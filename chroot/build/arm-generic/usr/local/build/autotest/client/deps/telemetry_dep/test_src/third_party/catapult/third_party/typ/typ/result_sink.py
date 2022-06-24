@@ -108,7 +108,7 @@ class ResultSinkReporter(object):
 
     def report_individual_test_result(
             self, test_name_prefix, result, artifact_output_dir, expectations,
-            test_file_location, test_file_line=None, additional_tags=None):
+            test_file_location, test_file_line=None):
         """Reports a single test result to ResultSink.
 
         Inputs are typically similar to what is passed to
@@ -130,8 +130,6 @@ class ResultSinkReporter(object):
                     containing the test.
             test_file_line: An int indicating the source file line number
                     containing the test.
-            additional_tags: An optional dict of additional tags to report to
-                    ResultDB.
 
         Returns:
             0 if the result was reported successfully or ResultDB is not
@@ -141,7 +139,6 @@ class ResultSinkReporter(object):
             return 0
 
         expectation_tags = expectations.tags if expectations else []
-        additional_tags = additional_tags or {}
 
         test_id = test_name_prefix + result.name
         raw_typ_expected_results = (
@@ -172,10 +169,6 @@ class ResultSinkReporter(object):
         if expectation_tags:
             for tag in expectation_tags:
                 tag_list.append(('typ_tag', tag))
-        for key, value in additional_tags.items():
-            assert isinstance(key, str)
-            assert isinstance(value, str)
-            tag_list.append((key, value))
 
         artifacts = {}
         original_artifacts = result.artifacts or {}

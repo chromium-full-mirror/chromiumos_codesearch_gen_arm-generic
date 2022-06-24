@@ -55,30 +55,6 @@ class WebCodecsIntegrationTest(gpu_integration_test.GpuIntegrationTest):
           'source_type':
           source_type
       }])
-      yield ('WebCodecs_GPUExternalTexture_expired_' + source_type,
-             'gpu-external-texture-expired.html', [{
-                 'source_type': source_type,
-                 'use_worker': False
-             }])
-      yield ('WebCodecs_GPUExternalTexture_expired_worker_' + source_type,
-             'gpu-external-texture-expired.html', [{
-                 'source_type': source_type,
-                 'use_worker': True
-             }])
-      yield ('WebCodecs_device_destroy_expired_texture_' + source_type,
-             'gpu-device-destroy-expire-active-external-texture.html', [{
-                 'source_type':
-                 source_type,
-                 'device_destroyed_before_import':
-                 False
-             }])
-      yield ('WebCodecs_texture_expired_from_destroyed_device_' + source_type,
-             'gpu-device-destroy-expire-active-external-texture.html', [{
-                 'source_type':
-                 source_type,
-                 'device_destroyed_before_import':
-                 True
-             }])
 
   @classmethod
   def GenerateAudioTests(cls) -> ct.TestGenerator:
@@ -180,8 +156,8 @@ class WebCodecsIntegrationTest(gpu_integration_test.GpuIntegrationTest):
   def SetUpProcess(cls) -> None:
     super(WebCodecsIntegrationTest, cls).SetUpProcess()
     args = [
-        '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream',
-        '--enable-unsafe-webgpu'
+        '--use-fake-device-for-media-stream',
+        '--use-fake-ui-for-media-stream',
     ]
 
     # If we don't call CustomizeBrowserArgs cls.platform is None

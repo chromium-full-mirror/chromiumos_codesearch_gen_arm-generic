@@ -13,7 +13,7 @@
 
 namespace chaps {
 
-inline constexpr size_t kIsolateCredentialBytes = 16;
+const size_t kIsolateCredentialBytes = 16;
 
 // Manages a user's isolate credentials, including saving and retrieval of
 // isolate credentials. Sample usage:

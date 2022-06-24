@@ -11,9 +11,10 @@
 
 namespace variations {
 
-// The name of the beacon file, which is relative to the user data directory
-// and used to store the CleanExitBeacon value and the variations crash streak.
-extern const base::FilePath::CharType kCleanExitBeaconFilename[];
+// The name of the file, which is relative to the user data directory, used by
+// the Extended Variations Safe Mode experiment's SignalAndWriteViaFileUtilGroup
+// to store the stability beacon and the variations crash streak.
+extern const base::FilePath::CharType kVariationsFilename[];
 
 // Trial and group names for the extended variations safe mode experiment.
 extern const char kExtendedSafeModeTrial[];

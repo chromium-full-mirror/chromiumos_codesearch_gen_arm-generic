@@ -298,8 +298,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -624,8 +623,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -662,8 +660,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -988,8 +985,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -1314,8 +1310,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -1352,8 +1347,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu --enable-features=Vulkan",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -1702,8 +1696,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -1846,15 +1839,14 @@
       },
       {
         "args": [
-          "--use-cmd-decoder=passthrough",
-          "--use-gl=angle",
+          "--use-cmd-decoder=validating",
           "--use-gpu-in-tests"
         ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_gtest_merge.py"
         },
-        "name": "gl_tests_passthrough",
+        "name": "gl_tests_validating",
         "swarming": {
           "can_use_on_swarming_builders": true,
           "dimension_sets": [
@@ -1865,8 +1857,7 @@
               "os": "Mac-11.5.2"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 2
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
         },
         "test": "gl_tests",
         "test_id_prefix": "ninja://gpu:gl_tests/"
@@ -2033,8 +2024,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -2072,8 +2062,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -2431,8 +2420,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -2473,8 +2461,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -2622,15 +2609,14 @@
       },
       {
         "args": [
-          "--use-cmd-decoder=passthrough",
-          "--use-gl=angle",
+          "--use-cmd-decoder=validating",
           "--use-gpu-in-tests"
         ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_gtest_merge.py"
         },
-        "name": "gl_tests_passthrough",
+        "name": "gl_tests_validating",
         "swarming": {
           "can_use_on_swarming_builders": true,
           "dimension_sets": [
@@ -2642,8 +2628,7 @@
             }
           ],
           "expiration": 21600,
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 2
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
         },
         "test": "gl_tests",
         "test_id_prefix": "ninja://gpu:gl_tests/"
@@ -2815,8 +2800,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -2855,8 +2839,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -3205,8 +3188,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -3349,15 +3331,14 @@
       },
       {
         "args": [
-          "--use-cmd-decoder=passthrough",
-          "--use-gl=angle",
+          "--use-cmd-decoder=validating",
           "--use-gpu-in-tests"
         ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_gtest_merge.py"
         },
-        "name": "gl_tests_passthrough",
+        "name": "gl_tests_validating",
         "swarming": {
           "can_use_on_swarming_builders": true,
           "dimension_sets": [
@@ -3368,8 +3349,7 @@
               "os": "Mac-11.5.2"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 2
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
         },
         "test": "gl_tests",
         "test_id_prefix": "ninja://gpu:gl_tests/"
@@ -3536,8 +3516,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -3575,8 +3554,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -3872,8 +3850,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -4197,8 +4174,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -4515,8 +4491,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -4553,8 +4528,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -4871,8 +4845,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -5189,8 +5162,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -5227,8 +5199,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -5518,8 +5489,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -5834,8 +5804,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -5872,8 +5841,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -6161,8 +6129,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -6477,8 +6444,7 @@
           "--passthrough",
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {
@@ -6515,8 +6481,7 @@
           "-v",
           "--extra-browser-args=--enable-logging=stderr --js-flags=--expose-gc --force_high_performance_gpu",
           "--enable-dawn-backend-validation",
-          "--retry-limit=3",
-          "--jobs=1"
+          "--retry-limit=3"
         ],
         "isolate_name": "telemetry_gpu_integration_test",
         "merge": {

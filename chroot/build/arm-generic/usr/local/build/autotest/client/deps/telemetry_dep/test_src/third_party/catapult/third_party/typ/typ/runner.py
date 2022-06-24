@@ -891,9 +891,11 @@ class Runner(object):
         return trace
 
     def expectations_for(self, test_case):
-        expectations = self.expectations if self.has_expectations else None
-        return _expectations_for(
-            test_case, expectations, self.args.test_name_prefix)
+        test_name = test_case.id()[len(self.args.test_name_prefix):]
+        if self.has_expectations:
+            return self.expectations.expectations_for(test_name)
+        else:
+            return Expectation(test=test_name)
 
     def default_classifier(self, test_set, test):
         if self.matches_filter(test):
@@ -990,10 +992,6 @@ class _Child(object):
         self.artifact_output_dir = parent.artifact_output_dir
         self.result_sink_reporter = None
         self.disable_resultsink = parent.args.disable_resultsink
-
-    def expectations_for(self, test_case):
-        expectations = self.expectations if self.has_expectations else None
-        return _expectations_for(test_case, expectations, self.test_name_prefix)
 
 
 def _setup_process(host, worker_num, child):
@@ -1136,7 +1134,20 @@ def _run_one_test(child, test_input):
             test_case.set_artifacts(None)
 
     took = h.time() - started
-    additional_tags = None
+    # If the test signaled that it should be retried on failure, do so.
+    if isinstance(test_case, TypTestCase):
+        # Handle the case where the test called self.skipTest, e.g. if it
+        # determined that the test is not valid on the current configuration.
+        if test_result.skipped and test_case.programmaticSkipIsExpected:
+            return (Result(test_name, ResultType.Skip, started, took,
+                           child.worker_num, expected={ResultType.Skip},
+                           unexpected=False, pid=pid), False)
+        should_retry_on_failure = (should_retry_on_failure
+                                   or test_case.retryOnFailure)
+    result = _result_from_test_result(test_result, test_name, started, took, out,
+                                    err, child.worker_num, pid, test_case,
+                                    expected_results, child.has_expectations,
+                                    art.artifacts)
     test_location = inspect.getsourcefile(test_case.__class__)
     test_method = getattr(test_case, test_case._testMethodName)
     # Test methods are often wrapped by decorators such as @mock. Try to get to
@@ -1149,32 +1160,10 @@ def _run_one_test(child, test_input):
         test_line = inspect.getsourcelines(test_method)[1]
     else:
         test_line = None
-
-    # If the test signaled that it should be retried on failure, do so.
-    if isinstance(test_case, TypTestCase):
-        additional_tags = test_case.additionalTags
-        # Handle the case where the test called self.skipTest, e.g. if it
-        # determined that the test is not valid on the current configuration.
-        if test_result.skipped and test_case.programmaticSkipIsExpected:
-            result = Result(test_name, ResultType.Skip, started, took,
-                           child.worker_num, expected={ResultType.Skip},
-                           unexpected=False, pid=pid)
-            result.result_sink_retcode =\
-                    child.result_sink_reporter.report_individual_test_result(
-                        child.test_name_prefix, result,
-                        child.artifact_output_dir, child.expectations,
-                        test_location, test_line, additional_tags)
-            return (result, False)
-        should_retry_on_failure = (should_retry_on_failure
-                                   or test_case.retryOnFailure)
-    result = _result_from_test_result(test_result, test_name, started, took, out,
-                                    err, child.worker_num, pid, test_case,
-                                    expected_results, child.has_expectations,
-                                    art.artifacts)
     result.result_sink_retcode =\
             child.result_sink_reporter.report_individual_test_result(
                 child.test_name_prefix, result, child.artifact_output_dir,
-                child.expectations, test_location, test_line, additional_tags)
+                child.expectations, test_location, test_line)
     return (result, should_retry_on_failure)
 
 
@@ -1352,14 +1341,6 @@ def _load_via_load_tests(child, test_name):
 
 def _sort_inputs(inps):
     return sorted(inps, key=lambda inp: inp.name)
-
-
-def _expectations_for(test_case, expectations, test_name_prefix):
-    test_name = test_case.id()[len(test_name_prefix):]
-    if expectations:
-        return expectations.expectations_for(test_name)
-    else:
-        return Expectation(test=test_name)
 
 
 if __name__ == '__main__':  # pragma: no cover

@@ -41,6 +41,7 @@
 
 #include "base/base_export.h"
 #include "base/json/json_common.h"
+#include "base/optional.h"
 #include "base/strings/string_piece.h"
 #include "base/values.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"

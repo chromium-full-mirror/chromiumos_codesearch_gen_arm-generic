@@ -163,7 +163,6 @@ class MtpStorageInfo :
     kProductFieldNumber = 4,
     kStorageDescriptionFieldNumber = 13,
     kVolumeIdentifierFieldNumber = 14,
-    kSerialNumberFieldNumber = 15,
     kVendorIdFieldNumber = 3,
     kProductIdFieldNumber = 5,
     kDeviceFlagsFieldNumber = 6,
@@ -272,26 +271,6 @@ class MtpStorageInfo :
   const std::string& _internal_volume_identifier() const;
   void _internal_set_volume_identifier(const std::string& value);
   std::string* _internal_mutable_volume_identifier();
-  public:
-
-  // optional string serial_number = 15;
-  bool has_serial_number() const;
-  private:
-  bool _internal_has_serial_number() const;
-  public:
-  void clear_serial_number();
-  const std::string& serial_number() const;
-  void set_serial_number(const std::string& value);
-  void set_serial_number(std::string&& value);
-  void set_serial_number(const char* value);
-  void set_serial_number(const char* value, size_t size);
-  std::string* mutable_serial_number();
-  std::string* release_serial_number();
-  void set_allocated_serial_number(std::string* serial_number);
-  private:
-  const std::string& _internal_serial_number() const;
-  void _internal_set_serial_number(const std::string& value);
-  std::string* _internal_mutable_serial_number();
   public:
 
   // optional uint32 vendor_id = 3;
@@ -423,7 +402,6 @@ class MtpStorageInfo :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr product_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr storage_description_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr volume_identifier_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serial_number_;
   ::PROTOBUF_NAMESPACE_ID::uint32 vendor_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 product_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 device_flags_;
@@ -590,7 +568,7 @@ inline void MtpStorageInfo::set_allocated_vendor(std::string* vendor) {
 
 // optional uint32 vendor_id = 3;
 inline bool MtpStorageInfo::_internal_has_vendor_id() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_vendor_id() const {
@@ -598,7 +576,7 @@ inline bool MtpStorageInfo::has_vendor_id() const {
 }
 inline void MtpStorageInfo::clear_vendor_id() {
   vendor_id_ = 0u;
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_vendor_id() const {
   return vendor_id_;
@@ -608,7 +586,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::vendor_id() const {
   return _internal_vendor_id();
 }
 inline void MtpStorageInfo::_internal_set_vendor_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
   vendor_id_ = value;
 }
 inline void MtpStorageInfo::set_vendor_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -689,7 +667,7 @@ inline void MtpStorageInfo::set_allocated_product(std::string* product) {
 
 // optional uint32 product_id = 5;
 inline bool MtpStorageInfo::_internal_has_product_id() const {
-  bool value = (_has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_product_id() const {
@@ -697,7 +675,7 @@ inline bool MtpStorageInfo::has_product_id() const {
 }
 inline void MtpStorageInfo::clear_product_id() {
   product_id_ = 0u;
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_product_id() const {
   return product_id_;
@@ -707,7 +685,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::product_id() const {
   return _internal_product_id();
 }
 inline void MtpStorageInfo::_internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000040u;
   product_id_ = value;
 }
 inline void MtpStorageInfo::set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -717,7 +695,7 @@ inline void MtpStorageInfo::set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value
 
 // optional uint32 device_flags = 6;
 inline bool MtpStorageInfo::_internal_has_device_flags() const {
-  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_device_flags() const {
@@ -725,7 +703,7 @@ inline bool MtpStorageInfo::has_device_flags() const {
 }
 inline void MtpStorageInfo::clear_device_flags() {
   device_flags_ = 0u;
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_device_flags() const {
   return device_flags_;
@@ -735,7 +713,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::device_flags() const {
   return _internal_device_flags();
 }
 inline void MtpStorageInfo::_internal_set_device_flags(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
   device_flags_ = value;
 }
 inline void MtpStorageInfo::set_device_flags(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -745,7 +723,7 @@ inline void MtpStorageInfo::set_device_flags(::PROTOBUF_NAMESPACE_ID::uint32 val
 
 // optional uint32 storage_type = 7;
 inline bool MtpStorageInfo::_internal_has_storage_type() const {
-  bool value = (_has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_storage_type() const {
@@ -753,7 +731,7 @@ inline bool MtpStorageInfo::has_storage_type() const {
 }
 inline void MtpStorageInfo::clear_storage_type() {
   storage_type_ = 0u;
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_storage_type() const {
   return storage_type_;
@@ -763,7 +741,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::storage_type() const {
   return _internal_storage_type();
 }
 inline void MtpStorageInfo::_internal_set_storage_type(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
   storage_type_ = value;
 }
 inline void MtpStorageInfo::set_storage_type(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -773,7 +751,7 @@ inline void MtpStorageInfo::set_storage_type(::PROTOBUF_NAMESPACE_ID::uint32 val
 
 // optional uint32 filesystem_type = 8;
 inline bool MtpStorageInfo::_internal_has_filesystem_type() const {
-  bool value = (_has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_filesystem_type() const {
@@ -781,7 +759,7 @@ inline bool MtpStorageInfo::has_filesystem_type() const {
 }
 inline void MtpStorageInfo::clear_filesystem_type() {
   filesystem_type_ = 0u;
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_filesystem_type() const {
   return filesystem_type_;
@@ -791,7 +769,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::filesystem_type() const {
   return _internal_filesystem_type();
 }
 inline void MtpStorageInfo::_internal_set_filesystem_type(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000200u;
   filesystem_type_ = value;
 }
 inline void MtpStorageInfo::set_filesystem_type(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -801,7 +779,7 @@ inline void MtpStorageInfo::set_filesystem_type(::PROTOBUF_NAMESPACE_ID::uint32 
 
 // optional uint32 access_capability = 9;
 inline bool MtpStorageInfo::_internal_has_access_capability() const {
-  bool value = (_has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_access_capability() const {
@@ -809,7 +787,7 @@ inline bool MtpStorageInfo::has_access_capability() const {
 }
 inline void MtpStorageInfo::clear_access_capability() {
   access_capability_ = 0u;
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::_internal_access_capability() const {
   return access_capability_;
@@ -819,7 +797,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MtpStorageInfo::access_capability() const
   return _internal_access_capability();
 }
 inline void MtpStorageInfo::_internal_set_access_capability(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00000400u;
   access_capability_ = value;
 }
 inline void MtpStorageInfo::set_access_capability(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -829,7 +807,7 @@ inline void MtpStorageInfo::set_access_capability(::PROTOBUF_NAMESPACE_ID::uint3
 
 // optional uint64 max_capacity = 10;
 inline bool MtpStorageInfo::_internal_has_max_capacity() const {
-  bool value = (_has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_max_capacity() const {
@@ -837,7 +815,7 @@ inline bool MtpStorageInfo::has_max_capacity() const {
 }
 inline void MtpStorageInfo::clear_max_capacity() {
   max_capacity_ = PROTOBUF_ULONGLONG(0);
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::_internal_max_capacity() const {
   return max_capacity_;
@@ -847,7 +825,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::max_capacity() const {
   return _internal_max_capacity();
 }
 inline void MtpStorageInfo::_internal_set_max_capacity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00000800u;
   max_capacity_ = value;
 }
 inline void MtpStorageInfo::set_max_capacity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -857,7 +835,7 @@ inline void MtpStorageInfo::set_max_capacity(::PROTOBUF_NAMESPACE_ID::uint64 val
 
 // optional uint64 free_space_in_bytes = 11;
 inline bool MtpStorageInfo::_internal_has_free_space_in_bytes() const {
-  bool value = (_has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_free_space_in_bytes() const {
@@ -865,7 +843,7 @@ inline bool MtpStorageInfo::has_free_space_in_bytes() const {
 }
 inline void MtpStorageInfo::clear_free_space_in_bytes() {
   free_space_in_bytes_ = PROTOBUF_ULONGLONG(0);
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::_internal_free_space_in_bytes() const {
   return free_space_in_bytes_;
@@ -875,7 +853,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::free_space_in_bytes() con
   return _internal_free_space_in_bytes();
 }
 inline void MtpStorageInfo::_internal_set_free_space_in_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00001000u;
   free_space_in_bytes_ = value;
 }
 inline void MtpStorageInfo::set_free_space_in_bytes(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -885,7 +863,7 @@ inline void MtpStorageInfo::set_free_space_in_bytes(::PROTOBUF_NAMESPACE_ID::uin
 
 // optional uint64 free_space_in_objects = 12;
 inline bool MtpStorageInfo::_internal_has_free_space_in_objects() const {
-  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline bool MtpStorageInfo::has_free_space_in_objects() const {
@@ -893,7 +871,7 @@ inline bool MtpStorageInfo::has_free_space_in_objects() const {
 }
 inline void MtpStorageInfo::clear_free_space_in_objects() {
   free_space_in_objects_ = PROTOBUF_ULONGLONG(0);
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::_internal_free_space_in_objects() const {
   return free_space_in_objects_;
@@ -903,7 +881,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 MtpStorageInfo::free_space_in_objects() c
   return _internal_free_space_in_objects();
 }
 inline void MtpStorageInfo::_internal_set_free_space_in_objects(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00002000u;
   free_space_in_objects_ = value;
 }
 inline void MtpStorageInfo::set_free_space_in_objects(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -1051,77 +1029,6 @@ inline void MtpStorageInfo::set_allocated_volume_identifier(std::string* volume_
   }
   volume_identifier_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), volume_identifier);
   // @@protoc_insertion_point(field_set_allocated:MtpStorageInfo.volume_identifier)
-}
-
-// optional string serial_number = 15;
-inline bool MtpStorageInfo::_internal_has_serial_number() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
-  return value;
-}
-inline bool MtpStorageInfo::has_serial_number() const {
-  return _internal_has_serial_number();
-}
-inline void MtpStorageInfo::clear_serial_number() {
-  serial_number_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline const std::string& MtpStorageInfo::serial_number() const {
-  // @@protoc_insertion_point(field_get:MtpStorageInfo.serial_number)
-  return _internal_serial_number();
-}
-inline void MtpStorageInfo::set_serial_number(const std::string& value) {
-  _internal_set_serial_number(value);
-  // @@protoc_insertion_point(field_set:MtpStorageInfo.serial_number)
-}
-inline std::string* MtpStorageInfo::mutable_serial_number() {
-  // @@protoc_insertion_point(field_mutable:MtpStorageInfo.serial_number)
-  return _internal_mutable_serial_number();
-}
-inline const std::string& MtpStorageInfo::_internal_serial_number() const {
-  return serial_number_.GetNoArena();
-}
-inline void MtpStorageInfo::_internal_set_serial_number(const std::string& value) {
-  _has_bits_[0] |= 0x00000020u;
-  serial_number_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void MtpStorageInfo::set_serial_number(std::string&& value) {
-  _has_bits_[0] |= 0x00000020u;
-  serial_number_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:MtpStorageInfo.serial_number)
-}
-inline void MtpStorageInfo::set_serial_number(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  _has_bits_[0] |= 0x00000020u;
-  serial_number_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:MtpStorageInfo.serial_number)
-}
-inline void MtpStorageInfo::set_serial_number(const char* value, size_t size) {
-  _has_bits_[0] |= 0x00000020u;
-  serial_number_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:MtpStorageInfo.serial_number)
-}
-inline std::string* MtpStorageInfo::_internal_mutable_serial_number() {
-  _has_bits_[0] |= 0x00000020u;
-  return serial_number_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* MtpStorageInfo::release_serial_number() {
-  // @@protoc_insertion_point(field_release:MtpStorageInfo.serial_number)
-  if (!_internal_has_serial_number()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000020u;
-  return serial_number_.ReleaseNonDefaultNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void MtpStorageInfo::set_allocated_serial_number(std::string* serial_number) {
-  if (serial_number != nullptr) {
-    _has_bits_[0] |= 0x00000020u;
-  } else {
-    _has_bits_[0] &= ~0x00000020u;
-  }
-  serial_number_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), serial_number);
-  // @@protoc_insertion_point(field_set_allocated:MtpStorageInfo.serial_number)
 }
 
 #ifdef __GNUC__

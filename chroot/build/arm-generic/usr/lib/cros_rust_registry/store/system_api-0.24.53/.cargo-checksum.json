@@ -1,8 +1,8 @@
 {
-	"package": "f6285485ee1f4949e8b222696c72e17d949cba16c1e9c672c7704655bae6e839",
+	"package": "01d614623cb2d869a34966e5b3908612a5d53deed7ad9498292dbeadf6a1cc61",
 	"files": {
-		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
-		"Cargo.toml": "658937d50bbfd09d2a60772f299cda34cd8a7672076208b803dfa9726907cf29",
+		"Cargo.toml.orig": "f954c7a048dc0f2fb73cbbd8fa46fa9e71b5262b2463ca0c3cc63c6c52be2805",
+		"Cargo.toml": "fe73e73c7cc34bdf4f98ee012940b9311eaf378b0d019ab786783eb72c2ae94c",
 		"src/lib.rs": "0be08c5b180e66f46749a3435caecbe763bca2a13d43b73bdc00bd9ad1242239",
 		"src/bindings/client/org_chromium_authpolicy.rs": "7fdd12522a2cfaee176700c912862f5da0ad0900315417b8f78d61a75ecf968f",
 		"src/bindings/client/org_chromium_sessionmanagerinterface.rs": "b964d553f62f9fb25774160f945ca89dec65c2e3ead48cb5950673c0322b2f87",

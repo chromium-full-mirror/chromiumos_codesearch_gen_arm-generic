@@ -10,6 +10,7 @@
 #include "base/gtest_prod_util.h"
 #include "base/memory/ptr_util.h"
 #include "base/memory/raw_ptr.h"
+#include "base/optional.h"
 #include "base/synchronization/waitable_event.h"
 #include "base/template_util.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"

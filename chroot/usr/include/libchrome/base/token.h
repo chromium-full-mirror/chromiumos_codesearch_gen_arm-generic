@@ -13,6 +13,7 @@
 #include "base/base_export.h"
 #include "base/containers/span.h"
 #include "base/hash/hash.h"
+#include "base/optional.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 
 namespace base {

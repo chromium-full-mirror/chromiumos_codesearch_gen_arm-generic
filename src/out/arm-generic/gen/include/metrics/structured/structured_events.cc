@@ -882,6 +882,11 @@ WiFiPortalDetectionStatus& WiFiPortalDetectionStatus::SetPortalDetectionStatus(c
   return *this;
 }
 
+WiFiPortalDetectionStatus& WiFiPortalDetectionStatus::SetPortalDetectionMultiProbeResult(const int64_t value) {
+  AddIntMetric(kPortalDetectionMultiProbeResultNameHash, value);
+  return *this;
+}
+
 WiFiConnectionEnd::WiFiConnectionEnd() :
   ::metrics::structured::EventBase(kEventNameHash, kProjectNameHash, kIdType, kEventType) {}
 WiFiConnectionEnd::~WiFiConnectionEnd() = default;

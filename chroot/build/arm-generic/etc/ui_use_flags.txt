@@ -8,7 +8,6 @@ legacy_power_button
 ml_service
 neon
 ondevice_document_scanner
-ondevice_grammar
 ondevice_handwriting
 opengles
 smartdim

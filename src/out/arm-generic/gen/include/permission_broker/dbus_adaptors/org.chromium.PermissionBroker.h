@@ -44,36 +44,6 @@ class PermissionBrokerInterface {
       uint32_t in_drop_privileges_mask,
       const base::ScopedFD& in_lifeline_fd,
       brillo::dbus_utils::FileDescriptor* out_fd) = 0;
-  // This API is for a client to register with the Permission Broker to
-  // make requests to detach/reattach USB device interfaces in the future.
-  // The |drop_privileges_mask| is a bit mask indicating which interface
-  // numbers of a USB device are allowed. The interface number 0 corresponds
-  // to the LSB of the mask. A device which has an ADB interface and other
-  // interfaces for Camera or Storage may be opened purely as an ADB device
-  // using a mask that zeros out the Camera and Storage interface number
-  // bit positions.
-  // The |path| is the USB device path the client wants to access.
-  // The |lifeline_fd| is a file descriptor for monitoring the client's
-  // lifetime and reattaching detached interfaces when the client terminates.
-  // The method returns |fd| which is a file descriptor opened at |path|,
-  // and |client_id| which is an unique id for a registered client.
-  virtual bool OpenPathAndRegisterClient(
-      brillo::ErrorPtr* error,
-      const std::string& in_path,
-      uint32_t in_drop_privileges_mask,
-      const base::ScopedFD& in_lifeline_fd,
-      brillo::dbus_utils::FileDescriptor* out_fd,
-      std::string* out_client_id) = 0;
-  // This API is for the client with |client_id| to detach the interface
-  // |iface_num| at the USB device associated with it.
-  virtual bool DetachInterface(
-      const std::string& in_client_id,
-      uint8_t in_iface_num) = 0;
-  // This API is for the client with |client_id| to reattach the interface
-  // |iface_num| at the USB device associated with it.
-  virtual bool ReattachInterface(
-      const std::string& in_client_id,
-      uint8_t in_iface_num) = 0;
   // This API uses USB VBUS to power-cycle one or more USB devices.
   // The |vid| is the Vendor ID of the target device/devices.
   // The |pid| is the Product ID of the target device/devices.
@@ -148,18 +118,6 @@ class PermissionBrokerAdaptor {
         "ClaimDevicePath",
         base::Unretained(interface_),
         &PermissionBrokerInterface::ClaimDevicePath);
-    itf->AddSimpleMethodHandlerWithError(
-        "OpenPathAndRegisterClient",
-        base::Unretained(interface_),
-        &PermissionBrokerInterface::OpenPathAndRegisterClient);
-    itf->AddSimpleMethodHandler(
-        "DetachInterface",
-        base::Unretained(interface_),
-        &PermissionBrokerInterface::DetachInterface);
-    itf->AddSimpleMethodHandler(
-        "ReattachInterface",
-        base::Unretained(interface_),
-        &PermissionBrokerInterface::ReattachInterface);
     itf->AddMethodHandler(
         "PowerCycleUsbPorts",
         base::Unretained(interface_),
@@ -226,23 +184,6 @@ class PermissionBrokerAdaptor {
         "      <arg name=\"drop_privileges_mask\" type=\"u\" direction=\"in\"/>\n"
         "      <arg name=\"lifeline_fd\" type=\"h\" direction=\"in\"/>\n"
         "      <arg name=\"fd\" type=\"h\" direction=\"out\"/>\n"
-        "    </method>\n"
-        "    <method name=\"OpenPathAndRegisterClient\">\n"
-        "      <arg name=\"path\" type=\"s\" direction=\"in\"/>\n"
-        "      <arg name=\"drop_privileges_mask\" type=\"u\" direction=\"in\"/>\n"
-        "      <arg name=\"lifeline_fd\" type=\"h\" direction=\"in\"/>\n"
-        "      <arg name=\"fd\" type=\"h\" direction=\"out\"/>\n"
-        "      <arg name=\"client_id\" type=\"s\" direction=\"out\"/>\n"
-        "    </method>\n"
-        "    <method name=\"DetachInterface\">\n"
-        "      <arg name=\"client_id\" type=\"s\" direction=\"in\"/>\n"
-        "      <arg name=\"iface_num\" type=\"y\" direction=\"in\"/>\n"
-        "      <arg name=\"success\" type=\"b\" direction=\"out\"/>\n"
-        "    </method>\n"
-        "    <method name=\"ReattachInterface\">\n"
-        "      <arg name=\"client_id\" type=\"s\" direction=\"in\"/>\n"
-        "      <arg name=\"iface_num\" type=\"y\" direction=\"in\"/>\n"
-        "      <arg name=\"success\" type=\"b\" direction=\"out\"/>\n"
         "    </method>\n"
         "    <method name=\"PowerCycleUsbPorts\">\n"
         "      <arg name=\"vid\" type=\"q\" direction=\"in\"/>\n"

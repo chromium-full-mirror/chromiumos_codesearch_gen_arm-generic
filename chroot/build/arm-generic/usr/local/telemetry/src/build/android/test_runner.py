@@ -437,12 +437,6 @@ def AddInstrumentationTestOptions(parser):
                       type=_RealPath,
                       help='Configures an additional-apk to be forced '
                       'to be queryable by other APKs.')
-  parser.add_argument('--instant-additional-apk',
-                      action='append',
-                      dest='instant_additional_apks',
-                      default=[],
-                      type=_RealPath,
-                      help='Configures an additional-apk to be an instant APK')
   parser.add_argument(
       '-A', '--annotation',
       dest='annotation_str',
@@ -1101,7 +1095,7 @@ def RunTestsInPlatformMode(args, result_sink_client=None):
             'raw_logs.txt', 'raw_logs',
             output_manager.Datatype.TEXT) as raw_logs_file:
           raw_logs_file.write(raw_logs)
-        logging.critical('RAW LOGS: %s', raw_logs_file.Link())
+      logging.critical('RAW LOGS: %s', raw_logs_file.Link())
 
       with out_manager.ArchivedTempfile(
           'test_results_presentation.html',

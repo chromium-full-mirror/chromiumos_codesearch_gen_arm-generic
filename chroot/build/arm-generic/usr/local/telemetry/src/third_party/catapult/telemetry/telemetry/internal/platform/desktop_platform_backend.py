@@ -3,7 +3,6 @@
 # found in the LICENSE file.
 
 from __future__ import absolute_import
-import logging
 import os
 import subprocess
 
@@ -23,16 +22,7 @@ class DesktopPlatformBackend(platform_backend.PlatformBackend):
         'clear_system_cache', self.GetOSName(), self.GetArchName())
     assert flush_command, 'You must build clear_system_cache first'
 
-    cmd = [flush_command, '--recurse', os.path.abspath(directory)]
-    proc = subprocess.Popen(
-        cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
-    )
-    stdout, _ = proc.communicate()
-    if proc.returncode != 0:
-      logging.error('%s exited with unexpected returncode %d. Output:\n%s',
-                    cmd, proc.returncode,
-                    stdout.decode(errors='backslashreplace'))
-      raise subprocess.CalledProcessError(proc.returncode, cmd)
+    subprocess.check_call([flush_command, '--recurse', directory])
 
   def GetDeviceTypeName(self):
     return 'Desktop'

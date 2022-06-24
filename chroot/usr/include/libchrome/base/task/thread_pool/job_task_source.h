@@ -14,6 +14,7 @@
 
 #include "base/base_export.h"
 #include "base/callback.h"
+#include "base/optional.h"
 #include "base/memory/raw_ptr.h"
 #include "base/synchronization/condition_variable.h"
 #include "base/task/common/checked_lock.h"

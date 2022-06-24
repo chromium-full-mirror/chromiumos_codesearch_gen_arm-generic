@@ -24,9 +24,9 @@ DEFAULT_LOG_FORMAT = (
 
 class SeriallyExecutedBrowserTestCase(test_case.TestCase):
 
-  # This should be removed once all references to it in Chromium have been
-  # removed, as trying to reference the runner in a parallel context breaks on
-  # Windows and Mac.
+  # Below is a reference to the typ.Runner instance. It will be used in
+  # member functions like GetExpectationsForTest() to get test information
+  # from the typ.Runner instance running the test.
   _typ_runner = None
   browser = None
 
@@ -59,10 +59,6 @@ class SeriallyExecutedBrowserTestCase(test_case.TestCase):
   @classmethod
   def Name(cls):
     return cls.__name__
-
-  @classmethod
-  def CanRunInParallel(cls):
-    return False
 
   @classmethod
   def AddCommandlineArgs(cls, parser):
@@ -154,11 +150,11 @@ class SeriallyExecutedBrowserTestCase(test_case.TestCase):
       cls.browser = cls._browser_to_create.Create()
       specifiers = set(cls.GetPlatformTags(cls.browser) +
                        cls._browser_to_create.GetTypExpectationsTags())
-      if cls.child.has_expectations and specifiers:
+      if cls._typ_runner.has_expectations and specifiers:
         logging.info(
             'The following expectations condition tags were generated %s' %
             str(list(specifiers)))
-        cls.child.expectations.set_tags(specifiers)
+        cls._typ_runner.expectations.add_tags(specifiers)
     except Exception:
       cls._browser_to_create.CleanUpEnvironment()
       raise
@@ -233,7 +229,7 @@ class SeriallyExecutedBrowserTestCase(test_case.TestCase):
     are no expectations files passed to typ, then a tuple of
     (set(['PASS']), False) should be returned from this function.
     """
-    exp = self.child.expectations_for(self)
+    exp = self.__class__._typ_runner.expectations_for(self)
     return exp.results, exp.should_retry_on_failure
 
   @classmethod

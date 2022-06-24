@@ -165,13 +165,12 @@ function webGpuDrawVideoFrames(gpuSetting, videos, videoRows, videoColumns,
   const vertexBufferForVideos = createVertexBufferForVideos(device, videos,
     videoRows, videoColumns);
 
-  const swapChainFormat = navigator.gpu.getPreferredCanvasFormat();
+  const swapChainFormat = context.getPreferredFormat(adapter);
 
   const swapChain = context.configure({
     device,
     format: swapChainFormat,
     usage: GPUTextureUsage.RENDER_ATTACHMENT,
-    alphaMode: "opaque"
   });
 
   let fragmentShaderModule;
@@ -187,7 +186,6 @@ function webGpuDrawVideoFrames(gpuSetting, videos, videoRows, videoColumns,
 
 
   const pipelineForVideos = device.createRenderPipeline({
-    layout: "auto",
     vertex: {
       module: device.createShaderModule({
         code: wgslShaders.vertex,
@@ -227,8 +225,7 @@ function webGpuDrawVideoFrames(gpuSetting, videos, videoRows, videoColumns,
     colorAttachments: [
       {
         view: undefined, // Assigned later
-        clearValue: { r: 1.0, g: 1.0, b: 1.0, a: 1.0 },
-        loadOp: 'clear',
+        loadValue: { r: 1.0, g: 1.0, b: 1.0, a: 1.0 },
         storeOp: 'store',
       },
     ],
@@ -281,7 +278,6 @@ function webGpuDrawVideoFrames(gpuSetting, videos, videoRows, videoColumns,
     createVertexBufferForIcons(device, videos, videoRows, videoColumns);
 
   const renderPipelineDescriptorForIcon = {
-    layout: "auto",
     vertex: {
       module: device.createShaderModule({
         code: wgslShaders.vertex_icons,
@@ -335,7 +331,6 @@ function webGpuDrawVideoFrames(gpuSetting, videos, videoRows, videoColumns,
 
   const vertexBufferForFPS = createVertexBufferForFPS(device);
   const pipelineForFPS = device.createRenderPipeline({
-    layout: "auto",
     vertex: {
       module: device.createShaderModule({
         code: wgslShaders.vertex,

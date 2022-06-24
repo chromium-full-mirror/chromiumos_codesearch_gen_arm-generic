@@ -9,6 +9,7 @@
 #include <memory>
 
 #include "base/memory/ref_counted.h"
+#include "base/optional.h"
 #include "base/sequence_checker.h"
 #include "base/threading/platform_thread.h"
 #include "base/threading/thread_checker.h"

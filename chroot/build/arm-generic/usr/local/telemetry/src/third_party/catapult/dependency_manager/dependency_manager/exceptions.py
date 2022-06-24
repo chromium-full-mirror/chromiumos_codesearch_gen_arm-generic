@@ -59,7 +59,3 @@ class CloudStorageUploadConflictError(CloudStorageError):
 
 class ArchiveError(Exception):
   pass
-
-
-class ConfigError(Exception):
-  pass

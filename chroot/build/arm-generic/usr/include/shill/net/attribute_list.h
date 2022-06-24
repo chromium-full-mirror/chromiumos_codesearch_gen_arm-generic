@@ -29,9 +29,8 @@ class NetlinkAttribute;
 class SHILL_EXPORT AttributeList : public base::RefCounted<AttributeList> {
  public:
   using NewFromIdMethod =
-      base::RepeatingCallback<std::unique_ptr<NetlinkAttribute>(int id)>;
-  using AttributeMethod =
-      base::RepeatingCallback<bool(int id, const ByteString& value)>;
+      base::Callback<std::unique_ptr<NetlinkAttribute>(int id)>;
+  using AttributeMethod = base::Callback<bool(int id, const ByteString& value)>;
 
   AttributeList();
   AttributeList(const AttributeList&) = delete;
