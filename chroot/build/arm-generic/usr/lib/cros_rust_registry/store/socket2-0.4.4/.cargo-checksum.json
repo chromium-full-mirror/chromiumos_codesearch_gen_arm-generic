@@ -1,0 +1,16 @@
+{
+	"package": "d9aeb5505b0e11b6ecd3b2537655e65a42f30fbe07fd0b68bd1ea99c789d1ccf",
+	"files": {
+		"Cargo.toml.orig": "eb8d5820a9c651d610d536a987f2fcbace797cb789a6c7e59817838cf7f8c656",
+		"Cargo.toml": "eb8d5820a9c651d610d536a987f2fcbace797cb789a6c7e59817838cf7f8c656",
+		"LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"README.md": "b870d442505bc8047b641815c8283f29fc213dcfd1331894802e6ae55cc09f1b",
+		"src/lib.rs": "b4409a10c9b4c1e16f20cc4b6cd087ad5fa0ec8fc701653bc93fedeb158583d2",
+		"src/socket.rs": "2beb154dfbadeb79408d987d074acd4a8daaf28e2dcadac0357e2d4fd4be7526",
+		"src/sockaddr.rs": "bed988fb306072fdb67718f3a215180d18f78f32321fecf64797f4c1d6bc7d84",
+		"src/sockref.rs": "02de263cce039aaddaee5d6c2bb3940bdfae5697a3fc9df47d226fb3cac03cd9",
+		"src/sys/windows.rs": "85840bf5c99fc984c9126cebfb065caefa7a8158b1c6bbc1d876f347187eefdb",
+		"src/sys/unix.rs": "b784e64a55ce666d8b3c8e30949b6d4965d6961c1bb964017f7fc54c109b7ad7"
+	}
+}

@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package chrome_knowledge;
+
+import "handwriting_interface.proto";
+
+// A labeled handwriting recognition request that can be used for validation.
+message HandwritingRecognizerLabeledRequest {
+  optional HandwritingRecognizerRequest request = 1;
+  optional string label = 2;
+}
+
+// A set of labeled handwriting recognition requests.
+message HandwritingRecognizerLabeledRequests {
+  repeated HandwritingRecognizerLabeledRequest labeled_requests = 1;
+}

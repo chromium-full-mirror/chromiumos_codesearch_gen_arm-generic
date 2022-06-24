@@ -1,0 +1,20 @@
+{
+	"package": "8bbb9ba9c9bdc5680e2bd7b163cbbe7f6a14f82c4cf87f0f51f1330d90ee94ad",
+	"files": {
+		"Cargo.toml.orig": "a1e66156f8d89d6b9331654422ee552a5f6a65fd4501915e517d31372735f9b3",
+		"tests/urltestdata.json": "afe55dd9583d125305d31e152478de9cc19801006b413c5f4fb7d430c50b1d11",
+		"tests/data.rs": "dace394aed466df0e8afea0037bb8c90306d30ce75efdaff39feb00dbd07fa79",
+		"tests/setters_tests.json": "486f6d129960d0d0d99b533caf9bef21113b31adcdb83296dfc4a59cd8431715",
+		"tests/unit.rs": "61e014d600aa558f4913ac7bc268d652eda67daead72b0b0cf288524b1d71d13",
+		"Cargo.toml": "2e146289004c91e20f5238d7ea7fa9dd02a96323e5272c8c27371c33b8da5e1b",
+		"LICENSE-MIT": "20c7855c364d57ea4c97889a5e8d98470a9952dade37bd9248b9a54431670e5e",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"src/origin.rs": "2b967dd04fa5852b4a89f13cc628f3bfd84d1432e9447b2d3cbc6fee8aba3738",
+		"src/lib.rs": "30372556e2352f93fa56178b85174eb0c3a819e87b12c288b67a101f7535a712",
+		"src/host.rs": "88adbe3a8dc691a4e32d7ed664dc7f17f8a1a863ffa4cde4d618032a00ec6653",
+		"src/quirks.rs": "8a504a2eeb74429e3282f2628014f3af9a567284c2b08bd0360bfd72d3a17e43",
+		"src/parser.rs": "eab4f6c7bffc021e9722375447a259683b8257dc6dff784c715032c39d4b4923",
+		"src/slicing.rs": "25425fc5c4100a3a5da49d1e0b497f6536066afcc91c4ba4dff5ace0860acd40",
+		"src/path_segments.rs": "dd6b637245b2ad77ce96221df3f80c8b4ad858cd52aecc86b97166dec386882a"
+	}
+}

@@ -1,0 +1,65 @@
+{
+    "platform": "keeby",
+    "mode_switcher_type": "menu_switcher",
+    "chrome_ec": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": false,
+        "battery": true,
+        "cbi": true,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": true,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": true
+    },
+    "firmware_screen": 15,
+    "spi_voltage": "pp3300",
+    "dark_resume_capable": true,
+    "smm_store": false,
+    "hold_pwr_button_nopowerd_shutdown": 14,
+    "usbc_input_voltage_limit": 15,
+    "max_charging_power": 45.0,
+    "custom_usb_enable_pins": [
+        {
+            "name": "EN_USB_A0_VBUS",
+            "ioex": false
+        },
+        {
+            "name": "EN_USB_A1_VBUS",
+            "ioex": false
+        }
+    ],
+    "models": {
+           "haboki": {
+              "custom_usb_enable_pins": [
+                 {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                 }
+              ]
+            },
+           "habokay": {
+              "custom_usb_enable_pins": [
+                 {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                 }
+              ]
+            },
+    	"cappy2": {
+		"custom_usb_enable_pins": [
+			{
+				"name": "EN_USB_A0_VBUS",
+				"ioex": false
+			}
+		]
+	}
+    },
+    "minios_enabled": false
+}

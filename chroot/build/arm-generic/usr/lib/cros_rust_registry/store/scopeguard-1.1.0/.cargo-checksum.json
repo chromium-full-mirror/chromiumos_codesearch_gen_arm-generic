@@ -1,0 +1,13 @@
+{
+	"package": "2411f349385862912ba3cfbe30e35280ad12170dc5a754fd82d83920decf2077",
+	"files": {
+		"Cargo.toml.orig": "42a68d9adab04bd2ef31a173c2044549e1ab60767f55a18e23e704b74669ab4b",
+		"Cargo.lock": "a96fedd8ac305616aa284e7d571d847fb967dd47c74f732791a6c4a56ddef502",
+		"Cargo.toml": "abff11e46790f238ef3fbb332b8b6764c25790183d8b169c0d4a8f76575b379b",
+		"LICENSE-MIT": "fb77f0a9c53e473abe5103c8632ef9f0f2874d4fb3f17cb2d8c661aab9cee9d7",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"README.rst": "67d8fa211a9c7d4b856ebcf822318ae5ae0192f3bd141d8b608677010ea7842f",
+		"examples/readme.rs": "d00fe19aecd7ca1632bcf176306f7a13ed8fdefa890761aa2c532f8c97532a33",
+		"src/lib.rs": "29a60ae468881edbdebc30e8f4c87101ede6e7e669482419b1c52a35e4c7f5ed"
+	}
+}

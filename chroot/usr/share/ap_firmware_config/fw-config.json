@@ -1,0 +1,4932 @@
+{
+  "brask": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "brya": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "dedede": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "drallion": {
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "eve": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "generic": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "grunt": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "guybrush": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "hatch": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "keeby": {
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_pp3300_a 1"
+        ],
+        [
+          "sleep:0.2"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "ec_uart_cmd:gpioset ec_ap_rsmrst_l 0"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "mancomb": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ],
+        [
+          "ap_flash_select:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ap_flash_select:on"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "octopus": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi_hold:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi_hold:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi_hold:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "puff": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "sarien": {
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "skyrim": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp1800"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "spi_hold:off"
+        ],
+        [
+          "ec_uart_cmd:powerb"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:20"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "spi_hold:off"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "volteer": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "cpu_fw_spi:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "cpu_fw_spi:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": true,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "wilco": {
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp3300",
+          "spi2_buf_en:on",
+          "cold_reset:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [
+        "-n"
+      ],
+      "flash_extra_flags_futility": [
+        "--fast"
+      ],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
+  "zork": {
+    "ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off",
+          "servo_present:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "cold_reset:on",
+          "servo_present:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "spi2_buf_on_flex_en:off",
+          "cold_reset:off",
+          "servo_present:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "spi2_buf_on_flex_en:on",
+          "cold_reset:on",
+          "servo_present:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "ft2232_spi:type=google-servo-v2,serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off",
+          "servo_present:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "cold_reset:on",
+          "servo_present:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,serial=%s"
+    },
+    "servo_v4p1_with_servo_micro": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off",
+          "spi2_buf_en:off",
+          "cold_reset:off",
+          "servo_present:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "spi2_vref:pp1800",
+          "spi2_buf_en:on",
+          "cold_reset:on",
+          "servo_present:on"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  }
+}

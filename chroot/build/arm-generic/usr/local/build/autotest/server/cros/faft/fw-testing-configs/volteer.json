@@ -1,0 +1,70 @@
+{
+    "platform": "volteer",
+    "mode_switcher_type": "menu_switcher",
+    "firmware_screen": 11,
+    "chrome_ec": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": false,
+        "battery": true,
+        "cbi": true,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": false,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": true
+    },
+    "spi_voltage": "pp3300",
+    "custom_usb_enable_pins": [
+        {
+            "name": "EN_PP5000_USBA",
+            "ioex": false
+        }
+    ],
+    "dark_resume_capable": true,
+    "smm_store": false,
+    "hold_pwr_button_nopowerd_shutdown": 14,
+    "models": {
+        "collis": {
+            "max_charging_power": 45.0
+        },
+        "copano": {
+            "max_charging_power": 45.0
+        },
+	"elemi": {
+	    "hold_pwr_button_poweroff": 7
+	},
+        "delbin": {
+            "max_charging_power": 45.0
+        },
+        "halvor": {
+            "max_charging_power": 65.0
+        },
+        "voema": {
+            "max_charging_power": 65.0
+        },
+        "volta": {
+            "max_charging_power": 45.0
+        },
+        "chronicler": {
+            "firmware_screen": 16
+        },
+        "eldrid": {
+            "firmware_screen": 20
+        }
+    },
+    "cr50_capability": {
+        "ec_hibernate_breaks_rdd": false,
+        "wp_on_in_g3": false,
+        "rdd_off_in_g3": true,
+        "rdd_leakage": false,
+        "deep_sleep_in_s0i3": false
+    },
+    "minios_enabled": false,
+    "ac_on_can_wake_ap_from_ulp": true
+}

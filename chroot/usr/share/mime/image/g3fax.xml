@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/g3fax">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CCITT G3 fax image</comment>
+  <glob pattern="*.g3"/>
+  <alias type="image/fax-g3"/>
+</mime-type>

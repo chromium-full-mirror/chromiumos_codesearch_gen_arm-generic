@@ -1,0 +1,10 @@
+{
+	"package": "37bd50920e4b6750d0ca52b0d4ac1f052e25fe6eb47e08697a4f4a2327b55019",
+	"files": {
+		"Cargo.toml.orig": "7369646ecf276ce681f3ad5d10e2d4bcf609da2c3121d8aeff90dd8e6f23a06f",
+		"Cargo.toml": "5f176e3837beeeba68bcd20ae7c44384bbfa7cedba0f606d4dac6ed16a823e61",
+		"src/headers/rate_estimator.h": "54dcfea6a7b7748a51397a1584530b118bfa0e11bc59b177b200a50feb94385a",
+		"src/rate_estimator_bindings.rs": "f882dfe5ddb519c2b2ba65290ef4f1862fe4ccdc0304db8030b244010e8a7189",
+		"src/rate_estimator.rs": "6f529a40df485856d3d84ba68fcfcfdab27d0a2f72f6ea52200f55b91e89837a"
+	}
+}

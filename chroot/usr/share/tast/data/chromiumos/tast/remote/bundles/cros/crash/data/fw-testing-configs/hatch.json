@@ -1,0 +1,57 @@
+{
+    "platform": "hatch",
+    "mode_switcher_type": "keyboard_dev_switcher",
+    "chrome_ec": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": false,
+        "battery": true,
+        "cbi": true,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": true,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": true
+    },
+    "firmware_screen": 15,
+    "spi_voltage": "pp3300",
+    "dark_resume_capable": true,
+    "custom_usb_enable_pins": [
+        {
+            "name": "EN_USB_A_5V",
+            "ioex": false
+        }
+    ],
+    "smm_store": false,
+    "cr50_capability": {
+        "ec_hibernate_breaks_rdd": true,
+        "wp_on_in_g3": false,
+        "rdd_off_in_g3": false,
+        "rdd_leakage": false,
+        "deep_sleep_in_s0i3": false
+    },
+    "models": {
+        "dratini": {
+            "usbc_voltage_on_shutdown_and_full_batt": 5
+        },
+        "jinlon": {
+            "usbc_voltage_on_shutdown_and_full_batt": 5
+        },
+        "kled": {
+            "usbc_input_voltage_limit": 15
+        },
+        "kohaku": {
+            "usb_a_port_count": 0
+        },
+        "mushu": {
+            "max_charging_power": 100.0
+        }
+    },
+    "minidiag_enabled": false,
+    "minios_enabled": false
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/fits">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>FITS document</comment>
+  <acronym>FITS</acronym>
+  <expanded-acronym>Flexible Image Transport System</expanded-acronym>
+  <glob pattern="*.fits"/>
+  <alias type="image/x-fits"/>
+</mime-type>

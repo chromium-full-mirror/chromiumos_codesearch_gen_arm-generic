@@ -1,0 +1,33 @@
+# This file is used by the Tast integration testing system to
+# determine which software features are present in the system image.
+# Don't use it for anything else. Your code will break.
+arc-camera3
+arm
+containers
+cras
+cups
+diagnostics
+direncription_allow_v2
+dlc
+drivefs
+drm_atomic
+fwupd
+hps
+iioservice
+kernel-5_15
+mbo
+memd
+ml_benchmark_drivers
+ml_service
+nacl
+ondevice_document_scanner
+ondevice_handwriting
+racc
+smartdim
+storage_wearout_detect
+transparent_hugepage
+usbguard
+v4l2_codec
+vkms
+wired_8021x
+wpa3_sae

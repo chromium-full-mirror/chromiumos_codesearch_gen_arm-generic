@@ -1,0 +1,13 @@
+{
+	"package": "b49e91b87805c7f775d48e39a391192ba9b184d48159159dbe3b2e8d6d39dfcf",
+	"files": {
+		"benches/benches.rs": "62c83a5a0948c06ffb54d0bf75a31ee5d9e5acde9e079c3b5cfb755bc634b72c",
+		"LICENSE": "1e697ce8d21401fbf1bddd9b5c3fd4c4c79ae1e3bdf51f81761c85e11d5a89cd",
+		"tests/lib.rs": "de2b1181c379a0f55de7b86021a9afb77dbe81053a6acf99623bec3663f9b7c4",
+		"Cargo.toml.orig": "977ae920897a076232134d8df12b1ad4d2e2f6a283ef23523a8acfee5ba24135",
+		"README.md": "b9fc7a1ac69abed8055b824713bf9ebfb4a07e2b7a356b50d8ed55e7a9accd18",
+		"Cargo.toml": "90f478d708fd42f70b69972e5f569d4e0d19b96708a5e05959c14cbb963003d3",
+		"CHANGELOG.md": "96553d0de79bf911b5ca66c999195f7f4ea6061564e4698d1adcb567060e1bcd",
+		"src/lib.rs": "1300ad81d4b682476e30d361a01a248a93e96426303ffde8bbd585258fa0b02f"
+	}
+}

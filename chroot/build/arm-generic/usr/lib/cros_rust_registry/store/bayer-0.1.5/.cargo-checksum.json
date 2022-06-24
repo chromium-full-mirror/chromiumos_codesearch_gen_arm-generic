@@ -1,0 +1,27 @@
+{
+	"package": "c62c4063886635528280c252ab791e0c23dc1c75676a8d48c559820467ea53d5",
+	"files": {
+		"Cargo.toml.orig": "69d09bb370b343ef6fec8dda9bac5fcb4b471bc6aae191b5bd7cbd2fda1b79f0",
+		"Cargo.lock": "aea59d9f10351a94ac121416d96fae2efe36c61dc672dd93fce7d08125e1975e",
+		"benches/benches.rs": "9ee3295a4e8295a98ec8d8d1079622ef351efbcb58354f68a6cd93f7a52a5749",
+		"Cargo.toml": "b9b5f99b7a80db3b1763574ae23fa276c3adef6c8ce7d252a80d0b94dbae8aec",
+		"include/libbayer.h": "3afb96725ebf3bc41cad1c97be078def063c949fede7941ee642537e47a36054",
+		"README.md": "edc2a08d99f33672361709d1a1237112964c2db88035c49b83d96c9324b7aaf8",
+		"LICENCE-MIT.txt": "5b62976ef8080cc7ced7a3fea9183d43d827f35101da0e08f89178f643683509",
+		"examples/showbayer.rs": "87e58d6da740f64408e8ac1baee07e01d51ebb59a7c62278ac14d72e2166d3b2",
+		"examples/writebayer.rs": "4915dec9bf2bf836942f7ee14dd2df3f01a311108d17e3cf806ea39ee5b7a94a",
+		"src/border_none.rs": "d9af54010fa2376c46d6a590e572478b91f48f5a232c20712df5dcf35fcc24f5",
+		"src/ffi.rs": "0cb7a6b8d9a8b174281703786dab33263bb683032909a92ad91f1c30aafb12bc",
+		"src/raster.rs": "0cdd97362de7da2f384b97144816a401c3193e7967e37dafad85e4786ea513a9",
+		"src/lib.rs": "60195df9219732495b9d216a303dfeaba3f6fc071c55f3b17e33c37ca62c3372",
+		"src/border_replicate.rs": "62d6c46cf2d4293c6f8b250ddba09c8491dd03072ab9b07f99a63f9a7ca079bf",
+		"src/demosaic/cubic.rs": "3111398c054532843ec84ce69c6867f97ba0e64db5434b18a0a92aa803a683a6",
+		"src/demosaic/mod.rs": "dbfd30b410d1982dedf0e902064d2fcc0262704d7785321a94580dc7fc9f7b5c",
+		"src/demosaic/none.rs": "724ee2af1beedb607aaf88bba6182a109c9d82d7414497aeaa1b43641bc2aa91",
+		"src/demosaic/nearestneighbour.rs": "4ec074ef433e97b8d4f38c89f28b98e3e9a1113e0ddcefa61f66ad0646b45258",
+		"src/demosaic/linear.rs": "b5b89ce711e39956892fa83650e1c447aac3acd1e829975228d6102c48ca9d16",
+		"src/bayer.rs": "56c9e30824860e87e9da9e414a24e0959eebb1eef96764a089c377def4feb5fa",
+		"src/errcode.rs": "58ac7d2b98e679f1cb40b2c0c5f25926a27a3bfee9eb16efba2482f2addd86db",
+		"src/border_mirror.rs": "3a98990fff1ce12e7cb9d84b26fbbb219082ed74d0e5cab235eb0528e7753e9f"
+	}
+}

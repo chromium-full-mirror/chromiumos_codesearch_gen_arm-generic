@@ -1,0 +1,11 @@
+{
+	"package": "237108059b69309c7d3ab8c83eac328bd1df7aebad35ed2a3545993fd5b769ca",
+	"files": {
+		"Cargo.toml.orig": "e0ea8bf90deba27a4e1d213ae926110e825a009890fdf01d918c6e4118856bfc",
+		"Cargo.toml": "f7b4934fea5f385d3ec2876e948f8a8128b6fdac783f5721c35a93ff22ff4b83",
+		"build.rs": "5431fa3ad4508951f48d6d04977caf54b2823b1d63ee099cecd1ee0d05735125",
+		"src/lib.rs": "bcc31714c0cb0e02884d2f12d93f75fdf1af8911a8634d0d2292453c3f071e82",
+		"src/bindings/client/org_torproject_tlsdate.rs": "53c79b21da923222dd47791270c70ea232fe060d907f68b5e967d606ab64093f",
+		"src/bindings/include_modules.rs": "4fae233c5f5c1b55365b53e99a8267134179c6d1e43eed1840da4b9d70c45f37"
+	}
+}

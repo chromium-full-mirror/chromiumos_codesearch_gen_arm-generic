@@ -1,0 +1,14 @@
+# This file is just for libchromeos's ChromiumCommandBuilder class.
+# Don't use it for anything else. Your code will break.
+compupdates
+diagnostics
+drm_atomic
+legacy_keyboard
+legacy_power_button
+ml_service
+neon
+ondevice_document_scanner
+ondevice_grammar
+ondevice_handwriting
+opengles
+smartdim

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-bzip">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Bzip archive</comment>
+  <generic-icon name="package-x-generic"/>
+  <glob pattern="*.bz2"/>
+  <glob pattern="*.bz"/>
+  <alias type="application/x-bzip2"/>
+  <alias type="application/bzip2"/>
+</mime-type>

@@ -1,0 +1,58 @@
+{
+    "platform": "octopus",
+    "mode_switcher_type": "keyboard_dev_switcher",
+    "chrome_ec": true,
+    "ec_boot_to_console": 0.3,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": false,
+        "battery": true,
+        "cbi": true,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": true,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": true
+    },
+    "cr50_capability": {
+        "ec_hibernate_breaks_rdd": false,
+        "wp_on_in_g3": false,
+        "rdd_off_in_g3": false,
+        "rdd_leakage": true
+    },
+    "usb_plug": 45,
+    "spi_voltage": "pp1800",
+    "custom_usb_enable_pins": [
+        {
+            "name": "EN_USB_A0_5V",
+            "ioex": false
+        },
+        {
+            "name": "EN_USB_A1_5V",
+            "ioex": false
+        }
+    ],
+    "smm_store": false,
+    "models": {
+        "ampton": {
+            "usbc_voltage_on_shutdown_and_full_batt": 5
+        },
+        "bluebird": {
+            "usbc_input_voltage_limit": 15
+        },
+        "bobba360": {
+            "usbc_input_voltage_limit": 15
+        },
+        "casta": {
+            "usbc_input_voltage_limit": 15
+        }
+    },
+    "max_charging_power": 45.0,
+    "minidiag_enabled": false,
+    "minios_enabled": false
+}

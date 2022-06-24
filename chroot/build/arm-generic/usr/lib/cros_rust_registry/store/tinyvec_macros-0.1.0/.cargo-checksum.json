@@ -1,0 +1,9 @@
+{
+	"package": "08d63c8a75f368195759fc4514ae710c8c6978b5d8746140814d686d25e1d609",
+	"files": {
+		"Cargo.toml.orig": "d68f6a5e3c1d88f1795a04a7c41d3d8304837e980fbeeac06837a6911fc4b90b",
+		"Cargo.toml": "de03359ec2002bbe9f59f92648aa6fe92e542444eb4204a343ab2b92e9ab65f1",
+		"LICENSE": "1dd8eca0f83669e75fa119e34fb9e1be9d16e3e9b6368962b8019db6e8ae5f7b",
+		"src/lib.rs": "5e07533db455ed4bad8375ec704dc16b9f5fd0ed4fc46e281a4856a65b79c3fb"
+	}
+}

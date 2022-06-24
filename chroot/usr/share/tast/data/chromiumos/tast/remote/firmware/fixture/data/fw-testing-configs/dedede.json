@@ -1,0 +1,252 @@
+{
+    "platform": "dedede",
+    "mode_switcher_type": "menu_switcher",
+    "chrome_ec": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": false,
+        "battery": true,
+        "cbi": true,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": true,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": true
+    },
+    "firmware_screen": 15,
+    "spi_voltage": "pp3300",
+    "dark_resume_capable": true,
+    "smm_store": false,
+    "hold_pwr_button_nopowerd_shutdown": 14,
+    "usbc_input_voltage_limit": 15,
+    "max_charging_power": 45.0,
+    "custom_usb_enable_pins": [
+        {
+            "name": "EN_USB_A0_VBUS",
+            "ioex": false
+        },
+        {
+            "name": "EN_USB_A1_VBUS",
+            "ioex": false
+        }
+    ],
+    "models": {
+        "drawcia": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "drawlat": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "drawman": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "drawper": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "lantis": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "landia": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "landrid": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "kracko": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "kracko360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A_5V",
+                    "ioex": false
+                }
+            ]
+        },
+        "storo": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "storo360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galnat": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galnat360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galtic": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galtic360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galith": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "galith360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "gallop": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "cret": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "cret360": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "sasuke": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "sasukette": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "pirika": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "pirette": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "pasara": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        },
+        "madoo": {
+            "usb_a_port_count": 0
+        },
+        "bugzzy": {
+            "custom_usb_enable_pins": [
+                {
+                    "name": "EN_USB_A0_VBUS",
+                    "ioex": false
+                }
+            ]
+        }
+    },
+    "minios_enabled": false
+}

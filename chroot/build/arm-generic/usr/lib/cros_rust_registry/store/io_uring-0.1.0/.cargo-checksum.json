@@ -1,0 +1,13 @@
+{
+	"package": "96215ef91e87750a5293f8ee0287bbc42d85395a78d3cbbaf0380d4a7695b3de",
+	"files": {
+		"Cargo.toml.orig": "bbcc3577089c2d029842f2800e4b780279166a13d1efa82c12cad6b84dc4d7fb",
+		"Cargo.toml": "ce1e412c2bbdbcc7b888be3c1840f1cc446faac0addb4cf63bbcc3c17240a101",
+		"bindgen.sh": "aac3fcb2af487c0e03e2cd06af5f16f341fa4d0edb9e478ad5cb65412a8333c2",
+		"DEPRECATED.md": "9085c62776d8fc105c87f2a04a177723d476ba7ec7f384edfc9fb4dee6a266f7",
+		"src/lib.rs": "4570339779730379dcb38524cf9bc924d375f29d86956b3609f0910dd9b4cce9",
+		"src/bindings.rs": "e6a08422bb5cb3cff1aac3f577c62c5f7ca9faf7af0653ad82a38918b7a7610f",
+		"src/uring.rs": "655f52252a754277ea7bc0fe98dba9e0400147faa58e82f7c56e02b3ab124092",
+		"src/syscalls.rs": "f7f577eaf2bcda78a580d2e4dfa3bf9fb5a8e191e5d0e395fd0efcf8b1c7ef02"
+	}
+}

@@ -1,0 +1,3248 @@
+spec: <
+  python_version: "3"
+  wheel: <
+    name: "infra/python/wheels/astroid-py3"
+    version: "EspQaLUpxygVSrq7EZByWKGzT_GYP0JwM0EkbBpmc9sC"
+  >
+  wheel: <
+    name: "infra/python/wheels/colorama-py3"
+    version: "EUQB6nzHHSMs6oq_aaza9xq9Xt3y2zBZZjBPOtLw7O0C"
+  >
+  wheel: <
+    name: "infra/python/wheels/futures-py2_py3"
+    version: "9ff3c808c9df796c3dd9a933eb3a6700ddccb3af"
+  >
+  wheel: <
+    name: "infra/python/wheels/isort-py2_py3"
+    version: "484efebb1dc968908afa4954e5640261e645b136"
+  >
+  wheel: <
+    name: "infra/python/wheels/lazy-object-proxy/linux-amd64_cp38_cp38"
+    version: "Ot8I2poAhexEC15Pn43ve7aivQcPEloHqKvtfp6q4NUC"
+  >
+  wheel: <
+    name: "infra/python/wheels/mccabe-py2_py3"
+    version: "62458710de11ba41c2568508ba47c325ac6325b7"
+  >
+  wheel: <
+    name: "infra/python/wheels/pylint-py3"
+    version: "1LQUv7P4VjmVP5rSygdcFAD8yO_cmIbDAPkXIbpGbdcC"
+  >
+  wheel: <
+    name: "infra/python/wheels/pylint-quotes-py3"
+    version: "sRW3bLnabVy1epd7WuY1Eqimm2-k41gmFQRA2_5uOt0C"
+  >
+  wheel: <
+    name: "infra/python/wheels/six-py2_py3"
+    version: "TpxryT6lpCVRb9xQ5T4mNq0h6QYePKv0fGXkigvLTDcC"
+  >
+  wheel: <
+    name: "infra/python/wheels/toml-py3"
+    version: "6ouKrxczTfPOjR5PuZVoxPd8vm5ZYuAPw6hy70TW_icC"
+  >
+  wheel: <
+    name: "infra/python/wheels/wrapt/linux-amd64_cp38_cp38"
+    version: "If5Nc8hh8BPqnXu-v4qN18cz2K2z6ePwF8JubBXzViUC"
+  >
+  virtualenv: <
+    name: "infra/3pp/tools/virtualenv"
+    version: "EAlOUkIXurFsvQf25rDPcFbqrIqB4Rus0I0KiqFBgMwC"
+  >
+>
+runtime: <
+  path: "/mnt/host/depot_tools/bootstrap-2@3.8.10.chromium.23_bin/python3/bin/python3.8"
+  hash: "A0D43ABB"
+  version: "3.8.10"
+  prefix: "/mnt/host/depot_tools/bootstrap-2@3.8.10.chromium.23_bin/python3"
+  arch: "amd64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp32"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp33"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp34"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp35"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp36"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp37"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "abi3"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "cp38"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "cp38"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py3"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py30"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py31"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py32"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py33"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py34"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py35"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py36"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py37"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "any"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "linux_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux1_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux2010_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux2014_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_10_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_11_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_12_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_13_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_14_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_15_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_16_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_17_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_18_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_19_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_20_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_21_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_22_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_23_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_24_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_25_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_26_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_27_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_28_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_29_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_30_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_31_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_32_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_33_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_5_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_6_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_7_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_8_x86_64"
+>
+pep425_tag: <
+  python: "py38"
+  abi: "none"
+  platform: "manylinux_2_9_x86_64"
+>

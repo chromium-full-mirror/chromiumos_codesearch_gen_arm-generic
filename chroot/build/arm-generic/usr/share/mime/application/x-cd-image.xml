@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cd-image">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>raw CD image</comment>
+  <sub-class-of type="application/x-raw-disk-image"/>
+  <alias type="application/x-iso9660-image"/>
+  <glob pattern="*.iso" weight="80"/>
+  <glob pattern="*.iso9660"/>
+</mime-type>

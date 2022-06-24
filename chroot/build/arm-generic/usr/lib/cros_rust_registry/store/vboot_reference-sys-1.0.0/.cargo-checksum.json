@@ -1,0 +1,10 @@
+{
+	"package": "9df72d837f07aa3ad0b5bba27c2742e8d98e0e7b019464582658e9791fbb98dd",
+	"files": {
+		"Cargo.toml.orig": "1e9cc8897ef9a1eae15d4ec1d17bfa1e0a413129492fd9f6d263fd2af5742e3d",
+		"Cargo.toml": "d3d0ad270d1423abff1b1116dbed76b457293e264c68e21b2ca544a1ba7692e3",
+		"crossystem.h": "4d375a311e27424749faccb32bc88a9b3f75f565489d6ea7b0d729f0fb0af791",
+		"lib.rs": "959c81703636370b7a8f3f21cbc9cfd32ffaa8d6d58485c940f0d5ebdede06ed",
+		"build.rs": "75cd7cbf278f89ef8e20942e45a91de705dbcfff7cc98b5ec60c2df9ea13ae33"
+	}
+}

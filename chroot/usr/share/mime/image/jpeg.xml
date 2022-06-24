@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/jpeg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>JPEG image</comment>
+  <glob pattern="*.jpg"/>
+  <glob pattern="*.jpeg"/>
+  <glob pattern="*.jpe"/>
+  <alias type="image/pjpeg"/>
+</mime-type>

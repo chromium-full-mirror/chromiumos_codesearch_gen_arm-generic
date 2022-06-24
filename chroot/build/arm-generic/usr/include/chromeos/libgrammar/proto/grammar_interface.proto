@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+package chrome_knowledge;
+
+message GrammarCheckerModelPaths {
+  // Required: Path to the grammar checker model.
+  optional string model_path = 1;
+}
+
+// The request to check grammar of a text.
+message GrammarCheckerRequest {
+  // Required: Text to be checked.
+  optional string text = 1;
+
+  // Required: Language of the text to be checked.
+  optional string language = 2;
+}
+
+// A span with suggested corrections.
+message CorrectionFragment {
+  // The start offset in the original text.
+  optional int32 offset = 1;
+
+  // The length of the fragment in the original text.
+  optional int32 length = 2;
+
+  // The replacement string.
+  optional string replacement = 3;
+}
+
+// One possible candidate returned from grammar checker model.
+message GrammarCheckerCandidate {
+  // Corrected text.
+  optional string text = 1;
+
+  // Score of the text. Log of conditional probability.
+  optional float score = 2;
+
+  // The list of individual corrections.
+  repeated CorrectionFragment fragments = 3;
+}
+
+// The result of grammar check.
+message GrammarCheckerResult {
+  // Candidates of corrected text and their scores.
+  repeated GrammarCheckerCandidate candidates = 1;
+}

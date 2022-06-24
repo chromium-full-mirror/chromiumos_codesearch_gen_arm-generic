@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>Docutils Building Wheels</title>
+<meta name="authors" content="engelbert gruber  open to all Docutils developers" />
+<meta name="date" content="2015-05-06" />
+<meta name="copyright" content="This document has been placed in the public domain." />
+<link rel="stylesheet" href="../../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="docutils-building-wheels">
+<h1 class="title"><a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> Building Wheels</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Authors:</th>
+<td>engelbert gruber
+<br />open to all Docutils developers</td></tr>
+<tr><th class="docinfo-name">Contact:</th>
+<td><a class="first last reference external" href="mailto:docutils-develop&#64;lists.sourceforge.net">docutils-develop&#64;lists.sourceforge.net</a></td></tr>
+<tr><th class="docinfo-name">Date:</th>
+<td>2015-05-06</td></tr>
+<tr><th class="docinfo-name">Revision:</th>
+<td>7887</td></tr>
+<tr><th class="docinfo-name">Copyright:</th>
+<td>This document has been placed in the public domain.</td></tr>
+</tbody>
+</table>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#abstract" id="id3">Abstract</a></li>
+<li><a class="reference internal" href="#requests" id="id4">Requests</a></li>
+<li><a class="reference internal" href="#logbook" id="id5">Logbook</a></li>
+<li><a class="reference internal" href="#logbook-with-setuptools-branch" id="id6">Logbook: with setuptools branch</a></li>
+<li><a class="reference internal" href="#logbook-with-pip" id="id7">Logbook with &quot;pip&quot;</a></li>
+</ul>
+</div>
+<div class="section" id="abstract">
+<h1><a class="toc-backref" href="#id3">Abstract</a></h1>
+<p>This document documents trials to build python wheels from Docutils. Once it
+is finished it might be driven into distribution or release documentation.</p>
+</div>
+<div class="section" id="requests">
+<h1><a class="toc-backref" href="#id4">Requests</a></h1>
+<p>There is <a class="reference external" href="https://sourceforge.net/p/docutils/feature-requests/43/">feature request 43</a> :  Make setup.py build wheels.</p>
+<blockquote>
+<p>Just add this to setup.cfg:</p>
+<p>[bdist_wheel]
+universal = 1</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Docutils is not fit for Universal Wheels. It supports both
+Python&nbsp;2 and 3, but with different code (we use “2to3”). This makes it
+a candidate for <a class="reference external" href="https://packaging.python.org/en/latest/distributing.html#pure-python-wheels">Pure Python wheels</a>.</p>
+<p class="last">As &quot;universal&quot; is false by default, no change to setup.cfg is required.
+The wheel builder detects that the package is pure Python and generates
+wheels for Py2 and Py3 depending under which python version it runs.</p>
+</div>
+</blockquote>
+<p>and <a class="reference external" href="https://sourceforge.net/p/docutils/bugs/275/">bugs275</a> : Upload wheels to pypi</p>
+<blockquote>
+Currently docutils does not publish any wheels on pypi. Wheels make docutils
+faster to install (no need to run setup.py, which for a large number of
+packages can take some time), and is no more difficult than uploading an
+sdist (see <a class="reference external" href="https://packaging.python.org/en/latest/distributing.html#wheels">https://packaging.python.org/en/latest/distributing.html#wheels</a>
+for instructions).</blockquote>
+</div>
+<div class="section" id="logbook">
+<h1><a class="toc-backref" href="#id5">Logbook</a></h1>
+<ol class="arabic">
+<li><p class="first">Add <tt class="docutils literal">[bdist_wheel] universal = 0</tt> to setup.cfg.</p>
+</li>
+<li><p class="first">Run <tt class="docutils literal">python setup.py bdist_wheel</tt>:</p>
+<pre class="literal-block">
+error: invalid command 'bdist_wheel'
+</pre>
+</li>
+<li><p class="first">setuptools is too old. Install the new one by wheel or source or pip or
+easy...</p>
+</li>
+<li><p class="first">try wheel ... first get wheel tar.gz and unpack.</p>
+</li>
+<li><p class="first">try</p>
+<pre class="literal-block">
+python2.7 wheel-0.24.0/wheel install setuptools-15.0-py2.py3-none-any.whl
+</pre>
+<p>no error. But still <tt class="docutils literal">error: invalid command 'bdist_wheel'</tt>:</p>
+<pre class="literal-block">
+$ python2.7 setup.py --version
+0.12
+</pre>
+<p>Did wheel install ? If no, why no error, if yes in which place ?</p>
+</li>
+</ol>
+</div>
+<div class="section" id="logbook-with-setuptools-branch">
+<h1><a class="toc-backref" href="#id6">Logbook: with setuptools branch</a></h1>
+<p><a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/sandbox/gitpull/setuptools/">gitpull/setuptools</a> sandbox branch introduces <a class="reference external" href="https://pythonhosted.org/setuptools/">setuptools</a> in <tt class="docutils literal">setup.py</tt>.</p>
+<p>As of 2015-04-16: <strong>Not working yet</strong>, <tt class="docutils literal">import docutils</tt> will raise an
+<tt class="docutils literal">ImportError</tt>. Need to get packages detected correctly.</p>
+<p>Install:</p>
+<pre class="literal-block">
+$ svn checkout svn://svn.code.sf.net/p/docutils/code/trunk/sandbox/gitpull/setuptools docutils-setuptools
+$ cd setuptools
+# create a virtualenv (however you like)
+$ pip install -e .
+</pre>
+<p>This includes support for generate <tt class="docutils literal">python setup.py bdist_wheel</tt>:</p>
+<pre class="literal-block">
+$ python setup.py bdist_wheel
+running bdist_wheel
+running build
+running build_scripts
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_egg_info
+running egg_info
+writing docutils.egg-info/PKG-INFO
+writing top-level names to docutils.egg-info/top_level.txt
+writing dependency_links to docutils.egg-info/dependency_links.txt
+reading manifest file 'docutils.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching 'MANIFEST'
+warning: no files found matching '*' under directory 'extras'
+warning: no previously-included files matching '.cvsignore' found under directory '*'
+warning: no previously-included files matching '*~' found under directory '*'
+warning: no previously-included files matching '.DS_Store' found under directory '*'
+writing manifest file 'docutils.egg-info/SOURCES.txt'
+Copying docutils.egg-info to build/bdist.linux-x86_64/wheel/docutils-0.13.data/purelib/docutils-0.13-py2.7.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2pseudoxml.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2man.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2odt.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2latex.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rstpep2html.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2s5.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2odt_prepstyles.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2html.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2html5.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2xml.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+copying build/scripts-2.7/rst2xetex.py -&gt; build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2pseudoxml.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2man.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2odt.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2latex.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rstpep2html.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2s5.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2odt_prepstyles.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2html.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2html5.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2xml.py to 755
+changing mode of build/bdist.linux-x86_64/wheel/docutils-0.13.data/scripts/rst2xetex.py to 755
+creating build/bdist.linux-x86_64/wheel/docutils-0.13.dist-info/WHEEL
+</pre>
+<p>Installation:</p>
+<pre class="literal-block">
+# create a fresh virtualenv
+$ pip install -U dist/docutils-0.13-cp27-none-linux_x86_64.whl
+Processing ./dist/docutils-0.13-cp27-none-linux_x86_64.whl
+Installing collected packages: docutils
+Found existing installation: docutils 0.13
+Uninstalling docutils-0.13:
+Successfully uninstalled docutils-0.13
+Successfully installed docutils-0.13
+</pre>
+</div>
+<div class="section" id="logbook-with-pip">
+<h1><a class="toc-backref" href="#id7">Logbook with &quot;pip&quot;</a></h1>
+<p>Docutils' &quot;setup.py&quot; imports from the stdlib's &quot;distutils&quot; module
+instead of the 3rd party &quot;setuptools&quot;. &quot;distutils&quot; cannot build wheels. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<p>OTOH, <a class="reference external" href="http://pip.readthedocs.org/en/latest/">pip</a> internally uses &quot;setuptools&quot; instead of &quot;distutils&quot;. This way, it
+can generate wheels without changes to &quot;setup.py&quot;.</p>
+<ol class="arabic">
+<li><p class="first">Install &quot;pip&quot; and &quot;wheels&quot;</p>
+<p>Under Debian Gnu/Linux: <tt class="docutils literal">aptitude install <span class="pre">python-pip</span> <span class="pre">python3-pip</span></tt></p>
+</li>
+<li><p class="first">In the repository root directory, run</p>
+<pre class="literal-block">
+#&gt; pip wheel ./docutils/
+Unpacking ./docutils
+  Running setup.py (path:/tmp/pip-Ym9hKL-build/setup.py) egg_info for package from file:///[...]docutils-svn/docutils
+
+    warning: no previously-included files matching '.DS_Store' found under directory '*'
+Building wheels for collected packages: docutils
+  Running setup.py bdist_wheel for docutils
+  Destination directory: /home/milde/Code/Python/docutils-svn/wheelhouse
+Successfully built docutils
+Cleaning up...
+</pre>
+</li>
+<li><p class="first">There is a &quot;pure Python&quot; wheel under
+<tt class="docutils literal"><span class="pre">wheelhouse/docutils-0.13-py2-none-any.whl</span></tt></p>
+</li>
+<li><p class="first">Repeat with:</p>
+<pre class="literal-block">
+#&gt; pip3 wheel ./docutils/
+</pre>
+<p>to get <tt class="docutils literal"><span class="pre">wheelhouse/docutils-0.13-py3-none-any.whl</span></tt></p>
+</li>
+</ol>
+<p>You can also generate wheels for Docutils&nbsp;0.12 with <tt class="docutils literal">pip wheel docutils</tt>
+and <tt class="docutils literal">pip3 wheel docutils</tt>. The 0.12 archive is downloaded from PIP and
+re-packed as wheel. With &quot;pip3&quot; this includes the 2to3 conversion.</p>
+<dl class="docutils">
+<dt>Summary:</dt>
+<dd><p class="first">With the &quot;pip&quot; utility, it is possible to generate wheels for Python 2
+and 3 for both, the released and the repository version of Docutils
+without changes to the code base.</p>
+<p class="last">The generated wheel can be installed. Installing the Py3k version happens
+&quot;instantaneously&quot;.</p>
+</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Docutils uses the batteries included with Python and avoids external
+dependencies.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="wheeling.txt">View document source</a>.
+Generated on: 2022-06-16 21:58 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

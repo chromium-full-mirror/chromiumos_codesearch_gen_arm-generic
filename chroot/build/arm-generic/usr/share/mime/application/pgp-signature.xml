@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/pgp-signature">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>detached OpenPGP signature</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+  <glob pattern="*.asc" weight="10"/>
+  <glob pattern="*.sig"/>
+  <glob pattern="*.pgp"/>
+  <glob pattern="*.gpg"/>
+</mime-type>

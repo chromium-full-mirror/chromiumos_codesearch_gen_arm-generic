@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-mpsub">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MPSub subtitles</comment>
+  <acronym>MPSub</acronym>
+  <expanded-acronym>MPlayer Subtitle</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <glob pattern="*.sub"/>
+</mime-type>

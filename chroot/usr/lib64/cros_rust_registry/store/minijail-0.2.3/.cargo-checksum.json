@@ -1,0 +1,10 @@
+{
+	"package": "1d8892b32c9e4b26f9276e8ee1cb2b2e797053eed8f9df2d05e5bc422200ed69",
+	"files": {
+		"tests/fork_remap.rs": "9a939ed6cecfbc756c5401c171977f8602219f237df15c61c0dabfafc751d003",
+		"Cargo.toml.orig": "13ad07acfe4cca2bfa811dc50da1e4f0c6fbc34afb87115ec3269ec3fabaa5ac",
+		"Cargo.toml": "d2c1f28c30bf721015b168962dff0fbe34b99550da97ab5da658be7b8664e18d",
+		"src/lib.rs": "b250b10c40e158d19824c2d338bd163fc55c01edf806f5d2a214fd51422c2504",
+		"src/test_filter.policy": "ef5e9afe42caa193d95d91444c22dac558d8f757a549a0b0c44444e6c9777938"
+	}
+}

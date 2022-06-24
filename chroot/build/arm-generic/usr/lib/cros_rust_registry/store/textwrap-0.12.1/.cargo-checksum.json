@@ -1,0 +1,19 @@
+{
+	"package": "4cda59a70d53c146103d6ee1885a66ebc5bfda336b36589f4ae29ead8fbcfa6b",
+	"files": {
+		"Cargo.toml.orig": "25a2bbbc2224a0fe03bbfca29b1168990c950c9e3e176e2e267373ef3f10a8fb",
+		"Cargo.lock": "0df426a7d5526b6f1d3fe853538e8c2cedc800b50cf2bc5baf02fd0ca4489829",
+		"benches/linear.rs": "13904ffd76d3b877d1d4dd470d40ef061b752894077aed4f709be6aa2178c706",
+		"tests/version-numbers.rs": "5e3174d1a6e159444abcbf36d9dad922f420da375b9ba1c5ed603eed20306452",
+		"Cargo.toml": "041a8588bfec018d6235d502a6fe67a711c5ab5e468f66bdab7350253a44d98a",
+		"LICENSE": "ce93600c49fbb3e14df32efe752264644f6a2f8e08a735ba981725799e5309ef",
+		"README.md": "33afc1a5f4bf1710e4c9851311821d29b72feb84e04feb30fdbb8b7bf7d64405",
+		"examples/termwidth.rs": "222ca611f8cf405dda7468bd98a5cc622bc2ac3d6e48f015b2bea663462c0362",
+		"examples/hyphenation.rs": "0e349d451e14de43c8f14dfb6866204694ac41402c20574743a885733fadef41",
+		"examples/layout.rs": "0e96c58f0f4e5b48dec9275ba53e9325dc651a40070cc800ef20482c9f023547",
+		"CHANGELOG.md": "aa5b80390fb2ea10d95f5c1c3eb31e87c9e76641614434d5162e1df8862e6839",
+		"src/lib.rs": "1ca0ddeb38d28b7187f62ffa5b3f4722f5351d36d4aef0e5839546b235d9275e",
+		"src/indentation.rs": "b1120dbda4b4d52cee89489996d6da53daf3df5c7fe95b3b6386c80d60216e58",
+		"src/splitting.rs": "0b1ef65bfe7423770881476c3df2d20706845fb749949b1c2e6b7faa70fd53f8"
+	}
+}

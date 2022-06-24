@@ -1,0 +1,137 @@
+syntax = "proto2";
+
+package chrome_knowledge;
+
+// A single point in an ink stroke.
+message InkPoint {
+  // (x, y) coordinates of the point. The upper-left corner of the writing area
+  // is (0, 0). The positive x-axis points to the right. The positive y-axis
+  // points down.
+  optional float x = 1;
+  optional float y = 2;
+
+  // Timestamp for when the point was captured relative to the beginning of the
+  // ink. First point of a request should have t=0.
+  optional int64 t = 3;
+}
+
+// A single ink stroke.
+message InkStroke {
+  // The set of points representing the stroke.
+  repeated InkPoint points = 1;
+}
+
+// A set of ink strokes.
+message Ink {
+  repeated InkStroke strokes = 1;
+}
+
+// The writing guide shown to the user during input.
+message WritingGuide {
+  // Size of the writing area. The writing area must have (0, 0) at the top
+  // left.
+  optional float width = 1;
+  optional float height = 2;
+}
+
+// Options that will influence the recognition output.
+message RecognitionContext {
+  // The writing guide shown to the user when the ink was captured.
+  optional WritingGuide writing_guide = 1;
+
+  // The context before the written text.
+  optional string pre_context = 2;
+}
+
+// A request to recognize handwritten ink.
+message HandwritingRecognizerRequest {
+  // The set of ink strokes to be recognized.
+  optional Ink ink = 1;
+
+  // The optional context in which the ink was generated.
+  optional RecognitionContext context = 2;
+
+  // Maximum number of results to be returned.
+  optional int32 max_num_results = 3;
+
+  // If true, returns the segmentation results. This will make the response
+  // struct much larger, as the stroke segmentation for all candidates will
+  // be returned.
+  optional bool return_segmentation = 4;
+}
+
+// Represents a contiguous range of ink. Start and end strokes / points are
+// inclusive.
+message HandwritingRecognizerInkRange {
+  // Zero-based start- and end-stroke indices in the ink strokes.
+  optional int32 start_stroke = 1;
+  optional int32 end_stroke = 2;
+  // Zero-based start- and end-point indices with the start / end strokes.
+  optional int32 start_point = 3;
+  optional int32 end_point = 4;
+}
+
+// A segment defines the substrokes that are associated with a substring of the
+// recognized text.
+message HandwritingRecognizerSegment {
+  // The substring of the recognized text represented by this segment.
+  optional string sublabel = 1;
+  // The ink ranges represented by this segment.
+  repeated HandwritingRecognizerInkRange ink_ranges = 2;
+}
+
+// The ink segmentation information.
+message HandwritingRecognizerSegmentation {
+  // The grouping of the cut strokes into characters.
+  repeated HandwritingRecognizerSegment segments = 1;
+}
+
+// One possible candidate from the handwriting recognition.
+message HandwritingRecognizerCandidate {
+  // The recognized text.
+  optional string text = 1;
+
+  // Scores will most often correspond to -log(p(c)) or a scaling thereof, so
+  // lower scores represent higher confidence.
+  optional float score = 2;
+
+  // The stroke segmentation that was used to generate the result.
+  optional HandwritingRecognizerSegmentation segmentation = 3;
+}
+
+// The result of the handwriting recognition.
+message HandwritingRecognizerResult {
+  // Status of the recognition response.
+  enum Status {
+    OK = 0;
+    ERROR = 1;
+  }
+  optional Status status = 1 [deprecated = true];
+
+  // The recognition candidates with additional alternatives, sorted by
+  // confidence (best score first).
+  repeated HandwritingRecognizerCandidate candidates = 2;
+  // The amount of time (in milliseconds) to perform the recognition. This is
+  // used for performance benchmarking.
+  optional float total_time_ms = 3;
+}
+
+// Paths that specify the location of the recognizer model components.
+message HandwritingRecognizerModelPaths {
+  // Required: Path to the recognition TFLite model.
+  optional string reco_model_path = 1;
+  // Optional: Path to the segmentation TFLite model.
+  optional string seg_model_path = 2;
+  // Optional: Path to the confidence TFLite model.
+  optional string conf_model_path = 3;
+  // Optional: Path to the FST model.
+  optional string fst_lm_path = 4;
+  // Required: Path to the research_handwriting.RecognizerSpec proto.
+  optional string recospec_path = 5;
+}
+
+// The specification of a handwriting recognizer.
+message HandwritingRecognizerOptions {
+  // The language the recognizer will handle.
+  optional string language = 1;
+}

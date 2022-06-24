@@ -1,0 +1,29 @@
+{
+    "platform": "gru",
+    "mode_switcher_type": "keyboard_dev_switcher",
+    "software_sync_update": 6,
+    "chrome_ec": true,
+    "ec_ro_vbus_bug": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": true,
+        "battery": true,
+        "cbi": false,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": true,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": false,
+        "thermal": false,
+        "usb": false,
+        "usbpd_uart": false,
+        "x86": false
+    },
+    "ec_boot_to_console": 0.2,
+    "firmware_screen": 7,
+    "usb_hid_wake_enabled": false,
+    "usb_a_port_count": -1,
+    "minidiag_enabled": false,
+    "minios_enabled": false
+}

@@ -1,0 +1,8 @@
+{
+	"package": "06d79293a180f769107c1ce6dd7334af180d8a6d453ac2cae41a92eb7194cc05",
+	"files": {
+		"Cargo.toml.orig": "9f29a278cfdaf8ae3b697493d9dccf2a8e20d7ce7be01a09d88cbb9ef638577f",
+		"Cargo.toml": "e04fe77d676d4bb457c961701e1825d945a981bdcd1b5251178561f31d604cdf",
+		"src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+	}
+}

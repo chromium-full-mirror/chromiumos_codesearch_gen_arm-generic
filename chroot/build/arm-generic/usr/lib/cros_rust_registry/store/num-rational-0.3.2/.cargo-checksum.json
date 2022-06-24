@@ -1,0 +1,14 @@
+{
+	"package": "41709e18b3416cbd2ec6abdb05ffb030f3bc57b4c5c9a1be42c9c538810df4e3",
+	"files": {
+		"Cargo.toml.orig": "607584215794cdbcabb85cf51bbc9de5c76544ceff483c87ef73214b200d5b9d",
+		"RELEASES.md": "8db78c99bb74435c02302e89353c62765da0018e259c1534731f6ce9dcc78510",
+		"Cargo.toml": "e565ad764585d4c83dce1b23fa06952ee5ed064bf804288ba1b70cf3133e37f4",
+		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"README.md": "3dd06509ad70233cdad5a3bb2aba4481408c0358ffc6c30d4ac6cb486ca08822",
+		"build.rs": "43a2d0ec88488d561f7b367d83f8cce81ad68bdfd352a3db9c881574a734c44f",
+		"src/lib.rs": "3ce2998ce894abcb119fb6d2b9f9cf67a93e6ba2b3267506be869b38faa0564c",
+		"src/pow.rs": "c38cabc61e75e99425ee4fea7ac5b0712a648baa0635a2c40a6215edd43ae4a3"
+	}
+}

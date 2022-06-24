@@ -1,0 +1,30 @@
+{
+	"package": "dd0db39e1bae4a50341fbb848ed9ad04d0c7134ff8bc2317759d6e85dbefb103",
+	"files": {
+		"Cargo.toml.orig": "d3b686c671ffd338340916fd6e00c1234a10708f3d6fc86ddbf15b2af763db5f",
+		"tests/mod.rs": "b8a6caeb5aafd13de775488168b0b46592336568ded37be713e422f724f6f086",
+		"Cargo.toml": "fe53b14fa7a9c482b501353f0fa507b7568396333326239d9f1fdc2ac3d4db4b",
+		"LICENSE-MIT": "209fbbe0ad52d9235e37badf9cadfe4dbdc87203179c0899e738b39ade42177b",
+		"LICENSE-APACHE": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
+		"README.md": "91ccce04b8ea75d26b78f155b578b92be283b2e740d94192ade9eaa3d59c8c27",
+		"COPYRIGHT": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5",
+		"CHANGELOG.md": "07e9da067d366c5105661ca8b93c76203d504335eebefa2a00aed324c67babcf",
+		"src/dummy_log.rs": "4e26589c18de568b7da7f0ccc9b77bb430961739a6510c2b043a43dee300c6fa",
+		"src/linux_android.rs": "5ed5003248fed1f630dfb1f57a00aea13e412f4aeef0b707d08c42e91a600519",
+		"src/macos.rs": "17ccfd5a69068db0580480f680398e20d9ed5219abd726c90e5d9db509539608",
+		"src/wasm32_stdweb.rs": "8684b8ce392941c9d7864d45f82e5a4577fc63b0f0bb709fa627f8b9c9e154a6",
+		"src/lib.rs": "78e80a23481c1dd9af2595d590a51e4e532a14f8a709a366443c121c66a6cdfe",
+		"src/wasm32_bindgen.rs": "befe5b8a90ed23c2b3adf40281651966a5ee15ae520101704b68890ec4fb4529",
+		"src/random_device.rs": "bc9cf2470619a90bb8444a632a873e431f801cc3230977851e20d54d86093321",
+		"src/freebsd.rs": "6b1e0a3735d798d8297a9426721e01672424cc289707dae86e336a207cd43436",
+		"src/windows.rs": "d72d555013440aeffe764d961a0a095f8a11417d28a13c2a8882abce2dc000f0",
+		"src/openbsd_bitrig.rs": "b9601aa0c6cc0129913341adba838aa0fadd698563eca7f0b046e31c97f0ac92",
+		"src/dragonfly_haiku_emscripten.rs": "8e693952f38b2576ce7c454cc51d0209917ec40f2a3224ff0f138f798d2c82b3",
+		"src/solaris.rs": "9c1d02554bf0d8f066a0db581b466b498ed685957a54ce47c48c50b94bab512f",
+		"src/netbsd.rs": "c1c80d7a3b7587523f321ef2b1f6d3d4028f124bb9e02b11b02f27f61cf2bcc9",
+		"src/fuchsia.rs": "61159ae3fa469a40214b7ad2f9b0445ed952944c0d5738cd3b7c045eb3e5034a",
+		"src/sgx.rs": "140cf6529ebbf28a19c112e6f325ecd9d84427cc962895795e427cb5b1fa8500",
+		"src/redox.rs": "c3fd6f418f085d3b5ffaa6ff4540380cf437cbd65c8b87f89c1dbe16222539e4",
+		"src/cloudabi.rs": "4f9f9991a1ef7dc330e81ee5208fcc23ad6acc2c73c257b019a3aa488f3a1291"
+	}
+}

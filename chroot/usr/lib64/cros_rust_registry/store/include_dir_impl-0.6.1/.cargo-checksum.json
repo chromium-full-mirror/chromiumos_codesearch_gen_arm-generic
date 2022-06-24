@@ -1,0 +1,10 @@
+{
+	"package": "651181af851cb64ba7467d2dc80c5b7c284b94ab12e82a0006c1d89ff9103185",
+	"files": {
+		"Cargo.toml.orig": "a45055991ba9fda3082a9edc489f7db7bd2d1dcf6ec28138263bec815095684e",
+		"Cargo.toml": "93895471810006712e5d9f7f27a9bd7a7d4cffcdf3ba04b3666e915cf29220c1",
+		"src/lib.rs": "c7fab0f02a9cfe9f27298bff66aed2d85a18a257ce1155b92e8f9c8db8a2fcac",
+		"src/file.rs": "40ad68e65198fcf3f2557a9b57b4fcdc80a1fc6a6e98a01d1dfdcde016156b83",
+		"src/dir.rs": "85d73553a2c435d8a1ce2e209a64679c8f106636d97a6d5bb8d4750427f21142"
+	}
+}

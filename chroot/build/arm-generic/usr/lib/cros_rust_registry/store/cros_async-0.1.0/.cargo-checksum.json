@@ -1,0 +1,31 @@
+{
+	"package": "d9b45c359ebc0fb195fda93639438f4fc9e54ccdecee2082b151658fb0602782",
+	"files": {
+		"Cargo.toml.orig": "8d97b0f1aa3008d217e18233b2134fb45dfab6020327799e5c3c8a9539ba23cb",
+		"Cargo.toml": "24af5d3f7a66482199d3d441799767bed8436c87f8938b317508aac631be7774",
+		"DEPRECATED.md": "a4aa81047297027b5aaa8847e1c75f881022575ecb4ecc0b5eaad16a96d93c41",
+		"src/timer.rs": "ee3e819d8fe7069fd01a5b011c34b7cf71c852b8712f01a0d3aa92b2853e340e",
+		"src/queue.rs": "67fe04ed1d2a9cb2613880c9e55209fcac6e6c2993a128d2496e3804683cf974",
+		"src/uring_source.rs": "d7ea3050f2d9b2ddbec2062e0f0156e954f173c711650e1f2844367bd90674a3",
+		"src/lib.rs": "4a41d5677148c296f273d9190a5cee99b4d59c947eb2d7152748f9e32abc5870",
+		"src/uring_executor.rs": "7058e31bdbd8af2dd9e0d870f16a0cea2fd740dd6ccb5e93b48ab617a39b1f27",
+		"src/io_ext.rs": "0a5a9afa437a68b2dfdaf5d9dec2a9a3244873350aba8bc046f0ef8a822387d5",
+		"src/mem.rs": "faa35f96c941ce025243deb713412ca16a2492bbd4aff573ea7fce58daf4831f",
+		"src/fd_executor.rs": "32ce6d1ceeb30f6b1a1e5d79c6d6af8f8c61282085bedbc29e0f4f9ba74506d5",
+		"src/poll_source.rs": "90b9ccb256e4e07c9669085880a9658aad19cf6aa3f348f8eb531229c3026301",
+		"src/sync/waiter.rs": "7eab9cf95783e1c01f9f10795c800f7d82675f8bfad10516300441dc68906f43",
+		"src/sync/spin.rs": "f0026226e4977bb5d6412a7e9672f8ab66a764bb0f251bc0a93fe32103ba2e6b",
+		"src/sync/mu.rs": "f248f94fbc990de38bd228fbdbbeb28f650c28af726c840c7b3b47fade6a0a39",
+		"src/sync/cv.rs": "4324f3b64a72e0172bd95ea42019e4897c199021a7b31fdea4688183b0c82e03",
+		"src/event.rs": "a938c2c9fb622c545d7db00b836b683e45c26acc669af17395a445a07461c50d",
+		"src/blocking/block_on.rs": "a2fc654f5c4e471fffff30c6a5e275da6cd84c374cf813d22ecaffe3b13ae81c",
+		"src/blocking/pool.rs": "e9d2e353dfadf8efbb4f90a2c63d95e28106de86ee105f1ed25302f40d42394f",
+		"src/select.rs": "7f875814528d7486ef1097f5d74cc51497e0b51c1956d32d53f49f1cc0b0ac0a",
+		"src/executor.rs": "298a7fa8f1e33c20ca2d3b0cc7435b547659f007c4418b35744e14c3b7265d3b",
+		"src/blocking.rs": "45009e06ce748fee3a35190c1dc50709c3676a323475e66a7cf4dd4560878d69",
+		"src/complete.rs": "621d4bba272ef89d9f3c1d529dac847da899f855e794f1b46b3d9dd6b3eaaf84",
+		"src/audio_streams_async.rs": "c813376431aead0b22620eabba8ccd17eb788b5f94d632e892b57ed61f75e77f",
+		"src/waker.rs": "e3412fdacc1888f8c322399019de8127699a02ce8da342c1f63a78b7c5e04bb5",
+		"src/sync.rs": "56fd2970573eb214c85809d5afac076b9b8debf62ed5b79dc8780ba3d3092609"
+	}
+}

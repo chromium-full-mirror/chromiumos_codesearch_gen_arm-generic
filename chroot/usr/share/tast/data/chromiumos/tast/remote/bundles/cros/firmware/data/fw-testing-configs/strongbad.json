@@ -1,0 +1,31 @@
+{
+    "platform": "strongbad",
+    "is_detachable": true,
+    "has_keyboard": false,
+    "chrome_ec": true,
+    "ec_capability": {
+        "adc_ectemp": false,
+        "arm": true,
+        "battery": true,
+        "cbi": false,
+        "charging": true,
+        "doubleboot": false,
+        "keyboard": false,
+        "lid": true,
+        "peci": false,
+        "smart_usb_charge": false,
+        "thermal": false,
+        "usb": true,
+        "usbpd_uart": false,
+        "x86": false
+    },
+    "charger_profile_override": true,
+    "ac_on_can_wake_ap_from_ulp": true,
+    "usb_a_port_count": -1,
+    "models": {
+        "coachz": {
+            "usbc_input_voltage_limit": 15
+        }
+    },
+    "minios_enabled": false
+}

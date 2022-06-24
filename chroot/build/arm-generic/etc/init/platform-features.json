@@ -1,0 +1,30 @@
+[
+  {
+        "name": "CrOSLateBootSchedTrace",
+        "commands": [
+                     {
+                        "name": "Mkdir",
+                        "path": "/sys/kernel/debug/tracing/instances/schedtrace/"
+                     },
+                     {
+                        "name": "WriteFile",
+                        "path": "/sys/kernel/debug/tracing/instances/schedtrace/events/sched/sched_switch/enable",
+                        "value": "1"
+                     },
+                     {
+                        "name": "WriteFile",
+                        "path": "/sys/kernel/debug/tracing/instances/schedtrace/events/sched/sched_waking/enable",
+                        "value": "1"
+                     },
+                     {
+                        "name": "WriteFile",
+                        "path": "/sys/kernel/debug/tracing/instances/schedtrace/events/sched/sched_migrate_task/enable",
+                        "value": "1"
+                     }
+		    ],
+        "support_check_commands": [{
+                        "name": "FileExists",
+                        "path": "/sys/kernel/debug/tracing/instances/"
+		      }]
+   }
+]

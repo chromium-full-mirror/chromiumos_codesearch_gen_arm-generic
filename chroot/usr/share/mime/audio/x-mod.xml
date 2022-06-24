@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-mod">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Amiga SoundTracker audio</comment>
+  <glob pattern="*.mod"/>
+  <glob pattern="*.ult"/>
+  <glob pattern="*.uni"/>
+  <glob pattern="*.m15"/>
+  <glob pattern="*.mtm"/>
+  <glob pattern="*.669"/>
+  <glob pattern="*.med"/>
+</mime-type>

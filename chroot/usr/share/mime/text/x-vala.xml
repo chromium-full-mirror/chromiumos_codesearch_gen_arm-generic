@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-vala">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Vala source code</comment>
+  <sub-class-of type="text/x-csrc"/>
+  <glob pattern="*.vala"/>
+  <glob pattern="*.vapi"/>
+</mime-type>

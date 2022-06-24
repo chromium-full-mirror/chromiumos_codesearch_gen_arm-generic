@@ -1,0 +1,122 @@
+syntax = "proto2";
+
+package chrome_knowledge;
+
+enum MultiWordExperiment {
+  MULTI_WORD_EXPERIMENT_UNSPECIFIED = 0;
+  MULTI_WORD_EXPERIMENT_GBOARD = 1;
+  MULTI_WORD_EXPERIMENT_GBOARD_RELAXED_A = 2;
+  MULTI_WORD_EXPERIMENT_GBOARD_RELAXED_B = 3;
+  MULTI_WORD_EXPERIMENT_GBOARD_RELAXED_C = 4;
+}
+
+message MultiWordSettings {
+  optional string model_path = 1;
+  optional string syms_path = 2;
+}
+
+message EmojiSettings {
+  optional string model_path = 1;
+  optional string token_symbol_table_path = 2;
+  optional string concept_symbol_path = 3;
+  optional string emoji_mapping_path = 4;
+}
+
+message EmojiTriggerSettings {
+  optional string model_path = 1;
+  optional string token_table_path = 2;
+  optional string blocklist_path = 3;
+  optional string allowlist_path = 4;
+}
+
+message FeatureSettings {
+  optional bool emojis_enabled = 1 [default = false];
+  optional bool multi_word_enabled = 3 [default = false];
+
+  // [Deprecated] Are we running any experiment for the multi word engine?
+  optional MultiWordExperiment multi_word_experiment = 2
+      [default = MULTI_WORD_EXPERIMENT_UNSPECIFIED];
+}
+
+message ExperimentSettings {
+  optional MultiWordExperiment multi_word = 1
+      [default = MULTI_WORD_EXPERIMENT_UNSPECIFIED];
+}
+
+message TextSuggesterSettings {
+  // Deprecated fields
+  reserved 1, 2;
+
+  // Settings for the inferencing engines
+  optional MultiWordSettings multi_word_settings = 3;
+  optional EmojiSettings emoji_settings = 4;
+  optional EmojiTriggerSettings emoji_trigger_settings = 5;
+
+  // Library settings
+  optional FeatureSettings feature_settings = 6;
+  optional ExperimentSettings experiment_settings = 7;
+}
+
+// A text candidate to complete the current word
+message NextWordCompletionCandidate {
+  // The text to complete the current word
+  optional string text = 1;
+
+  // The normalized confidence score for the generated candidate
+  optional float normalized_score = 2;
+}
+
+enum RequestSuggestionMode {
+  // Default value for the case where the suggestion mode is unspecified.
+  SUGGESTION_MODE_UNKNOWN = 0;
+
+  // Suggestions when the user is composing a word.
+  SUGGESTION_MODE_COMPLETION = 1;
+
+  // Suggestions when the user has finished composing a word.
+  SUGGESTION_MODE_PREDICTION = 2;
+}
+
+// A request to generate suggestion candidates
+message TextSuggesterRequest {
+  // The text used to generate suggestion candidates
+  optional string text = 1;
+
+  // The current candidates for next word completions.
+  repeated NextWordCompletionCandidate next_word_candidates = 2;
+
+  // Suggestion mode for the request
+  optional RequestSuggestionMode suggestion_mode = 3;
+}
+
+// A generated candidate for a multi word suggestion
+message MultiWordSuggestionCandidate {
+  // The text suggested
+  optional string text = 1;
+
+  // The normalized confidence scoring for the given candidate
+  optional float normalized_score = 2;
+}
+
+// A generated candidate for an emoji suggestion
+message EmojiSuggestionCandidate {
+  // The text suggested
+  optional string text = 1;
+
+  // The normalized confidence scoring for the given candidate
+  optional float normalized_score = 2;
+}
+
+// A generated candidate for a text suggestion
+message TextSuggestionCandidate {
+  oneof candidate {
+    MultiWordSuggestionCandidate multi_word = 1;
+    EmojiSuggestionCandidate emoji = 2;
+  }
+}
+
+// The response to a text suggestion request
+message TextSuggesterResult {
+  // The candidates returned in this suggestion response
+  repeated TextSuggestionCandidate candidates = 1;
+}

@@ -1,0 +1,11 @@
+{
+	"package": "643fbf30a49c1a05cf41aa844ac574fe0d5567f524d0175a88bca5af7db08512",
+	"files": {
+		"LICENSE": "219920e865eee70b7dcfc948a86b099e7f4fe2de01bcca2ca9a20c0a033f2b59",
+		"Cargo.toml.orig": "38f035c917bcf90270cabf77f678f375978d6b6ae28fedc8a5c1d8c238c2d35b",
+		"README.md": "a528e7356db49ea813c3290dd4f6b15d8e6c0a870cfc07a2df0f3d1381c575bf",
+		"Cargo.toml": "13737687c94980d0841ff55798ec9e6368ce7f9ee35b25bfa13f195ecd92a6fb",
+		"src/lib.rs": "625d4362db5fba46b47e2a71dc0d7d0440b1617021c8d4704e14b9ea3236070f",
+		"src/macros.rs": "e7cf1808faf5dac5ca25bd40ad99e95c2aab4f9899bd9327898761ea86271f7c"
+	}
+}
