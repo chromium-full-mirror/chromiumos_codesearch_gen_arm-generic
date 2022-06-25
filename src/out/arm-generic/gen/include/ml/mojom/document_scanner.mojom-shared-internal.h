@@ -11,6 +11,7 @@
 #include "mojo/public/cpp/bindings/lib/map_data_internal.h"
 #include "mojo/public/cpp/bindings/lib/buffer.h"
 #include "ml/mojom/document_scanner_param_types.mojom-shared-internal.h"
+#include "ml/mojom/file_path.mojom-shared-internal.h"
 #include "ml/mojom/geometry.mojom-shared-internal.h"
 #include "ml/mojom/shared_memory.mojom-shared-internal.h"
 #include "mojo/public/cpp/bindings/lib/native_enum_data.h"
@@ -62,7 +63,8 @@ class  DocumentScannerConfig_Data {
                        mojo::internal::ValidationContext* validation_context);
 
   mojo::internal::StructHeader header_;
-  mojo::internal::Pointer<mojo::internal::String_Data> library_dlc_path;
+  mojo::internal::Pointer<mojo::internal::String_Data> deprecated_library_dlc_path;
+  mojo::internal::Pointer<::mojo_base::mojom::internal::FilePath_Data> library_dlc_path;
 
  private:
   friend class mojo::internal::MessageFragment<DocumentScannerConfig_Data>;
@@ -70,7 +72,7 @@ class  DocumentScannerConfig_Data {
   DocumentScannerConfig_Data();
   ~DocumentScannerConfig_Data() = delete;
 };
-static_assert(sizeof(DocumentScannerConfig_Data) == 16,
+static_assert(sizeof(DocumentScannerConfig_Data) == 24,
               "Bad sizeof(DocumentScannerConfig_Data)");
 // Used by DocumentScannerConfig::WrapAsMessage to lazily serialize the struct.
 template <typename UserType, typename DataView>

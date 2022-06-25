@@ -150,6 +150,25 @@ inline const std::string& SuspendDone_WakeupType_Name(T enum_t_value) {
 }
 bool SuspendDone_WakeupType_Parse(
     const std::string& name, SuspendDone_WakeupType* value);
+enum SuspendDone_SuspendState : int {
+  SuspendDone_SuspendState_TO_RAM = 0,
+  SuspendDone_SuspendState_TO_DISK = 1
+};
+bool SuspendDone_SuspendState_IsValid(int value);
+constexpr SuspendDone_SuspendState SuspendDone_SuspendState_SuspendState_MIN = SuspendDone_SuspendState_TO_RAM;
+constexpr SuspendDone_SuspendState SuspendDone_SuspendState_SuspendState_MAX = SuspendDone_SuspendState_TO_DISK;
+constexpr int SuspendDone_SuspendState_SuspendState_ARRAYSIZE = SuspendDone_SuspendState_SuspendState_MAX + 1;
+
+const std::string& SuspendDone_SuspendState_Name(SuspendDone_SuspendState value);
+template<typename T>
+inline const std::string& SuspendDone_SuspendState_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, SuspendDone_SuspendState>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function SuspendDone_SuspendState_Name.");
+  return SuspendDone_SuspendState_Name(static_cast<SuspendDone_SuspendState>(enum_t_value));
+}
+bool SuspendDone_SuspendState_Parse(
+    const std::string& name, SuspendDone_SuspendState* value);
 // ===================================================================
 
 class SuspendImminent :
@@ -486,12 +505,39 @@ class SuspendDone :
     return SuspendDone_WakeupType_Parse(name, value);
   }
 
+  typedef SuspendDone_SuspendState SuspendState;
+  static constexpr SuspendState TO_RAM =
+    SuspendDone_SuspendState_TO_RAM;
+  static constexpr SuspendState TO_DISK =
+    SuspendDone_SuspendState_TO_DISK;
+  static inline bool SuspendState_IsValid(int value) {
+    return SuspendDone_SuspendState_IsValid(value);
+  }
+  static constexpr SuspendState SuspendState_MIN =
+    SuspendDone_SuspendState_SuspendState_MIN;
+  static constexpr SuspendState SuspendState_MAX =
+    SuspendDone_SuspendState_SuspendState_MAX;
+  static constexpr int SuspendState_ARRAYSIZE =
+    SuspendDone_SuspendState_SuspendState_ARRAYSIZE;
+  template<typename T>
+  static inline const std::string& SuspendState_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, SuspendState>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function SuspendState_Name.");
+    return SuspendDone_SuspendState_Name(enum_t_value);
+  }
+  static inline bool SuspendState_Parse(const std::string& name,
+      SuspendState* value) {
+    return SuspendDone_SuspendState_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kSuspendDurationFieldNumber = 2,
     kSuspendIdFieldNumber = 1,
     kWakeupTypeFieldNumber = 3,
+    kDeepestStateFieldNumber = 4,
   };
   // optional int64 suspend_duration = 2;
   bool has_suspend_duration() const;
@@ -532,6 +578,19 @@ class SuspendDone :
   void _internal_set_wakeup_type(::power_manager::SuspendDone_WakeupType value);
   public:
 
+  // optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
+  bool has_deepest_state() const;
+  private:
+  bool _internal_has_deepest_state() const;
+  public:
+  void clear_deepest_state();
+  ::power_manager::SuspendDone_SuspendState deepest_state() const;
+  void set_deepest_state(::power_manager::SuspendDone_SuspendState value);
+  private:
+  ::power_manager::SuspendDone_SuspendState _internal_deepest_state() const;
+  void _internal_set_deepest_state(::power_manager::SuspendDone_SuspendState value);
+  public:
+
   // @@protoc_insertion_point(class_scope:power_manager.SuspendDone)
  private:
   class _Internal;
@@ -542,6 +601,7 @@ class SuspendDone :
   ::PROTOBUF_NAMESPACE_ID::int64 suspend_duration_;
   ::PROTOBUF_NAMESPACE_ID::int32 suspend_id_;
   int wakeup_type_;
+  int deepest_state_;
   friend struct ::TableStruct_suspend_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1539,6 +1599,35 @@ inline void SuspendDone::set_wakeup_type(::power_manager::SuspendDone_WakeupType
   // @@protoc_insertion_point(field_set:power_manager.SuspendDone.wakeup_type)
 }
 
+// optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
+inline bool SuspendDone::_internal_has_deepest_state() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool SuspendDone::has_deepest_state() const {
+  return _internal_has_deepest_state();
+}
+inline void SuspendDone::clear_deepest_state() {
+  deepest_state_ = 0;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline ::power_manager::SuspendDone_SuspendState SuspendDone::_internal_deepest_state() const {
+  return static_cast< ::power_manager::SuspendDone_SuspendState >(deepest_state_);
+}
+inline ::power_manager::SuspendDone_SuspendState SuspendDone::deepest_state() const {
+  // @@protoc_insertion_point(field_get:power_manager.SuspendDone.deepest_state)
+  return _internal_deepest_state();
+}
+inline void SuspendDone::_internal_set_deepest_state(::power_manager::SuspendDone_SuspendState value) {
+  assert(::power_manager::SuspendDone_SuspendState_IsValid(value));
+  _has_bits_[0] |= 0x00000008u;
+  deepest_state_ = value;
+}
+inline void SuspendDone::set_deepest_state(::power_manager::SuspendDone_SuspendState value) {
+  _internal_set_deepest_state(value);
+  // @@protoc_insertion_point(field_set:power_manager.SuspendDone.deepest_state)
+}
+
 // -------------------------------------------------------------------
 
 // RegisterSuspendDelayRequest
@@ -1928,6 +2017,7 @@ PROTOBUF_NAMESPACE_OPEN
 template <> struct is_proto_enum< ::power_manager::SuspendImminent_Reason> : ::std::true_type {};
 template <> struct is_proto_enum< ::power_manager::SuspendImminent_Action> : ::std::true_type {};
 template <> struct is_proto_enum< ::power_manager::SuspendDone_WakeupType> : ::std::true_type {};
+template <> struct is_proto_enum< ::power_manager::SuspendDone_SuspendState> : ::std::true_type {};
 
 PROTOBUF_NAMESPACE_CLOSE
 

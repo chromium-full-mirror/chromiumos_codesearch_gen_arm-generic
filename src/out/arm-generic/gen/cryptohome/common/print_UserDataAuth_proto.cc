@@ -1633,6 +1633,17 @@ std::string GetProtoDebugStringWithIndent(const StartAuthSessionReply& value,
           .c_str());
   output += "\n";
 
+  output += indent + "  supported_auth_factors: {";
+  for (int i = 0; i < value.supported_auth_factors_size(); ++i) {
+    if (i > 0) {
+      base::StringAppendF(&output, ", ");
+    }
+    base::StringAppendF(&output, "%s",
+                        GetProtoDebugStringWithIndent(
+                            value.supported_auth_factors(i), indent_size + 2)
+                            .c_str());
+  }
+  output += "}\n";
   output += indent + "}\n";
   return output;
 }

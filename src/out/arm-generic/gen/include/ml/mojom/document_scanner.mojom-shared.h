@@ -25,6 +25,7 @@
 
 #include "ml/mojom/document_scanner.mojom-shared-internal.h"
 #include "ml/mojom/document_scanner_param_types.mojom-shared.h"
+#include "ml/mojom/file_path.mojom-shared.h"
 #include "ml/mojom/geometry.mojom-shared.h"
 #include "ml/mojom/shared_memory.mojom-shared.h"
 #include "mojo/public/cpp/bindings/lib/interface_serialization.h"
@@ -119,14 +120,35 @@ class DocumentScannerConfigDataView {
       : data_(data), message_(message) {}
 
   bool is_null() const { return !data_; }
-  inline void GetLibraryDlcPathDataView(
+  inline void GetDeprecatedLibraryDlcPathDataView(
       mojo::StringDataView* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadDeprecatedLibraryDlcPath(UserType* output) {
+    
+    auto* pointer = data_->deprecated_library_dlc_path.Get();
+    return mojo::internal::Deserialize<mojo::StringDataView>(
+        pointer, output, message_);
+  }
+  inline void GetLibraryDlcPathDataView(
+      ::mojo_base::mojom::FilePathDataView* output);
 
   template <typename UserType>
   WARN_UNUSED_RESULT bool ReadLibraryDlcPath(UserType* output) {
     
-    auto* pointer = data_->library_dlc_path.Get();
-    return mojo::internal::Deserialize<mojo::StringDataView>(
+static_assert(
+    mojo::internal::IsValidUserTypeForOptionalValue<
+        ::mojo_base::mojom::FilePathDataView, UserType>(),
+    "Attempting to read the optional `library_dlc_path` field into a type which "
+    "cannot represent a null value. Either wrap the destination object "
+    "with absl::optional, ensure that any corresponding "
+    "{Struct/Union/Array/String}Traits define the necessary IsNull and "
+    "SetToNull methods, or use `MaybeReadLibraryDlcPath` instead "
+    "of `ReadLibraryDlcPath if you're fine with null values being "
+    "silently ignored in this case.");
+    auto* pointer = data_->header_.version >= 1
+                    ? data_->library_dlc_path.Get() : nullptr;
+    return mojo::internal::Deserialize<::mojo_base::mojom::FilePathDataView>(
         pointer, output, message_);
   }
  private:
@@ -258,18 +280,26 @@ struct Serializer<::chromeos::machine_learning::mojom::DocumentScannerConfigData
     if (CallIsNullIfExists<Traits>(input))
       return;
     fragment.Allocate();
+    decltype(Traits::deprecated_library_dlc_path(input)) in_deprecated_library_dlc_path = Traits::deprecated_library_dlc_path(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->deprecated_library_dlc_path)::BaseType> deprecated_library_dlc_path_fragment(
+            fragment.message());
+    mojo::internal::Serialize<mojo::StringDataView>(
+        in_deprecated_library_dlc_path, deprecated_library_dlc_path_fragment);
+    fragment->deprecated_library_dlc_path.Set(
+        deprecated_library_dlc_path_fragment.is_null() ? nullptr : deprecated_library_dlc_path_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->deprecated_library_dlc_path.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null deprecated_library_dlc_path in DocumentScannerConfig struct");
     decltype(Traits::library_dlc_path(input)) in_library_dlc_path = Traits::library_dlc_path(input);
     mojo::internal::MessageFragment<
         typename decltype(fragment->library_dlc_path)::BaseType> library_dlc_path_fragment(
             fragment.message());
-    mojo::internal::Serialize<mojo::StringDataView>(
+    mojo::internal::Serialize<::mojo_base::mojom::FilePathDataView>(
         in_library_dlc_path, library_dlc_path_fragment);
     fragment->library_dlc_path.Set(
         library_dlc_path_fragment.is_null() ? nullptr : library_dlc_path_fragment.data());
-    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
-        fragment->library_dlc_path.is_null(),
-        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
-        "null library_dlc_path in DocumentScannerConfig struct");
   }
 
   static bool Deserialize(::chromeos::machine_learning::mojom::internal::DocumentScannerConfig_Data* input,
@@ -382,10 +412,16 @@ namespace chromeos {
 namespace machine_learning {
 namespace mojom {
 
-inline void DocumentScannerConfigDataView::GetLibraryDlcPathDataView(
+inline void DocumentScannerConfigDataView::GetDeprecatedLibraryDlcPathDataView(
     mojo::StringDataView* output) {
-  auto pointer = data_->library_dlc_path.Get();
+  auto pointer = data_->deprecated_library_dlc_path.Get();
   *output = mojo::StringDataView(pointer, message_);
+}
+inline void DocumentScannerConfigDataView::GetLibraryDlcPathDataView(
+    ::mojo_base::mojom::FilePathDataView* output) {
+  auto pointer = data_->header_.version >= 1
+                 ? data_->library_dlc_path.Get() : nullptr;
+  *output = ::mojo_base::mojom::FilePathDataView(pointer, message_);
 }
 
 

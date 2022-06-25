@@ -1,0 +1,2 @@
+/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_stacktrace.a CMakeFiles/absl_stacktrace.dir/stacktrace.cc.o
+/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_stacktrace.a

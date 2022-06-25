@@ -71,7 +71,6 @@
 #include "base/base_export.h"
 #include "base/check_op.h"
 #include "base/numerics/clamped_math.h"
-#include "base/optional.h"
 #include "build/build_config.h"
 #include "build/chromeos_buildflags.h"
 

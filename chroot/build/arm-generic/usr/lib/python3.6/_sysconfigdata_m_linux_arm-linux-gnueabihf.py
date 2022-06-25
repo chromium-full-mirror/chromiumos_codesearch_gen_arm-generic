@@ -35,7 +35,7 @@ build_time_vars = {'ABIFLAGS': 'm',
  'CONFIGURE_CFLAGS_NODIST': '-std=c99 -Wextra -Wno-unused-result '
                             '-Wno-unused-parameter '
                             '-Wno-missing-field-initializers '
-                            '-Wno-cast-function-type -Wstrict-prototypes',
+                            '-Wno-cast-function-type',
  'CONFIGURE_CPPFLAGS': '',
  'CONFIGURE_LDFLAGS': '-Wl,-O2 -Wl,--as-needed -Wl,--gc-sections -Wl,--icf=all',
  'CONFIGURE_LDFLAGS_NODIST': '',
@@ -627,7 +627,7 @@ build_time_vars = {'ABIFLAGS': 'm',
               '-fdata-sections -fwrapv',
  'PY_CFLAGS_NODIST': '-std=c99 -Wextra -Wno-unused-result '
                      '-Wno-unused-parameter -Wno-missing-field-initializers '
-                     '-Wno-cast-function-type -Wstrict-prototypes '
+                     '-Wno-cast-function-type '
                      '-fprofile-instr-use=code.profclangd',
  'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
                    '-DNDEBUG -Os -pipe -march=armv7-a -mtune=cortex-a15 '
@@ -636,8 +636,8 @@ build_time_vars = {'ABIFLAGS': 'm',
                    '-ffunction-sections -fdata-sections -fwrapv -std=c99 '
                    '-Wextra -Wno-unused-result -Wno-unused-parameter '
                    '-Wno-missing-field-initializers -Wno-cast-function-type '
-                   '-Wstrict-prototypes -fprofile-instr-use=code.profclangd '
-                   '-I. -I./Include -fPIC -DPy_BUILD_CORE',
+                   '-fprofile-instr-use=code.profclangd -I. -I./Include -fPIC '
+                   '-DPy_BUILD_CORE',
  'PY_CORE_LDFLAGS': '-Wl,-O2 -Wl,--as-needed -Wl,--gc-sections -Wl,--icf=all',
  'PY_CPPFLAGS': '-I. -I./Include',
  'PY_FORMAT_SIZE_T': '"z"',

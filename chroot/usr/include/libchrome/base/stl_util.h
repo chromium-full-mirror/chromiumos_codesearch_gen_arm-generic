@@ -13,7 +13,6 @@
 #include <type_traits>
 
 #include "base/check.h"
-#include "base/optional.h"
 #include "base/ranges/algorithm.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 

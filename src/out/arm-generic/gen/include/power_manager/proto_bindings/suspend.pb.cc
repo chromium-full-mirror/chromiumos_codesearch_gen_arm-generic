@@ -347,6 +347,64 @@ constexpr SuspendDone_WakeupType SuspendDone::WakeupType_MIN;
 constexpr SuspendDone_WakeupType SuspendDone::WakeupType_MAX;
 constexpr int SuspendDone::WakeupType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+bool SuspendDone_SuspendState_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> SuspendDone_SuspendState_strings[2] = {};
+
+static const char SuspendDone_SuspendState_names[] =
+  "TO_DISK"
+  "TO_RAM";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry SuspendDone_SuspendState_entries[] = {
+  { {SuspendDone_SuspendState_names + 0, 7}, 1 },
+  { {SuspendDone_SuspendState_names + 7, 6}, 0 },
+};
+
+static const int SuspendDone_SuspendState_entries_by_number[] = {
+  1, // 0 -> TO_RAM
+  0, // 1 -> TO_DISK
+};
+
+const std::string& SuspendDone_SuspendState_Name(
+    SuspendDone_SuspendState value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          SuspendDone_SuspendState_entries,
+          SuspendDone_SuspendState_entries_by_number,
+          2, SuspendDone_SuspendState_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      SuspendDone_SuspendState_entries,
+      SuspendDone_SuspendState_entries_by_number,
+      2, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     SuspendDone_SuspendState_strings[idx].get();
+}
+bool SuspendDone_SuspendState_Parse(
+    const std::string& name, SuspendDone_SuspendState* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      SuspendDone_SuspendState_entries, 2, name, &int_value);
+  if (success) {
+    *value = static_cast<SuspendDone_SuspendState>(int_value);
+  }
+  return success;
+}
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr SuspendDone_SuspendState SuspendDone::TO_RAM;
+constexpr SuspendDone_SuspendState SuspendDone::TO_DISK;
+constexpr SuspendDone_SuspendState SuspendDone::SuspendState_MIN;
+constexpr SuspendDone_SuspendState SuspendDone::SuspendState_MAX;
+constexpr int SuspendDone::SuspendState_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
@@ -624,6 +682,9 @@ class SuspendDone::_Internal {
   static void set_has_wakeup_type(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
+  static void set_has_deepest_state(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
 };
 
 SuspendDone::SuspendDone()
@@ -637,15 +698,15 @@ SuspendDone::SuspendDone(const SuspendDone& from)
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&suspend_duration_, &from.suspend_duration_,
-    static_cast<size_t>(reinterpret_cast<char*>(&wakeup_type_) -
-    reinterpret_cast<char*>(&suspend_duration_)) + sizeof(wakeup_type_));
+    static_cast<size_t>(reinterpret_cast<char*>(&deepest_state_) -
+    reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
   // @@protoc_insertion_point(copy_constructor:power_manager.SuspendDone)
 }
 
 void SuspendDone::SharedCtor() {
   ::memset(&suspend_duration_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&wakeup_type_) -
-      reinterpret_cast<char*>(&suspend_duration_)) + sizeof(wakeup_type_));
+      reinterpret_cast<char*>(&deepest_state_) -
+      reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
 }
 
 SuspendDone::~SuspendDone() {
@@ -672,10 +733,10 @@ void SuspendDone::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     ::memset(&suspend_duration_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&wakeup_type_) -
-        reinterpret_cast<char*>(&suspend_duration_)) + sizeof(wakeup_type_));
+        reinterpret_cast<char*>(&deepest_state_) -
+        reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -714,6 +775,18 @@ const char* SuspendDone::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             _internal_set_wakeup_type(static_cast<::power_manager::SuspendDone_WakeupType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
+          }
+        } else goto handle_unusual;
+        continue;
+      // optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::power_manager::SuspendDone_SuspendState_IsValid(val))) {
+            _internal_set_deepest_state(static_cast<::power_manager::SuspendDone_SuspendState>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
           }
         } else goto handle_unusual;
         continue;
@@ -764,6 +837,13 @@ failure:
       3, this->_internal_wakeup_type(), target);
   }
 
+  // optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      4, this->_internal_deepest_state(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
         static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
@@ -781,7 +861,7 @@ size_t SuspendDone::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     // optional int64 suspend_duration = 2;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
@@ -800,6 +880,12 @@ size_t SuspendDone::ByteSizeLong() const {
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_wakeup_type());
+    }
+
+    // optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_deepest_state());
     }
 
   }
@@ -825,7 +911,7 @@ void SuspendDone::MergeFrom(const SuspendDone& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
       suspend_duration_ = from.suspend_duration_;
     }
@@ -834,6 +920,9 @@ void SuspendDone::MergeFrom(const SuspendDone& from) {
     }
     if (cached_has_bits & 0x00000004u) {
       wakeup_type_ = from.wakeup_type_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      deepest_state_ = from.deepest_state_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -857,6 +946,7 @@ void SuspendDone::InternalSwap(SuspendDone* other) {
   swap(suspend_duration_, other->suspend_duration_);
   swap(suspend_id_, other->suspend_id_);
   swap(wakeup_type_, other->wakeup_type_);
+  swap(deepest_state_, other->deepest_state_);
 }
 
 std::string SuspendDone::GetTypeName() const {

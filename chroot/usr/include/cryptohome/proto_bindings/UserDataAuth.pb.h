@@ -6855,6 +6855,7 @@ class StartAuthSessionReply :
   enum : int {
     kKeyLabelDataFieldNumber = 4,
     kAuthFactorsFieldNumber = 5,
+    kSupportedAuthFactorsFieldNumber = 7,
     kAuthSessionIdFieldNumber = 2,
     kErrorInfoFieldNumber = 6,
     kErrorFieldNumber = 1,
@@ -6894,6 +6895,23 @@ class StartAuthSessionReply :
   ::user_data_auth::AuthFactor* add_auth_factors();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor >&
       auth_factors() const;
+
+  // repeated .user_data_auth.AuthFactorType supported_auth_factors = 7;
+  int supported_auth_factors_size() const;
+  private:
+  int _internal_supported_auth_factors_size() const;
+  public:
+  void clear_supported_auth_factors();
+  private:
+  ::user_data_auth::AuthFactorType _internal_supported_auth_factors(int index) const;
+  void _internal_add_supported_auth_factors(::user_data_auth::AuthFactorType value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_supported_auth_factors();
+  public:
+  ::user_data_auth::AuthFactorType supported_auth_factors(int index) const;
+  void set_supported_auth_factors(int index, ::user_data_auth::AuthFactorType value);
+  void add_supported_auth_factors(::user_data_auth::AuthFactorType value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& supported_auth_factors() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_supported_auth_factors();
 
   // bytes auth_session_id = 2;
   void clear_auth_session_id();
@@ -6956,6 +6974,8 @@ class StartAuthSessionReply :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
       0 > key_label_data_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor > auth_factors_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> supported_auth_factors_;
+  mutable std::atomic<int> _supported_auth_factors_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr auth_session_id_;
   ::user_data_auth::CryptohomeErrorInfo* error_info_;
   int error_;
@@ -21910,6 +21930,49 @@ inline void StartAuthSessionReply::set_allocated_error_info(::user_data_auth::Cr
   }
   error_info_ = error_info;
   // @@protoc_insertion_point(field_set_allocated:user_data_auth.StartAuthSessionReply.error_info)
+}
+
+// repeated .user_data_auth.AuthFactorType supported_auth_factors = 7;
+inline int StartAuthSessionReply::_internal_supported_auth_factors_size() const {
+  return supported_auth_factors_.size();
+}
+inline int StartAuthSessionReply::supported_auth_factors_size() const {
+  return _internal_supported_auth_factors_size();
+}
+inline void StartAuthSessionReply::clear_supported_auth_factors() {
+  supported_auth_factors_.Clear();
+}
+inline ::user_data_auth::AuthFactorType StartAuthSessionReply::_internal_supported_auth_factors(int index) const {
+  return static_cast< ::user_data_auth::AuthFactorType >(supported_auth_factors_.Get(index));
+}
+inline ::user_data_auth::AuthFactorType StartAuthSessionReply::supported_auth_factors(int index) const {
+  // @@protoc_insertion_point(field_get:user_data_auth.StartAuthSessionReply.supported_auth_factors)
+  return _internal_supported_auth_factors(index);
+}
+inline void StartAuthSessionReply::set_supported_auth_factors(int index, ::user_data_auth::AuthFactorType value) {
+  supported_auth_factors_.Set(index, value);
+  // @@protoc_insertion_point(field_set:user_data_auth.StartAuthSessionReply.supported_auth_factors)
+}
+inline void StartAuthSessionReply::_internal_add_supported_auth_factors(::user_data_auth::AuthFactorType value) {
+  supported_auth_factors_.Add(value);
+}
+inline void StartAuthSessionReply::add_supported_auth_factors(::user_data_auth::AuthFactorType value) {
+  // @@protoc_insertion_point(field_add:user_data_auth.StartAuthSessionReply.supported_auth_factors)
+  _internal_add_supported_auth_factors(value);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>&
+StartAuthSessionReply::supported_auth_factors() const {
+  // @@protoc_insertion_point(field_list:user_data_auth.StartAuthSessionReply.supported_auth_factors)
+  return supported_auth_factors_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+StartAuthSessionReply::_internal_mutable_supported_auth_factors() {
+  return &supported_auth_factors_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+StartAuthSessionReply::mutable_supported_auth_factors() {
+  // @@protoc_insertion_point(field_mutable_list:user_data_auth.StartAuthSessionReply.supported_auth_factors)
+  return _internal_mutable_supported_auth_factors();
 }
 
 // -------------------------------------------------------------------

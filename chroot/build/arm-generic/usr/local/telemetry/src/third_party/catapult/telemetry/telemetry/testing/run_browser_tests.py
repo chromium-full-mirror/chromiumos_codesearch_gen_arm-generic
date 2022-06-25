@@ -216,8 +216,12 @@ def _GetClassifier(typ_runner):
     if typ_runner.should_skip(test):
       test_set.add_test_to_skip(test, 'skipped because matched --skip')
       return
-    # For now, only support running these tests serially.
-    test_set.add_test_to_run_isolated(test)
+    # Default to running the test in isolation unless it has specifically opted
+    # in to parallel execution.
+    if test.CanRunInParallel():
+      test_set.add_test_to_run_in_parallel(test)
+    else:
+      test_set.add_test_to_run_isolated(test)
   return _SeriallyExecutedBrowserTestCaseClassifer
 
 
@@ -359,10 +363,10 @@ def _SetUpProcess(child, context):
     args.remote_platform_options.device = (
         android_devices[child.worker_num-1].guid)
   browser_test_context._global_test_context = context
+  # typ will set this later as well, but set it earlier so that it's available
+  # in the test class process setup.
+  context.test_class.child = child
   context.test_class.SetUpProcess()
-  if child.has_expectations:
-    child.expectations.set_tags(
-        context.test_class._typ_runner.expectations.tags)
 
 
 def _TearDownProcess(child, context):

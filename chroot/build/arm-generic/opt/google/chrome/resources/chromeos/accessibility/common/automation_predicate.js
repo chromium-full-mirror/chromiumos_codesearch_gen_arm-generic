@@ -395,6 +395,19 @@ AutomationPredicate = class {
   }
 
   /**
+   * Matches against nodes visited during object navigation with a gesture.
+   * @param {!AutomationNode} node
+   * @return {boolean}
+   */
+  static gestureObject(node) {
+    if (node.role === Role.LIST_BOX) {
+      return false;
+    }
+    return AutomationPredicate.object(node);
+  }
+
+
+  /**
    * @param {!AutomationNode} first
    * @param {!AutomationNode} second
    * @return {boolean}
@@ -815,7 +828,7 @@ AutomationPredicate.listLike =
 /** @type {AutomationPredicate.Unary} */
 AutomationPredicate.simpleListItem = AutomationPredicate.match({
   anyPredicate:
-      [(node) => node.role === Role.LIST_ITEM && node.children.length === 2 &&
+      [node => node.role === Role.LIST_ITEM && node.children.length === 2 &&
            node.firstChild.role === Role.LIST_MARKER &&
            node.lastChild.role === Role.STATIC_TEXT]
 });
@@ -876,7 +889,7 @@ AutomationPredicate.structuralContainer = AutomationPredicate.roles([
 AutomationPredicate.clickable = AutomationPredicate.match({
   anyPredicate: [
     AutomationPredicate.button, AutomationPredicate.link,
-    (node) => {
+    node => {
       return node.defaultActionVerb ===
           chrome.automation.DefaultActionVerb.CLICK;
     }

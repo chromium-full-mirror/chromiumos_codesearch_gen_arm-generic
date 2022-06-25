@@ -33,7 +33,7 @@ class DoPostProcessingResultDataView;
 
 enum class DocumentScannerResultStatus : int32_t;
 class DocumentScannerConfig;
-using DocumentScannerConfigPtr = mojo::InlinedStructPtr<DocumentScannerConfig>;
+using DocumentScannerConfigPtr = mojo::StructPtr<DocumentScannerConfig>;
 
 class DetectCornersResult;
 using DetectCornersResultPtr = mojo::StructPtr<DetectCornersResult>;

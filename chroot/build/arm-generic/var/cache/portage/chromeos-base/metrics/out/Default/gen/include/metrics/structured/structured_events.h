@@ -823,9 +823,6 @@ class BRILLO_EXPORT WiFiPortalDetectionStatus final : public ::metrics::structur
   static constexpr uint64_t kPortalDetectionStatusNameHash = UINT64_C(3858682471204091838);
   WiFiPortalDetectionStatus& SetPortalDetectionStatus(const int64_t value);
 
-  static constexpr uint64_t kPortalDetectionMultiProbeResultNameHash = UINT64_C(3104044316304720986);
-  WiFiPortalDetectionStatus& SetPortalDetectionMultiProbeResult(const int64_t value);
-
 };
 
 class BRILLO_EXPORT WiFiConnectionEnd final : public ::metrics::structured::EventBase {

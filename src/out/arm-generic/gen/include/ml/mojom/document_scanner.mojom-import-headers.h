@@ -8,6 +8,8 @@
 #define ML_MOJOM_DOCUMENT_SCANNER_MOJOM_IMPORT_HEADERS_H_
 #include "ml/mojom/document_scanner_param_types.mojom.h"
 #include "ml/mojom/document_scanner_param_types.mojom-import-headers.h"
+#include "ml/mojom/file_path.mojom.h"
+#include "ml/mojom/file_path.mojom-import-headers.h"
 #include "ml/mojom/geometry.mojom.h"
 #include "ml/mojom/geometry.mojom-import-headers.h"
 #include "ml/mojom/shared_memory.mojom.h"

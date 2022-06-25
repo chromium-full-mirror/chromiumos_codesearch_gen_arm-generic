@@ -48,26 +48,39 @@ namespace chromeos {
 namespace machine_learning {
 namespace mojom {
 DocumentScannerConfig::DocumentScannerConfig()
-    : library_dlc_path() {}
+    : deprecated_library_dlc_path(),
+      library_dlc_path() {}
 
 DocumentScannerConfig::DocumentScannerConfig(
-    const std::string& library_dlc_path_in)
-    : library_dlc_path(std::move(library_dlc_path_in)) {}
+    const std::string& deprecated_library_dlc_path_in)
+    : deprecated_library_dlc_path(std::move(deprecated_library_dlc_path_in)),
+      library_dlc_path() {}
+
+DocumentScannerConfig::DocumentScannerConfig(
+    const std::string& deprecated_library_dlc_path_in,
+    ::mojo_base::mojom::FilePathPtr library_dlc_path_in)
+    : deprecated_library_dlc_path(std::move(deprecated_library_dlc_path_in)),
+      library_dlc_path(std::move(library_dlc_path_in)) {}
 
 DocumentScannerConfig::~DocumentScannerConfig() = default;
-size_t DocumentScannerConfig::Hash(size_t seed) const {
-  seed = mojo::internal::Hash(seed, this->library_dlc_path);
-  return seed;
-}
 
 void DocumentScannerConfig::WriteIntoTrace(
     perfetto::libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
   perfetto::libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
-      "library_dlc_path"), this->library_dlc_path,
+      "deprecated_library_dlc_path"), this->deprecated_library_dlc_path,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
       "<value of type const std::string&>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "library_dlc_path"), this->library_dlc_path,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type ::mojo_base::mojom::FilePathPtr>"
 #else
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -945,6 +958,8 @@ bool StructTraits<::chromeos::machine_learning::mojom::DocumentScannerConfig::Da
   bool success = true;
   ::chromeos::machine_learning::mojom::DocumentScannerConfigPtr result(::chromeos::machine_learning::mojom::DocumentScannerConfig::New());
   
+      if (success && !input.ReadDeprecatedLibraryDlcPath(&result->deprecated_library_dlc_path))
+        success = false;
       if (success && !input.ReadLibraryDlcPath(&result->library_dlc_path))
         success = false;
   *output = std::move(result);

@@ -55,8 +55,12 @@ bool DocumentScannerConfig_Data::Validate(
     mojo::internal::ValidationContext* validation_context) {
   if (!data)
     return true;
-  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
-          data, 16, validation_context)) {
+  static constexpr mojo::internal::StructVersionSize kVersionSizes[] = {
+    { 0, 16 },
+    { 1, 24 },
+  };
+  if (!ValidateStructHeaderAndVersionSizeAndClaimMemory(
+          data, kVersionSizes, validation_context)) {
     return false;
   }
 
@@ -66,21 +70,26 @@ bool DocumentScannerConfig_Data::Validate(
       static_cast<const DocumentScannerConfig_Data*>(data);
 
   if (!mojo::internal::ValidatePointerNonNullable(
-          object->library_dlc_path, 1, validation_context)) {
+          object->deprecated_library_dlc_path, 1, validation_context)) {
     return false;
   }
-  const mojo::internal::ContainerValidateParams library_dlc_path_validate_params(
+  const mojo::internal::ContainerValidateParams deprecated_library_dlc_path_validate_params(
       0, false, nullptr);
-  if (!mojo::internal::ValidateContainer(object->library_dlc_path, validation_context,
-                                         &library_dlc_path_validate_params)) {
+  if (!mojo::internal::ValidateContainer(object->deprecated_library_dlc_path, validation_context,
+                                         &deprecated_library_dlc_path_validate_params)) {
     return false;
   }
+  if (object->header_.version < 1)
+    return true;
+
+  if (!mojo::internal::ValidateStruct(object->library_dlc_path, validation_context))
+    return false;
 
   return true;
 }
 
 DocumentScannerConfig_Data::DocumentScannerConfig_Data()
-    : header_({sizeof(*this), 0}) {}
+    : header_({sizeof(*this), 1}) {}
 
 
 // static
