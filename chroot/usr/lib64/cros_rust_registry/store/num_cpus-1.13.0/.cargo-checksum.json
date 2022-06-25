@@ -1,25 +1,25 @@
 {
 	"package": "40a7b1febb44ba04fe6abc6b048e7d0e93cfe2a7fad8c982444dc650f53db687",
 	"files": {
-		"examples/values.rs": "46c833324b7339d359054c4f8e8284259e860df206c552c63b5893ade59c16a6",
-		"CONTRIBUTING.md": "2390961aab1bba026135338da1216b6cc828dfaeed9357d9c155c55a252d3efb",
-		"fixtures/cgroups/cgroups/ceil/cpu.cfs_period_us": "d2ace393dc9388863d75d8de140df516d7ffe4aa7ed2f9a545aa71c9930d6638",
-		"fixtures/cgroups/cgroups/ceil/cpu.cfs_quota_us": "7ccd86cde0b22ffc2318f2509726d2a13053f6973e96dc5ca6965a56497e485e",
+		"CHANGELOG.md": "648196d9fad2d62618f5778dab9127cf6bb801e3a432d72179f118350d36ff23",
+		"Cargo.toml.orig": "52ef0f0118e9c7d08c1ce00006046341c9a7ab78b209339986c17c8ea079c6ca",
+		"Cargo.lock": "9881265d73b5d67b6a9527c389c5b996bae166a0cfaa6ad33cb03054c1d8d250",
+		"fixtures/cgroups/proc/cgroups/mountinfo": "3187b0b1c0fa192790abced7d435190e8979059186055688e4c3c2ca013398c6",
+		"fixtures/cgroups/proc/cgroups/cgroup": "6812299a4409bfd831ed751fdbbfdd9c5749f69acd7b14c5b0a704271a1f74c6",
 		"fixtures/cgroups/cgroups/zero-period/cpu.cfs_period_us": "74d01a0c051c963d9a9b8ab9dbeab1723f0ad8534ea9fa6a942f358d7fa011b4",
 		"fixtures/cgroups/cgroups/zero-period/cpu.cfs_quota_us": "1e6ffd8a95fab538ddd645a767e8cc505722d5c8aaf008969f2ed8ab753ff61e",
 		"fixtures/cgroups/cgroups/good/cpu.cfs_period_us": "d2ace393dc9388863d75d8de140df516d7ffe4aa7ed2f9a545aa71c9930d6638",
 		"fixtures/cgroups/cgroups/good/cpu.cfs_quota_us": "cdc3397c35d915e5fe61f8d2bdedcae00a225d55cc6b090580cde1b71c63463b",
-		"fixtures/cgroups/proc/cgroups/mountinfo": "3187b0b1c0fa192790abced7d435190e8979059186055688e4c3c2ca013398c6",
-		"fixtures/cgroups/proc/cgroups/cgroup": "6812299a4409bfd831ed751fdbbfdd9c5749f69acd7b14c5b0a704271a1f74c6",
-		"Cargo.toml.orig": "52ef0f0118e9c7d08c1ce00006046341c9a7ab78b209339986c17c8ea079c6ca",
-		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
-		"LICENSE-MIT": "0593d22d122d4bfec6407115e3907546312976f75473417aaa4c57ecd2095ae6",
-		"Cargo.lock": "9881265d73b5d67b6a9527c389c5b996bae166a0cfaa6ad33cb03054c1d8d250",
-		"README.md": "12451d6905fe9cdac206410de8071b562e5ea936b6e55a19ac97982831a0fcdb",
+		"fixtures/cgroups/cgroups/ceil/cpu.cfs_period_us": "d2ace393dc9388863d75d8de140df516d7ffe4aa7ed2f9a545aa71c9930d6638",
+		"fixtures/cgroups/cgroups/ceil/cpu.cfs_quota_us": "7ccd86cde0b22ffc2318f2509726d2a13053f6973e96dc5ca6965a56497e485e",
 		"Cargo.toml": "7e48836c054585ff781962497d455300320ab40a282e7d3e9110ebcc10352790",
-		"CHANGELOG.md": "648196d9fad2d62618f5778dab9127cf6bb801e3a432d72179f118350d36ff23",
+		"examples/values.rs": "46c833324b7339d359054c4f8e8284259e860df206c552c63b5893ade59c16a6",
+		"README.md": "12451d6905fe9cdac206410de8071b562e5ea936b6e55a19ac97982831a0fcdb",
+		"CONTRIBUTING.md": "2390961aab1bba026135338da1216b6cc828dfaeed9357d9c155c55a252d3efb",
 		"ci/cgroups/Dockerfile": "b018cda01776cabe033af06a22c5ad337c90c07fdb8093e94857f2fc5a0b2bdb",
+		"LICENSE-MIT": "0593d22d122d4bfec6407115e3907546312976f75473417aaa4c57ecd2095ae6",
+		"src/linux.rs": "c10382e85a4b196d6fd9a481d9b3d5978b8bb18eaeb7670716ced7d71b919f5e",
 		"src/lib.rs": "e1ce45ba3b2655fabb49ea0af50080808fd305c884d79cb4b9527198dab828ac",
-		"src/linux.rs": "c10382e85a4b196d6fd9a481d9b3d5978b8bb18eaeb7670716ced7d71b919f5e"
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
 	}
 }

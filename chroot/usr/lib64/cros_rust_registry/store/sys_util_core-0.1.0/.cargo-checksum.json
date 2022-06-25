@@ -5,8 +5,8 @@
 		"Cargo.toml": "1c3065f379e237b29d82093b220102a2ea9284c922ba20997e6d74291ce1b27c",
 		"src/alloc.rs": "2bfae341e031dc51096ae8b187007b6ca74afc8cc74a0fd763211cccb469d750",
 		"src/scoped_event_macro.rs": "9a255532d095b9254fc6e18ce633ea7cac744c6a410222f9eaa93f34e8bf1ecb",
-		"src/errno.rs": "51dd1bb251bf4a9b8352d3f520ebe11a61f67e3eda99613de76a968c46fd1659",
+		"src/external_mapping.rs": "599dfef14427e8c86676c5800f8eaabe7d3fb6a2ab4d29de900783d1c3a616da",
 		"src/lib.rs": "5b9b042eaa8eb68ea70204b07cd4eb69b80fe19ca3156b67c8793dcf9025fcdf",
-		"src/external_mapping.rs": "599dfef14427e8c86676c5800f8eaabe7d3fb6a2ab4d29de900783d1c3a616da"
+		"src/errno.rs": "51dd1bb251bf4a9b8352d3f520ebe11a61f67e3eda99613de76a968c46fd1659"
 	}
 }

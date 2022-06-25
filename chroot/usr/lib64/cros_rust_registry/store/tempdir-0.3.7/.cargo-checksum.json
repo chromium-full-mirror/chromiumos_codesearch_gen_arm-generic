@@ -1,13 +1,13 @@
 {
 	"package": "efbf1d81caadbeb34b0df36eeba293cf720163a68bafe7dd3cb6953dd0062af0",
 	"files": {
-		"tests/smoke.rs": "f10712bc24cc693b8300b90b8b014f2880106a58bdf891075b44344170c3a63b",
 		"Cargo.toml.orig": "edbf5f11b4a5cd89b68d4a5c57e2fd54e1fdce1eac6552c30903099b2c634ad6",
-		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
-		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
-		"README.md": "037867e0346ff775991de78c76c80b62bea8c86b3b9076edef00af18d74f7bfd",
+		"appveyor.yml": "da991211b72fa6f231af7adb84c9fb72f5a9131d1c0a3d47b8ceffe5a82c8542",
 		"Cargo.toml": "5c79fe81e7fcf14c3ed82d1e4fb10415a3387abea6e188a063eb7f4de237ab80",
+		"README.md": "037867e0346ff775991de78c76c80b62bea8c86b3b9076edef00af18d74f7bfd",
+		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
 		"src/lib.rs": "3db9d19cdb313e5b303f9969468b62f050a0b7f69c35a162f3af0b38c3d54575",
-		"appveyor.yml": "da991211b72fa6f231af7adb84c9fb72f5a9131d1c0a3d47b8ceffe5a82c8542"
+		"tests/smoke.rs": "f10712bc24cc693b8300b90b8b014f2880106a58bdf891075b44344170c3a63b",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
 	}
 }
