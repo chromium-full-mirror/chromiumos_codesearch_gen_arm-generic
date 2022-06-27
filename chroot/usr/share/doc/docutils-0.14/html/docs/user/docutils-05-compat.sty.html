@@ -40,7 +40,7 @@ This file is offered as-is, without any warranty.</p>
 <div class="abstract topic">
 <p class="topic-title first">Abstract</p>
 <p>This file documents changes and provides a style for best
-possible compatibility to the behaviour of the <span class="incremental">latex2e</span>
+possible compatibility to the behaviour of the <cite>latex2e</cite>
 writer of Doctutils release 0.5.</p>
 </div>
 <pre class="literal-block">
@@ -149,8 +149,8 @@ blocks nested in an admonition.</p>
 <li><p class="first">Two-way hyperlinked footnotes and support for symbol footnotes and
 <tt class="docutils literal"><span class="pre">--footnote-references=brackets</span></tt> with <tt class="docutils literal"><span class="pre">--use-latex-footnotes</span></tt>.</p>
 </li>
-<li><p class="first">The packages <span class="incremental">fixltx2e</span> (providing LaTeX patches and the textsubscript
-command) and <span class="incremental">cmap</span> (including character maps in the generated PDF for
+<li><p class="first">The packages <cite>fixltx2e</cite> (providing LaTeX patches and the textsubscript
+command) and <cite>cmap</cite> (including character maps in the generated PDF for
 better search and copy-and-paste operations) are now always loaded
 (configurable with custom <a class="reference internal" href="#templates">templates</a>).</p>
 </li>
@@ -284,9 +284,9 @@ unit &quot;bp&quot; to the LaTeX source.</li>
 <tt class="docutils literal">latex</tt> actually calls <tt class="docutils literal">pdftex</tt> with some options).</p>
 </li>
 <li><p class="first">In Docutils (as well as CSS) the unit symbol &quot;pt&quot; denotes the
-<span class="incremental">Postscript point</span> or <span class="incremental">DTP point</span> while LaTeX uses &quot;pt&quot; for the <span class="incremental">LaTeX
-point</span>, which is unknown to Docutils and 0.3&nbsp;% smaller.</p>
-<p>The <span class="incremental">DTP point</span> is available in LaTeX as &quot;bp&quot; (big point):</p>
+<cite>Postscript point</cite> or <cite>DTP point</cite> while LaTeX uses &quot;pt&quot; for the <cite>LaTeX
+point</cite>, which is unknown to Docutils and 0.3&nbsp;% smaller.</p>
+<p>The <cite>DTP point</cite> is available in LaTeX as &quot;bp&quot; (big point):</p>
 <blockquote>
 <p>1 pt = 1/72.25 in &lt; 1 bp  = 1/72 in</p>
 </blockquote>
@@ -312,12 +312,12 @@ imperceptible in most cases.</p>
 <div class="admonition admonition-error-illegal-unit-px">
 <p class="first admonition-title">Error <tt class="docutils literal">illegal unit px</tt></p>
 <p>The unit <tt class="docutils literal">px</tt> is not defined in &quot;pure&quot; LaTeX, but introduced by the
-<span class="incremental">pdfTeX</span> converter on 2005-02-04. <span class="incremental">pdfTeX</span> is used in all modern LaTeX
+<cite>pdfTeX</cite> converter on 2005-02-04. <cite>pdfTeX</cite> is used in all modern LaTeX
 distributions (since ca. 2006) also for conversion into DVI.</p>
 <p>If you convert the LaTeX source with a legacy program, you might get the
 error <tt class="docutils literal">illegal unit px</tt>.</p>
 <p class="last">If updating LaTeX is not an option, just remove the <tt class="docutils literal">px</tt> from the length
-specification. HTML/CSS will default to <tt class="docutils literal">px</tt> while the <span class="incremental">latexe2</span> writer
+specification. HTML/CSS will default to <tt class="docutils literal">px</tt> while the <cite>latexe2</cite> writer
 will add the fallback unit <tt class="docutils literal">bp</tt>.</p>
 </div>
 </div>
@@ -326,23 +326,23 @@ will add the fallback unit <tt class="docutils literal">bp</tt>.</p>
 <dl class="docutils">
 <dt>New feature:</dt>
 <dd><p class="first">Do not mix font-encoding and font settings: do not load the obsolete
-<span class="incremental">ae</span> and <span class="incremental">aeguill</span> packages unless explicitely required via the
+<cite>ae</cite> and <cite>aeguill</cite> packages unless explicitely required via the
 <tt class="docutils literal"><span class="pre">--stylesheet</span></tt> option.</p>
 <table class="last docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">font-encoding = &quot;&quot;:</th><td class="field-body"><p class="first">do not load <span class="incremental">ae</span> and <span class="incremental">aeguill</span>, i.e.</p>
+<tr class="field"><th class="field-name">font-encoding = &quot;&quot;:</th><td class="field-body"><p class="first">do not load <cite>ae</cite> and <cite>aeguill</cite>, i.e.</p>
 <ul class="simple">
 <li>do not change font settings,</li>
 <li>do not use the fontenc package
-(implicitely loaded via <span class="incremental">ae</span>),</li>
+(implicitely loaded via <cite>ae</cite>),</li>
 <li>use LaTeX default font encoding (OT1)</li>
 </ul>
 </td>
 </tr>
 <tr class="field"><th class="field-name" colspan="2">font-encoding = &quot;OT1&quot;:</th></tr>
-<tr class="field"><td>&nbsp;</td><td class="field-body"><p class="first last">load <span class="incremental">fontenc</span> with <tt class="docutils literal"><span class="pre">\usepackage[OT1]{fontenc}</span></tt></p>
+<tr class="field"><td>&nbsp;</td><td class="field-body"><p class="first last">load <cite>fontenc</cite> with <tt class="docutils literal"><span class="pre">\usepackage[OT1]{fontenc}</span></tt></p>
 </td>
 </tr>
 </tbody>
@@ -356,9 +356,9 @@ will add the fallback unit <tt class="docutils literal">bp</tt>.</p>
 </dl>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">Using <span class="incremental">ae</span> is not recommended. A similar look (but better
-implementation) can be achieved with the packages <span class="incremental">lmodern</span>, <span class="incremental">cmsuper</span>,
-or <span class="incremental">cmlgr</span> all providing Computer Modern look-alikes in vector format and
+<p class="last">Using <cite>ae</cite> is not recommended. A similar look (but better
+implementation) can be achieved with the packages <cite>lmodern</cite>, <cite>cmsuper</cite>,
+or <cite>cmlgr</cite> all providing Computer Modern look-alikes in vector format and
 T1 encoding, e.g. <tt class="docutils literal"><span class="pre">--font-encoding=T1</span> <span class="pre">--stylesheet=lmodern</span></tt>.</p>
 </div>
 </div>
@@ -414,7 +414,7 @@ with a book class, it can be given in a custom style sheet.</li>
 </ul>
 </dd>
 <dt>Backwards compatibility:</dt>
-<dd><p class="first">Up to version 0.5, use of <span class="incremental">typearea</span> and a DIV setting of 12 were
+<dd><p class="first">Up to version 0.5, use of <cite>typearea</cite> and a DIV setting of 12 were
 hard-coded into the latex2e writer</p>
 <pre class="literal-block">
 \usepackage{typearea}
@@ -483,7 +483,7 @@ replacing <tt class="docutils literal">\usepackage{minitoc} with <span class="pr
 <h2><a class="toc-backref" href="#id17">Figure placement</a></h2>
 <dl class="docutils">
 <dt>New feature:</dt>
-<dd><p class="first">Use <tt class="docutils literal">\floatplacement</tt> from the <span class="incremental">float</span> package instead of
+<dd><p class="first">Use <tt class="docutils literal">\floatplacement</tt> from the <cite>float</cite> package instead of
 &quot;hard-coded&quot; optional argument for the global setting.</p>
 <p class="last">Default to <tt class="docutils literal"><span class="pre">\floatplacement{figure}{H}</span></tt> (here definitely). This
 corresponds most closely to the source and HTML placement (principle of
@@ -552,7 +552,7 @@ with version 0.5:</p>
 </div>
 <div class="section" id="packages-that-are-conditionally-loaded">
 <h3><a class="toc-backref" href="#id21">Packages that are conditionally loaded</a></h3>
-<p>Additional to the <span class="incremental">typearea</span> for <a class="reference internal" href="#page-layout">page layout</a>, the following packages are
+<p>Additional to the <cite>typearea</cite> for <a class="reference internal" href="#page-layout">page layout</a>, the following packages are
 only loaded if actually required by doctree elements:</p>
 <div class="section" id="tables">
 <h4>Tables</h4>
@@ -829,7 +829,7 @@ changes.</dd>
 <div class="footer">
 <hr class="footer" />
 <a class="reference external" href="docutils-05-compat.sty.txt">View document source</a>.
-Generated on: 2022-06-23 01:09 UTC.
+Generated on: 2022-06-24 01:46 UTC.
 Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
 
 </div>

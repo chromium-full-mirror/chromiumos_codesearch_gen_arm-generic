@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1656288561.6888688, "deltas": [{"event": "add", "package": "chromeos-base/tast-tests-remote-data", "version": "0.0.1-r3772", "slot": "0", "counter": "1362"}, {"event": "add", "package": "chromeos-base/libec", "version": "0.0.1-r208", "slot": "0", "counter": "1363"}, {"event": "add", "package": "chromeos-base/ec-devutils", "version": "0.0.2-r11199", "slot": "0", "counter": "1364"}]}
+{"version": "1", "timestamp": 1656316984.071139}
