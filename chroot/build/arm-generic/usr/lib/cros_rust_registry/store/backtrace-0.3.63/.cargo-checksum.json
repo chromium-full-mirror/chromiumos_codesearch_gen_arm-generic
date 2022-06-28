@@ -1,8 +1,8 @@
 {
-	"package": "9eac199c19cddff100d7a27ac2481a08147f4951a05acbd458d872e6b27ec04a",
+	"package": "02a0846ad9bd92bbc4668e70fe628608d543ac8b0cfa7fdd80ee71aed84784b7",
 	"files": {
 		"Cargo.toml.orig": "7bf4fd710d392ddd7211964587a57dd4a9ea2045eb221fcbd91f17704d6943ea",
-		"Cargo.lock": "3a8fa394f63bb3c98c77cc54ef9e48d1a9d16566bac1938ec4f5030ffe7656d6",
+		"Cargo.lock": "27db9d4c9a1710595c6c94e30c89157947e7f9516b96fbf7e72e16749ee73f04",
 		"benches/benchmarks.rs": "029b78bb79052ec940eecfd18067b743925189202fc16015d3c4c25b05eb6d67",
 		"tests/long_fn_name.rs": "ebef58e34543ed4d47048faa9b6525f68fc71e12255af734523a513c5d4baa6f",
 		"tests/skip_inner_frames.rs": "7560fe59e83e4b234789c448da5504d3dd9065f9ad1b2615f12606f9112df4e0",

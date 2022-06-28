@@ -1,0 +1,1 @@
+{"rustc":9475098524968544992,"features":"","target":0,"profile":0,"path":0,"deps":[[5262205180847191334,"build_script_build",false,11463386819145650687]],"local":[{"RerunIfChanged":{"output":"armv7a-cros-linux-gnueabihf/release/build/num-traits-b2459e8f1fc9c955/output","paths":["build.rs"]}}],"rustflags":[],"metadata":0,"config":0,"compile_kind":0}
