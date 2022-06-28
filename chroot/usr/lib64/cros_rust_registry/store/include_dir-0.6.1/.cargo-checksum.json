@@ -1,12 +1,12 @@
 {
 	"package": "34bb5c771ff36973be9b96797c9720835c1357ba082a9397251d6ceb7fdab398",
 	"files": {
-		"Cargo.toml": "edab70d068ca4aab09052ef6b2e0850cb4216cadf49d021ab61121bd4467982a",
-		"Cargo.toml.orig": "8dc18b5613b43edceb40f80ef37e7d62c688a516b809945940db1958165eef7e",
 		"tests/integration_test.rs": "1a5087590bcc522ae3a7b5a1697a840b14aef43c5b6df34b61689a8c7f526bea",
+		"Cargo.toml.orig": "8dc18b5613b43edceb40f80ef37e7d62c688a516b809945940db1958165eef7e",
+		"src/dir.rs": "efa4219ee5af4c7ff56f28ca6996505aae1e8e21e37f3d808fc8ea19752e27b2",
 		"src/lib.rs": "b5dfd25b7265c689902fd43b1c53b70d7a9032b41d4b5b67c0319f32febfaea3",
 		"src/file.rs": "1dac2627ea96eec186eb0615317b8c5fad2e0bde75d170efc29db24cb8f78723",
 		"src/globs.rs": "ac81a8a88b08ce73490eeb73ab14de1e8123164d40c3c0fef50912fe289f1843",
-		"src/dir.rs": "efa4219ee5af4c7ff56f28ca6996505aae1e8e21e37f3d808fc8ea19752e27b2"
+		"Cargo.toml": "edab70d068ca4aab09052ef6b2e0850cb4216cadf49d021ab61121bd4467982a"
 	}
 }
