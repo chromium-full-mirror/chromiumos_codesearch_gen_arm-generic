@@ -146,6 +146,9 @@ class ManagerInterface {
       brillo::ErrorPtr* error,
       const dbus::ObjectPath& in_profile,
       const brillo::VariantDictionary& in_properties) = 0;
+  virtual bool SetTetheringEnabled(
+      brillo::ErrorPtr* error,
+      bool in_1) = 0;
 };
 
 // Interface adaptor for org::chromium::flimflam::Manager.
@@ -307,6 +310,10 @@ class ManagerAdaptor {
         "RemovePasspointCredentials",
         base::Unretained(interface_),
         &ManagerInterface::RemovePasspointCredentials);
+    itf->AddSimpleMethodHandlerWithError(
+        "SetTetheringEnabled",
+        base::Unretained(interface_),
+        &ManagerInterface::SetTetheringEnabled);
 
     signal_PropertyChanged_ = itf->RegisterSignalOfType<SignalPropertyChangedType>("PropertyChanged");
     signal_StateChanged_ = itf->RegisterSignalOfType<SignalStateChangedType>("StateChanged");
@@ -452,6 +459,9 @@ class ManagerAdaptor {
         "    <method name=\"RemovePasspointCredentials\">\n"
         "      <arg name=\"profile\" type=\"o\" direction=\"in\"/>\n"
         "      <arg name=\"properties\" type=\"a{sv}\" direction=\"in\"/>\n"
+        "    </method>\n"
+        "    <method name=\"SetTetheringEnabled\">\n"
+        "      <arg name=\"\" type=\"b\" direction=\"in\"/>\n"
         "    </method>\n"
         "    <signal name=\"PropertyChanged\">\n"
         "      <arg name=\"\" type=\"s\"/>\n"

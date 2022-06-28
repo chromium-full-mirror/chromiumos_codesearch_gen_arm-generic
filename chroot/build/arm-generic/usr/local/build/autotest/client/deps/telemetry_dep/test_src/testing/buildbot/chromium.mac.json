@@ -1480,7 +1480,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -1510,9 +1509,45 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 25
+          "shards": 10
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-10.13.6"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 15
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -3237,7 +3272,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -3267,9 +3301,45 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 12
+          "shards": 5
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-10.14.6"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 7
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -5002,7 +5072,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -5032,9 +5101,45 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 25
+          "shards": 10
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-10.15"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 15
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -6843,7 +6948,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -6873,11 +6977,49 @@
               "os": "Mac-11|Mac-10.16|Mac-12"
             }
           ],
-          "quickrun_shards": 26,
+          "quickrun_shards": 10,
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 25
+          "shards": 12
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "isolate_profile_data": true,
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-11|Mac-10.16|Mac-12"
+            }
+          ],
+          "quickrun_shards": 16,
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 18
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -8643,7 +8785,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}",
           "--debug"
         ],
@@ -8675,9 +8816,47 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 40
+          "shards": 16
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}",
+          "--debug"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "experiment_percentage": 100,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-12"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 24
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "isolate_name": "content_shell_crash_test",
@@ -20879,7 +21058,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -20910,9 +21088,46 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 12
+          "shards": 5
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "ci_only": true,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "arm64",
+              "os": "Mac-11|Mac-12"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 7
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -22669,7 +22884,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -22700,9 +22914,46 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 12
+          "shards": 5
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "ci_only": true,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "arm64",
+              "os": "Mac-12"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 7
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [

@@ -8361,7 +8361,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.62"
+              "revision": "version:103.0.5060.64"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -8446,7 +8446,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.23"
+              "revision": "version:104.0.5112.24"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -8871,7 +8871,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.62"
+              "revision": "version:103.0.5060.64"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -8956,7 +8956,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.23"
+              "revision": "version:104.0.5112.24"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",

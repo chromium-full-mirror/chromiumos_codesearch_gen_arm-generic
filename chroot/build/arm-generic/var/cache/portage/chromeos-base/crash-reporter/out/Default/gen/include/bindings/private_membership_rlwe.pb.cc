@@ -13,7 +13,7 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DoublyEncryptedId_private_5fmembership_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MembershipResponse_private_5fmembership_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_5frlwe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_5frlwe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_5frlwe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EncryptedBucketsParameters_private_5fmembership_5frlwe_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_5frlwe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HashedBucketsParameters_private_5fmembership_5frlwe_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_private_5fmembership_5frlwe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PirRequest_private_5fmembership_5frlwe_2eproto;
@@ -129,8 +129,9 @@ static void InitDefaultsscc_info_EncryptedBucket_EncryptedIdValuePair_private_5f
   ::private_membership::rlwe::EncryptedBucket_EncryptedIdValuePair::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto}, {
+      &scc_info_RlwePlaintextId_private_5fmembership_5frlwe_2eproto.base,}};
 
 static void InitDefaultsscc_info_EncryptedBucketsParameters_private_5fmembership_5frlwe_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -384,19 +385,23 @@ bool RlweUseCase_IsValid(int value) {
     case 13:
     case 14:
     case 15:
+    case 16:
+    case 17:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> RlweUseCase_strings[9] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> RlweUseCase_strings[11] = {};
 
 static const char RlweUseCase_names[] =
   "CROS_DEVICE_SECONDARY_STATE"
   "CROS_DEVICE_STATE"
-  "CROS_FRESNEL_ALL_TIME"
+  "CROS_FRESNEL_28DAY_ACTIVE"
+  "CROS_FRESNEL_7DAY_ACTIVE"
   "CROS_FRESNEL_DAILY"
+  "CROS_FRESNEL_FIRST_ACTIVE"
   "CROS_FRESNEL_MONTHLY"
   "RLWE_USE_CASE_UNDEFINED"
   "TEST_USE_CASE"
@@ -406,25 +411,29 @@ static const char RlweUseCase_names[] =
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry RlweUseCase_entries[] = {
   { {RlweUseCase_names + 0, 27}, 12 },
   { {RlweUseCase_names + 27, 17}, 5 },
-  { {RlweUseCase_names + 44, 21}, 15 },
-  { {RlweUseCase_names + 65, 18}, 13 },
-  { {RlweUseCase_names + 83, 20}, 14 },
-  { {RlweUseCase_names + 103, 23}, 0 },
-  { {RlweUseCase_names + 126, 13}, 1 },
-  { {RlweUseCase_names + 139, 14}, 2 },
-  { {RlweUseCase_names + 153, 14}, 3 },
+  { {RlweUseCase_names + 44, 25}, 17 },
+  { {RlweUseCase_names + 69, 24}, 16 },
+  { {RlweUseCase_names + 93, 18}, 13 },
+  { {RlweUseCase_names + 111, 25}, 15 },
+  { {RlweUseCase_names + 136, 20}, 14 },
+  { {RlweUseCase_names + 156, 23}, 0 },
+  { {RlweUseCase_names + 179, 13}, 1 },
+  { {RlweUseCase_names + 192, 14}, 2 },
+  { {RlweUseCase_names + 206, 14}, 3 },
 };
 
 static const int RlweUseCase_entries_by_number[] = {
-  5, // 0 -> RLWE_USE_CASE_UNDEFINED
-  6, // 1 -> TEST_USE_CASE
-  7, // 2 -> TEST_USE_CASE2
-  8, // 3 -> TEST_USE_CASE3
+  7, // 0 -> RLWE_USE_CASE_UNDEFINED
+  8, // 1 -> TEST_USE_CASE
+  9, // 2 -> TEST_USE_CASE2
+  10, // 3 -> TEST_USE_CASE3
   1, // 5 -> CROS_DEVICE_STATE
   0, // 12 -> CROS_DEVICE_SECONDARY_STATE
-  3, // 13 -> CROS_FRESNEL_DAILY
-  4, // 14 -> CROS_FRESNEL_MONTHLY
-  2, // 15 -> CROS_FRESNEL_ALL_TIME
+  4, // 13 -> CROS_FRESNEL_DAILY
+  6, // 14 -> CROS_FRESNEL_MONTHLY
+  5, // 15 -> CROS_FRESNEL_FIRST_ACTIVE
+  3, // 16 -> CROS_FRESNEL_7DAY_ACTIVE
+  2, // 17 -> CROS_FRESNEL_28DAY_ACTIVE
 };
 
 const std::string& RlweUseCase_Name(
@@ -433,12 +442,12 @@ const std::string& RlweUseCase_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           RlweUseCase_entries,
           RlweUseCase_entries_by_number,
-          9, RlweUseCase_strings);
+          11, RlweUseCase_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       RlweUseCase_entries,
       RlweUseCase_entries_by_number,
-      9, value);
+      11, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      RlweUseCase_strings[idx].get();
 }
@@ -446,7 +455,7 @@ bool RlweUseCase_Parse(
     const std::string& name, RlweUseCase* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      RlweUseCase_entries, 9, name, &int_value);
+      RlweUseCase_entries, 11, name, &int_value);
   if (success) {
     *value = static_cast<RlweUseCase>(int_value);
   }
@@ -3604,11 +3613,18 @@ std::string PirResponse::GetTypeName() const {
 // ===================================================================
 
 void EncryptedBucket_EncryptedIdValuePair::InitAsDefaultInstance() {
+  ::private_membership::rlwe::_EncryptedBucket_EncryptedIdValuePair_default_instance_._instance.get_mutable()->id_ = const_cast< ::private_membership::rlwe::RlwePlaintextId*>(
+      ::private_membership::rlwe::RlwePlaintextId::internal_default_instance());
 }
 class EncryptedBucket_EncryptedIdValuePair::_Internal {
  public:
+  static const ::private_membership::rlwe::RlwePlaintextId& id(const EncryptedBucket_EncryptedIdValuePair* msg);
 };
 
+const ::private_membership::rlwe::RlwePlaintextId&
+EncryptedBucket_EncryptedIdValuePair::_Internal::id(const EncryptedBucket_EncryptedIdValuePair* msg) {
+  return *msg->id_;
+}
 EncryptedBucket_EncryptedIdValuePair::EncryptedBucket_EncryptedIdValuePair()
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -3626,6 +3642,11 @@ EncryptedBucket_EncryptedIdValuePair::EncryptedBucket_EncryptedIdValuePair(const
   if (!from._internal_encrypted_value().empty()) {
     encrypted_value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.encrypted_value_);
   }
+  if (from._internal_has_id()) {
+    id_ = new ::private_membership::rlwe::RlwePlaintextId(*from.id_);
+  } else {
+    id_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair)
 }
 
@@ -3633,6 +3654,7 @@ void EncryptedBucket_EncryptedIdValuePair::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EncryptedBucket_EncryptedIdValuePair_private_5fmembership_5frlwe_2eproto.base);
   encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   encrypted_value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = nullptr;
 }
 
 EncryptedBucket_EncryptedIdValuePair::~EncryptedBucket_EncryptedIdValuePair() {
@@ -3643,6 +3665,7 @@ EncryptedBucket_EncryptedIdValuePair::~EncryptedBucket_EncryptedIdValuePair() {
 void EncryptedBucket_EncryptedIdValuePair::SharedDtor() {
   encrypted_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   encrypted_value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete id_;
 }
 
 void EncryptedBucket_EncryptedIdValuePair::SetCachedSize(int size) const {
@@ -3662,6 +3685,10 @@ void EncryptedBucket_EncryptedIdValuePair::Clear() {
 
   encrypted_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   encrypted_value_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -3685,6 +3712,13 @@ const char* EncryptedBucket_EncryptedIdValuePair::_InternalParse(const char* ptr
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_encrypted_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .private_membership.rlwe.RlwePlaintextId id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_id(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3726,6 +3760,14 @@ failure:
         2, this->_internal_encrypted_value(), target);
   }
 
+  // .private_membership.rlwe.RlwePlaintextId id = 3;
+  if (this->has_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::id(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
         static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
@@ -3754,6 +3796,13 @@ size_t EncryptedBucket_EncryptedIdValuePair::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_encrypted_value());
+  }
+
+  // .private_membership.rlwe.RlwePlaintextId id = 3;
+  if (this->has_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *id_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3785,6 +3834,9 @@ void EncryptedBucket_EncryptedIdValuePair::MergeFrom(const EncryptedBucket_Encry
 
     encrypted_value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.encrypted_value_);
   }
+  if (from.has_id()) {
+    _internal_mutable_id()->::private_membership::rlwe::RlwePlaintextId::MergeFrom(from._internal_id());
+  }
 }
 
 void EncryptedBucket_EncryptedIdValuePair::CopyFrom(const EncryptedBucket_EncryptedIdValuePair& from) {
@@ -3805,6 +3857,7 @@ void EncryptedBucket_EncryptedIdValuePair::InternalSwap(EncryptedBucket_Encrypte
     GetArenaNoVirtual());
   encrypted_value_.Swap(&other->encrypted_value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(id_, other->id_);
 }
 
 std::string EncryptedBucket_EncryptedIdValuePair::GetTypeName() const {

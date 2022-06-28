@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='private_membership.rlwe',
   syntax='proto3',
   serialized_options=b'H\003Z$github.com/google/private-membership',
-  serialized_pb=b'\n\x1dprivate_membership_rlwe.proto\x12\x17private_membership.rlwe\x1a\x18private_membership.proto\x1a\x13serialization.proto\"q\n PrivateMembershipRlweOprfRequest\x12\x15\n\rencrypted_ids\x18\x01 \x03(\x0c\x12\x36\n\x08use_case\x18\x02 \x01(\x0e\x32$.private_membership.rlwe.RlweUseCase\"\xef\x02\n!PrivateMembershipRlweOprfResponse\x12\x43\n\x14\x64oubly_encrypted_ids\x18\x01 \x03(\x0b\x32%.private_membership.DoublyEncryptedId\x12S\n\x19hashed_buckets_parameters\x18\x02 \x01(\x0b\x32\x30.private_membership.rlwe.HashedBucketsParameters\x12Y\n\x1c\x65ncrypted_buckets_parameters\x18\x03 \x01(\x0b\x32\x33.private_membership.rlwe.EncryptedBucketsParameters\x12@\n\x0frlwe_parameters\x18\x04 \x01(\x0b\x32\'.private_membership.rlwe.RlweParameters\x12\x13\n\x0bkey_version\x18\x05 \x01(\x03\"\xb6\x01\n!PrivateMembershipRlweQueryRequest\x12\x44\n\x07queries\x18\x01 \x03(\x0b\x32\x33.private_membership.rlwe.PrivateMembershipRlweQuery\x12\x36\n\x08use_case\x18\x02 \x01(\x0e\x32$.private_membership.rlwe.RlweUseCase\x12\x13\n\x0bkey_version\x18\x03 \x01(\x03\"v\n\"PrivateMembershipRlweQueryResponse\x12P\n\rpir_responses\x18\x01 \x03(\x0b\x32\x39.private_membership.rlwe.PrivateMembershipRlwePirResponse\"A\n\x0fRlwePlaintextId\x12\x18\n\x10non_sensitive_id\x18\x01 \x01(\t\x12\x14\n\x0csensitive_id\x18\x02 \x01(\t\"|\n\x17HashedBucketsParameters\x12\x1f\n\x17hashed_bucket_id_length\x18\x01 \x01(\x05\x12@\n\x1anon_sensitive_id_hash_type\x18\x02 \x01(\x0e\x32\x1c.private_membership.HashType\"\x8d\x01\n\x1a\x45ncryptedBucketsParameters\x12\"\n\x1a\x65ncrypted_bucket_id_length\x18\x01 \x01(\x05\x12K\n\x16sensitive_id_hash_type\x18\x02 \x01(\x0e\x32+.private_membership.EncryptedBucketHashType\"\x95\x01\n\x0eRlweParameters\x12\x31\n\x07modulus\x18\x01 \x03(\x0b\x32 .private_membership.rlwe.Uint128\x12\x12\n\nlog_degree\x18\x02 \x01(\x05\x12\r\n\x05log_t\x18\x03 \x01(\x05\x12\x10\n\x08variance\x18\x04 \x01(\x05\x12\x1b\n\x13levels_of_recursion\x18\x05 \x01(\x05\"!\n\x07Uint128\x12\n\n\x02lo\x18\x01 \x01(\x04\x12\n\n\x02hi\x18\x02 \x01(\x04\"\x92\x02\n\x1aPrivateMembershipRlweQuery\x12\x1c\n\x14queried_encrypted_id\x18\x01 \x01(\x0c\x12\x38\n\x0bpir_request\x18\x02 \x01(\x0b\x32#.private_membership.rlwe.PirRequest\x12\\\n\x10hashed_bucket_id\x18\x03 \x01(\x0b\x32\x42.private_membership.rlwe.PrivateMembershipRlweQuery.HashedBucketId\x1a>\n\x0eHashedBucketId\x12\x18\n\x10hashed_bucket_id\x18\x01 \x01(\x0c\x12\x12\n\nbit_length\x18\x02 \x01(\x05\"|\n PrivateMembershipRlwePirResponse\x12\x1c\n\x14queried_encrypted_id\x18\x01 \x01(\x0c\x12:\n\x0cpir_response\x18\x02 \x01(\x0b\x32$.private_membership.rlwe.PirResponse\"O\n\nPirRequest\x12.\n\x07request\x18\x01 \x03(\x0b\x32\x1d.rlwe.SerializedNttPolynomial\x12\x11\n\tprng_seed\x18\x02 \x01(\x0c\"f\n\x0bPirResponse\x12\x39\n\x08response\x18\x01 \x03(\x0b\x32\'.rlwe.SerializedSymmetricRlweCiphertext\x12\x1c\n\x14plaintext_entry_size\x18\x02 \x01(\x05\"\xb9\x01\n\x0f\x45ncryptedBucket\x12_\n\x18\x65ncrypted_id_value_pairs\x18\x01 \x03(\x0b\x32=.private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair\x1a\x45\n\x14\x45ncryptedIdValuePair\x12\x14\n\x0c\x65ncrypted_id\x18\x01 \x01(\x0c\x12\x17\n\x0f\x65ncrypted_value\x18\x02 \x01(\x0c\"\xa2\x02\n\x17RlweMembershipResponses\x12\x66\n\x14membership_responses\x18\x01 \x03(\x0b\x32H.private_membership.rlwe.RlweMembershipResponses.MembershipResponseEntry\x1a\x9e\x01\n\x17MembershipResponseEntry\x12>\n\x0cplaintext_id\x18\x01 \x01(\x0b\x32(.private_membership.rlwe.RlwePlaintextId\x12\x43\n\x13membership_response\x18\x02 \x01(\x0b\x32&.private_membership.MembershipResponse*\x94\x02\n\x0bRlweUseCase\x12\x1b\n\x17RLWE_USE_CASE_UNDEFINED\x10\x00\x12\x11\n\rTEST_USE_CASE\x10\x01\x12\x12\n\x0eTEST_USE_CASE2\x10\x02\x12\x12\n\x0eTEST_USE_CASE3\x10\x03\x12\x15\n\x11\x43ROS_DEVICE_STATE\x10\x05\x12\x1f\n\x1b\x43ROS_DEVICE_SECONDARY_STATE\x10\x0c\x12\x16\n\x12\x43ROS_FRESNEL_DAILY\x10\r\x12\x18\n\x14\x43ROS_FRESNEL_MONTHLY\x10\x0e\x12\x19\n\x15\x43ROS_FRESNEL_ALL_TIME\x10\x0f\"\x04\x08\x04\x10\x04\"\x04\x08\x06\x10\x06\"\x04\x08\x07\x10\x07\"\x04\x08\x08\x10\x08\"\x04\x08\t\x10\t\"\x04\x08\n\x10\n\"\x04\x08\x0b\x10\x0b\x42(H\x03Z$github.com/google/private-membershipb\x06proto3'
+  serialized_pb=b'\n\x1dprivate_membership_rlwe.proto\x12\x17private_membership.rlwe\x1a\x18private_membership.proto\x1a\x13serialization.proto\"q\n PrivateMembershipRlweOprfRequest\x12\x15\n\rencrypted_ids\x18\x01 \x03(\x0c\x12\x36\n\x08use_case\x18\x02 \x01(\x0e\x32$.private_membership.rlwe.RlweUseCase\"\xef\x02\n!PrivateMembershipRlweOprfResponse\x12\x43\n\x14\x64oubly_encrypted_ids\x18\x01 \x03(\x0b\x32%.private_membership.DoublyEncryptedId\x12S\n\x19hashed_buckets_parameters\x18\x02 \x01(\x0b\x32\x30.private_membership.rlwe.HashedBucketsParameters\x12Y\n\x1c\x65ncrypted_buckets_parameters\x18\x03 \x01(\x0b\x32\x33.private_membership.rlwe.EncryptedBucketsParameters\x12@\n\x0frlwe_parameters\x18\x04 \x01(\x0b\x32\'.private_membership.rlwe.RlweParameters\x12\x13\n\x0bkey_version\x18\x05 \x01(\x03\"\xb6\x01\n!PrivateMembershipRlweQueryRequest\x12\x44\n\x07queries\x18\x01 \x03(\x0b\x32\x33.private_membership.rlwe.PrivateMembershipRlweQuery\x12\x36\n\x08use_case\x18\x02 \x01(\x0e\x32$.private_membership.rlwe.RlweUseCase\x12\x13\n\x0bkey_version\x18\x03 \x01(\x03\"v\n\"PrivateMembershipRlweQueryResponse\x12P\n\rpir_responses\x18\x01 \x03(\x0b\x32\x39.private_membership.rlwe.PrivateMembershipRlwePirResponse\"A\n\x0fRlwePlaintextId\x12\x18\n\x10non_sensitive_id\x18\x01 \x01(\t\x12\x14\n\x0csensitive_id\x18\x02 \x01(\t\"|\n\x17HashedBucketsParameters\x12\x1f\n\x17hashed_bucket_id_length\x18\x01 \x01(\x05\x12@\n\x1anon_sensitive_id_hash_type\x18\x02 \x01(\x0e\x32\x1c.private_membership.HashType\"\x8d\x01\n\x1a\x45ncryptedBucketsParameters\x12\"\n\x1a\x65ncrypted_bucket_id_length\x18\x01 \x01(\x05\x12K\n\x16sensitive_id_hash_type\x18\x02 \x01(\x0e\x32+.private_membership.EncryptedBucketHashType\"\x95\x01\n\x0eRlweParameters\x12\x31\n\x07modulus\x18\x01 \x03(\x0b\x32 .private_membership.rlwe.Uint128\x12\x12\n\nlog_degree\x18\x02 \x01(\x05\x12\r\n\x05log_t\x18\x03 \x01(\x05\x12\x10\n\x08variance\x18\x04 \x01(\x05\x12\x1b\n\x13levels_of_recursion\x18\x05 \x01(\x05\"!\n\x07Uint128\x12\n\n\x02lo\x18\x01 \x01(\x04\x12\n\n\x02hi\x18\x02 \x01(\x04\"\x92\x02\n\x1aPrivateMembershipRlweQuery\x12\x1c\n\x14queried_encrypted_id\x18\x01 \x01(\x0c\x12\x38\n\x0bpir_request\x18\x02 \x01(\x0b\x32#.private_membership.rlwe.PirRequest\x12\\\n\x10hashed_bucket_id\x18\x03 \x01(\x0b\x32\x42.private_membership.rlwe.PrivateMembershipRlweQuery.HashedBucketId\x1a>\n\x0eHashedBucketId\x12\x18\n\x10hashed_bucket_id\x18\x01 \x01(\x0c\x12\x12\n\nbit_length\x18\x02 \x01(\x05\"|\n PrivateMembershipRlwePirResponse\x12\x1c\n\x14queried_encrypted_id\x18\x01 \x01(\x0c\x12:\n\x0cpir_response\x18\x02 \x01(\x0b\x32$.private_membership.rlwe.PirResponse\"O\n\nPirRequest\x12.\n\x07request\x18\x01 \x03(\x0b\x32\x1d.rlwe.SerializedNttPolynomial\x12\x11\n\tprng_seed\x18\x02 \x01(\x0c\"f\n\x0bPirResponse\x12\x39\n\x08response\x18\x01 \x03(\x0b\x32\'.rlwe.SerializedSymmetricRlweCiphertext\x12\x1c\n\x14plaintext_entry_size\x18\x02 \x01(\x05\"\xef\x01\n\x0f\x45ncryptedBucket\x12_\n\x18\x65ncrypted_id_value_pairs\x18\x01 \x03(\x0b\x32=.private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair\x1a{\n\x14\x45ncryptedIdValuePair\x12\x14\n\x0c\x65ncrypted_id\x18\x01 \x01(\x0c\x12\x17\n\x0f\x65ncrypted_value\x18\x02 \x01(\x0c\x12\x34\n\x02id\x18\x03 \x01(\x0b\x32(.private_membership.rlwe.RlwePlaintextId\"\xa2\x02\n\x17RlweMembershipResponses\x12\x66\n\x14membership_responses\x18\x01 \x03(\x0b\x32H.private_membership.rlwe.RlweMembershipResponses.MembershipResponseEntry\x1a\x9e\x01\n\x17MembershipResponseEntry\x12>\n\x0cplaintext_id\x18\x01 \x01(\x0b\x32(.private_membership.rlwe.RlwePlaintextId\x12\x43\n\x13membership_response\x18\x02 \x01(\x0b\x32&.private_membership.MembershipResponse*\xd5\x02\n\x0bRlweUseCase\x12\x1b\n\x17RLWE_USE_CASE_UNDEFINED\x10\x00\x12\x11\n\rTEST_USE_CASE\x10\x01\x12\x12\n\x0eTEST_USE_CASE2\x10\x02\x12\x12\n\x0eTEST_USE_CASE3\x10\x03\x12\x15\n\x11\x43ROS_DEVICE_STATE\x10\x05\x12\x1f\n\x1b\x43ROS_DEVICE_SECONDARY_STATE\x10\x0c\x12\x16\n\x12\x43ROS_FRESNEL_DAILY\x10\r\x12\x18\n\x14\x43ROS_FRESNEL_MONTHLY\x10\x0e\x12\x1d\n\x19\x43ROS_FRESNEL_FIRST_ACTIVE\x10\x0f\x12\x1c\n\x18\x43ROS_FRESNEL_7DAY_ACTIVE\x10\x10\x12\x1d\n\x19\x43ROS_FRESNEL_28DAY_ACTIVE\x10\x11\"\x04\x08\x04\x10\x04\"\x04\x08\x06\x10\x06\"\x04\x08\x07\x10\x07\"\x04\x08\x08\x10\x08\"\x04\x08\t\x10\t\"\x04\x08\n\x10\n\"\x04\x08\x0b\x10\x0b\x42(H\x03Z$github.com/google/private-membershipb\x06proto3'
   ,
   dependencies=[private__membership__pb2.DESCRIPTOR,serialization__pb2.DESCRIPTOR,])
 
@@ -64,14 +64,22 @@ _RLWEUSECASE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='CROS_FRESNEL_ALL_TIME', index=8, number=15,
+      name='CROS_FRESNEL_FIRST_ACTIVE', index=8, number=15,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CROS_FRESNEL_7DAY_ACTIVE', index=9, number=16,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CROS_FRESNEL_28DAY_ACTIVE', index=10, number=17,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2489,
-  serialized_end=2765,
+  serialized_start=2543,
+  serialized_end=2884,
 )
 _sym_db.RegisterEnumDescriptor(_RLWEUSECASE)
 
@@ -84,7 +92,9 @@ CROS_DEVICE_STATE = 5
 CROS_DEVICE_SECONDARY_STATE = 12
 CROS_FRESNEL_DAILY = 13
 CROS_FRESNEL_MONTHLY = 14
-CROS_FRESNEL_ALL_TIME = 15
+CROS_FRESNEL_FIRST_ACTIVE = 15
+CROS_FRESNEL_7DAY_ACTIVE = 16
+CROS_FRESNEL_28DAY_ACTIVE = 17
 
 
 
@@ -689,6 +699,13 @@ _ENCRYPTEDBUCKET_ENCRYPTEDIDVALUEPAIR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.id', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -702,7 +719,7 @@ _ENCRYPTEDBUCKET_ENCRYPTEDIDVALUEPAIR = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2124,
-  serialized_end=2193,
+  serialized_end=2247,
 )
 
 _ENCRYPTEDBUCKET = _descriptor.Descriptor(
@@ -732,7 +749,7 @@ _ENCRYPTEDBUCKET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2008,
-  serialized_end=2193,
+  serialized_end=2247,
 )
 
 
@@ -769,8 +786,8 @@ _RLWEMEMBERSHIPRESPONSES_MEMBERSHIPRESPONSEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2328,
-  serialized_end=2486,
+  serialized_start=2382,
+  serialized_end=2540,
 )
 
 _RLWEMEMBERSHIPRESPONSES = _descriptor.Descriptor(
@@ -799,8 +816,8 @@ _RLWEMEMBERSHIPRESPONSES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2196,
-  serialized_end=2486,
+  serialized_start=2250,
+  serialized_end=2540,
 )
 
 _PRIVATEMEMBERSHIPRLWEOPRFREQUEST.fields_by_name['use_case'].enum_type = _RLWEUSECASE
@@ -820,6 +837,7 @@ _PRIVATEMEMBERSHIPRLWEQUERY.fields_by_name['hashed_bucket_id'].message_type = _P
 _PRIVATEMEMBERSHIPRLWEPIRRESPONSE.fields_by_name['pir_response'].message_type = _PIRRESPONSE
 _PIRREQUEST.fields_by_name['request'].message_type = serialization__pb2._SERIALIZEDNTTPOLYNOMIAL
 _PIRRESPONSE.fields_by_name['response'].message_type = serialization__pb2._SERIALIZEDSYMMETRICRLWECIPHERTEXT
+_ENCRYPTEDBUCKET_ENCRYPTEDIDVALUEPAIR.fields_by_name['id'].message_type = _RLWEPLAINTEXTID
 _ENCRYPTEDBUCKET_ENCRYPTEDIDVALUEPAIR.containing_type = _ENCRYPTEDBUCKET
 _ENCRYPTEDBUCKET.fields_by_name['encrypted_id_value_pairs'].message_type = _ENCRYPTEDBUCKET_ENCRYPTEDIDVALUEPAIR
 _RLWEMEMBERSHIPRESPONSES_MEMBERSHIPRESPONSEENTRY.fields_by_name['plaintext_id'].message_type = _RLWEPLAINTEXTID

@@ -3809,13 +3809,15 @@ bool DeviceRegisterRequest_Flavor_IsValid(int value) {
     case 13:
     case 14:
     case 15:
+    case 16:
+    case 17:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> DeviceRegisterRequest_Flavor_strings[15] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> DeviceRegisterRequest_Flavor_strings[17] = {};
 
 static const char DeviceRegisterRequest_Flavor_names[] =
   "FLAVOR_ENROLLMENT_ATTESTATION"
@@ -3823,6 +3825,8 @@ static const char DeviceRegisterRequest_Flavor_names[] =
   "FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED"
   "FLAVOR_ENROLLMENT_ATTESTATION_LOCAL_FORCED"
   "FLAVOR_ENROLLMENT_ATTESTATION_MANUAL_FALLBACK"
+  "FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED"
+  "FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK"
   "FLAVOR_ENROLLMENT_ATTESTATION_SERVER_FORCED"
   "FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED"
   "FLAVOR_ENROLLMENT_LOCAL_ADVERTISED"
@@ -3840,34 +3844,38 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry DeviceRegisterRequest_
   { {DeviceRegisterRequest_Flavor_names + 82, 51}, 14 },
   { {DeviceRegisterRequest_Flavor_names + 133, 42}, 9 },
   { {DeviceRegisterRequest_Flavor_names + 175, 45}, 11 },
-  { {DeviceRegisterRequest_Flavor_names + 220, 43}, 10 },
-  { {DeviceRegisterRequest_Flavor_names + 263, 39}, 13 },
-  { {DeviceRegisterRequest_Flavor_names + 302, 34}, 3 },
-  { {DeviceRegisterRequest_Flavor_names + 336, 30}, 2 },
-  { {DeviceRegisterRequest_Flavor_names + 366, 24}, 0 },
-  { {DeviceRegisterRequest_Flavor_names + 390, 30}, 1 },
-  { {DeviceRegisterRequest_Flavor_names + 420, 26}, 6 },
-  { {DeviceRegisterRequest_Flavor_names + 446, 35}, 5 },
-  { {DeviceRegisterRequest_Flavor_names + 481, 31}, 4 },
-  { {DeviceRegisterRequest_Flavor_names + 512, 24}, 7 },
+  { {DeviceRegisterRequest_Flavor_names + 220, 45}, 16 },
+  { {DeviceRegisterRequest_Flavor_names + 265, 54}, 17 },
+  { {DeviceRegisterRequest_Flavor_names + 319, 43}, 10 },
+  { {DeviceRegisterRequest_Flavor_names + 362, 39}, 13 },
+  { {DeviceRegisterRequest_Flavor_names + 401, 34}, 3 },
+  { {DeviceRegisterRequest_Flavor_names + 435, 30}, 2 },
+  { {DeviceRegisterRequest_Flavor_names + 465, 24}, 0 },
+  { {DeviceRegisterRequest_Flavor_names + 489, 30}, 1 },
+  { {DeviceRegisterRequest_Flavor_names + 519, 26}, 6 },
+  { {DeviceRegisterRequest_Flavor_names + 545, 35}, 5 },
+  { {DeviceRegisterRequest_Flavor_names + 580, 31}, 4 },
+  { {DeviceRegisterRequest_Flavor_names + 611, 24}, 7 },
 };
 
 static const int DeviceRegisterRequest_Flavor_entries_by_number[] = {
-  9, // 0 -> FLAVOR_ENROLLMENT_MANUAL
-  10, // 1 -> FLAVOR_ENROLLMENT_MANUAL_RENEW
-  8, // 2 -> FLAVOR_ENROLLMENT_LOCAL_FORCED
-  7, // 3 -> FLAVOR_ENROLLMENT_LOCAL_ADVERTISED
-  13, // 4 -> FLAVOR_ENROLLMENT_SERVER_FORCED
-  12, // 5 -> FLAVOR_ENROLLMENT_SERVER_ADVERTISED
-  11, // 6 -> FLAVOR_ENROLLMENT_RECOVERY
-  14, // 7 -> FLAVOR_USER_REGISTRATION
+  11, // 0 -> FLAVOR_ENROLLMENT_MANUAL
+  12, // 1 -> FLAVOR_ENROLLMENT_MANUAL_RENEW
+  10, // 2 -> FLAVOR_ENROLLMENT_LOCAL_FORCED
+  9, // 3 -> FLAVOR_ENROLLMENT_LOCAL_ADVERTISED
+  15, // 4 -> FLAVOR_ENROLLMENT_SERVER_FORCED
+  14, // 5 -> FLAVOR_ENROLLMENT_SERVER_ADVERTISED
+  13, // 6 -> FLAVOR_ENROLLMENT_RECOVERY
+  16, // 7 -> FLAVOR_USER_REGISTRATION
   0, // 8 -> FLAVOR_ENROLLMENT_ATTESTATION
   3, // 9 -> FLAVOR_ENROLLMENT_ATTESTATION_LOCAL_FORCED
-  5, // 10 -> FLAVOR_ENROLLMENT_ATTESTATION_SERVER_FORCED
+  7, // 10 -> FLAVOR_ENROLLMENT_ATTESTATION_SERVER_FORCED
   4, // 11 -> FLAVOR_ENROLLMENT_ATTESTATION_MANUAL_FALLBACK
-  6, // 13 -> FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED
+  8, // 13 -> FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED
   2, // 14 -> FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED
   1, // 15 -> FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK
+  5, // 16 -> FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED
+  6, // 17 -> FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK
 };
 
 const std::string& DeviceRegisterRequest_Flavor_Name(
@@ -3876,12 +3884,12 @@ const std::string& DeviceRegisterRequest_Flavor_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           DeviceRegisterRequest_Flavor_entries,
           DeviceRegisterRequest_Flavor_entries_by_number,
-          15, DeviceRegisterRequest_Flavor_strings);
+          17, DeviceRegisterRequest_Flavor_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       DeviceRegisterRequest_Flavor_entries,
       DeviceRegisterRequest_Flavor_entries_by_number,
-      15, value);
+      17, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      DeviceRegisterRequest_Flavor_strings[idx].get();
 }
@@ -3889,7 +3897,7 @@ bool DeviceRegisterRequest_Flavor_Parse(
     const std::string& name, DeviceRegisterRequest_Flavor* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      DeviceRegisterRequest_Flavor_entries, 15, name, &int_value);
+      DeviceRegisterRequest_Flavor_entries, 17, name, &int_value);
   if (success) {
     *value = static_cast<DeviceRegisterRequest_Flavor>(int_value);
   }
@@ -3911,6 +3919,8 @@ constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED;
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED;
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK;
+constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED;
+constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK;
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::Flavor_MIN;
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest::Flavor_MAX;
 constexpr int DeviceRegisterRequest::Flavor_ARRAYSIZE;

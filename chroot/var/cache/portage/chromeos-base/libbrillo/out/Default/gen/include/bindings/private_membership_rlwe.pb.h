@@ -144,13 +144,15 @@ enum RlweUseCase : int {
   CROS_DEVICE_SECONDARY_STATE = 12,
   CROS_FRESNEL_DAILY = 13,
   CROS_FRESNEL_MONTHLY = 14,
-  CROS_FRESNEL_ALL_TIME = 15,
+  CROS_FRESNEL_FIRST_ACTIVE = 15,
+  CROS_FRESNEL_7DAY_ACTIVE = 16,
+  CROS_FRESNEL_28DAY_ACTIVE = 17,
   RlweUseCase_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   RlweUseCase_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool RlweUseCase_IsValid(int value);
 constexpr RlweUseCase RlweUseCase_MIN = RLWE_USE_CASE_UNDEFINED;
-constexpr RlweUseCase RlweUseCase_MAX = CROS_FRESNEL_ALL_TIME;
+constexpr RlweUseCase RlweUseCase_MAX = CROS_FRESNEL_28DAY_ACTIVE;
 constexpr int RlweUseCase_ARRAYSIZE = RlweUseCase_MAX + 1;
 
 const std::string& RlweUseCase_Name(RlweUseCase value);
@@ -2220,6 +2222,7 @@ class EncryptedBucket_EncryptedIdValuePair :
   enum : int {
     kEncryptedIdFieldNumber = 1,
     kEncryptedValueFieldNumber = 2,
+    kIdFieldNumber = 3,
   };
   // bytes encrypted_id = 1;
   void clear_encrypted_id();
@@ -2253,6 +2256,21 @@ class EncryptedBucket_EncryptedIdValuePair :
   std::string* _internal_mutable_encrypted_value();
   public:
 
+  // .private_membership.rlwe.RlwePlaintextId id = 3;
+  bool has_id() const;
+  private:
+  bool _internal_has_id() const;
+  public:
+  void clear_id();
+  const ::private_membership::rlwe::RlwePlaintextId& id() const;
+  ::private_membership::rlwe::RlwePlaintextId* release_id();
+  ::private_membership::rlwe::RlwePlaintextId* mutable_id();
+  void set_allocated_id(::private_membership::rlwe::RlwePlaintextId* id);
+  private:
+  const ::private_membership::rlwe::RlwePlaintextId& _internal_id() const;
+  ::private_membership::rlwe::RlwePlaintextId* _internal_mutable_id();
+  public:
+
   // @@protoc_insertion_point(class_scope:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair)
  private:
   class _Internal;
@@ -2260,6 +2278,7 @@ class EncryptedBucket_EncryptedIdValuePair :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr encrypted_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr encrypted_value_;
+  ::private_membership::rlwe::RlwePlaintextId* id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_private_5fmembership_5frlwe_2eproto;
 };
@@ -4171,6 +4190,66 @@ inline void EncryptedBucket_EncryptedIdValuePair::set_allocated_encrypted_value(
   }
   encrypted_value_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), encrypted_value);
   // @@protoc_insertion_point(field_set_allocated:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.encrypted_value)
+}
+
+// .private_membership.rlwe.RlwePlaintextId id = 3;
+inline bool EncryptedBucket_EncryptedIdValuePair::_internal_has_id() const {
+  return this != internal_default_instance() && id_ != nullptr;
+}
+inline bool EncryptedBucket_EncryptedIdValuePair::has_id() const {
+  return _internal_has_id();
+}
+inline void EncryptedBucket_EncryptedIdValuePair::clear_id() {
+  if (GetArenaNoVirtual() == nullptr && id_ != nullptr) {
+    delete id_;
+  }
+  id_ = nullptr;
+}
+inline const ::private_membership::rlwe::RlwePlaintextId& EncryptedBucket_EncryptedIdValuePair::_internal_id() const {
+  const ::private_membership::rlwe::RlwePlaintextId* p = id_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::private_membership::rlwe::RlwePlaintextId*>(
+      &::private_membership::rlwe::_RlwePlaintextId_default_instance_);
+}
+inline const ::private_membership::rlwe::RlwePlaintextId& EncryptedBucket_EncryptedIdValuePair::id() const {
+  // @@protoc_insertion_point(field_get:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.id)
+  return _internal_id();
+}
+inline ::private_membership::rlwe::RlwePlaintextId* EncryptedBucket_EncryptedIdValuePair::release_id() {
+  // @@protoc_insertion_point(field_release:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.id)
+  
+  ::private_membership::rlwe::RlwePlaintextId* temp = id_;
+  id_ = nullptr;
+  return temp;
+}
+inline ::private_membership::rlwe::RlwePlaintextId* EncryptedBucket_EncryptedIdValuePair::_internal_mutable_id() {
+  
+  if (id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::private_membership::rlwe::RlwePlaintextId>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  return id_;
+}
+inline ::private_membership::rlwe::RlwePlaintextId* EncryptedBucket_EncryptedIdValuePair::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.id)
+  return _internal_mutable_id();
+}
+inline void EncryptedBucket_EncryptedIdValuePair::set_allocated_id(::private_membership::rlwe::RlwePlaintextId* id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete id_;
+  }
+  if (id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:private_membership.rlwe.EncryptedBucket.EncryptedIdValuePair.id)
 }
 
 // -------------------------------------------------------------------

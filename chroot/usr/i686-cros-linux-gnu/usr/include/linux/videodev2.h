@@ -63,9 +63,6 @@
 #include <linux/types.h>
 #include <linux/v4l2-common.h>
 #include <linux/v4l2-controls.h>
-#include <linux/media/h264-ctrls-legacy.h>
-#include <linux/media/vp8-ctrls-legacy.h>
-#include <linux/media/vp9-ctrls-legacy.h>
 
 /*
  * Common stuff for both V4L1 and V4L2

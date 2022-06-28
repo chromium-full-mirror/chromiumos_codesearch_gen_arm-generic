@@ -390,6 +390,7 @@ class ContainerStartupInfo :
   enum : int {
     kTokenFieldNumber = 1,
     kGarconPortFieldNumber = 2,
+    kSftpPortFieldNumber = 3,
   };
   // string token = 1;
   void clear_token();
@@ -425,6 +426,15 @@ class ContainerStartupInfo :
   void _internal_set_garcon_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint32 sftp_port = 3;
+  void clear_sftp_port();
+  ::PROTOBUF_NAMESPACE_ID::uint32 sftp_port() const;
+  void set_sftp_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_sftp_port() const;
+  void _internal_set_sftp_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vm_tools.container.ContainerStartupInfo)
  private:
   class _Internal;
@@ -435,6 +445,7 @@ class ContainerStartupInfo :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr token_;
   ::PROTOBUF_NAMESPACE_ID::uint32 garcon_port_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 sftp_port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_container_5fhost_2eproto;
 };
@@ -5759,6 +5770,26 @@ inline void ContainerStartupInfo::_internal_set_garcon_port(::PROTOBUF_NAMESPACE
 inline void ContainerStartupInfo::set_garcon_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_garcon_port(value);
   // @@protoc_insertion_point(field_set:vm_tools.container.ContainerStartupInfo.garcon_port)
+}
+
+// uint32 sftp_port = 3;
+inline void ContainerStartupInfo::clear_sftp_port() {
+  sftp_port_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerStartupInfo::_internal_sftp_port() const {
+  return sftp_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerStartupInfo::sftp_port() const {
+  // @@protoc_insertion_point(field_get:vm_tools.container.ContainerStartupInfo.sftp_port)
+  return _internal_sftp_port();
+}
+inline void ContainerStartupInfo::_internal_set_sftp_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  sftp_port_ = value;
+}
+inline void ContainerStartupInfo::set_sftp_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_sftp_port(value);
+  // @@protoc_insertion_point(field_set:vm_tools.container.ContainerStartupInfo.sftp_port)
 }
 
 // -------------------------------------------------------------------

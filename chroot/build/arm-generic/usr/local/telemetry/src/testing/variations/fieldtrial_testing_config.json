@@ -1982,6 +1982,21 @@
             ]
         }
     ],
+    "CacheDeprecatedSystemLocationSetting": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "CacheDeprecatedSystemLocationSetting"
+                    ]
+                }
+            ]
+        }
+    ],
     "CacheFontFamilyMatching": [
         {
             "platforms": [
@@ -3679,6 +3694,21 @@
             ]
         }
     ],
+    "EcheSWA": [
+        {
+            "platforms": [
+                "chromeos"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "EcheSWA"
+                    ]
+                }
+            ]
+        }
+    ],
     "ElementSuperRareData": [
         {
             "platforms": [
@@ -4495,6 +4525,21 @@
                     "enable_features": [
                         "DefaultRequestedMode",
                         "IPH_DefaultSiteView"
+                    ]
+                }
+            ]
+        }
+    ],
+    "IOSEnableFaviconForPasswords": [
+        {
+            "platforms": [
+                "ios"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "EnableFaviconForPasswords"
                     ]
                 }
             ]
@@ -5865,25 +5910,6 @@
                     },
                     "enable_features": [
                         "OmniboxHistoryQuickProviderAblateInMemoryURLIndexCacheFile"
-                    ]
-                }
-            ]
-        }
-    ],
-    "OmniboxLocalHistoryZPSoniOS": [
-        {
-            "platforms": [
-                "ios"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled_60_Days_Stable_GWS",
-                    "params": {
-                        "OmniboxLocalZeroSuggestAgeThreshold": "60"
-                    },
-                    "enable_features": [
-                        "LocalHistoryZeroSuggest",
-                        "OmniboxLocalZeroSuggestAgeThreshold"
                     ]
                 }
             ]
@@ -7269,25 +7295,6 @@
             ]
         }
     ],
-    "SCTAuditingHashdance": [
-        {
-            "platforms": [
-                "chromeos",
-                "chromeos_lacros",
-                "linux",
-                "mac",
-                "windows"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "SCTAuditingHashdance"
-                    ]
-                }
-            ]
-        }
-    ],
     "SafeBrowsingCSDAndroid": [
         {
             "platforms": [
@@ -8239,6 +8246,33 @@
             ]
         }
     ],
+    "TimedHTMLParserBudget": [
+        {
+            "platforms": [
+                "android",
+                "android_weblayer",
+                "android_webview",
+                "chromeos",
+                "chromeos_lacros",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "20x500x2",
+                    "params": {
+                        "default-parser-budget": "20ms",
+                        "long-parser-budget": "500ms",
+                        "num-yields-with-default-budget": "2"
+                    },
+                    "enable_features": [
+                        "TimedHTMLParserBudget"
+                    ]
+                }
+            ]
+        }
+    ],
     "TouchToFillPasswordSubmissionStudy": [
         {
             "platforms": [
@@ -8470,6 +8504,27 @@
                     "name": "Enabled",
                     "enable_features": [
                         "UpdateHistoryEntryPointsInIncognito"
+                    ]
+                }
+            ]
+        }
+    ],
+    "UseHtmlAttributeNameLookup": [
+        {
+            "platforms": [
+                "android",
+                "android_weblayer",
+                "chromeos",
+                "chromeos_lacros",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "UseHtmlAttributeNameLookup",
+                    "enable_features": [
+                        "UseHtmlAttributeNameLookup"
                     ]
                 }
             ]

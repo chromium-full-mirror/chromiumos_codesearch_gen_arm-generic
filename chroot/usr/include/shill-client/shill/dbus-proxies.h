@@ -1340,6 +1340,17 @@ class ManagerProxyInterface {
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
+  virtual bool SetTetheringEnabled(
+      bool in_1,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual void SetTetheringEnabledAsync(
+      bool in_1,
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
   virtual void RegisterPropertyChangedSignalHandler(
       const base::RepeatingCallback<void(const std::string&,
                                          const brillo::Any&)>& signal_callback,
@@ -2513,6 +2524,36 @@ class ManagerProxy final : public ManagerProxyInterface {
         std::move(error_callback),
         in_profile,
         in_properties);
+  }
+
+  bool SetTetheringEnabled(
+      bool in_1,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.flimflam.Manager",
+        "SetTetheringEnabled",
+        error,
+        in_1);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error);
+  }
+
+  void SetTetheringEnabledAsync(
+      bool in_1,
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.flimflam.Manager",
+        "SetTetheringEnabled",
+        std::move(success_callback),
+        std::move(error_callback),
+        in_1);
   }
 
  private:

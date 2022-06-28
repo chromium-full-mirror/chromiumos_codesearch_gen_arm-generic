@@ -144,6 +144,9 @@
 #   'default_for_managed_devices_doc_only', which documents an explicitly
 #   implemented default policy value for managed devices.
 #
+#   'default_policy_level' is used to override mandatory policy level for the
+#   'default_for_enterprise_users' with the recommended level.
+#
 #   'items' is used to outline the behavior of each state the policy can take.
 #   This field is only used for policies of type 'main', 'int-enum', or
 #   'string-enum'. For 'main' policies, it describes how the policy behaves when
@@ -287,9 +290,9 @@
 #   For managed users on ChromeOS (i.e. users receiving user policy from the
 #   cloud), if the optional key 'default_for_enterprise_users' is set, its value
 #   is applied as mandatory policy unless a different setting is received from
-#   the cloud. This default value handling is automatically enforced by the
-#   policy stack when filling the PolicyMap (specifically, by the generated
-#   function SetEnterpriseUsersDefaults).
+#   the cloud or `default_policy_level` is set. This default value handling is
+#   automatically enforced by the policy stack when filling the PolicyMap
+#   (specifically, by the generated function SetEnterpriseUsersDefaults).
 #
 # Enterprise defaults for device policy:
 #   The optional key 'default_for_managed_devices_doc_only' can be used to
@@ -9285,7 +9288,7 @@
           'primary_account_signin',
         ]
       },
-      'future_on': ['chrome_os'],
+      'supported_on': ['chrome_os:103-'],
       'features': {
         # The case where a user is already signed in as a secondary account and the policy is dynamically refreshed to not allow secondary sign-ins cannot be handled right now. Hence this is not dynamic.
         'dynamic_refresh': False,
@@ -10270,6 +10273,40 @@
         If a policy is in the list and it's not officially released, its value will be applied.
 
         This policy has no effect on already released policies.''',
+    },
+    {
+      'name': 'PolicyScopeDetection',
+      'owners': ['zmin@chromium.org'],
+      'type': 'main',
+      'schema': { 'type': 'boolean' },
+      'supported_on': ['chrome.mac:105-107'],
+      'features': {
+        'per_profile': False,
+        'dynamic_refresh': True,
+      },
+      'items': [
+        {
+          'value': True,
+          'caption': '''Allow Policy scope detection.''',
+        },
+        {
+          'value': False,
+          'caption': '''Block Policy scope detection.''',
+        },
+      ],
+      'default': True,
+      'example_value': True,
+      'id': 989,
+      'caption': '''Allow policy scope detection on <ph name="MAC_OS_NAME">macOS</ph>''',
+      'tags': [],
+      'desc': ''' Controls whether browser can detect mandatory policy scope on <ph name="MAC_OS_NAME">macOS</ph> or not.
+
+      If the policy is set to Enabled or not set, each policy's scope will be determined by the scope of <ph name="MAC_OS_NAME">macOS</ph> managed profile.
+      If the policy is set to Disabled, all policies will be reconized as machine scope policy.
+
+      This policy is temporary in order to facilitate smooth transition to properly scoped policies on <ph name="MAC_OS_NAME">macOS</ph> and will be removed in <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> 107.
+
+      '''
     },
     {
       'name': 'OpenNetworkConfiguration',
@@ -19326,7 +19363,7 @@
     },
     {
       'name': 'WifiSyncAndroidAllowed',
-      'owners': ['jonmann@chromium.org', 'cvandermerwe@google.com'],
+      'owners': ['jonmann@chromium.org', 'chromeos-cross-device-eng@google.com'],
       'type': 'main',
       'schema': { 'type': 'boolean' },
       'supported_on': ['chrome_os:89-'],
@@ -24549,8 +24586,17 @@
       'example_value': {'reboot_time' : {'hour': 22, 'minute': 30}, 'frequency': 'WEEKLY', 'day_of_week': 'TUESDAY', 'day_of_month': 11},
       'tags': [],
       'id': 862,
-      'caption': '''Set custom schedule to reboot kiosk devices''',
-      'desc': '''Allows setting a custom schedule to reboot devices. The policy currently applies only to devices which have enabled auto-launch app in the Kiosk session. Once set to True, the device will reboot to the schedule. The policy must be removed to cancel any more scheduled reboots.'''
+      'caption': '''Set custom schedule to reboot devices''',
+      'desc': '''Allows setting a custom schedule to reboot devices. Once set to True, the device will reboot to the schedule. The policy must be removed to cancel any more scheduled reboots.
+
+      In user sessions and guest sessions, the following applies:
+
+        * The users are notified that the restart will occur 1 hour before the scheduled time. They have an option to restart then or wait for the scheduled reboot. The scheduled reboot cannot be deferred.
+
+        * There is a 1 hour grace period after the device is booted. Scheduled reboots are skipped during this period and rescheduled for the next day, week, or month, depending on the setting.
+
+      In kiosk sessions, there is no grace period and no notifications about the reboot.
+'''
     },
     {
       'name': 'KerberosEnabled',
@@ -24945,7 +24991,13 @@
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': {
+              'type': 'string',
+              'enum': [
+                'google',
+                'local_test'
+              ]
+            },
             'enable': {
               'type': 'array',
               'items': {
@@ -25001,7 +25053,7 @@
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'google',
         'enable': [
           {
             'url_list': ['*'],
@@ -25079,7 +25131,13 @@
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': {
+              'type': 'string',
+              'enum': [
+                'google',
+                'local_test'
+              ]
+            },
             'enable': {
               'type': 'array',
               'items': {
@@ -25135,7 +25193,7 @@
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'google',
         'enable': [
           {
             'url_list': ['*'],
@@ -25213,7 +25271,13 @@
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': {
+              'type': 'string',
+              'enum': [
+                'google',
+                'local_test'
+              ]
+            },
             'enable': {
               'type': 'array',
               'items': {
@@ -25268,7 +25332,7 @@
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'google',
         'enable': [
           {
             'url_list': ['*'],
@@ -25343,7 +25407,13 @@
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': {
+              'type': 'string',
+              'enum': [
+                'google',
+                'local_test'
+              ]
+            },
             'enable': {
               'type': 'array',
               'items': {
@@ -25398,7 +25468,7 @@
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'google',
         'enable': [
           {
             'url_list': ['*.them.com', '*.others.com'],
@@ -25463,7 +25533,7 @@
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': { 'type': 'string', 'enum': [ 'google' ] },
             'enabled_event_names': {
               'type': 'array',
               'items': { 'type': 'string' },
@@ -25485,7 +25555,7 @@
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'google',
         'enabled_event_names': ['passwordChangedEvent', 'sensitiveDataEvent'],
         'enabled_opt_in_events': [
           { 'name': 'loginEvent', 'url_patterns': ['*'] },
@@ -25566,6 +25636,37 @@
       'desc': '''Setting the policy to Enabled or leaving it unset turns Renderer Code Integrity on.
 
       Setting the policy to Disabled has a detrimental effect on <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph>'s security and stability as unknown and potentially hostile code can load inside <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph>'s renderer processes. Only turn off the policy if there are compatibility issues with third-party software that must run inside <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph>'s renderer processes.
+
+      Note: Read more about Process mitigation policies ( https://chromium.googlesource.com/chromium/src/+/HEAD/docs/design/sandbox.md#Process-mitigation-policies ).''',
+    },
+    {
+      'name': 'RendererAppContainerEnabled',
+      'owners': ['wfh@chromium.org', 'adetaylor@chromium.org'],
+      'type': 'main',
+      'schema': { 'type': 'boolean' },
+      'supported_on': ['chrome.win:104-'],
+      'features': {
+        'dynamic_refresh': False,
+        'per_profile': False,
+      },
+      'default': True,
+      'example_value': False,
+      'id': 987,
+      'items': [
+        {
+          'value': True,
+          'caption': 'Enable the Renderer App Container sandbox',
+        },
+        {
+          'value': False,
+          'caption': 'Disable the Renderer App Container sandbox',
+        },
+      ],
+      'caption': '''Enable Renderer App Container''',
+      'tags': ['system-security'],
+      'desc': '''Setting the policy to Enabled or leaving it unset means Renderer App Container configuration will be enabled on supported platforms.
+
+      Setting the policy to Disabled has a detrimental effect on the security and stability of <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> as it will weaken the sandbox that renderer processes use. Only turn off the policy if there are compatibility issues with third-party software that must run inside renderer processes.
 
       Note: Read more about Process mitigation policies ( https://chromium.googlesource.com/chromium/src/+/HEAD/docs/design/sandbox.md#Process-mitigation-policies ).''',
     },
@@ -26193,6 +26294,45 @@
       If this policy is set to False or not set, the form control elements will be enabled as they are launched in M81, M82, and M83.
 
       This policy will be removed after Chrome 84.'''
+    },
+    {
+      'name': 'EventPathEnabled',
+      'owners': ['xiaochengh@chromium.org', 'masonf@chromium.org'],
+      'type': 'main',
+      'schema': { 'type': 'boolean' },
+      'example_value': True,
+      'default': None,
+      'id': 990,
+      'supported_on': ['chrome.*:105-115', 'chrome_os:105-115', 'android:105-115', 'webview_android:105-115'],
+      'features': {
+        'dynamic_refresh': False,
+        'per_profile': True,
+      },
+      'caption': '''Re-enabled the Event.path API until M115.''',
+      'tags': [],
+      'items': [
+        {
+          'value': True,
+          'caption': 'Event.path API will be available.',
+        },
+        {
+          'value': False,
+          'caption': 'Event.path API will be unavailable.',
+        },
+        {
+          'value': None,
+          'caption': 'Event.path API will be in the default status: available before M109, and unavailable in M109 to 114.',
+        },
+      ],
+      'desc': ''' Starting in M109, the non-standard API Event.path will be removed to improve web compatibility. This policy re-enables the API until M115.
+
+      If this policy is set to enabled, the Event.path API will be available.
+
+      If this policy is set to disabled, the Event.path API will be unavailable.
+
+      If this policy is not set, the Event.path API will be in the default status: available before M109, and unavailable in M109 to 114.
+
+      This policy will be removed after Chrome 115.'''
     },
     {
       'name': 'ClickToCallEnabled',
@@ -28508,7 +28648,7 @@ If you disable this policy, web page scrolling to specific text fragments via UR
         'items': {
           'type': 'object',
           'properties': {
-            'service_provider': { 'type': 'string' },
+            'service_provider': { 'type': 'string', 'enum': [ 'box' ] },
             'enterprise_id': { 'type': 'string' },
             'domain': { 'type': 'string' },
             'enable': {
@@ -28547,7 +28687,7 @@ If you disable this policy, web page scrolling to specific text fragments via UR
         },
       },
       'example_value': [{
-        'service_provider': 'Google',
+        'service_provider': 'box',
         'enterprise_id': '1234567890',
         'domain': 'example.com',
         'enable': [
@@ -29553,7 +29693,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
       'owners': ['mattm@chromium.org'],
       'type': 'main',
       'schema': { 'type': 'boolean' },
-      'future_on': ['chrome.win', 'chrome.mac', 'chrome.linux'],
+      'supported_on': ['chrome.win:104-', 'chrome.mac:104-', 'chrome.linux:104-'],
       'features': {
         'dynamic_refresh': True,
         'per_profile': True,
@@ -29927,7 +30067,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
       'tags': [],
       'desc': '''Configures support of CORS non-wildcard request headers.
 
-      <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> version 97 introduces support for CORS non-wildcard request headers. When scripts make a cross-origin network request via fetch() and XMLHttpRequest with a script-added Authorization header, the header must be explicitly allowed by the Access-Control-Allow-Headers header in the CORS preflight response. "Explicitly" here means that the wild card symbol "*" doesn't cover the Authorization header. See <ph name="CORS_NON_WILDCARD_REQUEST_HEADERS_FEATURE_URL">https://www.chromestatus.com/feature/5768642492891136</ph> for more detail.
+      <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> version 97 introduces support for CORS non-wildcard request headers. When scripts make a cross-origin network request via fetch() and XMLHttpRequest with a script-added Authorization header, the header must be explicitly allowed by the Access-Control-Allow-Headers header in the CORS preflight response. "Explicitly" here means that the wild card symbol "*" doesn't cover the Authorization header. See <ph name="CORS_NON_WILDCARD_REQUEST_HEADERS_FEATURE_URL">https://chromestatus.com/feature/5742041264816128</ph> for more detail.
 
       If this policy is not set, or set to True, <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> will support the CORS non-wildcard request headers and behave as described above.
 
@@ -30517,7 +30657,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
       'schema': { 'type': 'boolean' },
       'features' : {
         'dynamic_refresh': False,
-        'per_profile': False,
+        'per_profile': True,
       },
       'items': [
         {
@@ -30541,8 +30681,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
 
                   When this policy is set to Disabled, the First-Party Sets feature is disabled.
 
-                  The state of the First-Party Sets feature determines whether Chrome retrieves the list of First-Party Sets.
-                  It also controls whether Chrome supports First-Party Sets related features (e.g. the SameParty cookie attribute).''',
+                  It controls whether Chrome supports First-Party Sets related features (e.g. the SameParty cookie attribute).''',
     },
     {
       'name': 'FirstPartySetsOverrides',
@@ -30806,6 +30945,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
           'caption': ''''Default behavior for setTimeout() function clamp.''',
         },
       ],
+      'deprecated': True,
       'default': None,
       'example_value': True,
       'id': 967,
@@ -30873,7 +31013,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
           'caption': 'Disable adaptive charging model on <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></ph>',
         },
       ],
-      'default': False,
+      'default': True,
       'example_value': False,
       'id': 971,
       'caption': '''Enable adaptive charging model to hold charging process to extend battery life''',
@@ -30944,14 +31084,15 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
           'caption': '''Use the Auto mode''',
         },
       ],
-      'future_on': ['chrome_os'],
+      'supported_on': ['chrome_os:104-'],
       'features': {
         'can_be_recommended': True,
-        'dynamic_refresh': False,
+        'dynamic_refresh': True,
         'per_profile': False,
       },
       'default': 'light',
       'default_for_enterprise_users': 'light',
+      'default_policy_level': 'recommended',
       'example_value': 'light',
       'id': 986,
       'caption': '''ChromeOS color mode''',
@@ -31093,7 +31234,47 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2<ex>Google ChromeOS</ex></
       If the policy is Enabled or not set, visited origins will be reported to the OS, and origins that have been blocked in Screen Time settings will display a blocking screen.
       If the policy is Disabled, visited origins will not be reported to the OS, and origins that have been blocked in Screen Time settings will be accessible.''',
     },
+    {
+      'name': 'UnthrottledNestedTimeoutEnabled',
+      'owners': ['file://third_party/blink/renderer/core/frame/OWNERS', 'etiennep@chromium.org', 'shaseley@chromium.org'],
+      'type': 'main',
+      'schema': { 'type': 'boolean' },
+      'supported_on': ['chrome_os:104-106', 'chrome.*:104-106', 'android:104-106'],
+      'features': {
+        'per_profile': True,
+        'dynamic_refresh': False,
+      },
+      'items': [
+        {
+          'value': True,
+          'caption': '''Javascript setTimeout() will not be clamped until a higher nesting threshold.''',
+        },
+        {
+          'value': False,
+          'caption': '''Javascript setTimeout() will be clamped after a normal nesting threshold.''',
+        },
+        {
+          'value': None,
+          'caption': '''Default behavior for setTimeout() function nested clamp.''',
+        },
+      ],
+      'default': None,
+      'example_value': True,
+      'id': 988,
+      'caption': '''Control the nesting threshold before which Javascript setTimeout() function start being clamped''',
+      'tags': [],
+      'desc': '''setTimeout(…, 0) is commonly used to break down long Javascript tasks.
+          When the policy is set to Enabled, setTimeouts and setIntervals with an interval smaller than 4ms are not clamped as aggressively.
+          This improves short horizon performance, but websites abusing the API will still eventually have their setTimeouts clamped.
 
+          This may change task ordering on a web page, leading to unexpected behavior on sites that are dependent on a certain ordering in some way.
+          It also may affect sites with a lot of setTimeout() with a timeout of 0ms usage, e.g. increasing CPU load.
+
+          For users where this policy is unset, <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> will roll out the change gradually on the stable channel.
+
+          This is a temporary policy that is planned be removed in <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> 107. This deadline may be extended if there is a need for it among enterprises.
+          ''',
+    },
   ],
   'messages': {
     # Messages that are not associated to any policies.
@@ -32100,6 +32281,6 @@ The recommended way to configure policy on Windows is via GPO, although provisio
   'placeholders': [],
   'deleted_policy_ids': [114, 115, 204, 205, 206, 341, 412, 476, 544, 546, 562, 569, 578, 583, 585, 586, 587, 588, 589, 590, 591, 600, 668, 669, 872],
   'deleted_atomic_policy_group_ids': [19],
-  'highest_id_currently_used': 986,
+  'highest_id_currently_used': 990,
   'highest_atomic_group_id_currently_used': 43
 }

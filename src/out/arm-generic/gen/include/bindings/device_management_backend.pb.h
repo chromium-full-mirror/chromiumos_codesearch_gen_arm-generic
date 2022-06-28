@@ -838,11 +838,13 @@ enum DeviceRegisterRequest_Flavor : int {
   DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_MANUAL_FALLBACK = 11,
   DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED = 13,
   DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED = 14,
-  DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK = 15
+  DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK = 15,
+  DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED = 16,
+  DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK = 17
 };
 bool DeviceRegisterRequest_Flavor_IsValid(int value);
 constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest_Flavor_Flavor_MIN = DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_MANUAL;
-constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest_Flavor_Flavor_MAX = DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK;
+constexpr DeviceRegisterRequest_Flavor DeviceRegisterRequest_Flavor_Flavor_MAX = DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK;
 constexpr int DeviceRegisterRequest_Flavor_Flavor_ARRAYSIZE = DeviceRegisterRequest_Flavor_Flavor_MAX + 1;
 
 const std::string& DeviceRegisterRequest_Flavor_Name(DeviceRegisterRequest_Flavor value);
@@ -3267,6 +3269,10 @@ class DeviceRegisterRequest :
     DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED;
   static constexpr Flavor FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK =
     DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK;
+  static constexpr Flavor FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED =
+    DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED;
+  static constexpr Flavor FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK =
+    DeviceRegisterRequest_Flavor_FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK;
   static inline bool Flavor_IsValid(int value) {
     return DeviceRegisterRequest_Flavor_IsValid(value);
   }

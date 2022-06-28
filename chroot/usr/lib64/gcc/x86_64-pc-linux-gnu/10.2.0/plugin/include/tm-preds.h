@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/var/tmp/portage/sys-devel/gcc-10.2.0-r26/work/gcc-10.2.0/gcc/config/i386/i386.md'.  */
+   from the machine description file '/var/tmp/portage/sys-devel/gcc-10.2.0-r27/work/gcc-10.2.0/gcc/config/i386/i386.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H

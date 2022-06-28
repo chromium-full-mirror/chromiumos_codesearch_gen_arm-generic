@@ -550,7 +550,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -570,7 +570,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "check_includes": true,
     "configs": [
@@ -657,6 +657,7 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/chromeos-imageburner_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/smbprovider_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/hpsd_libtestrunner.a",
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/print_tools_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/chromeos-installer_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/cros-disks_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/featured_libtestrunner.a",
@@ -23020,7 +23021,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23041,7 +23042,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23183,7 +23184,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23202,7 +23203,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23377,7 +23378,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23396,7 +23397,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23600,7 +23601,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23619,7 +23620,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23815,7 +23816,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23834,7 +23835,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24023,7 +24024,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24042,7 +24043,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24233,7 +24234,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24252,7 +24253,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24536,7 +24537,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24555,7 +24556,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24744,7 +24745,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24763,7 +24764,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24933,7 +24934,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24952,7 +24953,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25133,7 +25134,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25152,7 +25153,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25352,7 +25353,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25371,7 +25372,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25567,7 +25568,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25586,7 +25587,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25782,7 +25783,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25801,7 +25802,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25997,7 +25998,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26016,7 +26017,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26212,7 +26213,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26231,7 +26232,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26418,7 +26419,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26437,7 +26438,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26622,7 +26623,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26641,7 +26642,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26837,7 +26838,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26856,7 +26857,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27052,7 +27053,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27071,7 +27072,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27268,7 +27269,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27287,7 +27288,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -29965,7 +29966,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -29984,7 +29985,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -30164,7 +30165,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -30183,7 +30184,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -47075,6 +47076,7 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/store/property_store.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/technology.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/tethering.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/tethering_manager.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/throttler.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/upstart/upstart.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/virtual_device.cc",
@@ -55105,7 +55107,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -55125,7 +55127,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "check_includes": true,
     "configs": [
@@ -55254,7 +55256,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -55274,7 +55276,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\""
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\""
     ],
     "check_includes": true,
     "configs": [
@@ -72707,7 +72709,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72726,7 +72728,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72843,7 +72845,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72862,7 +72864,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -73040,7 +73042,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -73059,7 +73061,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75950,7 +75952,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75969,7 +75971,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76138,7 +76140,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76157,7 +76159,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76302,7 +76304,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76321,7 +76323,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77231,7 +77233,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77250,7 +77252,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77422,7 +77424,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77443,7 +77445,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -100778,6 +100780,7 @@
   },
   "//print_tools:all": {
     "deps": [
+      "//print_tools:ipp_in_json_test",
       "//print_tools:printer_diag"
     ],
     "metadata": {},
@@ -100785,6 +100788,154 @@
     "testonly": false,
     "toolchain": "//common-mk/toolchain:toolchain",
     "type": "group",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//print_tools:ipp_in_json_test": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-fPIE",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-pthread",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=959929",
+      "-pthread",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//common-mk:pie",
+      "//print_tools:target_defaults",
+      "//common-mk:test"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "deps": [
+      "//common-mk/testrunner:testrunner"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pie",
+      "-pthread",
+      "-Wl,-rpath=$ORIGIN/lib/",
+      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread",
+      "ipp",
+      "gmock",
+      "gtest",
+      "base-test"
+    ],
+    "metadata": {
+      "_run_test": [
+        true
+      ]
+    },
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/ipp_in_json_test"
+    ],
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/print_tools/ipp_in_json.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/print_tools/ipp_in_json.h",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/print_tools/ipp_in_json_test.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "executable",
     "visibility": [
       "*"
     ]
@@ -119927,6 +120078,7 @@
       "-Werror",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-fPIE",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/permission_broker-client-test",
       "-DUSE_RTTI_FOR_TYPE_TAGS",
       "-pthread",
       "-Wno-unused-local-typedefs",
@@ -119993,6 +120145,7 @@
       "//common-mk:no_exceptions",
       "//common-mk:pie",
       "//common-mk:test",
+      "//lorgnette:liblorgnette_config_test",
       "//lorgnette:target_defaults",
       "//lorgnette:liblorgnette_config"
     ],
@@ -120088,6 +120241,7 @@
     ],
     "public": "*",
     "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/lorgnette/firewall_manager_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/lorgnette/image_readers/jpeg_reader_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/lorgnette/image_readers/png_reader_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/lorgnette/ippusb_device_test.cc",
@@ -137045,7 +137199,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137064,7 +137218,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137258,7 +137412,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137277,7 +137431,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137481,7 +137635,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137500,7 +137654,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137710,7 +137864,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137729,7 +137883,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137937,7 +138091,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137956,7 +138110,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138144,7 +138298,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138163,7 +138317,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138359,7 +138513,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138378,7 +138532,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138593,7 +138747,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138612,7 +138766,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138813,7 +138967,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138832,7 +138986,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139081,7 +139235,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139100,7 +139254,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139313,7 +139467,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139332,7 +139486,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139516,7 +139670,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139535,7 +139689,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139708,7 +139862,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139727,7 +139881,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139947,7 +140101,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139966,7 +140120,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140200,7 +140354,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140219,7 +140373,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140474,7 +140628,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140493,7 +140647,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140738,7 +140892,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140757,7 +140911,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140974,7 +141128,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140993,7 +141147,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141213,7 +141367,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141232,7 +141386,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141423,7 +141577,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141442,7 +141596,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141614,7 +141768,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141633,7 +141787,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141801,7 +141955,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141820,7 +141974,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141988,7 +142142,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142007,7 +142161,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142175,7 +142329,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142194,7 +142348,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142363,7 +142517,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142382,7 +142536,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142553,7 +142707,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142572,7 +142726,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-d11edb4e3cfec2497b4f44a8903ff7712119b25d\"",
+      "-DVCSID=\"9999-ad0bbf9106e232e6a39ce32edbadf76a3a343131\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",

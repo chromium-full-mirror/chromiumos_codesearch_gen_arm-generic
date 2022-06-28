@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='enterprise_management',
   syntax='proto2',
   serialized_options=b'H\003Z+chromium/policy/enterprise_management_proto',
-  serialized_pb=b'\n\x1f\x64\x65vice_management_backend.proto\x12\x15\x65nterprise_management\x1a\x1dprivate_membership_rlwe.proto\"\xa7\x01\n\x0bLicenseType\x12H\n\x0clicense_type\x18\x01 \x01(\x0e\x32\x32.enterprise_management.LicenseType.LicenseTypeEnum\"N\n\x0fLicenseTypeEnum\x12\r\n\tUNDEFINED\x10\x00\x12\x11\n\rCDM_PERPETUAL\x10\x01\x12\x0e\n\nCDM_ANNUAL\x10\x02\x12\t\n\x05KIOSK\x10\x03\"G\n\nSignedData\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12\x18\n\x10\x65xtra_data_bytes\x18\x03 \x01(\x05\"-\n\x17\x43heckUserAccountRequest\x12\x12\n\nuser_email\x18\x01 \x01(\t\"\x99\x0e\n\x15\x44\x65viceRegisterRequest\x12\x12\n\nreregister\x18\x01 \x01(\x08\x12\x43\n\x04type\x18\x02 \x01(\x0e\x32\x31.enterprise_management.DeviceRegisterRequest.Type:\x02TT\x12\x12\n\nmachine_id\x18\x03 \x01(\t\x12\x15\n\rmachine_model\x18\x04 \x01(\t\x12\x13\n\x0brequisition\x18\x06 \x01(\t\x12\x1f\n\x17server_backed_state_key\x18\x07 \x01(\x0c\x12\x43\n\x06\x66lavor\x18\x08 \x01(\x0e\x32\x33.enterprise_management.DeviceRegisterRequest.Flavor\x12\x38\n\x0clicense_type\x18\t \x01(\x0b\x32\".enterprise_management.LicenseType\x12\\\n\x08lifetime\x18\x0b \x01(\x0e\x32\x35.enterprise_management.DeviceRegisterRequest.Lifetime:\x13LIFETIME_INDEFINITE\x12\x12\n\nbrand_code\x18\x0c \x01(\t\x12\x1f\n\x17reregistration_dm_token\x18\r \x01(\t\x12\x1c\n\x14\x65thernet_mac_address\x18\x0e \x01(\t\x12\x18\n\x10\x64ock_mac_address\x18\x0f \x01(\t\x12\x18\n\x10manufacture_date\x18\x10 \x01(\t\x12\"\n\x1a\x65xpected_enrollment_domain\x18\x11 \x01(\t\x12[\n\x1e\x64\x65vice_register_identification\x18\x12 \x01(\x0b\x32\x33.enterprise_management.DeviceRegisterIdentification\x12]\n\x14psm_execution_result\x18\x13 \x01(\x0e\x32?.enterprise_management.DeviceRegisterRequest.PsmExecutionResult\x12&\n\x1epsm_determination_timestamp_ms\x18\x14 \x01(\x03\"]\n\x04Type\x12\x06\n\x02TT\x10\x00\x12\x08\n\x04USER\x10\x01\x12\n\n\x06\x44\x45VICE\x10\x02\x12\x0b\n\x07\x42ROWSER\x10\x03\x12\x13\n\x0f\x41NDROID_BROWSER\x10\x04\x12\x0f\n\x0bIOS_BROWSER\x10\x06\"\x04\x08\x05\x10\x05\"\x80\x05\n\x06\x46lavor\x12\x1c\n\x18\x46LAVOR_ENROLLMENT_MANUAL\x10\x00\x12\"\n\x1e\x46LAVOR_ENROLLMENT_MANUAL_RENEW\x10\x01\x12\"\n\x1e\x46LAVOR_ENROLLMENT_LOCAL_FORCED\x10\x02\x12&\n\"FLAVOR_ENROLLMENT_LOCAL_ADVERTISED\x10\x03\x12#\n\x1f\x46LAVOR_ENROLLMENT_SERVER_FORCED\x10\x04\x12\'\n#FLAVOR_ENROLLMENT_SERVER_ADVERTISED\x10\x05\x12\x1e\n\x1a\x46LAVOR_ENROLLMENT_RECOVERY\x10\x06\x12\x1c\n\x18\x46LAVOR_USER_REGISTRATION\x10\x07\x12!\n\x1d\x46LAVOR_ENROLLMENT_ATTESTATION\x10\x08\x12.\n*FLAVOR_ENROLLMENT_ATTESTATION_LOCAL_FORCED\x10\t\x12/\n+FLAVOR_ENROLLMENT_ATTESTATION_SERVER_FORCED\x10\n\x12\x31\n-FLAVOR_ENROLLMENT_ATTESTATION_MANUAL_FALLBACK\x10\x0b\x12+\n\'FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED\x10\r\x12\x37\n3FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED\x10\x0e\x12\x39\n5FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK\x10\x0f\"\x04\x08\x0c\x10\x0c\"X\n\x08Lifetime\x12\x16\n\x12LIFETIME_UNDEFINED\x10\x00\x12\x17\n\x13LIFETIME_INDEFINITE\x10\x01\x12\x1b\n\x17LIFETIME_EPHEMERAL_USER\x10\x02\"\x91\x01\n\x12PsmExecutionResult\x12\x16\n\x12PSM_RESULT_UNKNOWN\x10\x00\x12$\n PSM_RESULT_SUCCESSFUL_WITH_STATE\x10\x01\x12\'\n#PSM_RESULT_SUCCESSFUL_WITHOUT_STATE\x10\x02\x12\x14\n\x10PSM_RESULT_ERROR\x10\x03J\x04\x08\x05\x10\x06J\x04\x08\n\x10\x0b\":\n\x1c\x44\x65viceRegisterIdentification\x12\x1a\n\x12\x61ttested_device_id\x18\x01 \x01(\t\"\xea\x01\n\x18\x43heckUserAccountResponse\x12\x17\n\x0f\x64omain_verified\x18\x01 \x01(\x08\x12Z\n\x11user_account_type\x18\x02 \x01(\x0e\x32?.enterprise_management.CheckUserAccountResponse.UserAccountType\"Y\n\x0fUserAccountType\x12\x1d\n\x19UNKNOWN_USER_ACCOUNT_TYPE\x10\x00\x12\r\n\tNOT_EXIST\x10\x01\x12\x0c\n\x08\x43ONSUMER\x10\x02\x12\n\n\x06\x44\x41SHER\x10\x03\"\xd0\x02\n\x16\x44\x65viceRegisterResponse\x12\x1f\n\x17\x64\x65vice_management_token\x18\x01 \x02(\t\x12\x14\n\x0cmachine_name\x18\x02 \x01(\t\x12]\n\x0f\x65nrollment_type\x18\x03 \x01(\x0e\x32\x38.enterprise_management.DeviceRegisterResponse.DeviceMode:\nENTERPRISE\x12\x1a\n\x12\x63onfiguration_seed\x18\x04 \x01(\t\x12\x1c\n\x14user_affiliation_ids\x18\x05 \x03(\t\x12\x18\n\x10\x64irectory_api_id\x18\x06 \x01(\t\"L\n\nDeviceMode\x12\x0e\n\nENTERPRISE\x10\x00\x12\x15\n\x11RETAIL_DEPRECATED\x10\x01\x12\r\n\tCHROME_AD\x10\x02\x12\x08\n\x04\x44\x45MO\x10\x03\"\x19\n\x17\x44\x65viceUnregisterRequest\"\x1a\n\x18\x44\x65viceUnregisterResponse\"\xa6\x02\n\x17\x44\x65viceCertUploadRequest\x12\x1a\n\x12\x64\x65vice_certificate\x18\x01 \x01(\x0c\x12X\n\x10\x63\x65rtificate_type\x18\x02 \x01(\x0e\x32>.enterprise_management.DeviceCertUploadRequest.CertificateType\x12\x15\n\renrollment_id\x18\x03 \x01(\x0c\"~\n\x0f\x43\x65rtificateType\x12 \n\x1c\x43\x45RTIFICATE_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1e\x45NTERPRISE_MACHINE_CERTIFICATE\x10\x01\x12%\n!ENTERPRISE_ENROLLMENT_CERTIFICATE\x10\x02\"\x1a\n\x18\x44\x65viceCertUploadResponse\"\xfe\x01\n\x1d\x44\x65viceServiceApiAccessRequest\x12\x13\n\x0b\x61uth_scopes\x18\x01 \x03(\t\x12\x18\n\x10oauth2_client_id\x18\x02 \x01(\t\x12T\n\x0b\x64\x65vice_type\x18\x03 \x01(\x0e\x32?.enterprise_management.DeviceServiceApiAccessRequest.DeviceType\"X\n\nDeviceType\x12\r\n\tCHROME_OS\x10\x00\x12\x0e\n\nANDROID_OS\x10\x01\x12\x17\n\x13\x43HROME_OS_DEMO_MODE\x10\x02\x12\x12\n\x0e\x43HROME_BROWSER\x10\x03\"3\n\x1e\x44\x65viceServiceApiAccessResponse\x12\x11\n\tauth_code\x18\x01 \x01(\t\"M\n\x17\x42rowserDeviceIdentifier\x12\x15\n\rcomputer_name\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\tJ\x04\x08\x03\x10\x04\"\x95\x04\n\x12PolicyFetchRequest\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12U\n\x0esignature_type\x18\x03 \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType:\x04NONE\x12\x1a\n\x12public_key_version\x18\x04 \x01(\x05\x12\x1a\n\x12settings_entity_id\x18\x06 \x01(\t\x12\x1c\n\x14invalidation_version\x18\x07 \x01(\x03\x12\x1c\n\x14invalidation_payload\x18\x08 \x01(\x0c\x12\x1d\n\x15verification_key_hash\x18\t \x01(\t\x12 \n\x18policy_invalidation_info\x18\n \x01(\t\x12 \n\x18invalidation_topics_only\x18\x0b \x01(\x08\x12\x17\n\x0f\x64\x65vice_dm_token\x18\x0c \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\r \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\"7\n\rSignatureType\x12\x08\n\x04NONE\x10\x00\x12\x0c\n\x08SHA1_RSA\x10\x01\x12\x0e\n\nSHA256_RSA\x10\x02J\x04\x08\x05\x10\x06\" \n\rDisabledState\x12\x0f\n\x07message\x18\x01 \x01(\t\"\xe3\x01\n\x0b\x44\x65viceState\x12V\n\x0b\x64\x65vice_mode\x18\x01 \x01(\x0e\x32-.enterprise_management.DeviceState.DeviceMode:\x12\x44\x45VICE_MODE_NORMAL\x12<\n\x0e\x64isabled_state\x18\x02 \x01(\x0b\x32$.enterprise_management.DisabledState\">\n\nDeviceMode\x12\x16\n\x12\x44\x45VICE_MODE_NORMAL\x10\x00\x12\x18\n\x14\x44\x45VICE_MODE_DISABLED\x10\x01\" \n\x0c\x43ustomerLogo\x12\x10\n\x08logo_url\x18\x01 \x01(\t\"\x90\r\n\nPolicyData\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x15\n\rrequest_token\x18\x03 \x01(\t\x12\x14\n\x0cpolicy_value\x18\x04 \x01(\x0c\x12\x14\n\x0cmachine_name\x18\x05 \x01(\t\x12\x1a\n\x12public_key_version\x18\x06 \x01(\x05\x12\x10\n\x08username\x18\x07 \x01(\t\x12\x11\n\tdevice_id\x18\x08 \x01(\t\x12I\n\x05state\x18\t \x01(\x0e\x32\x32.enterprise_management.PolicyData.AssociationState:\x06\x41\x43TIVE\x12\x1a\n\x12settings_entity_id\x18\x0b \x01(\t\x12 \n\x18service_account_identity\x18\x0c \x01(\t\x12\x14\n\x0cpolicy_token\x18\x0f \x01(\t\x12I\n\x0fmanagement_mode\x18\x10 \x01(\x0e\x32\x30.enterprise_management.PolicyData.ManagementMode\x12\x38\n\x0c\x64\x65vice_state\x18\x11 \x01(\x0b\x32\".enterprise_management.DeviceState\x12\x1a\n\x12\x61nnotated_location\x18\x14 \x01(\t\x12\x1a\n\x12\x61nnotated_asset_id\x18\x15 \x01(\t\x12\x18\n\x10\x64irectory_api_id\x18\x16 \x01(\t\x12\x1e\n\x16\x64\x65vice_affiliation_ids\x18\x17 \x03(\t\x12\x1c\n\x14user_affiliation_ids\x18\x18 \x03(\t\x12\x16\n\x0e\x64isplay_domain\x18\x19 \x01(\t\x12!\n\x19policy_invalidation_topic\x18\x1a \x01(\t\x12\"\n\x1a\x63ommand_invalidation_topic\x18\x1b \x01(\t\x12\x1c\n\x14\x65nrollment_id_needed\x18\x1c \x01(\x08\x12\x0f\n\x07gaia_id\x18\x1d \x01(\t\x12G\n\x0emarket_segment\x18\x1e \x01(\x0e\x32/.enterprise_management.PolicyData.MarketSegment\x12:\n\rcustomer_logo\x18\x1f \x01(\x0b\x32#.enterprise_management.CustomerLogo\x12\x1b\n\x13\x63hange_password_uri\x18  \x01(\t\x12K\n\x16\x63lient_action_required\x18! \x01(\x0b\x32+.enterprise_management.ClientActionRequired\x12\x1e\n\x16obfuscated_customer_id\x18\" \x01(\t\x12P\n\x13metrics_log_segment\x18# \x01(\x0e\x32\x33.enterprise_management.PolicyData.MetricsLogSegment\x12\x12\n\nmanaged_by\x18$ \x01(\t\x12\x13\n\x0bsso_profile\x18% \x01(\t\x12\x13\n\x0blicense_sku\x18& \x01(\t\"@\n\x10\x41ssociationState\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\r\n\tUNMANAGED\x10\x01\x12\x11\n\rDEPROVISIONED\x10\x02\"X\n\x0eManagementMode\x12\x0f\n\x0bLOCAL_OWNER\x10\x00\x12\x16\n\x12\x45NTERPRISE_MANAGED\x10\x01\x12\x1d\n\x19OBSOLETE_CONSUMER_MANAGED\x10\x02\"`\n\rMarketSegment\x12\x1e\n\x1aMARKET_SEGMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12\x45NROLLED_EDUCATION\x10\x01\x12\x17\n\x13\x45NROLLED_ENTERPRISE\x10\x02\"\\\n\x11MetricsLogSegment\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x07\n\x03K12\x10\x01\x12\x0e\n\nUNIVERSITY\x10\x02\x12\r\n\tNONPROFIT\x10\x03\x12\x0e\n\nENTERPRISE\x10\x04J\x04\x08\n\x10\x0bJ\x04\x08\r\x10\x0eJ\x04\x08\x0e\x10\x0fJ\x04\x08\x12\x10\x13J\x04\x08\x13\x10\x14R\x19\x63ommand_invalidation_nameR\x1b\x63ommand_invalidation_sourceR\x11invalidation_nameR\x13invalidation_sourceR\x1bvalid_serial_number_missing\"=\n\x14\x43lientActionRequired\x12%\n\x1d\x65nrollment_certificate_needed\x18\x01 \x01(\x08\"\xc0\x03\n\x13PolicyFetchResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\x12\x13\n\x0bpolicy_data\x18\x03 \x01(\x0c\x12\x1d\n\x15policy_data_signature\x18\x04 \x01(\x0c\x12\x16\n\x0enew_public_key\x18\x05 \x01(\x0c\x12 \n\x18new_public_key_signature\x18\x06 \x01(\x0c\x12<\n0new_public_key_verification_signature_deprecated\x18\x07 \x01(\x0c\x42\x02\x18\x01\x12(\n new_public_key_verification_data\x18\x08 \x01(\x0c\x12\x32\n*new_public_key_verification_data_signature\x18\t \x01(\x0c\x12\x17\n\x0bpolicy_type\x18\n \x01(\tB\x02\x18\x01\x12[\n\x1apolicy_data_signature_type\x18\x0b \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType\"L\n\"DEPRECATEDPolicyPublicKeyAndDomain\x12\x16\n\x0enew_public_key\x18\x01 \x01(\x0c\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"c\n\x19PublicKeyVerificationData\x12\x16\n\x0enew_public_key\x18\x01 \x01(\x0c\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x1e\n\x16new_public_key_version\x18\x03 \x01(\x05\"R\n\x13\x44\x65vicePolicyRequest\x12;\n\x08requests\x18\x03 \x03(\x0b\x32).enterprise_management.PolicyFetchRequest\"U\n\x14\x44\x65vicePolicyResponse\x12=\n\tresponses\x18\x03 \x03(\x0b\x32*.enterprise_management.PolicyFetchResponse\"<\n\nTimePeriod\x12\x17\n\x0fstart_timestamp\x18\x01 \x01(\x03\x12\x15\n\rend_timestamp\x18\x02 \x01(\x03\"\xe0\x02\n\x10\x41\x63tiveTimePeriod\x12\x36\n\x0btime_period\x18\x01 \x01(\x0b\x32!.enterprise_management.TimePeriod\x12\x17\n\x0f\x61\x63tive_duration\x18\x02 \x01(\x05\x12\x12\n\nuser_email\x18\x03 \x01(\t\x12I\n\x0csession_type\x18\x04 \x01(\x0e\x32\x33.enterprise_management.ActiveTimePeriod.SessionType\"\x9b\x01\n\x0bSessionType\x12\x13\n\x0fSESSION_UNKNOWN\x10\x00\x12\x1b\n\x17SESSION_AFFILIATED_USER\x10\x01\x12\x19\n\x15SESSION_MANAGED_GUEST\x10\x02\x12\x11\n\rSESSION_KIOSK\x10\x03\x12\x15\n\x11SESSION_ARC_KIOSK\x10\x04\x12\x15\n\x11SESSION_WEB_KIOSK\x10\x05\"\xaf\x02\n\x10NetworkInterface\x12G\n\x04type\x18\x01 \x01(\x0e\x32\x39.enterprise_management.NetworkInterface.NetworkDeviceType\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x0c\n\x04meid\x18\x03 \x01(\t\x12\x0c\n\x04imei\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_path\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0b\n\x03mdn\x18\x07 \x01(\t\x12\x0c\n\x04\x65ids\x18\x08 \x03(\t\"b\n\x11NetworkDeviceType\x12\x11\n\rTYPE_ETHERNET\x10\x00\x12\r\n\tTYPE_WIFI\x10\x01\x12\x12\n\x0eTYPE_BLUETOOTH\x10\x03\x12\x11\n\rTYPE_CELLULAR\x10\x04\"\x04\x08\x02\x10\x02\"\xf1\x02\n\x0cNetworkState\x12\x13\n\x0b\x64\x65vice_path\x18\x01 \x01(\t\x12M\n\x10\x63onnection_state\x18\x02 \x01(\x0e\x32\x33.enterprise_management.NetworkState.ConnectionState\x12\x17\n\x0fsignal_strength\x18\x03 \x01(\x05\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x0f\n\x07gateway\x18\x05 \x01(\t\"\xbe\x01\n\x0f\x43onnectionState\x12\x08\n\x04IDLE\x10\x00\x12\x0b\n\x07\x43\x41RRIER\x10\x01\x12\x0f\n\x0b\x41SSOCIATION\x10\x02\x12\x11\n\rCONFIGURATION\x10\x03\x12\t\n\x05READY\x10\x04\x12\n\n\x06PORTAL\x10\x05\x12\x0b\n\x07OFFLINE\x10\x06\x12\n\n\x06ONLINE\x10\x07\x12\x0e\n\nDISCONNECT\x10\x08\x12\x0b\n\x07\x46\x41ILURE\x10\t\x12\x16\n\x12\x41\x43TIVATION_FAILURE\x10\n\x12\x0b\n\x07UNKNOWN\x10\x0b\"\x91\x01\n\nDeviceUser\x12\x38\n\x04type\x18\x01 \x02(\x0e\x32*.enterprise_management.DeviceUser.UserType\x12\r\n\x05\x65mail\x18\x02 \x01(\t\":\n\x08UserType\x12\x15\n\x11USER_TYPE_MANAGED\x10\x00\x12\x17\n\x13USER_TYPE_UNMANAGED\x10\x01\"L\n\nVolumeInfo\x12\x11\n\tvolume_id\x18\x01 \x01(\t\x12\x15\n\rstorage_total\x18\x02 \x01(\x03\x12\x14\n\x0cstorage_free\x18\x03 \x01(\x03\"D\n\x12\x43puUtilizationInfo\x12\x1b\n\x13\x63pu_utilization_pct\x18\x01 \x01(\x05\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"=\n\x11SystemFreeRamInfo\x12\x15\n\rsize_in_bytes\x18\x01 \x01(\x03\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"E\n\x0b\x43PUTempInfo\x12\x11\n\tcpu_label\x18\x01 \x01(\t\x12\x10\n\x08\x63pu_temp\x18\x02 \x01(\x05\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"o\n\x15StatefulPartitionInfo\x12\x17\n\x0f\x61vailable_space\x18\x01 \x01(\x04\x12\x13\n\x0btotal_space\x18\x02 \x01(\x04\x12\x12\n\nfilesystem\x18\x03 \x01(\t\x12\x14\n\x0cmount_source\x18\x04 \x01(\t\"\xb2\x01\n\rBatterySample\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07voltage\x18\x02 \x01(\x03\x12\x1a\n\x12remaining_capacity\x18\x03 \x01(\x03\x12\x13\n\x0btemperature\x18\x04 \x01(\x05\x12\x16\n\x0e\x64ischarge_rate\x18\x05 \x01(\x05\x12\x13\n\x0b\x63harge_rate\x18\x06 \x01(\x05\x12\x0f\n\x07\x63urrent\x18\x07 \x01(\x03\x12\x0e\n\x06status\x18\x08 \x01(\t\"\x98\x02\n\x0b\x42\x61tteryInfo\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x16\n\x0e\x62\x61ttery_health\x18\x03 \x01(\t\x12\x17\n\x0f\x64\x65sign_capacity\x18\x04 \x01(\x03\x12\x1c\n\x14\x66ull_charge_capacity\x18\x05 \x01(\x03\x12\x13\n\x0b\x63ycle_count\x18\x06 \x01(\x05\x12\x35\n\x07samples\x18\x07 \x03(\x0b\x32$.enterprise_management.BatterySample\x12\x1a\n\x12\x64\x65sign_min_voltage\x18\t \x01(\x05\x12\x18\n\x10manufacture_date\x18\n \x01(\t\x12\x12\n\ntechnology\x18\x0b \x01(\t\"\xcd\x01\n\x0bPowerStatus\x12\x44\n\x0cpower_source\x18\x01 \x01(\x0e\x32..enterprise_management.PowerStatus.PowerSource\x12\x35\n\tbatteries\x18\x02 \x03(\x0b\x32\".enterprise_management.BatteryInfo\"A\n\x0bPowerSource\x12\x11\n\rPOWER_UNKNOWN\x10\x00\x12\x0c\n\x08POWER_AC\x10\x01\x12\x11\n\rPOWER_BATTERY\x10\x02\"2\n\x16\x44iskLifetimeEstimation\x12\x0b\n\x03slc\x18\x01 \x01(\x05\x12\x0b\n\x03mlc\x18\x02 \x01(\x05\"\x91\x07\n\x08\x44iskInfo\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\r\n\x05model\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x03\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x0e\n\x06health\x18\x06 \x01(\t\x12\x0f\n\x07volumes\x18\x07 \x03(\t\x12\"\n\x1a\x62ytes_read_since_last_boot\x18\x08 \x01(\x04\x12%\n\x1d\x62ytes_written_since_last_boot\x18\t \x01(\x04\x12)\n!read_time_seconds_since_last_boot\x18\n \x01(\x04\x12*\n\"write_time_seconds_since_last_boot\x18\x0b \x01(\x04\x12\'\n\x1fio_time_seconds_since_last_boot\x18\x0c \x01(\x04\x12,\n$discard_time_seconds_since_last_boot\x18\r \x01(\x04\x12\x1f\n\x15nvme_subsystem_vendor\x18\x0e \x01(\rH\x00\x12\x14\n\nemmc_oemid\x18\x0f \x01(\rH\x00\x12\x16\n\x0cother_vendor\x18\x10 \x01(\rH\x00\x12\x1f\n\x15nvme_subsystem_device\x18\x11 \x01(\rH\x01\x12\x12\n\x08\x65mmc_pnm\x18\x12 \x01(\rH\x01\x12\x17\n\rother_product\x18\x13 \x01(\rH\x01\x12\x1b\n\x11nvme_hardware_rev\x18\x14 \x01(\rH\x02\x12\x1b\n\x11\x65mmc_hardware_rev\x18\x15 \x01(\rH\x02\x12\x1c\n\x12other_hardware_rev\x18\x16 \x01(\rH\x02\x12\x1b\n\x11nvme_firmware_rev\x18\x17 \x01(\x04H\x03\x12\x1b\n\x11\x65mmc_firmware_rev\x18\x18 \x01(\x04H\x03\x12\x1c\n\x12other_firmware_rev\x18\x19 \x01(\rH\x03\x12>\n\x07purpose\x18\x1a \x01(\x0e\x32-.enterprise_management.DiskInfo.DevicePurpose\"H\n\rDevicePurpose\x12\x13\n\x0fPURPOSE_UNKNOWN\x10\x00\x12\x10\n\x0cPURPOSE_BOOT\x10\x01\x12\x10\n\x0cPURPOSE_SWAP\x10\x02\x42\x0b\n\tvendor_idB\x0c\n\nproduct_idB\x13\n\x11hardware_revisionB\x13\n\x11\x66irmware_revision\"\x8b\x01\n\rStorageStatus\x12.\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1f.enterprise_management.DiskInfo\x12J\n\x13lifetime_estimation\x18\x02 \x01(\x0b\x32-.enterprise_management.DiskLifetimeEstimation\"7\n\rThermalSample\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x13\n\x0btemperature\x18\x02 \x01(\x05\"Y\n\x0bThermalInfo\x12\r\n\x05label\x18\x01 \x01(\t\x12\x35\n\x07samples\x18\x03 \x03(\x0b\x32$.enterprise_management.ThermalSampleJ\x04\x08\x02\x10\x03\"H\n\x0b\x42oardStatus\x12\x39\n\rthermal_infos\x18\x01 \x03(\x0b\x32\".enterprise_management.ThermalInfo\"\xfa\x01\n\x0cSystemStatus\x12\x16\n\x0evpd_sku_number\x18\x01 \x01(\t\x12\x18\n\x10\x66irst_power_date\x18\x02 \x01(\t\x12\x18\n\x10manufacture_date\x18\x03 \x01(\t\x12\x16\n\x0emarketing_name\x18\x04 \x01(\t\x12\x14\n\x0c\x62ios_version\x18\x05 \x01(\t\x12\x12\n\nboard_name\x18\x06 \x01(\t\x12\x15\n\rboard_version\x18\x07 \x01(\t\x12\x14\n\x0c\x63hassis_type\x18\x08 \x01(\x04\x12\x14\n\x0cproduct_name\x18\t \x01(\t\x12\x19\n\x11vpd_serial_number\x18\n \x01(\t\"G\n\rCpuCStateInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n time_in_state_since_last_boot_us\x18\x02 \x01(\x04\"\xad\x01\n\x0eLogicalCpuInfo\x12!\n\x19scaling_max_frequency_khz\x18\x01 \x01(\r\x12%\n\x1dscaling_current_frequency_khz\x18\x02 \x01(\r\x12\x19\n\x11idle_time_seconds\x18\x03 \x01(\x04\x12\x36\n\x08\x63_states\x18\x04 \x03(\x0b\x32$.enterprise_management.CpuCStateInfo\"\x8d\x02\n\x07\x43puInfo\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x41\n\x0c\x61rchitecture\x18\x02 \x01(\x0e\x32+.enterprise_management.CpuInfo.Architecture\x12\x1b\n\x13max_clock_speed_khz\x18\x03 \x01(\r\x12;\n\x0clogical_cpus\x18\x04 \x03(\x0b\x32%.enterprise_management.LogicalCpuInfo\"Q\n\x0c\x41rchitecture\x12\x1c\n\x18\x41RCHITECTURE_UNSPECIFIED\x10\x00\x12\n\n\x06X86_64\x10\x01\x12\x0b\n\x07\x41\x41RCH64\x10\x02\x12\n\n\x06\x41RMV7L\x10\x03\"*\n\rGlobalCpuInfo\x12\x19\n\x11num_total_threads\x18\x01 \x01(\r\"m\n\x0b\x44isplayInfo\x12\x18\n\x10resolution_width\x18\x01 \x01(\r\x12\x19\n\x11resolution_height\x18\x02 \x01(\r\x12\x14\n\x0crefresh_rate\x18\x03 \x01(\r\x12\x13\n\x0bis_internal\x18\x04 \x01(\x08\"h\n\x13GraphicsAdapterInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0e\x64river_version\x18\x02 \x01(\t\x12\x11\n\tdevice_id\x18\x03 \x01(\x04\x12\x18\n\x10system_ram_usage\x18\x04 \x01(\x04\"\x83\x01\n\x0eGraphicsStatus\x12;\n\x07\x61\x64\x61pter\x18\x01 \x01(\x0b\x32*.enterprise_management.GraphicsAdapterInfo\x12\x34\n\x08\x64isplays\x18\x02 \x03(\x0b\x32\".enterprise_management.DisplayInfo\"\xdd\x02\n\x0f\x43rashReportInfo\x12\x11\n\tremote_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x61pture_timestamp\x18\x02 \x01(\x03\x12\r\n\x05\x63\x61use\x18\x03 \x01(\t\x12U\n\rupload_status\x18\x04 \x01(\x0e\x32>.enterprise_management.CrashReportInfo.CrashReportUploadStatus\"\xb5\x01\n\x17\x43rashReportUploadStatus\x12\x19\n\x15UPLOAD_STATUS_UNKNOWN\x10\x00\x12\x1e\n\x1aUPLOAD_STATUS_NOT_UPLOADED\x10\x01\x12\x19\n\x15UPLOAD_STATUS_PENDING\x10\x02\x12(\n$UPLOAD_STATUS_PENDING_USER_REQUESTED\x10\x03\x12\x1a\n\x16UPLOAD_STATUS_UPLOADED\x10\x04\"-\n\x0cTimezoneInfo\x12\r\n\x05posix\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\"\x82\x01\n\nMemoryInfo\x12\x18\n\x10total_memory_kib\x18\x01 \x01(\r\x12\x17\n\x0f\x66ree_memory_kib\x18\x02 \x01(\r\x12\x1c\n\x14\x61vailable_memory_kib\x18\x03 \x01(\r\x12#\n\x1bpage_faults_since_last_boot\x18\x04 \x01(\x04\"I\n\rBacklightInfo\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x16\n\x0emax_brightness\x18\x02 \x01(\r\x12\x12\n\nbrightness\x18\x03 \x01(\r\"\x1c\n\x07\x46\x61nInfo\x12\x11\n\tspeed_rpm\x18\x01 \x01(\r\"e\n\x14\x42luetoothAdapterInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07powered\x18\x03 \x01(\x08\x12\x1d\n\x15num_connected_devices\x18\x04 \x01(\r\"e\n\nSmbiosInfo\x12\x12\n\nsys_vendor\x18\x01 \x01(\t\x12\x14\n\x0cproduct_name\x18\x02 \x01(\t\x12\x17\n\x0fproduct_version\x18\x03 \x01(\t\x12\x14\n\x0c\x62ios_version\x18\x04 \x01(\t\"$\n\x10KernelParameters\x12\x10\n\x08\x63ros_efi\x18\x01 \x01(\x08\"\x1e\n\x07\x45\x46IVars\x12\x13\n\x0bsecure_boot\x18\x01 \x01(\x08\"\xc5\x01\n\x08\x42ootInfo\x12?\n\x0b\x62oot_method\x18\x01 \x01(\x0e\x32*.enterprise_management.BootInfo.BootMethod\x12\x17\n\x0bsecure_boot\x18\x02 \x01(\x08\x42\x02\x18\x01\"_\n\nBootMethod\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0f\n\x0b\x43ROS_SECURE\x10\x01\x12\r\n\tCROS_UEFI\x10\x02\x12\x0f\n\x0b\x43ROS_LEGACY\x10\x03\x12\x13\n\x0f\x43ROS_EFI_SECURE\x10\x04\"\xe3\x01\n\x12NetworkAdapterInfo\x12;\n\x0c\x64\x65vice_class\x18\x01 \x01(\x0e\x32%.enterprise_management.BusDeviceClass\x12\x30\n\x08\x62us_type\x18\x02 \x01(\x0e\x32\x1e.enterprise_management.BusType\x12\x11\n\tvendor_id\x18\x03 \x01(\x05\x12\x13\n\x0bvendor_name\x18\x04 \x01(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\x05\x12\x13\n\x0b\x64\x65vice_name\x18\x06 \x01(\t\x12\x0e\n\x06\x64river\x18\x07 \x03(\t\"\x8b\x01\n\x13LaCrOsBrowserReport\x12\x36\n\x0b\x64\x65vice_user\x18\x01 \x01(\x0b\x32!.enterprise_management.DeviceUser\x12<\n\x0e\x62rowser_report\x18\x02 \x01(\x0b\x32$.enterprise_management.BrowserReport\"\xae\x12\n\x19\x44\x65viceStatusReportRequest\x12\x12\n\nos_version\x18\x01 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x02 \x01(\t\x12\x11\n\tboot_mode\x18\x03 \x01(\t\x12\x17\n\x0f\x62rowser_version\x18\x05 \x01(\t\x12?\n\x0e\x61\x63tive_periods\x18\x06 \x03(\x0b\x32\'.enterprise_management.ActiveTimePeriod\x12\x43\n\x12network_interfaces\x18\x08 \x03(\x0b\x32\'.enterprise_management.NetworkInterface\x12\x30\n\x05users\x18\t \x03(\x0b\x32!.enterprise_management.DeviceUser\x12\x37\n\x0cvolume_infos\x18\n \x03(\x0b\x32!.enterprise_management.VolumeInfo\x12;\n\x0enetwork_states\x18\x0b \x03(\x0b\x32#.enterprise_management.NetworkState\x12\'\n\x1b\x63pu_utilization_pct_samples\x18\x0c \x03(\x05\x42\x02\x18\x01\x12\x18\n\x10system_ram_total\x18\x0e \x01(\x03\x12#\n\x17system_ram_free_samples\x18\x0f \x03(\x03\x42\x02\x18\x01\x12:\n\x0e\x63pu_temp_infos\x18\x10 \x03(\x0b\x32\".enterprise_management.CPUTempInfo\x12?\n\x10os_update_status\x18\x11 \x01(\x0b\x32%.enterprise_management.OsUpdateStatus\x12;\n\x11running_kiosk_app\x18\x12 \x01(\x0b\x32 .enterprise_management.AppStatus\x12\x14\n\x0csound_volume\x18\x13 \x01(\x05\x12?\n\x10tpm_version_info\x18\x15 \x01(\x0b\x32%.enterprise_management.TpmVersionInfo\x12/\n\x07\x63hannel\x18\x16 \x01(\x0e\x32\x1e.enterprise_management.Channel\x12=\n\x0ftpm_status_info\x18\x17 \x01(\x0b\x32$.enterprise_management.TpmStatusInfo\x12\x1c\n\x14write_protect_switch\x18\x18 \x01(\x08\x12\x38\n\x0cpower_status\x18\x19 \x01(\x0b\x32\".enterprise_management.PowerStatus\x12<\n\x0estorage_status\x18\x1a \x01(\x0b\x32$.enterprise_management.StorageStatus\x12\x38\n\x0c\x62oard_status\x18\x1b \x01(\x0b\x32\".enterprise_management.BoardStatus\x12:\n\rsystem_status\x18\x1c \x01(\x0b\x32#.enterprise_management.SystemStatus\x12M\n\x17stateful_partition_info\x18\x1d \x01(\x0b\x32,.enterprise_management.StatefulPartitionInfo\x12H\n\x15\x63pu_utilization_infos\x18\x1e \x03(\x0b\x32).enterprise_management.CpuUtilizationInfo\x12G\n\x15system_ram_free_infos\x18\x1f \x03(\x0b\x32(.enterprise_management.SystemFreeRamInfo\x12\x30\n\x08\x63pu_info\x18  \x03(\x0b\x32\x1e.enterprise_management.CpuInfo\x12>\n\x0fgraphics_status\x18! \x01(\x0b\x32%.enterprise_management.GraphicsStatus\x12\x42\n\x12\x63rash_report_infos\x18\" \x03(\x0b\x32&.enterprise_management.CrashReportInfo\x12:\n\rtimezone_info\x18# \x01(\x0b\x32#.enterprise_management.TimezoneInfo\x12\x36\n\x0bmemory_info\x18$ \x01(\x0b\x32!.enterprise_management.MemoryInfo\x12<\n\x0e\x62\x61\x63klight_info\x18% \x03(\x0b\x32$.enterprise_management.BacklightInfo\x12\x30\n\x08\x66\x61n_info\x18& \x03(\x0b\x32\x1e.enterprise_management.FanInfo\x12=\n\x0fglobal_cpu_info\x18\' \x01(\x0b\x32$.enterprise_management.GlobalCpuInfo\x12K\n\x16\x62luetooth_adapter_info\x18( \x03(\x0b\x32+.enterprise_management.BluetoothAdapterInfo\x12\x36\n\x0bsmbios_info\x18) \x01(\x0b\x32!.enterprise_management.SmbiosInfo\x12\x42\n\x11kernel_parameters\x18* \x01(\x0b\x32\'.enterprise_management.KernelParameters\x12\x30\n\x08\x65\x66i_vars\x18+ \x01(\x0b\x32\x1e.enterprise_management.EFIVars\x12\x32\n\tboot_info\x18, \x01(\x0b\x32\x1f.enterprise_management.BootInfo\x12G\n\x14network_adapter_info\x18- \x03(\x0b\x32).enterprise_management.NetworkAdapterInfo\x12I\n\x15lacros_browser_report\x18. \x03(\x0b\x32*.enterprise_management.LaCrOsBrowserReportJ\x04\x08\x04\x10\x05J\x04\x08\x07\x10\x08J\x04\x08\r\x10\x0eJ\x04\x08\x14\x10\x15\"\xe4\x02\n\x0eOsUpdateStatus\x12I\n\rupdate_status\x18\x01 \x01(\x0e\x32\x32.enterprise_management.OsUpdateStatus.UpdateStatus\x12\x1c\n\x14new_platform_version\x18\x02 \x01(\t\x12%\n\x1dnew_required_platform_version\x18\x03 \x01(\t\x12\x1e\n\x16last_checked_timestamp\x18\x04 \x01(\x03\x12\x1d\n\x15last_reboot_timestamp\x18\x05 \x01(\x03\"\x82\x01\n\x0cUpdateStatus\x12\x11\n\rOS_UP_TO_DATE\x10\x00\x12!\n\x1dOS_IMAGE_DOWNLOAD_NOT_STARTED\x10\x01\x12!\n\x1dOS_IMAGE_DOWNLOAD_IN_PROGRESS\x10\x02\x12\x19\n\x15OS_UPDATE_NEED_REBOOT\x10\x03\"x\n\tAppStatus\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x19\n\x11\x65xtension_version\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\x08\x12!\n\x19required_platform_version\x18\x05 \x01(\t\"\xfd\x03\n\x07\x41ppInfo\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x38\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32&.enterprise_management.AppInfo.AppType\x12\x10\n\x08\x61pp_name\x18\x03 \x01(\t\x12\x35\n\x06status\x18\x04 \x01(\x0e\x32%.enterprise_management.AppInfo.Status\x12\x14\n\x0cinstall_time\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x07 \x01(\t\x12>\n\x13\x61\x63tive_time_periods\x18\x08 \x03(\x0b\x32!.enterprise_management.TimePeriod\"\x96\x01\n\x07\x41ppType\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x0c\n\x08TYPE_ARC\x10\x01\x12\x10\n\x0cTYPE_BUILTIN\x10\x02\x12\x11\n\rTYPE_CROSTINI\x10\x03\x12\x12\n\x0eTYPE_EXTENSION\x10\x04\x12\x0c\n\x08TYPE_WEB\x10\x05\x12\x11\n\rTYPE_PLUGINVM\x10\x06\x12\x11\n\rTYPE_BOREALIS\x10\x07\"_\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x14\n\x10STATUS_INSTALLED\x10\x01\x12\x13\n\x0fSTATUS_DISABLED\x10\x02\x12\x16\n\x12STATUS_UNINSTALLED\x10\x03\"F\n\x14\x41ndroidAppPermission\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07granted\x18\x02 \x01(\x08\x12\x0f\n\x07managed\x18\x03 \x01(\x08\"\x85\x04\n\x0e\x41ndroidAppInfo\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x10\n\x08\x61pp_name\x18\x02 \x01(\t\x12\x14\n\x0cpackage_name\x18\x03 \x01(\t\x12\x46\n\x06status\x18\x04 \x01(\x0e\x32\x36.enterprise_management.AndroidAppInfo.AndroidAppStatus\x12O\n\x10installed_source\x18\x05 \x01(\x0e\x32\x35.enterprise_management.AndroidAppInfo.InstalledSource\x12\x0f\n\x07version\x18\x06 \x01(\x05\x12@\n\x0bpermissions\x18\x07 \x03(\x0b\x32+.enterprise_management.AndroidAppPermission\"e\n\x10\x41ndroidAppStatus\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x12\n\x0eSTATUS_ENABLED\x10\x01\x12\x14\n\x10STATUS_SUSPENDED\x10\x02\x12\x13\n\x0fSTATUS_DISABLED\x10\x03\"h\n\x0fInstalledSource\x12\x12\n\x0eSOURCE_UNKNOWN\x10\x00\x12\x13\n\x0fSOURCE_BY_ADMIN\x10\x01\x12\x12\n\x0eSOURCE_BY_USER\x10\x02\x12\x18\n\x14SOURCE_NOT_INSTALLED\x10\x03\"\xc5\x02\n\x17\x43hromeUserProfileReport\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1d\n\x15\x63hrome_signed_in_user\x18\x02 \x01(\t\x12\x16\n\x0e\x65xtension_data\x18\x03 \x01(\t\x12\x0f\n\x07plugins\x18\x04 \x01(\t\x12\x13\n\x0bpolicy_data\x18\x05 \x01(\t\x12 \n\x18policy_fetched_timestamp\x18\x06 \x01(\x03\x12\x1e\n\x16safe_browsing_warnings\x18\x07 \x01(\x04\x12,\n$safe_browsing_warnings_click_through\x18\x08 \x01(\x04\x12\x0c\n\x04name\x18\t \x01(\t\x12\x43\n\x12\x65xtension_requests\x18\n \x03(\x0b\x32\'.enterprise_management.ExtensionRequest\"?\n\x12\x43hromeSignedInUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x1a\n\x12obfuscated_gaia_id\x18\x02 \x01(\t\"P\n\x10\x45xtensionRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x11request_timestamp\x18\x02 \x01(\x03\x12\x15\n\rjustification\x18\x03 \x01(\t\"\xd1\x05\n\tExtension\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12@\n\x08\x61pp_type\x18\x05 \x01(\x0e\x32..enterprise_management.Extension.ExtensionType\x12\x14\n\x0chomepage_url\x18\x06 \x01(\t\x12\x42\n\x0cinstall_type\x18\x08 \x01(\x0e\x32,.enterprise_management.Extension.InstallType\x12\x0f\n\x07\x65nabled\x18\t \x01(\x08\x12\x13\n\x0bpermissions\x18\n \x03(\t\x12\x18\n\x10host_permissions\x18\x0b \x03(\t\x12\x15\n\rfrom_webstore\x18\r \x01(\x08\x12\x18\n\x10manifest_version\x18\x0e \x01(\x05\"\x81\x02\n\rExtensionType\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x12\n\x0eTYPE_EXTENSION\x10\x01\x12\x13\n\x0fTYPE_HOSTED_APP\x10\x02\x12\x15\n\x11TYPE_PACKAGED_APP\x10\x03\x12\x1c\n\x18TYPE_LEGACY_PACKAGED_APP\x10\x04\x12\x0e\n\nTYPE_THEME\x10\x05\x12\x14\n\x10TYPE_USER_SCRIPT\x10\x06\x12\x15\n\x11TYPE_PLATFORM_APP\x10\x07\x12\x1f\n\x1bTYPE_LOGIN_SCREEN_EXTENSION\x10\x08\x12\"\n\x1eTYPE_CHROMEOS_SYSTEM_EXTENSION\x10\t\"g\n\x0bInstallType\x12\x0f\n\x0bTYPE_NORMAL\x10\x00\x12\x14\n\x10TYPE_DEVELOPMENT\x10\x01\x12\x11\n\rTYPE_SIDELOAD\x10\x02\x12\x0e\n\nTYPE_ADMIN\x10\x03\x12\x0e\n\nTYPE_OTHER\x10\x04J\x04\x08\x07\x10\x08J\x04\x08\x0c\x10\r\"N\n\x06Plugin\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\"\xd7\x05\n\x06Policy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x05level\x18\x02 \x01(\x0e\x32).enterprise_management.Policy.PolicyLevel\x12\x38\n\x05scope\x18\x03 \x01(\x0e\x32).enterprise_management.Policy.PolicyScope\x12:\n\x06source\x18\x04 \x01(\x0e\x32*.enterprise_management.Policy.PolicySource\x12\r\n\x05value\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"L\n\x0bPolicyLevel\x12\x11\n\rLEVEL_UNKNOWN\x10\x00\x12\x15\n\x11LEVEL_RECOMMENDED\x10\x01\x12\x13\n\x0fLEVEL_MANDATORY\x10\x02\"C\n\x0bPolicyScope\x12\x11\n\rSCOPE_UNKNOWN\x10\x00\x12\x0e\n\nSCOPE_USER\x10\x01\x12\x11\n\rSCOPE_MACHINE\x10\x02\"\xdd\x02\n\x0cPolicySource\x12\x12\n\x0eSOURCE_UNKNOWN\x10\x00\x12\x1d\n\x19SOURCE_ENTERPRISE_DEFAULT\x10\x01\x12\x10\n\x0cSOURCE_CLOUD\x10\x02\x12\x1b\n\x17SOURCE_ACTIVE_DIRECTORY\x10\x03\x12\x33\n/SOURCE_DEVICE_LOCAL_ACCOUNT_OVERRIDE_DEPRECATED\x10\x04\x12\x13\n\x0fSOURCE_PLATFORM\x10\x05\x12$\n SOURCE_PRIORITY_CLOUD_DEPRECATED\x10\x06\x12\x11\n\rSOURCE_MERGED\x10\x07\x12\x17\n\x13SOURCE_COMMAND_LINE\x10\x08\x12\x19\n\x15SOURCE_CLOUD_FROM_ASH\x10\t\x12\x34\n0SOURCE_RESTRICTED_MANAGED_GUEST_SESSION_OVERRIDE\x10\n\"X\n\x0f\x45xtensionPolicy\x12\x14\n\x0c\x65xtension_id\x18\x01 \x01(\t\x12/\n\x08policies\x18\x02 \x03(\x0b\x32\x1d.enterprise_management.Policy\"7\n\x14PolicyFetchTimestamp\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"\xe5\x03\n\x15\x43hromeUserProfileInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13is_detail_available\x18\x03 \x01(\x08\x12H\n\x15\x63hrome_signed_in_user\x18\x04 \x01(\x0b\x32).enterprise_management.ChromeSignedInUser\x12\x34\n\nextensions\x18\x05 \x03(\x0b\x32 .enterprise_management.Extension\x12\x43\n\x12\x65xtension_requests\x18\n \x03(\x0b\x32\'.enterprise_management.ExtensionRequest\x12\x36\n\x0f\x63hrome_policies\x18\x07 \x03(\x0b\x32\x1d.enterprise_management.Policy\x12\x42\n\x12\x65xtension_policies\x18\x08 \x03(\x0b\x32&.enterprise_management.ExtensionPolicy\x12N\n\x19policy_fetched_timestamps\x18\t \x03(\x0b\x32+.enterprise_management.PolicyFetchTimestampJ\x04\x08\x06\x10\x07\"\x96\x03\n\rBrowserReport\x12\x17\n\x0f\x62rowser_version\x18\x01 \x01(\t\x12/\n\x07\x63hannel\x18\x02 \x01(\x0e\x32\x1e.enterprise_management.Channel\x12\x17\n\x0f\x65xecutable_path\x18\x03 \x01(\t\x12S\n\x1b\x63hrome_user_profile_reports\x18\x04 \x03(\x0b\x32..enterprise_management.ChromeUserProfileReport\x12O\n\x19\x63hrome_user_profile_infos\x18\x06 \x03(\x0b\x32,.enterprise_management.ChromeUserProfileInfo\x12.\n\x07plugins\x18\x07 \x03(\x0b\x32\x1d.enterprise_management.Plugin\x12!\n\x19installed_browser_version\x18\x08 \x01(\t\x12)\n\x1ais_extended_stable_channel\x18\t \x01(\x08:\x05\x66\x61lse\"7\n\x08OSReport\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x61rch\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\"\xfc\x03\n\x1a\x43hromeDesktopReportRequest\x12\x18\n\x0cmachine_name\x18\x01 \x01(\tB\x02\x18\x01\x12\x0f\n\x07os_info\x18\x02 \x01(\t\x12\x0f\n\x07os_user\x18\x03 \x01(\t\x12<\n\x0e\x62rowser_report\x18\x04 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12\x19\n\rserial_number\x18\x05 \x01(\tB\x02\x18\x01\x12\x19\n\rcomputer_name\x18\x06 \x01(\tB\x02\x18\x01\x12\x32\n\tos_report\x18\x07 \x01(\x0b\x32\x1f.enterprise_management.OSReport\x12\x14\n\x0cos_user_name\x18\x08 \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\t \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\x12\x46\n\x14partial_report_types\x18\n \x03(\x0e\x32(.enterprise_management.PartialReportType\x12\x1f\n\x17machine_attestation_key\x18\x0b \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x0c \x01(\t\x12\x12\n\nbrand_name\x18\r \x01(\t\"\xe3\x01\n\x19\x43hromeOsUserReportRequest\x12<\n\x0e\x62rowser_report\x18\x01 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12@\n\x11\x61ndroid_app_infos\x18\x02 \x03(\x0b\x32%.enterprise_management.AndroidAppInfo\x12\x46\n\x14partial_report_types\x18\x03 \x03(\x0e\x32(.enterprise_management.PartialReportType\"\x8e\x01\n\x1a\x43hromeProfileReportRequest\x12<\n\x0e\x62rowser_report\x18\x01 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12\x32\n\tos_report\x18\x02 \x01(\x0b\x32\x1f.enterprise_management.OSReport\"\xd4\x02\n\x1aPolicyValueValidationIssue\x12\x13\n\x0bpolicy_name\x18\x01 \x01(\t\x12`\n\x08severity\x18\x02 \x01(\x0e\x32N.enterprise_management.PolicyValueValidationIssue.ValueValidationIssueSeverity\x12\x15\n\rdebug_message\x18\x03 \x01(\t\"\xa7\x01\n\x1cValueValidationIssueSeverity\x12/\n+VALUE_VALIDATION_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12+\n\'VALUE_VALIDATION_ISSUE_SEVERITY_WARNING\x10\x01\x12)\n%VALUE_VALIDATION_ISSUE_SEVERITY_ERROR\x10\x02\"\xf7\x07\n\x1dPolicyValidationReportRequest\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x14\n\x0cpolicy_token\x18\x02 \x01(\t\x12i\n\x16validation_result_type\x18\x03 \x01(\x0e\x32I.enterprise_management.PolicyValidationReportRequest.ValidationResultType\x12Y\n\x1epolicy_value_validation_issues\x18\x04 \x03(\x0b\x32\x31.enterprise_management.PolicyValueValidationIssue\"\xe4\x05\n\x14ValidationResultType\x12,\n(VALIDATION_RESULT_TYPE_ERROR_UNSPECIFIED\x10\x00\x12\"\n\x1eVALIDATION_RESULT_TYPE_SUCCESS\x10\x01\x12\x30\n,VALIDATION_RESULT_TYPE_BAD_INITIAL_SIGNATURE\x10\x02\x12(\n$VALIDATION_RESULT_TYPE_BAD_SIGNATURE\x10\x03\x12-\n)VALIDATION_RESULT_TYPE_ERROR_CODE_PRESENT\x10\x04\x12.\n*VALIDATION_RESULT_TYPE_PAYLOAD_PARSE_ERROR\x10\x05\x12,\n(VALIDATION_RESULT_TYPE_WRONG_POLICY_TYPE\x10\x06\x12\x33\n/VALIDATION_RESULT_TYPE_WRONG_SETTINGS_ENTITY_ID\x10\x07\x12(\n$VALIDATION_RESULT_TYPE_BAD_TIMESTAMP\x10\x08\x12\'\n#VALIDATION_RESULT_TYPE_BAD_DM_TOKEN\x10\t\x12(\n$VALIDATION_RESULT_TYPE_BAD_DEVICE_ID\x10\n\x12#\n\x1fVALIDATION_RESULT_TYPE_BAD_USER\x10\x0b\x12-\n)VALIDATION_RESULT_TYPE_POLICY_PARSE_ERROR\x10\x0c\x12\x39\n5VALIDATION_RESULT_TYPE_BAD_KEY_VERIFICATION_SIGNATURE\x10\r\x12(\n$VALIDATION_RESULT_TYPE_VALUE_WARNING\x10\x0e\x12&\n\"VALIDATION_RESULT_TYPE_VALUE_ERROR\x10\x0f\" \n\x1ePolicyValidationReportResponse\"A\n\rAndroidStatus\x12\x16\n\x0estatus_payload\x18\x01 \x01(\t\x12\x18\n\x10\x64roid_guard_info\x18\x02 \x01(\t\"\xcf\x01\n\x0b\x43rostiniApp\x12\x10\n\x08\x61pp_name\x18\x01 \x01(\t\x12\x38\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32&.enterprise_management.CrostiniAppType\x12/\n\'last_launch_time_window_start_timestamp\x18\x03 \x01(\x03\x12\x14\n\x0cpackage_name\x18\x04 \x01(\t\x12\x17\n\x0fpackage_version\x18\x05 \x01(\t\x12\x14\n\x0cpackage_hash\x18\x06 \x01(\t\"\xca\x01\n\x0e\x43rostiniStatus\x12/\n\'last_launch_time_window_start_timestamp\x18\x01 \x01(\x03\x12$\n\x1clast_launch_vm_image_version\x18\x02 \x01(\t\x12%\n\x1dlast_launch_vm_kernel_version\x18\x03 \x01(\t\x12:\n\x0einstalled_apps\x18\x04 \x03(\x0b\x32\".enterprise_management.CrostiniApp\"\xea\x02\n\x1aSessionStatusReportRequest\x12\x1f\n\x17\x64\x65vice_local_account_id\x18\x04 \x01(\t\x12\x38\n\x0einstalled_apps\x18\x05 \x03(\x0b\x32 .enterprise_management.AppStatus\x12<\n\x0e\x61ndroid_status\x18\x07 \x01(\x0b\x32$.enterprise_management.AndroidStatus\x12\x15\n\ruser_dm_token\x18\x08 \x01(\t\x12\x11\n\ttime_zone\x18\t \x01(\t\x12>\n\x0f\x63rostini_status\x18\n \x01(\x0b\x32%.enterprise_management.CrostiniStatus\x12\x31\n\tapp_infos\x18\x0b \x03(\x0b\x32\x1e.enterprise_management.AppInfoJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04J\x04\x08\x06\x10\x07\"G\n\x1a\x44\x65viceStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"\x1d\n\x1b\x43hromeDesktopReportResponse\"\x1c\n\x1a\x43hromeOsUserReportResponse\"\x1d\n\x1b\x43hromeProfileReportResponse\"H\n\x1bSessionStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"k\n\x1bPrivateSetMembershipRequest\x12L\n\x0crlwe_request\x18\x01 \x01(\x0b\x32\x36.enterprise_management.PrivateSetMembershipRlweRequest\"n\n\x1cPrivateSetMembershipResponse\x12N\n\rrlwe_response\x18\x01 \x01(\x0b\x32\x37.enterprise_management.PrivateSetMembershipRlweResponse\"\xc5\x01\n\x1fPrivateSetMembershipRlweRequest\x12O\n\x0coprf_request\x18\x01 \x01(\x0b\x32\x39.private_membership.rlwe.PrivateMembershipRlweOprfRequest\x12Q\n\rquery_request\x18\x02 \x01(\x0b\x32:.private_membership.rlwe.PrivateMembershipRlweQueryRequest\"\xca\x01\n PrivateSetMembershipRlweResponse\x12Q\n\roprf_response\x18\x01 \x01(\x0b\x32:.private_membership.rlwe.PrivateMembershipRlweOprfResponse\x12S\n\x0equery_response\x18\x02 \x01(\x0b\x32;.private_membership.rlwe.PrivateMembershipRlweQueryResponse\"\xcf\x02\n\x1b\x44\x65viceAutoEnrollmentRequest\x12\x11\n\tremainder\x18\x01 \x01(\x03\x12\x0f\n\x07modulus\x18\x02 \x01(\x03\x12\x80\x01\n\x15\x65nrollment_check_type\x18\x03 \x01(\x0e\x32\x46.enterprise_management.DeviceAutoEnrollmentRequest.EnrollmentCheckType:\x19\x45NROLLMENT_CHECK_TYPE_FRE\"\x88\x01\n\x13\x45nrollmentCheckType\x12%\n!ENROLLMENT_CHECK_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x45NROLLMENT_CHECK_TYPE_FRE\x10\x01\x12+\n\'ENROLLMENT_CHECK_TYPE_FORCED_ENROLLMENT\x10\x02\"H\n\x1c\x44\x65viceAutoEnrollmentResponse\x12\x18\n\x10\x65xpected_modulus\x18\x01 \x01(\x03\x12\x0e\n\x06hashes\x18\x02 \x03(\x0c\">\n\x1b\x44\x65viceStateRetrievalRequest\x12\x1f\n\x17server_backed_state_key\x18\x01 \x01(\x0c\"?\n\x1b\x44\x65viceStateKeyUpdateRequest\x12 \n\x18server_backed_state_keys\x18\x01 \x03(\x0c\"\xfb\x03\n\x1c\x44\x65viceStateRetrievalResponse\x12h\n\x0crestore_mode\x18\x01 \x01(\x0e\x32?.enterprise_management.DeviceStateRetrievalResponse.RestoreMode:\x11RESTORE_MODE_NONE\x12\x19\n\x11management_domain\x18\x02 \x01(\t\x12<\n\x0e\x64isabled_state\x18\x03 \x01(\x0b\x32$.enterprise_management.DisabledState\x12[\n\x16initial_state_response\x18\x04 \x01(\x0b\x32;.enterprise_management.DeviceInitialEnrollmentStateResponse\"\xba\x01\n\x0bRestoreMode\x12\x15\n\x11RESTORE_MODE_NONE\x10\x00\x12\'\n#RESTORE_MODE_REENROLLMENT_REQUESTED\x10\x01\x12&\n\"RESTORE_MODE_REENROLLMENT_ENFORCED\x10\x02\x12\x19\n\x15RESTORE_MODE_DISABLED\x10\x03\x12(\n$RESTORE_MODE_REENROLLMENT_ZERO_TOUCH\x10\x04\"P\n#DeviceInitialEnrollmentStateRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x12\n\nbrand_code\x18\x02 \x01(\t\"\xd7\x05\n$DeviceInitialEnrollmentStateResponse\x12\x90\x01\n\x17initial_enrollment_mode\x18\x01 \x01(\x0e\x32Q.enterprise_management.DeviceInitialEnrollmentStateResponse.InitialEnrollmentMode:\x1cINITIAL_ENROLLMENT_MODE_NONE\x12\x19\n\x11management_domain\x18\x02 \x01(\t\x12\'\n\x1fis_license_packaged_with_device\x18\x03 \x01(\x08\x12<\n\x0e\x64isabled_state\x18\x04 \x01(\x0b\x32$.enterprise_management.DisabledState\x12n\n\x15license_packaging_sku\x18\x05 \x01(\x0e\x32O.enterprise_management.DeviceInitialEnrollmentStateResponse.LicensePackagingSKU\"\xc1\x01\n\x15InitialEnrollmentMode\x12 \n\x1cINITIAL_ENROLLMENT_MODE_NONE\x10\x00\x12/\n+INITIAL_ENROLLMENT_MODE_ENROLLMENT_ENFORCED\x10\x01\x12/\n+INITIAL_ENROLLMENT_MODE_ZERO_TOUCH_ENFORCED\x10\x02\x12$\n INITIAL_ENROLLMENT_MODE_DISABLED\x10\x03\"f\n\x13LicensePackagingSKU\x12\r\n\tNOT_EXIST\x10\x00\x12\x15\n\x11\x43HROME_ENTERPRISE\x10\x01\x12\x14\n\x10\x43HROME_EDUCATION\x10\x02\x12\x13\n\x0f\x43HROME_TERMINAL\x10\x03\"L\n\x14\x44\x65vicePairingRequest\x12\x16\n\x0ehost_device_id\x18\x01 \x01(\t\x12\x1c\n\x14\x63ontroller_device_id\x18\x02 \x01(\t\"\x95\x02\n\x15\x44\x65vicePairingResponse\x12T\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x37.enterprise_management.DevicePairingResponse.StatusCode:\x06\x46\x41ILED\"\xa5\x01\n\nStatusCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01\x12\x19\n\x15HOST_DEVICE_NOT_FOUND\x10\x02\x12\x1f\n\x1b\x43ONTROLLER_DEVICE_NOT_FOUND\x10\x03\x12\x1d\n\x19HOST_DEVICE_DEPROVISIONED\x10\x04\x12#\n\x1f\x43ONTROLLER_DEVICE_DEPROVISIONED\x10\x05\"Q\n\x19\x43heckDevicePairingRequest\x12\x16\n\x0ehost_device_id\x18\x01 \x01(\t\x12\x1c\n\x14\x63ontroller_device_id\x18\x02 \x01(\t\"\xce\x02\n\x1a\x43heckDevicePairingResponse\x12]\n\x0bstatus_code\x18\x01 \x01(\x0e\x32<.enterprise_management.CheckDevicePairingResponse.StatusCode:\nNOT_PAIRED\"\xd0\x01\n\nStatusCode\x12\n\n\x06PAIRED\x10\x00\x12\x0e\n\nNOT_PAIRED\x10\x01\x12\x19\n\x15HOST_DEVICE_NOT_FOUND\x10\x02\x12\x1f\n\x1b\x43ONTROLLER_DEVICE_NOT_FOUND\x10\x03\x12\x1d\n\x19HOST_DEVICE_DEPROVISIONED\x10\x04\x12#\n\x1f\x43ONTROLLER_DEVICE_DEPROVISIONED\x10\x05\x12&\n\"INVALID_CONTROLLER_DEVICE_IDENTITY\x10\x06\"\x9c\x05\n\rRemoteCommand\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).enterprise_management.RemoteCommand.Type\x12\x12\n\ncommand_id\x18\x02 \x01(\x03\x12\x16\n\x0e\x61ge_of_command\x18\x03 \x01(\x03\x12\x0f\n\x07payload\x18\x04 \x01(\t\x12\x18\n\x10target_device_id\x18\x05 \x01(\t\"\xfa\x03\n\x04Type\x12\x1e\n\x11\x43OMMAND_ECHO_TEST\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x11\n\rDEVICE_REBOOT\x10\x00\x12\x15\n\x11\x44\x45VICE_SCREENSHOT\x10\x01\x12\x15\n\x11\x44\x45VICE_SET_VOLUME\x10\x02\x12\x17\n\x13\x44\x45VICE_FETCH_STATUS\x10\x03\x12\x14\n\x10USER_ARC_COMMAND\x10\x04\x12\x15\n\x11\x44\x45VICE_WIPE_USERS\x10\x05\x12\x1c\n\x18\x44\x45VICE_START_CRD_SESSION\x10\x06\x12\x1b\n\x17\x44\x45VICE_REMOTE_POWERWASH\x10\x07\x12\x31\n-DEVICE_REFRESH_ENTERPRISE_MACHINE_CERTIFICATE\x10\x08\x12,\n(DEVICE_GET_AVAILABLE_DIAGNOSTIC_ROUTINES\x10\t\x12!\n\x1d\x44\x45VICE_RUN_DIAGNOSTIC_ROUTINE\x10\n\x12(\n$DEVICE_GET_DIAGNOSTIC_ROUTINE_UPDATE\x10\x0b\x12\x1f\n\x1b\x42ROWSER_CLEAR_BROWSING_DATA\x10\x0c\x12\x16\n\x12\x44\x45VICE_RESET_EUICC\x10\r\x12)\n%BROWSER_ROTATE_ATTESTATION_CREDENTIAL\x10\x0e\"\xde\x01\n\x13RemoteCommandResult\x12\x45\n\x06result\x18\x01 \x01(\x0e\x32\x35.enterprise_management.RemoteCommandResult.ResultType\x12\x12\n\ncommand_id\x18\x02 \x01(\x03\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0f\n\x07payload\x18\x04 \x01(\t\"H\n\nResultType\x12\x12\n\x0eRESULT_IGNORED\x10\x00\x12\x12\n\x0eRESULT_FAILURE\x10\x01\x12\x12\n\x0eRESULT_SUCCESS\x10\x02\"\xf0\x01\n\x1a\x44\x65viceRemoteCommandRequest\x12\x1e\n\x16last_command_unique_id\x18\x01 \x01(\x03\x12\x43\n\x0f\x63ommand_results\x18\x02 \x03(\x0b\x32*.enterprise_management.RemoteCommandResult\x12\x1c\n\x14send_secure_commands\x18\x03 \x01(\x08\x12O\n\x0esignature_type\x18\x04 \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType\"\x91\x01\n\x1b\x44\x65viceRemoteCommandResponse\x12\x36\n\x08\x63ommands\x18\x01 \x03(\x0b\x32$.enterprise_management.RemoteCommand\x12:\n\x0fsecure_commands\x18\x02 \x03(\x0b\x32!.enterprise_management.SignedData\"(\n&DeviceAttributeUpdatePermissionRequest\"\xd1\x01\n\'DeviceAttributeUpdatePermissionResponse\x12Y\n\x06result\x18\x01 \x01(\x0e\x32I.enterprise_management.DeviceAttributeUpdatePermissionResponse.ResultType\"K\n\nResultType\x12\x1f\n\x1b\x41TTRIBUTE_UPDATE_DISALLOWED\x10\x00\x12\x1c\n\x18\x41TTRIBUTE_UPDATE_ALLOWED\x10\x01\"B\n\x1c\x44\x65viceAttributeUpdateRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\"\xb8\x01\n\x1d\x44\x65viceAttributeUpdateResponse\x12O\n\x06result\x18\x01 \x01(\x0e\x32?.enterprise_management.DeviceAttributeUpdateResponse.ResultType\"F\n\nResultType\x12\x1a\n\x16\x41TTRIBUTE_UPDATE_ERROR\x10\x00\x12\x1c\n\x18\x41TTRIBUTE_UPDATE_SUCCESS\x10\x01\"$\n\x12GcmIdUpdateRequest\x12\x0e\n\x06gcm_id\x18\x01 \x01(\t\"\x15\n\x13GcmIdUpdateResponse\"\x1f\n\x1d\x43heckAndroidManagementRequest\" \n\x1e\x43heckAndroidManagementResponse\"b\n%CertificateBasedDeviceRegisterRequest\x12\x39\n\x0esigned_request\x18\x01 \x01(\x0b\x32!.enterprise_management.SignedData\"3\n\x1b\x44\x65viceRegisterConfiguration\x12\x14\n\x0c\x64\x65vice_owner\x18\x01 \x01(\t\"\x9e\x03\n&CertificateBasedDeviceRegistrationData\x12g\n\x10\x63\x65rtificate_type\x18\x01 \x01(\x0e\x32M.enterprise_management.CertificateBasedDeviceRegistrationData.CertificateType\x12\x1a\n\x12\x64\x65vice_certificate\x18\x02 \x01(\x0c\x12M\n\x17\x64\x65vice_register_request\x18\x03 \x01(\x0b\x32,.enterprise_management.DeviceRegisterRequest\x12Y\n\x1d\x64\x65vice_register_configuration\x18\x04 \x01(\x0b\x32\x32.enterprise_management.DeviceRegisterConfiguration\"E\n\x0f\x43\x65rtificateType\x12\x0b\n\x07UNKNOWN\x10\x00\x12%\n!ENTERPRISE_ENROLLMENT_CERTIFICATE\x10\x01\"\xd4\x01\n\x16RegisterBrowserRequest\x12\x14\n\x0cmachine_name\x18\x01 \x01(\t\x12\x13\n\x0bos_platform\x18\x02 \x01(\t\x12\x12\n\nos_version\x18\x03 \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\x04 \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\x12\x14\n\x0c\x64\x65vice_model\x18\x05 \x01(\t\x12\x12\n\nbrand_name\x18\x06 \x01(\t\"?\n$ActiveDirectoryEnrollPlayUserRequest\x12\x17\n\x0f\x61uth_session_id\x18\x01 \x01(\t\"\x97\x01\n%ActiveDirectoryEnrollPlayUserResponse\x12\x18\n\x10\x65nrollment_token\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x43\n\x0fsaml_parameters\x18\x03 \x01(\x0b\x32*.enterprise_management.SamlParametersProto\"I\n\x13SamlParametersProto\x12\x19\n\x11\x61uth_redirect_url\x18\x01 \x01(\t\x12\x17\n\x0f\x61uth_session_id\x18\x02 \x01(\t\"+\n\x15PublicSamlUserRequest\x12\x12\n\naccount_id\x18\x01 \x01(\t\"]\n\x16PublicSamlUserResponse\x12\x43\n\x0fsaml_parameters\x18\x01 \x01(\x0b\x32*.enterprise_management.SamlParametersProto\"5\n\"ActiveDirectoryPlayActivityRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"%\n#ActiveDirectoryPlayActivityResponse\"\x1b\n\x19\x43heckDeviceLicenseRequest\"\x89\x01\n\x13LicenseAvailability\x12G\n\x17license_type_deprecated\x18\x01 \x01(\x0b\x32\".enterprise_management.LicenseTypeB\x02\x18\x01\x12)\n\x1d\x61vailable_licenses_deprecated\x18\x02 \x01(\x05\x42\x02\x18\x01\"\xbe\x02\n\x1a\x43heckDeviceLicenseResponse\x12u\n!license_selection_mode_deprecated\x18\x01 \x01(\x0e\x32\x46.enterprise_management.CheckDeviceLicenseResponse.LicenseSelectionModeB\x02\x18\x01\x12Y\n!license_availabilities_deprecated\x18\x02 \x03(\x0b\x32*.enterprise_management.LicenseAvailabilityB\x02\x18\x01\"N\n\x14LicenseSelectionMode\x12\r\n\tUNDEFINED\x10\x00\x12\x12\n\x0eUSER_SELECTION\x10\x01\x12\x13\n\x0f\x41\x44MIN_SELECTION\x10\x02\"\"\n ActiveDirectoryUserSigninRequest\">\n!ActiveDirectoryUserSigninResponse\x12\x19\n\x11\x61uth_redirect_url\x18\x01 \x01(\t\"\xd8\x02\n\x0eTpmVersionInfo\x12\x0e\n\x06\x66\x61mily\x18\x01 \x01(\r\x12\x12\n\nspec_level\x18\x02 \x01(\x04\x12\x14\n\x0cmanufacturer\x18\x03 \x01(\r\x12\x11\n\ttpm_model\x18\x04 \x01(\r\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\x04\x12\x17\n\x0fvendor_specific\x18\x06 \x01(\t\x12\x45\n\x0bgsc_version\x18\x07 \x01(\x0e\x32\x30.enterprise_management.TpmVersionInfo.GscVersion\x12\x0f\n\x07\x64id_vid\x18\x08 \x01(\t\"n\n\nGscVersion\x12\x1b\n\x17GSC_VERSION_UNSPECIFIED\x10\x00\x12\x17\n\x13GSC_VERSION_NOT_GSC\x10\x01\x12\x14\n\x10GSC_VERSION_CR50\x10\x02\x12\x14\n\x10GSC_VERSION_TI50\x10\x03\"\xc2\x03\n\rTpmStatusInfo\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\r\n\x05owned\x18\x02 \x01(\x08\x12\x17\n\x0ftpm_initialized\x18\x03 \x01(\x08\x12\x1c\n\x14\x61ttestation_prepared\x18\x04 \x01(\x08\x12\x1c\n\x14\x61ttestation_enrolled\x18\x05 \x01(\x08\x12!\n\x19\x64ictionary_attack_counter\x18\x06 \x01(\x05\x12#\n\x1b\x64ictionary_attack_threshold\x18\x07 \x01(\x05\x12+\n#dictionary_attack_lockout_in_effect\x18\x08 \x01(\x08\x12\x33\n+dictionary_attack_lockout_seconds_remaining\x18\t \x01(\x05\x12\"\n\x16\x62oot_lockbox_finalized\x18\n \x01(\x08\x42\x02\x18\x01\x12!\n\x19owner_password_is_present\x18\x0b \x01(\x08\x12K\n\x16tpm_supported_features\x18\x0c \x01(\x0b\x32+.enterprise_management.TpmSupportedFeatures\"}\n\x14TpmSupportedFeatures\x12\x12\n\nis_allowed\x18\x01 \x01(\x08\x12\x19\n\x11support_pinweaver\x18\x02 \x01(\x08\x12!\n\x19support_runtime_selection\x18\x03 \x01(\x08\x12\x13\n\x0bsupport_u2f\x18\x04 \x01(\x08\"F\n\x0bSystemState\x12\x37\n\x0cvolume_infos\x18\x01 \x03(\x0b\x32!.enterprise_management.VolumeInfo\"\xe3\x33\n\x1e\x45xtensionInstallReportLogEvent\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12S\n\nevent_type\x18\x02 \x01(\x0e\x32?.enterprise_management.ExtensionInstallReportLogEvent.EventType\x12\x16\n\x0estateful_total\x18\x03 \x01(\x03\x12\x15\n\rstateful_free\x18\x04 \x01(\x03\x12\x0e\n\x06online\x18\x05 \x01(\x08\x12o\n\x19session_state_change_type\x18\x06 \x01(\x0e\x32L.enterprise_management.ExtensionInstallReportLogEvent.SessionStateChangeType\x12[\n\x0e\x66\x61ilure_reason\x18\x07 \x01(\x0e\x32\x43.enterprise_management.ExtensionInstallReportLogEvent.FailureReason\x12\x63\n\x12installation_stage\x18\x08 \x01(\x0e\x32G.enterprise_management.ExtensionInstallReportLogEvent.InstallationStage\x12\x61\n\x11\x64ownloading_stage\x18\t \x01(\x0e\x32\x46.enterprise_management.ExtensionInstallReportLogEvent.DownloadingStage\x12\x46\n\x0e\x65xtension_type\x18\n \x01(\x0e\x32..enterprise_management.Extension.ExtensionType\x12Q\n\tuser_type\x18\x0b \x01(\x0e\x32>.enterprise_management.ExtensionInstallReportLogEvent.UserType\x12\x13\n\x0bis_new_user\x18\x0c \x01(\x08\x12#\n\x1bis_misconfiguration_failure\x18\r \x01(\x08\x12j\n\x16install_creation_stage\x18\x0e \x01(\x0e\x32J.enterprise_management.ExtensionInstallReportLogEvent.InstallCreationStage\x12h\n\x15\x64ownload_cache_status\x18\x0f \x01(\x0e\x32I.enterprise_management.ExtensionInstallReportLogEvent.DownloadCacheStatus\x12u\n\x17unpacker_failure_reason\x18\x10 \x01(\x0e\x32T.enterprise_management.ExtensionInstallReportLogEvent.SandboxedUnpackerFailureReason\x12j\n\x16manifest_invalid_error\x18\x11 \x01(\x0e\x32J.enterprise_management.ExtensionInstallReportLogEvent.ManifestInvalidError\x12m\n\x18\x63rx_install_error_detail\x18\x12 \x01(\x0e\x32K.enterprise_management.ExtensionInstallReportLogEvent.CrxInstallErrorDetail\x12\x18\n\x10\x66\x65tch_error_code\x18\x13 \x01(\x05\x12\x13\n\x0b\x66\x65tch_tries\x18\x14 \x01(\x05\"\xa2\x01\n\tEventType\x12\x1a\n\x16LOG_EVENT_TYPE_UNKNOWN\x10\x00\x12\x12\n\x0ePOLICY_REQUEST\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0c\n\x08\x43\x41NCELED\x10\x03\x12\x17\n\x13\x43ONNECTIVITY_CHANGE\x10\x04\x12\x18\n\x14SESSION_STATE_CHANGE\x10\x05\x12\x17\n\x13INSTALLATION_FAILED\x10\x06\"o\n\x16SessionStateChangeType\x12%\n!SESSION_STATE_CHANGE_TYPE_UNKNOWN\x10\x00\x12\t\n\x05LOGIN\x10\x01\x12\n\n\x06LOGOUT\x10\x02\x12\x0b\n\x07SUSPEND\x10\x03\x12\n\n\x06RESUME\x10\x04\"\xbe\x06\n\rFailureReason\x12\x1a\n\x16\x46\x41ILURE_REASON_UNKNOWN\x10\x00\x12\x0e\n\nINVALID_ID\x10\x01\x12 \n\x1cMALFORMED_EXTENSION_SETTINGS\x10\x02\x12\x17\n\x13REPLACED_BY_ARC_APP\x10\x03\x12\x1c\n\x18MALFORMED_EXTENSION_DICT\x10\x04\x12 \n\x1cNOT_SUPPORTED_EXTENSION_DICT\x10\x05\x12&\n\"MALFORMED_EXTENSION_DICT_FILE_PATH\x10\x06\x12$\n MALFORMED_EXTENSION_DICT_VERSION\x10\x07\x12\'\n#MALFORMED_EXTENSION_DICT_UPDATE_URL\x10\x08\x12\x18\n\x14LOCALE_NOT_SUPPORTED\x10\t\x12\x1e\n\x1aNOT_PERFORMING_NEW_INSTALL\x10\n\x12\x13\n\x0fTOO_OLD_PROFILE\x10\x0b\x12!\n\x1d\x44O_NOT_INSTALL_FOR_ENTERPRISE\x10\x0c\x12\x15\n\x11\x41LREADY_INSTALLED\x10\r\x12\x14\n\x10\x43RX_FETCH_FAILED\x10\x0e\x12\x19\n\x15MANIFEST_FETCH_FAILED\x10\x0f\x12\x14\n\x10MANIFEST_INVALID\x10\x10\x12\r\n\tNO_UPDATE\x10\x11\x12\x1e\n\x1a\x43RX_INSTALL_ERROR_DECLINED\x10\x12\x12\x30\n,CRX_INSTALL_ERROR_SANDBOXED_UNPACKER_FAILURE\x10\x13\x12\x1b\n\x17\x43RX_INSTALL_ERROR_OTHER\x10\x14\x12\x11\n\rNO_UPDATE_URL\x10\x15\x12\x16\n\x12PENDING_ADD_FAILED\x10\x16\x12\x19\n\x15\x44OWNLOADER_ADD_FAILED\x10\x17\x12\x0f\n\x0bIN_PROGRESS\x10\x18\x12\x17\n\x13\x43RX_FETCH_URL_EMPTY\x10\x19\x12\x19\n\x15\x43RX_FETCH_URL_INVALID\x10\x1a\x12\x1a\n\x16OVERRIDDEN_BY_SETTINGS\x10\x1b\x12\x1a\n\x16REPLACED_BY_SYSTEM_APP\x10\x1c\"|\n\x11InstallationStage\x12\x1e\n\x1aINSTALLATION_STAGE_UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0b\x44OWNLOADING\x10\x03\x12\x0e\n\nINSTALLING\x10\x04\x12\x0c\n\x08\x43OMPLETE\x10\x05\"\x9c\x02\n\x08UserType\x12\x15\n\x11USER_TYPE_UNKNOWN\x10\x00\x12\x15\n\x11USER_TYPE_REGULAR\x10\x01\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x02\x12\x1c\n\x18USER_TYPE_PUBLIC_ACCOUNT\x10\x03\x12\'\n\x1fUSER_TYPE_SUPERVISED_DEPRECATED\x10\x04\x1a\x02\x08\x01\x12\x17\n\x13USER_TYPE_KIOSK_APP\x10\x05\x12\x13\n\x0fUSER_TYPE_CHILD\x10\x06\x12\x1b\n\x17USER_TYPE_ARC_KIOSK_APP\x10\x07\x12\x1e\n\x1aUSER_TYPE_ACTIVE_DIRECTORY\x10\x08\x12\x1b\n\x17USER_TYPE_WEB_KIOSK_APP\x10\t\"\x97\x02\n\x10\x44ownloadingStage\x12\x1d\n\x19\x44OWNLOADING_STAGE_UNKNOWN\x10\x00\x12\x14\n\x10\x44OWNLOAD_PENDING\x10\x01\x12\x17\n\x13QUEUED_FOR_MANIFEST\x10\x02\x12\x18\n\x14\x44OWNLOADING_MANIFEST\x10\x03\x12\x1e\n\x1a\x44OWNLOADING_MANIFEST_RETRY\x10\x04\x12\x14\n\x10PARSING_MANIFEST\x10\x05\x12\x13\n\x0fMANIFEST_LOADED\x10\x06\x12\x12\n\x0eQUEUED_FOR_CRX\x10\x07\x12\x13\n\x0f\x44OWNLOADING_CRX\x10\x08\x12\x19\n\x15\x44OWNLOADING_CRX_RETRY\x10\t\x12\x0c\n\x08\x46INISHED\x10\n\"\xc3\x02\n\x14InstallCreationStage\x12\"\n\x1eINSTALL_CREATION_STAGE_UNKNOWN\x10\x00\x12\x16\n\x12\x43REATION_INITIATED\x10\x01\x12\x34\n0NOTIFIED_FROM_MANAGEMENT_INITIAL_CREATION_FORCED\x10\x02\x12\x38\n4NOTIFIED_FROM_MANAGEMENT_INITIAL_CREATION_NOT_FORCED\x10\x03\x12\x1c\n\x18NOTIFIED_FROM_MANAGEMENT\x10\x04\x12\'\n#NOTIFIED_FROM_MANAGEMENT_NOT_FORCED\x10\x05\x12\x19\n\x15SEEN_BY_POLICY_LOADER\x10\x06\x12\x1d\n\x19SEEN_BY_EXTERNAL_PROVIDER\x10\x07\"\x98\x01\n\x13\x44ownloadCacheStatus\x12\x11\n\rCACHE_UNKNOWN\x10\x00\x12\x12\n\x0e\x43\x41\x43HE_DISABLED\x10\x01\x12\x0e\n\nCACHE_MISS\x10\x02\x12\x12\n\x0e\x43\x41\x43HE_OUTDATED\x10\x03\x12\r\n\tCACHE_HIT\x10\x04\x12\'\n#CACHE_HIT_ON_MANIFEST_FETCH_FAILURE\x10\x05\"\xb6\r\n\x1eSandboxedUnpackerFailureReason\x12-\n)SANDBOXED_UNPACKER_FAILURE_REASON_UNKNOWN\x10\x00\x12 \n\x1c\x43OULD_NOT_GET_TEMP_DIRECTORY\x10\x01\x12#\n\x1f\x43OULD_NOT_CREATE_TEMP_DIRECTORY\x10\x02\x12\x33\n/FAILED_TO_COPY_EXTENSION_FILE_TO_TEMP_DIRECTORY\x10\x03\x12\'\n#COULD_NOT_GET_SANDBOX_FRIENDLY_PATH\x10\x04\x12 \n\x1c\x43OULD_NOT_LOCALIZE_EXTENSION\x10\x05\x12\x14\n\x10INVALID_MANIFEST\x10\x06\x12\x1a\n\x16UNPACKER_CLIENT_FAILED\x10\x07\x12\x33\n/UTILITY_PROCESS_CRASHED_WHILE_TRYING_TO_INSTALL\x10\x08\x12\x19\n\x15\x43RX_FILE_NOT_READABLE\x10\t\x12\x16\n\x12\x43RX_HEADER_INVALID\x10\n\x12\x1c\n\x18\x43RX_MAGIC_NUMBER_INVALID\x10\x0b\x12\x1e\n\x1a\x43RX_VERSION_NUMBER_INVALID\x10\x0c\x12*\n&CRX_EXCESSIVELY_LARGE_KEY_OR_SIGNATURE\x10\r\x12\x17\n\x13\x43RX_ZERO_KEY_LENGTH\x10\x0e\x12\x1d\n\x19\x43RX_ZERO_SIGNATURE_LENGTH\x10\x0f\x12\x1a\n\x16\x43RX_PUBLIC_KEY_INVALID\x10\x10\x12\x19\n\x15\x43RX_SIGNATURE_INVALID\x10\x11\x12\x34\n0CRX_SIGNATURE_VERIFICATION_INITIALIZATION_FAILED\x10\x12\x12%\n!CRX_SIGNATURE_VERIFICATION_FAILED\x10\x13\x12#\n\x1f\x45RROR_SERIALIZING_MANIFEST_JSON\x10\x14\x12\x1e\n\x1a\x45RROR_SAVING_MANIFEST_JSON\x10\x15\x12.\n*COULD_NOT_READ_IMAGE_DATA_FROM_DISK_UNUSED\x10\x16\x12\x33\n/DECODED_IMAGES_DO_NOT_MATCH_THE_MANIFEST_UNUSED\x10\x17\x12\"\n\x1eINVALID_PATH_FOR_BROWSER_IMAGE\x10\x18\x12!\n\x1d\x45RROR_REMOVING_OLD_IMAGE_FILE\x10\x19\x12!\n\x1dINVALID_PATH_FOR_BITMAP_IMAGE\x10\x1a\x12!\n\x1d\x45RROR_RE_ENCODING_THEME_IMAGE\x10\x1b\x12\x1c\n\x18\x45RROR_SAVING_THEME_IMAGE\x10\x1c\x12&\n\"DEPRECATED_ABORTED_DUE_TO_SHUTDOWN\x10\x1d\x12\x30\n,COULD_NOT_READ_CATALOG_DATA_FROM_DISK_UNUSED\x10\x1e\x12\x18\n\x14INVALID_CATALOG_DATA\x10\x1f\x12#\n\x1fINVALID_PATH_FOR_CATALOG_UNUSED\x10 \x12\x1d\n\x19\x45RROR_SERIALIZING_CATALOG\x10!\x12\x18\n\x14\x45RROR_SAVING_CATALOG\x10\"\x12 \n\x1c\x43RX_HASH_VERIFICATION_FAILED\x10#\x12\x10\n\x0cUNZIP_FAILED\x10$\x12\x19\n\x15\x44IRECTORY_MOVE_FAILED\x10%\x12\x1c\n\x18\x43RX_FILE_IS_DELTA_UPDATE\x10&\x12\x1d\n\x19\x43RX_EXPECTED_HASH_INVALID\x10\'\x12(\n$DEPRECATED_ERROR_PARSING_DNR_RULESET\x10(\x12\x1e\n\x1a\x45RROR_INDEXING_DNR_RULESET\x10)\x12\x1e\n\x1a\x43RX_REQUIRED_PROOF_MISSING\x10*\x12\x36\n2CRX_HEADER_VERIFIED_CONTENTS_UNCOMPRESSING_FAILURE\x10+\x12\x1f\n\x1bMALFORMED_VERIFIED_CONTENTS\x10,\x12\'\n#COULD_NOT_CREATE_METADATA_DIRECTORY\x10-\x12/\n+COULD_NOT_WRITE_VERIFIED_CONTENTS_INTO_FILE\x10.\"\xc1\x03\n\x14ManifestInvalidError\x12\"\n\x1eMANIFEST_INVALID_ERROR_UNKNOWN\x10\x00\x12\x16\n\x12XML_PARSING_FAILED\x10\x01\x12 \n\x1cINVALID_XLMNS_ON_GUPDATE_TAG\x10\x02\x12\x17\n\x13MISSING_GUPDATE_TAG\x10\x03\x12#\n\x1fINVALID_PROTOCOL_ON_GUPDATE_TAG\x10\x04\x12\x12\n\x0eMISSING_APP_ID\x10\x05\x12\x1d\n\x19MISSING_UPDATE_CHECK_TAGS\x10\x06\x12\x1e\n\x1aMULTIPLE_UPDATE_CHECK_TAGS\x10\x07\x12\x1b\n\x17INVALID_PRODVERSION_MIN\x10\x08\x12\x16\n\x12\x45MPTY_CODEBASE_URL\x10\t\x12\x18\n\x14INVALID_CODEBASE_URL\x10\n\x12$\n MISSING_VERSION_FOR_UPDATE_CHECK\x10\x0b\x12\x13\n\x0fINVALID_VERSION\x10\x0c\x12\x1c\n\x18\x42\x41\x44_UPDATE_SPECIFICATION\x10\r\x12\x12\n\x0e\x42\x41\x44_APP_STATUS\x10\x0e\"\xeb\x05\n\x15\x43rxInstallErrorDetail\x12$\n CRX_INSTALL_ERROR_DETAIL_UNKNOWN\x10\x00\x12+\n\'CONVERT_USER_SCRIPT_TO_EXTENSION_FAILED\x10\x01\x12\x11\n\rUNEXPECTED_ID\x10\x02\x12\x16\n\x12UNEXPECTED_VERSION\x10\x03\x12\x16\n\x12MISMATCHED_VERSION\x10\x04\x12\x1e\n\x1a\x43RX_ERROR_MANIFEST_INVALID\x10\x05\x12\x17\n\x13INSTALL_NOT_ENABLED\x10\x06\x12\x1f\n\x1bOFFSTORE_INSTALL_DISALLOWED\x10\x07\x12\x1e\n\x1aINCORRECT_APP_CONTENT_TYPE\x10\x08\x12\x1e\n\x1aNOT_INSTALLED_FROM_GALLERY\x10\t\x12\x1a\n\x16INCORRECT_INSTALL_HOST\x10\n\x12 \n\x1c\x44\x45PENDENCY_NOT_SHARED_MODULE\x10\x0b\x12\x1a\n\x16\x44\x45PENDENCY_OLD_VERSION\x10\x0c\x12\x1e\n\x1a\x44\x45PENDENCY_NOT_ALLOWLISTED\x10\r\x12\x1c\n\x18UNSUPPORTED_REQUIREMENTS\x10\x0e\x12\x1c\n\x18\x45XTENSION_IS_BLOCKLISTED\x10\x0f\x12\x18\n\x14\x44ISALLOWED_BY_POLICY\x10\x10\x12\x13\n\x0fKIOSK_MODE_ONLY\x10\x11\x12\x1a\n\x16OVERLAPPING_WEB_EXTENT\x10\x12\x12\x1a\n\x16\x43\x41NT_DOWNGRADE_VERSION\x10\x13\x12$\n MOVE_DIRECTORY_TO_PROFILE_FAILED\x10\x14\x12\x17\n\x13\x43\x41NT_LOAD_EXTENSION\x10\x15\x12\x11\n\rUSER_CANCELED\x10\x16\x12\x10\n\x0cUSER_ABORTED\x10\x17\x12!\n\x1dUPDATE_NON_EXISTING_EXTENSION\x10\x18\"\xbe\x06\n\x18\x41ppInstallReportLogEvent\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12M\n\nevent_type\x18\x02 \x01(\x0e\x32\x39.enterprise_management.AppInstallReportLogEvent.EventType\x12\x16\n\x0estateful_total\x18\x03 \x01(\x03\x12\x15\n\rstateful_free\x18\x04 \x01(\x03\x12\x19\n\x11\x63louddps_response\x18\x05 \x01(\x05\x12\x14\n\x0cphonesky_log\x18\x06 \x01(\t\x12\x0e\n\x06online\x18\x07 \x01(\x08\x12i\n\x19session_state_change_type\x18\x08 \x01(\x0e\x32\x46.enterprise_management.AppInstallReportLogEvent.SessionStateChangeType\x12\x12\n\nandroid_id\x18\t \x01(\x03\"\xdf\x02\n\tEventType\x12\x1a\n\x16LOG_EVENT_TYPE_UNKNOWN\x10\x00\x12\x12\n\x0eSERVER_REQUEST\x10\x01\x12\x14\n\x10\x43LOUDDPC_REQUEST\x10\x02\x12\x14\n\x10\x43LOUDDPS_REQUEST\x10\x03\x12\x15\n\x11\x43LOUDDPS_RESPONSE\x10\x04\x12\x10\n\x0cPHONESKY_LOG\x10\x05\x12\x0b\n\x07SUCCESS\x10\x06\x12\x0c\n\x08\x43\x41NCELED\x10\x07\x12\x17\n\x13\x43ONNECTIVITY_CHANGE\x10\x08\x12\x18\n\x14SESSION_STATE_CHANGE\x10\t\x12\x18\n\x14INSTALLATION_STARTED\x10\n\x12\x19\n\x15INSTALLATION_FINISHED\x10\x0b\x12\x17\n\x13INSTALLATION_FAILED\x10\x0c\x12\x12\n\x0e\x44IRECT_INSTALL\x10\r\x12\x1d\n\x19\x43LOUDDPC_MAIN_LOOP_FAILED\x10\x0e\"o\n\x16SessionStateChangeType\x12%\n!SESSION_STATE_CHANGE_TYPE_UNKNOWN\x10\x00\x12\t\n\x05LOGIN\x10\x01\x12\n\n\x06LOGOUT\x10\x02\x12\x0b\n\x07SUSPEND\x10\x03\x12\n\n\x06RESUME\x10\x04\"\x87\x01\n\x16\x45xtensionInstallReport\x12\x14\n\x0c\x65xtension_id\x18\x01 \x01(\t\x12\x12\n\nincomplete\x18\x02 \x01(\x08\x12\x43\n\x04logs\x18\x03 \x03(\x0b\x32\x35.enterprise_management.ExtensionInstallReportLogEvent\"v\n\x10\x41ppInstallReport\x12\x0f\n\x07package\x18\x01 \x01(\t\x12\x12\n\nincomplete\x18\x02 \x01(\x08\x12=\n\x04logs\x18\x03 \x03(\x0b\x32/.enterprise_management.AppInstallReportLogEvent\"_\n\x17\x41ppInstallReportRequest\x12\x44\n\x13\x61pp_install_reports\x18\x01 \x03(\x0b\x32\'.enterprise_management.AppInstallReport\"q\n\x1d\x45xtensionInstallReportRequest\x12P\n\x19\x65xtension_install_reports\x18\x01 \x03(\x0b\x32-.enterprise_management.ExtensionInstallReport\"\x1a\n\x18\x41ppInstallReportResponse\"\xad\x01\n\x15RefreshAccountRequest\x12N\n\x0c\x61\x63\x63ount_type\x18\x01 \x01(\x0e\x32\x38.enterprise_management.RefreshAccountRequest.AccountType\"D\n\x0b\x41\x63\x63ountType\x12\x1c\n\x18\x41\x43\x43OUNT_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43HROME_OS_DEMO_MODE\x10\x01\"\x18\n\x16RefreshAccountResponse\"L\n\x19RsuLookupKeyUploadRequest\x12\x10\n\x08\x62oard_id\x18\x01 \x01(\x0c\x12\x1d\n\x15\x63r50_hashed_device_id\x18\x02 \x01(\x0c\"<\n\x1aRsuLookupKeyUploadResponse\x12\x1e\n\x16rsu_lookup_key_updated\x18\x01 \x01(\x08\"6\n\x0f\x45SimProfileInfo\x12\r\n\x05iccid\x18\x01 \x01(\t\x12\x14\n\x0csmdp_address\x18\x02 \x01(\t\"\x88\x01\n\x16UploadEuiccInfoRequest\x12\x13\n\x0b\x65uicc_count\x18\x01 \x01(\r\x12=\n\resim_profiles\x18\x02 \x03(\x0b\x32&.enterprise_management.ESimProfileInfo\x12\x1a\n\x12\x63lear_profile_list\x18\x03 \x01(\x08\"\x19\n\x17UploadEuiccInfoResponse\"\xc0\x08\n\rPrintJobEvent\x12U\n\x11job_configuration\x18\x01 \x01(\x0b\x32:.enterprise_management.PrintJobEvent.PrintJobConfiguration\x12@\n\tuser_type\x18\x02 \x01(\x0e\x32-.enterprise_management.PrintJobEvent.UserType\x12=\n\x07printer\x18\x03 \x01(\x0b\x32,.enterprise_management.PrintJobEvent.Printer\x1a\xe1\x01\n\x15PrintJobConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x1d\n\x15\x63reation_timestamp_ms\x18\x04 \x01(\x03\x12\x1f\n\x17\x63ompletion_timestamp_ms\x18\x05 \x01(\x03\x12\x17\n\x0fnumber_of_pages\x18\x06 \x01(\x05\x12\x44\n\x08settings\x18\x07 \x01(\x0b\x32\x32.enterprise_management.PrintJobEvent.PrintSettings\x1a\x30\n\x07Printer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x1a\xfa\x03\n\rPrintSettings\x12K\n\x05\x63olor\x18\x01 \x01(\x0e\x32<.enterprise_management.PrintJobEvent.PrintSettings.ColorMode\x12M\n\x06\x64uplex\x18\x02 \x01(\x0e\x32=.enterprise_management.PrintJobEvent.PrintSettings.DuplexMode\x12P\n\nmedia_size\x18\x03 \x01(\x0b\x32<.enterprise_management.PrintJobEvent.PrintSettings.MediaSize\x12\x0e\n\x06\x63opies\x18\x04 \x01(\x05\x1a=\n\tMediaSize\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12\x11\n\tvendor_id\x18\x03 \x01(\t\"C\n\tColorMode\x12\x16\n\x12UNKNOWN_COLOR_MODE\x10\x00\x12\x13\n\x0f\x42LACK_AND_WHITE\x10\x01\x12\t\n\x05\x43OLOR\x10\x02\"g\n\nDuplexMode\x12\x17\n\x13UNKNOWN_DUPLEX_MODE\x10\x00\x12\r\n\tONE_SIDED\x10\x01\x12\x17\n\x13TWO_SIDED_LONG_EDGE\x10\x02\x12\x18\n\x14TWO_SIDED_SHORT_EDGE\x10\x03\"D\n\x08UserType\x12\x15\n\x11UNKNOWN_USER_TYPE\x10\x00\x12\x0b\n\x07REGULAR\x10\x01\x12\t\n\x05GUEST\x10\x02\x12\t\n\x05KIOSK\x10\x03\"\xd8\x01\n\x03\x41pp\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x34\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32\".enterprise_management.App.AppType\x12\x19\n\x11\x61\x64\x64itional_app_id\x18\x03 \x03(\t\"p\n\x07\x41ppType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x41RC\x10\x01\x12\x0c\n\x08\x42UILT_IN\x10\x02\x12\x0c\n\x08\x43ROSTINI\x10\x03\x12\r\n\tEXTENSION\x10\x04\x12\x07\n\x03WEB\x10\x05\x12\r\n\tPLUGIN_VM\x10\x06\x12\x0c\n\x08\x42OREALIS\x10\x07\"\xbe\x02\n\x0b\x41ppActivity\x12,\n\x08\x61pp_info\x18\x01 \x01(\x0b\x32\x1a.enterprise_management.App\x12>\n\x13\x61\x63tive_time_periods\x18\x02 \x03(\x0b\x32!.enterprise_management.TimePeriod\x12\x14\n\x0cpopulated_at\x18\x03 \x01(\x03\x12>\n\tapp_state\x18\x04 \x01(\x0e\x32+.enterprise_management.AppActivity.AppState\"k\n\x08\x41ppState\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x14\n\x10\x41LWAYS_AVAILABLE\x10\x02\x12\x0b\n\x07\x42LOCKED\x10\x03\x12\x11\n\rLIMIT_REACHED\x10\x04\x12\x0f\n\x0bUNINSTALLED\x10\x05\"d\n\x0eScreenTimeSpan\x12\x36\n\x0btime_period\x18\x01 \x01(\x0b\x32!.enterprise_management.TimePeriod\x12\x1a\n\x12\x61\x63tive_duration_ms\x18\x02 \x01(\x03\"\xea\x02\n\x18\x43hildStatusReportRequest\x12\x15\n\ruser_dm_token\x18\x01 \x01(\t\x12\x14\n\x0ctimestamp_ms\x18\x02 \x01(\x03\x12\x11\n\ttime_zone\x18\x03 \x01(\t\x12?\n\x10screen_time_span\x18\x04 \x03(\x0b\x32%.enterprise_management.ScreenTimeSpan\x12<\n\x0e\x61ndroid_status\x18\x05 \x01(\x0b\x32$.enterprise_management.AndroidStatus\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x11\n\tboot_mode\x18\x07 \x01(\t\x12\x38\n\x0c\x61pp_activity\x18\x08 \x03(\x0b\x32\".enterprise_management.AppActivity\x12.\n\nhidden_app\x18\t \x03(\x0b\x32\x1a.enterprise_management.App\"F\n\x19\x43hildStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"\x11\n\x0fStartCsrRequest\"\xe2\x01\n\x10StartCsrResponse\x12\x1a\n\x12invalidation_topic\x18\x01 \x01(\t\x12\x14\n\x0cva_challenge\x18\x02 \x01(\x0c\x12\x42\n\x11hashing_algorithm\x18\x05 \x01(\x0e\x32\'.enterprise_management.HashingAlgorithm\x12\x42\n\x11signing_algorithm\x18\x03 \x01(\x0e\x32\'.enterprise_management.SigningAlgorithm\x12\x14\n\x0c\x64\x61ta_to_sign\x18\x04 \x01(\x0c\"D\n\x10\x46inishCsrRequest\x12\x1d\n\x15va_challenge_response\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\"\x13\n\x11\x46inishCsrResponse\"\x15\n\x13\x44ownloadCertRequest\"7\n\x14\x44ownloadCertResponse\x12\x1f\n\x17pem_encoded_certificate\x18\x01 \x01(\t\"\x83\x03\n$ClientCertificateProvisioningRequest\x12\x19\n\x11\x63\x65rtificate_scope\x18\x01 \x01(\t\x12\x17\n\x0f\x63\x65rt_profile_id\x18\x02 \x01(\t\x12\x12\n\npublic_key\x18\x03 \x01(\x0c\x12\x17\n\x0f\x64\x65vice_dm_token\x18\x04 \x01(\t\x12\x43\n\x11start_csr_request\x18\x05 \x01(\x0b\x32&.enterprise_management.StartCsrRequestH\x00\x12\x45\n\x12\x66inish_csr_request\x18\x06 \x01(\x0b\x32\'.enterprise_management.FinishCsrRequestH\x00\x12K\n\x15\x64ownload_cert_request\x18\x07 \x01(\x0b\x32*.enterprise_management.DownloadCertRequestH\x00\x12\x16\n\x0epolicy_version\x18\x08 \x01(\x0c\x42\t\n\x07request\"\xfa\x04\n%ClientCertificateProvisioningResponse\x12\x17\n\x0ftry_again_later\x18\x01 \x01(\x03\x12S\n\x05\x65rror\x18\x02 \x01(\x0e\x32\x42.enterprise_management.ClientCertificateProvisioningResponse.ErrorH\x00\x12\x45\n\x12start_csr_response\x18\x03 \x01(\x0b\x32\'.enterprise_management.StartCsrResponseH\x00\x12G\n\x13\x66inish_csr_response\x18\x04 \x01(\x0b\x32(.enterprise_management.FinishCsrResponseH\x00\x12M\n\x16\x64ownload_cert_response\x18\x05 \x01(\x0b\x32+.enterprise_management.DownloadCertResponseH\x00\"\xf7\x01\n\x05\x45rror\x12\r\n\tUNDEFINED\x10\x00\x12\r\n\tTIMED_OUT\x10\x01\x12\x1f\n\x1bIDENTITY_VERIFICATION_ERROR\x10\x02\x12\x0c\n\x08\x43\x41_ERROR\x10\x03\x12\x15\n\x11INCONSISTENT_DATA\x10\x04\x12\x12\n\x0e\x42\x41\x44_PUBLIC_KEY\x10\x05\x12 \n\x1c\x42\x41\x44_CA_CERTIFICATE_SPECIFIED\x10\x06\x12#\n\x1f\x42\x41\x44_CLIENT_CERTIFICATE_RECEIVED\x10\x07\x12\x19\n\x15INVALID_CSR_SIGNATURE\x10\x08\x12\x14\n\x10\x43SR_ALREADY_SENT\x10\tB\n\n\x08response\"\x9a\x03\n\x1d\x42rowserPublicKeyUploadRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12[\n\x0fkey_trust_level\x18\x03 \x01(\x0e\x32\x42.enterprise_management.BrowserPublicKeyUploadRequest.KeyTrustLevel\x12N\n\x08key_type\x18\x04 \x01(\x0e\x32<.enterprise_management.BrowserPublicKeyUploadRequest.KeyType\"g\n\rKeyTrustLevel\x12\x1f\n\x1bKEY_TRUST_LEVEL_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x43HROME_BROWSER_TPM_KEY\x10\x01\x12\x19\n\x15\x43HROME_BROWSER_OS_KEY\x10\x02\"<\n\x07KeyType\x12\x18\n\x14KEY_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07RSA_KEY\x10\x01\x12\n\n\x06\x45\x43_KEY\x10\x02\"\xbe\x01\n\x1e\x42rowserPublicKeyUploadResponse\x12Y\n\rresponse_code\x18\x01 \x01(\x0e\x32\x42.enterprise_management.BrowserPublicKeyUploadResponse.ResponseCode\"A\n\x0cResponseCode\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x15\n\x11INVALID_SIGNATURE\x10\x02\"\xe2\x1b\n\x17\x44\x65viceManagementRequest\x12\x46\n\x10register_request\x18\x01 \x01(\x0b\x32,.enterprise_management.DeviceRegisterRequest\x12J\n\x12unregister_request\x18\x02 \x01(\x0b\x32..enterprise_management.DeviceUnregisterRequest\x12\x42\n\x0epolicy_request\x18\x03 \x01(\x0b\x32*.enterprise_management.DevicePolicyRequest\x12V\n\x1c\x64\x65vice_status_report_request\x18\x04 \x01(\x0b\x32\x30.enterprise_management.DeviceStatusReportRequest\x12X\n\x1dsession_status_report_request\x18\x05 \x01(\x0b\x32\x31.enterprise_management.SessionStatusReportRequest\x12T\n\x1b\x63hild_status_report_request\x18\x1e \x01(\x0b\x32/.enterprise_management.ChildStatusReportRequest\x12S\n\x17\x61uto_enrollment_request\x18\x06 \x01(\x0b\x32\x32.enterprise_management.DeviceAutoEnrollmentRequest\x12K\n\x13\x63\x65rt_upload_request\x18\x07 \x01(\x0b\x32..enterprise_management.DeviceCertUploadRequest\x12X\n\x1aservice_api_access_request\x18\x08 \x01(\x0b\x32\x34.enterprise_management.DeviceServiceApiAccessRequest\x12Z\n\x1e\x64\x65vice_state_retrieval_request\x18\t \x01(\x0b\x32\x32.enterprise_management.DeviceStateRetrievalRequest\x12[\n\x1f\x64\x65vice_state_key_update_request\x18\n \x01(\x0b\x32\x32.enterprise_management.DeviceStateKeyUpdateRequest\x12K\n\x16\x64\x65vice_pairing_request\x18\x0b \x01(\x0b\x32+.enterprise_management.DevicePairingRequest\x12V\n\x1c\x63heck_device_pairing_request\x18\x0c \x01(\x0b\x32\x30.enterprise_management.CheckDevicePairingRequest\x12Q\n\x16remote_command_request\x18\r \x01(\x0b\x32\x31.enterprise_management.DeviceRemoteCommandRequest\x12q\n*device_attribute_update_permission_request\x18\x0e \x01(\x0b\x32=.enterprise_management.DeviceAttributeUpdatePermissionRequest\x12\\\n\x1f\x64\x65vice_attribute_update_request\x18\x0f \x01(\x0b\x32\x33.enterprise_management.DeviceAttributeUpdateRequest\x12H\n\x15gcm_id_update_request\x18\x10 \x01(\x0b\x32).enterprise_management.GcmIdUpdateRequest\x12^\n check_android_management_request\x18\x11 \x01(\x0b\x32\x34.enterprise_management.CheckAndroidManagementRequest\x12h\n\"certificate_based_register_request\x18\x12 \x01(\x0b\x32<.enterprise_management.CertificateBasedDeviceRegisterRequest\x12n\n)active_directory_enroll_play_user_request\x18\x13 \x01(\x0b\x32;.enterprise_management.ActiveDirectoryEnrollPlayUserRequest\x12i\n&active_directory_play_activity_request\x18\x14 \x01(\x0b\x32\x39.enterprise_management.ActiveDirectoryPlayActivityRequest\x12\x65\n\'check_device_license_request_deprecated\x18\x15 \x01(\x0b\x32\x30.enterprise_management.CheckDeviceLicenseRequestB\x02\x18\x01\x12\x65\n$active_directory_user_signin_request\x18\x16 \x01(\x0b\x32\x37.enterprise_management.ActiveDirectoryUserSigninRequest\x12O\n\x18register_browser_request\x18\x17 \x01(\x0b\x32-.enterprise_management.RegisterBrowserRequest\x12R\n\x1a\x61pp_install_report_request\x18\x19 \x01(\x0b\x32..enterprise_management.AppInstallReportRequest\x12X\n\x1d\x63hrome_desktop_report_request\x18\x1a \x01(\x0b\x32\x31.enterprise_management.ChromeDesktopReportRequest\x12^\n policy_validation_report_request\x18\x1b \x01(\x0b\x32\x34.enterprise_management.PolicyValidationReportRequest\x12k\n\'device_initial_enrollment_state_request\x18\x1c \x01(\x0b\x32:.enterprise_management.DeviceInitialEnrollmentStateRequest\x12M\n\x17refresh_account_request\x18\x1d \x01(\x0b\x32,.enterprise_management.RefreshAccountRequest\x12W\n\x1drsu_lookup_key_upload_request\x18\x1f \x01(\x0b\x32\x30.enterprise_management.RsuLookupKeyUploadRequest\x12N\n\x18public_saml_user_request\x18  \x01(\x0b\x32,.enterprise_management.PublicSamlUserRequest\x12W\n\x1d\x63hrome_os_user_report_request\x18! \x01(\x0b\x32\x30.enterprise_management.ChromeOsUserReportRequest\x12l\n\'client_certificate_provisioning_request\x18\" \x01(\x0b\x32;.enterprise_management.ClientCertificateProvisioningRequest\x12^\n extension_install_report_request\x18# \x01(\x0b\x32\x34.enterprise_management.ExtensionInstallReportRequest\x12R\n\x1a\x63heck_user_account_request\x18$ \x01(\x0b\x32..enterprise_management.CheckUserAccountRequest\x12Z\n\x1eprivate_set_membership_request\x18% \x01(\x0b\x32\x32.enterprise_management.PrivateSetMembershipRequest\x12_\n!browser_public_key_upload_request\x18& \x01(\x0b\x32\x34.enterprise_management.BrowserPublicKeyUploadRequest\x12P\n\x19upload_euicc_info_request\x18\' \x01(\x0b\x32-.enterprise_management.UploadEuiccInfoRequest\x12X\n\x1d\x63hrome_profile_report_request\x18( \x01(\x0b\x32\x31.enterprise_management.ChromeProfileReportRequestJ\x04\x08\x18\x10\x19\"\x98\x1a\n\x18\x44\x65viceManagementResponse\x12\x15\n\rerror_message\x18\x02 \x01(\t\x12H\n\x0c\x65rror_detail\x18\' \x03(\x0e\x32\x32.enterprise_management.DeviceManagementErrorDetail\x12H\n\x11register_response\x18\x03 \x01(\x0b\x32-.enterprise_management.DeviceRegisterResponse\x12L\n\x13unregister_response\x18\x04 \x01(\x0b\x32/.enterprise_management.DeviceUnregisterResponse\x12\x44\n\x0fpolicy_response\x18\x05 \x01(\x0b\x32+.enterprise_management.DevicePolicyResponse\x12X\n\x1d\x64\x65vice_status_report_response\x18\x06 \x01(\x0b\x32\x31.enterprise_management.DeviceStatusReportResponse\x12Z\n\x1esession_status_report_response\x18\x07 \x01(\x0b\x32\x32.enterprise_management.SessionStatusReportResponse\x12V\n\x1c\x63hild_status_report_response\x18\x1d \x01(\x0b\x32\x30.enterprise_management.ChildStatusReportResponse\x12U\n\x18\x61uto_enrollment_response\x18\x08 \x01(\x0b\x32\x33.enterprise_management.DeviceAutoEnrollmentResponse\x12M\n\x14\x63\x65rt_upload_response\x18\t \x01(\x0b\x32/.enterprise_management.DeviceCertUploadResponse\x12Z\n\x1bservice_api_access_response\x18\n \x01(\x0b\x32\x35.enterprise_management.DeviceServiceApiAccessResponse\x12\\\n\x1f\x64\x65vice_state_retrieval_response\x18\x0b \x01(\x0b\x32\x33.enterprise_management.DeviceStateRetrievalResponse\x12M\n\x17\x64\x65vice_pairing_response\x18\x0c \x01(\x0b\x32,.enterprise_management.DevicePairingResponse\x12X\n\x1d\x63heck_device_pairing_response\x18\r \x01(\x0b\x32\x31.enterprise_management.CheckDevicePairingResponse\x12S\n\x17remote_command_response\x18\x0e \x01(\x0b\x32\x32.enterprise_management.DeviceRemoteCommandResponse\x12s\n+device_attribute_update_permission_response\x18\x0f \x01(\x0b\x32>.enterprise_management.DeviceAttributeUpdatePermissionResponse\x12^\n device_attribute_update_response\x18\x10 \x01(\x0b\x32\x34.enterprise_management.DeviceAttributeUpdateResponse\x12J\n\x16gcm_id_update_response\x18\x11 \x01(\x0b\x32*.enterprise_management.GcmIdUpdateResponse\x12`\n!check_android_management_response\x18\x12 \x01(\x0b\x32\x35.enterprise_management.CheckAndroidManagementResponse\x12p\n*active_directory_enroll_play_user_response\x18\x13 \x01(\x0b\x32<.enterprise_management.ActiveDirectoryEnrollPlayUserResponse\x12k\n\'active_directory_play_activity_response\x18\x14 \x01(\x0b\x32:.enterprise_management.ActiveDirectoryPlayActivityResponse\x12g\n(check_device_license_response_deprecated\x18\x15 \x01(\x0b\x32\x31.enterprise_management.CheckDeviceLicenseResponseB\x02\x18\x01\x12g\n%active_directory_user_signin_response\x18\x16 \x01(\x0b\x32\x38.enterprise_management.ActiveDirectoryUserSigninResponse\x12Z\n\x1e\x63hrome_desktop_report_response\x18\x17 \x01(\x0b\x32\x32.enterprise_management.ChromeDesktopReportResponse\x12T\n\x1b\x61pp_install_report_response\x18\x19 \x01(\x0b\x32/.enterprise_management.AppInstallReportResponse\x12`\n!policy_validation_report_response\x18\x1a \x01(\x0b\x32\x35.enterprise_management.PolicyValidationReportResponse\x12m\n(device_initial_enrollment_state_response\x18\x1b \x01(\x0b\x32;.enterprise_management.DeviceInitialEnrollmentStateResponse\x12O\n\x18refresh_account_response\x18\x1c \x01(\x0b\x32-.enterprise_management.RefreshAccountResponse\x12Y\n\x1ersu_lookup_key_upload_response\x18\x1e \x01(\x0b\x32\x31.enterprise_management.RsuLookupKeyUploadResponse\x12P\n\x19public_saml_user_response\x18\x1f \x01(\x0b\x32-.enterprise_management.PublicSamlUserResponse\x12Y\n\x1e\x63hrome_os_user_report_response\x18  \x01(\x0b\x32\x31.enterprise_management.ChromeOsUserReportResponse\x12n\n(client_certificate_provisioning_response\x18! \x01(\x0b\x32<.enterprise_management.ClientCertificateProvisioningResponse\x12T\n\x1b\x63heck_user_account_response\x18\" \x01(\x0b\x32/.enterprise_management.CheckUserAccountResponse\x12\\\n\x1fprivate_set_membership_response\x18# \x01(\x0b\x32\x33.enterprise_management.PrivateSetMembershipResponse\x12\x61\n\"browser_public_key_upload_response\x18$ \x01(\x0b\x32\x35.enterprise_management.BrowserPublicKeyUploadResponse\x12R\n\x1aupload_euicc_info_response\x18% \x01(\x0b\x32..enterprise_management.UploadEuiccInfoResponse\x12Z\n\x1e\x63hrome_profile_report_response\x18& \x01(\x0b\x32\x32.enterprise_management.ChromeProfileReportResponseJ\x04\x08\x01\x10\x02J\x04\x08\x18\x10\x19\"5\n\x18\x44\x65viceStateRetrievalInfo\x12\x19\n\x11has_initial_state\x18\x01 \x01(\x08*i\n\x07\x43hannel\x12\x13\n\x0f\x43HANNEL_UNKNOWN\x10\x00\x12\x12\n\x0e\x43HANNEL_CANARY\x10\x01\x12\x0f\n\x0b\x43HANNEL_DEV\x10\x02\x12\x10\n\x0c\x43HANNEL_BETA\x10\x03\x12\x12\n\x0e\x43HANNEL_STABLE\x10\x04*\xab\x01\n\x0e\x42usDeviceClass\x12\x1c\n\x18\x44\x45VICE_CLASS_UNSPECIFIED\x10\x00\x12\x16\n\x12\x44ISPLAY_CONTROLLER\x10\x01\x12\x17\n\x13\x45THERNET_CONTROLLER\x10\x02\x12\x17\n\x13WIRELESS_CONTROLLER\x10\x03\x12\x15\n\x11\x42LUETOOTH_ADAPTER\x10\x04\x12\x1a\n\x16THUNDERBOLT_CONTROLLER\x10\x05*R\n\x07\x42usType\x12\x18\n\x14\x42US_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PCI_BUS\x10\x01\x12\x0b\n\x07USB_BUS\x10\x02\x12\x13\n\x0fTHUNDERBOLT_BUS\x10\x03*;\n\x11PartialReportType\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x15\n\x11\x45XTENSION_REQUEST\x10\x01*q\n\x0f\x43rostiniAppType\x12\x1e\n\x1a\x43ROSTINI_APP_TYPE_TERMINAL\x10\x00\x12!\n\x1d\x43ROSTINI_APP_TYPE_INTERACTIVE\x10\x01\x12\x1b\n\x17\x43ROSTINI_APP_TYPE_OTHER\x10\x02*X\n\x10HashingAlgorithm\x12!\n\x1dHASHING_ALGORITHM_UNSPECIFIED\x10\x00\x12\x08\n\x04SHA1\x10\x01\x12\n\n\x06SHA256\x10\x02\x12\x0b\n\x07NO_HASH\x10\x03*I\n\x10SigningAlgorithm\x12!\n\x1dSIGNING_ALGORITHM_UNSPECIFIED\x10\x00\x12\x12\n\x0eRSA_PKCS1_V1_5\x10\x01*\x9a\x01\n\x1b\x44\x65viceManagementErrorDetail\x12\x13\n\x0fNO_ERROR_DETAIL\x10\x00\x12\x30\n,CBCM_DELETION_POLICY_PREFERENCE_DELETE_TOKEN\x10\x01\x12\x34\n0CBCM_DELETION_POLICY_PREFERENCE_INVALIDATE_TOKEN\x10\x02\x42/H\x03Z+chromium/policy/enterprise_management_proto'
+  serialized_pb=b'\n\x1f\x64\x65vice_management_backend.proto\x12\x15\x65nterprise_management\x1a\x1dprivate_membership_rlwe.proto\"\xa7\x01\n\x0bLicenseType\x12H\n\x0clicense_type\x18\x01 \x01(\x0e\x32\x32.enterprise_management.LicenseType.LicenseTypeEnum\"N\n\x0fLicenseTypeEnum\x12\r\n\tUNDEFINED\x10\x00\x12\x11\n\rCDM_PERPETUAL\x10\x01\x12\x0e\n\nCDM_ANNUAL\x10\x02\x12\t\n\x05KIOSK\x10\x03\"G\n\nSignedData\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12\x18\n\x10\x65xtra_data_bytes\x18\x03 \x01(\x05\"-\n\x17\x43heckUserAccountRequest\x12\x12\n\nuser_email\x18\x01 \x01(\t\"\x88\x0f\n\x15\x44\x65viceRegisterRequest\x12\x12\n\nreregister\x18\x01 \x01(\x08\x12\x43\n\x04type\x18\x02 \x01(\x0e\x32\x31.enterprise_management.DeviceRegisterRequest.Type:\x02TT\x12\x12\n\nmachine_id\x18\x03 \x01(\t\x12\x15\n\rmachine_model\x18\x04 \x01(\t\x12\x13\n\x0brequisition\x18\x06 \x01(\t\x12\x1f\n\x17server_backed_state_key\x18\x07 \x01(\x0c\x12\x43\n\x06\x66lavor\x18\x08 \x01(\x0e\x32\x33.enterprise_management.DeviceRegisterRequest.Flavor\x12\x38\n\x0clicense_type\x18\t \x01(\x0b\x32\".enterprise_management.LicenseType\x12\\\n\x08lifetime\x18\x0b \x01(\x0e\x32\x35.enterprise_management.DeviceRegisterRequest.Lifetime:\x13LIFETIME_INDEFINITE\x12\x12\n\nbrand_code\x18\x0c \x01(\t\x12\x1f\n\x17reregistration_dm_token\x18\r \x01(\t\x12\x1c\n\x14\x65thernet_mac_address\x18\x0e \x01(\t\x12\x18\n\x10\x64ock_mac_address\x18\x0f \x01(\t\x12\x18\n\x10manufacture_date\x18\x10 \x01(\t\x12\"\n\x1a\x65xpected_enrollment_domain\x18\x11 \x01(\t\x12[\n\x1e\x64\x65vice_register_identification\x18\x12 \x01(\x0b\x32\x33.enterprise_management.DeviceRegisterIdentification\x12]\n\x14psm_execution_result\x18\x13 \x01(\x0e\x32?.enterprise_management.DeviceRegisterRequest.PsmExecutionResult\x12&\n\x1epsm_determination_timestamp_ms\x18\x14 \x01(\x03\"]\n\x04Type\x12\x06\n\x02TT\x10\x00\x12\x08\n\x04USER\x10\x01\x12\n\n\x06\x44\x45VICE\x10\x02\x12\x0b\n\x07\x42ROWSER\x10\x03\x12\x13\n\x0f\x41NDROID_BROWSER\x10\x04\x12\x0f\n\x0bIOS_BROWSER\x10\x06\"\x04\x08\x05\x10\x05\"\xef\x05\n\x06\x46lavor\x12\x1c\n\x18\x46LAVOR_ENROLLMENT_MANUAL\x10\x00\x12\"\n\x1e\x46LAVOR_ENROLLMENT_MANUAL_RENEW\x10\x01\x12\"\n\x1e\x46LAVOR_ENROLLMENT_LOCAL_FORCED\x10\x02\x12&\n\"FLAVOR_ENROLLMENT_LOCAL_ADVERTISED\x10\x03\x12#\n\x1f\x46LAVOR_ENROLLMENT_SERVER_FORCED\x10\x04\x12\'\n#FLAVOR_ENROLLMENT_SERVER_ADVERTISED\x10\x05\x12\x1e\n\x1a\x46LAVOR_ENROLLMENT_RECOVERY\x10\x06\x12\x1c\n\x18\x46LAVOR_USER_REGISTRATION\x10\x07\x12!\n\x1d\x46LAVOR_ENROLLMENT_ATTESTATION\x10\x08\x12.\n*FLAVOR_ENROLLMENT_ATTESTATION_LOCAL_FORCED\x10\t\x12/\n+FLAVOR_ENROLLMENT_ATTESTATION_SERVER_FORCED\x10\n\x12\x31\n-FLAVOR_ENROLLMENT_ATTESTATION_MANUAL_FALLBACK\x10\x0b\x12+\n\'FLAVOR_ENROLLMENT_INITIAL_SERVER_FORCED\x10\r\x12\x37\n3FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_SERVER_FORCED\x10\x0e\x12\x39\n5FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK\x10\x0f\x12\x31\n-FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED\x10\x10\x12:\n6FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK\x10\x11\"\x04\x08\x0c\x10\x0c\"X\n\x08Lifetime\x12\x16\n\x12LIFETIME_UNDEFINED\x10\x00\x12\x17\n\x13LIFETIME_INDEFINITE\x10\x01\x12\x1b\n\x17LIFETIME_EPHEMERAL_USER\x10\x02\"\x91\x01\n\x12PsmExecutionResult\x12\x16\n\x12PSM_RESULT_UNKNOWN\x10\x00\x12$\n PSM_RESULT_SUCCESSFUL_WITH_STATE\x10\x01\x12\'\n#PSM_RESULT_SUCCESSFUL_WITHOUT_STATE\x10\x02\x12\x14\n\x10PSM_RESULT_ERROR\x10\x03J\x04\x08\x05\x10\x06J\x04\x08\n\x10\x0b\":\n\x1c\x44\x65viceRegisterIdentification\x12\x1a\n\x12\x61ttested_device_id\x18\x01 \x01(\t\"\xea\x01\n\x18\x43heckUserAccountResponse\x12\x17\n\x0f\x64omain_verified\x18\x01 \x01(\x08\x12Z\n\x11user_account_type\x18\x02 \x01(\x0e\x32?.enterprise_management.CheckUserAccountResponse.UserAccountType\"Y\n\x0fUserAccountType\x12\x1d\n\x19UNKNOWN_USER_ACCOUNT_TYPE\x10\x00\x12\r\n\tNOT_EXIST\x10\x01\x12\x0c\n\x08\x43ONSUMER\x10\x02\x12\n\n\x06\x44\x41SHER\x10\x03\"\xd0\x02\n\x16\x44\x65viceRegisterResponse\x12\x1f\n\x17\x64\x65vice_management_token\x18\x01 \x02(\t\x12\x14\n\x0cmachine_name\x18\x02 \x01(\t\x12]\n\x0f\x65nrollment_type\x18\x03 \x01(\x0e\x32\x38.enterprise_management.DeviceRegisterResponse.DeviceMode:\nENTERPRISE\x12\x1a\n\x12\x63onfiguration_seed\x18\x04 \x01(\t\x12\x1c\n\x14user_affiliation_ids\x18\x05 \x03(\t\x12\x18\n\x10\x64irectory_api_id\x18\x06 \x01(\t\"L\n\nDeviceMode\x12\x0e\n\nENTERPRISE\x10\x00\x12\x15\n\x11RETAIL_DEPRECATED\x10\x01\x12\r\n\tCHROME_AD\x10\x02\x12\x08\n\x04\x44\x45MO\x10\x03\"\x19\n\x17\x44\x65viceUnregisterRequest\"\x1a\n\x18\x44\x65viceUnregisterResponse\"\xa6\x02\n\x17\x44\x65viceCertUploadRequest\x12\x1a\n\x12\x64\x65vice_certificate\x18\x01 \x01(\x0c\x12X\n\x10\x63\x65rtificate_type\x18\x02 \x01(\x0e\x32>.enterprise_management.DeviceCertUploadRequest.CertificateType\x12\x15\n\renrollment_id\x18\x03 \x01(\x0c\"~\n\x0f\x43\x65rtificateType\x12 \n\x1c\x43\x45RTIFICATE_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1e\x45NTERPRISE_MACHINE_CERTIFICATE\x10\x01\x12%\n!ENTERPRISE_ENROLLMENT_CERTIFICATE\x10\x02\"\x1a\n\x18\x44\x65viceCertUploadResponse\"\xfe\x01\n\x1d\x44\x65viceServiceApiAccessRequest\x12\x13\n\x0b\x61uth_scopes\x18\x01 \x03(\t\x12\x18\n\x10oauth2_client_id\x18\x02 \x01(\t\x12T\n\x0b\x64\x65vice_type\x18\x03 \x01(\x0e\x32?.enterprise_management.DeviceServiceApiAccessRequest.DeviceType\"X\n\nDeviceType\x12\r\n\tCHROME_OS\x10\x00\x12\x0e\n\nANDROID_OS\x10\x01\x12\x17\n\x13\x43HROME_OS_DEMO_MODE\x10\x02\x12\x12\n\x0e\x43HROME_BROWSER\x10\x03\"3\n\x1e\x44\x65viceServiceApiAccessResponse\x12\x11\n\tauth_code\x18\x01 \x01(\t\"M\n\x17\x42rowserDeviceIdentifier\x12\x15\n\rcomputer_name\x18\x01 \x01(\t\x12\x15\n\rserial_number\x18\x02 \x01(\tJ\x04\x08\x03\x10\x04\"\x95\x04\n\x12PolicyFetchRequest\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12U\n\x0esignature_type\x18\x03 \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType:\x04NONE\x12\x1a\n\x12public_key_version\x18\x04 \x01(\x05\x12\x1a\n\x12settings_entity_id\x18\x06 \x01(\t\x12\x1c\n\x14invalidation_version\x18\x07 \x01(\x03\x12\x1c\n\x14invalidation_payload\x18\x08 \x01(\x0c\x12\x1d\n\x15verification_key_hash\x18\t \x01(\t\x12 \n\x18policy_invalidation_info\x18\n \x01(\t\x12 \n\x18invalidation_topics_only\x18\x0b \x01(\x08\x12\x17\n\x0f\x64\x65vice_dm_token\x18\x0c \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\r \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\"7\n\rSignatureType\x12\x08\n\x04NONE\x10\x00\x12\x0c\n\x08SHA1_RSA\x10\x01\x12\x0e\n\nSHA256_RSA\x10\x02J\x04\x08\x05\x10\x06\" \n\rDisabledState\x12\x0f\n\x07message\x18\x01 \x01(\t\"\xe3\x01\n\x0b\x44\x65viceState\x12V\n\x0b\x64\x65vice_mode\x18\x01 \x01(\x0e\x32-.enterprise_management.DeviceState.DeviceMode:\x12\x44\x45VICE_MODE_NORMAL\x12<\n\x0e\x64isabled_state\x18\x02 \x01(\x0b\x32$.enterprise_management.DisabledState\">\n\nDeviceMode\x12\x16\n\x12\x44\x45VICE_MODE_NORMAL\x10\x00\x12\x18\n\x14\x44\x45VICE_MODE_DISABLED\x10\x01\" \n\x0c\x43ustomerLogo\x12\x10\n\x08logo_url\x18\x01 \x01(\t\"\x90\r\n\nPolicyData\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x15\n\rrequest_token\x18\x03 \x01(\t\x12\x14\n\x0cpolicy_value\x18\x04 \x01(\x0c\x12\x14\n\x0cmachine_name\x18\x05 \x01(\t\x12\x1a\n\x12public_key_version\x18\x06 \x01(\x05\x12\x10\n\x08username\x18\x07 \x01(\t\x12\x11\n\tdevice_id\x18\x08 \x01(\t\x12I\n\x05state\x18\t \x01(\x0e\x32\x32.enterprise_management.PolicyData.AssociationState:\x06\x41\x43TIVE\x12\x1a\n\x12settings_entity_id\x18\x0b \x01(\t\x12 \n\x18service_account_identity\x18\x0c \x01(\t\x12\x14\n\x0cpolicy_token\x18\x0f \x01(\t\x12I\n\x0fmanagement_mode\x18\x10 \x01(\x0e\x32\x30.enterprise_management.PolicyData.ManagementMode\x12\x38\n\x0c\x64\x65vice_state\x18\x11 \x01(\x0b\x32\".enterprise_management.DeviceState\x12\x1a\n\x12\x61nnotated_location\x18\x14 \x01(\t\x12\x1a\n\x12\x61nnotated_asset_id\x18\x15 \x01(\t\x12\x18\n\x10\x64irectory_api_id\x18\x16 \x01(\t\x12\x1e\n\x16\x64\x65vice_affiliation_ids\x18\x17 \x03(\t\x12\x1c\n\x14user_affiliation_ids\x18\x18 \x03(\t\x12\x16\n\x0e\x64isplay_domain\x18\x19 \x01(\t\x12!\n\x19policy_invalidation_topic\x18\x1a \x01(\t\x12\"\n\x1a\x63ommand_invalidation_topic\x18\x1b \x01(\t\x12\x1c\n\x14\x65nrollment_id_needed\x18\x1c \x01(\x08\x12\x0f\n\x07gaia_id\x18\x1d \x01(\t\x12G\n\x0emarket_segment\x18\x1e \x01(\x0e\x32/.enterprise_management.PolicyData.MarketSegment\x12:\n\rcustomer_logo\x18\x1f \x01(\x0b\x32#.enterprise_management.CustomerLogo\x12\x1b\n\x13\x63hange_password_uri\x18  \x01(\t\x12K\n\x16\x63lient_action_required\x18! \x01(\x0b\x32+.enterprise_management.ClientActionRequired\x12\x1e\n\x16obfuscated_customer_id\x18\" \x01(\t\x12P\n\x13metrics_log_segment\x18# \x01(\x0e\x32\x33.enterprise_management.PolicyData.MetricsLogSegment\x12\x12\n\nmanaged_by\x18$ \x01(\t\x12\x13\n\x0bsso_profile\x18% \x01(\t\x12\x13\n\x0blicense_sku\x18& \x01(\t\"@\n\x10\x41ssociationState\x12\n\n\x06\x41\x43TIVE\x10\x00\x12\r\n\tUNMANAGED\x10\x01\x12\x11\n\rDEPROVISIONED\x10\x02\"X\n\x0eManagementMode\x12\x0f\n\x0bLOCAL_OWNER\x10\x00\x12\x16\n\x12\x45NTERPRISE_MANAGED\x10\x01\x12\x1d\n\x19OBSOLETE_CONSUMER_MANAGED\x10\x02\"`\n\rMarketSegment\x12\x1e\n\x1aMARKET_SEGMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12\x45NROLLED_EDUCATION\x10\x01\x12\x17\n\x13\x45NROLLED_ENTERPRISE\x10\x02\"\\\n\x11MetricsLogSegment\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x07\n\x03K12\x10\x01\x12\x0e\n\nUNIVERSITY\x10\x02\x12\r\n\tNONPROFIT\x10\x03\x12\x0e\n\nENTERPRISE\x10\x04J\x04\x08\n\x10\x0bJ\x04\x08\r\x10\x0eJ\x04\x08\x0e\x10\x0fJ\x04\x08\x12\x10\x13J\x04\x08\x13\x10\x14R\x19\x63ommand_invalidation_nameR\x1b\x63ommand_invalidation_sourceR\x11invalidation_nameR\x13invalidation_sourceR\x1bvalid_serial_number_missing\"=\n\x14\x43lientActionRequired\x12%\n\x1d\x65nrollment_certificate_needed\x18\x01 \x01(\x08\"\xc0\x03\n\x13PolicyFetchResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\x12\x13\n\x0bpolicy_data\x18\x03 \x01(\x0c\x12\x1d\n\x15policy_data_signature\x18\x04 \x01(\x0c\x12\x16\n\x0enew_public_key\x18\x05 \x01(\x0c\x12 \n\x18new_public_key_signature\x18\x06 \x01(\x0c\x12<\n0new_public_key_verification_signature_deprecated\x18\x07 \x01(\x0c\x42\x02\x18\x01\x12(\n new_public_key_verification_data\x18\x08 \x01(\x0c\x12\x32\n*new_public_key_verification_data_signature\x18\t \x01(\x0c\x12\x17\n\x0bpolicy_type\x18\n \x01(\tB\x02\x18\x01\x12[\n\x1apolicy_data_signature_type\x18\x0b \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType\"L\n\"DEPRECATEDPolicyPublicKeyAndDomain\x12\x16\n\x0enew_public_key\x18\x01 \x01(\x0c\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"c\n\x19PublicKeyVerificationData\x12\x16\n\x0enew_public_key\x18\x01 \x01(\x0c\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\x12\x1e\n\x16new_public_key_version\x18\x03 \x01(\x05\"R\n\x13\x44\x65vicePolicyRequest\x12;\n\x08requests\x18\x03 \x03(\x0b\x32).enterprise_management.PolicyFetchRequest\"U\n\x14\x44\x65vicePolicyResponse\x12=\n\tresponses\x18\x03 \x03(\x0b\x32*.enterprise_management.PolicyFetchResponse\"<\n\nTimePeriod\x12\x17\n\x0fstart_timestamp\x18\x01 \x01(\x03\x12\x15\n\rend_timestamp\x18\x02 \x01(\x03\"\xe0\x02\n\x10\x41\x63tiveTimePeriod\x12\x36\n\x0btime_period\x18\x01 \x01(\x0b\x32!.enterprise_management.TimePeriod\x12\x17\n\x0f\x61\x63tive_duration\x18\x02 \x01(\x05\x12\x12\n\nuser_email\x18\x03 \x01(\t\x12I\n\x0csession_type\x18\x04 \x01(\x0e\x32\x33.enterprise_management.ActiveTimePeriod.SessionType\"\x9b\x01\n\x0bSessionType\x12\x13\n\x0fSESSION_UNKNOWN\x10\x00\x12\x1b\n\x17SESSION_AFFILIATED_USER\x10\x01\x12\x19\n\x15SESSION_MANAGED_GUEST\x10\x02\x12\x11\n\rSESSION_KIOSK\x10\x03\x12\x15\n\x11SESSION_ARC_KIOSK\x10\x04\x12\x15\n\x11SESSION_WEB_KIOSK\x10\x05\"\xaf\x02\n\x10NetworkInterface\x12G\n\x04type\x18\x01 \x01(\x0e\x32\x39.enterprise_management.NetworkInterface.NetworkDeviceType\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x0c\n\x04meid\x18\x03 \x01(\t\x12\x0c\n\x04imei\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65vice_path\x18\x05 \x01(\t\x12\r\n\x05iccid\x18\x06 \x01(\t\x12\x0b\n\x03mdn\x18\x07 \x01(\t\x12\x0c\n\x04\x65ids\x18\x08 \x03(\t\"b\n\x11NetworkDeviceType\x12\x11\n\rTYPE_ETHERNET\x10\x00\x12\r\n\tTYPE_WIFI\x10\x01\x12\x12\n\x0eTYPE_BLUETOOTH\x10\x03\x12\x11\n\rTYPE_CELLULAR\x10\x04\"\x04\x08\x02\x10\x02\"\xf1\x02\n\x0cNetworkState\x12\x13\n\x0b\x64\x65vice_path\x18\x01 \x01(\t\x12M\n\x10\x63onnection_state\x18\x02 \x01(\x0e\x32\x33.enterprise_management.NetworkState.ConnectionState\x12\x17\n\x0fsignal_strength\x18\x03 \x01(\x05\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x0f\n\x07gateway\x18\x05 \x01(\t\"\xbe\x01\n\x0f\x43onnectionState\x12\x08\n\x04IDLE\x10\x00\x12\x0b\n\x07\x43\x41RRIER\x10\x01\x12\x0f\n\x0b\x41SSOCIATION\x10\x02\x12\x11\n\rCONFIGURATION\x10\x03\x12\t\n\x05READY\x10\x04\x12\n\n\x06PORTAL\x10\x05\x12\x0b\n\x07OFFLINE\x10\x06\x12\n\n\x06ONLINE\x10\x07\x12\x0e\n\nDISCONNECT\x10\x08\x12\x0b\n\x07\x46\x41ILURE\x10\t\x12\x16\n\x12\x41\x43TIVATION_FAILURE\x10\n\x12\x0b\n\x07UNKNOWN\x10\x0b\"\x91\x01\n\nDeviceUser\x12\x38\n\x04type\x18\x01 \x02(\x0e\x32*.enterprise_management.DeviceUser.UserType\x12\r\n\x05\x65mail\x18\x02 \x01(\t\":\n\x08UserType\x12\x15\n\x11USER_TYPE_MANAGED\x10\x00\x12\x17\n\x13USER_TYPE_UNMANAGED\x10\x01\"L\n\nVolumeInfo\x12\x11\n\tvolume_id\x18\x01 \x01(\t\x12\x15\n\rstorage_total\x18\x02 \x01(\x03\x12\x14\n\x0cstorage_free\x18\x03 \x01(\x03\"D\n\x12\x43puUtilizationInfo\x12\x1b\n\x13\x63pu_utilization_pct\x18\x01 \x01(\x05\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"=\n\x11SystemFreeRamInfo\x12\x15\n\rsize_in_bytes\x18\x01 \x01(\x03\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"E\n\x0b\x43PUTempInfo\x12\x11\n\tcpu_label\x18\x01 \x01(\t\x12\x10\n\x08\x63pu_temp\x18\x02 \x01(\x05\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"o\n\x15StatefulPartitionInfo\x12\x17\n\x0f\x61vailable_space\x18\x01 \x01(\x04\x12\x13\n\x0btotal_space\x18\x02 \x01(\x04\x12\x12\n\nfilesystem\x18\x03 \x01(\t\x12\x14\n\x0cmount_source\x18\x04 \x01(\t\"\xb2\x01\n\rBatterySample\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0f\n\x07voltage\x18\x02 \x01(\x03\x12\x1a\n\x12remaining_capacity\x18\x03 \x01(\x03\x12\x13\n\x0btemperature\x18\x04 \x01(\x05\x12\x16\n\x0e\x64ischarge_rate\x18\x05 \x01(\x05\x12\x13\n\x0b\x63harge_rate\x18\x06 \x01(\x05\x12\x0f\n\x07\x63urrent\x18\x07 \x01(\x03\x12\x0e\n\x06status\x18\x08 \x01(\t\"\x98\x02\n\x0b\x42\x61tteryInfo\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\x16\n\x0e\x62\x61ttery_health\x18\x03 \x01(\t\x12\x17\n\x0f\x64\x65sign_capacity\x18\x04 \x01(\x03\x12\x1c\n\x14\x66ull_charge_capacity\x18\x05 \x01(\x03\x12\x13\n\x0b\x63ycle_count\x18\x06 \x01(\x05\x12\x35\n\x07samples\x18\x07 \x03(\x0b\x32$.enterprise_management.BatterySample\x12\x1a\n\x12\x64\x65sign_min_voltage\x18\t \x01(\x05\x12\x18\n\x10manufacture_date\x18\n \x01(\t\x12\x12\n\ntechnology\x18\x0b \x01(\t\"\xcd\x01\n\x0bPowerStatus\x12\x44\n\x0cpower_source\x18\x01 \x01(\x0e\x32..enterprise_management.PowerStatus.PowerSource\x12\x35\n\tbatteries\x18\x02 \x03(\x0b\x32\".enterprise_management.BatteryInfo\"A\n\x0bPowerSource\x12\x11\n\rPOWER_UNKNOWN\x10\x00\x12\x0c\n\x08POWER_AC\x10\x01\x12\x11\n\rPOWER_BATTERY\x10\x02\"2\n\x16\x44iskLifetimeEstimation\x12\x0b\n\x03slc\x18\x01 \x01(\x05\x12\x0b\n\x03mlc\x18\x02 \x01(\x05\"\x91\x07\n\x08\x44iskInfo\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x01(\t\x12\r\n\x05model\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x03\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x0e\n\x06health\x18\x06 \x01(\t\x12\x0f\n\x07volumes\x18\x07 \x03(\t\x12\"\n\x1a\x62ytes_read_since_last_boot\x18\x08 \x01(\x04\x12%\n\x1d\x62ytes_written_since_last_boot\x18\t \x01(\x04\x12)\n!read_time_seconds_since_last_boot\x18\n \x01(\x04\x12*\n\"write_time_seconds_since_last_boot\x18\x0b \x01(\x04\x12\'\n\x1fio_time_seconds_since_last_boot\x18\x0c \x01(\x04\x12,\n$discard_time_seconds_since_last_boot\x18\r \x01(\x04\x12\x1f\n\x15nvme_subsystem_vendor\x18\x0e \x01(\rH\x00\x12\x14\n\nemmc_oemid\x18\x0f \x01(\rH\x00\x12\x16\n\x0cother_vendor\x18\x10 \x01(\rH\x00\x12\x1f\n\x15nvme_subsystem_device\x18\x11 \x01(\rH\x01\x12\x12\n\x08\x65mmc_pnm\x18\x12 \x01(\rH\x01\x12\x17\n\rother_product\x18\x13 \x01(\rH\x01\x12\x1b\n\x11nvme_hardware_rev\x18\x14 \x01(\rH\x02\x12\x1b\n\x11\x65mmc_hardware_rev\x18\x15 \x01(\rH\x02\x12\x1c\n\x12other_hardware_rev\x18\x16 \x01(\rH\x02\x12\x1b\n\x11nvme_firmware_rev\x18\x17 \x01(\x04H\x03\x12\x1b\n\x11\x65mmc_firmware_rev\x18\x18 \x01(\x04H\x03\x12\x1c\n\x12other_firmware_rev\x18\x19 \x01(\rH\x03\x12>\n\x07purpose\x18\x1a \x01(\x0e\x32-.enterprise_management.DiskInfo.DevicePurpose\"H\n\rDevicePurpose\x12\x13\n\x0fPURPOSE_UNKNOWN\x10\x00\x12\x10\n\x0cPURPOSE_BOOT\x10\x01\x12\x10\n\x0cPURPOSE_SWAP\x10\x02\x42\x0b\n\tvendor_idB\x0c\n\nproduct_idB\x13\n\x11hardware_revisionB\x13\n\x11\x66irmware_revision\"\x8b\x01\n\rStorageStatus\x12.\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1f.enterprise_management.DiskInfo\x12J\n\x13lifetime_estimation\x18\x02 \x01(\x0b\x32-.enterprise_management.DiskLifetimeEstimation\"7\n\rThermalSample\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x13\n\x0btemperature\x18\x02 \x01(\x05\"Y\n\x0bThermalInfo\x12\r\n\x05label\x18\x01 \x01(\t\x12\x35\n\x07samples\x18\x03 \x03(\x0b\x32$.enterprise_management.ThermalSampleJ\x04\x08\x02\x10\x03\"H\n\x0b\x42oardStatus\x12\x39\n\rthermal_infos\x18\x01 \x03(\x0b\x32\".enterprise_management.ThermalInfo\"\xfa\x01\n\x0cSystemStatus\x12\x16\n\x0evpd_sku_number\x18\x01 \x01(\t\x12\x18\n\x10\x66irst_power_date\x18\x02 \x01(\t\x12\x18\n\x10manufacture_date\x18\x03 \x01(\t\x12\x16\n\x0emarketing_name\x18\x04 \x01(\t\x12\x14\n\x0c\x62ios_version\x18\x05 \x01(\t\x12\x12\n\nboard_name\x18\x06 \x01(\t\x12\x15\n\rboard_version\x18\x07 \x01(\t\x12\x14\n\x0c\x63hassis_type\x18\x08 \x01(\x04\x12\x14\n\x0cproduct_name\x18\t \x01(\t\x12\x19\n\x11vpd_serial_number\x18\n \x01(\t\"G\n\rCpuCStateInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n time_in_state_since_last_boot_us\x18\x02 \x01(\x04\"\xad\x01\n\x0eLogicalCpuInfo\x12!\n\x19scaling_max_frequency_khz\x18\x01 \x01(\r\x12%\n\x1dscaling_current_frequency_khz\x18\x02 \x01(\r\x12\x19\n\x11idle_time_seconds\x18\x03 \x01(\x04\x12\x36\n\x08\x63_states\x18\x04 \x03(\x0b\x32$.enterprise_management.CpuCStateInfo\"\x8d\x02\n\x07\x43puInfo\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x41\n\x0c\x61rchitecture\x18\x02 \x01(\x0e\x32+.enterprise_management.CpuInfo.Architecture\x12\x1b\n\x13max_clock_speed_khz\x18\x03 \x01(\r\x12;\n\x0clogical_cpus\x18\x04 \x03(\x0b\x32%.enterprise_management.LogicalCpuInfo\"Q\n\x0c\x41rchitecture\x12\x1c\n\x18\x41RCHITECTURE_UNSPECIFIED\x10\x00\x12\n\n\x06X86_64\x10\x01\x12\x0b\n\x07\x41\x41RCH64\x10\x02\x12\n\n\x06\x41RMV7L\x10\x03\"*\n\rGlobalCpuInfo\x12\x19\n\x11num_total_threads\x18\x01 \x01(\r\"m\n\x0b\x44isplayInfo\x12\x18\n\x10resolution_width\x18\x01 \x01(\r\x12\x19\n\x11resolution_height\x18\x02 \x01(\r\x12\x14\n\x0crefresh_rate\x18\x03 \x01(\r\x12\x13\n\x0bis_internal\x18\x04 \x01(\x08\"h\n\x13GraphicsAdapterInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0e\x64river_version\x18\x02 \x01(\t\x12\x11\n\tdevice_id\x18\x03 \x01(\x04\x12\x18\n\x10system_ram_usage\x18\x04 \x01(\x04\"\x83\x01\n\x0eGraphicsStatus\x12;\n\x07\x61\x64\x61pter\x18\x01 \x01(\x0b\x32*.enterprise_management.GraphicsAdapterInfo\x12\x34\n\x08\x64isplays\x18\x02 \x03(\x0b\x32\".enterprise_management.DisplayInfo\"\xdd\x02\n\x0f\x43rashReportInfo\x12\x11\n\tremote_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x61pture_timestamp\x18\x02 \x01(\x03\x12\r\n\x05\x63\x61use\x18\x03 \x01(\t\x12U\n\rupload_status\x18\x04 \x01(\x0e\x32>.enterprise_management.CrashReportInfo.CrashReportUploadStatus\"\xb5\x01\n\x17\x43rashReportUploadStatus\x12\x19\n\x15UPLOAD_STATUS_UNKNOWN\x10\x00\x12\x1e\n\x1aUPLOAD_STATUS_NOT_UPLOADED\x10\x01\x12\x19\n\x15UPLOAD_STATUS_PENDING\x10\x02\x12(\n$UPLOAD_STATUS_PENDING_USER_REQUESTED\x10\x03\x12\x1a\n\x16UPLOAD_STATUS_UPLOADED\x10\x04\"-\n\x0cTimezoneInfo\x12\r\n\x05posix\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\"\x82\x01\n\nMemoryInfo\x12\x18\n\x10total_memory_kib\x18\x01 \x01(\r\x12\x17\n\x0f\x66ree_memory_kib\x18\x02 \x01(\r\x12\x1c\n\x14\x61vailable_memory_kib\x18\x03 \x01(\r\x12#\n\x1bpage_faults_since_last_boot\x18\x04 \x01(\x04\"I\n\rBacklightInfo\x12\x0c\n\x04path\x18\x01 \x01(\t\x12\x16\n\x0emax_brightness\x18\x02 \x01(\r\x12\x12\n\nbrightness\x18\x03 \x01(\r\"\x1c\n\x07\x46\x61nInfo\x12\x11\n\tspeed_rpm\x18\x01 \x01(\r\"e\n\x14\x42luetoothAdapterInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07powered\x18\x03 \x01(\x08\x12\x1d\n\x15num_connected_devices\x18\x04 \x01(\r\"e\n\nSmbiosInfo\x12\x12\n\nsys_vendor\x18\x01 \x01(\t\x12\x14\n\x0cproduct_name\x18\x02 \x01(\t\x12\x17\n\x0fproduct_version\x18\x03 \x01(\t\x12\x14\n\x0c\x62ios_version\x18\x04 \x01(\t\"$\n\x10KernelParameters\x12\x10\n\x08\x63ros_efi\x18\x01 \x01(\x08\"\x1e\n\x07\x45\x46IVars\x12\x13\n\x0bsecure_boot\x18\x01 \x01(\x08\"\xc5\x01\n\x08\x42ootInfo\x12?\n\x0b\x62oot_method\x18\x01 \x01(\x0e\x32*.enterprise_management.BootInfo.BootMethod\x12\x17\n\x0bsecure_boot\x18\x02 \x01(\x08\x42\x02\x18\x01\"_\n\nBootMethod\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0f\n\x0b\x43ROS_SECURE\x10\x01\x12\r\n\tCROS_UEFI\x10\x02\x12\x0f\n\x0b\x43ROS_LEGACY\x10\x03\x12\x13\n\x0f\x43ROS_EFI_SECURE\x10\x04\"\xe3\x01\n\x12NetworkAdapterInfo\x12;\n\x0c\x64\x65vice_class\x18\x01 \x01(\x0e\x32%.enterprise_management.BusDeviceClass\x12\x30\n\x08\x62us_type\x18\x02 \x01(\x0e\x32\x1e.enterprise_management.BusType\x12\x11\n\tvendor_id\x18\x03 \x01(\x05\x12\x13\n\x0bvendor_name\x18\x04 \x01(\t\x12\x11\n\tdevice_id\x18\x05 \x01(\x05\x12\x13\n\x0b\x64\x65vice_name\x18\x06 \x01(\t\x12\x0e\n\x06\x64river\x18\x07 \x03(\t\"\x8b\x01\n\x13LaCrOsBrowserReport\x12\x36\n\x0b\x64\x65vice_user\x18\x01 \x01(\x0b\x32!.enterprise_management.DeviceUser\x12<\n\x0e\x62rowser_report\x18\x02 \x01(\x0b\x32$.enterprise_management.BrowserReport\"\xae\x12\n\x19\x44\x65viceStatusReportRequest\x12\x12\n\nos_version\x18\x01 \x01(\t\x12\x18\n\x10\x66irmware_version\x18\x02 \x01(\t\x12\x11\n\tboot_mode\x18\x03 \x01(\t\x12\x17\n\x0f\x62rowser_version\x18\x05 \x01(\t\x12?\n\x0e\x61\x63tive_periods\x18\x06 \x03(\x0b\x32\'.enterprise_management.ActiveTimePeriod\x12\x43\n\x12network_interfaces\x18\x08 \x03(\x0b\x32\'.enterprise_management.NetworkInterface\x12\x30\n\x05users\x18\t \x03(\x0b\x32!.enterprise_management.DeviceUser\x12\x37\n\x0cvolume_infos\x18\n \x03(\x0b\x32!.enterprise_management.VolumeInfo\x12;\n\x0enetwork_states\x18\x0b \x03(\x0b\x32#.enterprise_management.NetworkState\x12\'\n\x1b\x63pu_utilization_pct_samples\x18\x0c \x03(\x05\x42\x02\x18\x01\x12\x18\n\x10system_ram_total\x18\x0e \x01(\x03\x12#\n\x17system_ram_free_samples\x18\x0f \x03(\x03\x42\x02\x18\x01\x12:\n\x0e\x63pu_temp_infos\x18\x10 \x03(\x0b\x32\".enterprise_management.CPUTempInfo\x12?\n\x10os_update_status\x18\x11 \x01(\x0b\x32%.enterprise_management.OsUpdateStatus\x12;\n\x11running_kiosk_app\x18\x12 \x01(\x0b\x32 .enterprise_management.AppStatus\x12\x14\n\x0csound_volume\x18\x13 \x01(\x05\x12?\n\x10tpm_version_info\x18\x15 \x01(\x0b\x32%.enterprise_management.TpmVersionInfo\x12/\n\x07\x63hannel\x18\x16 \x01(\x0e\x32\x1e.enterprise_management.Channel\x12=\n\x0ftpm_status_info\x18\x17 \x01(\x0b\x32$.enterprise_management.TpmStatusInfo\x12\x1c\n\x14write_protect_switch\x18\x18 \x01(\x08\x12\x38\n\x0cpower_status\x18\x19 \x01(\x0b\x32\".enterprise_management.PowerStatus\x12<\n\x0estorage_status\x18\x1a \x01(\x0b\x32$.enterprise_management.StorageStatus\x12\x38\n\x0c\x62oard_status\x18\x1b \x01(\x0b\x32\".enterprise_management.BoardStatus\x12:\n\rsystem_status\x18\x1c \x01(\x0b\x32#.enterprise_management.SystemStatus\x12M\n\x17stateful_partition_info\x18\x1d \x01(\x0b\x32,.enterprise_management.StatefulPartitionInfo\x12H\n\x15\x63pu_utilization_infos\x18\x1e \x03(\x0b\x32).enterprise_management.CpuUtilizationInfo\x12G\n\x15system_ram_free_infos\x18\x1f \x03(\x0b\x32(.enterprise_management.SystemFreeRamInfo\x12\x30\n\x08\x63pu_info\x18  \x03(\x0b\x32\x1e.enterprise_management.CpuInfo\x12>\n\x0fgraphics_status\x18! \x01(\x0b\x32%.enterprise_management.GraphicsStatus\x12\x42\n\x12\x63rash_report_infos\x18\" \x03(\x0b\x32&.enterprise_management.CrashReportInfo\x12:\n\rtimezone_info\x18# \x01(\x0b\x32#.enterprise_management.TimezoneInfo\x12\x36\n\x0bmemory_info\x18$ \x01(\x0b\x32!.enterprise_management.MemoryInfo\x12<\n\x0e\x62\x61\x63klight_info\x18% \x03(\x0b\x32$.enterprise_management.BacklightInfo\x12\x30\n\x08\x66\x61n_info\x18& \x03(\x0b\x32\x1e.enterprise_management.FanInfo\x12=\n\x0fglobal_cpu_info\x18\' \x01(\x0b\x32$.enterprise_management.GlobalCpuInfo\x12K\n\x16\x62luetooth_adapter_info\x18( \x03(\x0b\x32+.enterprise_management.BluetoothAdapterInfo\x12\x36\n\x0bsmbios_info\x18) \x01(\x0b\x32!.enterprise_management.SmbiosInfo\x12\x42\n\x11kernel_parameters\x18* \x01(\x0b\x32\'.enterprise_management.KernelParameters\x12\x30\n\x08\x65\x66i_vars\x18+ \x01(\x0b\x32\x1e.enterprise_management.EFIVars\x12\x32\n\tboot_info\x18, \x01(\x0b\x32\x1f.enterprise_management.BootInfo\x12G\n\x14network_adapter_info\x18- \x03(\x0b\x32).enterprise_management.NetworkAdapterInfo\x12I\n\x15lacros_browser_report\x18. \x03(\x0b\x32*.enterprise_management.LaCrOsBrowserReportJ\x04\x08\x04\x10\x05J\x04\x08\x07\x10\x08J\x04\x08\r\x10\x0eJ\x04\x08\x14\x10\x15\"\xe4\x02\n\x0eOsUpdateStatus\x12I\n\rupdate_status\x18\x01 \x01(\x0e\x32\x32.enterprise_management.OsUpdateStatus.UpdateStatus\x12\x1c\n\x14new_platform_version\x18\x02 \x01(\t\x12%\n\x1dnew_required_platform_version\x18\x03 \x01(\t\x12\x1e\n\x16last_checked_timestamp\x18\x04 \x01(\x03\x12\x1d\n\x15last_reboot_timestamp\x18\x05 \x01(\x03\"\x82\x01\n\x0cUpdateStatus\x12\x11\n\rOS_UP_TO_DATE\x10\x00\x12!\n\x1dOS_IMAGE_DOWNLOAD_NOT_STARTED\x10\x01\x12!\n\x1dOS_IMAGE_DOWNLOAD_IN_PROGRESS\x10\x02\x12\x19\n\x15OS_UPDATE_NEED_REBOOT\x10\x03\"x\n\tAppStatus\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x19\n\x11\x65xtension_version\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\r\n\x05\x65rror\x18\x04 \x01(\x08\x12!\n\x19required_platform_version\x18\x05 \x01(\t\"\xfd\x03\n\x07\x41ppInfo\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x38\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32&.enterprise_management.AppInfo.AppType\x12\x10\n\x08\x61pp_name\x18\x03 \x01(\t\x12\x35\n\x06status\x18\x04 \x01(\x0e\x32%.enterprise_management.AppInfo.Status\x12\x14\n\x0cinstall_time\x18\x05 \x01(\x03\x12\x0f\n\x07version\x18\x07 \x01(\t\x12>\n\x13\x61\x63tive_time_periods\x18\x08 \x03(\x0b\x32!.enterprise_management.TimePeriod\"\x96\x01\n\x07\x41ppType\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x0c\n\x08TYPE_ARC\x10\x01\x12\x10\n\x0cTYPE_BUILTIN\x10\x02\x12\x11\n\rTYPE_CROSTINI\x10\x03\x12\x12\n\x0eTYPE_EXTENSION\x10\x04\x12\x0c\n\x08TYPE_WEB\x10\x05\x12\x11\n\rTYPE_PLUGINVM\x10\x06\x12\x11\n\rTYPE_BOREALIS\x10\x07\"_\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x14\n\x10STATUS_INSTALLED\x10\x01\x12\x13\n\x0fSTATUS_DISABLED\x10\x02\x12\x16\n\x12STATUS_UNINSTALLED\x10\x03\"F\n\x14\x41ndroidAppPermission\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07granted\x18\x02 \x01(\x08\x12\x0f\n\x07managed\x18\x03 \x01(\x08\"\x85\x04\n\x0e\x41ndroidAppInfo\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x10\n\x08\x61pp_name\x18\x02 \x01(\t\x12\x14\n\x0cpackage_name\x18\x03 \x01(\t\x12\x46\n\x06status\x18\x04 \x01(\x0e\x32\x36.enterprise_management.AndroidAppInfo.AndroidAppStatus\x12O\n\x10installed_source\x18\x05 \x01(\x0e\x32\x35.enterprise_management.AndroidAppInfo.InstalledSource\x12\x0f\n\x07version\x18\x06 \x01(\x05\x12@\n\x0bpermissions\x18\x07 \x03(\x0b\x32+.enterprise_management.AndroidAppPermission\"e\n\x10\x41ndroidAppStatus\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x12\n\x0eSTATUS_ENABLED\x10\x01\x12\x14\n\x10STATUS_SUSPENDED\x10\x02\x12\x13\n\x0fSTATUS_DISABLED\x10\x03\"h\n\x0fInstalledSource\x12\x12\n\x0eSOURCE_UNKNOWN\x10\x00\x12\x13\n\x0fSOURCE_BY_ADMIN\x10\x01\x12\x12\n\x0eSOURCE_BY_USER\x10\x02\x12\x18\n\x14SOURCE_NOT_INSTALLED\x10\x03\"\xc5\x02\n\x17\x43hromeUserProfileReport\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1d\n\x15\x63hrome_signed_in_user\x18\x02 \x01(\t\x12\x16\n\x0e\x65xtension_data\x18\x03 \x01(\t\x12\x0f\n\x07plugins\x18\x04 \x01(\t\x12\x13\n\x0bpolicy_data\x18\x05 \x01(\t\x12 \n\x18policy_fetched_timestamp\x18\x06 \x01(\x03\x12\x1e\n\x16safe_browsing_warnings\x18\x07 \x01(\x04\x12,\n$safe_browsing_warnings_click_through\x18\x08 \x01(\x04\x12\x0c\n\x04name\x18\t \x01(\t\x12\x43\n\x12\x65xtension_requests\x18\n \x03(\x0b\x32\'.enterprise_management.ExtensionRequest\"?\n\x12\x43hromeSignedInUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x1a\n\x12obfuscated_gaia_id\x18\x02 \x01(\t\"P\n\x10\x45xtensionRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x11request_timestamp\x18\x02 \x01(\x03\x12\x15\n\rjustification\x18\x03 \x01(\t\"\xd1\x05\n\tExtension\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12@\n\x08\x61pp_type\x18\x05 \x01(\x0e\x32..enterprise_management.Extension.ExtensionType\x12\x14\n\x0chomepage_url\x18\x06 \x01(\t\x12\x42\n\x0cinstall_type\x18\x08 \x01(\x0e\x32,.enterprise_management.Extension.InstallType\x12\x0f\n\x07\x65nabled\x18\t \x01(\x08\x12\x13\n\x0bpermissions\x18\n \x03(\t\x12\x18\n\x10host_permissions\x18\x0b \x03(\t\x12\x15\n\rfrom_webstore\x18\r \x01(\x08\x12\x18\n\x10manifest_version\x18\x0e \x01(\x05\"\x81\x02\n\rExtensionType\x12\x10\n\x0cTYPE_UNKNOWN\x10\x00\x12\x12\n\x0eTYPE_EXTENSION\x10\x01\x12\x13\n\x0fTYPE_HOSTED_APP\x10\x02\x12\x15\n\x11TYPE_PACKAGED_APP\x10\x03\x12\x1c\n\x18TYPE_LEGACY_PACKAGED_APP\x10\x04\x12\x0e\n\nTYPE_THEME\x10\x05\x12\x14\n\x10TYPE_USER_SCRIPT\x10\x06\x12\x15\n\x11TYPE_PLATFORM_APP\x10\x07\x12\x1f\n\x1bTYPE_LOGIN_SCREEN_EXTENSION\x10\x08\x12\"\n\x1eTYPE_CHROMEOS_SYSTEM_EXTENSION\x10\t\"g\n\x0bInstallType\x12\x0f\n\x0bTYPE_NORMAL\x10\x00\x12\x14\n\x10TYPE_DEVELOPMENT\x10\x01\x12\x11\n\rTYPE_SIDELOAD\x10\x02\x12\x0e\n\nTYPE_ADMIN\x10\x03\x12\x0e\n\nTYPE_OTHER\x10\x04J\x04\x08\x07\x10\x08J\x04\x08\x0c\x10\r\"N\n\x06Plugin\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\"\xd7\x05\n\x06Policy\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x05level\x18\x02 \x01(\x0e\x32).enterprise_management.Policy.PolicyLevel\x12\x38\n\x05scope\x18\x03 \x01(\x0e\x32).enterprise_management.Policy.PolicyScope\x12:\n\x06source\x18\x04 \x01(\x0e\x32*.enterprise_management.Policy.PolicySource\x12\r\n\x05value\x18\x05 \x01(\t\x12\r\n\x05\x65rror\x18\x06 \x01(\t\"L\n\x0bPolicyLevel\x12\x11\n\rLEVEL_UNKNOWN\x10\x00\x12\x15\n\x11LEVEL_RECOMMENDED\x10\x01\x12\x13\n\x0fLEVEL_MANDATORY\x10\x02\"C\n\x0bPolicyScope\x12\x11\n\rSCOPE_UNKNOWN\x10\x00\x12\x0e\n\nSCOPE_USER\x10\x01\x12\x11\n\rSCOPE_MACHINE\x10\x02\"\xdd\x02\n\x0cPolicySource\x12\x12\n\x0eSOURCE_UNKNOWN\x10\x00\x12\x1d\n\x19SOURCE_ENTERPRISE_DEFAULT\x10\x01\x12\x10\n\x0cSOURCE_CLOUD\x10\x02\x12\x1b\n\x17SOURCE_ACTIVE_DIRECTORY\x10\x03\x12\x33\n/SOURCE_DEVICE_LOCAL_ACCOUNT_OVERRIDE_DEPRECATED\x10\x04\x12\x13\n\x0fSOURCE_PLATFORM\x10\x05\x12$\n SOURCE_PRIORITY_CLOUD_DEPRECATED\x10\x06\x12\x11\n\rSOURCE_MERGED\x10\x07\x12\x17\n\x13SOURCE_COMMAND_LINE\x10\x08\x12\x19\n\x15SOURCE_CLOUD_FROM_ASH\x10\t\x12\x34\n0SOURCE_RESTRICTED_MANAGED_GUEST_SESSION_OVERRIDE\x10\n\"X\n\x0f\x45xtensionPolicy\x12\x14\n\x0c\x65xtension_id\x18\x01 \x01(\t\x12/\n\x08policies\x18\x02 \x03(\x0b\x32\x1d.enterprise_management.Policy\"7\n\x14PolicyFetchTimestamp\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"\xe5\x03\n\x15\x43hromeUserProfileInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1b\n\x13is_detail_available\x18\x03 \x01(\x08\x12H\n\x15\x63hrome_signed_in_user\x18\x04 \x01(\x0b\x32).enterprise_management.ChromeSignedInUser\x12\x34\n\nextensions\x18\x05 \x03(\x0b\x32 .enterprise_management.Extension\x12\x43\n\x12\x65xtension_requests\x18\n \x03(\x0b\x32\'.enterprise_management.ExtensionRequest\x12\x36\n\x0f\x63hrome_policies\x18\x07 \x03(\x0b\x32\x1d.enterprise_management.Policy\x12\x42\n\x12\x65xtension_policies\x18\x08 \x03(\x0b\x32&.enterprise_management.ExtensionPolicy\x12N\n\x19policy_fetched_timestamps\x18\t \x03(\x0b\x32+.enterprise_management.PolicyFetchTimestampJ\x04\x08\x06\x10\x07\"\x96\x03\n\rBrowserReport\x12\x17\n\x0f\x62rowser_version\x18\x01 \x01(\t\x12/\n\x07\x63hannel\x18\x02 \x01(\x0e\x32\x1e.enterprise_management.Channel\x12\x17\n\x0f\x65xecutable_path\x18\x03 \x01(\t\x12S\n\x1b\x63hrome_user_profile_reports\x18\x04 \x03(\x0b\x32..enterprise_management.ChromeUserProfileReport\x12O\n\x19\x63hrome_user_profile_infos\x18\x06 \x03(\x0b\x32,.enterprise_management.ChromeUserProfileInfo\x12.\n\x07plugins\x18\x07 \x03(\x0b\x32\x1d.enterprise_management.Plugin\x12!\n\x19installed_browser_version\x18\x08 \x01(\t\x12)\n\x1ais_extended_stable_channel\x18\t \x01(\x08:\x05\x66\x61lse\"7\n\x08OSReport\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x61rch\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\"\xfc\x03\n\x1a\x43hromeDesktopReportRequest\x12\x18\n\x0cmachine_name\x18\x01 \x01(\tB\x02\x18\x01\x12\x0f\n\x07os_info\x18\x02 \x01(\t\x12\x0f\n\x07os_user\x18\x03 \x01(\t\x12<\n\x0e\x62rowser_report\x18\x04 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12\x19\n\rserial_number\x18\x05 \x01(\tB\x02\x18\x01\x12\x19\n\rcomputer_name\x18\x06 \x01(\tB\x02\x18\x01\x12\x32\n\tos_report\x18\x07 \x01(\x0b\x32\x1f.enterprise_management.OSReport\x12\x14\n\x0cos_user_name\x18\x08 \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\t \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\x12\x46\n\x14partial_report_types\x18\n \x03(\x0e\x32(.enterprise_management.PartialReportType\x12\x1f\n\x17machine_attestation_key\x18\x0b \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x0c \x01(\t\x12\x12\n\nbrand_name\x18\r \x01(\t\"\xe3\x01\n\x19\x43hromeOsUserReportRequest\x12<\n\x0e\x62rowser_report\x18\x01 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12@\n\x11\x61ndroid_app_infos\x18\x02 \x03(\x0b\x32%.enterprise_management.AndroidAppInfo\x12\x46\n\x14partial_report_types\x18\x03 \x03(\x0e\x32(.enterprise_management.PartialReportType\"\x8e\x01\n\x1a\x43hromeProfileReportRequest\x12<\n\x0e\x62rowser_report\x18\x01 \x01(\x0b\x32$.enterprise_management.BrowserReport\x12\x32\n\tos_report\x18\x02 \x01(\x0b\x32\x1f.enterprise_management.OSReport\"\xd4\x02\n\x1aPolicyValueValidationIssue\x12\x13\n\x0bpolicy_name\x18\x01 \x01(\t\x12`\n\x08severity\x18\x02 \x01(\x0e\x32N.enterprise_management.PolicyValueValidationIssue.ValueValidationIssueSeverity\x12\x15\n\rdebug_message\x18\x03 \x01(\t\"\xa7\x01\n\x1cValueValidationIssueSeverity\x12/\n+VALUE_VALIDATION_ISSUE_SEVERITY_UNSPECIFIED\x10\x00\x12+\n\'VALUE_VALIDATION_ISSUE_SEVERITY_WARNING\x10\x01\x12)\n%VALUE_VALIDATION_ISSUE_SEVERITY_ERROR\x10\x02\"\xf7\x07\n\x1dPolicyValidationReportRequest\x12\x13\n\x0bpolicy_type\x18\x01 \x01(\t\x12\x14\n\x0cpolicy_token\x18\x02 \x01(\t\x12i\n\x16validation_result_type\x18\x03 \x01(\x0e\x32I.enterprise_management.PolicyValidationReportRequest.ValidationResultType\x12Y\n\x1epolicy_value_validation_issues\x18\x04 \x03(\x0b\x32\x31.enterprise_management.PolicyValueValidationIssue\"\xe4\x05\n\x14ValidationResultType\x12,\n(VALIDATION_RESULT_TYPE_ERROR_UNSPECIFIED\x10\x00\x12\"\n\x1eVALIDATION_RESULT_TYPE_SUCCESS\x10\x01\x12\x30\n,VALIDATION_RESULT_TYPE_BAD_INITIAL_SIGNATURE\x10\x02\x12(\n$VALIDATION_RESULT_TYPE_BAD_SIGNATURE\x10\x03\x12-\n)VALIDATION_RESULT_TYPE_ERROR_CODE_PRESENT\x10\x04\x12.\n*VALIDATION_RESULT_TYPE_PAYLOAD_PARSE_ERROR\x10\x05\x12,\n(VALIDATION_RESULT_TYPE_WRONG_POLICY_TYPE\x10\x06\x12\x33\n/VALIDATION_RESULT_TYPE_WRONG_SETTINGS_ENTITY_ID\x10\x07\x12(\n$VALIDATION_RESULT_TYPE_BAD_TIMESTAMP\x10\x08\x12\'\n#VALIDATION_RESULT_TYPE_BAD_DM_TOKEN\x10\t\x12(\n$VALIDATION_RESULT_TYPE_BAD_DEVICE_ID\x10\n\x12#\n\x1fVALIDATION_RESULT_TYPE_BAD_USER\x10\x0b\x12-\n)VALIDATION_RESULT_TYPE_POLICY_PARSE_ERROR\x10\x0c\x12\x39\n5VALIDATION_RESULT_TYPE_BAD_KEY_VERIFICATION_SIGNATURE\x10\r\x12(\n$VALIDATION_RESULT_TYPE_VALUE_WARNING\x10\x0e\x12&\n\"VALIDATION_RESULT_TYPE_VALUE_ERROR\x10\x0f\" \n\x1ePolicyValidationReportResponse\"A\n\rAndroidStatus\x12\x16\n\x0estatus_payload\x18\x01 \x01(\t\x12\x18\n\x10\x64roid_guard_info\x18\x02 \x01(\t\"\xcf\x01\n\x0b\x43rostiniApp\x12\x10\n\x08\x61pp_name\x18\x01 \x01(\t\x12\x38\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32&.enterprise_management.CrostiniAppType\x12/\n\'last_launch_time_window_start_timestamp\x18\x03 \x01(\x03\x12\x14\n\x0cpackage_name\x18\x04 \x01(\t\x12\x17\n\x0fpackage_version\x18\x05 \x01(\t\x12\x14\n\x0cpackage_hash\x18\x06 \x01(\t\"\xca\x01\n\x0e\x43rostiniStatus\x12/\n\'last_launch_time_window_start_timestamp\x18\x01 \x01(\x03\x12$\n\x1clast_launch_vm_image_version\x18\x02 \x01(\t\x12%\n\x1dlast_launch_vm_kernel_version\x18\x03 \x01(\t\x12:\n\x0einstalled_apps\x18\x04 \x03(\x0b\x32\".enterprise_management.CrostiniApp\"\xea\x02\n\x1aSessionStatusReportRequest\x12\x1f\n\x17\x64\x65vice_local_account_id\x18\x04 \x01(\t\x12\x38\n\x0einstalled_apps\x18\x05 \x03(\x0b\x32 .enterprise_management.AppStatus\x12<\n\x0e\x61ndroid_status\x18\x07 \x01(\x0b\x32$.enterprise_management.AndroidStatus\x12\x15\n\ruser_dm_token\x18\x08 \x01(\t\x12\x11\n\ttime_zone\x18\t \x01(\t\x12>\n\x0f\x63rostini_status\x18\n \x01(\x0b\x32%.enterprise_management.CrostiniStatus\x12\x31\n\tapp_infos\x18\x0b \x03(\x0b\x32\x1e.enterprise_management.AppInfoJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04J\x04\x08\x06\x10\x07\"G\n\x1a\x44\x65viceStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"\x1d\n\x1b\x43hromeDesktopReportResponse\"\x1c\n\x1a\x43hromeOsUserReportResponse\"\x1d\n\x1b\x43hromeProfileReportResponse\"H\n\x1bSessionStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"k\n\x1bPrivateSetMembershipRequest\x12L\n\x0crlwe_request\x18\x01 \x01(\x0b\x32\x36.enterprise_management.PrivateSetMembershipRlweRequest\"n\n\x1cPrivateSetMembershipResponse\x12N\n\rrlwe_response\x18\x01 \x01(\x0b\x32\x37.enterprise_management.PrivateSetMembershipRlweResponse\"\xc5\x01\n\x1fPrivateSetMembershipRlweRequest\x12O\n\x0coprf_request\x18\x01 \x01(\x0b\x32\x39.private_membership.rlwe.PrivateMembershipRlweOprfRequest\x12Q\n\rquery_request\x18\x02 \x01(\x0b\x32:.private_membership.rlwe.PrivateMembershipRlweQueryRequest\"\xca\x01\n PrivateSetMembershipRlweResponse\x12Q\n\roprf_response\x18\x01 \x01(\x0b\x32:.private_membership.rlwe.PrivateMembershipRlweOprfResponse\x12S\n\x0equery_response\x18\x02 \x01(\x0b\x32;.private_membership.rlwe.PrivateMembershipRlweQueryResponse\"\xcf\x02\n\x1b\x44\x65viceAutoEnrollmentRequest\x12\x11\n\tremainder\x18\x01 \x01(\x03\x12\x0f\n\x07modulus\x18\x02 \x01(\x03\x12\x80\x01\n\x15\x65nrollment_check_type\x18\x03 \x01(\x0e\x32\x46.enterprise_management.DeviceAutoEnrollmentRequest.EnrollmentCheckType:\x19\x45NROLLMENT_CHECK_TYPE_FRE\"\x88\x01\n\x13\x45nrollmentCheckType\x12%\n!ENROLLMENT_CHECK_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x45NROLLMENT_CHECK_TYPE_FRE\x10\x01\x12+\n\'ENROLLMENT_CHECK_TYPE_FORCED_ENROLLMENT\x10\x02\"H\n\x1c\x44\x65viceAutoEnrollmentResponse\x12\x18\n\x10\x65xpected_modulus\x18\x01 \x01(\x03\x12\x0e\n\x06hashes\x18\x02 \x03(\x0c\">\n\x1b\x44\x65viceStateRetrievalRequest\x12\x1f\n\x17server_backed_state_key\x18\x01 \x01(\x0c\"?\n\x1b\x44\x65viceStateKeyUpdateRequest\x12 \n\x18server_backed_state_keys\x18\x01 \x03(\x0c\"\xfb\x03\n\x1c\x44\x65viceStateRetrievalResponse\x12h\n\x0crestore_mode\x18\x01 \x01(\x0e\x32?.enterprise_management.DeviceStateRetrievalResponse.RestoreMode:\x11RESTORE_MODE_NONE\x12\x19\n\x11management_domain\x18\x02 \x01(\t\x12<\n\x0e\x64isabled_state\x18\x03 \x01(\x0b\x32$.enterprise_management.DisabledState\x12[\n\x16initial_state_response\x18\x04 \x01(\x0b\x32;.enterprise_management.DeviceInitialEnrollmentStateResponse\"\xba\x01\n\x0bRestoreMode\x12\x15\n\x11RESTORE_MODE_NONE\x10\x00\x12\'\n#RESTORE_MODE_REENROLLMENT_REQUESTED\x10\x01\x12&\n\"RESTORE_MODE_REENROLLMENT_ENFORCED\x10\x02\x12\x19\n\x15RESTORE_MODE_DISABLED\x10\x03\x12(\n$RESTORE_MODE_REENROLLMENT_ZERO_TOUCH\x10\x04\"P\n#DeviceInitialEnrollmentStateRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x12\n\nbrand_code\x18\x02 \x01(\t\"\xd7\x05\n$DeviceInitialEnrollmentStateResponse\x12\x90\x01\n\x17initial_enrollment_mode\x18\x01 \x01(\x0e\x32Q.enterprise_management.DeviceInitialEnrollmentStateResponse.InitialEnrollmentMode:\x1cINITIAL_ENROLLMENT_MODE_NONE\x12\x19\n\x11management_domain\x18\x02 \x01(\t\x12\'\n\x1fis_license_packaged_with_device\x18\x03 \x01(\x08\x12<\n\x0e\x64isabled_state\x18\x04 \x01(\x0b\x32$.enterprise_management.DisabledState\x12n\n\x15license_packaging_sku\x18\x05 \x01(\x0e\x32O.enterprise_management.DeviceInitialEnrollmentStateResponse.LicensePackagingSKU\"\xc1\x01\n\x15InitialEnrollmentMode\x12 \n\x1cINITIAL_ENROLLMENT_MODE_NONE\x10\x00\x12/\n+INITIAL_ENROLLMENT_MODE_ENROLLMENT_ENFORCED\x10\x01\x12/\n+INITIAL_ENROLLMENT_MODE_ZERO_TOUCH_ENFORCED\x10\x02\x12$\n INITIAL_ENROLLMENT_MODE_DISABLED\x10\x03\"f\n\x13LicensePackagingSKU\x12\r\n\tNOT_EXIST\x10\x00\x12\x15\n\x11\x43HROME_ENTERPRISE\x10\x01\x12\x14\n\x10\x43HROME_EDUCATION\x10\x02\x12\x13\n\x0f\x43HROME_TERMINAL\x10\x03\"L\n\x14\x44\x65vicePairingRequest\x12\x16\n\x0ehost_device_id\x18\x01 \x01(\t\x12\x1c\n\x14\x63ontroller_device_id\x18\x02 \x01(\t\"\x95\x02\n\x15\x44\x65vicePairingResponse\x12T\n\x0bstatus_code\x18\x01 \x01(\x0e\x32\x37.enterprise_management.DevicePairingResponse.StatusCode:\x06\x46\x41ILED\"\xa5\x01\n\nStatusCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01\x12\x19\n\x15HOST_DEVICE_NOT_FOUND\x10\x02\x12\x1f\n\x1b\x43ONTROLLER_DEVICE_NOT_FOUND\x10\x03\x12\x1d\n\x19HOST_DEVICE_DEPROVISIONED\x10\x04\x12#\n\x1f\x43ONTROLLER_DEVICE_DEPROVISIONED\x10\x05\"Q\n\x19\x43heckDevicePairingRequest\x12\x16\n\x0ehost_device_id\x18\x01 \x01(\t\x12\x1c\n\x14\x63ontroller_device_id\x18\x02 \x01(\t\"\xce\x02\n\x1a\x43heckDevicePairingResponse\x12]\n\x0bstatus_code\x18\x01 \x01(\x0e\x32<.enterprise_management.CheckDevicePairingResponse.StatusCode:\nNOT_PAIRED\"\xd0\x01\n\nStatusCode\x12\n\n\x06PAIRED\x10\x00\x12\x0e\n\nNOT_PAIRED\x10\x01\x12\x19\n\x15HOST_DEVICE_NOT_FOUND\x10\x02\x12\x1f\n\x1b\x43ONTROLLER_DEVICE_NOT_FOUND\x10\x03\x12\x1d\n\x19HOST_DEVICE_DEPROVISIONED\x10\x04\x12#\n\x1f\x43ONTROLLER_DEVICE_DEPROVISIONED\x10\x05\x12&\n\"INVALID_CONTROLLER_DEVICE_IDENTITY\x10\x06\"\x9c\x05\n\rRemoteCommand\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).enterprise_management.RemoteCommand.Type\x12\x12\n\ncommand_id\x18\x02 \x01(\x03\x12\x16\n\x0e\x61ge_of_command\x18\x03 \x01(\x03\x12\x0f\n\x07payload\x18\x04 \x01(\t\x12\x18\n\x10target_device_id\x18\x05 \x01(\t\"\xfa\x03\n\x04Type\x12\x1e\n\x11\x43OMMAND_ECHO_TEST\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x11\n\rDEVICE_REBOOT\x10\x00\x12\x15\n\x11\x44\x45VICE_SCREENSHOT\x10\x01\x12\x15\n\x11\x44\x45VICE_SET_VOLUME\x10\x02\x12\x17\n\x13\x44\x45VICE_FETCH_STATUS\x10\x03\x12\x14\n\x10USER_ARC_COMMAND\x10\x04\x12\x15\n\x11\x44\x45VICE_WIPE_USERS\x10\x05\x12\x1c\n\x18\x44\x45VICE_START_CRD_SESSION\x10\x06\x12\x1b\n\x17\x44\x45VICE_REMOTE_POWERWASH\x10\x07\x12\x31\n-DEVICE_REFRESH_ENTERPRISE_MACHINE_CERTIFICATE\x10\x08\x12,\n(DEVICE_GET_AVAILABLE_DIAGNOSTIC_ROUTINES\x10\t\x12!\n\x1d\x44\x45VICE_RUN_DIAGNOSTIC_ROUTINE\x10\n\x12(\n$DEVICE_GET_DIAGNOSTIC_ROUTINE_UPDATE\x10\x0b\x12\x1f\n\x1b\x42ROWSER_CLEAR_BROWSING_DATA\x10\x0c\x12\x16\n\x12\x44\x45VICE_RESET_EUICC\x10\r\x12)\n%BROWSER_ROTATE_ATTESTATION_CREDENTIAL\x10\x0e\"\xde\x01\n\x13RemoteCommandResult\x12\x45\n\x06result\x18\x01 \x01(\x0e\x32\x35.enterprise_management.RemoteCommandResult.ResultType\x12\x12\n\ncommand_id\x18\x02 \x01(\x03\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0f\n\x07payload\x18\x04 \x01(\t\"H\n\nResultType\x12\x12\n\x0eRESULT_IGNORED\x10\x00\x12\x12\n\x0eRESULT_FAILURE\x10\x01\x12\x12\n\x0eRESULT_SUCCESS\x10\x02\"\xf0\x01\n\x1a\x44\x65viceRemoteCommandRequest\x12\x1e\n\x16last_command_unique_id\x18\x01 \x01(\x03\x12\x43\n\x0f\x63ommand_results\x18\x02 \x03(\x0b\x32*.enterprise_management.RemoteCommandResult\x12\x1c\n\x14send_secure_commands\x18\x03 \x01(\x08\x12O\n\x0esignature_type\x18\x04 \x01(\x0e\x32\x37.enterprise_management.PolicyFetchRequest.SignatureType\"\x91\x01\n\x1b\x44\x65viceRemoteCommandResponse\x12\x36\n\x08\x63ommands\x18\x01 \x03(\x0b\x32$.enterprise_management.RemoteCommand\x12:\n\x0fsecure_commands\x18\x02 \x03(\x0b\x32!.enterprise_management.SignedData\"(\n&DeviceAttributeUpdatePermissionRequest\"\xd1\x01\n\'DeviceAttributeUpdatePermissionResponse\x12Y\n\x06result\x18\x01 \x01(\x0e\x32I.enterprise_management.DeviceAttributeUpdatePermissionResponse.ResultType\"K\n\nResultType\x12\x1f\n\x1b\x41TTRIBUTE_UPDATE_DISALLOWED\x10\x00\x12\x1c\n\x18\x41TTRIBUTE_UPDATE_ALLOWED\x10\x01\"B\n\x1c\x44\x65viceAttributeUpdateRequest\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\t\x12\x10\n\x08location\x18\x02 \x01(\t\"\xb8\x01\n\x1d\x44\x65viceAttributeUpdateResponse\x12O\n\x06result\x18\x01 \x01(\x0e\x32?.enterprise_management.DeviceAttributeUpdateResponse.ResultType\"F\n\nResultType\x12\x1a\n\x16\x41TTRIBUTE_UPDATE_ERROR\x10\x00\x12\x1c\n\x18\x41TTRIBUTE_UPDATE_SUCCESS\x10\x01\"$\n\x12GcmIdUpdateRequest\x12\x0e\n\x06gcm_id\x18\x01 \x01(\t\"\x15\n\x13GcmIdUpdateResponse\"\x1f\n\x1d\x43heckAndroidManagementRequest\" \n\x1e\x43heckAndroidManagementResponse\"b\n%CertificateBasedDeviceRegisterRequest\x12\x39\n\x0esigned_request\x18\x01 \x01(\x0b\x32!.enterprise_management.SignedData\"3\n\x1b\x44\x65viceRegisterConfiguration\x12\x14\n\x0c\x64\x65vice_owner\x18\x01 \x01(\t\"\x9e\x03\n&CertificateBasedDeviceRegistrationData\x12g\n\x10\x63\x65rtificate_type\x18\x01 \x01(\x0e\x32M.enterprise_management.CertificateBasedDeviceRegistrationData.CertificateType\x12\x1a\n\x12\x64\x65vice_certificate\x18\x02 \x01(\x0c\x12M\n\x17\x64\x65vice_register_request\x18\x03 \x01(\x0b\x32,.enterprise_management.DeviceRegisterRequest\x12Y\n\x1d\x64\x65vice_register_configuration\x18\x04 \x01(\x0b\x32\x32.enterprise_management.DeviceRegisterConfiguration\"E\n\x0f\x43\x65rtificateType\x12\x0b\n\x07UNKNOWN\x10\x00\x12%\n!ENTERPRISE_ENROLLMENT_CERTIFICATE\x10\x01\"\xd4\x01\n\x16RegisterBrowserRequest\x12\x14\n\x0cmachine_name\x18\x01 \x01(\t\x12\x13\n\x0bos_platform\x18\x02 \x01(\t\x12\x12\n\nos_version\x18\x03 \x01(\t\x12Q\n\x19\x62rowser_device_identifier\x18\x04 \x01(\x0b\x32..enterprise_management.BrowserDeviceIdentifier\x12\x14\n\x0c\x64\x65vice_model\x18\x05 \x01(\t\x12\x12\n\nbrand_name\x18\x06 \x01(\t\"?\n$ActiveDirectoryEnrollPlayUserRequest\x12\x17\n\x0f\x61uth_session_id\x18\x01 \x01(\t\"\x97\x01\n%ActiveDirectoryEnrollPlayUserResponse\x12\x18\n\x10\x65nrollment_token\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x43\n\x0fsaml_parameters\x18\x03 \x01(\x0b\x32*.enterprise_management.SamlParametersProto\"I\n\x13SamlParametersProto\x12\x19\n\x11\x61uth_redirect_url\x18\x01 \x01(\t\x12\x17\n\x0f\x61uth_session_id\x18\x02 \x01(\t\"+\n\x15PublicSamlUserRequest\x12\x12\n\naccount_id\x18\x01 \x01(\t\"]\n\x16PublicSamlUserResponse\x12\x43\n\x0fsaml_parameters\x18\x01 \x01(\x0b\x32*.enterprise_management.SamlParametersProto\"5\n\"ActiveDirectoryPlayActivityRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"%\n#ActiveDirectoryPlayActivityResponse\"\x1b\n\x19\x43heckDeviceLicenseRequest\"\x89\x01\n\x13LicenseAvailability\x12G\n\x17license_type_deprecated\x18\x01 \x01(\x0b\x32\".enterprise_management.LicenseTypeB\x02\x18\x01\x12)\n\x1d\x61vailable_licenses_deprecated\x18\x02 \x01(\x05\x42\x02\x18\x01\"\xbe\x02\n\x1a\x43heckDeviceLicenseResponse\x12u\n!license_selection_mode_deprecated\x18\x01 \x01(\x0e\x32\x46.enterprise_management.CheckDeviceLicenseResponse.LicenseSelectionModeB\x02\x18\x01\x12Y\n!license_availabilities_deprecated\x18\x02 \x03(\x0b\x32*.enterprise_management.LicenseAvailabilityB\x02\x18\x01\"N\n\x14LicenseSelectionMode\x12\r\n\tUNDEFINED\x10\x00\x12\x12\n\x0eUSER_SELECTION\x10\x01\x12\x13\n\x0f\x41\x44MIN_SELECTION\x10\x02\"\"\n ActiveDirectoryUserSigninRequest\">\n!ActiveDirectoryUserSigninResponse\x12\x19\n\x11\x61uth_redirect_url\x18\x01 \x01(\t\"\xd8\x02\n\x0eTpmVersionInfo\x12\x0e\n\x06\x66\x61mily\x18\x01 \x01(\r\x12\x12\n\nspec_level\x18\x02 \x01(\x04\x12\x14\n\x0cmanufacturer\x18\x03 \x01(\r\x12\x11\n\ttpm_model\x18\x04 \x01(\r\x12\x18\n\x10\x66irmware_version\x18\x05 \x01(\x04\x12\x17\n\x0fvendor_specific\x18\x06 \x01(\t\x12\x45\n\x0bgsc_version\x18\x07 \x01(\x0e\x32\x30.enterprise_management.TpmVersionInfo.GscVersion\x12\x0f\n\x07\x64id_vid\x18\x08 \x01(\t\"n\n\nGscVersion\x12\x1b\n\x17GSC_VERSION_UNSPECIFIED\x10\x00\x12\x17\n\x13GSC_VERSION_NOT_GSC\x10\x01\x12\x14\n\x10GSC_VERSION_CR50\x10\x02\x12\x14\n\x10GSC_VERSION_TI50\x10\x03\"\xc2\x03\n\rTpmStatusInfo\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\r\n\x05owned\x18\x02 \x01(\x08\x12\x17\n\x0ftpm_initialized\x18\x03 \x01(\x08\x12\x1c\n\x14\x61ttestation_prepared\x18\x04 \x01(\x08\x12\x1c\n\x14\x61ttestation_enrolled\x18\x05 \x01(\x08\x12!\n\x19\x64ictionary_attack_counter\x18\x06 \x01(\x05\x12#\n\x1b\x64ictionary_attack_threshold\x18\x07 \x01(\x05\x12+\n#dictionary_attack_lockout_in_effect\x18\x08 \x01(\x08\x12\x33\n+dictionary_attack_lockout_seconds_remaining\x18\t \x01(\x05\x12\"\n\x16\x62oot_lockbox_finalized\x18\n \x01(\x08\x42\x02\x18\x01\x12!\n\x19owner_password_is_present\x18\x0b \x01(\x08\x12K\n\x16tpm_supported_features\x18\x0c \x01(\x0b\x32+.enterprise_management.TpmSupportedFeatures\"}\n\x14TpmSupportedFeatures\x12\x12\n\nis_allowed\x18\x01 \x01(\x08\x12\x19\n\x11support_pinweaver\x18\x02 \x01(\x08\x12!\n\x19support_runtime_selection\x18\x03 \x01(\x08\x12\x13\n\x0bsupport_u2f\x18\x04 \x01(\x08\"F\n\x0bSystemState\x12\x37\n\x0cvolume_infos\x18\x01 \x03(\x0b\x32!.enterprise_management.VolumeInfo\"\xe3\x33\n\x1e\x45xtensionInstallReportLogEvent\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12S\n\nevent_type\x18\x02 \x01(\x0e\x32?.enterprise_management.ExtensionInstallReportLogEvent.EventType\x12\x16\n\x0estateful_total\x18\x03 \x01(\x03\x12\x15\n\rstateful_free\x18\x04 \x01(\x03\x12\x0e\n\x06online\x18\x05 \x01(\x08\x12o\n\x19session_state_change_type\x18\x06 \x01(\x0e\x32L.enterprise_management.ExtensionInstallReportLogEvent.SessionStateChangeType\x12[\n\x0e\x66\x61ilure_reason\x18\x07 \x01(\x0e\x32\x43.enterprise_management.ExtensionInstallReportLogEvent.FailureReason\x12\x63\n\x12installation_stage\x18\x08 \x01(\x0e\x32G.enterprise_management.ExtensionInstallReportLogEvent.InstallationStage\x12\x61\n\x11\x64ownloading_stage\x18\t \x01(\x0e\x32\x46.enterprise_management.ExtensionInstallReportLogEvent.DownloadingStage\x12\x46\n\x0e\x65xtension_type\x18\n \x01(\x0e\x32..enterprise_management.Extension.ExtensionType\x12Q\n\tuser_type\x18\x0b \x01(\x0e\x32>.enterprise_management.ExtensionInstallReportLogEvent.UserType\x12\x13\n\x0bis_new_user\x18\x0c \x01(\x08\x12#\n\x1bis_misconfiguration_failure\x18\r \x01(\x08\x12j\n\x16install_creation_stage\x18\x0e \x01(\x0e\x32J.enterprise_management.ExtensionInstallReportLogEvent.InstallCreationStage\x12h\n\x15\x64ownload_cache_status\x18\x0f \x01(\x0e\x32I.enterprise_management.ExtensionInstallReportLogEvent.DownloadCacheStatus\x12u\n\x17unpacker_failure_reason\x18\x10 \x01(\x0e\x32T.enterprise_management.ExtensionInstallReportLogEvent.SandboxedUnpackerFailureReason\x12j\n\x16manifest_invalid_error\x18\x11 \x01(\x0e\x32J.enterprise_management.ExtensionInstallReportLogEvent.ManifestInvalidError\x12m\n\x18\x63rx_install_error_detail\x18\x12 \x01(\x0e\x32K.enterprise_management.ExtensionInstallReportLogEvent.CrxInstallErrorDetail\x12\x18\n\x10\x66\x65tch_error_code\x18\x13 \x01(\x05\x12\x13\n\x0b\x66\x65tch_tries\x18\x14 \x01(\x05\"\xa2\x01\n\tEventType\x12\x1a\n\x16LOG_EVENT_TYPE_UNKNOWN\x10\x00\x12\x12\n\x0ePOLICY_REQUEST\x10\x01\x12\x0b\n\x07SUCCESS\x10\x02\x12\x0c\n\x08\x43\x41NCELED\x10\x03\x12\x17\n\x13\x43ONNECTIVITY_CHANGE\x10\x04\x12\x18\n\x14SESSION_STATE_CHANGE\x10\x05\x12\x17\n\x13INSTALLATION_FAILED\x10\x06\"o\n\x16SessionStateChangeType\x12%\n!SESSION_STATE_CHANGE_TYPE_UNKNOWN\x10\x00\x12\t\n\x05LOGIN\x10\x01\x12\n\n\x06LOGOUT\x10\x02\x12\x0b\n\x07SUSPEND\x10\x03\x12\n\n\x06RESUME\x10\x04\"\xbe\x06\n\rFailureReason\x12\x1a\n\x16\x46\x41ILURE_REASON_UNKNOWN\x10\x00\x12\x0e\n\nINVALID_ID\x10\x01\x12 \n\x1cMALFORMED_EXTENSION_SETTINGS\x10\x02\x12\x17\n\x13REPLACED_BY_ARC_APP\x10\x03\x12\x1c\n\x18MALFORMED_EXTENSION_DICT\x10\x04\x12 \n\x1cNOT_SUPPORTED_EXTENSION_DICT\x10\x05\x12&\n\"MALFORMED_EXTENSION_DICT_FILE_PATH\x10\x06\x12$\n MALFORMED_EXTENSION_DICT_VERSION\x10\x07\x12\'\n#MALFORMED_EXTENSION_DICT_UPDATE_URL\x10\x08\x12\x18\n\x14LOCALE_NOT_SUPPORTED\x10\t\x12\x1e\n\x1aNOT_PERFORMING_NEW_INSTALL\x10\n\x12\x13\n\x0fTOO_OLD_PROFILE\x10\x0b\x12!\n\x1d\x44O_NOT_INSTALL_FOR_ENTERPRISE\x10\x0c\x12\x15\n\x11\x41LREADY_INSTALLED\x10\r\x12\x14\n\x10\x43RX_FETCH_FAILED\x10\x0e\x12\x19\n\x15MANIFEST_FETCH_FAILED\x10\x0f\x12\x14\n\x10MANIFEST_INVALID\x10\x10\x12\r\n\tNO_UPDATE\x10\x11\x12\x1e\n\x1a\x43RX_INSTALL_ERROR_DECLINED\x10\x12\x12\x30\n,CRX_INSTALL_ERROR_SANDBOXED_UNPACKER_FAILURE\x10\x13\x12\x1b\n\x17\x43RX_INSTALL_ERROR_OTHER\x10\x14\x12\x11\n\rNO_UPDATE_URL\x10\x15\x12\x16\n\x12PENDING_ADD_FAILED\x10\x16\x12\x19\n\x15\x44OWNLOADER_ADD_FAILED\x10\x17\x12\x0f\n\x0bIN_PROGRESS\x10\x18\x12\x17\n\x13\x43RX_FETCH_URL_EMPTY\x10\x19\x12\x19\n\x15\x43RX_FETCH_URL_INVALID\x10\x1a\x12\x1a\n\x16OVERRIDDEN_BY_SETTINGS\x10\x1b\x12\x1a\n\x16REPLACED_BY_SYSTEM_APP\x10\x1c\"|\n\x11InstallationStage\x12\x1e\n\x1aINSTALLATION_STAGE_UNKNOWN\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0b\x44OWNLOADING\x10\x03\x12\x0e\n\nINSTALLING\x10\x04\x12\x0c\n\x08\x43OMPLETE\x10\x05\"\x9c\x02\n\x08UserType\x12\x15\n\x11USER_TYPE_UNKNOWN\x10\x00\x12\x15\n\x11USER_TYPE_REGULAR\x10\x01\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x02\x12\x1c\n\x18USER_TYPE_PUBLIC_ACCOUNT\x10\x03\x12\'\n\x1fUSER_TYPE_SUPERVISED_DEPRECATED\x10\x04\x1a\x02\x08\x01\x12\x17\n\x13USER_TYPE_KIOSK_APP\x10\x05\x12\x13\n\x0fUSER_TYPE_CHILD\x10\x06\x12\x1b\n\x17USER_TYPE_ARC_KIOSK_APP\x10\x07\x12\x1e\n\x1aUSER_TYPE_ACTIVE_DIRECTORY\x10\x08\x12\x1b\n\x17USER_TYPE_WEB_KIOSK_APP\x10\t\"\x97\x02\n\x10\x44ownloadingStage\x12\x1d\n\x19\x44OWNLOADING_STAGE_UNKNOWN\x10\x00\x12\x14\n\x10\x44OWNLOAD_PENDING\x10\x01\x12\x17\n\x13QUEUED_FOR_MANIFEST\x10\x02\x12\x18\n\x14\x44OWNLOADING_MANIFEST\x10\x03\x12\x1e\n\x1a\x44OWNLOADING_MANIFEST_RETRY\x10\x04\x12\x14\n\x10PARSING_MANIFEST\x10\x05\x12\x13\n\x0fMANIFEST_LOADED\x10\x06\x12\x12\n\x0eQUEUED_FOR_CRX\x10\x07\x12\x13\n\x0f\x44OWNLOADING_CRX\x10\x08\x12\x19\n\x15\x44OWNLOADING_CRX_RETRY\x10\t\x12\x0c\n\x08\x46INISHED\x10\n\"\xc3\x02\n\x14InstallCreationStage\x12\"\n\x1eINSTALL_CREATION_STAGE_UNKNOWN\x10\x00\x12\x16\n\x12\x43REATION_INITIATED\x10\x01\x12\x34\n0NOTIFIED_FROM_MANAGEMENT_INITIAL_CREATION_FORCED\x10\x02\x12\x38\n4NOTIFIED_FROM_MANAGEMENT_INITIAL_CREATION_NOT_FORCED\x10\x03\x12\x1c\n\x18NOTIFIED_FROM_MANAGEMENT\x10\x04\x12\'\n#NOTIFIED_FROM_MANAGEMENT_NOT_FORCED\x10\x05\x12\x19\n\x15SEEN_BY_POLICY_LOADER\x10\x06\x12\x1d\n\x19SEEN_BY_EXTERNAL_PROVIDER\x10\x07\"\x98\x01\n\x13\x44ownloadCacheStatus\x12\x11\n\rCACHE_UNKNOWN\x10\x00\x12\x12\n\x0e\x43\x41\x43HE_DISABLED\x10\x01\x12\x0e\n\nCACHE_MISS\x10\x02\x12\x12\n\x0e\x43\x41\x43HE_OUTDATED\x10\x03\x12\r\n\tCACHE_HIT\x10\x04\x12\'\n#CACHE_HIT_ON_MANIFEST_FETCH_FAILURE\x10\x05\"\xb6\r\n\x1eSandboxedUnpackerFailureReason\x12-\n)SANDBOXED_UNPACKER_FAILURE_REASON_UNKNOWN\x10\x00\x12 \n\x1c\x43OULD_NOT_GET_TEMP_DIRECTORY\x10\x01\x12#\n\x1f\x43OULD_NOT_CREATE_TEMP_DIRECTORY\x10\x02\x12\x33\n/FAILED_TO_COPY_EXTENSION_FILE_TO_TEMP_DIRECTORY\x10\x03\x12\'\n#COULD_NOT_GET_SANDBOX_FRIENDLY_PATH\x10\x04\x12 \n\x1c\x43OULD_NOT_LOCALIZE_EXTENSION\x10\x05\x12\x14\n\x10INVALID_MANIFEST\x10\x06\x12\x1a\n\x16UNPACKER_CLIENT_FAILED\x10\x07\x12\x33\n/UTILITY_PROCESS_CRASHED_WHILE_TRYING_TO_INSTALL\x10\x08\x12\x19\n\x15\x43RX_FILE_NOT_READABLE\x10\t\x12\x16\n\x12\x43RX_HEADER_INVALID\x10\n\x12\x1c\n\x18\x43RX_MAGIC_NUMBER_INVALID\x10\x0b\x12\x1e\n\x1a\x43RX_VERSION_NUMBER_INVALID\x10\x0c\x12*\n&CRX_EXCESSIVELY_LARGE_KEY_OR_SIGNATURE\x10\r\x12\x17\n\x13\x43RX_ZERO_KEY_LENGTH\x10\x0e\x12\x1d\n\x19\x43RX_ZERO_SIGNATURE_LENGTH\x10\x0f\x12\x1a\n\x16\x43RX_PUBLIC_KEY_INVALID\x10\x10\x12\x19\n\x15\x43RX_SIGNATURE_INVALID\x10\x11\x12\x34\n0CRX_SIGNATURE_VERIFICATION_INITIALIZATION_FAILED\x10\x12\x12%\n!CRX_SIGNATURE_VERIFICATION_FAILED\x10\x13\x12#\n\x1f\x45RROR_SERIALIZING_MANIFEST_JSON\x10\x14\x12\x1e\n\x1a\x45RROR_SAVING_MANIFEST_JSON\x10\x15\x12.\n*COULD_NOT_READ_IMAGE_DATA_FROM_DISK_UNUSED\x10\x16\x12\x33\n/DECODED_IMAGES_DO_NOT_MATCH_THE_MANIFEST_UNUSED\x10\x17\x12\"\n\x1eINVALID_PATH_FOR_BROWSER_IMAGE\x10\x18\x12!\n\x1d\x45RROR_REMOVING_OLD_IMAGE_FILE\x10\x19\x12!\n\x1dINVALID_PATH_FOR_BITMAP_IMAGE\x10\x1a\x12!\n\x1d\x45RROR_RE_ENCODING_THEME_IMAGE\x10\x1b\x12\x1c\n\x18\x45RROR_SAVING_THEME_IMAGE\x10\x1c\x12&\n\"DEPRECATED_ABORTED_DUE_TO_SHUTDOWN\x10\x1d\x12\x30\n,COULD_NOT_READ_CATALOG_DATA_FROM_DISK_UNUSED\x10\x1e\x12\x18\n\x14INVALID_CATALOG_DATA\x10\x1f\x12#\n\x1fINVALID_PATH_FOR_CATALOG_UNUSED\x10 \x12\x1d\n\x19\x45RROR_SERIALIZING_CATALOG\x10!\x12\x18\n\x14\x45RROR_SAVING_CATALOG\x10\"\x12 \n\x1c\x43RX_HASH_VERIFICATION_FAILED\x10#\x12\x10\n\x0cUNZIP_FAILED\x10$\x12\x19\n\x15\x44IRECTORY_MOVE_FAILED\x10%\x12\x1c\n\x18\x43RX_FILE_IS_DELTA_UPDATE\x10&\x12\x1d\n\x19\x43RX_EXPECTED_HASH_INVALID\x10\'\x12(\n$DEPRECATED_ERROR_PARSING_DNR_RULESET\x10(\x12\x1e\n\x1a\x45RROR_INDEXING_DNR_RULESET\x10)\x12\x1e\n\x1a\x43RX_REQUIRED_PROOF_MISSING\x10*\x12\x36\n2CRX_HEADER_VERIFIED_CONTENTS_UNCOMPRESSING_FAILURE\x10+\x12\x1f\n\x1bMALFORMED_VERIFIED_CONTENTS\x10,\x12\'\n#COULD_NOT_CREATE_METADATA_DIRECTORY\x10-\x12/\n+COULD_NOT_WRITE_VERIFIED_CONTENTS_INTO_FILE\x10.\"\xc1\x03\n\x14ManifestInvalidError\x12\"\n\x1eMANIFEST_INVALID_ERROR_UNKNOWN\x10\x00\x12\x16\n\x12XML_PARSING_FAILED\x10\x01\x12 \n\x1cINVALID_XLMNS_ON_GUPDATE_TAG\x10\x02\x12\x17\n\x13MISSING_GUPDATE_TAG\x10\x03\x12#\n\x1fINVALID_PROTOCOL_ON_GUPDATE_TAG\x10\x04\x12\x12\n\x0eMISSING_APP_ID\x10\x05\x12\x1d\n\x19MISSING_UPDATE_CHECK_TAGS\x10\x06\x12\x1e\n\x1aMULTIPLE_UPDATE_CHECK_TAGS\x10\x07\x12\x1b\n\x17INVALID_PRODVERSION_MIN\x10\x08\x12\x16\n\x12\x45MPTY_CODEBASE_URL\x10\t\x12\x18\n\x14INVALID_CODEBASE_URL\x10\n\x12$\n MISSING_VERSION_FOR_UPDATE_CHECK\x10\x0b\x12\x13\n\x0fINVALID_VERSION\x10\x0c\x12\x1c\n\x18\x42\x41\x44_UPDATE_SPECIFICATION\x10\r\x12\x12\n\x0e\x42\x41\x44_APP_STATUS\x10\x0e\"\xeb\x05\n\x15\x43rxInstallErrorDetail\x12$\n CRX_INSTALL_ERROR_DETAIL_UNKNOWN\x10\x00\x12+\n\'CONVERT_USER_SCRIPT_TO_EXTENSION_FAILED\x10\x01\x12\x11\n\rUNEXPECTED_ID\x10\x02\x12\x16\n\x12UNEXPECTED_VERSION\x10\x03\x12\x16\n\x12MISMATCHED_VERSION\x10\x04\x12\x1e\n\x1a\x43RX_ERROR_MANIFEST_INVALID\x10\x05\x12\x17\n\x13INSTALL_NOT_ENABLED\x10\x06\x12\x1f\n\x1bOFFSTORE_INSTALL_DISALLOWED\x10\x07\x12\x1e\n\x1aINCORRECT_APP_CONTENT_TYPE\x10\x08\x12\x1e\n\x1aNOT_INSTALLED_FROM_GALLERY\x10\t\x12\x1a\n\x16INCORRECT_INSTALL_HOST\x10\n\x12 \n\x1c\x44\x45PENDENCY_NOT_SHARED_MODULE\x10\x0b\x12\x1a\n\x16\x44\x45PENDENCY_OLD_VERSION\x10\x0c\x12\x1e\n\x1a\x44\x45PENDENCY_NOT_ALLOWLISTED\x10\r\x12\x1c\n\x18UNSUPPORTED_REQUIREMENTS\x10\x0e\x12\x1c\n\x18\x45XTENSION_IS_BLOCKLISTED\x10\x0f\x12\x18\n\x14\x44ISALLOWED_BY_POLICY\x10\x10\x12\x13\n\x0fKIOSK_MODE_ONLY\x10\x11\x12\x1a\n\x16OVERLAPPING_WEB_EXTENT\x10\x12\x12\x1a\n\x16\x43\x41NT_DOWNGRADE_VERSION\x10\x13\x12$\n MOVE_DIRECTORY_TO_PROFILE_FAILED\x10\x14\x12\x17\n\x13\x43\x41NT_LOAD_EXTENSION\x10\x15\x12\x11\n\rUSER_CANCELED\x10\x16\x12\x10\n\x0cUSER_ABORTED\x10\x17\x12!\n\x1dUPDATE_NON_EXISTING_EXTENSION\x10\x18\"\xbe\x06\n\x18\x41ppInstallReportLogEvent\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12M\n\nevent_type\x18\x02 \x01(\x0e\x32\x39.enterprise_management.AppInstallReportLogEvent.EventType\x12\x16\n\x0estateful_total\x18\x03 \x01(\x03\x12\x15\n\rstateful_free\x18\x04 \x01(\x03\x12\x19\n\x11\x63louddps_response\x18\x05 \x01(\x05\x12\x14\n\x0cphonesky_log\x18\x06 \x01(\t\x12\x0e\n\x06online\x18\x07 \x01(\x08\x12i\n\x19session_state_change_type\x18\x08 \x01(\x0e\x32\x46.enterprise_management.AppInstallReportLogEvent.SessionStateChangeType\x12\x12\n\nandroid_id\x18\t \x01(\x03\"\xdf\x02\n\tEventType\x12\x1a\n\x16LOG_EVENT_TYPE_UNKNOWN\x10\x00\x12\x12\n\x0eSERVER_REQUEST\x10\x01\x12\x14\n\x10\x43LOUDDPC_REQUEST\x10\x02\x12\x14\n\x10\x43LOUDDPS_REQUEST\x10\x03\x12\x15\n\x11\x43LOUDDPS_RESPONSE\x10\x04\x12\x10\n\x0cPHONESKY_LOG\x10\x05\x12\x0b\n\x07SUCCESS\x10\x06\x12\x0c\n\x08\x43\x41NCELED\x10\x07\x12\x17\n\x13\x43ONNECTIVITY_CHANGE\x10\x08\x12\x18\n\x14SESSION_STATE_CHANGE\x10\t\x12\x18\n\x14INSTALLATION_STARTED\x10\n\x12\x19\n\x15INSTALLATION_FINISHED\x10\x0b\x12\x17\n\x13INSTALLATION_FAILED\x10\x0c\x12\x12\n\x0e\x44IRECT_INSTALL\x10\r\x12\x1d\n\x19\x43LOUDDPC_MAIN_LOOP_FAILED\x10\x0e\"o\n\x16SessionStateChangeType\x12%\n!SESSION_STATE_CHANGE_TYPE_UNKNOWN\x10\x00\x12\t\n\x05LOGIN\x10\x01\x12\n\n\x06LOGOUT\x10\x02\x12\x0b\n\x07SUSPEND\x10\x03\x12\n\n\x06RESUME\x10\x04\"\x87\x01\n\x16\x45xtensionInstallReport\x12\x14\n\x0c\x65xtension_id\x18\x01 \x01(\t\x12\x12\n\nincomplete\x18\x02 \x01(\x08\x12\x43\n\x04logs\x18\x03 \x03(\x0b\x32\x35.enterprise_management.ExtensionInstallReportLogEvent\"v\n\x10\x41ppInstallReport\x12\x0f\n\x07package\x18\x01 \x01(\t\x12\x12\n\nincomplete\x18\x02 \x01(\x08\x12=\n\x04logs\x18\x03 \x03(\x0b\x32/.enterprise_management.AppInstallReportLogEvent\"_\n\x17\x41ppInstallReportRequest\x12\x44\n\x13\x61pp_install_reports\x18\x01 \x03(\x0b\x32\'.enterprise_management.AppInstallReport\"q\n\x1d\x45xtensionInstallReportRequest\x12P\n\x19\x65xtension_install_reports\x18\x01 \x03(\x0b\x32-.enterprise_management.ExtensionInstallReport\"\x1a\n\x18\x41ppInstallReportResponse\"\xad\x01\n\x15RefreshAccountRequest\x12N\n\x0c\x61\x63\x63ount_type\x18\x01 \x01(\x0e\x32\x38.enterprise_management.RefreshAccountRequest.AccountType\"D\n\x0b\x41\x63\x63ountType\x12\x1c\n\x18\x41\x43\x43OUNT_TYPE_UNSPECIFIED\x10\x00\x12\x17\n\x13\x43HROME_OS_DEMO_MODE\x10\x01\"\x18\n\x16RefreshAccountResponse\"L\n\x19RsuLookupKeyUploadRequest\x12\x10\n\x08\x62oard_id\x18\x01 \x01(\x0c\x12\x1d\n\x15\x63r50_hashed_device_id\x18\x02 \x01(\x0c\"<\n\x1aRsuLookupKeyUploadResponse\x12\x1e\n\x16rsu_lookup_key_updated\x18\x01 \x01(\x08\"6\n\x0f\x45SimProfileInfo\x12\r\n\x05iccid\x18\x01 \x01(\t\x12\x14\n\x0csmdp_address\x18\x02 \x01(\t\"\x88\x01\n\x16UploadEuiccInfoRequest\x12\x13\n\x0b\x65uicc_count\x18\x01 \x01(\r\x12=\n\resim_profiles\x18\x02 \x03(\x0b\x32&.enterprise_management.ESimProfileInfo\x12\x1a\n\x12\x63lear_profile_list\x18\x03 \x01(\x08\"\x19\n\x17UploadEuiccInfoResponse\"\xc0\x08\n\rPrintJobEvent\x12U\n\x11job_configuration\x18\x01 \x01(\x0b\x32:.enterprise_management.PrintJobEvent.PrintJobConfiguration\x12@\n\tuser_type\x18\x02 \x01(\x0e\x32-.enterprise_management.PrintJobEvent.UserType\x12=\n\x07printer\x18\x03 \x01(\x0b\x32,.enterprise_management.PrintJobEvent.Printer\x1a\xe1\x01\n\x15PrintJobConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x1d\n\x15\x63reation_timestamp_ms\x18\x04 \x01(\x03\x12\x1f\n\x17\x63ompletion_timestamp_ms\x18\x05 \x01(\x03\x12\x17\n\x0fnumber_of_pages\x18\x06 \x01(\x05\x12\x44\n\x08settings\x18\x07 \x01(\x0b\x32\x32.enterprise_management.PrintJobEvent.PrintSettings\x1a\x30\n\x07Printer\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x1a\xfa\x03\n\rPrintSettings\x12K\n\x05\x63olor\x18\x01 \x01(\x0e\x32<.enterprise_management.PrintJobEvent.PrintSettings.ColorMode\x12M\n\x06\x64uplex\x18\x02 \x01(\x0e\x32=.enterprise_management.PrintJobEvent.PrintSettings.DuplexMode\x12P\n\nmedia_size\x18\x03 \x01(\x0b\x32<.enterprise_management.PrintJobEvent.PrintSettings.MediaSize\x12\x0e\n\x06\x63opies\x18\x04 \x01(\x05\x1a=\n\tMediaSize\x12\r\n\x05width\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12\x11\n\tvendor_id\x18\x03 \x01(\t\"C\n\tColorMode\x12\x16\n\x12UNKNOWN_COLOR_MODE\x10\x00\x12\x13\n\x0f\x42LACK_AND_WHITE\x10\x01\x12\t\n\x05\x43OLOR\x10\x02\"g\n\nDuplexMode\x12\x17\n\x13UNKNOWN_DUPLEX_MODE\x10\x00\x12\r\n\tONE_SIDED\x10\x01\x12\x17\n\x13TWO_SIDED_LONG_EDGE\x10\x02\x12\x18\n\x14TWO_SIDED_SHORT_EDGE\x10\x03\"D\n\x08UserType\x12\x15\n\x11UNKNOWN_USER_TYPE\x10\x00\x12\x0b\n\x07REGULAR\x10\x01\x12\t\n\x05GUEST\x10\x02\x12\t\n\x05KIOSK\x10\x03\"\xd8\x01\n\x03\x41pp\x12\x0e\n\x06\x61pp_id\x18\x01 \x01(\t\x12\x34\n\x08\x61pp_type\x18\x02 \x01(\x0e\x32\".enterprise_management.App.AppType\x12\x19\n\x11\x61\x64\x64itional_app_id\x18\x03 \x03(\t\"p\n\x07\x41ppType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x07\n\x03\x41RC\x10\x01\x12\x0c\n\x08\x42UILT_IN\x10\x02\x12\x0c\n\x08\x43ROSTINI\x10\x03\x12\r\n\tEXTENSION\x10\x04\x12\x07\n\x03WEB\x10\x05\x12\r\n\tPLUGIN_VM\x10\x06\x12\x0c\n\x08\x42OREALIS\x10\x07\"\xbe\x02\n\x0b\x41ppActivity\x12,\n\x08\x61pp_info\x18\x01 \x01(\x0b\x32\x1a.enterprise_management.App\x12>\n\x13\x61\x63tive_time_periods\x18\x02 \x03(\x0b\x32!.enterprise_management.TimePeriod\x12\x14\n\x0cpopulated_at\x18\x03 \x01(\x03\x12>\n\tapp_state\x18\x04 \x01(\x0e\x32+.enterprise_management.AppActivity.AppState\"k\n\x08\x41ppState\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x14\n\x10\x41LWAYS_AVAILABLE\x10\x02\x12\x0b\n\x07\x42LOCKED\x10\x03\x12\x11\n\rLIMIT_REACHED\x10\x04\x12\x0f\n\x0bUNINSTALLED\x10\x05\"d\n\x0eScreenTimeSpan\x12\x36\n\x0btime_period\x18\x01 \x01(\x0b\x32!.enterprise_management.TimePeriod\x12\x1a\n\x12\x61\x63tive_duration_ms\x18\x02 \x01(\x03\"\xea\x02\n\x18\x43hildStatusReportRequest\x12\x15\n\ruser_dm_token\x18\x01 \x01(\t\x12\x14\n\x0ctimestamp_ms\x18\x02 \x01(\x03\x12\x11\n\ttime_zone\x18\x03 \x01(\t\x12?\n\x10screen_time_span\x18\x04 \x03(\x0b\x32%.enterprise_management.ScreenTimeSpan\x12<\n\x0e\x61ndroid_status\x18\x05 \x01(\x0b\x32$.enterprise_management.AndroidStatus\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x11\n\tboot_mode\x18\x07 \x01(\t\x12\x38\n\x0c\x61pp_activity\x18\x08 \x03(\x0b\x32\".enterprise_management.AppActivity\x12.\n\nhidden_app\x18\t \x03(\x0b\x32\x1a.enterprise_management.App\"F\n\x19\x43hildStatusReportResponse\x12\x12\n\nerror_code\x18\x01 \x01(\x05\x12\x15\n\rerror_message\x18\x02 \x01(\t\"\x11\n\x0fStartCsrRequest\"\xe2\x01\n\x10StartCsrResponse\x12\x1a\n\x12invalidation_topic\x18\x01 \x01(\t\x12\x14\n\x0cva_challenge\x18\x02 \x01(\x0c\x12\x42\n\x11hashing_algorithm\x18\x05 \x01(\x0e\x32\'.enterprise_management.HashingAlgorithm\x12\x42\n\x11signing_algorithm\x18\x03 \x01(\x0e\x32\'.enterprise_management.SigningAlgorithm\x12\x14\n\x0c\x64\x61ta_to_sign\x18\x04 \x01(\x0c\"D\n\x10\x46inishCsrRequest\x12\x1d\n\x15va_challenge_response\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\"\x13\n\x11\x46inishCsrResponse\"\x15\n\x13\x44ownloadCertRequest\"7\n\x14\x44ownloadCertResponse\x12\x1f\n\x17pem_encoded_certificate\x18\x01 \x01(\t\"\x83\x03\n$ClientCertificateProvisioningRequest\x12\x19\n\x11\x63\x65rtificate_scope\x18\x01 \x01(\t\x12\x17\n\x0f\x63\x65rt_profile_id\x18\x02 \x01(\t\x12\x12\n\npublic_key\x18\x03 \x01(\x0c\x12\x17\n\x0f\x64\x65vice_dm_token\x18\x04 \x01(\t\x12\x43\n\x11start_csr_request\x18\x05 \x01(\x0b\x32&.enterprise_management.StartCsrRequestH\x00\x12\x45\n\x12\x66inish_csr_request\x18\x06 \x01(\x0b\x32\'.enterprise_management.FinishCsrRequestH\x00\x12K\n\x15\x64ownload_cert_request\x18\x07 \x01(\x0b\x32*.enterprise_management.DownloadCertRequestH\x00\x12\x16\n\x0epolicy_version\x18\x08 \x01(\x0c\x42\t\n\x07request\"\xfa\x04\n%ClientCertificateProvisioningResponse\x12\x17\n\x0ftry_again_later\x18\x01 \x01(\x03\x12S\n\x05\x65rror\x18\x02 \x01(\x0e\x32\x42.enterprise_management.ClientCertificateProvisioningResponse.ErrorH\x00\x12\x45\n\x12start_csr_response\x18\x03 \x01(\x0b\x32\'.enterprise_management.StartCsrResponseH\x00\x12G\n\x13\x66inish_csr_response\x18\x04 \x01(\x0b\x32(.enterprise_management.FinishCsrResponseH\x00\x12M\n\x16\x64ownload_cert_response\x18\x05 \x01(\x0b\x32+.enterprise_management.DownloadCertResponseH\x00\"\xf7\x01\n\x05\x45rror\x12\r\n\tUNDEFINED\x10\x00\x12\r\n\tTIMED_OUT\x10\x01\x12\x1f\n\x1bIDENTITY_VERIFICATION_ERROR\x10\x02\x12\x0c\n\x08\x43\x41_ERROR\x10\x03\x12\x15\n\x11INCONSISTENT_DATA\x10\x04\x12\x12\n\x0e\x42\x41\x44_PUBLIC_KEY\x10\x05\x12 \n\x1c\x42\x41\x44_CA_CERTIFICATE_SPECIFIED\x10\x06\x12#\n\x1f\x42\x41\x44_CLIENT_CERTIFICATE_RECEIVED\x10\x07\x12\x19\n\x15INVALID_CSR_SIGNATURE\x10\x08\x12\x14\n\x10\x43SR_ALREADY_SENT\x10\tB\n\n\x08response\"\x9a\x03\n\x1d\x42rowserPublicKeyUploadRequest\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\x12\x11\n\tsignature\x18\x02 \x01(\x0c\x12[\n\x0fkey_trust_level\x18\x03 \x01(\x0e\x32\x42.enterprise_management.BrowserPublicKeyUploadRequest.KeyTrustLevel\x12N\n\x08key_type\x18\x04 \x01(\x0e\x32<.enterprise_management.BrowserPublicKeyUploadRequest.KeyType\"g\n\rKeyTrustLevel\x12\x1f\n\x1bKEY_TRUST_LEVEL_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x43HROME_BROWSER_TPM_KEY\x10\x01\x12\x19\n\x15\x43HROME_BROWSER_OS_KEY\x10\x02\"<\n\x07KeyType\x12\x18\n\x14KEY_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07RSA_KEY\x10\x01\x12\n\n\x06\x45\x43_KEY\x10\x02\"\xbe\x01\n\x1e\x42rowserPublicKeyUploadResponse\x12Y\n\rresponse_code\x18\x01 \x01(\x0e\x32\x42.enterprise_management.BrowserPublicKeyUploadResponse.ResponseCode\"A\n\x0cResponseCode\x12\r\n\tUNDEFINED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x15\n\x11INVALID_SIGNATURE\x10\x02\"\xe2\x1b\n\x17\x44\x65viceManagementRequest\x12\x46\n\x10register_request\x18\x01 \x01(\x0b\x32,.enterprise_management.DeviceRegisterRequest\x12J\n\x12unregister_request\x18\x02 \x01(\x0b\x32..enterprise_management.DeviceUnregisterRequest\x12\x42\n\x0epolicy_request\x18\x03 \x01(\x0b\x32*.enterprise_management.DevicePolicyRequest\x12V\n\x1c\x64\x65vice_status_report_request\x18\x04 \x01(\x0b\x32\x30.enterprise_management.DeviceStatusReportRequest\x12X\n\x1dsession_status_report_request\x18\x05 \x01(\x0b\x32\x31.enterprise_management.SessionStatusReportRequest\x12T\n\x1b\x63hild_status_report_request\x18\x1e \x01(\x0b\x32/.enterprise_management.ChildStatusReportRequest\x12S\n\x17\x61uto_enrollment_request\x18\x06 \x01(\x0b\x32\x32.enterprise_management.DeviceAutoEnrollmentRequest\x12K\n\x13\x63\x65rt_upload_request\x18\x07 \x01(\x0b\x32..enterprise_management.DeviceCertUploadRequest\x12X\n\x1aservice_api_access_request\x18\x08 \x01(\x0b\x32\x34.enterprise_management.DeviceServiceApiAccessRequest\x12Z\n\x1e\x64\x65vice_state_retrieval_request\x18\t \x01(\x0b\x32\x32.enterprise_management.DeviceStateRetrievalRequest\x12[\n\x1f\x64\x65vice_state_key_update_request\x18\n \x01(\x0b\x32\x32.enterprise_management.DeviceStateKeyUpdateRequest\x12K\n\x16\x64\x65vice_pairing_request\x18\x0b \x01(\x0b\x32+.enterprise_management.DevicePairingRequest\x12V\n\x1c\x63heck_device_pairing_request\x18\x0c \x01(\x0b\x32\x30.enterprise_management.CheckDevicePairingRequest\x12Q\n\x16remote_command_request\x18\r \x01(\x0b\x32\x31.enterprise_management.DeviceRemoteCommandRequest\x12q\n*device_attribute_update_permission_request\x18\x0e \x01(\x0b\x32=.enterprise_management.DeviceAttributeUpdatePermissionRequest\x12\\\n\x1f\x64\x65vice_attribute_update_request\x18\x0f \x01(\x0b\x32\x33.enterprise_management.DeviceAttributeUpdateRequest\x12H\n\x15gcm_id_update_request\x18\x10 \x01(\x0b\x32).enterprise_management.GcmIdUpdateRequest\x12^\n check_android_management_request\x18\x11 \x01(\x0b\x32\x34.enterprise_management.CheckAndroidManagementRequest\x12h\n\"certificate_based_register_request\x18\x12 \x01(\x0b\x32<.enterprise_management.CertificateBasedDeviceRegisterRequest\x12n\n)active_directory_enroll_play_user_request\x18\x13 \x01(\x0b\x32;.enterprise_management.ActiveDirectoryEnrollPlayUserRequest\x12i\n&active_directory_play_activity_request\x18\x14 \x01(\x0b\x32\x39.enterprise_management.ActiveDirectoryPlayActivityRequest\x12\x65\n\'check_device_license_request_deprecated\x18\x15 \x01(\x0b\x32\x30.enterprise_management.CheckDeviceLicenseRequestB\x02\x18\x01\x12\x65\n$active_directory_user_signin_request\x18\x16 \x01(\x0b\x32\x37.enterprise_management.ActiveDirectoryUserSigninRequest\x12O\n\x18register_browser_request\x18\x17 \x01(\x0b\x32-.enterprise_management.RegisterBrowserRequest\x12R\n\x1a\x61pp_install_report_request\x18\x19 \x01(\x0b\x32..enterprise_management.AppInstallReportRequest\x12X\n\x1d\x63hrome_desktop_report_request\x18\x1a \x01(\x0b\x32\x31.enterprise_management.ChromeDesktopReportRequest\x12^\n policy_validation_report_request\x18\x1b \x01(\x0b\x32\x34.enterprise_management.PolicyValidationReportRequest\x12k\n\'device_initial_enrollment_state_request\x18\x1c \x01(\x0b\x32:.enterprise_management.DeviceInitialEnrollmentStateRequest\x12M\n\x17refresh_account_request\x18\x1d \x01(\x0b\x32,.enterprise_management.RefreshAccountRequest\x12W\n\x1drsu_lookup_key_upload_request\x18\x1f \x01(\x0b\x32\x30.enterprise_management.RsuLookupKeyUploadRequest\x12N\n\x18public_saml_user_request\x18  \x01(\x0b\x32,.enterprise_management.PublicSamlUserRequest\x12W\n\x1d\x63hrome_os_user_report_request\x18! \x01(\x0b\x32\x30.enterprise_management.ChromeOsUserReportRequest\x12l\n\'client_certificate_provisioning_request\x18\" \x01(\x0b\x32;.enterprise_management.ClientCertificateProvisioningRequest\x12^\n extension_install_report_request\x18# \x01(\x0b\x32\x34.enterprise_management.ExtensionInstallReportRequest\x12R\n\x1a\x63heck_user_account_request\x18$ \x01(\x0b\x32..enterprise_management.CheckUserAccountRequest\x12Z\n\x1eprivate_set_membership_request\x18% \x01(\x0b\x32\x32.enterprise_management.PrivateSetMembershipRequest\x12_\n!browser_public_key_upload_request\x18& \x01(\x0b\x32\x34.enterprise_management.BrowserPublicKeyUploadRequest\x12P\n\x19upload_euicc_info_request\x18\' \x01(\x0b\x32-.enterprise_management.UploadEuiccInfoRequest\x12X\n\x1d\x63hrome_profile_report_request\x18( \x01(\x0b\x32\x31.enterprise_management.ChromeProfileReportRequestJ\x04\x08\x18\x10\x19\"\x98\x1a\n\x18\x44\x65viceManagementResponse\x12\x15\n\rerror_message\x18\x02 \x01(\t\x12H\n\x0c\x65rror_detail\x18\' \x03(\x0e\x32\x32.enterprise_management.DeviceManagementErrorDetail\x12H\n\x11register_response\x18\x03 \x01(\x0b\x32-.enterprise_management.DeviceRegisterResponse\x12L\n\x13unregister_response\x18\x04 \x01(\x0b\x32/.enterprise_management.DeviceUnregisterResponse\x12\x44\n\x0fpolicy_response\x18\x05 \x01(\x0b\x32+.enterprise_management.DevicePolicyResponse\x12X\n\x1d\x64\x65vice_status_report_response\x18\x06 \x01(\x0b\x32\x31.enterprise_management.DeviceStatusReportResponse\x12Z\n\x1esession_status_report_response\x18\x07 \x01(\x0b\x32\x32.enterprise_management.SessionStatusReportResponse\x12V\n\x1c\x63hild_status_report_response\x18\x1d \x01(\x0b\x32\x30.enterprise_management.ChildStatusReportResponse\x12U\n\x18\x61uto_enrollment_response\x18\x08 \x01(\x0b\x32\x33.enterprise_management.DeviceAutoEnrollmentResponse\x12M\n\x14\x63\x65rt_upload_response\x18\t \x01(\x0b\x32/.enterprise_management.DeviceCertUploadResponse\x12Z\n\x1bservice_api_access_response\x18\n \x01(\x0b\x32\x35.enterprise_management.DeviceServiceApiAccessResponse\x12\\\n\x1f\x64\x65vice_state_retrieval_response\x18\x0b \x01(\x0b\x32\x33.enterprise_management.DeviceStateRetrievalResponse\x12M\n\x17\x64\x65vice_pairing_response\x18\x0c \x01(\x0b\x32,.enterprise_management.DevicePairingResponse\x12X\n\x1d\x63heck_device_pairing_response\x18\r \x01(\x0b\x32\x31.enterprise_management.CheckDevicePairingResponse\x12S\n\x17remote_command_response\x18\x0e \x01(\x0b\x32\x32.enterprise_management.DeviceRemoteCommandResponse\x12s\n+device_attribute_update_permission_response\x18\x0f \x01(\x0b\x32>.enterprise_management.DeviceAttributeUpdatePermissionResponse\x12^\n device_attribute_update_response\x18\x10 \x01(\x0b\x32\x34.enterprise_management.DeviceAttributeUpdateResponse\x12J\n\x16gcm_id_update_response\x18\x11 \x01(\x0b\x32*.enterprise_management.GcmIdUpdateResponse\x12`\n!check_android_management_response\x18\x12 \x01(\x0b\x32\x35.enterprise_management.CheckAndroidManagementResponse\x12p\n*active_directory_enroll_play_user_response\x18\x13 \x01(\x0b\x32<.enterprise_management.ActiveDirectoryEnrollPlayUserResponse\x12k\n\'active_directory_play_activity_response\x18\x14 \x01(\x0b\x32:.enterprise_management.ActiveDirectoryPlayActivityResponse\x12g\n(check_device_license_response_deprecated\x18\x15 \x01(\x0b\x32\x31.enterprise_management.CheckDeviceLicenseResponseB\x02\x18\x01\x12g\n%active_directory_user_signin_response\x18\x16 \x01(\x0b\x32\x38.enterprise_management.ActiveDirectoryUserSigninResponse\x12Z\n\x1e\x63hrome_desktop_report_response\x18\x17 \x01(\x0b\x32\x32.enterprise_management.ChromeDesktopReportResponse\x12T\n\x1b\x61pp_install_report_response\x18\x19 \x01(\x0b\x32/.enterprise_management.AppInstallReportResponse\x12`\n!policy_validation_report_response\x18\x1a \x01(\x0b\x32\x35.enterprise_management.PolicyValidationReportResponse\x12m\n(device_initial_enrollment_state_response\x18\x1b \x01(\x0b\x32;.enterprise_management.DeviceInitialEnrollmentStateResponse\x12O\n\x18refresh_account_response\x18\x1c \x01(\x0b\x32-.enterprise_management.RefreshAccountResponse\x12Y\n\x1ersu_lookup_key_upload_response\x18\x1e \x01(\x0b\x32\x31.enterprise_management.RsuLookupKeyUploadResponse\x12P\n\x19public_saml_user_response\x18\x1f \x01(\x0b\x32-.enterprise_management.PublicSamlUserResponse\x12Y\n\x1e\x63hrome_os_user_report_response\x18  \x01(\x0b\x32\x31.enterprise_management.ChromeOsUserReportResponse\x12n\n(client_certificate_provisioning_response\x18! \x01(\x0b\x32<.enterprise_management.ClientCertificateProvisioningResponse\x12T\n\x1b\x63heck_user_account_response\x18\" \x01(\x0b\x32/.enterprise_management.CheckUserAccountResponse\x12\\\n\x1fprivate_set_membership_response\x18# \x01(\x0b\x32\x33.enterprise_management.PrivateSetMembershipResponse\x12\x61\n\"browser_public_key_upload_response\x18$ \x01(\x0b\x32\x35.enterprise_management.BrowserPublicKeyUploadResponse\x12R\n\x1aupload_euicc_info_response\x18% \x01(\x0b\x32..enterprise_management.UploadEuiccInfoResponse\x12Z\n\x1e\x63hrome_profile_report_response\x18& \x01(\x0b\x32\x32.enterprise_management.ChromeProfileReportResponseJ\x04\x08\x01\x10\x02J\x04\x08\x18\x10\x19\"5\n\x18\x44\x65viceStateRetrievalInfo\x12\x19\n\x11has_initial_state\x18\x01 \x01(\x08*i\n\x07\x43hannel\x12\x13\n\x0f\x43HANNEL_UNKNOWN\x10\x00\x12\x12\n\x0e\x43HANNEL_CANARY\x10\x01\x12\x0f\n\x0b\x43HANNEL_DEV\x10\x02\x12\x10\n\x0c\x43HANNEL_BETA\x10\x03\x12\x12\n\x0e\x43HANNEL_STABLE\x10\x04*\xab\x01\n\x0e\x42usDeviceClass\x12\x1c\n\x18\x44\x45VICE_CLASS_UNSPECIFIED\x10\x00\x12\x16\n\x12\x44ISPLAY_CONTROLLER\x10\x01\x12\x17\n\x13\x45THERNET_CONTROLLER\x10\x02\x12\x17\n\x13WIRELESS_CONTROLLER\x10\x03\x12\x15\n\x11\x42LUETOOTH_ADAPTER\x10\x04\x12\x1a\n\x16THUNDERBOLT_CONTROLLER\x10\x05*R\n\x07\x42usType\x12\x18\n\x14\x42US_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PCI_BUS\x10\x01\x12\x0b\n\x07USB_BUS\x10\x02\x12\x13\n\x0fTHUNDERBOLT_BUS\x10\x03*;\n\x11PartialReportType\x12\x0f\n\x0bUNSPECIFIED\x10\x00\x12\x15\n\x11\x45XTENSION_REQUEST\x10\x01*q\n\x0f\x43rostiniAppType\x12\x1e\n\x1a\x43ROSTINI_APP_TYPE_TERMINAL\x10\x00\x12!\n\x1d\x43ROSTINI_APP_TYPE_INTERACTIVE\x10\x01\x12\x1b\n\x17\x43ROSTINI_APP_TYPE_OTHER\x10\x02*X\n\x10HashingAlgorithm\x12!\n\x1dHASHING_ALGORITHM_UNSPECIFIED\x10\x00\x12\x08\n\x04SHA1\x10\x01\x12\n\n\x06SHA256\x10\x02\x12\x0b\n\x07NO_HASH\x10\x03*I\n\x10SigningAlgorithm\x12!\n\x1dSIGNING_ALGORITHM_UNSPECIFIED\x10\x00\x12\x12\n\x0eRSA_PKCS1_V1_5\x10\x01*\x9a\x01\n\x1b\x44\x65viceManagementErrorDetail\x12\x13\n\x0fNO_ERROR_DETAIL\x10\x00\x12\x30\n,CBCM_DELETION_POLICY_PREFERENCE_DELETE_TOKEN\x10\x01\x12\x34\n0CBCM_DELETION_POLICY_PREFERENCE_INVALIDATE_TOKEN\x10\x02\x42/H\x03Z+chromium/policy/enterprise_management_proto'
   ,
   dependencies=[private__membership__rlwe__pb2.DESCRIPTOR,])
 
@@ -53,8 +53,8 @@ _CHANNEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=51503,
-  serialized_end=51608,
+  serialized_start=51614,
+  serialized_end=51719,
 )
 _sym_db.RegisterEnumDescriptor(_CHANNEL)
 
@@ -92,8 +92,8 @@ _BUSDEVICECLASS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=51611,
-  serialized_end=51782,
+  serialized_start=51722,
+  serialized_end=51893,
 )
 _sym_db.RegisterEnumDescriptor(_BUSDEVICECLASS)
 
@@ -123,8 +123,8 @@ _BUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=51784,
-  serialized_end=51866,
+  serialized_start=51895,
+  serialized_end=51977,
 )
 _sym_db.RegisterEnumDescriptor(_BUSTYPE)
 
@@ -146,8 +146,8 @@ _PARTIALREPORTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=51868,
-  serialized_end=51927,
+  serialized_start=51979,
+  serialized_end=52038,
 )
 _sym_db.RegisterEnumDescriptor(_PARTIALREPORTTYPE)
 
@@ -173,8 +173,8 @@ _CROSTINIAPPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=51929,
-  serialized_end=52042,
+  serialized_start=52040,
+  serialized_end=52153,
 )
 _sym_db.RegisterEnumDescriptor(_CROSTINIAPPTYPE)
 
@@ -204,8 +204,8 @@ _HASHINGALGORITHM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=52044,
-  serialized_end=52132,
+  serialized_start=52155,
+  serialized_end=52243,
 )
 _sym_db.RegisterEnumDescriptor(_HASHINGALGORITHM)
 
@@ -227,8 +227,8 @@ _SIGNINGALGORITHM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=52134,
-  serialized_end=52207,
+  serialized_start=52245,
+  serialized_end=52318,
 )
 _sym_db.RegisterEnumDescriptor(_SIGNINGALGORITHM)
 
@@ -254,8 +254,8 @@ _DEVICEMANAGEMENTERRORDETAIL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=52210,
-  serialized_end=52364,
+  serialized_start=52321,
+  serialized_end=52475,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEMANAGEMENTERRORDETAIL)
 
@@ -425,11 +425,19 @@ _DEVICEREGISTERREQUEST_FLAVOR = _descriptor.EnumDescriptor(
       name='FLAVOR_ENROLLMENT_ATTESTATION_INITIAL_MANUAL_FALLBACK', index=14, number=15,
       serialized_options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_FORCED', index=15, number=16,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='FLAVOR_ENROLLMENT_ATTESTATION_ROLLBACK_MANUAL_FALLBACK', index=16, number=17,
+      serialized_options=None,
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=1307,
-  serialized_end=1947,
+  serialized_end=2058,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEREGISTERREQUEST_FLAVOR)
 
@@ -454,8 +462,8 @@ _DEVICEREGISTERREQUEST_LIFETIME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1949,
-  serialized_end=2037,
+  serialized_start=2060,
+  serialized_end=2148,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEREGISTERREQUEST_LIFETIME)
 
@@ -484,8 +492,8 @@ _DEVICEREGISTERREQUEST_PSMEXECUTIONRESULT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2040,
-  serialized_end=2185,
+  serialized_start=2151,
+  serialized_end=2296,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEREGISTERREQUEST_PSMEXECUTIONRESULT)
 
@@ -514,8 +522,8 @@ _CHECKUSERACCOUNTRESPONSE_USERACCOUNTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2405,
-  serialized_end=2494,
+  serialized_start=2516,
+  serialized_end=2605,
 )
 _sym_db.RegisterEnumDescriptor(_CHECKUSERACCOUNTRESPONSE_USERACCOUNTTYPE)
 
@@ -544,8 +552,8 @@ _DEVICEREGISTERRESPONSE_DEVICEMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2757,
-  serialized_end=2833,
+  serialized_start=2868,
+  serialized_end=2944,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEREGISTERRESPONSE_DEVICEMODE)
 
@@ -570,8 +578,8 @@ _DEVICECERTUPLOADREQUEST_CERTIFICATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3059,
-  serialized_end=3185,
+  serialized_start=3170,
+  serialized_end=3296,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICECERTUPLOADREQUEST_CERTIFICATETYPE)
 
@@ -600,8 +608,8 @@ _DEVICESERVICEAPIACCESSREQUEST_DEVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3382,
-  serialized_end=3470,
+  serialized_start=3493,
+  serialized_end=3581,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICESERVICEAPIACCESSREQUEST_DEVICETYPE)
 
@@ -626,8 +634,8 @@ _POLICYFETCHREQUEST_SIGNATURETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4077,
-  serialized_end=4132,
+  serialized_start=4188,
+  serialized_end=4243,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYFETCHREQUEST_SIGNATURETYPE)
 
@@ -648,8 +656,8 @@ _DEVICESTATE_DEVICEMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4340,
-  serialized_end=4402,
+  serialized_start=4451,
+  serialized_end=4513,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICESTATE_DEVICEMODE)
 
@@ -674,8 +682,8 @@ _POLICYDATA_ASSOCIATIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5618,
-  serialized_end=5682,
+  serialized_start=5729,
+  serialized_end=5793,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYDATA_ASSOCIATIONSTATE)
 
@@ -700,8 +708,8 @@ _POLICYDATA_MANAGEMENTMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5684,
-  serialized_end=5772,
+  serialized_start=5795,
+  serialized_end=5883,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYDATA_MANAGEMENTMODE)
 
@@ -726,8 +734,8 @@ _POLICYDATA_MARKETSEGMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5774,
-  serialized_end=5870,
+  serialized_start=5885,
+  serialized_end=5981,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYDATA_MARKETSEGMENT)
 
@@ -760,8 +768,8 @@ _POLICYDATA_METRICSLOGSEGMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5872,
-  serialized_end=5964,
+  serialized_start=5983,
+  serialized_end=6075,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYDATA_METRICSLOGSEGMENT)
 
@@ -798,8 +806,8 @@ _ACTIVETIMEPERIOD_SESSIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7245,
-  serialized_end=7400,
+  serialized_start=7356,
+  serialized_end=7511,
 )
 _sym_db.RegisterEnumDescriptor(_ACTIVETIMEPERIOD_SESSIONTYPE)
 
@@ -828,8 +836,8 @@ _NETWORKINTERFACE_NETWORKDEVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7608,
-  serialized_end=7706,
+  serialized_start=7719,
+  serialized_end=7817,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORKINTERFACE_NETWORKDEVICETYPE)
 
@@ -890,8 +898,8 @@ _NETWORKSTATE_CONNECTIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7888,
-  serialized_end=8078,
+  serialized_start=7999,
+  serialized_end=8189,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORKSTATE_CONNECTIONSTATE)
 
@@ -912,8 +920,8 @@ _DEVICEUSER_USERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8168,
-  serialized_end=8226,
+  serialized_start=8279,
+  serialized_end=8337,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEUSER_USERTYPE)
 
@@ -938,8 +946,8 @@ _POWERSTATUS_POWERSOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9228,
-  serialized_end=9293,
+  serialized_start=9339,
+  serialized_end=9404,
 )
 _sym_db.RegisterEnumDescriptor(_POWERSTATUS_POWERSOURCE)
 
@@ -964,8 +972,8 @@ _DISKINFO_DEVICEPURPOSE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10120,
-  serialized_end=10192,
+  serialized_start=10231,
+  serialized_end=10303,
 )
 _sym_db.RegisterEnumDescriptor(_DISKINFO_DEVICEPURPOSE)
 
@@ -994,8 +1002,8 @@ _CPUINFO_ARCHITECTURE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11318,
-  serialized_end=11399,
+  serialized_start=11429,
+  serialized_end=11510,
 )
 _sym_db.RegisterEnumDescriptor(_CPUINFO_ARCHITECTURE)
 
@@ -1028,8 +1036,8 @@ _CRASHREPORTINFO_CRASHREPORTUPLOADSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11965,
-  serialized_end=12146,
+  serialized_start=12076,
+  serialized_end=12257,
 )
 _sym_db.RegisterEnumDescriptor(_CRASHREPORTINFO_CRASHREPORTUPLOADSTATUS)
 
@@ -1062,8 +1070,8 @@ _BOOTINFO_BOOTMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=12812,
-  serialized_end=12907,
+  serialized_start=12923,
+  serialized_end=13018,
 )
 _sym_db.RegisterEnumDescriptor(_BOOTINFO_BOOTMETHOD)
 
@@ -1092,8 +1100,8 @@ _OSUPDATESTATUS_UPDATESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=15861,
-  serialized_end=15991,
+  serialized_start=15972,
+  serialized_end=16102,
 )
 _sym_db.RegisterEnumDescriptor(_OSUPDATESTATUS_UPDATESTATUS)
 
@@ -1138,8 +1146,8 @@ _APPINFO_APPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=16378,
-  serialized_end=16528,
+  serialized_start=16489,
+  serialized_end=16639,
 )
 _sym_db.RegisterEnumDescriptor(_APPINFO_APPTYPE)
 
@@ -1168,8 +1176,8 @@ _APPINFO_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=16530,
-  serialized_end=16625,
+  serialized_start=16641,
+  serialized_end=16736,
 )
 _sym_db.RegisterEnumDescriptor(_APPINFO_STATUS)
 
@@ -1198,8 +1206,8 @@ _ANDROIDAPPINFO_ANDROIDAPPSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=17010,
-  serialized_end=17111,
+  serialized_start=17121,
+  serialized_end=17222,
 )
 _sym_db.RegisterEnumDescriptor(_ANDROIDAPPINFO_ANDROIDAPPSTATUS)
 
@@ -1228,8 +1236,8 @@ _ANDROIDAPPINFO_INSTALLEDSOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=17113,
-  serialized_end=17217,
+  serialized_start=17224,
+  serialized_end=17328,
 )
 _sym_db.RegisterEnumDescriptor(_ANDROIDAPPINFO_INSTALLEDSOURCE)
 
@@ -1282,8 +1290,8 @@ _EXTENSION_EXTENSIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=18042,
-  serialized_end=18299,
+  serialized_start=18153,
+  serialized_end=18410,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSION_EXTENSIONTYPE)
 
@@ -1316,8 +1324,8 @@ _EXTENSION_INSTALLTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=18301,
-  serialized_end=18404,
+  serialized_start=18412,
+  serialized_end=18515,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSION_INSTALLTYPE)
 
@@ -1342,8 +1350,8 @@ _POLICY_POLICYLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=18729,
-  serialized_end=18805,
+  serialized_start=18840,
+  serialized_end=18916,
 )
 _sym_db.RegisterEnumDescriptor(_POLICY_POLICYLEVEL)
 
@@ -1368,8 +1376,8 @@ _POLICY_POLICYSCOPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=18807,
-  serialized_end=18874,
+  serialized_start=18918,
+  serialized_end=18985,
 )
 _sym_db.RegisterEnumDescriptor(_POLICY_POLICYSCOPE)
 
@@ -1426,8 +1434,8 @@ _POLICY_POLICYSOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=18877,
-  serialized_end=19226,
+  serialized_start=18988,
+  serialized_end=19337,
 )
 _sym_db.RegisterEnumDescriptor(_POLICY_POLICYSOURCE)
 
@@ -1452,8 +1460,8 @@ _POLICYVALUEVALIDATIONISSUE_VALUEVALIDATIONISSUESEVERITY = _descriptor.EnumDescr
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=21389,
-  serialized_end=21556,
+  serialized_start=21500,
+  serialized_end=21667,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYVALUEVALIDATIONISSUE_VALUEVALIDATIONISSUESEVERITY)
 
@@ -1530,8 +1538,8 @@ _POLICYVALIDATIONREPORTREQUEST_VALIDATIONRESULTTYPE = _descriptor.EnumDescriptor
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=21834,
-  serialized_end=22574,
+  serialized_start=21945,
+  serialized_end=22685,
 )
 _sym_db.RegisterEnumDescriptor(_POLICYVALIDATIONREPORTREQUEST_VALIDATIONRESULTTYPE)
 
@@ -1556,8 +1564,8 @@ _DEVICEAUTOENROLLMENTREQUEST_ENROLLMENTCHECKTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=24522,
-  serialized_end=24658,
+  serialized_start=24633,
+  serialized_end=24769,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEAUTOENROLLMENTREQUEST_ENROLLMENTCHECKTYPE)
 
@@ -1590,8 +1598,8 @@ _DEVICESTATERETRIEVALRESPONSE_RESTOREMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=25185,
-  serialized_end=25371,
+  serialized_start=25296,
+  serialized_end=25482,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICESTATERETRIEVALRESPONSE_RESTOREMODE)
 
@@ -1620,8 +1628,8 @@ _DEVICEINITIALENROLLMENTSTATERESPONSE_INITIALENROLLMENTMODE = _descriptor.EnumDe
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=25886,
-  serialized_end=26079,
+  serialized_start=25997,
+  serialized_end=26190,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEINITIALENROLLMENTSTATERESPONSE_INITIALENROLLMENTMODE)
 
@@ -1650,8 +1658,8 @@ _DEVICEINITIALENROLLMENTSTATERESPONSE_LICENSEPACKAGINGSKU = _descriptor.EnumDesc
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=26081,
-  serialized_end=26183,
+  serialized_start=26192,
+  serialized_end=26294,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEINITIALENROLLMENTSTATERESPONSE_LICENSEPACKAGINGSKU)
 
@@ -1688,8 +1696,8 @@ _DEVICEPAIRINGRESPONSE_STATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=26376,
-  serialized_end=26541,
+  serialized_start=26487,
+  serialized_end=26652,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEPAIRINGRESPONSE_STATUSCODE)
 
@@ -1730,8 +1738,8 @@ _CHECKDEVICEPAIRINGRESPONSE_STATUSCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=26753,
-  serialized_end=26961,
+  serialized_start=26864,
+  serialized_end=27072,
 )
 _sym_db.RegisterEnumDescriptor(_CHECKDEVICEPAIRINGRESPONSE_STATUSCODE)
 
@@ -1808,8 +1816,8 @@ _REMOTECOMMAND_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=27126,
-  serialized_end=27632,
+  serialized_start=27237,
+  serialized_end=27743,
 )
 _sym_db.RegisterEnumDescriptor(_REMOTECOMMAND_TYPE)
 
@@ -1834,8 +1842,8 @@ _REMOTECOMMANDRESULT_RESULTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=27785,
-  serialized_end=27857,
+  serialized_start=27896,
+  serialized_end=27968,
 )
 _sym_db.RegisterEnumDescriptor(_REMOTECOMMANDRESULT_RESULTTYPE)
 
@@ -1856,8 +1864,8 @@ _DEVICEATTRIBUTEUPDATEPERMISSIONRESPONSE_RESULTTYPE = _descriptor.EnumDescriptor
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=28427,
-  serialized_end=28502,
+  serialized_start=28538,
+  serialized_end=28613,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEATTRIBUTEUPDATEPERMISSIONRESPONSE_RESULTTYPE)
 
@@ -1878,8 +1886,8 @@ _DEVICEATTRIBUTEUPDATERESPONSE_RESULTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=28687,
-  serialized_end=28757,
+  serialized_start=28798,
+  serialized_end=28868,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEATTRIBUTEUPDATERESPONSE_RESULTTYPE)
 
@@ -1900,8 +1908,8 @@ _CERTIFICATEBASEDDEVICEREGISTRATIONDATA_CERTIFICATETYPE = _descriptor.EnumDescri
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=29386,
-  serialized_end=29455,
+  serialized_start=29497,
+  serialized_end=29566,
 )
 _sym_db.RegisterEnumDescriptor(_CERTIFICATEBASEDDEVICEREGISTRATIONDATA_CERTIFICATETYPE)
 
@@ -1926,8 +1934,8 @@ _CHECKDEVICELICENSERESPONSE_LICENSESELECTIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=30610,
-  serialized_end=30688,
+  serialized_start=30721,
+  serialized_end=30799,
 )
 _sym_db.RegisterEnumDescriptor(_CHECKDEVICELICENSERESPONSE_LICENSESELECTIONMODE)
 
@@ -1956,8 +1964,8 @@ _TPMVERSIONINFO_GSCVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=31025,
-  serialized_end=31135,
+  serialized_start=31136,
+  serialized_end=31246,
 )
 _sym_db.RegisterEnumDescriptor(_TPMVERSIONINFO_GSCVERSION)
 
@@ -1998,8 +2006,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_EVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=33210,
-  serialized_end=33372,
+  serialized_start=33321,
+  serialized_end=33483,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_EVENTTYPE)
 
@@ -2032,8 +2040,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_SESSIONSTATECHANGETYPE = _descriptor.EnumDescrip
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=33374,
-  serialized_end=33485,
+  serialized_start=33485,
+  serialized_end=33596,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_SESSIONSTATECHANGETYPE)
 
@@ -2162,8 +2170,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_FAILUREREASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=33488,
-  serialized_end=34318,
+  serialized_start=33599,
+  serialized_end=34429,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_FAILUREREASON)
 
@@ -2200,8 +2208,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_INSTALLATIONSTAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=34320,
-  serialized_end=34444,
+  serialized_start=34431,
+  serialized_end=34555,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_INSTALLATIONSTAGE)
 
@@ -2254,8 +2262,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_USERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=34447,
-  serialized_end=34731,
+  serialized_start=34558,
+  serialized_end=34842,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_USERTYPE)
 
@@ -2312,8 +2320,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_DOWNLOADINGSTAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=34734,
-  serialized_end=35013,
+  serialized_start=34845,
+  serialized_end=35124,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_DOWNLOADINGSTAGE)
 
@@ -2358,8 +2366,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_INSTALLCREATIONSTAGE = _descriptor.EnumDescripto
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=35016,
-  serialized_end=35339,
+  serialized_start=35127,
+  serialized_end=35450,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_INSTALLCREATIONSTAGE)
 
@@ -2396,8 +2404,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_DOWNLOADCACHESTATUS = _descriptor.EnumDescriptor
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=35342,
-  serialized_end=35494,
+  serialized_start=35453,
+  serialized_end=35605,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_DOWNLOADCACHESTATUS)
 
@@ -2598,8 +2606,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_SANDBOXEDUNPACKERFAILUREREASON = _descriptor.Enu
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=35497,
-  serialized_end=37215,
+  serialized_start=35608,
+  serialized_end=37326,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_SANDBOXEDUNPACKERFAILUREREASON)
 
@@ -2672,8 +2680,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_MANIFESTINVALIDERROR = _descriptor.EnumDescripto
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=37218,
-  serialized_end=37667,
+  serialized_start=37329,
+  serialized_end=37778,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_MANIFESTINVALIDERROR)
 
@@ -2786,8 +2794,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT_CRXINSTALLERRORDETAIL = _descriptor.EnumDescript
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=37670,
-  serialized_end=38417,
+  serialized_start=37781,
+  serialized_end=38528,
 )
 _sym_db.RegisterEnumDescriptor(_EXTENSIONINSTALLREPORTLOGEVENT_CRXINSTALLERRORDETAIL)
 
@@ -2860,8 +2868,8 @@ _APPINSTALLREPORTLOGEVENT_EVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=38786,
-  serialized_end=39137,
+  serialized_start=38897,
+  serialized_end=39248,
 )
 _sym_db.RegisterEnumDescriptor(_APPINSTALLREPORTLOGEVENT_EVENTTYPE)
 
@@ -2894,8 +2902,8 @@ _APPINSTALLREPORTLOGEVENT_SESSIONSTATECHANGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=33374,
-  serialized_end=33485,
+  serialized_start=33485,
+  serialized_end=33596,
 )
 _sym_db.RegisterEnumDescriptor(_APPINSTALLREPORTLOGEVENT_SESSIONSTATECHANGETYPE)
 
@@ -2916,8 +2924,8 @@ _REFRESHACCOUNTREQUEST_ACCOUNTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=39856,
-  serialized_end=39924,
+  serialized_start=39967,
+  serialized_end=40035,
 )
 _sym_db.RegisterEnumDescriptor(_REFRESHACCOUNTREQUEST_ACCOUNTTYPE)
 
@@ -2942,8 +2950,8 @@ _PRINTJOBEVENT_PRINTSETTINGS_COLORMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=41161,
-  serialized_end=41228,
+  serialized_start=41272,
+  serialized_end=41339,
 )
 _sym_db.RegisterEnumDescriptor(_PRINTJOBEVENT_PRINTSETTINGS_COLORMODE)
 
@@ -2972,8 +2980,8 @@ _PRINTJOBEVENT_PRINTSETTINGS_DUPLEXMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=41230,
-  serialized_end=41333,
+  serialized_start=41341,
+  serialized_end=41444,
 )
 _sym_db.RegisterEnumDescriptor(_PRINTJOBEVENT_PRINTSETTINGS_DUPLEXMODE)
 
@@ -3002,8 +3010,8 @@ _PRINTJOBEVENT_USERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=41335,
-  serialized_end=41403,
+  serialized_start=41446,
+  serialized_end=41514,
 )
 _sym_db.RegisterEnumDescriptor(_PRINTJOBEVENT_USERTYPE)
 
@@ -3048,8 +3056,8 @@ _APP_APPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=41510,
-  serialized_end=41622,
+  serialized_start=41621,
+  serialized_end=41733,
 )
 _sym_db.RegisterEnumDescriptor(_APP_APPTYPE)
 
@@ -3086,8 +3094,8 @@ _APPACTIVITY_APPSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=41836,
-  serialized_end=41943,
+  serialized_start=41947,
+  serialized_end=42054,
 )
 _sym_db.RegisterEnumDescriptor(_APPACTIVITY_APPSTATE)
 
@@ -3140,8 +3148,8 @@ _CLIENTCERTIFICATEPROVISIONINGRESPONSE_ERROR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=43669,
-  serialized_end=43916,
+  serialized_start=43780,
+  serialized_end=44027,
 )
 _sym_db.RegisterEnumDescriptor(_CLIENTCERTIFICATEPROVISIONINGRESPONSE_ERROR)
 
@@ -3166,8 +3174,8 @@ _BROWSERPUBLICKEYUPLOADREQUEST_KEYTRUSTLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=44176,
-  serialized_end=44279,
+  serialized_start=44287,
+  serialized_end=44390,
 )
 _sym_db.RegisterEnumDescriptor(_BROWSERPUBLICKEYUPLOADREQUEST_KEYTRUSTLEVEL)
 
@@ -3192,8 +3200,8 @@ _BROWSERPUBLICKEYUPLOADREQUEST_KEYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=44281,
-  serialized_end=44341,
+  serialized_start=44392,
+  serialized_end=44452,
 )
 _sym_db.RegisterEnumDescriptor(_BROWSERPUBLICKEYUPLOADREQUEST_KEYTYPE)
 
@@ -3218,8 +3226,8 @@ _BROWSERPUBLICKEYUPLOADRESPONSE_RESPONSECODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=44469,
-  serialized_end=44534,
+  serialized_start=44580,
+  serialized_end=44645,
 )
 _sym_db.RegisterEnumDescriptor(_BROWSERPUBLICKEYUPLOADRESPONSE_RESPONSECODE)
 
@@ -3482,7 +3490,7 @@ _DEVICEREGISTERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=380,
-  serialized_end=2197,
+  serialized_end=2308,
 )
 
 
@@ -3512,8 +3520,8 @@ _DEVICEREGISTERIDENTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2199,
-  serialized_end=2257,
+  serialized_start=2310,
+  serialized_end=2368,
 )
 
 
@@ -3551,8 +3559,8 @@ _CHECKUSERACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2260,
-  serialized_end=2494,
+  serialized_start=2371,
+  serialized_end=2605,
 )
 
 
@@ -3618,8 +3626,8 @@ _DEVICEREGISTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2497,
-  serialized_end=2833,
+  serialized_start=2608,
+  serialized_end=2944,
 )
 
 
@@ -3642,8 +3650,8 @@ _DEVICEUNREGISTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2835,
-  serialized_end=2860,
+  serialized_start=2946,
+  serialized_end=2971,
 )
 
 
@@ -3666,8 +3674,8 @@ _DEVICEUNREGISTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2862,
-  serialized_end=2888,
+  serialized_start=2973,
+  serialized_end=2999,
 )
 
 
@@ -3712,8 +3720,8 @@ _DEVICECERTUPLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2891,
-  serialized_end=3185,
+  serialized_start=3002,
+  serialized_end=3296,
 )
 
 
@@ -3736,8 +3744,8 @@ _DEVICECERTUPLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3187,
-  serialized_end=3213,
+  serialized_start=3298,
+  serialized_end=3324,
 )
 
 
@@ -3782,8 +3790,8 @@ _DEVICESERVICEAPIACCESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3216,
-  serialized_end=3470,
+  serialized_start=3327,
+  serialized_end=3581,
 )
 
 
@@ -3813,8 +3821,8 @@ _DEVICESERVICEAPIACCESSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3472,
-  serialized_end=3523,
+  serialized_start=3583,
+  serialized_end=3634,
 )
 
 
@@ -3851,8 +3859,8 @@ _BROWSERDEVICEIDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3525,
-  serialized_end=3602,
+  serialized_start=3636,
+  serialized_end=3713,
 )
 
 
@@ -3960,8 +3968,8 @@ _POLICYFETCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3605,
-  serialized_end=4138,
+  serialized_start=3716,
+  serialized_end=4249,
 )
 
 
@@ -3991,8 +3999,8 @@ _DISABLEDSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4140,
-  serialized_end=4172,
+  serialized_start=4251,
+  serialized_end=4283,
 )
 
 
@@ -4030,8 +4038,8 @@ _DEVICESTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4175,
-  serialized_end=4402,
+  serialized_start=4286,
+  serialized_end=4513,
 )
 
 
@@ -4061,8 +4069,8 @@ _CUSTOMERLOGO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4404,
-  serialized_end=4436,
+  serialized_start=4515,
+  serialized_end=4547,
 )
 
 
@@ -4320,8 +4328,8 @@ _POLICYDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4439,
-  serialized_end=6119,
+  serialized_start=4550,
+  serialized_end=6230,
 )
 
 
@@ -4351,8 +4359,8 @@ _CLIENTACTIONREQUIRED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6121,
-  serialized_end=6182,
+  serialized_start=6232,
+  serialized_end=6293,
 )
 
 
@@ -4452,8 +4460,8 @@ _POLICYFETCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6185,
-  serialized_end=6633,
+  serialized_start=6296,
+  serialized_end=6744,
 )
 
 
@@ -4490,8 +4498,8 @@ _DEPRECATEDPOLICYPUBLICKEYANDDOMAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6635,
-  serialized_end=6711,
+  serialized_start=6746,
+  serialized_end=6822,
 )
 
 
@@ -4535,8 +4543,8 @@ _PUBLICKEYVERIFICATIONDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6713,
-  serialized_end=6812,
+  serialized_start=6824,
+  serialized_end=6923,
 )
 
 
@@ -4566,8 +4574,8 @@ _DEVICEPOLICYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6814,
-  serialized_end=6896,
+  serialized_start=6925,
+  serialized_end=7007,
 )
 
 
@@ -4597,8 +4605,8 @@ _DEVICEPOLICYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6898,
-  serialized_end=6983,
+  serialized_start=7009,
+  serialized_end=7094,
 )
 
 
@@ -4635,8 +4643,8 @@ _TIMEPERIOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6985,
-  serialized_end=7045,
+  serialized_start=7096,
+  serialized_end=7156,
 )
 
 
@@ -4688,8 +4696,8 @@ _ACTIVETIMEPERIOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7048,
-  serialized_end=7400,
+  serialized_start=7159,
+  serialized_end=7511,
 )
 
 
@@ -4769,8 +4777,8 @@ _NETWORKINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7403,
-  serialized_end=7706,
+  serialized_start=7514,
+  serialized_end=7817,
 )
 
 
@@ -4829,8 +4837,8 @@ _NETWORKSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7709,
-  serialized_end=8078,
+  serialized_start=7820,
+  serialized_end=8189,
 )
 
 
@@ -4868,8 +4876,8 @@ _DEVICEUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8081,
-  serialized_end=8226,
+  serialized_start=8192,
+  serialized_end=8337,
 )
 
 
@@ -4913,8 +4921,8 @@ _VOLUMEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8228,
-  serialized_end=8304,
+  serialized_start=8339,
+  serialized_end=8415,
 )
 
 
@@ -4951,8 +4959,8 @@ _CPUUTILIZATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8306,
-  serialized_end=8374,
+  serialized_start=8417,
+  serialized_end=8485,
 )
 
 
@@ -4989,8 +4997,8 @@ _SYSTEMFREERAMINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8376,
-  serialized_end=8437,
+  serialized_start=8487,
+  serialized_end=8548,
 )
 
 
@@ -5034,8 +5042,8 @@ _CPUTEMPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8439,
-  serialized_end=8508,
+  serialized_start=8550,
+  serialized_end=8619,
 )
 
 
@@ -5086,8 +5094,8 @@ _STATEFULPARTITIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8510,
-  serialized_end=8621,
+  serialized_start=8621,
+  serialized_end=8732,
 )
 
 
@@ -5166,8 +5174,8 @@ _BATTERYSAMPLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8624,
-  serialized_end=8802,
+  serialized_start=8735,
+  serialized_end=8913,
 )
 
 
@@ -5260,8 +5268,8 @@ _BATTERYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8805,
-  serialized_end=9085,
+  serialized_start=8916,
+  serialized_end=9196,
 )
 
 
@@ -5299,8 +5307,8 @@ _POWERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9088,
-  serialized_end=9293,
+  serialized_start=9199,
+  serialized_end=9404,
 )
 
 
@@ -5337,8 +5345,8 @@ _DISKLIFETIMEESTIMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9295,
-  serialized_end=9345,
+  serialized_start=9406,
+  serialized_end=9456,
 )
 
 
@@ -5556,8 +5564,8 @@ _DISKINFO = _descriptor.Descriptor(
       name='firmware_revision', full_name='enterprise_management.DiskInfo.firmware_revision',
       index=3, containing_type=None, fields=[]),
   ],
-  serialized_start=9348,
-  serialized_end=10261,
+  serialized_start=9459,
+  serialized_end=10372,
 )
 
 
@@ -5594,8 +5602,8 @@ _STORAGESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10264,
-  serialized_end=10403,
+  serialized_start=10375,
+  serialized_end=10514,
 )
 
 
@@ -5632,8 +5640,8 @@ _THERMALSAMPLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10405,
-  serialized_end=10460,
+  serialized_start=10516,
+  serialized_end=10571,
 )
 
 
@@ -5670,8 +5678,8 @@ _THERMALINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10462,
-  serialized_end=10551,
+  serialized_start=10573,
+  serialized_end=10662,
 )
 
 
@@ -5701,8 +5709,8 @@ _BOARDSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10553,
-  serialized_end=10625,
+  serialized_start=10664,
+  serialized_end=10736,
 )
 
 
@@ -5795,8 +5803,8 @@ _SYSTEMSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10628,
-  serialized_end=10878,
+  serialized_start=10739,
+  serialized_end=10989,
 )
 
 
@@ -5833,8 +5841,8 @@ _CPUCSTATEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10880,
-  serialized_end=10951,
+  serialized_start=10991,
+  serialized_end=11062,
 )
 
 
@@ -5885,8 +5893,8 @@ _LOGICALCPUINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10954,
-  serialized_end=11127,
+  serialized_start=11065,
+  serialized_end=11238,
 )
 
 
@@ -5938,8 +5946,8 @@ _CPUINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11130,
-  serialized_end=11399,
+  serialized_start=11241,
+  serialized_end=11510,
 )
 
 
@@ -5969,8 +5977,8 @@ _GLOBALCPUINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11401,
-  serialized_end=11443,
+  serialized_start=11512,
+  serialized_end=11554,
 )
 
 
@@ -6021,8 +6029,8 @@ _DISPLAYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11445,
-  serialized_end=11554,
+  serialized_start=11556,
+  serialized_end=11665,
 )
 
 
@@ -6073,8 +6081,8 @@ _GRAPHICSADAPTERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11556,
-  serialized_end=11660,
+  serialized_start=11667,
+  serialized_end=11771,
 )
 
 
@@ -6111,8 +6119,8 @@ _GRAPHICSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11663,
-  serialized_end=11794,
+  serialized_start=11774,
+  serialized_end=11905,
 )
 
 
@@ -6164,8 +6172,8 @@ _CRASHREPORTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11797,
-  serialized_end=12146,
+  serialized_start=11908,
+  serialized_end=12257,
 )
 
 
@@ -6202,8 +6210,8 @@ _TIMEZONEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12148,
-  serialized_end=12193,
+  serialized_start=12259,
+  serialized_end=12304,
 )
 
 
@@ -6254,8 +6262,8 @@ _MEMORYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12196,
-  serialized_end=12326,
+  serialized_start=12307,
+  serialized_end=12437,
 )
 
 
@@ -6299,8 +6307,8 @@ _BACKLIGHTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12328,
-  serialized_end=12401,
+  serialized_start=12439,
+  serialized_end=12512,
 )
 
 
@@ -6330,8 +6338,8 @@ _FANINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12403,
-  serialized_end=12431,
+  serialized_start=12514,
+  serialized_end=12542,
 )
 
 
@@ -6382,8 +6390,8 @@ _BLUETOOTHADAPTERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12433,
-  serialized_end=12534,
+  serialized_start=12544,
+  serialized_end=12645,
 )
 
 
@@ -6434,8 +6442,8 @@ _SMBIOSINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12536,
-  serialized_end=12637,
+  serialized_start=12647,
+  serialized_end=12748,
 )
 
 
@@ -6465,8 +6473,8 @@ _KERNELPARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12639,
-  serialized_end=12675,
+  serialized_start=12750,
+  serialized_end=12786,
 )
 
 
@@ -6496,8 +6504,8 @@ _EFIVARS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12677,
-  serialized_end=12707,
+  serialized_start=12788,
+  serialized_end=12818,
 )
 
 
@@ -6535,8 +6543,8 @@ _BOOTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12710,
-  serialized_end=12907,
+  serialized_start=12821,
+  serialized_end=13018,
 )
 
 
@@ -6608,8 +6616,8 @@ _NETWORKADAPTERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12910,
-  serialized_end=13137,
+  serialized_start=13021,
+  serialized_end=13248,
 )
 
 
@@ -6646,8 +6654,8 @@ _LACROSBROWSERREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13140,
-  serialized_end=13279,
+  serialized_start=13251,
+  serialized_end=13390,
 )
 
 
@@ -6964,8 +6972,8 @@ _DEVICESTATUSREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13282,
-  serialized_end=15632,
+  serialized_start=13393,
+  serialized_end=15743,
 )
 
 
@@ -7024,8 +7032,8 @@ _OSUPDATESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15635,
-  serialized_end=15991,
+  serialized_start=15746,
+  serialized_end=16102,
 )
 
 
@@ -7083,8 +7091,8 @@ _APPSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15993,
-  serialized_end=16113,
+  serialized_start=16104,
+  serialized_end=16224,
 )
 
 
@@ -7158,8 +7166,8 @@ _APPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16116,
-  serialized_end=16625,
+  serialized_start=16227,
+  serialized_end=16736,
 )
 
 
@@ -7203,8 +7211,8 @@ _ANDROIDAPPPERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16627,
-  serialized_end=16697,
+  serialized_start=16738,
+  serialized_end=16808,
 )
 
 
@@ -7278,8 +7286,8 @@ _ANDROIDAPPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16700,
-  serialized_end=17217,
+  serialized_start=16811,
+  serialized_end=17328,
 )
 
 
@@ -7372,8 +7380,8 @@ _CHROMEUSERPROFILEREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17220,
-  serialized_end=17545,
+  serialized_start=17331,
+  serialized_end=17656,
 )
 
 
@@ -7410,8 +7418,8 @@ _CHROMESIGNEDINUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17547,
-  serialized_end=17610,
+  serialized_start=17658,
+  serialized_end=17721,
 )
 
 
@@ -7455,8 +7463,8 @@ _EXTENSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17612,
-  serialized_end=17692,
+  serialized_start=17723,
+  serialized_end=17803,
 )
 
 
@@ -7565,8 +7573,8 @@ _EXTENSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17695,
-  serialized_end=18416,
+  serialized_start=17806,
+  serialized_end=18527,
 )
 
 
@@ -7617,8 +7625,8 @@ _PLUGIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18418,
-  serialized_end=18496,
+  serialized_start=18529,
+  serialized_end=18607,
 )
 
 
@@ -7686,8 +7694,8 @@ _POLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18499,
-  serialized_end=19226,
+  serialized_start=18610,
+  serialized_end=19337,
 )
 
 
@@ -7724,8 +7732,8 @@ _EXTENSIONPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19228,
-  serialized_end=19316,
+  serialized_start=19339,
+  serialized_end=19427,
 )
 
 
@@ -7762,8 +7770,8 @@ _POLICYFETCHTIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19318,
-  serialized_end=19373,
+  serialized_start=19429,
+  serialized_end=19484,
 )
 
 
@@ -7849,8 +7857,8 @@ _CHROMEUSERPROFILEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19376,
-  serialized_end=19861,
+  serialized_start=19487,
+  serialized_end=19972,
 )
 
 
@@ -7929,8 +7937,8 @@ _BROWSERREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19864,
-  serialized_end=20270,
+  serialized_start=19975,
+  serialized_end=20381,
 )
 
 
@@ -7974,8 +7982,8 @@ _OSREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20272,
-  serialized_end=20327,
+  serialized_start=20383,
+  serialized_end=20438,
 )
 
 
@@ -8089,8 +8097,8 @@ _CHROMEDESKTOPREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20330,
-  serialized_end=20838,
+  serialized_start=20441,
+  serialized_end=20949,
 )
 
 
@@ -8134,8 +8142,8 @@ _CHROMEOSUSERREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20841,
-  serialized_end=21068,
+  serialized_start=20952,
+  serialized_end=21179,
 )
 
 
@@ -8172,8 +8180,8 @@ _CHROMEPROFILEREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21071,
-  serialized_end=21213,
+  serialized_start=21182,
+  serialized_end=21324,
 )
 
 
@@ -8218,8 +8226,8 @@ _POLICYVALUEVALIDATIONISSUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21216,
-  serialized_end=21556,
+  serialized_start=21327,
+  serialized_end=21667,
 )
 
 
@@ -8271,8 +8279,8 @@ _POLICYVALIDATIONREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21559,
-  serialized_end=22574,
+  serialized_start=21670,
+  serialized_end=22685,
 )
 
 
@@ -8295,8 +8303,8 @@ _POLICYVALIDATIONREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22576,
-  serialized_end=22608,
+  serialized_start=22687,
+  serialized_end=22719,
 )
 
 
@@ -8333,8 +8341,8 @@ _ANDROIDSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22610,
-  serialized_end=22675,
+  serialized_start=22721,
+  serialized_end=22786,
 )
 
 
@@ -8399,8 +8407,8 @@ _CROSTINIAPP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22678,
-  serialized_end=22885,
+  serialized_start=22789,
+  serialized_end=22996,
 )
 
 
@@ -8451,8 +8459,8 @@ _CROSTINISTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22888,
-  serialized_end=23090,
+  serialized_start=22999,
+  serialized_end=23201,
 )
 
 
@@ -8524,8 +8532,8 @@ _SESSIONSTATUSREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23093,
-  serialized_end=23455,
+  serialized_start=23204,
+  serialized_end=23566,
 )
 
 
@@ -8562,8 +8570,8 @@ _DEVICESTATUSREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23457,
-  serialized_end=23528,
+  serialized_start=23568,
+  serialized_end=23639,
 )
 
 
@@ -8586,8 +8594,8 @@ _CHROMEDESKTOPREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23530,
-  serialized_end=23559,
+  serialized_start=23641,
+  serialized_end=23670,
 )
 
 
@@ -8610,8 +8618,8 @@ _CHROMEOSUSERREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23561,
-  serialized_end=23589,
+  serialized_start=23672,
+  serialized_end=23700,
 )
 
 
@@ -8634,8 +8642,8 @@ _CHROMEPROFILEREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23591,
-  serialized_end=23620,
+  serialized_start=23702,
+  serialized_end=23731,
 )
 
 
@@ -8672,8 +8680,8 @@ _SESSIONSTATUSREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23622,
-  serialized_end=23694,
+  serialized_start=23733,
+  serialized_end=23805,
 )
 
 
@@ -8703,8 +8711,8 @@ _PRIVATESETMEMBERSHIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23696,
-  serialized_end=23803,
+  serialized_start=23807,
+  serialized_end=23914,
 )
 
 
@@ -8734,8 +8742,8 @@ _PRIVATESETMEMBERSHIPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23805,
-  serialized_end=23915,
+  serialized_start=23916,
+  serialized_end=24026,
 )
 
 
@@ -8772,8 +8780,8 @@ _PRIVATESETMEMBERSHIPRLWEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23918,
-  serialized_end=24115,
+  serialized_start=24029,
+  serialized_end=24226,
 )
 
 
@@ -8810,8 +8818,8 @@ _PRIVATESETMEMBERSHIPRLWERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24118,
-  serialized_end=24320,
+  serialized_start=24229,
+  serialized_end=24431,
 )
 
 
@@ -8856,8 +8864,8 @@ _DEVICEAUTOENROLLMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24323,
-  serialized_end=24658,
+  serialized_start=24434,
+  serialized_end=24769,
 )
 
 
@@ -8894,8 +8902,8 @@ _DEVICEAUTOENROLLMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24660,
-  serialized_end=24732,
+  serialized_start=24771,
+  serialized_end=24843,
 )
 
 
@@ -8925,8 +8933,8 @@ _DEVICESTATERETRIEVALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24734,
-  serialized_end=24796,
+  serialized_start=24845,
+  serialized_end=24907,
 )
 
 
@@ -8956,8 +8964,8 @@ _DEVICESTATEKEYUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24798,
-  serialized_end=24861,
+  serialized_start=24909,
+  serialized_end=24972,
 )
 
 
@@ -9009,8 +9017,8 @@ _DEVICESTATERETRIEVALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24864,
-  serialized_end=25371,
+  serialized_start=24975,
+  serialized_end=25482,
 )
 
 
@@ -9047,8 +9055,8 @@ _DEVICEINITIALENROLLMENTSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25373,
-  serialized_end=25453,
+  serialized_start=25484,
+  serialized_end=25564,
 )
 
 
@@ -9108,8 +9116,8 @@ _DEVICEINITIALENROLLMENTSTATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25456,
-  serialized_end=26183,
+  serialized_start=25567,
+  serialized_end=26294,
 )
 
 
@@ -9146,8 +9154,8 @@ _DEVICEPAIRINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26185,
-  serialized_end=26261,
+  serialized_start=26296,
+  serialized_end=26372,
 )
 
 
@@ -9178,8 +9186,8 @@ _DEVICEPAIRINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26264,
-  serialized_end=26541,
+  serialized_start=26375,
+  serialized_end=26652,
 )
 
 
@@ -9216,8 +9224,8 @@ _CHECKDEVICEPAIRINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26543,
-  serialized_end=26624,
+  serialized_start=26654,
+  serialized_end=26735,
 )
 
 
@@ -9248,8 +9256,8 @@ _CHECKDEVICEPAIRINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26627,
-  serialized_end=26961,
+  serialized_start=26738,
+  serialized_end=27072,
 )
 
 
@@ -9308,8 +9316,8 @@ _REMOTECOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26964,
-  serialized_end=27632,
+  serialized_start=27075,
+  serialized_end=27743,
 )
 
 
@@ -9361,8 +9369,8 @@ _REMOTECOMMANDRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27635,
-  serialized_end=27857,
+  serialized_start=27746,
+  serialized_end=27968,
 )
 
 
@@ -9413,8 +9421,8 @@ _DEVICEREMOTECOMMANDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27860,
-  serialized_end=28100,
+  serialized_start=27971,
+  serialized_end=28211,
 )
 
 
@@ -9451,8 +9459,8 @@ _DEVICEREMOTECOMMANDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28103,
-  serialized_end=28248,
+  serialized_start=28214,
+  serialized_end=28359,
 )
 
 
@@ -9475,8 +9483,8 @@ _DEVICEATTRIBUTEUPDATEPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28250,
-  serialized_end=28290,
+  serialized_start=28361,
+  serialized_end=28401,
 )
 
 
@@ -9507,8 +9515,8 @@ _DEVICEATTRIBUTEUPDATEPERMISSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28293,
-  serialized_end=28502,
+  serialized_start=28404,
+  serialized_end=28613,
 )
 
 
@@ -9545,8 +9553,8 @@ _DEVICEATTRIBUTEUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28504,
-  serialized_end=28570,
+  serialized_start=28615,
+  serialized_end=28681,
 )
 
 
@@ -9577,8 +9585,8 @@ _DEVICEATTRIBUTEUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28573,
-  serialized_end=28757,
+  serialized_start=28684,
+  serialized_end=28868,
 )
 
 
@@ -9608,8 +9616,8 @@ _GCMIDUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28759,
-  serialized_end=28795,
+  serialized_start=28870,
+  serialized_end=28906,
 )
 
 
@@ -9632,8 +9640,8 @@ _GCMIDUPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28797,
-  serialized_end=28818,
+  serialized_start=28908,
+  serialized_end=28929,
 )
 
 
@@ -9656,8 +9664,8 @@ _CHECKANDROIDMANAGEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28820,
-  serialized_end=28851,
+  serialized_start=28931,
+  serialized_end=28962,
 )
 
 
@@ -9680,8 +9688,8 @@ _CHECKANDROIDMANAGEMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28853,
-  serialized_end=28885,
+  serialized_start=28964,
+  serialized_end=28996,
 )
 
 
@@ -9711,8 +9719,8 @@ _CERTIFICATEBASEDDEVICEREGISTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28887,
-  serialized_end=28985,
+  serialized_start=28998,
+  serialized_end=29096,
 )
 
 
@@ -9742,8 +9750,8 @@ _DEVICEREGISTERCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28987,
-  serialized_end=29038,
+  serialized_start=29098,
+  serialized_end=29149,
 )
 
 
@@ -9795,8 +9803,8 @@ _CERTIFICATEBASEDDEVICEREGISTRATIONDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29041,
-  serialized_end=29455,
+  serialized_start=29152,
+  serialized_end=29566,
 )
 
 
@@ -9861,8 +9869,8 @@ _REGISTERBROWSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29458,
-  serialized_end=29670,
+  serialized_start=29569,
+  serialized_end=29781,
 )
 
 
@@ -9892,8 +9900,8 @@ _ACTIVEDIRECTORYENROLLPLAYUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29672,
-  serialized_end=29735,
+  serialized_start=29783,
+  serialized_end=29846,
 )
 
 
@@ -9937,8 +9945,8 @@ _ACTIVEDIRECTORYENROLLPLAYUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29738,
-  serialized_end=29889,
+  serialized_start=29849,
+  serialized_end=30000,
 )
 
 
@@ -9975,8 +9983,8 @@ _SAMLPARAMETERSPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29891,
-  serialized_end=29964,
+  serialized_start=30002,
+  serialized_end=30075,
 )
 
 
@@ -10006,8 +10014,8 @@ _PUBLICSAMLUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29966,
-  serialized_end=30009,
+  serialized_start=30077,
+  serialized_end=30120,
 )
 
 
@@ -10037,8 +10045,8 @@ _PUBLICSAMLUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30011,
-  serialized_end=30104,
+  serialized_start=30122,
+  serialized_end=30215,
 )
 
 
@@ -10068,8 +10076,8 @@ _ACTIVEDIRECTORYPLAYACTIVITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30106,
-  serialized_end=30159,
+  serialized_start=30217,
+  serialized_end=30270,
 )
 
 
@@ -10092,8 +10100,8 @@ _ACTIVEDIRECTORYPLAYACTIVITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30161,
-  serialized_end=30198,
+  serialized_start=30272,
+  serialized_end=30309,
 )
 
 
@@ -10116,8 +10124,8 @@ _CHECKDEVICELICENSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30200,
-  serialized_end=30227,
+  serialized_start=30311,
+  serialized_end=30338,
 )
 
 
@@ -10154,8 +10162,8 @@ _LICENSEAVAILABILITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30230,
-  serialized_end=30367,
+  serialized_start=30341,
+  serialized_end=30478,
 )
 
 
@@ -10193,8 +10201,8 @@ _CHECKDEVICELICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30370,
-  serialized_end=30688,
+  serialized_start=30481,
+  serialized_end=30799,
 )
 
 
@@ -10217,8 +10225,8 @@ _ACTIVEDIRECTORYUSERSIGNINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30690,
-  serialized_end=30724,
+  serialized_start=30801,
+  serialized_end=30835,
 )
 
 
@@ -10248,8 +10256,8 @@ _ACTIVEDIRECTORYUSERSIGNINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30726,
-  serialized_end=30788,
+  serialized_start=30837,
+  serialized_end=30899,
 )
 
 
@@ -10329,8 +10337,8 @@ _TPMVERSIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=30791,
-  serialized_end=31135,
+  serialized_start=30902,
+  serialized_end=31246,
 )
 
 
@@ -10437,8 +10445,8 @@ _TPMSTATUSINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31138,
-  serialized_end=31588,
+  serialized_start=31249,
+  serialized_end=31699,
 )
 
 
@@ -10489,8 +10497,8 @@ _TPMSUPPORTEDFEATURES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31590,
-  serialized_end=31715,
+  serialized_start=31701,
+  serialized_end=31826,
 )
 
 
@@ -10520,8 +10528,8 @@ _SYSTEMSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31717,
-  serialized_end=31787,
+  serialized_start=31828,
+  serialized_end=31898,
 )
 
 
@@ -10695,8 +10703,8 @@ _EXTENSIONINSTALLREPORTLOGEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=31790,
-  serialized_end=38417,
+  serialized_start=31901,
+  serialized_end=38528,
 )
 
 
@@ -10784,8 +10792,8 @@ _APPINSTALLREPORTLOGEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=38420,
-  serialized_end=39250,
+  serialized_start=38531,
+  serialized_end=39361,
 )
 
 
@@ -10829,8 +10837,8 @@ _EXTENSIONINSTALLREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39253,
-  serialized_end=39388,
+  serialized_start=39364,
+  serialized_end=39499,
 )
 
 
@@ -10874,8 +10882,8 @@ _APPINSTALLREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39390,
-  serialized_end=39508,
+  serialized_start=39501,
+  serialized_end=39619,
 )
 
 
@@ -10905,8 +10913,8 @@ _APPINSTALLREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39510,
-  serialized_end=39605,
+  serialized_start=39621,
+  serialized_end=39716,
 )
 
 
@@ -10936,8 +10944,8 @@ _EXTENSIONINSTALLREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39607,
-  serialized_end=39720,
+  serialized_start=39718,
+  serialized_end=39831,
 )
 
 
@@ -10960,8 +10968,8 @@ _APPINSTALLREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39722,
-  serialized_end=39748,
+  serialized_start=39833,
+  serialized_end=39859,
 )
 
 
@@ -10992,8 +11000,8 @@ _REFRESHACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39751,
-  serialized_end=39924,
+  serialized_start=39862,
+  serialized_end=40035,
 )
 
 
@@ -11016,8 +11024,8 @@ _REFRESHACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39926,
-  serialized_end=39950,
+  serialized_start=40037,
+  serialized_end=40061,
 )
 
 
@@ -11054,8 +11062,8 @@ _RSULOOKUPKEYUPLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=39952,
-  serialized_end=40028,
+  serialized_start=40063,
+  serialized_end=40139,
 )
 
 
@@ -11085,8 +11093,8 @@ _RSULOOKUPKEYUPLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40030,
-  serialized_end=40090,
+  serialized_start=40141,
+  serialized_end=40201,
 )
 
 
@@ -11123,8 +11131,8 @@ _ESIMPROFILEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40092,
-  serialized_end=40146,
+  serialized_start=40203,
+  serialized_end=40257,
 )
 
 
@@ -11168,8 +11176,8 @@ _UPLOADEUICCINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40149,
-  serialized_end=40285,
+  serialized_start=40260,
+  serialized_end=40396,
 )
 
 
@@ -11192,8 +11200,8 @@ _UPLOADEUICCINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40287,
-  serialized_end=40312,
+  serialized_start=40398,
+  serialized_end=40423,
 )
 
 
@@ -11265,8 +11273,8 @@ _PRINTJOBEVENT_PRINTJOBCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40549,
-  serialized_end=40774,
+  serialized_start=40660,
+  serialized_end=40885,
 )
 
 _PRINTJOBEVENT_PRINTER = _descriptor.Descriptor(
@@ -11309,8 +11317,8 @@ _PRINTJOBEVENT_PRINTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40776,
-  serialized_end=40824,
+  serialized_start=40887,
+  serialized_end=40935,
 )
 
 _PRINTJOBEVENT_PRINTSETTINGS_MEDIASIZE = _descriptor.Descriptor(
@@ -11353,8 +11361,8 @@ _PRINTJOBEVENT_PRINTSETTINGS_MEDIASIZE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=41098,
-  serialized_end=41159,
+  serialized_start=41209,
+  serialized_end=41270,
 )
 
 _PRINTJOBEVENT_PRINTSETTINGS = _descriptor.Descriptor(
@@ -11406,8 +11414,8 @@ _PRINTJOBEVENT_PRINTSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40827,
-  serialized_end=41333,
+  serialized_start=40938,
+  serialized_end=41444,
 )
 
 _PRINTJOBEVENT = _descriptor.Descriptor(
@@ -11451,8 +11459,8 @@ _PRINTJOBEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40315,
-  serialized_end=41403,
+  serialized_start=40426,
+  serialized_end=41514,
 )
 
 
@@ -11497,8 +11505,8 @@ _APP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=41406,
-  serialized_end=41622,
+  serialized_start=41517,
+  serialized_end=41733,
 )
 
 
@@ -11550,8 +11558,8 @@ _APPACTIVITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=41625,
-  serialized_end=41943,
+  serialized_start=41736,
+  serialized_end=42054,
 )
 
 
@@ -11588,8 +11596,8 @@ _SCREENTIMESPAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=41945,
-  serialized_end=42045,
+  serialized_start=42056,
+  serialized_end=42156,
 )
 
 
@@ -11675,8 +11683,8 @@ _CHILDSTATUSREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42048,
-  serialized_end=42410,
+  serialized_start=42159,
+  serialized_end=42521,
 )
 
 
@@ -11713,8 +11721,8 @@ _CHILDSTATUSREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42412,
-  serialized_end=42482,
+  serialized_start=42523,
+  serialized_end=42593,
 )
 
 
@@ -11737,8 +11745,8 @@ _STARTCSRREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42484,
-  serialized_end=42501,
+  serialized_start=42595,
+  serialized_end=42612,
 )
 
 
@@ -11796,8 +11804,8 @@ _STARTCSRRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42504,
-  serialized_end=42730,
+  serialized_start=42615,
+  serialized_end=42841,
 )
 
 
@@ -11834,8 +11842,8 @@ _FINISHCSRREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42732,
-  serialized_end=42800,
+  serialized_start=42843,
+  serialized_end=42911,
 )
 
 
@@ -11858,8 +11866,8 @@ _FINISHCSRRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42802,
-  serialized_end=42821,
+  serialized_start=42913,
+  serialized_end=42932,
 )
 
 
@@ -11882,8 +11890,8 @@ _DOWNLOADCERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42823,
-  serialized_end=42844,
+  serialized_start=42934,
+  serialized_end=42955,
 )
 
 
@@ -11913,8 +11921,8 @@ _DOWNLOADCERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42846,
-  serialized_end=42901,
+  serialized_start=42957,
+  serialized_end=43012,
 )
 
 
@@ -11996,8 +12004,8 @@ _CLIENTCERTIFICATEPROVISIONINGREQUEST = _descriptor.Descriptor(
       name='request', full_name='enterprise_management.ClientCertificateProvisioningRequest.request',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=42904,
-  serialized_end=43291,
+  serialized_start=43015,
+  serialized_end=43402,
 )
 
 
@@ -12059,8 +12067,8 @@ _CLIENTCERTIFICATEPROVISIONINGRESPONSE = _descriptor.Descriptor(
       name='response', full_name='enterprise_management.ClientCertificateProvisioningResponse.response',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=43294,
-  serialized_end=43928,
+  serialized_start=43405,
+  serialized_end=44039,
 )
 
 
@@ -12113,8 +12121,8 @@ _BROWSERPUBLICKEYUPLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43931,
-  serialized_end=44341,
+  serialized_start=44042,
+  serialized_end=44452,
 )
 
 
@@ -12145,8 +12153,8 @@ _BROWSERPUBLICKEYUPLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=44344,
-  serialized_end=44534,
+  serialized_start=44455,
+  serialized_end=44645,
 )
 
 
@@ -12442,8 +12450,8 @@ _DEVICEMANAGEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=44537,
-  serialized_end=48091,
+  serialized_start=44648,
+  serialized_end=48202,
 )
 
 
@@ -12725,8 +12733,8 @@ _DEVICEMANAGEMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=48094,
-  serialized_end=51446,
+  serialized_start=48205,
+  serialized_end=51557,
 )
 
 
@@ -12756,8 +12764,8 @@ _DEVICESTATERETRIEVALINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=51448,
-  serialized_end=51501,
+  serialized_start=51559,
+  serialized_end=51612,
 )
 
 _LICENSETYPE.fields_by_name['license_type'].enum_type = _LICENSETYPE_LICENSETYPEENUM

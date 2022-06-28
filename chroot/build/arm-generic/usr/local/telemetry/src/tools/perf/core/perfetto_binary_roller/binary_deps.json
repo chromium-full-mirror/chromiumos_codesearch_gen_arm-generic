@@ -5,24 +5,24 @@
             "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/linux_arm64/49b4b5dcbc312d8d2c3751cf29238b8efeb4e494/trace_processor_shell"
         },
         "win": {
-            "hash": "9a036613eb5405c4d5f82b39c460d999922624b2",
-            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/win/0eba417b2c72264fa825dc21067b9adc9b8adf70/trace_processor_shell.exe"
+            "hash": "8cf237fe0a9e3b8d989b50a1cb37a5845328148e",
+            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/win/2d2d50afec5365cdb39f1e9af40ab8fdde5387d8/trace_processor_shell.exe"
         },
         "linux_arm": {
             "hash": "58893933be305d3bfe0a72ebebcacde2ac3ca893",
             "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/linux_arm/49b4b5dcbc312d8d2c3751cf29238b8efeb4e494/trace_processor_shell"
         },
         "mac": {
-            "hash": "fc4705a4c9288cdf500d3b34c92e2f3be5c43be6",
-            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/mac/0eba417b2c72264fa825dc21067b9adc9b8adf70/trace_processor_shell"
+            "hash": "01cb94f5b8bbe4fb86dc4f6b2fe40506a3ba0943",
+            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/mac/d3300e34ed8ad844a4f18a9067cac38b0d950dbc/trace_processor_shell"
         },
         "mac_arm64": {
             "hash": "e1ad4861384b06d911a65f035317914b8cc975c6",
             "full_remote_path": "perfetto-luci-artifacts/v25.0/mac-arm64/trace_processor_shell"
         },
         "linux": {
-            "hash": "f0dc264508f628e6740790d87f6bb7ad18b66759",
-            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/linux/0eba417b2c72264fa825dc21067b9adc9b8adf70/trace_processor_shell"
+            "hash": "a19aa044a96d25ded789bdcd0e7cdf467d2acd0c",
+            "full_remote_path": "chromium-telemetry/perfetto_binaries/trace_processor_shell/linux/2d2d50afec5365cdb39f1e9af40ab8fdde5387d8/trace_processor_shell"
         }
     },
     "power_profile.sql": {

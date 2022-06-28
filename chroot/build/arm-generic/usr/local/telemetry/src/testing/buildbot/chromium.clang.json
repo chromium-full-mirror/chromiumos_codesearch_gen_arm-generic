@@ -1758,24 +1758,6 @@
               "os": "Windows-10-19042"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "cpu": "x86-64",
-              "os": "Windows-10-19042"
-            }
-          ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
           "shards": 40
         },
@@ -3560,24 +3542,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "cpu": "x86-64",
-              "os": "Windows-10-19042"
-            }
-          ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "args": [
@@ -9528,7 +9492,8 @@
       },
       {
         "args": [
-          "--child-arg=--ozone-platform=headless"
+          "--",
+          "--ozone-platform=headless"
         ],
         "merge": {
           "args": [],
@@ -9852,7 +9817,8 @@
       },
       {
         "args": [
-          "--child-arg=--vmodule=test_navigation_listener=1"
+          "--",
+          "--vmodule=test_navigation_listener=1"
         ],
         "merge": {
           "args": [],
@@ -9989,7 +9955,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}",
           "--platform=fuchsia"
         ],
@@ -10022,6 +9987,42 @@
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}",
+          "--platform=fuchsia"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "kvm": "1",
+              "os": "Ubuntu-18.04"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "args": [
@@ -10973,7 +10974,8 @@
       },
       {
         "args": [
-          "--child-arg=--ozone-platform=headless"
+          "--",
+          "--ozone-platform=headless"
         ],
         "merge": {
           "args": [],
@@ -11248,7 +11250,8 @@
       },
       {
         "args": [
-          "--child-arg=--vmodule=test_navigation_listener=1"
+          "--",
+          "--vmodule=test_navigation_listener=1"
         ],
         "merge": {
           "args": [],
@@ -23187,7 +23190,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -23217,9 +23219,45 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 12
+          "shards": 5
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-10.15"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 7
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "isolate_name": "chrome_sizes",
@@ -26777,7 +26815,6 @@
       {
         "args": [
           "--num-retries=3",
-          "--fuzzy-diff",
           "--git-revision=${got_revision}"
         ],
         "check_flakiness_for_new_tests": false,
@@ -26808,9 +26845,46 @@
             }
           ],
           "service_account": "chrome-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 12
+          "shards": 5
         },
         "test_id_prefix": "ninja://:blink_web_tests/"
+      },
+      {
+        "args": [
+          "--num-retries=3",
+          "--git-revision=${got_revision}"
+        ],
+        "check_flakiness_for_new_tests": false,
+        "isolate_name": "blink_wpt_tests",
+        "merge": {
+          "args": [
+            "--verbose"
+          ],
+          "script": "//third_party/blink/tools/merge_web_test_results.py"
+        },
+        "name": "blink_wpt_tests",
+        "precommit_args": [
+          "--gerrit-issue=${patch_issue}",
+          "--gerrit-patchset=${patch_set}",
+          "--buildbucket-id=${buildbucket_build_id}"
+        ],
+        "resultdb": {
+          "enable": true
+        },
+        "results_handler": "layout tests",
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "cpu": "x86-64",
+              "os": "Mac-10.15",
+              "pool": "chrome.tests"
+            }
+          ],
+          "service_account": "chrome-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 7
+        },
+        "test_id_prefix": "ninja://:blink_wpt_tests/"
       },
       {
         "isolate_name": "chrome_sizes",
@@ -27294,18 +27368,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "merge": {
@@ -28573,18 +28635,6 @@
         },
         "swarming": {
           "can_use_on_swarming_builders": true,
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
           "shards": 20
         },
@@ -29804,18 +29854,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "merge": {
@@ -31153,24 +31191,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "cpu": "x86-64",
-              "os": "Windows-10-19042"
-            }
-          ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "merge": {
@@ -33028,24 +33048,6 @@
               "os": "Windows-10-19042"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "cpu": "x86-64",
-              "os": "Windows-10-19042"
-            }
-          ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
           "shards": 20
         },
@@ -34875,24 +34877,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "cpu": "x86-64",
-              "os": "Windows-10-19042"
-            }
-          ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "merge": {
@@ -37275,24 +37259,6 @@
               "pool": "chrome.tests"
             }
           ],
-          "service_account": "chrome-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "os": "Windows-10",
-              "pool": "chrome.tests"
-            }
-          ],
           "service_account": "chrome-tester@chops-service-accounts.iam.gserviceaccount.com",
           "shards": 10
         },
@@ -39122,24 +39088,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "os": "Windows-10",
-              "pool": "chrome.tests"
-            }
-          ],
-          "service_account": "chrome-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "merge": {
@@ -42782,23 +42730,6 @@
         },
         "test": "boringssl_ssl_tests",
         "test_id_prefix": "ninja://third_party/boringssl:boringssl_ssl_tests/"
-      },
-      {
-        "merge": {
-          "args": [],
-          "script": "//testing/merge_scripts/standard_gtest_merge.py"
-        },
-        "swarming": {
-          "can_use_on_swarming_builders": true,
-          "dimension_sets": [
-            {
-              "os": "Windows-10-19042"
-            }
-          ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
-        },
-        "test": "browser_switcher_bho_unittests",
-        "test_id_prefix": "ninja://chrome/browser/browser_switcher/bho:browser_switcher_bho_unittests/"
       },
       {
         "args": [
