@@ -49,6 +49,8 @@ class  CameraHalServerInterceptorForTesting : public CameraHalServer {
   void CreateChannel(::mojo::PendingReceiver<::cros::mojom::CameraModule> camera_module_receiver, CameraClientType type) override;
   void SetTracingEnabled(bool enabled) override;
   void SetAutoFramingState(CameraAutoFramingState state) override;
+  void GetCameraSWPrivacySwitchState(GetCameraSWPrivacySwitchStateCallback callback) override;
+  void SetCameraSWPrivacySwitchState(CameraPrivacySwitchState state) override;
 };
 class  CameraHalServerAsyncWaiter {
  public:
@@ -58,6 +60,8 @@ class  CameraHalServerAsyncWaiter {
   CameraHalServerAsyncWaiter& operator=(const CameraHalServerAsyncWaiter&) = delete;
 
   ~CameraHalServerAsyncWaiter();
+  void GetCameraSWPrivacySwitchState(
+      CameraPrivacySwitchState* out_state);
 
  private:
   CameraHalServer* const proxy_;
@@ -68,6 +72,7 @@ class  CameraHalServerCallbacksInterceptorForTesting : public CameraHalServerCal
   virtual CameraHalServerCallbacks* GetForwardingInterface() = 0;
   void CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) override;
   void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) override;
+  void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) override;
 };
 class  CameraHalServerCallbacksAsyncWaiter {
  public:

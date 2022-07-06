@@ -24,8 +24,11 @@ constexpr uint32_t kCameraHalDispatcher_RegisterSensorClientWithToken_Name = 6;
 constexpr uint32_t kCameraHalServer_CreateChannel_Name = 0;
 constexpr uint32_t kCameraHalServer_SetTracingEnabled_Name = 1;
 constexpr uint32_t kCameraHalServer_SetAutoFramingState_Name = 2;
+constexpr uint32_t kCameraHalServer_GetCameraSWPrivacySwitchState_Name = 3;
+constexpr uint32_t kCameraHalServer_SetCameraSWPrivacySwitchState_Name = 4;
 constexpr uint32_t kCameraHalServerCallbacks_CameraDeviceActivityChange_Name = 0;
 constexpr uint32_t kCameraHalServerCallbacks_CameraPrivacySwitchStateChange_Name = 1;
+constexpr uint32_t kCameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Name = 2;
 constexpr uint32_t kCameraHalClient_SetUpChannel_Name = 0;
 
 }  // namespace internal

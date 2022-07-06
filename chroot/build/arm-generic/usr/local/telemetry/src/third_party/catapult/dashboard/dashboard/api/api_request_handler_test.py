@@ -43,6 +43,8 @@ class TestApiRequestHandlerForbidden(api_request_handler.ApiRequestHandler):
 class ApiRequestHandlerTest(testing_common.TestCase):
 
   def setUp(self):
+    # TODO(https://crbug.com/1262292): Change to super() after Python2 trybots retire.
+    # pylint: disable=super-with-arguments
     super(ApiRequestHandlerTest, self).setUp()
 
     app = webapp2.WSGIApplication([(r'/api/test', TestApiRequestHandler),
@@ -105,6 +107,16 @@ class ApiRequestHandlerTest(testing_common.TestCase):
     api_request_handler._ALLOWED_ORIGINS = ['foo.appspot.com']
     response = self.testapp.options(
         '/api/test', headers={'origin': 'https://bar.appspot.com'})
+    self.assertListEqual([('Content-Length', '0'),
+                          ('Cache-Control', 'no-cache'),
+                          ('Content-Type', 'application/json; charset=utf-8')],
+                         response.headerlist)
+
+  def testOptions_InvalidOriginWithSharedPrefix_HeadersNotSet(self):
+    api_request_handler._ALLOWED_ORIGINS = ['foo.appspot.com']
+    response = self.testapp.options(
+        '/api/test',
+        headers={'origin': 'https://foo.appspot.com.blablabla.com'})
     self.assertListEqual([('Content-Length', '0'),
                           ('Cache-Control', 'no-cache'),
                           ('Content-Type', 'application/json; charset=utf-8')],

@@ -152,12 +152,14 @@ if(goog.isDef(message['error'])){window.console.error('liblouis Web Assembly err
 const callback=this.pendingRpcCallbacks_[messageId];if(goog.isDef(callback)){delete this.pendingRpcCallbacks_[messageId];callback(message);}}
 loadOrReload_(opt_loadCallback){this.worker_=new Worker(this.wasmPath_);this.worker_.addEventListener('message',e=>this.onInstanceMessage_(e),false);this.worker_.addEventListener('error',e=>this.onInstanceError_(e),false);this.rpc_('load',{},()=>{this.isLoaded_=true;opt_loadCallback&&opt_loadCallback(this);this.onInstanceLoad_();});}};LibLouis.FormType={PLAIN_TEXT:0,ITALIC:1,UNDERLINE:2,BOLD:4,COMPUTER_BRAILLE:8};LibLouis.DEBUG=false;LibLouis.Translator=class{constructor(instance,tableNames){this.instance_=instance;this.tableNames_=tableNames;}
 translate(text,formTypeMap,callback){if(!this.instance_.worker_){callback(null,null,null);return;}
-const message={'table_names':this.tableNames_,text,form_type_map:formTypeMap};this.instance_.rpc_('Translate',message,reply=>{let cells=null;let textToBraille=null;let brailleToText=null;if(reply['success']&&goog.isString(reply['cells'])){cells=LibLouis.Translator.decodeHexString_(reply['cells']);if(goog.isDef(reply['text_to_braille'])){textToBraille=reply['text_to_braille'];}
+formTypeMap=0;const message={'table_names':this.tableNames_,text,form_type_map:formTypeMap};this.instance_.rpc_('Translate',message,reply=>{let cells=null;let textToBraille=null;let brailleToText=null;if(reply['success']&&goog.isString(reply['cells'])){cells=LibLouis.Translator.decodeHexString_(reply['cells']);if(goog.isDef(reply['text_to_braille'])){textToBraille=reply['text_to_braille'];}
 if(goog.isDef(reply['braille_to_text'])){brailleToText=reply['braille_to_text'];}}else if(text.length>0){console.error('Braille translation error for '+JSON.stringify(message));}
 callback(cells,textToBraille,brailleToText);});}
 backTranslate(cells,callback){if(!this.instance_.worker_){callback(null);return;}
 if(cells.byteLength===0){callback('');return;}
-const message={'table_names':this.tableNames_,'cells':LibLouis.Translator.encodeHexString_(cells)};this.instance_.rpc_('BackTranslate',message,reply=>{if(reply['success']&&goog.isString(reply['text'])){callback(reply['text']);}else{callback(null);}});}
+const message={'table_names':this.tableNames_,'cells':LibLouis.Translator.encodeHexString_(cells)};this.instance_.rpc_('BackTranslate',message,reply=>{if(!reply['success']||!goog.isString(reply['text'])){callback(null);return;}
+let text=reply['text'];const view=new Uint8Array(cells);if(view.length>0&&view[view.length-1]===0&&!text.endsWith(' ')){text+=' ';}
+callback(text);});}
 static decodeHexString_(hex){if(!/^([0-9a-f]{2})*$/i.test(hex)){throw Error('invalid hexadecimal string');}
 const array=new Uint8Array(hex.length/2);let idx=0;for(let i=0;i<hex.length;i+=2){array[idx++]=parseInt(hex.substring(i,i+2),16);}
 return array.buffer;}

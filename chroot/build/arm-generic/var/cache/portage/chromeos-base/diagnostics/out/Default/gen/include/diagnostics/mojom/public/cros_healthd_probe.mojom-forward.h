@@ -86,6 +86,12 @@ class WirelessLinkInfoDataView;
 
 class AudioInfoDataView;
 
+class AudioHardwareInfoDataView;
+
+class AudioCardDataView;
+
+class HDAudioCodecDataView;
+
 class BootPerformanceInfoDataView;
 
 class BusDeviceDataView;
@@ -154,6 +160,7 @@ class NetworkResultDataView;
 class NetworkInterfaceResultDataView;
 class NetworkInterfaceInfoDataView;
 class AudioResultDataView;
+class AudioHardwareResultDataView;
 class BootPerformanceResultDataView;
 class BusResultDataView;
 class BusInfoDataView;
@@ -289,6 +296,15 @@ using WirelessLinkInfoPtr = mojo::StructPtr<WirelessLinkInfo>;
 
 class AudioInfo;
 using AudioInfoPtr = mojo::StructPtr<AudioInfo>;
+
+class AudioHardwareInfo;
+using AudioHardwareInfoPtr = mojo::StructPtr<AudioHardwareInfo>;
+
+class AudioCard;
+using AudioCardPtr = mojo::StructPtr<AudioCard>;
+
+class HDAudioCodec;
+using HDAudioCodecPtr = mojo::InlinedStructPtr<HDAudioCodec>;
 
 class BootPerformanceInfo;
 using BootPerformanceInfoPtr = mojo::StructPtr<BootPerformanceInfo>;
@@ -441,6 +457,10 @@ using NetworkInterfaceInfoPtr = mojo::StructPtr<NetworkInterfaceInfo>;
 class AudioResult;
 
 using AudioResultPtr = mojo::StructPtr<AudioResult>;
+
+class AudioHardwareResult;
+
+using AudioHardwareResultPtr = mojo::StructPtr<AudioHardwareResult>;
 
 class BootPerformanceResult;
 

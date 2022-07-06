@@ -38,13 +38,21 @@ class BadRequestError(Exception):
 class ForbiddenError(Exception):
 
   def __init__(self):
+    # TODO(https://crbug.com/1262292): Change to super() after Python2 trybots retire.
+    # pylint: disable=super-with-arguments
     super(ForbiddenError, self).__init__('Access denied')
 
 
 class NotFoundError(Exception):
 
   def __init__(self):
+    # TODO(https://crbug.com/1262292): Change to super() after Python2 trybots retire.
+    # pylint: disable=super-with-arguments
     super(NotFoundError, self).__init__('Not found')
+
+
+def SafeOriginRegex(prefix, origin):
+  return re.compile(r'^' + prefix + re.escape(origin) + '$')
 
 
 if utils.IsRunningFlask():
@@ -87,9 +95,8 @@ if utils.IsRunningFlask():
     set_cors_headers = False
     origin = req.headers.get('Origin', '')
     for allowed in _ALLOWED_ORIGINS:
-      dev_pattern = re.compile(r'https://[A-Za-z0-9-]+-dot-' +
-                               re.escape(allowed))
-      prod_pattern = re.compile(r'https://' + re.escape(allowed))
+      dev_pattern = SafeOriginRegex(r'https://[A-Za-z0-9-]+-dot-', allowed)
+      prod_pattern = SafeOriginRegex(r'https://', allowed)
       if dev_pattern.match(origin) or prod_pattern.match(origin):
         set_cors_headers = True
     if set_cors_headers:
@@ -190,9 +197,8 @@ else:
       set_cors_headers = False
       origin = self.request.headers.get('Origin', '')
       for allowed in _ALLOWED_ORIGINS:
-        dev_pattern = re.compile(r'https://[A-Za-z0-9-]+-dot-' +
-                                 re.escape(allowed))
-        prod_pattern = re.compile(r'https://' + re.escape(allowed))
+        dev_pattern = SafeOriginRegex(r'https://[A-Za-z0-9-]+-dot-', allowed)
+        prod_pattern = SafeOriginRegex(r'https://', allowed)
         if dev_pattern.match(origin) or prod_pattern.match(origin):
           set_cors_headers = True
       if not set_cors_headers:

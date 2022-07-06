@@ -36,12 +36,9 @@ from autotest_lib.server import autotest
 from autotest_lib.server import test
 from autotest_lib.server.cros import gsutil_wrapper
 from autotest_lib.server.cros.dynamic_suite import tools
-from autotest_lib.utils.frozen_chromite.lib import auto_updater
-from autotest_lib.utils.frozen_chromite.lib import auto_updater_transfer
 from autotest_lib.utils.frozen_chromite.lib import constants as chromite_constants
 from autotest_lib.utils.frozen_chromite.lib import gob_util
 from autotest_lib.utils.frozen_chromite.lib import osutils
-from autotest_lib.utils.frozen_chromite.lib import remote_access
 from autotest_lib.utils.frozen_chromite.lib import retry_util
 
 
@@ -850,7 +847,8 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
                                        stateful_url,
                                        destination,
                                        keep_symlinks=False,
-                                       members=None):
+                                       members=None,
+                                       wildcards=False):
         """
         Download and extract the stateful partition.
 
@@ -860,6 +858,7 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
         @param keep_symlinks: Don't overwrite symlinks in destination directory.
         @param members: When provided, they specify the names of the stateful
             archive members to be extracted else everything will be extracted.
+        @param wildcards: Treat members as containing wildcards.
 
         """
         cmd = [
@@ -873,6 +872,8 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
             # Normalize members to be a list.
             if not isinstance(members, list):
                 members = [members]
+            if wildcards:
+                cmd += ['--wildcards']
             cmd += members
         self._run(cmd)
 
@@ -987,7 +988,9 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
         logging.info('Public stateful URL: %s', url)
         return url
 
-    def _get_provision_url_on_public_bucket(self, release_path):
+    def _get_provision_url_on_public_bucket(self,
+                                            release_path,
+                                            is_release_bucket=True):
         """
         Copy the necessary artifacts for quick-provision to the public bucket
         and return the URL pointing to them.
@@ -996,16 +999,23 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
         version on the DUT (such as m2n tests) without requiring lab cache
         server SSH access.
 
-        @param release_path: path to the build artifacts in
-            gs://chromeos-releases. Ex: dev-channel/asurada/14515.0.0. The
+        @param release_path: path to the build artifacts in either
+            gs://chromeos-releases or gs://chromeos-image-archive.
+            Ex: dev-channel/asurada/14515.0.0 for gs://chromeos-releases. The
             output of _get_latest_serving_stable_build matches this format.
+            Ex: asurada-release/14515.0.0 for gs://chromeos-image-archive. The
+            output of _get_release_builder_path matches this format.
+        @param is_release_bucket: If True (default), use release bucket
+            gs://chromeos-releases else use archive bucket gs://chromeos-image-archive.
 
         """
         # We have a flat directory structure in the public directory. Therefore
         # we need to disambiguate the path to the provision artifacts.
         new_gs_dir = os.path.join(self._CELLULAR_BUCKET, 'provision',
                                   release_path)
-        src_gs_dir = os.path.join('gs://chromeos-releases', release_path)
+        src_gs_bucket = ('gs://%s' % ('chromeos-releases' if is_release_bucket
+                                      else 'chromeos-image-archive'))
+        src_gs_dir = os.path.join(src_gs_bucket, release_path)
         provision_artifacts = [
                 self._STATEFUL_ARCHIVE_NAME, self._ROOTFS_ARCHIVE_NAME,
                 self._KERNEL_ARCHIVE_NAME
@@ -1092,76 +1102,6 @@ class UpdateEngineTest(test.test, update_engine_util.UpdateEngineUtil):
         logging.info('Payload URL for Nebraska: %s', payload_url)
         self._should_restore_stateful = True
         return payload_url
-
-
-    def update_device(self,
-                      payload_uri,
-                      clobber_stateful=False,
-                      tag='source',
-                      ignore_appid=False,
-                      m2n=False):
-        """
-        Updates the device.
-
-        Used by autoupdate_EndToEndTest and autoupdate_StatefulCompatibility,
-        which use auto_updater to perform updates.
-
-        @param payload_uri: The payload with which the device should be updated.
-        @param clobber_stateful: Boolean that determines whether the stateful
-                                 of the device should be force updated and the
-                                 TPM ownership should be cleared. By default,
-                                 set to False.
-        @param tag: An identifier string added to each log filename.
-        @param ignore_appid: True to tell Nebraska to ignore the App ID field
-                             when parsing the update request. This allows
-                             the target update to use a different board's
-                             image, which is needed for kernelnext updates.
-        @param m2n: True for an m2n update. m2n update tests don't use signed
-                    payloads from gs://chromeos-releases/, so the payload paths
-                    need to be parsed differently.
-
-        @raise error.TestFail if anything goes wrong with the update.
-
-        """
-        cros_preserved_path = ('/mnt/stateful_partition/unencrypted/'
-                               'preserve/cros-update')
-        if m2n:
-            # The payload_uri for an m2n update looks like:
-            # http://100.115.220.112:8082/static/octopus-release/R102-14692.0.0/chromeos_R102-14692.0.0_octopus_full_dev.bin
-            payload_path = payload_uri[payload_uri.index('static/'):]
-            build_name = '/'.join(payload_path.split('/')[1:-1])
-            payload_filename = payload_path.split('/')[-1]
-        else:
-            # Otherwise the payload_uri looks like:
-            # gs://chromeos-releases/dev-channel/octopus/14698.0.0/payloads/chromeos_14698.0.0_octopus_dev-channel_full_test.bin-gyzdkobygyzdck3swpkou632wan55vgx
-            build_name, payload_filename = self._get_update_parameters_from_uri(
-                    payload_uri)
-
-        logging.info('Installing %s on the DUT', payload_uri)
-        with remote_access.ChromiumOSDeviceHandler(
-            self._host.hostname, base_dir=cros_preserved_path) as device:
-            updater = auto_updater.ChromiumOSUpdater(
-                    device,
-                    build_name,
-                    build_name,
-                    yes=True,
-                    payload_filename=payload_filename,
-                    clobber_stateful=clobber_stateful,
-                    clear_tpm_owner=clobber_stateful,
-                    do_stateful_update=True,
-                    staging_server=self._autotest_devserver.url(),
-                    transfer_class=auto_updater_transfer.
-                    LabEndToEndPayloadTransfer,
-                    ignore_appid=ignore_appid)
-
-            try:
-                updater.RunUpdate()
-            except Exception as e:
-                logging.exception('ERROR: Failed to update device.')
-                raise error.TestFail(str(e))
-            finally:
-                self._copy_generated_nebraska_logs(
-                    updater.request_logs_dir, identifier=tag)
 
     def _get_paygen_json(self):
         """Return the paygen.json file as a json dictionary."""

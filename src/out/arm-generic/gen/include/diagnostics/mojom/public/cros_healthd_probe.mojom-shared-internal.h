@@ -57,6 +57,9 @@ class DmiInfo_Data;
 class WirelessInterfaceInfo_Data;
 class WirelessLinkInfo_Data;
 class AudioInfo_Data;
+class AudioHardwareInfo_Data;
+class AudioCard_Data;
+class HDAudioCodec_Data;
 class BootPerformanceInfo_Data;
 class BusDevice_Data;
 class PciBusInfo_Data;
@@ -101,6 +104,7 @@ class NetworkResult_Data;
 class NetworkInterfaceResult_Data;
 class NetworkInterfaceInfo_Data;
 class AudioResult_Data;
+class AudioHardwareResult_Data;
 class BootPerformanceResult_Data;
 class BusResult_Data;
 class BusInfo_Data;
@@ -161,6 +165,7 @@ struct ProbeCategoryEnum_Data {
       case 17:
       case 18:
       case 19:
+      case 20:
       case 65536:
         return true;
     }
@@ -377,6 +382,7 @@ struct BusDeviceClass_Data {
       case 3:
       case 4:
       case 5:
+      case 6:
         return true;
     }
     return false;
@@ -1756,6 +1762,67 @@ class  AudioResult_Data {
 };
 static_assert(sizeof(AudioResult_Data) == mojo::internal::kUnionDataSize,
               "Bad sizeof(AudioResult_Data)");
+
+
+class  AudioHardwareResult_Data {
+ public:
+  // Used to identify Mojom Union Data Classes.
+  typedef void MojomUnionDataType;
+
+  AudioHardwareResult_Data() = default;
+  // Do nothing in the destructor since it won't be called when it is a
+  // non-inlined union.
+  ~AudioHardwareResult_Data() = default;
+
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context,
+                       bool inlined);
+
+  bool is_null() const { return size == 0; }
+
+  void set_null() {
+    size = 0U;
+    tag = static_cast<AudioHardwareResult_Tag>(0);
+    data.unknown = 0U;
+  }
+
+  // TODO(crbug.com/1148486): SHOUTY_CASE values are being deprecated per C++ code style
+  // guidelines (https://google.github.io/styleguide/cppguide.html#Enumerator_Names),
+  // please use kCamelCase values instead.  Cleanup NULL_VALUE, BOOL_VALUE, INT_VALUE, etc.
+  // generation once codebase is transitioned to kNullValue, kBoolValue, kIntValue, etc.
+  enum class AudioHardwareResult_Tag : uint32_t {
+
+    
+    UNMAPPED_FIELD0,
+    
+    kUnmappedField0 = UNMAPPED_FIELD0,
+    
+    AUDIO_HARDWARE_INFO,
+    
+    kAudioHardwareInfo = AUDIO_HARDWARE_INFO,
+    
+    ERROR,
+    
+    kError = ERROR,
+  };
+
+  // A note on layout:
+  // "Each non-static data member is allocated as if it were the sole member of
+  // a struct." - Section 9.5.2 ISO/IEC 14882:2011 (The C++ Spec)
+  union MOJO_ALIGNAS(8) Union_ {
+    Union_() : unknown(0) {}
+    uint8_t f_unmapped_field0 : 1;
+    mojo::internal::Pointer<internal::AudioHardwareInfo_Data> f_audio_hardware_info;
+    mojo::internal::Pointer<internal::ProbeError_Data> f_error;
+    uint64_t unknown;
+  };
+
+  uint32_t size;
+  AudioHardwareResult_Tag tag;
+  Union_ data;
+};
+static_assert(sizeof(AudioHardwareResult_Data) == mojo::internal::kUnionDataSize,
+              "Bad sizeof(AudioHardwareResult_Data)");
 
 
 class  BootPerformanceResult_Data {
@@ -3811,6 +3878,154 @@ struct AudioInfo_UnserializedMessageContext
 template <typename UserType, typename DataView>
 const mojo::internal::UnserializedMessageContext::Tag
     AudioInfo_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
+class  AudioHardwareInfo_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  mojo::internal::Pointer<mojo::internal::Array_Data<mojo::internal::Pointer<internal::AudioCard_Data>>> audio_cards;
+
+ private:
+  friend class mojo::internal::MessageFragment<AudioHardwareInfo_Data>;
+
+  AudioHardwareInfo_Data();
+  ~AudioHardwareInfo_Data() = delete;
+};
+static_assert(sizeof(AudioHardwareInfo_Data) == 16,
+              "Bad sizeof(AudioHardwareInfo_Data)");
+// Used by AudioHardwareInfo::WrapAsMessage to lazily serialize the struct.
+template <typename UserType, typename DataView>
+struct AudioHardwareInfo_UnserializedMessageContext
+    : public mojo::internal::UnserializedMessageContext {
+ public:
+  static const mojo::internal::UnserializedMessageContext::Tag kMessageTag;
+
+  AudioHardwareInfo_UnserializedMessageContext(
+    uint32_t message_name,
+    uint32_t message_flags,
+    UserType input)
+      : mojo::internal::UnserializedMessageContext(&kMessageTag, message_name, message_flags)
+      , user_data_(std::move(input)) {}
+  ~AudioHardwareInfo_UnserializedMessageContext() override = default;
+
+  UserType TakeData() {
+    return std::move(user_data_);
+  }
+
+ private:
+  // mojo::internal::UnserializedMessageContext:
+  void Serialize(mojo::Message& message) override {
+    mojo::internal::MessageFragment<AudioHardwareInfo_Data> fragment(message);
+    mojo::internal::Serialize<DataView>(user_data_, fragment);
+  }
+
+  UserType user_data_;
+};
+
+template <typename UserType, typename DataView>
+const mojo::internal::UnserializedMessageContext::Tag
+    AudioHardwareInfo_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
+class  AudioCard_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  mojo::internal::Pointer<mojo::internal::String_Data> alsa_id;
+  mojo::internal::Pointer<internal::BusDevice_Data> bus_device;
+  mojo::internal::Pointer<mojo::internal::Array_Data<mojo::internal::Pointer<internal::HDAudioCodec_Data>>> hd_audio_codecs;
+
+ private:
+  friend class mojo::internal::MessageFragment<AudioCard_Data>;
+
+  AudioCard_Data();
+  ~AudioCard_Data() = delete;
+};
+static_assert(sizeof(AudioCard_Data) == 32,
+              "Bad sizeof(AudioCard_Data)");
+// Used by AudioCard::WrapAsMessage to lazily serialize the struct.
+template <typename UserType, typename DataView>
+struct AudioCard_UnserializedMessageContext
+    : public mojo::internal::UnserializedMessageContext {
+ public:
+  static const mojo::internal::UnserializedMessageContext::Tag kMessageTag;
+
+  AudioCard_UnserializedMessageContext(
+    uint32_t message_name,
+    uint32_t message_flags,
+    UserType input)
+      : mojo::internal::UnserializedMessageContext(&kMessageTag, message_name, message_flags)
+      , user_data_(std::move(input)) {}
+  ~AudioCard_UnserializedMessageContext() override = default;
+
+  UserType TakeData() {
+    return std::move(user_data_);
+  }
+
+ private:
+  // mojo::internal::UnserializedMessageContext:
+  void Serialize(mojo::Message& message) override {
+    mojo::internal::MessageFragment<AudioCard_Data> fragment(message);
+    mojo::internal::Serialize<DataView>(user_data_, fragment);
+  }
+
+  UserType user_data_;
+};
+
+template <typename UserType, typename DataView>
+const mojo::internal::UnserializedMessageContext::Tag
+    AudioCard_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
+class  HDAudioCodec_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  mojo::internal::Pointer<mojo::internal::String_Data> name;
+  uint8_t address;
+  uint8_t padfinal_[7];
+
+ private:
+  friend class mojo::internal::MessageFragment<HDAudioCodec_Data>;
+
+  HDAudioCodec_Data();
+  ~HDAudioCodec_Data() = delete;
+};
+static_assert(sizeof(HDAudioCodec_Data) == 24,
+              "Bad sizeof(HDAudioCodec_Data)");
+// Used by HDAudioCodec::WrapAsMessage to lazily serialize the struct.
+template <typename UserType, typename DataView>
+struct HDAudioCodec_UnserializedMessageContext
+    : public mojo::internal::UnserializedMessageContext {
+ public:
+  static const mojo::internal::UnserializedMessageContext::Tag kMessageTag;
+
+  HDAudioCodec_UnserializedMessageContext(
+    uint32_t message_name,
+    uint32_t message_flags,
+    UserType input)
+      : mojo::internal::UnserializedMessageContext(&kMessageTag, message_name, message_flags)
+      , user_data_(std::move(input)) {}
+  ~HDAudioCodec_UnserializedMessageContext() override = default;
+
+  UserType TakeData() {
+    return std::move(user_data_);
+  }
+
+ private:
+  // mojo::internal::UnserializedMessageContext:
+  void Serialize(mojo::Message& message) override {
+    mojo::internal::MessageFragment<HDAudioCodec_Data> fragment(message);
+    mojo::internal::Serialize<DataView>(user_data_, fragment);
+  }
+
+  UserType user_data_;
+};
+
+template <typename UserType, typename DataView>
+const mojo::internal::UnserializedMessageContext::Tag
+    HDAudioCodec_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
 class  BootPerformanceInfo_Data {
  public:
   static bool Validate(const void* data,
@@ -5049,6 +5264,7 @@ class  TelemetryInfo_Data {
   internal::DisplayResult_Data display_result;
   internal::NetworkInterfaceResult_Data network_interface_result;
   internal::InputResult_Data input_result;
+  internal::AudioHardwareResult_Data audio_hardware_result;
 
  private:
   friend class mojo::internal::MessageFragment<TelemetryInfo_Data>;
@@ -5056,7 +5272,7 @@ class  TelemetryInfo_Data {
   TelemetryInfo_Data();
   ~TelemetryInfo_Data() = delete;
 };
-static_assert(sizeof(TelemetryInfo_Data) == 328,
+static_assert(sizeof(TelemetryInfo_Data) == 344,
               "Bad sizeof(TelemetryInfo_Data)");
 // Used by TelemetryInfo::WrapAsMessage to lazily serialize the struct.
 template <typename UserType, typename DataView>

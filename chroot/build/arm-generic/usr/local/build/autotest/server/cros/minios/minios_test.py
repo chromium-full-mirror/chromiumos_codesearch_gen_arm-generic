@@ -53,6 +53,16 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
     _MINIOS_TEMP_STATEFUL_DIR = '/usr/local/tmp/stateful'
     _STATEFUL_DEV_IMAGE_NAME = 'dev_image_new'
 
+    # Wildcards form of '_DEPENDENCY_DIRS' used for robust extraction from
+    # stateful archive given that the contents of the stateful archive varies
+    # based on DUT CPU architecture.
+    _DEPENDENCY_DIRS_PATTERN = ['bin', 'lib*']
+
+    # Additional log files to be extracted from MiniOS.
+    _MESSAGES_LOG = '/var/log/messages'
+    _NET_LOG = '/var/log/net.log'
+    _UPSTART_LOG = '/var/log/upstart.log'
+
     # MiniOS State values from platform/system_api/dbus/minios/minios.proto.
     _MINIOS_STATE_ERROR = 'ERROR'
     _MINIOS_STATE_IDLE = 'IDLE'
@@ -81,8 +91,10 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
         self._use_public_bucket = False
         self._servo = host.servo
         self._servo.initialize_dut()
+        self._minios_resultsdir = os.path.join(self.resultsdir, 'minios')
+        os.mkdir(self._minios_resultsdir)
 
-    def warmup(self):
+    def warmup(self, running_at_desk=False, skip_provisioning=False):
         """
         Setup up minios autotests.
 
@@ -91,28 +103,78 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
         tests in a test suite, we provision and run the current installed
         version on the inactive partition to ensure the next test runs
         with the correct version of ChromeOS.
+
+        @param running_at_desk: indicates test is run locally from a
+            workstation.
+        @param skip_provisioning: indicates test is run locally and provisioning
+            of inactive partition should be skipped.
+
         """
+
+        if skip_provisioning:
+            logging.warning('Provisioning skipped.')
+            return super(MiniOsTest, self).warmup()
+
         build_name = self._get_release_builder_path()
+
         # Install the matching build with quick provision.
-        if not self._autotest_devserver:
-            self._autotest_devserver = dev_server.ImageServer.resolve(
-                    build_name, self._host.hostname)
-        update_url = self._autotest_devserver.get_update_url(build_name)
-        logging.info('Installing source image with update url: %s', update_url)
+        if running_at_desk:
+            self._copy_quick_provision_to_dut()
+            # Copy from gs://chromeos-image-archive instead of
+            # gs://chromeos-release because of the format of build_name.
+            # Ex: octopus-release/R102-14650.0.0
+            update_url = self._get_provision_url_on_public_bucket(
+                    build_name, is_release_bucket=False)
+        else:
+            if not self._autotest_devserver:
+                self._autotest_devserver = dev_server.ImageServer.resolve(
+                        build_name, self._host.hostname)
+            update_url = self._autotest_devserver.get_update_url(build_name)
+
+        logging.info('Provisioning inactive partition with update url: %s',
+                     update_url)
         provisioner.ChromiumOSProvisioner(
-                update_url, host=self._host,
-                is_release_bucket=True).run_provision()
+                update_url,
+                host=self._host,
+                is_release_bucket=True,
+                public_bucket=running_at_desk).run_provision()
         super(MiniOsTest, self).warmup()
 
     def cleanup(self):
         """Clean up minios autotests."""
         if self._nebraska:
             self._nebraska.stop()
-        super(MiniOsTest, self).cleanup()
-        # Make sure to reboot DUT into CroS in case of failures.
-        self._host.reboot()
+        if self._is_running_minios():
+            # Make sure to reboot DUT into CroS in case of failures.
+            self._minios_cleanup()
+            self._host.reboot()
         # Restore the stateful partition.
         self._restore_stateful(public_bucket=self._use_public_bucket)
+        super(MiniOsTest, self).cleanup()
+
+    def _minios_cleanup(self):
+        """
+        Perform any cleanup operations before we exit MiniOS.
+
+        MiniOS runs purely from ramfs and thus all data is lost when we exit
+        MiniOS. We therefore need to perform any cleanup functions like grabbing
+        logs before MiniOS exits. This function should be called just before
+        rebooting out of MiniOS.
+        """
+        if self._host:
+            self._host.get_file(self._MESSAGES_LOG, self._minios_resultsdir)
+            self._host.get_file(self._NET_LOG, self._minios_resultsdir)
+            self._host.get_file(self._UPDATE_ENGINE_LOG_DIR,
+                                self._minios_resultsdir)
+            self._host.get_file(self._UPSTART_LOG, self._minios_resultsdir)
+        if self._nebraska:
+            self._host.get_file(os.path.join('/tmp', self._NEBRASKA_LOG),
+                                self._minios_resultsdir)
+
+    def _is_running_minios(self):
+        """Returns True if the DUT is booted into MiniOS."""
+        pattern = r'\b%s\b' % self._MINIOS_KERNEL_FLAG
+        return re.search(pattern, self._host.get_cmdline())
 
     def _boot_minios(self):
         """Boot the DUT into MiniOS."""
@@ -147,8 +209,7 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
                         'Boot to MiniOS - invalid firmware: %s.' % mainfw_type)
             # There are multiple types of recovery images, make sure we booted
             # into minios.
-            pattern = r'\b%s\b' % self._MINIOS_KERNEL_FLAG
-            if not re.search(pattern, self._host.get_cmdline()):
+            if not self._is_running_minios():
                 raise error.TestError(
                         'Boot to MiniOS - recovery image is not minios.')
         else:
@@ -190,9 +251,6 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
         @param public_bucket: True to download stateful from a public bucket.
 
         """
-        if not self._job_repo_url:
-            raise error.TestError('No job repo url set.')
-
         statefuldev_url = self._stage_stateful(public_bucket)
         logging.info('Installing dependencies from %s', statefuldev_url)
 
@@ -211,13 +269,14 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
         # Generate the list of stateful archive members that we want to extract.
         members = [
                 os.path.join(self._STATEFUL_DEV_IMAGE_NAME, dir)
-                for dir in self._DEPENDENCY_DIRS
+                for dir in self._DEPENDENCY_DIRS_PATTERN
         ]
         try:
             self._download_and_extract_stateful(statefuldev_url,
                                                 self._MINIOS_TEMP_STATEFUL_DIR,
                                                 members=members,
-                                                keep_symlinks=True)
+                                                keep_symlinks=True,
+                                                wildcards=True)
         except error.AutoservRunError as e:
             err_str = 'Failed to install the test dependencies'
             raise error.TestFail('%s: %s' % (err_str, str(e)))
@@ -265,6 +324,7 @@ class MiniOsTest(update_engine_test.UpdateEngineTest):
         """
         self._host.test_wait_for_shutdown(self._MINIOS_SHUTDOWN_TIMEOUT)
         self._host.test_wait_for_boot(old_boot_id)
+        self._should_restore_stateful = True
 
     def _drop_download_traffic(self):
         """

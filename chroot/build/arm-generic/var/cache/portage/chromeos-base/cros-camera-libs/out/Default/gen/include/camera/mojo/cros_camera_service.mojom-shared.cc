@@ -533,6 +533,85 @@ CameraHalServer_SetAutoFramingState_Params_Data::CameraHalServer_SetAutoFramingS
 
 
 // static
+bool CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 8, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data* object =
+      static_cast<const CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data*>(data);
+
+  return true;
+}
+
+CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data::CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
+bool CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 16, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data* object =
+      static_cast<const CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data*>(data);
+
+
+  if (!::cros::mojom::internal::CameraPrivacySwitchState_Data
+        ::Validate(object->state, validation_context))
+    return false;
+
+  return true;
+}
+
+CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data::CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
+bool CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 16, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data* object =
+      static_cast<const CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data*>(data);
+
+
+  if (!::cros::mojom::internal::CameraPrivacySwitchState_Data
+        ::Validate(object->state, validation_context))
+    return false;
+
+  return true;
+}
+
+CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data::CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
 bool CameraHalServerCallbacks_CameraDeviceActivityChange_Params_Data::Validate(
     const void* data,
     mojo::internal::ValidationContext* validation_context) {
@@ -585,6 +664,34 @@ bool CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data::Valida
 }
 
 CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data::CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
+bool CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 16, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data* object =
+      static_cast<const CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data*>(data);
+
+
+  if (!::cros::mojom::internal::CameraPrivacySwitchState_Data
+        ::Validate(object->state, validation_context))
+    return false;
+
+  return true;
+}
+
+CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data::CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data()
     : header_({sizeof(*this), 0}) {}
 
 

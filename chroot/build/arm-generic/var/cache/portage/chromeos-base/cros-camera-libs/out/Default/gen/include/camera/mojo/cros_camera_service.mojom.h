@@ -119,13 +119,14 @@ template <typename ImplRefTraits>
 class CameraHalServerStub;
 
 class CameraHalServerRequestValidator;
+class CameraHalServerResponseValidator;
 
 
 class  CameraHalServer
     : public CameraHalServerInterfaceBase {
  public:
   static const char Name_[];
-  static constexpr uint32_t Version_ = 7;
+  static constexpr uint32_t Version_ = 8;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
   static constexpr bool HasUninterruptableMethods_ = false;
@@ -137,11 +138,13 @@ class  CameraHalServer
   using Stub_ = CameraHalServerStub<ImplRefTraits>;
 
   using RequestValidator_ = CameraHalServerRequestValidator;
-  using ResponseValidator_ = mojo::PassThroughFilter;
+  using ResponseValidator_ = CameraHalServerResponseValidator;
   enum MethodMinVersions : uint32_t {
     kCreateChannelMinVersion = 0,
     kSetTracingEnabledMinVersion = 3,
     kSetAutoFramingStateMinVersion = 7,
+    kGetCameraSWPrivacySwitchStateMinVersion = 8,
+    kSetCameraSWPrivacySwitchStateMinVersion = 8,
   };
   virtual ~CameraHalServer() = default;
 
@@ -153,6 +156,14 @@ class  CameraHalServer
 
   
   virtual void SetAutoFramingState(CameraAutoFramingState state) = 0;
+
+
+  using GetCameraSWPrivacySwitchStateCallback = base::OnceCallback<void(CameraPrivacySwitchState)>;
+  
+  virtual void GetCameraSWPrivacySwitchState(GetCameraSWPrivacySwitchStateCallback callback) = 0;
+
+  
+  virtual void SetCameraSWPrivacySwitchState(CameraPrivacySwitchState state) = 0;
 };
 
 class CameraHalServerCallbacksProxy;
@@ -167,7 +178,7 @@ class  CameraHalServerCallbacks
     : public CameraHalServerCallbacksInterfaceBase {
  public:
   static const char Name_[];
-  static constexpr uint32_t Version_ = 5;
+  static constexpr uint32_t Version_ = 8;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
   static constexpr bool HasUninterruptableMethods_ = false;
@@ -183,6 +194,7 @@ class  CameraHalServerCallbacks
   enum MethodMinVersions : uint32_t {
     kCameraDeviceActivityChangeMinVersion = 0,
     kCameraPrivacySwitchStateChangeMinVersion = 5,
+    kCameraSWPrivacySwitchStateChangeMinVersion = 8,
   };
   virtual ~CameraHalServerCallbacks() = default;
 
@@ -191,6 +203,9 @@ class  CameraHalServerCallbacks
 
   
   virtual void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) = 0;
+
+  
+  virtual void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) = 0;
 };
 
 class CameraHalClientProxy;
@@ -268,6 +283,10 @@ class  CameraHalServerProxy
   void SetTracingEnabled(bool enabled) final;
   
   void SetAutoFramingState(CameraAutoFramingState state) final;
+  
+  void GetCameraSWPrivacySwitchState(GetCameraSWPrivacySwitchStateCallback callback) final;
+  
+  void SetCameraSWPrivacySwitchState(CameraPrivacySwitchState state) final;
 
  private:
   mojo::MessageReceiverWithResponder* receiver_;
@@ -285,6 +304,8 @@ class  CameraHalServerCallbacksProxy
   void CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) final;
   
   void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) final;
+  
+  void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) final;
 
  private:
   mojo::MessageReceiverWithResponder* receiver_;
@@ -485,6 +506,10 @@ class  CameraHalClientRequestValidator : public mojo::MessageReceiver {
   bool Accept(mojo::Message* message) override;
 };
 class  CameraHalDispatcherResponseValidator : public mojo::MessageReceiver {
+ public:
+  bool Accept(mojo::Message* message) override;
+};
+class  CameraHalServerResponseValidator : public mojo::MessageReceiver {
  public:
   bool Accept(mojo::Message* message) override;
 };

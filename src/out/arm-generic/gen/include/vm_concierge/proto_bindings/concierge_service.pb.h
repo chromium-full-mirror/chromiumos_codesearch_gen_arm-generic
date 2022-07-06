@@ -1598,6 +1598,7 @@ class StartVmRequest :
     kEnableVulkanFieldNumber = 18,
     kEnableBigGlFieldNumber = 19,
     kTimeoutFieldNumber = 20,
+    kVtpmProxyFieldNumber = 22,
   };
   // repeated .vm_tools.concierge.DiskImage disks = 2;
   int disks_size() const;
@@ -1828,6 +1829,15 @@ class StartVmRequest :
   void _internal_set_timeout(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // bool vtpm_proxy = 22;
+  void clear_vtpm_proxy();
+  bool vtpm_proxy() const;
+  void set_vtpm_proxy(bool value);
+  private:
+  bool _internal_vtpm_proxy() const;
+  void _internal_set_vtpm_proxy(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vm_tools.concierge.StartVmRequest)
  private:
   class _Internal;
@@ -1853,6 +1863,7 @@ class StartVmRequest :
   bool enable_vulkan_;
   bool enable_big_gl_;
   ::PROTOBUF_NAMESPACE_ID::uint32 timeout_;
+  bool vtpm_proxy_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_concierge_5fservice_2eproto;
 };
@@ -2184,6 +2195,9 @@ class BalloonPolicyOptions :
     kReclaimTargetCacheFieldNumber = 1,
     kCriticalTargetCacheFieldNumber = 2,
     kModerateTargetCacheFieldNumber = 3,
+    kResponsiveFieldNumber = 4,
+    kResponsiveTimeoutMsFieldNumber = 5,
+    kResponsiveMaxDeflateBytesFieldNumber = 6,
   };
   // int64 reclaim_target_cache = 1;
   void clear_reclaim_target_cache();
@@ -2212,6 +2226,33 @@ class BalloonPolicyOptions :
   void _internal_set_moderate_target_cache(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
+  // bool responsive = 4;
+  void clear_responsive();
+  bool responsive() const;
+  void set_responsive(bool value);
+  private:
+  bool _internal_responsive() const;
+  void _internal_set_responsive(bool value);
+  public:
+
+  // int32 responsive_timeout_ms = 5;
+  void clear_responsive_timeout_ms();
+  ::PROTOBUF_NAMESPACE_ID::int32 responsive_timeout_ms() const;
+  void set_responsive_timeout_ms(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_responsive_timeout_ms() const;
+  void _internal_set_responsive_timeout_ms(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int64 responsive_max_deflate_bytes = 6;
+  void clear_responsive_max_deflate_bytes();
+  ::PROTOBUF_NAMESPACE_ID::int64 responsive_max_deflate_bytes() const;
+  void set_responsive_max_deflate_bytes(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_responsive_max_deflate_bytes() const;
+  void _internal_set_responsive_max_deflate_bytes(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vm_tools.concierge.BalloonPolicyOptions)
  private:
   class _Internal;
@@ -2220,6 +2261,9 @@ class BalloonPolicyOptions :
   ::PROTOBUF_NAMESPACE_ID::int64 reclaim_target_cache_;
   ::PROTOBUF_NAMESPACE_ID::int64 critical_target_cache_;
   ::PROTOBUF_NAMESPACE_ID::int64 moderate_target_cache_;
+  bool responsive_;
+  ::PROTOBUF_NAMESPACE_ID::int32 responsive_timeout_ms_;
+  ::PROTOBUF_NAMESPACE_ID::int64 responsive_max_deflate_bytes_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_concierge_5fservice_2eproto;
 };
@@ -2362,6 +2406,7 @@ class StartArcVmRequest :
     kRootfsBlockSizeFieldNumber = 15,
     kUsePerVmCoreSchedulingFieldNumber = 14,
     kEnableConsumerAutoUpdateToggleFieldNumber = 16,
+    kLockGuestMemoryFieldNumber = 18,
     kPanelOrientationFieldNumber = 17,
   };
   // repeated .vm_tools.concierge.DiskImage disks = 2;
@@ -2565,6 +2610,15 @@ class StartArcVmRequest :
   void _internal_set_enable_consumer_auto_update_toggle(bool value);
   public:
 
+  // bool lock_guest_memory = 18;
+  void clear_lock_guest_memory();
+  bool lock_guest_memory() const;
+  void set_lock_guest_memory(bool value);
+  private:
+  bool _internal_lock_guest_memory() const;
+  void _internal_set_lock_guest_memory(bool value);
+  public:
+
   // .vm_tools.concierge.StartArcVmRequest.DisplayOrientation panel_orientation = 17;
   void clear_panel_orientation();
   ::vm_tools::concierge::StartArcVmRequest_DisplayOrientation panel_orientation() const;
@@ -2595,6 +2649,7 @@ class StartArcVmRequest :
   ::PROTOBUF_NAMESPACE_ID::uint32 rootfs_block_size_;
   bool use_per_vm_core_scheduling_;
   bool enable_consumer_auto_update_toggle_;
+  bool lock_guest_memory_;
   int panel_orientation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_concierge_5fservice_2eproto;
@@ -12374,6 +12429,26 @@ StartVmRequest::mutable_features() {
   return _internal_mutable_features();
 }
 
+// bool vtpm_proxy = 22;
+inline void StartVmRequest::clear_vtpm_proxy() {
+  vtpm_proxy_ = false;
+}
+inline bool StartVmRequest::_internal_vtpm_proxy() const {
+  return vtpm_proxy_;
+}
+inline bool StartVmRequest::vtpm_proxy() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.StartVmRequest.vtpm_proxy)
+  return _internal_vtpm_proxy();
+}
+inline void StartVmRequest::_internal_set_vtpm_proxy(bool value) {
+  
+  vtpm_proxy_ = value;
+}
+inline void StartVmRequest::set_vtpm_proxy(bool value) {
+  _internal_set_vtpm_proxy(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.StartVmRequest.vtpm_proxy)
+}
+
 // -------------------------------------------------------------------
 
 // StartPluginVmRequest
@@ -12814,6 +12889,66 @@ inline void BalloonPolicyOptions::_internal_set_moderate_target_cache(::PROTOBUF
 inline void BalloonPolicyOptions::set_moderate_target_cache(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_moderate_target_cache(value);
   // @@protoc_insertion_point(field_set:vm_tools.concierge.BalloonPolicyOptions.moderate_target_cache)
+}
+
+// bool responsive = 4;
+inline void BalloonPolicyOptions::clear_responsive() {
+  responsive_ = false;
+}
+inline bool BalloonPolicyOptions::_internal_responsive() const {
+  return responsive_;
+}
+inline bool BalloonPolicyOptions::responsive() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.BalloonPolicyOptions.responsive)
+  return _internal_responsive();
+}
+inline void BalloonPolicyOptions::_internal_set_responsive(bool value) {
+  
+  responsive_ = value;
+}
+inline void BalloonPolicyOptions::set_responsive(bool value) {
+  _internal_set_responsive(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.BalloonPolicyOptions.responsive)
+}
+
+// int32 responsive_timeout_ms = 5;
+inline void BalloonPolicyOptions::clear_responsive_timeout_ms() {
+  responsive_timeout_ms_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 BalloonPolicyOptions::_internal_responsive_timeout_ms() const {
+  return responsive_timeout_ms_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 BalloonPolicyOptions::responsive_timeout_ms() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.BalloonPolicyOptions.responsive_timeout_ms)
+  return _internal_responsive_timeout_ms();
+}
+inline void BalloonPolicyOptions::_internal_set_responsive_timeout_ms(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  responsive_timeout_ms_ = value;
+}
+inline void BalloonPolicyOptions::set_responsive_timeout_ms(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_responsive_timeout_ms(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.BalloonPolicyOptions.responsive_timeout_ms)
+}
+
+// int64 responsive_max_deflate_bytes = 6;
+inline void BalloonPolicyOptions::clear_responsive_max_deflate_bytes() {
+  responsive_max_deflate_bytes_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 BalloonPolicyOptions::_internal_responsive_max_deflate_bytes() const {
+  return responsive_max_deflate_bytes_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 BalloonPolicyOptions::responsive_max_deflate_bytes() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.BalloonPolicyOptions.responsive_max_deflate_bytes)
+  return _internal_responsive_max_deflate_bytes();
+}
+inline void BalloonPolicyOptions::_internal_set_responsive_max_deflate_bytes(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  responsive_max_deflate_bytes_ = value;
+}
+inline void BalloonPolicyOptions::set_responsive_max_deflate_bytes(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_responsive_max_deflate_bytes(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.BalloonPolicyOptions.responsive_max_deflate_bytes)
 }
 
 // -------------------------------------------------------------------
@@ -13431,6 +13566,26 @@ inline void StartArcVmRequest::_internal_set_panel_orientation(::vm_tools::conci
 inline void StartArcVmRequest::set_panel_orientation(::vm_tools::concierge::StartArcVmRequest_DisplayOrientation value) {
   _internal_set_panel_orientation(value);
   // @@protoc_insertion_point(field_set:vm_tools.concierge.StartArcVmRequest.panel_orientation)
+}
+
+// bool lock_guest_memory = 18;
+inline void StartArcVmRequest::clear_lock_guest_memory() {
+  lock_guest_memory_ = false;
+}
+inline bool StartArcVmRequest::_internal_lock_guest_memory() const {
+  return lock_guest_memory_;
+}
+inline bool StartArcVmRequest::lock_guest_memory() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.StartArcVmRequest.lock_guest_memory)
+  return _internal_lock_guest_memory();
+}
+inline void StartArcVmRequest::_internal_set_lock_guest_memory(bool value) {
+  
+  lock_guest_memory_ = value;
+}
+inline void StartArcVmRequest::set_lock_guest_memory(bool value) {
+  _internal_set_lock_guest_memory(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.StartArcVmRequest.lock_guest_memory)
 }
 
 // -------------------------------------------------------------------

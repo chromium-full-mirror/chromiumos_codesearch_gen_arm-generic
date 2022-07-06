@@ -2067,6 +2067,149 @@ bool operator>=(const T& lhs, const T& rhs) {
 
 
 
+class  HDAudioCodec {
+ public:
+  template <typename T>
+  using EnableIfSame = std::enable_if_t<std::is_same<HDAudioCodec, T>::value>;
+  using DataView = HDAudioCodecDataView;
+  using Data_ = internal::HDAudioCodec_Data;
+
+  template <typename... Args>
+  static HDAudioCodecPtr New(Args&&... args) {
+    return HDAudioCodecPtr(
+        base::in_place, std::forward<Args>(args)...);
+  }
+
+  template <typename U>
+  static HDAudioCodecPtr From(const U& u) {
+    return mojo::TypeConverter<HDAudioCodecPtr, U>::Convert(u);
+  }
+
+  template <typename U>
+  U To() const {
+    return mojo::TypeConverter<U, HDAudioCodec>::Convert(*this);
+  }
+
+
+  HDAudioCodec();
+
+  HDAudioCodec(
+      const std::string& name,
+      uint8_t address);
+
+
+  ~HDAudioCodec();
+
+  // Clone() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Clone() or copy
+  // constructor/assignment are available for members.
+  template <typename StructPtrType = HDAudioCodecPtr>
+  HDAudioCodecPtr Clone() const;
+
+  // Equals() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Equals() or == operator
+  // are available for members.
+  template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+  bool Equals(const T& other) const;
+
+  template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+  bool operator==(const T& rhs) const { return Equals(rhs); }
+  size_t Hash(size_t seed) const;
+  template <typename UserType>
+  static std::vector<uint8_t> Serialize(UserType* input) {
+    return mojo::internal::SerializeImpl<
+        HDAudioCodec::DataView, std::vector<uint8_t>>(input);
+  }
+
+  template <typename UserType>
+  static mojo::Message SerializeAsMessage(UserType* input) {
+    return mojo::internal::SerializeAsMessageImpl<
+        HDAudioCodec::DataView>(input);
+  }
+
+  // The returned Message is serialized only if the message is moved
+  // cross-process or cross-language. Otherwise if the message is Deserialized
+  // as the same UserType |input| will just be moved to |output| in
+  // DeserializeFromMessage.
+  template <typename UserType>
+  static mojo::Message WrapAsMessage(UserType input) {
+    return mojo::Message(std::make_unique<
+        internal::HDAudioCodec_UnserializedMessageContext<
+            UserType, HDAudioCodec::DataView>>(0, 0, std::move(input)),
+        MOJO_CREATE_MESSAGE_FLAG_NONE);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const void* data,
+                          size_t data_num_bytes,
+                          UserType* output) {
+    mojo::Message message;
+    return mojo::internal::DeserializeImpl<HDAudioCodec::DataView>(
+        message, data, data_num_bytes, output, Validate);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const std::vector<uint8_t>& input,
+                          UserType* output) {
+    return HDAudioCodec::Deserialize(
+        input.size() == 0 ? nullptr : &input.front(), input.size(), output);
+  }
+
+  template <typename UserType>
+  static bool DeserializeFromMessage(mojo::Message input,
+                                     UserType* output) {
+    auto context = input.TakeUnserializedContext<
+        internal::HDAudioCodec_UnserializedMessageContext<
+            UserType, HDAudioCodec::DataView>>();
+    if (context) {
+      *output = std::move(context->TakeData());
+      return true;
+    }
+    input.SerializeIfNecessary();
+    return mojo::internal::DeserializeImpl<HDAudioCodec::DataView>(
+        input, input.payload(), input.payload_num_bytes(), output, Validate);
+  }
+
+  
+  std::string name;
+  
+  uint8_t address;
+
+  // Serialise this struct into a trace.
+  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+
+ private:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+};
+
+// The comparison operators are templates, so they are only instantiated if they
+// are used. Thus, the bindings generator does not need to know whether
+// comparison operators are available for members.
+template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+bool operator<(const T& lhs, const T& rhs);
+
+template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+bool operator<=(const T& lhs, const T& rhs) {
+  return !(rhs < lhs);
+}
+
+template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+bool operator>(const T& lhs, const T& rhs) {
+  return rhs < lhs;
+}
+
+template <typename T, HDAudioCodec::EnableIfSame<T>* = nullptr>
+bool operator>=(const T& lhs, const T& rhs) {
+  return !(lhs < rhs);
+}
+
+
+
+
+
+
+
 
 
 class  FwupdFirmwareVersionInfo {
@@ -5410,6 +5553,146 @@ class  AudioResult {
     Union_() = default;
     ~Union_() = default;
     AudioInfoPtr* audio_info;
+    ProbeErrorPtr* error;
+  };
+
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  void DestroyActive();
+  Tag tag_;
+  Union_ data_;
+};
+
+
+
+class  AudioHardwareResult {
+ public:
+  using DataView = AudioHardwareResultDataView;
+  using Data_ = internal::AudioHardwareResult_Data;
+  using Tag = Data_::AudioHardwareResult_Tag;
+
+  static AudioHardwareResultPtr New() {
+    return AudioHardwareResultPtr(base::in_place);
+  }
+  // Construct an instance holding |unmapped_field0|.
+  static AudioHardwareResultPtr
+  NewUnmappedField0(
+      bool unmapped_field0) {
+    auto result = AudioHardwareResultPtr(base::in_place);
+    result->set_unmapped_field0(std::move(unmapped_field0));
+    return result;
+  }
+  // Construct an instance holding |audio_hardware_info|.
+  static AudioHardwareResultPtr
+  NewAudioHardwareInfo(
+      AudioHardwareInfoPtr audio_hardware_info) {
+    auto result = AudioHardwareResultPtr(base::in_place);
+    result->set_audio_hardware_info(std::move(audio_hardware_info));
+    return result;
+  }
+  // Construct an instance holding |error|.
+  static AudioHardwareResultPtr
+  NewError(
+      ProbeErrorPtr error) {
+    auto result = AudioHardwareResultPtr(base::in_place);
+    result->set_error(std::move(error));
+    return result;
+  }
+
+  template <typename U>
+  static AudioHardwareResultPtr From(const U& u) {
+    return mojo::TypeConverter<AudioHardwareResultPtr, U>::Convert(u);
+  }
+
+  template <typename U>
+  U To() const {
+    return mojo::TypeConverter<U, AudioHardwareResult>::Convert(*this);
+  }
+
+  AudioHardwareResult();
+  ~AudioHardwareResult();
+
+  // Clone() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Clone() or copy
+  // constructor/assignment are available for members.
+  template <typename UnionPtrType = AudioHardwareResultPtr>
+  AudioHardwareResultPtr Clone() const;
+
+  // Equals() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Equals() or == operator
+  // are available for members.
+  template <typename T,
+            typename std::enable_if<std::is_same<
+                T, AudioHardwareResult>::value>::type* = nullptr>
+  bool Equals(const T& other) const;
+
+  template <typename T,
+            typename std::enable_if<std::is_same<
+                T, AudioHardwareResult>::value>::type* = nullptr>
+  bool operator==(const T& rhs) const { return Equals(rhs); }
+
+  Tag which() const {
+    return tag_;
+  }
+
+
+  
+  bool is_unmapped_field0() const { return tag_ == Tag::UNMAPPED_FIELD0; }
+
+  
+  bool get_unmapped_field0() const {
+    CHECK(tag_ == Tag::UNMAPPED_FIELD0);
+    return data_.unmapped_field0;
+  }
+
+  
+  void set_unmapped_field0(
+      bool unmapped_field0);
+  
+  bool is_audio_hardware_info() const { return tag_ == Tag::AUDIO_HARDWARE_INFO; }
+
+  
+  AudioHardwareInfoPtr& get_audio_hardware_info() const {
+    CHECK(tag_ == Tag::AUDIO_HARDWARE_INFO);
+    return *(data_.audio_hardware_info);
+  }
+
+  
+  void set_audio_hardware_info(
+      AudioHardwareInfoPtr audio_hardware_info);
+  
+  bool is_error() const { return tag_ == Tag::ERROR; }
+
+  
+  ProbeErrorPtr& get_error() const {
+    CHECK(tag_ == Tag::ERROR);
+    return *(data_.error);
+  }
+
+  
+  void set_error(
+      ProbeErrorPtr error);
+
+  template <typename UserType>
+  static mojo::Message SerializeAsMessage(UserType* input) {
+    return mojo::internal::SerializeAsMessageImpl<
+        AudioHardwareResult::DataView>(input);
+  }
+
+  template <typename UserType>
+  static bool DeserializeFromMessage(mojo::Message input,
+                                     UserType* output) {
+    return mojo::internal::DeserializeImpl<AudioHardwareResult::DataView>(
+        input, input.payload(), input.payload_num_bytes(), output, Validate);
+  }
+
+ private:
+  union Union_ {
+    Union_() = default;
+    ~Union_() = default;
+    bool unmapped_field0;
+    AudioHardwareInfoPtr* audio_hardware_info;
     ProbeErrorPtr* error;
   };
 
@@ -9086,6 +9369,291 @@ bool operator>=(const T& lhs, const T& rhs) {
 
 
 
+class  AudioHardwareInfo {
+ public:
+  template <typename T>
+  using EnableIfSame = std::enable_if_t<std::is_same<AudioHardwareInfo, T>::value>;
+  using DataView = AudioHardwareInfoDataView;
+  using Data_ = internal::AudioHardwareInfo_Data;
+
+  template <typename... Args>
+  static AudioHardwareInfoPtr New(Args&&... args) {
+    return AudioHardwareInfoPtr(
+        base::in_place, std::forward<Args>(args)...);
+  }
+
+  template <typename U>
+  static AudioHardwareInfoPtr From(const U& u) {
+    return mojo::TypeConverter<AudioHardwareInfoPtr, U>::Convert(u);
+  }
+
+  template <typename U>
+  U To() const {
+    return mojo::TypeConverter<U, AudioHardwareInfo>::Convert(*this);
+  }
+
+
+  AudioHardwareInfo();
+
+  explicit AudioHardwareInfo(
+      std::vector<AudioCardPtr> audio_cards);
+
+AudioHardwareInfo(const AudioHardwareInfo&) = delete;
+AudioHardwareInfo& operator=(const AudioHardwareInfo&) = delete;
+
+  ~AudioHardwareInfo();
+
+  // Clone() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Clone() or copy
+  // constructor/assignment are available for members.
+  template <typename StructPtrType = AudioHardwareInfoPtr>
+  AudioHardwareInfoPtr Clone() const;
+
+  // Equals() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Equals() or == operator
+  // are available for members.
+  template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+  bool Equals(const T& other) const;
+
+  template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+  bool operator==(const T& rhs) const { return Equals(rhs); }
+  template <typename UserType>
+  static std::vector<uint8_t> Serialize(UserType* input) {
+    return mojo::internal::SerializeImpl<
+        AudioHardwareInfo::DataView, std::vector<uint8_t>>(input);
+  }
+
+  template <typename UserType>
+  static mojo::Message SerializeAsMessage(UserType* input) {
+    return mojo::internal::SerializeAsMessageImpl<
+        AudioHardwareInfo::DataView>(input);
+  }
+
+  // The returned Message is serialized only if the message is moved
+  // cross-process or cross-language. Otherwise if the message is Deserialized
+  // as the same UserType |input| will just be moved to |output| in
+  // DeserializeFromMessage.
+  template <typename UserType>
+  static mojo::Message WrapAsMessage(UserType input) {
+    return mojo::Message(std::make_unique<
+        internal::AudioHardwareInfo_UnserializedMessageContext<
+            UserType, AudioHardwareInfo::DataView>>(0, 0, std::move(input)),
+        MOJO_CREATE_MESSAGE_FLAG_NONE);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const void* data,
+                          size_t data_num_bytes,
+                          UserType* output) {
+    mojo::Message message;
+    return mojo::internal::DeserializeImpl<AudioHardwareInfo::DataView>(
+        message, data, data_num_bytes, output, Validate);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const std::vector<uint8_t>& input,
+                          UserType* output) {
+    return AudioHardwareInfo::Deserialize(
+        input.size() == 0 ? nullptr : &input.front(), input.size(), output);
+  }
+
+  template <typename UserType>
+  static bool DeserializeFromMessage(mojo::Message input,
+                                     UserType* output) {
+    auto context = input.TakeUnserializedContext<
+        internal::AudioHardwareInfo_UnserializedMessageContext<
+            UserType, AudioHardwareInfo::DataView>>();
+    if (context) {
+      *output = std::move(context->TakeData());
+      return true;
+    }
+    input.SerializeIfNecessary();
+    return mojo::internal::DeserializeImpl<AudioHardwareInfo::DataView>(
+        input, input.payload(), input.payload_num_bytes(), output, Validate);
+  }
+
+  
+  std::vector<AudioCardPtr> audio_cards;
+
+  // Serialise this struct into a trace.
+  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+
+ private:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+};
+
+// The comparison operators are templates, so they are only instantiated if they
+// are used. Thus, the bindings generator does not need to know whether
+// comparison operators are available for members.
+template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+bool operator<(const T& lhs, const T& rhs);
+
+template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+bool operator<=(const T& lhs, const T& rhs) {
+  return !(rhs < lhs);
+}
+
+template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+bool operator>(const T& lhs, const T& rhs) {
+  return rhs < lhs;
+}
+
+template <typename T, AudioHardwareInfo::EnableIfSame<T>* = nullptr>
+bool operator>=(const T& lhs, const T& rhs) {
+  return !(lhs < rhs);
+}
+
+
+
+
+
+class  AudioCard {
+ public:
+  template <typename T>
+  using EnableIfSame = std::enable_if_t<std::is_same<AudioCard, T>::value>;
+  using DataView = AudioCardDataView;
+  using Data_ = internal::AudioCard_Data;
+
+  template <typename... Args>
+  static AudioCardPtr New(Args&&... args) {
+    return AudioCardPtr(
+        base::in_place, std::forward<Args>(args)...);
+  }
+
+  template <typename U>
+  static AudioCardPtr From(const U& u) {
+    return mojo::TypeConverter<AudioCardPtr, U>::Convert(u);
+  }
+
+  template <typename U>
+  U To() const {
+    return mojo::TypeConverter<U, AudioCard>::Convert(*this);
+  }
+
+
+  AudioCard();
+
+  AudioCard(
+      const std::string& alsa_id,
+      BusDevicePtr bus_device,
+      std::vector<HDAudioCodecPtr> hd_audio_codecs);
+
+AudioCard(const AudioCard&) = delete;
+AudioCard& operator=(const AudioCard&) = delete;
+
+  ~AudioCard();
+
+  // Clone() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Clone() or copy
+  // constructor/assignment are available for members.
+  template <typename StructPtrType = AudioCardPtr>
+  AudioCardPtr Clone() const;
+
+  // Equals() is a template so it is only instantiated if it is used. Thus, the
+  // bindings generator does not need to know whether Equals() or == operator
+  // are available for members.
+  template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+  bool Equals(const T& other) const;
+
+  template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+  bool operator==(const T& rhs) const { return Equals(rhs); }
+  template <typename UserType>
+  static std::vector<uint8_t> Serialize(UserType* input) {
+    return mojo::internal::SerializeImpl<
+        AudioCard::DataView, std::vector<uint8_t>>(input);
+  }
+
+  template <typename UserType>
+  static mojo::Message SerializeAsMessage(UserType* input) {
+    return mojo::internal::SerializeAsMessageImpl<
+        AudioCard::DataView>(input);
+  }
+
+  // The returned Message is serialized only if the message is moved
+  // cross-process or cross-language. Otherwise if the message is Deserialized
+  // as the same UserType |input| will just be moved to |output| in
+  // DeserializeFromMessage.
+  template <typename UserType>
+  static mojo::Message WrapAsMessage(UserType input) {
+    return mojo::Message(std::make_unique<
+        internal::AudioCard_UnserializedMessageContext<
+            UserType, AudioCard::DataView>>(0, 0, std::move(input)),
+        MOJO_CREATE_MESSAGE_FLAG_NONE);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const void* data,
+                          size_t data_num_bytes,
+                          UserType* output) {
+    mojo::Message message;
+    return mojo::internal::DeserializeImpl<AudioCard::DataView>(
+        message, data, data_num_bytes, output, Validate);
+  }
+
+  template <typename UserType>
+  static bool Deserialize(const std::vector<uint8_t>& input,
+                          UserType* output) {
+    return AudioCard::Deserialize(
+        input.size() == 0 ? nullptr : &input.front(), input.size(), output);
+  }
+
+  template <typename UserType>
+  static bool DeserializeFromMessage(mojo::Message input,
+                                     UserType* output) {
+    auto context = input.TakeUnserializedContext<
+        internal::AudioCard_UnserializedMessageContext<
+            UserType, AudioCard::DataView>>();
+    if (context) {
+      *output = std::move(context->TakeData());
+      return true;
+    }
+    input.SerializeIfNecessary();
+    return mojo::internal::DeserializeImpl<AudioCard::DataView>(
+        input, input.payload(), input.payload_num_bytes(), output, Validate);
+  }
+
+  
+  std::string alsa_id;
+  
+  BusDevicePtr bus_device;
+  
+  std::vector<HDAudioCodecPtr> hd_audio_codecs;
+
+  // Serialise this struct into a trace.
+  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+
+ private:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+};
+
+// The comparison operators are templates, so they are only instantiated if they
+// are used. Thus, the bindings generator does not need to know whether
+// comparison operators are available for members.
+template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+bool operator<(const T& lhs, const T& rhs);
+
+template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+bool operator<=(const T& lhs, const T& rhs) {
+  return !(rhs < lhs);
+}
+
+template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+bool operator>(const T& lhs, const T& rhs) {
+  return rhs < lhs;
+}
+
+template <typename T, AudioCard::EnableIfSame<T>* = nullptr>
+bool operator>=(const T& lhs, const T& rhs) {
+  return !(lhs < rhs);
+}
+
+
+
+
+
+
 class  BootPerformanceInfo {
  public:
   template <typename T>
@@ -11823,6 +12391,29 @@ class  TelemetryInfo {
       NetworkInterfaceResultPtr network_interface_result,
       InputResultPtr input_result);
 
+  TelemetryInfo(
+      BatteryResultPtr battery_result,
+      NonRemovableBlockDeviceResultPtr block_device_result,
+      CpuResultPtr cpu_result,
+      TimezoneResultPtr timezone_result,
+      MemoryResultPtr memory_result,
+      BacklightResultPtr backlight_result,
+      FanResultPtr fan_result,
+      StatefulPartitionResultPtr stateful_partition_result,
+      BluetoothResultPtr bluetooth_result,
+      SystemResultPtr system_result,
+      NetworkResultPtr network_result,
+      AudioResultPtr audio_result,
+      BootPerformanceResultPtr boot_performance_result,
+      BusResultPtr bus_result,
+      SystemResultV2Ptr system_result_v2,
+      TpmResultPtr tpm_result,
+      GraphicsResultPtr graphics_result,
+      DisplayResultPtr display_result,
+      NetworkInterfaceResultPtr network_interface_result,
+      InputResultPtr input_result,
+      AudioHardwareResultPtr audio_hardware_result);
+
 TelemetryInfo(const TelemetryInfo&) = delete;
 TelemetryInfo& operator=(const TelemetryInfo&) = delete;
 
@@ -11937,6 +12528,8 @@ TelemetryInfo& operator=(const TelemetryInfo&) = delete;
   NetworkInterfaceResultPtr network_interface_result;
   
   InputResultPtr input_result;
+  
+  AudioHardwareResultPtr audio_hardware_result;
 
   // Serialise this struct into a trace.
   void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
@@ -12621,6 +13214,43 @@ bool AudioResult::Equals(const T& other) const {
   switch (tag_) {
     case Tag::AUDIO_INFO:
       return mojo::Equals(*(data_.audio_info), *(other.data_.audio_info));
+    case Tag::ERROR:
+      return mojo::Equals(*(data_.error), *(other.data_.error));
+  }
+
+  return false;
+}
+template <typename UnionPtrType>
+AudioHardwareResultPtr AudioHardwareResult::Clone() const {
+  // Use UnionPtrType to prevent the compiler from trying to compile this
+  // without being asked.
+  UnionPtrType rv(New());
+  switch (tag_) {
+    case Tag::UNMAPPED_FIELD0:
+      rv->set_unmapped_field0(mojo::Clone(data_.unmapped_field0));
+      break;
+    case Tag::AUDIO_HARDWARE_INFO:
+      rv->set_audio_hardware_info(mojo::Clone(*data_.audio_hardware_info));
+      break;
+    case Tag::ERROR:
+      rv->set_error(mojo::Clone(*data_.error));
+      break;
+  }
+  return rv;
+}
+
+template <typename T,
+          typename std::enable_if<std::is_same<
+              T, AudioHardwareResult>::value>::type*>
+bool AudioHardwareResult::Equals(const T& other) const {
+  if (tag_ != other.which())
+    return false;
+
+  switch (tag_) {
+    case Tag::UNMAPPED_FIELD0:
+      return mojo::Equals(data_.unmapped_field0, other.data_.unmapped_field0);
+    case Tag::AUDIO_HARDWARE_INFO:
+      return mojo::Equals(*(data_.audio_hardware_info), *(other.data_.audio_hardware_info));
     case Tag::ERROR:
       return mojo::Equals(*(data_.error), *(other.data_.error));
   }
@@ -14596,6 +15226,93 @@ bool operator<(const T& lhs, const T& rhs) {
   return false;
 }
 template <typename StructPtrType>
+AudioHardwareInfoPtr AudioHardwareInfo::Clone() const {
+  return New(
+      mojo::Clone(audio_cards)
+  );
+}
+
+template <typename T, AudioHardwareInfo::EnableIfSame<T>*>
+bool AudioHardwareInfo::Equals(const T& other_struct) const {
+  if (!mojo::Equals(this->audio_cards, other_struct.audio_cards))
+    return false;
+  return true;
+}
+
+template <typename T, AudioHardwareInfo::EnableIfSame<T>*>
+bool operator<(const T& lhs, const T& rhs) {
+  if (lhs.audio_cards < rhs.audio_cards)
+    return true;
+  if (rhs.audio_cards < lhs.audio_cards)
+    return false;
+  return false;
+}
+template <typename StructPtrType>
+AudioCardPtr AudioCard::Clone() const {
+  return New(
+      mojo::Clone(alsa_id),
+      mojo::Clone(bus_device),
+      mojo::Clone(hd_audio_codecs)
+  );
+}
+
+template <typename T, AudioCard::EnableIfSame<T>*>
+bool AudioCard::Equals(const T& other_struct) const {
+  if (!mojo::Equals(this->alsa_id, other_struct.alsa_id))
+    return false;
+  if (!mojo::Equals(this->bus_device, other_struct.bus_device))
+    return false;
+  if (!mojo::Equals(this->hd_audio_codecs, other_struct.hd_audio_codecs))
+    return false;
+  return true;
+}
+
+template <typename T, AudioCard::EnableIfSame<T>*>
+bool operator<(const T& lhs, const T& rhs) {
+  if (lhs.alsa_id < rhs.alsa_id)
+    return true;
+  if (rhs.alsa_id < lhs.alsa_id)
+    return false;
+  if (lhs.bus_device < rhs.bus_device)
+    return true;
+  if (rhs.bus_device < lhs.bus_device)
+    return false;
+  if (lhs.hd_audio_codecs < rhs.hd_audio_codecs)
+    return true;
+  if (rhs.hd_audio_codecs < lhs.hd_audio_codecs)
+    return false;
+  return false;
+}
+template <typename StructPtrType>
+HDAudioCodecPtr HDAudioCodec::Clone() const {
+  return New(
+      mojo::Clone(name),
+      mojo::Clone(address)
+  );
+}
+
+template <typename T, HDAudioCodec::EnableIfSame<T>*>
+bool HDAudioCodec::Equals(const T& other_struct) const {
+  if (!mojo::Equals(this->name, other_struct.name))
+    return false;
+  if (!mojo::Equals(this->address, other_struct.address))
+    return false;
+  return true;
+}
+
+template <typename T, HDAudioCodec::EnableIfSame<T>*>
+bool operator<(const T& lhs, const T& rhs) {
+  if (lhs.name < rhs.name)
+    return true;
+  if (rhs.name < lhs.name)
+    return false;
+  if (lhs.address < rhs.address)
+    return true;
+  if (rhs.address < lhs.address)
+    return false;
+  return false;
+}
+template <typename StructPtrType>
 BootPerformanceInfoPtr BootPerformanceInfo::Clone() const {
   return New(
       mojo::Clone(boot_up_seconds),
@@ -15774,7 +16491,8 @@ TelemetryInfoPtr TelemetryInfo::Clone() const {
       mojo::Clone(graphics_result),
       mojo::Clone(display_result),
       mojo::Clone(network_interface_result),
-      mojo::Clone(input_result)
+      mojo::Clone(input_result),
+      mojo::Clone(audio_hardware_result)
   );
 }
 
@@ -15819,6 +16537,8 @@ bool TelemetryInfo::Equals(const T& other_struct) const {
   if (!mojo::Equals(this->network_interface_result, other_struct.network_interface_result))
     return false;
   if (!mojo::Equals(this->input_result, other_struct.input_result))
+    return false;
+  if (!mojo::Equals(this->audio_hardware_result, other_struct.audio_hardware_result))
     return false;
   return true;
 }
@@ -15904,6 +16624,10 @@ bool operator<(const T& lhs, const T& rhs) {
   if (lhs.input_result < rhs.input_result)
     return true;
   if (rhs.input_result < lhs.input_result)
+    return false;
+  if (lhs.audio_hardware_result < rhs.audio_hardware_result)
+    return true;
+  if (rhs.audio_hardware_result < lhs.audio_hardware_result)
     return false;
   return false;
 }
@@ -17137,6 +17861,66 @@ struct  StructTraits<::chromeos::cros_healthd::mojom::AudioInfo::DataView,
 
 
 template <>
+struct  StructTraits<::chromeos::cros_healthd::mojom::AudioHardwareInfo::DataView,
+                                         ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr> {
+  static bool IsNull(const ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr& input) { return !input; }
+  static void SetToNull(::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr* output) { output->reset(); }
+
+  static const decltype(::chromeos::cros_healthd::mojom::AudioHardwareInfo::audio_cards)& audio_cards(
+      const ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr& input) {
+    return input->audio_cards;
+  }
+
+  static bool Read(::chromeos::cros_healthd::mojom::AudioHardwareInfo::DataView input, ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr* output);
+};
+
+
+template <>
+struct  StructTraits<::chromeos::cros_healthd::mojom::AudioCard::DataView,
+                                         ::chromeos::cros_healthd::mojom::AudioCardPtr> {
+  static bool IsNull(const ::chromeos::cros_healthd::mojom::AudioCardPtr& input) { return !input; }
+  static void SetToNull(::chromeos::cros_healthd::mojom::AudioCardPtr* output) { output->reset(); }
+
+  static const decltype(::chromeos::cros_healthd::mojom::AudioCard::alsa_id)& alsa_id(
+      const ::chromeos::cros_healthd::mojom::AudioCardPtr& input) {
+    return input->alsa_id;
+  }
+
+  static const decltype(::chromeos::cros_healthd::mojom::AudioCard::bus_device)& bus_device(
+      const ::chromeos::cros_healthd::mojom::AudioCardPtr& input) {
+    return input->bus_device;
+  }
+
+  static const decltype(::chromeos::cros_healthd::mojom::AudioCard::hd_audio_codecs)& hd_audio_codecs(
+      const ::chromeos::cros_healthd::mojom::AudioCardPtr& input) {
+    return input->hd_audio_codecs;
+  }
+
+  static bool Read(::chromeos::cros_healthd::mojom::AudioCard::DataView input, ::chromeos::cros_healthd::mojom::AudioCardPtr* output);
+};
+
+
+template <>
+struct  StructTraits<::chromeos::cros_healthd::mojom::HDAudioCodec::DataView,
+                                         ::chromeos::cros_healthd::mojom::HDAudioCodecPtr> {
+  static bool IsNull(const ::chromeos::cros_healthd::mojom::HDAudioCodecPtr& input) { return !input; }
+  static void SetToNull(::chromeos::cros_healthd::mojom::HDAudioCodecPtr* output) { output->reset(); }
+
+  static const decltype(::chromeos::cros_healthd::mojom::HDAudioCodec::name)& name(
+      const ::chromeos::cros_healthd::mojom::HDAudioCodecPtr& input) {
+    return input->name;
+  }
+
+  static decltype(::chromeos::cros_healthd::mojom::HDAudioCodec::address) address(
+      const ::chromeos::cros_healthd::mojom::HDAudioCodecPtr& input) {
+    return input->address;
+  }
+
+  static bool Read(::chromeos::cros_healthd::mojom::HDAudioCodec::DataView input, ::chromeos::cros_healthd::mojom::HDAudioCodecPtr* output);
+};
+
+
+template <>
 struct  StructTraits<::chromeos::cros_healthd::mojom::BootPerformanceInfo::DataView,
                                          ::chromeos::cros_healthd::mojom::BootPerformanceInfoPtr> {
   static bool IsNull(const ::chromeos::cros_healthd::mojom::BootPerformanceInfoPtr& input) { return !input; }
@@ -18052,6 +18836,11 @@ struct  StructTraits<::chromeos::cros_healthd::mojom::TelemetryInfo::DataView,
     return input->input_result;
   }
 
+  static const decltype(::chromeos::cros_healthd::mojom::TelemetryInfo::audio_hardware_result)& audio_hardware_result(
+      const ::chromeos::cros_healthd::mojom::TelemetryInfoPtr& input) {
+    return input->audio_hardware_result;
+  }
+
   static bool Read(::chromeos::cros_healthd::mojom::TelemetryInfo::DataView input, ::chromeos::cros_healthd::mojom::TelemetryInfoPtr* output);
 };
 
@@ -18509,6 +19298,32 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::AudioResult::DataView,
   }
 
   static bool Read(::chromeos::cros_healthd::mojom::AudioResult::DataView input, ::chromeos::cros_healthd::mojom::AudioResultPtr* output);
+};
+
+
+template <>
+struct  UnionTraits<::chromeos::cros_healthd::mojom::AudioHardwareResult::DataView,
+                                        ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr> {
+  static bool IsNull(const ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr& input) { return !input; }
+  static void SetToNull(::chromeos::cros_healthd::mojom::AudioHardwareResultPtr* output) { output->reset(); }
+
+  static ::chromeos::cros_healthd::mojom::AudioHardwareResult::Tag GetTag(const ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr& input) {
+    return input->which();
+  }
+
+  static  bool unmapped_field0(const ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr& input) {
+    return input->get_unmapped_field0();
+  }
+
+  static const ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr& audio_hardware_info(const ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr& input) {
+    return input->get_audio_hardware_info();
+  }
+
+  static const ::chromeos::cros_healthd::mojom::ProbeErrorPtr& error(const ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr& input) {
+    return input->get_error();
+  }
+
+  static bool Read(::chromeos::cros_healthd::mojom::AudioHardwareResult::DataView input, ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr* output);
 };
 
 

@@ -1,25 +1,25 @@
 {
 	"package": "c8e45ee143fbbacc5850b8413751d945a521d53a7972e0acc3d4c8d68221e0ef",
 	"files": {
-		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
 		"Cargo.toml": "658937d50bbfd09d2a60772f299cda34cd8a7672076208b803dfa9726907cf29",
 		"src/lib.rs": "0be08c5b180e66f46749a3435caecbe763bca2a13d43b73bdc00bd9ad1242239",
-		"src/bindings/client/org_chromium_authpolicy.rs": "7fdd12522a2cfaee176700c912862f5da0ad0900315417b8f78d61a75ecf968f",
 		"src/bindings/client/org_chromium_sessionmanagerinterface.rs": "b964d553f62f9fb25774160f945ca89dec65c2e3ead48cb5950673c0322b2f87",
-		"src/bindings/client/org_chromium_power_manager.rs": "c80810ef5a9aca5ef006e48823814f019fa4593746711bebd7447e8fbfbcc819",
-		"src/bindings/client/org_chromium_debugd.rs": "cb4a7da9e0e3c964a62fc60c58dfc649ba8dbffbd1db086cb840f81b092c281b",
-		"src/bindings/client/org_chromium_userdataauth.rs": "ff6bf447d3bc806262091ffc8dda42f5bc357c17a0b7240399f801dac1f94284",
-		"src/bindings/client/org_chromium_flimflam_manager.rs": "806b693e170a728be72eea5f12f4f3edaa79c494a2e5577a8fc4299a6894c4e5",
 		"src/bindings/client/org_chromium_vtpm.rs": "2fe321efb81b496a3d418b2e0a7c1fb1b9323a63459e1c42c5d67399a3833455",
+		"src/bindings/client/org_chromium_authpolicy.rs": "7fdd12522a2cfaee176700c912862f5da0ad0900315417b8f78d61a75ecf968f",
+		"src/bindings/client/org_chromium_power_manager.rs": "c80810ef5a9aca5ef006e48823814f019fa4593746711bebd7447e8fbfbcc819",
 		"src/bindings/client/org_chromium_flimflam_service.rs": "30e85b38f5ee4fba7135d2d73829a0842f05da90f72acb50d3a88a155638ad4d",
+		"src/bindings/client/org_chromium_flimflam_manager.rs": "806b693e170a728be72eea5f12f4f3edaa79c494a2e5577a8fc4299a6894c4e5",
+		"src/bindings/client/org_chromium_userdataauth.rs": "ff6bf447d3bc806262091ffc8dda42f5bc357c17a0b7240399f801dac1f94284",
+		"src/bindings/client/org_chromium_debugd.rs": "cb4a7da9e0e3c964a62fc60c58dfc649ba8dbffbd1db086cb840f81b092c281b",
 		"src/bindings/include_modules.rs": "f7a282f258b36a6e7a62acecab729dfeb5c604145245c0c61dffd99e16b3b2e9",
 		"src/OWNERS": "268c5667b34ea8686da836537bec5d4a1dd92e1bcc1c02b023ff8805b0dddb21",
-		"src/protos/rpc.rs": "e10812231c6c775798ab19e705a04767662254e8e2664da14145f3c1ba6227ba",
-		"src/protos/vtpm_interface.rs": "d29a48b7a2ba3a14b87b552deecd32772f6ae96f57428415ddcba1ca482b60b5",
-		"src/protos/auth_factor.rs": "4b8bf7f197158035354a3f5c2732b86c83d1cbd7b9656e85bbe96ec84548b0c1",
-		"src/protos/UserDataAuth.rs": "cda28a2245f9eac403ea5e9bea946a4ecac0e511dec8116224678600224eb11f",
-		"src/protos/fido.rs": "f2e2e1e52320ff65c97a2b883437bef59225f7ea4b96eef68f0764d745369a0f",
 		"src/protos/include_protos.rs": "00f5c924716a38885e14f730b3732171d399d226ea088555a4223a5aa055aa38",
-		"src/protos/key.rs": "3cf3877f30c3679f88f58ca25baf18182828b7a159b73a9ea46297fad54816c5"
+		"src/protos/rpc.rs": "e10812231c6c775798ab19e705a04767662254e8e2664da14145f3c1ba6227ba",
+		"src/protos/auth_factor.rs": "4b8bf7f197158035354a3f5c2732b86c83d1cbd7b9656e85bbe96ec84548b0c1",
+		"src/protos/vtpm_interface.rs": "d29a48b7a2ba3a14b87b552deecd32772f6ae96f57428415ddcba1ca482b60b5",
+		"src/protos/UserDataAuth.rs": "cda28a2245f9eac403ea5e9bea946a4ecac0e511dec8116224678600224eb11f",
+		"src/protos/key.rs": "3cf3877f30c3679f88f58ca25baf18182828b7a159b73a9ea46297fad54816c5",
+		"src/protos/fido.rs": "f2e2e1e52320ff65c97a2b883437bef59225f7ea4b96eef68f0764d745369a0f",
+		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6"
 	}
 }

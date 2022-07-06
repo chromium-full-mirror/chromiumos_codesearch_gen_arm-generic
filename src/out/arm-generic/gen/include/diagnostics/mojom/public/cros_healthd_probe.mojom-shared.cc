@@ -93,6 +93,8 @@ static NOINLINE const char* ProbeCategoryEnumToStringHelper(ProbeCategoryEnum va
       return "kNetworkInterface";
     case ProbeCategoryEnum::kInput:
       return "kInput";
+    case ProbeCategoryEnum::kAudioHardware:
+      return "kAudioHardware";
     case ProbeCategoryEnum::kSystem2:
       return "kSystem2";
     default:
@@ -333,6 +335,8 @@ static NOINLINE const char* BusDeviceClassToStringHelper(BusDeviceClass value) {
       return "kBluetoothAdapter";
     case BusDeviceClass::kThunderboltController:
       return "kThunderboltController";
+    case BusDeviceClass::kAudioCard:
+      return "kAudioCard";
     default:
       return nullptr;
   }
@@ -1713,6 +1717,67 @@ bool AudioResult_Data::Validate(
           validation_context,
           mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
           "unknown tag in AudioResult");
+      return false;
+    }
+  }
+}
+// static
+bool AudioHardwareResult_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context,
+    bool inlined) {
+  if (!data) {
+    DCHECK(!inlined);
+    return true;
+  }
+
+  // If it is inlined, the alignment is already enforced by its enclosing
+  // object. We don't have to validate that.
+  DCHECK(!inlined || mojo::internal::IsAligned(data));
+
+  if (!inlined &&
+      !mojo::internal::ValidateNonInlinedUnionHeaderAndClaimMemory(
+          data, validation_context)) {
+    return false;
+  }
+
+  const AudioHardwareResult_Data* object = static_cast<const AudioHardwareResult_Data*>(data);
+
+  if (inlined && object->is_null())
+    return true;
+
+  switch (object->tag) {
+
+    case AudioHardwareResult_Tag::UNMAPPED_FIELD0: {
+
+      return true;
+    }
+    case AudioHardwareResult_Tag::AUDIO_HARDWARE_INFO: {
+
+      if (!mojo::internal::ValidatePointerNonNullable(
+              object->data.f_audio_hardware_info, 2, validation_context)) {
+        return false;
+      }
+      if (!mojo::internal::ValidateStruct(object->data.f_audio_hardware_info, validation_context))
+        return false;
+      return true;
+    }
+    case AudioHardwareResult_Tag::ERROR: {
+
+      if (!mojo::internal::ValidatePointerNonNullable(
+              object->data.f_error, 3, validation_context)) {
+        return false;
+      }
+      if (!mojo::internal::ValidateStruct(object->data.f_error, validation_context))
+        return false;
+      return true;
+    }
+    default: {
+
+      ReportValidationError(
+          validation_context,
+          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
+          "unknown tag in AudioHardwareResult");
       return false;
     }
   }
@@ -3706,6 +3771,122 @@ AudioInfo_Data::AudioInfo_Data()
 
 
 // static
+bool AudioHardwareInfo_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 16, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const AudioHardwareInfo_Data* object =
+      static_cast<const AudioHardwareInfo_Data*>(data);
+
+  if (!mojo::internal::ValidatePointerNonNullable(
+          object->audio_cards, 1, validation_context)) {
+    return false;
+  }
+  const mojo::internal::ContainerValidateParams audio_cards_validate_params(
+      0, false, nullptr);
+  if (!mojo::internal::ValidateContainer(object->audio_cards, validation_context,
+                                         &audio_cards_validate_params)) {
+    return false;
+  }
+
+  return true;
+}
+
+AudioHardwareInfo_Data::AudioHardwareInfo_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
+bool AudioCard_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 32, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const AudioCard_Data* object =
+      static_cast<const AudioCard_Data*>(data);
+
+  if (!mojo::internal::ValidatePointerNonNullable(
+          object->alsa_id, 1, validation_context)) {
+    return false;
+  }
+  const mojo::internal::ContainerValidateParams alsa_id_validate_params(
+      0, false, nullptr);
+  if (!mojo::internal::ValidateContainer(object->alsa_id, validation_context,
+                                         &alsa_id_validate_params)) {
+    return false;
+  }
+
+  if (!mojo::internal::ValidateStruct(object->bus_device, validation_context))
+    return false;
+
+  if (!mojo::internal::ValidatePointerNonNullable(
+          object->hd_audio_codecs, 3, validation_context)) {
+    return false;
+  }
+  const mojo::internal::ContainerValidateParams hd_audio_codecs_validate_params(
+      0, false, nullptr);
+  if (!mojo::internal::ValidateContainer(object->hd_audio_codecs, validation_context,
+                                         &hd_audio_codecs_validate_params)) {
+    return false;
+  }
+
+  return true;
+}
+
+AudioCard_Data::AudioCard_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
+bool HDAudioCodec_Data::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  if (!data)
+    return true;
+  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
+          data, 24, validation_context)) {
+    return false;
+  }
+
+  // NOTE: The memory backing |object| may be smaller than |sizeof(*object)| if
+  // the message comes from an older version.
+  [[maybe_unused]] const HDAudioCodec_Data* object =
+      static_cast<const HDAudioCodec_Data*>(data);
+
+  if (!mojo::internal::ValidatePointerNonNullable(
+          object->name, 1, validation_context)) {
+    return false;
+  }
+  const mojo::internal::ContainerValidateParams name_validate_params(
+      0, false, nullptr);
+  if (!mojo::internal::ValidateContainer(object->name, validation_context,
+                                         &name_validate_params)) {
+    return false;
+  }
+
+  return true;
+}
+
+HDAudioCodec_Data::HDAudioCodec_Data()
+    : header_({sizeof(*this), 0}) {}
+
+
+// static
 bool BootPerformanceInfo_Data::Validate(
     const void* data,
     mojo::internal::ValidationContext* validation_context) {
@@ -4811,6 +4992,7 @@ bool TelemetryInfo_Data::Validate(
     { 1, 296 },
     { 2, 312 },
     { 3, 328 },
+    { 4, 344 },
   };
   if (!ValidateStructHeaderAndVersionSizeAndClaimMemory(
           data, kVersionSizes, validation_context)) {
@@ -4887,12 +5069,17 @@ bool TelemetryInfo_Data::Validate(
 
   if (!mojo::internal::ValidateInlinedUnion(object->input_result, validation_context))
     return false;
+  if (object->header_.version < 4)
+    return true;
+
+  if (!mojo::internal::ValidateInlinedUnion(object->audio_hardware_result, validation_context))
+    return false;
 
   return true;
 }
 
 TelemetryInfo_Data::TelemetryInfo_Data()
-    : header_({sizeof(*this), 3}) {}
+    : header_({sizeof(*this), 4}) {}
 
 }  // namespace internal
 }  // namespace mojom

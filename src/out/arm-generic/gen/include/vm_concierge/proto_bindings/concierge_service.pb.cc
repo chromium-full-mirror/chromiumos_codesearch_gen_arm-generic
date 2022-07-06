@@ -3463,8 +3463,8 @@ StartVmRequest::StartVmRequest(const StartVmRequest& from)
     vm_ = nullptr;
   }
   ::memcpy(&start_termina_, &from.start_termina_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timeout_) -
-    reinterpret_cast<char*>(&start_termina_)) + sizeof(timeout_));
+    static_cast<size_t>(reinterpret_cast<char*>(&vtpm_proxy_) -
+    reinterpret_cast<char*>(&start_termina_)) + sizeof(vtpm_proxy_));
   // @@protoc_insertion_point(copy_constructor:vm_tools.concierge.StartVmRequest)
 }
 
@@ -3474,8 +3474,8 @@ void StartVmRequest::SharedCtor() {
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   owner_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&vm_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timeout_) -
-      reinterpret_cast<char*>(&vm_)) + sizeof(timeout_));
+      reinterpret_cast<char*>(&vtpm_proxy_) -
+      reinterpret_cast<char*>(&vm_)) + sizeof(vtpm_proxy_));
 }
 
 StartVmRequest::~StartVmRequest() {
@@ -3517,8 +3517,8 @@ void StartVmRequest::Clear() {
   }
   vm_ = nullptr;
   ::memset(&start_termina_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timeout_) -
-      reinterpret_cast<char*>(&start_termina_)) + sizeof(timeout_));
+      reinterpret_cast<char*>(&vtpm_proxy_) -
+      reinterpret_cast<char*>(&start_termina_)) + sizeof(vtpm_proxy_));
   _internal_metadata_.Clear();
 }
 
@@ -3681,6 +3681,13 @@ const char* StartVmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           _internal_add_features(static_cast<::vm_tools::concierge::StartVmRequest_TerminaFeature>(val));
         } else goto handle_unusual;
         continue;
+      // bool vtpm_proxy = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 176)) {
+          vtpm_proxy_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -3841,6 +3848,12 @@ failure:
     }
   }
 
+  // bool vtpm_proxy = 22;
+  if (this->vtpm_proxy() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(22, this->_internal_vtpm_proxy(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
         static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
@@ -3990,6 +4003,11 @@ size_t StartVmRequest::ByteSizeLong() const {
         this->_internal_timeout());
   }
 
+  // bool vtpm_proxy = 22;
+  if (this->vtpm_proxy() != 0) {
+    total_size += 2 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields().size();
   }
@@ -4060,6 +4078,9 @@ void StartVmRequest::MergeFrom(const StartVmRequest& from) {
   if (from.timeout() != 0) {
     _internal_set_timeout(from._internal_timeout());
   }
+  if (from.vtpm_proxy() != 0) {
+    _internal_set_vtpm_proxy(from._internal_vtpm_proxy());
+  }
 }
 
 void StartVmRequest::CopyFrom(const StartVmRequest& from) {
@@ -4097,6 +4118,7 @@ void StartVmRequest::InternalSwap(StartVmRequest* other) {
   swap(enable_vulkan_, other->enable_vulkan_);
   swap(enable_big_gl_, other->enable_big_gl_);
   swap(timeout_, other->timeout_);
+  swap(vtpm_proxy_, other->vtpm_proxy_);
 }
 
 std::string StartVmRequest::GetTypeName() const {
@@ -4535,15 +4557,15 @@ BalloonPolicyOptions::BalloonPolicyOptions(const BalloonPolicyOptions& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&reclaim_target_cache_, &from.reclaim_target_cache_,
-    static_cast<size_t>(reinterpret_cast<char*>(&moderate_target_cache_) -
-    reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(moderate_target_cache_));
+    static_cast<size_t>(reinterpret_cast<char*>(&responsive_max_deflate_bytes_) -
+    reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(responsive_max_deflate_bytes_));
   // @@protoc_insertion_point(copy_constructor:vm_tools.concierge.BalloonPolicyOptions)
 }
 
 void BalloonPolicyOptions::SharedCtor() {
   ::memset(&reclaim_target_cache_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&moderate_target_cache_) -
-      reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(moderate_target_cache_));
+      reinterpret_cast<char*>(&responsive_max_deflate_bytes_) -
+      reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(responsive_max_deflate_bytes_));
 }
 
 BalloonPolicyOptions::~BalloonPolicyOptions() {
@@ -4570,8 +4592,8 @@ void BalloonPolicyOptions::Clear() {
   (void) cached_has_bits;
 
   ::memset(&reclaim_target_cache_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&moderate_target_cache_) -
-      reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(moderate_target_cache_));
+      reinterpret_cast<char*>(&responsive_max_deflate_bytes_) -
+      reinterpret_cast<char*>(&reclaim_target_cache_)) + sizeof(responsive_max_deflate_bytes_));
   _internal_metadata_.Clear();
 }
 
@@ -4600,6 +4622,27 @@ const char* BalloonPolicyOptions::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           moderate_target_cache_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool responsive = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          responsive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 responsive_timeout_ms = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          responsive_timeout_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 responsive_max_deflate_bytes = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          responsive_max_deflate_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4647,6 +4690,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_moderate_target_cache(), target);
   }
 
+  // bool responsive = 4;
+  if (this->responsive() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_responsive(), target);
+  }
+
+  // int32 responsive_timeout_ms = 5;
+  if (this->responsive_timeout_ms() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(5, this->_internal_responsive_timeout_ms(), target);
+  }
+
+  // int64 responsive_max_deflate_bytes = 6;
+  if (this->responsive_max_deflate_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_responsive_max_deflate_bytes(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
         static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
@@ -4684,6 +4745,25 @@ size_t BalloonPolicyOptions::ByteSizeLong() const {
         this->_internal_moderate_target_cache());
   }
 
+  // bool responsive = 4;
+  if (this->responsive() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int32 responsive_timeout_ms = 5;
+  if (this->responsive_timeout_ms() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_responsive_timeout_ms());
+  }
+
+  // int64 responsive_max_deflate_bytes = 6;
+  if (this->responsive_max_deflate_bytes() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_responsive_max_deflate_bytes());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields().size();
   }
@@ -4714,6 +4794,15 @@ void BalloonPolicyOptions::MergeFrom(const BalloonPolicyOptions& from) {
   if (from.moderate_target_cache() != 0) {
     _internal_set_moderate_target_cache(from._internal_moderate_target_cache());
   }
+  if (from.responsive() != 0) {
+    _internal_set_responsive(from._internal_responsive());
+  }
+  if (from.responsive_timeout_ms() != 0) {
+    _internal_set_responsive_timeout_ms(from._internal_responsive_timeout_ms());
+  }
+  if (from.responsive_max_deflate_bytes() != 0) {
+    _internal_set_responsive_max_deflate_bytes(from._internal_responsive_max_deflate_bytes());
+  }
 }
 
 void BalloonPolicyOptions::CopyFrom(const BalloonPolicyOptions& from) {
@@ -4733,6 +4822,9 @@ void BalloonPolicyOptions::InternalSwap(BalloonPolicyOptions* other) {
   swap(reclaim_target_cache_, other->reclaim_target_cache_);
   swap(critical_target_cache_, other->critical_target_cache_);
   swap(moderate_target_cache_, other->moderate_target_cache_);
+  swap(responsive_, other->responsive_);
+  swap(responsive_timeout_ms_, other->responsive_timeout_ms_);
+  swap(responsive_max_deflate_bytes_, other->responsive_max_deflate_bytes_);
 }
 
 std::string BalloonPolicyOptions::GetTypeName() const {
@@ -5003,6 +5095,13 @@ const char* StartArcVmRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           _internal_set_panel_orientation(static_cast<::vm_tools::concierge::StartArcVmRequest_DisplayOrientation>(val));
         } else goto handle_unusual;
         continue;
+      // bool lock_guest_memory = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+          lock_guest_memory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -5154,6 +5253,12 @@ failure:
       17, this->_internal_panel_orientation(), target);
   }
 
+  // bool lock_guest_memory = 18;
+  if (this->lock_guest_memory() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(18, this->_internal_lock_guest_memory(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
         static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
@@ -5271,6 +5376,11 @@ size_t StartArcVmRequest::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
+  // bool lock_guest_memory = 18;
+  if (this->lock_guest_memory() != 0) {
+    total_size += 2 + 1;
+  }
+
   // .vm_tools.concierge.StartArcVmRequest.DisplayOrientation panel_orientation = 17;
   if (this->panel_orientation() != 0) {
     total_size += 2 +
@@ -5345,6 +5455,9 @@ void StartArcVmRequest::MergeFrom(const StartArcVmRequest& from) {
   if (from.enable_consumer_auto_update_toggle() != 0) {
     _internal_set_enable_consumer_auto_update_toggle(from._internal_enable_consumer_auto_update_toggle());
   }
+  if (from.lock_guest_memory() != 0) {
+    _internal_set_lock_guest_memory(from._internal_lock_guest_memory());
+  }
   if (from.panel_orientation() != 0) {
     _internal_set_panel_orientation(from._internal_panel_orientation());
   }
@@ -5383,6 +5496,7 @@ void StartArcVmRequest::InternalSwap(StartArcVmRequest* other) {
   swap(rootfs_block_size_, other->rootfs_block_size_);
   swap(use_per_vm_core_scheduling_, other->use_per_vm_core_scheduling_);
   swap(enable_consumer_auto_update_toggle_, other->enable_consumer_auto_update_toggle_);
+  swap(lock_guest_memory_, other->lock_guest_memory_);
   swap(panel_orientation_, other->panel_orientation_);
 }
 

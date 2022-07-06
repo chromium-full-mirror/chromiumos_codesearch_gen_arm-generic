@@ -2166,6 +2166,7 @@ class ContainerStartedSignal :
     kContainerUsernameFieldNumber = 4,
     kContainerHomedirFieldNumber = 5,
     kIpv4AddressFieldNumber = 6,
+    kSftpVsockPortFieldNumber = 7,
   };
   // string vm_name = 1;
   void clear_vm_name();
@@ -2263,6 +2264,15 @@ class ContainerStartedSignal :
   std::string* _internal_mutable_ipv4_address();
   public:
 
+  // uint32 sftp_vsock_port = 7;
+  void clear_sftp_vsock_port();
+  ::PROTOBUF_NAMESPACE_ID::uint32 sftp_vsock_port() const;
+  void set_sftp_vsock_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_sftp_vsock_port() const;
+  void _internal_set_sftp_vsock_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vm_tools.cicerone.ContainerStartedSignal)
  private:
   class _Internal;
@@ -2274,6 +2284,7 @@ class ContainerStartedSignal :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr container_username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr container_homedir_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ipv4_address_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 sftp_vsock_port_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_cicerone_5fservice_2eproto;
 };
@@ -16799,6 +16810,26 @@ inline void ContainerStartedSignal::set_allocated_ipv4_address(std::string* ipv4
   }
   ipv4_address_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ipv4_address);
   // @@protoc_insertion_point(field_set_allocated:vm_tools.cicerone.ContainerStartedSignal.ipv4_address)
+}
+
+// uint32 sftp_vsock_port = 7;
+inline void ContainerStartedSignal::clear_sftp_vsock_port() {
+  sftp_vsock_port_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerStartedSignal::_internal_sftp_vsock_port() const {
+  return sftp_vsock_port_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerStartedSignal::sftp_vsock_port() const {
+  // @@protoc_insertion_point(field_get:vm_tools.cicerone.ContainerStartedSignal.sftp_vsock_port)
+  return _internal_sftp_vsock_port();
+}
+inline void ContainerStartedSignal::_internal_set_sftp_vsock_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  sftp_vsock_port_ = value;
+}
+inline void ContainerStartedSignal::set_sftp_vsock_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_sftp_vsock_port(value);
+  // @@protoc_insertion_point(field_set:vm_tools.cicerone.ContainerStartedSignal.sftp_vsock_port)
 }
 
 // -------------------------------------------------------------------

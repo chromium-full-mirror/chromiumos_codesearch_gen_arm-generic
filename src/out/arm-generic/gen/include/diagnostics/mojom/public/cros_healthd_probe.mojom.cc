@@ -2943,6 +2943,131 @@ bool AudioInfo::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context);
 }
+AudioHardwareInfo::AudioHardwareInfo()
+    : audio_cards() {}
+
+AudioHardwareInfo::AudioHardwareInfo(
+    std::vector<AudioCardPtr> audio_cards_in)
+    : audio_cards(std::move(audio_cards_in)) {}
+
+AudioHardwareInfo::~AudioHardwareInfo() = default;
+
+void AudioHardwareInfo::WriteIntoTrace(
+    perfetto::libchrome::TracedValue traced_context) const {
+  auto dict = std::move(traced_context).WriteDictionary();
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "audio_cards"), this->audio_cards,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type std::vector<AudioCardPtr>>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+}
+
+bool AudioHardwareInfo::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context);
+}
+AudioCard::AudioCard()
+    : alsa_id(),
+      bus_device(),
+      hd_audio_codecs() {}
+
+AudioCard::AudioCard(
+    const std::string& alsa_id_in,
+    BusDevicePtr bus_device_in,
+    std::vector<HDAudioCodecPtr> hd_audio_codecs_in)
+    : alsa_id(std::move(alsa_id_in)),
+      bus_device(std::move(bus_device_in)),
+      hd_audio_codecs(std::move(hd_audio_codecs_in)) {}
+
+AudioCard::~AudioCard() = default;
+
+void AudioCard::WriteIntoTrace(
+    perfetto::libchrome::TracedValue traced_context) const {
+  auto dict = std::move(traced_context).WriteDictionary();
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "alsa_id"), this->alsa_id,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type const std::string&>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "bus_device"), this->bus_device,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type BusDevicePtr>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "hd_audio_codecs"), this->hd_audio_codecs,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type std::vector<HDAudioCodecPtr>>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+}
+
+bool AudioCard::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context);
+}
+HDAudioCodec::HDAudioCodec()
+    : name(),
+      address() {}
+
+HDAudioCodec::HDAudioCodec(
+    const std::string& name_in,
+    uint8_t address_in)
+    : name(std::move(name_in)),
+      address(std::move(address_in)) {}
+
+HDAudioCodec::~HDAudioCodec() = default;
+size_t HDAudioCodec::Hash(size_t seed) const {
+  seed = mojo::internal::Hash(seed, this->name);
+  seed = mojo::internal::Hash(seed, this->address);
+  return seed;
+}
+
+void HDAudioCodec::WriteIntoTrace(
+    perfetto::libchrome::TracedValue traced_context) const {
+  auto dict = std::move(traced_context).WriteDictionary();
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "name"), this->name,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type const std::string&>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "address"), this->address,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type uint8_t>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+}
+
+bool HDAudioCodec::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context);
+}
 BootPerformanceInfo::BootPerformanceInfo()
     : boot_up_seconds(),
       boot_up_timestamp(),
@@ -4869,7 +4994,8 @@ TelemetryInfo::TelemetryInfo()
       graphics_result(),
       display_result(),
       network_interface_result(),
-      input_result() {}
+      input_result(),
+      audio_hardware_result() {}
 
 TelemetryInfo::TelemetryInfo(
     BatteryResultPtr battery_result_in,
@@ -4908,7 +5034,8 @@ TelemetryInfo::TelemetryInfo(
       graphics_result(std::move(graphics_result_in)),
       display_result(),
       network_interface_result(),
-      input_result() {}
+      input_result(),
+      audio_hardware_result() {}
 
 TelemetryInfo::TelemetryInfo(
     BatteryResultPtr battery_result_in,
@@ -4948,7 +5075,8 @@ TelemetryInfo::TelemetryInfo(
       graphics_result(std::move(graphics_result_in)),
       display_result(std::move(display_result_in)),
       network_interface_result(),
-      input_result() {}
+      input_result(),
+      audio_hardware_result() {}
 
 TelemetryInfo::TelemetryInfo(
     BatteryResultPtr battery_result_in,
@@ -4989,7 +5117,8 @@ TelemetryInfo::TelemetryInfo(
       graphics_result(std::move(graphics_result_in)),
       display_result(std::move(display_result_in)),
       network_interface_result(std::move(network_interface_result_in)),
-      input_result() {}
+      input_result(),
+      audio_hardware_result() {}
 
 TelemetryInfo::TelemetryInfo(
     BatteryResultPtr battery_result_in,
@@ -5031,7 +5160,52 @@ TelemetryInfo::TelemetryInfo(
       graphics_result(std::move(graphics_result_in)),
       display_result(std::move(display_result_in)),
       network_interface_result(std::move(network_interface_result_in)),
-      input_result(std::move(input_result_in)) {}
+      input_result(std::move(input_result_in)),
+      audio_hardware_result() {}
+
+TelemetryInfo::TelemetryInfo(
+    BatteryResultPtr battery_result_in,
+    NonRemovableBlockDeviceResultPtr block_device_result_in,
+    CpuResultPtr cpu_result_in,
+    TimezoneResultPtr timezone_result_in,
+    MemoryResultPtr memory_result_in,
+    BacklightResultPtr backlight_result_in,
+    FanResultPtr fan_result_in,
+    StatefulPartitionResultPtr stateful_partition_result_in,
+    BluetoothResultPtr bluetooth_result_in,
+    SystemResultPtr system_result_in,
+    NetworkResultPtr network_result_in,
+    AudioResultPtr audio_result_in,
+    BootPerformanceResultPtr boot_performance_result_in,
+    BusResultPtr bus_result_in,
+    SystemResultV2Ptr system_result_v2_in,
+    TpmResultPtr tpm_result_in,
+    GraphicsResultPtr graphics_result_in,
+    DisplayResultPtr display_result_in,
+    NetworkInterfaceResultPtr network_interface_result_in,
+    InputResultPtr input_result_in,
+    AudioHardwareResultPtr audio_hardware_result_in)
+    : battery_result(std::move(battery_result_in)),
+      block_device_result(std::move(block_device_result_in)),
+      cpu_result(std::move(cpu_result_in)),
+      timezone_result(std::move(timezone_result_in)),
+      memory_result(std::move(memory_result_in)),
+      backlight_result(std::move(backlight_result_in)),
+      fan_result(std::move(fan_result_in)),
+      stateful_partition_result(std::move(stateful_partition_result_in)),
+      bluetooth_result(std::move(bluetooth_result_in)),
+      system_result(std::move(system_result_in)),
+      network_result(std::move(network_result_in)),
+      audio_result(std::move(audio_result_in)),
+      boot_performance_result(std::move(boot_performance_result_in)),
+      bus_result(std::move(bus_result_in)),
+      system_result_v2(std::move(system_result_v2_in)),
+      tpm_result(std::move(tpm_result_in)),
+      graphics_result(std::move(graphics_result_in)),
+      display_result(std::move(display_result_in)),
+      network_interface_result(std::move(network_interface_result_in)),
+      input_result(std::move(input_result_in)),
+      audio_hardware_result(std::move(audio_hardware_result_in)) {}
 
 TelemetryInfo::~TelemetryInfo() = default;
 
@@ -5214,6 +5388,15 @@ void TelemetryInfo::WriteIntoTrace(
       "input_result"), this->input_result,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
       "<value of type InputResultPtr>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "audio_hardware_result"), this->audio_hardware_result,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type AudioHardwareResultPtr>"
 #else
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -6367,6 +6550,68 @@ bool AudioResult::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context, false);
 }
+AudioHardwareResult::AudioHardwareResult() : tag_(Tag::UNMAPPED_FIELD0) {
+  data_.unmapped_field0 = bool();
+}
+
+AudioHardwareResult::~AudioHardwareResult() {
+  DestroyActive();
+}
+
+
+void AudioHardwareResult::set_unmapped_field0(
+    bool unmapped_field0) {
+  if (tag_ != Tag::UNMAPPED_FIELD0) {
+    DestroyActive();
+    tag_ = Tag::UNMAPPED_FIELD0;
+  }
+  data_.unmapped_field0 = unmapped_field0;
+}
+void AudioHardwareResult::set_audio_hardware_info(
+    AudioHardwareInfoPtr audio_hardware_info) {
+  if (tag_ == Tag::AUDIO_HARDWARE_INFO) {
+    *(data_.audio_hardware_info) = std::move(audio_hardware_info);
+  } else {
+    DestroyActive();
+    tag_ = Tag::AUDIO_HARDWARE_INFO;
+    data_.audio_hardware_info = new AudioHardwareInfoPtr(
+        std::move(audio_hardware_info));
+  }
+}
+void AudioHardwareResult::set_error(
+    ProbeErrorPtr error) {
+  if (tag_ == Tag::ERROR) {
+    *(data_.error) = std::move(error);
+  } else {
+    DestroyActive();
+    tag_ = Tag::ERROR;
+    data_.error = new ProbeErrorPtr(
+        std::move(error));
+  }
+}
+
+void AudioHardwareResult::DestroyActive() {
+  switch (tag_) {
+
+    case Tag::UNMAPPED_FIELD0:
+
+      break;
+    case Tag::AUDIO_HARDWARE_INFO:
+
+      delete data_.audio_hardware_info;
+      break;
+    case Tag::ERROR:
+
+      delete data_.error;
+      break;
+  }
+}
+
+bool AudioHardwareResult::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context, false);
+}
 BootPerformanceResult::BootPerformanceResult() : tag_(Tag::BOOT_PERFORMANCE_INFO) {
   data_.boot_performance_info = new BootPerformanceInfoPtr;
 }
@@ -7499,6 +7744,54 @@ bool StructTraits<::chromeos::cros_healthd::mojom::AudioInfo::DataView, ::chrome
 
 
 // static
+bool StructTraits<::chromeos::cros_healthd::mojom::AudioHardwareInfo::DataView, ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr>::Read(
+    ::chromeos::cros_healthd::mojom::AudioHardwareInfo::DataView input,
+    ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr* output) {
+  bool success = true;
+  ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr result(::chromeos::cros_healthd::mojom::AudioHardwareInfo::New());
+  
+      if (success && !input.ReadAudioCards(&result->audio_cards))
+        success = false;
+  *output = std::move(result);
+  return success;
+}
+
+
+// static
+bool StructTraits<::chromeos::cros_healthd::mojom::AudioCard::DataView, ::chromeos::cros_healthd::mojom::AudioCardPtr>::Read(
+    ::chromeos::cros_healthd::mojom::AudioCard::DataView input,
+    ::chromeos::cros_healthd::mojom::AudioCardPtr* output) {
+  bool success = true;
+  ::chromeos::cros_healthd::mojom::AudioCardPtr result(::chromeos::cros_healthd::mojom::AudioCard::New());
+  
+      if (success && !input.ReadAlsaId(&result->alsa_id))
+        success = false;
+      if (success && !input.ReadBusDevice(&result->bus_device))
+        success = false;
+      if (success && !input.ReadHdAudioCodecs(&result->hd_audio_codecs))
+        success = false;
+  *output = std::move(result);
+  return success;
+}
+
+
+// static
+bool StructTraits<::chromeos::cros_healthd::mojom::HDAudioCodec::DataView, ::chromeos::cros_healthd::mojom::HDAudioCodecPtr>::Read(
+    ::chromeos::cros_healthd::mojom::HDAudioCodec::DataView input,
+    ::chromeos::cros_healthd::mojom::HDAudioCodecPtr* output) {
+  bool success = true;
+  ::chromeos::cros_healthd::mojom::HDAudioCodecPtr result(::chromeos::cros_healthd::mojom::HDAudioCodec::New());
+  
+      if (success && !input.ReadName(&result->name))
+        success = false;
+      if (success)
+        result->address = input.address();
+  *output = std::move(result);
+  return success;
+}
+
+
+// static
 bool StructTraits<::chromeos::cros_healthd::mojom::BootPerformanceInfo::DataView, ::chromeos::cros_healthd::mojom::BootPerformanceInfoPtr>::Read(
     ::chromeos::cros_healthd::mojom::BootPerformanceInfo::DataView input,
     ::chromeos::cros_healthd::mojom::BootPerformanceInfoPtr* output) {
@@ -8052,6 +8345,8 @@ bool StructTraits<::chromeos::cros_healthd::mojom::TelemetryInfo::DataView, ::ch
       if (success && !input.ReadNetworkInterfaceResult(&result->network_interface_result))
         success = false;
       if (success && !input.ReadInputResult(&result->input_result))
+        success = false;
+      if (success && !input.ReadAudioHardwareResult(&result->audio_hardware_result))
         success = false;
   *output = std::move(result);
   return success;
@@ -8671,6 +8966,43 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::AudioResult::DataView, ::chrom
 
       *output = UnionType::NewAudioInfo(
           std::move(result_audio_info));
+      break;
+    }
+    case Tag::ERROR: {
+      ::chromeos::cros_healthd::mojom::ProbeErrorPtr result_error;
+      if (!input.ReadError(&result_error))
+        return false;
+
+      *output = UnionType::NewError(
+          std::move(result_error));
+      break;
+    }
+    default:
+
+      return false;
+  }
+  return true;
+}
+
+// static
+bool UnionTraits<::chromeos::cros_healthd::mojom::AudioHardwareResult::DataView, ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr>::Read(
+    ::chromeos::cros_healthd::mojom::AudioHardwareResult::DataView input,
+    ::chromeos::cros_healthd::mojom::AudioHardwareResultPtr* output) {
+  using UnionType = ::chromeos::cros_healthd::mojom::AudioHardwareResult;
+  using Tag = UnionType::Tag;
+
+  switch (input.tag()) {
+    case Tag::UNMAPPED_FIELD0: {
+      *output = UnionType::NewUnmappedField0(input.unmapped_field0());
+      break;
+    }
+    case Tag::AUDIO_HARDWARE_INFO: {
+      ::chromeos::cros_healthd::mojom::AudioHardwareInfoPtr result_audio_hardware_info;
+      if (!input.ReadAudioHardwareInfo(&result_audio_hardware_info))
+        return false;
+
+      *output = UnionType::NewAudioHardwareInfo(
+          std::move(result_audio_hardware_info));
       break;
     }
     case Tag::ERROR: {

@@ -98,6 +98,12 @@ class WirelessLinkInfoDataView;
 
 class AudioInfoDataView;
 
+class AudioHardwareInfoDataView;
+
+class AudioCardDataView;
+
+class HDAudioCodecDataView;
+
 class BootPerformanceInfoDataView;
 
 class BusDeviceDataView;
@@ -166,6 +172,7 @@ class NetworkResultDataView;
 class NetworkInterfaceResultDataView;
 class NetworkInterfaceInfoDataView;
 class AudioResultDataView;
+class AudioHardwareResultDataView;
 class BootPerformanceResultDataView;
 class BusResultDataView;
 class BusInfoDataView;
@@ -395,6 +402,27 @@ struct MojomTypeTraits<::chromeos::cros_healthd::mojom::WirelessLinkInfoDataView
 template <>
 struct MojomTypeTraits<::chromeos::cros_healthd::mojom::AudioInfoDataView> {
   using Data = ::chromeos::cros_healthd::mojom::internal::AudioInfo_Data;
+  using DataAsArrayElement = Pointer<Data>;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
+};
+
+template <>
+struct MojomTypeTraits<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView> {
+  using Data = ::chromeos::cros_healthd::mojom::internal::AudioHardwareInfo_Data;
+  using DataAsArrayElement = Pointer<Data>;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
+};
+
+template <>
+struct MojomTypeTraits<::chromeos::cros_healthd::mojom::AudioCardDataView> {
+  using Data = ::chromeos::cros_healthd::mojom::internal::AudioCard_Data;
+  using DataAsArrayElement = Pointer<Data>;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
+};
+
+template <>
+struct MojomTypeTraits<::chromeos::cros_healthd::mojom::HDAudioCodecDataView> {
+  using Data = ::chromeos::cros_healthd::mojom::internal::HDAudioCodec_Data;
   using DataAsArrayElement = Pointer<Data>;
   static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
 };
@@ -708,6 +736,13 @@ struct MojomTypeTraits<::chromeos::cros_healthd::mojom::AudioResultDataView> {
 };
 
 template <>
+struct MojomTypeTraits<::chromeos::cros_healthd::mojom::AudioHardwareResultDataView> {
+  using Data = ::chromeos::cros_healthd::mojom::internal::AudioHardwareResult_Data;
+  using DataAsArrayElement = Data;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kUnion;
+};
+
+template <>
 struct MojomTypeTraits<::chromeos::cros_healthd::mojom::BootPerformanceResultDataView> {
   using Data = ::chromeos::cros_healthd::mojom::internal::BootPerformanceResult_Data;
   using DataAsArrayElement = Data;
@@ -833,6 +868,8 @@ enum class ProbeCategoryEnum : int32_t {
   kNetworkInterface = 18,
   
   kInput = 19,
+  
+  kAudioHardware = 20,
   
   kSystem2 = 65536,
   kMinValue = 0,
@@ -1051,8 +1088,10 @@ enum class BusDeviceClass : int32_t {
   kBluetoothAdapter = 4,
   
   kThunderboltController = 5,
+  
+  kAudioCard = 6,
   kMinValue = 0,
-  kMaxValue = 5,
+  kMaxValue = 6,
   kDefaultValue = 0
 };
 
@@ -3665,6 +3704,120 @@ class AudioInfoDataView {
 
 
 
+class AudioHardwareInfoDataView {
+ public:
+  AudioHardwareInfoDataView() = default;
+
+  AudioHardwareInfoDataView(
+      internal::AudioHardwareInfo_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const { return !data_; }
+  inline void GetAudioCardsDataView(
+      mojo::ArrayDataView<AudioCardDataView>* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadAudioCards(UserType* output) {
+    
+    auto* pointer = data_->audio_cards.Get();
+    return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::AudioCardDataView>>(
+        pointer, output, message_);
+  }
+ private:
+  internal::AudioHardwareInfo_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
+class AudioCardDataView {
+ public:
+  AudioCardDataView() = default;
+
+  AudioCardDataView(
+      internal::AudioCard_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const { return !data_; }
+  inline void GetAlsaIdDataView(
+      mojo::StringDataView* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadAlsaId(UserType* output) {
+    
+    auto* pointer = data_->alsa_id.Get();
+    return mojo::internal::Deserialize<mojo::StringDataView>(
+        pointer, output, message_);
+  }
+  inline void GetBusDeviceDataView(
+      BusDeviceDataView* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadBusDevice(UserType* output) {
+    
+static_assert(
+    mojo::internal::IsValidUserTypeForOptionalValue<
+        ::chromeos::cros_healthd::mojom::BusDeviceDataView, UserType>(),
+    "Attempting to read the optional `bus_device` field into a type which "
+    "cannot represent a null value. Either wrap the destination object "
+    "with absl::optional, ensure that any corresponding "
+    "{Struct/Union/Array/String}Traits define the necessary IsNull and "
+    "SetToNull methods, or use `MaybeReadBusDevice` instead "
+    "of `ReadBusDevice if you're fine with null values being "
+    "silently ignored in this case.");
+    auto* pointer = data_->bus_device.Get();
+    return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BusDeviceDataView>(
+        pointer, output, message_);
+  }
+  inline void GetHdAudioCodecsDataView(
+      mojo::ArrayDataView<HDAudioCodecDataView>* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadHdAudioCodecs(UserType* output) {
+    
+    auto* pointer = data_->hd_audio_codecs.Get();
+    return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::HDAudioCodecDataView>>(
+        pointer, output, message_);
+  }
+ private:
+  internal::AudioCard_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
+class HDAudioCodecDataView {
+ public:
+  HDAudioCodecDataView() = default;
+
+  HDAudioCodecDataView(
+      internal::HDAudioCodec_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const { return !data_; }
+  inline void GetNameDataView(
+      mojo::StringDataView* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+    
+    auto* pointer = data_->name.Get();
+    return mojo::internal::Deserialize<mojo::StringDataView>(
+        pointer, output, message_);
+  }
+  uint8_t address() const {
+    return data_->address;
+  }
+ private:
+  internal::HDAudioCodec_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
 class BootPerformanceInfoDataView {
  public:
   BootPerformanceInfoDataView() = default;
@@ -5637,6 +5790,27 @@ static_assert(
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::InputResultDataView>(
         pointer, output, message_);
   }
+  inline void GetAudioHardwareResultDataView(
+      AudioHardwareResultDataView* output);
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadAudioHardwareResult(UserType* output) {
+    
+static_assert(
+    mojo::internal::IsValidUserTypeForOptionalValue<
+        ::chromeos::cros_healthd::mojom::AudioHardwareResultDataView, UserType>(),
+    "Attempting to read the optional `audio_hardware_result` field into a type which "
+    "cannot represent a null value. Either wrap the destination object "
+    "with absl::optional, ensure that any corresponding "
+    "{Struct/Union/Array/String}Traits define the necessary IsNull and "
+    "SetToNull methods, or use `MaybeReadAudioHardwareResult` instead "
+    "of `ReadAudioHardwareResult if you're fine with null values being "
+    "silently ignored in this case.");
+    auto* pointer = data_->header_.version >= 4 && !data_->audio_hardware_result.is_null()
+                    ? &data_->audio_hardware_result : nullptr;
+    return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::AudioHardwareResultDataView>(
+        pointer, output, message_);
+  }
  private:
   internal::TelemetryInfo_Data* data_ = nullptr;
   mojo::Message* message_ = nullptr;
@@ -6571,6 +6745,59 @@ class AudioResultDataView {
 
  private:
   internal::AudioResult_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
+class AudioHardwareResultDataView {
+ public:
+  using Tag = internal::AudioHardwareResult_Data::AudioHardwareResult_Tag;
+
+  AudioHardwareResultDataView() = default;
+
+  AudioHardwareResultDataView(
+      internal::AudioHardwareResult_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const {
+    // For inlined unions, |data_| is always non-null. In that case we need to
+    // check |data_->is_null()|.
+    return !data_ || data_->is_null();
+  }
+
+  Tag tag() const { return data_->tag; }
+  bool is_unmapped_field0() const { return data_->tag == Tag::UNMAPPED_FIELD0; }
+  bool unmapped_field0() const {
+    CHECK(is_unmapped_field0());
+    return data_->data.f_unmapped_field0;
+  }
+  bool is_audio_hardware_info() const { return data_->tag == Tag::AUDIO_HARDWARE_INFO; }
+  inline void GetAudioHardwareInfoDataView(
+      AudioHardwareInfoDataView* output) const;
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadAudioHardwareInfo(UserType* output) const {
+    
+    CHECK(is_audio_hardware_info());
+    return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView>(
+        data_->data.f_audio_hardware_info.Get(), output, message_);
+  }
+  bool is_error() const { return data_->tag == Tag::ERROR; }
+  inline void GetErrorDataView(
+      ProbeErrorDataView* output) const;
+
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+    
+    CHECK(is_error());
+    return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
+        data_->data.f_error.Get(), output, message_);
+  }
+
+ private:
+  internal::AudioHardwareResult_Data* data_ = nullptr;
   mojo::Message* message_ = nullptr;
 };
 
@@ -9321,6 +9548,154 @@ struct Serializer<::chromeos::cros_healthd::mojom::AudioInfoDataView, MaybeConst
 namespace internal {
 
 template <typename MaybeConstUserType>
+struct Serializer<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = StructTraits<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView, UserType>;
+
+  static void Serialize(
+      MaybeConstUserType& input,
+      mojo::internal::MessageFragment<::chromeos::cros_healthd::mojom::internal::AudioHardwareInfo_Data>& fragment) {
+    if (CallIsNullIfExists<Traits>(input))
+      return;
+    fragment.Allocate();
+    decltype(Traits::audio_cards(input)) in_audio_cards = Traits::audio_cards(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->audio_cards)::BaseType>
+        audio_cards_fragment(fragment.message());
+    const mojo::internal::ContainerValidateParams audio_cards_validate_params(
+        0, false, nullptr);
+    mojo::internal::Serialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::AudioCardDataView>>(
+        in_audio_cards, audio_cards_fragment, &audio_cards_validate_params);
+    fragment->audio_cards.Set(
+        audio_cards_fragment.is_null() ? nullptr : audio_cards_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->audio_cards.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null audio_cards in AudioHardwareInfo struct");
+  }
+
+  static bool Deserialize(::chromeos::cros_healthd::mojom::internal::AudioHardwareInfo_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input)
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
+struct Serializer<::chromeos::cros_healthd::mojom::AudioCardDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = StructTraits<::chromeos::cros_healthd::mojom::AudioCardDataView, UserType>;
+
+  static void Serialize(
+      MaybeConstUserType& input,
+      mojo::internal::MessageFragment<::chromeos::cros_healthd::mojom::internal::AudioCard_Data>& fragment) {
+    if (CallIsNullIfExists<Traits>(input))
+      return;
+    fragment.Allocate();
+    decltype(Traits::alsa_id(input)) in_alsa_id = Traits::alsa_id(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->alsa_id)::BaseType> alsa_id_fragment(
+            fragment.message());
+    mojo::internal::Serialize<mojo::StringDataView>(
+        in_alsa_id, alsa_id_fragment);
+    fragment->alsa_id.Set(
+        alsa_id_fragment.is_null() ? nullptr : alsa_id_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->alsa_id.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null alsa_id in AudioCard struct");
+    decltype(Traits::bus_device(input)) in_bus_device = Traits::bus_device(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->bus_device)::BaseType> bus_device_fragment(
+            fragment.message());
+    mojo::internal::Serialize<::chromeos::cros_healthd::mojom::BusDeviceDataView>(
+        in_bus_device, bus_device_fragment);
+    fragment->bus_device.Set(
+        bus_device_fragment.is_null() ? nullptr : bus_device_fragment.data());
+    decltype(Traits::hd_audio_codecs(input)) in_hd_audio_codecs = Traits::hd_audio_codecs(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->hd_audio_codecs)::BaseType>
+        hd_audio_codecs_fragment(fragment.message());
+    const mojo::internal::ContainerValidateParams hd_audio_codecs_validate_params(
+        0, false, nullptr);
+    mojo::internal::Serialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::HDAudioCodecDataView>>(
+        in_hd_audio_codecs, hd_audio_codecs_fragment, &hd_audio_codecs_validate_params);
+    fragment->hd_audio_codecs.Set(
+        hd_audio_codecs_fragment.is_null() ? nullptr : hd_audio_codecs_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->hd_audio_codecs.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null hd_audio_codecs in AudioCard struct");
+  }
+
+  static bool Deserialize(::chromeos::cros_healthd::mojom::internal::AudioCard_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input)
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::chromeos::cros_healthd::mojom::AudioCardDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
+struct Serializer<::chromeos::cros_healthd::mojom::HDAudioCodecDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = StructTraits<::chromeos::cros_healthd::mojom::HDAudioCodecDataView, UserType>;
+
+  static void Serialize(
+      MaybeConstUserType& input,
+      mojo::internal::MessageFragment<::chromeos::cros_healthd::mojom::internal::HDAudioCodec_Data>& fragment) {
+    if (CallIsNullIfExists<Traits>(input))
+      return;
+    fragment.Allocate();
+    decltype(Traits::name(input)) in_name = Traits::name(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->name)::BaseType> name_fragment(
+            fragment.message());
+    mojo::internal::Serialize<mojo::StringDataView>(
+        in_name, name_fragment);
+    fragment->name.Set(
+        name_fragment.is_null() ? nullptr : name_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->name.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null name in HDAudioCodec struct");
+    fragment->address = Traits::address(input);
+  }
+
+  static bool Deserialize(::chromeos::cros_healthd::mojom::internal::HDAudioCodec_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input)
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::chromeos::cros_healthd::mojom::HDAudioCodecDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
 struct Serializer<::chromeos::cros_healthd::mojom::BootPerformanceInfoDataView, MaybeConstUserType> {
   using UserType = typename std::remove_const<MaybeConstUserType>::type;
   using Traits = StructTraits<::chromeos::cros_healthd::mojom::BootPerformanceInfoDataView, UserType>;
@@ -10835,6 +11210,12 @@ struct Serializer<::chromeos::cros_healthd::mojom::TelemetryInfoDataView, MaybeC
     input_result_fragment.Claim(&fragment->input_result);
     mojo::internal::Serialize<::chromeos::cros_healthd::mojom::InputResultDataView>(
         in_input_result, input_result_fragment, true);
+    decltype(Traits::audio_hardware_result(input)) in_audio_hardware_result = Traits::audio_hardware_result(input);
+    mojo::internal::MessageFragment<decltype(fragment->audio_hardware_result)>
+        audio_hardware_result_fragment(fragment.message());
+    audio_hardware_result_fragment.Claim(&fragment->audio_hardware_result);
+    mojo::internal::Serialize<::chromeos::cros_healthd::mojom::AudioHardwareResultDataView>(
+        in_audio_hardware_result, audio_hardware_result_fragment, true);
   }
 
   static bool Deserialize(::chromeos::cros_healthd::mojom::internal::TelemetryInfo_Data* input,
@@ -12254,6 +12635,85 @@ struct Serializer<::chromeos::cros_healthd::mojom::AudioResultDataView, MaybeCon
 namespace internal {
 
 template <typename MaybeConstUserType>
+struct Serializer<::chromeos::cros_healthd::mojom::AudioHardwareResultDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = UnionTraits<::chromeos::cros_healthd::mojom::AudioHardwareResultDataView, UserType>;
+
+  static void Serialize(MaybeConstUserType& input,
+                        MessageFragment<::chromeos::cros_healthd::mojom::internal::AudioHardwareResult_Data>& fragment,
+                        bool inlined) {
+    if (CallIsNullIfExists<Traits>(input)) {
+       if (inlined)
+        fragment->set_null();
+      return;
+    }
+
+    if (!inlined)
+      fragment.Allocate();
+
+    // TODO(azani): Handle unknown and objects.
+    // Set the not-null flag.
+    fragment->size = kUnionDataSize;
+    fragment->tag = Traits::GetTag(input);
+    switch (fragment->tag) {
+      case ::chromeos::cros_healthd::mojom::AudioHardwareResultDataView::Tag::UNMAPPED_FIELD0: {
+        decltype(Traits::unmapped_field0(input))
+            in_unmapped_field0 = Traits::unmapped_field0(input);
+        fragment->data.f_unmapped_field0 = in_unmapped_field0;
+        break;
+      }
+      case ::chromeos::cros_healthd::mojom::AudioHardwareResultDataView::Tag::AUDIO_HARDWARE_INFO: {
+        decltype(Traits::audio_hardware_info(input))
+            in_audio_hardware_info = Traits::audio_hardware_info(input);
+        mojo::internal::MessageFragment<
+            typename decltype(fragment->data.f_audio_hardware_info)::BaseType>
+            value_fragment(fragment.message());
+        mojo::internal::Serialize<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView>(
+            in_audio_hardware_info, value_fragment);
+        MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+            value_fragment.is_null(),
+            mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+            "null audio_hardware_info in AudioHardwareResult union");
+        fragment->data.f_audio_hardware_info.Set(
+            value_fragment.is_null() ? nullptr : value_fragment.data());
+        break;
+      }
+      case ::chromeos::cros_healthd::mojom::AudioHardwareResultDataView::Tag::ERROR: {
+        decltype(Traits::error(input))
+            in_error = Traits::error(input);
+        mojo::internal::MessageFragment<
+            typename decltype(fragment->data.f_error)::BaseType>
+            value_fragment(fragment.message());
+        mojo::internal::Serialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
+            in_error, value_fragment);
+        MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+            value_fragment.is_null(),
+            mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+            "null error in AudioHardwareResult union");
+        fragment->data.f_error.Set(
+            value_fragment.is_null() ? nullptr : value_fragment.data());
+        break;
+      }
+    }
+  }
+
+  static bool Deserialize(::chromeos::cros_healthd::mojom::internal::AudioHardwareResult_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input || input->is_null())
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::chromeos::cros_healthd::mojom::AudioHardwareResultDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
 struct Serializer<::chromeos::cros_healthd::mojom::BootPerformanceResultDataView, MaybeConstUserType> {
   using UserType = typename std::remove_const<MaybeConstUserType>::type;
   using Traits = UnionTraits<::chromeos::cros_healthd::mojom::BootPerformanceResultDataView, UserType>;
@@ -13340,6 +13800,37 @@ inline void AudioInfoDataView::GetInputDeviceNameDataView(
 }
 
 
+inline void AudioHardwareInfoDataView::GetAudioCardsDataView(
+    mojo::ArrayDataView<AudioCardDataView>* output) {
+  auto pointer = data_->audio_cards.Get();
+  *output = mojo::ArrayDataView<AudioCardDataView>(pointer, message_);
+}
+
+
+inline void AudioCardDataView::GetAlsaIdDataView(
+    mojo::StringDataView* output) {
+  auto pointer = data_->alsa_id.Get();
+  *output = mojo::StringDataView(pointer, message_);
+}
+inline void AudioCardDataView::GetBusDeviceDataView(
+    BusDeviceDataView* output) {
+  auto pointer = data_->bus_device.Get();
+  *output = BusDeviceDataView(pointer, message_);
+}
+inline void AudioCardDataView::GetHdAudioCodecsDataView(
+    mojo::ArrayDataView<HDAudioCodecDataView>* output) {
+  auto pointer = data_->hd_audio_codecs.Get();
+  *output = mojo::ArrayDataView<HDAudioCodecDataView>(pointer, message_);
+}
+
+
+inline void HDAudioCodecDataView::GetNameDataView(
+    mojo::StringDataView* output) {
+  auto pointer = data_->name.Get();
+  *output = mojo::StringDataView(pointer, message_);
+}
+
+
 inline void BootPerformanceInfoDataView::GetShutdownReasonDataView(
     mojo::StringDataView* output) {
   auto pointer = data_->shutdown_reason.Get();
@@ -13830,6 +14321,12 @@ inline void TelemetryInfoDataView::GetInputResultDataView(
                  ? &data_->input_result : nullptr;
   *output = InputResultDataView(pointer, message_);
 }
+inline void TelemetryInfoDataView::GetAudioHardwareResultDataView(
+    AudioHardwareResultDataView* output) {
+  auto pointer = data_->header_.version >= 4
+                 ? &data_->audio_hardware_result : nullptr;
+  *output = AudioHardwareResultDataView(pointer, message_);
+}
 
 
 inline void ProcessResultDataView::GetProcessInfoDataView(
@@ -14002,6 +14499,17 @@ inline void AudioResultDataView::GetAudioInfoDataView(
   *output = AudioInfoDataView(data_->data.f_audio_info.Get(), message_);
 }
 inline void AudioResultDataView::GetErrorDataView(
+    ProbeErrorDataView* output) const {
+  CHECK(is_error());
+  *output = ProbeErrorDataView(data_->data.f_error.Get(), message_);
+}
+
+inline void AudioHardwareResultDataView::GetAudioHardwareInfoDataView(
+    AudioHardwareInfoDataView* output) const {
+  CHECK(is_audio_hardware_info());
+  *output = AudioHardwareInfoDataView(data_->data.f_audio_hardware_info.Get(), message_);
+}
+inline void AudioHardwareResultDataView::GetErrorDataView(
     ProbeErrorDataView* output) const {
   CHECK(is_error());
   *output = ProbeErrorDataView(data_->data.f_error.Get(), message_);

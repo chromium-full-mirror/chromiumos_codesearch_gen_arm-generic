@@ -241,6 +241,55 @@ class  CameraHalServer_SetAutoFramingState_Params_Data {
 };
 static_assert(sizeof(CameraHalServer_SetAutoFramingState_Params_Data) == 16,
               "Bad sizeof(CameraHalServer_SetAutoFramingState_Params_Data)");
+class  CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+
+ private:
+  friend class mojo::internal::MessageFragment<CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data>;
+
+  CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data();
+  ~CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data() = delete;
+};
+static_assert(sizeof(CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data) == 8,
+              "Bad sizeof(CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data)");
+class  CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  int32_t state;
+  uint8_t padfinal_[4];
+
+ private:
+  friend class mojo::internal::MessageFragment<CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data>;
+
+  CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data();
+  ~CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data() = delete;
+};
+static_assert(sizeof(CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data) == 16,
+              "Bad sizeof(CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data)");
+class  CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  int32_t state;
+  uint8_t padfinal_[4];
+
+ private:
+  friend class mojo::internal::MessageFragment<CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data>;
+
+  CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data();
+  ~CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data() = delete;
+};
+static_assert(sizeof(CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data) == 16,
+              "Bad sizeof(CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data)");
 class  CameraHalServerCallbacks_CameraDeviceActivityChange_Params_Data {
  public:
   static bool Validate(const void* data,
@@ -278,6 +327,23 @@ class  CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data {
 };
 static_assert(sizeof(CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data) == 16,
               "Bad sizeof(CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data)");
+class  CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  int32_t state;
+  uint8_t padfinal_[4];
+
+ private:
+  friend class mojo::internal::MessageFragment<CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data>;
+
+  CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data();
+  ~CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data() = delete;
+};
+static_assert(sizeof(CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data) == 16,
+              "Bad sizeof(CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data)");
 class  CameraHalClient_SetUpChannel_Params_Data {
  public:
   static bool Validate(const void* data,
@@ -671,6 +737,74 @@ class CameraHalServer_SetAutoFramingState_ParamsDataView {
 
 
 
+class CameraHalServer_GetCameraSWPrivacySwitchState_ParamsDataView {
+ public:
+  CameraHalServer_GetCameraSWPrivacySwitchState_ParamsDataView() = default;
+
+  CameraHalServer_GetCameraSWPrivacySwitchState_ParamsDataView(
+      internal::CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data* data,
+      mojo::Message* message)
+      : data_(data) {}
+
+  bool is_null() const { return !data_; }
+ private:
+  internal::CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data* data_ = nullptr;
+};
+
+
+
+class CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParamsDataView {
+ public:
+  CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParamsDataView() = default;
+
+  CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParamsDataView(
+      internal::CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data* data,
+      mojo::Message* message)
+      : data_(data) {}
+
+  bool is_null() const { return !data_; }
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+    auto data_value = data_->state;
+    return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
+        data_value, output);
+  }
+  CameraPrivacySwitchState state() const {
+    return ::mojo::internal::ToKnownEnumValueHelper(
+          static_cast<::cros::mojom::CameraPrivacySwitchState>(data_->state));
+  }
+ private:
+  internal::CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data* data_ = nullptr;
+};
+
+
+
+class CameraHalServer_SetCameraSWPrivacySwitchState_ParamsDataView {
+ public:
+  CameraHalServer_SetCameraSWPrivacySwitchState_ParamsDataView() = default;
+
+  CameraHalServer_SetCameraSWPrivacySwitchState_ParamsDataView(
+      internal::CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data* data,
+      mojo::Message* message)
+      : data_(data) {}
+
+  bool is_null() const { return !data_; }
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+    auto data_value = data_->state;
+    return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
+        data_value, output);
+  }
+  CameraPrivacySwitchState state() const {
+    return ::mojo::internal::ToKnownEnumValueHelper(
+          static_cast<::cros::mojom::CameraPrivacySwitchState>(data_->state));
+  }
+ private:
+  internal::CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data* data_ = nullptr;
+};
+
+
+
 class CameraHalServerCallbacks_CameraDeviceActivityChange_ParamsDataView {
  public:
   CameraHalServerCallbacks_CameraDeviceActivityChange_ParamsDataView() = default;
@@ -725,6 +859,32 @@ class CameraHalServerCallbacks_CameraPrivacySwitchStateChange_ParamsDataView {
   }
  private:
   internal::CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data* data_ = nullptr;
+};
+
+
+
+class CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_ParamsDataView {
+ public:
+  CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_ParamsDataView() = default;
+
+  CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_ParamsDataView(
+      internal::CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data* data,
+      mojo::Message* message)
+      : data_(data) {}
+
+  bool is_null() const { return !data_; }
+  template <typename UserType>
+  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+    auto data_value = data_->state;
+    return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
+        data_value, output);
+  }
+  CameraPrivacySwitchState state() const {
+    return ::mojo::internal::ToKnownEnumValueHelper(
+          static_cast<::cros::mojom::CameraPrivacySwitchState>(data_->state));
+  }
+ private:
+  internal::CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data* data_ = nullptr;
 };
 
 
@@ -785,6 +945,14 @@ inline void CameraHalDispatcher_RegisterSensorClientWithToken_ParamsDataView::Ge
   auto pointer = data_->auth_token.Get();
   *output = ::mojo_base::mojom::UnguessableTokenDataView(pointer, message_);
 }
+
+
+
+
+
+
+
+
 
 
 
