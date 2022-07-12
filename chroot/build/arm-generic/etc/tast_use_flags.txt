@@ -21,7 +21,9 @@ ml_benchmark_drivers
 ml_service
 nacl
 ondevice_document_scanner
+ondevice_grammar
 ondevice_handwriting
+ondevice_text_suggestions
 racc
 smartdim
 storage_wearout_detect

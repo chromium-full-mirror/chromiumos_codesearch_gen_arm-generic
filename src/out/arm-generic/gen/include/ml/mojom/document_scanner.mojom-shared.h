@@ -124,7 +124,7 @@ class DocumentScannerConfigDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeprecatedLibraryDlcPath(UserType* output) {
+  [[nodiscard]] bool ReadDeprecatedLibraryDlcPath(UserType* output) {
     
     auto* pointer = data_->deprecated_library_dlc_path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -134,7 +134,7 @@ class DocumentScannerConfigDataView {
       ::mojo_base::mojom::FilePathDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLibraryDlcPath(UserType* output) {
+  [[nodiscard]] bool ReadLibraryDlcPath(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -169,7 +169,7 @@ class DetectCornersResultDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::DocumentScannerResultStatus>(
         data_value, output);
@@ -182,7 +182,7 @@ class DetectCornersResultDataView {
       mojo::ArrayDataView<::gfx::mojom::PointFDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCorners(UserType* output) {
+  [[nodiscard]] bool ReadCorners(UserType* output) {
     
     auto* pointer = data_->corners.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::gfx::mojom::PointFDataView>>(
@@ -206,7 +206,7 @@ class DoPostProcessingResultDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::DocumentScannerResultStatus>(
         data_value, output);
@@ -219,7 +219,7 @@ class DoPostProcessingResultDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProcessedJpegImage(UserType* output) {
+  [[nodiscard]] bool ReadProcessedJpegImage(UserType* output) {
     
     auto* pointer = data_->processed_jpeg_image.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

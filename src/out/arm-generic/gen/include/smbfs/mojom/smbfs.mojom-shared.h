@@ -234,7 +234,7 @@ class KerberosConfigDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSource(UserType* output) const {
+  [[nodiscard]] bool ReadSource(UserType* output) const {
     auto data_value = data_->source;
     return mojo::internal::Deserialize<::smbfs::mojom::KerberosConfig_Source>(
         data_value, output);
@@ -247,7 +247,7 @@ class KerberosConfigDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIdentity(UserType* output) {
+  [[nodiscard]] bool ReadIdentity(UserType* output) {
     
     auto* pointer = data_->identity.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -274,7 +274,7 @@ class CredentialStorageOptionsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAccountHash(UserType* output) {
+  [[nodiscard]] bool ReadAccountHash(UserType* output) {
     
     auto* pointer = data_->account_hash.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -284,7 +284,7 @@ class CredentialStorageOptionsDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSalt(UserType* output) {
+  [[nodiscard]] bool ReadSalt(UserType* output) {
     
     auto* pointer = data_->salt.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -311,7 +311,7 @@ class MountOptionsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSharePath(UserType* output) {
+  [[nodiscard]] bool ReadSharePath(UserType* output) {
     
     auto* pointer = data_->share_path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -321,7 +321,7 @@ class MountOptionsDataView {
       ::smbfs::mojom::IPAddressDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResolvedHost(UserType* output) {
+  [[nodiscard]] bool ReadResolvedHost(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -341,7 +341,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUsername(UserType* output) {
+  [[nodiscard]] bool ReadUsername(UserType* output) {
     
     auto* pointer = data_->username.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -351,7 +351,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWorkgroup(UserType* output) {
+  [[nodiscard]] bool ReadWorkgroup(UserType* output) {
     
     auto* pointer = data_->workgroup.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -361,7 +361,7 @@ static_assert(
       PasswordDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPassword(UserType* output) {
+  [[nodiscard]] bool ReadPassword(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -381,7 +381,7 @@ static_assert(
       KerberosConfigDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadKerberosConfig(UserType* output) {
+  [[nodiscard]] bool ReadKerberosConfig(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -407,7 +407,7 @@ static_assert(
       CredentialStorageOptionsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCredentialStorageOptions(UserType* output) {
+  [[nodiscard]] bool ReadCredentialStorageOptions(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -445,7 +445,7 @@ class CredentialsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUsername(UserType* output) {
+  [[nodiscard]] bool ReadUsername(UserType* output) {
     
     auto* pointer = data_->username.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -455,7 +455,7 @@ class CredentialsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWorkgroup(UserType* output) {
+  [[nodiscard]] bool ReadWorkgroup(UserType* output) {
     
     auto* pointer = data_->workgroup.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -465,7 +465,7 @@ class CredentialsDataView {
       PasswordDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPassword(UserType* output) {
+  [[nodiscard]] bool ReadPassword(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

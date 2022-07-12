@@ -292,6 +292,12 @@ message UnmountRequest {
 message UnmountReply {
   // Indicates an error if |error| is not empty.
   CryptohomeErrorCode error = 1;
+
+  // Indicate an error if this field exists.
+  // This field is replacing the |error| field above, for more information on
+  // which field to use and the process on the migration, see comment in
+  // CryptohomeErrorInfo.
+  CryptohomeErrorInfo error_info = 2;
 }
 
 // Input parameters to Mount()
@@ -357,6 +363,11 @@ message RemoveRequest {
 message RemoveReply {
   // Indicate an error when |error| is not empty.
   CryptohomeErrorCode error = 1;
+  // Indicate an error if this field exists.
+  // This field is replacing the |error| field above, for more information on
+  // which field to use and the process on the migration, see comment in
+  // CryptohomeErrorInfo.
+  CryptohomeErrorInfo error_info = 2;
 }
 
 // Input parameters to ListKeys()
@@ -376,6 +387,11 @@ message ListKeysReply {
   CryptohomeErrorCode error = 1;
   // The labels of the Vault Keyset. This will be empty on error.
   repeated string labels = 2;
+  // Indicate an error if this field exists.
+  // This field is replacing the |error| field above, for more information on
+  // which field to use and the process on the migration, see comment in
+  // CryptohomeErrorInfo.
+  CryptohomeErrorInfo error_info = 3;
 }
 
 // Input parameters to GetKeyData()
@@ -561,7 +577,11 @@ message GetWebAuthnSecretHashReply {
 // Input parameters to GetHibernateSecret()
 message GetHibernateSecretRequest {
   // This represents the "single user" that the secret belongs to.
+  // This mechanism is deprecated in favor of the auth_session_id below.
   cryptohome.AccountIdentifier account_id = 1;
+  // Serialized form of token that is used to identify Auth Session in
+  // progress.
+  bytes auth_session_id = 2;
 }
 
 // Output parameters for GetHibernateSecret()
@@ -1028,34 +1048,6 @@ message GetCurrentSpaceForArcProjectIdReply {
   int64 cur_space = 1;
 }
 
-// Type of paths that are allowed for SetProjectId.
-enum SetProjectIdAllowedPathType {
-  // /home/user/<obfuscated_username>/MyFiles/Downloads/
-  PATH_DOWNLOADS = 0;
-  // /home/root/<obfuscated_username>/android-data/
-  PATH_ANDROID_DATA = 1;
-}
-
-// Input parameters to SetProjectId().
-message SetProjectIdRequest {
-  // The project ID.
-  uint32 project_id = 1;
-
-  // |parent_path|, |child_path| and |account_id| are used for constructing the
-  // target path. (e.g.
-  // /home/user/<obfuscated_username>/MyFiles/Downloads/<child_path> for
-  // parent_path=PATH_DOWNLOADS)
-  SetProjectIdAllowedPathType parent_path = 2;
-  string child_path = 3;
-  cryptohome.AccountIdentifier account_id = 4;
-}
-
-// Output parameters for SetProjectId().
-message SetProjectIdReply {
-  // Set to true if ioctl syscall for setting the project ID succeeds.
-  bool success = 1;
-}
-
 // Input parameters to SetMediaRWDataFileProjectId().
 message SetMediaRWDataFileProjectIdRequest {
   // The project ID.
@@ -1462,7 +1454,7 @@ message AuthenticateAuthFactorRequest {
   // The AuthFactor label would be used to determine the AuthFactor that
   // needs to be authenticated. If the label does not exist, the call would
   // return an error.
-  bytes auth_factor_label = 2;
+  string auth_factor_label = 2;
   // In some cases, such as password, the secret would be user supplied. In
   // those cases the secret can be passed here.
   AuthInput auth_input = 3;

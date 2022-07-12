@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -373,6 +372,43 @@ bool Credentials::Validate(
 }
 const char SmbFsBootstrap::Name_[] = "smbfs.mojom.SmbFsBootstrap";
 
+uint32_t SmbFsBootstrap::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSmbFsBootstrap_MountShare_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)smbfs::mojom::SmbFsBootstrap::MountShare");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SmbFsBootstrap::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSmbFsBootstrap_MountShare_Name:
+            return "Receive smbfs::mojom::SmbFsBootstrap::MountShare";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSmbFsBootstrap_MountShare_Name:
+            return "Receive reply smbfs::mojom::SmbFsBootstrap::MountShare";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 class SmbFsBootstrap_MountShare_ForwardToCallback
     : public mojo::MessageReceiver {
  public:
@@ -497,10 +533,6 @@ class SmbFsBootstrap_MountShare_ProxyToResponder : public ::mojo::internal::Prox
 
 bool SmbFsBootstrap_MountShare_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply smbfs::mojom::SmbFsBootstrap::MountShare",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::SmbFsBootstrap_MountShare_ResponseParams_Data* params =
@@ -572,8 +604,11 @@ void SmbFsBootstrap_MountShare_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -600,15 +635,6 @@ bool SmbFsBootstrapStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kSmbFsBootstrap_MountShare_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive smbfs::mojom::SmbFsBootstrap::MountShare",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)smbfs::mojom::SmbFsBootstrap::MountShare");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::SmbFsBootstrap_MountShare_Params_Data* params =
           reinterpret_cast<
@@ -663,6 +689,52 @@ bool SmbFsBootstrapResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kSmbFsBootstrapValidationInfo);
 }
 const char SmbFs::Name_[] = "smbfs.mojom.SmbFs";
+
+uint32_t SmbFs::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSmbFs_RemoveSavedCredentials_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)smbfs::mojom::SmbFs::RemoveSavedCredentials");
+      return value;
+    }
+    case internal::kSmbFs_DeleteRecursively_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)smbfs::mojom::SmbFs::DeleteRecursively");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SmbFs::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSmbFs_RemoveSavedCredentials_Name:
+            return "Receive smbfs::mojom::SmbFs::RemoveSavedCredentials";
+      case internal::kSmbFs_DeleteRecursively_Name:
+            return "Receive smbfs::mojom::SmbFs::DeleteRecursively";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSmbFs_RemoveSavedCredentials_Name:
+            return "Receive reply smbfs::mojom::SmbFs::RemoveSavedCredentials";
+      case internal::kSmbFs_DeleteRecursively_Name:
+            return "Receive reply smbfs::mojom::SmbFs::DeleteRecursively";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class SmbFs_RemoveSavedCredentials_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -826,10 +898,6 @@ class SmbFs_RemoveSavedCredentials_ProxyToResponder : public ::mojo::internal::P
 
 bool SmbFs_RemoveSavedCredentials_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply smbfs::mojom::SmbFs::RemoveSavedCredentials",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::SmbFs_RemoveSavedCredentials_ResponseParams_Data* params =
@@ -889,8 +957,11 @@ void SmbFs_RemoveSavedCredentials_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -941,10 +1012,6 @@ class SmbFs_DeleteRecursively_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool SmbFs_DeleteRecursively_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply smbfs::mojom::SmbFs::DeleteRecursively",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::SmbFs_DeleteRecursively_ResponseParams_Data* params =
@@ -1005,8 +1072,11 @@ void SmbFs_DeleteRecursively_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1036,15 +1106,6 @@ bool SmbFsStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kSmbFs_RemoveSavedCredentials_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive smbfs::mojom::SmbFs::RemoveSavedCredentials",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)smbfs::mojom::SmbFs::RemoveSavedCredentials");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::SmbFs_RemoveSavedCredentials_Params_Data* params =
           reinterpret_cast<
@@ -1070,15 +1131,6 @@ bool SmbFsStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kSmbFs_DeleteRecursively_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive smbfs::mojom::SmbFs::DeleteRecursively",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)smbfs::mojom::SmbFs::DeleteRecursively");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::SmbFs_DeleteRecursively_Params_Data* params =
           reinterpret_cast<
@@ -1129,6 +1181,43 @@ bool SmbFsResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kSmbFsValidationInfo);
 }
 const char SmbFsDelegate::Name_[] = "smbfs.mojom.SmbFsDelegate";
+
+uint32_t SmbFsDelegate::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSmbFsDelegate_RequestCredentials_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)smbfs::mojom::SmbFsDelegate::RequestCredentials");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SmbFsDelegate::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSmbFsDelegate_RequestCredentials_Name:
+            return "Receive smbfs::mojom::SmbFsDelegate::RequestCredentials";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSmbFsDelegate_RequestCredentials_Name:
+            return "Receive reply smbfs::mojom::SmbFsDelegate::RequestCredentials";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class SmbFsDelegate_RequestCredentials_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -1227,10 +1316,6 @@ class SmbFsDelegate_RequestCredentials_ProxyToResponder : public ::mojo::interna
 
 bool SmbFsDelegate_RequestCredentials_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply smbfs::mojom::SmbFsDelegate::RequestCredentials",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::SmbFsDelegate_RequestCredentials_ResponseParams_Data* params =
@@ -1296,8 +1381,11 @@ void SmbFsDelegate_RequestCredentials_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1324,15 +1412,6 @@ bool SmbFsDelegateStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kSmbFsDelegate_RequestCredentials_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive smbfs::mojom::SmbFsDelegate::RequestCredentials",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)smbfs::mojom::SmbFsDelegate::RequestCredentials");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::SmbFsDelegate_RequestCredentials_Params_Data* params =
           reinterpret_cast<

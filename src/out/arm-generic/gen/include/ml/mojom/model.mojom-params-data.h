@@ -130,7 +130,7 @@ class Model_REMOVED_0_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::CreateGraphExecutorResult>(
         data_value, output);
@@ -159,7 +159,7 @@ class Model_CreateGraphExecutor_ParamsDataView {
       GraphExecutorOptionsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOptions(UserType* output) {
+  [[nodiscard]] bool ReadOptions(UserType* output) {
     
     auto* pointer = data_->options.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::GraphExecutorOptionsDataView>(
@@ -192,7 +192,7 @@ class Model_CreateGraphExecutor_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::CreateGraphExecutorResult>(
         data_value, output);

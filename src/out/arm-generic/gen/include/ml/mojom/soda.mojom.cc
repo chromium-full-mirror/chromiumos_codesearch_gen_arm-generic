@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -608,6 +607,61 @@ bool SpeechRecognizerEvent::Validate(
 }
 const char SodaClient::Name_[] = "chromeos.machine_learning.mojom.SodaClient";
 
+uint32_t SodaClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSodaClient_OnStart_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnStart");
+      return value;
+    }
+    case internal::kSodaClient_OnStop_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnStop");
+      return value;
+    }
+    case internal::kSodaClient_OnSpeechRecognizerEvent_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnSpeechRecognizerEvent");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SodaClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSodaClient_OnStart_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaClient::OnStart";
+      case internal::kSodaClient_OnStop_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaClient::OnStop";
+      case internal::kSodaClient_OnSpeechRecognizerEvent_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaClient::OnSpeechRecognizerEvent";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSodaClient_OnStart_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaClient::OnStart";
+      case internal::kSodaClient_OnStop_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaClient::OnStop";
+      case internal::kSodaClient_OnSpeechRecognizerEvent_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaClient::OnSpeechRecognizerEvent";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 SodaClientProxy::SodaClientProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -724,15 +778,6 @@ bool SodaClientStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kSodaClient_OnStart_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaClient::OnStart",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnStart");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaClient_OnStart_Params_Data* params =
@@ -755,15 +800,6 @@ bool SodaClientStubDispatch::Accept(
       return true;
     }
     case internal::kSodaClient_OnStop_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaClient::OnStop",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnStop");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaClient_OnStop_Params_Data* params =
@@ -786,15 +822,6 @@ bool SodaClientStubDispatch::Accept(
       return true;
     }
     case internal::kSodaClient_OnSpeechRecognizerEvent_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaClient::OnSpeechRecognizerEvent",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaClient::OnSpeechRecognizerEvent");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaClient_OnSpeechRecognizerEvent_Params_Data* params =
@@ -862,6 +889,70 @@ bool SodaClientRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char SodaRecognizer::Name_[] = "chromeos.machine_learning.mojom.SodaRecognizer";
+
+uint32_t SodaRecognizer::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSodaRecognizer_AddAudio_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::AddAudio");
+      return value;
+    }
+    case internal::kSodaRecognizer_Stop_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::Stop");
+      return value;
+    }
+    case internal::kSodaRecognizer_Start_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::Start");
+      return value;
+    }
+    case internal::kSodaRecognizer_MarkDone_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::MarkDone");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SodaRecognizer::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSodaRecognizer_AddAudio_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaRecognizer::AddAudio";
+      case internal::kSodaRecognizer_Stop_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaRecognizer::Stop";
+      case internal::kSodaRecognizer_Start_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaRecognizer::Start";
+      case internal::kSodaRecognizer_MarkDone_Name:
+            return "Receive chromeos::machine_learning::mojom::SodaRecognizer::MarkDone";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSodaRecognizer_AddAudio_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaRecognizer::AddAudio";
+      case internal::kSodaRecognizer_Stop_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaRecognizer::Stop";
+      case internal::kSodaRecognizer_Start_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaRecognizer::Start";
+      case internal::kSodaRecognizer_MarkDone_Name:
+            return "Receive reply chromeos::machine_learning::mojom::SodaRecognizer::MarkDone";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 SodaRecognizerProxy::SodaRecognizerProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -1013,15 +1104,6 @@ bool SodaRecognizerStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kSodaRecognizer_AddAudio_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaRecognizer::AddAudio",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::AddAudio");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaRecognizer_AddAudio_Params_Data* params =
@@ -1048,15 +1130,6 @@ std::move(p_audio));
       return true;
     }
     case internal::kSodaRecognizer_Stop_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaRecognizer::Stop",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::Stop");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaRecognizer_Stop_Params_Data* params =
@@ -1079,15 +1152,6 @@ std::move(p_audio));
       return true;
     }
     case internal::kSodaRecognizer_Start_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaRecognizer::Start",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::Start");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaRecognizer_Start_Params_Data* params =
@@ -1110,15 +1174,6 @@ std::move(p_audio));
       return true;
     }
     case internal::kSodaRecognizer_MarkDone_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::SodaRecognizer::MarkDone",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::SodaRecognizer::MarkDone");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SodaRecognizer_MarkDone_Params_Data* params =

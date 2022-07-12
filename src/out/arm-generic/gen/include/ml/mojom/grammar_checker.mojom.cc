@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -244,6 +243,43 @@ bool GrammarCheckerResult::Validate(
 }
 const char GrammarChecker::Name_[] = "chromeos.machine_learning.mojom.GrammarChecker";
 
+uint32_t GrammarChecker::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kGrammarChecker_Check_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::GrammarChecker::Check");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* GrammarChecker::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kGrammarChecker_Check_Name:
+            return "Receive chromeos::machine_learning::mojom::GrammarChecker::Check";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kGrammarChecker_Check_Name:
+            return "Receive reply chromeos::machine_learning::mojom::GrammarChecker::Check";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 class GrammarChecker_Check_ForwardToCallback
     : public mojo::MessageReceiver {
  public:
@@ -359,10 +395,6 @@ class GrammarChecker_Check_ProxyToResponder : public ::mojo::internal::ProxyToRe
 
 bool GrammarChecker_Check_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::GrammarChecker::Check",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::GrammarChecker_Check_ResponseParams_Data* params =
@@ -432,8 +464,11 @@ void GrammarChecker_Check_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -460,15 +495,6 @@ bool GrammarCheckerStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kGrammarChecker_Check_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::GrammarChecker::Check",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::GrammarChecker::Check");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::GrammarChecker_Check_Params_Data* params =
           reinterpret_cast<

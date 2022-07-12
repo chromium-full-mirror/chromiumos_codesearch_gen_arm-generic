@@ -177,7 +177,7 @@ class SodaClient_OnSpeechRecognizerEvent_ParamsDataView {
       SpeechRecognizerEventDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEvent(UserType* output) {
+  [[nodiscard]] bool ReadEvent(UserType* output) {
     
     auto* pointer = !data_->event.is_null() ? &data_->event : nullptr;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::SpeechRecognizerEventDataView>(
@@ -204,7 +204,7 @@ class SodaRecognizer_AddAudio_ParamsDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudio(UserType* output) {
+  [[nodiscard]] bool ReadAudio(UserType* output) {
     
     auto* pointer = data_->audio.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

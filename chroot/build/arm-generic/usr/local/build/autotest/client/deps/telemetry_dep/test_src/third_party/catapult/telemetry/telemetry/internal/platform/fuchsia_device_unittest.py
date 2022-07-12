@@ -2,6 +2,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 from __future__ import absolute_import
+import argparse
 import os
 import shutil
 import tarfile
@@ -19,8 +20,10 @@ _FUCHSIA_DEVICE_IMPORT_PATH = 'telemetry.internal.platform.fuchsia_device'
 class FuchsiaDeviceTest(unittest.TestCase):
 
   def testFindFuchsiaDevice(self):
-    with mock.patch('telemetry.util.cmd_util.GetAllCmdOutput',
-                    return_value=['{"device":"list"}', None]):
+    with mock.patch(_FUCHSIA_DEVICE_IMPORT_PATH +
+                        '.fuchsia_interface.run_ffx_command',
+                    return_value=argparse.Namespace(
+                        stdout='{"device":"list"}')):
       self.assertEqual(fuchsia_device._FindFuchsiaDevice(), {"device":"list"})
 
   def testFindAllAvailableDevicesFailsNonFuchsiaBrowser(self):
@@ -57,6 +60,7 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
     self._options.fuchsia_system_log_file = None
     self._options.fuchsia_repo = None
     self._options.fuchsia_device_address = None
+    self._options.fuchsia_target_id = None
 
   def testSkipSDKUseIfSshPortExists(self):
     self._options.fuchsia_ssh_port = 22222
@@ -69,6 +73,26 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
       self.assertEqual(device.port, 22222)
       self.assertEqual(device.host, 'localhost')
 
+  def testUseFfxIfTargetIdExists(self):
+    self._options.fuchsia_target_id = 'fuchsia-test-device'
+    with mock.patch(_FUCHSIA_DEVICE_IMPORT_PATH +
+                        '.fuchsia_interface.run_ffx_command',
+                    return_value=argparse.Namespace(
+                        stdout='1.2.3.4:22222')):
+      found_devices = fuchsia_device.FindAllAvailableDevices(self._options)
+      self.assertEqual(len(found_devices), 1)
+      device = found_devices[0]
+      self.assertEqual(device.port, 22222)
+      self.assertEqual(device.host, '1.2.3.4')
+
+  def testRaiseValueErrorForInvalidInput(self):
+    self._options.fuchsia_target_id = 'fuchsia-test-device'
+    with mock.patch(_FUCHSIA_DEVICE_IMPORT_PATH +
+                        '.fuchsia_interface.run_ffx_command',
+                    return_value=argparse.Namespace(
+                        stdout='1.2.3.4;22222')):
+      with self.assertRaises(ValueError):
+        fuchsia_device.FindAllAvailableDevices(self._options)
 
   def testDownloadSDKIfNotExists(self):
     with mock.patch('os.path.exists', return_value=False):
@@ -136,7 +160,7 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
         self.assertEqual(len(found_devices), 1)
         device = found_devices[0]
         self.assertEqual(device.host, 'a0')
-        self.assertEqual(device.target_name, 'n0')
+        self.assertEqual(device.target_id, 'n0')
 
   def testFoundMultipleFuchsiaDevices(self):
     with mock.patch('os.path.exists', return_value=True):
@@ -148,7 +172,7 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
         self.assertEqual(len(found_devices), 1)
         device = found_devices[0]
         self.assertEqual(device.host, 'a0')
-        self.assertEqual(device.target_name, 'n0')
+        self.assertEqual(device.target_id, 'n0')
 
   def testSkipUsingSDKIfFuchsiaSshPortFlagUsed(self):
 
@@ -161,7 +185,6 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
         self.assertEqual(len(found_devices), 1)
         device = found_devices[0]
         self.assertEqual(device.host, 'localhost')
-        self.assertEqual(device.target_name, 'local_device')
         get_mock.assert_not_called()
         find_mock.assert_not_called()
 
@@ -171,12 +194,11 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
                     '._DownloadFuchsiaSDK') as get_mock:
       with mock.patch(_FUCHSIA_DEVICE_IMPORT_PATH + '._FindFuchsiaDevice',
                       return_value=None) as find_mock:
-        self._options.fuchsia_device_address = 'fuchsia_device'
+        self._options.fuchsia_device_address = '1.2.3.4'
         found_devices = fuchsia_device.FindAllAvailableDevices(self._options)
         self.assertEqual(len(found_devices), 1)
         device = found_devices[0]
-        self.assertEqual(device.host, 'fuchsia_device')
-        self.assertEqual(device.target_name, 'device_target')
+        self.assertEqual(device.host, '1.2.3.4')
         get_mock.assert_not_called()
         find_mock.assert_not_called()
 
@@ -192,6 +214,5 @@ class FuchsiaSDKUsageTest(unittest.TestCase):
         self.assertEqual(len(found_devices), 1)
         device = found_devices[0]
         self.assertEqual(device.host, 'localhost')
-        self.assertEqual(device.target_name, 'local_device')
         get_mock.assert_not_called()
         find_mock.assert_not_called()

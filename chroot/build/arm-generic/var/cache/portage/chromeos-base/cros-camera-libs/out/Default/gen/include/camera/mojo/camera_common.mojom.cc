@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -180,6 +179,52 @@ bool CameraInfo::Validate(
 }
 const char CameraModuleCallbacks::Name_[] = "cros.mojom.CameraModuleCallbacks";
 
+uint32_t CameraModuleCallbacks::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraModuleCallbacks_CameraDeviceStatusChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModuleCallbacks::CameraDeviceStatusChange");
+      return value;
+    }
+    case internal::kCameraModuleCallbacks_TorchModeStatusChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModuleCallbacks::TorchModeStatusChange");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraModuleCallbacks::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraModuleCallbacks_CameraDeviceStatusChange_Name:
+            return "Receive cros::mojom::CameraModuleCallbacks::CameraDeviceStatusChange";
+      case internal::kCameraModuleCallbacks_TorchModeStatusChange_Name:
+            return "Receive cros::mojom::CameraModuleCallbacks::TorchModeStatusChange";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraModuleCallbacks_CameraDeviceStatusChange_Name:
+            return "Receive reply cros::mojom::CameraModuleCallbacks::CameraDeviceStatusChange";
+      case internal::kCameraModuleCallbacks_TorchModeStatusChange_Name:
+            return "Receive reply cros::mojom::CameraModuleCallbacks::TorchModeStatusChange";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 CameraModuleCallbacksProxy::CameraModuleCallbacksProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -276,15 +321,6 @@ bool CameraModuleCallbacksStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCameraModuleCallbacks_CameraDeviceStatusChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModuleCallbacks::CameraDeviceStatusChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModuleCallbacks::CameraDeviceStatusChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraModuleCallbacks_CameraDeviceStatusChange_Params_Data* params =
@@ -315,15 +351,6 @@ std::move(p_new_status));
       return true;
     }
     case internal::kCameraModuleCallbacks_TorchModeStatusChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModuleCallbacks::TorchModeStatusChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModuleCallbacks::TorchModeStatusChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraModuleCallbacks_TorchModeStatusChange_Params_Data* params =
@@ -390,6 +417,79 @@ bool CameraModuleCallbacksRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char VendorTagOps::Name_[] = "cros.mojom.VendorTagOps";
+
+uint32_t VendorTagOps::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kVendorTagOps_GetTagCount_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::VendorTagOps::GetTagCount");
+      return value;
+    }
+    case internal::kVendorTagOps_GetAllTags_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::VendorTagOps::GetAllTags");
+      return value;
+    }
+    case internal::kVendorTagOps_GetSectionName_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::VendorTagOps::GetSectionName");
+      return value;
+    }
+    case internal::kVendorTagOps_GetTagName_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::VendorTagOps::GetTagName");
+      return value;
+    }
+    case internal::kVendorTagOps_GetTagType_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::VendorTagOps::GetTagType");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* VendorTagOps::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kVendorTagOps_GetTagCount_Name:
+            return "Receive cros::mojom::VendorTagOps::GetTagCount";
+      case internal::kVendorTagOps_GetAllTags_Name:
+            return "Receive cros::mojom::VendorTagOps::GetAllTags";
+      case internal::kVendorTagOps_GetSectionName_Name:
+            return "Receive cros::mojom::VendorTagOps::GetSectionName";
+      case internal::kVendorTagOps_GetTagName_Name:
+            return "Receive cros::mojom::VendorTagOps::GetTagName";
+      case internal::kVendorTagOps_GetTagType_Name:
+            return "Receive cros::mojom::VendorTagOps::GetTagType";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kVendorTagOps_GetTagCount_Name:
+            return "Receive reply cros::mojom::VendorTagOps::GetTagCount";
+      case internal::kVendorTagOps_GetAllTags_Name:
+            return "Receive reply cros::mojom::VendorTagOps::GetAllTags";
+      case internal::kVendorTagOps_GetSectionName_Name:
+            return "Receive reply cros::mojom::VendorTagOps::GetSectionName";
+      case internal::kVendorTagOps_GetTagName_Name:
+            return "Receive reply cros::mojom::VendorTagOps::GetTagName";
+      case internal::kVendorTagOps_GetTagType_Name:
+            return "Receive reply cros::mojom::VendorTagOps::GetTagType";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class VendorTagOps_GetTagCount_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -700,10 +800,6 @@ class VendorTagOps_GetTagCount_ProxyToResponder : public ::mojo::internal::Proxy
 
 bool VendorTagOps_GetTagCount_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::VendorTagOps::GetTagCount",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VendorTagOps_GetTagCount_ResponseParams_Data* params =
@@ -763,8 +859,11 @@ void VendorTagOps_GetTagCount_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -815,10 +914,6 @@ class VendorTagOps_GetAllTags_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool VendorTagOps_GetAllTags_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::VendorTagOps::GetAllTags",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VendorTagOps_GetAllTags_ResponseParams_Data* params =
@@ -890,8 +985,11 @@ void VendorTagOps_GetAllTags_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -942,10 +1040,6 @@ class VendorTagOps_GetSectionName_ProxyToResponder : public ::mojo::internal::Pr
 
 bool VendorTagOps_GetSectionName_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::VendorTagOps::GetSectionName",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VendorTagOps_GetSectionName_ResponseParams_Data* params =
@@ -1011,8 +1105,11 @@ void VendorTagOps_GetSectionName_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1063,10 +1160,6 @@ class VendorTagOps_GetTagName_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool VendorTagOps_GetTagName_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::VendorTagOps::GetTagName",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VendorTagOps_GetTagName_ResponseParams_Data* params =
@@ -1132,8 +1225,11 @@ void VendorTagOps_GetTagName_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1184,10 +1280,6 @@ class VendorTagOps_GetTagType_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool VendorTagOps_GetTagType_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::VendorTagOps::GetTagType",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VendorTagOps_GetTagType_ResponseParams_Data* params =
@@ -1247,8 +1339,11 @@ void VendorTagOps_GetTagType_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1287,15 +1382,6 @@ bool VendorTagOpsStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kVendorTagOps_GetTagCount_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::VendorTagOps::GetTagCount",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::VendorTagOps::GetTagCount");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VendorTagOps_GetTagCount_Params_Data* params =
           reinterpret_cast<
@@ -1321,15 +1407,6 @@ bool VendorTagOpsStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kVendorTagOps_GetAllTags_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::VendorTagOps::GetAllTags",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::VendorTagOps::GetAllTags");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VendorTagOps_GetAllTags_Params_Data* params =
           reinterpret_cast<
@@ -1355,15 +1432,6 @@ bool VendorTagOpsStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kVendorTagOps_GetSectionName_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::VendorTagOps::GetSectionName",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::VendorTagOps::GetSectionName");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VendorTagOps_GetSectionName_Params_Data* params =
           reinterpret_cast<
@@ -1393,15 +1461,6 @@ std::move(p_tag), std::move(callback));
       return true;
     }
     case internal::kVendorTagOps_GetTagName_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::VendorTagOps::GetTagName",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::VendorTagOps::GetTagName");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VendorTagOps_GetTagName_Params_Data* params =
           reinterpret_cast<
@@ -1431,15 +1490,6 @@ std::move(p_tag), std::move(callback));
       return true;
     }
     case internal::kVendorTagOps_GetTagType_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::VendorTagOps::GetTagType",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::VendorTagOps::GetTagType");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VendorTagOps_GetTagType_Params_Data* params =
           reinterpret_cast<
@@ -1496,6 +1546,106 @@ bool VendorTagOpsResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kVendorTagOpsValidationInfo);
 }
 const char CameraModule::Name_[] = "cros.mojom.CameraModule";
+
+uint32_t CameraModule::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraModule_OpenDevice_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::OpenDevice");
+      return value;
+    }
+    case internal::kCameraModule_GetNumberOfCameras_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::GetNumberOfCameras");
+      return value;
+    }
+    case internal::kCameraModule_GetCameraInfo_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::GetCameraInfo");
+      return value;
+    }
+    case internal::kCameraModule_SetCallbacks_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::SetCallbacks");
+      return value;
+    }
+    case internal::kCameraModule_SetTorchMode_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::SetTorchMode");
+      return value;
+    }
+    case internal::kCameraModule_Init_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::Init");
+      return value;
+    }
+    case internal::kCameraModule_GetVendorTagOps_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::GetVendorTagOps");
+      return value;
+    }
+    case internal::kCameraModule_SetCallbacksAssociated_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraModule::SetCallbacksAssociated");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraModule::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraModule_OpenDevice_Name:
+            return "Receive cros::mojom::CameraModule::OpenDevice";
+      case internal::kCameraModule_GetNumberOfCameras_Name:
+            return "Receive cros::mojom::CameraModule::GetNumberOfCameras";
+      case internal::kCameraModule_GetCameraInfo_Name:
+            return "Receive cros::mojom::CameraModule::GetCameraInfo";
+      case internal::kCameraModule_SetCallbacks_Name:
+            return "Receive cros::mojom::CameraModule::SetCallbacks";
+      case internal::kCameraModule_SetTorchMode_Name:
+            return "Receive cros::mojom::CameraModule::SetTorchMode";
+      case internal::kCameraModule_Init_Name:
+            return "Receive cros::mojom::CameraModule::Init";
+      case internal::kCameraModule_GetVendorTagOps_Name:
+            return "Receive cros::mojom::CameraModule::GetVendorTagOps";
+      case internal::kCameraModule_SetCallbacksAssociated_Name:
+            return "Receive cros::mojom::CameraModule::SetCallbacksAssociated";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraModule_OpenDevice_Name:
+            return "Receive reply cros::mojom::CameraModule::OpenDevice";
+      case internal::kCameraModule_GetNumberOfCameras_Name:
+            return "Receive reply cros::mojom::CameraModule::GetNumberOfCameras";
+      case internal::kCameraModule_GetCameraInfo_Name:
+            return "Receive reply cros::mojom::CameraModule::GetCameraInfo";
+      case internal::kCameraModule_SetCallbacks_Name:
+            return "Receive reply cros::mojom::CameraModule::SetCallbacks";
+      case internal::kCameraModule_SetTorchMode_Name:
+            return "Receive reply cros::mojom::CameraModule::SetTorchMode";
+      case internal::kCameraModule_Init_Name:
+            return "Receive reply cros::mojom::CameraModule::Init";
+      case internal::kCameraModule_GetVendorTagOps_Name:
+            return "Receive reply cros::mojom::CameraModule::GetVendorTagOps";
+      case internal::kCameraModule_SetCallbacksAssociated_Name:
+            return "Receive reply cros::mojom::CameraModule::SetCallbacksAssociated";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CameraModule_OpenDevice_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -1999,10 +2149,6 @@ class CameraModule_OpenDevice_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool CameraModule_OpenDevice_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::OpenDevice",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_OpenDevice_ResponseParams_Data* params =
@@ -2062,8 +2208,11 @@ void CameraModule_OpenDevice_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2114,10 +2263,6 @@ class CameraModule_GetNumberOfCameras_ProxyToResponder : public ::mojo::internal
 
 bool CameraModule_GetNumberOfCameras_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::GetNumberOfCameras",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_GetNumberOfCameras_ResponseParams_Data* params =
@@ -2177,8 +2322,11 @@ void CameraModule_GetNumberOfCameras_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2229,10 +2377,6 @@ class CameraModule_GetCameraInfo_ProxyToResponder : public ::mojo::internal::Pro
 
 bool CameraModule_GetCameraInfo_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::GetCameraInfo",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_GetCameraInfo_ResponseParams_Data* params =
@@ -2306,8 +2450,11 @@ void CameraModule_GetCameraInfo_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2358,10 +2505,6 @@ class CameraModule_SetCallbacks_ProxyToResponder : public ::mojo::internal::Prox
 
 bool CameraModule_SetCallbacks_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::SetCallbacks",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_SetCallbacks_ResponseParams_Data* params =
@@ -2421,8 +2564,11 @@ void CameraModule_SetCallbacks_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2473,10 +2619,6 @@ class CameraModule_SetTorchMode_ProxyToResponder : public ::mojo::internal::Prox
 
 bool CameraModule_SetTorchMode_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::SetTorchMode",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_SetTorchMode_ResponseParams_Data* params =
@@ -2536,8 +2678,11 @@ void CameraModule_SetTorchMode_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2588,10 +2733,6 @@ class CameraModule_Init_ProxyToResponder : public ::mojo::internal::ProxyToRespo
 
 bool CameraModule_Init_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::Init",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_Init_ResponseParams_Data* params =
@@ -2651,8 +2792,11 @@ void CameraModule_Init_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2703,10 +2847,6 @@ class CameraModule_GetVendorTagOps_ProxyToResponder : public ::mojo::internal::P
 
 bool CameraModule_GetVendorTagOps_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::GetVendorTagOps",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_GetVendorTagOps_ResponseParams_Data* params =
@@ -2754,8 +2894,11 @@ void CameraModule_GetVendorTagOps_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2806,10 +2949,6 @@ class CameraModule_SetCallbacksAssociated_ProxyToResponder : public ::mojo::inte
 
 bool CameraModule_SetCallbacksAssociated_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraModule::SetCallbacksAssociated",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraModule_SetCallbacksAssociated_ResponseParams_Data* params =
@@ -2869,8 +3008,11 @@ void CameraModule_SetCallbacksAssociated_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2918,15 +3060,6 @@ bool CameraModuleStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kCameraModule_OpenDevice_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::OpenDevice",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::OpenDevice");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_OpenDevice_Params_Data* params =
           reinterpret_cast<
@@ -2962,15 +3095,6 @@ std::move(p_device_ops_receiver), std::move(callback));
       return true;
     }
     case internal::kCameraModule_GetNumberOfCameras_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::GetNumberOfCameras",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::GetNumberOfCameras");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_GetNumberOfCameras_Params_Data* params =
           reinterpret_cast<
@@ -2996,15 +3120,6 @@ std::move(p_device_ops_receiver), std::move(callback));
       return true;
     }
     case internal::kCameraModule_GetCameraInfo_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::GetCameraInfo",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::GetCameraInfo");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_GetCameraInfo_Params_Data* params =
           reinterpret_cast<
@@ -3034,15 +3149,6 @@ std::move(p_camera_id), std::move(callback));
       return true;
     }
     case internal::kCameraModule_SetCallbacks_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::SetCallbacks",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::SetCallbacks");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_SetCallbacks_Params_Data* params =
           reinterpret_cast<
@@ -3074,15 +3180,6 @@ std::move(p_callbacks), std::move(callback));
       return true;
     }
     case internal::kCameraModule_SetTorchMode_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::SetTorchMode",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::SetTorchMode");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_SetTorchMode_Params_Data* params =
           reinterpret_cast<
@@ -3116,15 +3213,6 @@ std::move(p_enabled), std::move(callback));
       return true;
     }
     case internal::kCameraModule_Init_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::Init",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::Init");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_Init_Params_Data* params =
           reinterpret_cast<
@@ -3150,15 +3238,6 @@ std::move(p_enabled), std::move(callback));
       return true;
     }
     case internal::kCameraModule_GetVendorTagOps_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::GetVendorTagOps",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::GetVendorTagOps");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_GetVendorTagOps_Params_Data* params =
           reinterpret_cast<
@@ -3190,15 +3269,6 @@ std::move(p_vendor_tag_ops_receiver), std::move(callback));
       return true;
     }
     case internal::kCameraModule_SetCallbacksAssociated_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraModule::SetCallbacksAssociated",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraModule::SetCallbacksAssociated");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraModule_SetCallbacksAssociated_Params_Data* params =
           reinterpret_cast<

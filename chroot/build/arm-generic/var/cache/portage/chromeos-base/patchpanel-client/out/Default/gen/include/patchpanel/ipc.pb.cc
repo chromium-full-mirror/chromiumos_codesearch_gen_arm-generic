@@ -11,89 +11,69 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeviceMessage_ipc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GuestMessage_ipc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NDProxyMessage_ipc_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace patchpanel {
-class DeviceMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeviceMessage> _instance;
-} _DeviceMessage_default_instance_;
-class GuestMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GuestMessage> _instance;
-} _GuestMessage_default_instance_;
-class NDProxyMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<NDProxyMessage> _instance;
-} _NDProxyMessage_default_instance_;
-class IpHelperMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IpHelperMessage> _instance;
-  const ::patchpanel::GuestMessage* guest_message_;
-  const ::patchpanel::DeviceMessage* device_message_;
-  const ::patchpanel::NDProxyMessage* ndproxy_message_;
-} _IpHelperMessage_default_instance_;
+constexpr DeviceMessage::DeviceMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : dev_ifname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , br_ifname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , teardown_(false)
+  , force_local_next_hop_(false){}
+struct DeviceMessageDefaultTypeInternal {
+  constexpr DeviceMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeviceMessageDefaultTypeInternal() {}
+  union {
+    DeviceMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceMessageDefaultTypeInternal _DeviceMessage_default_instance_;
+constexpr GuestMessage::GuestMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : type_(0)
+
+  , event_(0)
+
+  , arc_pid_(0)
+  , arcvm_vsock_cid_(0){}
+struct GuestMessageDefaultTypeInternal {
+  constexpr GuestMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GuestMessageDefaultTypeInternal() {}
+  union {
+    GuestMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GuestMessageDefaultTypeInternal _GuestMessage_default_instance_;
+constexpr NDProxyMessage::NDProxyMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : ifname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ip6addr_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_(0)
+{}
+struct NDProxyMessageDefaultTypeInternal {
+  constexpr NDProxyMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~NDProxyMessageDefaultTypeInternal() {}
+  union {
+    NDProxyMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NDProxyMessageDefaultTypeInternal _NDProxyMessage_default_instance_;
+constexpr IpHelperMessage::IpHelperMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct IpHelperMessageDefaultTypeInternal {
+  constexpr IpHelperMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~IpHelperMessageDefaultTypeInternal() {}
+  union {
+    IpHelperMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IpHelperMessageDefaultTypeInternal _IpHelperMessage_default_instance_;
 }  // namespace patchpanel
-static void InitDefaultsscc_info_DeviceMessage_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::patchpanel::_DeviceMessage_default_instance_;
-    new (ptr) ::patchpanel::DeviceMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::patchpanel::DeviceMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeviceMessage_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeviceMessage_ipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_GuestMessage_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::patchpanel::_GuestMessage_default_instance_;
-    new (ptr) ::patchpanel::GuestMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::patchpanel::GuestMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GuestMessage_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GuestMessage_ipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_IpHelperMessage_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::patchpanel::_IpHelperMessage_default_instance_;
-    new (ptr) ::patchpanel::IpHelperMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::patchpanel::IpHelperMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_IpHelperMessage_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_IpHelperMessage_ipc_2eproto}, {
-      &scc_info_GuestMessage_ipc_2eproto.base,
-      &scc_info_DeviceMessage_ipc_2eproto.base,
-      &scc_info_NDProxyMessage_ipc_2eproto.base,}};
-
-static void InitDefaultsscc_info_NDProxyMessage_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::patchpanel::_NDProxyMessage_default_instance_;
-    new (ptr) ::patchpanel::NDProxyMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::patchpanel::NDProxyMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_NDProxyMessage_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_NDProxyMessage_ipc_2eproto}, {}};
-
 namespace patchpanel {
 bool GuestMessage_GuestType_IsValid(int value) {
   switch (value) {
@@ -149,7 +129,7 @@ const std::string& GuestMessage_GuestType_Name(
                      GuestMessage_GuestType_strings[idx].get();
 }
 bool GuestMessage_GuestType_Parse(
-    const std::string& name, GuestMessage_GuestType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, GuestMessage_GuestType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       GuestMessage_GuestType_entries, 5, name, &int_value);
@@ -158,7 +138,7 @@ bool GuestMessage_GuestType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr GuestMessage_GuestType GuestMessage::UNKNOWN_GUEST;
 constexpr GuestMessage_GuestType GuestMessage::ARC;
 constexpr GuestMessage_GuestType GuestMessage::ARC_VM;
@@ -167,7 +147,7 @@ constexpr GuestMessage_GuestType GuestMessage::PLUGIN_VM;
 constexpr GuestMessage_GuestType GuestMessage::GuestType_MIN;
 constexpr GuestMessage_GuestType GuestMessage::GuestType_MAX;
 constexpr int GuestMessage::GuestType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool GuestMessage_GuestEvent_IsValid(int value) {
   switch (value) {
     case 0:
@@ -214,7 +194,7 @@ const std::string& GuestMessage_GuestEvent_Name(
                      GuestMessage_GuestEvent_strings[idx].get();
 }
 bool GuestMessage_GuestEvent_Parse(
-    const std::string& name, GuestMessage_GuestEvent* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, GuestMessage_GuestEvent* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       GuestMessage_GuestEvent_entries, 3, name, &int_value);
@@ -223,14 +203,14 @@ bool GuestMessage_GuestEvent_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr GuestMessage_GuestEvent GuestMessage::UNKNOWN_EVENT;
 constexpr GuestMessage_GuestEvent GuestMessage::START;
 constexpr GuestMessage_GuestEvent GuestMessage::STOP;
 constexpr GuestMessage_GuestEvent GuestMessage::GuestEvent_MIN;
 constexpr GuestMessage_GuestEvent GuestMessage::GuestEvent_MAX;
 constexpr int GuestMessage::GuestEvent_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool NDProxyMessage_NDProxyEventType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -281,7 +261,7 @@ const std::string& NDProxyMessage_NDProxyEventType_Name(
                      NDProxyMessage_NDProxyEventType_strings[idx].get();
 }
 bool NDProxyMessage_NDProxyEventType_Parse(
-    const std::string& name, NDProxyMessage_NDProxyEventType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NDProxyMessage_NDProxyEventType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       NDProxyMessage_NDProxyEventType_entries, 4, name, &int_value);
@@ -290,7 +270,7 @@ bool NDProxyMessage_NDProxyEventType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::UNKNOWN;
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::ADD_ROUTE;
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::ADD_ADDR;
@@ -298,12 +278,10 @@ constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::DEL_ADDR;
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::NDProxyEventType_MIN;
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::NDProxyEventType_MAX;
 constexpr int NDProxyMessage::NDProxyEventType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void DeviceMessage::InitAsDefaultInstance() {
-}
 class DeviceMessage::_Internal {
  public:
   using HasBits = decltype(std::declval<DeviceMessage>()._has_bits_);
@@ -319,25 +297,39 @@ class DeviceMessage::_Internal {
   static void set_has_force_local_next_hop(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
 };
 
-DeviceMessage::DeviceMessage()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DeviceMessage::DeviceMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:patchpanel.DeviceMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.DeviceMessage)
 }
 DeviceMessage::DeviceMessage(const DeviceMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   dev_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    dev_ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_dev_ifname()) {
-    dev_ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dev_ifname_);
+    dev_ifname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_dev_ifname(), 
+      GetArenaForAllocation());
   }
   br_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    br_ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_br_ifname()) {
-    br_ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.br_ifname_);
+    br_ifname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_br_ifname(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&teardown_, &from.teardown_,
     static_cast<size_t>(reinterpret_cast<char*>(&force_local_next_hop_) -
@@ -345,121 +337,137 @@ DeviceMessage::DeviceMessage(const DeviceMessage& from)
   // @@protoc_insertion_point(copy_constructor:patchpanel.DeviceMessage)
 }
 
-void DeviceMessage::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DeviceMessage_ipc_2eproto.base);
-  dev_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  br_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&teardown_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&force_local_next_hop_) -
-      reinterpret_cast<char*>(&teardown_)) + sizeof(force_local_next_hop_));
+inline void DeviceMessage::SharedCtor() {
+dev_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  dev_ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+br_ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  br_ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&teardown_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&force_local_next_hop_) -
+    reinterpret_cast<char*>(&teardown_)) + sizeof(force_local_next_hop_));
 }
 
 DeviceMessage::~DeviceMessage() {
   // @@protoc_insertion_point(destructor:patchpanel.DeviceMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DeviceMessage::SharedDtor() {
+inline void DeviceMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   dev_ifname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   br_ifname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DeviceMessage::ArenaDtor(void* object) {
+  DeviceMessage* _this = reinterpret_cast< DeviceMessage* >(object);
+  (void)_this;
+}
+void DeviceMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeviceMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DeviceMessage& DeviceMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeviceMessage_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DeviceMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:patchpanel.DeviceMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      dev_ifname_.ClearNonDefaultToEmptyNoArena();
+      dev_ifname_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      br_ifname_.ClearNonDefaultToEmptyNoArena();
+      br_ifname_.ClearNonDefaultToEmpty();
     }
   }
   ::memset(&teardown_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&force_local_next_hop_) -
       reinterpret_cast<char*>(&teardown_)) + sizeof(force_local_next_hop_));
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DeviceMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required string dev_ifname = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_dev_ifname();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string br_ifname = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_br_ifname();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool teardown = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_teardown(&has_bits);
-          teardown_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          teardown_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool force_local_next_hop = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_force_local_next_hop(&has_bits);
-          force_local_next_hop_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          force_local_next_hop_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DeviceMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DeviceMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:patchpanel.DeviceMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -488,8 +496,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:patchpanel.DeviceMessage)
   return target;
@@ -505,7 +513,7 @@ size_t DeviceMessage::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_dev_ifname());
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -530,7 +538,7 @@ size_t DeviceMessage::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -546,19 +554,16 @@ void DeviceMessage::CheckTypeAndMergeFrom(
 void DeviceMessage::MergeFrom(const DeviceMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.DeviceMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      dev_ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dev_ifname_);
+      _internal_set_dev_ifname(from._internal_dev_ifname());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      br_ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.br_ifname_);
+      _internal_set_br_ifname(from._internal_br_ifname());
     }
     if (cached_has_bits & 0x00000004u) {
       teardown_ = from.teardown_;
@@ -568,6 +573,7 @@ void DeviceMessage::MergeFrom(const DeviceMessage& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DeviceMessage::CopyFrom(const DeviceMessage& from) {
@@ -578,20 +584,32 @@ void DeviceMessage::CopyFrom(const DeviceMessage& from) {
 }
 
 bool DeviceMessage::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void DeviceMessage::InternalSwap(DeviceMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  dev_ifname_.Swap(&other->dev_ifname_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  br_ifname_.Swap(&other->br_ifname_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(teardown_, other->teardown_);
-  swap(force_local_next_hop_, other->force_local_next_hop_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &dev_ifname_, lhs_arena,
+      &other->dev_ifname_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &br_ifname_, lhs_arena,
+      &other->br_ifname_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DeviceMessage, force_local_next_hop_)
+      + sizeof(DeviceMessage::force_local_next_hop_)
+      - PROTOBUF_FIELD_OFFSET(DeviceMessage, teardown_)>(
+          reinterpret_cast<char*>(&teardown_),
+          reinterpret_cast<char*>(&other->teardown_));
 }
 
 std::string DeviceMessage::GetTypeName() const {
@@ -601,8 +619,6 @@ std::string DeviceMessage::GetTypeName() const {
 
 // ===================================================================
 
-void GuestMessage::InitAsDefaultInstance() {
-}
 class GuestMessage::_Internal {
  public:
   using HasBits = decltype(std::declval<GuestMessage>()._has_bits_);
@@ -618,50 +634,61 @@ class GuestMessage::_Internal {
   static void set_has_arcvm_vsock_cid(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
 };
 
-GuestMessage::GuestMessage()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GuestMessage::GuestMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:patchpanel.GuestMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.GuestMessage)
 }
 GuestMessage::GuestMessage(const GuestMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&type_, &from.type_,
     static_cast<size_t>(reinterpret_cast<char*>(&arcvm_vsock_cid_) -
     reinterpret_cast<char*>(&type_)) + sizeof(arcvm_vsock_cid_));
   // @@protoc_insertion_point(copy_constructor:patchpanel.GuestMessage)
 }
 
-void GuestMessage::SharedCtor() {
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&arcvm_vsock_cid_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(arcvm_vsock_cid_));
+inline void GuestMessage::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&arcvm_vsock_cid_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(arcvm_vsock_cid_));
 }
 
 GuestMessage::~GuestMessage() {
   // @@protoc_insertion_point(destructor:patchpanel.GuestMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GuestMessage::SharedDtor() {
+inline void GuestMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void GuestMessage::ArenaDtor(void* object) {
+  GuestMessage* _this = reinterpret_cast< GuestMessage* >(object);
+  (void)_this;
+}
+void GuestMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuestMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GuestMessage& GuestMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GuestMessage_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GuestMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:patchpanel.GuestMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -672,82 +699,88 @@ void GuestMessage::Clear() {
         reinterpret_cast<char*>(&type_)) + sizeof(arcvm_vsock_cid_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GuestMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required .patchpanel.GuestMessage.GuestType type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::patchpanel::GuestMessage_GuestType_IsValid(val))) {
             _internal_set_type(static_cast<::patchpanel::GuestMessage_GuestType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // required .patchpanel.GuestMessage.GuestEvent event = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::patchpanel::GuestMessage_GuestEvent_IsValid(val))) {
             _internal_set_event(static_cast<::patchpanel::GuestMessage_GuestEvent>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 arc_pid = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_arc_pid(&has_bits);
-          arc_pid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          arc_pid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 arcvm_vsock_cid = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_arcvm_vsock_cid(&has_bits);
-          arcvm_vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          arcvm_vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GuestMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GuestMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:patchpanel.GuestMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -778,8 +811,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:patchpanel.GuestMessage)
   return target;
@@ -819,7 +852,7 @@ size_t GuestMessage::ByteSizeLong() const {
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -827,21 +860,17 @@ size_t GuestMessage::ByteSizeLong() const {
   if (cached_has_bits & 0x0000000cu) {
     // optional int32 arc_pid = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_arc_pid());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_arc_pid());
     }
 
     // optional int32 arcvm_vsock_cid = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_arcvm_vsock_cid());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_arcvm_vsock_cid());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -857,8 +886,7 @@ void GuestMessage::CheckTypeAndMergeFrom(
 void GuestMessage::MergeFrom(const GuestMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.GuestMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -877,6 +905,7 @@ void GuestMessage::MergeFrom(const GuestMessage& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GuestMessage::CopyFrom(const GuestMessage& from) {
@@ -887,18 +916,20 @@ void GuestMessage::CopyFrom(const GuestMessage& from) {
 }
 
 bool GuestMessage::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void GuestMessage::InternalSwap(GuestMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(type_, other->type_);
-  swap(event_, other->event_);
-  swap(arc_pid_, other->arc_pid_);
-  swap(arcvm_vsock_cid_, other->arcvm_vsock_cid_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GuestMessage, arcvm_vsock_cid_)
+      + sizeof(GuestMessage::arcvm_vsock_cid_)
+      - PROTOBUF_FIELD_OFFSET(GuestMessage, type_)>(
+          reinterpret_cast<char*>(&type_),
+          reinterpret_cast<char*>(&other->type_));
 }
 
 std::string GuestMessage::GetTypeName() const {
@@ -908,8 +939,6 @@ std::string GuestMessage::GetTypeName() const {
 
 // ===================================================================
 
-void NDProxyMessage::InitAsDefaultInstance() {
-}
 class NDProxyMessage::_Internal {
  public:
   using HasBits = decltype(std::declval<NDProxyMessage>()._has_bits_);
@@ -922,137 +951,165 @@ class NDProxyMessage::_Internal {
   static void set_has_ip6addr(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000005) ^ 0x00000005) != 0;
+  }
 };
 
-NDProxyMessage::NDProxyMessage()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+NDProxyMessage::NDProxyMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:patchpanel.NDProxyMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.NDProxyMessage)
 }
 NDProxyMessage::NDProxyMessage(const NDProxyMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_ifname()) {
-    ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ifname_);
+    ifname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ifname(), 
+      GetArenaForAllocation());
   }
   ip6addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    ip6addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_ip6addr()) {
-    ip6addr_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip6addr_);
+    ip6addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ip6addr(), 
+      GetArenaForAllocation());
   }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:patchpanel.NDProxyMessage)
 }
 
-void NDProxyMessage::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_NDProxyMessage_ipc_2eproto.base);
-  ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ip6addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  type_ = 0;
+inline void NDProxyMessage::SharedCtor() {
+ifname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ifname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+ip6addr_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ip6addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+type_ = 0;
 }
 
 NDProxyMessage::~NDProxyMessage() {
   // @@protoc_insertion_point(destructor:patchpanel.NDProxyMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void NDProxyMessage::SharedDtor() {
+inline void NDProxyMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   ifname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ip6addr_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void NDProxyMessage::ArenaDtor(void* object) {
+  NDProxyMessage* _this = reinterpret_cast< NDProxyMessage* >(object);
+  (void)_this;
+}
+void NDProxyMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void NDProxyMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const NDProxyMessage& NDProxyMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_NDProxyMessage_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void NDProxyMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:patchpanel.NDProxyMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      ifname_.ClearNonDefaultToEmptyNoArena();
+      ifname_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      ip6addr_.ClearNonDefaultToEmptyNoArena();
+      ip6addr_.ClearNonDefaultToEmpty();
     }
   }
   type_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* NDProxyMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required .patchpanel.NDProxyMessage.NDProxyEventType type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::patchpanel::NDProxyMessage_NDProxyEventType_IsValid(val))) {
             _internal_set_type(static_cast<::patchpanel::NDProxyMessage_NDProxyEventType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // required string ifname = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_ifname();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string ip6addr = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_ip6addr();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* NDProxyMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* NDProxyMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:patchpanel.NDProxyMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1076,8 +1133,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:patchpanel.NDProxyMessage)
   return target;
@@ -1119,7 +1176,7 @@ size_t NDProxyMessage::ByteSizeLong() const {
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1132,7 +1189,7 @@ size_t NDProxyMessage::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1148,25 +1205,23 @@ void NDProxyMessage::CheckTypeAndMergeFrom(
 void NDProxyMessage::MergeFrom(const NDProxyMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.NDProxyMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      ifname_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ifname_);
+      _internal_set_ifname(from._internal_ifname());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      ip6addr_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip6addr_);
+      _internal_set_ip6addr(from._internal_ip6addr());
     }
     if (cached_has_bits & 0x00000004u) {
       type_ = from.type_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void NDProxyMessage::CopyFrom(const NDProxyMessage& from) {
@@ -1177,18 +1232,26 @@ void NDProxyMessage::CopyFrom(const NDProxyMessage& from) {
 }
 
 bool NDProxyMessage::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void NDProxyMessage::InternalSwap(NDProxyMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ifname_.Swap(&other->ifname_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  ip6addr_.Swap(&other->ip6addr_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ifname_, lhs_arena,
+      &other->ifname_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ip6addr_, lhs_arena,
+      &other->ip6addr_, rhs_arena
+  );
   swap(type_, other->type_);
 }
 
@@ -1199,11 +1262,8 @@ std::string NDProxyMessage::GetTypeName() const {
 
 // ===================================================================
 
-void IpHelperMessage::InitAsDefaultInstance() {
-}
 class IpHelperMessage::_Internal {
  public:
-  using HasBits = decltype(std::declval<IpHelperMessage>()._has_bits_);
   static const ::patchpanel::GuestMessage& guest_message(const IpHelperMessage* msg);
   static const ::patchpanel::DeviceMessage& device_message(const IpHelperMessage* msg);
   static const ::patchpanel::NDProxyMessage& ndproxy_message(const IpHelperMessage* msg);
@@ -1222,10 +1282,11 @@ IpHelperMessage::_Internal::ndproxy_message(const IpHelperMessage* msg) {
   return *msg->message_type_.ndproxy_message_;
 }
 void IpHelperMessage::set_allocated_guest_message(::patchpanel::GuestMessage* guest_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_message_type();
   if (guest_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::GuestMessage>::GetOwningArena(guest_message);
     if (message_arena != submessage_arena) {
       guest_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, guest_message, submessage_arena);
@@ -1236,10 +1297,11 @@ void IpHelperMessage::set_allocated_guest_message(::patchpanel::GuestMessage* gu
   // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.guest_message)
 }
 void IpHelperMessage::set_allocated_device_message(::patchpanel::DeviceMessage* device_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_message_type();
   if (device_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::DeviceMessage>::GetOwningArena(device_message);
     if (message_arena != submessage_arena) {
       device_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, device_message, submessage_arena);
@@ -1250,10 +1312,11 @@ void IpHelperMessage::set_allocated_device_message(::patchpanel::DeviceMessage* 
   // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.device_message)
 }
 void IpHelperMessage::set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_message_type();
   if (ndproxy_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::NDProxyMessage>::GetOwningArena(ndproxy_message);
     if (message_arena != submessage_arena) {
       ndproxy_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ndproxy_message, submessage_arena);
@@ -1263,16 +1326,18 @@ void IpHelperMessage::set_allocated_ndproxy_message(::patchpanel::NDProxyMessage
   }
   // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.ndproxy_message)
 }
-IpHelperMessage::IpHelperMessage()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+IpHelperMessage::IpHelperMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:patchpanel.IpHelperMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.IpHelperMessage)
 }
 IpHelperMessage::IpHelperMessage(const IpHelperMessage& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   clear_has_message_type();
   switch (from.message_type_case()) {
     case kGuestMessage: {
@@ -1294,44 +1359,53 @@ IpHelperMessage::IpHelperMessage(const IpHelperMessage& from)
   // @@protoc_insertion_point(copy_constructor:patchpanel.IpHelperMessage)
 }
 
-void IpHelperMessage::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_IpHelperMessage_ipc_2eproto.base);
-  clear_has_message_type();
+inline void IpHelperMessage::SharedCtor() {
+clear_has_message_type();
 }
 
 IpHelperMessage::~IpHelperMessage() {
   // @@protoc_insertion_point(destructor:patchpanel.IpHelperMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void IpHelperMessage::SharedDtor() {
+inline void IpHelperMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_message_type()) {
     clear_message_type();
   }
 }
 
+void IpHelperMessage::ArenaDtor(void* object) {
+  IpHelperMessage* _this = reinterpret_cast< IpHelperMessage* >(object);
+  (void)_this;
+}
+void IpHelperMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void IpHelperMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const IpHelperMessage& IpHelperMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IpHelperMessage_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void IpHelperMessage::clear_message_type() {
 // @@protoc_insertion_point(one_of_clear_start:patchpanel.IpHelperMessage)
   switch (message_type_case()) {
     case kGuestMessage: {
-      delete message_type_.guest_message_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.guest_message_;
+      }
       break;
     }
     case kDeviceMessage: {
-      delete message_type_.device_message_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.device_message_;
+      }
       break;
     }
     case kNdproxyMessage: {
-      delete message_type_.ndproxy_message_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.ndproxy_message_;
+      }
       break;
     }
     case MESSAGE_TYPE_NOT_SET: {
@@ -1344,67 +1418,71 @@ void IpHelperMessage::clear_message_type() {
 
 void IpHelperMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:patchpanel.IpHelperMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   clear_message_type();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* IpHelperMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
-      // optional .patchpanel.GuestMessage guest_message = 1;
+      // .patchpanel.GuestMessage guest_message = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_guest_message(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .patchpanel.DeviceMessage device_message = 2;
+      // .patchpanel.DeviceMessage device_message = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_device_message(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .patchpanel.NDProxyMessage ndproxy_message = 3;
+      // .patchpanel.NDProxyMessage ndproxy_message = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_ndproxy_message(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* IpHelperMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* IpHelperMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:patchpanel.IpHelperMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (message_type_case()) {
@@ -1432,8 +1510,8 @@ failure:
     default: ;
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:patchpanel.IpHelperMessage)
   return target;
@@ -1443,26 +1521,26 @@ size_t IpHelperMessage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:patchpanel.IpHelperMessage)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (message_type_case()) {
-    // optional .patchpanel.GuestMessage guest_message = 1;
+    // .patchpanel.GuestMessage guest_message = 1;
     case kGuestMessage: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *message_type_.guest_message_);
       break;
     }
-    // optional .patchpanel.DeviceMessage device_message = 2;
+    // .patchpanel.DeviceMessage device_message = 2;
     case kDeviceMessage: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *message_type_.device_message_);
       break;
     }
-    // optional .patchpanel.NDProxyMessage ndproxy_message = 3;
+    // .patchpanel.NDProxyMessage ndproxy_message = 3;
     case kNdproxyMessage: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1474,7 +1552,7 @@ size_t IpHelperMessage::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1490,8 +1568,7 @@ void IpHelperMessage::CheckTypeAndMergeFrom(
 void IpHelperMessage::MergeFrom(const IpHelperMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.IpHelperMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.message_type_case()) {
@@ -1511,6 +1588,7 @@ void IpHelperMessage::MergeFrom(const IpHelperMessage& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void IpHelperMessage::CopyFrom(const IpHelperMessage& from) {
@@ -1523,20 +1601,20 @@ void IpHelperMessage::CopyFrom(const IpHelperMessage& from) {
 bool IpHelperMessage::IsInitialized() const {
   switch (message_type_case()) {
     case kGuestMessage: {
-      if (has_guest_message()) {
-        if (!this->guest_message().IsInitialized()) return false;
+      if (_internal_has_guest_message()) {
+        if (!message_type_.guest_message_->IsInitialized()) return false;
       }
       break;
     }
     case kDeviceMessage: {
-      if (has_device_message()) {
-        if (!this->device_message().IsInitialized()) return false;
+      if (_internal_has_device_message()) {
+        if (!message_type_.device_message_->IsInitialized()) return false;
       }
       break;
     }
     case kNdproxyMessage: {
-      if (has_ndproxy_message()) {
-        if (!this->ndproxy_message().IsInitialized()) return false;
+      if (_internal_has_ndproxy_message()) {
+        if (!message_type_.ndproxy_message_->IsInitialized()) return false;
       }
       break;
     }
@@ -1549,8 +1627,7 @@ bool IpHelperMessage::IsInitialized() const {
 
 void IpHelperMessage::InternalSwap(IpHelperMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(message_type_, other->message_type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -1564,16 +1641,16 @@ std::string IpHelperMessage::GetTypeName() const {
 }  // namespace patchpanel
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::patchpanel::DeviceMessage* Arena::CreateMaybeMessage< ::patchpanel::DeviceMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::patchpanel::DeviceMessage >(arena);
+  return Arena::CreateMessageInternal< ::patchpanel::DeviceMessage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::patchpanel::GuestMessage* Arena::CreateMaybeMessage< ::patchpanel::GuestMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::patchpanel::GuestMessage >(arena);
+  return Arena::CreateMessageInternal< ::patchpanel::GuestMessage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::patchpanel::NDProxyMessage* Arena::CreateMaybeMessage< ::patchpanel::NDProxyMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::patchpanel::NDProxyMessage >(arena);
+  return Arena::CreateMessageInternal< ::patchpanel::NDProxyMessage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::patchpanel::IpHelperMessage* Arena::CreateMaybeMessage< ::patchpanel::IpHelperMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::patchpanel::IpHelperMessage >(arena);
+  return Arena::CreateMessageInternal< ::patchpanel::IpHelperMessage >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

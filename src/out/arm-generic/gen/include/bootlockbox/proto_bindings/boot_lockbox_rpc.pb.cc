@@ -11,116 +11,86 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace cryptohome {
-class StoreBootLockboxRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StoreBootLockboxRequest> _instance;
-} _StoreBootLockboxRequest_default_instance_;
-class StoreBootLockboxReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StoreBootLockboxReply> _instance;
-} _StoreBootLockboxReply_default_instance_;
-class ReadBootLockboxRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ReadBootLockboxRequest> _instance;
-} _ReadBootLockboxRequest_default_instance_;
-class ReadBootLockboxReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ReadBootLockboxReply> _instance;
-} _ReadBootLockboxReply_default_instance_;
-class FinalizeNVRamBootLockboxRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FinalizeNVRamBootLockboxRequest> _instance;
-} _FinalizeNVRamBootLockboxRequest_default_instance_;
-class FinalizeBootLockboxReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FinalizeBootLockboxReply> _instance;
-} _FinalizeBootLockboxReply_default_instance_;
+constexpr StoreBootLockboxRequest::StoreBootLockboxRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct StoreBootLockboxRequestDefaultTypeInternal {
+  constexpr StoreBootLockboxRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~StoreBootLockboxRequestDefaultTypeInternal() {}
+  union {
+    StoreBootLockboxRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StoreBootLockboxRequestDefaultTypeInternal _StoreBootLockboxRequest_default_instance_;
+constexpr StoreBootLockboxReply::StoreBootLockboxReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(0)
+{}
+struct StoreBootLockboxReplyDefaultTypeInternal {
+  constexpr StoreBootLockboxReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~StoreBootLockboxReplyDefaultTypeInternal() {}
+  union {
+    StoreBootLockboxReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StoreBootLockboxReplyDefaultTypeInternal _StoreBootLockboxReply_default_instance_;
+constexpr ReadBootLockboxRequest::ReadBootLockboxRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ReadBootLockboxRequestDefaultTypeInternal {
+  constexpr ReadBootLockboxRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReadBootLockboxRequestDefaultTypeInternal() {}
+  union {
+    ReadBootLockboxRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReadBootLockboxRequestDefaultTypeInternal _ReadBootLockboxRequest_default_instance_;
+constexpr ReadBootLockboxReply::ReadBootLockboxReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : data_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , error_(0)
+{}
+struct ReadBootLockboxReplyDefaultTypeInternal {
+  constexpr ReadBootLockboxReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReadBootLockboxReplyDefaultTypeInternal() {}
+  union {
+    ReadBootLockboxReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReadBootLockboxReplyDefaultTypeInternal _ReadBootLockboxReply_default_instance_;
+constexpr FinalizeNVRamBootLockboxRequest::FinalizeNVRamBootLockboxRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct FinalizeNVRamBootLockboxRequestDefaultTypeInternal {
+  constexpr FinalizeNVRamBootLockboxRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FinalizeNVRamBootLockboxRequestDefaultTypeInternal() {}
+  union {
+    FinalizeNVRamBootLockboxRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FinalizeNVRamBootLockboxRequestDefaultTypeInternal _FinalizeNVRamBootLockboxRequest_default_instance_;
+constexpr FinalizeBootLockboxReply::FinalizeBootLockboxReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(0)
+{}
+struct FinalizeBootLockboxReplyDefaultTypeInternal {
+  constexpr FinalizeBootLockboxReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FinalizeBootLockboxReplyDefaultTypeInternal() {}
+  union {
+    FinalizeBootLockboxReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FinalizeBootLockboxReplyDefaultTypeInternal _FinalizeBootLockboxReply_default_instance_;
 }  // namespace cryptohome
-static void InitDefaultsscc_info_FinalizeBootLockboxReply_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_FinalizeBootLockboxReply_default_instance_;
-    new (ptr) ::cryptohome::FinalizeBootLockboxReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::FinalizeBootLockboxReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FinalizeBootLockboxReply_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FinalizeBootLockboxReply_boot_5flockbox_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_FinalizeNVRamBootLockboxRequest_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_FinalizeNVRamBootLockboxRequest_default_instance_;
-    new (ptr) ::cryptohome::FinalizeNVRamBootLockboxRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::FinalizeNVRamBootLockboxRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FinalizeNVRamBootLockboxRequest_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FinalizeNVRamBootLockboxRequest_boot_5flockbox_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_ReadBootLockboxReply_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_ReadBootLockboxReply_default_instance_;
-    new (ptr) ::cryptohome::ReadBootLockboxReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::ReadBootLockboxReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ReadBootLockboxReply_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ReadBootLockboxReply_boot_5flockbox_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_ReadBootLockboxRequest_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_ReadBootLockboxRequest_default_instance_;
-    new (ptr) ::cryptohome::ReadBootLockboxRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::ReadBootLockboxRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ReadBootLockboxRequest_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ReadBootLockboxRequest_boot_5flockbox_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_StoreBootLockboxReply_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_StoreBootLockboxReply_default_instance_;
-    new (ptr) ::cryptohome::StoreBootLockboxReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::StoreBootLockboxReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StoreBootLockboxReply_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StoreBootLockboxReply_boot_5flockbox_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_StoreBootLockboxRequest_boot_5flockbox_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_StoreBootLockboxRequest_default_instance_;
-    new (ptr) ::cryptohome::StoreBootLockboxRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::StoreBootLockboxRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StoreBootLockboxRequest_boot_5flockbox_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_StoreBootLockboxRequest_boot_5flockbox_5frpc_2eproto}, {}};
-
 namespace cryptohome {
 bool BootLockboxErrorCode_IsValid(int value) {
   switch (value) {
@@ -188,7 +158,7 @@ const std::string& BootLockboxErrorCode_Name(
                      BootLockboxErrorCode_strings[idx].get();
 }
 bool BootLockboxErrorCode_Parse(
-    const std::string& name, BootLockboxErrorCode* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BootLockboxErrorCode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       BootLockboxErrorCode_entries, 8, name, &int_value);
@@ -200,8 +170,6 @@ bool BootLockboxErrorCode_Parse(
 
 // ===================================================================
 
-void StoreBootLockboxRequest::InitAsDefaultInstance() {
-}
 class StoreBootLockboxRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<StoreBootLockboxRequest>()._has_bits_);
@@ -213,120 +181,144 @@ class StoreBootLockboxRequest::_Internal {
   }
 };
 
-StoreBootLockboxRequest::StoreBootLockboxRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+StoreBootLockboxRequest::StoreBootLockboxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.StoreBootLockboxRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.StoreBootLockboxRequest)
 }
 StoreBootLockboxRequest::StoreBootLockboxRequest(const StoreBootLockboxRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_key()) {
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
+      GetArenaForAllocation());
   }
   data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_data()) {
-    data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
+    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:cryptohome.StoreBootLockboxRequest)
 }
 
-void StoreBootLockboxRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_StoreBootLockboxRequest_boot_5flockbox_5frpc_2eproto.base);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void StoreBootLockboxRequest::SharedCtor() {
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 StoreBootLockboxRequest::~StoreBootLockboxRequest() {
   // @@protoc_insertion_point(destructor:cryptohome.StoreBootLockboxRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void StoreBootLockboxRequest::SharedDtor() {
+inline void StoreBootLockboxRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void StoreBootLockboxRequest::ArenaDtor(void* object) {
+  StoreBootLockboxRequest* _this = reinterpret_cast< StoreBootLockboxRequest* >(object);
+  (void)_this;
+}
+void StoreBootLockboxRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void StoreBootLockboxRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const StoreBootLockboxRequest& StoreBootLockboxRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StoreBootLockboxRequest_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void StoreBootLockboxRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.StoreBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      key_.ClearNonDefaultToEmptyNoArena();
+      key_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      data_.ClearNonDefaultToEmptyNoArena();
+      data_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* StoreBootLockboxRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes data = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_data();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* StoreBootLockboxRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* StoreBootLockboxRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.StoreBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -343,8 +335,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.StoreBootLockboxRequest)
   return target;
@@ -354,7 +346,7 @@ size_t StoreBootLockboxRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.StoreBootLockboxRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -376,7 +368,7 @@ size_t StoreBootLockboxRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -392,21 +384,19 @@ void StoreBootLockboxRequest::CheckTypeAndMergeFrom(
 void StoreBootLockboxRequest::MergeFrom(const StoreBootLockboxRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.StoreBootLockboxRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+      _internal_set_key(from._internal_key());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
+      _internal_set_data(from._internal_data());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void StoreBootLockboxRequest::CopyFrom(const StoreBootLockboxRequest& from) {
@@ -422,12 +412,20 @@ bool StoreBootLockboxRequest::IsInitialized() const {
 
 void StoreBootLockboxRequest::InternalSwap(StoreBootLockboxRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  data_.Swap(&other->data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_, lhs_arena,
+      &other->key_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &data_, lhs_arena,
+      &other->data_, rhs_arena
+  );
 }
 
 std::string StoreBootLockboxRequest::GetTypeName() const {
@@ -437,8 +435,6 @@ std::string StoreBootLockboxRequest::GetTypeName() const {
 
 // ===================================================================
 
-void StoreBootLockboxReply::InitAsDefaultInstance() {
-}
 class StoreBootLockboxReply::_Internal {
  public:
   using HasBits = decltype(std::declval<StoreBootLockboxReply>()._has_bits_);
@@ -447,97 +443,107 @@ class StoreBootLockboxReply::_Internal {
   }
 };
 
-StoreBootLockboxReply::StoreBootLockboxReply()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+StoreBootLockboxReply::StoreBootLockboxReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.StoreBootLockboxReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.StoreBootLockboxReply)
 }
 StoreBootLockboxReply::StoreBootLockboxReply(const StoreBootLockboxReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:cryptohome.StoreBootLockboxReply)
 }
 
-void StoreBootLockboxReply::SharedCtor() {
-  error_ = 0;
+inline void StoreBootLockboxReply::SharedCtor() {
+error_ = 0;
 }
 
 StoreBootLockboxReply::~StoreBootLockboxReply() {
   // @@protoc_insertion_point(destructor:cryptohome.StoreBootLockboxReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void StoreBootLockboxReply::SharedDtor() {
+inline void StoreBootLockboxReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void StoreBootLockboxReply::ArenaDtor(void* object) {
+  StoreBootLockboxReply* _this = reinterpret_cast< StoreBootLockboxReply* >(object);
+  (void)_this;
+}
+void StoreBootLockboxReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void StoreBootLockboxReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const StoreBootLockboxReply& StoreBootLockboxReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_StoreBootLockboxReply_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void StoreBootLockboxReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.StoreBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* StoreBootLockboxReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .cryptohome.BootLockboxErrorCode error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::cryptohome::BootLockboxErrorCode_IsValid(val))) {
             _internal_set_error(static_cast<::cryptohome::BootLockboxErrorCode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* StoreBootLockboxReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* StoreBootLockboxReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.StoreBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -549,8 +555,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.StoreBootLockboxReply)
   return target;
@@ -560,7 +566,7 @@ size_t StoreBootLockboxReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.StoreBootLockboxReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -572,7 +578,7 @@ size_t StoreBootLockboxReply::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -588,13 +594,13 @@ void StoreBootLockboxReply::CheckTypeAndMergeFrom(
 void StoreBootLockboxReply::MergeFrom(const StoreBootLockboxReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.StoreBootLockboxReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void StoreBootLockboxReply::CopyFrom(const StoreBootLockboxReply& from) {
@@ -610,7 +616,7 @@ bool StoreBootLockboxReply::IsInitialized() const {
 
 void StoreBootLockboxReply::InternalSwap(StoreBootLockboxReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(error_, other->error_);
 }
@@ -622,8 +628,6 @@ std::string StoreBootLockboxReply::GetTypeName() const {
 
 // ===================================================================
 
-void ReadBootLockboxRequest::InitAsDefaultInstance() {
-}
 class ReadBootLockboxRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<ReadBootLockboxRequest>()._has_bits_);
@@ -632,101 +636,117 @@ class ReadBootLockboxRequest::_Internal {
   }
 };
 
-ReadBootLockboxRequest::ReadBootLockboxRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ReadBootLockboxRequest::ReadBootLockboxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.ReadBootLockboxRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.ReadBootLockboxRequest)
 }
 ReadBootLockboxRequest::ReadBootLockboxRequest(const ReadBootLockboxRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_key()) {
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:cryptohome.ReadBootLockboxRequest)
 }
 
-void ReadBootLockboxRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReadBootLockboxRequest_boot_5flockbox_5frpc_2eproto.base);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ReadBootLockboxRequest::SharedCtor() {
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ReadBootLockboxRequest::~ReadBootLockboxRequest() {
   // @@protoc_insertion_point(destructor:cryptohome.ReadBootLockboxRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ReadBootLockboxRequest::SharedDtor() {
+inline void ReadBootLockboxRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ReadBootLockboxRequest::ArenaDtor(void* object) {
+  ReadBootLockboxRequest* _this = reinterpret_cast< ReadBootLockboxRequest* >(object);
+  (void)_this;
+}
+void ReadBootLockboxRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ReadBootLockboxRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ReadBootLockboxRequest& ReadBootLockboxRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ReadBootLockboxRequest_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ReadBootLockboxRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.ReadBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    key_.ClearNonDefaultToEmptyNoArena();
+    key_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ReadBootLockboxRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ReadBootLockboxRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ReadBootLockboxRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.ReadBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -737,8 +757,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.ReadBootLockboxRequest)
   return target;
@@ -748,7 +768,7 @@ size_t ReadBootLockboxRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.ReadBootLockboxRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -761,7 +781,7 @@ size_t ReadBootLockboxRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -777,14 +797,13 @@ void ReadBootLockboxRequest::CheckTypeAndMergeFrom(
 void ReadBootLockboxRequest::MergeFrom(const ReadBootLockboxRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.ReadBootLockboxRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_key()) {
-    _has_bits_[0] |= 0x00000001u;
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    _internal_set_key(from._internal_key());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ReadBootLockboxRequest::CopyFrom(const ReadBootLockboxRequest& from) {
@@ -800,10 +819,15 @@ bool ReadBootLockboxRequest::IsInitialized() const {
 
 void ReadBootLockboxRequest::InternalSwap(ReadBootLockboxRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_, lhs_arena,
+      &other->key_, rhs_arena
+  );
 }
 
 std::string ReadBootLockboxRequest::GetTypeName() const {
@@ -813,8 +837,6 @@ std::string ReadBootLockboxRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ReadBootLockboxReply::InitAsDefaultInstance() {
-}
 class ReadBootLockboxReply::_Internal {
  public:
   using HasBits = decltype(std::declval<ReadBootLockboxReply>()._has_bits_);
@@ -826,116 +848,133 @@ class ReadBootLockboxReply::_Internal {
   }
 };
 
-ReadBootLockboxReply::ReadBootLockboxReply()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ReadBootLockboxReply::ReadBootLockboxReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.ReadBootLockboxReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.ReadBootLockboxReply)
 }
 ReadBootLockboxReply::ReadBootLockboxReply(const ReadBootLockboxReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_data()) {
-    data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
+    data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_data(), 
+      GetArenaForAllocation());
   }
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:cryptohome.ReadBootLockboxReply)
 }
 
-void ReadBootLockboxReply::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ReadBootLockboxReply_boot_5flockbox_5frpc_2eproto.base);
-  data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  error_ = 0;
+inline void ReadBootLockboxReply::SharedCtor() {
+data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+error_ = 0;
 }
 
 ReadBootLockboxReply::~ReadBootLockboxReply() {
   // @@protoc_insertion_point(destructor:cryptohome.ReadBootLockboxReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ReadBootLockboxReply::SharedDtor() {
+inline void ReadBootLockboxReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ReadBootLockboxReply::ArenaDtor(void* object) {
+  ReadBootLockboxReply* _this = reinterpret_cast< ReadBootLockboxReply* >(object);
+  (void)_this;
+}
+void ReadBootLockboxReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ReadBootLockboxReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ReadBootLockboxReply& ReadBootLockboxReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ReadBootLockboxReply_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ReadBootLockboxReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.ReadBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    data_.ClearNonDefaultToEmptyNoArena();
+    data_.ClearNonDefaultToEmpty();
   }
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ReadBootLockboxReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .cryptohome.BootLockboxErrorCode error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::cryptohome::BootLockboxErrorCode_IsValid(val))) {
             _internal_set_error(static_cast<::cryptohome::BootLockboxErrorCode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes data = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_data();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ReadBootLockboxReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ReadBootLockboxReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.ReadBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -953,8 +992,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.ReadBootLockboxReply)
   return target;
@@ -964,7 +1003,7 @@ size_t ReadBootLockboxReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.ReadBootLockboxReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -985,7 +1024,7 @@ size_t ReadBootLockboxReply::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1001,21 +1040,20 @@ void ReadBootLockboxReply::CheckTypeAndMergeFrom(
 void ReadBootLockboxReply::MergeFrom(const ReadBootLockboxReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.ReadBootLockboxReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.data_);
+      _internal_set_data(from._internal_data());
     }
     if (cached_has_bits & 0x00000002u) {
       error_ = from.error_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ReadBootLockboxReply::CopyFrom(const ReadBootLockboxReply& from) {
@@ -1031,10 +1069,15 @@ bool ReadBootLockboxReply::IsInitialized() const {
 
 void ReadBootLockboxReply::InternalSwap(ReadBootLockboxReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  data_.Swap(&other->data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &data_, lhs_arena,
+      &other->data_, rhs_arena
+  );
   swap(error_, other->error_);
 }
 
@@ -1045,87 +1088,91 @@ std::string ReadBootLockboxReply::GetTypeName() const {
 
 // ===================================================================
 
-void FinalizeNVRamBootLockboxRequest::InitAsDefaultInstance() {
-}
 class FinalizeNVRamBootLockboxRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<FinalizeNVRamBootLockboxRequest>()._has_bits_);
 };
 
-FinalizeNVRamBootLockboxRequest::FinalizeNVRamBootLockboxRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FinalizeNVRamBootLockboxRequest::FinalizeNVRamBootLockboxRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.FinalizeNVRamBootLockboxRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.FinalizeNVRamBootLockboxRequest)
 }
 FinalizeNVRamBootLockboxRequest::FinalizeNVRamBootLockboxRequest(const FinalizeNVRamBootLockboxRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:cryptohome.FinalizeNVRamBootLockboxRequest)
 }
 
-void FinalizeNVRamBootLockboxRequest::SharedCtor() {
+inline void FinalizeNVRamBootLockboxRequest::SharedCtor() {
 }
 
 FinalizeNVRamBootLockboxRequest::~FinalizeNVRamBootLockboxRequest() {
   // @@protoc_insertion_point(destructor:cryptohome.FinalizeNVRamBootLockboxRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FinalizeNVRamBootLockboxRequest::SharedDtor() {
+inline void FinalizeNVRamBootLockboxRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void FinalizeNVRamBootLockboxRequest::ArenaDtor(void* object) {
+  FinalizeNVRamBootLockboxRequest* _this = reinterpret_cast< FinalizeNVRamBootLockboxRequest* >(object);
+  (void)_this;
+}
+void FinalizeNVRamBootLockboxRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FinalizeNVRamBootLockboxRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FinalizeNVRamBootLockboxRequest& FinalizeNVRamBootLockboxRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FinalizeNVRamBootLockboxRequest_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FinalizeNVRamBootLockboxRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.FinalizeNVRamBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FinalizeNVRamBootLockboxRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FinalizeNVRamBootLockboxRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FinalizeNVRamBootLockboxRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.FinalizeNVRamBootLockboxRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.FinalizeNVRamBootLockboxRequest)
   return target;
@@ -1135,12 +1182,12 @@ size_t FinalizeNVRamBootLockboxRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.FinalizeNVRamBootLockboxRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1156,10 +1203,10 @@ void FinalizeNVRamBootLockboxRequest::CheckTypeAndMergeFrom(
 void FinalizeNVRamBootLockboxRequest::MergeFrom(const FinalizeNVRamBootLockboxRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.FinalizeNVRamBootLockboxRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FinalizeNVRamBootLockboxRequest::CopyFrom(const FinalizeNVRamBootLockboxRequest& from) {
@@ -1175,8 +1222,7 @@ bool FinalizeNVRamBootLockboxRequest::IsInitialized() const {
 
 void FinalizeNVRamBootLockboxRequest::InternalSwap(FinalizeNVRamBootLockboxRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
 }
 
 std::string FinalizeNVRamBootLockboxRequest::GetTypeName() const {
@@ -1186,8 +1232,6 @@ std::string FinalizeNVRamBootLockboxRequest::GetTypeName() const {
 
 // ===================================================================
 
-void FinalizeBootLockboxReply::InitAsDefaultInstance() {
-}
 class FinalizeBootLockboxReply::_Internal {
  public:
   using HasBits = decltype(std::declval<FinalizeBootLockboxReply>()._has_bits_);
@@ -1196,97 +1240,107 @@ class FinalizeBootLockboxReply::_Internal {
   }
 };
 
-FinalizeBootLockboxReply::FinalizeBootLockboxReply()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FinalizeBootLockboxReply::FinalizeBootLockboxReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.FinalizeBootLockboxReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.FinalizeBootLockboxReply)
 }
 FinalizeBootLockboxReply::FinalizeBootLockboxReply(const FinalizeBootLockboxReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:cryptohome.FinalizeBootLockboxReply)
 }
 
-void FinalizeBootLockboxReply::SharedCtor() {
-  error_ = 0;
+inline void FinalizeBootLockboxReply::SharedCtor() {
+error_ = 0;
 }
 
 FinalizeBootLockboxReply::~FinalizeBootLockboxReply() {
   // @@protoc_insertion_point(destructor:cryptohome.FinalizeBootLockboxReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FinalizeBootLockboxReply::SharedDtor() {
+inline void FinalizeBootLockboxReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void FinalizeBootLockboxReply::ArenaDtor(void* object) {
+  FinalizeBootLockboxReply* _this = reinterpret_cast< FinalizeBootLockboxReply* >(object);
+  (void)_this;
+}
+void FinalizeBootLockboxReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FinalizeBootLockboxReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FinalizeBootLockboxReply& FinalizeBootLockboxReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FinalizeBootLockboxReply_boot_5flockbox_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FinalizeBootLockboxReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.FinalizeBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FinalizeBootLockboxReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .cryptohome.BootLockboxErrorCode error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::cryptohome::BootLockboxErrorCode_IsValid(val))) {
             _internal_set_error(static_cast<::cryptohome::BootLockboxErrorCode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FinalizeBootLockboxReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FinalizeBootLockboxReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.FinalizeBootLockboxReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1298,8 +1352,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.FinalizeBootLockboxReply)
   return target;
@@ -1309,7 +1363,7 @@ size_t FinalizeBootLockboxReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.FinalizeBootLockboxReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1321,7 +1375,7 @@ size_t FinalizeBootLockboxReply::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1337,13 +1391,13 @@ void FinalizeBootLockboxReply::CheckTypeAndMergeFrom(
 void FinalizeBootLockboxReply::MergeFrom(const FinalizeBootLockboxReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.FinalizeBootLockboxReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FinalizeBootLockboxReply::CopyFrom(const FinalizeBootLockboxReply& from) {
@@ -1359,7 +1413,7 @@ bool FinalizeBootLockboxReply::IsInitialized() const {
 
 void FinalizeBootLockboxReply::InternalSwap(FinalizeBootLockboxReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(error_, other->error_);
 }
@@ -1373,22 +1427,22 @@ std::string FinalizeBootLockboxReply::GetTypeName() const {
 }  // namespace cryptohome
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::cryptohome::StoreBootLockboxRequest* Arena::CreateMaybeMessage< ::cryptohome::StoreBootLockboxRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::StoreBootLockboxRequest >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::StoreBootLockboxRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::StoreBootLockboxReply* Arena::CreateMaybeMessage< ::cryptohome::StoreBootLockboxReply >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::StoreBootLockboxReply >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::StoreBootLockboxReply >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::ReadBootLockboxRequest* Arena::CreateMaybeMessage< ::cryptohome::ReadBootLockboxRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::ReadBootLockboxRequest >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::ReadBootLockboxRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::ReadBootLockboxReply* Arena::CreateMaybeMessage< ::cryptohome::ReadBootLockboxReply >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::ReadBootLockboxReply >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::ReadBootLockboxReply >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::FinalizeNVRamBootLockboxRequest* Arena::CreateMaybeMessage< ::cryptohome::FinalizeNVRamBootLockboxRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::FinalizeNVRamBootLockboxRequest >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::FinalizeNVRamBootLockboxRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::FinalizeBootLockboxReply* Arena::CreateMaybeMessage< ::cryptohome::FinalizeBootLockboxReply >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::FinalizeBootLockboxReply >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::FinalizeBootLockboxReply >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

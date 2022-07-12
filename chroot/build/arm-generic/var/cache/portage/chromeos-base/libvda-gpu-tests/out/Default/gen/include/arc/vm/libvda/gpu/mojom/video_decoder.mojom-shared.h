@@ -166,7 +166,7 @@ class VideoDecoderConfigDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProfile(UserType* output) const {
+  [[nodiscard]] bool ReadProfile(UserType* output) const {
     auto data_value = data_->profile;
     return mojo::internal::Deserialize<::arc::mojom::VideoCodecProfile>(
         data_value, output);
@@ -179,7 +179,7 @@ class VideoDecoderConfigDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCodedSize(UserType* output) {
+  [[nodiscard]] bool ReadCodedSize(UserType* output) {
     
     auto* pointer = data_->coded_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
@@ -215,7 +215,7 @@ class DecoderBufferDataView {
       BufferDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBuffer(UserType* output) const {
+  [[nodiscard]] bool ReadBuffer(UserType* output) const {
     
     CHECK(is_buffer());
     return mojo::internal::Deserialize<::arc::mojom::BufferDataView>(

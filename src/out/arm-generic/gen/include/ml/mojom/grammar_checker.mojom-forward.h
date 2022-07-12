@@ -48,16 +48,6 @@ using GrammarCheckerResultPtr = mojo::StructPtr<GrammarCheckerResult>;
 
 class GrammarChecker;
 
-using GrammarCheckerPtr = mojo::InterfacePtr<GrammarChecker>;
-using GrammarCheckerPtrInfo = mojo::InterfacePtrInfo<GrammarChecker>;
-
-using GrammarCheckerRequest = mojo::InterfaceRequest<GrammarChecker>;
-using GrammarCheckerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<GrammarChecker>;
-
-using GrammarCheckerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<GrammarChecker>;
-
 
 
 

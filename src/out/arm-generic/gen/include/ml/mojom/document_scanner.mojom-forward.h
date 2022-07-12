@@ -43,16 +43,6 @@ using DoPostProcessingResultPtr = mojo::StructPtr<DoPostProcessingResult>;
 
 class DocumentScanner;
 
-using DocumentScannerPtr = mojo::InterfacePtr<DocumentScanner>;
-using DocumentScannerPtrInfo = mojo::InterfacePtrInfo<DocumentScanner>;
-
-using DocumentScannerRequest = mojo::InterfaceRequest<DocumentScanner>;
-using DocumentScannerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<DocumentScanner>;
-
-using DocumentScannerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<DocumentScanner>;
-
 
 
 

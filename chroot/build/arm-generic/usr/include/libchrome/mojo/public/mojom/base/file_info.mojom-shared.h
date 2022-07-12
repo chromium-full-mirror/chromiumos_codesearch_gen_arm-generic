@@ -82,7 +82,7 @@ class FileInfoDataView {
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLastModified(UserType* output) {
+  [[nodiscard]] bool ReadLastModified(UserType* output) {
     
     auto* pointer = data_->last_modified.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDataView>(
@@ -92,7 +92,7 @@ class FileInfoDataView {
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLastAccessed(UserType* output) {
+  [[nodiscard]] bool ReadLastAccessed(UserType* output) {
     
     auto* pointer = data_->last_accessed.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDataView>(
@@ -102,7 +102,7 @@ class FileInfoDataView {
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCreationTime(UserType* output) {
+  [[nodiscard]] bool ReadCreationTime(UserType* output) {
     
     auto* pointer = data_->creation_time.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDataView>(

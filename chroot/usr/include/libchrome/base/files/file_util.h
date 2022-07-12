@@ -29,7 +29,6 @@
 #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
 #include <sys/stat.h>
 #include <unistd.h>
-#include "base/file_descriptor_posix.h"
 #include "base/posix/eintr_wrapper.h"
 #endif
 
@@ -50,7 +49,7 @@ BASE_EXPORT FilePath MakeAbsoluteFilePath(const FilePath& input);
 // If the path does not exist the function returns 0.
 //
 // This function is implemented using the FileEnumerator class so it is not
-// particularly speedy in any platform.
+// particularly speedy on any platform.
 BASE_EXPORT int64_t ComputeDirectorySize(const FilePath& root_path);
 
 // Deletes the given path, whether it's a file or a directory.

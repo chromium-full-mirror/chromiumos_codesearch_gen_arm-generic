@@ -134,7 +134,7 @@ class TextClassifier_Annotate_ParamsDataView {
       TextAnnotationRequestDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRequest(UserType* output) {
+  [[nodiscard]] bool ReadRequest(UserType* output) {
     
     auto* pointer = data_->request.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextAnnotationRequestDataView>(
@@ -161,7 +161,7 @@ class TextClassifier_Annotate_ResponseParamsDataView {
       mojo::ArrayDataView<TextAnnotationDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputs(UserType* output) {
+  [[nodiscard]] bool ReadOutputs(UserType* output) {
     
     auto* pointer = data_->outputs.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::TextAnnotationDataView>>(
@@ -188,7 +188,7 @@ class TextClassifier_FindLanguages_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -215,7 +215,7 @@ class TextClassifier_FindLanguages_ResponseParamsDataView {
       mojo::ArrayDataView<TextLanguageDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputs(UserType* output) {
+  [[nodiscard]] bool ReadOutputs(UserType* output) {
     
     auto* pointer = data_->outputs.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::TextLanguageDataView>>(
@@ -242,7 +242,7 @@ class TextClassifier_REMOVED_1_ParamsDataView {
       REMOVED_TextSuggestSelectionRequestDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRequest(UserType* output) {
+  [[nodiscard]] bool ReadRequest(UserType* output) {
     
     auto* pointer = data_->request.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::REMOVED_TextSuggestSelectionRequestDataView>(
@@ -269,7 +269,7 @@ class TextClassifier_REMOVED_1_ResponseParamsDataView {
       CodepointSpanDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputs(UserType* output) {
+  [[nodiscard]] bool ReadOutputs(UserType* output) {
     
     auto* pointer = data_->outputs.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::CodepointSpanDataView>(

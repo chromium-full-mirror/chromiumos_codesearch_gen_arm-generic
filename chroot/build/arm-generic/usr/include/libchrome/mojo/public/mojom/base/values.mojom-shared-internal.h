@@ -25,6 +25,8 @@ namespace mojom {
 namespace internal {
 class DictionaryValue_Data;
 class ListValue_Data;
+class DeprecatedDictionaryValue_Data;
+class DeprecatedListValue_Data;
 class Value_Data;
 
 #pragma pack(push, 1)
@@ -210,6 +212,102 @@ struct ListValue_UnserializedMessageContext
 template <typename UserType, typename DataView>
 const mojo::internal::UnserializedMessageContext::Tag
     ListValue_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
+class  DeprecatedDictionaryValue_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  mojo::internal::Pointer<mojo::internal::Map_Data<mojo::internal::Pointer<mojo::internal::String_Data>, internal::Value_Data>> storage;
+
+ private:
+  friend class mojo::internal::MessageFragment<DeprecatedDictionaryValue_Data>;
+
+  DeprecatedDictionaryValue_Data();
+  ~DeprecatedDictionaryValue_Data() = delete;
+};
+static_assert(sizeof(DeprecatedDictionaryValue_Data) == 16,
+              "Bad sizeof(DeprecatedDictionaryValue_Data)");
+// Used by DeprecatedDictionaryValue::WrapAsMessage to lazily serialize the struct.
+template <typename UserType, typename DataView>
+struct DeprecatedDictionaryValue_UnserializedMessageContext
+    : public mojo::internal::UnserializedMessageContext {
+ public:
+  static const mojo::internal::UnserializedMessageContext::Tag kMessageTag;
+
+  DeprecatedDictionaryValue_UnserializedMessageContext(
+    uint32_t message_name,
+    uint32_t message_flags,
+    UserType input)
+      : mojo::internal::UnserializedMessageContext(&kMessageTag, message_name, message_flags)
+      , user_data_(std::move(input)) {}
+  ~DeprecatedDictionaryValue_UnserializedMessageContext() override = default;
+
+  UserType TakeData() {
+    return std::move(user_data_);
+  }
+
+ private:
+  // mojo::internal::UnserializedMessageContext:
+  void Serialize(mojo::Message& message) override {
+    mojo::internal::MessageFragment<DeprecatedDictionaryValue_Data> fragment(message);
+    mojo::internal::Serialize<DataView>(user_data_, fragment);
+  }
+
+  UserType user_data_;
+};
+
+template <typename UserType, typename DataView>
+const mojo::internal::UnserializedMessageContext::Tag
+    DeprecatedDictionaryValue_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
+class  DeprecatedListValue_Data {
+ public:
+  static bool Validate(const void* data,
+                       mojo::internal::ValidationContext* validation_context);
+
+  mojo::internal::StructHeader header_;
+  mojo::internal::Pointer<mojo::internal::Array_Data<internal::Value_Data>> storage;
+
+ private:
+  friend class mojo::internal::MessageFragment<DeprecatedListValue_Data>;
+
+  DeprecatedListValue_Data();
+  ~DeprecatedListValue_Data() = delete;
+};
+static_assert(sizeof(DeprecatedListValue_Data) == 16,
+              "Bad sizeof(DeprecatedListValue_Data)");
+// Used by DeprecatedListValue::WrapAsMessage to lazily serialize the struct.
+template <typename UserType, typename DataView>
+struct DeprecatedListValue_UnserializedMessageContext
+    : public mojo::internal::UnserializedMessageContext {
+ public:
+  static const mojo::internal::UnserializedMessageContext::Tag kMessageTag;
+
+  DeprecatedListValue_UnserializedMessageContext(
+    uint32_t message_name,
+    uint32_t message_flags,
+    UserType input)
+      : mojo::internal::UnserializedMessageContext(&kMessageTag, message_name, message_flags)
+      , user_data_(std::move(input)) {}
+  ~DeprecatedListValue_UnserializedMessageContext() override = default;
+
+  UserType TakeData() {
+    return std::move(user_data_);
+  }
+
+ private:
+  // mojo::internal::UnserializedMessageContext:
+  void Serialize(mojo::Message& message) override {
+    mojo::internal::MessageFragment<DeprecatedListValue_Data> fragment(message);
+    mojo::internal::Serialize<DataView>(user_data_, fragment);
+  }
+
+  UserType user_data_;
+};
+
+template <typename UserType, typename DataView>
+const mojo::internal::UnserializedMessageContext::Tag
+    DeprecatedListValue_UnserializedMessageContext<UserType, DataView>::kMessageTag = {};
 
 #pragma pack(pop)
 

@@ -24,27 +24,7 @@ namespace cros {
 namespace mojom {
 class CameraAlgorithmOps;
 
-using CameraAlgorithmOpsPtr = mojo::InterfacePtr<CameraAlgorithmOps>;
-using CameraAlgorithmOpsPtrInfo = mojo::InterfacePtrInfo<CameraAlgorithmOps>;
-
-using CameraAlgorithmOpsRequest = mojo::InterfaceRequest<CameraAlgorithmOps>;
-using CameraAlgorithmOpsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraAlgorithmOps>;
-
-using CameraAlgorithmOpsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraAlgorithmOps>;
-
 class CameraAlgorithmCallbackOps;
-
-using CameraAlgorithmCallbackOpsPtr = mojo::InterfacePtr<CameraAlgorithmCallbackOps>;
-using CameraAlgorithmCallbackOpsPtrInfo = mojo::InterfacePtrInfo<CameraAlgorithmCallbackOps>;
-
-using CameraAlgorithmCallbackOpsRequest = mojo::InterfaceRequest<CameraAlgorithmCallbackOps>;
-using CameraAlgorithmCallbackOpsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraAlgorithmCallbackOps>;
-
-using CameraAlgorithmCallbackOpsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraAlgorithmCallbackOps>;
 
 
 

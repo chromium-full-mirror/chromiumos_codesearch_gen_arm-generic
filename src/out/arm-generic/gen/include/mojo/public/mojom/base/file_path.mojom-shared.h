@@ -72,7 +72,7 @@ class FilePathDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPath(UserType* output) {
+  [[nodiscard]] bool ReadPath(UserType* output) {
     
     auto* pointer = data_->path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

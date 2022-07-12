@@ -11,52 +11,41 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_google_5fkey_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GoogleRsaPublicKey_google_5fkey_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace attestation {
-class GoogleRsaPublicKeyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GoogleRsaPublicKey> _instance;
-} _GoogleRsaPublicKey_default_instance_;
-class DefaultGoogleRsaPublicKeySetDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DefaultGoogleRsaPublicKeySet> _instance;
-} _DefaultGoogleRsaPublicKeySet_default_instance_;
+constexpr GoogleRsaPublicKey::GoogleRsaPublicKey(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : modulus_in_hex_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , key_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GoogleRsaPublicKeyDefaultTypeInternal {
+  constexpr GoogleRsaPublicKeyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GoogleRsaPublicKeyDefaultTypeInternal() {}
+  union {
+    GoogleRsaPublicKey _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GoogleRsaPublicKeyDefaultTypeInternal _GoogleRsaPublicKey_default_instance_;
+constexpr DefaultGoogleRsaPublicKeySet::DefaultGoogleRsaPublicKeySet(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : default_ca_encryption_key_(nullptr)
+  , default_va_signing_key_(nullptr)
+  , default_va_encryption_key_(nullptr){}
+struct DefaultGoogleRsaPublicKeySetDefaultTypeInternal {
+  constexpr DefaultGoogleRsaPublicKeySetDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DefaultGoogleRsaPublicKeySetDefaultTypeInternal() {}
+  union {
+    DefaultGoogleRsaPublicKeySet _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DefaultGoogleRsaPublicKeySetDefaultTypeInternal _DefaultGoogleRsaPublicKeySet_default_instance_;
 }  // namespace attestation
-static void InitDefaultsscc_info_DefaultGoogleRsaPublicKeySet_google_5fkey_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::attestation::_DefaultGoogleRsaPublicKeySet_default_instance_;
-    new (ptr) ::attestation::DefaultGoogleRsaPublicKeySet();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::attestation::DefaultGoogleRsaPublicKeySet::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DefaultGoogleRsaPublicKeySet_google_5fkey_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DefaultGoogleRsaPublicKeySet_google_5fkey_2eproto}, {
-      &scc_info_GoogleRsaPublicKey_google_5fkey_2eproto.base,}};
-
-static void InitDefaultsscc_info_GoogleRsaPublicKey_google_5fkey_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::attestation::_GoogleRsaPublicKey_default_instance_;
-    new (ptr) ::attestation::GoogleRsaPublicKey();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::attestation::GoogleRsaPublicKey::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GoogleRsaPublicKey_google_5fkey_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GoogleRsaPublicKey_google_5fkey_2eproto}, {}};
-
 namespace attestation {
 
 // ===================================================================
 
-void GoogleRsaPublicKey::InitAsDefaultInstance() {
-}
 class GoogleRsaPublicKey::_Internal {
  public:
   using HasBits = decltype(std::declval<GoogleRsaPublicKey>()._has_bits_);
@@ -68,120 +57,144 @@ class GoogleRsaPublicKey::_Internal {
   }
 };
 
-GoogleRsaPublicKey::GoogleRsaPublicKey()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GoogleRsaPublicKey::GoogleRsaPublicKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:attestation.GoogleRsaPublicKey)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:attestation.GoogleRsaPublicKey)
 }
 GoogleRsaPublicKey::GoogleRsaPublicKey(const GoogleRsaPublicKey& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   modulus_in_hex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    modulus_in_hex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_modulus_in_hex()) {
-    modulus_in_hex_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.modulus_in_hex_);
+    modulus_in_hex_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_modulus_in_hex(), 
+      GetArenaForAllocation());
   }
   key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_key_id()) {
-    key_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_id_);
+    key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:attestation.GoogleRsaPublicKey)
 }
 
-void GoogleRsaPublicKey::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GoogleRsaPublicKey_google_5fkey_2eproto.base);
-  modulus_in_hex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GoogleRsaPublicKey::SharedCtor() {
+modulus_in_hex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  modulus_in_hex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GoogleRsaPublicKey::~GoogleRsaPublicKey() {
   // @@protoc_insertion_point(destructor:attestation.GoogleRsaPublicKey)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GoogleRsaPublicKey::SharedDtor() {
+inline void GoogleRsaPublicKey::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   modulus_in_hex_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   key_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GoogleRsaPublicKey::ArenaDtor(void* object) {
+  GoogleRsaPublicKey* _this = reinterpret_cast< GoogleRsaPublicKey* >(object);
+  (void)_this;
+}
+void GoogleRsaPublicKey::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GoogleRsaPublicKey::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GoogleRsaPublicKey& GoogleRsaPublicKey::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GoogleRsaPublicKey_google_5fkey_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GoogleRsaPublicKey::Clear() {
 // @@protoc_insertion_point(message_clear_start:attestation.GoogleRsaPublicKey)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      modulus_in_hex_.ClearNonDefaultToEmptyNoArena();
+      modulus_in_hex_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      key_id_.ClearNonDefaultToEmptyNoArena();
+      key_id_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GoogleRsaPublicKey::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string modulus_in_hex = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_modulus_in_hex();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes key_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_key_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GoogleRsaPublicKey::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GoogleRsaPublicKey::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:attestation.GoogleRsaPublicKey)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -198,8 +211,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:attestation.GoogleRsaPublicKey)
   return target;
@@ -209,7 +222,7 @@ size_t GoogleRsaPublicKey::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:attestation.GoogleRsaPublicKey)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -231,7 +244,7 @@ size_t GoogleRsaPublicKey::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -247,21 +260,19 @@ void GoogleRsaPublicKey::CheckTypeAndMergeFrom(
 void GoogleRsaPublicKey::MergeFrom(const GoogleRsaPublicKey& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:attestation.GoogleRsaPublicKey)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      modulus_in_hex_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.modulus_in_hex_);
+      _internal_set_modulus_in_hex(from._internal_modulus_in_hex());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      key_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_id_);
+      _internal_set_key_id(from._internal_key_id());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GoogleRsaPublicKey::CopyFrom(const GoogleRsaPublicKey& from) {
@@ -277,12 +288,20 @@ bool GoogleRsaPublicKey::IsInitialized() const {
 
 void GoogleRsaPublicKey::InternalSwap(GoogleRsaPublicKey* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  modulus_in_hex_.Swap(&other->modulus_in_hex_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  key_id_.Swap(&other->key_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &modulus_in_hex_, lhs_arena,
+      &other->modulus_in_hex_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_id_, lhs_arena,
+      &other->key_id_, rhs_arena
+  );
 }
 
 std::string GoogleRsaPublicKey::GetTypeName() const {
@@ -292,14 +311,6 @@ std::string GoogleRsaPublicKey::GetTypeName() const {
 
 // ===================================================================
 
-void DefaultGoogleRsaPublicKeySet::InitAsDefaultInstance() {
-  ::attestation::_DefaultGoogleRsaPublicKeySet_default_instance_._instance.get_mutable()->default_ca_encryption_key_ = const_cast< ::attestation::GoogleRsaPublicKey*>(
-      ::attestation::GoogleRsaPublicKey::internal_default_instance());
-  ::attestation::_DefaultGoogleRsaPublicKeySet_default_instance_._instance.get_mutable()->default_va_signing_key_ = const_cast< ::attestation::GoogleRsaPublicKey*>(
-      ::attestation::GoogleRsaPublicKey::internal_default_instance());
-  ::attestation::_DefaultGoogleRsaPublicKeySet_default_instance_._instance.get_mutable()->default_va_encryption_key_ = const_cast< ::attestation::GoogleRsaPublicKey*>(
-      ::attestation::GoogleRsaPublicKey::internal_default_instance());
-}
 class DefaultGoogleRsaPublicKeySet::_Internal {
  public:
   using HasBits = decltype(std::declval<DefaultGoogleRsaPublicKeySet>()._has_bits_);
@@ -329,16 +340,19 @@ const ::attestation::GoogleRsaPublicKey&
 DefaultGoogleRsaPublicKeySet::_Internal::default_va_encryption_key(const DefaultGoogleRsaPublicKeySet* msg) {
   return *msg->default_va_encryption_key_;
 }
-DefaultGoogleRsaPublicKeySet::DefaultGoogleRsaPublicKeySet()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DefaultGoogleRsaPublicKeySet::DefaultGoogleRsaPublicKeySet(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:attestation.DefaultGoogleRsaPublicKeySet)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:attestation.DefaultGoogleRsaPublicKeySet)
 }
 DefaultGoogleRsaPublicKeySet::DefaultGoogleRsaPublicKeySet(const DefaultGoogleRsaPublicKeySet& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_default_ca_encryption_key()) {
     default_ca_encryption_key_ = new ::attestation::GoogleRsaPublicKey(*from.default_ca_encryption_key_);
   } else {
@@ -357,36 +371,40 @@ DefaultGoogleRsaPublicKeySet::DefaultGoogleRsaPublicKeySet(const DefaultGoogleRs
   // @@protoc_insertion_point(copy_constructor:attestation.DefaultGoogleRsaPublicKeySet)
 }
 
-void DefaultGoogleRsaPublicKeySet::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DefaultGoogleRsaPublicKeySet_google_5fkey_2eproto.base);
-  ::memset(&default_ca_encryption_key_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&default_va_encryption_key_) -
-      reinterpret_cast<char*>(&default_ca_encryption_key_)) + sizeof(default_va_encryption_key_));
+inline void DefaultGoogleRsaPublicKeySet::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&default_ca_encryption_key_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&default_va_encryption_key_) -
+    reinterpret_cast<char*>(&default_ca_encryption_key_)) + sizeof(default_va_encryption_key_));
 }
 
 DefaultGoogleRsaPublicKeySet::~DefaultGoogleRsaPublicKeySet() {
   // @@protoc_insertion_point(destructor:attestation.DefaultGoogleRsaPublicKeySet)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DefaultGoogleRsaPublicKeySet::SharedDtor() {
+inline void DefaultGoogleRsaPublicKeySet::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete default_ca_encryption_key_;
   if (this != internal_default_instance()) delete default_va_signing_key_;
   if (this != internal_default_instance()) delete default_va_encryption_key_;
 }
 
+void DefaultGoogleRsaPublicKeySet::ArenaDtor(void* object) {
+  DefaultGoogleRsaPublicKeySet* _this = reinterpret_cast< DefaultGoogleRsaPublicKeySet* >(object);
+  (void)_this;
+}
+void DefaultGoogleRsaPublicKeySet::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DefaultGoogleRsaPublicKeySet::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DefaultGoogleRsaPublicKeySet& DefaultGoogleRsaPublicKeySet::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DefaultGoogleRsaPublicKeySet_google_5fkey_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DefaultGoogleRsaPublicKeySet::Clear() {
 // @@protoc_insertion_point(message_clear_start:attestation.DefaultGoogleRsaPublicKeySet)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -406,63 +424,68 @@ void DefaultGoogleRsaPublicKeySet::Clear() {
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DefaultGoogleRsaPublicKeySet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .attestation.GoogleRsaPublicKey default_ca_encryption_key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_default_ca_encryption_key(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .attestation.GoogleRsaPublicKey default_va_signing_key = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_default_va_signing_key(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .attestation.GoogleRsaPublicKey default_va_encryption_key = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_default_va_encryption_key(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DefaultGoogleRsaPublicKeySet::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DefaultGoogleRsaPublicKeySet::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:attestation.DefaultGoogleRsaPublicKeySet)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -491,8 +514,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:attestation.DefaultGoogleRsaPublicKeySet)
   return target;
@@ -502,7 +525,7 @@ size_t DefaultGoogleRsaPublicKeySet::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:attestation.DefaultGoogleRsaPublicKeySet)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -531,7 +554,7 @@ size_t DefaultGoogleRsaPublicKeySet::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -547,8 +570,7 @@ void DefaultGoogleRsaPublicKeySet::CheckTypeAndMergeFrom(
 void DefaultGoogleRsaPublicKeySet::MergeFrom(const DefaultGoogleRsaPublicKeySet& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:attestation.DefaultGoogleRsaPublicKeySet)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -563,6 +585,7 @@ void DefaultGoogleRsaPublicKeySet::MergeFrom(const DefaultGoogleRsaPublicKeySet&
       _internal_mutable_default_va_encryption_key()->::attestation::GoogleRsaPublicKey::MergeFrom(from._internal_default_va_encryption_key());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DefaultGoogleRsaPublicKeySet::CopyFrom(const DefaultGoogleRsaPublicKeySet& from) {
@@ -578,11 +601,14 @@ bool DefaultGoogleRsaPublicKeySet::IsInitialized() const {
 
 void DefaultGoogleRsaPublicKeySet::InternalSwap(DefaultGoogleRsaPublicKeySet* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(default_ca_encryption_key_, other->default_ca_encryption_key_);
-  swap(default_va_signing_key_, other->default_va_signing_key_);
-  swap(default_va_encryption_key_, other->default_va_encryption_key_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DefaultGoogleRsaPublicKeySet, default_va_encryption_key_)
+      + sizeof(DefaultGoogleRsaPublicKeySet::default_va_encryption_key_)
+      - PROTOBUF_FIELD_OFFSET(DefaultGoogleRsaPublicKeySet, default_ca_encryption_key_)>(
+          reinterpret_cast<char*>(&default_ca_encryption_key_),
+          reinterpret_cast<char*>(&other->default_ca_encryption_key_));
 }
 
 std::string DefaultGoogleRsaPublicKeySet::GetTypeName() const {
@@ -594,10 +620,10 @@ std::string DefaultGoogleRsaPublicKeySet::GetTypeName() const {
 }  // namespace attestation
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::attestation::GoogleRsaPublicKey* Arena::CreateMaybeMessage< ::attestation::GoogleRsaPublicKey >(Arena* arena) {
-  return Arena::CreateInternal< ::attestation::GoogleRsaPublicKey >(arena);
+  return Arena::CreateMessageInternal< ::attestation::GoogleRsaPublicKey >(arena);
 }
 template<> PROTOBUF_NOINLINE ::attestation::DefaultGoogleRsaPublicKeySet* Arena::CreateMaybeMessage< ::attestation::DefaultGoogleRsaPublicKeySet >(Arena* arena) {
-  return Arena::CreateInternal< ::attestation::DefaultGoogleRsaPublicKeySet >(arena);
+  return Arena::CreateMessageInternal< ::attestation::DefaultGoogleRsaPublicKeySet >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

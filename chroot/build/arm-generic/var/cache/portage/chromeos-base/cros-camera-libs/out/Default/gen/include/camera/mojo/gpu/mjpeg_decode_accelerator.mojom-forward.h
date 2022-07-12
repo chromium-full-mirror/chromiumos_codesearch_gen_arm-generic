@@ -26,16 +26,6 @@ namespace mojom {
 enum class DecodeError : int32_t;
 class MjpegDecodeAccelerator;
 
-using MjpegDecodeAcceleratorPtr = mojo::InterfacePtr<MjpegDecodeAccelerator>;
-using MjpegDecodeAcceleratorPtrInfo = mojo::InterfacePtrInfo<MjpegDecodeAccelerator>;
-
-using MjpegDecodeAcceleratorRequest = mojo::InterfaceRequest<MjpegDecodeAccelerator>;
-using MjpegDecodeAcceleratorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<MjpegDecodeAccelerator>;
-
-using MjpegDecodeAcceleratorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<MjpegDecodeAccelerator>;
-
 
 
 

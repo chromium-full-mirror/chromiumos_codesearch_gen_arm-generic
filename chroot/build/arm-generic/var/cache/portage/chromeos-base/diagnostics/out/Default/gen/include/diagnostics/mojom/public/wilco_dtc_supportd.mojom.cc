@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -48,6 +47,43 @@ namespace chromeos {
 namespace wilco_dtc_supportd {
 namespace mojom {
 const char WilcoDtcSupportdServiceFactory::Name_[] = "chromeos.wilco_dtc_supportd.mojom.WilcoDtcSupportdServiceFactory";
+
+uint32_t WilcoDtcSupportdServiceFactory::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kWilcoDtcSupportdServiceFactory_GetService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* WilcoDtcSupportdServiceFactory::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdServiceFactory_GetService_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdServiceFactory_GetService_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class WilcoDtcSupportdServiceFactory_GetService_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -168,10 +204,6 @@ class WilcoDtcSupportdServiceFactory_GetService_ProxyToResponder : public ::mojo
 
 bool WilcoDtcSupportdServiceFactory_GetService_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoDtcSupportdServiceFactory_GetService_ResponseParams_Data* params =
@@ -219,8 +251,11 @@ void WilcoDtcSupportdServiceFactory_GetService_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -247,15 +282,6 @@ bool WilcoDtcSupportdServiceFactoryStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kWilcoDtcSupportdServiceFactory_GetService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdServiceFactory::GetService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoDtcSupportdServiceFactory_GetService_Params_Data* params =
           reinterpret_cast<
@@ -312,6 +338,52 @@ bool WilcoDtcSupportdServiceFactoryResponseValidator::Accept(mojo::Message* mess
   return mojo::internal::ValidateResponseGenericPacked(message, name, kWilcoDtcSupportdServiceFactoryValidationInfo);
 }
 const char WilcoDtcSupportdService::Name_[] = "chromeos.wilco_dtc_supportd.mojom.WilcoDtcSupportdService";
+
+uint32_t WilcoDtcSupportdService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kWilcoDtcSupportdService_SendUiMessageToWilcoDtc_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdService_NotifyConfigurationDataChanged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::NotifyConfigurationDataChanged");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* WilcoDtcSupportdService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdService_SendUiMessageToWilcoDtc_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc";
+      case internal::kWilcoDtcSupportdService_NotifyConfigurationDataChanged_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::NotifyConfigurationDataChanged";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdService_SendUiMessageToWilcoDtc_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc";
+      case internal::kWilcoDtcSupportdService_NotifyConfigurationDataChanged_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::NotifyConfigurationDataChanged";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class WilcoDtcSupportdService_SendUiMessageToWilcoDtc_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -453,10 +525,6 @@ class WilcoDtcSupportdService_SendUiMessageToWilcoDtc_ProxyToResponder : public 
 
 bool WilcoDtcSupportdService_SendUiMessageToWilcoDtc_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoDtcSupportdService_SendUiMessageToWilcoDtc_ResponseParams_Data* params =
@@ -517,8 +585,11 @@ void WilcoDtcSupportdService_SendUiMessageToWilcoDtc_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -532,15 +603,6 @@ bool WilcoDtcSupportdServiceStubDispatch::Accept(
       break;
     }
     case internal::kWilcoDtcSupportdService_NotifyConfigurationDataChanged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::NotifyConfigurationDataChanged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::NotifyConfigurationDataChanged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoDtcSupportdService_NotifyConfigurationDataChanged_Params_Data* params =
@@ -576,15 +638,6 @@ bool WilcoDtcSupportdServiceStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kWilcoDtcSupportdService_SendUiMessageToWilcoDtc_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdService::SendUiMessageToWilcoDtc");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoDtcSupportdService_SendUiMessageToWilcoDtc_Params_Data* params =
           reinterpret_cast<
@@ -638,6 +691,88 @@ bool WilcoDtcSupportdServiceResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kWilcoDtcSupportdServiceValidationInfo);
 }
 const char WilcoDtcSupportdClient::Name_[] = "chromeos.wilco_dtc_supportd.mojom.WilcoDtcSupportdClient";
+
+uint32_t WilcoDtcSupportdClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kWilcoDtcSupportdClient_PerformWebRequest_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdClient_SendWilcoDtcMessageToUi_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdClient_GetConfigurationData_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdClient_HandleEvent_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::HandleEvent");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdClient_GetCrosHealthdDiagnosticsService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdDiagnosticsService");
+      return value;
+    }
+    case internal::kWilcoDtcSupportdClient_GetCrosHealthdProbeService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdProbeService");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* WilcoDtcSupportdClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdClient_PerformWebRequest_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest";
+      case internal::kWilcoDtcSupportdClient_SendWilcoDtcMessageToUi_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi";
+      case internal::kWilcoDtcSupportdClient_GetConfigurationData_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData";
+      case internal::kWilcoDtcSupportdClient_HandleEvent_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::HandleEvent";
+      case internal::kWilcoDtcSupportdClient_GetCrosHealthdDiagnosticsService_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdDiagnosticsService";
+      case internal::kWilcoDtcSupportdClient_GetCrosHealthdProbeService_Name:
+            return "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdProbeService";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kWilcoDtcSupportdClient_PerformWebRequest_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest";
+      case internal::kWilcoDtcSupportdClient_SendWilcoDtcMessageToUi_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi";
+      case internal::kWilcoDtcSupportdClient_GetConfigurationData_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData";
+      case internal::kWilcoDtcSupportdClient_HandleEvent_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::HandleEvent";
+      case internal::kWilcoDtcSupportdClient_GetCrosHealthdDiagnosticsService_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdDiagnosticsService";
+      case internal::kWilcoDtcSupportdClient_GetCrosHealthdProbeService_Name:
+            return "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdProbeService";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class WilcoDtcSupportdClient_PerformWebRequest_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -1007,10 +1142,6 @@ class WilcoDtcSupportdClient_PerformWebRequest_ProxyToResponder : public ::mojo:
 
 bool WilcoDtcSupportdClient_PerformWebRequest_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoDtcSupportdClient_PerformWebRequest_ResponseParams_Data* params =
@@ -1088,8 +1219,11 @@ void WilcoDtcSupportdClient_PerformWebRequest_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1140,10 +1274,6 @@ class WilcoDtcSupportdClient_SendWilcoDtcMessageToUi_ProxyToResponder : public :
 
 bool WilcoDtcSupportdClient_SendWilcoDtcMessageToUi_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoDtcSupportdClient_SendWilcoDtcMessageToUi_ResponseParams_Data* params =
@@ -1204,8 +1334,11 @@ void WilcoDtcSupportdClient_SendWilcoDtcMessageToUi_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1256,10 +1389,6 @@ class WilcoDtcSupportdClient_GetConfigurationData_ProxyToResponder : public ::mo
 
 bool WilcoDtcSupportdClient_GetConfigurationData_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoDtcSupportdClient_GetConfigurationData_ResponseParams_Data* params =
@@ -1329,8 +1458,11 @@ void WilcoDtcSupportdClient_GetConfigurationData_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1350,15 +1482,6 @@ bool WilcoDtcSupportdClientStubDispatch::Accept(
       break;
     }
     case internal::kWilcoDtcSupportdClient_HandleEvent_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::HandleEvent",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::HandleEvent");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoDtcSupportdClient_HandleEvent_Params_Data* params =
@@ -1385,15 +1508,6 @@ std::move(p_event));
       return true;
     }
     case internal::kWilcoDtcSupportdClient_GetCrosHealthdDiagnosticsService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdDiagnosticsService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdDiagnosticsService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoDtcSupportdClient_GetCrosHealthdDiagnosticsService_Params_Data* params =
@@ -1422,15 +1536,6 @@ std::move(p_service));
       return true;
     }
     case internal::kWilcoDtcSupportdClient_GetCrosHealthdProbeService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdProbeService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetCrosHealthdProbeService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoDtcSupportdClient_GetCrosHealthdProbeService_Params_Data* params =
@@ -1472,15 +1577,6 @@ bool WilcoDtcSupportdClientStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kWilcoDtcSupportdClient_PerformWebRequest_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::PerformWebRequest");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoDtcSupportdClient_PerformWebRequest_Params_Data* params =
           reinterpret_cast<
@@ -1522,15 +1618,6 @@ std::move(p_request_body), std::move(callback));
       return true;
     }
     case internal::kWilcoDtcSupportdClient_SendWilcoDtcMessageToUi_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::SendWilcoDtcMessageToUi");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoDtcSupportdClient_SendWilcoDtcMessageToUi_Params_Data* params =
           reinterpret_cast<
@@ -1560,15 +1647,6 @@ std::move(p_json_message), std::move(callback));
       return true;
     }
     case internal::kWilcoDtcSupportdClient_GetConfigurationData_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdClient::GetConfigurationData");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoDtcSupportdClient_GetConfigurationData_Params_Data* params =
           reinterpret_cast<

@@ -24,16 +24,6 @@ namespace arc {
 namespace mojom {
 class VideoProtectedBufferAllocator;
 
-using VideoProtectedBufferAllocatorPtr = mojo::InterfacePtr<VideoProtectedBufferAllocator>;
-using VideoProtectedBufferAllocatorPtrInfo = mojo::InterfacePtrInfo<VideoProtectedBufferAllocator>;
-
-using VideoProtectedBufferAllocatorRequest = mojo::InterfaceRequest<VideoProtectedBufferAllocator>;
-using VideoProtectedBufferAllocatorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoProtectedBufferAllocator>;
-
-using VideoProtectedBufferAllocatorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoProtectedBufferAllocator>;
-
 
 
 

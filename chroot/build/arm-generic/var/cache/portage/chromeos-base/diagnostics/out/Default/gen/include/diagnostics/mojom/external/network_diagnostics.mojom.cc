@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -432,6 +431,187 @@ bool RoutineResultValue::Validate(
   return Data_::Validate(data, validation_context, false);
 }
 const char NetworkDiagnosticsRoutines::Name_[] = "chromeos.network_diagnostics.mojom.NetworkDiagnosticsRoutines";
+
+uint32_t NetworkDiagnosticsRoutines::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kNetworkDiagnosticsRoutines_GetResult_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_GetAllResults_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunLanConnectivity_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunSignalStrength_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunGatewayCanBePinged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunDnsResolverPresent_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunDnsLatency_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunDnsResolution_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunCaptivePortal_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunHttpFirewall_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunHttpsFirewall_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunHttpsLatency_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunVideoConferencing_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunArcHttp_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunArcPing_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing");
+      return value;
+    }
+    case internal::kNetworkDiagnosticsRoutines_RunArcDnsResolution_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* NetworkDiagnosticsRoutines::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kNetworkDiagnosticsRoutines_GetResult_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult";
+      case internal::kNetworkDiagnosticsRoutines_GetAllResults_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults";
+      case internal::kNetworkDiagnosticsRoutines_RunLanConnectivity_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity";
+      case internal::kNetworkDiagnosticsRoutines_RunSignalStrength_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength";
+      case internal::kNetworkDiagnosticsRoutines_RunGatewayCanBePinged_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged";
+      case internal::kNetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsResolverPresent_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsLatency_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsResolution_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution";
+      case internal::kNetworkDiagnosticsRoutines_RunCaptivePortal_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpFirewall_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpsFirewall_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpsLatency_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency";
+      case internal::kNetworkDiagnosticsRoutines_RunVideoConferencing_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing";
+      case internal::kNetworkDiagnosticsRoutines_RunArcHttp_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp";
+      case internal::kNetworkDiagnosticsRoutines_RunArcPing_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing";
+      case internal::kNetworkDiagnosticsRoutines_RunArcDnsResolution_Name:
+            return "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kNetworkDiagnosticsRoutines_GetResult_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult";
+      case internal::kNetworkDiagnosticsRoutines_GetAllResults_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults";
+      case internal::kNetworkDiagnosticsRoutines_RunLanConnectivity_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity";
+      case internal::kNetworkDiagnosticsRoutines_RunSignalStrength_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength";
+      case internal::kNetworkDiagnosticsRoutines_RunGatewayCanBePinged_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged";
+      case internal::kNetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsResolverPresent_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsLatency_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency";
+      case internal::kNetworkDiagnosticsRoutines_RunDnsResolution_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution";
+      case internal::kNetworkDiagnosticsRoutines_RunCaptivePortal_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpFirewall_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpsFirewall_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall";
+      case internal::kNetworkDiagnosticsRoutines_RunHttpsLatency_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency";
+      case internal::kNetworkDiagnosticsRoutines_RunVideoConferencing_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing";
+      case internal::kNetworkDiagnosticsRoutines_RunArcHttp_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp";
+      case internal::kNetworkDiagnosticsRoutines_RunArcPing_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing";
+      case internal::kNetworkDiagnosticsRoutines_RunArcDnsResolution_Name:
+            return "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class NetworkDiagnosticsRoutines_GetResult_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -1305,10 +1485,6 @@ class NetworkDiagnosticsRoutines_GetResult_ProxyToResponder : public ::mojo::int
 
 bool NetworkDiagnosticsRoutines_GetResult_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_GetResult_ResponseParams_Data* params =
@@ -1374,8 +1550,11 @@ void NetworkDiagnosticsRoutines_GetResult_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1426,10 +1605,6 @@ class NetworkDiagnosticsRoutines_GetAllResults_ProxyToResponder : public ::mojo:
 
 bool NetworkDiagnosticsRoutines_GetAllResults_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_GetAllResults_ResponseParams_Data* params =
@@ -1501,8 +1676,11 @@ void NetworkDiagnosticsRoutines_GetAllResults_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1553,10 +1731,6 @@ class NetworkDiagnosticsRoutines_RunLanConnectivity_ProxyToResponder : public ::
 
 bool NetworkDiagnosticsRoutines_RunLanConnectivity_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunLanConnectivity_ResponseParams_Data* params =
@@ -1626,8 +1800,11 @@ void NetworkDiagnosticsRoutines_RunLanConnectivity_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1678,10 +1855,6 @@ class NetworkDiagnosticsRoutines_RunSignalStrength_ProxyToResponder : public ::m
 
 bool NetworkDiagnosticsRoutines_RunSignalStrength_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunSignalStrength_ResponseParams_Data* params =
@@ -1751,8 +1924,11 @@ void NetworkDiagnosticsRoutines_RunSignalStrength_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1803,10 +1979,6 @@ class NetworkDiagnosticsRoutines_RunGatewayCanBePinged_ProxyToResponder : public
 
 bool NetworkDiagnosticsRoutines_RunGatewayCanBePinged_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunGatewayCanBePinged_ResponseParams_Data* params =
@@ -1876,8 +2048,11 @@ void NetworkDiagnosticsRoutines_RunGatewayCanBePinged_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1928,10 +2103,6 @@ class NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_ProxyToResponder : p
 
 bool NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_ResponseParams_Data* params =
@@ -2001,8 +2172,11 @@ void NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2053,10 +2227,6 @@ class NetworkDiagnosticsRoutines_RunDnsResolverPresent_ProxyToResponder : public
 
 bool NetworkDiagnosticsRoutines_RunDnsResolverPresent_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunDnsResolverPresent_ResponseParams_Data* params =
@@ -2126,8 +2296,11 @@ void NetworkDiagnosticsRoutines_RunDnsResolverPresent_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2178,10 +2351,6 @@ class NetworkDiagnosticsRoutines_RunDnsLatency_ProxyToResponder : public ::mojo:
 
 bool NetworkDiagnosticsRoutines_RunDnsLatency_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunDnsLatency_ResponseParams_Data* params =
@@ -2251,8 +2420,11 @@ void NetworkDiagnosticsRoutines_RunDnsLatency_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2303,10 +2475,6 @@ class NetworkDiagnosticsRoutines_RunDnsResolution_ProxyToResponder : public ::mo
 
 bool NetworkDiagnosticsRoutines_RunDnsResolution_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunDnsResolution_ResponseParams_Data* params =
@@ -2376,8 +2544,11 @@ void NetworkDiagnosticsRoutines_RunDnsResolution_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2428,10 +2599,6 @@ class NetworkDiagnosticsRoutines_RunCaptivePortal_ProxyToResponder : public ::mo
 
 bool NetworkDiagnosticsRoutines_RunCaptivePortal_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunCaptivePortal_ResponseParams_Data* params =
@@ -2501,8 +2668,11 @@ void NetworkDiagnosticsRoutines_RunCaptivePortal_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2553,10 +2723,6 @@ class NetworkDiagnosticsRoutines_RunHttpFirewall_ProxyToResponder : public ::moj
 
 bool NetworkDiagnosticsRoutines_RunHttpFirewall_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunHttpFirewall_ResponseParams_Data* params =
@@ -2626,8 +2792,11 @@ void NetworkDiagnosticsRoutines_RunHttpFirewall_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2678,10 +2847,6 @@ class NetworkDiagnosticsRoutines_RunHttpsFirewall_ProxyToResponder : public ::mo
 
 bool NetworkDiagnosticsRoutines_RunHttpsFirewall_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunHttpsFirewall_ResponseParams_Data* params =
@@ -2751,8 +2916,11 @@ void NetworkDiagnosticsRoutines_RunHttpsFirewall_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2803,10 +2971,6 @@ class NetworkDiagnosticsRoutines_RunHttpsLatency_ProxyToResponder : public ::moj
 
 bool NetworkDiagnosticsRoutines_RunHttpsLatency_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunHttpsLatency_ResponseParams_Data* params =
@@ -2876,8 +3040,11 @@ void NetworkDiagnosticsRoutines_RunHttpsLatency_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2928,10 +3095,6 @@ class NetworkDiagnosticsRoutines_RunVideoConferencing_ProxyToResponder : public 
 
 bool NetworkDiagnosticsRoutines_RunVideoConferencing_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunVideoConferencing_ResponseParams_Data* params =
@@ -3001,8 +3164,11 @@ void NetworkDiagnosticsRoutines_RunVideoConferencing_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3053,10 +3219,6 @@ class NetworkDiagnosticsRoutines_RunArcHttp_ProxyToResponder : public ::mojo::in
 
 bool NetworkDiagnosticsRoutines_RunArcHttp_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunArcHttp_ResponseParams_Data* params =
@@ -3126,8 +3288,11 @@ void NetworkDiagnosticsRoutines_RunArcHttp_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3178,10 +3343,6 @@ class NetworkDiagnosticsRoutines_RunArcPing_ProxyToResponder : public ::mojo::in
 
 bool NetworkDiagnosticsRoutines_RunArcPing_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunArcPing_ResponseParams_Data* params =
@@ -3251,8 +3412,11 @@ void NetworkDiagnosticsRoutines_RunArcPing_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3303,10 +3467,6 @@ class NetworkDiagnosticsRoutines_RunArcDnsResolution_ProxyToResponder : public :
 
 bool NetworkDiagnosticsRoutines_RunArcDnsResolution_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkDiagnosticsRoutines_RunArcDnsResolution_ResponseParams_Data* params =
@@ -3376,8 +3536,11 @@ void NetworkDiagnosticsRoutines_RunArcDnsResolution_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3452,15 +3615,6 @@ bool NetworkDiagnosticsRoutinesStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kNetworkDiagnosticsRoutines_GetResult_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetResult");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_GetResult_Params_Data* params =
           reinterpret_cast<
@@ -3490,15 +3644,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_GetAllResults_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::GetAllResults");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_GetAllResults_Params_Data* params =
           reinterpret_cast<
@@ -3524,15 +3669,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunLanConnectivity_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunLanConnectivity");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunLanConnectivity_Params_Data* params =
           reinterpret_cast<
@@ -3558,15 +3694,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunSignalStrength_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunSignalStrength");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunSignalStrength_Params_Data* params =
           reinterpret_cast<
@@ -3592,15 +3719,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunGatewayCanBePinged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunGatewayCanBePinged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunGatewayCanBePinged_Params_Data* params =
           reinterpret_cast<
@@ -3626,15 +3744,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHasSecureWiFiConnection");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_Params_Data* params =
           reinterpret_cast<
@@ -3660,15 +3769,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunDnsResolverPresent_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolverPresent");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunDnsResolverPresent_Params_Data* params =
           reinterpret_cast<
@@ -3694,15 +3794,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunDnsLatency_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsLatency");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunDnsLatency_Params_Data* params =
           reinterpret_cast<
@@ -3728,15 +3819,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunDnsResolution_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunDnsResolution");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunDnsResolution_Params_Data* params =
           reinterpret_cast<
@@ -3762,15 +3844,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunCaptivePortal_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunCaptivePortal");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunCaptivePortal_Params_Data* params =
           reinterpret_cast<
@@ -3796,15 +3869,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunHttpFirewall_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpFirewall");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunHttpFirewall_Params_Data* params =
           reinterpret_cast<
@@ -3830,15 +3894,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunHttpsFirewall_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsFirewall");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunHttpsFirewall_Params_Data* params =
           reinterpret_cast<
@@ -3864,15 +3919,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunHttpsLatency_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunHttpsLatency");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunHttpsLatency_Params_Data* params =
           reinterpret_cast<
@@ -3898,15 +3944,6 @@ std::move(p_routine), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunVideoConferencing_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunVideoConferencing");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunVideoConferencing_Params_Data* params =
           reinterpret_cast<
@@ -3936,15 +3973,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunArcHttp_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcHttp");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunArcHttp_Params_Data* params =
           reinterpret_cast<
@@ -3970,15 +3998,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunArcPing_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcPing");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunArcPing_Params_Data* params =
           reinterpret_cast<
@@ -4004,15 +4023,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kNetworkDiagnosticsRoutines_RunArcDnsResolution_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_diagnostics::mojom::NetworkDiagnosticsRoutines::RunArcDnsResolution");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkDiagnosticsRoutines_RunArcDnsResolution_Params_Data* params =
           reinterpret_cast<

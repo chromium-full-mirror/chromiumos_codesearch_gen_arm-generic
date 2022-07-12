@@ -42,16 +42,6 @@ using GetEcTelemetryResponsePtr = mojo::InlinedStructPtr<GetEcTelemetryResponse>
 
 class WilcoEcObserver;
 
-using WilcoEcObserverPtr = mojo::InterfacePtr<WilcoEcObserver>;
-using WilcoEcObserverPtrInfo = mojo::InterfacePtrInfo<WilcoEcObserver>;
-
-using WilcoEcObserverRequest = mojo::InterfaceRequest<WilcoEcObserver>;
-using WilcoEcObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<WilcoEcObserver>;
-
-using WilcoEcObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<WilcoEcObserver>;
-
 
 
 

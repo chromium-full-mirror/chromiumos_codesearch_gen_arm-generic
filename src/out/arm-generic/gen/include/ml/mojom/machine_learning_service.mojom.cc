@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -49,6 +48,142 @@ namespace machine_learning {
 namespace mojom {
 const char MachineLearningService::Name_[] = "chromeos.machine_learning.mojom.MachineLearningService";
 constexpr base::Token MachineLearningService::Uuid_;
+
+uint32_t MachineLearningService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kMachineLearningService_Clone_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::Clone");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadBuiltinModel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadFlatBufferModel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadTextClassifier_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadHandwritingModel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadSpeechRecognizer_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadGrammarChecker_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadTextSuggester_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadWebPlatformHandwritingModel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel");
+      return value;
+    }
+    case internal::kMachineLearningService_LoadDocumentScanner_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner");
+      return value;
+    }
+    case internal::kMachineLearningService_CreateWebPlatformModelLoader_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader");
+      return value;
+    }
+    case internal::kMachineLearningService_REMOVED_4_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* MachineLearningService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kMachineLearningService_Clone_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::Clone";
+      case internal::kMachineLearningService_LoadBuiltinModel_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel";
+      case internal::kMachineLearningService_LoadFlatBufferModel_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel";
+      case internal::kMachineLearningService_LoadTextClassifier_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier";
+      case internal::kMachineLearningService_LoadHandwritingModel_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel";
+      case internal::kMachineLearningService_LoadSpeechRecognizer_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer";
+      case internal::kMachineLearningService_LoadGrammarChecker_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker";
+      case internal::kMachineLearningService_LoadTextSuggester_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester";
+      case internal::kMachineLearningService_LoadWebPlatformHandwritingModel_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel";
+      case internal::kMachineLearningService_LoadDocumentScanner_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner";
+      case internal::kMachineLearningService_CreateWebPlatformModelLoader_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader";
+      case internal::kMachineLearningService_REMOVED_4_Name:
+            return "Receive chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kMachineLearningService_Clone_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::Clone";
+      case internal::kMachineLearningService_LoadBuiltinModel_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel";
+      case internal::kMachineLearningService_LoadFlatBufferModel_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel";
+      case internal::kMachineLearningService_LoadTextClassifier_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier";
+      case internal::kMachineLearningService_LoadHandwritingModel_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel";
+      case internal::kMachineLearningService_LoadSpeechRecognizer_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer";
+      case internal::kMachineLearningService_LoadGrammarChecker_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker";
+      case internal::kMachineLearningService_LoadTextSuggester_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester";
+      case internal::kMachineLearningService_LoadWebPlatformHandwritingModel_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel";
+      case internal::kMachineLearningService_LoadDocumentScanner_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner";
+      case internal::kMachineLearningService_CreateWebPlatformModelLoader_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader";
+      case internal::kMachineLearningService_REMOVED_4_Name:
+            return "Receive reply chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class MachineLearningService_LoadBuiltinModel_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -930,10 +1065,6 @@ class MachineLearningService_LoadBuiltinModel_ProxyToResponder : public ::mojo::
 
 bool MachineLearningService_LoadBuiltinModel_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadBuiltinModel_ResponseParams_Data* params =
@@ -994,8 +1125,11 @@ void MachineLearningService_LoadBuiltinModel_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1046,10 +1180,6 @@ class MachineLearningService_LoadFlatBufferModel_ProxyToResponder : public ::moj
 
 bool MachineLearningService_LoadFlatBufferModel_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadFlatBufferModel_ResponseParams_Data* params =
@@ -1110,8 +1240,11 @@ void MachineLearningService_LoadFlatBufferModel_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1162,10 +1295,6 @@ class MachineLearningService_LoadTextClassifier_ProxyToResponder : public ::mojo
 
 bool MachineLearningService_LoadTextClassifier_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadTextClassifier_ResponseParams_Data* params =
@@ -1226,8 +1355,11 @@ void MachineLearningService_LoadTextClassifier_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1278,10 +1410,6 @@ class MachineLearningService_LoadHandwritingModel_ProxyToResponder : public ::mo
 
 bool MachineLearningService_LoadHandwritingModel_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadHandwritingModel_ResponseParams_Data* params =
@@ -1342,8 +1470,11 @@ void MachineLearningService_LoadHandwritingModel_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1394,10 +1525,6 @@ class MachineLearningService_LoadSpeechRecognizer_ProxyToResponder : public ::mo
 
 bool MachineLearningService_LoadSpeechRecognizer_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadSpeechRecognizer_ResponseParams_Data* params =
@@ -1458,8 +1585,11 @@ void MachineLearningService_LoadSpeechRecognizer_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1510,10 +1640,6 @@ class MachineLearningService_LoadGrammarChecker_ProxyToResponder : public ::mojo
 
 bool MachineLearningService_LoadGrammarChecker_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadGrammarChecker_ResponseParams_Data* params =
@@ -1574,8 +1700,11 @@ void MachineLearningService_LoadGrammarChecker_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1626,10 +1755,6 @@ class MachineLearningService_LoadTextSuggester_ProxyToResponder : public ::mojo:
 
 bool MachineLearningService_LoadTextSuggester_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadTextSuggester_ResponseParams_Data* params =
@@ -1690,8 +1815,11 @@ void MachineLearningService_LoadTextSuggester_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1742,10 +1870,6 @@ class MachineLearningService_LoadWebPlatformHandwritingModel_ProxyToResponder : 
 
 bool MachineLearningService_LoadWebPlatformHandwritingModel_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadWebPlatformHandwritingModel_ResponseParams_Data* params =
@@ -1806,8 +1930,11 @@ void MachineLearningService_LoadWebPlatformHandwritingModel_ProxyToResponder::Ru
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1858,10 +1985,6 @@ class MachineLearningService_LoadDocumentScanner_ProxyToResponder : public ::moj
 
 bool MachineLearningService_LoadDocumentScanner_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_LoadDocumentScanner_ResponseParams_Data* params =
@@ -1922,8 +2045,11 @@ void MachineLearningService_LoadDocumentScanner_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1974,10 +2100,6 @@ class MachineLearningService_CreateWebPlatformModelLoader_ProxyToResponder : pub
 
 bool MachineLearningService_CreateWebPlatformModelLoader_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_CreateWebPlatformModelLoader_ResponseParams_Data* params =
@@ -2038,8 +2160,11 @@ void MachineLearningService_CreateWebPlatformModelLoader_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2090,10 +2215,6 @@ class MachineLearningService_REMOVED_4_ProxyToResponder : public ::mojo::interna
 
 bool MachineLearningService_REMOVED_4_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::MachineLearningService_REMOVED_4_ResponseParams_Data* params =
@@ -2154,8 +2275,11 @@ void MachineLearningService_REMOVED_4_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2166,15 +2290,6 @@ bool MachineLearningServiceStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kMachineLearningService_Clone_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::Clone",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::Clone");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::MachineLearningService_Clone_Params_Data* params =
@@ -2252,15 +2367,6 @@ bool MachineLearningServiceStubDispatch::AcceptWithResponder(
       break;
     }
     case internal::kMachineLearningService_LoadBuiltinModel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadBuiltinModel_Params_Data* params =
           reinterpret_cast<
@@ -2296,15 +2402,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadFlatBufferModel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadFlatBufferModel_Params_Data* params =
           reinterpret_cast<
@@ -2340,15 +2437,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadTextClassifier_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadTextClassifier_Params_Data* params =
           reinterpret_cast<
@@ -2380,15 +2468,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadHandwritingModel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadHandwritingModel_Params_Data* params =
           reinterpret_cast<
@@ -2424,15 +2503,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadSpeechRecognizer_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadSpeechRecognizer_Params_Data* params =
           reinterpret_cast<
@@ -2474,15 +2544,6 @@ std::move(p_soda_recognizer), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadGrammarChecker_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadGrammarChecker_Params_Data* params =
           reinterpret_cast<
@@ -2514,15 +2575,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadTextSuggester_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadTextSuggester_Params_Data* params =
           reinterpret_cast<
@@ -2558,15 +2610,6 @@ std::move(p_spec), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadWebPlatformHandwritingModel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadWebPlatformHandwritingModel_Params_Data* params =
           reinterpret_cast<
@@ -2602,15 +2645,6 @@ std::move(p_receiver), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_LoadDocumentScanner_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_LoadDocumentScanner_Params_Data* params =
           reinterpret_cast<
@@ -2646,15 +2680,6 @@ std::move(p_config), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_CreateWebPlatformModelLoader_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_CreateWebPlatformModelLoader_Params_Data* params =
           reinterpret_cast<
@@ -2690,15 +2715,6 @@ std::move(p_options), std::move(callback));
       return true;
     }
     case internal::kMachineLearningService_REMOVED_4_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::MachineLearningService_REMOVED_4_Params_Data* params =
           reinterpret_cast<

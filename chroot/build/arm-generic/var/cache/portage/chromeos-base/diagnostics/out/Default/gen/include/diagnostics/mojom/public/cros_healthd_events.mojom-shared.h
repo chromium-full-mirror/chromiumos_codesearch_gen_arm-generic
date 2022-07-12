@@ -136,7 +136,7 @@ class UsbEventInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendor(UserType* output) {
+  [[nodiscard]] bool ReadVendor(UserType* output) {
     
     auto* pointer = data_->vendor.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -146,7 +146,7 @@ class UsbEventInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -162,7 +162,7 @@ class UsbEventInfoDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCategories(UserType* output) {
+  [[nodiscard]] bool ReadCategories(UserType* output) {
     
     auto* pointer = data_->categories.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(

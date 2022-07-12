@@ -11,26 +11,24 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace power_manager {
-class ThermalEventDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ThermalEvent> _instance;
-} _ThermalEvent_default_instance_;
+constexpr ThermalEvent::ThermalEvent(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : timestamp_(int64_t{0})
+  , thermal_state_(0)
+{}
+struct ThermalEventDefaultTypeInternal {
+  constexpr ThermalEventDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ThermalEventDefaultTypeInternal() {}
+  union {
+    ThermalEvent _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ThermalEventDefaultTypeInternal _ThermalEvent_default_instance_;
 }  // namespace power_manager
-static void InitDefaultsscc_info_ThermalEvent_thermal_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_ThermalEvent_default_instance_;
-    new (ptr) ::power_manager::ThermalEvent();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::ThermalEvent::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ThermalEvent_thermal_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ThermalEvent_thermal_2eproto}, {}};
-
 namespace power_manager {
 bool ThermalEvent_ThermalState_IsValid(int value) {
   switch (value) {
@@ -86,7 +84,7 @@ const std::string& ThermalEvent_ThermalState_Name(
                      ThermalEvent_ThermalState_strings[idx].get();
 }
 bool ThermalEvent_ThermalState_Parse(
-    const std::string& name, ThermalEvent_ThermalState* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ThermalEvent_ThermalState* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ThermalEvent_ThermalState_entries, 5, name, &int_value);
@@ -95,7 +93,7 @@ bool ThermalEvent_ThermalState_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ThermalEvent_ThermalState ThermalEvent::UNKNOWN;
 constexpr ThermalEvent_ThermalState ThermalEvent::NOMINAL;
 constexpr ThermalEvent_ThermalState ThermalEvent::FAIR;
@@ -104,12 +102,10 @@ constexpr ThermalEvent_ThermalState ThermalEvent::CRITICAL;
 constexpr ThermalEvent_ThermalState ThermalEvent::ThermalState_MIN;
 constexpr ThermalEvent_ThermalState ThermalEvent::ThermalState_MAX;
 constexpr int ThermalEvent::ThermalState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void ThermalEvent::InitAsDefaultInstance() {
-}
 class ThermalEvent::_Internal {
  public:
   using HasBits = decltype(std::declval<ThermalEvent>()._has_bits_);
@@ -121,48 +117,56 @@ class ThermalEvent::_Internal {
   }
 };
 
-ThermalEvent::ThermalEvent()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ThermalEvent::ThermalEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.ThermalEvent)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.ThermalEvent)
 }
 ThermalEvent::ThermalEvent(const ThermalEvent& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&timestamp_, &from.timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&thermal_state_) -
     reinterpret_cast<char*>(&timestamp_)) + sizeof(thermal_state_));
   // @@protoc_insertion_point(copy_constructor:power_manager.ThermalEvent)
 }
 
-void ThermalEvent::SharedCtor() {
-  ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&thermal_state_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(thermal_state_));
+inline void ThermalEvent::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&thermal_state_) -
+    reinterpret_cast<char*>(&timestamp_)) + sizeof(thermal_state_));
 }
 
 ThermalEvent::~ThermalEvent() {
   // @@protoc_insertion_point(destructor:power_manager.ThermalEvent)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ThermalEvent::SharedDtor() {
+inline void ThermalEvent::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ThermalEvent::ArenaDtor(void* object) {
+  ThermalEvent* _this = reinterpret_cast< ThermalEvent* >(object);
+  (void)_this;
+}
+void ThermalEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ThermalEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ThermalEvent& ThermalEvent::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ThermalEvent_thermal_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ThermalEvent::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.ThermalEvent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -173,62 +177,66 @@ void ThermalEvent::Clear() {
         reinterpret_cast<char*>(&timestamp_)) + sizeof(thermal_state_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ThermalEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .power_manager.ThermalEvent.ThermalState thermal_state = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::ThermalEvent_ThermalState_IsValid(val))) {
             _internal_set_thermal_state(static_cast<::power_manager::ThermalEvent_ThermalState>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 timestamp = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_timestamp(&has_bits);
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ThermalEvent::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ThermalEvent::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.ThermalEvent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -246,8 +254,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.ThermalEvent)
   return target;
@@ -257,7 +265,7 @@ size_t ThermalEvent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.ThermalEvent)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -265,9 +273,7 @@ size_t ThermalEvent::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional int64 timestamp = 2;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_timestamp());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_timestamp());
     }
 
     // optional .power_manager.ThermalEvent.ThermalState thermal_state = 1;
@@ -278,7 +284,7 @@ size_t ThermalEvent::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -294,8 +300,7 @@ void ThermalEvent::CheckTypeAndMergeFrom(
 void ThermalEvent::MergeFrom(const ThermalEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.ThermalEvent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -308,6 +313,7 @@ void ThermalEvent::MergeFrom(const ThermalEvent& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ThermalEvent::CopyFrom(const ThermalEvent& from) {
@@ -323,10 +329,14 @@ bool ThermalEvent::IsInitialized() const {
 
 void ThermalEvent::InternalSwap(ThermalEvent* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(timestamp_, other->timestamp_);
-  swap(thermal_state_, other->thermal_state_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ThermalEvent, thermal_state_)
+      + sizeof(ThermalEvent::thermal_state_)
+      - PROTOBUF_FIELD_OFFSET(ThermalEvent, timestamp_)>(
+          reinterpret_cast<char*>(&timestamp_),
+          reinterpret_cast<char*>(&other->timestamp_));
 }
 
 std::string ThermalEvent::GetTypeName() const {
@@ -338,7 +348,7 @@ std::string ThermalEvent::GetTypeName() const {
 }  // namespace power_manager
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::power_manager::ThermalEvent* Arena::CreateMaybeMessage< ::power_manager::ThermalEvent >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::ThermalEvent >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::ThermalEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

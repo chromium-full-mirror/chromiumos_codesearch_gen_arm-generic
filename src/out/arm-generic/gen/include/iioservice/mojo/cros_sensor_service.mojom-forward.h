@@ -24,27 +24,7 @@ namespace cros {
 namespace mojom {
 class SensorHalServer;
 
-using SensorHalServerPtr = mojo::InterfacePtr<SensorHalServer>;
-using SensorHalServerPtrInfo = mojo::InterfacePtrInfo<SensorHalServer>;
-
-using SensorHalServerRequest = mojo::InterfaceRequest<SensorHalServer>;
-using SensorHalServerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorHalServer>;
-
-using SensorHalServerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorHalServer>;
-
 class SensorHalClient;
-
-using SensorHalClientPtr = mojo::InterfacePtr<SensorHalClient>;
-using SensorHalClientPtrInfo = mojo::InterfacePtrInfo<SensorHalClient>;
-
-using SensorHalClientRequest = mojo::InterfaceRequest<SensorHalClient>;
-using SensorHalClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorHalClient>;
-
-using SensorHalClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorHalClient>;
 
 
 

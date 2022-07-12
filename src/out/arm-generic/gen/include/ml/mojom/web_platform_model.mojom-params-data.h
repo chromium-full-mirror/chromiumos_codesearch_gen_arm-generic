@@ -107,7 +107,7 @@ class ModelLoader_Load_ParamsDataView {
       ::mojo_base::mojom::BigBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelContent(UserType* output) {
+  [[nodiscard]] bool ReadModelContent(UserType* output) {
     
     auto* pointer = !data_->model_content.is_null() ? &data_->model_content : nullptr;
     return mojo::internal::Deserialize<::mojo_base::mojom::BigBufferDataView>(
@@ -131,7 +131,7 @@ class ModelLoader_Load_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::LoadModelResult>(
         data_value, output);
@@ -153,7 +153,7 @@ class ModelLoader_Load_ResponseParamsDataView {
       ModelInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelInfo(UserType* output) {
+  [[nodiscard]] bool ReadModelInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -190,7 +190,7 @@ class Model_Compute_ParamsDataView {
       mojo::MapDataView<mojo::StringDataView, mojo::ArrayDataView<uint8_t>>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputTensors(UserType* output) {
+  [[nodiscard]] bool ReadInputTensors(UserType* output) {
     
     auto* pointer = data_->input_tensors.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, mojo::ArrayDataView<uint8_t>>>(
@@ -214,7 +214,7 @@ class Model_Compute_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::ComputeResult>(
         data_value, output);
@@ -227,7 +227,7 @@ class Model_Compute_ResponseParamsDataView {
       mojo::MapDataView<mojo::StringDataView, mojo::ArrayDataView<uint8_t>>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputTensors(UserType* output) {
+  [[nodiscard]] bool ReadOutputTensors(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

@@ -628,7 +628,7 @@ class CrosHealthdUsbObserver_OnAdd_ParamsDataView {
       UsbEventInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInfo(UserType* output) {
+  [[nodiscard]] bool ReadInfo(UserType* output) {
     
     auto* pointer = data_->info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::UsbEventInfoDataView>(
@@ -655,7 +655,7 @@ class CrosHealthdUsbObserver_OnRemove_ParamsDataView {
       UsbEventInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInfo(UserType* output) {
+  [[nodiscard]] bool ReadInfo(UserType* output) {
     
     auto* pointer = data_->info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::UsbEventInfoDataView>(

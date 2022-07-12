@@ -105,7 +105,7 @@ class Channel_Receive_ParamsDataView {
       MessageDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMessage(UserType* output) {
+  [[nodiscard]] bool ReadMessage(UserType* output) {
     
     auto* pointer = data_->message.Get();
     return mojo::internal::Deserialize<::IPC::mojom::MessageDataView>(
@@ -132,7 +132,7 @@ class Channel_GetAssociatedInterface_ParamsDataView {
       ::mojo_base::mojom::GenericPendingAssociatedReceiverDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReceiver(UserType* output) {
+  [[nodiscard]] bool ReadReceiver(UserType* output) {
     
     auto* pointer = data_->receiver.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::GenericPendingAssociatedReceiverDataView>(

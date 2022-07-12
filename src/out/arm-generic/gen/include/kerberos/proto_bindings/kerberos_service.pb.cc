@@ -11,358 +11,265 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_kerberos_5fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_kerberos_5fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_kerberos_5fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ConfigErrorInfo_kerberos_5fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_kerberos_5fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KerberosFiles_kerberos_5fservice_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace kerberos {
-class KerberosFilesDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KerberosFiles> _instance;
-} _KerberosFiles_default_instance_;
-class AccountDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Account> _instance;
-} _Account_default_instance_;
-class ConfigErrorInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ConfigErrorInfo> _instance;
-} _ConfigErrorInfo_default_instance_;
-class AddAccountRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddAccountRequest> _instance;
-} _AddAccountRequest_default_instance_;
-class AddAccountResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddAccountResponse> _instance;
-} _AddAccountResponse_default_instance_;
-class RemoveAccountRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveAccountRequest> _instance;
-} _RemoveAccountRequest_default_instance_;
-class RemoveAccountResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveAccountResponse> _instance;
-} _RemoveAccountResponse_default_instance_;
-class ClearAccountsRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearAccountsRequest> _instance;
-} _ClearAccountsRequest_default_instance_;
-class ClearAccountsResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearAccountsResponse> _instance;
-} _ClearAccountsResponse_default_instance_;
-class ListAccountsRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListAccountsRequest> _instance;
-} _ListAccountsRequest_default_instance_;
-class ListAccountsResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ListAccountsResponse> _instance;
-} _ListAccountsResponse_default_instance_;
-class SetConfigRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetConfigRequest> _instance;
-} _SetConfigRequest_default_instance_;
-class SetConfigResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SetConfigResponse> _instance;
-} _SetConfigResponse_default_instance_;
-class ValidateConfigRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ValidateConfigRequest> _instance;
-} _ValidateConfigRequest_default_instance_;
-class ValidateConfigResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ValidateConfigResponse> _instance;
-} _ValidateConfigResponse_default_instance_;
-class AcquireKerberosTgtRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcquireKerberosTgtRequest> _instance;
-} _AcquireKerberosTgtRequest_default_instance_;
-class AcquireKerberosTgtResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AcquireKerberosTgtResponse> _instance;
-} _AcquireKerberosTgtResponse_default_instance_;
-class GetKerberosFilesRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetKerberosFilesRequest> _instance;
-} _GetKerberosFilesRequest_default_instance_;
-class GetKerberosFilesResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetKerberosFilesResponse> _instance;
-} _GetKerberosFilesResponse_default_instance_;
+constexpr KerberosFiles::KerberosFiles(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : krb5cc_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , krb5conf_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct KerberosFilesDefaultTypeInternal {
+  constexpr KerberosFilesDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KerberosFilesDefaultTypeInternal() {}
+  union {
+    KerberosFiles _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KerberosFilesDefaultTypeInternal _KerberosFiles_default_instance_;
+constexpr Account::Account(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , krb5conf_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , tgt_validity_seconds_(int64_t{0})
+  , tgt_renewal_seconds_(int64_t{0})
+  , is_managed_(false)
+  , password_was_remembered_(false)
+  , use_login_password_(false){}
+struct AccountDefaultTypeInternal {
+  constexpr AccountDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AccountDefaultTypeInternal() {}
+  union {
+    Account _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AccountDefaultTypeInternal _Account_default_instance_;
+constexpr ConfigErrorInfo::ConfigErrorInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : code_(0)
+
+  , line_index_(0){}
+struct ConfigErrorInfoDefaultTypeInternal {
+  constexpr ConfigErrorInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigErrorInfoDefaultTypeInternal() {}
+  union {
+    ConfigErrorInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigErrorInfoDefaultTypeInternal _ConfigErrorInfo_default_instance_;
+constexpr AddAccountRequest::AddAccountRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , is_managed_(false){}
+struct AddAccountRequestDefaultTypeInternal {
+  constexpr AddAccountRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddAccountRequestDefaultTypeInternal() {}
+  union {
+    AddAccountRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddAccountRequestDefaultTypeInternal _AddAccountRequest_default_instance_;
+constexpr AddAccountResponse::AddAccountResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(0)
+{}
+struct AddAccountResponseDefaultTypeInternal {
+  constexpr AddAccountResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AddAccountResponseDefaultTypeInternal() {}
+  union {
+    AddAccountResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AddAccountResponseDefaultTypeInternal _AddAccountResponse_default_instance_;
+constexpr RemoveAccountRequest::RemoveAccountRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct RemoveAccountRequestDefaultTypeInternal {
+  constexpr RemoveAccountRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RemoveAccountRequestDefaultTypeInternal() {}
+  union {
+    RemoveAccountRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveAccountRequestDefaultTypeInternal _RemoveAccountRequest_default_instance_;
+constexpr RemoveAccountResponse::RemoveAccountResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : accounts_()
+  , error_(0)
+{}
+struct RemoveAccountResponseDefaultTypeInternal {
+  constexpr RemoveAccountResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RemoveAccountResponseDefaultTypeInternal() {}
+  union {
+    RemoveAccountResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveAccountResponseDefaultTypeInternal _RemoveAccountResponse_default_instance_;
+constexpr ClearAccountsRequest::ClearAccountsRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_names_to_ignore_()
+  , mode_(0)
+{}
+struct ClearAccountsRequestDefaultTypeInternal {
+  constexpr ClearAccountsRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClearAccountsRequestDefaultTypeInternal() {}
+  union {
+    ClearAccountsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClearAccountsRequestDefaultTypeInternal _ClearAccountsRequest_default_instance_;
+constexpr ClearAccountsResponse::ClearAccountsResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : accounts_()
+  , error_(0)
+{}
+struct ClearAccountsResponseDefaultTypeInternal {
+  constexpr ClearAccountsResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClearAccountsResponseDefaultTypeInternal() {}
+  union {
+    ClearAccountsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClearAccountsResponseDefaultTypeInternal _ClearAccountsResponse_default_instance_;
+constexpr ListAccountsRequest::ListAccountsRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ListAccountsRequestDefaultTypeInternal {
+  constexpr ListAccountsRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListAccountsRequestDefaultTypeInternal() {}
+  union {
+    ListAccountsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListAccountsRequestDefaultTypeInternal _ListAccountsRequest_default_instance_;
+constexpr ListAccountsResponse::ListAccountsResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : accounts_()
+  , error_(0)
+{}
+struct ListAccountsResponseDefaultTypeInternal {
+  constexpr ListAccountsResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListAccountsResponseDefaultTypeInternal() {}
+  union {
+    ListAccountsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListAccountsResponseDefaultTypeInternal _ListAccountsResponse_default_instance_;
+constexpr SetConfigRequest::SetConfigRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , krb5conf_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SetConfigRequestDefaultTypeInternal {
+  constexpr SetConfigRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SetConfigRequestDefaultTypeInternal() {}
+  union {
+    SetConfigRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetConfigRequestDefaultTypeInternal _SetConfigRequest_default_instance_;
+constexpr SetConfigResponse::SetConfigResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(0)
+{}
+struct SetConfigResponseDefaultTypeInternal {
+  constexpr SetConfigResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SetConfigResponseDefaultTypeInternal() {}
+  union {
+    SetConfigResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetConfigResponseDefaultTypeInternal _SetConfigResponse_default_instance_;
+constexpr ValidateConfigRequest::ValidateConfigRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : krb5conf_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ValidateConfigRequestDefaultTypeInternal {
+  constexpr ValidateConfigRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ValidateConfigRequestDefaultTypeInternal() {}
+  union {
+    ValidateConfigRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ValidateConfigRequestDefaultTypeInternal _ValidateConfigRequest_default_instance_;
+constexpr ValidateConfigResponse::ValidateConfigResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_info_(nullptr)
+  , error_(0)
+{}
+struct ValidateConfigResponseDefaultTypeInternal {
+  constexpr ValidateConfigResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ValidateConfigResponseDefaultTypeInternal() {}
+  union {
+    ValidateConfigResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ValidateConfigResponseDefaultTypeInternal _ValidateConfigResponse_default_instance_;
+constexpr AcquireKerberosTgtRequest::AcquireKerberosTgtRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , remember_password_(false)
+  , use_login_password_(false){}
+struct AcquireKerberosTgtRequestDefaultTypeInternal {
+  constexpr AcquireKerberosTgtRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcquireKerberosTgtRequestDefaultTypeInternal() {}
+  union {
+    AcquireKerberosTgtRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcquireKerberosTgtRequestDefaultTypeInternal _AcquireKerberosTgtRequest_default_instance_;
+constexpr AcquireKerberosTgtResponse::AcquireKerberosTgtResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(0)
+{}
+struct AcquireKerberosTgtResponseDefaultTypeInternal {
+  constexpr AcquireKerberosTgtResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AcquireKerberosTgtResponseDefaultTypeInternal() {}
+  union {
+    AcquireKerberosTgtResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AcquireKerberosTgtResponseDefaultTypeInternal _AcquireKerberosTgtResponse_default_instance_;
+constexpr GetKerberosFilesRequest::GetKerberosFilesRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetKerberosFilesRequestDefaultTypeInternal {
+  constexpr GetKerberosFilesRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetKerberosFilesRequestDefaultTypeInternal() {}
+  union {
+    GetKerberosFilesRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetKerberosFilesRequestDefaultTypeInternal _GetKerberosFilesRequest_default_instance_;
+constexpr GetKerberosFilesResponse::GetKerberosFilesResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : files_(nullptr)
+  , error_(0)
+{}
+struct GetKerberosFilesResponseDefaultTypeInternal {
+  constexpr GetKerberosFilesResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetKerberosFilesResponseDefaultTypeInternal() {}
+  union {
+    GetKerberosFilesResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetKerberosFilesResponseDefaultTypeInternal _GetKerberosFilesResponse_default_instance_;
 }  // namespace kerberos
-static void InitDefaultsscc_info_Account_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_Account_default_instance_;
-    new (ptr) ::kerberos::Account();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::Account::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Account_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Account_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_AcquireKerberosTgtRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_AcquireKerberosTgtRequest_default_instance_;
-    new (ptr) ::kerberos::AcquireKerberosTgtRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::AcquireKerberosTgtRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AcquireKerberosTgtRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AcquireKerberosTgtRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_AcquireKerberosTgtResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_AcquireKerberosTgtResponse_default_instance_;
-    new (ptr) ::kerberos::AcquireKerberosTgtResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::AcquireKerberosTgtResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AcquireKerberosTgtResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AcquireKerberosTgtResponse_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_AddAccountRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_AddAccountRequest_default_instance_;
-    new (ptr) ::kerberos::AddAccountRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::AddAccountRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddAccountRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddAccountRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_AddAccountResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_AddAccountResponse_default_instance_;
-    new (ptr) ::kerberos::AddAccountResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::AddAccountResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddAccountResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddAccountResponse_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ClearAccountsRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ClearAccountsRequest_default_instance_;
-    new (ptr) ::kerberos::ClearAccountsRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ClearAccountsRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearAccountsRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClearAccountsRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ClearAccountsResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ClearAccountsResponse_default_instance_;
-    new (ptr) ::kerberos::ClearAccountsResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ClearAccountsResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ClearAccountsResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ClearAccountsResponse_kerberos_5fservice_2eproto}, {
-      &scc_info_Account_kerberos_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_ConfigErrorInfo_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ConfigErrorInfo_default_instance_;
-    new (ptr) ::kerberos::ConfigErrorInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ConfigErrorInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ConfigErrorInfo_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ConfigErrorInfo_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetKerberosFilesRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_GetKerberosFilesRequest_default_instance_;
-    new (ptr) ::kerberos::GetKerberosFilesRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::GetKerberosFilesRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetKerberosFilesRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetKerberosFilesRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetKerberosFilesResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_GetKerberosFilesResponse_default_instance_;
-    new (ptr) ::kerberos::GetKerberosFilesResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::GetKerberosFilesResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetKerberosFilesResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetKerberosFilesResponse_kerberos_5fservice_2eproto}, {
-      &scc_info_KerberosFiles_kerberos_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_KerberosFiles_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_KerberosFiles_default_instance_;
-    new (ptr) ::kerberos::KerberosFiles();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::KerberosFiles::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KerberosFiles_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KerberosFiles_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ListAccountsRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ListAccountsRequest_default_instance_;
-    new (ptr) ::kerberos::ListAccountsRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ListAccountsRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ListAccountsRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ListAccountsRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ListAccountsResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ListAccountsResponse_default_instance_;
-    new (ptr) ::kerberos::ListAccountsResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ListAccountsResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ListAccountsResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ListAccountsResponse_kerberos_5fservice_2eproto}, {
-      &scc_info_Account_kerberos_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_RemoveAccountRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_RemoveAccountRequest_default_instance_;
-    new (ptr) ::kerberos::RemoveAccountRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::RemoveAccountRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveAccountRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveAccountRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_RemoveAccountResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_RemoveAccountResponse_default_instance_;
-    new (ptr) ::kerberos::RemoveAccountResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::RemoveAccountResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RemoveAccountResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_RemoveAccountResponse_kerberos_5fservice_2eproto}, {
-      &scc_info_Account_kerberos_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_SetConfigRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_SetConfigRequest_default_instance_;
-    new (ptr) ::kerberos::SetConfigRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::SetConfigRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetConfigRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetConfigRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_SetConfigResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_SetConfigResponse_default_instance_;
-    new (ptr) ::kerberos::SetConfigResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::SetConfigResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SetConfigResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SetConfigResponse_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ValidateConfigRequest_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ValidateConfigRequest_default_instance_;
-    new (ptr) ::kerberos::ValidateConfigRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ValidateConfigRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ValidateConfigRequest_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ValidateConfigRequest_kerberos_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_ValidateConfigResponse_kerberos_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::kerberos::_ValidateConfigResponse_default_instance_;
-    new (ptr) ::kerberos::ValidateConfigResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::kerberos::ValidateConfigResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ValidateConfigResponse_kerberos_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ValidateConfigResponse_kerberos_5fservice_2eproto}, {
-      &scc_info_ConfigErrorInfo_kerberos_5fservice_2eproto.base,}};
-
 namespace kerberos {
 bool ErrorType_IsValid(int value) {
   switch (value) {
@@ -490,7 +397,7 @@ const std::string& ErrorType_Name(
                      ErrorType_strings[idx].get();
 }
 bool ErrorType_Parse(
-    const std::string& name, ErrorType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ErrorType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ErrorType_entries, 23, name, &int_value);
@@ -577,7 +484,7 @@ const std::string& ConfigErrorCode_Name(
                      ConfigErrorCode_strings[idx].get();
 }
 bool ConfigErrorCode_Parse(
-    const std::string& name, ConfigErrorCode* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ConfigErrorCode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ConfigErrorCode_entries, 11, name, &int_value);
@@ -636,7 +543,7 @@ const std::string& ClearMode_Name(
                      ClearMode_strings[idx].get();
 }
 bool ClearMode_Parse(
-    const std::string& name, ClearMode* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ClearMode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ClearMode_entries, 4, name, &int_value);
@@ -648,8 +555,6 @@ bool ClearMode_Parse(
 
 // ===================================================================
 
-void KerberosFiles::InitAsDefaultInstance() {
-}
 class KerberosFiles::_Internal {
  public:
   using HasBits = decltype(std::declval<KerberosFiles>()._has_bits_);
@@ -661,120 +566,144 @@ class KerberosFiles::_Internal {
   }
 };
 
-KerberosFiles::KerberosFiles()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+KerberosFiles::KerberosFiles(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.KerberosFiles)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.KerberosFiles)
 }
 KerberosFiles::KerberosFiles(const KerberosFiles& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5cc_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5cc()) {
-    krb5cc_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_);
+    krb5cc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5cc(), 
+      GetArenaForAllocation());
   }
   krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf()) {
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    krb5conf_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kerberos.KerberosFiles)
 }
 
-void KerberosFiles::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KerberosFiles_kerberos_5fservice_2eproto.base);
-  krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void KerberosFiles::SharedCtor() {
+krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5cc_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 KerberosFiles::~KerberosFiles() {
   // @@protoc_insertion_point(destructor:kerberos.KerberosFiles)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void KerberosFiles::SharedDtor() {
+inline void KerberosFiles::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   krb5cc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   krb5conf_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void KerberosFiles::ArenaDtor(void* object) {
+  KerberosFiles* _this = reinterpret_cast< KerberosFiles* >(object);
+  (void)_this;
+}
+void KerberosFiles::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void KerberosFiles::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KerberosFiles& KerberosFiles::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KerberosFiles_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void KerberosFiles::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.KerberosFiles)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      krb5cc_.ClearNonDefaultToEmptyNoArena();
+      krb5cc_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      krb5conf_.ClearNonDefaultToEmptyNoArena();
+      krb5conf_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* KerberosFiles::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes krb5cc = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_krb5cc();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes krb5conf = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_krb5conf();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KerberosFiles::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* KerberosFiles::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.KerberosFiles)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -791,8 +720,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.KerberosFiles)
   return target;
@@ -802,7 +731,7 @@ size_t KerberosFiles::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.KerberosFiles)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -824,7 +753,7 @@ size_t KerberosFiles::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -840,21 +769,19 @@ void KerberosFiles::CheckTypeAndMergeFrom(
 void KerberosFiles::MergeFrom(const KerberosFiles& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.KerberosFiles)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      krb5cc_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_);
+      _internal_set_krb5cc(from._internal_krb5cc());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+      _internal_set_krb5conf(from._internal_krb5conf());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void KerberosFiles::CopyFrom(const KerberosFiles& from) {
@@ -870,12 +797,20 @@ bool KerberosFiles::IsInitialized() const {
 
 void KerberosFiles::InternalSwap(KerberosFiles* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  krb5cc_.Swap(&other->krb5cc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  krb5conf_.Swap(&other->krb5conf_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5cc_, lhs_arena,
+      &other->krb5cc_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_, lhs_arena,
+      &other->krb5conf_, rhs_arena
+  );
 }
 
 std::string KerberosFiles::GetTypeName() const {
@@ -885,8 +820,6 @@ std::string KerberosFiles::GetTypeName() const {
 
 // ===================================================================
 
-void Account::InitAsDefaultInstance() {
-}
 class Account::_Internal {
  public:
   using HasBits = decltype(std::declval<Account>()._has_bits_);
@@ -913,23 +846,34 @@ class Account::_Internal {
   }
 };
 
-Account::Account()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+Account::Account(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.Account)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.Account)
 }
 Account::Account(const Account& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf()) {
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    krb5conf_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&tgt_validity_seconds_, &from.tgt_validity_seconds_,
     static_cast<size_t>(reinterpret_cast<char*>(&use_login_password_) -
@@ -937,47 +881,57 @@ Account::Account(const Account& from)
   // @@protoc_insertion_point(copy_constructor:kerberos.Account)
 }
 
-void Account::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Account_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&tgt_validity_seconds_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&use_login_password_) -
-      reinterpret_cast<char*>(&tgt_validity_seconds_)) + sizeof(use_login_password_));
+inline void Account::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&tgt_validity_seconds_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&use_login_password_) -
+    reinterpret_cast<char*>(&tgt_validity_seconds_)) + sizeof(use_login_password_));
 }
 
 Account::~Account() {
   // @@protoc_insertion_point(destructor:kerberos.Account)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void Account::SharedDtor() {
+inline void Account::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   krb5conf_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Account::ArenaDtor(void* object) {
+  Account* _this = reinterpret_cast< Account* >(object);
+  (void)_this;
+}
+void Account::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Account::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Account& Account::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Account_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Account::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.Account)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      principal_name_.ClearNonDefaultToEmptyNoArena();
+      principal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      krb5conf_.ClearNonDefaultToEmptyNoArena();
+      krb5conf_.ClearNonDefaultToEmpty();
     }
   }
   if (cached_has_bits & 0x0000007cu) {
@@ -986,98 +940,107 @@ void Account::Clear() {
         reinterpret_cast<char*>(&tgt_validity_seconds_)) + sizeof(use_login_password_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* Account::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes krb5conf = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_krb5conf();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 tgt_validity_seconds = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_tgt_validity_seconds(&has_bits);
-          tgt_validity_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tgt_validity_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 tgt_renewal_seconds = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_tgt_renewal_seconds(&has_bits);
-          tgt_renewal_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tgt_renewal_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_managed = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_is_managed(&has_bits);
-          is_managed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_managed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool password_was_remembered = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_password_was_remembered(&has_bits);
-          password_was_remembered_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          password_was_remembered_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool use_login_password = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_use_login_password(&has_bits);
-          use_login_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_login_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Account::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Account::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.Account)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1124,8 +1087,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.Account)
   return target;
@@ -1135,7 +1098,7 @@ size_t Account::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.Account)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1157,16 +1120,12 @@ size_t Account::ByteSizeLong() const {
 
     // optional int64 tgt_validity_seconds = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_tgt_validity_seconds());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_tgt_validity_seconds());
     }
 
     // optional int64 tgt_renewal_seconds = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_tgt_renewal_seconds());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_tgt_renewal_seconds());
     }
 
     // optional bool is_managed = 5;
@@ -1186,7 +1145,7 @@ size_t Account::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1202,19 +1161,16 @@ void Account::CheckTypeAndMergeFrom(
 void Account::MergeFrom(const Account& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.Account)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+      _internal_set_principal_name(from._internal_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+      _internal_set_krb5conf(from._internal_krb5conf());
     }
     if (cached_has_bits & 0x00000004u) {
       tgt_validity_seconds_ = from.tgt_validity_seconds_;
@@ -1233,6 +1189,7 @@ void Account::MergeFrom(const Account& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void Account::CopyFrom(const Account& from) {
@@ -1248,17 +1205,26 @@ bool Account::IsInitialized() const {
 
 void Account::InternalSwap(Account* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  krb5conf_.Swap(&other->krb5conf_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(tgt_validity_seconds_, other->tgt_validity_seconds_);
-  swap(tgt_renewal_seconds_, other->tgt_renewal_seconds_);
-  swap(is_managed_, other->is_managed_);
-  swap(password_was_remembered_, other->password_was_remembered_);
-  swap(use_login_password_, other->use_login_password_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_, lhs_arena,
+      &other->krb5conf_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Account, use_login_password_)
+      + sizeof(Account::use_login_password_)
+      - PROTOBUF_FIELD_OFFSET(Account, tgt_validity_seconds_)>(
+          reinterpret_cast<char*>(&tgt_validity_seconds_),
+          reinterpret_cast<char*>(&other->tgt_validity_seconds_));
 }
 
 std::string Account::GetTypeName() const {
@@ -1268,8 +1234,6 @@ std::string Account::GetTypeName() const {
 
 // ===================================================================
 
-void ConfigErrorInfo::InitAsDefaultInstance() {
-}
 class ConfigErrorInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<ConfigErrorInfo>()._has_bits_);
@@ -1281,48 +1245,56 @@ class ConfigErrorInfo::_Internal {
   }
 };
 
-ConfigErrorInfo::ConfigErrorInfo()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ConfigErrorInfo::ConfigErrorInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ConfigErrorInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ConfigErrorInfo)
 }
 ConfigErrorInfo::ConfigErrorInfo(const ConfigErrorInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&code_, &from.code_,
     static_cast<size_t>(reinterpret_cast<char*>(&line_index_) -
     reinterpret_cast<char*>(&code_)) + sizeof(line_index_));
   // @@protoc_insertion_point(copy_constructor:kerberos.ConfigErrorInfo)
 }
 
-void ConfigErrorInfo::SharedCtor() {
-  ::memset(&code_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&line_index_) -
-      reinterpret_cast<char*>(&code_)) + sizeof(line_index_));
+inline void ConfigErrorInfo::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&code_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&line_index_) -
+    reinterpret_cast<char*>(&code_)) + sizeof(line_index_));
 }
 
 ConfigErrorInfo::~ConfigErrorInfo() {
   // @@protoc_insertion_point(destructor:kerberos.ConfigErrorInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ConfigErrorInfo::SharedDtor() {
+inline void ConfigErrorInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ConfigErrorInfo::ArenaDtor(void* object) {
+  ConfigErrorInfo* _this = reinterpret_cast< ConfigErrorInfo* >(object);
+  (void)_this;
+}
+void ConfigErrorInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ConfigErrorInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ConfigErrorInfo& ConfigErrorInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ConfigErrorInfo_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ConfigErrorInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ConfigErrorInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1333,62 +1305,66 @@ void ConfigErrorInfo::Clear() {
         reinterpret_cast<char*>(&code_)) + sizeof(line_index_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ConfigErrorInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ConfigErrorCode code = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ConfigErrorCode_IsValid(val))) {
             _internal_set_code(static_cast<::kerberos::ConfigErrorCode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 line_index = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_line_index(&has_bits);
-          line_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          line_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ConfigErrorInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ConfigErrorInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ConfigErrorInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1406,8 +1382,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ConfigErrorInfo)
   return target;
@@ -1417,7 +1393,7 @@ size_t ConfigErrorInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ConfigErrorInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1431,14 +1407,12 @@ size_t ConfigErrorInfo::ByteSizeLong() const {
 
     // optional int32 line_index = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_line_index());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_line_index());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1454,8 +1428,7 @@ void ConfigErrorInfo::CheckTypeAndMergeFrom(
 void ConfigErrorInfo::MergeFrom(const ConfigErrorInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ConfigErrorInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1468,6 +1441,7 @@ void ConfigErrorInfo::MergeFrom(const ConfigErrorInfo& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ConfigErrorInfo::CopyFrom(const ConfigErrorInfo& from) {
@@ -1483,10 +1457,14 @@ bool ConfigErrorInfo::IsInitialized() const {
 
 void ConfigErrorInfo::InternalSwap(ConfigErrorInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(code_, other->code_);
-  swap(line_index_, other->line_index_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConfigErrorInfo, line_index_)
+      + sizeof(ConfigErrorInfo::line_index_)
+      - PROTOBUF_FIELD_OFFSET(ConfigErrorInfo, code_)>(
+          reinterpret_cast<char*>(&code_),
+          reinterpret_cast<char*>(&other->code_));
 }
 
 std::string ConfigErrorInfo::GetTypeName() const {
@@ -1496,8 +1474,6 @@ std::string ConfigErrorInfo::GetTypeName() const {
 
 // ===================================================================
 
-void AddAccountRequest::InitAsDefaultInstance() {
-}
 class AddAccountRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<AddAccountRequest>()._has_bits_);
@@ -1509,112 +1485,129 @@ class AddAccountRequest::_Internal {
   }
 };
 
-AddAccountRequest::AddAccountRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AddAccountRequest::AddAccountRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.AddAccountRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.AddAccountRequest)
 }
 AddAccountRequest::AddAccountRequest(const AddAccountRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   is_managed_ = from.is_managed_;
   // @@protoc_insertion_point(copy_constructor:kerberos.AddAccountRequest)
 }
 
-void AddAccountRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddAccountRequest_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  is_managed_ = false;
+inline void AddAccountRequest::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+is_managed_ = false;
 }
 
 AddAccountRequest::~AddAccountRequest() {
   // @@protoc_insertion_point(destructor:kerberos.AddAccountRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AddAccountRequest::SharedDtor() {
+inline void AddAccountRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void AddAccountRequest::ArenaDtor(void* object) {
+  AddAccountRequest* _this = reinterpret_cast< AddAccountRequest* >(object);
+  (void)_this;
+}
+void AddAccountRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AddAccountRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AddAccountRequest& AddAccountRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddAccountRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AddAccountRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.AddAccountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    principal_name_.ClearNonDefaultToEmptyNoArena();
+    principal_name_.ClearNonDefaultToEmpty();
   }
   is_managed_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AddAccountRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_managed = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_is_managed(&has_bits);
-          is_managed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_managed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AddAccountRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AddAccountRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.AddAccountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1631,8 +1624,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.AddAccountRequest)
   return target;
@@ -1642,7 +1635,7 @@ size_t AddAccountRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.AddAccountRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1662,7 +1655,7 @@ size_t AddAccountRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1678,21 +1671,20 @@ void AddAccountRequest::CheckTypeAndMergeFrom(
 void AddAccountRequest::MergeFrom(const AddAccountRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.AddAccountRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+      _internal_set_principal_name(from._internal_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
       is_managed_ = from.is_managed_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AddAccountRequest::CopyFrom(const AddAccountRequest& from) {
@@ -1708,10 +1700,15 @@ bool AddAccountRequest::IsInitialized() const {
 
 void AddAccountRequest::InternalSwap(AddAccountRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
   swap(is_managed_, other->is_managed_);
 }
 
@@ -1722,8 +1719,6 @@ std::string AddAccountRequest::GetTypeName() const {
 
 // ===================================================================
 
-void AddAccountResponse::InitAsDefaultInstance() {
-}
 class AddAccountResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<AddAccountResponse>()._has_bits_);
@@ -1732,97 +1727,107 @@ class AddAccountResponse::_Internal {
   }
 };
 
-AddAccountResponse::AddAccountResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AddAccountResponse::AddAccountResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.AddAccountResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.AddAccountResponse)
 }
 AddAccountResponse::AddAccountResponse(const AddAccountResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.AddAccountResponse)
 }
 
-void AddAccountResponse::SharedCtor() {
-  error_ = 0;
+inline void AddAccountResponse::SharedCtor() {
+error_ = 0;
 }
 
 AddAccountResponse::~AddAccountResponse() {
   // @@protoc_insertion_point(destructor:kerberos.AddAccountResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AddAccountResponse::SharedDtor() {
+inline void AddAccountResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void AddAccountResponse::ArenaDtor(void* object) {
+  AddAccountResponse* _this = reinterpret_cast< AddAccountResponse* >(object);
+  (void)_this;
+}
+void AddAccountResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AddAccountResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AddAccountResponse& AddAccountResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddAccountResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AddAccountResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.AddAccountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AddAccountResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AddAccountResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AddAccountResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.AddAccountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1834,8 +1839,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.AddAccountResponse)
   return target;
@@ -1845,7 +1850,7 @@ size_t AddAccountResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.AddAccountResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1857,7 +1862,7 @@ size_t AddAccountResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1873,13 +1878,13 @@ void AddAccountResponse::CheckTypeAndMergeFrom(
 void AddAccountResponse::MergeFrom(const AddAccountResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.AddAccountResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AddAccountResponse::CopyFrom(const AddAccountResponse& from) {
@@ -1895,7 +1900,7 @@ bool AddAccountResponse::IsInitialized() const {
 
 void AddAccountResponse::InternalSwap(AddAccountResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(error_, other->error_);
 }
@@ -1907,8 +1912,6 @@ std::string AddAccountResponse::GetTypeName() const {
 
 // ===================================================================
 
-void RemoveAccountRequest::InitAsDefaultInstance() {
-}
 class RemoveAccountRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<RemoveAccountRequest>()._has_bits_);
@@ -1917,101 +1920,117 @@ class RemoveAccountRequest::_Internal {
   }
 };
 
-RemoveAccountRequest::RemoveAccountRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RemoveAccountRequest::RemoveAccountRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.RemoveAccountRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.RemoveAccountRequest)
 }
 RemoveAccountRequest::RemoveAccountRequest(const RemoveAccountRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kerberos.RemoveAccountRequest)
 }
 
-void RemoveAccountRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RemoveAccountRequest_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void RemoveAccountRequest::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RemoveAccountRequest::~RemoveAccountRequest() {
   // @@protoc_insertion_point(destructor:kerberos.RemoveAccountRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RemoveAccountRequest::SharedDtor() {
+inline void RemoveAccountRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RemoveAccountRequest::ArenaDtor(void* object) {
+  RemoveAccountRequest* _this = reinterpret_cast< RemoveAccountRequest* >(object);
+  (void)_this;
+}
+void RemoveAccountRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RemoveAccountRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RemoveAccountRequest& RemoveAccountRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveAccountRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RemoveAccountRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.RemoveAccountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    principal_name_.ClearNonDefaultToEmptyNoArena();
+    principal_name_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RemoveAccountRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RemoveAccountRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RemoveAccountRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.RemoveAccountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2022,8 +2041,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.RemoveAccountRequest)
   return target;
@@ -2033,7 +2052,7 @@ size_t RemoveAccountRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.RemoveAccountRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2046,7 +2065,7 @@ size_t RemoveAccountRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2062,14 +2081,13 @@ void RemoveAccountRequest::CheckTypeAndMergeFrom(
 void RemoveAccountRequest::MergeFrom(const RemoveAccountRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.RemoveAccountRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_principal_name()) {
-    _has_bits_[0] |= 0x00000001u;
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    _internal_set_principal_name(from._internal_principal_name());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RemoveAccountRequest::CopyFrom(const RemoveAccountRequest& from) {
@@ -2085,10 +2103,15 @@ bool RemoveAccountRequest::IsInitialized() const {
 
 void RemoveAccountRequest::InternalSwap(RemoveAccountRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
 }
 
 std::string RemoveAccountRequest::GetTypeName() const {
@@ -2098,8 +2121,6 @@ std::string RemoveAccountRequest::GetTypeName() const {
 
 // ===================================================================
 
-void RemoveAccountResponse::InitAsDefaultInstance() {
-}
 class RemoveAccountResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<RemoveAccountResponse>()._has_bits_);
@@ -2108,78 +2129,85 @@ class RemoveAccountResponse::_Internal {
   }
 };
 
-RemoveAccountResponse::RemoveAccountResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RemoveAccountResponse::RemoveAccountResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  accounts_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.RemoveAccountResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.RemoveAccountResponse)
 }
 RemoveAccountResponse::RemoveAccountResponse(const RemoveAccountResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       accounts_(from.accounts_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.RemoveAccountResponse)
 }
 
-void RemoveAccountResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RemoveAccountResponse_kerberos_5fservice_2eproto.base);
-  error_ = 0;
+inline void RemoveAccountResponse::SharedCtor() {
+error_ = 0;
 }
 
 RemoveAccountResponse::~RemoveAccountResponse() {
   // @@protoc_insertion_point(destructor:kerberos.RemoveAccountResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RemoveAccountResponse::SharedDtor() {
+inline void RemoveAccountResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void RemoveAccountResponse::ArenaDtor(void* object) {
+  RemoveAccountResponse* _this = reinterpret_cast< RemoveAccountResponse* >(object);
+  (void)_this;
+}
+void RemoveAccountResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RemoveAccountResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RemoveAccountResponse& RemoveAccountResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveAccountResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RemoveAccountResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.RemoveAccountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   accounts_.Clear();
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RemoveAccountResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .kerberos.Account accounts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2187,33 +2215,37 @@ const char* RemoveAccountResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RemoveAccountResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RemoveAccountResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.RemoveAccountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2233,8 +2265,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.RemoveAccountResponse)
   return target;
@@ -2244,7 +2276,7 @@ size_t RemoveAccountResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.RemoveAccountResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2263,7 +2295,7 @@ size_t RemoveAccountResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2279,14 +2311,14 @@ void RemoveAccountResponse::CheckTypeAndMergeFrom(
 void RemoveAccountResponse::MergeFrom(const RemoveAccountResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.RemoveAccountResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   accounts_.MergeFrom(from.accounts_);
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RemoveAccountResponse::CopyFrom(const RemoveAccountResponse& from) {
@@ -2302,7 +2334,7 @@ bool RemoveAccountResponse::IsInitialized() const {
 
 void RemoveAccountResponse::InternalSwap(RemoveAccountResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   accounts_.InternalSwap(&other->accounts_);
   swap(error_, other->error_);
@@ -2315,8 +2347,6 @@ std::string RemoveAccountResponse::GetTypeName() const {
 
 // ===================================================================
 
-void ClearAccountsRequest::InitAsDefaultInstance() {
-}
 class ClearAccountsRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<ClearAccountsRequest>()._has_bits_);
@@ -2325,78 +2355,85 @@ class ClearAccountsRequest::_Internal {
   }
 };
 
-ClearAccountsRequest::ClearAccountsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ClearAccountsRequest::ClearAccountsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  principal_names_to_ignore_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ClearAccountsRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ClearAccountsRequest)
 }
 ClearAccountsRequest::ClearAccountsRequest(const ClearAccountsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       principal_names_to_ignore_(from.principal_names_to_ignore_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   mode_ = from.mode_;
   // @@protoc_insertion_point(copy_constructor:kerberos.ClearAccountsRequest)
 }
 
-void ClearAccountsRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClearAccountsRequest_kerberos_5fservice_2eproto.base);
-  mode_ = 0;
+inline void ClearAccountsRequest::SharedCtor() {
+mode_ = 0;
 }
 
 ClearAccountsRequest::~ClearAccountsRequest() {
   // @@protoc_insertion_point(destructor:kerberos.ClearAccountsRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ClearAccountsRequest::SharedDtor() {
+inline void ClearAccountsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ClearAccountsRequest::ArenaDtor(void* object) {
+  ClearAccountsRequest* _this = reinterpret_cast< ClearAccountsRequest* >(object);
+  (void)_this;
+}
+void ClearAccountsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ClearAccountsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClearAccountsRequest& ClearAccountsRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearAccountsRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClearAccountsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ClearAccountsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   principal_names_to_ignore_.Clear();
   mode_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ClearAccountsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ClearMode mode = 1 [default = CLEAR_ALL];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ClearMode_IsValid(val))) {
             _internal_set_mode(static_cast<::kerberos::ClearMode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string principal_names_to_ignore = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2405,33 +2442,37 @@ const char* ClearAccountsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ClearAccountsRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ClearAccountsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ClearAccountsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2449,8 +2490,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ClearAccountsRequest)
   return target;
@@ -2460,7 +2501,7 @@ size_t ClearAccountsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ClearAccountsRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2480,7 +2521,7 @@ size_t ClearAccountsRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2496,14 +2537,14 @@ void ClearAccountsRequest::CheckTypeAndMergeFrom(
 void ClearAccountsRequest::MergeFrom(const ClearAccountsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ClearAccountsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   principal_names_to_ignore_.MergeFrom(from.principal_names_to_ignore_);
   if (from._internal_has_mode()) {
     _internal_set_mode(from._internal_mode());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ClearAccountsRequest::CopyFrom(const ClearAccountsRequest& from) {
@@ -2519,7 +2560,7 @@ bool ClearAccountsRequest::IsInitialized() const {
 
 void ClearAccountsRequest::InternalSwap(ClearAccountsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   principal_names_to_ignore_.InternalSwap(&other->principal_names_to_ignore_);
   swap(mode_, other->mode_);
@@ -2532,8 +2573,6 @@ std::string ClearAccountsRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ClearAccountsResponse::InitAsDefaultInstance() {
-}
 class ClearAccountsResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<ClearAccountsResponse>()._has_bits_);
@@ -2542,78 +2581,85 @@ class ClearAccountsResponse::_Internal {
   }
 };
 
-ClearAccountsResponse::ClearAccountsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ClearAccountsResponse::ClearAccountsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  accounts_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ClearAccountsResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ClearAccountsResponse)
 }
 ClearAccountsResponse::ClearAccountsResponse(const ClearAccountsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       accounts_(from.accounts_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.ClearAccountsResponse)
 }
 
-void ClearAccountsResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ClearAccountsResponse_kerberos_5fservice_2eproto.base);
-  error_ = 0;
+inline void ClearAccountsResponse::SharedCtor() {
+error_ = 0;
 }
 
 ClearAccountsResponse::~ClearAccountsResponse() {
   // @@protoc_insertion_point(destructor:kerberos.ClearAccountsResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ClearAccountsResponse::SharedDtor() {
+inline void ClearAccountsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ClearAccountsResponse::ArenaDtor(void* object) {
+  ClearAccountsResponse* _this = reinterpret_cast< ClearAccountsResponse* >(object);
+  (void)_this;
+}
+void ClearAccountsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ClearAccountsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClearAccountsResponse& ClearAccountsResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearAccountsResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClearAccountsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ClearAccountsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   accounts_.Clear();
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ClearAccountsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .kerberos.Account accounts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2621,33 +2667,37 @@ const char* ClearAccountsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ClearAccountsResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ClearAccountsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ClearAccountsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2667,8 +2717,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ClearAccountsResponse)
   return target;
@@ -2678,7 +2728,7 @@ size_t ClearAccountsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ClearAccountsResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2697,7 +2747,7 @@ size_t ClearAccountsResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2713,14 +2763,14 @@ void ClearAccountsResponse::CheckTypeAndMergeFrom(
 void ClearAccountsResponse::MergeFrom(const ClearAccountsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ClearAccountsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   accounts_.MergeFrom(from.accounts_);
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ClearAccountsResponse::CopyFrom(const ClearAccountsResponse& from) {
@@ -2736,7 +2786,7 @@ bool ClearAccountsResponse::IsInitialized() const {
 
 void ClearAccountsResponse::InternalSwap(ClearAccountsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   accounts_.InternalSwap(&other->accounts_);
   swap(error_, other->error_);
@@ -2749,87 +2799,91 @@ std::string ClearAccountsResponse::GetTypeName() const {
 
 // ===================================================================
 
-void ListAccountsRequest::InitAsDefaultInstance() {
-}
 class ListAccountsRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<ListAccountsRequest>()._has_bits_);
 };
 
-ListAccountsRequest::ListAccountsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ListAccountsRequest::ListAccountsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ListAccountsRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ListAccountsRequest)
 }
 ListAccountsRequest::ListAccountsRequest(const ListAccountsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:kerberos.ListAccountsRequest)
 }
 
-void ListAccountsRequest::SharedCtor() {
+inline void ListAccountsRequest::SharedCtor() {
 }
 
 ListAccountsRequest::~ListAccountsRequest() {
   // @@protoc_insertion_point(destructor:kerberos.ListAccountsRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ListAccountsRequest::SharedDtor() {
+inline void ListAccountsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ListAccountsRequest::ArenaDtor(void* object) {
+  ListAccountsRequest* _this = reinterpret_cast< ListAccountsRequest* >(object);
+  (void)_this;
+}
+void ListAccountsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ListAccountsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ListAccountsRequest& ListAccountsRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListAccountsRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ListAccountsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ListAccountsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ListAccountsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ListAccountsRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ListAccountsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ListAccountsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ListAccountsRequest)
   return target;
@@ -2839,12 +2893,12 @@ size_t ListAccountsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ListAccountsRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2860,10 +2914,10 @@ void ListAccountsRequest::CheckTypeAndMergeFrom(
 void ListAccountsRequest::MergeFrom(const ListAccountsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ListAccountsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ListAccountsRequest::CopyFrom(const ListAccountsRequest& from) {
@@ -2879,8 +2933,7 @@ bool ListAccountsRequest::IsInitialized() const {
 
 void ListAccountsRequest::InternalSwap(ListAccountsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
 }
 
 std::string ListAccountsRequest::GetTypeName() const {
@@ -2890,8 +2943,6 @@ std::string ListAccountsRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ListAccountsResponse::InitAsDefaultInstance() {
-}
 class ListAccountsResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<ListAccountsResponse>()._has_bits_);
@@ -2900,78 +2951,85 @@ class ListAccountsResponse::_Internal {
   }
 };
 
-ListAccountsResponse::ListAccountsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ListAccountsResponse::ListAccountsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  accounts_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ListAccountsResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ListAccountsResponse)
 }
 ListAccountsResponse::ListAccountsResponse(const ListAccountsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       accounts_(from.accounts_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.ListAccountsResponse)
 }
 
-void ListAccountsResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ListAccountsResponse_kerberos_5fservice_2eproto.base);
-  error_ = 0;
+inline void ListAccountsResponse::SharedCtor() {
+error_ = 0;
 }
 
 ListAccountsResponse::~ListAccountsResponse() {
   // @@protoc_insertion_point(destructor:kerberos.ListAccountsResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ListAccountsResponse::SharedDtor() {
+inline void ListAccountsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ListAccountsResponse::ArenaDtor(void* object) {
+  ListAccountsResponse* _this = reinterpret_cast< ListAccountsResponse* >(object);
+  (void)_this;
+}
+void ListAccountsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ListAccountsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ListAccountsResponse& ListAccountsResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ListAccountsResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ListAccountsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ListAccountsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   accounts_.Clear();
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ListAccountsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .kerberos.Account accounts = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2979,33 +3037,37 @@ const char* ListAccountsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ListAccountsResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ListAccountsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ListAccountsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3025,8 +3087,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ListAccountsResponse)
   return target;
@@ -3036,7 +3098,7 @@ size_t ListAccountsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ListAccountsResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3055,7 +3117,7 @@ size_t ListAccountsResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3071,14 +3133,14 @@ void ListAccountsResponse::CheckTypeAndMergeFrom(
 void ListAccountsResponse::MergeFrom(const ListAccountsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ListAccountsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   accounts_.MergeFrom(from.accounts_);
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ListAccountsResponse::CopyFrom(const ListAccountsResponse& from) {
@@ -3094,7 +3156,7 @@ bool ListAccountsResponse::IsInitialized() const {
 
 void ListAccountsResponse::InternalSwap(ListAccountsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   accounts_.InternalSwap(&other->accounts_);
   swap(error_, other->error_);
@@ -3107,8 +3169,6 @@ std::string ListAccountsResponse::GetTypeName() const {
 
 // ===================================================================
 
-void SetConfigRequest::InitAsDefaultInstance() {
-}
 class SetConfigRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<SetConfigRequest>()._has_bits_);
@@ -3120,120 +3180,144 @@ class SetConfigRequest::_Internal {
   }
 };
 
-SetConfigRequest::SetConfigRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SetConfigRequest::SetConfigRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.SetConfigRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.SetConfigRequest)
 }
 SetConfigRequest::SetConfigRequest(const SetConfigRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf()) {
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    krb5conf_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kerberos.SetConfigRequest)
 }
 
-void SetConfigRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SetConfigRequest_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void SetConfigRequest::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SetConfigRequest::~SetConfigRequest() {
   // @@protoc_insertion_point(destructor:kerberos.SetConfigRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SetConfigRequest::SharedDtor() {
+inline void SetConfigRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   krb5conf_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SetConfigRequest::ArenaDtor(void* object) {
+  SetConfigRequest* _this = reinterpret_cast< SetConfigRequest* >(object);
+  (void)_this;
+}
+void SetConfigRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SetConfigRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetConfigRequest& SetConfigRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetConfigRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SetConfigRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.SetConfigRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      principal_name_.ClearNonDefaultToEmptyNoArena();
+      principal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      krb5conf_.ClearNonDefaultToEmptyNoArena();
+      krb5conf_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SetConfigRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string krb5conf = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_krb5conf();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SetConfigRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetConfigRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.SetConfigRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3250,8 +3334,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.SetConfigRequest)
   return target;
@@ -3261,7 +3345,7 @@ size_t SetConfigRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.SetConfigRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3283,7 +3367,7 @@ size_t SetConfigRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3299,21 +3383,19 @@ void SetConfigRequest::CheckTypeAndMergeFrom(
 void SetConfigRequest::MergeFrom(const SetConfigRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.SetConfigRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+      _internal_set_principal_name(from._internal_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+      _internal_set_krb5conf(from._internal_krb5conf());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SetConfigRequest::CopyFrom(const SetConfigRequest& from) {
@@ -3329,12 +3411,20 @@ bool SetConfigRequest::IsInitialized() const {
 
 void SetConfigRequest::InternalSwap(SetConfigRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  krb5conf_.Swap(&other->krb5conf_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_, lhs_arena,
+      &other->krb5conf_, rhs_arena
+  );
 }
 
 std::string SetConfigRequest::GetTypeName() const {
@@ -3344,8 +3434,6 @@ std::string SetConfigRequest::GetTypeName() const {
 
 // ===================================================================
 
-void SetConfigResponse::InitAsDefaultInstance() {
-}
 class SetConfigResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<SetConfigResponse>()._has_bits_);
@@ -3354,97 +3442,107 @@ class SetConfigResponse::_Internal {
   }
 };
 
-SetConfigResponse::SetConfigResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SetConfigResponse::SetConfigResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.SetConfigResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.SetConfigResponse)
 }
 SetConfigResponse::SetConfigResponse(const SetConfigResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.SetConfigResponse)
 }
 
-void SetConfigResponse::SharedCtor() {
-  error_ = 0;
+inline void SetConfigResponse::SharedCtor() {
+error_ = 0;
 }
 
 SetConfigResponse::~SetConfigResponse() {
   // @@protoc_insertion_point(destructor:kerberos.SetConfigResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SetConfigResponse::SharedDtor() {
+inline void SetConfigResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SetConfigResponse::ArenaDtor(void* object) {
+  SetConfigResponse* _this = reinterpret_cast< SetConfigResponse* >(object);
+  (void)_this;
+}
+void SetConfigResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SetConfigResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SetConfigResponse& SetConfigResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SetConfigResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SetConfigResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.SetConfigResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SetConfigResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SetConfigResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetConfigResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.SetConfigResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3456,8 +3554,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.SetConfigResponse)
   return target;
@@ -3467,7 +3565,7 @@ size_t SetConfigResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.SetConfigResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3479,7 +3577,7 @@ size_t SetConfigResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3495,13 +3593,13 @@ void SetConfigResponse::CheckTypeAndMergeFrom(
 void SetConfigResponse::MergeFrom(const SetConfigResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.SetConfigResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SetConfigResponse::CopyFrom(const SetConfigResponse& from) {
@@ -3517,7 +3615,7 @@ bool SetConfigResponse::IsInitialized() const {
 
 void SetConfigResponse::InternalSwap(SetConfigResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(error_, other->error_);
 }
@@ -3529,8 +3627,6 @@ std::string SetConfigResponse::GetTypeName() const {
 
 // ===================================================================
 
-void ValidateConfigRequest::InitAsDefaultInstance() {
-}
 class ValidateConfigRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<ValidateConfigRequest>()._has_bits_);
@@ -3539,101 +3635,117 @@ class ValidateConfigRequest::_Internal {
   }
 };
 
-ValidateConfigRequest::ValidateConfigRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ValidateConfigRequest::ValidateConfigRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ValidateConfigRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ValidateConfigRequest)
 }
 ValidateConfigRequest::ValidateConfigRequest(const ValidateConfigRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf()) {
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    krb5conf_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kerberos.ValidateConfigRequest)
 }
 
-void ValidateConfigRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ValidateConfigRequest_kerberos_5fservice_2eproto.base);
-  krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ValidateConfigRequest::SharedCtor() {
+krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ValidateConfigRequest::~ValidateConfigRequest() {
   // @@protoc_insertion_point(destructor:kerberos.ValidateConfigRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ValidateConfigRequest::SharedDtor() {
+inline void ValidateConfigRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   krb5conf_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ValidateConfigRequest::ArenaDtor(void* object) {
+  ValidateConfigRequest* _this = reinterpret_cast< ValidateConfigRequest* >(object);
+  (void)_this;
+}
+void ValidateConfigRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ValidateConfigRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ValidateConfigRequest& ValidateConfigRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ValidateConfigRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ValidateConfigRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ValidateConfigRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    krb5conf_.ClearNonDefaultToEmptyNoArena();
+    krb5conf_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ValidateConfigRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string krb5conf = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_krb5conf();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ValidateConfigRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ValidateConfigRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ValidateConfigRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3644,8 +3756,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ValidateConfigRequest)
   return target;
@@ -3655,7 +3767,7 @@ size_t ValidateConfigRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ValidateConfigRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3668,7 +3780,7 @@ size_t ValidateConfigRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3684,14 +3796,13 @@ void ValidateConfigRequest::CheckTypeAndMergeFrom(
 void ValidateConfigRequest::MergeFrom(const ValidateConfigRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ValidateConfigRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_krb5conf()) {
-    _has_bits_[0] |= 0x00000001u;
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    _internal_set_krb5conf(from._internal_krb5conf());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ValidateConfigRequest::CopyFrom(const ValidateConfigRequest& from) {
@@ -3707,10 +3818,15 @@ bool ValidateConfigRequest::IsInitialized() const {
 
 void ValidateConfigRequest::InternalSwap(ValidateConfigRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  krb5conf_.Swap(&other->krb5conf_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_, lhs_arena,
+      &other->krb5conf_, rhs_arena
+  );
 }
 
 std::string ValidateConfigRequest::GetTypeName() const {
@@ -3720,10 +3836,6 @@ std::string ValidateConfigRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ValidateConfigResponse::InitAsDefaultInstance() {
-  ::kerberos::_ValidateConfigResponse_default_instance_._instance.get_mutable()->error_info_ = const_cast< ::kerberos::ConfigErrorInfo*>(
-      ::kerberos::ConfigErrorInfo::internal_default_instance());
-}
 class ValidateConfigResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<ValidateConfigResponse>()._has_bits_);
@@ -3740,16 +3852,19 @@ const ::kerberos::ConfigErrorInfo&
 ValidateConfigResponse::_Internal::error_info(const ValidateConfigResponse* msg) {
   return *msg->error_info_;
 }
-ValidateConfigResponse::ValidateConfigResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ValidateConfigResponse::ValidateConfigResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.ValidateConfigResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.ValidateConfigResponse)
 }
 ValidateConfigResponse::ValidateConfigResponse(const ValidateConfigResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_error_info()) {
     error_info_ = new ::kerberos::ConfigErrorInfo(*from.error_info_);
   } else {
@@ -3759,34 +3874,38 @@ ValidateConfigResponse::ValidateConfigResponse(const ValidateConfigResponse& fro
   // @@protoc_insertion_point(copy_constructor:kerberos.ValidateConfigResponse)
 }
 
-void ValidateConfigResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ValidateConfigResponse_kerberos_5fservice_2eproto.base);
-  ::memset(&error_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&error_) -
-      reinterpret_cast<char*>(&error_info_)) + sizeof(error_));
+inline void ValidateConfigResponse::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&error_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&error_) -
+    reinterpret_cast<char*>(&error_info_)) + sizeof(error_));
 }
 
 ValidateConfigResponse::~ValidateConfigResponse() {
   // @@protoc_insertion_point(destructor:kerberos.ValidateConfigResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ValidateConfigResponse::SharedDtor() {
+inline void ValidateConfigResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete error_info_;
 }
 
+void ValidateConfigResponse::ArenaDtor(void* object) {
+  ValidateConfigResponse* _this = reinterpret_cast< ValidateConfigResponse* >(object);
+  (void)_this;
+}
+void ValidateConfigResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ValidateConfigResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ValidateConfigResponse& ValidateConfigResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ValidateConfigResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ValidateConfigResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.ValidateConfigResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3797,61 +3916,65 @@ void ValidateConfigResponse::Clear() {
   }
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ValidateConfigResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .kerberos.ConfigErrorInfo error_info = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ValidateConfigResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ValidateConfigResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.ValidateConfigResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3871,8 +3994,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.ValidateConfigResponse)
   return target;
@@ -3882,7 +4005,7 @@ size_t ValidateConfigResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.ValidateConfigResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3903,7 +4026,7 @@ size_t ValidateConfigResponse::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3919,8 +4042,7 @@ void ValidateConfigResponse::CheckTypeAndMergeFrom(
 void ValidateConfigResponse::MergeFrom(const ValidateConfigResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.ValidateConfigResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -3933,6 +4055,7 @@ void ValidateConfigResponse::MergeFrom(const ValidateConfigResponse& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ValidateConfigResponse::CopyFrom(const ValidateConfigResponse& from) {
@@ -3948,10 +4071,14 @@ bool ValidateConfigResponse::IsInitialized() const {
 
 void ValidateConfigResponse::InternalSwap(ValidateConfigResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(error_info_, other->error_info_);
-  swap(error_, other->error_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ValidateConfigResponse, error_)
+      + sizeof(ValidateConfigResponse::error_)
+      - PROTOBUF_FIELD_OFFSET(ValidateConfigResponse, error_info_)>(
+          reinterpret_cast<char*>(&error_info_),
+          reinterpret_cast<char*>(&other->error_info_));
 }
 
 std::string ValidateConfigResponse::GetTypeName() const {
@@ -3961,8 +4088,6 @@ std::string ValidateConfigResponse::GetTypeName() const {
 
 // ===================================================================
 
-void AcquireKerberosTgtRequest::InitAsDefaultInstance() {
-}
 class AcquireKerberosTgtRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<AcquireKerberosTgtRequest>()._has_bits_);
@@ -3977,19 +4102,26 @@ class AcquireKerberosTgtRequest::_Internal {
   }
 };
 
-AcquireKerberosTgtRequest::AcquireKerberosTgtRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AcquireKerberosTgtRequest::AcquireKerberosTgtRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.AcquireKerberosTgtRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.AcquireKerberosTgtRequest)
 }
 AcquireKerberosTgtRequest::AcquireKerberosTgtRequest(const AcquireKerberosTgtRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&remember_password_, &from.remember_password_,
     static_cast<size_t>(reinterpret_cast<char*>(&use_login_password_) -
@@ -3997,106 +4129,118 @@ AcquireKerberosTgtRequest::AcquireKerberosTgtRequest(const AcquireKerberosTgtReq
   // @@protoc_insertion_point(copy_constructor:kerberos.AcquireKerberosTgtRequest)
 }
 
-void AcquireKerberosTgtRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AcquireKerberosTgtRequest_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&remember_password_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&use_login_password_) -
-      reinterpret_cast<char*>(&remember_password_)) + sizeof(use_login_password_));
+inline void AcquireKerberosTgtRequest::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&remember_password_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&use_login_password_) -
+    reinterpret_cast<char*>(&remember_password_)) + sizeof(use_login_password_));
 }
 
 AcquireKerberosTgtRequest::~AcquireKerberosTgtRequest() {
   // @@protoc_insertion_point(destructor:kerberos.AcquireKerberosTgtRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AcquireKerberosTgtRequest::SharedDtor() {
+inline void AcquireKerberosTgtRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void AcquireKerberosTgtRequest::ArenaDtor(void* object) {
+  AcquireKerberosTgtRequest* _this = reinterpret_cast< AcquireKerberosTgtRequest* >(object);
+  (void)_this;
+}
+void AcquireKerberosTgtRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AcquireKerberosTgtRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcquireKerberosTgtRequest& AcquireKerberosTgtRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcquireKerberosTgtRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcquireKerberosTgtRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.AcquireKerberosTgtRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    principal_name_.ClearNonDefaultToEmptyNoArena();
+    principal_name_.ClearNonDefaultToEmpty();
   }
   ::memset(&remember_password_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&use_login_password_) -
       reinterpret_cast<char*>(&remember_password_)) + sizeof(use_login_password_));
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AcquireKerberosTgtRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool remember_password = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_remember_password(&has_bits);
-          remember_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          remember_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool use_login_password = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_use_login_password(&has_bits);
-          use_login_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_login_password_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AcquireKerberosTgtRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AcquireKerberosTgtRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.AcquireKerberosTgtRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4119,8 +4263,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.AcquireKerberosTgtRequest)
   return target;
@@ -4130,7 +4274,7 @@ size_t AcquireKerberosTgtRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.AcquireKerberosTgtRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4155,7 +4299,7 @@ size_t AcquireKerberosTgtRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4171,15 +4315,13 @@ void AcquireKerberosTgtRequest::CheckTypeAndMergeFrom(
 void AcquireKerberosTgtRequest::MergeFrom(const AcquireKerberosTgtRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.AcquireKerberosTgtRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+      _internal_set_principal_name(from._internal_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
       remember_password_ = from.remember_password_;
@@ -4189,6 +4331,7 @@ void AcquireKerberosTgtRequest::MergeFrom(const AcquireKerberosTgtRequest& from)
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AcquireKerberosTgtRequest::CopyFrom(const AcquireKerberosTgtRequest& from) {
@@ -4204,12 +4347,21 @@ bool AcquireKerberosTgtRequest::IsInitialized() const {
 
 void AcquireKerberosTgtRequest::InternalSwap(AcquireKerberosTgtRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(remember_password_, other->remember_password_);
-  swap(use_login_password_, other->use_login_password_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AcquireKerberosTgtRequest, use_login_password_)
+      + sizeof(AcquireKerberosTgtRequest::use_login_password_)
+      - PROTOBUF_FIELD_OFFSET(AcquireKerberosTgtRequest, remember_password_)>(
+          reinterpret_cast<char*>(&remember_password_),
+          reinterpret_cast<char*>(&other->remember_password_));
 }
 
 std::string AcquireKerberosTgtRequest::GetTypeName() const {
@@ -4219,8 +4371,6 @@ std::string AcquireKerberosTgtRequest::GetTypeName() const {
 
 // ===================================================================
 
-void AcquireKerberosTgtResponse::InitAsDefaultInstance() {
-}
 class AcquireKerberosTgtResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<AcquireKerberosTgtResponse>()._has_bits_);
@@ -4229,97 +4379,107 @@ class AcquireKerberosTgtResponse::_Internal {
   }
 };
 
-AcquireKerberosTgtResponse::AcquireKerberosTgtResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AcquireKerberosTgtResponse::AcquireKerberosTgtResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.AcquireKerberosTgtResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.AcquireKerberosTgtResponse)
 }
 AcquireKerberosTgtResponse::AcquireKerberosTgtResponse(const AcquireKerberosTgtResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:kerberos.AcquireKerberosTgtResponse)
 }
 
-void AcquireKerberosTgtResponse::SharedCtor() {
-  error_ = 0;
+inline void AcquireKerberosTgtResponse::SharedCtor() {
+error_ = 0;
 }
 
 AcquireKerberosTgtResponse::~AcquireKerberosTgtResponse() {
   // @@protoc_insertion_point(destructor:kerberos.AcquireKerberosTgtResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AcquireKerberosTgtResponse::SharedDtor() {
+inline void AcquireKerberosTgtResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void AcquireKerberosTgtResponse::ArenaDtor(void* object) {
+  AcquireKerberosTgtResponse* _this = reinterpret_cast< AcquireKerberosTgtResponse* >(object);
+  (void)_this;
+}
+void AcquireKerberosTgtResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AcquireKerberosTgtResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AcquireKerberosTgtResponse& AcquireKerberosTgtResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AcquireKerberosTgtResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AcquireKerberosTgtResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.AcquireKerberosTgtResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AcquireKerberosTgtResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AcquireKerberosTgtResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AcquireKerberosTgtResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.AcquireKerberosTgtResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4331,8 +4491,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.AcquireKerberosTgtResponse)
   return target;
@@ -4342,7 +4502,7 @@ size_t AcquireKerberosTgtResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.AcquireKerberosTgtResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4354,7 +4514,7 @@ size_t AcquireKerberosTgtResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4370,13 +4530,13 @@ void AcquireKerberosTgtResponse::CheckTypeAndMergeFrom(
 void AcquireKerberosTgtResponse::MergeFrom(const AcquireKerberosTgtResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.AcquireKerberosTgtResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_error()) {
     _internal_set_error(from._internal_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AcquireKerberosTgtResponse::CopyFrom(const AcquireKerberosTgtResponse& from) {
@@ -4392,7 +4552,7 @@ bool AcquireKerberosTgtResponse::IsInitialized() const {
 
 void AcquireKerberosTgtResponse::InternalSwap(AcquireKerberosTgtResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(error_, other->error_);
 }
@@ -4404,8 +4564,6 @@ std::string AcquireKerberosTgtResponse::GetTypeName() const {
 
 // ===================================================================
 
-void GetKerberosFilesRequest::InitAsDefaultInstance() {
-}
 class GetKerberosFilesRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<GetKerberosFilesRequest>()._has_bits_);
@@ -4414,101 +4572,117 @@ class GetKerberosFilesRequest::_Internal {
   }
 };
 
-GetKerberosFilesRequest::GetKerberosFilesRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GetKerberosFilesRequest::GetKerberosFilesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.GetKerberosFilesRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.GetKerberosFilesRequest)
 }
 GetKerberosFilesRequest::GetKerberosFilesRequest(const GetKerberosFilesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_principal_name()) {
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_principal_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:kerberos.GetKerberosFilesRequest)
 }
 
-void GetKerberosFilesRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetKerberosFilesRequest_kerberos_5fservice_2eproto.base);
-  principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GetKerberosFilesRequest::SharedCtor() {
+principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetKerberosFilesRequest::~GetKerberosFilesRequest() {
   // @@protoc_insertion_point(destructor:kerberos.GetKerberosFilesRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GetKerberosFilesRequest::SharedDtor() {
+inline void GetKerberosFilesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetKerberosFilesRequest::ArenaDtor(void* object) {
+  GetKerberosFilesRequest* _this = reinterpret_cast< GetKerberosFilesRequest* >(object);
+  (void)_this;
+}
+void GetKerberosFilesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetKerberosFilesRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetKerberosFilesRequest& GetKerberosFilesRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetKerberosFilesRequest_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetKerberosFilesRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.GetKerberosFilesRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    principal_name_.ClearNonDefaultToEmptyNoArena();
+    principal_name_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GetKerberosFilesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetKerberosFilesRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetKerberosFilesRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.GetKerberosFilesRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4519,8 +4693,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.GetKerberosFilesRequest)
   return target;
@@ -4530,7 +4704,7 @@ size_t GetKerberosFilesRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.GetKerberosFilesRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4543,7 +4717,7 @@ size_t GetKerberosFilesRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4559,14 +4733,13 @@ void GetKerberosFilesRequest::CheckTypeAndMergeFrom(
 void GetKerberosFilesRequest::MergeFrom(const GetKerberosFilesRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.GetKerberosFilesRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_principal_name()) {
-    _has_bits_[0] |= 0x00000001u;
-    principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.principal_name_);
+    _internal_set_principal_name(from._internal_principal_name());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GetKerberosFilesRequest::CopyFrom(const GetKerberosFilesRequest& from) {
@@ -4582,10 +4755,15 @@ bool GetKerberosFilesRequest::IsInitialized() const {
 
 void GetKerberosFilesRequest::InternalSwap(GetKerberosFilesRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  principal_name_.Swap(&other->principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &principal_name_, lhs_arena,
+      &other->principal_name_, rhs_arena
+  );
 }
 
 std::string GetKerberosFilesRequest::GetTypeName() const {
@@ -4595,10 +4773,6 @@ std::string GetKerberosFilesRequest::GetTypeName() const {
 
 // ===================================================================
 
-void GetKerberosFilesResponse::InitAsDefaultInstance() {
-  ::kerberos::_GetKerberosFilesResponse_default_instance_._instance.get_mutable()->files_ = const_cast< ::kerberos::KerberosFiles*>(
-      ::kerberos::KerberosFiles::internal_default_instance());
-}
 class GetKerberosFilesResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<GetKerberosFilesResponse>()._has_bits_);
@@ -4615,16 +4789,19 @@ const ::kerberos::KerberosFiles&
 GetKerberosFilesResponse::_Internal::files(const GetKerberosFilesResponse* msg) {
   return *msg->files_;
 }
-GetKerberosFilesResponse::GetKerberosFilesResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GetKerberosFilesResponse::GetKerberosFilesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:kerberos.GetKerberosFilesResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:kerberos.GetKerberosFilesResponse)
 }
 GetKerberosFilesResponse::GetKerberosFilesResponse(const GetKerberosFilesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_files()) {
     files_ = new ::kerberos::KerberosFiles(*from.files_);
   } else {
@@ -4634,34 +4811,38 @@ GetKerberosFilesResponse::GetKerberosFilesResponse(const GetKerberosFilesRespons
   // @@protoc_insertion_point(copy_constructor:kerberos.GetKerberosFilesResponse)
 }
 
-void GetKerberosFilesResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetKerberosFilesResponse_kerberos_5fservice_2eproto.base);
-  ::memset(&files_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&error_) -
-      reinterpret_cast<char*>(&files_)) + sizeof(error_));
+inline void GetKerberosFilesResponse::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&files_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&error_) -
+    reinterpret_cast<char*>(&files_)) + sizeof(error_));
 }
 
 GetKerberosFilesResponse::~GetKerberosFilesResponse() {
   // @@protoc_insertion_point(destructor:kerberos.GetKerberosFilesResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GetKerberosFilesResponse::SharedDtor() {
+inline void GetKerberosFilesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete files_;
 }
 
+void GetKerberosFilesResponse::ArenaDtor(void* object) {
+  GetKerberosFilesResponse* _this = reinterpret_cast< GetKerberosFilesResponse* >(object);
+  (void)_this;
+}
+void GetKerberosFilesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetKerberosFilesResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetKerberosFilesResponse& GetKerberosFilesResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetKerberosFilesResponse_kerberos_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetKerberosFilesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:kerberos.GetKerberosFilesResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4672,61 +4853,65 @@ void GetKerberosFilesResponse::Clear() {
   }
   error_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GetKerberosFilesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .kerberos.ErrorType error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::kerberos::ErrorType_IsValid(val))) {
             _internal_set_error(static_cast<::kerberos::ErrorType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .kerberos.KerberosFiles files = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_files(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetKerberosFilesResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetKerberosFilesResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:kerberos.GetKerberosFilesResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4746,8 +4931,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:kerberos.GetKerberosFilesResponse)
   return target;
@@ -4757,7 +4942,7 @@ size_t GetKerberosFilesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:kerberos.GetKerberosFilesResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4778,7 +4963,7 @@ size_t GetKerberosFilesResponse::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4794,8 +4979,7 @@ void GetKerberosFilesResponse::CheckTypeAndMergeFrom(
 void GetKerberosFilesResponse::MergeFrom(const GetKerberosFilesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:kerberos.GetKerberosFilesResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -4808,6 +4992,7 @@ void GetKerberosFilesResponse::MergeFrom(const GetKerberosFilesResponse& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GetKerberosFilesResponse::CopyFrom(const GetKerberosFilesResponse& from) {
@@ -4823,10 +5008,14 @@ bool GetKerberosFilesResponse::IsInitialized() const {
 
 void GetKerberosFilesResponse::InternalSwap(GetKerberosFilesResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(files_, other->files_);
-  swap(error_, other->error_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetKerberosFilesResponse, error_)
+      + sizeof(GetKerberosFilesResponse::error_)
+      - PROTOBUF_FIELD_OFFSET(GetKerberosFilesResponse, files_)>(
+          reinterpret_cast<char*>(&files_),
+          reinterpret_cast<char*>(&other->files_));
 }
 
 std::string GetKerberosFilesResponse::GetTypeName() const {
@@ -4838,61 +5027,61 @@ std::string GetKerberosFilesResponse::GetTypeName() const {
 }  // namespace kerberos
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::kerberos::KerberosFiles* Arena::CreateMaybeMessage< ::kerberos::KerberosFiles >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::KerberosFiles >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::KerberosFiles >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::Account* Arena::CreateMaybeMessage< ::kerberos::Account >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::Account >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::Account >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ConfigErrorInfo* Arena::CreateMaybeMessage< ::kerberos::ConfigErrorInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ConfigErrorInfo >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ConfigErrorInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::AddAccountRequest* Arena::CreateMaybeMessage< ::kerberos::AddAccountRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::AddAccountRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::AddAccountRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::AddAccountResponse* Arena::CreateMaybeMessage< ::kerberos::AddAccountResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::AddAccountResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::AddAccountResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::RemoveAccountRequest* Arena::CreateMaybeMessage< ::kerberos::RemoveAccountRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::RemoveAccountRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::RemoveAccountRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::RemoveAccountResponse* Arena::CreateMaybeMessage< ::kerberos::RemoveAccountResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::RemoveAccountResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::RemoveAccountResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ClearAccountsRequest* Arena::CreateMaybeMessage< ::kerberos::ClearAccountsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ClearAccountsRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ClearAccountsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ClearAccountsResponse* Arena::CreateMaybeMessage< ::kerberos::ClearAccountsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ClearAccountsResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ClearAccountsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ListAccountsRequest* Arena::CreateMaybeMessage< ::kerberos::ListAccountsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ListAccountsRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ListAccountsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ListAccountsResponse* Arena::CreateMaybeMessage< ::kerberos::ListAccountsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ListAccountsResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ListAccountsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::SetConfigRequest* Arena::CreateMaybeMessage< ::kerberos::SetConfigRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::SetConfigRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::SetConfigRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::SetConfigResponse* Arena::CreateMaybeMessage< ::kerberos::SetConfigResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::SetConfigResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::SetConfigResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ValidateConfigRequest* Arena::CreateMaybeMessage< ::kerberos::ValidateConfigRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ValidateConfigRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ValidateConfigRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::ValidateConfigResponse* Arena::CreateMaybeMessage< ::kerberos::ValidateConfigResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::ValidateConfigResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::ValidateConfigResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::AcquireKerberosTgtRequest* Arena::CreateMaybeMessage< ::kerberos::AcquireKerberosTgtRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::AcquireKerberosTgtRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::AcquireKerberosTgtRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::AcquireKerberosTgtResponse* Arena::CreateMaybeMessage< ::kerberos::AcquireKerberosTgtResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::AcquireKerberosTgtResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::AcquireKerberosTgtResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::GetKerberosFilesRequest* Arena::CreateMaybeMessage< ::kerberos::GetKerberosFilesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::GetKerberosFilesRequest >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::GetKerberosFilesRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::kerberos::GetKerberosFilesResponse* Arena::CreateMaybeMessage< ::kerberos::GetKerberosFilesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::kerberos::GetKerberosFilesResponse >(arena);
+  return Arena::CreateMessageInternal< ::kerberos::GetKerberosFilesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

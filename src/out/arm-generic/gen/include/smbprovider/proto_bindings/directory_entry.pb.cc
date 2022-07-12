@@ -11,82 +11,61 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_directory_5fentry_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DirectoryEntryProto_directory_5fentry_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace smbprovider {
-class DirectoryEntryProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DirectoryEntryProto> _instance;
-} _DirectoryEntryProto_default_instance_;
-class DirectoryEntryListProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DirectoryEntryListProto> _instance;
-} _DirectoryEntryListProto_default_instance_;
-class GetSharesOptionsProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetSharesOptionsProto> _instance;
-} _GetSharesOptionsProto_default_instance_;
-class HostnamesProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HostnamesProto> _instance;
-} _HostnamesProto_default_instance_;
+constexpr DirectoryEntryProto::DirectoryEntryProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , size_(int64_t{0})
+  , last_modified_time_(int64_t{0})
+  , is_directory_(false){}
+struct DirectoryEntryProtoDefaultTypeInternal {
+  constexpr DirectoryEntryProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DirectoryEntryProtoDefaultTypeInternal() {}
+  union {
+    DirectoryEntryProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DirectoryEntryProtoDefaultTypeInternal _DirectoryEntryProto_default_instance_;
+constexpr DirectoryEntryListProto::DirectoryEntryListProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : entries_(){}
+struct DirectoryEntryListProtoDefaultTypeInternal {
+  constexpr DirectoryEntryListProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DirectoryEntryListProtoDefaultTypeInternal() {}
+  union {
+    DirectoryEntryListProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DirectoryEntryListProtoDefaultTypeInternal _DirectoryEntryListProto_default_instance_;
+constexpr GetSharesOptionsProto::GetSharesOptionsProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : server_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetSharesOptionsProtoDefaultTypeInternal {
+  constexpr GetSharesOptionsProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetSharesOptionsProtoDefaultTypeInternal() {}
+  union {
+    GetSharesOptionsProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetSharesOptionsProtoDefaultTypeInternal _GetSharesOptionsProto_default_instance_;
+constexpr HostnamesProto::HostnamesProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hostnames_(){}
+struct HostnamesProtoDefaultTypeInternal {
+  constexpr HostnamesProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HostnamesProtoDefaultTypeInternal() {}
+  union {
+    HostnamesProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HostnamesProtoDefaultTypeInternal _HostnamesProto_default_instance_;
 }  // namespace smbprovider
-static void InitDefaultsscc_info_DirectoryEntryListProto_directory_5fentry_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::smbprovider::_DirectoryEntryListProto_default_instance_;
-    new (ptr) ::smbprovider::DirectoryEntryListProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::smbprovider::DirectoryEntryListProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DirectoryEntryListProto_directory_5fentry_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DirectoryEntryListProto_directory_5fentry_2eproto}, {
-      &scc_info_DirectoryEntryProto_directory_5fentry_2eproto.base,}};
-
-static void InitDefaultsscc_info_DirectoryEntryProto_directory_5fentry_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::smbprovider::_DirectoryEntryProto_default_instance_;
-    new (ptr) ::smbprovider::DirectoryEntryProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::smbprovider::DirectoryEntryProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DirectoryEntryProto_directory_5fentry_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DirectoryEntryProto_directory_5fentry_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetSharesOptionsProto_directory_5fentry_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::smbprovider::_GetSharesOptionsProto_default_instance_;
-    new (ptr) ::smbprovider::GetSharesOptionsProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::smbprovider::GetSharesOptionsProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetSharesOptionsProto_directory_5fentry_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetSharesOptionsProto_directory_5fentry_2eproto}, {}};
-
-static void InitDefaultsscc_info_HostnamesProto_directory_5fentry_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::smbprovider::_HostnamesProto_default_instance_;
-    new (ptr) ::smbprovider::HostnamesProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::smbprovider::HostnamesProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HostnamesProto_directory_5fentry_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HostnamesProto_directory_5fentry_2eproto}, {}};
-
 namespace smbprovider {
 bool ErrorType_IsValid(int value) {
   switch (value) {
@@ -222,7 +201,7 @@ const std::string& ErrorType_Name(
                      ErrorType_strings[idx].get();
 }
 bool ErrorType_Parse(
-    const std::string& name, ErrorType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ErrorType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ErrorType_entries, 25, name, &int_value);
@@ -234,8 +213,6 @@ bool ErrorType_Parse(
 
 // ===================================================================
 
-void DirectoryEntryProto::InitAsDefaultInstance() {
-}
 class DirectoryEntryProto::_Internal {
  public:
   using HasBits = decltype(std::declval<DirectoryEntryProto>()._has_bits_);
@@ -253,19 +230,26 @@ class DirectoryEntryProto::_Internal {
   }
 };
 
-DirectoryEntryProto::DirectoryEntryProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DirectoryEntryProto::DirectoryEntryProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:smbprovider.DirectoryEntryProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:smbprovider.DirectoryEntryProto)
 }
 DirectoryEntryProto::DirectoryEntryProto(const DirectoryEntryProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_name()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&size_, &from.size_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_directory_) -
@@ -273,41 +257,48 @@ DirectoryEntryProto::DirectoryEntryProto(const DirectoryEntryProto& from)
   // @@protoc_insertion_point(copy_constructor:smbprovider.DirectoryEntryProto)
 }
 
-void DirectoryEntryProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DirectoryEntryProto_directory_5fentry_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&size_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_directory_) -
-      reinterpret_cast<char*>(&size_)) + sizeof(is_directory_));
+inline void DirectoryEntryProto::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_directory_) -
+    reinterpret_cast<char*>(&size_)) + sizeof(is_directory_));
 }
 
 DirectoryEntryProto::~DirectoryEntryProto() {
   // @@protoc_insertion_point(destructor:smbprovider.DirectoryEntryProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DirectoryEntryProto::SharedDtor() {
+inline void DirectoryEntryProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DirectoryEntryProto::ArenaDtor(void* object) {
+  DirectoryEntryProto* _this = reinterpret_cast< DirectoryEntryProto* >(object);
+  (void)_this;
+}
+void DirectoryEntryProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DirectoryEntryProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DirectoryEntryProto& DirectoryEntryProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DirectoryEntryProto_directory_5fentry_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DirectoryEntryProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:smbprovider.DirectoryEntryProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    name_.ClearNonDefaultToEmptyNoArena();
+    name_.ClearNonDefaultToEmpty();
   }
   if (cached_has_bits & 0x0000000eu) {
     ::memset(&size_, 0, static_cast<size_t>(
@@ -315,74 +306,80 @@ void DirectoryEntryProto::Clear() {
         reinterpret_cast<char*>(&size_)) + sizeof(is_directory_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DirectoryEntryProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool is_directory = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_is_directory(&has_bits);
-          is_directory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_directory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 size = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_size(&has_bits);
-          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 last_modified_time = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_last_modified_time(&has_bits);
-          last_modified_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_modified_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DirectoryEntryProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DirectoryEntryProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:smbprovider.DirectoryEntryProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -411,8 +408,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:smbprovider.DirectoryEntryProto)
   return target;
@@ -422,7 +419,7 @@ size_t DirectoryEntryProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:smbprovider.DirectoryEntryProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -437,16 +434,12 @@ size_t DirectoryEntryProto::ByteSizeLong() const {
 
     // optional int64 size = 3;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_size());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_size());
     }
 
     // optional int64 last_modified_time = 4;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_modified_time());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_modified_time());
     }
 
     // optional bool is_directory = 1;
@@ -456,7 +449,7 @@ size_t DirectoryEntryProto::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -472,15 +465,13 @@ void DirectoryEntryProto::CheckTypeAndMergeFrom(
 void DirectoryEntryProto::MergeFrom(const DirectoryEntryProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:smbprovider.DirectoryEntryProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+      _internal_set_name(from._internal_name());
     }
     if (cached_has_bits & 0x00000002u) {
       size_ = from.size_;
@@ -493,6 +484,7 @@ void DirectoryEntryProto::MergeFrom(const DirectoryEntryProto& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DirectoryEntryProto::CopyFrom(const DirectoryEntryProto& from) {
@@ -508,13 +500,21 @@ bool DirectoryEntryProto::IsInitialized() const {
 
 void DirectoryEntryProto::InternalSwap(DirectoryEntryProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(size_, other->size_);
-  swap(last_modified_time_, other->last_modified_time_);
-  swap(is_directory_, other->is_directory_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DirectoryEntryProto, is_directory_)
+      + sizeof(DirectoryEntryProto::is_directory_)
+      - PROTOBUF_FIELD_OFFSET(DirectoryEntryProto, size_)>(
+          reinterpret_cast<char*>(&size_),
+          reinterpret_cast<char*>(&other->size_));
 }
 
 std::string DirectoryEntryProto::GetTypeName() const {
@@ -524,69 +524,70 @@ std::string DirectoryEntryProto::GetTypeName() const {
 
 // ===================================================================
 
-void DirectoryEntryListProto::InitAsDefaultInstance() {
-}
 class DirectoryEntryListProto::_Internal {
  public:
-  using HasBits = decltype(std::declval<DirectoryEntryListProto>()._has_bits_);
 };
 
-DirectoryEntryListProto::DirectoryEntryListProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DirectoryEntryListProto::DirectoryEntryListProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  entries_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:smbprovider.DirectoryEntryListProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:smbprovider.DirectoryEntryListProto)
 }
 DirectoryEntryListProto::DirectoryEntryListProto(const DirectoryEntryListProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       entries_(from.entries_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:smbprovider.DirectoryEntryListProto)
 }
 
-void DirectoryEntryListProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DirectoryEntryListProto_directory_5fentry_2eproto.base);
+inline void DirectoryEntryListProto::SharedCtor() {
 }
 
 DirectoryEntryListProto::~DirectoryEntryListProto() {
   // @@protoc_insertion_point(destructor:smbprovider.DirectoryEntryListProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DirectoryEntryListProto::SharedDtor() {
+inline void DirectoryEntryListProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void DirectoryEntryListProto::ArenaDtor(void* object) {
+  DirectoryEntryListProto* _this = reinterpret_cast< DirectoryEntryListProto* >(object);
+  (void)_this;
+}
+void DirectoryEntryListProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DirectoryEntryListProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DirectoryEntryListProto& DirectoryEntryListProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DirectoryEntryListProto_directory_5fentry_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DirectoryEntryListProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:smbprovider.DirectoryEntryListProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   entries_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DirectoryEntryListProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .smbprovider.DirectoryEntryProto entries = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -594,32 +595,36 @@ const char* DirectoryEntryListProto::_InternalParse(const char* ptr, ::PROTOBUF_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DirectoryEntryListProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DirectoryEntryListProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:smbprovider.DirectoryEntryListProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .smbprovider.DirectoryEntryProto entries = 1;
@@ -631,8 +636,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:smbprovider.DirectoryEntryListProto)
   return target;
@@ -642,7 +647,7 @@ size_t DirectoryEntryListProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:smbprovider.DirectoryEntryListProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -654,7 +659,7 @@ size_t DirectoryEntryListProto::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -670,11 +675,11 @@ void DirectoryEntryListProto::CheckTypeAndMergeFrom(
 void DirectoryEntryListProto::MergeFrom(const DirectoryEntryListProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:smbprovider.DirectoryEntryListProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   entries_.MergeFrom(from.entries_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DirectoryEntryListProto::CopyFrom(const DirectoryEntryListProto& from) {
@@ -690,8 +695,7 @@ bool DirectoryEntryListProto::IsInitialized() const {
 
 void DirectoryEntryListProto::InternalSwap(DirectoryEntryListProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   entries_.InternalSwap(&other->entries_);
 }
 
@@ -702,8 +706,6 @@ std::string DirectoryEntryListProto::GetTypeName() const {
 
 // ===================================================================
 
-void GetSharesOptionsProto::InitAsDefaultInstance() {
-}
 class GetSharesOptionsProto::_Internal {
  public:
   using HasBits = decltype(std::declval<GetSharesOptionsProto>()._has_bits_);
@@ -712,101 +714,117 @@ class GetSharesOptionsProto::_Internal {
   }
 };
 
-GetSharesOptionsProto::GetSharesOptionsProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GetSharesOptionsProto::GetSharesOptionsProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:smbprovider.GetSharesOptionsProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:smbprovider.GetSharesOptionsProto)
 }
 GetSharesOptionsProto::GetSharesOptionsProto(const GetSharesOptionsProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   server_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    server_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_server_url()) {
-    server_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.server_url_);
+    server_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_server_url(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:smbprovider.GetSharesOptionsProto)
 }
 
-void GetSharesOptionsProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetSharesOptionsProto_directory_5fentry_2eproto.base);
-  server_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GetSharesOptionsProto::SharedCtor() {
+server_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  server_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetSharesOptionsProto::~GetSharesOptionsProto() {
   // @@protoc_insertion_point(destructor:smbprovider.GetSharesOptionsProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GetSharesOptionsProto::SharedDtor() {
+inline void GetSharesOptionsProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   server_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetSharesOptionsProto::ArenaDtor(void* object) {
+  GetSharesOptionsProto* _this = reinterpret_cast< GetSharesOptionsProto* >(object);
+  (void)_this;
+}
+void GetSharesOptionsProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetSharesOptionsProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetSharesOptionsProto& GetSharesOptionsProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetSharesOptionsProto_directory_5fentry_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetSharesOptionsProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:smbprovider.GetSharesOptionsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    server_url_.ClearNonDefaultToEmptyNoArena();
+    server_url_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GetSharesOptionsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string server_url = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_server_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetSharesOptionsProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetSharesOptionsProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:smbprovider.GetSharesOptionsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -817,8 +835,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:smbprovider.GetSharesOptionsProto)
   return target;
@@ -828,7 +846,7 @@ size_t GetSharesOptionsProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:smbprovider.GetSharesOptionsProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -841,7 +859,7 @@ size_t GetSharesOptionsProto::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -857,14 +875,13 @@ void GetSharesOptionsProto::CheckTypeAndMergeFrom(
 void GetSharesOptionsProto::MergeFrom(const GetSharesOptionsProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:smbprovider.GetSharesOptionsProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_server_url()) {
-    _has_bits_[0] |= 0x00000001u;
-    server_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.server_url_);
+    _internal_set_server_url(from._internal_server_url());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GetSharesOptionsProto::CopyFrom(const GetSharesOptionsProto& from) {
@@ -880,10 +897,15 @@ bool GetSharesOptionsProto::IsInitialized() const {
 
 void GetSharesOptionsProto::InternalSwap(GetSharesOptionsProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  server_url_.Swap(&other->server_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &server_url_, lhs_arena,
+      &other->server_url_, rhs_arena
+  );
 }
 
 std::string GetSharesOptionsProto::GetTypeName() const {
@@ -893,69 +915,70 @@ std::string GetSharesOptionsProto::GetTypeName() const {
 
 // ===================================================================
 
-void HostnamesProto::InitAsDefaultInstance() {
-}
 class HostnamesProto::_Internal {
  public:
-  using HasBits = decltype(std::declval<HostnamesProto>()._has_bits_);
 };
 
-HostnamesProto::HostnamesProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+HostnamesProto::HostnamesProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  hostnames_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:smbprovider.HostnamesProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:smbprovider.HostnamesProto)
 }
 HostnamesProto::HostnamesProto(const HostnamesProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       hostnames_(from.hostnames_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:smbprovider.HostnamesProto)
 }
 
-void HostnamesProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HostnamesProto_directory_5fentry_2eproto.base);
+inline void HostnamesProto::SharedCtor() {
 }
 
 HostnamesProto::~HostnamesProto() {
   // @@protoc_insertion_point(destructor:smbprovider.HostnamesProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void HostnamesProto::SharedDtor() {
+inline void HostnamesProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void HostnamesProto::ArenaDtor(void* object) {
+  HostnamesProto* _this = reinterpret_cast< HostnamesProto* >(object);
+  (void)_this;
+}
+void HostnamesProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HostnamesProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HostnamesProto& HostnamesProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HostnamesProto_directory_5fentry_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HostnamesProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:smbprovider.HostnamesProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   hostnames_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* HostnamesProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string hostnames = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -964,32 +987,36 @@ const char* HostnamesProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HostnamesProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HostnamesProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:smbprovider.HostnamesProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string hostnames = 1;
@@ -999,8 +1026,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:smbprovider.HostnamesProto)
   return target;
@@ -1010,7 +1037,7 @@ size_t HostnamesProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:smbprovider.HostnamesProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1023,7 +1050,7 @@ size_t HostnamesProto::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1039,11 +1066,11 @@ void HostnamesProto::CheckTypeAndMergeFrom(
 void HostnamesProto::MergeFrom(const HostnamesProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:smbprovider.HostnamesProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   hostnames_.MergeFrom(from.hostnames_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void HostnamesProto::CopyFrom(const HostnamesProto& from) {
@@ -1059,8 +1086,7 @@ bool HostnamesProto::IsInitialized() const {
 
 void HostnamesProto::InternalSwap(HostnamesProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   hostnames_.InternalSwap(&other->hostnames_);
 }
 
@@ -1073,16 +1099,16 @@ std::string HostnamesProto::GetTypeName() const {
 }  // namespace smbprovider
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::smbprovider::DirectoryEntryProto* Arena::CreateMaybeMessage< ::smbprovider::DirectoryEntryProto >(Arena* arena) {
-  return Arena::CreateInternal< ::smbprovider::DirectoryEntryProto >(arena);
+  return Arena::CreateMessageInternal< ::smbprovider::DirectoryEntryProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::smbprovider::DirectoryEntryListProto* Arena::CreateMaybeMessage< ::smbprovider::DirectoryEntryListProto >(Arena* arena) {
-  return Arena::CreateInternal< ::smbprovider::DirectoryEntryListProto >(arena);
+  return Arena::CreateMessageInternal< ::smbprovider::DirectoryEntryListProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::smbprovider::GetSharesOptionsProto* Arena::CreateMaybeMessage< ::smbprovider::GetSharesOptionsProto >(Arena* arena) {
-  return Arena::CreateInternal< ::smbprovider::GetSharesOptionsProto >(arena);
+  return Arena::CreateMessageInternal< ::smbprovider::GetSharesOptionsProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::smbprovider::HostnamesProto* Arena::CreateMaybeMessage< ::smbprovider::HostnamesProto >(Arena* arena) {
-  return Arena::CreateInternal< ::smbprovider::HostnamesProto >(arena);
+  return Arena::CreateMessageInternal< ::smbprovider::HostnamesProto >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

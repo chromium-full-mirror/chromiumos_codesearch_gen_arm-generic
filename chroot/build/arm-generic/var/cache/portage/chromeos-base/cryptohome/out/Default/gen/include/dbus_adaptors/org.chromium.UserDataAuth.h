@@ -516,9 +516,6 @@ class ArcQuotaInterface {
   virtual void GetCurrentSpaceForArcProjectId(
       std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<user_data_auth::GetCurrentSpaceForArcProjectIdReply>> response,
       const user_data_auth::GetCurrentSpaceForArcProjectIdRequest& in_request) = 0;
-  virtual void SetProjectId(
-      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<user_data_auth::SetProjectIdReply>> response,
-      const user_data_auth::SetProjectIdRequest& in_request) = 0;
   virtual void SetMediaRWDataFileProjectId(
       std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<user_data_auth::SetMediaRWDataFileProjectIdReply>> response,
       const base::ScopedFD& in_fd,
@@ -557,10 +554,6 @@ class ArcQuotaAdaptor {
         base::Unretained(interface_),
         &ArcQuotaInterface::GetCurrentSpaceForArcProjectId);
     itf->AddMethodHandler(
-        "SetProjectId",
-        base::Unretained(interface_),
-        &ArcQuotaInterface::SetProjectId);
-    itf->AddMethodHandler(
         "SetMediaRWDataFileProjectId",
         base::Unretained(interface_),
         &ArcQuotaInterface::SetMediaRWDataFileProjectId);
@@ -590,10 +583,6 @@ class ArcQuotaAdaptor {
         "      <arg name=\"reply\" type=\"ay\" direction=\"out\"/>\n"
         "    </method>\n"
         "    <method name=\"GetCurrentSpaceForArcProjectId\">\n"
-        "      <arg name=\"request\" type=\"ay\" direction=\"in\"/>\n"
-        "      <arg name=\"reply\" type=\"ay\" direction=\"out\"/>\n"
-        "    </method>\n"
-        "    <method name=\"SetProjectId\">\n"
         "      <arg name=\"request\" type=\"ay\" direction=\"in\"/>\n"
         "      <arg name=\"reply\" type=\"ay\" direction=\"out\"/>\n"
         "    </method>\n"

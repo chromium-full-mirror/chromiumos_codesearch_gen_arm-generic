@@ -53,27 +53,7 @@ using ModelInfoPtr = mojo::StructPtr<ModelInfo>;
 
 class ModelLoader;
 
-using ModelLoaderPtr = mojo::InterfacePtr<ModelLoader>;
-using ModelLoaderPtrInfo = mojo::InterfacePtrInfo<ModelLoader>;
-
-using ModelLoaderRequest = mojo::InterfaceRequest<ModelLoader>;
-using ModelLoaderAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<ModelLoader>;
-
-using ModelLoaderAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<ModelLoader>;
-
 class Model;
-
-using ModelPtr = mojo::InterfacePtr<Model>;
-using ModelPtrInfo = mojo::InterfacePtrInfo<Model>;
-
-using ModelRequest = mojo::InterfaceRequest<Model>;
-using ModelAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Model>;
-
-using ModelAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Model>;
 
 
 

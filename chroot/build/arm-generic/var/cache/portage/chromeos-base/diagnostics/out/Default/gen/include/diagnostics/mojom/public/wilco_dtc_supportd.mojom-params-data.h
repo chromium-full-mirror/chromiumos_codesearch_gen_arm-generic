@@ -389,7 +389,7 @@ class WilcoDtcSupportdClient_PerformWebRequest_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHttpMethod(UserType* output) const {
+  [[nodiscard]] bool ReadHttpMethod(UserType* output) const {
     auto data_value = data_->http_method;
     return mojo::internal::Deserialize<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethod>(
         data_value, output);
@@ -410,7 +410,7 @@ class WilcoDtcSupportdClient_PerformWebRequest_ParamsDataView {
       mojo::ArrayDataView<mojo::ScopedHandle>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHeaders(UserType* output) {
+  [[nodiscard]] bool ReadHeaders(UserType* output) {
     
     auto* pointer = data_->headers.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::ScopedHandle>>(
@@ -442,7 +442,7 @@ class WilcoDtcSupportdClient_PerformWebRequest_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatus>(
         data_value, output);
@@ -549,7 +549,7 @@ class WilcoDtcSupportdClient_GetConfigurationData_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadJsonConfigurationData(UserType* output) {
+  [[nodiscard]] bool ReadJsonConfigurationData(UserType* output) {
     
     auto* pointer = data_->json_configuration_data.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -573,7 +573,7 @@ class WilcoDtcSupportdClient_HandleEvent_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEvent(UserType* output) const {
+  [[nodiscard]] bool ReadEvent(UserType* output) const {
     auto data_value = data_->event;
     return mojo::internal::Deserialize<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEvent>(
         data_value, output);

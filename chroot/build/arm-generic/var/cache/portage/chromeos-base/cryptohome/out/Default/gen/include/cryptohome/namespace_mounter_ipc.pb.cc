@@ -11,44 +11,43 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace cryptohome {
-class OutOfProcessMountRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OutOfProcessMountRequest> _instance;
-} _OutOfProcessMountRequest_default_instance_;
-class OutOfProcessMountResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<OutOfProcessMountResponse> _instance;
-} _OutOfProcessMountResponse_default_instance_;
+constexpr OutOfProcessMountRequest::OutOfProcessMountRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , mount_namespace_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fek_signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fnek_signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ephemeral_loop_device_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_(0)
+
+  , legacy_home_(false)
+  , bind_mount_downloads_(false){}
+struct OutOfProcessMountRequestDefaultTypeInternal {
+  constexpr OutOfProcessMountRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OutOfProcessMountRequestDefaultTypeInternal() {}
+  union {
+    OutOfProcessMountRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OutOfProcessMountRequestDefaultTypeInternal _OutOfProcessMountRequest_default_instance_;
+constexpr OutOfProcessMountResponse::OutOfProcessMountResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : paths_()
+  , mount_error_(0u){}
+struct OutOfProcessMountResponseDefaultTypeInternal {
+  constexpr OutOfProcessMountResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~OutOfProcessMountResponseDefaultTypeInternal() {}
+  union {
+    OutOfProcessMountResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OutOfProcessMountResponseDefaultTypeInternal _OutOfProcessMountResponse_default_instance_;
 }  // namespace cryptohome
-static void InitDefaultsscc_info_OutOfProcessMountRequest_namespace_5fmounter_5fipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_OutOfProcessMountRequest_default_instance_;
-    new (ptr) ::cryptohome::OutOfProcessMountRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::OutOfProcessMountRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OutOfProcessMountRequest_namespace_5fmounter_5fipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OutOfProcessMountRequest_namespace_5fmounter_5fipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_OutOfProcessMountResponse_namespace_5fmounter_5fipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::cryptohome::_OutOfProcessMountResponse_default_instance_;
-    new (ptr) ::cryptohome::OutOfProcessMountResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::cryptohome::OutOfProcessMountResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_OutOfProcessMountResponse_namespace_5fmounter_5fipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_OutOfProcessMountResponse_namespace_5fmounter_5fipc_2eproto}, {}};
-
 namespace cryptohome {
 bool OutOfProcessMountRequest_MountType_IsValid(int value) {
   switch (value) {
@@ -116,7 +115,7 @@ const std::string& OutOfProcessMountRequest_MountType_Name(
                      OutOfProcessMountRequest_MountType_strings[idx].get();
 }
 bool OutOfProcessMountRequest_MountType_Parse(
-    const std::string& name, OutOfProcessMountRequest_MountType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OutOfProcessMountRequest_MountType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       OutOfProcessMountRequest_MountType_entries, 8, name, &int_value);
@@ -125,7 +124,7 @@ bool OutOfProcessMountRequest_MountType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::NONE;
 constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::ECRYPTFS;
 constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::DIR_CRYPTO;
@@ -137,44 +136,65 @@ constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::DIR_CRYPT
 constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::MountType_MIN;
 constexpr OutOfProcessMountRequest_MountType OutOfProcessMountRequest::MountType_MAX;
 constexpr int OutOfProcessMountRequest::MountType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void OutOfProcessMountRequest::InitAsDefaultInstance() {
-}
 class OutOfProcessMountRequest::_Internal {
  public:
 };
 
-OutOfProcessMountRequest::OutOfProcessMountRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+OutOfProcessMountRequest::OutOfProcessMountRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.OutOfProcessMountRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.OutOfProcessMountRequest)
 }
 OutOfProcessMountRequest::OutOfProcessMountRequest(const OutOfProcessMountRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_username().empty()) {
-    username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.username_);
+    username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_username(), 
+      GetArenaForAllocation());
   }
   mount_namespace_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    mount_namespace_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_mount_namespace_path().empty()) {
-    mount_namespace_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mount_namespace_path_);
+    mount_namespace_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mount_namespace_path(), 
+      GetArenaForAllocation());
   }
   fek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    fek_signature_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_fek_signature().empty()) {
-    fek_signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fek_signature_);
+    fek_signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fek_signature(), 
+      GetArenaForAllocation());
   }
   fnek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    fnek_signature_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_fnek_signature().empty()) {
-    fnek_signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fnek_signature_);
+    fnek_signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fnek_signature(), 
+      GetArenaForAllocation());
   }
   ephemeral_loop_device_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    ephemeral_loop_device_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_ephemeral_loop_device().empty()) {
-    ephemeral_loop_device_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ephemeral_loop_device_);
+    ephemeral_loop_device_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_ephemeral_loop_device(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&type_, &from.type_,
     static_cast<size_t>(reinterpret_cast<char*>(&bind_mount_downloads_) -
@@ -182,24 +202,42 @@ OutOfProcessMountRequest::OutOfProcessMountRequest(const OutOfProcessMountReques
   // @@protoc_insertion_point(copy_constructor:cryptohome.OutOfProcessMountRequest)
 }
 
-void OutOfProcessMountRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OutOfProcessMountRequest_namespace_5fmounter_5fipc_2eproto.base);
-  username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mount_namespace_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fnek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ephemeral_loop_device_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&bind_mount_downloads_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(bind_mount_downloads_));
+inline void OutOfProcessMountRequest::SharedCtor() {
+username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+mount_namespace_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  mount_namespace_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+fek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  fek_signature_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+fnek_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  fnek_signature_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+ephemeral_loop_device_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  ephemeral_loop_device_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bind_mount_downloads_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(bind_mount_downloads_));
 }
 
 OutOfProcessMountRequest::~OutOfProcessMountRequest() {
   // @@protoc_insertion_point(destructor:cryptohome.OutOfProcessMountRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void OutOfProcessMountRequest::SharedDtor() {
+inline void OutOfProcessMountRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mount_namespace_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fek_signature_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -207,134 +245,145 @@ void OutOfProcessMountRequest::SharedDtor() {
   ephemeral_loop_device_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OutOfProcessMountRequest::ArenaDtor(void* object) {
+  OutOfProcessMountRequest* _this = reinterpret_cast< OutOfProcessMountRequest* >(object);
+  (void)_this;
+}
+void OutOfProcessMountRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OutOfProcessMountRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const OutOfProcessMountRequest& OutOfProcessMountRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OutOfProcessMountRequest_namespace_5fmounter_5fipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void OutOfProcessMountRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.OutOfProcessMountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  username_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mount_namespace_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fek_signature_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fnek_signature_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ephemeral_loop_device_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  username_.ClearToEmpty();
+  mount_namespace_path_.ClearToEmpty();
+  fek_signature_.ClearToEmpty();
+  fnek_signature_.ClearToEmpty();
+  ephemeral_loop_device_.ClearToEmpty();
   ::memset(&type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&bind_mount_downloads_) -
       reinterpret_cast<char*>(&type_)) + sizeof(bind_mount_downloads_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* OutOfProcessMountRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string username = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_username();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool legacy_home = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          legacy_home_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          legacy_home_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string mount_namespace_path = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_mount_namespace_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .cryptohome.OutOfProcessMountRequest.MountType type = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::cryptohome::OutOfProcessMountRequest_MountType>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string fek_signature = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_fek_signature();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string fnek_signature = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_fnek_signature();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool bind_mount_downloads = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          bind_mount_downloads_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          bind_mount_downloads_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string ephemeral_loop_device = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_ephemeral_loop_device();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* OutOfProcessMountRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* OutOfProcessMountRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.OutOfProcessMountRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string username = 1;
-  if (this->username().size() > 0) {
+  if (!this->_internal_username().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -344,13 +393,13 @@ failure:
   }
 
   // bool legacy_home = 2;
-  if (this->legacy_home() != 0) {
+  if (this->_internal_legacy_home() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_legacy_home(), target);
   }
 
   // string mount_namespace_path = 3;
-  if (this->mount_namespace_path().size() > 0) {
+  if (!this->_internal_mount_namespace_path().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_mount_namespace_path().data(), static_cast<int>(this->_internal_mount_namespace_path().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -360,14 +409,14 @@ failure:
   }
 
   // .cryptohome.OutOfProcessMountRequest.MountType type = 4;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       4, this->_internal_type(), target);
   }
 
   // string fek_signature = 5;
-  if (this->fek_signature().size() > 0) {
+  if (!this->_internal_fek_signature().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_fek_signature().data(), static_cast<int>(this->_internal_fek_signature().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -377,7 +426,7 @@ failure:
   }
 
   // string fnek_signature = 6;
-  if (this->fnek_signature().size() > 0) {
+  if (!this->_internal_fnek_signature().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_fnek_signature().data(), static_cast<int>(this->_internal_fnek_signature().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -387,13 +436,13 @@ failure:
   }
 
   // bool bind_mount_downloads = 7;
-  if (this->bind_mount_downloads() != 0) {
+  if (this->_internal_bind_mount_downloads() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_bind_mount_downloads(), target);
   }
 
   // string ephemeral_loop_device = 8;
-  if (this->ephemeral_loop_device().size() > 0) {
+  if (!this->_internal_ephemeral_loop_device().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ephemeral_loop_device().data(), static_cast<int>(this->_internal_ephemeral_loop_device().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -403,8 +452,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.OutOfProcessMountRequest)
   return target;
@@ -414,63 +463,63 @@ size_t OutOfProcessMountRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.OutOfProcessMountRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string username = 1;
-  if (this->username().size() > 0) {
+  if (!this->_internal_username().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_username());
   }
 
   // string mount_namespace_path = 3;
-  if (this->mount_namespace_path().size() > 0) {
+  if (!this->_internal_mount_namespace_path().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_mount_namespace_path());
   }
 
   // string fek_signature = 5;
-  if (this->fek_signature().size() > 0) {
+  if (!this->_internal_fek_signature().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_fek_signature());
   }
 
   // string fnek_signature = 6;
-  if (this->fnek_signature().size() > 0) {
+  if (!this->_internal_fnek_signature().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_fnek_signature());
   }
 
   // string ephemeral_loop_device = 8;
-  if (this->ephemeral_loop_device().size() > 0) {
+  if (!this->_internal_ephemeral_loop_device().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_ephemeral_loop_device());
   }
 
   // .cryptohome.OutOfProcessMountRequest.MountType type = 4;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // bool legacy_home = 2;
-  if (this->legacy_home() != 0) {
+  if (this->_internal_legacy_home() != 0) {
     total_size += 1 + 1;
   }
 
   // bool bind_mount_downloads = 7;
-  if (this->bind_mount_downloads() != 0) {
+  if (this->_internal_bind_mount_downloads() != 0) {
     total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -486,39 +535,34 @@ void OutOfProcessMountRequest::CheckTypeAndMergeFrom(
 void OutOfProcessMountRequest::MergeFrom(const OutOfProcessMountRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.OutOfProcessMountRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.username().size() > 0) {
-
-    username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.username_);
+  if (!from._internal_username().empty()) {
+    _internal_set_username(from._internal_username());
   }
-  if (from.mount_namespace_path().size() > 0) {
-
-    mount_namespace_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mount_namespace_path_);
+  if (!from._internal_mount_namespace_path().empty()) {
+    _internal_set_mount_namespace_path(from._internal_mount_namespace_path());
   }
-  if (from.fek_signature().size() > 0) {
-
-    fek_signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fek_signature_);
+  if (!from._internal_fek_signature().empty()) {
+    _internal_set_fek_signature(from._internal_fek_signature());
   }
-  if (from.fnek_signature().size() > 0) {
-
-    fnek_signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fnek_signature_);
+  if (!from._internal_fnek_signature().empty()) {
+    _internal_set_fnek_signature(from._internal_fnek_signature());
   }
-  if (from.ephemeral_loop_device().size() > 0) {
-
-    ephemeral_loop_device_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ephemeral_loop_device_);
+  if (!from._internal_ephemeral_loop_device().empty()) {
+    _internal_set_ephemeral_loop_device(from._internal_ephemeral_loop_device());
   }
-  if (from.type() != 0) {
+  if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
-  if (from.legacy_home() != 0) {
+  if (from._internal_legacy_home() != 0) {
     _internal_set_legacy_home(from._internal_legacy_home());
   }
-  if (from.bind_mount_downloads() != 0) {
+  if (from._internal_bind_mount_downloads() != 0) {
     _internal_set_bind_mount_downloads(from._internal_bind_mount_downloads());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void OutOfProcessMountRequest::CopyFrom(const OutOfProcessMountRequest& from) {
@@ -534,20 +578,40 @@ bool OutOfProcessMountRequest::IsInitialized() const {
 
 void OutOfProcessMountRequest::InternalSwap(OutOfProcessMountRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  username_.Swap(&other->username_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  mount_namespace_path_.Swap(&other->mount_namespace_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  fek_signature_.Swap(&other->fek_signature_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  fnek_signature_.Swap(&other->fnek_signature_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  ephemeral_loop_device_.Swap(&other->ephemeral_loop_device_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(type_, other->type_);
-  swap(legacy_home_, other->legacy_home_);
-  swap(bind_mount_downloads_, other->bind_mount_downloads_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &username_, lhs_arena,
+      &other->username_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &mount_namespace_path_, lhs_arena,
+      &other->mount_namespace_path_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &fek_signature_, lhs_arena,
+      &other->fek_signature_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &fnek_signature_, lhs_arena,
+      &other->fnek_signature_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &ephemeral_loop_device_, lhs_arena,
+      &other->ephemeral_loop_device_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OutOfProcessMountRequest, bind_mount_downloads_)
+      + sizeof(OutOfProcessMountRequest::bind_mount_downloads_)
+      - PROTOBUF_FIELD_OFFSET(OutOfProcessMountRequest, type_)>(
+          reinterpret_cast<char*>(&type_),
+          reinterpret_cast<char*>(&other->type_));
 }
 
 std::string OutOfProcessMountRequest::GetTypeName() const {
@@ -557,69 +621,73 @@ std::string OutOfProcessMountRequest::GetTypeName() const {
 
 // ===================================================================
 
-void OutOfProcessMountResponse::InitAsDefaultInstance() {
-}
 class OutOfProcessMountResponse::_Internal {
  public:
 };
 
-OutOfProcessMountResponse::OutOfProcessMountResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+OutOfProcessMountResponse::OutOfProcessMountResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  paths_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:cryptohome.OutOfProcessMountResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:cryptohome.OutOfProcessMountResponse)
 }
 OutOfProcessMountResponse::OutOfProcessMountResponse(const OutOfProcessMountResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       paths_(from.paths_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   mount_error_ = from.mount_error_;
   // @@protoc_insertion_point(copy_constructor:cryptohome.OutOfProcessMountResponse)
 }
 
-void OutOfProcessMountResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_OutOfProcessMountResponse_namespace_5fmounter_5fipc_2eproto.base);
-  mount_error_ = 0u;
+inline void OutOfProcessMountResponse::SharedCtor() {
+mount_error_ = 0u;
 }
 
 OutOfProcessMountResponse::~OutOfProcessMountResponse() {
   // @@protoc_insertion_point(destructor:cryptohome.OutOfProcessMountResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void OutOfProcessMountResponse::SharedDtor() {
+inline void OutOfProcessMountResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void OutOfProcessMountResponse::ArenaDtor(void* object) {
+  OutOfProcessMountResponse* _this = reinterpret_cast< OutOfProcessMountResponse* >(object);
+  (void)_this;
+}
+void OutOfProcessMountResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OutOfProcessMountResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const OutOfProcessMountResponse& OutOfProcessMountResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_OutOfProcessMountResponse_namespace_5fmounter_5fipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void OutOfProcessMountResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:cryptohome.OutOfProcessMountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   paths_.Clear();
   mount_error_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* OutOfProcessMountResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string paths = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -629,39 +697,44 @@ const char* OutOfProcessMountResponse::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 mount_error = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          mount_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          mount_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* OutOfProcessMountResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* OutOfProcessMountResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:cryptohome.OutOfProcessMountResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string paths = 1;
@@ -675,14 +748,14 @@ failure:
   }
 
   // uint32 mount_error = 2;
-  if (this->mount_error() != 0) {
+  if (this->_internal_mount_error() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_mount_error(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:cryptohome.OutOfProcessMountResponse)
   return target;
@@ -692,7 +765,7 @@ size_t OutOfProcessMountResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:cryptohome.OutOfProcessMountResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -705,14 +778,12 @@ size_t OutOfProcessMountResponse::ByteSizeLong() const {
   }
 
   // uint32 mount_error = 2;
-  if (this->mount_error() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_mount_error());
+  if (this->_internal_mount_error() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_mount_error());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -728,14 +799,14 @@ void OutOfProcessMountResponse::CheckTypeAndMergeFrom(
 void OutOfProcessMountResponse::MergeFrom(const OutOfProcessMountResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:cryptohome.OutOfProcessMountResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   paths_.MergeFrom(from.paths_);
-  if (from.mount_error() != 0) {
+  if (from._internal_mount_error() != 0) {
     _internal_set_mount_error(from._internal_mount_error());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void OutOfProcessMountResponse::CopyFrom(const OutOfProcessMountResponse& from) {
@@ -751,7 +822,7 @@ bool OutOfProcessMountResponse::IsInitialized() const {
 
 void OutOfProcessMountResponse::InternalSwap(OutOfProcessMountResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   paths_.InternalSwap(&other->paths_);
   swap(mount_error_, other->mount_error_);
 }
@@ -765,10 +836,10 @@ std::string OutOfProcessMountResponse::GetTypeName() const {
 }  // namespace cryptohome
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::cryptohome::OutOfProcessMountRequest* Arena::CreateMaybeMessage< ::cryptohome::OutOfProcessMountRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::OutOfProcessMountRequest >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::OutOfProcessMountRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::cryptohome::OutOfProcessMountResponse* Arena::CreateMaybeMessage< ::cryptohome::OutOfProcessMountResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::cryptohome::OutOfProcessMountResponse >(arena);
+  return Arena::CreateMessageInternal< ::cryptohome::OutOfProcessMountResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -37,6 +37,10 @@ class DictionaryValueDataView;
 
 class ListValueDataView;
 
+class DeprecatedDictionaryValueDataView;
+
+class DeprecatedListValueDataView;
+
 class ValueDataView;
 
 
@@ -56,6 +60,20 @@ struct MojomTypeTraits<::mojo_base::mojom::DictionaryValueDataView> {
 template <>
 struct MojomTypeTraits<::mojo_base::mojom::ListValueDataView> {
   using Data = ::mojo_base::mojom::internal::ListValue_Data;
+  using DataAsArrayElement = Pointer<Data>;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
+};
+
+template <>
+struct MojomTypeTraits<::mojo_base::mojom::DeprecatedDictionaryValueDataView> {
+  using Data = ::mojo_base::mojom::internal::DeprecatedDictionaryValue_Data;
+  using DataAsArrayElement = Pointer<Data>;
+  static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
+};
+
+template <>
+struct MojomTypeTraits<::mojo_base::mojom::DeprecatedListValueDataView> {
+  using Data = ::mojo_base::mojom::internal::DeprecatedListValue_Data;
   using DataAsArrayElement = Pointer<Data>;
   static constexpr MojomTypeCategory category = MojomTypeCategory::kStruct;
 };
@@ -89,7 +107,7 @@ class DictionaryValueDataView {
       mojo::MapDataView<mojo::StringDataView, ValueDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStorage(UserType* output) {
+  [[nodiscard]] bool ReadStorage(UserType* output) {
     
     auto* pointer = data_->storage.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, ::mojo_base::mojom::ValueDataView>>(
@@ -116,7 +134,7 @@ class ListValueDataView {
       mojo::ArrayDataView<ValueDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStorage(UserType* output) {
+  [[nodiscard]] bool ReadStorage(UserType* output) {
     
     auto* pointer = data_->storage.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::mojo_base::mojom::ValueDataView>>(
@@ -124,6 +142,60 @@ class ListValueDataView {
   }
  private:
   internal::ListValue_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
+class DeprecatedDictionaryValueDataView {
+ public:
+  DeprecatedDictionaryValueDataView() = default;
+
+  DeprecatedDictionaryValueDataView(
+      internal::DeprecatedDictionaryValue_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const { return !data_; }
+  inline void GetStorageDataView(
+      mojo::MapDataView<mojo::StringDataView, ValueDataView>* output);
+
+  template <typename UserType>
+  [[nodiscard]] bool ReadStorage(UserType* output) {
+    
+    auto* pointer = data_->storage.Get();
+    return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, ::mojo_base::mojom::ValueDataView>>(
+        pointer, output, message_);
+  }
+ private:
+  internal::DeprecatedDictionaryValue_Data* data_ = nullptr;
+  mojo::Message* message_ = nullptr;
+};
+
+
+
+class DeprecatedListValueDataView {
+ public:
+  DeprecatedListValueDataView() = default;
+
+  DeprecatedListValueDataView(
+      internal::DeprecatedListValue_Data* data,
+      mojo::Message* message)
+      : data_(data), message_(message) {}
+
+  bool is_null() const { return !data_; }
+  inline void GetStorageDataView(
+      mojo::ArrayDataView<ValueDataView>* output);
+
+  template <typename UserType>
+  [[nodiscard]] bool ReadStorage(UserType* output) {
+    
+    auto* pointer = data_->storage.Get();
+    return mojo::internal::Deserialize<mojo::ArrayDataView<::mojo_base::mojom::ValueDataView>>(
+        pointer, output, message_);
+  }
+ private:
+  internal::DeprecatedListValue_Data* data_ = nullptr;
   mojo::Message* message_ = nullptr;
 };
 
@@ -172,7 +244,7 @@ class ValueDataView {
       mojo::StringDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStringValue(UserType* output) const {
+  [[nodiscard]] bool ReadStringValue(UserType* output) const {
     
     CHECK(is_string_value());
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -183,7 +255,7 @@ class ValueDataView {
       mojo::ArrayDataView<uint8_t>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBinaryValue(UserType* output) const {
+  [[nodiscard]] bool ReadBinaryValue(UserType* output) const {
     
     CHECK(is_binary_value());
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -194,7 +266,7 @@ class ValueDataView {
       DictionaryValueDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDictionaryValue(UserType* output) const {
+  [[nodiscard]] bool ReadDictionaryValue(UserType* output) const {
     
     CHECK(is_dictionary_value());
     return mojo::internal::Deserialize<::mojo_base::mojom::DictionaryValueDataView>(
@@ -205,7 +277,7 @@ class ValueDataView {
       ListValueDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadListValue(UserType* output) const {
+  [[nodiscard]] bool ReadListValue(UserType* output) const {
     
     CHECK(is_list_value());
     return mojo::internal::Deserialize<::mojo_base::mojom::ListValueDataView>(
@@ -308,6 +380,92 @@ struct Serializer<::mojo_base::mojom::ListValueDataView, MaybeConstUserType> {
       return CallSetToNullIfExists<Traits>(output);
 
     ::mojo_base::mojom::ListValueDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
+struct Serializer<::mojo_base::mojom::DeprecatedDictionaryValueDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = StructTraits<::mojo_base::mojom::DeprecatedDictionaryValueDataView, UserType>;
+
+  static void Serialize(
+      MaybeConstUserType& input,
+      mojo::internal::MessageFragment<::mojo_base::mojom::internal::DeprecatedDictionaryValue_Data>& fragment) {
+    if (CallIsNullIfExists<Traits>(input))
+      return;
+    fragment.Allocate();
+    decltype(Traits::storage(input)) in_storage = Traits::storage(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->storage)::BaseType>
+        storage_fragment(fragment.message());
+    const mojo::internal::ContainerValidateParams storage_validate_params(
+        new mojo::internal::ContainerValidateParams(0, false, new mojo::internal::ContainerValidateParams(0, false, nullptr)), new mojo::internal::ContainerValidateParams(0, false, nullptr));
+    mojo::internal::Serialize<mojo::MapDataView<mojo::StringDataView, ::mojo_base::mojom::ValueDataView>>(
+        in_storage, storage_fragment, &storage_validate_params);
+    fragment->storage.Set(
+        storage_fragment.is_null() ? nullptr : storage_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->storage.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null storage in DeprecatedDictionaryValue struct");
+  }
+
+  static bool Deserialize(::mojo_base::mojom::internal::DeprecatedDictionaryValue_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input)
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::mojo_base::mojom::DeprecatedDictionaryValueDataView data_view(input, message);
+    return Traits::Read(data_view, output);
+  }
+};
+
+}  // namespace internal
+
+
+namespace internal {
+
+template <typename MaybeConstUserType>
+struct Serializer<::mojo_base::mojom::DeprecatedListValueDataView, MaybeConstUserType> {
+  using UserType = typename std::remove_const<MaybeConstUserType>::type;
+  using Traits = StructTraits<::mojo_base::mojom::DeprecatedListValueDataView, UserType>;
+
+  static void Serialize(
+      MaybeConstUserType& input,
+      mojo::internal::MessageFragment<::mojo_base::mojom::internal::DeprecatedListValue_Data>& fragment) {
+    if (CallIsNullIfExists<Traits>(input))
+      return;
+    fragment.Allocate();
+    decltype(Traits::storage(input)) in_storage = Traits::storage(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->storage)::BaseType>
+        storage_fragment(fragment.message());
+    const mojo::internal::ContainerValidateParams storage_validate_params(
+        0, false, nullptr);
+    mojo::internal::Serialize<mojo::ArrayDataView<::mojo_base::mojom::ValueDataView>>(
+        in_storage, storage_fragment, &storage_validate_params);
+    fragment->storage.Set(
+        storage_fragment.is_null() ? nullptr : storage_fragment.data());
+    MOJO_INTERNAL_DLOG_SERIALIZATION_WARNING(
+        fragment->storage.is_null(),
+        mojo::internal::VALIDATION_ERROR_UNEXPECTED_NULL_POINTER,
+        "null storage in DeprecatedListValue struct");
+  }
+
+  static bool Deserialize(::mojo_base::mojom::internal::DeprecatedListValue_Data* input,
+                          UserType* output,
+                          Message* message) {
+    if (!input)
+      return CallSetToNullIfExists<Traits>(output);
+
+    ::mojo_base::mojom::DeprecatedListValueDataView data_view(input, message);
     return Traits::Read(data_view, output);
   }
 };
@@ -459,6 +617,20 @@ inline void DictionaryValueDataView::GetStorageDataView(
 
 
 inline void ListValueDataView::GetStorageDataView(
+    mojo::ArrayDataView<ValueDataView>* output) {
+  auto pointer = data_->storage.Get();
+  *output = mojo::ArrayDataView<ValueDataView>(pointer, message_);
+}
+
+
+inline void DeprecatedDictionaryValueDataView::GetStorageDataView(
+    mojo::MapDataView<mojo::StringDataView, ValueDataView>* output) {
+  auto pointer = data_->storage.Get();
+  *output = mojo::MapDataView<mojo::StringDataView, ValueDataView>(pointer, message_);
+}
+
+
+inline void DeprecatedListValueDataView::GetStorageDataView(
     mojo::ArrayDataView<ValueDataView>* output) {
   auto pointer = data_->storage.Get();
   *output = mojo::ArrayDataView<ValueDataView>(pointer, message_);

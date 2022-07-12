@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -199,6 +198,43 @@ bool ModelInfo::Validate(
 }
 const char ModelLoader::Name_[] = "ml.model_loader.mojom.ModelLoader";
 
+uint32_t ModelLoader::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kModelLoader_Load_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)ml::model_loader::mojom::ModelLoader::Load");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* ModelLoader::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kModelLoader_Load_Name:
+            return "Receive ml::model_loader::mojom::ModelLoader::Load";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kModelLoader_Load_Name:
+            return "Receive reply ml::model_loader::mojom::ModelLoader::Load";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 class ModelLoader_Load_ForwardToCallback
     : public mojo::MessageReceiver {
  public:
@@ -312,10 +348,6 @@ class ModelLoader_Load_ProxyToResponder : public ::mojo::internal::ProxyToRespon
 
 bool ModelLoader_Load_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply ml::model_loader::mojom::ModelLoader::Load",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::ModelLoader_Load_ResponseParams_Data* params =
@@ -401,8 +433,11 @@ void ModelLoader_Load_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -429,15 +464,6 @@ bool ModelLoaderStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kModelLoader_Load_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive ml::model_loader::mojom::ModelLoader::Load",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)ml::model_loader::mojom::ModelLoader::Load");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::ModelLoader_Load_Params_Data* params =
           reinterpret_cast<
@@ -486,6 +512,43 @@ bool ModelLoaderResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kModelLoaderValidationInfo);
 }
 const char Model::Name_[] = "ml.model_loader.mojom.Model";
+
+uint32_t Model::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kModel_Compute_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)ml::model_loader::mojom::Model::Compute");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* Model::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kModel_Compute_Name:
+            return "Receive ml::model_loader::mojom::Model::Compute";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kModel_Compute_Name:
+            return "Receive reply ml::model_loader::mojom::Model::Compute";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class Model_Compute_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -604,10 +667,6 @@ class Model_Compute_ProxyToResponder : public ::mojo::internal::ProxyToResponder
 
 bool Model_Compute_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply ml::model_loader::mojom::Model::Compute",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Model_Compute_ResponseParams_Data* params =
@@ -684,8 +743,11 @@ void Model_Compute_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -712,15 +774,6 @@ bool ModelStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kModel_Compute_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive ml::model_loader::mojom::Model::Compute",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)ml::model_loader::mojom::Model::Compute");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Model_Compute_Params_Data* params =
           reinterpret_cast<

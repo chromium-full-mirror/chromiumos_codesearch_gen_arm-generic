@@ -64,6 +64,12 @@ class MockTremplinStub : public Tremplin::StubInterface {
   MOCK_METHOD3(GetDebugInfo, ::grpc::Status(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::vm_tools::tremplin::GetDebugInfoResponse* response));
   MOCK_METHOD3(AsyncGetDebugInfoRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq));
   MOCK_METHOD3(PrepareAsyncGetDebugInfoRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(AttachUsbToContainer, ::grpc::Status(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response));
+  MOCK_METHOD3(AsyncAttachUsbToContainerRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncAttachUsbToContainerRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(DetachUsbFromContainer, ::grpc::Status(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response));
+  MOCK_METHOD3(AsyncDetachUsbFromContainerRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq));
+  MOCK_METHOD3(PrepareAsyncDetachUsbFromContainerRaw, ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>*(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq));
 };
 
 class MockTremplinListenerStub : public TremplinListener::StubInterface {

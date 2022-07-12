@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -98,6 +97,62 @@ void ListValue::WriteIntoTrace(
 }
 
 bool ListValue::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context);
+}
+DeprecatedDictionaryValue::DeprecatedDictionaryValue()
+    : storage() {}
+
+DeprecatedDictionaryValue::DeprecatedDictionaryValue(
+    base::flat_map<std::string, ValuePtr> storage_in)
+    : storage(std::move(storage_in)) {}
+
+DeprecatedDictionaryValue::~DeprecatedDictionaryValue() = default;
+
+void DeprecatedDictionaryValue::WriteIntoTrace(
+    perfetto::libchrome::TracedValue traced_context) const {
+  auto dict = std::move(traced_context).WriteDictionary();
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "storage"), this->storage,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type base::flat_map<std::string, ValuePtr>>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+}
+
+bool DeprecatedDictionaryValue::Validate(
+    const void* data,
+    mojo::internal::ValidationContext* validation_context) {
+  return Data_::Validate(data, validation_context);
+}
+DeprecatedListValue::DeprecatedListValue()
+    : storage() {}
+
+DeprecatedListValue::DeprecatedListValue(
+    std::vector<ValuePtr> storage_in)
+    : storage(std::move(storage_in)) {}
+
+DeprecatedListValue::~DeprecatedListValue() = default;
+
+void DeprecatedListValue::WriteIntoTrace(
+    perfetto::libchrome::TracedValue traced_context) const {
+  auto dict = std::move(traced_context).WriteDictionary();
+  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+    dict.AddItem(
+      "storage"), this->storage,
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+      "<value of type std::vector<ValuePtr>>"
+#else
+      "<value>"
+#endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
+    );
+}
+
+bool DeprecatedListValue::Validate(
     const void* data,
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context);
@@ -256,6 +311,34 @@ bool StructTraits<::mojo_base::mojom::ListValue::DataView, ::mojo_base::mojom::L
     ::mojo_base::mojom::ListValuePtr* output) {
   bool success = true;
   ::mojo_base::mojom::ListValuePtr result(::mojo_base::mojom::ListValue::New());
+  
+      if (success && !input.ReadStorage(&result->storage))
+        success = false;
+  *output = std::move(result);
+  return success;
+}
+
+
+// static
+bool StructTraits<::mojo_base::mojom::DeprecatedDictionaryValue::DataView, ::mojo_base::mojom::DeprecatedDictionaryValuePtr>::Read(
+    ::mojo_base::mojom::DeprecatedDictionaryValue::DataView input,
+    ::mojo_base::mojom::DeprecatedDictionaryValuePtr* output) {
+  bool success = true;
+  ::mojo_base::mojom::DeprecatedDictionaryValuePtr result(::mojo_base::mojom::DeprecatedDictionaryValue::New());
+  
+      if (success && !input.ReadStorage(&result->storage))
+        success = false;
+  *output = std::move(result);
+  return success;
+}
+
+
+// static
+bool StructTraits<::mojo_base::mojom::DeprecatedListValue::DataView, ::mojo_base::mojom::DeprecatedListValuePtr>::Read(
+    ::mojo_base::mojom::DeprecatedListValue::DataView input,
+    ::mojo_base::mojom::DeprecatedListValuePtr* output) {
+  bool success = true;
+  ::mojo_base::mojom::DeprecatedListValuePtr result(::mojo_base::mojom::DeprecatedListValue::New());
   
       if (success && !input.ReadStorage(&result->storage))
         success = false;

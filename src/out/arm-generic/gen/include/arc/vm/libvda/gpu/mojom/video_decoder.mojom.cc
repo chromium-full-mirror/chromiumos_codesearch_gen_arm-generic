@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -203,6 +202,70 @@ bool DecoderBuffer::Validate(
   return Data_::Validate(data, validation_context, false);
 }
 const char VideoDecoder::Name_[] = "arc.mojom.VideoDecoder";
+
+uint32_t VideoDecoder::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kVideoDecoder_Initialize_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoder::Initialize");
+      return value;
+    }
+    case internal::kVideoDecoder_Decode_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoder::Decode");
+      return value;
+    }
+    case internal::kVideoDecoder_Reset_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoder::Reset");
+      return value;
+    }
+    case internal::kVideoDecoder_ReleaseVideoFrame_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoder::ReleaseVideoFrame");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* VideoDecoder::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kVideoDecoder_Initialize_Name:
+            return "Receive arc::mojom::VideoDecoder::Initialize";
+      case internal::kVideoDecoder_Decode_Name:
+            return "Receive arc::mojom::VideoDecoder::Decode";
+      case internal::kVideoDecoder_Reset_Name:
+            return "Receive arc::mojom::VideoDecoder::Reset";
+      case internal::kVideoDecoder_ReleaseVideoFrame_Name:
+            return "Receive arc::mojom::VideoDecoder::ReleaseVideoFrame";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kVideoDecoder_Initialize_Name:
+            return "Receive reply arc::mojom::VideoDecoder::Initialize";
+      case internal::kVideoDecoder_Decode_Name:
+            return "Receive reply arc::mojom::VideoDecoder::Decode";
+      case internal::kVideoDecoder_Reset_Name:
+            return "Receive reply arc::mojom::VideoDecoder::Reset";
+      case internal::kVideoDecoder_ReleaseVideoFrame_Name:
+            return "Receive reply arc::mojom::VideoDecoder::ReleaseVideoFrame";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class VideoDecoder_Initialize_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -485,10 +548,6 @@ class VideoDecoder_Initialize_ProxyToResponder : public ::mojo::internal::ProxyT
 
 bool VideoDecoder_Initialize_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoDecoder::Initialize",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoDecoder_Initialize_ResponseParams_Data* params =
@@ -549,8 +608,11 @@ void VideoDecoder_Initialize_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -601,10 +663,6 @@ class VideoDecoder_Decode_ProxyToResponder : public ::mojo::internal::ProxyToRes
 
 bool VideoDecoder_Decode_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoDecoder::Decode",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoDecoder_Decode_ResponseParams_Data* params =
@@ -665,8 +723,11 @@ void VideoDecoder_Decode_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -717,10 +778,6 @@ class VideoDecoder_Reset_ProxyToResponder : public ::mojo::internal::ProxyToResp
 
 bool VideoDecoder_Reset_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoDecoder::Reset",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoDecoder_Reset_ResponseParams_Data* params =
@@ -768,8 +825,11 @@ void VideoDecoder_Reset_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -789,15 +849,6 @@ bool VideoDecoderStubDispatch::Accept(
       break;
     }
     case internal::kVideoDecoder_ReleaseVideoFrame_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoder::ReleaseVideoFrame",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoder::ReleaseVideoFrame");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoDecoder_ReleaseVideoFrame_Params_Data* params =
@@ -837,15 +888,6 @@ bool VideoDecoderStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kVideoDecoder_Initialize_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoder::Initialize",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoder::Initialize");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoDecoder_Initialize_Params_Data* params =
           reinterpret_cast<
@@ -887,15 +929,6 @@ std::move(p_video_frame_pool), std::move(callback));
       return true;
     }
     case internal::kVideoDecoder_Decode_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoder::Decode",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoder::Decode");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoDecoder_Decode_Params_Data* params =
           reinterpret_cast<
@@ -925,15 +958,6 @@ std::move(p_buffer), std::move(callback));
       return true;
     }
     case internal::kVideoDecoder_Reset_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoder::Reset",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoder::Reset");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoDecoder_Reset_Params_Data* params =
           reinterpret_cast<
@@ -987,6 +1011,52 @@ bool VideoDecoderResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kVideoDecoderValidationInfo);
 }
 const char VideoDecoderClient::Name_[] = "arc.mojom.VideoDecoderClient";
+
+uint32_t VideoDecoderClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kVideoDecoderClient_OnVideoFrameDecoded_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoderClient::OnVideoFrameDecoded");
+      return value;
+    }
+    case internal::kVideoDecoderClient_OnError_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoDecoderClient::OnError");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* VideoDecoderClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kVideoDecoderClient_OnVideoFrameDecoded_Name:
+            return "Receive arc::mojom::VideoDecoderClient::OnVideoFrameDecoded";
+      case internal::kVideoDecoderClient_OnError_Name:
+            return "Receive arc::mojom::VideoDecoderClient::OnError";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kVideoDecoderClient_OnVideoFrameDecoded_Name:
+            return "Receive reply arc::mojom::VideoDecoderClient::OnVideoFrameDecoded";
+      case internal::kVideoDecoderClient_OnError_Name:
+            return "Receive reply arc::mojom::VideoDecoderClient::OnError";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 VideoDecoderClientProxy::VideoDecoderClientProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -1093,15 +1163,6 @@ bool VideoDecoderClientStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kVideoDecoderClient_OnVideoFrameDecoded_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoderClient::OnVideoFrameDecoded",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoderClient::OnVideoFrameDecoded");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoDecoderClient_OnVideoFrameDecoded_Params_Data* params =
@@ -1136,15 +1197,6 @@ std::move(p_timestamp));
       return true;
     }
     case internal::kVideoDecoderClient_OnError_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoDecoderClient::OnError",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoDecoderClient::OnError");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoDecoderClient_OnError_Params_Data* params =

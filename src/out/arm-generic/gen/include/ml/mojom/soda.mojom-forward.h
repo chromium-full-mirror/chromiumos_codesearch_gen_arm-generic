@@ -74,27 +74,7 @@ using SpeechRecognizerEventPtr = mojo::StructPtr<SpeechRecognizerEvent>;
 
 class SodaClient;
 
-using SodaClientPtr = mojo::InterfacePtr<SodaClient>;
-using SodaClientPtrInfo = mojo::InterfacePtrInfo<SodaClient>;
-
-using SodaClientRequest = mojo::InterfaceRequest<SodaClient>;
-using SodaClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SodaClient>;
-
-using SodaClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SodaClient>;
-
 class SodaRecognizer;
-
-using SodaRecognizerPtr = mojo::InterfacePtr<SodaRecognizer>;
-using SodaRecognizerPtrInfo = mojo::InterfacePtrInfo<SodaRecognizer>;
-
-using SodaRecognizerRequest = mojo::InterfaceRequest<SodaRecognizer>;
-using SodaRecognizerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SodaRecognizer>;
-
-using SodaRecognizerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SodaRecognizer>;
 
 
 

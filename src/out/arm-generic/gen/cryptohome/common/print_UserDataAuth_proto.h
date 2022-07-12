@@ -45,10 +45,6 @@ BRILLO_EXPORT std::string GetProtoDebugString(AuthSessionStatus value);
 std::string GetProtoDebugStringWithIndent(VaultEncryptionType value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(VaultEncryptionType value);
-std::string GetProtoDebugStringWithIndent(SetProjectIdAllowedPathType value,
-                                          int indent_size);
-BRILLO_EXPORT std::string GetProtoDebugString(
-    SetProjectIdAllowedPathType value);
 std::string GetProtoDebugStringWithIndent(InstallAttributesState value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(InstallAttributesState value);
@@ -372,12 +368,6 @@ std::string GetProtoDebugStringWithIndent(
     int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(
     const GetCurrentSpaceForArcProjectIdReply& value);
-std::string GetProtoDebugStringWithIndent(const SetProjectIdRequest& value,
-                                          int indent_size);
-BRILLO_EXPORT std::string GetProtoDebugString(const SetProjectIdRequest& value);
-std::string GetProtoDebugStringWithIndent(const SetProjectIdReply& value,
-                                          int indent_size);
-BRILLO_EXPORT std::string GetProtoDebugString(const SetProjectIdReply& value);
 std::string GetProtoDebugStringWithIndent(
     const SetMediaRWDataFileProjectIdRequest& value,
     int indent_size);

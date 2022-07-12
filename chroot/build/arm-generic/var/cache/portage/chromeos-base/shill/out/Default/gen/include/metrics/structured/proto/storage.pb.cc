@@ -11,94 +11,67 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_structured_5fdata_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_StructuredEventProto_structured_5fdata_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_storage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_KeyDataProto_KeysEntry_DoNotUse_storage_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_storage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KeyProto_storage_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace metrics {
 namespace structured {
-class KeyProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KeyProto> _instance;
-} _KeyProto_default_instance_;
-class KeyDataProto_KeysEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KeyDataProto_KeysEntry_DoNotUse> _instance;
-} _KeyDataProto_KeysEntry_DoNotUse_default_instance_;
-class KeyDataProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KeyDataProto> _instance;
-} _KeyDataProto_default_instance_;
-class EventsProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<EventsProto> _instance;
-} _EventsProto_default_instance_;
+constexpr KeyProto::KeyProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , last_rotation_(int64_t{0})
+  , rotation_period_(int64_t{0}){}
+struct KeyProtoDefaultTypeInternal {
+  constexpr KeyProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KeyProtoDefaultTypeInternal() {}
+  union {
+    KeyProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KeyProtoDefaultTypeInternal _KeyProto_default_instance_;
+constexpr KeyDataProto_KeysEntry_DoNotUse::KeyDataProto_KeysEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct KeyDataProto_KeysEntry_DoNotUseDefaultTypeInternal {
+  constexpr KeyDataProto_KeysEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KeyDataProto_KeysEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    KeyDataProto_KeysEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KeyDataProto_KeysEntry_DoNotUseDefaultTypeInternal _KeyDataProto_KeysEntry_DoNotUse_default_instance_;
+constexpr KeyDataProto::KeyDataProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keys_(){}
+struct KeyDataProtoDefaultTypeInternal {
+  constexpr KeyDataProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KeyDataProtoDefaultTypeInternal() {}
+  union {
+    KeyDataProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KeyDataProtoDefaultTypeInternal _KeyDataProto_default_instance_;
+constexpr EventsProto::EventsProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : non_uma_events_()
+  , uma_events_(){}
+struct EventsProtoDefaultTypeInternal {
+  constexpr EventsProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EventsProtoDefaultTypeInternal() {}
+  union {
+    EventsProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EventsProtoDefaultTypeInternal _EventsProto_default_instance_;
 }  // namespace structured
 }  // namespace metrics
-static void InitDefaultsscc_info_EventsProto_storage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::structured::_EventsProto_default_instance_;
-    new (ptr) ::metrics::structured::EventsProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::structured::EventsProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EventsProto_storage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_EventsProto_storage_2eproto}, {
-      &scc_info_StructuredEventProto_structured_5fdata_2eproto.base,}};
-
-static void InitDefaultsscc_info_KeyDataProto_storage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::structured::_KeyDataProto_default_instance_;
-    new (ptr) ::metrics::structured::KeyDataProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::structured::KeyDataProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_KeyDataProto_storage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_KeyDataProto_storage_2eproto}, {
-      &scc_info_KeyDataProto_KeysEntry_DoNotUse_storage_2eproto.base,}};
-
-static void InitDefaultsscc_info_KeyDataProto_KeysEntry_DoNotUse_storage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::structured::_KeyDataProto_KeysEntry_DoNotUse_default_instance_;
-    new (ptr) ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse();
-  }
-  ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_KeyDataProto_KeysEntry_DoNotUse_storage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_KeyDataProto_KeysEntry_DoNotUse_storage_2eproto}, {
-      &scc_info_KeyProto_storage_2eproto.base,}};
-
-static void InitDefaultsscc_info_KeyProto_storage_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::structured::_KeyProto_default_instance_;
-    new (ptr) ::metrics::structured::KeyProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::structured::KeyProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KeyProto_storage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KeyProto_storage_2eproto}, {}};
-
 namespace metrics {
 namespace structured {
 
 // ===================================================================
 
-void KeyProto::InitAsDefaultInstance() {
-}
 class KeyProto::_Internal {
  public:
   using HasBits = decltype(std::declval<KeyProto>()._has_bits_);
@@ -113,19 +86,26 @@ class KeyProto::_Internal {
   }
 };
 
-KeyProto::KeyProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+KeyProto::KeyProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.structured.KeyProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.structured.KeyProto)
 }
 KeyProto::KeyProto(const KeyProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_key()) {
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&last_rotation_, &from.last_rotation_,
     static_cast<size_t>(reinterpret_cast<char*>(&rotation_period_) -
@@ -133,41 +113,48 @@ KeyProto::KeyProto(const KeyProto& from)
   // @@protoc_insertion_point(copy_constructor:metrics.structured.KeyProto)
 }
 
-void KeyProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KeyProto_storage_2eproto.base);
-  key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&last_rotation_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rotation_period_) -
-      reinterpret_cast<char*>(&last_rotation_)) + sizeof(rotation_period_));
+inline void KeyProto::SharedCtor() {
+key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&last_rotation_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rotation_period_) -
+    reinterpret_cast<char*>(&last_rotation_)) + sizeof(rotation_period_));
 }
 
 KeyProto::~KeyProto() {
   // @@protoc_insertion_point(destructor:metrics.structured.KeyProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void KeyProto::SharedDtor() {
+inline void KeyProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void KeyProto::ArenaDtor(void* object) {
+  KeyProto* _this = reinterpret_cast< KeyProto* >(object);
+  (void)_this;
+}
+void KeyProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void KeyProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KeyProto& KeyProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KeyProto_storage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void KeyProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.structured.KeyProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    key_.ClearNonDefaultToEmptyNoArena();
+    key_.ClearNonDefaultToEmpty();
   }
   if (cached_has_bits & 0x00000006u) {
     ::memset(&last_rotation_, 0, static_cast<size_t>(
@@ -175,66 +162,71 @@ void KeyProto::Clear() {
         reinterpret_cast<char*>(&last_rotation_)) + sizeof(rotation_period_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* KeyProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string key = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 last_rotation = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_last_rotation(&has_bits);
-          last_rotation_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_rotation_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 rotation_period = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_rotation_period(&has_bits);
-          rotation_period_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          rotation_period_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KeyProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* KeyProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.structured.KeyProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -257,8 +249,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.structured.KeyProto)
   return target;
@@ -268,7 +260,7 @@ size_t KeyProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.structured.KeyProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -283,21 +275,17 @@ size_t KeyProto::ByteSizeLong() const {
 
     // optional int64 last_rotation = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_rotation());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_rotation());
     }
 
     // optional int64 rotation_period = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_rotation_period());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_rotation_period());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -313,15 +301,13 @@ void KeyProto::CheckTypeAndMergeFrom(
 void KeyProto::MergeFrom(const KeyProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.structured.KeyProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+      _internal_set_key(from._internal_key());
     }
     if (cached_has_bits & 0x00000002u) {
       last_rotation_ = from.last_rotation_;
@@ -331,6 +317,7 @@ void KeyProto::MergeFrom(const KeyProto& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void KeyProto::CopyFrom(const KeyProto& from) {
@@ -346,12 +333,21 @@ bool KeyProto::IsInitialized() const {
 
 void KeyProto::InternalSwap(KeyProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(last_rotation_, other->last_rotation_);
-  swap(rotation_period_, other->rotation_period_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_, lhs_arena,
+      &other->key_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(KeyProto, rotation_period_)
+      + sizeof(KeyProto::rotation_period_)
+      - PROTOBUF_FIELD_OFFSET(KeyProto, last_rotation_)>(
+          reinterpret_cast<char*>(&last_rotation_),
+          reinterpret_cast<char*>(&other->last_rotation_));
 }
 
 std::string KeyProto::GetTypeName() const {
@@ -370,69 +366,70 @@ void KeyDataProto_KeysEntry_DoNotUse::MergeFrom(const KeyDataProto_KeysEntry_DoN
 
 // ===================================================================
 
-void KeyDataProto::InitAsDefaultInstance() {
-}
 class KeyDataProto::_Internal {
  public:
-  using HasBits = decltype(std::declval<KeyDataProto>()._has_bits_);
 };
 
-KeyDataProto::KeyDataProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+KeyDataProto::KeyDataProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  keys_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.structured.KeyDataProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.structured.KeyDataProto)
 }
 KeyDataProto::KeyDataProto(const KeyDataProto& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   keys_.MergeFrom(from.keys_);
   // @@protoc_insertion_point(copy_constructor:metrics.structured.KeyDataProto)
 }
 
-void KeyDataProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KeyDataProto_storage_2eproto.base);
+inline void KeyDataProto::SharedCtor() {
 }
 
 KeyDataProto::~KeyDataProto() {
   // @@protoc_insertion_point(destructor:metrics.structured.KeyDataProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void KeyDataProto::SharedDtor() {
+inline void KeyDataProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void KeyDataProto::ArenaDtor(void* object) {
+  KeyDataProto* _this = reinterpret_cast< KeyDataProto* >(object);
+  (void)_this;
+}
+void KeyDataProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void KeyDataProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KeyDataProto& KeyDataProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KeyDataProto_storage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void KeyDataProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.structured.KeyDataProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   keys_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* KeyDataProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // map<fixed64, .metrics.structured.KeyProto> keys = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -440,48 +437,52 @@ const char* KeyDataProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KeyDataProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* KeyDataProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.structured.KeyDataProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // map<fixed64, .metrics.structured.KeyProto> keys = 1;
   if (!this->_internal_keys().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::metrics::structured::KeyProto >::const_pointer
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< uint64_t, ::metrics::structured::KeyProto >::const_pointer
         ConstPtr;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint64, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< uint64_t, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (stream->IsSerializationDeterministic() &&
         this->_internal_keys().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->_internal_keys().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::metrics::structured::KeyProto >::size_type size_type;
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< uint64_t, ::metrics::structured::KeyProto >::size_type size_type;
       size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::metrics::structured::KeyProto >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< uint64_t, ::metrics::structured::KeyProto >::const_iterator
           it = this->_internal_keys().begin();
           it != this->_internal_keys().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -491,7 +492,7 @@ failure:
         target = KeyDataProto_KeysEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
       }
     } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::metrics::structured::KeyProto >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< uint64_t, ::metrics::structured::KeyProto >::const_iterator
           it = this->_internal_keys().begin();
           it != this->_internal_keys().end(); ++it) {
         target = KeyDataProto_KeysEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
@@ -500,8 +501,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.structured.KeyDataProto)
   return target;
@@ -511,21 +512,21 @@ size_t KeyDataProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.structured.KeyDataProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // map<fixed64, .metrics.structured.KeyProto> keys = 1;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_keys_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::metrics::structured::KeyProto >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< uint64_t, ::metrics::structured::KeyProto >::const_iterator
       it = this->_internal_keys().begin();
       it != this->_internal_keys().end(); ++it) {
     total_size += KeyDataProto_KeysEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -541,11 +542,11 @@ void KeyDataProto::CheckTypeAndMergeFrom(
 void KeyDataProto::MergeFrom(const KeyDataProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.structured.KeyDataProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   keys_.MergeFrom(from.keys_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void KeyDataProto::CopyFrom(const KeyDataProto& from) {
@@ -561,9 +562,8 @@ bool KeyDataProto::IsInitialized() const {
 
 void KeyDataProto::InternalSwap(KeyDataProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  keys_.Swap(&other->keys_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  keys_.InternalSwap(&other->keys_);
 }
 
 std::string KeyDataProto::GetTypeName() const {
@@ -573,11 +573,8 @@ std::string KeyDataProto::GetTypeName() const {
 
 // ===================================================================
 
-void EventsProto::InitAsDefaultInstance() {
-}
 class EventsProto::_Internal {
  public:
-  using HasBits = decltype(std::declval<EventsProto>()._has_bits_);
 };
 
 void EventsProto::clear_non_uma_events() {
@@ -586,64 +583,69 @@ void EventsProto::clear_non_uma_events() {
 void EventsProto::clear_uma_events() {
   uma_events_.Clear();
 }
-EventsProto::EventsProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+EventsProto::EventsProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  non_uma_events_(arena),
+  uma_events_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.structured.EventsProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.structured.EventsProto)
 }
 EventsProto::EventsProto(const EventsProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       non_uma_events_(from.non_uma_events_),
       uma_events_(from.uma_events_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:metrics.structured.EventsProto)
 }
 
-void EventsProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EventsProto_storage_2eproto.base);
+inline void EventsProto::SharedCtor() {
 }
 
 EventsProto::~EventsProto() {
   // @@protoc_insertion_point(destructor:metrics.structured.EventsProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void EventsProto::SharedDtor() {
+inline void EventsProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void EventsProto::ArenaDtor(void* object) {
+  EventsProto* _this = reinterpret_cast< EventsProto* >(object);
+  (void)_this;
+}
+void EventsProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EventsProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EventsProto& EventsProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_EventsProto_storage_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void EventsProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.structured.EventsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   non_uma_events_.Clear();
   uma_events_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* EventsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .metrics.StructuredEventProto non_uma_events = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -651,11 +653,12 @@ const char* EventsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.StructuredEventProto uma_events = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -663,32 +666,36 @@ const char* EventsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* EventsProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* EventsProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.structured.EventsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .metrics.StructuredEventProto non_uma_events = 1;
@@ -708,8 +715,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.structured.EventsProto)
   return target;
@@ -719,7 +726,7 @@ size_t EventsProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.structured.EventsProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -738,7 +745,7 @@ size_t EventsProto::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -754,12 +761,12 @@ void EventsProto::CheckTypeAndMergeFrom(
 void EventsProto::MergeFrom(const EventsProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.structured.EventsProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   non_uma_events_.MergeFrom(from.non_uma_events_);
   uma_events_.MergeFrom(from.uma_events_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void EventsProto::CopyFrom(const EventsProto& from) {
@@ -775,8 +782,7 @@ bool EventsProto::IsInitialized() const {
 
 void EventsProto::InternalSwap(EventsProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   non_uma_events_.InternalSwap(&other->non_uma_events_);
   uma_events_.InternalSwap(&other->uma_events_);
 }
@@ -791,16 +797,16 @@ std::string EventsProto::GetTypeName() const {
 }  // namespace metrics
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::metrics::structured::KeyProto* Arena::CreateMaybeMessage< ::metrics::structured::KeyProto >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::structured::KeyProto >(arena);
+  return Arena::CreateMessageInternal< ::metrics::structured::KeyProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse* Arena::CreateMaybeMessage< ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::metrics::structured::KeyDataProto_KeysEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::structured::KeyDataProto* Arena::CreateMaybeMessage< ::metrics::structured::KeyDataProto >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::structured::KeyDataProto >(arena);
+  return Arena::CreateMessageInternal< ::metrics::structured::KeyDataProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::structured::EventsProto* Arena::CreateMaybeMessage< ::metrics::structured::EventsProto >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::structured::EventsProto >(arena);
+  return Arena::CreateMessageInternal< ::metrics::structured::EventsProto >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -52,27 +52,7 @@ using BufferModifierPtr = mojo::InlinedStructPtr<BufferModifier>;
 
 class VideoDecodeAccelerator;
 
-using VideoDecodeAcceleratorPtr = mojo::InterfacePtr<VideoDecodeAccelerator>;
-using VideoDecodeAcceleratorPtrInfo = mojo::InterfacePtrInfo<VideoDecodeAccelerator>;
-
-using VideoDecodeAcceleratorRequest = mojo::InterfaceRequest<VideoDecodeAccelerator>;
-using VideoDecodeAcceleratorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoDecodeAccelerator>;
-
-using VideoDecodeAcceleratorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoDecodeAccelerator>;
-
 class VideoDecodeClient;
-
-using VideoDecodeClientPtr = mojo::InterfacePtr<VideoDecodeClient>;
-using VideoDecodeClientPtrInfo = mojo::InterfacePtrInfo<VideoDecodeClient>;
-
-using VideoDecodeClientRequest = mojo::InterfaceRequest<VideoDecodeClient>;
-using VideoDecodeClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoDecodeClient>;
-
-using VideoDecodeClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoDecodeClient>;
 
 
 

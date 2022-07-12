@@ -13,7 +13,7 @@
 
 G_BEGIN_DECLS
 
-/* enumerations from "../libmbim-1.27.6/src/libmbim-glib/mbim-cid.h" */
+/* enumerations from "../libmbim-1.27.7/src/libmbim-glib/mbim-cid.h" */
 GType mbim_cid_basic_connect_get_type (void) G_GNUC_CONST;
 #define MBIM_TYPE_CID_BASIC_CONNECT (mbim_cid_basic_connect_get_type ())
 
@@ -695,7 +695,7 @@ const gchar *mbim_cid_ms_voice_extensions_get_string (MbimCidMsVoiceExtensions v
 gchar *mbim_cid_ms_voice_extensions_build_string_from_mask (MbimCidMsVoiceExtensions mask);
 #endif
 
-/* enumerations from "../libmbim-1.27.6/src/libmbim-glib/mbim-enums.h" */
+/* enumerations from "../libmbim-1.27.7/src/libmbim-glib/mbim-enums.h" */
 GType mbim_device_type_get_type (void) G_GNUC_CONST;
 #define MBIM_TYPE_DEVICE_TYPE (mbim_device_type_get_type ())
 
@@ -3791,7 +3791,7 @@ const gchar *mbim_intel_boot_mode_get_string (MbimIntelBootMode val);
 gchar *mbim_intel_boot_mode_build_string_from_mask (MbimIntelBootMode mask);
 #endif
 
-/* enumerations from "../libmbim-1.27.6/src/libmbim-glib/mbim-message.h" */
+/* enumerations from "../libmbim-1.27.7/src/libmbim-glib/mbim-message.h" */
 GType mbim_message_type_get_type (void) G_GNUC_CONST;
 #define MBIM_TYPE_MESSAGE_TYPE (mbim_message_type_get_type ())
 
@@ -3861,7 +3861,7 @@ const gchar *mbim_message_command_type_get_string (MbimMessageCommandType val);
 gchar *mbim_message_command_type_build_string_from_mask (MbimMessageCommandType mask);
 #endif
 
-/* enumerations from "../libmbim-1.27.6/src/libmbim-glib/mbim-tlv.h" */
+/* enumerations from "../libmbim-1.27.7/src/libmbim-glib/mbim-tlv.h" */
 GType mbim_tlv_type_get_type (void) G_GNUC_CONST;
 #define MBIM_TYPE_TLV_TYPE (mbim_tlv_type_get_type ())
 
@@ -3897,7 +3897,7 @@ const gchar *mbim_tlv_type_get_string (MbimTlvType val);
 gchar *mbim_tlv_type_build_string_from_mask (MbimTlvType mask);
 #endif
 
-/* enumerations from "../libmbim-1.27.6/src/libmbim-glib/mbim-uuid.h" */
+/* enumerations from "../libmbim-1.27.7/src/libmbim-glib/mbim-uuid.h" */
 GType mbim_service_get_type (void) G_GNUC_CONST;
 #define MBIM_TYPE_SERVICE (mbim_service_get_type ())
 

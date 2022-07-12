@@ -25,16 +25,6 @@ namespace rollback_network_config {
 namespace mojom {
 class RollbackNetworkConfig;
 
-using RollbackNetworkConfigPtr = mojo::InterfacePtr<RollbackNetworkConfig>;
-using RollbackNetworkConfigPtrInfo = mojo::InterfacePtrInfo<RollbackNetworkConfig>;
-
-using RollbackNetworkConfigRequest = mojo::InterfaceRequest<RollbackNetworkConfig>;
-using RollbackNetworkConfigAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<RollbackNetworkConfig>;
-
-using RollbackNetworkConfigAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<RollbackNetworkConfig>;
-
 
 
 

@@ -317,7 +317,7 @@ class  CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data {
 
   mojo::internal::StructHeader header_;
   int32_t state;
-  uint8_t padfinal_[4];
+  int32_t camera_id;
 
  private:
   friend class mojo::internal::MessageFragment<CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data>;
@@ -491,7 +491,7 @@ class CameraHalDispatcher_RegisterServerWithToken_ParamsDataView {
       ::mojo_base::mojom::UnguessableTokenDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAuthToken(UserType* output) {
+  [[nodiscard]] bool ReadAuthToken(UserType* output) {
     
     auto* pointer = data_->auth_token.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::UnguessableTokenDataView>(
@@ -553,7 +553,7 @@ class CameraHalDispatcher_RegisterClientWithToken_ParamsDataView {
     return result;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::CameraClientType>(
         data_value, output);
@@ -566,7 +566,7 @@ class CameraHalDispatcher_RegisterClientWithToken_ParamsDataView {
       ::mojo_base::mojom::UnguessableTokenDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAuthToken(UserType* output) {
+  [[nodiscard]] bool ReadAuthToken(UserType* output) {
     
     auto* pointer = data_->auth_token.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::UnguessableTokenDataView>(
@@ -621,7 +621,7 @@ class CameraHalDispatcher_RegisterSensorClientWithToken_ParamsDataView {
       ::mojo_base::mojom::UnguessableTokenDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAuthToken(UserType* output) {
+  [[nodiscard]] bool ReadAuthToken(UserType* output) {
     
     auto* pointer = data_->auth_token.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::UnguessableTokenDataView>(
@@ -673,7 +673,7 @@ class CameraHalServer_CreateChannel_ParamsDataView {
     return result;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->header_.version >= 4
                       ? data_->type : 0;
     return mojo::internal::Deserialize<::cros::mojom::CameraClientType>(
@@ -722,7 +722,7 @@ class CameraHalServer_SetAutoFramingState_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::cros::mojom::CameraAutoFramingState>(
         data_value, output);
@@ -764,7 +764,7 @@ class CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
         data_value, output);
@@ -790,7 +790,7 @@ class CameraHalServer_SetCameraSWPrivacySwitchState_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
         data_value, output);
@@ -822,7 +822,7 @@ class CameraHalServerCallbacks_CameraDeviceActivityChange_ParamsDataView {
     return data_->opened;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::CameraClientType>(
         data_value, output);
@@ -848,7 +848,7 @@ class CameraHalServerCallbacks_CameraPrivacySwitchStateChange_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
         data_value, output);
@@ -856,6 +856,11 @@ class CameraHalServerCallbacks_CameraPrivacySwitchStateChange_ParamsDataView {
   CameraPrivacySwitchState state() const {
     return ::mojo::internal::ToKnownEnumValueHelper(
           static_cast<::cros::mojom::CameraPrivacySwitchState>(data_->state));
+  }
+  int32_t camera_id() const {
+    if (data_->header_.version < 9)
+      return int32_t{};
+    return data_->camera_id;
   }
  private:
   internal::CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data* data_ = nullptr;
@@ -874,7 +879,7 @@ class CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::cros::mojom::CameraPrivacySwitchState>(
         data_value, output);

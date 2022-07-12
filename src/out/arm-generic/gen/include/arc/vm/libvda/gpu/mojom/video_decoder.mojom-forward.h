@@ -42,27 +42,7 @@ using DecoderBufferPtr = mojo::StructPtr<DecoderBuffer>;
 
 class VideoDecoder;
 
-using VideoDecoderPtr = mojo::InterfacePtr<VideoDecoder>;
-using VideoDecoderPtrInfo = mojo::InterfacePtrInfo<VideoDecoder>;
-
-using VideoDecoderRequest = mojo::InterfaceRequest<VideoDecoder>;
-using VideoDecoderAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoDecoder>;
-
-using VideoDecoderAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoDecoder>;
-
 class VideoDecoderClient;
-
-using VideoDecoderClientPtr = mojo::InterfacePtr<VideoDecoderClient>;
-using VideoDecoderClientPtrInfo = mojo::InterfacePtrInfo<VideoDecoderClient>;
-
-using VideoDecoderClientRequest = mojo::InterfaceRequest<VideoDecoderClient>;
-using VideoDecoderClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoDecoderClient>;
-
-using VideoDecoderClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoDecoderClient>;
 
 
 

@@ -253,7 +253,7 @@ class SodaConfigDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadApiKey(UserType* output) {
+  [[nodiscard]] bool ReadApiKey(UserType* output) {
     
     auto* pointer = data_->api_key.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -263,7 +263,7 @@ class SodaConfigDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLibraryDlcPath(UserType* output) {
+  [[nodiscard]] bool ReadLibraryDlcPath(UserType* output) {
     
     auto* pointer = data_->library_dlc_path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -273,14 +273,14 @@ class SodaConfigDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLanguageDlcPath(UserType* output) {
+  [[nodiscard]] bool ReadLanguageDlcPath(UserType* output) {
     
     auto* pointer = data_->language_dlc_path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEnableFormatting(UserType* output) const {
+  [[nodiscard]] bool ReadEnableFormatting(UserType* output) const {
     auto data_value = data_->header_.version >= 2
                       ? data_->enable_formatting : 0;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::OptionalBool>(
@@ -293,7 +293,7 @@ class SodaConfigDataView {
           static_cast<::chromeos::machine_learning::mojom::OptionalBool>(data_->enable_formatting));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRecognitionMode(UserType* output) const {
+  [[nodiscard]] bool ReadRecognitionMode(UserType* output) const {
     auto data_value = data_->header_.version >= 3
                       ? data_->recognition_mode : 0;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::SodaRecognitionMode>(
@@ -326,7 +326,7 @@ class TimingInfoDataView {
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioStartEpoch(UserType* output) {
+  [[nodiscard]] bool ReadAudioStartEpoch(UserType* output) {
     
     auto* pointer = data_->audio_start_epoch.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDataView>(
@@ -336,7 +336,7 @@ class TimingInfoDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioStartTime(UserType* output) {
+  [[nodiscard]] bool ReadAudioStartTime(UserType* output) {
     
     auto* pointer = data_->audio_start_time.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -346,7 +346,7 @@ class TimingInfoDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadElapsedWallTime(UserType* output) {
+  [[nodiscard]] bool ReadElapsedWallTime(UserType* output) {
     
     auto* pointer = data_->elapsed_wall_time.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -356,7 +356,7 @@ class TimingInfoDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEventEndTime(UserType* output) {
+  [[nodiscard]] bool ReadEventEndTime(UserType* output) {
     
     auto* pointer = data_->event_end_time.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -366,7 +366,7 @@ class TimingInfoDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLatency(UserType* output) {
+  [[nodiscard]] bool ReadLatency(UserType* output) {
     
     auto* pointer = data_->latency.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -379,7 +379,7 @@ class TimingInfoDataView {
       mojo::ArrayDataView<::mojo_base::mojom::TimeDeltaDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWordAlignments(UserType* output) {
+  [[nodiscard]] bool ReadWordAlignments(UserType* output) {
     
     auto* pointer = data_->word_alignments.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::mojo_base::mojom::TimeDeltaDataView>>(
@@ -403,7 +403,7 @@ class EndpointerEventDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEndpointerType(UserType* output) const {
+  [[nodiscard]] bool ReadEndpointerType(UserType* output) const {
     auto data_value = data_->endpointer_type;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::EndpointerType>(
         data_value, output);
@@ -416,7 +416,7 @@ class EndpointerEventDataView {
       TimingInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimingEvent(UserType* output) {
+  [[nodiscard]] bool ReadTimingEvent(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -453,7 +453,7 @@ class PartialResultDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPartialText(UserType* output) {
+  [[nodiscard]] bool ReadPartialText(UserType* output) {
     
     auto* pointer = data_->partial_text.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -463,7 +463,7 @@ class PartialResultDataView {
       TimingInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimingEvent(UserType* output) {
+  [[nodiscard]] bool ReadTimingEvent(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -500,7 +500,7 @@ class HypothesisPartInResultDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -510,7 +510,7 @@ class HypothesisPartInResultDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAlignment(UserType* output) {
+  [[nodiscard]] bool ReadAlignment(UserType* output) {
     
     auto* pointer = data_->alignment.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -537,14 +537,14 @@ class FinalResultDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFinalHypotheses(UserType* output) {
+  [[nodiscard]] bool ReadFinalHypotheses(UserType* output) {
     
     auto* pointer = data_->final_hypotheses.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEndpointReason(UserType* output) const {
+  [[nodiscard]] bool ReadEndpointReason(UserType* output) const {
     auto data_value = data_->endpoint_reason;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::EndpointReason>(
         data_value, output);
@@ -557,7 +557,7 @@ class FinalResultDataView {
       TimingInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimingEvent(UserType* output) {
+  [[nodiscard]] bool ReadTimingEvent(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -577,7 +577,7 @@ static_assert(
       mojo::ArrayDataView<HypothesisPartInResultDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHypothesisPart(UserType* output) {
+  [[nodiscard]] bool ReadHypothesisPart(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -646,7 +646,7 @@ class SpeechRecognizerEventDataView {
       AudioLevelEventDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioEvent(UserType* output) const {
+  [[nodiscard]] bool ReadAudioEvent(UserType* output) const {
     
     CHECK(is_audio_event());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::AudioLevelEventDataView>(
@@ -657,7 +657,7 @@ class SpeechRecognizerEventDataView {
       PartialResultDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPartialResult(UserType* output) const {
+  [[nodiscard]] bool ReadPartialResult(UserType* output) const {
     
     CHECK(is_partial_result());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::PartialResultDataView>(
@@ -668,7 +668,7 @@ class SpeechRecognizerEventDataView {
       EndpointerEventDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEndpointerEvent(UserType* output) const {
+  [[nodiscard]] bool ReadEndpointerEvent(UserType* output) const {
     
     CHECK(is_endpointer_event());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::EndpointerEventDataView>(
@@ -679,7 +679,7 @@ class SpeechRecognizerEventDataView {
       FinalResultDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFinalResult(UserType* output) const {
+  [[nodiscard]] bool ReadFinalResult(UserType* output) const {
     
     CHECK(is_final_result());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::FinalResultDataView>(

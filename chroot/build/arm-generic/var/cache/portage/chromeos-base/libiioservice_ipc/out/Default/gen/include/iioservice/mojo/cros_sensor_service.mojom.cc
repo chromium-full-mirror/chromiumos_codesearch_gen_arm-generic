@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -47,6 +46,43 @@
 namespace cros {
 namespace mojom {
 const char SensorHalServer::Name_[] = "cros.mojom.SensorHalServer";
+
+uint32_t SensorHalServer::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSensorHalServer_CreateChannel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::SensorHalServer::CreateChannel");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SensorHalServer::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSensorHalServer_CreateChannel_Name:
+            return "Receive cros::mojom::SensorHalServer::CreateChannel";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSensorHalServer_CreateChannel_Name:
+            return "Receive reply cros::mojom::SensorHalServer::CreateChannel";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 SensorHalServerProxy::SensorHalServerProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -101,15 +137,6 @@ bool SensorHalServerStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kSensorHalServer_CreateChannel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::SensorHalServer::CreateChannel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::SensorHalServer::CreateChannel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SensorHalServer_CreateChannel_Params_Data* params =
@@ -170,6 +197,43 @@ bool SensorHalServerRequestValidator::Accept(mojo::Message* message) {
 
 const char SensorHalClient::Name_[] = "cros.mojom.SensorHalClient";
 
+uint32_t SensorHalClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kSensorHalClient_SetUpChannel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::SensorHalClient::SetUpChannel");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* SensorHalClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kSensorHalClient_SetUpChannel_Name:
+            return "Receive cros::mojom::SensorHalClient::SetUpChannel";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kSensorHalClient_SetUpChannel_Name:
+            return "Receive reply cros::mojom::SensorHalClient::SetUpChannel";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 SensorHalClientProxy::SensorHalClientProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -223,15 +287,6 @@ bool SensorHalClientStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kSensorHalClient_SetUpChannel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::SensorHalClient::SetUpChannel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::SensorHalClient::SetUpChannel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::SensorHalClient_SetUpChannel_Params_Data* params =

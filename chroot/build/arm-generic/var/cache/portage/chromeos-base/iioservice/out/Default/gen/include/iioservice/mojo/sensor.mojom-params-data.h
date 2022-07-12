@@ -618,7 +618,7 @@ class SensorService_GetDeviceIds_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::DeviceType>(
         data_value, output);
@@ -647,7 +647,7 @@ class SensorService_GetDeviceIds_ResponseParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioDeviceIds(UserType* output) {
+  [[nodiscard]] bool ReadIioDeviceIds(UserType* output) {
     
     auto* pointer = data_->iio_device_ids.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -690,7 +690,7 @@ class SensorService_GetAllDeviceIds_ResponseParamsDataView {
       mojo::MapDataView<int32_t, mojo::ArrayDataView<DeviceType>>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioDeviceIdsTypes(UserType* output) {
+  [[nodiscard]] bool ReadIioDeviceIdsTypes(UserType* output) {
     
     auto* pointer = data_->iio_device_ids_types.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<int32_t, mojo::ArrayDataView<::cros::mojom::DeviceType>>>(
@@ -791,7 +791,7 @@ class SensorDevice_GetAttributes_ParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAttrNames(UserType* output) {
+  [[nodiscard]] bool ReadAttrNames(UserType* output) {
     
     auto* pointer = data_->attr_names.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -818,7 +818,7 @@ class SensorDevice_GetAttributes_ResponseParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValues(UserType* output) {
+  [[nodiscard]] bool ReadValues(UserType* output) {
     
     auto* pointer = data_->values.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -941,7 +941,7 @@ class SensorDevice_GetAllChannelIds_ResponseParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioChnIds(UserType* output) {
+  [[nodiscard]] bool ReadIioChnIds(UserType* output) {
     
     auto* pointer = data_->iio_chn_ids.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -968,7 +968,7 @@ class SensorDevice_SetChannelsEnabled_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioChnIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioChnIndices(UserType* output) {
     
     auto* pointer = data_->iio_chn_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -998,7 +998,7 @@ class SensorDevice_SetChannelsEnabled_ResponseParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFailedIndices(UserType* output) {
+  [[nodiscard]] bool ReadFailedIndices(UserType* output) {
     
     auto* pointer = data_->failed_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1025,7 +1025,7 @@ class SensorDevice_GetChannelsEnabled_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioChnIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioChnIndices(UserType* output) {
     
     auto* pointer = data_->iio_chn_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1052,7 +1052,7 @@ class SensorDevice_GetChannelsEnabled_ResponseParamsDataView {
       mojo::ArrayDataView<bool>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEnabled(UserType* output) {
+  [[nodiscard]] bool ReadEnabled(UserType* output) {
     
     auto* pointer = data_->enabled.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<bool>>(
@@ -1079,7 +1079,7 @@ class SensorDevice_GetChannelsAttributes_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioChnIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioChnIndices(UserType* output) {
     
     auto* pointer = data_->iio_chn_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1089,7 +1089,7 @@ class SensorDevice_GetChannelsAttributes_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAttrName(UserType* output) {
+  [[nodiscard]] bool ReadAttrName(UserType* output) {
     
     auto* pointer = data_->attr_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1116,7 +1116,7 @@ class SensorDevice_GetChannelsAttributes_ResponseParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValues(UserType* output) {
+  [[nodiscard]] bool ReadValues(UserType* output) {
     
     auto* pointer = data_->values.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -1159,7 +1159,7 @@ class SensorDevice_GetAllEvents_ResponseParamsDataView {
       mojo::ArrayDataView<IioEventDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioEvents(UserType* output) {
+  [[nodiscard]] bool ReadIioEvents(UserType* output) {
     
     auto* pointer = data_->iio_events.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::IioEventDataView>>(
@@ -1186,7 +1186,7 @@ class SensorDevice_SetEventsEnabled_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioEventIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioEventIndices(UserType* output) {
     
     auto* pointer = data_->iio_event_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1216,7 +1216,7 @@ class SensorDevice_SetEventsEnabled_ResponseParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFailedIndices(UserType* output) {
+  [[nodiscard]] bool ReadFailedIndices(UserType* output) {
     
     auto* pointer = data_->failed_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1243,7 +1243,7 @@ class SensorDevice_GetEventsEnabled_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioEventIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioEventIndices(UserType* output) {
     
     auto* pointer = data_->iio_event_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1270,7 +1270,7 @@ class SensorDevice_GetEventsEnabled_ResponseParamsDataView {
       mojo::ArrayDataView<bool>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEnabled(UserType* output) {
+  [[nodiscard]] bool ReadEnabled(UserType* output) {
     
     auto* pointer = data_->enabled.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<bool>>(
@@ -1297,7 +1297,7 @@ class SensorDevice_GetEventsAttributes_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioEventIndices(UserType* output) {
+  [[nodiscard]] bool ReadIioEventIndices(UserType* output) {
     
     auto* pointer = data_->iio_event_indices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -1307,7 +1307,7 @@ class SensorDevice_GetEventsAttributes_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAttrName(UserType* output) {
+  [[nodiscard]] bool ReadAttrName(UserType* output) {
     
     auto* pointer = data_->attr_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1334,7 +1334,7 @@ class SensorDevice_GetEventsAttributes_ResponseParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValues(UserType* output) {
+  [[nodiscard]] bool ReadValues(UserType* output) {
     
     auto* pointer = data_->values.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -1403,7 +1403,7 @@ class SensorDeviceSamplesObserver_OnSampleUpdated_ParamsDataView {
       mojo::MapDataView<int32_t, int64_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSample(UserType* output) {
+  [[nodiscard]] bool ReadSample(UserType* output) {
     
     auto* pointer = data_->sample.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<int32_t, int64_t>>(
@@ -1427,7 +1427,7 @@ class SensorDeviceSamplesObserver_OnErrorOccurred_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::ObserverErrorType>(
         data_value, output);
@@ -1459,7 +1459,7 @@ class SensorServiceNewDevicesObserver_OnNewDeviceAdded_ParamsDataView {
       mojo::ArrayDataView<DeviceType>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTypes(UserType* output) {
+  [[nodiscard]] bool ReadTypes(UserType* output) {
     
     auto* pointer = data_->types.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::DeviceType>>(
@@ -1486,7 +1486,7 @@ class SensorDeviceEventsObserver_OnEventUpdated_ParamsDataView {
       IioEventDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIioEvent(UserType* output) {
+  [[nodiscard]] bool ReadIioEvent(UserType* output) {
     
     auto* pointer = data_->iio_event.Get();
     return mojo::internal::Deserialize<::cros::mojom::IioEventDataView>(
@@ -1510,7 +1510,7 @@ class SensorDeviceEventsObserver_OnErrorOccurred_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::ObserverErrorType>(
         data_value, output);

@@ -103,27 +103,7 @@ using Camera3NotifyMsgMessagePtr = mojo::StructPtr<Camera3NotifyMsgMessage>;
 
 class Camera3CallbackOps;
 
-using Camera3CallbackOpsPtr = mojo::InterfacePtr<Camera3CallbackOps>;
-using Camera3CallbackOpsPtrInfo = mojo::InterfacePtrInfo<Camera3CallbackOps>;
-
-using Camera3CallbackOpsRequest = mojo::InterfaceRequest<Camera3CallbackOps>;
-using Camera3CallbackOpsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Camera3CallbackOps>;
-
-using Camera3CallbackOpsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Camera3CallbackOps>;
-
 class Camera3DeviceOps;
-
-using Camera3DeviceOpsPtr = mojo::InterfacePtr<Camera3DeviceOps>;
-using Camera3DeviceOpsPtrInfo = mojo::InterfacePtrInfo<Camera3DeviceOps>;
-
-using Camera3DeviceOpsRequest = mojo::InterfaceRequest<Camera3DeviceOps>;
-using Camera3DeviceOpsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Camera3DeviceOps>;
-
-using Camera3DeviceOpsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Camera3DeviceOps>;
 
 
 

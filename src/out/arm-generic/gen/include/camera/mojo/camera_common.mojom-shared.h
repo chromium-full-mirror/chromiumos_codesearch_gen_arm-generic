@@ -190,7 +190,7 @@ class CameraInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFacing(UserType* output) const {
+  [[nodiscard]] bool ReadFacing(UserType* output) const {
     auto data_value = data_->facing;
     return mojo::internal::Deserialize<::cros::mojom::CameraFacing>(
         data_value, output);
@@ -209,7 +209,7 @@ class CameraInfoDataView {
       ::cros::mojom::CameraMetadataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStaticCameraCharacteristics(UserType* output) {
+  [[nodiscard]] bool ReadStaticCameraCharacteristics(UserType* output) {
     
     auto* pointer = data_->static_camera_characteristics.Get();
     return mojo::internal::Deserialize<::cros::mojom::CameraMetadataDataView>(
@@ -219,7 +219,7 @@ class CameraInfoDataView {
       CameraResourceCostDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResourceCost(UserType* output) {
+  [[nodiscard]] bool ReadResourceCost(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -240,7 +240,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConflictingDevices(UserType* output) {
+  [[nodiscard]] bool ReadConflictingDevices(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

@@ -21,7 +21,7 @@ class TracedValue;
 class EventContext;
 
 template <typename T>
-void WriteIntoTrace(TracedValue context, T&& value);
+void WriteIntoTracedValue(TracedValue context, T&& value);
 
 template <typename T, class = void>
 struct TraceFormatTraits;

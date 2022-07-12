@@ -62,16 +62,6 @@ using TextSuggestionCandidatePtr = mojo::StructPtr<TextSuggestionCandidate>;
 
 class TextSuggester;
 
-using TextSuggesterPtr = mojo::InterfacePtr<TextSuggester>;
-using TextSuggesterPtrInfo = mojo::InterfacePtrInfo<TextSuggester>;
-
-using TextSuggesterRequest = mojo::InterfaceRequest<TextSuggester>;
-using TextSuggesterAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<TextSuggester>;
-
-using TextSuggesterAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<TextSuggester>;
-
 
 
 

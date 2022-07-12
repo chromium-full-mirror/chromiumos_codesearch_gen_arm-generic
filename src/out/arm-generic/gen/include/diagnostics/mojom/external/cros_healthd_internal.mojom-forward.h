@@ -39,16 +39,6 @@ using InputDevicePtr = mojo::StructPtr<InputDevice>;
 
 class ChromiumDataCollector;
 
-using ChromiumDataCollectorPtr = mojo::InterfacePtr<ChromiumDataCollector>;
-using ChromiumDataCollectorPtrInfo = mojo::InterfacePtrInfo<ChromiumDataCollector>;
-
-using ChromiumDataCollectorRequest = mojo::InterfaceRequest<ChromiumDataCollector>;
-using ChromiumDataCollectorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<ChromiumDataCollector>;
-
-using ChromiumDataCollectorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<ChromiumDataCollector>;
-
 
 
 

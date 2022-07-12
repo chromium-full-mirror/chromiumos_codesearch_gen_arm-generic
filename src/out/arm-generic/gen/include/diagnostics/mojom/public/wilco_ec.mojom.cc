@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -146,6 +145,43 @@ bool GetEcTelemetryResponse::Validate(
 }
 const char WilcoEcObserver::Name_[] = "chromeos.cros_healthd.mojom.WilcoEcObserver";
 
+uint32_t WilcoEcObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kWilcoEcObserver_OnEcEvent_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* WilcoEcObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kWilcoEcObserver_OnEcEvent_Name:
+            return "Receive chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kWilcoEcObserver_OnEcEvent_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 WilcoEcObserverProxy::WilcoEcObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -204,15 +240,6 @@ bool WilcoEcObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kWilcoEcObserver_OnEcEvent_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoEcObserver_OnEcEvent_Params_Data* params =

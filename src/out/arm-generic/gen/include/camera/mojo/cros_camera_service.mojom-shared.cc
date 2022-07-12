@@ -645,8 +645,12 @@ bool CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data::Valida
     mojo::internal::ValidationContext* validation_context) {
   if (!data)
     return true;
-  if (!ValidateUnversionedStructHeaderAndSizeAndClaimMemory(
-          data, 16, validation_context)) {
+  static constexpr mojo::internal::StructVersionSize kVersionSizes[] = {
+    { 0, 16 },
+    { 9, 16 },
+  };
+  if (!ValidateStructHeaderAndVersionSizeAndClaimMemory(
+          data, kVersionSizes, validation_context)) {
     return false;
   }
 
@@ -664,7 +668,7 @@ bool CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data::Valida
 }
 
 CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data::CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data()
-    : header_({sizeof(*this), 0}) {}
+    : header_({sizeof(*this), 9}) {}
 
 
 // static

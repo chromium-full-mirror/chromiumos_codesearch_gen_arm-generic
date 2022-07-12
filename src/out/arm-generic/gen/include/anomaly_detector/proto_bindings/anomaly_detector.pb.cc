@@ -11,147 +11,145 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace anomaly_detector {
-class GuestFileCorruptionSignalDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GuestFileCorruptionSignal> _instance;
-} _GuestFileCorruptionSignal_default_instance_;
-class GuestOomEventSignalDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GuestOomEventSignal> _instance;
-} _GuestOomEventSignal_default_instance_;
+constexpr GuestFileCorruptionSignal::GuestFileCorruptionSignal(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vsock_cid_(0){}
+struct GuestFileCorruptionSignalDefaultTypeInternal {
+  constexpr GuestFileCorruptionSignalDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GuestFileCorruptionSignalDefaultTypeInternal() {}
+  union {
+    GuestFileCorruptionSignal _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GuestFileCorruptionSignalDefaultTypeInternal _GuestFileCorruptionSignal_default_instance_;
+constexpr GuestOomEventSignal::GuestOomEventSignal(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vsock_cid_(0){}
+struct GuestOomEventSignalDefaultTypeInternal {
+  constexpr GuestOomEventSignalDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GuestOomEventSignalDefaultTypeInternal() {}
+  union {
+    GuestOomEventSignal _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GuestOomEventSignalDefaultTypeInternal _GuestOomEventSignal_default_instance_;
 }  // namespace anomaly_detector
-static void InitDefaultsscc_info_GuestFileCorruptionSignal_anomaly_5fdetector_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::anomaly_detector::_GuestFileCorruptionSignal_default_instance_;
-    new (ptr) ::anomaly_detector::GuestFileCorruptionSignal();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::anomaly_detector::GuestFileCorruptionSignal::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GuestFileCorruptionSignal_anomaly_5fdetector_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GuestFileCorruptionSignal_anomaly_5fdetector_2eproto}, {}};
-
-static void InitDefaultsscc_info_GuestOomEventSignal_anomaly_5fdetector_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::anomaly_detector::_GuestOomEventSignal_default_instance_;
-    new (ptr) ::anomaly_detector::GuestOomEventSignal();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::anomaly_detector::GuestOomEventSignal::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GuestOomEventSignal_anomaly_5fdetector_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GuestOomEventSignal_anomaly_5fdetector_2eproto}, {}};
-
 namespace anomaly_detector {
 
 // ===================================================================
 
-void GuestFileCorruptionSignal::InitAsDefaultInstance() {
-}
 class GuestFileCorruptionSignal::_Internal {
  public:
 };
 
-GuestFileCorruptionSignal::GuestFileCorruptionSignal()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GuestFileCorruptionSignal::GuestFileCorruptionSignal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:anomaly_detector.GuestFileCorruptionSignal)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:anomaly_detector.GuestFileCorruptionSignal)
 }
 GuestFileCorruptionSignal::GuestFileCorruptionSignal(const GuestFileCorruptionSignal& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   vsock_cid_ = from.vsock_cid_;
   // @@protoc_insertion_point(copy_constructor:anomaly_detector.GuestFileCorruptionSignal)
 }
 
-void GuestFileCorruptionSignal::SharedCtor() {
-  vsock_cid_ = 0;
+inline void GuestFileCorruptionSignal::SharedCtor() {
+vsock_cid_ = 0;
 }
 
 GuestFileCorruptionSignal::~GuestFileCorruptionSignal() {
   // @@protoc_insertion_point(destructor:anomaly_detector.GuestFileCorruptionSignal)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GuestFileCorruptionSignal::SharedDtor() {
+inline void GuestFileCorruptionSignal::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void GuestFileCorruptionSignal::ArenaDtor(void* object) {
+  GuestFileCorruptionSignal* _this = reinterpret_cast< GuestFileCorruptionSignal* >(object);
+  (void)_this;
+}
+void GuestFileCorruptionSignal::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuestFileCorruptionSignal::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GuestFileCorruptionSignal& GuestFileCorruptionSignal::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GuestFileCorruptionSignal_anomaly_5fdetector_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GuestFileCorruptionSignal::Clear() {
 // @@protoc_insertion_point(message_clear_start:anomaly_detector.GuestFileCorruptionSignal)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   vsock_cid_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GuestFileCorruptionSignal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 vsock_cid = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GuestFileCorruptionSignal::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GuestFileCorruptionSignal::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:anomaly_detector.GuestFileCorruptionSignal)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 vsock_cid = 1;
-  if (this->vsock_cid() != 0) {
+  if (this->_internal_vsock_cid() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_vsock_cid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:anomaly_detector.GuestFileCorruptionSignal)
   return target;
@@ -161,19 +159,17 @@ size_t GuestFileCorruptionSignal::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:anomaly_detector.GuestFileCorruptionSignal)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 vsock_cid = 1;
-  if (this->vsock_cid() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_vsock_cid());
+  if (this->_internal_vsock_cid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vsock_cid());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -189,13 +185,13 @@ void GuestFileCorruptionSignal::CheckTypeAndMergeFrom(
 void GuestFileCorruptionSignal::MergeFrom(const GuestFileCorruptionSignal& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:anomaly_detector.GuestFileCorruptionSignal)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vsock_cid() != 0) {
+  if (from._internal_vsock_cid() != 0) {
     _internal_set_vsock_cid(from._internal_vsock_cid());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GuestFileCorruptionSignal::CopyFrom(const GuestFileCorruptionSignal& from) {
@@ -211,7 +207,7 @@ bool GuestFileCorruptionSignal::IsInitialized() const {
 
 void GuestFileCorruptionSignal::InternalSwap(GuestFileCorruptionSignal* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(vsock_cid_, other->vsock_cid_);
 }
 
@@ -222,105 +218,113 @@ std::string GuestFileCorruptionSignal::GetTypeName() const {
 
 // ===================================================================
 
-void GuestOomEventSignal::InitAsDefaultInstance() {
-}
 class GuestOomEventSignal::_Internal {
  public:
 };
 
-GuestOomEventSignal::GuestOomEventSignal()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GuestOomEventSignal::GuestOomEventSignal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:anomaly_detector.GuestOomEventSignal)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:anomaly_detector.GuestOomEventSignal)
 }
 GuestOomEventSignal::GuestOomEventSignal(const GuestOomEventSignal& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   vsock_cid_ = from.vsock_cid_;
   // @@protoc_insertion_point(copy_constructor:anomaly_detector.GuestOomEventSignal)
 }
 
-void GuestOomEventSignal::SharedCtor() {
-  vsock_cid_ = 0;
+inline void GuestOomEventSignal::SharedCtor() {
+vsock_cid_ = 0;
 }
 
 GuestOomEventSignal::~GuestOomEventSignal() {
   // @@protoc_insertion_point(destructor:anomaly_detector.GuestOomEventSignal)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GuestOomEventSignal::SharedDtor() {
+inline void GuestOomEventSignal::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void GuestOomEventSignal::ArenaDtor(void* object) {
+  GuestOomEventSignal* _this = reinterpret_cast< GuestOomEventSignal* >(object);
+  (void)_this;
+}
+void GuestOomEventSignal::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuestOomEventSignal::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GuestOomEventSignal& GuestOomEventSignal::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GuestOomEventSignal_anomaly_5fdetector_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GuestOomEventSignal::Clear() {
 // @@protoc_insertion_point(message_clear_start:anomaly_detector.GuestOomEventSignal)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   vsock_cid_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GuestOomEventSignal::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 vsock_cid = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GuestOomEventSignal::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GuestOomEventSignal::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:anomaly_detector.GuestOomEventSignal)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 vsock_cid = 1;
-  if (this->vsock_cid() != 0) {
+  if (this->_internal_vsock_cid() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_vsock_cid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:anomaly_detector.GuestOomEventSignal)
   return target;
@@ -330,19 +334,17 @@ size_t GuestOomEventSignal::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:anomaly_detector.GuestOomEventSignal)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 vsock_cid = 1;
-  if (this->vsock_cid() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_vsock_cid());
+  if (this->_internal_vsock_cid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vsock_cid());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -358,13 +360,13 @@ void GuestOomEventSignal::CheckTypeAndMergeFrom(
 void GuestOomEventSignal::MergeFrom(const GuestOomEventSignal& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:anomaly_detector.GuestOomEventSignal)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vsock_cid() != 0) {
+  if (from._internal_vsock_cid() != 0) {
     _internal_set_vsock_cid(from._internal_vsock_cid());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GuestOomEventSignal::CopyFrom(const GuestOomEventSignal& from) {
@@ -380,7 +382,7 @@ bool GuestOomEventSignal::IsInitialized() const {
 
 void GuestOomEventSignal::InternalSwap(GuestOomEventSignal* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(vsock_cid_, other->vsock_cid_);
 }
 
@@ -393,10 +395,10 @@ std::string GuestOomEventSignal::GetTypeName() const {
 }  // namespace anomaly_detector
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::anomaly_detector::GuestFileCorruptionSignal* Arena::CreateMaybeMessage< ::anomaly_detector::GuestFileCorruptionSignal >(Arena* arena) {
-  return Arena::CreateInternal< ::anomaly_detector::GuestFileCorruptionSignal >(arena);
+  return Arena::CreateMessageInternal< ::anomaly_detector::GuestFileCorruptionSignal >(arena);
 }
 template<> PROTOBUF_NOINLINE ::anomaly_detector::GuestOomEventSignal* Arena::CreateMaybeMessage< ::anomaly_detector::GuestOomEventSignal >(Arena* arena) {
-  return Arena::CreateInternal< ::anomaly_detector::GuestOomEventSignal >(arena);
+  return Arena::CreateMessageInternal< ::anomaly_detector::GuestOomEventSignal >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

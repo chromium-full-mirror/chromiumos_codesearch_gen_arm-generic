@@ -11,70 +11,52 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_legacy_5flocal_5fdata_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace tpm_manager {
-class LegacyTpmStatusDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LegacyTpmStatus> _instance;
-} _LegacyTpmStatus_default_instance_;
-class LegacyDelegationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LegacyDelegation> _instance;
-} _LegacyDelegation_default_instance_;
-class LegacyAttestationDatabaseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LegacyAttestationDatabase> _instance;
-} _LegacyAttestationDatabase_default_instance_;
+constexpr LegacyTpmStatus::LegacyTpmStatus(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : owner_password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct LegacyTpmStatusDefaultTypeInternal {
+  constexpr LegacyTpmStatusDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LegacyTpmStatusDefaultTypeInternal() {}
+  union {
+    LegacyTpmStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LegacyTpmStatusDefaultTypeInternal _LegacyTpmStatus_default_instance_;
+constexpr LegacyDelegation::LegacyDelegation(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : blob_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , secret_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , has_reset_lock_permissions_(false){}
+struct LegacyDelegationDefaultTypeInternal {
+  constexpr LegacyDelegationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LegacyDelegationDefaultTypeInternal() {}
+  union {
+    LegacyDelegation _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LegacyDelegationDefaultTypeInternal _LegacyDelegation_default_instance_;
+constexpr LegacyAttestationDatabase::LegacyAttestationDatabase(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : delegate_(nullptr){}
+struct LegacyAttestationDatabaseDefaultTypeInternal {
+  constexpr LegacyAttestationDatabaseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LegacyAttestationDatabaseDefaultTypeInternal() {}
+  union {
+    LegacyAttestationDatabase _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LegacyAttestationDatabaseDefaultTypeInternal _LegacyAttestationDatabase_default_instance_;
 }  // namespace tpm_manager
-static void InitDefaultsscc_info_LegacyAttestationDatabase_legacy_5flocal_5fdata_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::tpm_manager::_LegacyAttestationDatabase_default_instance_;
-    new (ptr) ::tpm_manager::LegacyAttestationDatabase();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::tpm_manager::LegacyAttestationDatabase::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LegacyAttestationDatabase_legacy_5flocal_5fdata_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_LegacyAttestationDatabase_legacy_5flocal_5fdata_2eproto}, {
-      &scc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto.base,}};
-
-static void InitDefaultsscc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::tpm_manager::_LegacyDelegation_default_instance_;
-    new (ptr) ::tpm_manager::LegacyDelegation();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::tpm_manager::LegacyDelegation::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto}, {}};
-
-static void InitDefaultsscc_info_LegacyTpmStatus_legacy_5flocal_5fdata_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::tpm_manager::_LegacyTpmStatus_default_instance_;
-    new (ptr) ::tpm_manager::LegacyTpmStatus();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::tpm_manager::LegacyTpmStatus::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LegacyTpmStatus_legacy_5flocal_5fdata_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LegacyTpmStatus_legacy_5flocal_5fdata_2eproto}, {}};
-
 namespace tpm_manager {
 
 // ===================================================================
 
-void LegacyTpmStatus::InitAsDefaultInstance() {
-}
 class LegacyTpmStatus::_Internal {
  public:
   using HasBits = decltype(std::declval<LegacyTpmStatus>()._has_bits_);
@@ -83,101 +65,117 @@ class LegacyTpmStatus::_Internal {
   }
 };
 
-LegacyTpmStatus::LegacyTpmStatus()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+LegacyTpmStatus::LegacyTpmStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tpm_manager.LegacyTpmStatus)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:tpm_manager.LegacyTpmStatus)
 }
 LegacyTpmStatus::LegacyTpmStatus(const LegacyTpmStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   owner_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    owner_password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_owner_password()) {
-    owner_password_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.owner_password_);
+    owner_password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_owner_password(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:tpm_manager.LegacyTpmStatus)
 }
 
-void LegacyTpmStatus::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LegacyTpmStatus_legacy_5flocal_5fdata_2eproto.base);
-  owner_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void LegacyTpmStatus::SharedCtor() {
+owner_password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  owner_password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 LegacyTpmStatus::~LegacyTpmStatus() {
   // @@protoc_insertion_point(destructor:tpm_manager.LegacyTpmStatus)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void LegacyTpmStatus::SharedDtor() {
+inline void LegacyTpmStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   owner_password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void LegacyTpmStatus::ArenaDtor(void* object) {
+  LegacyTpmStatus* _this = reinterpret_cast< LegacyTpmStatus* >(object);
+  (void)_this;
+}
+void LegacyTpmStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LegacyTpmStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const LegacyTpmStatus& LegacyTpmStatus::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LegacyTpmStatus_legacy_5flocal_5fdata_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void LegacyTpmStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:tpm_manager.LegacyTpmStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    owner_password_.ClearNonDefaultToEmptyNoArena();
+    owner_password_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* LegacyTpmStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes owner_password = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_owner_password();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* LegacyTpmStatus::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LegacyTpmStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:tpm_manager.LegacyTpmStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -188,8 +186,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tpm_manager.LegacyTpmStatus)
   return target;
@@ -199,7 +197,7 @@ size_t LegacyTpmStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:tpm_manager.LegacyTpmStatus)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -212,7 +210,7 @@ size_t LegacyTpmStatus::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -228,14 +226,13 @@ void LegacyTpmStatus::CheckTypeAndMergeFrom(
 void LegacyTpmStatus::MergeFrom(const LegacyTpmStatus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tpm_manager.LegacyTpmStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_owner_password()) {
-    _has_bits_[0] |= 0x00000001u;
-    owner_password_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.owner_password_);
+    _internal_set_owner_password(from._internal_owner_password());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void LegacyTpmStatus::CopyFrom(const LegacyTpmStatus& from) {
@@ -251,10 +248,15 @@ bool LegacyTpmStatus::IsInitialized() const {
 
 void LegacyTpmStatus::InternalSwap(LegacyTpmStatus* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  owner_password_.Swap(&other->owner_password_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &owner_password_, lhs_arena,
+      &other->owner_password_, rhs_arena
+  );
 }
 
 std::string LegacyTpmStatus::GetTypeName() const {
@@ -264,8 +266,6 @@ std::string LegacyTpmStatus::GetTypeName() const {
 
 // ===================================================================
 
-void LegacyDelegation::InitAsDefaultInstance() {
-}
 class LegacyDelegation::_Internal {
  public:
   using HasBits = decltype(std::declval<LegacyDelegation>()._has_bits_);
@@ -280,131 +280,156 @@ class LegacyDelegation::_Internal {
   }
 };
 
-LegacyDelegation::LegacyDelegation()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+LegacyDelegation::LegacyDelegation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tpm_manager.LegacyDelegation)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:tpm_manager.LegacyDelegation)
 }
 LegacyDelegation::LegacyDelegation(const LegacyDelegation& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    blob_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_blob()) {
-    blob_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.blob_);
+    blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_blob(), 
+      GetArenaForAllocation());
   }
   secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    secret_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_secret()) {
-    secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
+    secret_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_secret(), 
+      GetArenaForAllocation());
   }
   has_reset_lock_permissions_ = from.has_reset_lock_permissions_;
   // @@protoc_insertion_point(copy_constructor:tpm_manager.LegacyDelegation)
 }
 
-void LegacyDelegation::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto.base);
-  blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  has_reset_lock_permissions_ = false;
+inline void LegacyDelegation::SharedCtor() {
+blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  blob_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  secret_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+has_reset_lock_permissions_ = false;
 }
 
 LegacyDelegation::~LegacyDelegation() {
   // @@protoc_insertion_point(destructor:tpm_manager.LegacyDelegation)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void LegacyDelegation::SharedDtor() {
+inline void LegacyDelegation::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   blob_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   secret_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void LegacyDelegation::ArenaDtor(void* object) {
+  LegacyDelegation* _this = reinterpret_cast< LegacyDelegation* >(object);
+  (void)_this;
+}
+void LegacyDelegation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LegacyDelegation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const LegacyDelegation& LegacyDelegation::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LegacyDelegation_legacy_5flocal_5fdata_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void LegacyDelegation::Clear() {
 // @@protoc_insertion_point(message_clear_start:tpm_manager.LegacyDelegation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      blob_.ClearNonDefaultToEmptyNoArena();
+      blob_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      secret_.ClearNonDefaultToEmptyNoArena();
+      secret_.ClearNonDefaultToEmpty();
     }
   }
   has_reset_lock_permissions_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* LegacyDelegation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes blob = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_blob();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes secret = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_secret();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool has_reset_lock_permissions = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_has_reset_lock_permissions(&has_bits);
-          has_reset_lock_permissions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_reset_lock_permissions_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* LegacyDelegation::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LegacyDelegation::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:tpm_manager.LegacyDelegation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -427,8 +452,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tpm_manager.LegacyDelegation)
   return target;
@@ -438,7 +463,7 @@ size_t LegacyDelegation::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:tpm_manager.LegacyDelegation)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -465,7 +490,7 @@ size_t LegacyDelegation::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -481,25 +506,23 @@ void LegacyDelegation::CheckTypeAndMergeFrom(
 void LegacyDelegation::MergeFrom(const LegacyDelegation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tpm_manager.LegacyDelegation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      blob_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.blob_);
+      _internal_set_blob(from._internal_blob());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      secret_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.secret_);
+      _internal_set_secret(from._internal_secret());
     }
     if (cached_has_bits & 0x00000004u) {
       has_reset_lock_permissions_ = from.has_reset_lock_permissions_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void LegacyDelegation::CopyFrom(const LegacyDelegation& from) {
@@ -515,12 +538,20 @@ bool LegacyDelegation::IsInitialized() const {
 
 void LegacyDelegation::InternalSwap(LegacyDelegation* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  blob_.Swap(&other->blob_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  secret_.Swap(&other->secret_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &blob_, lhs_arena,
+      &other->blob_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &secret_, lhs_arena,
+      &other->secret_, rhs_arena
+  );
   swap(has_reset_lock_permissions_, other->has_reset_lock_permissions_);
 }
 
@@ -531,10 +562,6 @@ std::string LegacyDelegation::GetTypeName() const {
 
 // ===================================================================
 
-void LegacyAttestationDatabase::InitAsDefaultInstance() {
-  ::tpm_manager::_LegacyAttestationDatabase_default_instance_._instance.get_mutable()->delegate_ = const_cast< ::tpm_manager::LegacyDelegation*>(
-      ::tpm_manager::LegacyDelegation::internal_default_instance());
-}
 class LegacyAttestationDatabase::_Internal {
  public:
   using HasBits = decltype(std::declval<LegacyAttestationDatabase>()._has_bits_);
@@ -548,16 +575,19 @@ const ::tpm_manager::LegacyDelegation&
 LegacyAttestationDatabase::_Internal::delegate(const LegacyAttestationDatabase* msg) {
   return *msg->delegate_;
 }
-LegacyAttestationDatabase::LegacyAttestationDatabase()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+LegacyAttestationDatabase::LegacyAttestationDatabase(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:tpm_manager.LegacyAttestationDatabase)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:tpm_manager.LegacyAttestationDatabase)
 }
 LegacyAttestationDatabase::LegacyAttestationDatabase(const LegacyAttestationDatabase& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_delegate()) {
     delegate_ = new ::tpm_manager::LegacyDelegation(*from.delegate_);
   } else {
@@ -566,32 +596,35 @@ LegacyAttestationDatabase::LegacyAttestationDatabase(const LegacyAttestationData
   // @@protoc_insertion_point(copy_constructor:tpm_manager.LegacyAttestationDatabase)
 }
 
-void LegacyAttestationDatabase::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LegacyAttestationDatabase_legacy_5flocal_5fdata_2eproto.base);
-  delegate_ = nullptr;
+inline void LegacyAttestationDatabase::SharedCtor() {
+delegate_ = nullptr;
 }
 
 LegacyAttestationDatabase::~LegacyAttestationDatabase() {
   // @@protoc_insertion_point(destructor:tpm_manager.LegacyAttestationDatabase)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void LegacyAttestationDatabase::SharedDtor() {
+inline void LegacyAttestationDatabase::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete delegate_;
 }
 
+void LegacyAttestationDatabase::ArenaDtor(void* object) {
+  LegacyAttestationDatabase* _this = reinterpret_cast< LegacyAttestationDatabase* >(object);
+  (void)_this;
+}
+void LegacyAttestationDatabase::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LegacyAttestationDatabase::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const LegacyAttestationDatabase& LegacyAttestationDatabase::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LegacyAttestationDatabase_legacy_5flocal_5fdata_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void LegacyAttestationDatabase::Clear() {
 // @@protoc_insertion_point(message_clear_start:tpm_manager.LegacyAttestationDatabase)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -601,49 +634,52 @@ void LegacyAttestationDatabase::Clear() {
     delegate_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* LegacyAttestationDatabase::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .tpm_manager.LegacyDelegation delegate = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_delegate(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* LegacyAttestationDatabase::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LegacyAttestationDatabase::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:tpm_manager.LegacyAttestationDatabase)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -656,8 +692,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:tpm_manager.LegacyAttestationDatabase)
   return target;
@@ -667,7 +703,7 @@ size_t LegacyAttestationDatabase::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:tpm_manager.LegacyAttestationDatabase)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -680,7 +716,7 @@ size_t LegacyAttestationDatabase::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -696,13 +732,13 @@ void LegacyAttestationDatabase::CheckTypeAndMergeFrom(
 void LegacyAttestationDatabase::MergeFrom(const LegacyAttestationDatabase& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:tpm_manager.LegacyAttestationDatabase)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_delegate()) {
     _internal_mutable_delegate()->::tpm_manager::LegacyDelegation::MergeFrom(from._internal_delegate());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void LegacyAttestationDatabase::CopyFrom(const LegacyAttestationDatabase& from) {
@@ -718,7 +754,7 @@ bool LegacyAttestationDatabase::IsInitialized() const {
 
 void LegacyAttestationDatabase::InternalSwap(LegacyAttestationDatabase* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(delegate_, other->delegate_);
 }
@@ -732,13 +768,13 @@ std::string LegacyAttestationDatabase::GetTypeName() const {
 }  // namespace tpm_manager
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::tpm_manager::LegacyTpmStatus* Arena::CreateMaybeMessage< ::tpm_manager::LegacyTpmStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::tpm_manager::LegacyTpmStatus >(arena);
+  return Arena::CreateMessageInternal< ::tpm_manager::LegacyTpmStatus >(arena);
 }
 template<> PROTOBUF_NOINLINE ::tpm_manager::LegacyDelegation* Arena::CreateMaybeMessage< ::tpm_manager::LegacyDelegation >(Arena* arena) {
-  return Arena::CreateInternal< ::tpm_manager::LegacyDelegation >(arena);
+  return Arena::CreateMessageInternal< ::tpm_manager::LegacyDelegation >(arena);
 }
 template<> PROTOBUF_NOINLINE ::tpm_manager::LegacyAttestationDatabase* Arena::CreateMaybeMessage< ::tpm_manager::LegacyAttestationDatabase >(Arena* arena) {
-  return Arena::CreateInternal< ::tpm_manager::LegacyAttestationDatabase >(arena);
+  return Arena::CreateMessageInternal< ::tpm_manager::LegacyAttestationDatabase >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

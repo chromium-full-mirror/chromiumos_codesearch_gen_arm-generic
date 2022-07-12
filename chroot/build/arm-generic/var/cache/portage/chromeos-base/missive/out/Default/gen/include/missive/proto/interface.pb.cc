@@ -11,210 +11,141 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_record_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_EncryptedRecord_record_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_record_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Record_record_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_record_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SequenceInformation_record_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_record_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SignedEncryptionInfo_record_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_status_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StatusProto_status_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace reporting {
-class EnqueueRecordRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<EnqueueRecordRequest> _instance;
-} _EnqueueRecordRequest_default_instance_;
-class EnqueueRecordResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<EnqueueRecordResponse> _instance;
-} _EnqueueRecordResponse_default_instance_;
-class FlushPriorityRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FlushPriorityRequest> _instance;
-} _FlushPriorityRequest_default_instance_;
-class FlushPriorityResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FlushPriorityResponse> _instance;
-} _FlushPriorityResponse_default_instance_;
-class UploadEncryptedRecordRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UploadEncryptedRecordRequest> _instance;
-} _UploadEncryptedRecordRequest_default_instance_;
-class UploadEncryptedRecordResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UploadEncryptedRecordResponse> _instance;
-} _UploadEncryptedRecordResponse_default_instance_;
-class ConfirmRecordUploadRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ConfirmRecordUploadRequest> _instance;
-} _ConfirmRecordUploadRequest_default_instance_;
-class ConfirmRecordUploadResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ConfirmRecordUploadResponse> _instance;
-} _ConfirmRecordUploadResponse_default_instance_;
-class UpdateEncryptionKeyRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateEncryptionKeyRequest> _instance;
-} _UpdateEncryptionKeyRequest_default_instance_;
-class UpdateEncryptionKeyResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateEncryptionKeyResponse> _instance;
-} _UpdateEncryptionKeyResponse_default_instance_;
+constexpr EnqueueRecordRequest::EnqueueRecordRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : record_(nullptr)
+  , priority_(0)
+{}
+struct EnqueueRecordRequestDefaultTypeInternal {
+  constexpr EnqueueRecordRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EnqueueRecordRequestDefaultTypeInternal() {}
+  union {
+    EnqueueRecordRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EnqueueRecordRequestDefaultTypeInternal _EnqueueRecordRequest_default_instance_;
+constexpr EnqueueRecordResponse::EnqueueRecordResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(nullptr){}
+struct EnqueueRecordResponseDefaultTypeInternal {
+  constexpr EnqueueRecordResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EnqueueRecordResponseDefaultTypeInternal() {}
+  union {
+    EnqueueRecordResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EnqueueRecordResponseDefaultTypeInternal _EnqueueRecordResponse_default_instance_;
+constexpr FlushPriorityRequest::FlushPriorityRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : priority_(5)
+{}
+struct FlushPriorityRequestDefaultTypeInternal {
+  constexpr FlushPriorityRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FlushPriorityRequestDefaultTypeInternal() {}
+  union {
+    FlushPriorityRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FlushPriorityRequestDefaultTypeInternal _FlushPriorityRequest_default_instance_;
+constexpr FlushPriorityResponse::FlushPriorityResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(nullptr){}
+struct FlushPriorityResponseDefaultTypeInternal {
+  constexpr FlushPriorityResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FlushPriorityResponseDefaultTypeInternal() {}
+  union {
+    FlushPriorityResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FlushPriorityResponseDefaultTypeInternal _FlushPriorityResponse_default_instance_;
+constexpr UploadEncryptedRecordRequest::UploadEncryptedRecordRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : encrypted_record_()
+  , remaining_storage_capacity_(uint64_t{0u})
+  , new_events_rate_(uint64_t{0u})
+  , need_encryption_keys_(false){}
+struct UploadEncryptedRecordRequestDefaultTypeInternal {
+  constexpr UploadEncryptedRecordRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UploadEncryptedRecordRequestDefaultTypeInternal() {}
+  union {
+    UploadEncryptedRecordRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UploadEncryptedRecordRequestDefaultTypeInternal _UploadEncryptedRecordRequest_default_instance_;
+constexpr UploadEncryptedRecordResponse::UploadEncryptedRecordResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(nullptr){}
+struct UploadEncryptedRecordResponseDefaultTypeInternal {
+  constexpr UploadEncryptedRecordResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UploadEncryptedRecordResponseDefaultTypeInternal() {}
+  union {
+    UploadEncryptedRecordResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UploadEncryptedRecordResponseDefaultTypeInternal _UploadEncryptedRecordResponse_default_instance_;
+constexpr ConfirmRecordUploadRequest::ConfirmRecordUploadRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : sequence_information_(nullptr)
+  , force_confirm_(false){}
+struct ConfirmRecordUploadRequestDefaultTypeInternal {
+  constexpr ConfirmRecordUploadRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfirmRecordUploadRequestDefaultTypeInternal() {}
+  union {
+    ConfirmRecordUploadRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfirmRecordUploadRequestDefaultTypeInternal _ConfirmRecordUploadRequest_default_instance_;
+constexpr ConfirmRecordUploadResponse::ConfirmRecordUploadResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(nullptr){}
+struct ConfirmRecordUploadResponseDefaultTypeInternal {
+  constexpr ConfirmRecordUploadResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfirmRecordUploadResponseDefaultTypeInternal() {}
+  union {
+    ConfirmRecordUploadResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfirmRecordUploadResponseDefaultTypeInternal _ConfirmRecordUploadResponse_default_instance_;
+constexpr UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : signed_encryption_info_(nullptr){}
+struct UpdateEncryptionKeyRequestDefaultTypeInternal {
+  constexpr UpdateEncryptionKeyRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateEncryptionKeyRequestDefaultTypeInternal() {}
+  union {
+    UpdateEncryptionKeyRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEncryptionKeyRequestDefaultTypeInternal _UpdateEncryptionKeyRequest_default_instance_;
+constexpr UpdateEncryptionKeyResponse::UpdateEncryptionKeyResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(nullptr){}
+struct UpdateEncryptionKeyResponseDefaultTypeInternal {
+  constexpr UpdateEncryptionKeyResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateEncryptionKeyResponseDefaultTypeInternal() {}
+  union {
+    UpdateEncryptionKeyResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateEncryptionKeyResponseDefaultTypeInternal _UpdateEncryptionKeyResponse_default_instance_;
 }  // namespace reporting
-static void InitDefaultsscc_info_ConfirmRecordUploadRequest_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_ConfirmRecordUploadRequest_default_instance_;
-    new (ptr) ::reporting::ConfirmRecordUploadRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::ConfirmRecordUploadRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ConfirmRecordUploadRequest_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ConfirmRecordUploadRequest_interface_2eproto}, {
-      &scc_info_SequenceInformation_record_2eproto.base,}};
-
-static void InitDefaultsscc_info_ConfirmRecordUploadResponse_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_ConfirmRecordUploadResponse_default_instance_;
-    new (ptr) ::reporting::ConfirmRecordUploadResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::ConfirmRecordUploadResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ConfirmRecordUploadResponse_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ConfirmRecordUploadResponse_interface_2eproto}, {
-      &scc_info_StatusProto_status_2eproto.base,}};
-
-static void InitDefaultsscc_info_EnqueueRecordRequest_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_EnqueueRecordRequest_default_instance_;
-    new (ptr) ::reporting::EnqueueRecordRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::EnqueueRecordRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EnqueueRecordRequest_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_EnqueueRecordRequest_interface_2eproto}, {
-      &scc_info_Record_record_2eproto.base,}};
-
-static void InitDefaultsscc_info_EnqueueRecordResponse_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_EnqueueRecordResponse_default_instance_;
-    new (ptr) ::reporting::EnqueueRecordResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::EnqueueRecordResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_EnqueueRecordResponse_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_EnqueueRecordResponse_interface_2eproto}, {
-      &scc_info_StatusProto_status_2eproto.base,}};
-
-static void InitDefaultsscc_info_FlushPriorityRequest_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_FlushPriorityRequest_default_instance_;
-    new (ptr) ::reporting::FlushPriorityRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::FlushPriorityRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FlushPriorityRequest_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FlushPriorityRequest_interface_2eproto}, {}};
-
-static void InitDefaultsscc_info_FlushPriorityResponse_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_FlushPriorityResponse_default_instance_;
-    new (ptr) ::reporting::FlushPriorityResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::FlushPriorityResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FlushPriorityResponse_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FlushPriorityResponse_interface_2eproto}, {
-      &scc_info_StatusProto_status_2eproto.base,}};
-
-static void InitDefaultsscc_info_UpdateEncryptionKeyRequest_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_UpdateEncryptionKeyRequest_default_instance_;
-    new (ptr) ::reporting::UpdateEncryptionKeyRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::UpdateEncryptionKeyRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UpdateEncryptionKeyRequest_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UpdateEncryptionKeyRequest_interface_2eproto}, {
-      &scc_info_SignedEncryptionInfo_record_2eproto.base,}};
-
-static void InitDefaultsscc_info_UpdateEncryptionKeyResponse_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_UpdateEncryptionKeyResponse_default_instance_;
-    new (ptr) ::reporting::UpdateEncryptionKeyResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::UpdateEncryptionKeyResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UpdateEncryptionKeyResponse_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UpdateEncryptionKeyResponse_interface_2eproto}, {
-      &scc_info_StatusProto_status_2eproto.base,}};
-
-static void InitDefaultsscc_info_UploadEncryptedRecordRequest_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_UploadEncryptedRecordRequest_default_instance_;
-    new (ptr) ::reporting::UploadEncryptedRecordRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::UploadEncryptedRecordRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UploadEncryptedRecordRequest_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UploadEncryptedRecordRequest_interface_2eproto}, {
-      &scc_info_EncryptedRecord_record_2eproto.base,}};
-
-static void InitDefaultsscc_info_UploadEncryptedRecordResponse_interface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::reporting::_UploadEncryptedRecordResponse_default_instance_;
-    new (ptr) ::reporting::UploadEncryptedRecordResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::reporting::UploadEncryptedRecordResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UploadEncryptedRecordResponse_interface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UploadEncryptedRecordResponse_interface_2eproto}, {
-      &scc_info_StatusProto_status_2eproto.base,}};
-
 namespace reporting {
 
 // ===================================================================
 
-void EnqueueRecordRequest::InitAsDefaultInstance() {
-  ::reporting::_EnqueueRecordRequest_default_instance_._instance.get_mutable()->record_ = const_cast< ::reporting::Record*>(
-      ::reporting::Record::internal_default_instance());
-}
 class EnqueueRecordRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<EnqueueRecordRequest>()._has_bits_);
@@ -235,16 +166,19 @@ void EnqueueRecordRequest::clear_record() {
   if (record_ != nullptr) record_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-EnqueueRecordRequest::EnqueueRecordRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+EnqueueRecordRequest::EnqueueRecordRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.EnqueueRecordRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.EnqueueRecordRequest)
 }
 EnqueueRecordRequest::EnqueueRecordRequest(const EnqueueRecordRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_record()) {
     record_ = new ::reporting::Record(*from.record_);
   } else {
@@ -254,34 +188,38 @@ EnqueueRecordRequest::EnqueueRecordRequest(const EnqueueRecordRequest& from)
   // @@protoc_insertion_point(copy_constructor:reporting.EnqueueRecordRequest)
 }
 
-void EnqueueRecordRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EnqueueRecordRequest_interface_2eproto.base);
-  ::memset(&record_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&priority_) -
-      reinterpret_cast<char*>(&record_)) + sizeof(priority_));
+inline void EnqueueRecordRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&record_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&priority_) -
+    reinterpret_cast<char*>(&record_)) + sizeof(priority_));
 }
 
 EnqueueRecordRequest::~EnqueueRecordRequest() {
   // @@protoc_insertion_point(destructor:reporting.EnqueueRecordRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void EnqueueRecordRequest::SharedDtor() {
+inline void EnqueueRecordRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete record_;
 }
 
+void EnqueueRecordRequest::ArenaDtor(void* object) {
+  EnqueueRecordRequest* _this = reinterpret_cast< EnqueueRecordRequest* >(object);
+  (void)_this;
+}
+void EnqueueRecordRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EnqueueRecordRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EnqueueRecordRequest& EnqueueRecordRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_EnqueueRecordRequest_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void EnqueueRecordRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.EnqueueRecordRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -292,61 +230,65 @@ void EnqueueRecordRequest::Clear() {
   }
   priority_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* EnqueueRecordRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.Record record = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_record(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .reporting.Priority priority = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::reporting::Priority_IsValid(val))) {
             _internal_set_priority(static_cast<::reporting::Priority>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* EnqueueRecordRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* EnqueueRecordRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.EnqueueRecordRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -366,8 +308,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.EnqueueRecordRequest)
   return target;
@@ -377,7 +319,7 @@ size_t EnqueueRecordRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.EnqueueRecordRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -398,7 +340,7 @@ size_t EnqueueRecordRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -414,8 +356,7 @@ void EnqueueRecordRequest::CheckTypeAndMergeFrom(
 void EnqueueRecordRequest::MergeFrom(const EnqueueRecordRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.EnqueueRecordRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -428,6 +369,7 @@ void EnqueueRecordRequest::MergeFrom(const EnqueueRecordRequest& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void EnqueueRecordRequest::CopyFrom(const EnqueueRecordRequest& from) {
@@ -443,10 +385,14 @@ bool EnqueueRecordRequest::IsInitialized() const {
 
 void EnqueueRecordRequest::InternalSwap(EnqueueRecordRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(record_, other->record_);
-  swap(priority_, other->priority_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(EnqueueRecordRequest, priority_)
+      + sizeof(EnqueueRecordRequest::priority_)
+      - PROTOBUF_FIELD_OFFSET(EnqueueRecordRequest, record_)>(
+          reinterpret_cast<char*>(&record_),
+          reinterpret_cast<char*>(&other->record_));
 }
 
 std::string EnqueueRecordRequest::GetTypeName() const {
@@ -456,10 +402,6 @@ std::string EnqueueRecordRequest::GetTypeName() const {
 
 // ===================================================================
 
-void EnqueueRecordResponse::InitAsDefaultInstance() {
-  ::reporting::_EnqueueRecordResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::reporting::StatusProto*>(
-      ::reporting::StatusProto::internal_default_instance());
-}
 class EnqueueRecordResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<EnqueueRecordResponse>()._has_bits_);
@@ -477,16 +419,19 @@ void EnqueueRecordResponse::clear_status() {
   if (status_ != nullptr) status_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-EnqueueRecordResponse::EnqueueRecordResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+EnqueueRecordResponse::EnqueueRecordResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.EnqueueRecordResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.EnqueueRecordResponse)
 }
 EnqueueRecordResponse::EnqueueRecordResponse(const EnqueueRecordResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_status()) {
     status_ = new ::reporting::StatusProto(*from.status_);
   } else {
@@ -495,32 +440,35 @@ EnqueueRecordResponse::EnqueueRecordResponse(const EnqueueRecordResponse& from)
   // @@protoc_insertion_point(copy_constructor:reporting.EnqueueRecordResponse)
 }
 
-void EnqueueRecordResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_EnqueueRecordResponse_interface_2eproto.base);
-  status_ = nullptr;
+inline void EnqueueRecordResponse::SharedCtor() {
+status_ = nullptr;
 }
 
 EnqueueRecordResponse::~EnqueueRecordResponse() {
   // @@protoc_insertion_point(destructor:reporting.EnqueueRecordResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void EnqueueRecordResponse::SharedDtor() {
+inline void EnqueueRecordResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete status_;
 }
 
+void EnqueueRecordResponse::ArenaDtor(void* object) {
+  EnqueueRecordResponse* _this = reinterpret_cast< EnqueueRecordResponse* >(object);
+  (void)_this;
+}
+void EnqueueRecordResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EnqueueRecordResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EnqueueRecordResponse& EnqueueRecordResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_EnqueueRecordResponse_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void EnqueueRecordResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.EnqueueRecordResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -530,49 +478,52 @@ void EnqueueRecordResponse::Clear() {
     status_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* EnqueueRecordResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.StatusProto status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* EnqueueRecordResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* EnqueueRecordResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.EnqueueRecordResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -585,8 +536,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.EnqueueRecordResponse)
   return target;
@@ -596,7 +547,7 @@ size_t EnqueueRecordResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.EnqueueRecordResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -609,7 +560,7 @@ size_t EnqueueRecordResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -625,13 +576,13 @@ void EnqueueRecordResponse::CheckTypeAndMergeFrom(
 void EnqueueRecordResponse::MergeFrom(const EnqueueRecordResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.EnqueueRecordResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
     _internal_mutable_status()->::reporting::StatusProto::MergeFrom(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void EnqueueRecordResponse::CopyFrom(const EnqueueRecordResponse& from) {
@@ -647,7 +598,7 @@ bool EnqueueRecordResponse::IsInitialized() const {
 
 void EnqueueRecordResponse::InternalSwap(EnqueueRecordResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(status_, other->status_);
 }
@@ -659,8 +610,6 @@ std::string EnqueueRecordResponse::GetTypeName() const {
 
 // ===================================================================
 
-void FlushPriorityRequest::InitAsDefaultInstance() {
-}
 class FlushPriorityRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<FlushPriorityRequest>()._has_bits_);
@@ -669,97 +618,107 @@ class FlushPriorityRequest::_Internal {
   }
 };
 
-FlushPriorityRequest::FlushPriorityRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FlushPriorityRequest::FlushPriorityRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.FlushPriorityRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.FlushPriorityRequest)
 }
 FlushPriorityRequest::FlushPriorityRequest(const FlushPriorityRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   priority_ = from.priority_;
   // @@protoc_insertion_point(copy_constructor:reporting.FlushPriorityRequest)
 }
 
-void FlushPriorityRequest::SharedCtor() {
-  priority_ = 5;
+inline void FlushPriorityRequest::SharedCtor() {
+priority_ = 5;
 }
 
 FlushPriorityRequest::~FlushPriorityRequest() {
   // @@protoc_insertion_point(destructor:reporting.FlushPriorityRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FlushPriorityRequest::SharedDtor() {
+inline void FlushPriorityRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void FlushPriorityRequest::ArenaDtor(void* object) {
+  FlushPriorityRequest* _this = reinterpret_cast< FlushPriorityRequest* >(object);
+  (void)_this;
+}
+void FlushPriorityRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FlushPriorityRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FlushPriorityRequest& FlushPriorityRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FlushPriorityRequest_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FlushPriorityRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.FlushPriorityRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   priority_ = 5;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FlushPriorityRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.Priority priority = 1 [default = MANUAL_BATCH];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::reporting::Priority_IsValid(val))) {
             _internal_set_priority(static_cast<::reporting::Priority>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FlushPriorityRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FlushPriorityRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.FlushPriorityRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -771,8 +730,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.FlushPriorityRequest)
   return target;
@@ -782,7 +741,7 @@ size_t FlushPriorityRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.FlushPriorityRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -794,7 +753,7 @@ size_t FlushPriorityRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -810,13 +769,13 @@ void FlushPriorityRequest::CheckTypeAndMergeFrom(
 void FlushPriorityRequest::MergeFrom(const FlushPriorityRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.FlushPriorityRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_priority()) {
     _internal_set_priority(from._internal_priority());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FlushPriorityRequest::CopyFrom(const FlushPriorityRequest& from) {
@@ -832,7 +791,7 @@ bool FlushPriorityRequest::IsInitialized() const {
 
 void FlushPriorityRequest::InternalSwap(FlushPriorityRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(priority_, other->priority_);
 }
@@ -844,10 +803,6 @@ std::string FlushPriorityRequest::GetTypeName() const {
 
 // ===================================================================
 
-void FlushPriorityResponse::InitAsDefaultInstance() {
-  ::reporting::_FlushPriorityResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::reporting::StatusProto*>(
-      ::reporting::StatusProto::internal_default_instance());
-}
 class FlushPriorityResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<FlushPriorityResponse>()._has_bits_);
@@ -865,16 +820,19 @@ void FlushPriorityResponse::clear_status() {
   if (status_ != nullptr) status_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-FlushPriorityResponse::FlushPriorityResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FlushPriorityResponse::FlushPriorityResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.FlushPriorityResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.FlushPriorityResponse)
 }
 FlushPriorityResponse::FlushPriorityResponse(const FlushPriorityResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_status()) {
     status_ = new ::reporting::StatusProto(*from.status_);
   } else {
@@ -883,32 +841,35 @@ FlushPriorityResponse::FlushPriorityResponse(const FlushPriorityResponse& from)
   // @@protoc_insertion_point(copy_constructor:reporting.FlushPriorityResponse)
 }
 
-void FlushPriorityResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FlushPriorityResponse_interface_2eproto.base);
-  status_ = nullptr;
+inline void FlushPriorityResponse::SharedCtor() {
+status_ = nullptr;
 }
 
 FlushPriorityResponse::~FlushPriorityResponse() {
   // @@protoc_insertion_point(destructor:reporting.FlushPriorityResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FlushPriorityResponse::SharedDtor() {
+inline void FlushPriorityResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete status_;
 }
 
+void FlushPriorityResponse::ArenaDtor(void* object) {
+  FlushPriorityResponse* _this = reinterpret_cast< FlushPriorityResponse* >(object);
+  (void)_this;
+}
+void FlushPriorityResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FlushPriorityResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FlushPriorityResponse& FlushPriorityResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FlushPriorityResponse_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FlushPriorityResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.FlushPriorityResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -918,49 +879,52 @@ void FlushPriorityResponse::Clear() {
     status_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FlushPriorityResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.StatusProto status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FlushPriorityResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FlushPriorityResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.FlushPriorityResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -973,8 +937,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.FlushPriorityResponse)
   return target;
@@ -984,7 +948,7 @@ size_t FlushPriorityResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.FlushPriorityResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -997,7 +961,7 @@ size_t FlushPriorityResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1013,13 +977,13 @@ void FlushPriorityResponse::CheckTypeAndMergeFrom(
 void FlushPriorityResponse::MergeFrom(const FlushPriorityResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.FlushPriorityResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
     _internal_mutable_status()->::reporting::StatusProto::MergeFrom(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FlushPriorityResponse::CopyFrom(const FlushPriorityResponse& from) {
@@ -1035,7 +999,7 @@ bool FlushPriorityResponse::IsInitialized() const {
 
 void FlushPriorityResponse::InternalSwap(FlushPriorityResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(status_, other->status_);
 }
@@ -1047,8 +1011,6 @@ std::string FlushPriorityResponse::GetTypeName() const {
 
 // ===================================================================
 
-void UploadEncryptedRecordRequest::InitAsDefaultInstance() {
-}
 class UploadEncryptedRecordRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<UploadEncryptedRecordRequest>()._has_bits_);
@@ -1066,50 +1028,58 @@ class UploadEncryptedRecordRequest::_Internal {
 void UploadEncryptedRecordRequest::clear_encrypted_record() {
   encrypted_record_.Clear();
 }
-UploadEncryptedRecordRequest::UploadEncryptedRecordRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UploadEncryptedRecordRequest::UploadEncryptedRecordRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  encrypted_record_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.UploadEncryptedRecordRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.UploadEncryptedRecordRequest)
 }
 UploadEncryptedRecordRequest::UploadEncryptedRecordRequest(const UploadEncryptedRecordRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       encrypted_record_(from.encrypted_record_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&remaining_storage_capacity_, &from.remaining_storage_capacity_,
     static_cast<size_t>(reinterpret_cast<char*>(&need_encryption_keys_) -
     reinterpret_cast<char*>(&remaining_storage_capacity_)) + sizeof(need_encryption_keys_));
   // @@protoc_insertion_point(copy_constructor:reporting.UploadEncryptedRecordRequest)
 }
 
-void UploadEncryptedRecordRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UploadEncryptedRecordRequest_interface_2eproto.base);
-  ::memset(&remaining_storage_capacity_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&need_encryption_keys_) -
-      reinterpret_cast<char*>(&remaining_storage_capacity_)) + sizeof(need_encryption_keys_));
+inline void UploadEncryptedRecordRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&remaining_storage_capacity_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&need_encryption_keys_) -
+    reinterpret_cast<char*>(&remaining_storage_capacity_)) + sizeof(need_encryption_keys_));
 }
 
 UploadEncryptedRecordRequest::~UploadEncryptedRecordRequest() {
   // @@protoc_insertion_point(destructor:reporting.UploadEncryptedRecordRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UploadEncryptedRecordRequest::SharedDtor() {
+inline void UploadEncryptedRecordRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void UploadEncryptedRecordRequest::ArenaDtor(void* object) {
+  UploadEncryptedRecordRequest* _this = reinterpret_cast< UploadEncryptedRecordRequest* >(object);
+  (void)_this;
+}
+void UploadEncryptedRecordRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UploadEncryptedRecordRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UploadEncryptedRecordRequest& UploadEncryptedRecordRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UploadEncryptedRecordRequest_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UploadEncryptedRecordRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.UploadEncryptedRecordRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1121,20 +1091,19 @@ void UploadEncryptedRecordRequest::Clear() {
         reinterpret_cast<char*>(&remaining_storage_capacity_)) + sizeof(need_encryption_keys_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UploadEncryptedRecordRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .reporting.EncryptedRecord encrypted_record = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1142,57 +1111,64 @@ const char* UploadEncryptedRecordRequest::_InternalParse(const char* ptr, ::PROT
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool need_encryption_keys = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_need_encryption_keys(&has_bits);
-          need_encryption_keys_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          need_encryption_keys_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint64 remaining_storage_capacity = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_remaining_storage_capacity(&has_bits);
-          remaining_storage_capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          remaining_storage_capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint64 new_events_rate = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_new_events_rate(&has_bits);
-          new_events_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          new_events_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UploadEncryptedRecordRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UploadEncryptedRecordRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.UploadEncryptedRecordRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .reporting.EncryptedRecord encrypted_record = 1;
@@ -1223,8 +1199,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.UploadEncryptedRecordRequest)
   return target;
@@ -1234,7 +1210,7 @@ size_t UploadEncryptedRecordRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.UploadEncryptedRecordRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1249,16 +1225,12 @@ size_t UploadEncryptedRecordRequest::ByteSizeLong() const {
   if (cached_has_bits & 0x00000007u) {
     // optional uint64 remaining_storage_capacity = 3;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-          this->_internal_remaining_storage_capacity());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_remaining_storage_capacity());
     }
 
     // optional uint64 new_events_rate = 4;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-          this->_internal_new_events_rate());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_new_events_rate());
     }
 
     // optional bool need_encryption_keys = 2;
@@ -1268,7 +1240,7 @@ size_t UploadEncryptedRecordRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1284,8 +1256,7 @@ void UploadEncryptedRecordRequest::CheckTypeAndMergeFrom(
 void UploadEncryptedRecordRequest::MergeFrom(const UploadEncryptedRecordRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.UploadEncryptedRecordRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   encrypted_record_.MergeFrom(from.encrypted_record_);
@@ -1302,6 +1273,7 @@ void UploadEncryptedRecordRequest::MergeFrom(const UploadEncryptedRecordRequest&
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UploadEncryptedRecordRequest::CopyFrom(const UploadEncryptedRecordRequest& from) {
@@ -1317,12 +1289,15 @@ bool UploadEncryptedRecordRequest::IsInitialized() const {
 
 void UploadEncryptedRecordRequest::InternalSwap(UploadEncryptedRecordRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   encrypted_record_.InternalSwap(&other->encrypted_record_);
-  swap(remaining_storage_capacity_, other->remaining_storage_capacity_);
-  swap(new_events_rate_, other->new_events_rate_);
-  swap(need_encryption_keys_, other->need_encryption_keys_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UploadEncryptedRecordRequest, need_encryption_keys_)
+      + sizeof(UploadEncryptedRecordRequest::need_encryption_keys_)
+      - PROTOBUF_FIELD_OFFSET(UploadEncryptedRecordRequest, remaining_storage_capacity_)>(
+          reinterpret_cast<char*>(&remaining_storage_capacity_),
+          reinterpret_cast<char*>(&other->remaining_storage_capacity_));
 }
 
 std::string UploadEncryptedRecordRequest::GetTypeName() const {
@@ -1332,10 +1307,6 @@ std::string UploadEncryptedRecordRequest::GetTypeName() const {
 
 // ===================================================================
 
-void UploadEncryptedRecordResponse::InitAsDefaultInstance() {
-  ::reporting::_UploadEncryptedRecordResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::reporting::StatusProto*>(
-      ::reporting::StatusProto::internal_default_instance());
-}
 class UploadEncryptedRecordResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<UploadEncryptedRecordResponse>()._has_bits_);
@@ -1353,16 +1324,19 @@ void UploadEncryptedRecordResponse::clear_status() {
   if (status_ != nullptr) status_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-UploadEncryptedRecordResponse::UploadEncryptedRecordResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UploadEncryptedRecordResponse::UploadEncryptedRecordResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.UploadEncryptedRecordResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.UploadEncryptedRecordResponse)
 }
 UploadEncryptedRecordResponse::UploadEncryptedRecordResponse(const UploadEncryptedRecordResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_status()) {
     status_ = new ::reporting::StatusProto(*from.status_);
   } else {
@@ -1371,32 +1345,35 @@ UploadEncryptedRecordResponse::UploadEncryptedRecordResponse(const UploadEncrypt
   // @@protoc_insertion_point(copy_constructor:reporting.UploadEncryptedRecordResponse)
 }
 
-void UploadEncryptedRecordResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UploadEncryptedRecordResponse_interface_2eproto.base);
-  status_ = nullptr;
+inline void UploadEncryptedRecordResponse::SharedCtor() {
+status_ = nullptr;
 }
 
 UploadEncryptedRecordResponse::~UploadEncryptedRecordResponse() {
   // @@protoc_insertion_point(destructor:reporting.UploadEncryptedRecordResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UploadEncryptedRecordResponse::SharedDtor() {
+inline void UploadEncryptedRecordResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete status_;
 }
 
+void UploadEncryptedRecordResponse::ArenaDtor(void* object) {
+  UploadEncryptedRecordResponse* _this = reinterpret_cast< UploadEncryptedRecordResponse* >(object);
+  (void)_this;
+}
+void UploadEncryptedRecordResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UploadEncryptedRecordResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UploadEncryptedRecordResponse& UploadEncryptedRecordResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UploadEncryptedRecordResponse_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UploadEncryptedRecordResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.UploadEncryptedRecordResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1406,49 +1383,52 @@ void UploadEncryptedRecordResponse::Clear() {
     status_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UploadEncryptedRecordResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.StatusProto status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UploadEncryptedRecordResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UploadEncryptedRecordResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.UploadEncryptedRecordResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1461,8 +1441,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.UploadEncryptedRecordResponse)
   return target;
@@ -1472,7 +1452,7 @@ size_t UploadEncryptedRecordResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.UploadEncryptedRecordResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1485,7 +1465,7 @@ size_t UploadEncryptedRecordResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1501,13 +1481,13 @@ void UploadEncryptedRecordResponse::CheckTypeAndMergeFrom(
 void UploadEncryptedRecordResponse::MergeFrom(const UploadEncryptedRecordResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.UploadEncryptedRecordResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
     _internal_mutable_status()->::reporting::StatusProto::MergeFrom(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UploadEncryptedRecordResponse::CopyFrom(const UploadEncryptedRecordResponse& from) {
@@ -1523,7 +1503,7 @@ bool UploadEncryptedRecordResponse::IsInitialized() const {
 
 void UploadEncryptedRecordResponse::InternalSwap(UploadEncryptedRecordResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(status_, other->status_);
 }
@@ -1535,10 +1515,6 @@ std::string UploadEncryptedRecordResponse::GetTypeName() const {
 
 // ===================================================================
 
-void ConfirmRecordUploadRequest::InitAsDefaultInstance() {
-  ::reporting::_ConfirmRecordUploadRequest_default_instance_._instance.get_mutable()->sequence_information_ = const_cast< ::reporting::SequenceInformation*>(
-      ::reporting::SequenceInformation::internal_default_instance());
-}
 class ConfirmRecordUploadRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<ConfirmRecordUploadRequest>()._has_bits_);
@@ -1559,16 +1535,19 @@ void ConfirmRecordUploadRequest::clear_sequence_information() {
   if (sequence_information_ != nullptr) sequence_information_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-ConfirmRecordUploadRequest::ConfirmRecordUploadRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ConfirmRecordUploadRequest::ConfirmRecordUploadRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.ConfirmRecordUploadRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.ConfirmRecordUploadRequest)
 }
 ConfirmRecordUploadRequest::ConfirmRecordUploadRequest(const ConfirmRecordUploadRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_sequence_information()) {
     sequence_information_ = new ::reporting::SequenceInformation(*from.sequence_information_);
   } else {
@@ -1578,34 +1557,38 @@ ConfirmRecordUploadRequest::ConfirmRecordUploadRequest(const ConfirmRecordUpload
   // @@protoc_insertion_point(copy_constructor:reporting.ConfirmRecordUploadRequest)
 }
 
-void ConfirmRecordUploadRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ConfirmRecordUploadRequest_interface_2eproto.base);
-  ::memset(&sequence_information_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&force_confirm_) -
-      reinterpret_cast<char*>(&sequence_information_)) + sizeof(force_confirm_));
+inline void ConfirmRecordUploadRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&sequence_information_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&force_confirm_) -
+    reinterpret_cast<char*>(&sequence_information_)) + sizeof(force_confirm_));
 }
 
 ConfirmRecordUploadRequest::~ConfirmRecordUploadRequest() {
   // @@protoc_insertion_point(destructor:reporting.ConfirmRecordUploadRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ConfirmRecordUploadRequest::SharedDtor() {
+inline void ConfirmRecordUploadRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete sequence_information_;
 }
 
+void ConfirmRecordUploadRequest::ArenaDtor(void* object) {
+  ConfirmRecordUploadRequest* _this = reinterpret_cast< ConfirmRecordUploadRequest* >(object);
+  (void)_this;
+}
+void ConfirmRecordUploadRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ConfirmRecordUploadRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ConfirmRecordUploadRequest& ConfirmRecordUploadRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ConfirmRecordUploadRequest_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ConfirmRecordUploadRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.ConfirmRecordUploadRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1616,57 +1599,61 @@ void ConfirmRecordUploadRequest::Clear() {
   }
   force_confirm_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ConfirmRecordUploadRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.SequenceInformation sequence_information = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_sequence_information(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool force_confirm = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_force_confirm(&has_bits);
-          force_confirm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          force_confirm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ConfirmRecordUploadRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ConfirmRecordUploadRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.ConfirmRecordUploadRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1685,8 +1672,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.ConfirmRecordUploadRequest)
   return target;
@@ -1696,7 +1683,7 @@ size_t ConfirmRecordUploadRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.ConfirmRecordUploadRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1716,7 +1703,7 @@ size_t ConfirmRecordUploadRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1732,8 +1719,7 @@ void ConfirmRecordUploadRequest::CheckTypeAndMergeFrom(
 void ConfirmRecordUploadRequest::MergeFrom(const ConfirmRecordUploadRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.ConfirmRecordUploadRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1746,6 +1732,7 @@ void ConfirmRecordUploadRequest::MergeFrom(const ConfirmRecordUploadRequest& fro
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ConfirmRecordUploadRequest::CopyFrom(const ConfirmRecordUploadRequest& from) {
@@ -1761,10 +1748,14 @@ bool ConfirmRecordUploadRequest::IsInitialized() const {
 
 void ConfirmRecordUploadRequest::InternalSwap(ConfirmRecordUploadRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(sequence_information_, other->sequence_information_);
-  swap(force_confirm_, other->force_confirm_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConfirmRecordUploadRequest, force_confirm_)
+      + sizeof(ConfirmRecordUploadRequest::force_confirm_)
+      - PROTOBUF_FIELD_OFFSET(ConfirmRecordUploadRequest, sequence_information_)>(
+          reinterpret_cast<char*>(&sequence_information_),
+          reinterpret_cast<char*>(&other->sequence_information_));
 }
 
 std::string ConfirmRecordUploadRequest::GetTypeName() const {
@@ -1774,10 +1765,6 @@ std::string ConfirmRecordUploadRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ConfirmRecordUploadResponse::InitAsDefaultInstance() {
-  ::reporting::_ConfirmRecordUploadResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::reporting::StatusProto*>(
-      ::reporting::StatusProto::internal_default_instance());
-}
 class ConfirmRecordUploadResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<ConfirmRecordUploadResponse>()._has_bits_);
@@ -1795,16 +1782,19 @@ void ConfirmRecordUploadResponse::clear_status() {
   if (status_ != nullptr) status_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-ConfirmRecordUploadResponse::ConfirmRecordUploadResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ConfirmRecordUploadResponse::ConfirmRecordUploadResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.ConfirmRecordUploadResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.ConfirmRecordUploadResponse)
 }
 ConfirmRecordUploadResponse::ConfirmRecordUploadResponse(const ConfirmRecordUploadResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_status()) {
     status_ = new ::reporting::StatusProto(*from.status_);
   } else {
@@ -1813,32 +1803,35 @@ ConfirmRecordUploadResponse::ConfirmRecordUploadResponse(const ConfirmRecordUplo
   // @@protoc_insertion_point(copy_constructor:reporting.ConfirmRecordUploadResponse)
 }
 
-void ConfirmRecordUploadResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ConfirmRecordUploadResponse_interface_2eproto.base);
-  status_ = nullptr;
+inline void ConfirmRecordUploadResponse::SharedCtor() {
+status_ = nullptr;
 }
 
 ConfirmRecordUploadResponse::~ConfirmRecordUploadResponse() {
   // @@protoc_insertion_point(destructor:reporting.ConfirmRecordUploadResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ConfirmRecordUploadResponse::SharedDtor() {
+inline void ConfirmRecordUploadResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete status_;
 }
 
+void ConfirmRecordUploadResponse::ArenaDtor(void* object) {
+  ConfirmRecordUploadResponse* _this = reinterpret_cast< ConfirmRecordUploadResponse* >(object);
+  (void)_this;
+}
+void ConfirmRecordUploadResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ConfirmRecordUploadResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ConfirmRecordUploadResponse& ConfirmRecordUploadResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ConfirmRecordUploadResponse_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ConfirmRecordUploadResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.ConfirmRecordUploadResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1848,49 +1841,52 @@ void ConfirmRecordUploadResponse::Clear() {
     status_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ConfirmRecordUploadResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.StatusProto status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ConfirmRecordUploadResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ConfirmRecordUploadResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.ConfirmRecordUploadResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1903,8 +1899,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.ConfirmRecordUploadResponse)
   return target;
@@ -1914,7 +1910,7 @@ size_t ConfirmRecordUploadResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.ConfirmRecordUploadResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1927,7 +1923,7 @@ size_t ConfirmRecordUploadResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1943,13 +1939,13 @@ void ConfirmRecordUploadResponse::CheckTypeAndMergeFrom(
 void ConfirmRecordUploadResponse::MergeFrom(const ConfirmRecordUploadResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.ConfirmRecordUploadResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
     _internal_mutable_status()->::reporting::StatusProto::MergeFrom(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ConfirmRecordUploadResponse::CopyFrom(const ConfirmRecordUploadResponse& from) {
@@ -1965,7 +1961,7 @@ bool ConfirmRecordUploadResponse::IsInitialized() const {
 
 void ConfirmRecordUploadResponse::InternalSwap(ConfirmRecordUploadResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(status_, other->status_);
 }
@@ -1977,10 +1973,6 @@ std::string ConfirmRecordUploadResponse::GetTypeName() const {
 
 // ===================================================================
 
-void UpdateEncryptionKeyRequest::InitAsDefaultInstance() {
-  ::reporting::_UpdateEncryptionKeyRequest_default_instance_._instance.get_mutable()->signed_encryption_info_ = const_cast< ::reporting::SignedEncryptionInfo*>(
-      ::reporting::SignedEncryptionInfo::internal_default_instance());
-}
 class UpdateEncryptionKeyRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<UpdateEncryptionKeyRequest>()._has_bits_);
@@ -1998,16 +1990,19 @@ void UpdateEncryptionKeyRequest::clear_signed_encryption_info() {
   if (signed_encryption_info_ != nullptr) signed_encryption_info_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.UpdateEncryptionKeyRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.UpdateEncryptionKeyRequest)
 }
 UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest(const UpdateEncryptionKeyRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_signed_encryption_info()) {
     signed_encryption_info_ = new ::reporting::SignedEncryptionInfo(*from.signed_encryption_info_);
   } else {
@@ -2016,32 +2011,35 @@ UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest(const UpdateEncryptionKey
   // @@protoc_insertion_point(copy_constructor:reporting.UpdateEncryptionKeyRequest)
 }
 
-void UpdateEncryptionKeyRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateEncryptionKeyRequest_interface_2eproto.base);
-  signed_encryption_info_ = nullptr;
+inline void UpdateEncryptionKeyRequest::SharedCtor() {
+signed_encryption_info_ = nullptr;
 }
 
 UpdateEncryptionKeyRequest::~UpdateEncryptionKeyRequest() {
   // @@protoc_insertion_point(destructor:reporting.UpdateEncryptionKeyRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UpdateEncryptionKeyRequest::SharedDtor() {
+inline void UpdateEncryptionKeyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete signed_encryption_info_;
 }
 
+void UpdateEncryptionKeyRequest::ArenaDtor(void* object) {
+  UpdateEncryptionKeyRequest* _this = reinterpret_cast< UpdateEncryptionKeyRequest* >(object);
+  (void)_this;
+}
+void UpdateEncryptionKeyRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateEncryptionKeyRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UpdateEncryptionKeyRequest& UpdateEncryptionKeyRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateEncryptionKeyRequest_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UpdateEncryptionKeyRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.UpdateEncryptionKeyRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2051,49 +2049,52 @@ void UpdateEncryptionKeyRequest::Clear() {
     signed_encryption_info_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UpdateEncryptionKeyRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.SignedEncryptionInfo signed_encryption_info = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_signed_encryption_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UpdateEncryptionKeyRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdateEncryptionKeyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.UpdateEncryptionKeyRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2106,8 +2107,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.UpdateEncryptionKeyRequest)
   return target;
@@ -2117,7 +2118,7 @@ size_t UpdateEncryptionKeyRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.UpdateEncryptionKeyRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2130,7 +2131,7 @@ size_t UpdateEncryptionKeyRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2146,13 +2147,13 @@ void UpdateEncryptionKeyRequest::CheckTypeAndMergeFrom(
 void UpdateEncryptionKeyRequest::MergeFrom(const UpdateEncryptionKeyRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.UpdateEncryptionKeyRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_signed_encryption_info()) {
     _internal_mutable_signed_encryption_info()->::reporting::SignedEncryptionInfo::MergeFrom(from._internal_signed_encryption_info());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UpdateEncryptionKeyRequest::CopyFrom(const UpdateEncryptionKeyRequest& from) {
@@ -2168,7 +2169,7 @@ bool UpdateEncryptionKeyRequest::IsInitialized() const {
 
 void UpdateEncryptionKeyRequest::InternalSwap(UpdateEncryptionKeyRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(signed_encryption_info_, other->signed_encryption_info_);
 }
@@ -2180,10 +2181,6 @@ std::string UpdateEncryptionKeyRequest::GetTypeName() const {
 
 // ===================================================================
 
-void UpdateEncryptionKeyResponse::InitAsDefaultInstance() {
-  ::reporting::_UpdateEncryptionKeyResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::reporting::StatusProto*>(
-      ::reporting::StatusProto::internal_default_instance());
-}
 class UpdateEncryptionKeyResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<UpdateEncryptionKeyResponse>()._has_bits_);
@@ -2201,16 +2198,19 @@ void UpdateEncryptionKeyResponse::clear_status() {
   if (status_ != nullptr) status_->Clear();
   _has_bits_[0] &= ~0x00000001u;
 }
-UpdateEncryptionKeyResponse::UpdateEncryptionKeyResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UpdateEncryptionKeyResponse::UpdateEncryptionKeyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:reporting.UpdateEncryptionKeyResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:reporting.UpdateEncryptionKeyResponse)
 }
 UpdateEncryptionKeyResponse::UpdateEncryptionKeyResponse(const UpdateEncryptionKeyResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_status()) {
     status_ = new ::reporting::StatusProto(*from.status_);
   } else {
@@ -2219,32 +2219,35 @@ UpdateEncryptionKeyResponse::UpdateEncryptionKeyResponse(const UpdateEncryptionK
   // @@protoc_insertion_point(copy_constructor:reporting.UpdateEncryptionKeyResponse)
 }
 
-void UpdateEncryptionKeyResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateEncryptionKeyResponse_interface_2eproto.base);
-  status_ = nullptr;
+inline void UpdateEncryptionKeyResponse::SharedCtor() {
+status_ = nullptr;
 }
 
 UpdateEncryptionKeyResponse::~UpdateEncryptionKeyResponse() {
   // @@protoc_insertion_point(destructor:reporting.UpdateEncryptionKeyResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UpdateEncryptionKeyResponse::SharedDtor() {
+inline void UpdateEncryptionKeyResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete status_;
 }
 
+void UpdateEncryptionKeyResponse::ArenaDtor(void* object) {
+  UpdateEncryptionKeyResponse* _this = reinterpret_cast< UpdateEncryptionKeyResponse* >(object);
+  (void)_this;
+}
+void UpdateEncryptionKeyResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateEncryptionKeyResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UpdateEncryptionKeyResponse& UpdateEncryptionKeyResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateEncryptionKeyResponse_interface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UpdateEncryptionKeyResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:reporting.UpdateEncryptionKeyResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2254,49 +2257,52 @@ void UpdateEncryptionKeyResponse::Clear() {
     status_->Clear();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UpdateEncryptionKeyResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .reporting.StatusProto status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UpdateEncryptionKeyResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdateEncryptionKeyResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:reporting.UpdateEncryptionKeyResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2309,8 +2315,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:reporting.UpdateEncryptionKeyResponse)
   return target;
@@ -2320,7 +2326,7 @@ size_t UpdateEncryptionKeyResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:reporting.UpdateEncryptionKeyResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2333,7 +2339,7 @@ size_t UpdateEncryptionKeyResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2349,13 +2355,13 @@ void UpdateEncryptionKeyResponse::CheckTypeAndMergeFrom(
 void UpdateEncryptionKeyResponse::MergeFrom(const UpdateEncryptionKeyResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:reporting.UpdateEncryptionKeyResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_status()) {
     _internal_mutable_status()->::reporting::StatusProto::MergeFrom(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UpdateEncryptionKeyResponse::CopyFrom(const UpdateEncryptionKeyResponse& from) {
@@ -2371,7 +2377,7 @@ bool UpdateEncryptionKeyResponse::IsInitialized() const {
 
 void UpdateEncryptionKeyResponse::InternalSwap(UpdateEncryptionKeyResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(status_, other->status_);
 }
@@ -2385,34 +2391,34 @@ std::string UpdateEncryptionKeyResponse::GetTypeName() const {
 }  // namespace reporting
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::reporting::EnqueueRecordRequest* Arena::CreateMaybeMessage< ::reporting::EnqueueRecordRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::EnqueueRecordRequest >(arena);
+  return Arena::CreateMessageInternal< ::reporting::EnqueueRecordRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::EnqueueRecordResponse* Arena::CreateMaybeMessage< ::reporting::EnqueueRecordResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::EnqueueRecordResponse >(arena);
+  return Arena::CreateMessageInternal< ::reporting::EnqueueRecordResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::FlushPriorityRequest* Arena::CreateMaybeMessage< ::reporting::FlushPriorityRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::FlushPriorityRequest >(arena);
+  return Arena::CreateMessageInternal< ::reporting::FlushPriorityRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::FlushPriorityResponse* Arena::CreateMaybeMessage< ::reporting::FlushPriorityResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::FlushPriorityResponse >(arena);
+  return Arena::CreateMessageInternal< ::reporting::FlushPriorityResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::UploadEncryptedRecordRequest* Arena::CreateMaybeMessage< ::reporting::UploadEncryptedRecordRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::UploadEncryptedRecordRequest >(arena);
+  return Arena::CreateMessageInternal< ::reporting::UploadEncryptedRecordRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::UploadEncryptedRecordResponse* Arena::CreateMaybeMessage< ::reporting::UploadEncryptedRecordResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::UploadEncryptedRecordResponse >(arena);
+  return Arena::CreateMessageInternal< ::reporting::UploadEncryptedRecordResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::ConfirmRecordUploadRequest* Arena::CreateMaybeMessage< ::reporting::ConfirmRecordUploadRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::ConfirmRecordUploadRequest >(arena);
+  return Arena::CreateMessageInternal< ::reporting::ConfirmRecordUploadRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::ConfirmRecordUploadResponse* Arena::CreateMaybeMessage< ::reporting::ConfirmRecordUploadResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::ConfirmRecordUploadResponse >(arena);
+  return Arena::CreateMessageInternal< ::reporting::ConfirmRecordUploadResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::UpdateEncryptionKeyRequest* Arena::CreateMaybeMessage< ::reporting::UpdateEncryptionKeyRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::UpdateEncryptionKeyRequest >(arena);
+  return Arena::CreateMessageInternal< ::reporting::UpdateEncryptionKeyRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::reporting::UpdateEncryptionKeyResponse* Arena::CreateMaybeMessage< ::reporting::UpdateEncryptionKeyResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::reporting::UpdateEncryptionKeyResponse >(arena);
+  return Arena::CreateMessageInternal< ::reporting::UpdateEncryptionKeyResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

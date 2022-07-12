@@ -117,7 +117,7 @@ class BigBufferDataView {
       mojo::ArrayDataView<uint8_t>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBytes(UserType* output) const {
+  [[nodiscard]] bool ReadBytes(UserType* output) const {
     
     CHECK(is_bytes());
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -128,7 +128,7 @@ class BigBufferDataView {
       BigBufferSharedMemoryRegionDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSharedMemory(UserType* output) const {
+  [[nodiscard]] bool ReadSharedMemory(UserType* output) const {
     
     CHECK(is_shared_memory());
     return mojo::internal::Deserialize<::mojo_base::mojom::BigBufferSharedMemoryRegionDataView>(

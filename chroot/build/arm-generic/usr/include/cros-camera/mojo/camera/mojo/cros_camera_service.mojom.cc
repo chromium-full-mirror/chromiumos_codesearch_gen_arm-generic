@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -47,6 +46,97 @@
 namespace cros {
 namespace mojom {
 const char CameraHalDispatcher::Name_[] = "cros.mojom.CameraHalDispatcher";
+
+uint32_t CameraHalDispatcher::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraHalDispatcher_RegisterServer_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::RegisterServer");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_RegisterClient_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::RegisterClient");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_GetMjpegDecodeAccelerator_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::GetMjpegDecodeAccelerator");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_GetJpegEncodeAccelerator_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::GetJpegEncodeAccelerator");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_RegisterServerWithToken_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::RegisterServerWithToken");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_RegisterClientWithToken_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::RegisterClientWithToken");
+      return value;
+    }
+    case internal::kCameraHalDispatcher_RegisterSensorClientWithToken_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraHalDispatcher::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraHalDispatcher_RegisterServer_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::RegisterServer";
+      case internal::kCameraHalDispatcher_RegisterClient_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::RegisterClient";
+      case internal::kCameraHalDispatcher_GetMjpegDecodeAccelerator_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::GetMjpegDecodeAccelerator";
+      case internal::kCameraHalDispatcher_GetJpegEncodeAccelerator_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::GetJpegEncodeAccelerator";
+      case internal::kCameraHalDispatcher_RegisterServerWithToken_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::RegisterServerWithToken";
+      case internal::kCameraHalDispatcher_RegisterClientWithToken_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::RegisterClientWithToken";
+      case internal::kCameraHalDispatcher_RegisterSensorClientWithToken_Name:
+            return "Receive cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraHalDispatcher_RegisterServer_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::RegisterServer";
+      case internal::kCameraHalDispatcher_RegisterClient_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::RegisterClient";
+      case internal::kCameraHalDispatcher_GetMjpegDecodeAccelerator_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::GetMjpegDecodeAccelerator";
+      case internal::kCameraHalDispatcher_GetJpegEncodeAccelerator_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::GetJpegEncodeAccelerator";
+      case internal::kCameraHalDispatcher_RegisterServerWithToken_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::RegisterServerWithToken";
+      case internal::kCameraHalDispatcher_RegisterClientWithToken_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::RegisterClientWithToken";
+      case internal::kCameraHalDispatcher_RegisterSensorClientWithToken_Name:
+            return "Receive reply cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CameraHalDispatcher_RegisterServerWithToken_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -497,10 +587,6 @@ class CameraHalDispatcher_RegisterServerWithToken_ProxyToResponder : public ::mo
 
 bool CameraHalDispatcher_RegisterServerWithToken_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraHalDispatcher::RegisterServerWithToken",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraHalDispatcher_RegisterServerWithToken_ResponseParams_Data* params =
@@ -575,8 +661,11 @@ void CameraHalDispatcher_RegisterServerWithToken_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -627,10 +716,6 @@ class CameraHalDispatcher_RegisterClientWithToken_ProxyToResponder : public ::mo
 
 bool CameraHalDispatcher_RegisterClientWithToken_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraHalDispatcher::RegisterClientWithToken",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraHalDispatcher_RegisterClientWithToken_ResponseParams_Data* params =
@@ -690,8 +775,11 @@ void CameraHalDispatcher_RegisterClientWithToken_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -742,10 +830,6 @@ class CameraHalDispatcher_RegisterSensorClientWithToken_ProxyToResponder : publi
 
 bool CameraHalDispatcher_RegisterSensorClientWithToken_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraHalDispatcher_RegisterSensorClientWithToken_ResponseParams_Data* params =
@@ -805,8 +889,11 @@ void CameraHalDispatcher_RegisterSensorClientWithToken_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -817,15 +904,6 @@ bool CameraHalDispatcherStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCameraHalDispatcher_RegisterServer_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::RegisterServer",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::RegisterServer");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalDispatcher_RegisterServer_Params_Data* params =
@@ -854,15 +932,6 @@ std::move(p_server));
       return true;
     }
     case internal::kCameraHalDispatcher_RegisterClient_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::RegisterClient",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::RegisterClient");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalDispatcher_RegisterClient_Params_Data* params =
@@ -891,15 +960,6 @@ std::move(p_client));
       return true;
     }
     case internal::kCameraHalDispatcher_GetMjpegDecodeAccelerator_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::GetMjpegDecodeAccelerator",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::GetMjpegDecodeAccelerator");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalDispatcher_GetMjpegDecodeAccelerator_Params_Data* params =
@@ -928,15 +988,6 @@ std::move(p_jda_receiver));
       return true;
     }
     case internal::kCameraHalDispatcher_GetJpegEncodeAccelerator_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::GetJpegEncodeAccelerator",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::GetJpegEncodeAccelerator");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalDispatcher_GetJpegEncodeAccelerator_Params_Data* params =
@@ -999,15 +1050,6 @@ bool CameraHalDispatcherStubDispatch::AcceptWithResponder(
       break;
     }
     case internal::kCameraHalDispatcher_RegisterServerWithToken_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::RegisterServerWithToken",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::RegisterServerWithToken");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraHalDispatcher_RegisterServerWithToken_Params_Data* params =
           reinterpret_cast<
@@ -1043,15 +1085,6 @@ std::move(p_auth_token), std::move(callback));
       return true;
     }
     case internal::kCameraHalDispatcher_RegisterClientWithToken_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::RegisterClientWithToken",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::RegisterClientWithToken");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraHalDispatcher_RegisterClientWithToken_Params_Data* params =
           reinterpret_cast<
@@ -1091,15 +1124,6 @@ std::move(p_auth_token), std::move(callback));
       return true;
     }
     case internal::kCameraHalDispatcher_RegisterSensorClientWithToken_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalDispatcher::RegisterSensorClientWithToken");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraHalDispatcher_RegisterSensorClientWithToken_Params_Data* params =
           reinterpret_cast<
@@ -1166,6 +1190,79 @@ bool CameraHalDispatcherResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kCameraHalDispatcherValidationInfo);
 }
 const char CameraHalServer::Name_[] = "cros.mojom.CameraHalServer";
+
+uint32_t CameraHalServer::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraHalServer_CreateChannel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServer::CreateChannel");
+      return value;
+    }
+    case internal::kCameraHalServer_SetTracingEnabled_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServer::SetTracingEnabled");
+      return value;
+    }
+    case internal::kCameraHalServer_SetAutoFramingState_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServer::SetAutoFramingState");
+      return value;
+    }
+    case internal::kCameraHalServer_GetCameraSWPrivacySwitchState_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState");
+      return value;
+    }
+    case internal::kCameraHalServer_SetCameraSWPrivacySwitchState_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServer::SetCameraSWPrivacySwitchState");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraHalServer::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraHalServer_CreateChannel_Name:
+            return "Receive cros::mojom::CameraHalServer::CreateChannel";
+      case internal::kCameraHalServer_SetTracingEnabled_Name:
+            return "Receive cros::mojom::CameraHalServer::SetTracingEnabled";
+      case internal::kCameraHalServer_SetAutoFramingState_Name:
+            return "Receive cros::mojom::CameraHalServer::SetAutoFramingState";
+      case internal::kCameraHalServer_GetCameraSWPrivacySwitchState_Name:
+            return "Receive cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState";
+      case internal::kCameraHalServer_SetCameraSWPrivacySwitchState_Name:
+            return "Receive cros::mojom::CameraHalServer::SetCameraSWPrivacySwitchState";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraHalServer_CreateChannel_Name:
+            return "Receive reply cros::mojom::CameraHalServer::CreateChannel";
+      case internal::kCameraHalServer_SetTracingEnabled_Name:
+            return "Receive reply cros::mojom::CameraHalServer::SetTracingEnabled";
+      case internal::kCameraHalServer_SetAutoFramingState_Name:
+            return "Receive reply cros::mojom::CameraHalServer::SetAutoFramingState";
+      case internal::kCameraHalServer_GetCameraSWPrivacySwitchState_Name:
+            return "Receive reply cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState";
+      case internal::kCameraHalServer_SetCameraSWPrivacySwitchState_Name:
+            return "Receive reply cros::mojom::CameraHalServer::SetCameraSWPrivacySwitchState";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CameraHalServer_GetCameraSWPrivacySwitchState_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -1428,10 +1525,6 @@ class CameraHalServer_GetCameraSWPrivacySwitchState_ProxyToResponder : public ::
 
 bool CameraHalServer_GetCameraSWPrivacySwitchState_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CameraHalServer_GetCameraSWPrivacySwitchState_ResponseParams_Data* params =
@@ -1492,8 +1585,11 @@ void CameraHalServer_GetCameraSWPrivacySwitchState_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1504,15 +1600,6 @@ bool CameraHalServerStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCameraHalServer_CreateChannel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServer::CreateChannel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServer::CreateChannel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServer_CreateChannel_Params_Data* params =
@@ -1545,15 +1632,6 @@ std::move(p_type));
       return true;
     }
     case internal::kCameraHalServer_SetTracingEnabled_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServer::SetTracingEnabled",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServer::SetTracingEnabled");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServer_SetTracingEnabled_Params_Data* params =
@@ -1580,15 +1658,6 @@ std::move(p_enabled));
       return true;
     }
     case internal::kCameraHalServer_SetAutoFramingState_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServer::SetAutoFramingState",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServer::SetAutoFramingState");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServer_SetAutoFramingState_Params_Data* params =
@@ -1618,15 +1687,6 @@ std::move(p_state));
       break;
     }
     case internal::kCameraHalServer_SetCameraSWPrivacySwitchState_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServer::SetCameraSWPrivacySwitchState",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServer::SetCameraSWPrivacySwitchState");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServer_SetCameraSWPrivacySwitchState_Params_Data* params =
@@ -1675,15 +1735,6 @@ bool CameraHalServerStubDispatch::AcceptWithResponder(
       break;
     }
     case internal::kCameraHalServer_GetCameraSWPrivacySwitchState_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServer::GetCameraSWPrivacySwitchState");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CameraHalServer_GetCameraSWPrivacySwitchState_Params_Data* params =
           reinterpret_cast<
@@ -1740,6 +1791,61 @@ bool CameraHalServerResponseValidator::Accept(mojo::Message* message) {
 }
 const char CameraHalServerCallbacks::Name_[] = "cros.mojom.CameraHalServerCallbacks";
 
+uint32_t CameraHalServerCallbacks::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraHalServerCallbacks_CameraDeviceActivityChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraDeviceActivityChange");
+      return value;
+    }
+    case internal::kCameraHalServerCallbacks_CameraPrivacySwitchStateChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange");
+      return value;
+    }
+    case internal::kCameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraSWPrivacySwitchStateChange");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraHalServerCallbacks::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraHalServerCallbacks_CameraDeviceActivityChange_Name:
+            return "Receive cros::mojom::CameraHalServerCallbacks::CameraDeviceActivityChange";
+      case internal::kCameraHalServerCallbacks_CameraPrivacySwitchStateChange_Name:
+            return "Receive cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange";
+      case internal::kCameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Name:
+            return "Receive cros::mojom::CameraHalServerCallbacks::CameraSWPrivacySwitchStateChange";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraHalServerCallbacks_CameraDeviceActivityChange_Name:
+            return "Receive reply cros::mojom::CameraHalServerCallbacks::CameraDeviceActivityChange";
+      case internal::kCameraHalServerCallbacks_CameraPrivacySwitchStateChange_Name:
+            return "Receive reply cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange";
+      case internal::kCameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Name:
+            return "Receive reply cros::mojom::CameraHalServerCallbacks::CameraSWPrivacySwitchStateChange";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 CameraHalServerCallbacksProxy::CameraHalServerCallbacksProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -1792,7 +1898,7 @@ void CameraHalServerCallbacksProxy::CameraDeviceActivityChange(
 }
 
 void CameraHalServerCallbacksProxy::CameraPrivacySwitchStateChange(
-    CameraPrivacySwitchState in_state) {
+    CameraPrivacySwitchState in_state, int32_t in_camera_id) {
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange", "input_parameters",
@@ -1801,6 +1907,9 @@ void CameraHalServerCallbacksProxy::CameraPrivacySwitchStateChange(
       perfetto::libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("state"), in_state,
                         "<value of type CameraPrivacySwitchState>");
+      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+           dict.AddItem("camera_id"), in_camera_id,
+                        "<value of type int32_t>");
    });
 #endif
   const bool kExpectsResponse = false;
@@ -1820,6 +1929,7 @@ void CameraHalServerCallbacksProxy::CameraPrivacySwitchStateChange(
   params.Allocate();
   mojo::internal::Serialize<::cros::mojom::CameraPrivacySwitchState>(
       in_state, &params->state);
+  params->camera_id = in_camera_id;
 
 #if defined(ENABLE_IPC_FUZZER)
   message.set_interface_name(CameraHalServerCallbacks::Name_);
@@ -1875,15 +1985,6 @@ bool CameraHalServerCallbacksStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCameraHalServerCallbacks_CameraDeviceActivityChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServerCallbacks::CameraDeviceActivityChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraDeviceActivityChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServerCallbacks_CameraDeviceActivityChange_Params_Data* params =
@@ -1918,15 +2019,6 @@ std::move(p_type));
       return true;
     }
     case internal::kCameraHalServerCallbacks_CameraPrivacySwitchStateChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraPrivacySwitchStateChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServerCallbacks_CameraPrivacySwitchStateChange_Params_Data* params =
@@ -1935,10 +2027,13 @@ std::move(p_type));
       
       bool success = true;
       CameraPrivacySwitchState p_state{};
+      int32_t p_camera_id{};
       CameraHalServerCallbacks_CameraPrivacySwitchStateChange_ParamsDataView input_data_view(params, message);
       
       if (success && !input_data_view.ReadState(&p_state))
         success = false;
+      if (success)
+        p_camera_id = input_data_view.camera_id();
       if (!success) {
         ReportValidationErrorForMessage(
             message,
@@ -1949,19 +2044,11 @@ std::move(p_type));
       // A null |impl| means no implementation was bound.
       DCHECK(impl);
       impl->CameraPrivacySwitchStateChange(
-std::move(p_state));
+std::move(p_state), 
+std::move(p_camera_id));
       return true;
     }
     case internal::kCameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalServerCallbacks::CameraSWPrivacySwitchStateChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalServerCallbacks::CameraSWPrivacySwitchStateChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalServerCallbacks_CameraSWPrivacySwitchStateChange_Params_Data* params =
@@ -2030,6 +2117,43 @@ bool CameraHalServerCallbacksRequestValidator::Accept(mojo::Message* message) {
 
 const char CameraHalClient::Name_[] = "cros.mojom.CameraHalClient";
 
+uint32_t CameraHalClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCameraHalClient_SetUpChannel_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)cros::mojom::CameraHalClient::SetUpChannel");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CameraHalClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCameraHalClient_SetUpChannel_Name:
+            return "Receive cros::mojom::CameraHalClient::SetUpChannel";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCameraHalClient_SetUpChannel_Name:
+            return "Receive reply cros::mojom::CameraHalClient::SetUpChannel";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 CameraHalClientProxy::CameraHalClientProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -2083,15 +2207,6 @@ bool CameraHalClientStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCameraHalClient_SetUpChannel_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive cros::mojom::CameraHalClient::SetUpChannel",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)cros::mojom::CameraHalClient::SetUpChannel");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CameraHalClient_SetUpChannel_Params_Data* params =
@@ -2288,8 +2403,8 @@ void CameraHalServerAsyncWaiter::GetCameraSWPrivacySwitchState(
 void CameraHalServerCallbacksInterceptorForTesting::CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) {
   GetForwardingInterface()->CameraDeviceActivityChange(std::move(camera_id), std::move(opened), std::move(type));
 }
-void CameraHalServerCallbacksInterceptorForTesting::CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) {
-  GetForwardingInterface()->CameraPrivacySwitchStateChange(std::move(state));
+void CameraHalServerCallbacksInterceptorForTesting::CameraPrivacySwitchStateChange(CameraPrivacySwitchState state, int32_t camera_id) {
+  GetForwardingInterface()->CameraPrivacySwitchStateChange(std::move(state), std::move(camera_id));
 }
 void CameraHalServerCallbacksInterceptorForTesting::CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) {
   GetForwardingInterface()->CameraSWPrivacySwitchStateChange(std::move(state));

@@ -24,39 +24,9 @@ namespace arc {
 namespace mojom {
 class VideoHost;
 
-using VideoHostPtr = mojo::InterfacePtr<VideoHost>;
-using VideoHostPtrInfo = mojo::InterfacePtrInfo<VideoHost>;
-
-using VideoHostRequest = mojo::InterfaceRequest<VideoHost>;
-using VideoHostAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoHost>;
-
-using VideoHostAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoHost>;
-
 class VideoInstance;
 
-using VideoInstancePtr = mojo::InterfacePtr<VideoInstance>;
-using VideoInstancePtrInfo = mojo::InterfacePtrInfo<VideoInstance>;
-
-using VideoInstanceRequest = mojo::InterfaceRequest<VideoInstance>;
-using VideoInstanceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoInstance>;
-
-using VideoInstanceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoInstance>;
-
 class VideoAcceleratorFactory;
-
-using VideoAcceleratorFactoryPtr = mojo::InterfacePtr<VideoAcceleratorFactory>;
-using VideoAcceleratorFactoryPtrInfo = mojo::InterfacePtrInfo<VideoAcceleratorFactory>;
-
-using VideoAcceleratorFactoryRequest = mojo::InterfaceRequest<VideoAcceleratorFactory>;
-using VideoAcceleratorFactoryAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoAcceleratorFactory>;
-
-using VideoAcceleratorFactoryAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoAcceleratorFactory>;
 
 
 

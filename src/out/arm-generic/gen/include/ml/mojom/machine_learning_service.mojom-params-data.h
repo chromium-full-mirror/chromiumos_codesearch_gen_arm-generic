@@ -465,7 +465,7 @@ class MachineLearningService_LoadBuiltinModel_ParamsDataView {
       ::chromeos::machine_learning::mojom::BuiltinModelSpecDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSpec(UserType* output) {
+  [[nodiscard]] bool ReadSpec(UserType* output) {
     
     auto* pointer = data_->spec.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::BuiltinModelSpecDataView>(
@@ -498,7 +498,7 @@ class MachineLearningService_LoadBuiltinModel_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -527,7 +527,7 @@ class MachineLearningService_LoadFlatBufferModel_ParamsDataView {
       ::chromeos::machine_learning::mojom::FlatBufferModelSpecDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSpec(UserType* output) {
+  [[nodiscard]] bool ReadSpec(UserType* output) {
     
     auto* pointer = data_->spec.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::FlatBufferModelSpecDataView>(
@@ -560,7 +560,7 @@ class MachineLearningService_LoadFlatBufferModel_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -612,7 +612,7 @@ class MachineLearningService_LoadTextClassifier_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -641,7 +641,7 @@ class MachineLearningService_LoadHandwritingModel_ParamsDataView {
       ::chromeos::machine_learning::mojom::HandwritingRecognizerSpecDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSpec(UserType* output) {
+  [[nodiscard]] bool ReadSpec(UserType* output) {
     
     auto* pointer = data_->spec.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::HandwritingRecognizerSpecDataView>(
@@ -674,7 +674,7 @@ class MachineLearningService_LoadHandwritingModel_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadHandwritingModelResult>(
         data_value, output);
@@ -703,7 +703,7 @@ class MachineLearningService_LoadSpeechRecognizer_ParamsDataView {
       ::chromeos::machine_learning::mojom::SodaConfigDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
     auto* pointer = data_->config.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::SodaConfigDataView>(
@@ -745,7 +745,7 @@ class MachineLearningService_LoadSpeechRecognizer_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -797,7 +797,7 @@ class MachineLearningService_LoadGrammarChecker_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -835,7 +835,7 @@ class MachineLearningService_LoadTextSuggester_ParamsDataView {
       ::chromeos::machine_learning::mojom::TextSuggesterSpecDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSpec(UserType* output) {
+  [[nodiscard]] bool ReadSpec(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -870,7 +870,7 @@ class MachineLearningService_LoadTextSuggester_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -899,7 +899,7 @@ class MachineLearningService_LoadWebPlatformHandwritingModel_ParamsDataView {
       ::chromeos::machine_learning::web_platform::mojom::HandwritingModelConstraintDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConstraint(UserType* output) {
+  [[nodiscard]] bool ReadConstraint(UserType* output) {
     
     auto* pointer = data_->constraint.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::web_platform::mojom::HandwritingModelConstraintDataView>(
@@ -932,7 +932,7 @@ class MachineLearningService_LoadWebPlatformHandwritingModel_ResponseParamsDataV
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadHandwritingModelResult>(
         data_value, output);
@@ -970,7 +970,7 @@ class MachineLearningService_LoadDocumentScanner_ParamsDataView {
       ::chromeos::machine_learning::mojom::DocumentScannerConfigDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1005,7 +1005,7 @@ class MachineLearningService_LoadDocumentScanner_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);
@@ -1043,7 +1043,7 @@ class MachineLearningService_CreateWebPlatformModelLoader_ParamsDataView {
       ::ml::model_loader::mojom::CreateModelLoaderOptionsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOptions(UserType* output) {
+  [[nodiscard]] bool ReadOptions(UserType* output) {
     
     auto* pointer = data_->options.Get();
     return mojo::internal::Deserialize<::ml::model_loader::mojom::CreateModelLoaderOptionsDataView>(
@@ -1067,7 +1067,7 @@ class MachineLearningService_CreateWebPlatformModelLoader_ResponseParamsDataView
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::CreateModelLoaderResult>(
         data_value, output);
@@ -1096,7 +1096,7 @@ class MachineLearningService_REMOVED_4_ParamsDataView {
       ::chromeos::machine_learning::mojom::HandwritingRecognizerSpecDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSpec(UserType* output) {
+  [[nodiscard]] bool ReadSpec(UserType* output) {
     
     auto* pointer = data_->spec.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::HandwritingRecognizerSpecDataView>(
@@ -1129,7 +1129,7 @@ class MachineLearningService_REMOVED_4_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::LoadModelResult>(
         data_value, output);

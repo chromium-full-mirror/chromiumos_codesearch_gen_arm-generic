@@ -2831,7 +2831,8 @@
               "name": "shard #${SHARD_INDEX} logcats"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 2
         },
         "test": "chrome_public_unit_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_unit_test_apk/"
@@ -6363,7 +6364,7 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 20
+          "shards": 19
         },
         "test": "chrome_public_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_test_apk/"
@@ -6420,7 +6421,8 @@
               "name": "shard #${SHARD_INDEX} logcats"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 2
         },
         "test": "chrome_public_unit_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_unit_test_apk/"
@@ -11448,7 +11450,7 @@
       },
       {
         "args": [
-          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android30.textpb",
@@ -11526,7 +11528,7 @@
       },
       {
         "args": [
-          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android30.textpb",
@@ -16138,7 +16140,7 @@
       },
       {
         "args": [
-          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android31.textpb",
@@ -16216,7 +16218,7 @@
       },
       {
         "args": [
-          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android31.textpb",
@@ -21026,7 +21028,8 @@
               "name": "shard #${SHARD_INDEX} logcats"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 2
         },
         "test": "chrome_public_unit_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_unit_test_apk/"
@@ -32574,7 +32577,7 @@
       },
       {
         "args": [
-          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android23.textpb",
@@ -37448,7 +37451,8 @@
               "name": "shard #${SHARD_INDEX} logcats"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 2
         },
         "test": "chrome_public_unit_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_unit_test_apk/"
@@ -40557,7 +40561,7 @@
             }
           ],
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
-          "shards": 20
+          "shards": 19
         },
         "test": "chrome_public_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_test_apk/"
@@ -40614,7 +40618,8 @@
               "name": "shard #${SHARD_INDEX} logcats"
             }
           ],
-          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
+          "shards": 2
         },
         "test": "chrome_public_unit_test_apk",
         "test_id_prefix": "ninja://chrome/android:chrome_public_unit_test_apk/"
@@ -42490,7 +42495,7 @@
       },
       {
         "args": [
-          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=-org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android28.textpb",
@@ -42565,7 +42570,7 @@
       },
       {
         "args": [
-          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*",
+          "--gtest_filter=org.chromium.chrome.browser.contextualsearch.ContextualSearchManagerTest.test*ExternalNavigationWithUserGesture*:org.chromium.shape_detection.*",
           "--gs-results-bucket=chromium-result-details",
           "--recover-devices",
           "--avd-config=../../tools/android/avd/proto/generic_android28.textpb",
@@ -46542,7 +46547,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -46627,7 +46632,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -47052,7 +47057,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -47137,7 +47142,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -47566,7 +47571,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -47651,7 +47656,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -48076,7 +48081,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -48161,7 +48166,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -48658,7 +48663,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -48743,7 +48748,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -49168,7 +49173,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -49253,7 +49258,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -49750,7 +49755,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -49835,7 +49840,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -50260,7 +50265,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M103",
-              "revision": "version:103.0.5060.115"
+              "revision": "version:103.0.5060.122"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",
@@ -50345,7 +50350,7 @@
             {
               "cipd_package": "chromium/testing/weblayer-x86",
               "location": "weblayer_instrumentation_test_M104",
-              "revision": "version:104.0.5112.33"
+              "revision": "version:104.0.5112.42"
             },
             {
               "cipd_package": "infra/tools/luci/logdog/butler/${platform}",

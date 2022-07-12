@@ -161,6 +161,20 @@ class Tremplin final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>> PrepareAsyncGetDebugInfo(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>>(PrepareAsyncGetDebugInfoRaw(context, request, cq));
     }
+    virtual ::grpc::Status AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>> AsyncAttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>>(AsyncAttachUsbToContainerRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>> PrepareAsyncAttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>>(PrepareAsyncAttachUsbToContainerRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>> AsyncDetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>>(AsyncDetachUsbFromContainerRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>> PrepareAsyncDetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>>(PrepareAsyncDetachUsbFromContainerRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -181,6 +195,8 @@ class Tremplin final {
       virtual void CancelUpgradeContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::CancelUpgradeContainerRequest* request, ::vm_tools::tremplin::CancelUpgradeContainerResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void HostNetworkChanged(::grpc::ClientContext* context, const ::vm_tools::tremplin::HostNetworkChangedRequest* request, ::vm_tools::tremplin::HostNetworkChangedResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetDebugInfo(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest* request, ::vm_tools::tremplin::GetDebugInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -218,6 +234,10 @@ class Tremplin final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::HostNetworkChangedResponse>* PrepareAsyncHostNetworkChangedRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::HostNetworkChangedRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>* AsyncGetDebugInfoRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::GetDebugInfoResponse>* PrepareAsyncGetDebugInfoRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>* AsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::AttachUsbToContainerResponse>* PrepareAsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* AsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* PrepareAsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -341,6 +361,20 @@ class Tremplin final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::GetDebugInfoResponse>> PrepareAsyncGetDebugInfo(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::GetDebugInfoResponse>>(PrepareAsyncGetDebugInfoRaw(context, request, cq));
     }
+    ::grpc::Status AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>> AsyncAttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>>(AsyncAttachUsbToContainerRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>> PrepareAsyncAttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>>(PrepareAsyncAttachUsbToContainerRaw(context, request, cq));
+    }
+    ::grpc::Status DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>> AsyncDetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>>(AsyncDetachUsbFromContainerRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>> PrepareAsyncDetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>>(PrepareAsyncDetachUsbFromContainerRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -361,6 +395,8 @@ class Tremplin final {
       void CancelUpgradeContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::CancelUpgradeContainerRequest* request, ::vm_tools::tremplin::CancelUpgradeContainerResponse* response, std::function<void(::grpc::Status)>) override;
       void HostNetworkChanged(::grpc::ClientContext* context, const ::vm_tools::tremplin::HostNetworkChangedRequest* request, ::vm_tools::tremplin::HostNetworkChangedResponse* response, std::function<void(::grpc::Status)>) override;
       void GetDebugInfo(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest* request, ::vm_tools::tremplin::GetDebugInfoResponse* response, std::function<void(::grpc::Status)>) override;
+      void AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response, std::function<void(::grpc::Status)>) override;
+      void DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -406,6 +442,10 @@ class Tremplin final {
     ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::HostNetworkChangedResponse>* PrepareAsyncHostNetworkChangedRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::HostNetworkChangedRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::GetDebugInfoResponse>* AsyncGetDebugInfoRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::GetDebugInfoResponse>* PrepareAsyncGetDebugInfoRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>* AsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>* PrepareAsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* AsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* PrepareAsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_StartLxd_;
     const ::grpc::internal::RpcMethod rpcmethod_CreateContainer_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteContainer_;
@@ -423,6 +463,8 @@ class Tremplin final {
     const ::grpc::internal::RpcMethod rpcmethod_CancelUpgradeContainer_;
     const ::grpc::internal::RpcMethod rpcmethod_HostNetworkChanged_;
     const ::grpc::internal::RpcMethod rpcmethod_GetDebugInfo_;
+    const ::grpc::internal::RpcMethod rpcmethod_AttachUsbToContainer_;
+    const ::grpc::internal::RpcMethod rpcmethod_DetachUsbFromContainer_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -447,6 +489,8 @@ class Tremplin final {
     virtual ::grpc::Status CancelUpgradeContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::CancelUpgradeContainerRequest* request, ::vm_tools::tremplin::CancelUpgradeContainerResponse* response);
     virtual ::grpc::Status HostNetworkChanged(::grpc::ServerContext* context, const ::vm_tools::tremplin::HostNetworkChangedRequest* request, ::vm_tools::tremplin::HostNetworkChangedResponse* response);
     virtual ::grpc::Status GetDebugInfo(::grpc::ServerContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest* request, ::vm_tools::tremplin::GetDebugInfoResponse* response);
+    virtual ::grpc::Status AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response);
+    virtual ::grpc::Status DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_StartLxd : public BaseClass {
@@ -788,7 +832,47 @@ class Tremplin final {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_StartLxd<WithAsyncMethod_CreateContainer<WithAsyncMethod_DeleteContainer<WithAsyncMethod_StartContainer<WithAsyncMethod_StopContainer<WithAsyncMethod_GetContainerUsername<WithAsyncMethod_SetUpUser<WithAsyncMethod_GetContainerInfo<WithAsyncMethod_SetTimezone<WithAsyncMethod_ExportContainer<WithAsyncMethod_CancelExportContainer<WithAsyncMethod_ImportContainer<WithAsyncMethod_CancelImportContainer<WithAsyncMethod_UpgradeContainer<WithAsyncMethod_CancelUpgradeContainer<WithAsyncMethod_HostNetworkChanged<WithAsyncMethod_GetDebugInfo<Service > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AttachUsbToContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AttachUsbToContainer() {
+      ::grpc::Service::MarkMethodAsync(17);
+    }
+    ~WithAsyncMethod_AttachUsbToContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachUsbToContainer(::grpc::ServerContext* context, ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::tremplin::AttachUsbToContainerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DetachUsbFromContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DetachUsbFromContainer() {
+      ::grpc::Service::MarkMethodAsync(18);
+    }
+    ~WithAsyncMethod_DetachUsbFromContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDetachUsbFromContainer(::grpc::ServerContext* context, ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_StartLxd<WithAsyncMethod_CreateContainer<WithAsyncMethod_DeleteContainer<WithAsyncMethod_StartContainer<WithAsyncMethod_StopContainer<WithAsyncMethod_GetContainerUsername<WithAsyncMethod_SetUpUser<WithAsyncMethod_GetContainerInfo<WithAsyncMethod_SetTimezone<WithAsyncMethod_ExportContainer<WithAsyncMethod_CancelExportContainer<WithAsyncMethod_ImportContainer<WithAsyncMethod_CancelImportContainer<WithAsyncMethod_UpgradeContainer<WithAsyncMethod_CancelUpgradeContainer<WithAsyncMethod_HostNetworkChanged<WithAsyncMethod_GetDebugInfo<WithAsyncMethod_AttachUsbToContainer<WithAsyncMethod_DetachUsbFromContainer<Service > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_StartLxd : public BaseClass {
    private:
@@ -1074,6 +1158,40 @@ class Tremplin final {
     }
     // disable synchronous version of this method
     ::grpc::Status GetDebugInfo(::grpc::ServerContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest* request, ::vm_tools::tremplin::GetDebugInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AttachUsbToContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AttachUsbToContainer() {
+      ::grpc::Service::MarkMethodGeneric(17);
+    }
+    ~WithGenericMethod_AttachUsbToContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DetachUsbFromContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DetachUsbFromContainer() {
+      ::grpc::Service::MarkMethodGeneric(18);
+    }
+    ~WithGenericMethod_DetachUsbFromContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1419,6 +1537,46 @@ class Tremplin final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_AttachUsbToContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AttachUsbToContainer() {
+      ::grpc::Service::MarkMethodRaw(17);
+    }
+    ~WithRawMethod_AttachUsbToContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAttachUsbToContainer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DetachUsbFromContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DetachUsbFromContainer() {
+      ::grpc::Service::MarkMethodRaw(18);
+    }
+    ~WithRawMethod_DetachUsbFromContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDetachUsbFromContainer(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_StartLxd : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1758,9 +1916,49 @@ class Tremplin final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetDebugInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::tremplin::GetDebugInfoRequest,::vm_tools::tremplin::GetDebugInfoResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_StartLxd<WithStreamedUnaryMethod_CreateContainer<WithStreamedUnaryMethod_DeleteContainer<WithStreamedUnaryMethod_StartContainer<WithStreamedUnaryMethod_StopContainer<WithStreamedUnaryMethod_GetContainerUsername<WithStreamedUnaryMethod_SetUpUser<WithStreamedUnaryMethod_GetContainerInfo<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_ExportContainer<WithStreamedUnaryMethod_CancelExportContainer<WithStreamedUnaryMethod_ImportContainer<WithStreamedUnaryMethod_CancelImportContainer<WithStreamedUnaryMethod_UpgradeContainer<WithStreamedUnaryMethod_CancelUpgradeContainer<WithStreamedUnaryMethod_HostNetworkChanged<WithStreamedUnaryMethod_GetDebugInfo<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AttachUsbToContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AttachUsbToContainer() {
+      ::grpc::Service::MarkMethodStreamed(17,
+        new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::tremplin::AttachUsbToContainerRequest, ::vm_tools::tremplin::AttachUsbToContainerResponse>(std::bind(&WithStreamedUnaryMethod_AttachUsbToContainer<BaseClass>::StreamedAttachUsbToContainer, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AttachUsbToContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAttachUsbToContainer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::tremplin::AttachUsbToContainerRequest,::vm_tools::tremplin::AttachUsbToContainerResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DetachUsbFromContainer : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DetachUsbFromContainer() {
+      ::grpc::Service::MarkMethodStreamed(18,
+        new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::tremplin::DetachUsbFromContainerRequest, ::vm_tools::tremplin::DetachUsbFromContainerResponse>(std::bind(&WithStreamedUnaryMethod_DetachUsbFromContainer<BaseClass>::StreamedDetachUsbFromContainer, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DetachUsbFromContainer() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDetachUsbFromContainer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::tremplin::DetachUsbFromContainerRequest,::vm_tools::tremplin::DetachUsbFromContainerResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_StartLxd<WithStreamedUnaryMethod_CreateContainer<WithStreamedUnaryMethod_DeleteContainer<WithStreamedUnaryMethod_StartContainer<WithStreamedUnaryMethod_StopContainer<WithStreamedUnaryMethod_GetContainerUsername<WithStreamedUnaryMethod_SetUpUser<WithStreamedUnaryMethod_GetContainerInfo<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_ExportContainer<WithStreamedUnaryMethod_CancelExportContainer<WithStreamedUnaryMethod_ImportContainer<WithStreamedUnaryMethod_CancelImportContainer<WithStreamedUnaryMethod_UpgradeContainer<WithStreamedUnaryMethod_CancelUpgradeContainer<WithStreamedUnaryMethod_HostNetworkChanged<WithStreamedUnaryMethod_GetDebugInfo<WithStreamedUnaryMethod_AttachUsbToContainer<WithStreamedUnaryMethod_DetachUsbFromContainer<Service > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_StartLxd<WithStreamedUnaryMethod_CreateContainer<WithStreamedUnaryMethod_DeleteContainer<WithStreamedUnaryMethod_StartContainer<WithStreamedUnaryMethod_StopContainer<WithStreamedUnaryMethod_GetContainerUsername<WithStreamedUnaryMethod_SetUpUser<WithStreamedUnaryMethod_GetContainerInfo<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_ExportContainer<WithStreamedUnaryMethod_CancelExportContainer<WithStreamedUnaryMethod_ImportContainer<WithStreamedUnaryMethod_CancelImportContainer<WithStreamedUnaryMethod_UpgradeContainer<WithStreamedUnaryMethod_CancelUpgradeContainer<WithStreamedUnaryMethod_HostNetworkChanged<WithStreamedUnaryMethod_GetDebugInfo<Service > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_StartLxd<WithStreamedUnaryMethod_CreateContainer<WithStreamedUnaryMethod_DeleteContainer<WithStreamedUnaryMethod_StartContainer<WithStreamedUnaryMethod_StopContainer<WithStreamedUnaryMethod_GetContainerUsername<WithStreamedUnaryMethod_SetUpUser<WithStreamedUnaryMethod_GetContainerInfo<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_ExportContainer<WithStreamedUnaryMethod_CancelExportContainer<WithStreamedUnaryMethod_ImportContainer<WithStreamedUnaryMethod_CancelImportContainer<WithStreamedUnaryMethod_UpgradeContainer<WithStreamedUnaryMethod_CancelUpgradeContainer<WithStreamedUnaryMethod_HostNetworkChanged<WithStreamedUnaryMethod_GetDebugInfo<WithStreamedUnaryMethod_AttachUsbToContainer<WithStreamedUnaryMethod_DetachUsbFromContainer<Service > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 // Service that is notified of events from tremplin.

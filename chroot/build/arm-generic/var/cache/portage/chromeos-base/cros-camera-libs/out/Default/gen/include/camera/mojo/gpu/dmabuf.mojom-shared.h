@@ -130,7 +130,7 @@ class DmaBufVideoFrameDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) const {
+  [[nodiscard]] bool ReadFormat(UserType* output) const {
     auto data_value = data_->format;
     return mojo::internal::Deserialize<::cros::mojom::VideoPixelFormat>(
         data_value, output);
@@ -149,7 +149,7 @@ class DmaBufVideoFrameDataView {
       mojo::ArrayDataView<DmaBufPlaneDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPlanes(UserType* output) {
+  [[nodiscard]] bool ReadPlanes(UserType* output) {
     
     auto* pointer = data_->planes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::DmaBufPlaneDataView>>(

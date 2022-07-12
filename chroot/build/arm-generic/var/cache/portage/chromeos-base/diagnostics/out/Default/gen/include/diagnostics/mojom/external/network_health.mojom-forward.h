@@ -48,27 +48,7 @@ using NetworkHealthStatePtr = mojo::StructPtr<NetworkHealthState>;
 
 class NetworkEventsObserver;
 
-using NetworkEventsObserverPtr = mojo::InterfacePtr<NetworkEventsObserver>;
-using NetworkEventsObserverPtrInfo = mojo::InterfacePtrInfo<NetworkEventsObserver>;
-
-using NetworkEventsObserverRequest = mojo::InterfaceRequest<NetworkEventsObserver>;
-using NetworkEventsObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<NetworkEventsObserver>;
-
-using NetworkEventsObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<NetworkEventsObserver>;
-
 class NetworkHealthService;
-
-using NetworkHealthServicePtr = mojo::InterfacePtr<NetworkHealthService>;
-using NetworkHealthServicePtrInfo = mojo::InterfacePtrInfo<NetworkHealthService>;
-
-using NetworkHealthServiceRequest = mojo::InterfaceRequest<NetworkHealthService>;
-using NetworkHealthServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<NetworkHealthService>;
-
-using NetworkHealthServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<NetworkHealthService>;
 
 
 

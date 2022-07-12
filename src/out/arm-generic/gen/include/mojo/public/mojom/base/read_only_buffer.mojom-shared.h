@@ -72,7 +72,7 @@ class ReadOnlyBufferDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBuffer(UserType* output) {
+  [[nodiscard]] bool ReadBuffer(UserType* output) {
     
     auto* pointer = data_->buffer.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

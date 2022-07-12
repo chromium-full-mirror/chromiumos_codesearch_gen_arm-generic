@@ -14,95 +14,84 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_benchmark_5fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_benchmark_5fconfig_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Metric_benchmark_5fconfig_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace chrome {
 namespace ml_benchmark {
-class CrOSBenchmarkConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CrOSBenchmarkConfig> _instance;
-} _CrOSBenchmarkConfig_default_instance_;
-class MetricDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Metric> _instance;
-} _Metric_default_instance_;
-class BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse> _instance;
-} _BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_default_instance_;
-class BenchmarkResultsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BenchmarkResults> _instance;
-} _BenchmarkResults_default_instance_;
+constexpr CrOSBenchmarkConfig::CrOSBenchmarkConfig(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : driver_config_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , acceleration_mode_(0)
+{}
+struct CrOSBenchmarkConfigDefaultTypeInternal {
+  constexpr CrOSBenchmarkConfigDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CrOSBenchmarkConfigDefaultTypeInternal() {}
+  union {
+    CrOSBenchmarkConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CrOSBenchmarkConfigDefaultTypeInternal _CrOSBenchmarkConfig_default_instance_;
+constexpr Metric::Metric(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : values_()
+  , name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , units_(0)
+
+  , direction_(0)
+
+  , cardinality_(0)
+{}
+struct MetricDefaultTypeInternal {
+  constexpr MetricDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~MetricDefaultTypeInternal() {}
+  union {
+    Metric _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MetricDefaultTypeInternal _Metric_default_instance_;
+constexpr BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUseDefaultTypeInternal {
+  constexpr BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUseDefaultTypeInternal _BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_default_instance_;
+constexpr BenchmarkResults::BenchmarkResults(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : percentile_latencies_in_us_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , metrics_()
+  , results_message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(0)
+
+  , power_normalization_factor_(0){}
+struct BenchmarkResultsDefaultTypeInternal {
+  constexpr BenchmarkResultsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~BenchmarkResultsDefaultTypeInternal() {}
+  union {
+    BenchmarkResults _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT BenchmarkResultsDefaultTypeInternal _BenchmarkResults_default_instance_;
 }  // namespace ml_benchmark
 }  // namespace chrome
-static void InitDefaultsscc_info_BenchmarkResults_benchmark_5fconfig_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome::ml_benchmark::_BenchmarkResults_default_instance_;
-    new (ptr) ::chrome::ml_benchmark::BenchmarkResults();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome::ml_benchmark::BenchmarkResults::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_BenchmarkResults_benchmark_5fconfig_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_BenchmarkResults_benchmark_5fconfig_2eproto}, {
-      &scc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto.base,
-      &scc_info_Metric_benchmark_5fconfig_2eproto.base,}};
-
-static void InitDefaultsscc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome::ml_benchmark::_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_default_instance_;
-    new (ptr) ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse();
-  }
-  ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto}, {}};
-
-static void InitDefaultsscc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome::ml_benchmark::_CrOSBenchmarkConfig_default_instance_;
-    new (ptr) ::chrome::ml_benchmark::CrOSBenchmarkConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome::ml_benchmark::CrOSBenchmarkConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto}, {}};
-
-static void InitDefaultsscc_info_Metric_benchmark_5fconfig_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome::ml_benchmark::_Metric_default_instance_;
-    new (ptr) ::chrome::ml_benchmark::Metric();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome::ml_benchmark::Metric::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Metric_benchmark_5fconfig_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Metric_benchmark_5fconfig_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_benchmark_5fconfig_2eproto[4];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_benchmark_5fconfig_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_benchmark_5fconfig_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_benchmark_5fconfig_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_benchmark_5fconfig_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::CrOSBenchmarkConfig, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::CrOSBenchmarkConfig, acceleration_mode_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::CrOSBenchmarkConfig, driver_config_),
   ~0u,  // no _has_bits_
@@ -110,6 +99,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_benchmark_5fconfig_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::Metric, name_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::Metric, units_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::Metric, direction_),
@@ -120,6 +110,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_benchmark_5fconfig_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse, key_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse, value_),
   0,
@@ -129,6 +120,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_benchmark_5fconfig_2eproto::of
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults, status_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults, results_message_),
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults, percentile_latencies_in_us_),
@@ -136,10 +128,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_benchmark_5fconfig_2eproto::of
   PROTOBUF_FIELD_OFFSET(::chrome::ml_benchmark::BenchmarkResults, power_normalization_factor_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::chrome::ml_benchmark::CrOSBenchmarkConfig)},
-  { 7, -1, sizeof(::chrome::ml_benchmark::Metric)},
-  { 17, 24, sizeof(::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse)},
-  { 26, -1, sizeof(::chrome::ml_benchmark::BenchmarkResults)},
+  { 0, -1, -1, sizeof(::chrome::ml_benchmark::CrOSBenchmarkConfig)},
+  { 8, -1, -1, sizeof(::chrome::ml_benchmark::Metric)},
+  { 19, 27, -1, sizeof(::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse)},
+  { 29, -1, -1, sizeof(::chrome::ml_benchmark::BenchmarkResults)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -180,25 +172,19 @@ const char descriptor_table_protodef_benchmark_5fconfig_2eproto[] PROTOBUF_SECTI
   "\n\025INITIALIZATION_FAILED\020\002\022\027\n\023BENCHMARK_T"
   "IMED_OUT\020\003\022\021\n\rRUNTIME_ERROR\020\004b\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_benchmark_5fconfig_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_benchmark_5fconfig_2eproto_sccs[4] = {
-  &scc_info_BenchmarkResults_benchmark_5fconfig_2eproto.base,
-  &scc_info_BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse_benchmark_5fconfig_2eproto.base,
-  &scc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto.base,
-  &scc_info_Metric_benchmark_5fconfig_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_benchmark_5fconfig_2eproto_once;
-static bool descriptor_table_benchmark_5fconfig_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_benchmark_5fconfig_2eproto = {
-  &descriptor_table_benchmark_5fconfig_2eproto_initialized, descriptor_table_protodef_benchmark_5fconfig_2eproto, "benchmark_config.proto", 1157,
-  &descriptor_table_benchmark_5fconfig_2eproto_once, descriptor_table_benchmark_5fconfig_2eproto_sccs, descriptor_table_benchmark_5fconfig_2eproto_deps, 4, 0,
+  false, false, 1157, descriptor_table_protodef_benchmark_5fconfig_2eproto, "benchmark_config.proto", 
+  &descriptor_table_benchmark_5fconfig_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_benchmark_5fconfig_2eproto::offsets,
-  file_level_metadata_benchmark_5fconfig_2eproto, 4, file_level_enum_descriptors_benchmark_5fconfig_2eproto, file_level_service_descriptors_benchmark_5fconfig_2eproto,
+  file_level_metadata_benchmark_5fconfig_2eproto, file_level_enum_descriptors_benchmark_5fconfig_2eproto, file_level_service_descriptors_benchmark_5fconfig_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_benchmark_5fconfig_2eproto_getter() {
+  return &descriptor_table_benchmark_5fconfig_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_benchmark_5fconfig_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_benchmark_5fconfig_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_benchmark_5fconfig_2eproto(&descriptor_table_benchmark_5fconfig_2eproto);
 namespace chrome {
 namespace ml_benchmark {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Metric_Direction_descriptor() {
@@ -215,13 +201,13 @@ bool Metric_Direction_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Metric_Direction Metric::SMALLER_IS_BETTER;
 constexpr Metric_Direction Metric::BIGGER_IS_BETTER;
 constexpr Metric_Direction Metric::Direction_MIN;
 constexpr Metric_Direction Metric::Direction_MAX;
 constexpr int Metric::Direction_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Metric_Units_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_benchmark_5fconfig_2eproto);
   return file_level_enum_descriptors_benchmark_5fconfig_2eproto[1];
@@ -243,7 +229,7 @@ bool Metric_Units_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Metric_Units Metric::UNITLESS;
 constexpr Metric_Units Metric::BYTES;
 constexpr Metric_Units Metric::JOULES;
@@ -256,7 +242,7 @@ constexpr Metric_Units Metric::TS_MS;
 constexpr Metric_Units Metric::Units_MIN;
 constexpr Metric_Units Metric::Units_MAX;
 constexpr int Metric::Units_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Metric_Cardinality_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_benchmark_5fconfig_2eproto);
   return file_level_enum_descriptors_benchmark_5fconfig_2eproto[2];
@@ -271,13 +257,13 @@ bool Metric_Cardinality_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Metric_Cardinality Metric::SINGLE;
 constexpr Metric_Cardinality Metric::MULTIPLE;
 constexpr Metric_Cardinality Metric::Cardinality_MIN;
 constexpr Metric_Cardinality Metric::Cardinality_MAX;
 constexpr int Metric::Cardinality_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AccelerationMode_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_benchmark_5fconfig_2eproto);
   return file_level_enum_descriptors_benchmark_5fconfig_2eproto[3];
@@ -312,123 +298,138 @@ bool BenchmarkReturnStatus_IsValid(int value) {
 
 // ===================================================================
 
-void CrOSBenchmarkConfig::InitAsDefaultInstance() {
-}
 class CrOSBenchmarkConfig::_Internal {
  public:
 };
 
-CrOSBenchmarkConfig::CrOSBenchmarkConfig()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CrOSBenchmarkConfig::CrOSBenchmarkConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome.ml_benchmark.CrOSBenchmarkConfig)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome.ml_benchmark.CrOSBenchmarkConfig)
 }
 CrOSBenchmarkConfig::CrOSBenchmarkConfig(const CrOSBenchmarkConfig& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   driver_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    driver_config_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_driver_config().empty()) {
-    driver_config_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_config_);
+    driver_config_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_driver_config(), 
+      GetArenaForAllocation());
   }
   acceleration_mode_ = from.acceleration_mode_;
   // @@protoc_insertion_point(copy_constructor:chrome.ml_benchmark.CrOSBenchmarkConfig)
 }
 
-void CrOSBenchmarkConfig::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto.base);
-  driver_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  acceleration_mode_ = 0;
+inline void CrOSBenchmarkConfig::SharedCtor() {
+driver_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  driver_config_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+acceleration_mode_ = 0;
 }
 
 CrOSBenchmarkConfig::~CrOSBenchmarkConfig() {
   // @@protoc_insertion_point(destructor:chrome.ml_benchmark.CrOSBenchmarkConfig)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void CrOSBenchmarkConfig::SharedDtor() {
+inline void CrOSBenchmarkConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   driver_config_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CrOSBenchmarkConfig::ArenaDtor(void* object) {
+  CrOSBenchmarkConfig* _this = reinterpret_cast< CrOSBenchmarkConfig* >(object);
+  (void)_this;
+}
+void CrOSBenchmarkConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CrOSBenchmarkConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CrOSBenchmarkConfig& CrOSBenchmarkConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CrOSBenchmarkConfig_benchmark_5fconfig_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CrOSBenchmarkConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  driver_config_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  driver_config_.ClearToEmpty();
   acceleration_mode_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CrOSBenchmarkConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .chrome.ml_benchmark.AccelerationMode acceleration_mode = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_acceleration_mode(static_cast<::chrome::ml_benchmark::AccelerationMode>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string driver_config = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_driver_config();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome.ml_benchmark.CrOSBenchmarkConfig.driver_config"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* CrOSBenchmarkConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* CrOSBenchmarkConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .chrome.ml_benchmark.AccelerationMode acceleration_mode = 1;
-  if (this->acceleration_mode() != 0) {
+  if (this->_internal_acceleration_mode() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_acceleration_mode(), target);
   }
 
   // string driver_config = 4;
-  if (this->driver_config().size() > 0) {
+  if (!this->_internal_driver_config().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_driver_config().data(), static_cast<int>(this->_internal_driver_config().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -439,7 +440,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome.ml_benchmark.CrOSBenchmarkConfig)
   return target;
@@ -449,68 +450,52 @@ size_t CrOSBenchmarkConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string driver_config = 4;
-  if (this->driver_config().size() > 0) {
+  if (!this->_internal_driver_config().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_driver_config());
   }
 
   // .chrome.ml_benchmark.AccelerationMode acceleration_mode = 1;
-  if (this->acceleration_mode() != 0) {
+  if (this->_internal_acceleration_mode() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_acceleration_mode());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void CrOSBenchmarkConfig::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CrOSBenchmarkConfig* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CrOSBenchmarkConfig>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome.ml_benchmark.CrOSBenchmarkConfig)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome.ml_benchmark.CrOSBenchmarkConfig)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CrOSBenchmarkConfig::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CrOSBenchmarkConfig::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CrOSBenchmarkConfig::GetClassData() const { return &_class_data_; }
+
+void CrOSBenchmarkConfig::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<CrOSBenchmarkConfig *>(to)->MergeFrom(
+      static_cast<const CrOSBenchmarkConfig &>(from));
 }
+
 
 void CrOSBenchmarkConfig::MergeFrom(const CrOSBenchmarkConfig& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.driver_config().size() > 0) {
-
-    driver_config_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_config_);
+  if (!from._internal_driver_config().empty()) {
+    _internal_set_driver_config(from._internal_driver_config());
   }
-  if (from.acceleration_mode() != 0) {
+  if (from._internal_acceleration_mode() != 0) {
     _internal_set_acceleration_mode(from._internal_acceleration_mode());
   }
-}
-
-void CrOSBenchmarkConfig::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome.ml_benchmark.CrOSBenchmarkConfig)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CrOSBenchmarkConfig::CopyFrom(const CrOSBenchmarkConfig& from) {
@@ -526,38 +511,50 @@ bool CrOSBenchmarkConfig::IsInitialized() const {
 
 void CrOSBenchmarkConfig::InternalSwap(CrOSBenchmarkConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  driver_config_.Swap(&other->driver_config_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &driver_config_, lhs_arena,
+      &other->driver_config_, rhs_arena
+  );
   swap(acceleration_mode_, other->acceleration_mode_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CrOSBenchmarkConfig::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_benchmark_5fconfig_2eproto_getter, &descriptor_table_benchmark_5fconfig_2eproto_once,
+      file_level_metadata_benchmark_5fconfig_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void Metric::InitAsDefaultInstance() {
-}
 class Metric::_Internal {
  public:
 };
 
-Metric::Metric()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Metric::Metric(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  values_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome.ml_benchmark.Metric)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome.ml_benchmark.Metric)
 }
 Metric::Metric(const Metric& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       values_(from.values_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&units_, &from.units_,
     static_cast<size_t>(reinterpret_cast<char*>(&cardinality_) -
@@ -565,124 +562,138 @@ Metric::Metric(const Metric& from)
   // @@protoc_insertion_point(copy_constructor:chrome.ml_benchmark.Metric)
 }
 
-void Metric::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Metric_benchmark_5fconfig_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&units_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cardinality_) -
-      reinterpret_cast<char*>(&units_)) + sizeof(cardinality_));
+inline void Metric::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&units_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cardinality_) -
+    reinterpret_cast<char*>(&units_)) + sizeof(cardinality_));
 }
 
 Metric::~Metric() {
   // @@protoc_insertion_point(destructor:chrome.ml_benchmark.Metric)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Metric::SharedDtor() {
+inline void Metric::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Metric::ArenaDtor(void* object) {
+  Metric* _this = reinterpret_cast< Metric* >(object);
+  (void)_this;
+}
+void Metric::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Metric::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Metric& Metric::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Metric_benchmark_5fconfig_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Metric::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome.ml_benchmark.Metric)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   values_.Clear();
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmpty();
   ::memset(&units_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&cardinality_) -
       reinterpret_cast<char*>(&units_)) + sizeof(cardinality_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Metric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome.ml_benchmark.Metric.name"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .chrome.ml_benchmark.Metric.Units units = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_units(static_cast<::chrome::ml_benchmark::Metric_Units>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .chrome.ml_benchmark.Metric.Direction direction = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_direction(static_cast<::chrome::ml_benchmark::Metric_Direction>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .chrome.ml_benchmark.Metric.Cardinality cardinality = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_cardinality(static_cast<::chrome::ml_benchmark::Metric_Cardinality>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated double values = 5 [packed = true];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_values(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 41) {
+        } else if (static_cast<uint8_t>(tag) == 41) {
           _internal_add_values(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Metric::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Metric::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome.ml_benchmark.Metric)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string name = 1;
-  if (this->name().size() > 0) {
+  if (!this->_internal_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -692,21 +703,21 @@ failure:
   }
 
   // .chrome.ml_benchmark.Metric.Units units = 2;
-  if (this->units() != 0) {
+  if (this->_internal_units() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       2, this->_internal_units(), target);
   }
 
   // .chrome.ml_benchmark.Metric.Direction direction = 3;
-  if (this->direction() != 0) {
+  if (this->_internal_direction() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       3, this->_internal_direction(), target);
   }
 
   // .chrome.ml_benchmark.Metric.Cardinality cardinality = 4;
-  if (this->cardinality() != 0) {
+  if (this->_internal_cardinality() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       4, this->_internal_cardinality(), target);
@@ -719,7 +730,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome.ml_benchmark.Metric)
   return target;
@@ -729,7 +740,7 @@ size_t Metric::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome.ml_benchmark.Metric)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -740,91 +751,72 @@ size_t Metric::ByteSizeLong() const {
     if (data_size > 0) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+            static_cast<int32_t>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _values_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
   // string name = 1;
-  if (this->name().size() > 0) {
+  if (!this->_internal_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
   }
 
   // .chrome.ml_benchmark.Metric.Units units = 2;
-  if (this->units() != 0) {
+  if (this->_internal_units() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_units());
   }
 
   // .chrome.ml_benchmark.Metric.Direction direction = 3;
-  if (this->direction() != 0) {
+  if (this->_internal_direction() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_direction());
   }
 
   // .chrome.ml_benchmark.Metric.Cardinality cardinality = 4;
-  if (this->cardinality() != 0) {
+  if (this->_internal_cardinality() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cardinality());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Metric::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome.ml_benchmark.Metric)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Metric* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Metric>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome.ml_benchmark.Metric)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome.ml_benchmark.Metric)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Metric::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Metric::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Metric::GetClassData() const { return &_class_data_; }
+
+void Metric::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Metric *>(to)->MergeFrom(
+      static_cast<const Metric &>(from));
 }
+
 
 void Metric::MergeFrom(const Metric& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome.ml_benchmark.Metric)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   values_.MergeFrom(from.values_);
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
   }
-  if (from.units() != 0) {
+  if (from._internal_units() != 0) {
     _internal_set_units(from._internal_units());
   }
-  if (from.direction() != 0) {
+  if (from._internal_direction() != 0) {
     _internal_set_direction(from._internal_direction());
   }
-  if (from.cardinality() != 0) {
+  if (from._internal_cardinality() != 0) {
     _internal_set_cardinality(from._internal_cardinality());
   }
-}
-
-void Metric::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome.ml_benchmark.Metric)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Metric::CopyFrom(const Metric& from) {
@@ -840,19 +832,28 @@ bool Metric::IsInitialized() const {
 
 void Metric::InternalSwap(Metric* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   values_.InternalSwap(&other->values_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(units_, other->units_);
-  swap(direction_, other->direction_);
-  swap(cardinality_, other->cardinality_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Metric, cardinality_)
+      + sizeof(Metric::cardinality_)
+      - PROTOBUF_FIELD_OFFSET(Metric, units_)>(
+          reinterpret_cast<char*>(&units_),
+          reinterpret_cast<char*>(&other->units_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Metric::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_benchmark_5fconfig_2eproto_getter, &descriptor_table_benchmark_5fconfig_2eproto_once,
+      file_level_metadata_benchmark_5fconfig_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -863,36 +864,40 @@ void BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::MergeFrom(const Ben
   MergeFromInternal(other);
 }
 ::PROTOBUF_NAMESPACE_ID::Metadata BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_benchmark_5fconfig_2eproto_getter, &descriptor_table_benchmark_5fconfig_2eproto_once,
+      file_level_metadata_benchmark_5fconfig_2eproto[2]);
 }
-void BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::MergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
-  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
-}
-
 
 // ===================================================================
 
-void BenchmarkResults::InitAsDefaultInstance() {
-}
 class BenchmarkResults::_Internal {
  public:
 };
 
-BenchmarkResults::BenchmarkResults()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+BenchmarkResults::BenchmarkResults(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  percentile_latencies_in_us_(arena),
+  metrics_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome.ml_benchmark.BenchmarkResults)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome.ml_benchmark.BenchmarkResults)
 }
 BenchmarkResults::BenchmarkResults(const BenchmarkResults& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       metrics_(from.metrics_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   percentile_latencies_in_us_.MergeFrom(from.percentile_latencies_in_us_);
   results_message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    results_message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_results_message().empty()) {
-    results_message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.results_message_);
+    results_message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_results_message(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&status_, &from.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&power_normalization_factor_) -
@@ -900,74 +905,86 @@ BenchmarkResults::BenchmarkResults(const BenchmarkResults& from)
   // @@protoc_insertion_point(copy_constructor:chrome.ml_benchmark.BenchmarkResults)
 }
 
-void BenchmarkResults::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_BenchmarkResults_benchmark_5fconfig_2eproto.base);
-  results_message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&power_normalization_factor_) -
-      reinterpret_cast<char*>(&status_)) + sizeof(power_normalization_factor_));
+inline void BenchmarkResults::SharedCtor() {
+results_message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  results_message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&status_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&power_normalization_factor_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(power_normalization_factor_));
 }
 
 BenchmarkResults::~BenchmarkResults() {
   // @@protoc_insertion_point(destructor:chrome.ml_benchmark.BenchmarkResults)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void BenchmarkResults::SharedDtor() {
+inline void BenchmarkResults::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   results_message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void BenchmarkResults::ArenaDtor(void* object) {
+  BenchmarkResults* _this = reinterpret_cast< BenchmarkResults* >(object);
+  (void)_this;
+  _this->percentile_latencies_in_us_. ~MapField();
+}
+inline void BenchmarkResults::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
+  if (arena != nullptr) {
+    arena->OwnCustomDestructor(this, &BenchmarkResults::ArenaDtor);
+  }
+}
 void BenchmarkResults::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BenchmarkResults& BenchmarkResults::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BenchmarkResults_benchmark_5fconfig_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void BenchmarkResults::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome.ml_benchmark.BenchmarkResults)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   percentile_latencies_in_us_.Clear();
   metrics_.Clear();
-  results_message_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  results_message_.ClearToEmpty();
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&power_normalization_factor_) -
       reinterpret_cast<char*>(&status_)) + sizeof(power_normalization_factor_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* BenchmarkResults::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .chrome.ml_benchmark.BenchmarkReturnStatus status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::chrome::ml_benchmark::BenchmarkReturnStatus>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string results_message = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_results_message();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome.ml_benchmark.BenchmarkResults.results_message"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // map<int32, int64> percentile_latencies_in_us = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -975,11 +992,12 @@ const char* BenchmarkResults::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .chrome.ml_benchmark.Metric metrics = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -987,50 +1005,55 @@ const char* BenchmarkResults::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // double power_normalization_factor = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 57)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
           power_normalization_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* BenchmarkResults::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* BenchmarkResults::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome.ml_benchmark.BenchmarkResults)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .chrome.ml_benchmark.BenchmarkReturnStatus status = 1;
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_status(), target);
   }
 
   // string results_message = 2;
-  if (this->results_message().size() > 0) {
+  if (!this->_internal_results_message().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_results_message().data(), static_cast<int>(this->_internal_results_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1041,18 +1064,18 @@ failure:
 
   // map<int32, int64> percentile_latencies_in_us = 5;
   if (!this->_internal_percentile_latencies_in_us().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::int64 >::const_pointer
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< int32_t, int64_t >::const_pointer
         ConstPtr;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::int32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< int32_t, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (stream->IsSerializationDeterministic() &&
         this->_internal_percentile_latencies_in_us().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->_internal_percentile_latencies_in_us().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::int64 >::size_type size_type;
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< int32_t, int64_t >::size_type size_type;
       size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::int64 >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< int32_t, int64_t >::const_iterator
           it = this->_internal_percentile_latencies_in_us().begin();
           it != this->_internal_percentile_latencies_in_us().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -1062,7 +1085,7 @@ failure:
         target = BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
       }
     } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::int64 >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< int32_t, int64_t >::const_iterator
           it = this->_internal_percentile_latencies_in_us().begin();
           it != this->_internal_percentile_latencies_in_us().end(); ++it) {
         target = BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
@@ -1079,14 +1102,18 @@ failure:
   }
 
   // double power_normalization_factor = 7;
-  if (!(this->power_normalization_factor() <= 0 && this->power_normalization_factor() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_power_normalization_factor = this->_internal_power_normalization_factor();
+  uint64_t raw_power_normalization_factor;
+  memcpy(&raw_power_normalization_factor, &tmp_power_normalization_factor, sizeof(tmp_power_normalization_factor));
+  if (raw_power_normalization_factor != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(7, this->_internal_power_normalization_factor(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome.ml_benchmark.BenchmarkResults)
   return target;
@@ -1096,14 +1123,14 @@ size_t BenchmarkResults::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome.ml_benchmark.BenchmarkResults)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // map<int32, int64> percentile_latencies_in_us = 5;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_percentile_latencies_in_us_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::PROTOBUF_NAMESPACE_ID::int64 >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< int32_t, int64_t >::const_iterator
       it = this->_internal_percentile_latencies_in_us().begin();
       it != this->_internal_percentile_latencies_in_us().end(); ++it) {
     total_size += BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
@@ -1117,73 +1144,65 @@ size_t BenchmarkResults::ByteSizeLong() const {
   }
 
   // string results_message = 2;
-  if (this->results_message().size() > 0) {
+  if (!this->_internal_results_message().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_results_message());
   }
 
   // .chrome.ml_benchmark.BenchmarkReturnStatus status = 1;
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
   // double power_normalization_factor = 7;
-  if (!(this->power_normalization_factor() <= 0 && this->power_normalization_factor() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_power_normalization_factor = this->_internal_power_normalization_factor();
+  uint64_t raw_power_normalization_factor;
+  memcpy(&raw_power_normalization_factor, &tmp_power_normalization_factor, sizeof(tmp_power_normalization_factor));
+  if (raw_power_normalization_factor != 0) {
     total_size += 1 + 8;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void BenchmarkResults::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome.ml_benchmark.BenchmarkResults)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BenchmarkResults* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BenchmarkResults>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome.ml_benchmark.BenchmarkResults)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome.ml_benchmark.BenchmarkResults)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BenchmarkResults::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BenchmarkResults::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BenchmarkResults::GetClassData() const { return &_class_data_; }
+
+void BenchmarkResults::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BenchmarkResults *>(to)->MergeFrom(
+      static_cast<const BenchmarkResults &>(from));
 }
+
 
 void BenchmarkResults::MergeFrom(const BenchmarkResults& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome.ml_benchmark.BenchmarkResults)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   percentile_latencies_in_us_.MergeFrom(from.percentile_latencies_in_us_);
   metrics_.MergeFrom(from.metrics_);
-  if (from.results_message().size() > 0) {
-
-    results_message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.results_message_);
+  if (!from._internal_results_message().empty()) {
+    _internal_set_results_message(from._internal_results_message());
   }
-  if (from.status() != 0) {
+  if (from._internal_status() != 0) {
     _internal_set_status(from._internal_status());
   }
-  if (!(from.power_normalization_factor() <= 0 && from.power_normalization_factor() >= 0)) {
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_power_normalization_factor = from._internal_power_normalization_factor();
+  uint64_t raw_power_normalization_factor;
+  memcpy(&raw_power_normalization_factor, &tmp_power_normalization_factor, sizeof(tmp_power_normalization_factor));
+  if (raw_power_normalization_factor != 0) {
     _internal_set_power_normalization_factor(from._internal_power_normalization_factor());
   }
-}
-
-void BenchmarkResults::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome.ml_benchmark.BenchmarkResults)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BenchmarkResults::CopyFrom(const BenchmarkResults& from) {
@@ -1199,35 +1218,45 @@ bool BenchmarkResults::IsInitialized() const {
 
 void BenchmarkResults::InternalSwap(BenchmarkResults* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  percentile_latencies_in_us_.Swap(&other->percentile_latencies_in_us_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  percentile_latencies_in_us_.InternalSwap(&other->percentile_latencies_in_us_);
   metrics_.InternalSwap(&other->metrics_);
-  results_message_.Swap(&other->results_message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(status_, other->status_);
-  swap(power_normalization_factor_, other->power_normalization_factor_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &results_message_, lhs_arena,
+      &other->results_message_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BenchmarkResults, power_normalization_factor_)
+      + sizeof(BenchmarkResults::power_normalization_factor_)
+      - PROTOBUF_FIELD_OFFSET(BenchmarkResults, status_)>(
+          reinterpret_cast<char*>(&status_),
+          reinterpret_cast<char*>(&other->status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BenchmarkResults::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_benchmark_5fconfig_2eproto_getter, &descriptor_table_benchmark_5fconfig_2eproto_once,
+      file_level_metadata_benchmark_5fconfig_2eproto[3]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ml_benchmark
 }  // namespace chrome
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::chrome::ml_benchmark::CrOSBenchmarkConfig* Arena::CreateMaybeMessage< ::chrome::ml_benchmark::CrOSBenchmarkConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome::ml_benchmark::CrOSBenchmarkConfig >(arena);
+  return Arena::CreateMessageInternal< ::chrome::ml_benchmark::CrOSBenchmarkConfig >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome::ml_benchmark::Metric* Arena::CreateMaybeMessage< ::chrome::ml_benchmark::Metric >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome::ml_benchmark::Metric >(arena);
+  return Arena::CreateMessageInternal< ::chrome::ml_benchmark::Metric >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse* Arena::CreateMaybeMessage< ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::chrome::ml_benchmark::BenchmarkResults_PercentileLatenciesInUsEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome::ml_benchmark::BenchmarkResults* Arena::CreateMaybeMessage< ::chrome::ml_benchmark::BenchmarkResults >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome::ml_benchmark::BenchmarkResults >(arena);
+  return Arena::CreateMessageInternal< ::chrome::ml_benchmark::BenchmarkResults >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

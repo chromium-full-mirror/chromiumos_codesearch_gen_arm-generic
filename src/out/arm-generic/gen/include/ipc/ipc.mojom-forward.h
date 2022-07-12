@@ -30,27 +30,7 @@ using MessagePtr = mojo::StructPtr<Message>;
 
 class Channel;
 
-using ChannelPtr = mojo::InterfacePtr<Channel>;
-using ChannelPtrInfo = mojo::InterfacePtrInfo<Channel>;
-
-using ChannelRequest = mojo::InterfaceRequest<Channel>;
-using ChannelAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Channel>;
-
-using ChannelAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Channel>;
-
 class ChannelBootstrap;
-
-using ChannelBootstrapPtr = mojo::InterfacePtr<ChannelBootstrap>;
-using ChannelBootstrapPtrInfo = mojo::InterfacePtrInfo<ChannelBootstrap>;
-
-using ChannelBootstrapRequest = mojo::InterfaceRequest<ChannelBootstrap>;
-using ChannelBootstrapAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<ChannelBootstrap>;
-
-using ChannelBootstrapAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<ChannelBootstrap>;
 
 
 

@@ -151,14 +151,14 @@ class NetworkEventsObserver_OnConnectionStateChanged_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGuid(UserType* output) {
+  [[nodiscard]] bool ReadGuid(UserType* output) {
     
     auto* pointer = data_->guid.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::chromeos::network_health::mojom::NetworkState>(
         data_value, output);
@@ -188,7 +188,7 @@ class NetworkEventsObserver_OnSignalStrengthChanged_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGuid(UserType* output) {
+  [[nodiscard]] bool ReadGuid(UserType* output) {
     
     auto* pointer = data_->guid.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -198,7 +198,7 @@ class NetworkEventsObserver_OnSignalStrengthChanged_ParamsDataView {
       UInt32ValueDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSignalStrength(UserType* output) {
+  [[nodiscard]] bool ReadSignalStrength(UserType* output) {
     
     auto* pointer = data_->signal_strength.Get();
     return mojo::internal::Deserialize<::chromeos::network_health::mojom::UInt32ValueDataView>(
@@ -267,7 +267,7 @@ class NetworkHealthService_GetNetworkList_ResponseParamsDataView {
       mojo::ArrayDataView<NetworkDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworks(UserType* output) {
+  [[nodiscard]] bool ReadNetworks(UserType* output) {
     
     auto* pointer = data_->networks.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_health::mojom::NetworkDataView>>(
@@ -310,7 +310,7 @@ class NetworkHealthService_GetHealthSnapshot_ResponseParamsDataView {
       NetworkHealthStateDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) {
+  [[nodiscard]] bool ReadState(UserType* output) {
     
     auto* pointer = data_->state.Get();
     return mojo::internal::Deserialize<::chromeos::network_health::mojom::NetworkHealthStateDataView>(

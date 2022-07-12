@@ -185,7 +185,7 @@ class VideoEncodeProfileDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProfile(UserType* output) const {
+  [[nodiscard]] bool ReadProfile(UserType* output) const {
     auto data_value = data_->profile;
     return mojo::internal::Deserialize<::arc::mojom::VideoCodecProfile>(
         data_value, output);
@@ -198,7 +198,7 @@ class VideoEncodeProfileDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMaxResolution(UserType* output) {
+  [[nodiscard]] bool ReadMaxResolution(UserType* output) {
     
     auto* pointer = data_->max_resolution.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
@@ -269,7 +269,7 @@ class VideoEncodeAcceleratorConfigDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputFormat(UserType* output) const {
+  [[nodiscard]] bool ReadInputFormat(UserType* output) const {
     auto data_value = data_->input_format;
     return mojo::internal::Deserialize<::arc::mojom::VideoPixelFormat>(
         data_value, output);
@@ -282,14 +282,14 @@ class VideoEncodeAcceleratorConfigDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputVisibleSize(UserType* output) {
+  [[nodiscard]] bool ReadInputVisibleSize(UserType* output) {
     
     auto* pointer = data_->input_visible_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputProfile(UserType* output) const {
+  [[nodiscard]] bool ReadOutputProfile(UserType* output) const {
     auto data_value = data_->output_profile;
     return mojo::internal::Deserialize<::arc::mojom::VideoCodecProfile>(
         data_value, output);
@@ -314,7 +314,7 @@ class VideoEncodeAcceleratorConfigDataView {
     return data_->has_h264_output_level;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStorageType(UserType* output) const {
+  [[nodiscard]] bool ReadStorageType(UserType* output) const {
     auto data_value = data_->header_.version >= 1
                       ? data_->storage_type : 0;
     return mojo::internal::Deserialize<::arc::mojom::VideoFrameStorageType>(
@@ -330,7 +330,7 @@ class VideoEncodeAcceleratorConfigDataView {
       BitrateDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBitrate(UserType* output) {
+  [[nodiscard]] bool ReadBitrate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -377,7 +377,7 @@ class BitrateDataView {
       ConstantBitrateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConstant(UserType* output) const {
+  [[nodiscard]] bool ReadConstant(UserType* output) const {
     
     CHECK(is_constant());
     return mojo::internal::Deserialize<::arc::mojom::ConstantBitrateDataView>(
@@ -388,7 +388,7 @@ class BitrateDataView {
       VariableBitrateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVariable(UserType* output) const {
+  [[nodiscard]] bool ReadVariable(UserType* output) const {
     
     CHECK(is_variable());
     return mojo::internal::Deserialize<::arc::mojom::VariableBitrateDataView>(

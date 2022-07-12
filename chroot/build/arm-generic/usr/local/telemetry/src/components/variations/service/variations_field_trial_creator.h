@@ -180,13 +180,6 @@ class VariationsFieldTrialCreator {
   const std::string& application_locale() const { return application_locale_; }
 
  protected:
-  // If the client is in an Extended Variations Safe Mode experiment group,
-  // applies group-specific behavior. Does nothing if the client is not in the
-  // experiment. See CleanExitBeacon::Initialize() for group assignment details.
-  // Protected and virtual for testing.
-  virtual void MaybeExtendVariationsSafeMode(
-      metrics::MetricsStateManager* metrics_state_manager);
-
   // Get the platform we're running on, respecting OverrideVariationsPlatform().
   // Protected for testing.
   Study::Platform GetPlatform();
@@ -230,6 +223,13 @@ class VariationsFieldTrialCreator {
       const base::FieldTrial::EntropyProvider* low_entropy_provider,
       base::FeatureList* feature_list,
       SafeSeedManager* safe_seed_manager);
+
+  // Reads a seed's data and signature from the file at |seed_path| and writes
+  // them to Local State. Exits Chrome (A) if the file's contents can't be
+  // loaded or (B) if the contents do not contain |kVariationsCompressedSeed| or
+  // |kVariationsSeedSignature|. Also forces Chrome to not run in variations
+  // safe mode. Used for variations seed testing.
+  void LoadSeedFromFile(const base::FilePath& seed_path);
 
   // Returns the seed store. Virtual for testing.
   virtual VariationsSeedStore* GetSeedStore();

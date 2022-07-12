@@ -11,68 +11,55 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_secure_5fbuffer_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_secure_5fbuffer_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace chromeos {
 namespace cdm {
-class ArcSecureBufferForChrome_EncryptionPatternDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ArcSecureBufferForChrome_EncryptionPattern> _instance;
-} _ArcSecureBufferForChrome_EncryptionPattern_default_instance_;
-class ArcSecureBufferForChrome_SubsampleDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ArcSecureBufferForChrome_Subsample> _instance;
-} _ArcSecureBufferForChrome_Subsample_default_instance_;
-class ArcSecureBufferForChromeDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ArcSecureBufferForChrome> _instance;
-} _ArcSecureBufferForChrome_default_instance_;
+constexpr ArcSecureBufferForChrome_EncryptionPattern::ArcSecureBufferForChrome_EncryptionPattern(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : clear_bytes_(0u)
+  , cypher_bytes_(0u){}
+struct ArcSecureBufferForChrome_EncryptionPatternDefaultTypeInternal {
+  constexpr ArcSecureBufferForChrome_EncryptionPatternDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ArcSecureBufferForChrome_EncryptionPatternDefaultTypeInternal() {}
+  union {
+    ArcSecureBufferForChrome_EncryptionPattern _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ArcSecureBufferForChrome_EncryptionPatternDefaultTypeInternal _ArcSecureBufferForChrome_EncryptionPattern_default_instance_;
+constexpr ArcSecureBufferForChrome_Subsample::ArcSecureBufferForChrome_Subsample(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : clear_bytes_(0u)
+  , cypher_bytes_(0u){}
+struct ArcSecureBufferForChrome_SubsampleDefaultTypeInternal {
+  constexpr ArcSecureBufferForChrome_SubsampleDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ArcSecureBufferForChrome_SubsampleDefaultTypeInternal() {}
+  union {
+    ArcSecureBufferForChrome_Subsample _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ArcSecureBufferForChrome_SubsampleDefaultTypeInternal _ArcSecureBufferForChrome_Subsample_default_instance_;
+constexpr ArcSecureBufferForChrome::ArcSecureBufferForChrome(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : subsample_()
+  , key_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , iv_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pattern_(nullptr)
+  , encryption_scheme_(0)
+{}
+struct ArcSecureBufferForChromeDefaultTypeInternal {
+  constexpr ArcSecureBufferForChromeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ArcSecureBufferForChromeDefaultTypeInternal() {}
+  union {
+    ArcSecureBufferForChrome _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ArcSecureBufferForChromeDefaultTypeInternal _ArcSecureBufferForChrome_default_instance_;
 }  // namespace cdm
 }  // namespace chromeos
-static void InitDefaultsscc_info_ArcSecureBufferForChrome_secure_5fbuffer_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chromeos::cdm::_ArcSecureBufferForChrome_default_instance_;
-    new (ptr) ::chromeos::cdm::ArcSecureBufferForChrome();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chromeos::cdm::ArcSecureBufferForChrome::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ArcSecureBufferForChrome_secure_5fbuffer_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_ArcSecureBufferForChrome_secure_5fbuffer_2eproto}, {
-      &scc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto.base,
-      &scc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto.base,}};
-
-static void InitDefaultsscc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chromeos::cdm::_ArcSecureBufferForChrome_EncryptionPattern_default_instance_;
-    new (ptr) ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto}, {}};
-
-static void InitDefaultsscc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chromeos::cdm::_ArcSecureBufferForChrome_Subsample_default_instance_;
-    new (ptr) ::chromeos::cdm::ArcSecureBufferForChrome_Subsample();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chromeos::cdm::ArcSecureBufferForChrome_Subsample::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto}, {}};
-
 namespace chromeos {
 namespace cdm {
 bool ArcSecureBufferForChrome_EncryptionScheme_IsValid(int value) {
@@ -121,7 +108,7 @@ const std::string& ArcSecureBufferForChrome_EncryptionScheme_Name(
                      ArcSecureBufferForChrome_EncryptionScheme_strings[idx].get();
 }
 bool ArcSecureBufferForChrome_EncryptionScheme_Parse(
-    const std::string& name, ArcSecureBufferForChrome_EncryptionScheme* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ArcSecureBufferForChrome_EncryptionScheme* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ArcSecureBufferForChrome_EncryptionScheme_entries, 3, name, &int_value);
@@ -130,135 +117,145 @@ bool ArcSecureBufferForChrome_EncryptionScheme_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ArcSecureBufferForChrome_EncryptionScheme ArcSecureBufferForChrome::NONE;
 constexpr ArcSecureBufferForChrome_EncryptionScheme ArcSecureBufferForChrome::CENC;
 constexpr ArcSecureBufferForChrome_EncryptionScheme ArcSecureBufferForChrome::CBCS;
 constexpr ArcSecureBufferForChrome_EncryptionScheme ArcSecureBufferForChrome::EncryptionScheme_MIN;
 constexpr ArcSecureBufferForChrome_EncryptionScheme ArcSecureBufferForChrome::EncryptionScheme_MAX;
 constexpr int ArcSecureBufferForChrome::EncryptionScheme_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void ArcSecureBufferForChrome_EncryptionPattern::InitAsDefaultInstance() {
-}
 class ArcSecureBufferForChrome_EncryptionPattern::_Internal {
  public:
 };
 
-ArcSecureBufferForChrome_EncryptionPattern::ArcSecureBufferForChrome_EncryptionPattern()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ArcSecureBufferForChrome_EncryptionPattern::ArcSecureBufferForChrome_EncryptionPattern(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
 }
 ArcSecureBufferForChrome_EncryptionPattern::ArcSecureBufferForChrome_EncryptionPattern(const ArcSecureBufferForChrome_EncryptionPattern& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&clear_bytes_, &from.clear_bytes_,
     static_cast<size_t>(reinterpret_cast<char*>(&cypher_bytes_) -
     reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
   // @@protoc_insertion_point(copy_constructor:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
 }
 
-void ArcSecureBufferForChrome_EncryptionPattern::SharedCtor() {
-  ::memset(&clear_bytes_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cypher_bytes_) -
-      reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
+inline void ArcSecureBufferForChrome_EncryptionPattern::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&clear_bytes_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cypher_bytes_) -
+    reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
 }
 
 ArcSecureBufferForChrome_EncryptionPattern::~ArcSecureBufferForChrome_EncryptionPattern() {
   // @@protoc_insertion_point(destructor:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ArcSecureBufferForChrome_EncryptionPattern::SharedDtor() {
+inline void ArcSecureBufferForChrome_EncryptionPattern::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ArcSecureBufferForChrome_EncryptionPattern::ArenaDtor(void* object) {
+  ArcSecureBufferForChrome_EncryptionPattern* _this = reinterpret_cast< ArcSecureBufferForChrome_EncryptionPattern* >(object);
+  (void)_this;
+}
+void ArcSecureBufferForChrome_EncryptionPattern::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ArcSecureBufferForChrome_EncryptionPattern::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ArcSecureBufferForChrome_EncryptionPattern& ArcSecureBufferForChrome_EncryptionPattern::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ArcSecureBufferForChrome_EncryptionPattern_secure_5fbuffer_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ArcSecureBufferForChrome_EncryptionPattern::Clear() {
 // @@protoc_insertion_point(message_clear_start:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&clear_bytes_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&cypher_bytes_) -
       reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ArcSecureBufferForChrome_EncryptionPattern::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 clear_bytes = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          clear_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          clear_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 cypher_bytes = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          cypher_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          cypher_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ArcSecureBufferForChrome_EncryptionPattern::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ArcSecureBufferForChrome_EncryptionPattern::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 clear_bytes = 1;
-  if (this->clear_bytes() != 0) {
+  if (this->_internal_clear_bytes() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_clear_bytes(), target);
   }
 
   // uint32 cypher_bytes = 2;
-  if (this->cypher_bytes() != 0) {
+  if (this->_internal_cypher_bytes() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cypher_bytes(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
   return target;
@@ -268,26 +265,22 @@ size_t ArcSecureBufferForChrome_EncryptionPattern::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 clear_bytes = 1;
-  if (this->clear_bytes() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_clear_bytes());
+  if (this->_internal_clear_bytes() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_clear_bytes());
   }
 
   // uint32 cypher_bytes = 2;
-  if (this->cypher_bytes() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_cypher_bytes());
+  if (this->_internal_cypher_bytes() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_cypher_bytes());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -303,16 +296,16 @@ void ArcSecureBufferForChrome_EncryptionPattern::CheckTypeAndMergeFrom(
 void ArcSecureBufferForChrome_EncryptionPattern::MergeFrom(const ArcSecureBufferForChrome_EncryptionPattern& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.clear_bytes() != 0) {
+  if (from._internal_clear_bytes() != 0) {
     _internal_set_clear_bytes(from._internal_clear_bytes());
   }
-  if (from.cypher_bytes() != 0) {
+  if (from._internal_cypher_bytes() != 0) {
     _internal_set_cypher_bytes(from._internal_cypher_bytes());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ArcSecureBufferForChrome_EncryptionPattern::CopyFrom(const ArcSecureBufferForChrome_EncryptionPattern& from) {
@@ -328,9 +321,13 @@ bool ArcSecureBufferForChrome_EncryptionPattern::IsInitialized() const {
 
 void ArcSecureBufferForChrome_EncryptionPattern::InternalSwap(ArcSecureBufferForChrome_EncryptionPattern* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(clear_bytes_, other->clear_bytes_);
-  swap(cypher_bytes_, other->cypher_bytes_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome_EncryptionPattern, cypher_bytes_)
+      + sizeof(ArcSecureBufferForChrome_EncryptionPattern::cypher_bytes_)
+      - PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome_EncryptionPattern, clear_bytes_)>(
+          reinterpret_cast<char*>(&clear_bytes_),
+          reinterpret_cast<char*>(&other->clear_bytes_));
 }
 
 std::string ArcSecureBufferForChrome_EncryptionPattern::GetTypeName() const {
@@ -340,124 +337,134 @@ std::string ArcSecureBufferForChrome_EncryptionPattern::GetTypeName() const {
 
 // ===================================================================
 
-void ArcSecureBufferForChrome_Subsample::InitAsDefaultInstance() {
-}
 class ArcSecureBufferForChrome_Subsample::_Internal {
  public:
 };
 
-ArcSecureBufferForChrome_Subsample::ArcSecureBufferForChrome_Subsample()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ArcSecureBufferForChrome_Subsample::ArcSecureBufferForChrome_Subsample(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
 }
 ArcSecureBufferForChrome_Subsample::ArcSecureBufferForChrome_Subsample(const ArcSecureBufferForChrome_Subsample& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&clear_bytes_, &from.clear_bytes_,
     static_cast<size_t>(reinterpret_cast<char*>(&cypher_bytes_) -
     reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
   // @@protoc_insertion_point(copy_constructor:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
 }
 
-void ArcSecureBufferForChrome_Subsample::SharedCtor() {
-  ::memset(&clear_bytes_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cypher_bytes_) -
-      reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
+inline void ArcSecureBufferForChrome_Subsample::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&clear_bytes_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cypher_bytes_) -
+    reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
 }
 
 ArcSecureBufferForChrome_Subsample::~ArcSecureBufferForChrome_Subsample() {
   // @@protoc_insertion_point(destructor:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ArcSecureBufferForChrome_Subsample::SharedDtor() {
+inline void ArcSecureBufferForChrome_Subsample::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ArcSecureBufferForChrome_Subsample::ArenaDtor(void* object) {
+  ArcSecureBufferForChrome_Subsample* _this = reinterpret_cast< ArcSecureBufferForChrome_Subsample* >(object);
+  (void)_this;
+}
+void ArcSecureBufferForChrome_Subsample::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ArcSecureBufferForChrome_Subsample::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ArcSecureBufferForChrome_Subsample& ArcSecureBufferForChrome_Subsample::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ArcSecureBufferForChrome_Subsample_secure_5fbuffer_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ArcSecureBufferForChrome_Subsample::Clear() {
 // @@protoc_insertion_point(message_clear_start:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&clear_bytes_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&cypher_bytes_) -
       reinterpret_cast<char*>(&clear_bytes_)) + sizeof(cypher_bytes_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ArcSecureBufferForChrome_Subsample::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 clear_bytes = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          clear_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          clear_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 cypher_bytes = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          cypher_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          cypher_bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ArcSecureBufferForChrome_Subsample::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ArcSecureBufferForChrome_Subsample::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 clear_bytes = 1;
-  if (this->clear_bytes() != 0) {
+  if (this->_internal_clear_bytes() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_clear_bytes(), target);
   }
 
   // uint32 cypher_bytes = 2;
-  if (this->cypher_bytes() != 0) {
+  if (this->_internal_cypher_bytes() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cypher_bytes(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
   return target;
@@ -467,26 +474,22 @@ size_t ArcSecureBufferForChrome_Subsample::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint32 clear_bytes = 1;
-  if (this->clear_bytes() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_clear_bytes());
+  if (this->_internal_clear_bytes() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_clear_bytes());
   }
 
   // uint32 cypher_bytes = 2;
-  if (this->cypher_bytes() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_cypher_bytes());
+  if (this->_internal_cypher_bytes() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_cypher_bytes());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -502,16 +505,16 @@ void ArcSecureBufferForChrome_Subsample::CheckTypeAndMergeFrom(
 void ArcSecureBufferForChrome_Subsample::MergeFrom(const ArcSecureBufferForChrome_Subsample& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chromeos.cdm.ArcSecureBufferForChrome.Subsample)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.clear_bytes() != 0) {
+  if (from._internal_clear_bytes() != 0) {
     _internal_set_clear_bytes(from._internal_clear_bytes());
   }
-  if (from.cypher_bytes() != 0) {
+  if (from._internal_cypher_bytes() != 0) {
     _internal_set_cypher_bytes(from._internal_cypher_bytes());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ArcSecureBufferForChrome_Subsample::CopyFrom(const ArcSecureBufferForChrome_Subsample& from) {
@@ -527,9 +530,13 @@ bool ArcSecureBufferForChrome_Subsample::IsInitialized() const {
 
 void ArcSecureBufferForChrome_Subsample::InternalSwap(ArcSecureBufferForChrome_Subsample* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(clear_bytes_, other->clear_bytes_);
-  swap(cypher_bytes_, other->cypher_bytes_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome_Subsample, cypher_bytes_)
+      + sizeof(ArcSecureBufferForChrome_Subsample::cypher_bytes_)
+      - PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome_Subsample, clear_bytes_)>(
+          reinterpret_cast<char*>(&clear_bytes_),
+          reinterpret_cast<char*>(&other->clear_bytes_));
 }
 
 std::string ArcSecureBufferForChrome_Subsample::GetTypeName() const {
@@ -539,10 +546,6 @@ std::string ArcSecureBufferForChrome_Subsample::GetTypeName() const {
 
 // ===================================================================
 
-void ArcSecureBufferForChrome::InitAsDefaultInstance() {
-  ::chromeos::cdm::_ArcSecureBufferForChrome_default_instance_._instance.get_mutable()->pattern_ = const_cast< ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern*>(
-      ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern::internal_default_instance());
-}
 class ArcSecureBufferForChrome::_Internal {
  public:
   static const ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern& pattern(const ArcSecureBufferForChrome* msg);
@@ -552,23 +555,35 @@ const ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern&
 ArcSecureBufferForChrome::_Internal::pattern(const ArcSecureBufferForChrome* msg) {
   return *msg->pattern_;
 }
-ArcSecureBufferForChrome::ArcSecureBufferForChrome()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ArcSecureBufferForChrome::ArcSecureBufferForChrome(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  subsample_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chromeos.cdm.ArcSecureBufferForChrome)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chromeos.cdm.ArcSecureBufferForChrome)
 }
 ArcSecureBufferForChrome::ArcSecureBufferForChrome(const ArcSecureBufferForChrome& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       subsample_(from.subsample_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_key_id().empty()) {
-    key_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_id_);
+    key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key_id(), 
+      GetArenaForAllocation());
   }
   iv_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    iv_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_iv().empty()) {
-    iv_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.iv_);
+    iv_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_iv(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_pattern()) {
     pattern_ = new ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern(*from.pattern_);
@@ -579,93 +594,106 @@ ArcSecureBufferForChrome::ArcSecureBufferForChrome(const ArcSecureBufferForChrom
   // @@protoc_insertion_point(copy_constructor:chromeos.cdm.ArcSecureBufferForChrome)
 }
 
-void ArcSecureBufferForChrome::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ArcSecureBufferForChrome_secure_5fbuffer_2eproto.base);
-  key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  iv_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&pattern_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&encryption_scheme_) -
-      reinterpret_cast<char*>(&pattern_)) + sizeof(encryption_scheme_));
+inline void ArcSecureBufferForChrome::SharedCtor() {
+key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+iv_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  iv_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&pattern_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&encryption_scheme_) -
+    reinterpret_cast<char*>(&pattern_)) + sizeof(encryption_scheme_));
 }
 
 ArcSecureBufferForChrome::~ArcSecureBufferForChrome() {
   // @@protoc_insertion_point(destructor:chromeos.cdm.ArcSecureBufferForChrome)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ArcSecureBufferForChrome::SharedDtor() {
+inline void ArcSecureBufferForChrome::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   key_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   iv_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete pattern_;
 }
 
+void ArcSecureBufferForChrome::ArenaDtor(void* object) {
+  ArcSecureBufferForChrome* _this = reinterpret_cast< ArcSecureBufferForChrome* >(object);
+  (void)_this;
+}
+void ArcSecureBufferForChrome::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ArcSecureBufferForChrome::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ArcSecureBufferForChrome& ArcSecureBufferForChrome::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ArcSecureBufferForChrome_secure_5fbuffer_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ArcSecureBufferForChrome::Clear() {
 // @@protoc_insertion_point(message_clear_start:chromeos.cdm.ArcSecureBufferForChrome)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   subsample_.Clear();
-  key_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  iv_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && pattern_ != nullptr) {
+  key_id_.ClearToEmpty();
+  iv_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && pattern_ != nullptr) {
     delete pattern_;
   }
   pattern_ = nullptr;
   encryption_scheme_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ArcSecureBufferForChrome::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionScheme encryption_scheme = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_encryption_scheme(static_cast<::chromeos::cdm::ArcSecureBufferForChrome_EncryptionScheme>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes key_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_key_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes iv = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_iv();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern pattern = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_pattern(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .chromeos.cdm.ArcSecureBufferForChrome.Subsample subsample = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -673,55 +701,59 @@ const char* ArcSecureBufferForChrome::_InternalParse(const char* ptr, ::PROTOBUF
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ArcSecureBufferForChrome::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ArcSecureBufferForChrome::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chromeos.cdm.ArcSecureBufferForChrome)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionScheme encryption_scheme = 1;
-  if (this->encryption_scheme() != 0) {
+  if (this->_internal_encryption_scheme() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_encryption_scheme(), target);
   }
 
   // bytes key_id = 2;
-  if (this->key_id().size() > 0) {
+  if (!this->_internal_key_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_key_id(), target);
   }
 
   // bytes iv = 3;
-  if (this->iv().size() > 0) {
+  if (!this->_internal_iv().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_iv(), target);
   }
 
   // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern pattern = 4;
-  if (this->has_pattern()) {
+  if (this->_internal_has_pattern()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -737,8 +769,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chromeos.cdm.ArcSecureBufferForChrome)
   return target;
@@ -748,7 +780,7 @@ size_t ArcSecureBufferForChrome::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chromeos.cdm.ArcSecureBufferForChrome)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -760,34 +792,34 @@ size_t ArcSecureBufferForChrome::ByteSizeLong() const {
   }
 
   // bytes key_id = 2;
-  if (this->key_id().size() > 0) {
+  if (!this->_internal_key_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_key_id());
   }
 
   // bytes iv = 3;
-  if (this->iv().size() > 0) {
+  if (!this->_internal_iv().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_iv());
   }
 
   // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionPattern pattern = 4;
-  if (this->has_pattern()) {
+  if (this->_internal_has_pattern()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *pattern_);
   }
 
   // .chromeos.cdm.ArcSecureBufferForChrome.EncryptionScheme encryption_scheme = 1;
-  if (this->encryption_scheme() != 0) {
+  if (this->_internal_encryption_scheme() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_encryption_scheme());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -803,25 +835,23 @@ void ArcSecureBufferForChrome::CheckTypeAndMergeFrom(
 void ArcSecureBufferForChrome::MergeFrom(const ArcSecureBufferForChrome& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chromeos.cdm.ArcSecureBufferForChrome)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   subsample_.MergeFrom(from.subsample_);
-  if (from.key_id().size() > 0) {
-
-    key_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_id_);
+  if (!from._internal_key_id().empty()) {
+    _internal_set_key_id(from._internal_key_id());
   }
-  if (from.iv().size() > 0) {
-
-    iv_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.iv_);
+  if (!from._internal_iv().empty()) {
+    _internal_set_iv(from._internal_iv());
   }
-  if (from.has_pattern()) {
+  if (from._internal_has_pattern()) {
     _internal_mutable_pattern()->::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern::MergeFrom(from._internal_pattern());
   }
-  if (from.encryption_scheme() != 0) {
+  if (from._internal_encryption_scheme() != 0) {
     _internal_set_encryption_scheme(from._internal_encryption_scheme());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ArcSecureBufferForChrome::CopyFrom(const ArcSecureBufferForChrome& from) {
@@ -837,14 +867,26 @@ bool ArcSecureBufferForChrome::IsInitialized() const {
 
 void ArcSecureBufferForChrome::InternalSwap(ArcSecureBufferForChrome* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   subsample_.InternalSwap(&other->subsample_);
-  key_id_.Swap(&other->key_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  iv_.Swap(&other->iv_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(pattern_, other->pattern_);
-  swap(encryption_scheme_, other->encryption_scheme_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_id_, lhs_arena,
+      &other->key_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &iv_, lhs_arena,
+      &other->iv_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome, encryption_scheme_)
+      + sizeof(ArcSecureBufferForChrome::encryption_scheme_)
+      - PROTOBUF_FIELD_OFFSET(ArcSecureBufferForChrome, pattern_)>(
+          reinterpret_cast<char*>(&pattern_),
+          reinterpret_cast<char*>(&other->pattern_));
 }
 
 std::string ArcSecureBufferForChrome::GetTypeName() const {
@@ -857,13 +899,13 @@ std::string ArcSecureBufferForChrome::GetTypeName() const {
 }  // namespace chromeos
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern* Arena::CreateMaybeMessage< ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern >(Arena* arena) {
-  return Arena::CreateInternal< ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern >(arena);
+  return Arena::CreateMessageInternal< ::chromeos::cdm::ArcSecureBufferForChrome_EncryptionPattern >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chromeos::cdm::ArcSecureBufferForChrome_Subsample* Arena::CreateMaybeMessage< ::chromeos::cdm::ArcSecureBufferForChrome_Subsample >(Arena* arena) {
-  return Arena::CreateInternal< ::chromeos::cdm::ArcSecureBufferForChrome_Subsample >(arena);
+  return Arena::CreateMessageInternal< ::chromeos::cdm::ArcSecureBufferForChrome_Subsample >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chromeos::cdm::ArcSecureBufferForChrome* Arena::CreateMaybeMessage< ::chromeos::cdm::ArcSecureBufferForChrome >(Arena* arena) {
-  return Arena::CreateInternal< ::chromeos::cdm::ArcSecureBufferForChrome >(arena);
+  return Arena::CreateMessageInternal< ::chromeos::cdm::ArcSecureBufferForChrome >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

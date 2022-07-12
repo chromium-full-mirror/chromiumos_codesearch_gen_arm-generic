@@ -189,7 +189,7 @@ class VideoDecoder_Initialize_ParamsDataView {
       VideoDecoderConfigDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
     auto* pointer = data_->config.Get();
     return mojo::internal::Deserialize<::arc::mojom::VideoDecoderConfigDataView>(
@@ -231,7 +231,7 @@ class VideoDecoder_Initialize_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::arc::mojom::DecoderStatus>(
         data_value, output);
@@ -260,7 +260,7 @@ class VideoDecoder_Decode_ParamsDataView {
       DecoderBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBuffer(UserType* output) {
+  [[nodiscard]] bool ReadBuffer(UserType* output) {
     
     auto* pointer = !data_->buffer.is_null() ? &data_->buffer : nullptr;
     return mojo::internal::Deserialize<::arc::mojom::DecoderBufferDataView>(
@@ -284,7 +284,7 @@ class VideoDecoder_Decode_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::arc::mojom::DecoderStatus>(
         data_value, output);
@@ -367,7 +367,7 @@ class VideoDecoderClient_OnVideoFrameDecoded_ParamsDataView {
       ::arc::mojom::RectDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVisibleRect(UserType* output) {
+  [[nodiscard]] bool ReadVisibleRect(UserType* output) {
     
     auto* pointer = data_->visible_rect.Get();
     return mojo::internal::Deserialize<::arc::mojom::RectDataView>(
@@ -394,7 +394,7 @@ class VideoDecoderClient_OnError_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::arc::mojom::DecoderStatus>(
         data_value, output);

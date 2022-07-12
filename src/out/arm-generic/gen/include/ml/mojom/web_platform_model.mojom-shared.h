@@ -270,7 +270,7 @@ class CreateModelLoaderOptionsDataView {
     return data_->num_threads;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelFormat(UserType* output) const {
+  [[nodiscard]] bool ReadModelFormat(UserType* output) const {
     auto data_value = data_->model_format;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::ModelFormat>(
         data_value, output);
@@ -280,7 +280,7 @@ class CreateModelLoaderOptionsDataView {
           static_cast<::ml::model_loader::mojom::ModelFormat>(data_->model_format));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDevicePreference(UserType* output) const {
+  [[nodiscard]] bool ReadDevicePreference(UserType* output) const {
     auto data_value = data_->device_preference;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::DevicePreference>(
         data_value, output);
@@ -309,7 +309,7 @@ class TensorInfoDataView {
     return data_->byte_size;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDataType(UserType* output) const {
+  [[nodiscard]] bool ReadDataType(UserType* output) const {
     auto data_value = data_->data_type;
     return mojo::internal::Deserialize<::ml::model_loader::mojom::DataType>(
         data_value, output);
@@ -322,7 +322,7 @@ class TensorInfoDataView {
       mojo::ArrayDataView<uint32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDimensions(UserType* output) {
+  [[nodiscard]] bool ReadDimensions(UserType* output) {
     
     auto* pointer = data_->dimensions.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint32_t>>(
@@ -349,7 +349,7 @@ class ModelInfoDataView {
       mojo::MapDataView<mojo::StringDataView, TensorInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputTensorInfo(UserType* output) {
+  [[nodiscard]] bool ReadInputTensorInfo(UserType* output) {
     
     auto* pointer = data_->input_tensor_info.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, ::ml::model_loader::mojom::TensorInfoDataView>>(
@@ -359,7 +359,7 @@ class ModelInfoDataView {
       mojo::MapDataView<mojo::StringDataView, TensorInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputTensorInfo(UserType* output) {
+  [[nodiscard]] bool ReadOutputTensorInfo(UserType* output) {
     
     auto* pointer = data_->output_tensor_info.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, ::ml::model_loader::mojom::TensorInfoDataView>>(

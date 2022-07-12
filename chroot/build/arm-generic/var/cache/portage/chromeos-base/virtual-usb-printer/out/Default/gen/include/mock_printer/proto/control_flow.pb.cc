@@ -14,161 +14,113 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Cardinality_control_5fflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Cardinality_Count_control_5fflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Expectation_control_5fflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ExpectationWithResponse_control_5fflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_http_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HttpProperties_http_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ipp_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_IppMessage_ipp_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Response_control_5fflow_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_control_5fflow_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TestCaseStep_control_5fflow_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace mocking {
-class Cardinality_CountDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Cardinality_Count> _instance;
-} _Cardinality_Count_default_instance_;
-class CardinalityDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Cardinality> _instance;
-} _Cardinality_default_instance_;
-class ExpectationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Expectation> _instance;
-} _Expectation_default_instance_;
-class ResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Response> _instance;
-} _Response_default_instance_;
-class ExpectationWithResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExpectationWithResponse> _instance;
-} _ExpectationWithResponse_default_instance_;
-class TestCaseStepDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TestCaseStep> _instance;
-} _TestCaseStep_default_instance_;
-class TestCaseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TestCase> _instance;
-} _TestCase_default_instance_;
+constexpr Cardinality_Count::Cardinality_Count(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : at_least_(0)
+  , at_most_(0)
+  , exactly_(0){}
+struct Cardinality_CountDefaultTypeInternal {
+  constexpr Cardinality_CountDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~Cardinality_CountDefaultTypeInternal() {}
+  union {
+    Cardinality_Count _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT Cardinality_CountDefaultTypeInternal _Cardinality_Count_default_instance_;
+constexpr Cardinality::Cardinality(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : count_(nullptr)
+  , type_(0)
+{}
+struct CardinalityDefaultTypeInternal {
+  constexpr CardinalityDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CardinalityDefaultTypeInternal() {}
+  union {
+    Cardinality _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CardinalityDefaultTypeInternal _Cardinality_default_instance_;
+constexpr Expectation::Expectation(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : ipp_matcher_(nullptr){}
+struct ExpectationDefaultTypeInternal {
+  constexpr ExpectationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExpectationDefaultTypeInternal() {}
+  union {
+    Expectation _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExpectationDefaultTypeInternal _Expectation_default_instance_;
+constexpr Response::Response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : ipp_response_(nullptr)
+  , http_properties_(nullptr)
+  , pause_seconds_(0){}
+struct ResponseDefaultTypeInternal {
+  constexpr ResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ResponseDefaultTypeInternal() {}
+  union {
+    Response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ResponseDefaultTypeInternal _Response_default_instance_;
+constexpr ExpectationWithResponse::ExpectationWithResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : expectation_(nullptr)
+  , response_(nullptr){}
+struct ExpectationWithResponseDefaultTypeInternal {
+  constexpr ExpectationWithResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExpectationWithResponseDefaultTypeInternal() {}
+  union {
+    ExpectationWithResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExpectationWithResponseDefaultTypeInternal _ExpectationWithResponse_default_instance_;
+constexpr TestCaseStep::TestCaseStep(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : expectation_with_response_()
+  , cardinality_(nullptr){}
+struct TestCaseStepDefaultTypeInternal {
+  constexpr TestCaseStepDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TestCaseStepDefaultTypeInternal() {}
+  union {
+    TestCaseStep _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TestCaseStepDefaultTypeInternal _TestCaseStep_default_instance_;
+constexpr TestCase::TestCase(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : steps_(){}
+struct TestCaseDefaultTypeInternal {
+  constexpr TestCaseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TestCaseDefaultTypeInternal() {}
+  union {
+    TestCase _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TestCaseDefaultTypeInternal _TestCase_default_instance_;
 }  // namespace mocking
-static void InitDefaultsscc_info_Cardinality_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_Cardinality_default_instance_;
-    new (ptr) ::mocking::Cardinality();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::Cardinality::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Cardinality_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Cardinality_control_5fflow_2eproto}, {
-      &scc_info_Cardinality_Count_control_5fflow_2eproto.base,}};
-
-static void InitDefaultsscc_info_Cardinality_Count_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_Cardinality_Count_default_instance_;
-    new (ptr) ::mocking::Cardinality_Count();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::Cardinality_Count::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Cardinality_Count_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Cardinality_Count_control_5fflow_2eproto}, {}};
-
-static void InitDefaultsscc_info_Expectation_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_Expectation_default_instance_;
-    new (ptr) ::mocking::Expectation();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::Expectation::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Expectation_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Expectation_control_5fflow_2eproto}, {
-      &scc_info_IppMessage_ipp_2eproto.base,}};
-
-static void InitDefaultsscc_info_ExpectationWithResponse_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_ExpectationWithResponse_default_instance_;
-    new (ptr) ::mocking::ExpectationWithResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::ExpectationWithResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ExpectationWithResponse_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_ExpectationWithResponse_control_5fflow_2eproto}, {
-      &scc_info_Expectation_control_5fflow_2eproto.base,
-      &scc_info_Response_control_5fflow_2eproto.base,}};
-
-static void InitDefaultsscc_info_Response_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_Response_default_instance_;
-    new (ptr) ::mocking::Response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::Response::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Response_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Response_control_5fflow_2eproto}, {
-      &scc_info_IppMessage_ipp_2eproto.base,
-      &scc_info_HttpProperties_http_2eproto.base,}};
-
-static void InitDefaultsscc_info_TestCase_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_TestCase_default_instance_;
-    new (ptr) ::mocking::TestCase();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::TestCase::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TestCase_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_TestCase_control_5fflow_2eproto}, {
-      &scc_info_TestCaseStep_control_5fflow_2eproto.base,}};
-
-static void InitDefaultsscc_info_TestCaseStep_control_5fflow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::mocking::_TestCaseStep_default_instance_;
-    new (ptr) ::mocking::TestCaseStep();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::mocking::TestCaseStep::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_TestCaseStep_control_5fflow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_TestCaseStep_control_5fflow_2eproto}, {
-      &scc_info_Cardinality_control_5fflow_2eproto.base,
-      &scc_info_ExpectationWithResponse_control_5fflow_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_control_5fflow_2eproto[7];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_control_5fflow_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_control_5fflow_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_control_5fflow_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality_Count, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality_Count, at_least_),
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality_Count, at_most_),
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality_Count, exactly_),
@@ -177,6 +129,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality, type_),
   PROTOBUF_FIELD_OFFSET(::mocking::Cardinality, count_),
   ~0u,  // no _has_bits_
@@ -184,12 +137,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::Expectation, ipp_matcher_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mocking::Response, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::Response, pause_seconds_),
   PROTOBUF_FIELD_OFFSET(::mocking::Response, ipp_response_),
   PROTOBUF_FIELD_OFFSET(::mocking::Response, http_properties_),
@@ -198,6 +153,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::ExpectationWithResponse, expectation_),
   PROTOBUF_FIELD_OFFSET(::mocking::ExpectationWithResponse, response_),
   ~0u,  // no _has_bits_
@@ -205,6 +161,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::TestCaseStep, cardinality_),
   PROTOBUF_FIELD_OFFSET(::mocking::TestCaseStep, expectation_with_response_),
   ~0u,  // no _has_bits_
@@ -212,16 +169,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_control_5fflow_2eproto::offset
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::mocking::TestCase, steps_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mocking::Cardinality_Count)},
-  { 8, -1, sizeof(::mocking::Cardinality)},
-  { 15, -1, sizeof(::mocking::Expectation)},
-  { 21, -1, sizeof(::mocking::Response)},
-  { 29, -1, sizeof(::mocking::ExpectationWithResponse)},
-  { 36, -1, sizeof(::mocking::TestCaseStep)},
-  { 43, -1, sizeof(::mocking::TestCase)},
+  { 0, -1, -1, sizeof(::mocking::Cardinality_Count)},
+  { 9, -1, -1, sizeof(::mocking::Cardinality)},
+  { 17, -1, -1, sizeof(::mocking::Expectation)},
+  { 24, -1, -1, sizeof(::mocking::Response)},
+  { 33, -1, -1, sizeof(::mocking::ExpectationWithResponse)},
+  { 41, -1, -1, sizeof(::mocking::TestCaseStep)},
+  { 49, -1, -1, sizeof(::mocking::TestCase)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -260,26 +218,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_http_2eproto,
   &::descriptor_table_ipp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_control_5fflow_2eproto_sccs[7] = {
-  &scc_info_Cardinality_control_5fflow_2eproto.base,
-  &scc_info_Cardinality_Count_control_5fflow_2eproto.base,
-  &scc_info_Expectation_control_5fflow_2eproto.base,
-  &scc_info_ExpectationWithResponse_control_5fflow_2eproto.base,
-  &scc_info_Response_control_5fflow_2eproto.base,
-  &scc_info_TestCase_control_5fflow_2eproto.base,
-  &scc_info_TestCaseStep_control_5fflow_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_control_5fflow_2eproto_once;
-static bool descriptor_table_control_5fflow_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_control_5fflow_2eproto = {
-  &descriptor_table_control_5fflow_2eproto_initialized, descriptor_table_protodef_control_5fflow_2eproto, "control_flow.proto", 766,
-  &descriptor_table_control_5fflow_2eproto_once, descriptor_table_control_5fflow_2eproto_sccs, descriptor_table_control_5fflow_2eproto_deps, 7, 2,
+  false, false, 766, descriptor_table_protodef_control_5fflow_2eproto, "control_flow.proto", 
+  &descriptor_table_control_5fflow_2eproto_once, descriptor_table_control_5fflow_2eproto_deps, 2, 7,
   schemas, file_default_instances, TableStruct_control_5fflow_2eproto::offsets,
-  file_level_metadata_control_5fflow_2eproto, 7, file_level_enum_descriptors_control_5fflow_2eproto, file_level_service_descriptors_control_5fflow_2eproto,
+  file_level_metadata_control_5fflow_2eproto, file_level_enum_descriptors_control_5fflow_2eproto, file_level_service_descriptors_control_5fflow_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_control_5fflow_2eproto_getter() {
+  return &descriptor_table_control_5fflow_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_control_5fflow_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_control_5fflow_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_control_5fflow_2eproto(&descriptor_table_control_5fflow_2eproto);
 namespace mocking {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cardinality_Type_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_control_5fflow_2eproto);
@@ -297,7 +248,7 @@ bool Cardinality_Type_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr Cardinality_Type Cardinality::ALL_IN_ORDER;
 constexpr Cardinality_Type Cardinality::ALL_IN_ANY_ORDER;
 constexpr Cardinality_Type Cardinality::SOME_OF;
@@ -305,141 +256,152 @@ constexpr Cardinality_Type Cardinality::REPEATED;
 constexpr Cardinality_Type Cardinality::Type_MIN;
 constexpr Cardinality_Type Cardinality::Type_MAX;
 constexpr int Cardinality::Type_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void Cardinality_Count::InitAsDefaultInstance() {
-}
 class Cardinality_Count::_Internal {
  public:
 };
 
-Cardinality_Count::Cardinality_Count()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Cardinality_Count::Cardinality_Count(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.Cardinality.Count)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.Cardinality.Count)
 }
 Cardinality_Count::Cardinality_Count(const Cardinality_Count& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&at_least_, &from.at_least_,
     static_cast<size_t>(reinterpret_cast<char*>(&exactly_) -
     reinterpret_cast<char*>(&at_least_)) + sizeof(exactly_));
   // @@protoc_insertion_point(copy_constructor:mocking.Cardinality.Count)
 }
 
-void Cardinality_Count::SharedCtor() {
-  ::memset(&at_least_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&exactly_) -
-      reinterpret_cast<char*>(&at_least_)) + sizeof(exactly_));
+inline void Cardinality_Count::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&at_least_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&exactly_) -
+    reinterpret_cast<char*>(&at_least_)) + sizeof(exactly_));
 }
 
 Cardinality_Count::~Cardinality_Count() {
   // @@protoc_insertion_point(destructor:mocking.Cardinality.Count)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Cardinality_Count::SharedDtor() {
+inline void Cardinality_Count::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void Cardinality_Count::ArenaDtor(void* object) {
+  Cardinality_Count* _this = reinterpret_cast< Cardinality_Count* >(object);
+  (void)_this;
+}
+void Cardinality_Count::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Cardinality_Count::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Cardinality_Count& Cardinality_Count::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Cardinality_Count_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Cardinality_Count::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.Cardinality.Count)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&at_least_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&exactly_) -
       reinterpret_cast<char*>(&at_least_)) + sizeof(exactly_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Cardinality_Count::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 at_least = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          at_least_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          at_least_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 at_most = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          at_most_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          at_most_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int32 exactly = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          exactly_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          exactly_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Cardinality_Count::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Cardinality_Count::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.Cardinality.Count)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 at_least = 1;
-  if (this->at_least() != 0) {
+  if (this->_internal_at_least() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_at_least(), target);
   }
 
   // int32 at_most = 2;
-  if (this->at_most() != 0) {
+  if (this->_internal_at_most() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_at_most(), target);
   }
 
   // int32 exactly = 3;
-  if (this->exactly() != 0) {
+  if (this->_internal_exactly() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_exactly(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.Cardinality.Count)
   return target;
@@ -449,78 +411,57 @@ size_t Cardinality_Count::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.Cardinality.Count)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 at_least = 1;
-  if (this->at_least() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_at_least());
+  if (this->_internal_at_least() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_at_least());
   }
 
   // int32 at_most = 2;
-  if (this->at_most() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_at_most());
+  if (this->_internal_at_most() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_at_most());
   }
 
   // int32 exactly = 3;
-  if (this->exactly() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_exactly());
+  if (this->_internal_exactly() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_exactly());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Cardinality_Count::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.Cardinality.Count)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Cardinality_Count* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Cardinality_Count>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.Cardinality.Count)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.Cardinality.Count)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Cardinality_Count::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Cardinality_Count::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Cardinality_Count::GetClassData() const { return &_class_data_; }
+
+void Cardinality_Count::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Cardinality_Count *>(to)->MergeFrom(
+      static_cast<const Cardinality_Count &>(from));
 }
+
 
 void Cardinality_Count::MergeFrom(const Cardinality_Count& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.Cardinality.Count)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.at_least() != 0) {
+  if (from._internal_at_least() != 0) {
     _internal_set_at_least(from._internal_at_least());
   }
-  if (from.at_most() != 0) {
+  if (from._internal_at_most() != 0) {
     _internal_set_at_most(from._internal_at_most());
   }
-  if (from.exactly() != 0) {
+  if (from._internal_exactly() != 0) {
     _internal_set_exactly(from._internal_exactly());
   }
-}
-
-void Cardinality_Count::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.Cardinality.Count)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Cardinality_Count::CopyFrom(const Cardinality_Count& from) {
@@ -536,23 +477,23 @@ bool Cardinality_Count::IsInitialized() const {
 
 void Cardinality_Count::InternalSwap(Cardinality_Count* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(at_least_, other->at_least_);
-  swap(at_most_, other->at_most_);
-  swap(exactly_, other->exactly_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Cardinality_Count, exactly_)
+      + sizeof(Cardinality_Count::exactly_)
+      - PROTOBUF_FIELD_OFFSET(Cardinality_Count, at_least_)>(
+          reinterpret_cast<char*>(&at_least_),
+          reinterpret_cast<char*>(&other->at_least_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Cardinality_Count::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void Cardinality::InitAsDefaultInstance() {
-  ::mocking::_Cardinality_default_instance_._instance.get_mutable()->count_ = const_cast< ::mocking::Cardinality_Count*>(
-      ::mocking::Cardinality_Count::internal_default_instance());
-}
 class Cardinality::_Internal {
  public:
   static const ::mocking::Cardinality_Count& count(const Cardinality* msg);
@@ -562,15 +503,18 @@ const ::mocking::Cardinality_Count&
 Cardinality::_Internal::count(const Cardinality* msg) {
   return *msg->count_;
 }
-Cardinality::Cardinality()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Cardinality::Cardinality(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.Cardinality)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.Cardinality)
 }
 Cardinality::Cardinality(const Cardinality& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_count()) {
     count_ = new ::mocking::Cardinality_Count(*from.count_);
   } else {
@@ -580,102 +524,110 @@ Cardinality::Cardinality(const Cardinality& from)
   // @@protoc_insertion_point(copy_constructor:mocking.Cardinality)
 }
 
-void Cardinality::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Cardinality_control_5fflow_2eproto.base);
-  ::memset(&count_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&type_) -
-      reinterpret_cast<char*>(&count_)) + sizeof(type_));
+inline void Cardinality::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&count_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&count_)) + sizeof(type_));
 }
 
 Cardinality::~Cardinality() {
   // @@protoc_insertion_point(destructor:mocking.Cardinality)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Cardinality::SharedDtor() {
+inline void Cardinality::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete count_;
 }
 
+void Cardinality::ArenaDtor(void* object) {
+  Cardinality* _this = reinterpret_cast< Cardinality* >(object);
+  (void)_this;
+}
+void Cardinality::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Cardinality::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Cardinality& Cardinality::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Cardinality_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Cardinality::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.Cardinality)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && count_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && count_ != nullptr) {
     delete count_;
   }
   count_ = nullptr;
   type_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Cardinality::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .mocking.Cardinality.Type type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::mocking::Cardinality_Type>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .mocking.Cardinality.Count count = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_count(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Cardinality::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Cardinality::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.Cardinality)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .mocking.Cardinality.Type type = 1;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_type(), target);
   }
 
   // .mocking.Cardinality.Count count = 2;
-  if (this->has_count()) {
+  if (this->_internal_has_count()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -684,7 +636,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.Cardinality)
   return target;
@@ -694,67 +646,52 @@ size_t Cardinality::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.Cardinality)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .mocking.Cardinality.Count count = 2;
-  if (this->has_count()) {
+  if (this->_internal_has_count()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *count_);
   }
 
   // .mocking.Cardinality.Type type = 1;
-  if (this->type() != 0) {
+  if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Cardinality::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.Cardinality)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Cardinality* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Cardinality>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.Cardinality)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.Cardinality)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Cardinality::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Cardinality::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Cardinality::GetClassData() const { return &_class_data_; }
+
+void Cardinality::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Cardinality *>(to)->MergeFrom(
+      static_cast<const Cardinality &>(from));
 }
+
 
 void Cardinality::MergeFrom(const Cardinality& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.Cardinality)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_count()) {
+  if (from._internal_has_count()) {
     _internal_mutable_count()->::mocking::Cardinality_Count::MergeFrom(from._internal_count());
   }
-  if (from.type() != 0) {
+  if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
-}
-
-void Cardinality::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.Cardinality)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Cardinality::CopyFrom(const Cardinality& from) {
@@ -770,22 +707,23 @@ bool Cardinality::IsInitialized() const {
 
 void Cardinality::InternalSwap(Cardinality* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(count_, other->count_);
-  swap(type_, other->type_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Cardinality, type_)
+      + sizeof(Cardinality::type_)
+      - PROTOBUF_FIELD_OFFSET(Cardinality, count_)>(
+          reinterpret_cast<char*>(&count_),
+          reinterpret_cast<char*>(&other->count_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Cardinality::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void Expectation::InitAsDefaultInstance() {
-  ::mocking::_Expectation_default_instance_._instance.get_mutable()->ipp_matcher_ = const_cast< ::mocking::IppMessage*>(
-      ::mocking::IppMessage::internal_default_instance());
-}
 class Expectation::_Internal {
  public:
   static const ::mocking::IppMessage& ipp_matcher(const Expectation* msg);
@@ -796,20 +734,23 @@ Expectation::_Internal::ipp_matcher(const Expectation* msg) {
   return *msg->ipp_matcher_;
 }
 void Expectation::clear_ipp_matcher() {
-  if (GetArenaNoVirtual() == nullptr && ipp_matcher_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && ipp_matcher_ != nullptr) {
     delete ipp_matcher_;
   }
   ipp_matcher_ = nullptr;
 }
-Expectation::Expectation()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Expectation::Expectation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.Expectation)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.Expectation)
 }
 Expectation::Expectation(const Expectation& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_ipp_matcher()) {
     ipp_matcher_ = new ::mocking::IppMessage(*from.ipp_matcher_);
   } else {
@@ -818,84 +759,90 @@ Expectation::Expectation(const Expectation& from)
   // @@protoc_insertion_point(copy_constructor:mocking.Expectation)
 }
 
-void Expectation::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Expectation_control_5fflow_2eproto.base);
-  ipp_matcher_ = nullptr;
+inline void Expectation::SharedCtor() {
+ipp_matcher_ = nullptr;
 }
 
 Expectation::~Expectation() {
   // @@protoc_insertion_point(destructor:mocking.Expectation)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Expectation::SharedDtor() {
+inline void Expectation::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete ipp_matcher_;
 }
 
+void Expectation::ArenaDtor(void* object) {
+  Expectation* _this = reinterpret_cast< Expectation* >(object);
+  (void)_this;
+}
+void Expectation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Expectation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Expectation& Expectation::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Expectation_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Expectation::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.Expectation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && ipp_matcher_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && ipp_matcher_ != nullptr) {
     delete ipp_matcher_;
   }
   ipp_matcher_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Expectation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .mocking.IppMessage ipp_matcher = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_ipp_matcher(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Expectation::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Expectation::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.Expectation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .mocking.IppMessage ipp_matcher = 3;
-  if (this->has_ipp_matcher()) {
+  if (this->_internal_has_ipp_matcher()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -904,7 +851,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.Expectation)
   return target;
@@ -914,58 +861,43 @@ size_t Expectation::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.Expectation)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .mocking.IppMessage ipp_matcher = 3;
-  if (this->has_ipp_matcher()) {
+  if (this->_internal_has_ipp_matcher()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ipp_matcher_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Expectation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.Expectation)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Expectation* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Expectation>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.Expectation)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.Expectation)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Expectation::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Expectation::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Expectation::GetClassData() const { return &_class_data_; }
+
+void Expectation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Expectation *>(to)->MergeFrom(
+      static_cast<const Expectation &>(from));
 }
+
 
 void Expectation::MergeFrom(const Expectation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.Expectation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_ipp_matcher()) {
+  if (from._internal_has_ipp_matcher()) {
     _internal_mutable_ipp_matcher()->::mocking::IppMessage::MergeFrom(from._internal_ipp_matcher());
   }
-}
-
-void Expectation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.Expectation)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Expectation::CopyFrom(const Expectation& from) {
@@ -981,23 +913,18 @@ bool Expectation::IsInitialized() const {
 
 void Expectation::InternalSwap(Expectation* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(ipp_matcher_, other->ipp_matcher_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Expectation::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[2]);
 }
-
 
 // ===================================================================
 
-void Response::InitAsDefaultInstance() {
-  ::mocking::_Response_default_instance_._instance.get_mutable()->ipp_response_ = const_cast< ::mocking::IppMessage*>(
-      ::mocking::IppMessage::internal_default_instance());
-  ::mocking::_Response_default_instance_._instance.get_mutable()->http_properties_ = const_cast< ::mocking::HttpProperties*>(
-      ::mocking::HttpProperties::internal_default_instance());
-}
 class Response::_Internal {
  public:
   static const ::mocking::IppMessage& ipp_response(const Response* msg);
@@ -1013,26 +940,29 @@ Response::_Internal::http_properties(const Response* msg) {
   return *msg->http_properties_;
 }
 void Response::clear_ipp_response() {
-  if (GetArenaNoVirtual() == nullptr && ipp_response_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && ipp_response_ != nullptr) {
     delete ipp_response_;
   }
   ipp_response_ = nullptr;
 }
 void Response::clear_http_properties() {
-  if (GetArenaNoVirtual() == nullptr && http_properties_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && http_properties_ != nullptr) {
     delete http_properties_;
   }
   http_properties_ = nullptr;
 }
-Response::Response()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Response::Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.Response)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.Response)
 }
 Response::Response(const Response& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_ipp_response()) {
     ipp_response_ = new ::mocking::IppMessage(*from.ipp_response_);
   } else {
@@ -1047,112 +977,121 @@ Response::Response(const Response& from)
   // @@protoc_insertion_point(copy_constructor:mocking.Response)
 }
 
-void Response::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Response_control_5fflow_2eproto.base);
-  ::memset(&ipp_response_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&pause_seconds_) -
-      reinterpret_cast<char*>(&ipp_response_)) + sizeof(pause_seconds_));
+inline void Response::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&ipp_response_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&pause_seconds_) -
+    reinterpret_cast<char*>(&ipp_response_)) + sizeof(pause_seconds_));
 }
 
 Response::~Response() {
   // @@protoc_insertion_point(destructor:mocking.Response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void Response::SharedDtor() {
+inline void Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete ipp_response_;
   if (this != internal_default_instance()) delete http_properties_;
 }
 
+void Response::ArenaDtor(void* object) {
+  Response* _this = reinterpret_cast< Response* >(object);
+  (void)_this;
+}
+void Response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Response& Response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Response_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Response::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.Response)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && ipp_response_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && ipp_response_ != nullptr) {
     delete ipp_response_;
   }
   ipp_response_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && http_properties_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && http_properties_ != nullptr) {
     delete http_properties_;
   }
   http_properties_ = nullptr;
   pause_seconds_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // int32 pause_seconds = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          pause_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          pause_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .mocking.IppMessage ipp_response = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_ipp_response(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .mocking.HttpProperties http_properties = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_http_properties(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Response::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Response::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.Response)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // int32 pause_seconds = 1;
-  if (this->pause_seconds() != 0) {
+  if (this->_internal_pause_seconds() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_pause_seconds(), target);
   }
 
   // .mocking.IppMessage ipp_response = 2;
-  if (this->has_ipp_response()) {
+  if (this->_internal_has_ipp_response()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1160,7 +1099,7 @@ failure:
   }
 
   // .mocking.HttpProperties http_properties = 3;
-  if (this->has_http_properties()) {
+  if (this->_internal_has_http_properties()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1169,7 +1108,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.Response)
   return target;
@@ -1179,78 +1118,61 @@ size_t Response::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.Response)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .mocking.IppMessage ipp_response = 2;
-  if (this->has_ipp_response()) {
+  if (this->_internal_has_ipp_response()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *ipp_response_);
   }
 
   // .mocking.HttpProperties http_properties = 3;
-  if (this->has_http_properties()) {
+  if (this->_internal_has_http_properties()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *http_properties_);
   }
 
   // int32 pause_seconds = 1;
-  if (this->pause_seconds() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_pause_seconds());
+  if (this->_internal_pause_seconds() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_pause_seconds());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void Response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.Response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.Response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.Response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Response::GetClassData() const { return &_class_data_; }
+
+void Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Response *>(to)->MergeFrom(
+      static_cast<const Response &>(from));
 }
+
 
 void Response::MergeFrom(const Response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.Response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_ipp_response()) {
+  if (from._internal_has_ipp_response()) {
     _internal_mutable_ipp_response()->::mocking::IppMessage::MergeFrom(from._internal_ipp_response());
   }
-  if (from.has_http_properties()) {
+  if (from._internal_has_http_properties()) {
     _internal_mutable_http_properties()->::mocking::HttpProperties::MergeFrom(from._internal_http_properties());
   }
-  if (from.pause_seconds() != 0) {
+  if (from._internal_pause_seconds() != 0) {
     _internal_set_pause_seconds(from._internal_pause_seconds());
   }
-}
-
-void Response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.Response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Response::CopyFrom(const Response& from) {
@@ -1266,25 +1188,23 @@ bool Response::IsInitialized() const {
 
 void Response::InternalSwap(Response* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(ipp_response_, other->ipp_response_);
-  swap(http_properties_, other->http_properties_);
-  swap(pause_seconds_, other->pause_seconds_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Response, pause_seconds_)
+      + sizeof(Response::pause_seconds_)
+      - PROTOBUF_FIELD_OFFSET(Response, ipp_response_)>(
+          reinterpret_cast<char*>(&ipp_response_),
+          reinterpret_cast<char*>(&other->ipp_response_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[3]);
 }
-
 
 // ===================================================================
 
-void ExpectationWithResponse::InitAsDefaultInstance() {
-  ::mocking::_ExpectationWithResponse_default_instance_._instance.get_mutable()->expectation_ = const_cast< ::mocking::Expectation*>(
-      ::mocking::Expectation::internal_default_instance());
-  ::mocking::_ExpectationWithResponse_default_instance_._instance.get_mutable()->response_ = const_cast< ::mocking::Response*>(
-      ::mocking::Response::internal_default_instance());
-}
 class ExpectationWithResponse::_Internal {
  public:
   static const ::mocking::Expectation& expectation(const ExpectationWithResponse* msg);
@@ -1299,15 +1219,18 @@ const ::mocking::Response&
 ExpectationWithResponse::_Internal::response(const ExpectationWithResponse* msg) {
   return *msg->response_;
 }
-ExpectationWithResponse::ExpectationWithResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ExpectationWithResponse::ExpectationWithResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.ExpectationWithResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.ExpectationWithResponse)
 }
 ExpectationWithResponse::ExpectationWithResponse(const ExpectationWithResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_expectation()) {
     expectation_ = new ::mocking::Expectation(*from.expectation_);
   } else {
@@ -1321,98 +1244,106 @@ ExpectationWithResponse::ExpectationWithResponse(const ExpectationWithResponse& 
   // @@protoc_insertion_point(copy_constructor:mocking.ExpectationWithResponse)
 }
 
-void ExpectationWithResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ExpectationWithResponse_control_5fflow_2eproto.base);
-  ::memset(&expectation_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&response_) -
-      reinterpret_cast<char*>(&expectation_)) + sizeof(response_));
+inline void ExpectationWithResponse::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&expectation_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&response_) -
+    reinterpret_cast<char*>(&expectation_)) + sizeof(response_));
 }
 
 ExpectationWithResponse::~ExpectationWithResponse() {
   // @@protoc_insertion_point(destructor:mocking.ExpectationWithResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ExpectationWithResponse::SharedDtor() {
+inline void ExpectationWithResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete expectation_;
   if (this != internal_default_instance()) delete response_;
 }
 
+void ExpectationWithResponse::ArenaDtor(void* object) {
+  ExpectationWithResponse* _this = reinterpret_cast< ExpectationWithResponse* >(object);
+  (void)_this;
+}
+void ExpectationWithResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ExpectationWithResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ExpectationWithResponse& ExpectationWithResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ExpectationWithResponse_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ExpectationWithResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.ExpectationWithResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && expectation_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && expectation_ != nullptr) {
     delete expectation_;
   }
   expectation_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && response_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && response_ != nullptr) {
     delete response_;
   }
   response_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ExpectationWithResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .mocking.Expectation expectation = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_expectation(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .mocking.Response response = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_response(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ExpectationWithResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ExpectationWithResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.ExpectationWithResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .mocking.Expectation expectation = 1;
-  if (this->has_expectation()) {
+  if (this->_internal_has_expectation()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1420,7 +1351,7 @@ failure:
   }
 
   // .mocking.Response response = 2;
-  if (this->has_response()) {
+  if (this->_internal_has_response()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1429,7 +1360,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.ExpectationWithResponse)
   return target;
@@ -1439,68 +1370,53 @@ size_t ExpectationWithResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.ExpectationWithResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .mocking.Expectation expectation = 1;
-  if (this->has_expectation()) {
+  if (this->_internal_has_expectation()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *expectation_);
   }
 
   // .mocking.Response response = 2;
-  if (this->has_response()) {
+  if (this->_internal_has_response()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *response_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ExpectationWithResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.ExpectationWithResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ExpectationWithResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ExpectationWithResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.ExpectationWithResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.ExpectationWithResponse)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ExpectationWithResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ExpectationWithResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ExpectationWithResponse::GetClassData() const { return &_class_data_; }
+
+void ExpectationWithResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ExpectationWithResponse *>(to)->MergeFrom(
+      static_cast<const ExpectationWithResponse &>(from));
 }
+
 
 void ExpectationWithResponse::MergeFrom(const ExpectationWithResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.ExpectationWithResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_expectation()) {
+  if (from._internal_has_expectation()) {
     _internal_mutable_expectation()->::mocking::Expectation::MergeFrom(from._internal_expectation());
   }
-  if (from.has_response()) {
+  if (from._internal_has_response()) {
     _internal_mutable_response()->::mocking::Response::MergeFrom(from._internal_response());
   }
-}
-
-void ExpectationWithResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.ExpectationWithResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ExpectationWithResponse::CopyFrom(const ExpectationWithResponse& from) {
@@ -1516,22 +1432,23 @@ bool ExpectationWithResponse::IsInitialized() const {
 
 void ExpectationWithResponse::InternalSwap(ExpectationWithResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(expectation_, other->expectation_);
-  swap(response_, other->response_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ExpectationWithResponse, response_)
+      + sizeof(ExpectationWithResponse::response_)
+      - PROTOBUF_FIELD_OFFSET(ExpectationWithResponse, expectation_)>(
+          reinterpret_cast<char*>(&expectation_),
+          reinterpret_cast<char*>(&other->expectation_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ExpectationWithResponse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[4]);
 }
-
 
 // ===================================================================
 
-void TestCaseStep::InitAsDefaultInstance() {
-  ::mocking::_TestCaseStep_default_instance_._instance.get_mutable()->cardinality_ = const_cast< ::mocking::Cardinality*>(
-      ::mocking::Cardinality::internal_default_instance());
-}
 class TestCaseStep::_Internal {
  public:
   static const ::mocking::Cardinality& cardinality(const TestCaseStep* msg);
@@ -1541,16 +1458,20 @@ const ::mocking::Cardinality&
 TestCaseStep::_Internal::cardinality(const TestCaseStep* msg) {
   return *msg->cardinality_;
 }
-TestCaseStep::TestCaseStep()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TestCaseStep::TestCaseStep(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  expectation_with_response_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.TestCaseStep)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.TestCaseStep)
 }
 TestCaseStep::TestCaseStep(const TestCaseStep& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       expectation_with_response_(from.expectation_with_response_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_cardinality()) {
     cardinality_ = new ::mocking::Cardinality(*from.cardinality_);
   } else {
@@ -1559,60 +1480,63 @@ TestCaseStep::TestCaseStep(const TestCaseStep& from)
   // @@protoc_insertion_point(copy_constructor:mocking.TestCaseStep)
 }
 
-void TestCaseStep::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TestCaseStep_control_5fflow_2eproto.base);
-  cardinality_ = nullptr;
+inline void TestCaseStep::SharedCtor() {
+cardinality_ = nullptr;
 }
 
 TestCaseStep::~TestCaseStep() {
   // @@protoc_insertion_point(destructor:mocking.TestCaseStep)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void TestCaseStep::SharedDtor() {
+inline void TestCaseStep::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete cardinality_;
 }
 
+void TestCaseStep::ArenaDtor(void* object) {
+  TestCaseStep* _this = reinterpret_cast< TestCaseStep* >(object);
+  (void)_this;
+}
+void TestCaseStep::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TestCaseStep::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TestCaseStep& TestCaseStep::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TestCaseStep_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TestCaseStep::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.TestCaseStep)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   expectation_with_response_.Clear();
-  if (GetArenaNoVirtual() == nullptr && cardinality_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && cardinality_ != nullptr) {
     delete cardinality_;
   }
   cardinality_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TestCaseStep::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .mocking.Cardinality cardinality = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_cardinality(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .mocking.ExpectationWithResponse expectation_with_response = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1620,36 +1544,40 @@ const char* TestCaseStep::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* TestCaseStep::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* TestCaseStep::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.TestCaseStep)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .mocking.Cardinality cardinality = 1;
-  if (this->has_cardinality()) {
+  if (this->_internal_has_cardinality()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1666,7 +1594,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.TestCaseStep)
   return target;
@@ -1676,7 +1604,7 @@ size_t TestCaseStep::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.TestCaseStep)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1688,54 +1616,39 @@ size_t TestCaseStep::ByteSizeLong() const {
   }
 
   // .mocking.Cardinality cardinality = 1;
-  if (this->has_cardinality()) {
+  if (this->_internal_has_cardinality()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *cardinality_);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void TestCaseStep::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.TestCaseStep)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TestCaseStep* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TestCaseStep>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.TestCaseStep)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.TestCaseStep)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TestCaseStep::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TestCaseStep::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TestCaseStep::GetClassData() const { return &_class_data_; }
+
+void TestCaseStep::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TestCaseStep *>(to)->MergeFrom(
+      static_cast<const TestCaseStep &>(from));
 }
+
 
 void TestCaseStep::MergeFrom(const TestCaseStep& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.TestCaseStep)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   expectation_with_response_.MergeFrom(from.expectation_with_response_);
-  if (from.has_cardinality()) {
+  if (from._internal_has_cardinality()) {
     _internal_mutable_cardinality()->::mocking::Cardinality::MergeFrom(from._internal_cardinality());
   }
-}
-
-void TestCaseStep::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.TestCaseStep)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TestCaseStep::CopyFrom(const TestCaseStep& from) {
@@ -1751,78 +1664,83 @@ bool TestCaseStep::IsInitialized() const {
 
 void TestCaseStep::InternalSwap(TestCaseStep* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   expectation_with_response_.InternalSwap(&other->expectation_with_response_);
   swap(cardinality_, other->cardinality_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TestCaseStep::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[5]);
 }
-
 
 // ===================================================================
 
-void TestCase::InitAsDefaultInstance() {
-}
 class TestCase::_Internal {
  public:
 };
 
-TestCase::TestCase()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TestCase::TestCase(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  steps_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mocking.TestCase)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:mocking.TestCase)
 }
 TestCase::TestCase(const TestCase& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       steps_(from.steps_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mocking.TestCase)
 }
 
-void TestCase::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TestCase_control_5fflow_2eproto.base);
+inline void TestCase::SharedCtor() {
 }
 
 TestCase::~TestCase() {
   // @@protoc_insertion_point(destructor:mocking.TestCase)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void TestCase::SharedDtor() {
+inline void TestCase::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void TestCase::ArenaDtor(void* object) {
+  TestCase* _this = reinterpret_cast< TestCase* >(object);
+  (void)_this;
+}
+void TestCase::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TestCase::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TestCase& TestCase::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TestCase_control_5fflow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void TestCase::Clear() {
 // @@protoc_insertion_point(message_clear_start:mocking.TestCase)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   steps_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TestCase::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .mocking.TestCaseStep steps = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1830,32 +1748,36 @@ const char* TestCase::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* TestCase::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* TestCase::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mocking.TestCase)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .mocking.TestCaseStep steps = 1;
@@ -1868,7 +1790,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mocking.TestCase)
   return target;
@@ -1878,7 +1800,7 @@ size_t TestCase::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mocking.TestCase)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1889,45 +1811,30 @@ size_t TestCase::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void TestCase::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mocking.TestCase)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TestCase* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TestCase>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mocking.TestCase)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mocking.TestCase)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TestCase::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TestCase::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TestCase::GetClassData() const { return &_class_data_; }
+
+void TestCase::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TestCase *>(to)->MergeFrom(
+      static_cast<const TestCase &>(from));
 }
+
 
 void TestCase::MergeFrom(const TestCase& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mocking.TestCase)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   steps_.MergeFrom(from.steps_);
-}
-
-void TestCase::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mocking.TestCase)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TestCase::CopyFrom(const TestCase& from) {
@@ -1943,38 +1850,39 @@ bool TestCase::IsInitialized() const {
 
 void TestCase::InternalSwap(TestCase* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   steps_.InternalSwap(&other->steps_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TestCase::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_control_5fflow_2eproto_getter, &descriptor_table_control_5fflow_2eproto_once,
+      file_level_metadata_control_5fflow_2eproto[6]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mocking
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mocking::Cardinality_Count* Arena::CreateMaybeMessage< ::mocking::Cardinality_Count >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::Cardinality_Count >(arena);
+  return Arena::CreateMessageInternal< ::mocking::Cardinality_Count >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::Cardinality* Arena::CreateMaybeMessage< ::mocking::Cardinality >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::Cardinality >(arena);
+  return Arena::CreateMessageInternal< ::mocking::Cardinality >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::Expectation* Arena::CreateMaybeMessage< ::mocking::Expectation >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::Expectation >(arena);
+  return Arena::CreateMessageInternal< ::mocking::Expectation >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::Response* Arena::CreateMaybeMessage< ::mocking::Response >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::Response >(arena);
+  return Arena::CreateMessageInternal< ::mocking::Response >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::ExpectationWithResponse* Arena::CreateMaybeMessage< ::mocking::ExpectationWithResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::ExpectationWithResponse >(arena);
+  return Arena::CreateMessageInternal< ::mocking::ExpectationWithResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::TestCaseStep* Arena::CreateMaybeMessage< ::mocking::TestCaseStep >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::TestCaseStep >(arena);
+  return Arena::CreateMessageInternal< ::mocking::TestCaseStep >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mocking::TestCase* Arena::CreateMaybeMessage< ::mocking::TestCase >(Arena* arena) {
-  return Arena::CreateInternal< ::mocking::TestCase >(arena);
+  return Arena::CreateMessageInternal< ::mocking::TestCase >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -2,7 +2,7 @@
 	"package": "52b3e3822cbb7ff4fef8d289a2bd38d2f5c634cee7925679c218252ea24515d5",
 	"files": {
 		"Cargo.toml": "b06ede86c0dcbeeac13401dd9f3e844ccffaecb38cc72414c56769df97daab76",
-		"src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-		"Cargo.toml.orig": "0ba890f32e53226f4fab3626e6e35f712b66fef74afd39be361804dea6813a6e"
+		"Cargo.toml.orig": "0ba890f32e53226f4fab3626e6e35f712b66fef74afd39be361804dea6813a6e",
+		"src/lib.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 	}
 }

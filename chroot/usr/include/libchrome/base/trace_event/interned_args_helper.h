@@ -76,6 +76,16 @@ struct BASE_EXPORT InternedSourceLocation
   static void Add(perfetto::libchrome::protos::pbzero::InternedData* interned_data,
                   size_t iid,
                   const TraceSourceLocation& location);
+  using perfetto::libchrome::TrackEventInternedDataIndex<
+      InternedSourceLocation,
+      perfetto::libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
+      TraceSourceLocation>::Get;
+  static size_t Get(perfetto::libchrome::EventContext* ctx, const Location& location) {
+    return perfetto::libchrome::TrackEventInternedDataIndex<
+        InternedSourceLocation,
+        perfetto::libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
+        TraceSourceLocation>::Get(ctx, TraceSourceLocation(location));
+  }
 };
 
 struct BASE_EXPORT InternedLogMessage

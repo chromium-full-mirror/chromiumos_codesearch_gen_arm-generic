@@ -110,7 +110,7 @@ class StringListDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValue(UserType* output) {
+  [[nodiscard]] bool ReadValue(UserType* output) {
     
     auto* pointer = data_->value.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -137,7 +137,7 @@ class FloatListDataView {
       mojo::ArrayDataView<double>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValue(UserType* output) {
+  [[nodiscard]] bool ReadValue(UserType* output) {
     
     auto* pointer = data_->value.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<double>>(
@@ -164,7 +164,7 @@ class Int64ListDataView {
       mojo::ArrayDataView<int64_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValue(UserType* output) {
+  [[nodiscard]] bool ReadValue(UserType* output) {
     
     auto* pointer = data_->value.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int64_t>>(
@@ -191,7 +191,7 @@ class TensorDataView {
       ValueListDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = !data_->data.is_null() ? &data_->data : nullptr;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::ValueListDataView>(
@@ -201,7 +201,7 @@ class TensorDataView {
       Int64ListDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadShape(UserType* output) {
+  [[nodiscard]] bool ReadShape(UserType* output) {
     
     auto* pointer = data_->shape.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::Int64ListDataView>(
@@ -237,7 +237,7 @@ class ValueListDataView {
       StringListDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStringList(UserType* output) const {
+  [[nodiscard]] bool ReadStringList(UserType* output) const {
     
     CHECK(is_string_list());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::StringListDataView>(
@@ -248,7 +248,7 @@ class ValueListDataView {
       FloatListDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFloatList(UserType* output) const {
+  [[nodiscard]] bool ReadFloatList(UserType* output) const {
     
     CHECK(is_float_list());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::FloatListDataView>(
@@ -259,7 +259,7 @@ class ValueListDataView {
       Int64ListDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInt64List(UserType* output) const {
+  [[nodiscard]] bool ReadInt64List(UserType* output) const {
     
     CHECK(is_int64_list());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::Int64ListDataView>(

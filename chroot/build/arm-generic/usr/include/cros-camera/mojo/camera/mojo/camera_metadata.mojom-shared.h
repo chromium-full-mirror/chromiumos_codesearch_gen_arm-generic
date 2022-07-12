@@ -108,7 +108,7 @@ class CameraMetadataEntryDataView {
     return data_->index;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTag(UserType* output) const {
+  [[nodiscard]] bool ReadTag(UserType* output) const {
     auto data_value = data_->tag;
     return mojo::internal::Deserialize<::cros::mojom::CameraMetadataTag>(
         data_value, output);
@@ -118,7 +118,7 @@ class CameraMetadataEntryDataView {
           static_cast<::cros::mojom::CameraMetadataTag>(data_->tag));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::EntryType>(
         data_value, output);
@@ -134,7 +134,7 @@ class CameraMetadataEntryDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = data_->data.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -176,7 +176,7 @@ class CameraMetadataDataView {
       mojo::ArrayDataView<CameraMetadataEntryDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEntries(UserType* output) {
+  [[nodiscard]] bool ReadEntries(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

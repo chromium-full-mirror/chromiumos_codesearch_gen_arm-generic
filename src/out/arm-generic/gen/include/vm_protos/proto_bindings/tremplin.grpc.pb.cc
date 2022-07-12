@@ -36,6 +36,8 @@ static const char* Tremplin_method_names[] = {
   "/vm_tools.tremplin.Tremplin/CancelUpgradeContainer",
   "/vm_tools.tremplin.Tremplin/HostNetworkChanged",
   "/vm_tools.tremplin.Tremplin/GetDebugInfo",
+  "/vm_tools.tremplin.Tremplin/AttachUsbToContainer",
+  "/vm_tools.tremplin.Tremplin/DetachUsbFromContainer",
 };
 
 std::unique_ptr< Tremplin::Stub> Tremplin::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -62,6 +64,8 @@ Tremplin::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_CancelUpgradeContainer_(Tremplin_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_HostNetworkChanged_(Tremplin_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetDebugInfo_(Tremplin_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AttachUsbToContainer_(Tremplin_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DetachUsbFromContainer_(Tremplin_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Tremplin::Stub::StartLxd(::grpc::ClientContext* context, const ::vm_tools::tremplin::StartLxdRequest& request, ::vm_tools::tremplin::StartLxdResponse* response) {
@@ -336,6 +340,38 @@ void Tremplin::Stub::experimental_async::GetDebugInfo(::grpc::ClientContext* con
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::tremplin::GetDebugInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetDebugInfo_, context, request, false);
 }
 
+::grpc::Status Tremplin::Stub::AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AttachUsbToContainer_, context, request, response);
+}
+
+void Tremplin::Stub::experimental_async::AttachUsbToContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AttachUsbToContainer_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>* Tremplin::Stub::AsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::tremplin::AttachUsbToContainerResponse>::Create(channel_.get(), cq, rpcmethod_AttachUsbToContainer_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::AttachUsbToContainerResponse>* Tremplin::Stub::PrepareAsyncAttachUsbToContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::tremplin::AttachUsbToContainerResponse>::Create(channel_.get(), cq, rpcmethod_AttachUsbToContainer_, context, request, false);
+}
+
+::grpc::Status Tremplin::Stub::DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DetachUsbFromContainer_, context, request, response);
+}
+
+void Tremplin::Stub::experimental_async::DetachUsbFromContainer(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DetachUsbFromContainer_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* Tremplin::Stub::AsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::tremplin::DetachUsbFromContainerResponse>::Create(channel_.get(), cq, rpcmethod_DetachUsbFromContainer_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::tremplin::DetachUsbFromContainerResponse>* Tremplin::Stub::PrepareAsyncDetachUsbFromContainerRaw(::grpc::ClientContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::tremplin::DetachUsbFromContainerResponse>::Create(channel_.get(), cq, rpcmethod_DetachUsbFromContainer_, context, request, false);
+}
+
 Tremplin::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Tremplin_method_names[0],
@@ -422,6 +458,16 @@ Tremplin::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Tremplin::Service, ::vm_tools::tremplin::GetDebugInfoRequest, ::vm_tools::tremplin::GetDebugInfoResponse>(
           std::mem_fn(&Tremplin::Service::GetDebugInfo), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Tremplin_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Tremplin::Service, ::vm_tools::tremplin::AttachUsbToContainerRequest, ::vm_tools::tremplin::AttachUsbToContainerResponse>(
+          std::mem_fn(&Tremplin::Service::AttachUsbToContainer), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Tremplin_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Tremplin::Service, ::vm_tools::tremplin::DetachUsbFromContainerRequest, ::vm_tools::tremplin::DetachUsbFromContainerResponse>(
+          std::mem_fn(&Tremplin::Service::DetachUsbFromContainer), this)));
 }
 
 Tremplin::Service::~Service() {
@@ -540,6 +586,20 @@ Tremplin::Service::~Service() {
 }
 
 ::grpc::Status Tremplin::Service::GetDebugInfo(::grpc::ServerContext* context, const ::vm_tools::tremplin::GetDebugInfoRequest* request, ::vm_tools::tremplin::GetDebugInfoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Tremplin::Service::AttachUsbToContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::AttachUsbToContainerRequest* request, ::vm_tools::tremplin::AttachUsbToContainerResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Tremplin::Service::DetachUsbFromContainer(::grpc::ServerContext* context, const ::vm_tools::tremplin::DetachUsbFromContainerRequest* request, ::vm_tools::tremplin::DetachUsbFromContainerResponse* response) {
   (void) context;
   (void) request;
   (void) response;

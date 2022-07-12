@@ -72,7 +72,7 @@ class GenericPendingReceiverDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaceName(UserType* output) {
+  [[nodiscard]] bool ReadInterfaceName(UserType* output) {
     
     auto* pointer = data_->interface_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

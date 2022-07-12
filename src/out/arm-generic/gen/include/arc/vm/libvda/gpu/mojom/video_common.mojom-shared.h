@@ -283,7 +283,7 @@ class VideoFrameLayoutDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) const {
+  [[nodiscard]] bool ReadFormat(UserType* output) const {
     auto data_value = data_->format;
     return mojo::internal::Deserialize<::arc::mojom::VideoPixelFormat>(
         data_value, output);
@@ -296,7 +296,7 @@ class VideoFrameLayoutDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCodedSize(UserType* output) {
+  [[nodiscard]] bool ReadCodedSize(UserType* output) {
     
     auto* pointer = data_->coded_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
@@ -306,7 +306,7 @@ class VideoFrameLayoutDataView {
       mojo::ArrayDataView<ColorPlaneLayoutDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPlanes(UserType* output) {
+  [[nodiscard]] bool ReadPlanes(UserType* output) {
     
     auto* pointer = data_->planes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::arc::mojom::ColorPlaneLayoutDataView>>(

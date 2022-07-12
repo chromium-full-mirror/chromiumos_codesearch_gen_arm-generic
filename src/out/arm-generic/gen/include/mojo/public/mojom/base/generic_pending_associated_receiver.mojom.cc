@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -87,6 +86,24 @@ bool GenericPendingAssociatedReceiver::Validate(
   return Data_::Validate(data, validation_context);
 }
 const char GenericAssociatedInterface::Name_[] = "mojo_base.mojom.GenericAssociatedInterface";
+
+uint32_t GenericAssociatedInterface::MessageToStableIPCHash_(mojo::Message& message) {
+  return 0;
+}
+
+
+const char* GenericAssociatedInterface::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 GenericAssociatedInterfaceProxy::GenericAssociatedInterfaceProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {

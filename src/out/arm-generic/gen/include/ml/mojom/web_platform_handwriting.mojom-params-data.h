@@ -72,7 +72,7 @@ class HandwritingRecognizer_GetPrediction_ParamsDataView {
       mojo::ArrayDataView<HandwritingStrokeDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStrokes(UserType* output) {
+  [[nodiscard]] bool ReadStrokes(UserType* output) {
     
     auto* pointer = data_->strokes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::web_platform::mojom::HandwritingStrokeDataView>>(
@@ -82,7 +82,7 @@ class HandwritingRecognizer_GetPrediction_ParamsDataView {
       HandwritingHintsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHints(UserType* output) {
+  [[nodiscard]] bool ReadHints(UserType* output) {
     
     auto* pointer = data_->hints.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::web_platform::mojom::HandwritingHintsDataView>(
@@ -109,7 +109,7 @@ class HandwritingRecognizer_GetPrediction_ResponseParamsDataView {
       mojo::ArrayDataView<HandwritingPredictionDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPrediction(UserType* output) {
+  [[nodiscard]] bool ReadPrediction(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

@@ -56,27 +56,7 @@ using BitratePtr = mojo::StructPtr<Bitrate>;
 
 class VideoEncodeAccelerator;
 
-using VideoEncodeAcceleratorPtr = mojo::InterfacePtr<VideoEncodeAccelerator>;
-using VideoEncodeAcceleratorPtrInfo = mojo::InterfacePtrInfo<VideoEncodeAccelerator>;
-
-using VideoEncodeAcceleratorRequest = mojo::InterfaceRequest<VideoEncodeAccelerator>;
-using VideoEncodeAcceleratorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoEncodeAccelerator>;
-
-using VideoEncodeAcceleratorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoEncodeAccelerator>;
-
 class VideoEncodeClient;
-
-using VideoEncodeClientPtr = mojo::InterfacePtr<VideoEncodeClient>;
-using VideoEncodeClientPtrInfo = mojo::InterfacePtrInfo<VideoEncodeClient>;
-
-using VideoEncodeClientRequest = mojo::InterfaceRequest<VideoEncodeClient>;
-using VideoEncodeClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoEncodeClient>;
-
-using VideoEncodeClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoEncodeClient>;
 
 
 

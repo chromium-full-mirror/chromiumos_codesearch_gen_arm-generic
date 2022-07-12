@@ -27,16 +27,6 @@ namespace mojom {
 enum class ExecuteResult : int32_t;
 class GraphExecutor;
 
-using GraphExecutorPtr = mojo::InterfacePtr<GraphExecutor>;
-using GraphExecutorPtrInfo = mojo::InterfacePtrInfo<GraphExecutor>;
-
-using GraphExecutorRequest = mojo::InterfaceRequest<GraphExecutor>;
-using GraphExecutorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<GraphExecutor>;
-
-using GraphExecutorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<GraphExecutor>;
-
 
 
 

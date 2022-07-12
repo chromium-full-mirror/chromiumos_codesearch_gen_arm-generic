@@ -26,16 +26,6 @@ namespace mojom {
 enum class EncodeStatus : int32_t;
 class JpegEncodeAccelerator;
 
-using JpegEncodeAcceleratorPtr = mojo::InterfacePtr<JpegEncodeAccelerator>;
-using JpegEncodeAcceleratorPtrInfo = mojo::InterfacePtrInfo<JpegEncodeAccelerator>;
-
-using JpegEncodeAcceleratorRequest = mojo::InterfaceRequest<JpegEncodeAccelerator>;
-using JpegEncodeAcceleratorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<JpegEncodeAccelerator>;
-
-using JpegEncodeAcceleratorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<JpegEncodeAccelerator>;
-
 
 
 

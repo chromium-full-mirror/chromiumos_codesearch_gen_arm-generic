@@ -197,7 +197,7 @@ class PictureDataView {
       ::arc::mojom::RectDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCropRect(UserType* output) {
+  [[nodiscard]] bool ReadCropRect(UserType* output) {
     
     auto* pointer = data_->crop_rect.Get();
     return mojo::internal::Deserialize<::arc::mojom::RectDataView>(
@@ -227,7 +227,7 @@ class PictureBufferFormatDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCodedSize(UserType* output) {
+  [[nodiscard]] bool ReadCodedSize(UserType* output) {
     
     auto* pointer = data_->coded_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
@@ -251,7 +251,7 @@ class VideoDecodeAcceleratorConfigDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProfile(UserType* output) const {
+  [[nodiscard]] bool ReadProfile(UserType* output) const {
     auto data_value = data_->profile;
     return mojo::internal::Deserialize<::arc::mojom::VideoCodecProfile>(
         data_value, output);

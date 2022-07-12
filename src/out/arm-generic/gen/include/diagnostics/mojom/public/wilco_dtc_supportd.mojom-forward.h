@@ -31,39 +31,9 @@ enum class WilcoDtcSupportdWebRequestStatus : int32_t;
 enum class WilcoDtcSupportdEvent : int32_t;
 class WilcoDtcSupportdServiceFactory;
 
-using WilcoDtcSupportdServiceFactoryPtr = mojo::InterfacePtr<WilcoDtcSupportdServiceFactory>;
-using WilcoDtcSupportdServiceFactoryPtrInfo = mojo::InterfacePtrInfo<WilcoDtcSupportdServiceFactory>;
-
-using WilcoDtcSupportdServiceFactoryRequest = mojo::InterfaceRequest<WilcoDtcSupportdServiceFactory>;
-using WilcoDtcSupportdServiceFactoryAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<WilcoDtcSupportdServiceFactory>;
-
-using WilcoDtcSupportdServiceFactoryAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<WilcoDtcSupportdServiceFactory>;
-
 class WilcoDtcSupportdService;
 
-using WilcoDtcSupportdServicePtr = mojo::InterfacePtr<WilcoDtcSupportdService>;
-using WilcoDtcSupportdServicePtrInfo = mojo::InterfacePtrInfo<WilcoDtcSupportdService>;
-
-using WilcoDtcSupportdServiceRequest = mojo::InterfaceRequest<WilcoDtcSupportdService>;
-using WilcoDtcSupportdServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<WilcoDtcSupportdService>;
-
-using WilcoDtcSupportdServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<WilcoDtcSupportdService>;
-
 class WilcoDtcSupportdClient;
-
-using WilcoDtcSupportdClientPtr = mojo::InterfacePtr<WilcoDtcSupportdClient>;
-using WilcoDtcSupportdClientPtrInfo = mojo::InterfacePtrInfo<WilcoDtcSupportdClient>;
-
-using WilcoDtcSupportdClientRequest = mojo::InterfaceRequest<WilcoDtcSupportdClient>;
-using WilcoDtcSupportdClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<WilcoDtcSupportdClient>;
-
-using WilcoDtcSupportdClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<WilcoDtcSupportdClient>;
 
 
 

@@ -11,49 +11,36 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_field_5ftrial_5flist_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto;
-class FieldTrialList_ActiveGroupDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FieldTrialList_ActiveGroup> _instance;
-} _FieldTrialList_ActiveGroup_default_instance_;
-class FieldTrialListDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FieldTrialList> _instance;
-} _FieldTrialList_default_instance_;
-static void InitDefaultsscc_info_FieldTrialList_field_5ftrial_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  {
-    void* ptr = &::_FieldTrialList_default_instance_;
-    new (ptr) ::FieldTrialList();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::FieldTrialList::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FieldTrialList_field_5ftrial_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FieldTrialList_field_5ftrial_5flist_2eproto}, {
-      &scc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto.base,}};
-
-static void InitDefaultsscc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::_FieldTrialList_ActiveGroup_default_instance_;
-    new (ptr) ::FieldTrialList_ActiveGroup();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::FieldTrialList_ActiveGroup::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto}, {}};
-
+PROTOBUF_PRAGMA_INIT_SEG
+constexpr FieldTrialList_ActiveGroup::FieldTrialList_ActiveGroup(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : trial_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , group_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct FieldTrialList_ActiveGroupDefaultTypeInternal {
+  constexpr FieldTrialList_ActiveGroupDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FieldTrialList_ActiveGroupDefaultTypeInternal() {}
+  union {
+    FieldTrialList_ActiveGroup _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FieldTrialList_ActiveGroupDefaultTypeInternal _FieldTrialList_ActiveGroup_default_instance_;
+constexpr FieldTrialList::FieldTrialList(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : group_(){}
+struct FieldTrialListDefaultTypeInternal {
+  constexpr FieldTrialListDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FieldTrialListDefaultTypeInternal() {}
+  union {
+    FieldTrialList _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FieldTrialListDefaultTypeInternal _FieldTrialList_default_instance_;
 
 // ===================================================================
 
-void FieldTrialList_ActiveGroup::InitAsDefaultInstance() {
-}
 class FieldTrialList_ActiveGroup::_Internal {
  public:
   using HasBits = decltype(std::declval<FieldTrialList_ActiveGroup>()._has_bits_);
@@ -65,120 +52,144 @@ class FieldTrialList_ActiveGroup::_Internal {
   }
 };
 
-FieldTrialList_ActiveGroup::FieldTrialList_ActiveGroup()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FieldTrialList_ActiveGroup::FieldTrialList_ActiveGroup(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:FieldTrialList.ActiveGroup)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:FieldTrialList.ActiveGroup)
 }
 FieldTrialList_ActiveGroup::FieldTrialList_ActiveGroup(const FieldTrialList_ActiveGroup& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   trial_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    trial_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_trial_name()) {
-    trial_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trial_name_);
+    trial_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_trial_name(), 
+      GetArenaForAllocation());
   }
   group_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    group_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_group_name()) {
-    group_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.group_name_);
+    group_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_group_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:FieldTrialList.ActiveGroup)
 }
 
-void FieldTrialList_ActiveGroup::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto.base);
-  trial_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  group_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void FieldTrialList_ActiveGroup::SharedCtor() {
+trial_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  trial_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+group_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  group_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 FieldTrialList_ActiveGroup::~FieldTrialList_ActiveGroup() {
   // @@protoc_insertion_point(destructor:FieldTrialList.ActiveGroup)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FieldTrialList_ActiveGroup::SharedDtor() {
+inline void FieldTrialList_ActiveGroup::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   trial_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   group_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void FieldTrialList_ActiveGroup::ArenaDtor(void* object) {
+  FieldTrialList_ActiveGroup* _this = reinterpret_cast< FieldTrialList_ActiveGroup* >(object);
+  (void)_this;
+}
+void FieldTrialList_ActiveGroup::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FieldTrialList_ActiveGroup::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FieldTrialList_ActiveGroup& FieldTrialList_ActiveGroup::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FieldTrialList_ActiveGroup_field_5ftrial_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FieldTrialList_ActiveGroup::Clear() {
 // @@protoc_insertion_point(message_clear_start:FieldTrialList.ActiveGroup)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      trial_name_.ClearNonDefaultToEmptyNoArena();
+      trial_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      group_name_.ClearNonDefaultToEmptyNoArena();
+      group_name_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FieldTrialList_ActiveGroup::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string trial_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_trial_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string group_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_group_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FieldTrialList_ActiveGroup::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FieldTrialList_ActiveGroup::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:FieldTrialList.ActiveGroup)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -195,8 +206,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:FieldTrialList.ActiveGroup)
   return target;
@@ -206,7 +217,7 @@ size_t FieldTrialList_ActiveGroup::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:FieldTrialList.ActiveGroup)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -228,7 +239,7 @@ size_t FieldTrialList_ActiveGroup::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -244,21 +255,19 @@ void FieldTrialList_ActiveGroup::CheckTypeAndMergeFrom(
 void FieldTrialList_ActiveGroup::MergeFrom(const FieldTrialList_ActiveGroup& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:FieldTrialList.ActiveGroup)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      trial_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trial_name_);
+      _internal_set_trial_name(from._internal_trial_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      group_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.group_name_);
+      _internal_set_group_name(from._internal_group_name());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FieldTrialList_ActiveGroup::CopyFrom(const FieldTrialList_ActiveGroup& from) {
@@ -274,12 +283,20 @@ bool FieldTrialList_ActiveGroup::IsInitialized() const {
 
 void FieldTrialList_ActiveGroup::InternalSwap(FieldTrialList_ActiveGroup* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  trial_name_.Swap(&other->trial_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  group_name_.Swap(&other->group_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &trial_name_, lhs_arena,
+      &other->trial_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &group_name_, lhs_arena,
+      &other->group_name_, rhs_arena
+  );
 }
 
 std::string FieldTrialList_ActiveGroup::GetTypeName() const {
@@ -289,69 +306,70 @@ std::string FieldTrialList_ActiveGroup::GetTypeName() const {
 
 // ===================================================================
 
-void FieldTrialList::InitAsDefaultInstance() {
-}
 class FieldTrialList::_Internal {
  public:
-  using HasBits = decltype(std::declval<FieldTrialList>()._has_bits_);
 };
 
-FieldTrialList::FieldTrialList()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FieldTrialList::FieldTrialList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  group_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:FieldTrialList)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:FieldTrialList)
 }
 FieldTrialList::FieldTrialList(const FieldTrialList& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       group_(from.group_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:FieldTrialList)
 }
 
-void FieldTrialList::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FieldTrialList_field_5ftrial_5flist_2eproto.base);
+inline void FieldTrialList::SharedCtor() {
 }
 
 FieldTrialList::~FieldTrialList() {
   // @@protoc_insertion_point(destructor:FieldTrialList)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FieldTrialList::SharedDtor() {
+inline void FieldTrialList::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void FieldTrialList::ArenaDtor(void* object) {
+  FieldTrialList* _this = reinterpret_cast< FieldTrialList* >(object);
+  (void)_this;
+}
+void FieldTrialList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FieldTrialList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FieldTrialList& FieldTrialList::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FieldTrialList_field_5ftrial_5flist_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FieldTrialList::Clear() {
 // @@protoc_insertion_point(message_clear_start:FieldTrialList)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   group_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FieldTrialList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .FieldTrialList.ActiveGroup group = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -359,32 +377,36 @@ const char* FieldTrialList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FieldTrialList::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FieldTrialList::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:FieldTrialList)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .FieldTrialList.ActiveGroup group = 1;
@@ -396,8 +418,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:FieldTrialList)
   return target;
@@ -407,7 +429,7 @@ size_t FieldTrialList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:FieldTrialList)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -419,7 +441,7 @@ size_t FieldTrialList::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -435,11 +457,11 @@ void FieldTrialList::CheckTypeAndMergeFrom(
 void FieldTrialList::MergeFrom(const FieldTrialList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:FieldTrialList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   group_.MergeFrom(from.group_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FieldTrialList::CopyFrom(const FieldTrialList& from) {
@@ -455,8 +477,7 @@ bool FieldTrialList::IsInitialized() const {
 
 void FieldTrialList::InternalSwap(FieldTrialList* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   group_.InternalSwap(&other->group_);
 }
 
@@ -468,10 +489,10 @@ std::string FieldTrialList::GetTypeName() const {
 // @@protoc_insertion_point(namespace_scope)
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::FieldTrialList_ActiveGroup* Arena::CreateMaybeMessage< ::FieldTrialList_ActiveGroup >(Arena* arena) {
-  return Arena::CreateInternal< ::FieldTrialList_ActiveGroup >(arena);
+  return Arena::CreateMessageInternal< ::FieldTrialList_ActiveGroup >(arena);
 }
 template<> PROTOBUF_NOINLINE ::FieldTrialList* Arena::CreateMaybeMessage< ::FieldTrialList >(Arena* arena) {
-  return Arena::CreateInternal< ::FieldTrialList >(arena);
+  return Arena::CreateMessageInternal< ::FieldTrialList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

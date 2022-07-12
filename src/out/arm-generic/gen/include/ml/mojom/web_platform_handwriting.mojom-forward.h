@@ -62,16 +62,6 @@ using HandwritingModelConstraintPtr = mojo::StructPtr<HandwritingModelConstraint
 
 class HandwritingRecognizer;
 
-using HandwritingRecognizerPtr = mojo::InterfacePtr<HandwritingRecognizer>;
-using HandwritingRecognizerPtrInfo = mojo::InterfacePtrInfo<HandwritingRecognizer>;
-
-using HandwritingRecognizerRequest = mojo::InterfaceRequest<HandwritingRecognizer>;
-using HandwritingRecognizerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<HandwritingRecognizer>;
-
-using HandwritingRecognizerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<HandwritingRecognizer>;
-
 
 
 

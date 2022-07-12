@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -318,6 +317,52 @@ bool NetworkHealthState::Validate(
 }
 const char NetworkEventsObserver::Name_[] = "chromeos.network_health.mojom.NetworkEventsObserver";
 
+uint32_t NetworkEventsObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kNetworkEventsObserver_OnConnectionStateChanged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_health::mojom::NetworkEventsObserver::OnConnectionStateChanged");
+      return value;
+    }
+    case internal::kNetworkEventsObserver_OnSignalStrengthChanged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_health::mojom::NetworkEventsObserver::OnSignalStrengthChanged");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* NetworkEventsObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kNetworkEventsObserver_OnConnectionStateChanged_Name:
+            return "Receive chromeos::network_health::mojom::NetworkEventsObserver::OnConnectionStateChanged";
+      case internal::kNetworkEventsObserver_OnSignalStrengthChanged_Name:
+            return "Receive chromeos::network_health::mojom::NetworkEventsObserver::OnSignalStrengthChanged";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kNetworkEventsObserver_OnConnectionStateChanged_Name:
+            return "Receive reply chromeos::network_health::mojom::NetworkEventsObserver::OnConnectionStateChanged";
+      case internal::kNetworkEventsObserver_OnSignalStrengthChanged_Name:
+            return "Receive reply chromeos::network_health::mojom::NetworkEventsObserver::OnSignalStrengthChanged";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 NetworkEventsObserverProxy::NetworkEventsObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -443,15 +488,6 @@ bool NetworkEventsObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kNetworkEventsObserver_OnConnectionStateChanged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_health::mojom::NetworkEventsObserver::OnConnectionStateChanged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_health::mojom::NetworkEventsObserver::OnConnectionStateChanged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::NetworkEventsObserver_OnConnectionStateChanged_Params_Data* params =
@@ -482,15 +518,6 @@ std::move(p_state));
       return true;
     }
     case internal::kNetworkEventsObserver_OnSignalStrengthChanged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_health::mojom::NetworkEventsObserver::OnSignalStrengthChanged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_health::mojom::NetworkEventsObserver::OnSignalStrengthChanged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::NetworkEventsObserver_OnSignalStrengthChanged_Params_Data* params =
@@ -557,6 +584,61 @@ bool NetworkEventsObserverRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char NetworkHealthService::Name_[] = "chromeos.network_health.mojom.NetworkHealthService";
+
+uint32_t NetworkHealthService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kNetworkHealthService_AddObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_health::mojom::NetworkHealthService::AddObserver");
+      return value;
+    }
+    case internal::kNetworkHealthService_GetNetworkList_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_health::mojom::NetworkHealthService::GetNetworkList");
+      return value;
+    }
+    case internal::kNetworkHealthService_GetHealthSnapshot_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* NetworkHealthService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kNetworkHealthService_AddObserver_Name:
+            return "Receive chromeos::network_health::mojom::NetworkHealthService::AddObserver";
+      case internal::kNetworkHealthService_GetNetworkList_Name:
+            return "Receive chromeos::network_health::mojom::NetworkHealthService::GetNetworkList";
+      case internal::kNetworkHealthService_GetHealthSnapshot_Name:
+            return "Receive chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kNetworkHealthService_AddObserver_Name:
+            return "Receive reply chromeos::network_health::mojom::NetworkHealthService::AddObserver";
+      case internal::kNetworkHealthService_GetNetworkList_Name:
+            return "Receive reply chromeos::network_health::mojom::NetworkHealthService::GetNetworkList";
+      case internal::kNetworkHealthService_GetHealthSnapshot_Name:
+            return "Receive reply chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class NetworkHealthService_GetNetworkList_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -745,10 +827,6 @@ class NetworkHealthService_GetNetworkList_ProxyToResponder : public ::mojo::inte
 
 bool NetworkHealthService_GetNetworkList_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_health::mojom::NetworkHealthService::GetNetworkList",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkHealthService_GetNetworkList_ResponseParams_Data* params =
@@ -820,8 +898,11 @@ void NetworkHealthService_GetNetworkList_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -872,10 +953,6 @@ class NetworkHealthService_GetHealthSnapshot_ProxyToResponder : public ::mojo::i
 
 bool NetworkHealthService_GetHealthSnapshot_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::NetworkHealthService_GetHealthSnapshot_ResponseParams_Data* params =
@@ -945,8 +1022,11 @@ void NetworkHealthService_GetHealthSnapshot_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -957,15 +1037,6 @@ bool NetworkHealthServiceStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kNetworkHealthService_AddObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_health::mojom::NetworkHealthService::AddObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_health::mojom::NetworkHealthService::AddObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::NetworkHealthService_AddObserver_Params_Data* params =
@@ -1016,15 +1087,6 @@ bool NetworkHealthServiceStubDispatch::AcceptWithResponder(
       break;
     }
     case internal::kNetworkHealthService_GetNetworkList_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_health::mojom::NetworkHealthService::GetNetworkList",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_health::mojom::NetworkHealthService::GetNetworkList");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkHealthService_GetNetworkList_Params_Data* params =
           reinterpret_cast<
@@ -1050,15 +1112,6 @@ bool NetworkHealthServiceStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kNetworkHealthService_GetHealthSnapshot_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::network_health::mojom::NetworkHealthService::GetHealthSnapshot");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::NetworkHealthService_GetHealthSnapshot_Params_Data* params =
           reinterpret_cast<

@@ -177,7 +177,7 @@ class RunMessageParamsDataView {
       RunInputDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInput(UserType* output) {
+  [[nodiscard]] bool ReadInput(UserType* output) {
     
     auto* pointer = !data_->input.is_null() ? &data_->input : nullptr;
     return mojo::internal::Deserialize<::mojo::interface_control::RunInputDataView>(
@@ -204,7 +204,7 @@ class RunResponseMessageParamsDataView {
       RunOutputDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutput(UserType* output) {
+  [[nodiscard]] bool ReadOutput(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -292,7 +292,7 @@ class RunOrClosePipeMessageParamsDataView {
       RunOrClosePipeInputDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInput(UserType* output) {
+  [[nodiscard]] bool ReadInput(UserType* output) {
     
     auto* pointer = !data_->input.is_null() ? &data_->input : nullptr;
     return mojo::internal::Deserialize<::mojo::interface_control::RunOrClosePipeInputDataView>(
@@ -398,7 +398,7 @@ class RunInputDataView {
       QueryVersionDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadQueryVersion(UserType* output) const {
+  [[nodiscard]] bool ReadQueryVersion(UserType* output) const {
     
     CHECK(is_query_version());
     return mojo::internal::Deserialize<::mojo::interface_control::QueryVersionDataView>(
@@ -409,7 +409,7 @@ class RunInputDataView {
       FlushForTestingDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFlushForTesting(UserType* output) const {
+  [[nodiscard]] bool ReadFlushForTesting(UserType* output) const {
     
     CHECK(is_flush_for_testing());
     return mojo::internal::Deserialize<::mojo::interface_control::FlushForTestingDataView>(
@@ -446,7 +446,7 @@ class RunOutputDataView {
       QueryVersionResultDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadQueryVersionResult(UserType* output) const {
+  [[nodiscard]] bool ReadQueryVersionResult(UserType* output) const {
     
     CHECK(is_query_version_result());
     return mojo::internal::Deserialize<::mojo::interface_control::QueryVersionResultDataView>(
@@ -483,7 +483,7 @@ class RunOrClosePipeInputDataView {
       RequireVersionDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRequireVersion(UserType* output) const {
+  [[nodiscard]] bool ReadRequireVersion(UserType* output) const {
     
     CHECK(is_require_version());
     return mojo::internal::Deserialize<::mojo::interface_control::RequireVersionDataView>(
@@ -494,7 +494,7 @@ class RunOrClosePipeInputDataView {
       EnableIdleTrackingDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEnableIdleTracking(UserType* output) const {
+  [[nodiscard]] bool ReadEnableIdleTracking(UserType* output) const {
     
     CHECK(is_enable_idle_tracking());
     return mojo::internal::Deserialize<::mojo::interface_control::EnableIdleTrackingDataView>(
@@ -505,7 +505,7 @@ class RunOrClosePipeInputDataView {
       MessageAckDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMessageAck(UserType* output) const {
+  [[nodiscard]] bool ReadMessageAck(UserType* output) const {
     
     CHECK(is_message_ack());
     return mojo::internal::Deserialize<::mojo::interface_control::MessageAckDataView>(
@@ -516,7 +516,7 @@ class RunOrClosePipeInputDataView {
       NotifyIdleDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNotifyIdle(UserType* output) const {
+  [[nodiscard]] bool ReadNotifyIdle(UserType* output) const {
     
     CHECK(is_notify_idle());
     return mojo::internal::Deserialize<::mojo::interface_control::NotifyIdleDataView>(

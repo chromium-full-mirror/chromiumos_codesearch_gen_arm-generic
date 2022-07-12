@@ -54,7 +54,7 @@ class WilcoEcObserver_OnEcEvent_ParamsDataView {
       EcEventDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEcEvent(UserType* output) {
+  [[nodiscard]] bool ReadEcEvent(UserType* output) {
     
     auto* pointer = data_->ec_event.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EcEventDataView>(

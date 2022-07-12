@@ -116,7 +116,7 @@ class RunOrClosePipeMessageParamsDataView {
       RunOrClosePipeInputDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInput(UserType* output) {
+  [[nodiscard]] bool ReadInput(UserType* output) {
     
     auto* pointer = !data_->input.is_null() ? &data_->input : nullptr;
     return mojo::internal::Deserialize<::mojo::pipe_control::RunOrClosePipeInputDataView>(
@@ -146,7 +146,7 @@ class DisconnectReasonDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDescription(UserType* output) {
+  [[nodiscard]] bool ReadDescription(UserType* output) {
     
     auto* pointer = data_->description.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -176,7 +176,7 @@ class PeerAssociatedEndpointClosedEventDataView {
       DisconnectReasonDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisconnectReason(UserType* output) {
+  [[nodiscard]] bool ReadDisconnectReason(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -272,7 +272,7 @@ class RunOrClosePipeInputDataView {
       PeerAssociatedEndpointClosedEventDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPeerAssociatedEndpointClosedEvent(UserType* output) const {
+  [[nodiscard]] bool ReadPeerAssociatedEndpointClosedEvent(UserType* output) const {
     
     CHECK(is_peer_associated_endpoint_closed_event());
     return mojo::internal::Deserialize<::mojo::pipe_control::PeerAssociatedEndpointClosedEventDataView>(
@@ -283,7 +283,7 @@ class RunOrClosePipeInputDataView {
       PauseUntilFlushCompletesDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPauseUntilFlushCompletes(UserType* output) const {
+  [[nodiscard]] bool ReadPauseUntilFlushCompletes(UserType* output) const {
     
     CHECK(is_pause_until_flush_completes());
     return mojo::internal::Deserialize<::mojo::pipe_control::PauseUntilFlushCompletesDataView>(
@@ -294,7 +294,7 @@ class RunOrClosePipeInputDataView {
       FlushAsyncDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFlushAsync(UserType* output) const {
+  [[nodiscard]] bool ReadFlushAsync(UserType* output) const {
     
     CHECK(is_flush_async());
     return mojo::internal::Deserialize<::mojo::pipe_control::FlushAsyncDataView>(

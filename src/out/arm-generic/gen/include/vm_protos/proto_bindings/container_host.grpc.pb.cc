@@ -36,6 +36,7 @@ static const char* ContainerListener_method_names[] = {
   "/vm_tools.container.ContainerListener/GetDiskInfo",
   "/vm_tools.container.ContainerListener/RequestSpace",
   "/vm_tools.container.ContainerListener/ReleaseSpace",
+  "/vm_tools.container.ContainerListener/ReportMetrics",
 };
 
 std::unique_ptr< ContainerListener::Stub> ContainerListener::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -62,6 +63,7 @@ ContainerListener::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_GetDiskInfo_(ContainerListener_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RequestSpace_(ContainerListener_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_ReleaseSpace_(ContainerListener_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ReportMetrics_(ContainerListener_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status ContainerListener::Stub::ContainerReady(::grpc::ClientContext* context, const ::vm_tools::container::ContainerStartupInfo& request, ::vm_tools::EmptyMessage* response) {
@@ -336,6 +338,22 @@ void ContainerListener::Stub::experimental_async::ReleaseSpace(::grpc::ClientCon
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::ReleaseSpaceResponse>::Create(channel_.get(), cq, rpcmethod_ReleaseSpace_, context, request, false);
 }
 
+::grpc::Status ContainerListener::Stub::ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::vm_tools::container::ReportMetricsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ReportMetrics_, context, request, response);
+}
+
+void ContainerListener::Stub::experimental_async::ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ReportMetrics_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>* ContainerListener::Stub::AsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::ReportMetricsResponse>::Create(channel_.get(), cq, rpcmethod_ReportMetrics_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>* ContainerListener::Stub::PrepareAsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::ReportMetricsResponse>::Create(channel_.get(), cq, rpcmethod_ReportMetrics_, context, request, false);
+}
+
 ContainerListener::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ContainerListener_method_names[0],
@@ -422,6 +440,11 @@ ContainerListener::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< ContainerListener::Service, ::vm_tools::container::ReleaseSpaceRequest, ::vm_tools::container::ReleaseSpaceResponse>(
           std::mem_fn(&ContainerListener::Service::ReleaseSpace), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ContainerListener_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ContainerListener::Service, ::vm_tools::container::ReportMetricsRequest, ::vm_tools::container::ReportMetricsResponse>(
+          std::mem_fn(&ContainerListener::Service::ReportMetrics), this)));
 }
 
 ContainerListener::Service::~Service() {
@@ -540,6 +563,13 @@ ContainerListener::Service::~Service() {
 }
 
 ::grpc::Status ContainerListener::Service::ReleaseSpace(::grpc::ServerContext* context, const ::vm_tools::container::ReleaseSpaceRequest* request, ::vm_tools::container::ReleaseSpaceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ContainerListener::Service::ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

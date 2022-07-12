@@ -11,152 +11,118 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace power_manager {
-class SuspendImminentDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SuspendImminent> _instance;
-} _SuspendImminent_default_instance_;
-class SuspendDoneDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SuspendDone> _instance;
-} _SuspendDone_default_instance_;
-class RegisterSuspendDelayRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterSuspendDelayRequest> _instance;
-} _RegisterSuspendDelayRequest_default_instance_;
-class RegisterSuspendDelayReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterSuspendDelayReply> _instance;
-} _RegisterSuspendDelayReply_default_instance_;
-class UnregisterSuspendDelayRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UnregisterSuspendDelayRequest> _instance;
-} _UnregisterSuspendDelayRequest_default_instance_;
-class SuspendReadinessInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SuspendReadinessInfo> _instance;
-} _SuspendReadinessInfo_default_instance_;
-class DarkResumeWakeReasonDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DarkResumeWakeReason> _instance;
-} _DarkResumeWakeReason_default_instance_;
-class HibernateResumeReadyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HibernateResumeReady> _instance;
-} _HibernateResumeReady_default_instance_;
+constexpr SuspendImminent::SuspendImminent(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : suspend_id_(0)
+  , reason_(0)
+
+  , action_(0)
+{}
+struct SuspendImminentDefaultTypeInternal {
+  constexpr SuspendImminentDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SuspendImminentDefaultTypeInternal() {}
+  union {
+    SuspendImminent _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SuspendImminentDefaultTypeInternal _SuspendImminent_default_instance_;
+constexpr SuspendDone::SuspendDone(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : suspend_duration_(int64_t{0})
+  , suspend_id_(0)
+  , wakeup_type_(0)
+
+  , deepest_state_(0)
+{}
+struct SuspendDoneDefaultTypeInternal {
+  constexpr SuspendDoneDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SuspendDoneDefaultTypeInternal() {}
+  union {
+    SuspendDone _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SuspendDoneDefaultTypeInternal _SuspendDone_default_instance_;
+constexpr RegisterSuspendDelayRequest::RegisterSuspendDelayRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : description_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , timeout_(int64_t{0}){}
+struct RegisterSuspendDelayRequestDefaultTypeInternal {
+  constexpr RegisterSuspendDelayRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RegisterSuspendDelayRequestDefaultTypeInternal() {}
+  union {
+    RegisterSuspendDelayRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RegisterSuspendDelayRequestDefaultTypeInternal _RegisterSuspendDelayRequest_default_instance_;
+constexpr RegisterSuspendDelayReply::RegisterSuspendDelayReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : delay_id_(0)
+  , min_delay_timeout_ms_(0){}
+struct RegisterSuspendDelayReplyDefaultTypeInternal {
+  constexpr RegisterSuspendDelayReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RegisterSuspendDelayReplyDefaultTypeInternal() {}
+  union {
+    RegisterSuspendDelayReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RegisterSuspendDelayReplyDefaultTypeInternal _RegisterSuspendDelayReply_default_instance_;
+constexpr UnregisterSuspendDelayRequest::UnregisterSuspendDelayRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : delay_id_(0){}
+struct UnregisterSuspendDelayRequestDefaultTypeInternal {
+  constexpr UnregisterSuspendDelayRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UnregisterSuspendDelayRequestDefaultTypeInternal() {}
+  union {
+    UnregisterSuspendDelayRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnregisterSuspendDelayRequestDefaultTypeInternal _UnregisterSuspendDelayRequest_default_instance_;
+constexpr SuspendReadinessInfo::SuspendReadinessInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : delay_id_(0)
+  , suspend_id_(0){}
+struct SuspendReadinessInfoDefaultTypeInternal {
+  constexpr SuspendReadinessInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SuspendReadinessInfoDefaultTypeInternal() {}
+  union {
+    SuspendReadinessInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SuspendReadinessInfoDefaultTypeInternal _SuspendReadinessInfo_default_instance_;
+constexpr DarkResumeWakeReason::DarkResumeWakeReason(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : wake_reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DarkResumeWakeReasonDefaultTypeInternal {
+  constexpr DarkResumeWakeReasonDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DarkResumeWakeReasonDefaultTypeInternal() {}
+  union {
+    DarkResumeWakeReason _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DarkResumeWakeReasonDefaultTypeInternal _DarkResumeWakeReason_default_instance_;
+constexpr HibernateResumeReady::HibernateResumeReady(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : suspend_id_(0){}
+struct HibernateResumeReadyDefaultTypeInternal {
+  constexpr HibernateResumeReadyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HibernateResumeReadyDefaultTypeInternal() {}
+  union {
+    HibernateResumeReady _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HibernateResumeReadyDefaultTypeInternal _HibernateResumeReady_default_instance_;
 }  // namespace power_manager
-static void InitDefaultsscc_info_DarkResumeWakeReason_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_DarkResumeWakeReason_default_instance_;
-    new (ptr) ::power_manager::DarkResumeWakeReason();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::DarkResumeWakeReason::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DarkResumeWakeReason_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DarkResumeWakeReason_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_HibernateResumeReady_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_HibernateResumeReady_default_instance_;
-    new (ptr) ::power_manager::HibernateResumeReady();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::HibernateResumeReady::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HibernateResumeReady_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HibernateResumeReady_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_RegisterSuspendDelayReply_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_RegisterSuspendDelayReply_default_instance_;
-    new (ptr) ::power_manager::RegisterSuspendDelayReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::RegisterSuspendDelayReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterSuspendDelayReply_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisterSuspendDelayReply_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_RegisterSuspendDelayRequest_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_RegisterSuspendDelayRequest_default_instance_;
-    new (ptr) ::power_manager::RegisterSuspendDelayRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::RegisterSuspendDelayRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterSuspendDelayRequest_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisterSuspendDelayRequest_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_SuspendDone_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_SuspendDone_default_instance_;
-    new (ptr) ::power_manager::SuspendDone();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::SuspendDone::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SuspendDone_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SuspendDone_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_SuspendImminent_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_SuspendImminent_default_instance_;
-    new (ptr) ::power_manager::SuspendImminent();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::SuspendImminent::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SuspendImminent_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SuspendImminent_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_SuspendReadinessInfo_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_SuspendReadinessInfo_default_instance_;
-    new (ptr) ::power_manager::SuspendReadinessInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::SuspendReadinessInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SuspendReadinessInfo_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SuspendReadinessInfo_suspend_2eproto}, {}};
-
-static void InitDefaultsscc_info_UnregisterSuspendDelayRequest_suspend_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_UnregisterSuspendDelayRequest_default_instance_;
-    new (ptr) ::power_manager::UnregisterSuspendDelayRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::UnregisterSuspendDelayRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnregisterSuspendDelayRequest_suspend_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UnregisterSuspendDelayRequest_suspend_2eproto}, {}};
-
 namespace power_manager {
 bool SuspendImminent_Reason_IsValid(int value) {
   switch (value) {
@@ -204,7 +170,7 @@ const std::string& SuspendImminent_Reason_Name(
                      SuspendImminent_Reason_strings[idx].get();
 }
 bool SuspendImminent_Reason_Parse(
-    const std::string& name, SuspendImminent_Reason* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SuspendImminent_Reason* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SuspendImminent_Reason_entries, 3, name, &int_value);
@@ -213,14 +179,14 @@ bool SuspendImminent_Reason_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SuspendImminent_Reason SuspendImminent::IDLE;
 constexpr SuspendImminent_Reason SuspendImminent::LID_CLOSED;
 constexpr SuspendImminent_Reason SuspendImminent::OTHER;
 constexpr SuspendImminent_Reason SuspendImminent::Reason_MIN;
 constexpr SuspendImminent_Reason SuspendImminent::Reason_MAX;
 constexpr int SuspendImminent::Reason_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SuspendImminent_Action_IsValid(int value) {
   switch (value) {
     case 0:
@@ -263,7 +229,7 @@ const std::string& SuspendImminent_Action_Name(
                      SuspendImminent_Action_strings[idx].get();
 }
 bool SuspendImminent_Action_Parse(
-    const std::string& name, SuspendImminent_Action* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SuspendImminent_Action* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SuspendImminent_Action_entries, 2, name, &int_value);
@@ -272,13 +238,13 @@ bool SuspendImminent_Action_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SuspendImminent_Action SuspendImminent::SUSPEND;
 constexpr SuspendImminent_Action SuspendImminent::HIBERNATE_RESUME;
 constexpr SuspendImminent_Action SuspendImminent::Action_MIN;
 constexpr SuspendImminent_Action SuspendImminent::Action_MAX;
 constexpr int SuspendImminent::Action_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SuspendDone_WakeupType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -329,7 +295,7 @@ const std::string& SuspendDone_WakeupType_Name(
                      SuspendDone_WakeupType_strings[idx].get();
 }
 bool SuspendDone_WakeupType_Parse(
-    const std::string& name, SuspendDone_WakeupType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SuspendDone_WakeupType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SuspendDone_WakeupType_entries, 4, name, &int_value);
@@ -338,7 +304,7 @@ bool SuspendDone_WakeupType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SuspendDone_WakeupType SuspendDone::UNKNOWN;
 constexpr SuspendDone_WakeupType SuspendDone::NOT_APPLICABLE;
 constexpr SuspendDone_WakeupType SuspendDone::INPUT;
@@ -346,7 +312,7 @@ constexpr SuspendDone_WakeupType SuspendDone::OTHER;
 constexpr SuspendDone_WakeupType SuspendDone::WakeupType_MIN;
 constexpr SuspendDone_WakeupType SuspendDone::WakeupType_MAX;
 constexpr int SuspendDone::WakeupType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SuspendDone_SuspendState_IsValid(int value) {
   switch (value) {
     case 0:
@@ -389,7 +355,7 @@ const std::string& SuspendDone_SuspendState_Name(
                      SuspendDone_SuspendState_strings[idx].get();
 }
 bool SuspendDone_SuspendState_Parse(
-    const std::string& name, SuspendDone_SuspendState* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SuspendDone_SuspendState* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SuspendDone_SuspendState_entries, 2, name, &int_value);
@@ -398,18 +364,16 @@ bool SuspendDone_SuspendState_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SuspendDone_SuspendState SuspendDone::TO_RAM;
 constexpr SuspendDone_SuspendState SuspendDone::TO_DISK;
 constexpr SuspendDone_SuspendState SuspendDone::SuspendState_MIN;
 constexpr SuspendDone_SuspendState SuspendDone::SuspendState_MAX;
 constexpr int SuspendDone::SuspendState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void SuspendImminent::InitAsDefaultInstance() {
-}
 class SuspendImminent::_Internal {
  public:
   using HasBits = decltype(std::declval<SuspendImminent>()._has_bits_);
@@ -424,48 +388,56 @@ class SuspendImminent::_Internal {
   }
 };
 
-SuspendImminent::SuspendImminent()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SuspendImminent::SuspendImminent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.SuspendImminent)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.SuspendImminent)
 }
 SuspendImminent::SuspendImminent(const SuspendImminent& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&suspend_id_, &from.suspend_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&action_) -
     reinterpret_cast<char*>(&suspend_id_)) + sizeof(action_));
   // @@protoc_insertion_point(copy_constructor:power_manager.SuspendImminent)
 }
 
-void SuspendImminent::SharedCtor() {
-  ::memset(&suspend_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&action_) -
-      reinterpret_cast<char*>(&suspend_id_)) + sizeof(action_));
+inline void SuspendImminent::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&suspend_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&action_) -
+    reinterpret_cast<char*>(&suspend_id_)) + sizeof(action_));
 }
 
 SuspendImminent::~SuspendImminent() {
   // @@protoc_insertion_point(destructor:power_manager.SuspendImminent)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SuspendImminent::SharedDtor() {
+inline void SuspendImminent::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SuspendImminent::ArenaDtor(void* object) {
+  SuspendImminent* _this = reinterpret_cast< SuspendImminent* >(object);
+  (void)_this;
+}
+void SuspendImminent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SuspendImminent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SuspendImminent& SuspendImminent::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SuspendImminent_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SuspendImminent::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.SuspendImminent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -476,74 +448,79 @@ void SuspendImminent::Clear() {
         reinterpret_cast<char*>(&suspend_id_)) + sizeof(action_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SuspendImminent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 suspend_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_suspend_id(&has_bits);
-          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.SuspendImminent.Reason reason = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::SuspendImminent_Reason_IsValid(val))) {
             _internal_set_reason(static_cast<::power_manager::SuspendImminent_Reason>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.SuspendImminent.Action action = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::SuspendImminent_Action_IsValid(val))) {
             _internal_set_action(static_cast<::power_manager::SuspendImminent_Action>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SuspendImminent::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SuspendImminent::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.SuspendImminent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -568,8 +545,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.SuspendImminent)
   return target;
@@ -579,7 +556,7 @@ size_t SuspendImminent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.SuspendImminent)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -587,9 +564,7 @@ size_t SuspendImminent::ByteSizeLong() const {
   if (cached_has_bits & 0x00000007u) {
     // optional int32 suspend_id = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_suspend_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_suspend_id());
     }
 
     // optional .power_manager.SuspendImminent.Reason reason = 2;
@@ -606,7 +581,7 @@ size_t SuspendImminent::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -622,8 +597,7 @@ void SuspendImminent::CheckTypeAndMergeFrom(
 void SuspendImminent::MergeFrom(const SuspendImminent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.SuspendImminent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -639,6 +613,7 @@ void SuspendImminent::MergeFrom(const SuspendImminent& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SuspendImminent::CopyFrom(const SuspendImminent& from) {
@@ -654,11 +629,14 @@ bool SuspendImminent::IsInitialized() const {
 
 void SuspendImminent::InternalSwap(SuspendImminent* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(suspend_id_, other->suspend_id_);
-  swap(reason_, other->reason_);
-  swap(action_, other->action_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SuspendImminent, action_)
+      + sizeof(SuspendImminent::action_)
+      - PROTOBUF_FIELD_OFFSET(SuspendImminent, suspend_id_)>(
+          reinterpret_cast<char*>(&suspend_id_),
+          reinterpret_cast<char*>(&other->suspend_id_));
 }
 
 std::string SuspendImminent::GetTypeName() const {
@@ -668,8 +646,6 @@ std::string SuspendImminent::GetTypeName() const {
 
 // ===================================================================
 
-void SuspendDone::InitAsDefaultInstance() {
-}
 class SuspendDone::_Internal {
  public:
   using HasBits = decltype(std::declval<SuspendDone>()._has_bits_);
@@ -687,48 +663,56 @@ class SuspendDone::_Internal {
   }
 };
 
-SuspendDone::SuspendDone()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SuspendDone::SuspendDone(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.SuspendDone)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.SuspendDone)
 }
 SuspendDone::SuspendDone(const SuspendDone& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&suspend_duration_, &from.suspend_duration_,
     static_cast<size_t>(reinterpret_cast<char*>(&deepest_state_) -
     reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
   // @@protoc_insertion_point(copy_constructor:power_manager.SuspendDone)
 }
 
-void SuspendDone::SharedCtor() {
-  ::memset(&suspend_duration_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&deepest_state_) -
-      reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
+inline void SuspendDone::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&suspend_duration_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&deepest_state_) -
+    reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
 }
 
 SuspendDone::~SuspendDone() {
   // @@protoc_insertion_point(destructor:power_manager.SuspendDone)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SuspendDone::SharedDtor() {
+inline void SuspendDone::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SuspendDone::ArenaDtor(void* object) {
+  SuspendDone* _this = reinterpret_cast< SuspendDone* >(object);
+  (void)_this;
+}
+void SuspendDone::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SuspendDone::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SuspendDone& SuspendDone::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SuspendDone_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SuspendDone::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.SuspendDone)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -739,82 +723,88 @@ void SuspendDone::Clear() {
         reinterpret_cast<char*>(&suspend_duration_)) + sizeof(deepest_state_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SuspendDone::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 suspend_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_suspend_id(&has_bits);
-          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 suspend_duration = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_suspend_duration(&has_bits);
-          suspend_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          suspend_duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.SuspendDone.WakeupType wakeup_type = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::SuspendDone_WakeupType_IsValid(val))) {
             _internal_set_wakeup_type(static_cast<::power_manager::SuspendDone_WakeupType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.SuspendDone.SuspendState deepest_state = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::SuspendDone_SuspendState_IsValid(val))) {
             _internal_set_deepest_state(static_cast<::power_manager::SuspendDone_SuspendState>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SuspendDone::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SuspendDone::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.SuspendDone)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -845,8 +835,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.SuspendDone)
   return target;
@@ -856,7 +846,7 @@ size_t SuspendDone::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.SuspendDone)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -864,16 +854,12 @@ size_t SuspendDone::ByteSizeLong() const {
   if (cached_has_bits & 0x0000000fu) {
     // optional int64 suspend_duration = 2;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_suspend_duration());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_suspend_duration());
     }
 
     // optional int32 suspend_id = 1;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_suspend_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_suspend_id());
     }
 
     // optional .power_manager.SuspendDone.WakeupType wakeup_type = 3;
@@ -890,7 +876,7 @@ size_t SuspendDone::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -906,8 +892,7 @@ void SuspendDone::CheckTypeAndMergeFrom(
 void SuspendDone::MergeFrom(const SuspendDone& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.SuspendDone)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -926,6 +911,7 @@ void SuspendDone::MergeFrom(const SuspendDone& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SuspendDone::CopyFrom(const SuspendDone& from) {
@@ -941,12 +927,14 @@ bool SuspendDone::IsInitialized() const {
 
 void SuspendDone::InternalSwap(SuspendDone* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(suspend_duration_, other->suspend_duration_);
-  swap(suspend_id_, other->suspend_id_);
-  swap(wakeup_type_, other->wakeup_type_);
-  swap(deepest_state_, other->deepest_state_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SuspendDone, deepest_state_)
+      + sizeof(SuspendDone::deepest_state_)
+      - PROTOBUF_FIELD_OFFSET(SuspendDone, suspend_duration_)>(
+          reinterpret_cast<char*>(&suspend_duration_),
+          reinterpret_cast<char*>(&other->suspend_duration_));
 }
 
 std::string SuspendDone::GetTypeName() const {
@@ -956,8 +944,6 @@ std::string SuspendDone::GetTypeName() const {
 
 // ===================================================================
 
-void RegisterSuspendDelayRequest::InitAsDefaultInstance() {
-}
 class RegisterSuspendDelayRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<RegisterSuspendDelayRequest>()._has_bits_);
@@ -969,112 +955,129 @@ class RegisterSuspendDelayRequest::_Internal {
   }
 };
 
-RegisterSuspendDelayRequest::RegisterSuspendDelayRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RegisterSuspendDelayRequest::RegisterSuspendDelayRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.RegisterSuspendDelayRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.RegisterSuspendDelayRequest)
 }
 RegisterSuspendDelayRequest::RegisterSuspendDelayRequest(const RegisterSuspendDelayRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_description()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    description_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_description(), 
+      GetArenaForAllocation());
   }
   timeout_ = from.timeout_;
   // @@protoc_insertion_point(copy_constructor:power_manager.RegisterSuspendDelayRequest)
 }
 
-void RegisterSuspendDelayRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RegisterSuspendDelayRequest_suspend_2eproto.base);
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  timeout_ = PROTOBUF_LONGLONG(0);
+inline void RegisterSuspendDelayRequest::SharedCtor() {
+description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+timeout_ = int64_t{0};
 }
 
 RegisterSuspendDelayRequest::~RegisterSuspendDelayRequest() {
   // @@protoc_insertion_point(destructor:power_manager.RegisterSuspendDelayRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RegisterSuspendDelayRequest::SharedDtor() {
+inline void RegisterSuspendDelayRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RegisterSuspendDelayRequest::ArenaDtor(void* object) {
+  RegisterSuspendDelayRequest* _this = reinterpret_cast< RegisterSuspendDelayRequest* >(object);
+  (void)_this;
+}
+void RegisterSuspendDelayRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RegisterSuspendDelayRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RegisterSuspendDelayRequest& RegisterSuspendDelayRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegisterSuspendDelayRequest_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RegisterSuspendDelayRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.RegisterSuspendDelayRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    description_.ClearNonDefaultToEmptyNoArena();
+    description_.ClearNonDefaultToEmpty();
   }
-  timeout_ = PROTOBUF_LONGLONG(0);
+  timeout_ = int64_t{0};
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RegisterSuspendDelayRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int64 timeout = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_timeout(&has_bits);
-          timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          timeout_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string description = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_description();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RegisterSuspendDelayRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RegisterSuspendDelayRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.RegisterSuspendDelayRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1091,8 +1094,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.RegisterSuspendDelayRequest)
   return target;
@@ -1102,7 +1105,7 @@ size_t RegisterSuspendDelayRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.RegisterSuspendDelayRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1117,14 +1120,12 @@ size_t RegisterSuspendDelayRequest::ByteSizeLong() const {
 
     // optional int64 timeout = 1;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_timeout());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_timeout());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1140,21 +1141,20 @@ void RegisterSuspendDelayRequest::CheckTypeAndMergeFrom(
 void RegisterSuspendDelayRequest::MergeFrom(const RegisterSuspendDelayRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.RegisterSuspendDelayRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+      _internal_set_description(from._internal_description());
     }
     if (cached_has_bits & 0x00000002u) {
       timeout_ = from.timeout_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RegisterSuspendDelayRequest::CopyFrom(const RegisterSuspendDelayRequest& from) {
@@ -1170,10 +1170,15 @@ bool RegisterSuspendDelayRequest::IsInitialized() const {
 
 void RegisterSuspendDelayRequest::InternalSwap(RegisterSuspendDelayRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &description_, lhs_arena,
+      &other->description_, rhs_arena
+  );
   swap(timeout_, other->timeout_);
 }
 
@@ -1184,8 +1189,6 @@ std::string RegisterSuspendDelayRequest::GetTypeName() const {
 
 // ===================================================================
 
-void RegisterSuspendDelayReply::InitAsDefaultInstance() {
-}
 class RegisterSuspendDelayReply::_Internal {
  public:
   using HasBits = decltype(std::declval<RegisterSuspendDelayReply>()._has_bits_);
@@ -1197,48 +1200,56 @@ class RegisterSuspendDelayReply::_Internal {
   }
 };
 
-RegisterSuspendDelayReply::RegisterSuspendDelayReply()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RegisterSuspendDelayReply::RegisterSuspendDelayReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.RegisterSuspendDelayReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.RegisterSuspendDelayReply)
 }
 RegisterSuspendDelayReply::RegisterSuspendDelayReply(const RegisterSuspendDelayReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&delay_id_, &from.delay_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&min_delay_timeout_ms_) -
     reinterpret_cast<char*>(&delay_id_)) + sizeof(min_delay_timeout_ms_));
   // @@protoc_insertion_point(copy_constructor:power_manager.RegisterSuspendDelayReply)
 }
 
-void RegisterSuspendDelayReply::SharedCtor() {
-  ::memset(&delay_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&min_delay_timeout_ms_) -
-      reinterpret_cast<char*>(&delay_id_)) + sizeof(min_delay_timeout_ms_));
+inline void RegisterSuspendDelayReply::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&delay_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&min_delay_timeout_ms_) -
+    reinterpret_cast<char*>(&delay_id_)) + sizeof(min_delay_timeout_ms_));
 }
 
 RegisterSuspendDelayReply::~RegisterSuspendDelayReply() {
   // @@protoc_insertion_point(destructor:power_manager.RegisterSuspendDelayReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RegisterSuspendDelayReply::SharedDtor() {
+inline void RegisterSuspendDelayReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void RegisterSuspendDelayReply::ArenaDtor(void* object) {
+  RegisterSuspendDelayReply* _this = reinterpret_cast< RegisterSuspendDelayReply* >(object);
+  (void)_this;
+}
+void RegisterSuspendDelayReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RegisterSuspendDelayReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RegisterSuspendDelayReply& RegisterSuspendDelayReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegisterSuspendDelayReply_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RegisterSuspendDelayReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.RegisterSuspendDelayReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1249,58 +1260,62 @@ void RegisterSuspendDelayReply::Clear() {
         reinterpret_cast<char*>(&delay_id_)) + sizeof(min_delay_timeout_ms_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RegisterSuspendDelayReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 delay_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_delay_id(&has_bits);
-          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 min_delay_timeout_ms = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_min_delay_timeout_ms(&has_bits);
-          min_delay_timeout_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          min_delay_timeout_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RegisterSuspendDelayReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RegisterSuspendDelayReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.RegisterSuspendDelayReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1317,8 +1332,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.RegisterSuspendDelayReply)
   return target;
@@ -1328,7 +1343,7 @@ size_t RegisterSuspendDelayReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.RegisterSuspendDelayReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1336,21 +1351,17 @@ size_t RegisterSuspendDelayReply::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional int32 delay_id = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_delay_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_delay_id());
     }
 
     // optional int32 min_delay_timeout_ms = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_min_delay_timeout_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_min_delay_timeout_ms());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1366,8 +1377,7 @@ void RegisterSuspendDelayReply::CheckTypeAndMergeFrom(
 void RegisterSuspendDelayReply::MergeFrom(const RegisterSuspendDelayReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.RegisterSuspendDelayReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1380,6 +1390,7 @@ void RegisterSuspendDelayReply::MergeFrom(const RegisterSuspendDelayReply& from)
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RegisterSuspendDelayReply::CopyFrom(const RegisterSuspendDelayReply& from) {
@@ -1395,10 +1406,14 @@ bool RegisterSuspendDelayReply::IsInitialized() const {
 
 void RegisterSuspendDelayReply::InternalSwap(RegisterSuspendDelayReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(delay_id_, other->delay_id_);
-  swap(min_delay_timeout_ms_, other->min_delay_timeout_ms_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RegisterSuspendDelayReply, min_delay_timeout_ms_)
+      + sizeof(RegisterSuspendDelayReply::min_delay_timeout_ms_)
+      - PROTOBUF_FIELD_OFFSET(RegisterSuspendDelayReply, delay_id_)>(
+          reinterpret_cast<char*>(&delay_id_),
+          reinterpret_cast<char*>(&other->delay_id_));
 }
 
 std::string RegisterSuspendDelayReply::GetTypeName() const {
@@ -1408,8 +1423,6 @@ std::string RegisterSuspendDelayReply::GetTypeName() const {
 
 // ===================================================================
 
-void UnregisterSuspendDelayRequest::InitAsDefaultInstance() {
-}
 class UnregisterSuspendDelayRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<UnregisterSuspendDelayRequest>()._has_bits_);
@@ -1418,93 +1431,103 @@ class UnregisterSuspendDelayRequest::_Internal {
   }
 };
 
-UnregisterSuspendDelayRequest::UnregisterSuspendDelayRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UnregisterSuspendDelayRequest::UnregisterSuspendDelayRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.UnregisterSuspendDelayRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.UnregisterSuspendDelayRequest)
 }
 UnregisterSuspendDelayRequest::UnregisterSuspendDelayRequest(const UnregisterSuspendDelayRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   delay_id_ = from.delay_id_;
   // @@protoc_insertion_point(copy_constructor:power_manager.UnregisterSuspendDelayRequest)
 }
 
-void UnregisterSuspendDelayRequest::SharedCtor() {
-  delay_id_ = 0;
+inline void UnregisterSuspendDelayRequest::SharedCtor() {
+delay_id_ = 0;
 }
 
 UnregisterSuspendDelayRequest::~UnregisterSuspendDelayRequest() {
   // @@protoc_insertion_point(destructor:power_manager.UnregisterSuspendDelayRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UnregisterSuspendDelayRequest::SharedDtor() {
+inline void UnregisterSuspendDelayRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void UnregisterSuspendDelayRequest::ArenaDtor(void* object) {
+  UnregisterSuspendDelayRequest* _this = reinterpret_cast< UnregisterSuspendDelayRequest* >(object);
+  (void)_this;
+}
+void UnregisterSuspendDelayRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnregisterSuspendDelayRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UnregisterSuspendDelayRequest& UnregisterSuspendDelayRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UnregisterSuspendDelayRequest_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UnregisterSuspendDelayRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.UnregisterSuspendDelayRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   delay_id_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UnregisterSuspendDelayRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 delay_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_delay_id(&has_bits);
-          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UnregisterSuspendDelayRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UnregisterSuspendDelayRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.UnregisterSuspendDelayRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1515,8 +1538,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.UnregisterSuspendDelayRequest)
   return target;
@@ -1526,20 +1549,18 @@ size_t UnregisterSuspendDelayRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.UnregisterSuspendDelayRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional int32 delay_id = 1;
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_delay_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_delay_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1555,13 +1576,13 @@ void UnregisterSuspendDelayRequest::CheckTypeAndMergeFrom(
 void UnregisterSuspendDelayRequest::MergeFrom(const UnregisterSuspendDelayRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.UnregisterSuspendDelayRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_delay_id()) {
     _internal_set_delay_id(from._internal_delay_id());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UnregisterSuspendDelayRequest::CopyFrom(const UnregisterSuspendDelayRequest& from) {
@@ -1577,7 +1598,7 @@ bool UnregisterSuspendDelayRequest::IsInitialized() const {
 
 void UnregisterSuspendDelayRequest::InternalSwap(UnregisterSuspendDelayRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(delay_id_, other->delay_id_);
 }
@@ -1589,8 +1610,6 @@ std::string UnregisterSuspendDelayRequest::GetTypeName() const {
 
 // ===================================================================
 
-void SuspendReadinessInfo::InitAsDefaultInstance() {
-}
 class SuspendReadinessInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<SuspendReadinessInfo>()._has_bits_);
@@ -1602,48 +1621,56 @@ class SuspendReadinessInfo::_Internal {
   }
 };
 
-SuspendReadinessInfo::SuspendReadinessInfo()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SuspendReadinessInfo::SuspendReadinessInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.SuspendReadinessInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.SuspendReadinessInfo)
 }
 SuspendReadinessInfo::SuspendReadinessInfo(const SuspendReadinessInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&delay_id_, &from.delay_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&suspend_id_) -
     reinterpret_cast<char*>(&delay_id_)) + sizeof(suspend_id_));
   // @@protoc_insertion_point(copy_constructor:power_manager.SuspendReadinessInfo)
 }
 
-void SuspendReadinessInfo::SharedCtor() {
-  ::memset(&delay_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&suspend_id_) -
-      reinterpret_cast<char*>(&delay_id_)) + sizeof(suspend_id_));
+inline void SuspendReadinessInfo::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&delay_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&suspend_id_) -
+    reinterpret_cast<char*>(&delay_id_)) + sizeof(suspend_id_));
 }
 
 SuspendReadinessInfo::~SuspendReadinessInfo() {
   // @@protoc_insertion_point(destructor:power_manager.SuspendReadinessInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SuspendReadinessInfo::SharedDtor() {
+inline void SuspendReadinessInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SuspendReadinessInfo::ArenaDtor(void* object) {
+  SuspendReadinessInfo* _this = reinterpret_cast< SuspendReadinessInfo* >(object);
+  (void)_this;
+}
+void SuspendReadinessInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SuspendReadinessInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SuspendReadinessInfo& SuspendReadinessInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SuspendReadinessInfo_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SuspendReadinessInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.SuspendReadinessInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1654,58 +1681,62 @@ void SuspendReadinessInfo::Clear() {
         reinterpret_cast<char*>(&delay_id_)) + sizeof(suspend_id_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SuspendReadinessInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 delay_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_delay_id(&has_bits);
-          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          delay_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 suspend_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_suspend_id(&has_bits);
-          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SuspendReadinessInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SuspendReadinessInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.SuspendReadinessInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1722,8 +1753,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.SuspendReadinessInfo)
   return target;
@@ -1733,7 +1764,7 @@ size_t SuspendReadinessInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.SuspendReadinessInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1741,21 +1772,17 @@ size_t SuspendReadinessInfo::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional int32 delay_id = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_delay_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_delay_id());
     }
 
     // optional int32 suspend_id = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_suspend_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_suspend_id());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1771,8 +1798,7 @@ void SuspendReadinessInfo::CheckTypeAndMergeFrom(
 void SuspendReadinessInfo::MergeFrom(const SuspendReadinessInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.SuspendReadinessInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1785,6 +1811,7 @@ void SuspendReadinessInfo::MergeFrom(const SuspendReadinessInfo& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SuspendReadinessInfo::CopyFrom(const SuspendReadinessInfo& from) {
@@ -1800,10 +1827,14 @@ bool SuspendReadinessInfo::IsInitialized() const {
 
 void SuspendReadinessInfo::InternalSwap(SuspendReadinessInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(delay_id_, other->delay_id_);
-  swap(suspend_id_, other->suspend_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SuspendReadinessInfo, suspend_id_)
+      + sizeof(SuspendReadinessInfo::suspend_id_)
+      - PROTOBUF_FIELD_OFFSET(SuspendReadinessInfo, delay_id_)>(
+          reinterpret_cast<char*>(&delay_id_),
+          reinterpret_cast<char*>(&other->delay_id_));
 }
 
 std::string SuspendReadinessInfo::GetTypeName() const {
@@ -1813,8 +1844,6 @@ std::string SuspendReadinessInfo::GetTypeName() const {
 
 // ===================================================================
 
-void DarkResumeWakeReason::InitAsDefaultInstance() {
-}
 class DarkResumeWakeReason::_Internal {
  public:
   using HasBits = decltype(std::declval<DarkResumeWakeReason>()._has_bits_);
@@ -1823,101 +1852,117 @@ class DarkResumeWakeReason::_Internal {
   }
 };
 
-DarkResumeWakeReason::DarkResumeWakeReason()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DarkResumeWakeReason::DarkResumeWakeReason(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.DarkResumeWakeReason)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.DarkResumeWakeReason)
 }
 DarkResumeWakeReason::DarkResumeWakeReason(const DarkResumeWakeReason& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   wake_reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    wake_reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_wake_reason()) {
-    wake_reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.wake_reason_);
+    wake_reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_wake_reason(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:power_manager.DarkResumeWakeReason)
 }
 
-void DarkResumeWakeReason::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DarkResumeWakeReason_suspend_2eproto.base);
-  wake_reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void DarkResumeWakeReason::SharedCtor() {
+wake_reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  wake_reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DarkResumeWakeReason::~DarkResumeWakeReason() {
   // @@protoc_insertion_point(destructor:power_manager.DarkResumeWakeReason)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DarkResumeWakeReason::SharedDtor() {
+inline void DarkResumeWakeReason::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   wake_reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DarkResumeWakeReason::ArenaDtor(void* object) {
+  DarkResumeWakeReason* _this = reinterpret_cast< DarkResumeWakeReason* >(object);
+  (void)_this;
+}
+void DarkResumeWakeReason::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DarkResumeWakeReason::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DarkResumeWakeReason& DarkResumeWakeReason::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DarkResumeWakeReason_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DarkResumeWakeReason::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.DarkResumeWakeReason)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    wake_reason_.ClearNonDefaultToEmptyNoArena();
+    wake_reason_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DarkResumeWakeReason::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string wake_reason = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_wake_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DarkResumeWakeReason::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DarkResumeWakeReason::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.DarkResumeWakeReason)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1928,8 +1973,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.DarkResumeWakeReason)
   return target;
@@ -1939,7 +1984,7 @@ size_t DarkResumeWakeReason::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.DarkResumeWakeReason)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1952,7 +1997,7 @@ size_t DarkResumeWakeReason::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1968,14 +2013,13 @@ void DarkResumeWakeReason::CheckTypeAndMergeFrom(
 void DarkResumeWakeReason::MergeFrom(const DarkResumeWakeReason& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.DarkResumeWakeReason)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_wake_reason()) {
-    _has_bits_[0] |= 0x00000001u;
-    wake_reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.wake_reason_);
+    _internal_set_wake_reason(from._internal_wake_reason());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DarkResumeWakeReason::CopyFrom(const DarkResumeWakeReason& from) {
@@ -1991,10 +2035,15 @@ bool DarkResumeWakeReason::IsInitialized() const {
 
 void DarkResumeWakeReason::InternalSwap(DarkResumeWakeReason* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  wake_reason_.Swap(&other->wake_reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &wake_reason_, lhs_arena,
+      &other->wake_reason_, rhs_arena
+  );
 }
 
 std::string DarkResumeWakeReason::GetTypeName() const {
@@ -2004,8 +2053,6 @@ std::string DarkResumeWakeReason::GetTypeName() const {
 
 // ===================================================================
 
-void HibernateResumeReady::InitAsDefaultInstance() {
-}
 class HibernateResumeReady::_Internal {
  public:
   using HasBits = decltype(std::declval<HibernateResumeReady>()._has_bits_);
@@ -2014,93 +2061,103 @@ class HibernateResumeReady::_Internal {
   }
 };
 
-HibernateResumeReady::HibernateResumeReady()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+HibernateResumeReady::HibernateResumeReady(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.HibernateResumeReady)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.HibernateResumeReady)
 }
 HibernateResumeReady::HibernateResumeReady(const HibernateResumeReady& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   suspend_id_ = from.suspend_id_;
   // @@protoc_insertion_point(copy_constructor:power_manager.HibernateResumeReady)
 }
 
-void HibernateResumeReady::SharedCtor() {
-  suspend_id_ = 0;
+inline void HibernateResumeReady::SharedCtor() {
+suspend_id_ = 0;
 }
 
 HibernateResumeReady::~HibernateResumeReady() {
   // @@protoc_insertion_point(destructor:power_manager.HibernateResumeReady)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void HibernateResumeReady::SharedDtor() {
+inline void HibernateResumeReady::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void HibernateResumeReady::ArenaDtor(void* object) {
+  HibernateResumeReady* _this = reinterpret_cast< HibernateResumeReady* >(object);
+  (void)_this;
+}
+void HibernateResumeReady::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HibernateResumeReady::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HibernateResumeReady& HibernateResumeReady::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HibernateResumeReady_suspend_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HibernateResumeReady::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.HibernateResumeReady)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   suspend_id_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* HibernateResumeReady::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 suspend_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_suspend_id(&has_bits);
-          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          suspend_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HibernateResumeReady::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HibernateResumeReady::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.HibernateResumeReady)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2111,8 +2168,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.HibernateResumeReady)
   return target;
@@ -2122,20 +2179,18 @@ size_t HibernateResumeReady::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.HibernateResumeReady)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional int32 suspend_id = 1;
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_suspend_id());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_suspend_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2151,13 +2206,13 @@ void HibernateResumeReady::CheckTypeAndMergeFrom(
 void HibernateResumeReady::MergeFrom(const HibernateResumeReady& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.HibernateResumeReady)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_suspend_id()) {
     _internal_set_suspend_id(from._internal_suspend_id());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void HibernateResumeReady::CopyFrom(const HibernateResumeReady& from) {
@@ -2173,7 +2228,7 @@ bool HibernateResumeReady::IsInitialized() const {
 
 void HibernateResumeReady::InternalSwap(HibernateResumeReady* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(suspend_id_, other->suspend_id_);
 }
@@ -2187,28 +2242,28 @@ std::string HibernateResumeReady::GetTypeName() const {
 }  // namespace power_manager
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::power_manager::SuspendImminent* Arena::CreateMaybeMessage< ::power_manager::SuspendImminent >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::SuspendImminent >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::SuspendImminent >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::SuspendDone* Arena::CreateMaybeMessage< ::power_manager::SuspendDone >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::SuspendDone >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::SuspendDone >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::RegisterSuspendDelayRequest* Arena::CreateMaybeMessage< ::power_manager::RegisterSuspendDelayRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::RegisterSuspendDelayRequest >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::RegisterSuspendDelayRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::RegisterSuspendDelayReply* Arena::CreateMaybeMessage< ::power_manager::RegisterSuspendDelayReply >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::RegisterSuspendDelayReply >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::RegisterSuspendDelayReply >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::UnregisterSuspendDelayRequest* Arena::CreateMaybeMessage< ::power_manager::UnregisterSuspendDelayRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::UnregisterSuspendDelayRequest >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::UnregisterSuspendDelayRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::SuspendReadinessInfo* Arena::CreateMaybeMessage< ::power_manager::SuspendReadinessInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::SuspendReadinessInfo >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::SuspendReadinessInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::DarkResumeWakeReason* Arena::CreateMaybeMessage< ::power_manager::DarkResumeWakeReason >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::DarkResumeWakeReason >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::DarkResumeWakeReason >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::HibernateResumeReady* Arena::CreateMaybeMessage< ::power_manager::HibernateResumeReady >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::HibernateResumeReady >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::HibernateResumeReady >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

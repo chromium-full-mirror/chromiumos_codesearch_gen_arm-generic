@@ -31,16 +31,6 @@ using ExecutedProcessResultPtr = mojo::InlinedStructPtr<ExecutedProcessResult>;
 
 class Executor;
 
-using ExecutorPtr = mojo::InterfacePtr<Executor>;
-using ExecutorPtrInfo = mojo::InterfacePtrInfo<Executor>;
-
-using ExecutorRequest = mojo::InterfaceRequest<Executor>;
-using ExecutorAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Executor>;
-
-using ExecutorAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Executor>;
-
 
 
 

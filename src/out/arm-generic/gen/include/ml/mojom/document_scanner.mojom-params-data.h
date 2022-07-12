@@ -137,7 +137,7 @@ class DocumentScanner_DetectCornersFromNV12Image_ParamsDataView {
       ::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNv12Image(UserType* output) {
+  [[nodiscard]] bool ReadNv12Image(UserType* output) {
     
     auto* pointer = data_->nv12_image.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView>(
@@ -164,7 +164,7 @@ class DocumentScanner_DetectCornersFromNV12Image_ResponseParamsDataView {
       DetectCornersResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::DetectCornersResultDataView>(
@@ -191,7 +191,7 @@ class DocumentScanner_DetectCornersFromJPEGImage_ParamsDataView {
       ::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadJpegImage(UserType* output) {
+  [[nodiscard]] bool ReadJpegImage(UserType* output) {
     
     auto* pointer = data_->jpeg_image.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView>(
@@ -218,7 +218,7 @@ class DocumentScanner_DetectCornersFromJPEGImage_ResponseParamsDataView {
       DetectCornersResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::DetectCornersResultDataView>(
@@ -245,7 +245,7 @@ class DocumentScanner_DoPostProcessing_ParamsDataView {
       ::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadJpegImage(UserType* output) {
+  [[nodiscard]] bool ReadJpegImage(UserType* output) {
     
     auto* pointer = data_->jpeg_image.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::ReadOnlySharedMemoryRegionDataView>(
@@ -255,14 +255,14 @@ class DocumentScanner_DoPostProcessing_ParamsDataView {
       mojo::ArrayDataView<::gfx::mojom::PointFDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCorners(UserType* output) {
+  [[nodiscard]] bool ReadCorners(UserType* output) {
     
     auto* pointer = data_->corners.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::gfx::mojom::PointFDataView>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRotation(UserType* output) const {
+  [[nodiscard]] bool ReadRotation(UserType* output) const {
     auto data_value = data_->header_.version >= 1
                       ? data_->rotation : 0;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::Rotation>(
@@ -295,7 +295,7 @@ class DocumentScanner_DoPostProcessing_ResponseParamsDataView {
       DoPostProcessingResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::DoPostProcessingResultDataView>(

@@ -30,16 +30,6 @@ using GenericPendingAssociatedReceiverPtr = mojo::StructPtr<GenericPendingAssoci
 
 class GenericAssociatedInterface;
 
-using GenericAssociatedInterfacePtr = mojo::InterfacePtr<GenericAssociatedInterface>;
-using GenericAssociatedInterfacePtrInfo = mojo::InterfacePtrInfo<GenericAssociatedInterface>;
-
-using GenericAssociatedInterfaceRequest = mojo::InterfaceRequest<GenericAssociatedInterface>;
-using GenericAssociatedInterfaceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<GenericAssociatedInterface>;
-
-using GenericAssociatedInterfaceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<GenericAssociatedInterface>;
-
 
 
 

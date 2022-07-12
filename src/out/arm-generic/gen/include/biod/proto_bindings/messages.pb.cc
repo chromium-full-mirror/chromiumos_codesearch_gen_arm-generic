@@ -11,67 +11,57 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace biod {
-class FingerprintMessageDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FingerprintMessage> _instance;
-  int error_;
-  int scan_result_;
-} _FingerprintMessage_default_instance_;
-class EnrollScanDoneDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<EnrollScanDone> _instance;
-} _EnrollScanDone_default_instance_;
+constexpr FingerprintMessage::FingerprintMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct FingerprintMessageDefaultTypeInternal {
+  constexpr FingerprintMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FingerprintMessageDefaultTypeInternal() {}
+  union {
+    FingerprintMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FingerprintMessageDefaultTypeInternal _FingerprintMessage_default_instance_;
+constexpr EnrollScanDone::EnrollScanDone(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : scan_result_(0)
+
+  , done_(false)
+  , percent_complete_(0){}
+struct EnrollScanDoneDefaultTypeInternal {
+  constexpr EnrollScanDoneDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~EnrollScanDoneDefaultTypeInternal() {}
+  union {
+    EnrollScanDone _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT EnrollScanDoneDefaultTypeInternal _EnrollScanDone_default_instance_;
 }  // namespace biod
-static void InitDefaultsscc_info_EnrollScanDone_messages_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::biod::_EnrollScanDone_default_instance_;
-    new (ptr) ::biod::EnrollScanDone();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::biod::EnrollScanDone::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_EnrollScanDone_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_EnrollScanDone_messages_2eproto}, {}};
-
-static void InitDefaultsscc_info_FingerprintMessage_messages_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::biod::_FingerprintMessage_default_instance_;
-    new (ptr) ::biod::FingerprintMessage();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::biod::FingerprintMessage::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FingerprintMessage_messages_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FingerprintMessage_messages_2eproto}, {}};
-
 namespace biod {
 
 // ===================================================================
 
-void FingerprintMessage::InitAsDefaultInstance() {
-}
 class FingerprintMessage::_Internal {
  public:
-  using HasBits = decltype(std::declval<FingerprintMessage>()._has_bits_);
 };
 
-FingerprintMessage::FingerprintMessage()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+FingerprintMessage::FingerprintMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:biod.FingerprintMessage)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:biod.FingerprintMessage)
 }
 FingerprintMessage::FingerprintMessage(const FingerprintMessage& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   clear_has_msg();
   switch (from.msg_case()) {
     case kError: {
@@ -89,29 +79,33 @@ FingerprintMessage::FingerprintMessage(const FingerprintMessage& from)
   // @@protoc_insertion_point(copy_constructor:biod.FingerprintMessage)
 }
 
-void FingerprintMessage::SharedCtor() {
-  clear_has_msg();
+inline void FingerprintMessage::SharedCtor() {
+clear_has_msg();
 }
 
 FingerprintMessage::~FingerprintMessage() {
   // @@protoc_insertion_point(destructor:biod.FingerprintMessage)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void FingerprintMessage::SharedDtor() {
+inline void FingerprintMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_msg()) {
     clear_msg();
   }
 }
 
+void FingerprintMessage::ArenaDtor(void* object) {
+  FingerprintMessage* _this = reinterpret_cast< FingerprintMessage* >(object);
+  (void)_this;
+}
+void FingerprintMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FingerprintMessage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const FingerprintMessage& FingerprintMessage::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FingerprintMessage_messages_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void FingerprintMessage::clear_msg() {
 // @@protoc_insertion_point(one_of_clear_start:biod.FingerprintMessage)
@@ -134,70 +128,73 @@ void FingerprintMessage::clear_msg() {
 
 void FingerprintMessage::Clear() {
 // @@protoc_insertion_point(message_clear_start:biod.FingerprintMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   clear_msg();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* FingerprintMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
-      // optional .biod.FingerprintError error = 1;
+      // .biod.FingerprintError error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::biod::FingerprintError_IsValid(val))) {
             _internal_set_error(static_cast<::biod::FingerprintError>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .biod.ScanResult scan_result = 2;
+      // .biod.ScanResult scan_result = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::biod::ScanResult_IsValid(val))) {
             _internal_set_scan_result(static_cast<::biod::ScanResult>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FingerprintMessage::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* FingerprintMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:biod.FingerprintMessage)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (msg_case()) {
@@ -216,8 +213,8 @@ failure:
     default: ;
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:biod.FingerprintMessage)
   return target;
@@ -227,18 +224,18 @@ size_t FingerprintMessage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:biod.FingerprintMessage)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (msg_case()) {
-    // optional .biod.FingerprintError error = 1;
+    // .biod.FingerprintError error = 1;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_error());
       break;
     }
-    // optional .biod.ScanResult scan_result = 2;
+    // .biod.ScanResult scan_result = 2;
     case kScanResult: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_scan_result());
@@ -249,7 +246,7 @@ size_t FingerprintMessage::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -265,8 +262,7 @@ void FingerprintMessage::CheckTypeAndMergeFrom(
 void FingerprintMessage::MergeFrom(const FingerprintMessage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:biod.FingerprintMessage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.msg_case()) {
@@ -282,6 +278,7 @@ void FingerprintMessage::MergeFrom(const FingerprintMessage& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void FingerprintMessage::CopyFrom(const FingerprintMessage& from) {
@@ -297,8 +294,7 @@ bool FingerprintMessage::IsInitialized() const {
 
 void FingerprintMessage::InternalSwap(FingerprintMessage* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(msg_, other->msg_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -310,8 +306,6 @@ std::string FingerprintMessage::GetTypeName() const {
 
 // ===================================================================
 
-void EnrollScanDone::InitAsDefaultInstance() {
-}
 class EnrollScanDone::_Internal {
  public:
   using HasBits = decltype(std::declval<EnrollScanDone>()._has_bits_);
@@ -326,48 +320,56 @@ class EnrollScanDone::_Internal {
   }
 };
 
-EnrollScanDone::EnrollScanDone()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+EnrollScanDone::EnrollScanDone(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:biod.EnrollScanDone)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:biod.EnrollScanDone)
 }
 EnrollScanDone::EnrollScanDone(const EnrollScanDone& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&scan_result_, &from.scan_result_,
     static_cast<size_t>(reinterpret_cast<char*>(&percent_complete_) -
     reinterpret_cast<char*>(&scan_result_)) + sizeof(percent_complete_));
   // @@protoc_insertion_point(copy_constructor:biod.EnrollScanDone)
 }
 
-void EnrollScanDone::SharedCtor() {
-  ::memset(&scan_result_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&percent_complete_) -
-      reinterpret_cast<char*>(&scan_result_)) + sizeof(percent_complete_));
+inline void EnrollScanDone::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&scan_result_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&percent_complete_) -
+    reinterpret_cast<char*>(&scan_result_)) + sizeof(percent_complete_));
 }
 
 EnrollScanDone::~EnrollScanDone() {
   // @@protoc_insertion_point(destructor:biod.EnrollScanDone)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void EnrollScanDone::SharedDtor() {
+inline void EnrollScanDone::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void EnrollScanDone::ArenaDtor(void* object) {
+  EnrollScanDone* _this = reinterpret_cast< EnrollScanDone* >(object);
+  (void)_this;
+}
+void EnrollScanDone::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EnrollScanDone::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EnrollScanDone& EnrollScanDone::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_EnrollScanDone_messages_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void EnrollScanDone::Clear() {
 // @@protoc_insertion_point(message_clear_start:biod.EnrollScanDone)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -378,70 +380,75 @@ void EnrollScanDone::Clear() {
         reinterpret_cast<char*>(&scan_result_)) + sizeof(percent_complete_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* EnrollScanDone::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .biod.ScanResult scan_result = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::biod::ScanResult_IsValid(val))) {
             _internal_set_scan_result(static_cast<::biod::ScanResult>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool done = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_done(&has_bits);
-          done_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          done_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 percent_complete = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_percent_complete(&has_bits);
-          percent_complete_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          percent_complete_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* EnrollScanDone::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* EnrollScanDone::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:biod.EnrollScanDone)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -465,8 +472,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:biod.EnrollScanDone)
   return target;
@@ -476,7 +483,7 @@ size_t EnrollScanDone::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:biod.EnrollScanDone)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -495,14 +502,12 @@ size_t EnrollScanDone::ByteSizeLong() const {
 
     // optional int32 percent_complete = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_percent_complete());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_percent_complete());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -518,8 +523,7 @@ void EnrollScanDone::CheckTypeAndMergeFrom(
 void EnrollScanDone::MergeFrom(const EnrollScanDone& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:biod.EnrollScanDone)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -535,6 +539,7 @@ void EnrollScanDone::MergeFrom(const EnrollScanDone& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void EnrollScanDone::CopyFrom(const EnrollScanDone& from) {
@@ -550,11 +555,14 @@ bool EnrollScanDone::IsInitialized() const {
 
 void EnrollScanDone::InternalSwap(EnrollScanDone* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(scan_result_, other->scan_result_);
-  swap(done_, other->done_);
-  swap(percent_complete_, other->percent_complete_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(EnrollScanDone, percent_complete_)
+      + sizeof(EnrollScanDone::percent_complete_)
+      - PROTOBUF_FIELD_OFFSET(EnrollScanDone, scan_result_)>(
+          reinterpret_cast<char*>(&scan_result_),
+          reinterpret_cast<char*>(&other->scan_result_));
 }
 
 std::string EnrollScanDone::GetTypeName() const {
@@ -566,10 +574,10 @@ std::string EnrollScanDone::GetTypeName() const {
 }  // namespace biod
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::biod::FingerprintMessage* Arena::CreateMaybeMessage< ::biod::FingerprintMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::biod::FingerprintMessage >(arena);
+  return Arena::CreateMessageInternal< ::biod::FingerprintMessage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::biod::EnrollScanDone* Arena::CreateMaybeMessage< ::biod::EnrollScanDone >(Arena* arena) {
-  return Arena::CreateInternal< ::biod::EnrollScanDone >(arena);
+  return Arena::CreateMessageInternal< ::biod::EnrollScanDone >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

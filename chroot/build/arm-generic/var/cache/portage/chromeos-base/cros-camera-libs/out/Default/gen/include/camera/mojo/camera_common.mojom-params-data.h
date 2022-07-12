@@ -500,7 +500,7 @@ class CameraModuleCallbacks_CameraDeviceStatusChange_ParamsDataView {
     return data_->camera_id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNewStatus(UserType* output) const {
+  [[nodiscard]] bool ReadNewStatus(UserType* output) const {
     auto data_value = data_->new_status;
     return mojo::internal::Deserialize<::cros::mojom::CameraDeviceStatus>(
         data_value, output);
@@ -529,7 +529,7 @@ class CameraModuleCallbacks_TorchModeStatusChange_ParamsDataView {
     return data_->camera_id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNewStatus(UserType* output) const {
+  [[nodiscard]] bool ReadNewStatus(UserType* output) const {
     auto data_value = data_->new_status;
     return mojo::internal::Deserialize<::cros::mojom::TorchModeStatus>(
         data_value, output);
@@ -609,7 +609,7 @@ class VendorTagOps_GetAllTags_ResponseParamsDataView {
       mojo::ArrayDataView<uint32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTagArray(UserType* output) {
+  [[nodiscard]] bool ReadTagArray(UserType* output) {
     
     auto* pointer = data_->tag_array.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint32_t>>(
@@ -655,7 +655,7 @@ class VendorTagOps_GetSectionName_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -711,7 +711,7 @@ class VendorTagOps_GetTagName_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -891,7 +891,7 @@ class CameraModule_GetCameraInfo_ResponseParamsDataView {
       CameraInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCameraInfo(UserType* output) {
+  [[nodiscard]] bool ReadCameraInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -436,6 +435,106 @@ bool Bitrate::Validate(
   return Data_::Validate(data, validation_context, false);
 }
 const char VideoEncodeAccelerator::Name_[] = "arc.mojom.VideoEncodeAccelerator";
+
+uint32_t VideoEncodeAccelerator::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kVideoEncodeAccelerator_GetSupportedProfiles_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_Initialize_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::Initialize");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_InitializeDeprecated_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::InitializeDeprecated");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_Encode_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::Encode");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_UseBitstreamBuffer_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_RequestEncodingParametersChange_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChange");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_RequestEncodingParametersChangeDeprecated_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChangeDeprecated");
+      return value;
+    }
+    case internal::kVideoEncodeAccelerator_Flush_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeAccelerator::Flush");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* VideoEncodeAccelerator::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kVideoEncodeAccelerator_GetSupportedProfiles_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles";
+      case internal::kVideoEncodeAccelerator_Initialize_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::Initialize";
+      case internal::kVideoEncodeAccelerator_InitializeDeprecated_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::InitializeDeprecated";
+      case internal::kVideoEncodeAccelerator_Encode_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::Encode";
+      case internal::kVideoEncodeAccelerator_UseBitstreamBuffer_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer";
+      case internal::kVideoEncodeAccelerator_RequestEncodingParametersChange_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChange";
+      case internal::kVideoEncodeAccelerator_RequestEncodingParametersChangeDeprecated_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChangeDeprecated";
+      case internal::kVideoEncodeAccelerator_Flush_Name:
+            return "Receive arc::mojom::VideoEncodeAccelerator::Flush";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kVideoEncodeAccelerator_GetSupportedProfiles_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles";
+      case internal::kVideoEncodeAccelerator_Initialize_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::Initialize";
+      case internal::kVideoEncodeAccelerator_InitializeDeprecated_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::InitializeDeprecated";
+      case internal::kVideoEncodeAccelerator_Encode_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::Encode";
+      case internal::kVideoEncodeAccelerator_UseBitstreamBuffer_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer";
+      case internal::kVideoEncodeAccelerator_RequestEncodingParametersChange_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChange";
+      case internal::kVideoEncodeAccelerator_RequestEncodingParametersChangeDeprecated_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChangeDeprecated";
+      case internal::kVideoEncodeAccelerator_Flush_Name:
+            return "Receive reply arc::mojom::VideoEncodeAccelerator::Flush";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class VideoEncodeAccelerator_GetSupportedProfiles_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -978,10 +1077,6 @@ class VideoEncodeAccelerator_GetSupportedProfiles_ProxyToResponder : public ::mo
 
 bool VideoEncodeAccelerator_GetSupportedProfiles_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_GetSupportedProfiles_ResponseParams_Data* params =
@@ -1053,8 +1148,11 @@ void VideoEncodeAccelerator_GetSupportedProfiles_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1105,10 +1203,6 @@ class VideoEncodeAccelerator_Initialize_ProxyToResponder : public ::mojo::intern
 
 bool VideoEncodeAccelerator_Initialize_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::Initialize",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_Initialize_ResponseParams_Data* params =
@@ -1169,8 +1263,11 @@ void VideoEncodeAccelerator_Initialize_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1221,10 +1318,6 @@ class VideoEncodeAccelerator_InitializeDeprecated_ProxyToResponder : public ::mo
 
 bool VideoEncodeAccelerator_InitializeDeprecated_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::InitializeDeprecated",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_InitializeDeprecated_ResponseParams_Data* params =
@@ -1284,8 +1377,11 @@ void VideoEncodeAccelerator_InitializeDeprecated_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1336,10 +1432,6 @@ class VideoEncodeAccelerator_Encode_ProxyToResponder : public ::mojo::internal::
 
 bool VideoEncodeAccelerator_Encode_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::Encode",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_Encode_ResponseParams_Data* params =
@@ -1387,8 +1479,11 @@ void VideoEncodeAccelerator_Encode_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1439,10 +1534,6 @@ class VideoEncodeAccelerator_UseBitstreamBuffer_ProxyToResponder : public ::mojo
 
 bool VideoEncodeAccelerator_UseBitstreamBuffer_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_UseBitstreamBuffer_ResponseParams_Data* params =
@@ -1518,8 +1609,11 @@ void VideoEncodeAccelerator_UseBitstreamBuffer_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1570,10 +1664,6 @@ class VideoEncodeAccelerator_Flush_ProxyToResponder : public ::mojo::internal::P
 
 bool VideoEncodeAccelerator_Flush_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply arc::mojom::VideoEncodeAccelerator::Flush",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::VideoEncodeAccelerator_Flush_ResponseParams_Data* params =
@@ -1633,8 +1723,11 @@ void VideoEncodeAccelerator_Flush_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1660,15 +1753,6 @@ bool VideoEncodeAcceleratorStubDispatch::Accept(
       break;
     }
     case internal::kVideoEncodeAccelerator_RequestEncodingParametersChange_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChange",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChange");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoEncodeAccelerator_RequestEncodingParametersChange_Params_Data* params =
@@ -1699,15 +1783,6 @@ std::move(p_framerate));
       return true;
     }
     case internal::kVideoEncodeAccelerator_RequestEncodingParametersChangeDeprecated_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChangeDeprecated",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::RequestEncodingParametersChangeDeprecated");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoEncodeAccelerator_RequestEncodingParametersChangeDeprecated_Params_Data* params =
@@ -1754,15 +1829,6 @@ bool VideoEncodeAcceleratorStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kVideoEncodeAccelerator_GetSupportedProfiles_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::GetSupportedProfiles");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_GetSupportedProfiles_Params_Data* params =
           reinterpret_cast<
@@ -1788,15 +1854,6 @@ bool VideoEncodeAcceleratorStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kVideoEncodeAccelerator_Initialize_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::Initialize",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::Initialize");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_Initialize_Params_Data* params =
           reinterpret_cast<
@@ -1832,15 +1889,6 @@ std::move(p_client), std::move(callback));
       return true;
     }
     case internal::kVideoEncodeAccelerator_InitializeDeprecated_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::InitializeDeprecated",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::InitializeDeprecated");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_InitializeDeprecated_Params_Data* params =
           reinterpret_cast<
@@ -1876,15 +1924,6 @@ std::move(p_client), std::move(callback));
       return true;
     }
     case internal::kVideoEncodeAccelerator_Encode_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::Encode",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::Encode");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_Encode_Params_Data* params =
           reinterpret_cast<
@@ -1930,15 +1969,6 @@ std::move(p_force_keyframe), std::move(callback));
       return true;
     }
     case internal::kVideoEncodeAccelerator_UseBitstreamBuffer_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::UseBitstreamBuffer");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_UseBitstreamBuffer_Params_Data* params =
           reinterpret_cast<
@@ -1982,15 +2012,6 @@ std::move(p_size), std::move(callback));
       break;
     }
     case internal::kVideoEncodeAccelerator_Flush_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeAccelerator::Flush",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeAccelerator::Flush");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::VideoEncodeAccelerator_Flush_Params_Data* params =
           reinterpret_cast<
@@ -2052,6 +2073,52 @@ bool VideoEncodeAcceleratorResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kVideoEncodeAcceleratorValidationInfo);
 }
 const char VideoEncodeClient::Name_[] = "arc.mojom.VideoEncodeClient";
+
+uint32_t VideoEncodeClient::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kVideoEncodeClient_RequireBitstreamBuffers_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeClient::RequireBitstreamBuffers");
+      return value;
+    }
+    case internal::kVideoEncodeClient_NotifyError_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)arc::mojom::VideoEncodeClient::NotifyError");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* VideoEncodeClient::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kVideoEncodeClient_RequireBitstreamBuffers_Name:
+            return "Receive arc::mojom::VideoEncodeClient::RequireBitstreamBuffers";
+      case internal::kVideoEncodeClient_NotifyError_Name:
+            return "Receive arc::mojom::VideoEncodeClient::NotifyError";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kVideoEncodeClient_RequireBitstreamBuffers_Name:
+            return "Receive reply arc::mojom::VideoEncodeClient::RequireBitstreamBuffers";
+      case internal::kVideoEncodeClient_NotifyError_Name:
+            return "Receive reply arc::mojom::VideoEncodeClient::NotifyError";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 VideoEncodeClientProxy::VideoEncodeClientProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -2158,15 +2225,6 @@ bool VideoEncodeClientStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kVideoEncodeClient_RequireBitstreamBuffers_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeClient::RequireBitstreamBuffers",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeClient::RequireBitstreamBuffers");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoEncodeClient_RequireBitstreamBuffers_Params_Data* params =
@@ -2201,15 +2259,6 @@ std::move(p_output_buffer_size));
       return true;
     }
     case internal::kVideoEncodeClient_NotifyError_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive arc::mojom::VideoEncodeClient::NotifyError",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)arc::mojom::VideoEncodeClient::NotifyError");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::VideoEncodeClient_NotifyError_Params_Data* params =

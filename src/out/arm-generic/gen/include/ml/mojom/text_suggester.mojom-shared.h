@@ -205,7 +205,7 @@ class NextWordCompletionCandidateDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -235,7 +235,7 @@ class TextSuggesterQueryDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -245,14 +245,14 @@ class TextSuggesterQueryDataView {
       mojo::ArrayDataView<NextWordCompletionCandidateDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNextWordCandidates(UserType* output) {
+  [[nodiscard]] bool ReadNextWordCandidates(UserType* output) {
     
     auto* pointer = data_->next_word_candidates.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::NextWordCompletionCandidateDataView>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSuggestionMode(UserType* output) const {
+  [[nodiscard]] bool ReadSuggestionMode(UserType* output) const {
     auto data_value = data_->header_.version >= 1
                       ? data_->suggestion_mode : 0;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextSuggestionMode>(
@@ -285,7 +285,7 @@ class MultiWordSuggestionCandidateDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -312,7 +312,7 @@ class TextSuggesterResultDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextSuggesterResult_Status>(
         data_value, output);
@@ -325,7 +325,7 @@ class TextSuggesterResultDataView {
       mojo::ArrayDataView<TextSuggestionCandidateDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCandidates(UserType* output) {
+  [[nodiscard]] bool ReadCandidates(UserType* output) {
     
     auto* pointer = data_->candidates.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::TextSuggestionCandidateDataView>>(
@@ -349,7 +349,7 @@ class TextSuggesterSpecDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMultiWordExperiment(UserType* output) const {
+  [[nodiscard]] bool ReadMultiWordExperiment(UserType* output) const {
     auto data_value = data_->multi_word_experiment;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::MultiWordExperimentGroup>(
         data_value, output);
@@ -387,7 +387,7 @@ class TextSuggestionCandidateDataView {
       MultiWordSuggestionCandidateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMultiWord(UserType* output) const {
+  [[nodiscard]] bool ReadMultiWord(UserType* output) const {
     
     CHECK(is_multi_word());
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::MultiWordSuggestionCandidateDataView>(

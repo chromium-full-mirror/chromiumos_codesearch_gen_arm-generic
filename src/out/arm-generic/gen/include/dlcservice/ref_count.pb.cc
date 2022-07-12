@@ -11,149 +11,152 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_ref_5fcount_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RefCountInfo_User_ref_5fcount_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace dlcservice {
-class RefCountInfo_UserDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RefCountInfo_User> _instance;
-} _RefCountInfo_User_default_instance_;
-class RefCountInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RefCountInfo> _instance;
-} _RefCountInfo_default_instance_;
+constexpr RefCountInfo_User::RefCountInfo_User(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : sanitized_username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct RefCountInfo_UserDefaultTypeInternal {
+  constexpr RefCountInfo_UserDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RefCountInfo_UserDefaultTypeInternal() {}
+  union {
+    RefCountInfo_User _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RefCountInfo_UserDefaultTypeInternal _RefCountInfo_User_default_instance_;
+constexpr RefCountInfo::RefCountInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : users_()
+  , last_access_time_us_(int64_t{0}){}
+struct RefCountInfoDefaultTypeInternal {
+  constexpr RefCountInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RefCountInfoDefaultTypeInternal() {}
+  union {
+    RefCountInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RefCountInfoDefaultTypeInternal _RefCountInfo_default_instance_;
 }  // namespace dlcservice
-static void InitDefaultsscc_info_RefCountInfo_ref_5fcount_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::dlcservice::_RefCountInfo_default_instance_;
-    new (ptr) ::dlcservice::RefCountInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::dlcservice::RefCountInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_RefCountInfo_ref_5fcount_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_RefCountInfo_ref_5fcount_2eproto}, {
-      &scc_info_RefCountInfo_User_ref_5fcount_2eproto.base,}};
-
-static void InitDefaultsscc_info_RefCountInfo_User_ref_5fcount_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::dlcservice::_RefCountInfo_User_default_instance_;
-    new (ptr) ::dlcservice::RefCountInfo_User();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::dlcservice::RefCountInfo_User::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RefCountInfo_User_ref_5fcount_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RefCountInfo_User_ref_5fcount_2eproto}, {}};
-
 namespace dlcservice {
 
 // ===================================================================
 
-void RefCountInfo_User::InitAsDefaultInstance() {
-}
 class RefCountInfo_User::_Internal {
  public:
 };
 
-RefCountInfo_User::RefCountInfo_User()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RefCountInfo_User::RefCountInfo_User(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:dlcservice.RefCountInfo.User)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:dlcservice.RefCountInfo.User)
 }
 RefCountInfo_User::RefCountInfo_User(const RefCountInfo_User& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   sanitized_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    sanitized_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_sanitized_username().empty()) {
-    sanitized_username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sanitized_username_);
+    sanitized_username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sanitized_username(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:dlcservice.RefCountInfo.User)
 }
 
-void RefCountInfo_User::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RefCountInfo_User_ref_5fcount_2eproto.base);
-  sanitized_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void RefCountInfo_User::SharedCtor() {
+sanitized_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  sanitized_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 RefCountInfo_User::~RefCountInfo_User() {
   // @@protoc_insertion_point(destructor:dlcservice.RefCountInfo.User)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RefCountInfo_User::SharedDtor() {
+inline void RefCountInfo_User::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   sanitized_username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RefCountInfo_User::ArenaDtor(void* object) {
+  RefCountInfo_User* _this = reinterpret_cast< RefCountInfo_User* >(object);
+  (void)_this;
+}
+void RefCountInfo_User::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RefCountInfo_User::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RefCountInfo_User& RefCountInfo_User::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RefCountInfo_User_ref_5fcount_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RefCountInfo_User::Clear() {
 // @@protoc_insertion_point(message_clear_start:dlcservice.RefCountInfo.User)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sanitized_username_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  sanitized_username_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RefCountInfo_User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string sanitized_username = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_sanitized_username();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RefCountInfo_User::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RefCountInfo_User::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:dlcservice.RefCountInfo.User)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string sanitized_username = 1;
-  if (this->sanitized_username().size() > 0) {
+  if (!this->_internal_sanitized_username().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_sanitized_username().data(), static_cast<int>(this->_internal_sanitized_username().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -163,8 +166,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dlcservice.RefCountInfo.User)
   return target;
@@ -174,19 +177,19 @@ size_t RefCountInfo_User::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dlcservice.RefCountInfo.User)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string sanitized_username = 1;
-  if (this->sanitized_username().size() > 0) {
+  if (!this->_internal_sanitized_username().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_sanitized_username());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -202,14 +205,13 @@ void RefCountInfo_User::CheckTypeAndMergeFrom(
 void RefCountInfo_User::MergeFrom(const RefCountInfo_User& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dlcservice.RefCountInfo.User)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.sanitized_username().size() > 0) {
-
-    sanitized_username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sanitized_username_);
+  if (!from._internal_sanitized_username().empty()) {
+    _internal_set_sanitized_username(from._internal_sanitized_username());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RefCountInfo_User::CopyFrom(const RefCountInfo_User& from) {
@@ -225,9 +227,14 @@ bool RefCountInfo_User::IsInitialized() const {
 
 void RefCountInfo_User::InternalSwap(RefCountInfo_User* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  sanitized_username_.Swap(&other->sanitized_username_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &sanitized_username_, lhs_arena,
+      &other->sanitized_username_, rhs_arena
+  );
 }
 
 std::string RefCountInfo_User::GetTypeName() const {
@@ -237,69 +244,73 @@ std::string RefCountInfo_User::GetTypeName() const {
 
 // ===================================================================
 
-void RefCountInfo::InitAsDefaultInstance() {
-}
 class RefCountInfo::_Internal {
  public:
 };
 
-RefCountInfo::RefCountInfo()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RefCountInfo::RefCountInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  users_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:dlcservice.RefCountInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:dlcservice.RefCountInfo)
 }
 RefCountInfo::RefCountInfo(const RefCountInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       users_(from.users_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   last_access_time_us_ = from.last_access_time_us_;
   // @@protoc_insertion_point(copy_constructor:dlcservice.RefCountInfo)
 }
 
-void RefCountInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RefCountInfo_ref_5fcount_2eproto.base);
-  last_access_time_us_ = PROTOBUF_LONGLONG(0);
+inline void RefCountInfo::SharedCtor() {
+last_access_time_us_ = int64_t{0};
 }
 
 RefCountInfo::~RefCountInfo() {
   // @@protoc_insertion_point(destructor:dlcservice.RefCountInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RefCountInfo::SharedDtor() {
+inline void RefCountInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void RefCountInfo::ArenaDtor(void* object) {
+  RefCountInfo* _this = reinterpret_cast< RefCountInfo* >(object);
+  (void)_this;
+}
+void RefCountInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RefCountInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RefCountInfo& RefCountInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RefCountInfo_ref_5fcount_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RefCountInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:dlcservice.RefCountInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   users_.Clear();
-  last_access_time_us_ = PROTOBUF_LONGLONG(0);
-  _internal_metadata_.Clear();
+  last_access_time_us_ = int64_t{0};
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RefCountInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .dlcservice.RefCountInfo.User users = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -307,39 +318,44 @@ const char* RefCountInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // int64 last_access_time_us = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          last_access_time_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          last_access_time_us_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RefCountInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RefCountInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:dlcservice.RefCountInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .dlcservice.RefCountInfo.User users = 1;
@@ -351,14 +367,14 @@ failure:
   }
 
   // int64 last_access_time_us = 2;
-  if (this->last_access_time_us() != 0) {
+  if (this->_internal_last_access_time_us() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_last_access_time_us(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dlcservice.RefCountInfo)
   return target;
@@ -368,7 +384,7 @@ size_t RefCountInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:dlcservice.RefCountInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -380,14 +396,12 @@ size_t RefCountInfo::ByteSizeLong() const {
   }
 
   // int64 last_access_time_us = 2;
-  if (this->last_access_time_us() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_last_access_time_us());
+  if (this->_internal_last_access_time_us() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_access_time_us());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -403,14 +417,14 @@ void RefCountInfo::CheckTypeAndMergeFrom(
 void RefCountInfo::MergeFrom(const RefCountInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dlcservice.RefCountInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   users_.MergeFrom(from.users_);
-  if (from.last_access_time_us() != 0) {
+  if (from._internal_last_access_time_us() != 0) {
     _internal_set_last_access_time_us(from._internal_last_access_time_us());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RefCountInfo::CopyFrom(const RefCountInfo& from) {
@@ -426,7 +440,7 @@ bool RefCountInfo::IsInitialized() const {
 
 void RefCountInfo::InternalSwap(RefCountInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   users_.InternalSwap(&other->users_);
   swap(last_access_time_us_, other->last_access_time_us_);
 }
@@ -440,10 +454,10 @@ std::string RefCountInfo::GetTypeName() const {
 }  // namespace dlcservice
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::dlcservice::RefCountInfo_User* Arena::CreateMaybeMessage< ::dlcservice::RefCountInfo_User >(Arena* arena) {
-  return Arena::CreateInternal< ::dlcservice::RefCountInfo_User >(arena);
+  return Arena::CreateMessageInternal< ::dlcservice::RefCountInfo_User >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dlcservice::RefCountInfo* Arena::CreateMaybeMessage< ::dlcservice::RefCountInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::dlcservice::RefCountInfo >(arena);
+  return Arena::CreateMessageInternal< ::dlcservice::RefCountInfo >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

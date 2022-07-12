@@ -373,7 +373,7 @@ class CropRotateScaleInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCropRotateScaleDegrees(UserType* output) const {
+  [[nodiscard]] bool ReadCropRotateScaleDegrees(UserType* output) const {
     auto data_value = data_->crop_rotate_scale_degrees;
     return mojo::internal::Deserialize<::cros::mojom::Camera3StreamRotation>(
         data_value, output);
@@ -402,7 +402,7 @@ class Camera3StreamDataView {
     return data_->id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStreamType(UserType* output) const {
+  [[nodiscard]] bool ReadStreamType(UserType* output) const {
     auto data_value = data_->stream_type;
     return mojo::internal::Deserialize<::cros::mojom::Camera3StreamType>(
         data_value, output);
@@ -418,7 +418,7 @@ class Camera3StreamDataView {
     return data_->height;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) const {
+  [[nodiscard]] bool ReadFormat(UserType* output) const {
     auto data_value = data_->format;
     return mojo::internal::Deserialize<::cros::mojom::HalPixelFormat>(
         data_value, output);
@@ -437,7 +437,7 @@ class Camera3StreamDataView {
     return data_->data_space;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRotation(UserType* output) const {
+  [[nodiscard]] bool ReadRotation(UserType* output) const {
     auto data_value = data_->rotation;
     return mojo::internal::Deserialize<::cros::mojom::Camera3StreamRotation>(
         data_value, output);
@@ -450,7 +450,7 @@ class Camera3StreamDataView {
       CropRotateScaleInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCropRotateScaleInfo(UserType* output) {
+  [[nodiscard]] bool ReadCropRotateScaleInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -471,7 +471,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhysicalCameraId(UserType* output) {
+  [[nodiscard]] bool ReadPhysicalCameraId(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -509,14 +509,14 @@ class Camera3StreamConfigurationDataView {
       mojo::ArrayDataView<Camera3StreamDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStreams(UserType* output) {
+  [[nodiscard]] bool ReadStreams(UserType* output) {
     
     auto* pointer = data_->streams.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::Camera3StreamDataView>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOperationMode(UserType* output) const {
+  [[nodiscard]] bool ReadOperationMode(UserType* output) const {
     auto data_value = data_->operation_mode;
     return mojo::internal::Deserialize<::cros::mojom::Camera3StreamConfigurationMode>(
         data_value, output);
@@ -529,7 +529,7 @@ class Camera3StreamConfigurationDataView {
       ::cros::mojom::CameraMetadataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSessionParameters(UserType* output) {
+  [[nodiscard]] bool ReadSessionParameters(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -570,7 +570,7 @@ class CameraBufferHandleDataView {
       mojo::ArrayDataView<mojo::ScopedHandle>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFds(UserType* output) {
+  [[nodiscard]] bool ReadFds(UserType* output) {
     
     auto* pointer = data_->fds.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::ScopedHandle>>(
@@ -580,7 +580,7 @@ class CameraBufferHandleDataView {
     return data_->drm_format;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHalPixelFormat(UserType* output) const {
+  [[nodiscard]] bool ReadHalPixelFormat(UserType* output) const {
     auto data_value = data_->hal_pixel_format;
     return mojo::internal::Deserialize<::cros::mojom::HalPixelFormat>(
         data_value, output);
@@ -599,7 +599,7 @@ class CameraBufferHandleDataView {
       mojo::ArrayDataView<uint32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStrides(UserType* output) {
+  [[nodiscard]] bool ReadStrides(UserType* output) {
     
     auto* pointer = data_->strides.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint32_t>>(
@@ -609,7 +609,7 @@ class CameraBufferHandleDataView {
       mojo::ArrayDataView<uint32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOffsets(UserType* output) {
+  [[nodiscard]] bool ReadOffsets(UserType* output) {
     
     auto* pointer = data_->offsets.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint32_t>>(
@@ -619,7 +619,7 @@ class CameraBufferHandleDataView {
       mojo::ArrayDataView<uint32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSizes(UserType* output) {
+  [[nodiscard]] bool ReadSizes(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -660,7 +660,7 @@ class Camera3StreamBufferDataView {
     return data_->buffer_id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::cros::mojom::Camera3BufferStatus>(
         data_value, output);
@@ -689,7 +689,7 @@ class Camera3StreamBufferDataView {
       CameraBufferHandleDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBufferHandle(UserType* output) {
+  [[nodiscard]] bool ReadBufferHandle(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -730,7 +730,7 @@ class Camera3ErrorMsgDataView {
     return data_->error_stream_id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadErrorCode(UserType* output) const {
+  [[nodiscard]] bool ReadErrorCode(UserType* output) const {
     auto data_value = data_->error_code;
     return mojo::internal::Deserialize<::cros::mojom::Camera3ErrorMsgCode>(
         data_value, output);
@@ -778,7 +778,7 @@ class Camera3NotifyMsgDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::cros::mojom::Camera3MsgType>(
         data_value, output);
@@ -791,7 +791,7 @@ class Camera3NotifyMsgDataView {
       Camera3NotifyMsgMessageDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMessage(UserType* output) {
+  [[nodiscard]] bool ReadMessage(UserType* output) {
     
     auto* pointer = !data_->message.is_null() ? &data_->message : nullptr;
     return mojo::internal::Deserialize<::cros::mojom::Camera3NotifyMsgMessageDataView>(
@@ -821,7 +821,7 @@ class Camera3PhyscamMetadataDataView {
       ::cros::mojom::CameraMetadataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMetadata(UserType* output) {
+  [[nodiscard]] bool ReadMetadata(UserType* output) {
     
     auto* pointer = data_->metadata.Get();
     return mojo::internal::Deserialize<::cros::mojom::CameraMetadataDataView>(
@@ -851,7 +851,7 @@ class Camera3CaptureRequestDataView {
       ::cros::mojom::CameraMetadataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSettings(UserType* output) {
+  [[nodiscard]] bool ReadSettings(UserType* output) {
     
     auto* pointer = data_->settings.Get();
     return mojo::internal::Deserialize<::cros::mojom::CameraMetadataDataView>(
@@ -861,7 +861,7 @@ class Camera3CaptureRequestDataView {
       Camera3StreamBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputBuffer(UserType* output) {
+  [[nodiscard]] bool ReadInputBuffer(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -881,7 +881,7 @@ static_assert(
       mojo::ArrayDataView<Camera3StreamBufferDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputBuffers(UserType* output) {
+  [[nodiscard]] bool ReadOutputBuffers(UserType* output) {
     
     auto* pointer = data_->output_buffers.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::Camera3StreamBufferDataView>>(
@@ -891,7 +891,7 @@ static_assert(
       mojo::ArrayDataView<Camera3PhyscamMetadataDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhyscamSettings(UserType* output) {
+  [[nodiscard]] bool ReadPhyscamSettings(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -932,7 +932,7 @@ class Camera3CaptureResultDataView {
       ::cros::mojom::CameraMetadataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::cros::mojom::CameraMetadataDataView>(
@@ -942,7 +942,7 @@ class Camera3CaptureResultDataView {
       mojo::ArrayDataView<Camera3StreamBufferDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputBuffers(UserType* output) {
+  [[nodiscard]] bool ReadOutputBuffers(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -962,7 +962,7 @@ static_assert(
       Camera3StreamBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputBuffer(UserType* output) {
+  [[nodiscard]] bool ReadInputBuffer(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -985,7 +985,7 @@ static_assert(
       mojo::ArrayDataView<Camera3PhyscamMetadataDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhyscamMetadata(UserType* output) {
+  [[nodiscard]] bool ReadPhyscamMetadata(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1032,7 +1032,7 @@ class Camera3NotifyMsgMessageDataView {
       Camera3ErrorMsgDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::cros::mojom::Camera3ErrorMsgDataView>(
@@ -1043,7 +1043,7 @@ class Camera3NotifyMsgMessageDataView {
       Camera3ShutterMsgDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadShutter(UserType* output) const {
+  [[nodiscard]] bool ReadShutter(UserType* output) const {
     
     CHECK(is_shutter());
     return mojo::internal::Deserialize<::cros::mojom::Camera3ShutterMsgDataView>(
@@ -1054,7 +1054,7 @@ class Camera3NotifyMsgMessageDataView {
       mojo::ArrayDataView<uint8_t>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGeneric(UserType* output) const {
+  [[nodiscard]] bool ReadGeneric(UserType* output) const {
     
     CHECK(is_generic());
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

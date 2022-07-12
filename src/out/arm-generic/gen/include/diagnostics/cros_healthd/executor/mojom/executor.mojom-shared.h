@@ -90,7 +90,7 @@ class ExecutedProcessResultDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOut(UserType* output) {
+  [[nodiscard]] bool ReadOut(UserType* output) {
     
     auto* pointer = data_->out.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -100,7 +100,7 @@ class ExecutedProcessResultDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadErr(UserType* output) {
+  [[nodiscard]] bool ReadErr(UserType* output) {
     
     auto* pointer = data_->err.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

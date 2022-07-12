@@ -14,36 +14,39 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace quipper {
-class PerfParserOptionsProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PerfParserOptionsProto> _instance;
-} _PerfParserOptionsProto_default_instance_;
+constexpr PerfParserOptionsProto::PerfParserOptionsProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : do_remap_(false)
+  , discard_unused_events_(false)
+  , sort_events_by_time_(false)
+  , read_missing_buildids_(false)
+  , sample_mapping_percentage_threshold_(95)
+  , deduce_huge_page_mappings_(true)
+  , combine_mappings_(true){}
+struct PerfParserOptionsProtoDefaultTypeInternal {
+  constexpr PerfParserOptionsProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PerfParserOptionsProtoDefaultTypeInternal() {}
+  union {
+    PerfParserOptionsProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PerfParserOptionsProtoDefaultTypeInternal _PerfParserOptionsProto_default_instance_;
 }  // namespace quipper
-static void InitDefaultsscc_info_PerfParserOptionsProto_perf_5fparser_5foptions_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::quipper::_PerfParserOptionsProto_default_instance_;
-    new (ptr) ::quipper::PerfParserOptionsProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::quipper::PerfParserOptionsProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PerfParserOptionsProto_perf_5fparser_5foptions_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PerfParserOptionsProto_perf_5fparser_5foptions_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_perf_5fparser_5foptions_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_perf_5fparser_5foptions_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_perf_5fparser_5foptions_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_perf_5fparser_5foptions_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_perf_5fparser_5foptions_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::quipper::PerfParserOptionsProto, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::quipper::PerfParserOptionsProto, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::quipper::PerfParserOptionsProto, do_remap_),
   PROTOBUF_FIELD_OFFSET(::quipper::PerfParserOptionsProto, discard_unused_events_),
   PROTOBUF_FIELD_OFFSET(::quipper::PerfParserOptionsProto, sample_mapping_percentage_threshold_),
@@ -60,7 +63,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_perf_5fparser_5foptions_2eprot
   6,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 12, sizeof(::quipper::PerfParserOptionsProto)},
+  { 0, 13, -1, sizeof(::quipper::PerfParserOptionsProto)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -78,28 +81,23 @@ const char descriptor_table_protodef_perf_5fparser_5foptions_2eproto[] PROTOBUF_
   " \001(\010:\004true\022\036\n\020combine_mappings\030\007 \001(\010:\004tr"
   "ue"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_perf_5fparser_5foptions_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_perf_5fparser_5foptions_2eproto_sccs[1] = {
-  &scc_info_PerfParserOptionsProto_perf_5fparser_5foptions_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_perf_5fparser_5foptions_2eproto_once;
-static bool descriptor_table_perf_5fparser_5foptions_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_perf_5fparser_5foptions_2eproto = {
-  &descriptor_table_perf_5fparser_5foptions_2eproto_initialized, descriptor_table_protodef_perf_5fparser_5foptions_2eproto, "perf_parser_options.proto", 322,
-  &descriptor_table_perf_5fparser_5foptions_2eproto_once, descriptor_table_perf_5fparser_5foptions_2eproto_sccs, descriptor_table_perf_5fparser_5foptions_2eproto_deps, 1, 0,
+  false, false, 322, descriptor_table_protodef_perf_5fparser_5foptions_2eproto, "perf_parser_options.proto", 
+  &descriptor_table_perf_5fparser_5foptions_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_perf_5fparser_5foptions_2eproto::offsets,
-  file_level_metadata_perf_5fparser_5foptions_2eproto, 1, file_level_enum_descriptors_perf_5fparser_5foptions_2eproto, file_level_service_descriptors_perf_5fparser_5foptions_2eproto,
+  file_level_metadata_perf_5fparser_5foptions_2eproto, file_level_enum_descriptors_perf_5fparser_5foptions_2eproto, file_level_service_descriptors_perf_5fparser_5foptions_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_perf_5fparser_5foptions_2eproto_getter() {
+  return &descriptor_table_perf_5fparser_5foptions_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_perf_5fparser_5foptions_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_perf_5fparser_5foptions_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_perf_5fparser_5foptions_2eproto(&descriptor_table_perf_5fparser_5foptions_2eproto);
 namespace quipper {
 
 // ===================================================================
 
-void PerfParserOptionsProto::InitAsDefaultInstance() {
-}
 class PerfParserOptionsProto::_Internal {
  public:
   using HasBits = decltype(std::declval<PerfParserOptionsProto>()._has_bits_);
@@ -126,51 +124,59 @@ class PerfParserOptionsProto::_Internal {
   }
 };
 
-PerfParserOptionsProto::PerfParserOptionsProto()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+PerfParserOptionsProto::PerfParserOptionsProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:quipper.PerfParserOptionsProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:quipper.PerfParserOptionsProto)
 }
 PerfParserOptionsProto::PerfParserOptionsProto(const PerfParserOptionsProto& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&do_remap_, &from.do_remap_,
     static_cast<size_t>(reinterpret_cast<char*>(&combine_mappings_) -
     reinterpret_cast<char*>(&do_remap_)) + sizeof(combine_mappings_));
   // @@protoc_insertion_point(copy_constructor:quipper.PerfParserOptionsProto)
 }
 
-void PerfParserOptionsProto::SharedCtor() {
-  ::memset(&do_remap_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&read_missing_buildids_) -
-      reinterpret_cast<char*>(&do_remap_)) + sizeof(read_missing_buildids_));
-  sample_mapping_percentage_threshold_ = 95;
-  deduce_huge_page_mappings_ = true;
-  combine_mappings_ = true;
+inline void PerfParserOptionsProto::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&do_remap_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&read_missing_buildids_) -
+    reinterpret_cast<char*>(&do_remap_)) + sizeof(read_missing_buildids_));
+sample_mapping_percentage_threshold_ = 95;
+deduce_huge_page_mappings_ = true;
+combine_mappings_ = true;
 }
 
 PerfParserOptionsProto::~PerfParserOptionsProto() {
   // @@protoc_insertion_point(destructor:quipper.PerfParserOptionsProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void PerfParserOptionsProto::SharedDtor() {
+inline void PerfParserOptionsProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PerfParserOptionsProto::ArenaDtor(void* object) {
+  PerfParserOptionsProto* _this = reinterpret_cast< PerfParserOptionsProto* >(object);
+  (void)_this;
+}
+void PerfParserOptionsProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PerfParserOptionsProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PerfParserOptionsProto& PerfParserOptionsProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PerfParserOptionsProto_perf_5fparser_5foptions_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PerfParserOptionsProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:quipper.PerfParserOptionsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -184,98 +190,107 @@ void PerfParserOptionsProto::Clear() {
     combine_mappings_ = true;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* PerfParserOptionsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool do_remap = 1 [default = false];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_do_remap(&has_bits);
-          do_remap_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          do_remap_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool discard_unused_events = 2 [default = false];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_discard_unused_events(&has_bits);
-          discard_unused_events_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          discard_unused_events_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional float sample_mapping_percentage_threshold = 3 [default = 95];
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
           _Internal::set_has_sample_mapping_percentage_threshold(&has_bits);
           sample_mapping_percentage_threshold_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool sort_events_by_time = 4 [default = false];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_sort_events_by_time(&has_bits);
-          sort_events_by_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          sort_events_by_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool read_missing_buildids = 5 [default = false];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_read_missing_buildids(&has_bits);
-          read_missing_buildids_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          read_missing_buildids_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool deduce_huge_page_mappings = 6 [default = true];
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_deduce_huge_page_mappings(&has_bits);
-          deduce_huge_page_mappings_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          deduce_huge_page_mappings_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool combine_mappings = 7 [default = true];
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_combine_mappings(&has_bits);
-          combine_mappings_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          combine_mappings_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PerfParserOptionsProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PerfParserOptionsProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:quipper.PerfParserOptionsProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -323,7 +338,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:quipper.PerfParserOptionsProto)
   return target;
@@ -333,7 +348,7 @@ size_t PerfParserOptionsProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:quipper.PerfParserOptionsProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -375,35 +390,26 @@ size_t PerfParserOptionsProto::ByteSizeLong() const {
     }
 
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void PerfParserOptionsProto::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:quipper.PerfParserOptionsProto)
-  GOOGLE_DCHECK_NE(&from, this);
-  const PerfParserOptionsProto* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PerfParserOptionsProto>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:quipper.PerfParserOptionsProto)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:quipper.PerfParserOptionsProto)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PerfParserOptionsProto::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    PerfParserOptionsProto::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PerfParserOptionsProto::GetClassData() const { return &_class_data_; }
+
+void PerfParserOptionsProto::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<PerfParserOptionsProto *>(to)->MergeFrom(
+      static_cast<const PerfParserOptionsProto &>(from));
 }
+
 
 void PerfParserOptionsProto::MergeFrom(const PerfParserOptionsProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:quipper.PerfParserOptionsProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -431,13 +437,7 @@ void PerfParserOptionsProto::MergeFrom(const PerfParserOptionsProto& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void PerfParserOptionsProto::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:quipper.PerfParserOptionsProto)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PerfParserOptionsProto::CopyFrom(const PerfParserOptionsProto& from) {
@@ -453,27 +453,30 @@ bool PerfParserOptionsProto::IsInitialized() const {
 
 void PerfParserOptionsProto::InternalSwap(PerfParserOptionsProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(do_remap_, other->do_remap_);
-  swap(discard_unused_events_, other->discard_unused_events_);
-  swap(sort_events_by_time_, other->sort_events_by_time_);
-  swap(read_missing_buildids_, other->read_missing_buildids_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PerfParserOptionsProto, read_missing_buildids_)
+      + sizeof(PerfParserOptionsProto::read_missing_buildids_)
+      - PROTOBUF_FIELD_OFFSET(PerfParserOptionsProto, do_remap_)>(
+          reinterpret_cast<char*>(&do_remap_),
+          reinterpret_cast<char*>(&other->do_remap_));
   swap(sample_mapping_percentage_threshold_, other->sample_mapping_percentage_threshold_);
   swap(deduce_huge_page_mappings_, other->deduce_huge_page_mappings_);
   swap(combine_mappings_, other->combine_mappings_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PerfParserOptionsProto::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_perf_5fparser_5foptions_2eproto_getter, &descriptor_table_perf_5fparser_5foptions_2eproto_once,
+      file_level_metadata_perf_5fparser_5foptions_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace quipper
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::quipper::PerfParserOptionsProto* Arena::CreateMaybeMessage< ::quipper::PerfParserOptionsProto >(Arena* arena) {
-  return Arena::CreateInternal< ::quipper::PerfParserOptionsProto >(arena);
+  return Arena::CreateMessageInternal< ::quipper::PerfParserOptionsProto >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

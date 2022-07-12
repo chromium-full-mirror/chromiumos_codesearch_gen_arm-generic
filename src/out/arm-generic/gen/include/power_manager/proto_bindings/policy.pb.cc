@@ -11,145 +11,142 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_policy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_policy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_policy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_DayTime_policy_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_policy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_Delays_policy_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_policy_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace power_manager {
-class PowerManagementPolicy_DelaysDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy_Delays> _instance;
-} _PowerManagementPolicy_Delays_default_instance_;
-class PowerManagementPolicy_DayTimeDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy_DayTime> _instance;
-} _PowerManagementPolicy_DayTime_default_instance_;
-class PowerManagementPolicy_PeakShiftDayConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy_PeakShiftDayConfig> _instance;
-} _PowerManagementPolicy_PeakShiftDayConfig_default_instance_;
-class PowerManagementPolicy_AdvancedBatteryChargeModeDayConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig> _instance;
-} _PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_default_instance_;
-class PowerManagementPolicy_BatteryChargeModeDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy_BatteryChargeMode> _instance;
-} _PowerManagementPolicy_BatteryChargeMode_default_instance_;
-class PowerManagementPolicyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PowerManagementPolicy> _instance;
-} _PowerManagementPolicy_default_instance_;
-class IdleActionImminentDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IdleActionImminent> _instance;
-} _IdleActionImminent_default_instance_;
+constexpr PowerManagementPolicy_Delays::PowerManagementPolicy_Delays(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : idle_ms_(int64_t{0})
+  , screen_off_ms_(int64_t{0})
+  , screen_dim_ms_(int64_t{0})
+  , screen_lock_ms_(int64_t{0})
+  , idle_warning_ms_(int64_t{0})
+  , quick_dim_ms_(int64_t{0})
+  , quick_lock_ms_(int64_t{0}){}
+struct PowerManagementPolicy_DelaysDefaultTypeInternal {
+  constexpr PowerManagementPolicy_DelaysDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicy_DelaysDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy_Delays _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicy_DelaysDefaultTypeInternal _PowerManagementPolicy_Delays_default_instance_;
+constexpr PowerManagementPolicy_DayTime::PowerManagementPolicy_DayTime(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hour_(0)
+  , minute_(0){}
+struct PowerManagementPolicy_DayTimeDefaultTypeInternal {
+  constexpr PowerManagementPolicy_DayTimeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicy_DayTimeDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy_DayTime _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicy_DayTimeDefaultTypeInternal _PowerManagementPolicy_DayTime_default_instance_;
+constexpr PowerManagementPolicy_PeakShiftDayConfig::PowerManagementPolicy_PeakShiftDayConfig(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : start_time_(nullptr)
+  , end_time_(nullptr)
+  , charge_start_time_(nullptr)
+  , day_(0)
+{}
+struct PowerManagementPolicy_PeakShiftDayConfigDefaultTypeInternal {
+  constexpr PowerManagementPolicy_PeakShiftDayConfigDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicy_PeakShiftDayConfigDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy_PeakShiftDayConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicy_PeakShiftDayConfigDefaultTypeInternal _PowerManagementPolicy_PeakShiftDayConfig_default_instance_;
+constexpr PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : charge_start_time_(nullptr)
+  , charge_end_time_(nullptr)
+  , day_(0)
+{}
+struct PowerManagementPolicy_AdvancedBatteryChargeModeDayConfigDefaultTypeInternal {
+  constexpr PowerManagementPolicy_AdvancedBatteryChargeModeDayConfigDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicy_AdvancedBatteryChargeModeDayConfigDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicy_AdvancedBatteryChargeModeDayConfigDefaultTypeInternal _PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_default_instance_;
+constexpr PowerManagementPolicy_BatteryChargeMode::PowerManagementPolicy_BatteryChargeMode(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : mode_(0)
+
+  , custom_charge_start_(0)
+  , custom_charge_stop_(0){}
+struct PowerManagementPolicy_BatteryChargeModeDefaultTypeInternal {
+  constexpr PowerManagementPolicy_BatteryChargeModeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicy_BatteryChargeModeDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy_BatteryChargeMode _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicy_BatteryChargeModeDefaultTypeInternal _PowerManagementPolicy_BatteryChargeMode_default_instance_;
+constexpr PowerManagementPolicy::PowerManagementPolicy(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : peak_shift_day_configs_()
+  , advanced_battery_charge_mode_day_configs_()
+  , reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , ac_delays_(nullptr)
+  , battery_delays_(nullptr)
+  , battery_charge_mode_(nullptr)
+  , ac_idle_action_(0)
+
+  , lid_closed_action_(0)
+
+  , user_activity_screen_dim_delay_factor_(0)
+  , presentation_screen_dim_delay_factor_(0)
+  , ac_brightness_percent_(0)
+  , battery_idle_action_(0)
+
+  , use_video_activity_(false)
+  , wait_for_initial_user_activity_(false)
+  , force_nonzero_brightness_for_user_activity_(false)
+  , boot_on_ac_(false)
+  , battery_brightness_percent_(0)
+  , screen_wake_lock_(false)
+  , dim_wake_lock_(false)
+  , system_wake_lock_(false)
+  , use_audio_activity_(false)
+  , peak_shift_battery_percent_threshold_(0)
+  , double_tap_action_(0)
+
+  , usb_power_share_(false)
+  , send_feedback_if_undimmed_(false)
+  , adaptive_charging_enabled_(false)
+  , adaptive_charging_min_probability_(0)
+  , adaptive_charging_hold_percent_(0){}
+struct PowerManagementPolicyDefaultTypeInternal {
+  constexpr PowerManagementPolicyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PowerManagementPolicyDefaultTypeInternal() {}
+  union {
+    PowerManagementPolicy _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PowerManagementPolicyDefaultTypeInternal _PowerManagementPolicy_default_instance_;
+constexpr IdleActionImminent::IdleActionImminent(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : time_until_idle_action_(int64_t{0}){}
+struct IdleActionImminentDefaultTypeInternal {
+  constexpr IdleActionImminentDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~IdleActionImminentDefaultTypeInternal() {}
+  union {
+    IdleActionImminent _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IdleActionImminentDefaultTypeInternal _IdleActionImminent_default_instance_;
 }  // namespace power_manager
-static void InitDefaultsscc_info_IdleActionImminent_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_IdleActionImminent_default_instance_;
-    new (ptr) ::power_manager::IdleActionImminent();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::IdleActionImminent::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IdleActionImminent_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IdleActionImminent_policy_2eproto}, {}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_PowerManagementPolicy_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_PowerManagementPolicy_policy_2eproto}, {
-      &scc_info_PowerManagementPolicy_Delays_policy_2eproto.base,
-      &scc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto.base,
-      &scc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto.base,
-      &scc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto.base,}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto}, {
-      &scc_info_PowerManagementPolicy_DayTime_policy_2eproto.base,}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_BatteryChargeMode_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy_BatteryChargeMode();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy_BatteryChargeMode::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto}, {}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_DayTime_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_DayTime_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy_DayTime();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy_DayTime::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_DayTime_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PowerManagementPolicy_DayTime_policy_2eproto}, {}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_Delays_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_Delays_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy_Delays();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy_Delays::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PowerManagementPolicy_Delays_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PowerManagementPolicy_Delays_policy_2eproto}, {}};
-
-static void InitDefaultsscc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::power_manager::_PowerManagementPolicy_PeakShiftDayConfig_default_instance_;
-    new (ptr) ::power_manager::PowerManagementPolicy_PeakShiftDayConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::power_manager::PowerManagementPolicy_PeakShiftDayConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto}, {
-      &scc_info_PowerManagementPolicy_DayTime_policy_2eproto.base,}};
-
 namespace power_manager {
 bool PowerManagementPolicy_BatteryChargeMode_Mode_IsValid(int value) {
   switch (value) {
@@ -205,7 +202,7 @@ const std::string& PowerManagementPolicy_BatteryChargeMode_Mode_Name(
                      PowerManagementPolicy_BatteryChargeMode_Mode_strings[idx].get();
 }
 bool PowerManagementPolicy_BatteryChargeMode_Mode_Parse(
-    const std::string& name, PowerManagementPolicy_BatteryChargeMode_Mode* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PowerManagementPolicy_BatteryChargeMode_Mode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       PowerManagementPolicy_BatteryChargeMode_Mode_entries, 5, name, &int_value);
@@ -214,7 +211,7 @@ bool PowerManagementPolicy_BatteryChargeMode_Mode_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_BatteryChargeMode::STANDARD;
 constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_BatteryChargeMode::EXPRESS_CHARGE;
 constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_BatteryChargeMode::PRIMARILY_AC_USE;
@@ -223,7 +220,7 @@ constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_Bat
 constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_BatteryChargeMode::Mode_MIN;
 constexpr PowerManagementPolicy_BatteryChargeMode_Mode PowerManagementPolicy_BatteryChargeMode::Mode_MAX;
 constexpr int PowerManagementPolicy_BatteryChargeMode::Mode_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool PowerManagementPolicy_Action_IsValid(int value) {
   switch (value) {
     case 0:
@@ -274,7 +271,7 @@ const std::string& PowerManagementPolicy_Action_Name(
                      PowerManagementPolicy_Action_strings[idx].get();
 }
 bool PowerManagementPolicy_Action_Parse(
-    const std::string& name, PowerManagementPolicy_Action* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PowerManagementPolicy_Action* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       PowerManagementPolicy_Action_entries, 4, name, &int_value);
@@ -283,7 +280,7 @@ bool PowerManagementPolicy_Action_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr PowerManagementPolicy_Action PowerManagementPolicy::SUSPEND;
 constexpr PowerManagementPolicy_Action PowerManagementPolicy::STOP_SESSION;
 constexpr PowerManagementPolicy_Action PowerManagementPolicy::SHUT_DOWN;
@@ -291,7 +288,7 @@ constexpr PowerManagementPolicy_Action PowerManagementPolicy::DO_NOTHING;
 constexpr PowerManagementPolicy_Action PowerManagementPolicy::Action_MIN;
 constexpr PowerManagementPolicy_Action PowerManagementPolicy::Action_MAX;
 constexpr int PowerManagementPolicy::Action_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool PowerManagementPolicy_DoubleTapAction_IsValid(int value) {
   switch (value) {
     case 0:
@@ -334,7 +331,7 @@ const std::string& PowerManagementPolicy_DoubleTapAction_Name(
                      PowerManagementPolicy_DoubleTapAction_strings[idx].get();
 }
 bool PowerManagementPolicy_DoubleTapAction_Parse(
-    const std::string& name, PowerManagementPolicy_DoubleTapAction* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PowerManagementPolicy_DoubleTapAction* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       PowerManagementPolicy_DoubleTapAction_entries, 2, name, &int_value);
@@ -343,13 +340,13 @@ bool PowerManagementPolicy_DoubleTapAction_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr PowerManagementPolicy_DoubleTapAction PowerManagementPolicy::DISABLED;
 constexpr PowerManagementPolicy_DoubleTapAction PowerManagementPolicy::WAKE;
 constexpr PowerManagementPolicy_DoubleTapAction PowerManagementPolicy::DoubleTapAction_MIN;
 constexpr PowerManagementPolicy_DoubleTapAction PowerManagementPolicy::DoubleTapAction_MAX;
 constexpr int PowerManagementPolicy::DoubleTapAction_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool PowerManagementPolicy_WeekDay_IsValid(int value) {
   switch (value) {
     case 0:
@@ -412,7 +409,7 @@ const std::string& PowerManagementPolicy_WeekDay_Name(
                      PowerManagementPolicy_WeekDay_strings[idx].get();
 }
 bool PowerManagementPolicy_WeekDay_Parse(
-    const std::string& name, PowerManagementPolicy_WeekDay* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PowerManagementPolicy_WeekDay* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       PowerManagementPolicy_WeekDay_entries, 7, name, &int_value);
@@ -421,7 +418,7 @@ bool PowerManagementPolicy_WeekDay_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::MONDAY;
 constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::TUESDAY;
 constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::WEDNESDAY;
@@ -432,12 +429,10 @@ constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::SUNDAY;
 constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::WeekDay_MIN;
 constexpr PowerManagementPolicy_WeekDay PowerManagementPolicy::WeekDay_MAX;
 constexpr int PowerManagementPolicy::WeekDay_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void PowerManagementPolicy_Delays::InitAsDefaultInstance() {
-}
 class PowerManagementPolicy_Delays::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy_Delays>()._has_bits_);
@@ -464,48 +459,56 @@ class PowerManagementPolicy_Delays::_Internal {
   }
 };
 
-PowerManagementPolicy_Delays::PowerManagementPolicy_Delays()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy_Delays::PowerManagementPolicy_Delays(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy.Delays)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy.Delays)
 }
 PowerManagementPolicy_Delays::PowerManagementPolicy_Delays(const PowerManagementPolicy_Delays& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&idle_ms_, &from.idle_ms_,
     static_cast<size_t>(reinterpret_cast<char*>(&quick_lock_ms_) -
     reinterpret_cast<char*>(&idle_ms_)) + sizeof(quick_lock_ms_));
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy.Delays)
 }
 
-void PowerManagementPolicy_Delays::SharedCtor() {
-  ::memset(&idle_ms_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&quick_lock_ms_) -
-      reinterpret_cast<char*>(&idle_ms_)) + sizeof(quick_lock_ms_));
+inline void PowerManagementPolicy_Delays::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&idle_ms_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&quick_lock_ms_) -
+    reinterpret_cast<char*>(&idle_ms_)) + sizeof(quick_lock_ms_));
 }
 
 PowerManagementPolicy_Delays::~PowerManagementPolicy_Delays() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy.Delays)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy_Delays::SharedDtor() {
+inline void PowerManagementPolicy_Delays::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PowerManagementPolicy_Delays::ArenaDtor(void* object) {
+  PowerManagementPolicy_Delays* _this = reinterpret_cast< PowerManagementPolicy_Delays* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy_Delays::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy_Delays::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy_Delays& PowerManagementPolicy_Delays::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_Delays_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy_Delays::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy.Delays)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -516,98 +519,107 @@ void PowerManagementPolicy_Delays::Clear() {
         reinterpret_cast<char*>(&idle_ms_)) + sizeof(quick_lock_ms_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy_Delays::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int64 idle_ms = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_idle_ms(&has_bits);
-          idle_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          idle_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 screen_off_ms = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_screen_off_ms(&has_bits);
-          screen_off_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          screen_off_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 screen_dim_ms = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_screen_dim_ms(&has_bits);
-          screen_dim_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          screen_dim_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 screen_lock_ms = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_screen_lock_ms(&has_bits);
-          screen_lock_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          screen_lock_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 idle_warning_ms = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_idle_warning_ms(&has_bits);
-          idle_warning_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          idle_warning_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 quick_dim_ms = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_quick_dim_ms(&has_bits);
-          quick_dim_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          quick_dim_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 quick_lock_ms = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_quick_lock_ms(&has_bits);
-          quick_lock_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          quick_lock_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy_Delays::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy_Delays::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy.Delays)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -654,8 +666,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy.Delays)
   return target;
@@ -665,7 +677,7 @@ size_t PowerManagementPolicy_Delays::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy.Delays)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -673,56 +685,42 @@ size_t PowerManagementPolicy_Delays::ByteSizeLong() const {
   if (cached_has_bits & 0x0000007fu) {
     // optional int64 idle_ms = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_idle_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_idle_ms());
     }
 
     // optional int64 screen_off_ms = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_screen_off_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_screen_off_ms());
     }
 
     // optional int64 screen_dim_ms = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_screen_dim_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_screen_dim_ms());
     }
 
     // optional int64 screen_lock_ms = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_screen_lock_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_screen_lock_ms());
     }
 
     // optional int64 idle_warning_ms = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_idle_warning_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_idle_warning_ms());
     }
 
     // optional int64 quick_dim_ms = 6;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_quick_dim_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_quick_dim_ms());
     }
 
     // optional int64 quick_lock_ms = 7;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_quick_lock_ms());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_quick_lock_ms());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -738,8 +736,7 @@ void PowerManagementPolicy_Delays::CheckTypeAndMergeFrom(
 void PowerManagementPolicy_Delays::MergeFrom(const PowerManagementPolicy_Delays& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy.Delays)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -767,6 +764,7 @@ void PowerManagementPolicy_Delays::MergeFrom(const PowerManagementPolicy_Delays&
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy_Delays::CopyFrom(const PowerManagementPolicy_Delays& from) {
@@ -782,15 +780,14 @@ bool PowerManagementPolicy_Delays::IsInitialized() const {
 
 void PowerManagementPolicy_Delays::InternalSwap(PowerManagementPolicy_Delays* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(idle_ms_, other->idle_ms_);
-  swap(screen_off_ms_, other->screen_off_ms_);
-  swap(screen_dim_ms_, other->screen_dim_ms_);
-  swap(screen_lock_ms_, other->screen_lock_ms_);
-  swap(idle_warning_ms_, other->idle_warning_ms_);
-  swap(quick_dim_ms_, other->quick_dim_ms_);
-  swap(quick_lock_ms_, other->quick_lock_ms_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_Delays, quick_lock_ms_)
+      + sizeof(PowerManagementPolicy_Delays::quick_lock_ms_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_Delays, idle_ms_)>(
+          reinterpret_cast<char*>(&idle_ms_),
+          reinterpret_cast<char*>(&other->idle_ms_));
 }
 
 std::string PowerManagementPolicy_Delays::GetTypeName() const {
@@ -800,8 +797,6 @@ std::string PowerManagementPolicy_Delays::GetTypeName() const {
 
 // ===================================================================
 
-void PowerManagementPolicy_DayTime::InitAsDefaultInstance() {
-}
 class PowerManagementPolicy_DayTime::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy_DayTime>()._has_bits_);
@@ -813,48 +808,56 @@ class PowerManagementPolicy_DayTime::_Internal {
   }
 };
 
-PowerManagementPolicy_DayTime::PowerManagementPolicy_DayTime()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy_DayTime::PowerManagementPolicy_DayTime(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy.DayTime)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy.DayTime)
 }
 PowerManagementPolicy_DayTime::PowerManagementPolicy_DayTime(const PowerManagementPolicy_DayTime& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&hour_, &from.hour_,
     static_cast<size_t>(reinterpret_cast<char*>(&minute_) -
     reinterpret_cast<char*>(&hour_)) + sizeof(minute_));
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy.DayTime)
 }
 
-void PowerManagementPolicy_DayTime::SharedCtor() {
-  ::memset(&hour_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&minute_) -
-      reinterpret_cast<char*>(&hour_)) + sizeof(minute_));
+inline void PowerManagementPolicy_DayTime::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&hour_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&minute_) -
+    reinterpret_cast<char*>(&hour_)) + sizeof(minute_));
 }
 
 PowerManagementPolicy_DayTime::~PowerManagementPolicy_DayTime() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy.DayTime)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy_DayTime::SharedDtor() {
+inline void PowerManagementPolicy_DayTime::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PowerManagementPolicy_DayTime::ArenaDtor(void* object) {
+  PowerManagementPolicy_DayTime* _this = reinterpret_cast< PowerManagementPolicy_DayTime* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy_DayTime::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy_DayTime::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy_DayTime& PowerManagementPolicy_DayTime::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_DayTime_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy_DayTime::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy.DayTime)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -865,58 +868,62 @@ void PowerManagementPolicy_DayTime::Clear() {
         reinterpret_cast<char*>(&hour_)) + sizeof(minute_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy_DayTime::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 hour = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_hour(&has_bits);
-          hour_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          hour_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 minute = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_minute(&has_bits);
-          minute_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          minute_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy_DayTime::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy_DayTime::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy.DayTime)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -933,8 +940,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy.DayTime)
   return target;
@@ -944,7 +951,7 @@ size_t PowerManagementPolicy_DayTime::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy.DayTime)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -952,21 +959,17 @@ size_t PowerManagementPolicy_DayTime::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional int32 hour = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_hour());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_hour());
     }
 
     // optional int32 minute = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_minute());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_minute());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -982,8 +985,7 @@ void PowerManagementPolicy_DayTime::CheckTypeAndMergeFrom(
 void PowerManagementPolicy_DayTime::MergeFrom(const PowerManagementPolicy_DayTime& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy.DayTime)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -996,6 +998,7 @@ void PowerManagementPolicy_DayTime::MergeFrom(const PowerManagementPolicy_DayTim
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy_DayTime::CopyFrom(const PowerManagementPolicy_DayTime& from) {
@@ -1011,10 +1014,14 @@ bool PowerManagementPolicy_DayTime::IsInitialized() const {
 
 void PowerManagementPolicy_DayTime::InternalSwap(PowerManagementPolicy_DayTime* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(hour_, other->hour_);
-  swap(minute_, other->minute_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_DayTime, minute_)
+      + sizeof(PowerManagementPolicy_DayTime::minute_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_DayTime, hour_)>(
+          reinterpret_cast<char*>(&hour_),
+          reinterpret_cast<char*>(&other->hour_));
 }
 
 std::string PowerManagementPolicy_DayTime::GetTypeName() const {
@@ -1024,14 +1031,6 @@ std::string PowerManagementPolicy_DayTime::GetTypeName() const {
 
 // ===================================================================
 
-void PowerManagementPolicy_PeakShiftDayConfig::InitAsDefaultInstance() {
-  ::power_manager::_PowerManagementPolicy_PeakShiftDayConfig_default_instance_._instance.get_mutable()->start_time_ = const_cast< ::power_manager::PowerManagementPolicy_DayTime*>(
-      ::power_manager::PowerManagementPolicy_DayTime::internal_default_instance());
-  ::power_manager::_PowerManagementPolicy_PeakShiftDayConfig_default_instance_._instance.get_mutable()->end_time_ = const_cast< ::power_manager::PowerManagementPolicy_DayTime*>(
-      ::power_manager::PowerManagementPolicy_DayTime::internal_default_instance());
-  ::power_manager::_PowerManagementPolicy_PeakShiftDayConfig_default_instance_._instance.get_mutable()->charge_start_time_ = const_cast< ::power_manager::PowerManagementPolicy_DayTime*>(
-      ::power_manager::PowerManagementPolicy_DayTime::internal_default_instance());
-}
 class PowerManagementPolicy_PeakShiftDayConfig::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy_PeakShiftDayConfig>()._has_bits_);
@@ -1064,16 +1063,19 @@ const ::power_manager::PowerManagementPolicy_DayTime&
 PowerManagementPolicy_PeakShiftDayConfig::_Internal::charge_start_time(const PowerManagementPolicy_PeakShiftDayConfig* msg) {
   return *msg->charge_start_time_;
 }
-PowerManagementPolicy_PeakShiftDayConfig::PowerManagementPolicy_PeakShiftDayConfig()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy_PeakShiftDayConfig::PowerManagementPolicy_PeakShiftDayConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
 }
 PowerManagementPolicy_PeakShiftDayConfig::PowerManagementPolicy_PeakShiftDayConfig(const PowerManagementPolicy_PeakShiftDayConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_start_time()) {
     start_time_ = new ::power_manager::PowerManagementPolicy_DayTime(*from.start_time_);
   } else {
@@ -1093,36 +1095,40 @@ PowerManagementPolicy_PeakShiftDayConfig::PowerManagementPolicy_PeakShiftDayConf
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
 }
 
-void PowerManagementPolicy_PeakShiftDayConfig::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto.base);
-  ::memset(&start_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&day_) -
-      reinterpret_cast<char*>(&start_time_)) + sizeof(day_));
+inline void PowerManagementPolicy_PeakShiftDayConfig::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&start_time_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&day_) -
+    reinterpret_cast<char*>(&start_time_)) + sizeof(day_));
 }
 
 PowerManagementPolicy_PeakShiftDayConfig::~PowerManagementPolicy_PeakShiftDayConfig() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy_PeakShiftDayConfig::SharedDtor() {
+inline void PowerManagementPolicy_PeakShiftDayConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete start_time_;
   if (this != internal_default_instance()) delete end_time_;
   if (this != internal_default_instance()) delete charge_start_time_;
 }
 
+void PowerManagementPolicy_PeakShiftDayConfig::ArenaDtor(void* object) {
+  PowerManagementPolicy_PeakShiftDayConfig* _this = reinterpret_cast< PowerManagementPolicy_PeakShiftDayConfig* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy_PeakShiftDayConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy_PeakShiftDayConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy_PeakShiftDayConfig& PowerManagementPolicy_PeakShiftDayConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_PeakShiftDayConfig_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy_PeakShiftDayConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1143,75 +1149,81 @@ void PowerManagementPolicy_PeakShiftDayConfig::Clear() {
   }
   day_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy_PeakShiftDayConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .power_manager.PowerManagementPolicy.WeekDay day = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_WeekDay_IsValid(val))) {
             _internal_set_day(static_cast<::power_manager::PowerManagementPolicy_WeekDay>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DayTime start_time = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_start_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DayTime end_time = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_end_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DayTime charge_start_time = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_charge_start_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy_PeakShiftDayConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy_PeakShiftDayConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1247,8 +1259,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
   return target;
@@ -1258,7 +1270,7 @@ size_t PowerManagementPolicy_PeakShiftDayConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1293,7 +1305,7 @@ size_t PowerManagementPolicy_PeakShiftDayConfig::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1309,8 +1321,7 @@ void PowerManagementPolicy_PeakShiftDayConfig::CheckTypeAndMergeFrom(
 void PowerManagementPolicy_PeakShiftDayConfig::MergeFrom(const PowerManagementPolicy_PeakShiftDayConfig& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy.PeakShiftDayConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1329,6 +1340,7 @@ void PowerManagementPolicy_PeakShiftDayConfig::MergeFrom(const PowerManagementPo
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy_PeakShiftDayConfig::CopyFrom(const PowerManagementPolicy_PeakShiftDayConfig& from) {
@@ -1344,12 +1356,14 @@ bool PowerManagementPolicy_PeakShiftDayConfig::IsInitialized() const {
 
 void PowerManagementPolicy_PeakShiftDayConfig::InternalSwap(PowerManagementPolicy_PeakShiftDayConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(start_time_, other->start_time_);
-  swap(end_time_, other->end_time_);
-  swap(charge_start_time_, other->charge_start_time_);
-  swap(day_, other->day_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_PeakShiftDayConfig, day_)
+      + sizeof(PowerManagementPolicy_PeakShiftDayConfig::day_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_PeakShiftDayConfig, start_time_)>(
+          reinterpret_cast<char*>(&start_time_),
+          reinterpret_cast<char*>(&other->start_time_));
 }
 
 std::string PowerManagementPolicy_PeakShiftDayConfig::GetTypeName() const {
@@ -1359,12 +1373,6 @@ std::string PowerManagementPolicy_PeakShiftDayConfig::GetTypeName() const {
 
 // ===================================================================
 
-void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::InitAsDefaultInstance() {
-  ::power_manager::_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_default_instance_._instance.get_mutable()->charge_start_time_ = const_cast< ::power_manager::PowerManagementPolicy_DayTime*>(
-      ::power_manager::PowerManagementPolicy_DayTime::internal_default_instance());
-  ::power_manager::_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_default_instance_._instance.get_mutable()->charge_end_time_ = const_cast< ::power_manager::PowerManagementPolicy_DayTime*>(
-      ::power_manager::PowerManagementPolicy_DayTime::internal_default_instance());
-}
 class PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig>()._has_bits_);
@@ -1389,16 +1397,19 @@ const ::power_manager::PowerManagementPolicy_DayTime&
 PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::_Internal::charge_end_time(const PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig* msg) {
   return *msg->charge_end_time_;
 }
-PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
 }
 PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig(const PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_charge_start_time()) {
     charge_start_time_ = new ::power_manager::PowerManagementPolicy_DayTime(*from.charge_start_time_);
   } else {
@@ -1413,35 +1424,39 @@ PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::PowerManagementPolicy_
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
 }
 
-void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto.base);
-  ::memset(&charge_start_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&day_) -
-      reinterpret_cast<char*>(&charge_start_time_)) + sizeof(day_));
+inline void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&charge_start_time_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&day_) -
+    reinterpret_cast<char*>(&charge_start_time_)) + sizeof(day_));
 }
 
 PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::~PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::SharedDtor() {
+inline void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete charge_start_time_;
   if (this != internal_default_instance()) delete charge_end_time_;
 }
 
+void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::ArenaDtor(void* object) {
+  PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig* _this = reinterpret_cast< PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig& PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1458,68 +1473,73 @@ void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::Clear() {
   }
   day_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .power_manager.PowerManagementPolicy.WeekDay day = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_WeekDay_IsValid(val))) {
             _internal_set_day(static_cast<::power_manager::PowerManagementPolicy_WeekDay>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DayTime charge_start_time = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_charge_start_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DayTime charge_end_time = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_charge_end_time(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1547,8 +1567,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
   return target;
@@ -1558,7 +1578,7 @@ size_t PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::ByteSizeLong() 
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1586,7 +1606,7 @@ size_t PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::ByteSizeLong() 
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1602,8 +1622,7 @@ void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::CheckTypeAndMerge
 void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::MergeFrom(const PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1619,6 +1638,7 @@ void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::MergeFrom(const P
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::CopyFrom(const PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig& from) {
@@ -1634,11 +1654,14 @@ bool PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::IsInitialized() c
 
 void PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::InternalSwap(PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(charge_start_time_, other->charge_start_time_);
-  swap(charge_end_time_, other->charge_end_time_);
-  swap(day_, other->day_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig, day_)
+      + sizeof(PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::day_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig, charge_start_time_)>(
+          reinterpret_cast<char*>(&charge_start_time_),
+          reinterpret_cast<char*>(&other->charge_start_time_));
 }
 
 std::string PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::GetTypeName() const {
@@ -1648,8 +1671,6 @@ std::string PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig::GetTypeNam
 
 // ===================================================================
 
-void PowerManagementPolicy_BatteryChargeMode::InitAsDefaultInstance() {
-}
 class PowerManagementPolicy_BatteryChargeMode::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy_BatteryChargeMode>()._has_bits_);
@@ -1664,48 +1685,56 @@ class PowerManagementPolicy_BatteryChargeMode::_Internal {
   }
 };
 
-PowerManagementPolicy_BatteryChargeMode::PowerManagementPolicy_BatteryChargeMode()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy_BatteryChargeMode::PowerManagementPolicy_BatteryChargeMode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy.BatteryChargeMode)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy.BatteryChargeMode)
 }
 PowerManagementPolicy_BatteryChargeMode::PowerManagementPolicy_BatteryChargeMode(const PowerManagementPolicy_BatteryChargeMode& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&mode_, &from.mode_,
     static_cast<size_t>(reinterpret_cast<char*>(&custom_charge_stop_) -
     reinterpret_cast<char*>(&mode_)) + sizeof(custom_charge_stop_));
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy.BatteryChargeMode)
 }
 
-void PowerManagementPolicy_BatteryChargeMode::SharedCtor() {
-  ::memset(&mode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&custom_charge_stop_) -
-      reinterpret_cast<char*>(&mode_)) + sizeof(custom_charge_stop_));
+inline void PowerManagementPolicy_BatteryChargeMode::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&mode_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&custom_charge_stop_) -
+    reinterpret_cast<char*>(&mode_)) + sizeof(custom_charge_stop_));
 }
 
 PowerManagementPolicy_BatteryChargeMode::~PowerManagementPolicy_BatteryChargeMode() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy.BatteryChargeMode)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy_BatteryChargeMode::SharedDtor() {
+inline void PowerManagementPolicy_BatteryChargeMode::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PowerManagementPolicy_BatteryChargeMode::ArenaDtor(void* object) {
+  PowerManagementPolicy_BatteryChargeMode* _this = reinterpret_cast< PowerManagementPolicy_BatteryChargeMode* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy_BatteryChargeMode::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy_BatteryChargeMode::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy_BatteryChargeMode& PowerManagementPolicy_BatteryChargeMode::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_BatteryChargeMode_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy_BatteryChargeMode::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy.BatteryChargeMode)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1716,70 +1745,75 @@ void PowerManagementPolicy_BatteryChargeMode::Clear() {
         reinterpret_cast<char*>(&mode_)) + sizeof(custom_charge_stop_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy_BatteryChargeMode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .power_manager.PowerManagementPolicy.BatteryChargeMode.Mode mode = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_BatteryChargeMode_Mode_IsValid(val))) {
             _internal_set_mode(static_cast<::power_manager::PowerManagementPolicy_BatteryChargeMode_Mode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 custom_charge_start = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_custom_charge_start(&has_bits);
-          custom_charge_start_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          custom_charge_start_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 custom_charge_stop = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_custom_charge_stop(&has_bits);
-          custom_charge_stop_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          custom_charge_stop_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy_BatteryChargeMode::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy_BatteryChargeMode::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy.BatteryChargeMode)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1803,8 +1837,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy.BatteryChargeMode)
   return target;
@@ -1814,7 +1848,7 @@ size_t PowerManagementPolicy_BatteryChargeMode::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy.BatteryChargeMode)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1828,21 +1862,17 @@ size_t PowerManagementPolicy_BatteryChargeMode::ByteSizeLong() const {
 
     // optional int32 custom_charge_start = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_custom_charge_start());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_custom_charge_start());
     }
 
     // optional int32 custom_charge_stop = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_custom_charge_stop());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_custom_charge_stop());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1858,8 +1888,7 @@ void PowerManagementPolicy_BatteryChargeMode::CheckTypeAndMergeFrom(
 void PowerManagementPolicy_BatteryChargeMode::MergeFrom(const PowerManagementPolicy_BatteryChargeMode& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy.BatteryChargeMode)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1875,6 +1904,7 @@ void PowerManagementPolicy_BatteryChargeMode::MergeFrom(const PowerManagementPol
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy_BatteryChargeMode::CopyFrom(const PowerManagementPolicy_BatteryChargeMode& from) {
@@ -1890,11 +1920,14 @@ bool PowerManagementPolicy_BatteryChargeMode::IsInitialized() const {
 
 void PowerManagementPolicy_BatteryChargeMode::InternalSwap(PowerManagementPolicy_BatteryChargeMode* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(mode_, other->mode_);
-  swap(custom_charge_start_, other->custom_charge_start_);
-  swap(custom_charge_stop_, other->custom_charge_stop_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_BatteryChargeMode, custom_charge_stop_)
+      + sizeof(PowerManagementPolicy_BatteryChargeMode::custom_charge_stop_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy_BatteryChargeMode, mode_)>(
+          reinterpret_cast<char*>(&mode_),
+          reinterpret_cast<char*>(&other->mode_));
 }
 
 std::string PowerManagementPolicy_BatteryChargeMode::GetTypeName() const {
@@ -1904,14 +1937,6 @@ std::string PowerManagementPolicy_BatteryChargeMode::GetTypeName() const {
 
 // ===================================================================
 
-void PowerManagementPolicy::InitAsDefaultInstance() {
-  ::power_manager::_PowerManagementPolicy_default_instance_._instance.get_mutable()->ac_delays_ = const_cast< ::power_manager::PowerManagementPolicy_Delays*>(
-      ::power_manager::PowerManagementPolicy_Delays::internal_default_instance());
-  ::power_manager::_PowerManagementPolicy_default_instance_._instance.get_mutable()->battery_delays_ = const_cast< ::power_manager::PowerManagementPolicy_Delays*>(
-      ::power_manager::PowerManagementPolicy_Delays::internal_default_instance());
-  ::power_manager::_PowerManagementPolicy_default_instance_._instance.get_mutable()->battery_charge_mode_ = const_cast< ::power_manager::PowerManagementPolicy_BatteryChargeMode*>(
-      ::power_manager::PowerManagementPolicy_BatteryChargeMode::internal_default_instance());
-}
 class PowerManagementPolicy::_Internal {
  public:
   using HasBits = decltype(std::declval<PowerManagementPolicy>()._has_bits_);
@@ -2010,21 +2035,30 @@ const ::power_manager::PowerManagementPolicy_BatteryChargeMode&
 PowerManagementPolicy::_Internal::battery_charge_mode(const PowerManagementPolicy* msg) {
   return *msg->battery_charge_mode_;
 }
-PowerManagementPolicy::PowerManagementPolicy()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PowerManagementPolicy::PowerManagementPolicy(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  peak_shift_day_configs_(arena),
+  advanced_battery_charge_mode_day_configs_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.PowerManagementPolicy)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.PowerManagementPolicy)
 }
 PowerManagementPolicy::PowerManagementPolicy(const PowerManagementPolicy& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       peak_shift_day_configs_(from.peak_shift_day_configs_),
       advanced_battery_charge_mode_day_configs_(from.advanced_battery_charge_mode_day_configs_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_reason()) {
-    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+    reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_reason(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_ac_delays()) {
     ac_delays_ = new ::power_manager::PowerManagementPolicy_Delays(*from.ac_delays_);
@@ -2047,38 +2081,45 @@ PowerManagementPolicy::PowerManagementPolicy(const PowerManagementPolicy& from)
   // @@protoc_insertion_point(copy_constructor:power_manager.PowerManagementPolicy)
 }
 
-void PowerManagementPolicy::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PowerManagementPolicy_policy_2eproto.base);
-  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&ac_delays_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&adaptive_charging_hold_percent_) -
-      reinterpret_cast<char*>(&ac_delays_)) + sizeof(adaptive_charging_hold_percent_));
+inline void PowerManagementPolicy::SharedCtor() {
+reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&ac_delays_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&adaptive_charging_hold_percent_) -
+    reinterpret_cast<char*>(&ac_delays_)) + sizeof(adaptive_charging_hold_percent_));
 }
 
 PowerManagementPolicy::~PowerManagementPolicy() {
   // @@protoc_insertion_point(destructor:power_manager.PowerManagementPolicy)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PowerManagementPolicy::SharedDtor() {
+inline void PowerManagementPolicy::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete ac_delays_;
   if (this != internal_default_instance()) delete battery_delays_;
   if (this != internal_default_instance()) delete battery_charge_mode_;
 }
 
+void PowerManagementPolicy::ArenaDtor(void* object) {
+  PowerManagementPolicy* _this = reinterpret_cast< PowerManagementPolicy* >(object);
+  (void)_this;
+}
+void PowerManagementPolicy::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PowerManagementPolicy::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PowerManagementPolicy& PowerManagementPolicy::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PowerManagementPolicy_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PowerManagementPolicy::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.PowerManagementPolicy)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2087,7 +2128,7 @@ void PowerManagementPolicy::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      reason_.ClearNonDefaultToEmptyNoArena();
+      reason_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
       GOOGLE_DCHECK(ac_delays_ != nullptr);
@@ -2123,174 +2164,191 @@ void PowerManagementPolicy::Clear() {
         reinterpret_cast<char*>(&adaptive_charging_min_probability_)) + sizeof(adaptive_charging_hold_percent_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PowerManagementPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .power_manager.PowerManagementPolicy.Action ac_idle_action = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_Action_IsValid(val))) {
             _internal_set_ac_idle_action(static_cast<::power_manager::PowerManagementPolicy_Action>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.Action lid_closed_action = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_Action_IsValid(val))) {
             _internal_set_lid_closed_action(static_cast<::power_manager::PowerManagementPolicy_Action>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.Delays ac_delays = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_ac_delays(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.Delays battery_delays = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_battery_delays(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool use_audio_activity = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_use_audio_activity(&has_bits);
-          use_audio_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_audio_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool use_video_activity = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_use_video_activity(&has_bits);
-          use_video_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_video_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string reason = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional double user_activity_screen_dim_delay_factor = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 73)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
           _Internal::set_has_user_activity_screen_dim_delay_factor(&has_bits);
           user_activity_screen_dim_delay_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional double presentation_screen_dim_delay_factor = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 81)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
           _Internal::set_has_presentation_screen_dim_delay_factor(&has_bits);
           presentation_screen_dim_delay_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.Action battery_idle_action = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_Action_IsValid(val))) {
             _internal_set_battery_idle_action(static_cast<::power_manager::PowerManagementPolicy_Action>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(11, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool wait_for_initial_user_activity = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           _Internal::set_has_wait_for_initial_user_activity(&has_bits);
-          wait_for_initial_user_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          wait_for_initial_user_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional double ac_brightness_percent = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 105)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 105)) {
           _Internal::set_has_ac_brightness_percent(&has_bits);
           ac_brightness_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional double battery_brightness_percent = 14;
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 113)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 113)) {
           _Internal::set_has_battery_brightness_percent(&has_bits);
           battery_brightness_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool force_nonzero_brightness_for_user_activity = 15;
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
           _Internal::set_has_force_nonzero_brightness_for_user_activity(&has_bits);
-          force_nonzero_brightness_for_user_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          force_nonzero_brightness_for_user_activity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool screen_wake_lock = 16;
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
           _Internal::set_has_screen_wake_lock(&has_bits);
-          screen_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          screen_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool dim_wake_lock = 17;
       case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 136)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _Internal::set_has_dim_wake_lock(&has_bits);
-          dim_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dim_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool system_wake_lock = 18;
       case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
           _Internal::set_has_system_wake_lock(&has_bits);
-          system_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          system_wake_lock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 peak_shift_battery_percent_threshold = 19;
       case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
           _Internal::set_has_peak_shift_battery_percent_threshold(&has_bits);
-          peak_shift_battery_percent_threshold_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          peak_shift_battery_percent_threshold_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .power_manager.PowerManagementPolicy.PeakShiftDayConfig peak_shift_day_configs = 20;
       case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -2298,27 +2356,30 @@ const char* PowerManagementPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool boot_on_ac = 21;
       case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 168)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
           _Internal::set_has_boot_on_ac(&has_bits);
-          boot_on_ac_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          boot_on_ac_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool usb_power_share = 22;
       case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 176)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
           _Internal::set_has_usb_power_share(&has_bits);
-          usb_power_share_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          usb_power_share_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .power_manager.PowerManagementPolicy.AdvancedBatteryChargeModeDayConfig advanced_battery_charge_mode_day_configs = 23;
       case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -2326,84 +2387,94 @@ const char* PowerManagementPolicy::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.BatteryChargeMode battery_charge_mode = 24;
       case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 194)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
           ptr = ctx->ParseMessage(_internal_mutable_battery_charge_mode(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .power_manager.PowerManagementPolicy.DoubleTapAction double_tap_action = 25;
       case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 200)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::power_manager::PowerManagementPolicy_DoubleTapAction_IsValid(val))) {
             _internal_set_double_tap_action(static_cast<::power_manager::PowerManagementPolicy_DoubleTapAction>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(25, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool send_feedback_if_undimmed = 26;
       case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 208)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
           _Internal::set_has_send_feedback_if_undimmed(&has_bits);
-          send_feedback_if_undimmed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          send_feedback_if_undimmed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool adaptive_charging_enabled = 27;
       case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 216)) {
           _Internal::set_has_adaptive_charging_enabled(&has_bits);
-          adaptive_charging_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          adaptive_charging_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 adaptive_charging_hold_percent = 28;
       case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 224)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
           _Internal::set_has_adaptive_charging_hold_percent(&has_bits);
-          adaptive_charging_hold_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          adaptive_charging_hold_percent_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional double adaptive_charging_min_probability = 29;
       case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 233)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 233)) {
           _Internal::set_has_adaptive_charging_min_probability(&has_bits);
           adaptive_charging_min_probability_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PowerManagementPolicy::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PowerManagementPolicy::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.PowerManagementPolicy)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2590,8 +2661,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.PowerManagementPolicy)
   return target;
@@ -2601,7 +2672,7 @@ size_t PowerManagementPolicy::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.PowerManagementPolicy)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2775,7 +2846,7 @@ size_t PowerManagementPolicy::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2791,8 +2862,7 @@ void PowerManagementPolicy::CheckTypeAndMergeFrom(
 void PowerManagementPolicy::MergeFrom(const PowerManagementPolicy& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.PowerManagementPolicy)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   peak_shift_day_configs_.MergeFrom(from.peak_shift_day_configs_);
@@ -2800,8 +2870,7 @@ void PowerManagementPolicy::MergeFrom(const PowerManagementPolicy& from) {
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+      _internal_set_reason(from._internal_reason());
     }
     if (cached_has_bits & 0x00000002u) {
       _internal_mutable_ac_delays()->::power_manager::PowerManagementPolicy_Delays::MergeFrom(from._internal_ac_delays());
@@ -2889,6 +2958,7 @@ void PowerManagementPolicy::MergeFrom(const PowerManagementPolicy& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PowerManagementPolicy::CopyFrom(const PowerManagementPolicy& from) {
@@ -2904,37 +2974,23 @@ bool PowerManagementPolicy::IsInitialized() const {
 
 void PowerManagementPolicy::InternalSwap(PowerManagementPolicy* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   peak_shift_day_configs_.InternalSwap(&other->peak_shift_day_configs_);
   advanced_battery_charge_mode_day_configs_.InternalSwap(&other->advanced_battery_charge_mode_day_configs_);
-  reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(ac_delays_, other->ac_delays_);
-  swap(battery_delays_, other->battery_delays_);
-  swap(battery_charge_mode_, other->battery_charge_mode_);
-  swap(ac_idle_action_, other->ac_idle_action_);
-  swap(lid_closed_action_, other->lid_closed_action_);
-  swap(user_activity_screen_dim_delay_factor_, other->user_activity_screen_dim_delay_factor_);
-  swap(presentation_screen_dim_delay_factor_, other->presentation_screen_dim_delay_factor_);
-  swap(ac_brightness_percent_, other->ac_brightness_percent_);
-  swap(battery_idle_action_, other->battery_idle_action_);
-  swap(use_video_activity_, other->use_video_activity_);
-  swap(wait_for_initial_user_activity_, other->wait_for_initial_user_activity_);
-  swap(force_nonzero_brightness_for_user_activity_, other->force_nonzero_brightness_for_user_activity_);
-  swap(boot_on_ac_, other->boot_on_ac_);
-  swap(battery_brightness_percent_, other->battery_brightness_percent_);
-  swap(screen_wake_lock_, other->screen_wake_lock_);
-  swap(dim_wake_lock_, other->dim_wake_lock_);
-  swap(system_wake_lock_, other->system_wake_lock_);
-  swap(use_audio_activity_, other->use_audio_activity_);
-  swap(peak_shift_battery_percent_threshold_, other->peak_shift_battery_percent_threshold_);
-  swap(double_tap_action_, other->double_tap_action_);
-  swap(usb_power_share_, other->usb_power_share_);
-  swap(send_feedback_if_undimmed_, other->send_feedback_if_undimmed_);
-  swap(adaptive_charging_enabled_, other->adaptive_charging_enabled_);
-  swap(adaptive_charging_min_probability_, other->adaptive_charging_min_probability_);
-  swap(adaptive_charging_hold_percent_, other->adaptive_charging_hold_percent_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &reason_, lhs_arena,
+      &other->reason_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PowerManagementPolicy, adaptive_charging_hold_percent_)
+      + sizeof(PowerManagementPolicy::adaptive_charging_hold_percent_)
+      - PROTOBUF_FIELD_OFFSET(PowerManagementPolicy, ac_delays_)>(
+          reinterpret_cast<char*>(&ac_delays_),
+          reinterpret_cast<char*>(&other->ac_delays_));
 }
 
 std::string PowerManagementPolicy::GetTypeName() const {
@@ -2944,8 +3000,6 @@ std::string PowerManagementPolicy::GetTypeName() const {
 
 // ===================================================================
 
-void IdleActionImminent::InitAsDefaultInstance() {
-}
 class IdleActionImminent::_Internal {
  public:
   using HasBits = decltype(std::declval<IdleActionImminent>()._has_bits_);
@@ -2954,93 +3008,103 @@ class IdleActionImminent::_Internal {
   }
 };
 
-IdleActionImminent::IdleActionImminent()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+IdleActionImminent::IdleActionImminent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:power_manager.IdleActionImminent)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:power_manager.IdleActionImminent)
 }
 IdleActionImminent::IdleActionImminent(const IdleActionImminent& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   time_until_idle_action_ = from.time_until_idle_action_;
   // @@protoc_insertion_point(copy_constructor:power_manager.IdleActionImminent)
 }
 
-void IdleActionImminent::SharedCtor() {
-  time_until_idle_action_ = PROTOBUF_LONGLONG(0);
+inline void IdleActionImminent::SharedCtor() {
+time_until_idle_action_ = int64_t{0};
 }
 
 IdleActionImminent::~IdleActionImminent() {
   // @@protoc_insertion_point(destructor:power_manager.IdleActionImminent)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void IdleActionImminent::SharedDtor() {
+inline void IdleActionImminent::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void IdleActionImminent::ArenaDtor(void* object) {
+  IdleActionImminent* _this = reinterpret_cast< IdleActionImminent* >(object);
+  (void)_this;
+}
+void IdleActionImminent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void IdleActionImminent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const IdleActionImminent& IdleActionImminent::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IdleActionImminent_policy_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void IdleActionImminent::Clear() {
 // @@protoc_insertion_point(message_clear_start:power_manager.IdleActionImminent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  time_until_idle_action_ = PROTOBUF_LONGLONG(0);
+  time_until_idle_action_ = int64_t{0};
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* IdleActionImminent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int64 time_until_idle_action = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_time_until_idle_action(&has_bits);
-          time_until_idle_action_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          time_until_idle_action_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* IdleActionImminent::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* IdleActionImminent::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:power_manager.IdleActionImminent)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3051,8 +3115,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:power_manager.IdleActionImminent)
   return target;
@@ -3062,20 +3126,18 @@ size_t IdleActionImminent::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:power_manager.IdleActionImminent)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional int64 time_until_idle_action = 1;
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-        this->_internal_time_until_idle_action());
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_time_until_idle_action());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3091,13 +3153,13 @@ void IdleActionImminent::CheckTypeAndMergeFrom(
 void IdleActionImminent::MergeFrom(const IdleActionImminent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:power_manager.IdleActionImminent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_time_until_idle_action()) {
     _internal_set_time_until_idle_action(from._internal_time_until_idle_action());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void IdleActionImminent::CopyFrom(const IdleActionImminent& from) {
@@ -3113,7 +3175,7 @@ bool IdleActionImminent::IsInitialized() const {
 
 void IdleActionImminent::InternalSwap(IdleActionImminent* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(time_until_idle_action_, other->time_until_idle_action_);
 }
@@ -3127,25 +3189,25 @@ std::string IdleActionImminent::GetTypeName() const {
 }  // namespace power_manager
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy_Delays* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy_Delays >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy_Delays >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy_Delays >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy_DayTime* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy_DayTime >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy_DayTime >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy_DayTime >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy_PeakShiftDayConfig* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy_PeakShiftDayConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy_PeakShiftDayConfig >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy_PeakShiftDayConfig >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy_AdvancedBatteryChargeModeDayConfig >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy_BatteryChargeMode* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy_BatteryChargeMode >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy_BatteryChargeMode >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy_BatteryChargeMode >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::PowerManagementPolicy* Arena::CreateMaybeMessage< ::power_manager::PowerManagementPolicy >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::PowerManagementPolicy >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::PowerManagementPolicy >(arena);
 }
 template<> PROTOBUF_NOINLINE ::power_manager::IdleActionImminent* Arena::CreateMaybeMessage< ::power_manager::IdleActionImminent >(Arena* arena) {
-  return Arena::CreateInternal< ::power_manager::IdleActionImminent >(arena);
+  return Arena::CreateMessageInternal< ::power_manager::IdleActionImminent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

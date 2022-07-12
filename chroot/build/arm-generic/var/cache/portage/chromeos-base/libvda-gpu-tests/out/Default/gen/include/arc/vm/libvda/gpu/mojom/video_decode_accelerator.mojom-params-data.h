@@ -273,7 +273,7 @@ class VideoDecodeAccelerator_Initialize_ParamsDataView {
       VideoDecodeAcceleratorConfigDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
     auto* pointer = data_->config.Get();
     return mojo::internal::Deserialize<::arc::mojom::VideoDecodeAcceleratorConfigDataView>(
@@ -306,7 +306,7 @@ class VideoDecodeAccelerator_Initialize_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::arc::mojom::VideoDecodeAccelerator_Result>(
         data_value, output);
@@ -335,7 +335,7 @@ class VideoDecodeAccelerator_Decode_ParamsDataView {
       BitstreamBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBitstreamBuffer(UserType* output) {
+  [[nodiscard]] bool ReadBitstreamBuffer(UserType* output) {
     
     auto* pointer = data_->bitstream_buffer.Get();
     return mojo::internal::Deserialize<::arc::mojom::BitstreamBufferDataView>(
@@ -381,7 +381,7 @@ class VideoDecodeAccelerator_ImportBufferForPicture_ParamsDataView {
     return data_->picture_buffer_id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) const {
+  [[nodiscard]] bool ReadFormat(UserType* output) const {
     auto data_value = data_->format;
     return mojo::internal::Deserialize<::arc::mojom::HalPixelFormat>(
         data_value, output);
@@ -402,7 +402,7 @@ class VideoDecodeAccelerator_ImportBufferForPicture_ParamsDataView {
       mojo::ArrayDataView<::arc::mojom::VideoFramePlaneDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPlanes(UserType* output) {
+  [[nodiscard]] bool ReadPlanes(UserType* output) {
     
     auto* pointer = data_->planes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::arc::mojom::VideoFramePlaneDataView>>(
@@ -412,7 +412,7 @@ class VideoDecodeAccelerator_ImportBufferForPicture_ParamsDataView {
       BufferModifierDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModifier(UserType* output) {
+  [[nodiscard]] bool ReadModifier(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -482,7 +482,7 @@ class VideoDecodeAccelerator_Reset_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::arc::mojom::VideoDecodeAccelerator_Result>(
         data_value, output);
@@ -524,7 +524,7 @@ class VideoDecodeAccelerator_Flush_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::arc::mojom::VideoDecodeAccelerator_Result>(
         data_value, output);
@@ -553,7 +553,7 @@ class VideoDecodeClient_PictureReady_ParamsDataView {
       PictureDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPicture(UserType* output) {
+  [[nodiscard]] bool ReadPicture(UserType* output) {
     
     auto* pointer = data_->picture.Get();
     return mojo::internal::Deserialize<::arc::mojom::PictureDataView>(
@@ -596,7 +596,7 @@ class VideoDecodeClient_NotifyError_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     auto data_value = data_->error;
     return mojo::internal::Deserialize<::arc::mojom::VideoDecodeAccelerator_Result>(
         data_value, output);
@@ -625,7 +625,7 @@ class VideoDecodeClient_ProvidePictureBuffers_ParamsDataView {
       PictureBufferFormatDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) {
+  [[nodiscard]] bool ReadFormat(UserType* output) {
     
     auto* pointer = data_->format.Get();
     return mojo::internal::Deserialize<::arc::mojom::PictureBufferFormatDataView>(
@@ -635,7 +635,7 @@ class VideoDecodeClient_ProvidePictureBuffers_ParamsDataView {
       ::arc::mojom::RectDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVisibleRect(UserType* output) {
+  [[nodiscard]] bool ReadVisibleRect(UserType* output) {
     
     auto* pointer = data_->visible_rect.Get();
     return mojo::internal::Deserialize<::arc::mojom::RectDataView>(

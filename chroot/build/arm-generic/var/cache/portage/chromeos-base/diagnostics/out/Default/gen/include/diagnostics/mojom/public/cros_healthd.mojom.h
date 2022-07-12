@@ -36,10 +36,6 @@
 #include <string>
 #include <vector>
 
-#include "mojo/public/cpp/bindings/associated_interface_ptr_info.h"
-#include "mojo/public/cpp/bindings/associated_interface_request.h"
-#include "mojo/public/cpp/bindings/interface_ptr.h"
-#include "mojo/public/cpp/bindings/interface_request.h"
 #include "mojo/public/cpp/bindings/lib/control_message_handler.h"
 #include "mojo/public/cpp/bindings/raw_ptr_impl_ref_traits.h"
 
@@ -64,6 +60,8 @@ class  CrosHealthdServiceFactory
     : public CrosHealthdServiceFactoryInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 1;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -123,6 +121,8 @@ class  CrosHealthdDiagnosticsService
     : public CrosHealthdDiagnosticsServiceInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -345,6 +345,8 @@ class  CrosHealthdEventService
     : public CrosHealthdEventServiceInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 1;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -404,6 +406,8 @@ class  CrosHealthdProbeService
     : public CrosHealthdProbeServiceInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -447,6 +451,8 @@ class  CrosHealthdSystemService
     : public CrosHealthdSystemServiceInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -484,6 +490,8 @@ class  WilcoEcServiceController
     : public WilcoEcServiceControllerInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;

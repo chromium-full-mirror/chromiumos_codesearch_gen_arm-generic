@@ -80,16 +80,6 @@ using RoutineResultValuePtr = mojo::StructPtr<RoutineResultValue>;
 
 class NetworkDiagnosticsRoutines;
 
-using NetworkDiagnosticsRoutinesPtr = mojo::InterfacePtr<NetworkDiagnosticsRoutines>;
-using NetworkDiagnosticsRoutinesPtrInfo = mojo::InterfacePtrInfo<NetworkDiagnosticsRoutines>;
-
-using NetworkDiagnosticsRoutinesRequest = mojo::InterfaceRequest<NetworkDiagnosticsRoutines>;
-using NetworkDiagnosticsRoutinesAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<NetworkDiagnosticsRoutines>;
-
-using NetworkDiagnosticsRoutinesAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<NetworkDiagnosticsRoutines>;
-
 
 
 

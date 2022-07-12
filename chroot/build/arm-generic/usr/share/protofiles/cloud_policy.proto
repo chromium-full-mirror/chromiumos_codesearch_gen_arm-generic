@@ -444,7 +444,6 @@ message CloudPolicySettings {
   optional StringListPolicyProto InsecureContentAllowedForUrls = 636;
   optional StringListPolicyProto InsecureContentBlockedForUrls = 637;
   optional StringPolicyProto PerAppTimeLimits = 643;
-  optional BooleanPolicyProto EventPathEnabled = 992;
   optional BooleanPolicyProto ClickToCallEnabled = 647;
   optional StringListPolicyProto PrinterTypeDenyList = 649;
   optional IntegerPolicyProto PrintRasterizePdfDpi = 892;

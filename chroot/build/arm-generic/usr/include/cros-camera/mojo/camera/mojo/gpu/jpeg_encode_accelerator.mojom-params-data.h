@@ -252,7 +252,7 @@ class JpegEncodeAccelerator_EncodeWithFD_ResponseParamsDataView {
     return data_->encoded_buffer_size;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::cros::mojom::EncodeStatus>(
         data_value, output);
@@ -287,7 +287,7 @@ class JpegEncodeAccelerator_EncodeWithDmaBuf_ParamsDataView {
       mojo::ArrayDataView<::cros::mojom::DmaBufPlaneDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputPlanes(UserType* output) {
+  [[nodiscard]] bool ReadInputPlanes(UserType* output) {
     
     auto* pointer = data_->input_planes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::DmaBufPlaneDataView>>(
@@ -297,7 +297,7 @@ class JpegEncodeAccelerator_EncodeWithDmaBuf_ParamsDataView {
       mojo::ArrayDataView<::cros::mojom::DmaBufPlaneDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputPlanes(UserType* output) {
+  [[nodiscard]] bool ReadOutputPlanes(UserType* output) {
     
     auto* pointer = data_->output_planes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::cros::mojom::DmaBufPlaneDataView>>(
@@ -344,7 +344,7 @@ class JpegEncodeAccelerator_EncodeWithDmaBuf_ResponseParamsDataView {
     return data_->encoded_buffer_size;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::cros::mojom::EncodeStatus>(
         data_value, output);

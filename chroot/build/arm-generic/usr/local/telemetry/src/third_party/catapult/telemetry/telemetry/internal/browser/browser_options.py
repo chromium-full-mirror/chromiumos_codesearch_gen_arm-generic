@@ -297,8 +297,7 @@ class BrowserFinderOptions(optparse.Values):
         '--fuchsia-ssh-port',
         type=int,
         help='The port on the host to which the ssh service running on the '
-        'Fuchsia device was forwarded. Will skip using the device-finder tool '
-        'if specified.')
+        'Fuchsia device was forwarded.')
     group.add_option(
         '--fuchsia-system-log-file',
         help='The file where Fuchsia system logs will be stored.')
@@ -306,6 +305,9 @@ class BrowserFinderOptions(optparse.Values):
         '--fuchsia-repo',
         default='fuchsia.com',
         help='The name of the Fuchsia repo used to serve required packages.')
+    group.add_option(
+        '--fuchsia-target-id',
+        help='The Fuchsia target id used by the ffx tool.')
     parser.add_option_group(group)
 
     # CPU profiling on Android/Linux/ChromeOS.

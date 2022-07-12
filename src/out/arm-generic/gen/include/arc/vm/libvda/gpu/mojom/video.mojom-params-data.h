@@ -193,7 +193,7 @@ class VideoHost_OnBootstrapVideoAcceleratorFactory_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadToken(UserType* output) {
+  [[nodiscard]] bool ReadToken(UserType* output) {
     
     auto* pointer = data_->token.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

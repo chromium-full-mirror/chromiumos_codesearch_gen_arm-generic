@@ -235,7 +235,7 @@ class InkPointDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadT(UserType* output) {
+  [[nodiscard]] bool ReadT(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -272,7 +272,7 @@ class InkStrokeDataView {
       mojo::ArrayDataView<InkPointDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPoints(UserType* output) {
+  [[nodiscard]] bool ReadPoints(UserType* output) {
     
     auto* pointer = data_->points.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::InkPointDataView>>(
@@ -321,7 +321,7 @@ class RecognitionContextDataView {
       WritingGuideDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWritingGuide(UserType* output) {
+  [[nodiscard]] bool ReadWritingGuide(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -341,7 +341,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPreContext(UserType* output) {
+  [[nodiscard]] bool ReadPreContext(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -378,7 +378,7 @@ class HandwritingRecognitionQueryDataView {
       mojo::ArrayDataView<InkStrokeDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInk(UserType* output) {
+  [[nodiscard]] bool ReadInk(UserType* output) {
     
     auto* pointer = data_->ink.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::InkStrokeDataView>>(
@@ -388,7 +388,7 @@ class HandwritingRecognitionQueryDataView {
       RecognitionContextDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadContext(UserType* output) {
+  [[nodiscard]] bool ReadContext(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -459,7 +459,7 @@ class HandwritingRecognizerSegmentDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSublabel(UserType* output) {
+  [[nodiscard]] bool ReadSublabel(UserType* output) {
     
     auto* pointer = data_->sublabel.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -469,7 +469,7 @@ class HandwritingRecognizerSegmentDataView {
       mojo::ArrayDataView<HandwritingRecognizerInkRangeDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInkRanges(UserType* output) {
+  [[nodiscard]] bool ReadInkRanges(UserType* output) {
     
     auto* pointer = data_->ink_ranges.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::HandwritingRecognizerInkRangeDataView>>(
@@ -496,7 +496,7 @@ class HandwritingRecognizerSegmentationDataView {
       mojo::ArrayDataView<HandwritingRecognizerSegmentDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSegments(UserType* output) {
+  [[nodiscard]] bool ReadSegments(UserType* output) {
     
     auto* pointer = data_->segments.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::HandwritingRecognizerSegmentDataView>>(
@@ -523,7 +523,7 @@ class HandwritingRecognizerCandidateDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -536,7 +536,7 @@ class HandwritingRecognizerCandidateDataView {
       HandwritingRecognizerSegmentationDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSegmentation(UserType* output) {
+  [[nodiscard]] bool ReadSegmentation(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -570,7 +570,7 @@ class HandwritingRecognizerResultDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::HandwritingRecognizerResult_Status>(
         data_value, output);
@@ -583,7 +583,7 @@ class HandwritingRecognizerResultDataView {
       mojo::ArrayDataView<HandwritingRecognizerCandidateDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCandidates(UserType* output) {
+  [[nodiscard]] bool ReadCandidates(UserType* output) {
     
     auto* pointer = data_->candidates.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::HandwritingRecognizerCandidateDataView>>(
@@ -610,7 +610,7 @@ class HandwritingRecognizerSpecDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLanguage(UserType* output) {
+  [[nodiscard]] bool ReadLanguage(UserType* output) {
     
     auto* pointer = data_->language.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -620,7 +620,7 @@ class HandwritingRecognizerSpecDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLanguagePackPath(UserType* output) {
+  [[nodiscard]] bool ReadLanguagePackPath(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -641,7 +641,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLibraryDlcPath(UserType* output) {
+  [[nodiscard]] bool ReadLibraryDlcPath(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

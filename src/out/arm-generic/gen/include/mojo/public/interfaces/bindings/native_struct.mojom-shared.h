@@ -108,7 +108,7 @@ class SerializedHandleDataView {
     return result;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::mojo::native::SerializedHandleType>(
         data_value, output);
@@ -138,7 +138,7 @@ class NativeStructDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = data_->data.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -148,7 +148,7 @@ class NativeStructDataView {
       mojo::ArrayDataView<SerializedHandleDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHandles(UserType* output) {
+  [[nodiscard]] bool ReadHandles(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

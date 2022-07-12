@@ -102,7 +102,7 @@ class RollbackNetworkConfig_RollbackConfigImport_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
     auto* pointer = data_->config.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -164,7 +164,7 @@ class RollbackNetworkConfig_RollbackConfigExport_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConfig(UserType* output) {
+  [[nodiscard]] bool ReadConfig(UserType* output) {
     
     auto* pointer = data_->config.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

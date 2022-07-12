@@ -176,7 +176,7 @@ class VideoProtectedBufferAllocator_AllocateProtectedNativePixmap_ParamsDataView
     return result;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPixelFormat(UserType* output) const {
+  [[nodiscard]] bool ReadPixelFormat(UserType* output) const {
     auto data_value = data_->pixel_format;
     return mojo::internal::Deserialize<::arc::mojom::HalPixelFormat>(
         data_value, output);
@@ -189,7 +189,7 @@ class VideoProtectedBufferAllocator_AllocateProtectedNativePixmap_ParamsDataView
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPictureSize(UserType* output) {
+  [[nodiscard]] bool ReadPictureSize(UserType* output) {
     
     auto* pointer = data_->picture_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(

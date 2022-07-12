@@ -462,7 +462,7 @@ class HttpsLatencyResultValueDataView {
       ::mojo_base::mojom::TimeDeltaDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLatency(UserType* output) {
+  [[nodiscard]] bool ReadLatency(UserType* output) {
     
     auto* pointer = data_->latency.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDeltaDataView>(
@@ -486,7 +486,7 @@ class RoutineResultDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVerdict(UserType* output) const {
+  [[nodiscard]] bool ReadVerdict(UserType* output) const {
     auto data_value = data_->verdict;
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineVerdict>(
         data_value, output);
@@ -499,7 +499,7 @@ class RoutineResultDataView {
       RoutineProblemsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProblems(UserType* output) {
+  [[nodiscard]] bool ReadProblems(UserType* output) {
     
     auto* pointer = !data_->problems.is_null() ? &data_->problems : nullptr;
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineProblemsDataView>(
@@ -509,7 +509,7 @@ class RoutineResultDataView {
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimestamp(UserType* output) {
+  [[nodiscard]] bool ReadTimestamp(UserType* output) {
     
     auto* pointer = data_->timestamp.Get();
     return mojo::internal::Deserialize<::mojo_base::mojom::TimeDataView>(
@@ -519,7 +519,7 @@ class RoutineResultDataView {
       RoutineResultValueDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResultValue(UserType* output) {
+  [[nodiscard]] bool ReadResultValue(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -566,7 +566,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<LanConnectivityProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLanConnectivityProblems(UserType* output) const {
+  [[nodiscard]] bool ReadLanConnectivityProblems(UserType* output) const {
     
     CHECK(is_lan_connectivity_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::LanConnectivityProblem>>(
@@ -577,7 +577,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<SignalStrengthProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSignalStrengthProblems(UserType* output) const {
+  [[nodiscard]] bool ReadSignalStrengthProblems(UserType* output) const {
     
     CHECK(is_signal_strength_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::SignalStrengthProblem>>(
@@ -588,7 +588,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<GatewayCanBePingedProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGatewayCanBePingedProblems(UserType* output) const {
+  [[nodiscard]] bool ReadGatewayCanBePingedProblems(UserType* output) const {
     
     CHECK(is_gateway_can_be_pinged_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::GatewayCanBePingedProblem>>(
@@ -599,7 +599,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<HasSecureWiFiConnectionProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHasSecureWifiConnectionProblems(UserType* output) const {
+  [[nodiscard]] bool ReadHasSecureWifiConnectionProblems(UserType* output) const {
     
     CHECK(is_has_secure_wifi_connection_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::HasSecureWiFiConnectionProblem>>(
@@ -610,7 +610,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<DnsResolverPresentProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDnsResolverPresentProblems(UserType* output) const {
+  [[nodiscard]] bool ReadDnsResolverPresentProblems(UserType* output) const {
     
     CHECK(is_dns_resolver_present_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::DnsResolverPresentProblem>>(
@@ -621,7 +621,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<DnsLatencyProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDnsLatencyProblems(UserType* output) const {
+  [[nodiscard]] bool ReadDnsLatencyProblems(UserType* output) const {
     
     CHECK(is_dns_latency_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::DnsLatencyProblem>>(
@@ -632,7 +632,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<DnsResolutionProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDnsResolutionProblems(UserType* output) const {
+  [[nodiscard]] bool ReadDnsResolutionProblems(UserType* output) const {
     
     CHECK(is_dns_resolution_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::DnsResolutionProblem>>(
@@ -643,7 +643,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<CaptivePortalProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCaptivePortalProblems(UserType* output) const {
+  [[nodiscard]] bool ReadCaptivePortalProblems(UserType* output) const {
     
     CHECK(is_captive_portal_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::CaptivePortalProblem>>(
@@ -654,7 +654,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<HttpFirewallProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHttpFirewallProblems(UserType* output) const {
+  [[nodiscard]] bool ReadHttpFirewallProblems(UserType* output) const {
     
     CHECK(is_http_firewall_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::HttpFirewallProblem>>(
@@ -665,7 +665,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<HttpsFirewallProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHttpsFirewallProblems(UserType* output) const {
+  [[nodiscard]] bool ReadHttpsFirewallProblems(UserType* output) const {
     
     CHECK(is_https_firewall_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::HttpsFirewallProblem>>(
@@ -676,7 +676,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<HttpsLatencyProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHttpsLatencyProblems(UserType* output) const {
+  [[nodiscard]] bool ReadHttpsLatencyProblems(UserType* output) const {
     
     CHECK(is_https_latency_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::HttpsLatencyProblem>>(
@@ -687,7 +687,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<VideoConferencingProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVideoConferencingProblems(UserType* output) const {
+  [[nodiscard]] bool ReadVideoConferencingProblems(UserType* output) const {
     
     CHECK(is_video_conferencing_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::VideoConferencingProblem>>(
@@ -698,7 +698,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<ArcHttpProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadArcHttpProblems(UserType* output) const {
+  [[nodiscard]] bool ReadArcHttpProblems(UserType* output) const {
     
     CHECK(is_arc_http_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::ArcHttpProblem>>(
@@ -709,7 +709,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<ArcDnsResolutionProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadArcDnsResolutionProblems(UserType* output) const {
+  [[nodiscard]] bool ReadArcDnsResolutionProblems(UserType* output) const {
     
     CHECK(is_arc_dns_resolution_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::ArcDnsResolutionProblem>>(
@@ -720,7 +720,7 @@ class RoutineProblemsDataView {
       mojo::ArrayDataView<ArcPingProblem>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadArcPingProblems(UserType* output) const {
+  [[nodiscard]] bool ReadArcPingProblems(UserType* output) const {
     
     CHECK(is_arc_ping_problems());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_diagnostics::mojom::ArcPingProblem>>(
@@ -757,7 +757,7 @@ class RoutineResultValueDataView {
       HttpsLatencyResultValueDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHttpsLatencyResultValue(UserType* output) const {
+  [[nodiscard]] bool ReadHttpsLatencyResultValue(UserType* output) const {
     
     CHECK(is_https_latency_result_value());
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::HttpsLatencyResultValueDataView>(

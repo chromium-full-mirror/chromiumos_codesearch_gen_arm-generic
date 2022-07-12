@@ -11,85 +11,63 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_chunneld_5fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_chunneld_5fservice_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_chunneld_5fservice_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace vm_tools {
 namespace chunneld {
-class UpdateListeningPortsRequest_Tcp4ForwardTargetDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateListeningPortsRequest_Tcp4ForwardTarget> _instance;
-} _UpdateListeningPortsRequest_Tcp4ForwardTarget_default_instance_;
-class UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse> _instance;
-} _UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_default_instance_;
-class UpdateListeningPortsRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateListeningPortsRequest> _instance;
-} _UpdateListeningPortsRequest_default_instance_;
-class UpdateListeningPortsResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateListeningPortsResponse> _instance;
-} _UpdateListeningPortsResponse_default_instance_;
+constexpr UpdateListeningPortsRequest_Tcp4ForwardTarget::UpdateListeningPortsRequest_Tcp4ForwardTarget(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vm_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , container_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , owner_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , vsock_cid_(0u){}
+struct UpdateListeningPortsRequest_Tcp4ForwardTargetDefaultTypeInternal {
+  constexpr UpdateListeningPortsRequest_Tcp4ForwardTargetDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateListeningPortsRequest_Tcp4ForwardTargetDefaultTypeInternal() {}
+  union {
+    UpdateListeningPortsRequest_Tcp4ForwardTarget _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateListeningPortsRequest_Tcp4ForwardTargetDefaultTypeInternal _UpdateListeningPortsRequest_Tcp4ForwardTarget_default_instance_;
+constexpr UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUseDefaultTypeInternal {
+  constexpr UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUseDefaultTypeInternal _UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_default_instance_;
+constexpr UpdateListeningPortsRequest::UpdateListeningPortsRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : tcp4_forward_targets_(){}
+struct UpdateListeningPortsRequestDefaultTypeInternal {
+  constexpr UpdateListeningPortsRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateListeningPortsRequestDefaultTypeInternal() {}
+  union {
+    UpdateListeningPortsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateListeningPortsRequestDefaultTypeInternal _UpdateListeningPortsRequest_default_instance_;
+constexpr UpdateListeningPortsResponse::UpdateListeningPortsResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : status_(0)
+{}
+struct UpdateListeningPortsResponseDefaultTypeInternal {
+  constexpr UpdateListeningPortsResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UpdateListeningPortsResponseDefaultTypeInternal() {}
+  union {
+    UpdateListeningPortsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UpdateListeningPortsResponseDefaultTypeInternal _UpdateListeningPortsResponse_default_instance_;
 }  // namespace chunneld
 }  // namespace vm_tools
-static void InitDefaultsscc_info_UpdateListeningPortsRequest_chunneld_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vm_tools::chunneld::_UpdateListeningPortsRequest_default_instance_;
-    new (ptr) ::vm_tools::chunneld::UpdateListeningPortsRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vm_tools::chunneld::UpdateListeningPortsRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UpdateListeningPortsRequest_chunneld_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UpdateListeningPortsRequest_chunneld_5fservice_2eproto}, {
-      &scc_info_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_chunneld_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vm_tools::chunneld::_UpdateListeningPortsRequest_Tcp4ForwardTarget_default_instance_;
-    new (ptr) ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto}, {}};
-
-static void InitDefaultsscc_info_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_chunneld_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vm_tools::chunneld::_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_default_instance_;
-    new (ptr) ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse();
-  }
-  ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_chunneld_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse_chunneld_5fservice_2eproto}, {
-      &scc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto.base,}};
-
-static void InitDefaultsscc_info_UpdateListeningPortsResponse_chunneld_5fservice_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::vm_tools::chunneld::_UpdateListeningPortsResponse_default_instance_;
-    new (ptr) ::vm_tools::chunneld::UpdateListeningPortsResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::vm_tools::chunneld::UpdateListeningPortsResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateListeningPortsResponse_chunneld_5fservice_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateListeningPortsResponse_chunneld_5fservice_2eproto}, {}};
-
 namespace vm_tools {
 namespace chunneld {
 bool UpdateListeningPortsResponse_Status_IsValid(int value) {
@@ -138,7 +116,7 @@ const std::string& UpdateListeningPortsResponse_Status_Name(
                      UpdateListeningPortsResponse_Status_strings[idx].get();
 }
 bool UpdateListeningPortsResponse_Status_Parse(
-    const std::string& name, UpdateListeningPortsResponse_Status* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, UpdateListeningPortsResponse_Status* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       UpdateListeningPortsResponse_Status_entries, 3, name, &int_value);
@@ -147,158 +125,189 @@ bool UpdateListeningPortsResponse_Status_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr UpdateListeningPortsResponse_Status UpdateListeningPortsResponse::UNKNOWN;
 constexpr UpdateListeningPortsResponse_Status UpdateListeningPortsResponse::SUCCESS;
 constexpr UpdateListeningPortsResponse_Status UpdateListeningPortsResponse::FAILED;
 constexpr UpdateListeningPortsResponse_Status UpdateListeningPortsResponse::Status_MIN;
 constexpr UpdateListeningPortsResponse_Status UpdateListeningPortsResponse::Status_MAX;
 constexpr int UpdateListeningPortsResponse::Status_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void UpdateListeningPortsRequest_Tcp4ForwardTarget::InitAsDefaultInstance() {
-}
 class UpdateListeningPortsRequest_Tcp4ForwardTarget::_Internal {
  public:
 };
 
-UpdateListeningPortsRequest_Tcp4ForwardTarget::UpdateListeningPortsRequest_Tcp4ForwardTarget()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UpdateListeningPortsRequest_Tcp4ForwardTarget::UpdateListeningPortsRequest_Tcp4ForwardTarget(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
 }
 UpdateListeningPortsRequest_Tcp4ForwardTarget::UpdateListeningPortsRequest_Tcp4ForwardTarget(const UpdateListeningPortsRequest_Tcp4ForwardTarget& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   vm_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vm_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_vm_name().empty()) {
-    vm_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.vm_name_);
+    vm_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vm_name(), 
+      GetArenaForAllocation());
   }
   container_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    container_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_container_name().empty()) {
-    container_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.container_name_);
+    container_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_container_name(), 
+      GetArenaForAllocation());
   }
   owner_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    owner_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_owner_id().empty()) {
-    owner_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.owner_id_);
+    owner_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_owner_id(), 
+      GetArenaForAllocation());
   }
   vsock_cid_ = from.vsock_cid_;
   // @@protoc_insertion_point(copy_constructor:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
 }
 
-void UpdateListeningPortsRequest_Tcp4ForwardTarget::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto.base);
-  vm_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  container_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  owner_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  vsock_cid_ = 0u;
+inline void UpdateListeningPortsRequest_Tcp4ForwardTarget::SharedCtor() {
+vm_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vm_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+container_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  container_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+owner_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  owner_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+vsock_cid_ = 0u;
 }
 
 UpdateListeningPortsRequest_Tcp4ForwardTarget::~UpdateListeningPortsRequest_Tcp4ForwardTarget() {
   // @@protoc_insertion_point(destructor:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UpdateListeningPortsRequest_Tcp4ForwardTarget::SharedDtor() {
+inline void UpdateListeningPortsRequest_Tcp4ForwardTarget::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   vm_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   container_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   owner_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void UpdateListeningPortsRequest_Tcp4ForwardTarget::ArenaDtor(void* object) {
+  UpdateListeningPortsRequest_Tcp4ForwardTarget* _this = reinterpret_cast< UpdateListeningPortsRequest_Tcp4ForwardTarget* >(object);
+  (void)_this;
+}
+void UpdateListeningPortsRequest_Tcp4ForwardTarget::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateListeningPortsRequest_Tcp4ForwardTarget::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UpdateListeningPortsRequest_Tcp4ForwardTarget& UpdateListeningPortsRequest_Tcp4ForwardTarget::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateListeningPortsRequest_Tcp4ForwardTarget_chunneld_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UpdateListeningPortsRequest_Tcp4ForwardTarget::Clear() {
 // @@protoc_insertion_point(message_clear_start:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  vm_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  container_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  owner_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  vm_name_.ClearToEmpty();
+  container_name_.ClearToEmpty();
+  owner_id_.ClearToEmpty();
   vsock_cid_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UpdateListeningPortsRequest_Tcp4ForwardTarget::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string vm_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_vm_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string container_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_container_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string owner_id = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_owner_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 vsock_cid = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          vsock_cid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UpdateListeningPortsRequest_Tcp4ForwardTarget::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdateListeningPortsRequest_Tcp4ForwardTarget::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string vm_name = 1;
-  if (this->vm_name().size() > 0) {
+  if (!this->_internal_vm_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_vm_name().data(), static_cast<int>(this->_internal_vm_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -308,7 +317,7 @@ failure:
   }
 
   // string container_name = 2;
-  if (this->container_name().size() > 0) {
+  if (!this->_internal_container_name().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_container_name().data(), static_cast<int>(this->_internal_container_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -318,7 +327,7 @@ failure:
   }
 
   // string owner_id = 3;
-  if (this->owner_id().size() > 0) {
+  if (!this->_internal_owner_id().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_owner_id().data(), static_cast<int>(this->_internal_owner_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -328,14 +337,14 @@ failure:
   }
 
   // uint32 vsock_cid = 4;
-  if (this->vsock_cid() != 0) {
+  if (this->_internal_vsock_cid() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_vsock_cid(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
   return target;
@@ -345,40 +354,38 @@ size_t UpdateListeningPortsRequest_Tcp4ForwardTarget::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string vm_name = 1;
-  if (this->vm_name().size() > 0) {
+  if (!this->_internal_vm_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_vm_name());
   }
 
   // string container_name = 2;
-  if (this->container_name().size() > 0) {
+  if (!this->_internal_container_name().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_container_name());
   }
 
   // string owner_id = 3;
-  if (this->owner_id().size() > 0) {
+  if (!this->_internal_owner_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_owner_id());
   }
 
   // uint32 vsock_cid = 4;
-  if (this->vsock_cid() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_vsock_cid());
+  if (this->_internal_vsock_cid() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vsock_cid());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -394,25 +401,22 @@ void UpdateListeningPortsRequest_Tcp4ForwardTarget::CheckTypeAndMergeFrom(
 void UpdateListeningPortsRequest_Tcp4ForwardTarget::MergeFrom(const UpdateListeningPortsRequest_Tcp4ForwardTarget& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.vm_name().size() > 0) {
-
-    vm_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.vm_name_);
+  if (!from._internal_vm_name().empty()) {
+    _internal_set_vm_name(from._internal_vm_name());
   }
-  if (from.container_name().size() > 0) {
-
-    container_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.container_name_);
+  if (!from._internal_container_name().empty()) {
+    _internal_set_container_name(from._internal_container_name());
   }
-  if (from.owner_id().size() > 0) {
-
-    owner_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.owner_id_);
+  if (!from._internal_owner_id().empty()) {
+    _internal_set_owner_id(from._internal_owner_id());
   }
-  if (from.vsock_cid() != 0) {
+  if (from._internal_vsock_cid() != 0) {
     _internal_set_vsock_cid(from._internal_vsock_cid());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UpdateListeningPortsRequest_Tcp4ForwardTarget::CopyFrom(const UpdateListeningPortsRequest_Tcp4ForwardTarget& from) {
@@ -428,13 +432,24 @@ bool UpdateListeningPortsRequest_Tcp4ForwardTarget::IsInitialized() const {
 
 void UpdateListeningPortsRequest_Tcp4ForwardTarget::InternalSwap(UpdateListeningPortsRequest_Tcp4ForwardTarget* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  vm_name_.Swap(&other->vm_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  container_name_.Swap(&other->container_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  owner_id_.Swap(&other->owner_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vm_name_, lhs_arena,
+      &other->vm_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &container_name_, lhs_arena,
+      &other->container_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &owner_id_, lhs_arena,
+      &other->owner_id_, rhs_arena
+  );
   swap(vsock_cid_, other->vsock_cid_);
 }
 
@@ -454,66 +469,70 @@ void UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::MergeFrom(con
 
 // ===================================================================
 
-void UpdateListeningPortsRequest::InitAsDefaultInstance() {
-}
 class UpdateListeningPortsRequest::_Internal {
  public:
 };
 
-UpdateListeningPortsRequest::UpdateListeningPortsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UpdateListeningPortsRequest::UpdateListeningPortsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  tcp4_forward_targets_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:vm_tools.chunneld.UpdateListeningPortsRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.chunneld.UpdateListeningPortsRequest)
 }
 UpdateListeningPortsRequest::UpdateListeningPortsRequest(const UpdateListeningPortsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   tcp4_forward_targets_.MergeFrom(from.tcp4_forward_targets_);
   // @@protoc_insertion_point(copy_constructor:vm_tools.chunneld.UpdateListeningPortsRequest)
 }
 
-void UpdateListeningPortsRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateListeningPortsRequest_chunneld_5fservice_2eproto.base);
+inline void UpdateListeningPortsRequest::SharedCtor() {
 }
 
 UpdateListeningPortsRequest::~UpdateListeningPortsRequest() {
   // @@protoc_insertion_point(destructor:vm_tools.chunneld.UpdateListeningPortsRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UpdateListeningPortsRequest::SharedDtor() {
+inline void UpdateListeningPortsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void UpdateListeningPortsRequest::ArenaDtor(void* object) {
+  UpdateListeningPortsRequest* _this = reinterpret_cast< UpdateListeningPortsRequest* >(object);
+  (void)_this;
+}
+void UpdateListeningPortsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateListeningPortsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UpdateListeningPortsRequest& UpdateListeningPortsRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateListeningPortsRequest_chunneld_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UpdateListeningPortsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:vm_tools.chunneld.UpdateListeningPortsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   tcp4_forward_targets_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UpdateListeningPortsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // map<uint32, .vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget> tcp4_forward_targets = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -521,48 +540,52 @@ const char* UpdateListeningPortsRequest::_InternalParse(const char* ptr, ::PROTO
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UpdateListeningPortsRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdateListeningPortsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:vm_tools.chunneld.UpdateListeningPortsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // map<uint32, .vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget> tcp4_forward_targets = 1;
   if (!this->_internal_tcp4_forward_targets().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_pointer
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< uint32_t, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_pointer
         ConstPtr;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< uint32_t, ConstPtr > SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
 
     if (stream->IsSerializationDeterministic() &&
         this->_internal_tcp4_forward_targets().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->_internal_tcp4_forward_targets().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::size_type size_type;
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< uint32_t, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::size_type size_type;
       size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< uint32_t, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
           it = this->_internal_tcp4_forward_targets().begin();
           it != this->_internal_tcp4_forward_targets().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -572,7 +595,7 @@ failure:
         target = UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
       }
     } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< uint32_t, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
           it = this->_internal_tcp4_forward_targets().begin();
           it != this->_internal_tcp4_forward_targets().end(); ++it) {
         target = UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
@@ -581,8 +604,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vm_tools.chunneld.UpdateListeningPortsRequest)
   return target;
@@ -592,21 +615,21 @@ size_t UpdateListeningPortsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:vm_tools.chunneld.UpdateListeningPortsRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // map<uint32, .vm_tools.chunneld.UpdateListeningPortsRequest.Tcp4ForwardTarget> tcp4_forward_targets = 1;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_tcp4_forward_targets_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< uint32_t, ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >::const_iterator
       it = this->_internal_tcp4_forward_targets().begin();
       it != this->_internal_tcp4_forward_targets().end(); ++it) {
     total_size += UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -622,11 +645,11 @@ void UpdateListeningPortsRequest::CheckTypeAndMergeFrom(
 void UpdateListeningPortsRequest::MergeFrom(const UpdateListeningPortsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.chunneld.UpdateListeningPortsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   tcp4_forward_targets_.MergeFrom(from.tcp4_forward_targets_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UpdateListeningPortsRequest::CopyFrom(const UpdateListeningPortsRequest& from) {
@@ -642,8 +665,8 @@ bool UpdateListeningPortsRequest::IsInitialized() const {
 
 void UpdateListeningPortsRequest::InternalSwap(UpdateListeningPortsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  tcp4_forward_targets_.Swap(&other->tcp4_forward_targets_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  tcp4_forward_targets_.InternalSwap(&other->tcp4_forward_targets_);
 }
 
 std::string UpdateListeningPortsRequest::GetTypeName() const {
@@ -653,107 +676,115 @@ std::string UpdateListeningPortsRequest::GetTypeName() const {
 
 // ===================================================================
 
-void UpdateListeningPortsResponse::InitAsDefaultInstance() {
-}
 class UpdateListeningPortsResponse::_Internal {
  public:
 };
 
-UpdateListeningPortsResponse::UpdateListeningPortsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UpdateListeningPortsResponse::UpdateListeningPortsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:vm_tools.chunneld.UpdateListeningPortsResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.chunneld.UpdateListeningPortsResponse)
 }
 UpdateListeningPortsResponse::UpdateListeningPortsResponse(const UpdateListeningPortsResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   status_ = from.status_;
   // @@protoc_insertion_point(copy_constructor:vm_tools.chunneld.UpdateListeningPortsResponse)
 }
 
-void UpdateListeningPortsResponse::SharedCtor() {
-  status_ = 0;
+inline void UpdateListeningPortsResponse::SharedCtor() {
+status_ = 0;
 }
 
 UpdateListeningPortsResponse::~UpdateListeningPortsResponse() {
   // @@protoc_insertion_point(destructor:vm_tools.chunneld.UpdateListeningPortsResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UpdateListeningPortsResponse::SharedDtor() {
+inline void UpdateListeningPortsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void UpdateListeningPortsResponse::ArenaDtor(void* object) {
+  UpdateListeningPortsResponse* _this = reinterpret_cast< UpdateListeningPortsResponse* >(object);
+  (void)_this;
+}
+void UpdateListeningPortsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateListeningPortsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UpdateListeningPortsResponse& UpdateListeningPortsResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateListeningPortsResponse_chunneld_5fservice_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UpdateListeningPortsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:vm_tools.chunneld.UpdateListeningPortsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   status_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UpdateListeningPortsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .vm_tools.chunneld.UpdateListeningPortsResponse.Status status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::vm_tools::chunneld::UpdateListeningPortsResponse_Status>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UpdateListeningPortsResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdateListeningPortsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:vm_tools.chunneld.UpdateListeningPortsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .vm_tools.chunneld.UpdateListeningPortsResponse.Status status = 1;
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:vm_tools.chunneld.UpdateListeningPortsResponse)
   return target;
@@ -763,18 +794,18 @@ size_t UpdateListeningPortsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:vm_tools.chunneld.UpdateListeningPortsResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .vm_tools.chunneld.UpdateListeningPortsResponse.Status status = 1;
-  if (this->status() != 0) {
+  if (this->_internal_status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -790,13 +821,13 @@ void UpdateListeningPortsResponse::CheckTypeAndMergeFrom(
 void UpdateListeningPortsResponse::MergeFrom(const UpdateListeningPortsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.chunneld.UpdateListeningPortsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.status() != 0) {
+  if (from._internal_status() != 0) {
     _internal_set_status(from._internal_status());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UpdateListeningPortsResponse::CopyFrom(const UpdateListeningPortsResponse& from) {
@@ -812,7 +843,7 @@ bool UpdateListeningPortsResponse::IsInitialized() const {
 
 void UpdateListeningPortsResponse::InternalSwap(UpdateListeningPortsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(status_, other->status_);
 }
 
@@ -826,16 +857,16 @@ std::string UpdateListeningPortsResponse::GetTypeName() const {
 }  // namespace vm_tools
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget* Arena::CreateMaybeMessage< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >(Arena* arena) {
-  return Arena::CreateInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >(arena);
+  return Arena::CreateMessageInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTarget >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse* Arena::CreateMaybeMessage< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest_Tcp4ForwardTargetsEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::chunneld::UpdateListeningPortsRequest* Arena::CreateMaybeMessage< ::vm_tools::chunneld::UpdateListeningPortsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest >(arena);
+  return Arena::CreateMessageInternal< ::vm_tools::chunneld::UpdateListeningPortsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::chunneld::UpdateListeningPortsResponse* Arena::CreateMaybeMessage< ::vm_tools::chunneld::UpdateListeningPortsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::vm_tools::chunneld::UpdateListeningPortsResponse >(arena);
+  return Arena::CreateMessageInternal< ::vm_tools::chunneld::UpdateListeningPortsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

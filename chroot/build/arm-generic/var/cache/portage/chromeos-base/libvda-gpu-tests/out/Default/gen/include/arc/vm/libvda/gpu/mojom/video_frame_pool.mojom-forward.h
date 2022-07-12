@@ -30,27 +30,7 @@ using VideoFramePtr = mojo::StructPtr<VideoFrame>;
 
 class VideoFramePool;
 
-using VideoFramePoolPtr = mojo::InterfacePtr<VideoFramePool>;
-using VideoFramePoolPtrInfo = mojo::InterfacePtrInfo<VideoFramePool>;
-
-using VideoFramePoolRequest = mojo::InterfaceRequest<VideoFramePool>;
-using VideoFramePoolAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoFramePool>;
-
-using VideoFramePoolAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoFramePool>;
-
 class VideoFramePoolClient;
-
-using VideoFramePoolClientPtr = mojo::InterfacePtr<VideoFramePoolClient>;
-using VideoFramePoolClientPtrInfo = mojo::InterfacePtrInfo<VideoFramePoolClient>;
-
-using VideoFramePoolClientRequest = mojo::InterfaceRequest<VideoFramePoolClient>;
-using VideoFramePoolClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VideoFramePoolClient>;
-
-using VideoFramePoolClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VideoFramePoolClient>;
 
 
 

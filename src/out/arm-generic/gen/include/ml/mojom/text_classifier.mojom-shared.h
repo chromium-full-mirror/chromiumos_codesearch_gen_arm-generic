@@ -156,7 +156,7 @@ class TextEntityDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -169,7 +169,7 @@ class TextEntityDataView {
       TextEntityDataDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = !data_->data.is_null() ? &data_->data : nullptr;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextEntityDataDataView>(
@@ -202,7 +202,7 @@ class TextAnnotationDataView {
       mojo::ArrayDataView<TextEntityDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEntities(UserType* output) {
+  [[nodiscard]] bool ReadEntities(UserType* output) {
     
     auto* pointer = data_->entities.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::machine_learning::mojom::TextEntityDataView>>(
@@ -229,7 +229,7 @@ class TextAnnotationRequestDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -239,7 +239,7 @@ class TextAnnotationRequestDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDefaultLocales(UserType* output) {
+  [[nodiscard]] bool ReadDefaultLocales(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -259,7 +259,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDetectedTextLanguageTags(UserType* output) {
+  [[nodiscard]] bool ReadDetectedTextLanguageTags(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -276,7 +276,7 @@ static_assert(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAnnotationUsecase(UserType* output) const {
+  [[nodiscard]] bool ReadAnnotationUsecase(UserType* output) const {
     auto data_value = data_->annotation_usecase;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::AnnotationUsecase>(
         data_value, output);
@@ -289,7 +289,7 @@ static_assert(
       ::mojo_base::mojom::TimeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReferenceTime(UserType* output) {
+  [[nodiscard]] bool ReadReferenceTime(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -309,7 +309,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReferenceTimezone(UserType* output) {
+  [[nodiscard]] bool ReadReferenceTimezone(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -329,7 +329,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEnabledEntities(UserType* output) {
+  [[nodiscard]] bool ReadEnabledEntities(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -393,7 +393,7 @@ class TextLanguageDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLocale(UserType* output) {
+  [[nodiscard]] bool ReadLocale(UserType* output) {
     
     auto* pointer = data_->locale.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -423,7 +423,7 @@ class REMOVED_TextSuggestSelectionRequestDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadText(UserType* output) {
+  [[nodiscard]] bool ReadText(UserType* output) {
     
     auto* pointer = data_->text.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -433,7 +433,7 @@ class REMOVED_TextSuggestSelectionRequestDataView {
       CodepointSpanDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUserSelection(UserType* output) {
+  [[nodiscard]] bool ReadUserSelection(UserType* output) {
     
     auto* pointer = data_->user_selection.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::CodepointSpanDataView>(
@@ -443,7 +443,7 @@ class REMOVED_TextSuggestSelectionRequestDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDefaultLocales(UserType* output) {
+  [[nodiscard]] bool ReadDefaultLocales(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -463,7 +463,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDetectedTextLanguageTags(UserType* output) {
+  [[nodiscard]] bool ReadDetectedTextLanguageTags(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -480,7 +480,7 @@ static_assert(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAnnotationUsecase(UserType* output) const {
+  [[nodiscard]] bool ReadAnnotationUsecase(UserType* output) const {
     auto data_value = data_->annotation_usecase;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::AnnotationUsecase>(
         data_value, output);
@@ -524,7 +524,7 @@ class TextEntityDataDataView {
       mojo::StringDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStringValue(UserType* output) const {
+  [[nodiscard]] bool ReadStringValue(UserType* output) const {
     
     CHECK(is_string_value());
     return mojo::internal::Deserialize<mojo::StringDataView>(

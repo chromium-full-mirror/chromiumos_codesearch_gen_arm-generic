@@ -54,7 +54,7 @@
 
 
 // First part of user prologue.
-#line 12 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 12 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
 
   #include "language_y.h"
   extern int yylex(yy::parser::semantic_type*, yy::parser::location_type*, void *);
@@ -1284,7 +1284,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
   switch (yyn)
     {
   case 2: // file: IS_LITTLE_ENDIAN declarations
-#line 112 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 112 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
   {
     decls->is_little_endian = ((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer) == 1);
     if (decls->is_little_endian) {
@@ -1297,7 +1297,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 5: // declaration: enum_definition
-#line 127 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 127 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "FOUND ENUM\n\n";
       decls->AddTypeDef((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.enum_definition)->name_, (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.enum_definition));
@@ -1306,7 +1306,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 6: // declaration: packet_definition
-#line 132 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 132 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "FOUND PACKET\n\n";
       decls->AddPacketDef((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_definition_value)->name_, (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_definition_value));
@@ -1315,7 +1315,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 7: // declaration: struct_definition
-#line 137 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 137 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "FOUND STRUCT\n\n";
       decls->AddTypeDef((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.struct_definition_value)->name_, (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.struct_definition_value));
@@ -1324,7 +1324,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 8: // declaration: group_definition
-#line 142 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 142 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       // All actions are handled in group_definition
     }
@@ -1332,7 +1332,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 9: // declaration: checksum_definition
-#line 146 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 146 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       // All actions are handled in checksum_definition
     }
@@ -1340,7 +1340,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 10: // declaration: custom_field_definition
-#line 150 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 150 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       // All actions are handled in custom_field_definition
     }
@@ -1348,7 +1348,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 11: // declaration: test_definition
-#line 154 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 154 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       // All actions are handled in test_definition
     }
@@ -1356,7 +1356,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 12: // enum_definition: "enum" IDENTIFIER ':' INTEGER '{' enumeration_list ',' '}'
-#line 160 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 160 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Enum Declared: name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-6)].yystate.yysemantics.yysval.string)
                 << " size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.integer) << "\n";
@@ -1372,7 +1372,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 13: // enumeration_list: enumeration
-#line 174 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 174 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Enumerator with comma\n";
       ((*yyvalp).enumeration_values) = new std::map<uint64_t, std::string>();
@@ -1383,7 +1383,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 14: // enumeration_list: enumeration_list ',' enumeration
-#line 181 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 181 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Enumerator with list\n";
       ((*yyvalp).enumeration_values) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.enumeration_values);
@@ -1394,7 +1394,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 15: // enumeration: IDENTIFIER '=' INTEGER
-#line 190 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 190 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Enumerator: name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string)
                 << " value=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer) << "\n";
@@ -1405,7 +1405,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 16: // group_definition: "group" IDENTIFIER '{' field_definition_list '}'
-#line 199 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 199 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       decls->AddGroupDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.packet_field_definitions));
       delete (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
@@ -1414,7 +1414,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 17: // checksum_definition: "checksum" IDENTIFIER ':' INTEGER STRING
-#line 206 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 206 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Checksum field defined\n";
       decls->AddTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), new ChecksumDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer)));
@@ -1425,7 +1425,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 18: // custom_field_definition: "custom_field" IDENTIFIER ':' INTEGER STRING
-#line 215 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 215 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       decls->AddTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), new CustomFieldDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer)));
       delete (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
@@ -1435,7 +1435,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 19: // custom_field_definition: "custom_field" IDENTIFIER STRING
-#line 221 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 221 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       decls->AddTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string), new CustomFieldDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string), *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string)));
       delete (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string);
@@ -1445,7 +1445,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 20: // test_definition: "test" IDENTIFIER '{' test_case_list ',' '}'
-#line 229 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 229 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.string);
       DEBUG() << "Test Declared: name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.string) << "\n";
@@ -1464,7 +1464,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 21: // test_case_list: test_case
-#line 246 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 246 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Test case with comma\n";
       ((*yyvalp).test_cases_t) = new std::set<std::string*>();
@@ -1474,7 +1474,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 22: // test_case_list: test_case_list ',' test_case
-#line 252 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 252 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Test case with list\n";
       ((*yyvalp).test_cases_t) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.test_cases_t);
@@ -1484,7 +1484,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 23: // test_case: STRING
-#line 260 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 260 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Test Case: name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string) << "\n";
       ((*yyvalp).test_case_t) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string);
@@ -1493,7 +1493,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 24: // struct_definition: "struct" IDENTIFIER '{' field_definition_list '}'
-#line 267 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 267 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& struct_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
       auto&& field_definition_list = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.packet_field_definitions);
@@ -1511,7 +1511,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 25: // struct_definition: "struct" IDENTIFIER ':' IDENTIFIER '{' field_definition_list '}'
-#line 281 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 281 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& struct_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string);
       auto&& parent_struct_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
@@ -1541,7 +1541,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 26: // struct_definition: "struct" IDENTIFIER ':' IDENTIFIER '(' constraint_list ')' '{' field_definition_list '}'
-#line 307 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 307 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& struct_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-8)].yystate.yysemantics.yysval.string);
       auto&& parent_struct_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-6)].yystate.yysemantics.yysval.string);
@@ -1579,7 +1579,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 27: // packet_definition: "packet" IDENTIFIER '{' field_definition_list '}'
-#line 343 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 343 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
       auto&& field_definition_list = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.packet_field_definitions);
@@ -1597,7 +1597,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 28: // packet_definition: "packet" IDENTIFIER ':' IDENTIFIER '{' field_definition_list '}'
-#line 357 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 357 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string);
       auto&& parent_packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string);
@@ -1625,7 +1625,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 29: // packet_definition: "packet" IDENTIFIER ':' IDENTIFIER '(' constraint_list ')' '{' field_definition_list '}'
-#line 381 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 381 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto&& packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-8)].yystate.yysemantics.yysval.string);
       auto&& parent_packet_name = *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-6)].yystate.yysemantics.yysval.string);
@@ -1663,7 +1663,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 30: // field_definition_list: %empty
-#line 417 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 417 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Empty Field definition\n";
       ((*yyvalp).packet_field_definitions) = new FieldList();
@@ -1672,7 +1672,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 31: // field_definition_list: field_definition
-#line 422 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 422 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Field definition\n";
       ((*yyvalp).packet_field_definitions) = new FieldList();
@@ -1693,7 +1693,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 32: // field_definition_list: field_definition ',' field_definition_list
-#line 439 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 439 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Field definition with list\n";
       ((*yyvalp).packet_field_definitions) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_definitions);
@@ -1714,7 +1714,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 33: // field_definition: group_field_definition
-#line 458 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 458 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group Field";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1723,7 +1723,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 34: // field_definition: type_def_field_definition
-#line 463 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 463 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Field with a pre-defined type\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1732,7 +1732,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 35: // field_definition: scalar_field_definition
-#line 468 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 468 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Scalar field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1741,7 +1741,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 36: // field_definition: checksum_start_field_definition
-#line 473 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 473 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Checksum start field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1750,7 +1750,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 37: // field_definition: padding_field_definition
-#line 478 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 478 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Padding field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1759,7 +1759,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 38: // field_definition: size_field_definition
-#line 483 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 483 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Size field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1768,7 +1768,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 39: // field_definition: body_field_definition
-#line 488 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 488 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Body field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1777,7 +1777,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 40: // field_definition: payload_field_definition
-#line 493 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 493 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Payload field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1786,7 +1786,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 41: // field_definition: fixed_field_definition
-#line 498 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 498 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Fixed field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1795,7 +1795,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 42: // field_definition: reserved_field_definition
-#line 503 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 503 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Reserved field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1804,7 +1804,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 43: // field_definition: array_field_definition
-#line 508 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 508 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "ARRAY field\n";
       ((*yyvalp).packet_field_type) = (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.packet_field_type);
@@ -1813,7 +1813,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 44: // group_field_definition: IDENTIFIER
-#line 515 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 515 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       auto group = decls->GetGroupDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string));
       if (group == nullptr) {
@@ -1829,7 +1829,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 45: // group_field_definition: IDENTIFIER '{' constraint_list '}'
-#line 527 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 527 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group with fixed field(s) " << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string) << "\n";
       auto group = decls->GetGroupDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string));
@@ -1877,7 +1877,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 46: // constraint_list: constraint ',' constraint_list
-#line 573 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 573 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group field value list\n";
       (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.constraint_list_t)->insert(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.constraint_t));
@@ -1888,7 +1888,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 47: // constraint_list: constraint
-#line 580 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 580 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group field value\n";
       ((*yyvalp).constraint_list_t) = new std::map<std::string, std::variant<int64_t, std::string>>();
@@ -1899,7 +1899,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 48: // constraint: IDENTIFIER '=' INTEGER
-#line 589 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 589 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group with a fixed integer value=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string) << " value=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer) << "\n";
 
@@ -1910,7 +1910,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 49: // constraint: IDENTIFIER '=' IDENTIFIER
-#line 596 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 596 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Group with a fixed enum field value=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string) << " enum=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string);
 
@@ -1922,7 +1922,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 50: // type_def_field_definition: IDENTIFIER ':' IDENTIFIER
-#line 606 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 606 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Predefined type field " << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string) << " : " << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string) << "\n";
       if (auto type_def = decls->GetTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string))) {
@@ -1937,7 +1937,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 51: // scalar_field_definition: IDENTIFIER ':' INTEGER
-#line 619 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 619 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Scalar field " << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string) << " : " << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer) << "\n";
       ((*yyvalp).packet_field_type) = new ScalarField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -1947,7 +1947,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 52: // body_field_definition: "body"
-#line 627 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 627 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Body field\n";
       ((*yyvalp).packet_field_type) = new BodyField(LOC);
@@ -1956,7 +1956,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 53: // payload_field_definition: "payload" ':' '[' SIZE_MODIFIER ']'
-#line 634 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 634 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Payload field with modifier " << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string) << "\n";
       ((*yyvalp).packet_field_type) = new PayloadField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string), LOC);
@@ -1966,7 +1966,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 54: // payload_field_definition: "payload"
-#line 640 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 640 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Payload field\n";
       ((*yyvalp).packet_field_type) = new PayloadField("", LOC);
@@ -1975,7 +1975,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 55: // checksum_start_field_definition: "checksum_start" '(' IDENTIFIER ')'
-#line 647 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 647 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "ChecksumStart field defined\n";
       ((*yyvalp).packet_field_type) = new ChecksumStartField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string), LOC);
@@ -1985,7 +1985,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 56: // padding_field_definition: "padding" '[' INTEGER ']'
-#line 655 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 655 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Padding field defined\n";
       ((*yyvalp).packet_field_type) = new PaddingField((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer), LOC);
@@ -1994,7 +1994,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 57: // size_field_definition: "size" '(' IDENTIFIER ')' ':' INTEGER
-#line 662 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 662 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Size field defined\n";
       ((*yyvalp).packet_field_type) = new SizeField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -2004,7 +2004,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 58: // size_field_definition: "size" '(' "payload" ')' ':' INTEGER
-#line 668 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 668 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Size for payload defined\n";
       ((*yyvalp).packet_field_type) = new SizeField("payload", (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -2013,7 +2013,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 59: // size_field_definition: "size" '(' "body" ')' ':' INTEGER
-#line 673 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 673 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Size for body defined\n";
       ((*yyvalp).packet_field_type) = new SizeField("body", (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -2022,7 +2022,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 60: // size_field_definition: "count" '(' IDENTIFIER ')' ':' INTEGER
-#line 678 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 678 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Count field defined\n";
       ((*yyvalp).packet_field_type) = new CountField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -2032,7 +2032,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 61: // fixed_field_definition: "fixed" '=' INTEGER ':' INTEGER
-#line 686 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 686 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Fixed field defined value=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.integer) << " size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer) << "\n";
       ((*yyvalp).packet_field_type) = new FixedScalarField((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.integer), LOC);
@@ -2041,7 +2041,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 62: // fixed_field_definition: "fixed" '=' IDENTIFIER ':' IDENTIFIER
-#line 691 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 691 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Fixed enum field defined value=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string) << " enum=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string);
       auto type_def = decls->GetTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.string));
@@ -2063,7 +2063,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 63: // reserved_field_definition: "reserved" ':' INTEGER
-#line 711 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 711 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Reserved field of size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer) << "\n";
       ((*yyvalp).packet_field_type) = new ReservedField((YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (0)].yystate.yysemantics.yysval.integer), LOC);
@@ -2072,7 +2072,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 64: // array_field_definition: IDENTIFIER ':' INTEGER '[' ']'
-#line 718 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 718 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Vector field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.string) << " element_size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.integer);
       ((*yyvalp).packet_field_type) = new VectorField(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.string), (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.integer), "", LOC);
@@ -2082,7 +2082,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 65: // array_field_definition: IDENTIFIER ':' INTEGER '[' SIZE_MODIFIER ']'
-#line 724 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 724 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Vector field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string) << " element_size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.integer)
              << " size_modifier=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string);
@@ -2094,7 +2094,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 66: // array_field_definition: IDENTIFIER ':' INTEGER '[' INTEGER ']'
-#line 732 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 732 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Array field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string) << " element_size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.integer)
              << " fixed_size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer);
@@ -2105,7 +2105,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 67: // array_field_definition: IDENTIFIER ':' IDENTIFIER '[' ']'
-#line 739 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 739 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Vector field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-4)].yystate.yysemantics.yysval.string) << " type=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string);
       if (auto type_def = decls->GetTypeDef(*(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-2)].yystate.yysemantics.yysval.string))) {
@@ -2120,7 +2120,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 68: // array_field_definition: IDENTIFIER ':' IDENTIFIER '[' SIZE_MODIFIER ']'
-#line 750 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 750 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Vector field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string) << " type=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string)
              << " size_modifier=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.string);
@@ -2137,7 +2137,7 @@ yyuserAction (yyRuleNum yyn, int yyrhslen, yyGLRStackItem* yyvsp,
     break;
 
   case 69: // array_field_definition: IDENTIFIER ':' IDENTIFIER '[' INTEGER ']'
-#line 763 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 763 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
     {
       DEBUG() << "Array field defined name=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-5)].yystate.yysemantics.yysval.string) << " type=" << *(YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-3)].yystate.yysemantics.yysval.string)
              << " fixed_size=" << (YY_CAST (yyGLRStackItem const *, yyvsp)[YYFILL (-1)].yystate.yysemantics.yysval.integer);
@@ -2215,19 +2215,19 @@ yydestruct (const char *yymsg,
   switch (yykind)
     {
     case S_IDENTIFIER: // IDENTIFIER
-#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
             { std::cout << "DESTROYING STRING " << *((*yyvaluep).string) << "\n"; delete ((*yyvaluep).string); }
 #line 2221 "/build/arm-generic/var/cache/portage/net-wireless/floss/out/Default/gen/bt/system/gd/packet/parser/language_y.cc"
         break;
 
     case S_SIZE_MODIFIER: // SIZE_MODIFIER
-#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
             { std::cout << "DESTROYING STRING " << *((*yyvaluep).string) << "\n"; delete ((*yyvaluep).string); }
 #line 2227 "/build/arm-generic/var/cache/portage/net-wireless/floss/out/Default/gen/bt/system/gd/packet/parser/language_y.cc"
         break;
 
     case S_STRING: // STRING
-#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 106 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
             { std::cout << "DESTROYING STRING " << *((*yyvaluep).string) << "\n"; delete ((*yyvaluep).string); }
 #line 2233 "/build/arm-generic/var/cache/portage/net-wireless/floss/out/Default/gen/bt/system/gd/packet/parser/language_y.cc"
         break;
@@ -4147,7 +4147,7 @@ namespace yy {
 #undef S_reserved_field_definition
 #undef S_array_field_definition
 
-#line 775 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1260/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
+#line 775 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1291/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_y.yy"
 
 
 

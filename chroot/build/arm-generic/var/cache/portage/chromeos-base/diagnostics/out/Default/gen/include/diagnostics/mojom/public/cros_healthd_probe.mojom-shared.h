@@ -1363,7 +1363,7 @@ class ProbeErrorDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ErrorType>(
         data_value, output);
@@ -1376,7 +1376,7 @@ class ProbeErrorDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMsg(UserType* output) {
+  [[nodiscard]] bool ReadMsg(UserType* output) {
     
     auto* pointer = data_->msg.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1403,7 +1403,7 @@ class ProcessInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCommand(UserType* output) {
+  [[nodiscard]] bool ReadCommand(UserType* output) {
     
     auto* pointer = data_->command.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1422,7 +1422,7 @@ class ProcessInfoDataView {
     return data_->uptime_ticks;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProcessState>(
         data_value, output);
@@ -1488,7 +1488,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendor(UserType* output) {
+  [[nodiscard]] bool ReadVendor(UserType* output) {
     
     auto* pointer = data_->vendor.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1498,7 +1498,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSerialNumber(UserType* output) {
+  [[nodiscard]] bool ReadSerialNumber(UserType* output) {
     
     auto* pointer = data_->serial_number.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1517,7 +1517,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelName(UserType* output) {
+  [[nodiscard]] bool ReadModelName(UserType* output) {
     
     auto* pointer = data_->model_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1533,7 +1533,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTechnology(UserType* output) {
+  [[nodiscard]] bool ReadTechnology(UserType* output) {
     
     auto* pointer = data_->technology.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1543,7 +1543,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) {
+  [[nodiscard]] bool ReadStatus(UserType* output) {
     
     auto* pointer = data_->status.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1553,7 +1553,7 @@ class BatteryInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureDate(UserType* output) {
+  [[nodiscard]] bool ReadManufactureDate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1573,7 +1573,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint64DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTemperature(UserType* output) {
+  [[nodiscard]] bool ReadTemperature(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1625,7 +1625,7 @@ class NonRemovableBlockDeviceInfoDataView {
       ::chromeos::cros_healthd::mojom::NullableUint64DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDiscardTimeSecondsSinceLastBoot(UserType* output) {
+  [[nodiscard]] bool ReadDiscardTimeSecondsSinceLastBoot(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1645,7 +1645,7 @@ static_assert(
       BlockDeviceVendorDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendorId(UserType* output) {
+  [[nodiscard]] bool ReadVendorId(UserType* output) {
     
     auto* pointer = !data_->vendor_id.is_null() ? &data_->vendor_id : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView>(
@@ -1655,7 +1655,7 @@ static_assert(
       BlockDeviceProductDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductId(UserType* output) {
+  [[nodiscard]] bool ReadProductId(UserType* output) {
     
     auto* pointer = !data_->product_id.is_null() ? &data_->product_id : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BlockDeviceProductDataView>(
@@ -1665,7 +1665,7 @@ static_assert(
       BlockDeviceRevisionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRevision(UserType* output) {
+  [[nodiscard]] bool ReadRevision(UserType* output) {
     
     auto* pointer = !data_->revision.is_null() ? &data_->revision : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView>(
@@ -1675,7 +1675,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1688,7 +1688,7 @@ static_assert(
       BlockDeviceFirmwareDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFirmwareVersion(UserType* output) {
+  [[nodiscard]] bool ReadFirmwareVersion(UserType* output) {
     
     auto* pointer = !data_->firmware_version.is_null() ? &data_->firmware_version : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView>(
@@ -1698,14 +1698,14 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) {
+  [[nodiscard]] bool ReadType(UserType* output) {
     
     auto* pointer = data_->type.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPurpose(UserType* output) const {
+  [[nodiscard]] bool ReadPurpose(UserType* output) const {
     auto data_value = data_->purpose;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::StorageDevicePurpose>(
         data_value, output);
@@ -1718,7 +1718,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPath(UserType* output) {
+  [[nodiscard]] bool ReadPath(UserType* output) {
     
     auto* pointer = data_->path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1751,7 +1751,7 @@ class CpuInfoDataView {
     return data_->num_total_threads;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadArchitecture(UserType* output) const {
+  [[nodiscard]] bool ReadArchitecture(UserType* output) const {
     auto data_value = data_->architecture;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::CpuArchitectureEnum>(
         data_value, output);
@@ -1764,7 +1764,7 @@ class CpuInfoDataView {
       mojo::ArrayDataView<PhysicalCpuInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhysicalCpus(UserType* output) {
+  [[nodiscard]] bool ReadPhysicalCpus(UserType* output) {
     
     auto* pointer = data_->physical_cpus.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::PhysicalCpuInfoDataView>>(
@@ -1774,7 +1774,7 @@ class CpuInfoDataView {
       mojo::ArrayDataView<CpuTemperatureChannelDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTemperatureChannels(UserType* output) {
+  [[nodiscard]] bool ReadTemperatureChannels(UserType* output) {
     
     auto* pointer = data_->temperature_channels.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::CpuTemperatureChannelDataView>>(
@@ -1784,7 +1784,7 @@ class CpuInfoDataView {
       KeylockerInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadKeylockerInfo(UserType* output) {
+  [[nodiscard]] bool ReadKeylockerInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1804,7 +1804,7 @@ static_assert(
       VirtualizationInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVirtualization(UserType* output) {
+  [[nodiscard]] bool ReadVirtualization(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1825,7 +1825,7 @@ static_assert(
       mojo::MapDataView<mojo::StringDataView, VulnerabilityInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVulnerabilities(UserType* output) {
+  [[nodiscard]] bool ReadVulnerabilities(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1866,7 +1866,7 @@ class VirtualizationInfoDataView {
     return data_->is_smt_active;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSmtControl(UserType* output) const {
+  [[nodiscard]] bool ReadSmtControl(UserType* output) const {
     auto data_value = data_->smt_control;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl>(
         data_value, output);
@@ -1892,7 +1892,7 @@ class VulnerabilityInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status>(
         data_value, output);
@@ -1905,7 +1905,7 @@ class VulnerabilityInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMessage(UserType* output) {
+  [[nodiscard]] bool ReadMessage(UserType* output) {
     
     auto* pointer = data_->message.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -1951,7 +1951,7 @@ class PhysicalCpuInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelName(UserType* output) {
+  [[nodiscard]] bool ReadModelName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1971,7 +1971,7 @@ static_assert(
       mojo::ArrayDataView<LogicalCpuInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLogicalCpus(UserType* output) {
+  [[nodiscard]] bool ReadLogicalCpus(UserType* output) {
     
     auto* pointer = data_->logical_cpus.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::LogicalCpuInfoDataView>>(
@@ -1981,7 +1981,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFlags(UserType* output) {
+  [[nodiscard]] bool ReadFlags(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2002,7 +2002,7 @@ static_assert(
       CpuVirtualizationInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVirtualization(UserType* output) {
+  [[nodiscard]] bool ReadVirtualization(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2037,7 +2037,7 @@ class CpuVirtualizationInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type>(
         data_value, output);
@@ -2090,7 +2090,7 @@ class LogicalCpuInfoDataView {
       mojo::ArrayDataView<CpuCStateInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCStates(UserType* output) {
+  [[nodiscard]] bool ReadCStates(UserType* output) {
     
     auto* pointer = data_->c_states.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::CpuCStateInfoDataView>>(
@@ -2117,7 +2117,7 @@ class CpuCStateInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2147,7 +2147,7 @@ class CpuTemperatureChannelDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLabel(UserType* output) {
+  [[nodiscard]] bool ReadLabel(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2187,7 +2187,7 @@ class TimezoneInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPosix(UserType* output) {
+  [[nodiscard]] bool ReadPosix(UserType* output) {
     
     auto* pointer = data_->posix.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2197,7 +2197,7 @@ class TimezoneInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRegion(UserType* output) {
+  [[nodiscard]] bool ReadRegion(UserType* output) {
     
     auto* pointer = data_->region.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2236,7 +2236,7 @@ class MemoryInfoDataView {
       MemoryEncryptionInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMemoryEncryptionInfo(UserType* output) {
+  [[nodiscard]] bool ReadMemoryEncryptionInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2271,7 +2271,7 @@ class MemoryEncryptionInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEncryptionState(UserType* output) const {
+  [[nodiscard]] bool ReadEncryptionState(UserType* output) const {
     auto data_value = data_->encryption_state;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EncryptionState>(
         data_value, output);
@@ -2287,7 +2287,7 @@ class MemoryEncryptionInfoDataView {
     return data_->key_length;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadActiveAlgorithm(UserType* output) const {
+  [[nodiscard]] bool ReadActiveAlgorithm(UserType* output) const {
     auto data_value = data_->active_algorithm;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::CryptoAlgorithm>(
         data_value, output);
@@ -2316,7 +2316,7 @@ class BacklightInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPath(UserType* output) {
+  [[nodiscard]] bool ReadPath(UserType* output) {
     
     auto* pointer = data_->path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2374,7 +2374,7 @@ class StatefulPartitionInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFilesystem(UserType* output) {
+  [[nodiscard]] bool ReadFilesystem(UserType* output) {
     
     auto* pointer = data_->filesystem.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2384,7 +2384,7 @@ class StatefulPartitionInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMountSource(UserType* output) {
+  [[nodiscard]] bool ReadMountSource(UserType* output) {
     
     auto* pointer = data_->mount_source.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2411,7 +2411,7 @@ class BluetoothAdapterInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2421,7 +2421,7 @@ class BluetoothAdapterInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAddress(UserType* output) {
+  [[nodiscard]] bool ReadAddress(UserType* output) {
     
     auto* pointer = data_->address.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2437,7 +2437,7 @@ class BluetoothAdapterInfoDataView {
       mojo::ArrayDataView<BluetoothDeviceInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConnectedDevices(UserType* output) {
+  [[nodiscard]] bool ReadConnectedDevices(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2468,7 +2468,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUuids(UserType* output) {
+  [[nodiscard]] bool ReadUuids(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2489,7 +2489,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModalias(UserType* output) {
+  [[nodiscard]] bool ReadModalias(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2510,7 +2510,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadServiceAllowList(UserType* output) {
+  [[nodiscard]] bool ReadServiceAllowList(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2531,7 +2531,7 @@ static_assert(
       SupportedCapabilitiesDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSupportedCapabilities(UserType* output) {
+  [[nodiscard]] bool ReadSupportedCapabilities(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2569,7 +2569,7 @@ class BluetoothDeviceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAddress(UserType* output) {
+  [[nodiscard]] bool ReadAddress(UserType* output) {
     
     auto* pointer = data_->address.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2579,7 +2579,7 @@ class BluetoothDeviceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2596,7 +2596,7 @@ static_assert(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BluetoothDeviceType>(
         data_value, output);
@@ -2609,7 +2609,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAppearance(UserType* output) {
+  [[nodiscard]] bool ReadAppearance(UserType* output) {
     
     auto* pointer = data_->appearance.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::NullableUint16DataView>(
@@ -2619,7 +2619,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModalias(UserType* output) {
+  [[nodiscard]] bool ReadModalias(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2639,7 +2639,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableInt16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRssi(UserType* output) {
+  [[nodiscard]] bool ReadRssi(UserType* output) {
     
     auto* pointer = data_->rssi.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::NullableInt16DataView>(
@@ -2649,7 +2649,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMtu(UserType* output) {
+  [[nodiscard]] bool ReadMtu(UserType* output) {
     
     auto* pointer = data_->mtu.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::NullableUint16DataView>(
@@ -2659,7 +2659,7 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUuids(UserType* output) {
+  [[nodiscard]] bool ReadUuids(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2679,7 +2679,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint8DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBatteryPercentage(UserType* output) {
+  [[nodiscard]] bool ReadBatteryPercentage(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2745,7 +2745,7 @@ class SystemInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFirstPowerDate(UserType* output) {
+  [[nodiscard]] bool ReadFirstPowerDate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2765,7 +2765,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureDate(UserType* output) {
+  [[nodiscard]] bool ReadManufactureDate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2785,7 +2785,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductSkuNumber(UserType* output) {
+  [[nodiscard]] bool ReadProductSkuNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2805,7 +2805,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductSerialNumber(UserType* output) {
+  [[nodiscard]] bool ReadProductSerialNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2825,7 +2825,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductModelName(UserType* output) {
+  [[nodiscard]] bool ReadProductModelName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2845,7 +2845,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMarketingName(UserType* output) {
+  [[nodiscard]] bool ReadMarketingName(UserType* output) {
     
     auto* pointer = data_->marketing_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -2855,7 +2855,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBiosVersion(UserType* output) {
+  [[nodiscard]] bool ReadBiosVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2875,7 +2875,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBoardName(UserType* output) {
+  [[nodiscard]] bool ReadBoardName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2895,7 +2895,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBoardVersion(UserType* output) {
+  [[nodiscard]] bool ReadBoardVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2915,7 +2915,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint64DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadChassisType(UserType* output) {
+  [[nodiscard]] bool ReadChassisType(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2935,7 +2935,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductName(UserType* output) {
+  [[nodiscard]] bool ReadProductName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -2955,7 +2955,7 @@ static_assert(
       OsVersionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOsVersion(UserType* output) {
+  [[nodiscard]] bool ReadOsVersion(UserType* output) {
     
     auto* pointer = data_->os_version.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::OsVersionDataView>(
@@ -2982,7 +2982,7 @@ class SystemInfoV2DataView {
       OsInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOsInfo(UserType* output) {
+  [[nodiscard]] bool ReadOsInfo(UserType* output) {
     
     auto* pointer = data_->os_info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::OsInfoDataView>(
@@ -2992,7 +2992,7 @@ class SystemInfoV2DataView {
       VpdInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVpdInfo(UserType* output) {
+  [[nodiscard]] bool ReadVpdInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3012,7 +3012,7 @@ static_assert(
       DmiInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDmiInfo(UserType* output) {
+  [[nodiscard]] bool ReadDmiInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3049,7 +3049,7 @@ class OsInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCodeName(UserType* output) {
+  [[nodiscard]] bool ReadCodeName(UserType* output) {
     
     auto* pointer = data_->code_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3059,7 +3059,7 @@ class OsInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMarketingName(UserType* output) {
+  [[nodiscard]] bool ReadMarketingName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3079,14 +3079,14 @@ static_assert(
       OsVersionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOsVersion(UserType* output) {
+  [[nodiscard]] bool ReadOsVersion(UserType* output) {
     
     auto* pointer = data_->os_version.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::OsVersionDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBootMode(UserType* output) const {
+  [[nodiscard]] bool ReadBootMode(UserType* output) const {
     auto data_value = data_->boot_mode;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BootMode>(
         data_value, output);
@@ -3099,7 +3099,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOemName(UserType* output) {
+  [[nodiscard]] bool ReadOemName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3137,7 +3137,7 @@ class OsVersionDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReleaseMilestone(UserType* output) {
+  [[nodiscard]] bool ReadReleaseMilestone(UserType* output) {
     
     auto* pointer = data_->release_milestone.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3147,7 +3147,7 @@ class OsVersionDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBuildNumber(UserType* output) {
+  [[nodiscard]] bool ReadBuildNumber(UserType* output) {
     
     auto* pointer = data_->build_number.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3157,7 +3157,7 @@ class OsVersionDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPatchNumber(UserType* output) {
+  [[nodiscard]] bool ReadPatchNumber(UserType* output) {
     
     auto* pointer = data_->patch_number.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3167,7 +3167,7 @@ class OsVersionDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReleaseChannel(UserType* output) {
+  [[nodiscard]] bool ReadReleaseChannel(UserType* output) {
     
     auto* pointer = data_->release_channel.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3194,7 +3194,7 @@ class VpdInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSerialNumber(UserType* output) {
+  [[nodiscard]] bool ReadSerialNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3214,7 +3214,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRegion(UserType* output) {
+  [[nodiscard]] bool ReadRegion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3234,7 +3234,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMfgDate(UserType* output) {
+  [[nodiscard]] bool ReadMfgDate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3254,7 +3254,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadActivateDate(UserType* output) {
+  [[nodiscard]] bool ReadActivateDate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3274,7 +3274,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSkuNumber(UserType* output) {
+  [[nodiscard]] bool ReadSkuNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3294,7 +3294,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelName(UserType* output) {
+  [[nodiscard]] bool ReadModelName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3331,7 +3331,7 @@ class DmiInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBiosVendor(UserType* output) {
+  [[nodiscard]] bool ReadBiosVendor(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3351,7 +3351,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBiosVersion(UserType* output) {
+  [[nodiscard]] bool ReadBiosVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3371,7 +3371,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBoardName(UserType* output) {
+  [[nodiscard]] bool ReadBoardName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3391,7 +3391,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBoardVendor(UserType* output) {
+  [[nodiscard]] bool ReadBoardVendor(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3411,7 +3411,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBoardVersion(UserType* output) {
+  [[nodiscard]] bool ReadBoardVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3431,7 +3431,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadChassisVendor(UserType* output) {
+  [[nodiscard]] bool ReadChassisVendor(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3451,7 +3451,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint64DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadChassisType(UserType* output) {
+  [[nodiscard]] bool ReadChassisType(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3471,7 +3471,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductFamily(UserType* output) {
+  [[nodiscard]] bool ReadProductFamily(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3491,7 +3491,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductName(UserType* output) {
+  [[nodiscard]] bool ReadProductName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3511,7 +3511,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductVersion(UserType* output) {
+  [[nodiscard]] bool ReadProductVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3531,7 +3531,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSysVendor(UserType* output) {
+  [[nodiscard]] bool ReadSysVendor(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3568,7 +3568,7 @@ class WirelessInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaceName(UserType* output) {
+  [[nodiscard]] bool ReadInterfaceName(UserType* output) {
     
     auto* pointer = data_->interface_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3581,7 +3581,7 @@ class WirelessInterfaceInfoDataView {
       WirelessLinkInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWirelessLinkInfo(UserType* output) {
+  [[nodiscard]] bool ReadWirelessLinkInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3618,7 +3618,7 @@ class WirelessLinkInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAccessPointAddressStr(UserType* output) {
+  [[nodiscard]] bool ReadAccessPointAddressStr(UserType* output) {
     
     auto* pointer = data_->access_point_address_str.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3672,7 +3672,7 @@ class AudioInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputDeviceName(UserType* output) {
+  [[nodiscard]] bool ReadOutputDeviceName(UserType* output) {
     
     auto* pointer = data_->output_device_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3685,7 +3685,7 @@ class AudioInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputDeviceName(UserType* output) {
+  [[nodiscard]] bool ReadInputDeviceName(UserType* output) {
     
     auto* pointer = data_->input_device_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3718,7 +3718,7 @@ class AudioHardwareInfoDataView {
       mojo::ArrayDataView<AudioCardDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioCards(UserType* output) {
+  [[nodiscard]] bool ReadAudioCards(UserType* output) {
     
     auto* pointer = data_->audio_cards.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::AudioCardDataView>>(
@@ -3745,7 +3745,7 @@ class AudioCardDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAlsaId(UserType* output) {
+  [[nodiscard]] bool ReadAlsaId(UserType* output) {
     
     auto* pointer = data_->alsa_id.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3755,7 +3755,7 @@ class AudioCardDataView {
       BusDeviceDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBusDevice(UserType* output) {
+  [[nodiscard]] bool ReadBusDevice(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3775,7 +3775,7 @@ static_assert(
       mojo::ArrayDataView<HDAudioCodecDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHdAudioCodecs(UserType* output) {
+  [[nodiscard]] bool ReadHdAudioCodecs(UserType* output) {
     
     auto* pointer = data_->hd_audio_codecs.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::HDAudioCodecDataView>>(
@@ -3802,7 +3802,7 @@ class HDAudioCodecDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3844,7 +3844,7 @@ class BootPerformanceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadShutdownReason(UserType* output) {
+  [[nodiscard]] bool ReadShutdownReason(UserType* output) {
     
     auto* pointer = data_->shutdown_reason.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3871,7 +3871,7 @@ class BusDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendorName(UserType* output) {
+  [[nodiscard]] bool ReadVendorName(UserType* output) {
     
     auto* pointer = data_->vendor_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -3881,14 +3881,14 @@ class BusDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProductName(UserType* output) {
+  [[nodiscard]] bool ReadProductName(UserType* output) {
     
     auto* pointer = data_->product_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeviceClass(UserType* output) const {
+  [[nodiscard]] bool ReadDeviceClass(UserType* output) const {
     auto data_value = data_->device_class;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BusDeviceClass>(
         data_value, output);
@@ -3901,7 +3901,7 @@ class BusDeviceDataView {
       BusInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBusInfo(UserType* output) {
+  [[nodiscard]] bool ReadBusInfo(UserType* output) {
     
     auto* pointer = !data_->bus_info.is_null() ? &data_->bus_info : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BusInfoDataView>(
@@ -3943,7 +3943,7 @@ class PciBusInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDriver(UserType* output) {
+  [[nodiscard]] bool ReadDriver(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -3995,7 +3995,7 @@ class UsbBusInfoDataView {
       mojo::ArrayDataView<UsbBusInterfaceInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaces(UserType* output) {
+  [[nodiscard]] bool ReadInterfaces(UserType* output) {
     
     auto* pointer = data_->interfaces.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::UsbBusInterfaceInfoDataView>>(
@@ -4005,7 +4005,7 @@ class UsbBusInfoDataView {
       FwupdFirmwareVersionInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFwupdFirmwareVersionInfo(UserType* output) {
+  [[nodiscard]] bool ReadFwupdFirmwareVersionInfo(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4043,14 +4043,14 @@ class FwupdFirmwareVersionInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVersion(UserType* output) {
+  [[nodiscard]] bool ReadVersion(UserType* output) {
     
     auto* pointer = data_->version.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVersionFormat(UserType* output) const {
+  [[nodiscard]] bool ReadVersionFormat(UserType* output) const {
     auto data_value = data_->version_format;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::FwupdVersionFormat>(
         data_value, output);
@@ -4092,7 +4092,7 @@ class UsbBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDriver(UserType* output) {
+  [[nodiscard]] bool ReadDriver(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4129,7 +4129,7 @@ class TpmInfoDataView {
       TpmVersionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVersion(UserType* output) {
+  [[nodiscard]] bool ReadVersion(UserType* output) {
     
     auto* pointer = data_->version.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmVersionDataView>(
@@ -4139,7 +4139,7 @@ class TpmInfoDataView {
       TpmStatusDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) {
+  [[nodiscard]] bool ReadStatus(UserType* output) {
     
     auto* pointer = data_->status.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmStatusDataView>(
@@ -4149,7 +4149,7 @@ class TpmInfoDataView {
       TpmDictionaryAttackDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDictionaryAttack(UserType* output) {
+  [[nodiscard]] bool ReadDictionaryAttack(UserType* output) {
     
     auto* pointer = data_->dictionary_attack.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmDictionaryAttackDataView>(
@@ -4159,7 +4159,7 @@ class TpmInfoDataView {
       TpmAttestationDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAttestation(UserType* output) {
+  [[nodiscard]] bool ReadAttestation(UserType* output) {
     
     auto* pointer = data_->attestation.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmAttestationDataView>(
@@ -4169,7 +4169,7 @@ class TpmInfoDataView {
       TpmSupportedFeaturesDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSupportedFeatures(UserType* output) {
+  [[nodiscard]] bool ReadSupportedFeatures(UserType* output) {
     
     auto* pointer = data_->supported_features.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmSupportedFeaturesDataView>(
@@ -4179,7 +4179,7 @@ class TpmInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDidVid(UserType* output) {
+  [[nodiscard]] bool ReadDidVid(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4213,7 +4213,7 @@ class TpmVersionDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGscVersion(UserType* output) const {
+  [[nodiscard]] bool ReadGscVersion(UserType* output) const {
     auto data_value = data_->gsc_version;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmGSCVersion>(
         data_value, output);
@@ -4241,7 +4241,7 @@ class TpmVersionDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendorSpecific(UserType* output) {
+  [[nodiscard]] bool ReadVendorSpecific(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4381,7 +4381,7 @@ class GraphicsInfoDataView {
       GLESInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGlesInfo(UserType* output) {
+  [[nodiscard]] bool ReadGlesInfo(UserType* output) {
     
     auto* pointer = data_->gles_info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::GLESInfoDataView>(
@@ -4391,7 +4391,7 @@ class GraphicsInfoDataView {
       EGLInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEglInfo(UserType* output) {
+  [[nodiscard]] bool ReadEglInfo(UserType* output) {
     
     auto* pointer = data_->egl_info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EGLInfoDataView>(
@@ -4418,7 +4418,7 @@ class GLESInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVersion(UserType* output) {
+  [[nodiscard]] bool ReadVersion(UserType* output) {
     
     auto* pointer = data_->version.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4428,7 +4428,7 @@ class GLESInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadShadingVersion(UserType* output) {
+  [[nodiscard]] bool ReadShadingVersion(UserType* output) {
     
     auto* pointer = data_->shading_version.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4438,7 +4438,7 @@ class GLESInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendor(UserType* output) {
+  [[nodiscard]] bool ReadVendor(UserType* output) {
     
     auto* pointer = data_->vendor.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4448,7 +4448,7 @@ class GLESInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRenderer(UserType* output) {
+  [[nodiscard]] bool ReadRenderer(UserType* output) {
     
     auto* pointer = data_->renderer.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4458,7 +4458,7 @@ class GLESInfoDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadExtensions(UserType* output) {
+  [[nodiscard]] bool ReadExtensions(UserType* output) {
     
     auto* pointer = data_->extensions.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -4485,7 +4485,7 @@ class EGLInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVersion(UserType* output) {
+  [[nodiscard]] bool ReadVersion(UserType* output) {
     
     auto* pointer = data_->version.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4495,7 +4495,7 @@ class EGLInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendor(UserType* output) {
+  [[nodiscard]] bool ReadVendor(UserType* output) {
     
     auto* pointer = data_->vendor.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4505,7 +4505,7 @@ class EGLInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadClientApi(UserType* output) {
+  [[nodiscard]] bool ReadClientApi(UserType* output) {
     
     auto* pointer = data_->client_api.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -4515,7 +4515,7 @@ class EGLInfoDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadExtensions(UserType* output) {
+  [[nodiscard]] bool ReadExtensions(UserType* output) {
     
     auto* pointer = data_->extensions.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -4542,7 +4542,7 @@ class DisplayInfoDataView {
       EmbeddedDisplayInfoDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEdpInfo(UserType* output) {
+  [[nodiscard]] bool ReadEdpInfo(UserType* output) {
     
     auto* pointer = data_->edp_info.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EmbeddedDisplayInfoDataView>(
@@ -4552,7 +4552,7 @@ class DisplayInfoDataView {
       mojo::ArrayDataView<ExternalDisplayInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDpInfos(UserType* output) {
+  [[nodiscard]] bool ReadDpInfos(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4596,7 +4596,7 @@ class EmbeddedDisplayInfoDataView {
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayWidth(UserType* output) {
+  [[nodiscard]] bool ReadDisplayWidth(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4617,7 +4617,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayHeight(UserType* output) {
+  [[nodiscard]] bool ReadDisplayHeight(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4638,7 +4638,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResolutionHorizontal(UserType* output) {
+  [[nodiscard]] bool ReadResolutionHorizontal(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4659,7 +4659,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResolutionVertical(UserType* output) {
+  [[nodiscard]] bool ReadResolutionVertical(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4680,7 +4680,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableDoubleDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRefreshRate(UserType* output) {
+  [[nodiscard]] bool ReadRefreshRate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4701,7 +4701,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufacturer(UserType* output) {
+  [[nodiscard]] bool ReadManufacturer(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4722,7 +4722,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelId(UserType* output) {
+  [[nodiscard]] bool ReadModelId(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4743,7 +4743,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSerialNumber(UserType* output) {
+  [[nodiscard]] bool ReadSerialNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4764,7 +4764,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint8DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureWeek(UserType* output) {
+  [[nodiscard]] bool ReadManufactureWeek(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4785,7 +4785,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureYear(UserType* output) {
+  [[nodiscard]] bool ReadManufactureYear(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4806,7 +4806,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEdidVersion(UserType* output) {
+  [[nodiscard]] bool ReadEdidVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4824,7 +4824,7 @@ static_assert(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputType(UserType* output) const {
+  [[nodiscard]] bool ReadInputType(UserType* output) const {
     auto data_value = data_->header_.version >= 2
                       ? data_->input_type : 0;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DisplayInputType>(
@@ -4840,7 +4840,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayName(UserType* output) {
+  [[nodiscard]] bool ReadDisplayName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4878,7 +4878,7 @@ class ExternalDisplayInfoDataView {
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayWidth(UserType* output) {
+  [[nodiscard]] bool ReadDisplayWidth(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4898,7 +4898,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayHeight(UserType* output) {
+  [[nodiscard]] bool ReadDisplayHeight(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4918,7 +4918,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResolutionHorizontal(UserType* output) {
+  [[nodiscard]] bool ReadResolutionHorizontal(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4938,7 +4938,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResolutionVertical(UserType* output) {
+  [[nodiscard]] bool ReadResolutionVertical(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4958,7 +4958,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableDoubleDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRefreshRate(UserType* output) {
+  [[nodiscard]] bool ReadRefreshRate(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4978,7 +4978,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufacturer(UserType* output) {
+  [[nodiscard]] bool ReadManufacturer(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -4999,7 +4999,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadModelId(UserType* output) {
+  [[nodiscard]] bool ReadModelId(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5020,7 +5020,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint32DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSerialNumber(UserType* output) {
+  [[nodiscard]] bool ReadSerialNumber(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5041,7 +5041,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint8DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureWeek(UserType* output) {
+  [[nodiscard]] bool ReadManufactureWeek(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5062,7 +5062,7 @@ static_assert(
       ::chromeos::cros_healthd::mojom::NullableUint16DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadManufactureYear(UserType* output) {
+  [[nodiscard]] bool ReadManufactureYear(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5083,7 +5083,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEdidVersion(UserType* output) {
+  [[nodiscard]] bool ReadEdidVersion(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5101,7 +5101,7 @@ static_assert(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputType(UserType* output) const {
+  [[nodiscard]] bool ReadInputType(UserType* output) const {
     auto data_value = data_->header_.version >= 1
                       ? data_->input_type : 0;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DisplayInputType>(
@@ -5117,7 +5117,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayName(UserType* output) {
+  [[nodiscard]] bool ReadDisplayName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5155,7 +5155,7 @@ class ThunderboltBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVendorName(UserType* output) {
+  [[nodiscard]] bool ReadVendorName(UserType* output) {
     
     auto* pointer = data_->vendor_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5165,7 +5165,7 @@ class ThunderboltBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeviceName(UserType* output) {
+  [[nodiscard]] bool ReadDeviceName(UserType* output) {
     
     auto* pointer = data_->device_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5175,7 +5175,7 @@ class ThunderboltBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeviceType(UserType* output) {
+  [[nodiscard]] bool ReadDeviceType(UserType* output) {
     
     auto* pointer = data_->device_type.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5185,7 +5185,7 @@ class ThunderboltBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeviceUuid(UserType* output) {
+  [[nodiscard]] bool ReadDeviceUuid(UserType* output) {
     
     auto* pointer = data_->device_uuid.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5204,7 +5204,7 @@ class ThunderboltBusInterfaceInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDeviceFwVersion(UserType* output) {
+  [[nodiscard]] bool ReadDeviceFwVersion(UserType* output) {
     
     auto* pointer = data_->device_fw_version.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5228,7 +5228,7 @@ class ThunderboltBusInfoDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSecurityLevel(UserType* output) const {
+  [[nodiscard]] bool ReadSecurityLevel(UserType* output) const {
     auto data_value = data_->security_level;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel>(
         data_value, output);
@@ -5241,7 +5241,7 @@ class ThunderboltBusInfoDataView {
       mojo::ArrayDataView<ThunderboltBusInterfaceInfoDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadThunderboltInterfaces(UserType* output) {
+  [[nodiscard]] bool ReadThunderboltInterfaces(UserType* output) {
     
     auto* pointer = data_->thunderbolt_interfaces.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::ThunderboltBusInterfaceInfoDataView>>(
@@ -5268,7 +5268,7 @@ class InputInfoDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTouchpadLibraryName(UserType* output) {
+  [[nodiscard]] bool ReadTouchpadLibraryName(UserType* output) {
     
     auto* pointer = data_->touchpad_library_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5278,7 +5278,7 @@ class InputInfoDataView {
       mojo::ArrayDataView<TouchscreenDeviceDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTouchscreenDevices(UserType* output) {
+  [[nodiscard]] bool ReadTouchscreenDevices(UserType* output) {
     
     auto* pointer = data_->touchscreen_devices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::TouchscreenDeviceDataView>>(
@@ -5305,7 +5305,7 @@ class TouchscreenDeviceDataView {
       InputDeviceDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputDevice(UserType* output) {
+  [[nodiscard]] bool ReadInputDevice(UserType* output) {
     
     auto* pointer = data_->input_device.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::InputDeviceDataView>(
@@ -5341,14 +5341,14 @@ class InputDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConnectionType(UserType* output) const {
+  [[nodiscard]] bool ReadConnectionType(UserType* output) const {
     auto data_value = data_->connection_type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::InputDevice_ConnectionType>(
         data_value, output);
@@ -5361,7 +5361,7 @@ class InputDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhysicalLocation(UserType* output) {
+  [[nodiscard]] bool ReadPhysicalLocation(UserType* output) {
     
     auto* pointer = data_->physical_location.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -5391,7 +5391,7 @@ class TelemetryInfoDataView {
       BatteryResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBatteryResult(UserType* output) {
+  [[nodiscard]] bool ReadBatteryResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5411,7 +5411,7 @@ static_assert(
       NonRemovableBlockDeviceResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBlockDeviceResult(UserType* output) {
+  [[nodiscard]] bool ReadBlockDeviceResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5431,7 +5431,7 @@ static_assert(
       CpuResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCpuResult(UserType* output) {
+  [[nodiscard]] bool ReadCpuResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5451,7 +5451,7 @@ static_assert(
       TimezoneResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimezoneResult(UserType* output) {
+  [[nodiscard]] bool ReadTimezoneResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5471,7 +5471,7 @@ static_assert(
       MemoryResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMemoryResult(UserType* output) {
+  [[nodiscard]] bool ReadMemoryResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5491,7 +5491,7 @@ static_assert(
       BacklightResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBacklightResult(UserType* output) {
+  [[nodiscard]] bool ReadBacklightResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5511,7 +5511,7 @@ static_assert(
       FanResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFanResult(UserType* output) {
+  [[nodiscard]] bool ReadFanResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5531,7 +5531,7 @@ static_assert(
       StatefulPartitionResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatefulPartitionResult(UserType* output) {
+  [[nodiscard]] bool ReadStatefulPartitionResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5551,7 +5551,7 @@ static_assert(
       BluetoothResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBluetoothResult(UserType* output) {
+  [[nodiscard]] bool ReadBluetoothResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5571,7 +5571,7 @@ static_assert(
       SystemResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSystemResult(UserType* output) {
+  [[nodiscard]] bool ReadSystemResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5591,7 +5591,7 @@ static_assert(
       NetworkResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworkResult(UserType* output) {
+  [[nodiscard]] bool ReadNetworkResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5611,7 +5611,7 @@ static_assert(
       AudioResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioResult(UserType* output) {
+  [[nodiscard]] bool ReadAudioResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5631,7 +5631,7 @@ static_assert(
       BootPerformanceResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBootPerformanceResult(UserType* output) {
+  [[nodiscard]] bool ReadBootPerformanceResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5651,7 +5651,7 @@ static_assert(
       BusResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBusResult(UserType* output) {
+  [[nodiscard]] bool ReadBusResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5671,7 +5671,7 @@ static_assert(
       SystemResultV2DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSystemResultV2(UserType* output) {
+  [[nodiscard]] bool ReadSystemResultV2(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5691,7 +5691,7 @@ static_assert(
       TpmResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTpmResult(UserType* output) {
+  [[nodiscard]] bool ReadTpmResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5711,7 +5711,7 @@ static_assert(
       GraphicsResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGraphicsResult(UserType* output) {
+  [[nodiscard]] bool ReadGraphicsResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5731,7 +5731,7 @@ static_assert(
       DisplayResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayResult(UserType* output) {
+  [[nodiscard]] bool ReadDisplayResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5752,7 +5752,7 @@ static_assert(
       NetworkInterfaceResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworkInterfaceResult(UserType* output) {
+  [[nodiscard]] bool ReadNetworkInterfaceResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5773,7 +5773,7 @@ static_assert(
       InputResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputResult(UserType* output) {
+  [[nodiscard]] bool ReadInputResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5794,7 +5794,7 @@ static_assert(
       AudioHardwareResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioHardwareResult(UserType* output) {
+  [[nodiscard]] bool ReadAudioHardwareResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5846,7 +5846,7 @@ class ProcessResultDataView {
       ProcessInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadProcessInfo(UserType* output) const {
+  [[nodiscard]] bool ReadProcessInfo(UserType* output) const {
     
     CHECK(is_process_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProcessInfoDataView>(
@@ -5857,7 +5857,7 @@ class ProcessResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -5894,7 +5894,7 @@ class BatteryResultDataView {
       BatteryInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBatteryInfo(UserType* output) const {
+  [[nodiscard]] bool ReadBatteryInfo(UserType* output) const {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -5915,7 +5915,7 @@ static_assert(
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -5952,7 +5952,7 @@ class NonRemovableBlockDeviceResultDataView {
       mojo::ArrayDataView<NonRemovableBlockDeviceInfoDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBlockDeviceInfo(UserType* output) const {
+  [[nodiscard]] bool ReadBlockDeviceInfo(UserType* output) const {
     
     CHECK(is_block_device_info());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::NonRemovableBlockDeviceInfoDataView>>(
@@ -5963,7 +5963,7 @@ class NonRemovableBlockDeviceResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6160,7 +6160,7 @@ class CpuResultDataView {
       CpuInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCpuInfo(UserType* output) const {
+  [[nodiscard]] bool ReadCpuInfo(UserType* output) const {
     
     CHECK(is_cpu_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::CpuInfoDataView>(
@@ -6171,7 +6171,7 @@ class CpuResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6208,7 +6208,7 @@ class TimezoneResultDataView {
       TimezoneInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTimezoneInfo(UserType* output) const {
+  [[nodiscard]] bool ReadTimezoneInfo(UserType* output) const {
     
     CHECK(is_timezone_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TimezoneInfoDataView>(
@@ -6219,7 +6219,7 @@ class TimezoneResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6256,7 +6256,7 @@ class MemoryResultDataView {
       MemoryInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMemoryInfo(UserType* output) const {
+  [[nodiscard]] bool ReadMemoryInfo(UserType* output) const {
     
     CHECK(is_memory_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::MemoryInfoDataView>(
@@ -6267,7 +6267,7 @@ class MemoryResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6304,7 +6304,7 @@ class BacklightResultDataView {
       mojo::ArrayDataView<BacklightInfoDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBacklightInfo(UserType* output) const {
+  [[nodiscard]] bool ReadBacklightInfo(UserType* output) const {
     
     CHECK(is_backlight_info());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::BacklightInfoDataView>>(
@@ -6315,7 +6315,7 @@ class BacklightResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6352,7 +6352,7 @@ class FanResultDataView {
       mojo::ArrayDataView<FanInfoDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFanInfo(UserType* output) const {
+  [[nodiscard]] bool ReadFanInfo(UserType* output) const {
     
     CHECK(is_fan_info());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::FanInfoDataView>>(
@@ -6363,7 +6363,7 @@ class FanResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6400,7 +6400,7 @@ class StatefulPartitionResultDataView {
       StatefulPartitionInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPartitionInfo(UserType* output) const {
+  [[nodiscard]] bool ReadPartitionInfo(UserType* output) const {
     
     CHECK(is_partition_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::StatefulPartitionInfoDataView>(
@@ -6411,7 +6411,7 @@ class StatefulPartitionResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6448,7 +6448,7 @@ class BluetoothResultDataView {
       mojo::ArrayDataView<BluetoothAdapterInfoDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBluetoothAdapterInfo(UserType* output) const {
+  [[nodiscard]] bool ReadBluetoothAdapterInfo(UserType* output) const {
     
     CHECK(is_bluetooth_adapter_info());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::BluetoothAdapterInfoDataView>>(
@@ -6459,7 +6459,7 @@ class BluetoothResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6496,7 +6496,7 @@ class SystemResultDataView {
       SystemInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSystemInfo(UserType* output) const {
+  [[nodiscard]] bool ReadSystemInfo(UserType* output) const {
     
     CHECK(is_system_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::SystemInfoDataView>(
@@ -6507,7 +6507,7 @@ class SystemResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6544,7 +6544,7 @@ class SystemResultV2DataView {
       SystemInfoV2DataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSystemInfoV2(UserType* output) const {
+  [[nodiscard]] bool ReadSystemInfoV2(UserType* output) const {
     
     CHECK(is_system_info_v2());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::SystemInfoV2DataView>(
@@ -6555,7 +6555,7 @@ class SystemResultV2DataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6592,7 +6592,7 @@ class NetworkResultDataView {
       ::chromeos::network_health::mojom::NetworkHealthStateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworkHealth(UserType* output) const {
+  [[nodiscard]] bool ReadNetworkHealth(UserType* output) const {
     
     CHECK(is_network_health());
     return mojo::internal::Deserialize<::chromeos::network_health::mojom::NetworkHealthStateDataView>(
@@ -6603,7 +6603,7 @@ class NetworkResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6640,7 +6640,7 @@ class NetworkInterfaceResultDataView {
       mojo::ArrayDataView<NetworkInterfaceInfoDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworkInterfaceInfo(UserType* output) const {
+  [[nodiscard]] bool ReadNetworkInterfaceInfo(UserType* output) const {
     
     CHECK(is_network_interface_info());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::NetworkInterfaceInfoDataView>>(
@@ -6651,7 +6651,7 @@ class NetworkInterfaceResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6688,7 +6688,7 @@ class NetworkInterfaceInfoDataView {
       WirelessInterfaceInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadWirelessInterfaceInfo(UserType* output) const {
+  [[nodiscard]] bool ReadWirelessInterfaceInfo(UserType* output) const {
     
     CHECK(is_wireless_interface_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::WirelessInterfaceInfoDataView>(
@@ -6725,7 +6725,7 @@ class AudioResultDataView {
       AudioInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioInfo(UserType* output) const {
+  [[nodiscard]] bool ReadAudioInfo(UserType* output) const {
     
     CHECK(is_audio_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::AudioInfoDataView>(
@@ -6736,7 +6736,7 @@ class AudioResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6778,7 +6778,7 @@ class AudioHardwareResultDataView {
       AudioHardwareInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAudioHardwareInfo(UserType* output) const {
+  [[nodiscard]] bool ReadAudioHardwareInfo(UserType* output) const {
     
     CHECK(is_audio_hardware_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::AudioHardwareInfoDataView>(
@@ -6789,7 +6789,7 @@ class AudioHardwareResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6826,7 +6826,7 @@ class BootPerformanceResultDataView {
       BootPerformanceInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBootPerformanceInfo(UserType* output) const {
+  [[nodiscard]] bool ReadBootPerformanceInfo(UserType* output) const {
     
     CHECK(is_boot_performance_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::BootPerformanceInfoDataView>(
@@ -6837,7 +6837,7 @@ class BootPerformanceResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6874,7 +6874,7 @@ class BusResultDataView {
       mojo::ArrayDataView<BusDeviceDataView>* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBusDevices(UserType* output) const {
+  [[nodiscard]] bool ReadBusDevices(UserType* output) const {
     
     CHECK(is_bus_devices());
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::mojom::BusDeviceDataView>>(
@@ -6885,7 +6885,7 @@ class BusResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -6922,7 +6922,7 @@ class BusInfoDataView {
       PciBusInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPciBusInfo(UserType* output) const {
+  [[nodiscard]] bool ReadPciBusInfo(UserType* output) const {
     
     CHECK(is_pci_bus_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::PciBusInfoDataView>(
@@ -6933,7 +6933,7 @@ class BusInfoDataView {
       UsbBusInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUsbBusInfo(UserType* output) const {
+  [[nodiscard]] bool ReadUsbBusInfo(UserType* output) const {
     
     CHECK(is_usb_bus_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::UsbBusInfoDataView>(
@@ -6944,7 +6944,7 @@ class BusInfoDataView {
       ThunderboltBusInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadThunderboltBusInfo(UserType* output) const {
+  [[nodiscard]] bool ReadThunderboltBusInfo(UserType* output) const {
     
     CHECK(is_thunderbolt_bus_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ThunderboltBusInfoDataView>(
@@ -6981,7 +6981,7 @@ class TpmResultDataView {
       TpmInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadTpmInfo(UserType* output) const {
+  [[nodiscard]] bool ReadTpmInfo(UserType* output) const {
     
     CHECK(is_tpm_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::TpmInfoDataView>(
@@ -6992,7 +6992,7 @@ class TpmResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -7029,7 +7029,7 @@ class GraphicsResultDataView {
       GraphicsInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGraphicsInfo(UserType* output) const {
+  [[nodiscard]] bool ReadGraphicsInfo(UserType* output) const {
     
     CHECK(is_graphics_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::GraphicsInfoDataView>(
@@ -7040,7 +7040,7 @@ class GraphicsResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -7077,7 +7077,7 @@ class DisplayResultDataView {
       DisplayInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDisplayInfo(UserType* output) const {
+  [[nodiscard]] bool ReadDisplayInfo(UserType* output) const {
     
     CHECK(is_display_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DisplayInfoDataView>(
@@ -7088,7 +7088,7 @@ class DisplayResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(
@@ -7125,7 +7125,7 @@ class InputResultDataView {
       InputInfoDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputInfo(UserType* output) const {
+  [[nodiscard]] bool ReadInputInfo(UserType* output) const {
     
     CHECK(is_input_info());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::InputInfoDataView>(
@@ -7136,7 +7136,7 @@ class InputResultDataView {
       ProbeErrorDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     
     CHECK(is_error());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ProbeErrorDataView>(

@@ -1,18 +1,18 @@
 {
 	"package": "6b0c76ae041f3aa383e1b38379c3a0ab4195fbe6eaa425f8664834894ba04d63",
 	"files": {
-		"LICENSE-MIT": "de3911c2d98c8bd2d701ee721347053d9b55995a11f9a8c955e44d3ca1b376bf",
-		"LICENSE-APACHE": "453745410e3be8cf25d56872ea2aec975a78e6c9f217443d0bf908a5bce7c8ff",
-		"Cargo.lock": "62aefd74c98c61490d30fb8dbd99a3ebeb135861d6debec8d2bea524e099068b",
-		"Cargo.toml": "c5a55ae97d10709f1da671a1d3fa206d2bde5fe2c2f901f564f5f6ffc1ced4bb",
-		"examples/server.rs": "4f22e84923ab5ec72a4ec43c97932c7d619eb582e4319b3eed169cabf6d7b4f6",
 		"examples/adv_server.rs": "31d290110ae0f3618e832c674abdef25bc0c81df5043da7154b8826f03aa6b07",
-		"src/methodtype.rs": "8b1550856ad0f9d5c5ce817103e99a3e1774dfe627a7a67d36437cfce6a0baa8",
-		"src/lib.rs": "c27c782f798b2846cfd0409456a73e23f9af28758859ff7527cb0582322a2f13",
-		"src/utils.rs": "240b7cc7b4ce175ffbeb96943da53e6764f3b4cf47b20820b66d17acfbeade21",
-		"src/objectpath.rs": "cf4a8577ba95431c1decb6ef1176c1ce724356f4ccb93824cdc903319d83c5af",
-		"src/factory.rs": "bd1e4728df66b8597f07282ca76998a290deae9b690bd2fcb4407bad14e55f95",
+		"examples/server.rs": "4f22e84923ab5ec72a4ec43c97932c7d619eb582e4319b3eed169cabf6d7b4f6",
+		"Cargo.toml": "c5a55ae97d10709f1da671a1d3fa206d2bde5fe2c2f901f564f5f6ffc1ced4bb",
+		"Cargo.toml.orig": "89deff695a1fbad43dd095f91b9a44d6942cd39156408b142c4f500c40cdc897",
+		"Cargo.lock": "62aefd74c98c61490d30fb8dbd99a3ebeb135861d6debec8d2bea524e099068b",
+		"LICENSE-MIT": "de3911c2d98c8bd2d701ee721347053d9b55995a11f9a8c955e44d3ca1b376bf",
 		"src/leaves.rs": "4cd9971b7328d4c17b4de9fda666d4e0980e101b0f465243a42f88ef9395515c",
-		"Cargo.toml.orig": "89deff695a1fbad43dd095f91b9a44d6942cd39156408b142c4f500c40cdc897"
+		"src/factory.rs": "bd1e4728df66b8597f07282ca76998a290deae9b690bd2fcb4407bad14e55f95",
+		"src/objectpath.rs": "cf4a8577ba95431c1decb6ef1176c1ce724356f4ccb93824cdc903319d83c5af",
+		"src/lib.rs": "c27c782f798b2846cfd0409456a73e23f9af28758859ff7527cb0582322a2f13",
+		"src/methodtype.rs": "8b1550856ad0f9d5c5ce817103e99a3e1774dfe627a7a67d36437cfce6a0baa8",
+		"src/utils.rs": "240b7cc7b4ce175ffbeb96943da53e6764f3b4cf47b20820b66d17acfbeade21",
+		"LICENSE-APACHE": "453745410e3be8cf25d56872ea2aec975a78e6c9f217443d0bf908a5bce7c8ff"
 	}
 }

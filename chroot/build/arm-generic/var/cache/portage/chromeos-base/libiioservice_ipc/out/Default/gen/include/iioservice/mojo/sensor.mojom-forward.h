@@ -74,63 +74,13 @@ using IioEventPtr = mojo::StructPtr<IioEvent>;
 
 class SensorService;
 
-using SensorServicePtr = mojo::InterfacePtr<SensorService>;
-using SensorServicePtrInfo = mojo::InterfacePtrInfo<SensorService>;
-
-using SensorServiceRequest = mojo::InterfaceRequest<SensorService>;
-using SensorServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorService>;
-
-using SensorServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorService>;
-
 class SensorDevice;
-
-using SensorDevicePtr = mojo::InterfacePtr<SensorDevice>;
-using SensorDevicePtrInfo = mojo::InterfacePtrInfo<SensorDevice>;
-
-using SensorDeviceRequest = mojo::InterfaceRequest<SensorDevice>;
-using SensorDeviceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorDevice>;
-
-using SensorDeviceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorDevice>;
 
 class SensorDeviceSamplesObserver;
 
-using SensorDeviceSamplesObserverPtr = mojo::InterfacePtr<SensorDeviceSamplesObserver>;
-using SensorDeviceSamplesObserverPtrInfo = mojo::InterfacePtrInfo<SensorDeviceSamplesObserver>;
-
-using SensorDeviceSamplesObserverRequest = mojo::InterfaceRequest<SensorDeviceSamplesObserver>;
-using SensorDeviceSamplesObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorDeviceSamplesObserver>;
-
-using SensorDeviceSamplesObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorDeviceSamplesObserver>;
-
 class SensorServiceNewDevicesObserver;
 
-using SensorServiceNewDevicesObserverPtr = mojo::InterfacePtr<SensorServiceNewDevicesObserver>;
-using SensorServiceNewDevicesObserverPtrInfo = mojo::InterfacePtrInfo<SensorServiceNewDevicesObserver>;
-
-using SensorServiceNewDevicesObserverRequest = mojo::InterfaceRequest<SensorServiceNewDevicesObserver>;
-using SensorServiceNewDevicesObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorServiceNewDevicesObserver>;
-
-using SensorServiceNewDevicesObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorServiceNewDevicesObserver>;
-
 class SensorDeviceEventsObserver;
-
-using SensorDeviceEventsObserverPtr = mojo::InterfacePtr<SensorDeviceEventsObserver>;
-using SensorDeviceEventsObserverPtrInfo = mojo::InterfacePtrInfo<SensorDeviceEventsObserver>;
-
-using SensorDeviceEventsObserverRequest = mojo::InterfaceRequest<SensorDeviceEventsObserver>;
-using SensorDeviceEventsObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SensorDeviceEventsObserver>;
-
-using SensorDeviceEventsObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SensorDeviceEventsObserver>;
 
 
 

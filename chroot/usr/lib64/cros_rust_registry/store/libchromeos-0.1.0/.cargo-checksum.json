@@ -1,14 +1,14 @@
 {
 	"package": "c72daaaf8ea8e1c280d1a151beea872337071e299bc375975a98d1efa461d2f8",
 	"files": {
-		"OWNERS": "e060f355dc574b60cb1ef66faea560a575a82ea710d7edc3b8c39ca92fc61f37",
-		"README.md": "bbc55f2f7267907efd0b30197b83802c589b108bcfb7ad89ecb473387bfb870e",
+		"Cargo.toml.orig": "c77885fd3a9901c0cb2a379299c0e2e2adf7599f4fa1ce347498196960e2ebdc",
 		"Cargo.toml": "e405cbfcdcac72d5ade8f50028e11dc10993f0c652024347c1c717bffb9b4fab",
+		"README.md": "bbc55f2f7267907efd0b30197b83802c589b108bcfb7ad89ecb473387bfb870e",
+		"OWNERS": "e060f355dc574b60cb1ef66faea560a575a82ea710d7edc3b8c39ca92fc61f37",
 		"src/lib.rs": "fc95e1b4374499a5b5de177f4c307f03b7f451464fe30238e81eff940f20e8c7",
-		"src/secure_blob.rs": "47b4ecfd0a2e000b44930a6c415af08d4451218e4d2e1708f7aa38c769e14327",
-		"src/syslog.rs": "e8fcca17d4012db70b24b78dc43de43aeb62aec647e111bc9f7130e8d177e2ca",
 		"src/scoped_path.rs": "4485ff8c8e394e236ee2f8b28a467fa582917f2bd8391b8eca4fb8a4e5fe8d20",
 		"src/chromeos.rs": "77e16a2f0d9d65a46245d3a51d0720d5fdb94dcbe8571fac3fdc0d58bd50d989",
-		"Cargo.toml.orig": "c77885fd3a9901c0cb2a379299c0e2e2adf7599f4fa1ce347498196960e2ebdc"
+		"src/syslog.rs": "e8fcca17d4012db70b24b78dc43de43aeb62aec647e111bc9f7130e8d177e2ca",
+		"src/secure_blob.rs": "47b4ecfd0a2e000b44930a6c415af08d4451218e4d2e1708f7aa38c769e14327"
 	}
 }

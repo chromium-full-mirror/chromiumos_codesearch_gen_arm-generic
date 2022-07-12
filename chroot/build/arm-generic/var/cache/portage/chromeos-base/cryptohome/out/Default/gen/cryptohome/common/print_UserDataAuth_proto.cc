@@ -351,21 +351,6 @@ std::string GetProtoDebugStringWithIndent(VaultEncryptionType value,
   return "<unknown>";
 }
 
-std::string GetProtoDebugString(SetProjectIdAllowedPathType value) {
-  return GetProtoDebugStringWithIndent(value, 0);
-}
-
-std::string GetProtoDebugStringWithIndent(SetProjectIdAllowedPathType value,
-                                          int indent_size) {
-  if (value == PATH_DOWNLOADS) {
-    return "PATH_DOWNLOADS";
-  }
-  if (value == PATH_ANDROID_DATA) {
-    return "PATH_ANDROID_DATA";
-  }
-  return "<unknown>";
-}
-
 std::string GetProtoDebugString(InstallAttributesState value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -550,6 +535,13 @@ std::string GetProtoDebugStringWithIndent(const UnmountReply& value,
       GetProtoDebugStringWithIndent(value.error(), indent_size + 2).c_str());
   output += "\n";
 
+  output += indent + "  error_info: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error_info(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
   output += indent + "}\n";
   return output;
 }
@@ -696,6 +688,13 @@ std::string GetProtoDebugStringWithIndent(const RemoveReply& value,
       GetProtoDebugStringWithIndent(value.error(), indent_size + 2).c_str());
   output += "\n";
 
+  output += indent + "  error_info: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error_info(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
   output += indent + "}\n";
   return output;
 }
@@ -752,6 +751,13 @@ std::string GetProtoDebugStringWithIndent(const ListKeysReply& value,
     base::StringAppendF(&output, "%s", value.labels(i).c_str());
   }
   output += "}\n";
+  output += indent + "  error_info: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error_info(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
   output += indent + "}\n";
   return output;
 }
@@ -1294,6 +1300,13 @@ std::string GetProtoDebugStringWithIndent(
       &output, "%s",
       GetProtoDebugStringWithIndent(value.account_id(), indent_size + 2)
           .c_str());
+  output += "\n";
+
+  output += indent + "  auth_session_id: ";
+  base::StringAppendF(&output, "%s",
+                      base::HexEncode(value.auth_session_id().data(),
+                                      value.auth_session_id().size())
+                          .c_str());
   output += "\n";
 
   output += indent + "}\n";
@@ -2410,61 +2423,6 @@ std::string GetProtoDebugStringWithIndent(
   return output;
 }
 
-std::string GetProtoDebugString(const SetProjectIdRequest& value) {
-  return GetProtoDebugStringWithIndent(value, 0);
-}
-
-std::string GetProtoDebugStringWithIndent(const SetProjectIdRequest& value,
-                                          int indent_size) {
-  std::string indent(indent_size, ' ');
-  std::string output =
-      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
-
-  output += indent + "  project_id: ";
-  base::StringAppendF(&output, "%" PRIu32 " (0x%08" PRIX32 ")",
-                      value.project_id(), value.project_id());
-  output += "\n";
-
-  output += indent + "  parent_path: ";
-  base::StringAppendF(
-      &output, "%s",
-      GetProtoDebugStringWithIndent(value.parent_path(), indent_size + 2)
-          .c_str());
-  output += "\n";
-
-  output += indent + "  child_path: ";
-  base::StringAppendF(&output, "%s", value.child_path().c_str());
-  output += "\n";
-
-  output += indent + "  account_id: ";
-  base::StringAppendF(
-      &output, "%s",
-      GetProtoDebugStringWithIndent(value.account_id(), indent_size + 2)
-          .c_str());
-  output += "\n";
-
-  output += indent + "}\n";
-  return output;
-}
-
-std::string GetProtoDebugString(const SetProjectIdReply& value) {
-  return GetProtoDebugStringWithIndent(value, 0);
-}
-
-std::string GetProtoDebugStringWithIndent(const SetProjectIdReply& value,
-                                          int indent_size) {
-  std::string indent(indent_size, ' ');
-  std::string output =
-      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
-
-  output += indent + "  success: ";
-  base::StringAppendF(&output, "%s", value.success() ? "true" : "false");
-  output += "\n";
-
-  output += indent + "}\n";
-  return output;
-}
-
 std::string GetProtoDebugString(
     const SetMediaRWDataFileProjectIdRequest& value) {
   return GetProtoDebugStringWithIndent(value, 0);
@@ -3542,10 +3500,7 @@ std::string GetProtoDebugStringWithIndent(
   output += "\n";
 
   output += indent + "  auth_factor_label: ";
-  base::StringAppendF(&output, "%s",
-                      base::HexEncode(value.auth_factor_label().data(),
-                                      value.auth_factor_label().size())
-                          .c_str());
+  base::StringAppendF(&output, "%s", value.auth_factor_label().c_str());
   output += "\n";
 
   output += indent + "  auth_input: ";

@@ -11,26 +11,23 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace privacy_screen {
-class PrivacyScreenSettingDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PrivacyScreenSetting> _instance;
-} _PrivacyScreenSetting_default_instance_;
+constexpr PrivacyScreenSetting::PrivacyScreenSetting(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : state_(0)
+{}
+struct PrivacyScreenSettingDefaultTypeInternal {
+  constexpr PrivacyScreenSettingDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PrivacyScreenSettingDefaultTypeInternal() {}
+  union {
+    PrivacyScreenSetting _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PrivacyScreenSettingDefaultTypeInternal _PrivacyScreenSetting_default_instance_;
 }  // namespace privacy_screen
-static void InitDefaultsscc_info_PrivacyScreenSetting_privacy_5fscreen_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::privacy_screen::_PrivacyScreenSetting_default_instance_;
-    new (ptr) ::privacy_screen::PrivacyScreenSetting();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::privacy_screen::PrivacyScreenSetting::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PrivacyScreenSetting_privacy_5fscreen_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PrivacyScreenSetting_privacy_5fscreen_2eproto}, {}};
-
 namespace privacy_screen {
 bool PrivacyScreenSetting_PrivacyScreenState_IsValid(int value) {
   switch (value) {
@@ -78,7 +75,7 @@ const std::string& PrivacyScreenSetting_PrivacyScreenState_Name(
                      PrivacyScreenSetting_PrivacyScreenState_strings[idx].get();
 }
 bool PrivacyScreenSetting_PrivacyScreenState_Parse(
-    const std::string& name, PrivacyScreenSetting_PrivacyScreenState* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PrivacyScreenSetting_PrivacyScreenState* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       PrivacyScreenSetting_PrivacyScreenState_entries, 3, name, &int_value);
@@ -87,118 +84,126 @@ bool PrivacyScreenSetting_PrivacyScreenState_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr PrivacyScreenSetting_PrivacyScreenState PrivacyScreenSetting::DISABLED;
 constexpr PrivacyScreenSetting_PrivacyScreenState PrivacyScreenSetting::ENABLED;
 constexpr PrivacyScreenSetting_PrivacyScreenState PrivacyScreenSetting::NOT_SUPPORTED;
 constexpr PrivacyScreenSetting_PrivacyScreenState PrivacyScreenSetting::PrivacyScreenState_MIN;
 constexpr PrivacyScreenSetting_PrivacyScreenState PrivacyScreenSetting::PrivacyScreenState_MAX;
 constexpr int PrivacyScreenSetting::PrivacyScreenState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void PrivacyScreenSetting::InitAsDefaultInstance() {
-}
 class PrivacyScreenSetting::_Internal {
  public:
 };
 
-PrivacyScreenSetting::PrivacyScreenSetting()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PrivacyScreenSetting::PrivacyScreenSetting(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:privacy_screen.PrivacyScreenSetting)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:privacy_screen.PrivacyScreenSetting)
 }
 PrivacyScreenSetting::PrivacyScreenSetting(const PrivacyScreenSetting& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   state_ = from.state_;
   // @@protoc_insertion_point(copy_constructor:privacy_screen.PrivacyScreenSetting)
 }
 
-void PrivacyScreenSetting::SharedCtor() {
-  state_ = 0;
+inline void PrivacyScreenSetting::SharedCtor() {
+state_ = 0;
 }
 
 PrivacyScreenSetting::~PrivacyScreenSetting() {
   // @@protoc_insertion_point(destructor:privacy_screen.PrivacyScreenSetting)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PrivacyScreenSetting::SharedDtor() {
+inline void PrivacyScreenSetting::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PrivacyScreenSetting::ArenaDtor(void* object) {
+  PrivacyScreenSetting* _this = reinterpret_cast< PrivacyScreenSetting* >(object);
+  (void)_this;
+}
+void PrivacyScreenSetting::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PrivacyScreenSetting::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PrivacyScreenSetting& PrivacyScreenSetting::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PrivacyScreenSetting_privacy_5fscreen_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PrivacyScreenSetting::Clear() {
 // @@protoc_insertion_point(message_clear_start:privacy_screen.PrivacyScreenSetting)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   state_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PrivacyScreenSetting::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .privacy_screen.PrivacyScreenSetting.PrivacyScreenState state = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::privacy_screen::PrivacyScreenSetting_PrivacyScreenState>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PrivacyScreenSetting::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PrivacyScreenSetting::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:privacy_screen.PrivacyScreenSetting)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .privacy_screen.PrivacyScreenSetting.PrivacyScreenState state = 1;
-  if (this->state() != 0) {
+  if (this->_internal_state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_state(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:privacy_screen.PrivacyScreenSetting)
   return target;
@@ -208,18 +213,18 @@ size_t PrivacyScreenSetting::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:privacy_screen.PrivacyScreenSetting)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .privacy_screen.PrivacyScreenSetting.PrivacyScreenState state = 1;
-  if (this->state() != 0) {
+  if (this->_internal_state() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -235,13 +240,13 @@ void PrivacyScreenSetting::CheckTypeAndMergeFrom(
 void PrivacyScreenSetting::MergeFrom(const PrivacyScreenSetting& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:privacy_screen.PrivacyScreenSetting)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.state() != 0) {
+  if (from._internal_state() != 0) {
     _internal_set_state(from._internal_state());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PrivacyScreenSetting::CopyFrom(const PrivacyScreenSetting& from) {
@@ -257,7 +262,7 @@ bool PrivacyScreenSetting::IsInitialized() const {
 
 void PrivacyScreenSetting::InternalSwap(PrivacyScreenSetting* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(state_, other->state_);
 }
 
@@ -270,7 +275,7 @@ std::string PrivacyScreenSetting::GetTypeName() const {
 }  // namespace privacy_screen
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::privacy_screen::PrivacyScreenSetting* Arena::CreateMaybeMessage< ::privacy_screen::PrivacyScreenSetting >(Arena* arena) {
-  return Arena::CreateInternal< ::privacy_screen::PrivacyScreenSetting >(arena);
+  return Arena::CreateMessageInternal< ::privacy_screen::PrivacyScreenSetting >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

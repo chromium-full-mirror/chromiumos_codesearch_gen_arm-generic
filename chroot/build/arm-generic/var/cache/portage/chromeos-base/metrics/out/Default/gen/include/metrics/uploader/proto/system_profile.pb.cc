@@ -11,467 +11,418 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Network_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_OS_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Stability_system_5fprofile_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_system_5fprofile_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace metrics {
-class SystemProfileProto_BrilloDeviceDataDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_BrilloDeviceData> _instance;
-} _SystemProfileProto_BrilloDeviceData_default_instance_;
-class SystemProfileProto_OSDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_OS> _instance;
-} _SystemProfileProto_OS_default_instance_;
-class SystemProfileProto_Hardware_CPUDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_CPU> _instance;
-} _SystemProfileProto_Hardware_CPU_default_instance_;
-class SystemProfileProto_Hardware_GraphicsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_Graphics> _instance;
-} _SystemProfileProto_Hardware_Graphics_default_instance_;
-class SystemProfileProto_Hardware_Bluetooth_PairedDeviceDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_Bluetooth_PairedDevice> _instance;
-} _SystemProfileProto_Hardware_Bluetooth_PairedDevice_default_instance_;
-class SystemProfileProto_Hardware_BluetoothDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_Bluetooth> _instance;
-} _SystemProfileProto_Hardware_Bluetooth_default_instance_;
-class SystemProfileProto_Hardware_TouchScreenDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_TouchScreen> _instance;
-} _SystemProfileProto_Hardware_TouchScreen_default_instance_;
-class SystemProfileProto_Hardware_DriveDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware_Drive> _instance;
-} _SystemProfileProto_Hardware_Drive_default_instance_;
-class SystemProfileProto_HardwareDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Hardware> _instance;
-} _SystemProfileProto_Hardware_default_instance_;
-class SystemProfileProto_Network_WifiAccessPoint_VendorInformationDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Network_WifiAccessPoint_VendorInformation> _instance;
-} _SystemProfileProto_Network_WifiAccessPoint_VendorInformation_default_instance_;
-class SystemProfileProto_Network_WifiAccessPointDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Network_WifiAccessPoint> _instance;
-} _SystemProfileProto_Network_WifiAccessPoint_default_instance_;
-class SystemProfileProto_NetworkDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Network> _instance;
-} _SystemProfileProto_Network_default_instance_;
-class SystemProfileProto_GoogleUpdate_ProductInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_GoogleUpdate_ProductInfo> _instance;
-} _SystemProfileProto_GoogleUpdate_ProductInfo_default_instance_;
-class SystemProfileProto_GoogleUpdateDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_GoogleUpdate> _instance;
-} _SystemProfileProto_GoogleUpdate_default_instance_;
-class SystemProfileProto_PluginDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Plugin> _instance;
-} _SystemProfileProto_Plugin_default_instance_;
-class SystemProfileProto_Stability_PluginStabilityDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Stability_PluginStability> _instance;
-} _SystemProfileProto_Stability_PluginStability_default_instance_;
-class SystemProfileProto_StabilityDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_Stability> _instance;
-} _SystemProfileProto_Stability_default_instance_;
-class SystemProfileProto_FieldTrialDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_FieldTrial> _instance;
-} _SystemProfileProto_FieldTrial_default_instance_;
-class SystemProfileProto_ExternalAudioVideoDevice_AudioDescriptionDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_ExternalAudioVideoDevice_AudioDescription> _instance;
-} _SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_default_instance_;
-class SystemProfileProto_ExternalAudioVideoDevice_CECCommandDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_ExternalAudioVideoDevice_CECCommand> _instance;
-} _SystemProfileProto_ExternalAudioVideoDevice_CECCommand_default_instance_;
-class SystemProfileProto_ExternalAudioVideoDeviceDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_ExternalAudioVideoDevice> _instance;
-} _SystemProfileProto_ExternalAudioVideoDevice_default_instance_;
-class SystemProfileProto_ExternalAccessPointDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto_ExternalAccessPoint> _instance;
-} _SystemProfileProto_ExternalAccessPoint_default_instance_;
-class SystemProfileProtoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SystemProfileProto> _instance;
-} _SystemProfileProto_default_instance_;
+constexpr SystemProfileProto_BrilloDeviceData::SystemProfileProto_BrilloDeviceData(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : build_target_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SystemProfileProto_BrilloDeviceDataDefaultTypeInternal {
+  constexpr SystemProfileProto_BrilloDeviceDataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_BrilloDeviceDataDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_BrilloDeviceData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_BrilloDeviceDataDefaultTypeInternal _SystemProfileProto_BrilloDeviceData_default_instance_;
+constexpr SystemProfileProto_OS::SystemProfileProto_OS(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fingerprint_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , is_jailbroken_(false){}
+struct SystemProfileProto_OSDefaultTypeInternal {
+  constexpr SystemProfileProto_OSDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_OSDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_OS _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_OSDefaultTypeInternal _SystemProfileProto_OS_default_instance_;
+constexpr SystemProfileProto_Hardware_CPU::SystemProfileProto_Hardware_CPU(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vendor_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , signature_(0u)
+  , num_cores_(0u){}
+struct SystemProfileProto_Hardware_CPUDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_CPUDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_CPUDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_CPU _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_CPUDefaultTypeInternal _SystemProfileProto_Hardware_CPU_default_instance_;
+constexpr SystemProfileProto_Hardware_Graphics::SystemProfileProto_Hardware_Graphics(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : driver_version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , driver_date_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , gl_vendor_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , gl_renderer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , vendor_id_(0u)
+  , device_id_(0u){}
+struct SystemProfileProto_Hardware_GraphicsDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_GraphicsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_GraphicsDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_Graphics _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_GraphicsDefaultTypeInternal _SystemProfileProto_Hardware_Graphics_default_instance_;
+constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice::SystemProfileProto_Hardware_Bluetooth_PairedDevice(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : bluetooth_class_(0u)
+  , type_(0)
+
+  , vendor_prefix_(0u)
+  , vendor_id_(0u)
+  , product_id_(0u)
+  , device_id_(0u)
+  , vendor_id_source_(0)
+{}
+struct SystemProfileProto_Hardware_Bluetooth_PairedDeviceDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_Bluetooth_PairedDeviceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_Bluetooth_PairedDeviceDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_Bluetooth_PairedDevice _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_Bluetooth_PairedDeviceDefaultTypeInternal _SystemProfileProto_Hardware_Bluetooth_PairedDevice_default_instance_;
+constexpr SystemProfileProto_Hardware_Bluetooth::SystemProfileProto_Hardware_Bluetooth(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : paired_device_()
+  , is_present_(false)
+  , is_enabled_(false){}
+struct SystemProfileProto_Hardware_BluetoothDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_BluetoothDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_BluetoothDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_Bluetooth _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_BluetoothDefaultTypeInternal _SystemProfileProto_Hardware_Bluetooth_default_instance_;
+constexpr SystemProfileProto_Hardware_TouchScreen::SystemProfileProto_Hardware_TouchScreen(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vendor_id_(0u)
+  , product_id_(0u){}
+struct SystemProfileProto_Hardware_TouchScreenDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_TouchScreenDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_TouchScreenDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_TouchScreen _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_TouchScreenDefaultTypeInternal _SystemProfileProto_Hardware_TouchScreen_default_instance_;
+constexpr SystemProfileProto_Hardware_Drive::SystemProfileProto_Hardware_Drive(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : has_seek_penalty_(false){}
+struct SystemProfileProto_Hardware_DriveDefaultTypeInternal {
+  constexpr SystemProfileProto_Hardware_DriveDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Hardware_DriveDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware_Drive _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Hardware_DriveDefaultTypeInternal _SystemProfileProto_Hardware_Drive_default_instance_;
+constexpr SystemProfileProto_Hardware::SystemProfileProto_Hardware(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : external_touchscreen_()
+  , cpu_architecture_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , hardware_class_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , gpu_(nullptr)
+  , bluetooth_(nullptr)
+  , cpu_(nullptr)
+  , app_drive_(nullptr)
+  , user_data_drive_(nullptr)
+  , system_ram_mb_(int64_t{0})
+  , dll_base_(int64_t{0})
+  , screen_count_(0)
+  , primary_screen_width_(0)
+  , primary_screen_height_(0)
+  , max_dpi_x_(0)
+  , max_dpi_y_(0)
+  , primary_screen_scale_factor_(0)
+  , internal_display_supports_touch_(false){}
+struct SystemProfileProto_HardwareDefaultTypeInternal {
+  constexpr SystemProfileProto_HardwareDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_HardwareDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Hardware _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_HardwareDefaultTypeInternal _SystemProfileProto_Hardware_default_instance_;
+constexpr SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SystemProfileProto_Network_WifiAccessPoint_VendorInformation(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : element_identifier_()
+  , model_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , model_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , device_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SystemProfileProto_Network_WifiAccessPoint_VendorInformationDefaultTypeInternal {
+  constexpr SystemProfileProto_Network_WifiAccessPoint_VendorInformationDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Network_WifiAccessPoint_VendorInformationDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Network_WifiAccessPoint_VendorInformation _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Network_WifiAccessPoint_VendorInformationDefaultTypeInternal _SystemProfileProto_Network_WifiAccessPoint_VendorInformation_default_instance_;
+constexpr SystemProfileProto_Network_WifiAccessPoint::SystemProfileProto_Network_WifiAccessPoint(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : vendor_info_(nullptr)
+  , vendor_prefix_(0u)
+  , security_mode_(0)
+{}
+struct SystemProfileProto_Network_WifiAccessPointDefaultTypeInternal {
+  constexpr SystemProfileProto_Network_WifiAccessPointDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Network_WifiAccessPointDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Network_WifiAccessPoint _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Network_WifiAccessPointDefaultTypeInternal _SystemProfileProto_Network_WifiAccessPoint_default_instance_;
+constexpr SystemProfileProto_Network::SystemProfileProto_Network(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : access_point_info_(nullptr)
+  , connection_type_(0)
+
+  , connection_type_is_ambiguous_(false)
+  , wifi_phy_layer_protocol_is_ambiguous_(false)
+  , wifi_phy_layer_protocol_(0)
+{}
+struct SystemProfileProto_NetworkDefaultTypeInternal {
+  constexpr SystemProfileProto_NetworkDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_NetworkDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Network _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_NetworkDefaultTypeInternal _SystemProfileProto_Network_default_instance_;
+constexpr SystemProfileProto_GoogleUpdate_ProductInfo::SystemProfileProto_GoogleUpdate_ProductInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , last_update_success_timestamp_(int64_t{0})
+  , last_result_(0)
+
+  , last_error_(0)
+  , last_extra_error_(0){}
+struct SystemProfileProto_GoogleUpdate_ProductInfoDefaultTypeInternal {
+  constexpr SystemProfileProto_GoogleUpdate_ProductInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_GoogleUpdate_ProductInfoDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_GoogleUpdate_ProductInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_GoogleUpdate_ProductInfoDefaultTypeInternal _SystemProfileProto_GoogleUpdate_ProductInfo_default_instance_;
+constexpr SystemProfileProto_GoogleUpdate::SystemProfileProto_GoogleUpdate(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : google_update_status_(nullptr)
+  , client_status_(nullptr)
+  , last_automatic_start_timestamp_(int64_t{0})
+  , last_update_check_timestamp_(int64_t{0})
+  , is_system_install_(false){}
+struct SystemProfileProto_GoogleUpdateDefaultTypeInternal {
+  constexpr SystemProfileProto_GoogleUpdateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_GoogleUpdateDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_GoogleUpdate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_GoogleUpdateDefaultTypeInternal _SystemProfileProto_GoogleUpdate_default_instance_;
+constexpr SystemProfileProto_Plugin::SystemProfileProto_Plugin(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , filename_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , is_disabled_(false)
+  , is_pepper_(false){}
+struct SystemProfileProto_PluginDefaultTypeInternal {
+  constexpr SystemProfileProto_PluginDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_PluginDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Plugin _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_PluginDefaultTypeInternal _SystemProfileProto_Plugin_default_instance_;
+constexpr SystemProfileProto_Stability_PluginStability::SystemProfileProto_Stability_PluginStability(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : plugin_(nullptr)
+  , launch_count_(0)
+  , instance_count_(0)
+  , crash_count_(0)
+  , loading_error_count_(0){}
+struct SystemProfileProto_Stability_PluginStabilityDefaultTypeInternal {
+  constexpr SystemProfileProto_Stability_PluginStabilityDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_Stability_PluginStabilityDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Stability_PluginStability _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_Stability_PluginStabilityDefaultTypeInternal _SystemProfileProto_Stability_PluginStability_default_instance_;
+constexpr SystemProfileProto_Stability::SystemProfileProto_Stability(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : plugin_stability_()
+  , incremental_uptime_sec_(int64_t{0})
+  , page_load_count_(0)
+  , renderer_crash_count_(0)
+  , renderer_hang_count_(0)
+  , extension_renderer_crash_count_(0)
+  , child_process_crash_count_(0)
+  , other_user_crash_count_(0)
+  , kernel_crash_count_(0)
+  , unclean_system_shutdown_count_(0)
+  , launch_count_(0)
+  , crash_count_(0)
+  , incomplete_shutdown_count_(0)
+  , breakpad_registration_success_count_(0)
+  , debugger_not_present_count_(0)
+  , breakpad_registration_failure_count_(0)
+  , debugger_present_count_(0)
+  , uptime_sec_(int64_t{0}){}
+struct SystemProfileProto_StabilityDefaultTypeInternal {
+  constexpr SystemProfileProto_StabilityDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_StabilityDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_Stability _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_StabilityDefaultTypeInternal _SystemProfileProto_Stability_default_instance_;
+constexpr SystemProfileProto_FieldTrial::SystemProfileProto_FieldTrial(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_id_(0u)
+  , group_id_(0u){}
+struct SystemProfileProto_FieldTrialDefaultTypeInternal {
+  constexpr SystemProfileProto_FieldTrialDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_FieldTrialDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_FieldTrial _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_FieldTrialDefaultTypeInternal _SystemProfileProto_FieldTrial_default_instance_;
+constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : sample_frequency_hz_()
+  , audio_format_(0)
+
+  , num_channels_(0)
+  , max_bit_rate_per_second_(0)
+  , bit_depth_(0){}
+struct SystemProfileProto_ExternalAudioVideoDevice_AudioDescriptionDefaultTypeInternal {
+  constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescriptionDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_ExternalAudioVideoDevice_AudioDescriptionDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_ExternalAudioVideoDevice_AudioDescription _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_ExternalAudioVideoDevice_AudioDescriptionDefaultTypeInternal _SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_default_instance_;
+constexpr SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SystemProfileProto_ExternalAudioVideoDevice_CECCommand(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : opcode_(0)
+  , num_received_direct_(0)
+  , num_received_broadcast_(0)
+  , num_sent_direct_(0)
+  , num_sent_broadcast_(0)
+  , num_aborted_unknown_reason_(0)
+  , num_aborted_unrecognized_(0){}
+struct SystemProfileProto_ExternalAudioVideoDevice_CECCommandDefaultTypeInternal {
+  constexpr SystemProfileProto_ExternalAudioVideoDevice_CECCommandDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_ExternalAudioVideoDevice_CECCommandDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_ExternalAudioVideoDevice_CECCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_ExternalAudioVideoDevice_CECCommandDefaultTypeInternal _SystemProfileProto_ExternalAudioVideoDevice_CECCommand_default_instance_;
+constexpr SystemProfileProto_ExternalAudioVideoDevice::SystemProfileProto_ExternalAudioVideoDevice(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : av_device_type_()
+  , audio_description_()
+  , cec_command_()
+  , manufacturer_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , model_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , product_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , manufacture_year_(0)
+  , manufacture_week_(0)
+  , horizontal_resolution_(0)
+  , vertical_resolution_(0)
+  , position_in_setup_(0)
+  , is_in_path_to_tv_(false)
+  , cec_version_(0){}
+struct SystemProfileProto_ExternalAudioVideoDeviceDefaultTypeInternal {
+  constexpr SystemProfileProto_ExternalAudioVideoDeviceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_ExternalAudioVideoDeviceDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_ExternalAudioVideoDevice _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_ExternalAudioVideoDeviceDefaultTypeInternal _SystemProfileProto_ExternalAudioVideoDevice_default_instance_;
+constexpr SystemProfileProto_ExternalAccessPoint::SystemProfileProto_ExternalAccessPoint(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : manufacturer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , model_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , model_number_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , device_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SystemProfileProto_ExternalAccessPointDefaultTypeInternal {
+  constexpr SystemProfileProto_ExternalAccessPointDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProto_ExternalAccessPointDefaultTypeInternal() {}
+  union {
+    SystemProfileProto_ExternalAccessPoint _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProto_ExternalAccessPointDefaultTypeInternal _SystemProfileProto_ExternalAccessPoint_default_instance_;
+constexpr SystemProfileProto::SystemProfileProto(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : plugin_()
+  , field_trial_()
+  , external_audio_video_device_()
+  , occupied_extension_bucket_()
+  , app_version_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , application_locale_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , brand_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , os_(nullptr)
+  , hardware_(nullptr)
+  , stability_(nullptr)
+  , google_update_(nullptr)
+  , network_(nullptr)
+  , external_access_point_(nullptr)
+  , brillo_(nullptr)
+  , build_timestamp_(int64_t{0})
+  , uma_enabled_date_(int64_t{0})
+  , channel_(0)
+
+  , multi_profile_user_count_(0u)
+  , install_date_(int64_t{0})
+  , offstore_extensions_state_(0)
+
+  , is_asan_build_(false){}
+struct SystemProfileProtoDefaultTypeInternal {
+  constexpr SystemProfileProtoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SystemProfileProtoDefaultTypeInternal() {}
+  union {
+    SystemProfileProto _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemProfileProtoDefaultTypeInternal _SystemProfileProto_default_instance_;
 }  // namespace metrics
-static void InitDefaultsscc_info_SystemProfileProto_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<10> scc_info_SystemProfileProto_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 10, 0, InitDefaultsscc_info_SystemProfileProto_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_OS_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Network_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Stability_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_BrilloDeviceData_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_BrilloDeviceData();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_BrilloDeviceData::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_ExternalAccessPoint_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_ExternalAccessPoint();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_ExternalAccessPoint::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_ExternalAudioVideoDevice_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_ExternalAudioVideoDevice();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_ExternalAudioVideoDevice::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_FieldTrial_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_FieldTrial();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_FieldTrial::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_GoogleUpdate_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_GoogleUpdate();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_GoogleUpdate::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_GoogleUpdate_ProductInfo_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 5, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto.base,
-      &scc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_Bluetooth_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_Bluetooth();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_Bluetooth::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_Bluetooth_PairedDevice_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_CPU_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_CPU();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_CPU::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_Drive_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_Drive();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_Drive::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_Graphics_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_Graphics();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_Graphics::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Hardware_TouchScreen_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Hardware_TouchScreen();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Hardware_TouchScreen::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Network_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Network_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Network();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Network::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Network_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_Network_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Network_WifiAccessPoint_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Network_WifiAccessPoint();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Network_WifiAccessPoint::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_OS_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_OS_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_OS();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_OS::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_OS_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_OS_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Plugin_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Plugin();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Plugin::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto}, {}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Stability_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Stability_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Stability();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Stability::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Stability_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_Stability_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto.base,}};
-
-static void InitDefaultsscc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::metrics::_SystemProfileProto_Stability_PluginStability_default_instance_;
-    new (ptr) ::metrics::SystemProfileProto_Stability_PluginStability();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::metrics::SystemProfileProto_Stability_PluginStability::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto}, {
-      &scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto.base,}};
-
 namespace metrics {
 bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_IsValid(int value) {
   switch (value) {
@@ -563,7 +514,7 @@ const std::string& SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_Name(
                      SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_strings[idx].get();
 }
 bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_Parse(
-    const std::string& name, SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_entries, 14, name, &int_value);
@@ -572,7 +523,7 @@ bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileProto_Hardware_Bluetooth_PairedDevice::DEVICE_UNKNOWN;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileProto_Hardware_Bluetooth_PairedDevice::DEVICE_COMPUTER;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileProto_Hardware_Bluetooth_PairedDevice::DEVICE_PHONE;
@@ -590,7 +541,7 @@ constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileP
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileProto_Hardware_Bluetooth_PairedDevice::Type_MIN;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type SystemProfileProto_Hardware_Bluetooth_PairedDevice::Type_MAX;
 constexpr int SystemProfileProto_Hardware_Bluetooth_PairedDevice::Type_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_IsValid(int value) {
   switch (value) {
     case 0:
@@ -637,7 +588,7 @@ const std::string& SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSo
                      SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_strings[idx].get();
 }
 bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_Parse(
-    const std::string& name, SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_entries, 3, name, &int_value);
@@ -646,14 +597,14 @@ bool SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource SystemProfileProto_Hardware_Bluetooth_PairedDevice::VENDOR_ID_UNKNOWN;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource SystemProfileProto_Hardware_Bluetooth_PairedDevice::VENDOR_ID_BLUETOOTH;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource SystemProfileProto_Hardware_Bluetooth_PairedDevice::VENDOR_ID_USB;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource SystemProfileProto_Hardware_Bluetooth_PairedDevice::VendorIDSource_MIN;
 constexpr SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource SystemProfileProto_Hardware_Bluetooth_PairedDevice::VendorIDSource_MAX;
 constexpr int SystemProfileProto_Hardware_Bluetooth_PairedDevice::VendorIDSource_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_Network_WifiAccessPoint_SecurityMode_IsValid(int value) {
   switch (value) {
     case 0:
@@ -716,7 +667,7 @@ const std::string& SystemProfileProto_Network_WifiAccessPoint_SecurityMode_Name(
                      SystemProfileProto_Network_WifiAccessPoint_SecurityMode_strings[idx].get();
 }
 bool SystemProfileProto_Network_WifiAccessPoint_SecurityMode_Parse(
-    const std::string& name, SystemProfileProto_Network_WifiAccessPoint_SecurityMode* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Network_WifiAccessPoint_SecurityMode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Network_WifiAccessPoint_SecurityMode_entries, 7, name, &int_value);
@@ -725,7 +676,7 @@ bool SystemProfileProto_Network_WifiAccessPoint_SecurityMode_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileProto_Network_WifiAccessPoint::SECURITY_UNKNOWN;
 constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileProto_Network_WifiAccessPoint::SECURITY_WPA;
 constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileProto_Network_WifiAccessPoint::SECURITY_WEP;
@@ -736,7 +687,7 @@ constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileP
 constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileProto_Network_WifiAccessPoint::SecurityMode_MIN;
 constexpr SystemProfileProto_Network_WifiAccessPoint_SecurityMode SystemProfileProto_Network_WifiAccessPoint::SecurityMode_MAX;
 constexpr int SystemProfileProto_Network_WifiAccessPoint::SecurityMode_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_Network_ConnectionType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -799,7 +750,7 @@ const std::string& SystemProfileProto_Network_ConnectionType_Name(
                      SystemProfileProto_Network_ConnectionType_strings[idx].get();
 }
 bool SystemProfileProto_Network_ConnectionType_Parse(
-    const std::string& name, SystemProfileProto_Network_ConnectionType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Network_ConnectionType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Network_ConnectionType_entries, 7, name, &int_value);
@@ -808,7 +759,7 @@ bool SystemProfileProto_Network_ConnectionType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::CONNECTION_UNKNOWN;
 constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::CONNECTION_ETHERNET;
 constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::CONNECTION_WIFI;
@@ -819,7 +770,7 @@ constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::
 constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::ConnectionType_MIN;
 constexpr SystemProfileProto_Network_ConnectionType SystemProfileProto_Network::ConnectionType_MAX;
 constexpr int SystemProfileProto_Network::ConnectionType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_Network_WifiPHYLayerProtocol_IsValid(int value) {
   switch (value) {
     case 0:
@@ -882,7 +833,7 @@ const std::string& SystemProfileProto_Network_WifiPHYLayerProtocol_Name(
                      SystemProfileProto_Network_WifiPHYLayerProtocol_strings[idx].get();
 }
 bool SystemProfileProto_Network_WifiPHYLayerProtocol_Parse(
-    const std::string& name, SystemProfileProto_Network_WifiPHYLayerProtocol* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Network_WifiPHYLayerProtocol* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Network_WifiPHYLayerProtocol_entries, 7, name, &int_value);
@@ -891,7 +842,7 @@ bool SystemProfileProto_Network_WifiPHYLayerProtocol_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Network::WIFI_PHY_LAYER_PROTOCOL_NONE;
 constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Network::WIFI_PHY_LAYER_PROTOCOL_ANCIENT;
 constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Network::WIFI_PHY_LAYER_PROTOCOL_A;
@@ -902,7 +853,7 @@ constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Net
 constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Network::WifiPHYLayerProtocol_MIN;
 constexpr SystemProfileProto_Network_WifiPHYLayerProtocol SystemProfileProto_Network::WifiPHYLayerProtocol_MAX;
 constexpr int SystemProfileProto_Network::WifiPHYLayerProtocol_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_IsValid(int value) {
   switch (value) {
     case 0:
@@ -957,7 +908,7 @@ const std::string& SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_Nam
                      SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_strings[idx].get();
 }
 bool SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_Parse(
-    const std::string& name, SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_entries, 5, name, &int_value);
@@ -966,7 +917,7 @@ bool SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfileProto_GoogleUpdate_ProductInfo::INSTALL_RESULT_SUCCESS;
 constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfileProto_GoogleUpdate_ProductInfo::INSTALL_RESULT_FAILED_CUSTOM_ERROR;
 constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfileProto_GoogleUpdate_ProductInfo::INSTALL_RESULT_FAILED_MSI_ERROR;
@@ -975,7 +926,7 @@ constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfil
 constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfileProto_GoogleUpdate_ProductInfo::InstallResult_MIN;
 constexpr SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult SystemProfileProto_GoogleUpdate_ProductInfo::InstallResult_MAX;
 constexpr int SystemProfileProto_GoogleUpdate_ProductInfo::InstallResult_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_IsValid(int value) {
   switch (value) {
     case 0:
@@ -1070,7 +1021,7 @@ const std::string& SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_
                      SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_strings[idx].get();
 }
 bool SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_Parse(
-    const std::string& name, SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_entries, 15, name, &int_value);
@@ -1079,7 +1030,7 @@ bool SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_Pa
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AUDIO_FORMAT_UNKNOWN;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AUDIO_FORMAT_LPCM;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AUDIO_FORMAT_AC_3;
@@ -1098,7 +1049,7 @@ constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioForm
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AudioFormat_MIN;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AudioFormat_MAX;
 constexpr int SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::AudioFormat_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -1157,7 +1108,7 @@ const std::string& SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_Name
                      SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_strings[idx].get();
 }
 bool SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_Parse(
-    const std::string& name, SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_entries, 6, name, &int_value);
@@ -1166,7 +1117,7 @@ bool SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfileProto_ExternalAudioVideoDevice::AV_DEVICE_TYPE_UNKNOWN;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfileProto_ExternalAudioVideoDevice::AV_DEVICE_TYPE_TV;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfileProto_ExternalAudioVideoDevice::AV_DEVICE_TYPE_RECORDER;
@@ -1176,7 +1127,7 @@ constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfile
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfileProto_ExternalAudioVideoDevice::AVDeviceType_MIN;
 constexpr SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType SystemProfileProto_ExternalAudioVideoDevice::AVDeviceType_MAX;
 constexpr int SystemProfileProto_ExternalAudioVideoDevice::AVDeviceType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_Channel_IsValid(int value) {
   switch (value) {
     case 0:
@@ -1231,7 +1182,7 @@ const std::string& SystemProfileProto_Channel_Name(
                      SystemProfileProto_Channel_strings[idx].get();
 }
 bool SystemProfileProto_Channel_Parse(
-    const std::string& name, SystemProfileProto_Channel* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_Channel* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_Channel_entries, 5, name, &int_value);
@@ -1240,7 +1191,7 @@ bool SystemProfileProto_Channel_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_Channel SystemProfileProto::CHANNEL_UNKNOWN;
 constexpr SystemProfileProto_Channel SystemProfileProto::CHANNEL_CANARY;
 constexpr SystemProfileProto_Channel SystemProfileProto::CHANNEL_DEV;
@@ -1249,7 +1200,7 @@ constexpr SystemProfileProto_Channel SystemProfileProto::CHANNEL_STABLE;
 constexpr SystemProfileProto_Channel SystemProfileProto::Channel_MIN;
 constexpr SystemProfileProto_Channel SystemProfileProto::Channel_MAX;
 constexpr int SystemProfileProto::Channel_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool SystemProfileProto_ExtensionsState_IsValid(int value) {
   switch (value) {
     case 0:
@@ -1300,7 +1251,7 @@ const std::string& SystemProfileProto_ExtensionsState_Name(
                      SystemProfileProto_ExtensionsState_strings[idx].get();
 }
 bool SystemProfileProto_ExtensionsState_Parse(
-    const std::string& name, SystemProfileProto_ExtensionsState* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SystemProfileProto_ExtensionsState* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       SystemProfileProto_ExtensionsState_entries, 4, name, &int_value);
@@ -1309,7 +1260,7 @@ bool SystemProfileProto_ExtensionsState_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr SystemProfileProto_ExtensionsState SystemProfileProto::NO_EXTENSIONS;
 constexpr SystemProfileProto_ExtensionsState SystemProfileProto::NO_OFFSTORE_VERIFIED;
 constexpr SystemProfileProto_ExtensionsState SystemProfileProto::NO_OFFSTORE_UNVERIFIED;
@@ -1317,12 +1268,10 @@ constexpr SystemProfileProto_ExtensionsState SystemProfileProto::HAS_OFFSTORE;
 constexpr SystemProfileProto_ExtensionsState SystemProfileProto::ExtensionsState_MIN;
 constexpr SystemProfileProto_ExtensionsState SystemProfileProto::ExtensionsState_MAX;
 constexpr int SystemProfileProto::ExtensionsState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void SystemProfileProto_BrilloDeviceData::InitAsDefaultInstance() {
-}
 class SystemProfileProto_BrilloDeviceData::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_BrilloDeviceData>()._has_bits_);
@@ -1331,101 +1280,117 @@ class SystemProfileProto_BrilloDeviceData::_Internal {
   }
 };
 
-SystemProfileProto_BrilloDeviceData::SystemProfileProto_BrilloDeviceData()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_BrilloDeviceData::SystemProfileProto_BrilloDeviceData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.BrilloDeviceData)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.BrilloDeviceData)
 }
 SystemProfileProto_BrilloDeviceData::SystemProfileProto_BrilloDeviceData(const SystemProfileProto_BrilloDeviceData& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   build_target_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    build_target_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_build_target_id()) {
-    build_target_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.build_target_id_);
+    build_target_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_build_target_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.BrilloDeviceData)
 }
 
-void SystemProfileProto_BrilloDeviceData::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto.base);
-  build_target_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void SystemProfileProto_BrilloDeviceData::SharedCtor() {
+build_target_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  build_target_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SystemProfileProto_BrilloDeviceData::~SystemProfileProto_BrilloDeviceData() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.BrilloDeviceData)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_BrilloDeviceData::SharedDtor() {
+inline void SystemProfileProto_BrilloDeviceData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   build_target_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_BrilloDeviceData::ArenaDtor(void* object) {
+  SystemProfileProto_BrilloDeviceData* _this = reinterpret_cast< SystemProfileProto_BrilloDeviceData* >(object);
+  (void)_this;
+}
+void SystemProfileProto_BrilloDeviceData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_BrilloDeviceData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_BrilloDeviceData& SystemProfileProto_BrilloDeviceData::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_BrilloDeviceData_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_BrilloDeviceData::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.BrilloDeviceData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    build_target_id_.ClearNonDefaultToEmptyNoArena();
+    build_target_id_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_BrilloDeviceData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string build_target_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_build_target_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_BrilloDeviceData::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_BrilloDeviceData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.BrilloDeviceData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1436,8 +1401,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.BrilloDeviceData)
   return target;
@@ -1447,7 +1412,7 @@ size_t SystemProfileProto_BrilloDeviceData::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.BrilloDeviceData)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1460,7 +1425,7 @@ size_t SystemProfileProto_BrilloDeviceData::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1476,14 +1441,13 @@ void SystemProfileProto_BrilloDeviceData::CheckTypeAndMergeFrom(
 void SystemProfileProto_BrilloDeviceData::MergeFrom(const SystemProfileProto_BrilloDeviceData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.BrilloDeviceData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_build_target_id()) {
-    _has_bits_[0] |= 0x00000001u;
-    build_target_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.build_target_id_);
+    _internal_set_build_target_id(from._internal_build_target_id());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_BrilloDeviceData::CopyFrom(const SystemProfileProto_BrilloDeviceData& from) {
@@ -1499,10 +1463,15 @@ bool SystemProfileProto_BrilloDeviceData::IsInitialized() const {
 
 void SystemProfileProto_BrilloDeviceData::InternalSwap(SystemProfileProto_BrilloDeviceData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  build_target_id_.Swap(&other->build_target_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &build_target_id_, lhs_arena,
+      &other->build_target_id_, rhs_arena
+  );
 }
 
 std::string SystemProfileProto_BrilloDeviceData::GetTypeName() const {
@@ -1512,8 +1481,6 @@ std::string SystemProfileProto_BrilloDeviceData::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_OS::InitAsDefaultInstance() {
-}
 class SystemProfileProto_OS::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_OS>()._has_bits_);
@@ -1531,148 +1498,181 @@ class SystemProfileProto_OS::_Internal {
   }
 };
 
-SystemProfileProto_OS::SystemProfileProto_OS()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_OS::SystemProfileProto_OS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.OS)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.OS)
 }
 SystemProfileProto_OS::SystemProfileProto_OS(const SystemProfileProto_OS& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_name()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_version()) {
-    version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
+      GetArenaForAllocation());
   }
   fingerprint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    fingerprint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_fingerprint()) {
-    fingerprint_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fingerprint_);
+    fingerprint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_fingerprint(), 
+      GetArenaForAllocation());
   }
   is_jailbroken_ = from.is_jailbroken_;
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.OS)
 }
 
-void SystemProfileProto_OS::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_OS_system_5fprofile_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fingerprint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  is_jailbroken_ = false;
+inline void SystemProfileProto_OS::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+fingerprint_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  fingerprint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+is_jailbroken_ = false;
 }
 
 SystemProfileProto_OS::~SystemProfileProto_OS() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.OS)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_OS::SharedDtor() {
+inline void SystemProfileProto_OS::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fingerprint_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_OS::ArenaDtor(void* object) {
+  SystemProfileProto_OS* _this = reinterpret_cast< SystemProfileProto_OS* >(object);
+  (void)_this;
+}
+void SystemProfileProto_OS::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_OS::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_OS& SystemProfileProto_OS::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_OS_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_OS::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.OS)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      name_.ClearNonDefaultToEmptyNoArena();
+      name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      version_.ClearNonDefaultToEmptyNoArena();
+      version_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      fingerprint_.ClearNonDefaultToEmptyNoArena();
+      fingerprint_.ClearNonDefaultToEmpty();
     }
   }
   is_jailbroken_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_OS::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string version = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string fingerprint = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_fingerprint();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_jailbroken = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_is_jailbroken(&has_bits);
-          is_jailbroken_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_jailbroken_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_OS::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_OS::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.OS)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1701,8 +1701,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.OS)
   return target;
@@ -1712,7 +1712,7 @@ size_t SystemProfileProto_OS::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.OS)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1746,7 +1746,7 @@ size_t SystemProfileProto_OS::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1762,29 +1762,26 @@ void SystemProfileProto_OS::CheckTypeAndMergeFrom(
 void SystemProfileProto_OS::MergeFrom(const SystemProfileProto_OS& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.OS)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+      _internal_set_name(from._internal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+      _internal_set_version(from._internal_version());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      fingerprint_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fingerprint_);
+      _internal_set_fingerprint(from._internal_fingerprint());
     }
     if (cached_has_bits & 0x00000008u) {
       is_jailbroken_ = from.is_jailbroken_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_OS::CopyFrom(const SystemProfileProto_OS& from) {
@@ -1800,14 +1797,25 @@ bool SystemProfileProto_OS::IsInitialized() const {
 
 void SystemProfileProto_OS::InternalSwap(SystemProfileProto_OS* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  version_.Swap(&other->version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  fingerprint_.Swap(&other->fingerprint_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &version_, lhs_arena,
+      &other->version_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &fingerprint_, lhs_arena,
+      &other->fingerprint_, rhs_arena
+  );
   swap(is_jailbroken_, other->is_jailbroken_);
 }
 
@@ -1818,8 +1826,6 @@ std::string SystemProfileProto_OS::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_CPU::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_CPU::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_CPU>()._has_bits_);
@@ -1834,19 +1840,26 @@ class SystemProfileProto_Hardware_CPU::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_CPU::SystemProfileProto_Hardware_CPU()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_CPU::SystemProfileProto_Hardware_CPU(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.CPU)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.CPU)
 }
 SystemProfileProto_Hardware_CPU::SystemProfileProto_Hardware_CPU(const SystemProfileProto_Hardware_CPU& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   vendor_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    vendor_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_vendor_name()) {
-    vendor_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.vendor_name_);
+    vendor_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_vendor_name(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&signature_, &from.signature_,
     static_cast<size_t>(reinterpret_cast<char*>(&num_cores_) -
@@ -1854,41 +1867,48 @@ SystemProfileProto_Hardware_CPU::SystemProfileProto_Hardware_CPU(const SystemPro
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.CPU)
 }
 
-void SystemProfileProto_Hardware_CPU::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto.base);
-  vendor_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&signature_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&num_cores_) -
-      reinterpret_cast<char*>(&signature_)) + sizeof(num_cores_));
+inline void SystemProfileProto_Hardware_CPU::SharedCtor() {
+vendor_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  vendor_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&signature_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&num_cores_) -
+    reinterpret_cast<char*>(&signature_)) + sizeof(num_cores_));
 }
 
 SystemProfileProto_Hardware_CPU::~SystemProfileProto_Hardware_CPU() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.CPU)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_CPU::SharedDtor() {
+inline void SystemProfileProto_Hardware_CPU::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   vendor_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_Hardware_CPU::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_CPU* _this = reinterpret_cast< SystemProfileProto_Hardware_CPU* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_CPU::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_CPU::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_CPU& SystemProfileProto_Hardware_CPU::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_CPU_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_CPU::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.CPU)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    vendor_name_.ClearNonDefaultToEmptyNoArena();
+    vendor_name_.ClearNonDefaultToEmpty();
   }
   if (cached_has_bits & 0x00000006u) {
     ::memset(&signature_, 0, static_cast<size_t>(
@@ -1896,66 +1916,71 @@ void SystemProfileProto_Hardware_CPU::Clear() {
         reinterpret_cast<char*>(&signature_)) + sizeof(num_cores_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_CPU::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string vendor_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_vendor_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 signature = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_signature(&has_bits);
-          signature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          signature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 num_cores = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_num_cores(&has_bits);
-          num_cores_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_cores_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_CPU::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_CPU::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.CPU)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1978,8 +2003,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.CPU)
   return target;
@@ -1989,7 +2014,7 @@ size_t SystemProfileProto_Hardware_CPU::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.CPU)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2004,21 +2029,17 @@ size_t SystemProfileProto_Hardware_CPU::ByteSizeLong() const {
 
     // optional uint32 signature = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_signature());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_signature());
     }
 
     // optional uint32 num_cores = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_num_cores());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_num_cores());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2034,15 +2055,13 @@ void SystemProfileProto_Hardware_CPU::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_CPU::MergeFrom(const SystemProfileProto_Hardware_CPU& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.CPU)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      vendor_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.vendor_name_);
+      _internal_set_vendor_name(from._internal_vendor_name());
     }
     if (cached_has_bits & 0x00000002u) {
       signature_ = from.signature_;
@@ -2052,6 +2071,7 @@ void SystemProfileProto_Hardware_CPU::MergeFrom(const SystemProfileProto_Hardwar
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_CPU::CopyFrom(const SystemProfileProto_Hardware_CPU& from) {
@@ -2067,12 +2087,21 @@ bool SystemProfileProto_Hardware_CPU::IsInitialized() const {
 
 void SystemProfileProto_Hardware_CPU::InternalSwap(SystemProfileProto_Hardware_CPU* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  vendor_name_.Swap(&other->vendor_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(signature_, other->signature_);
-  swap(num_cores_, other->num_cores_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &vendor_name_, lhs_arena,
+      &other->vendor_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_CPU, num_cores_)
+      + sizeof(SystemProfileProto_Hardware_CPU::num_cores_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_CPU, signature_)>(
+          reinterpret_cast<char*>(&signature_),
+          reinterpret_cast<char*>(&other->signature_));
 }
 
 std::string SystemProfileProto_Hardware_CPU::GetTypeName() const {
@@ -2082,8 +2111,6 @@ std::string SystemProfileProto_Hardware_CPU::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_Graphics::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_Graphics::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_Graphics>()._has_bits_);
@@ -2107,31 +2134,50 @@ class SystemProfileProto_Hardware_Graphics::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_Graphics::SystemProfileProto_Hardware_Graphics()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_Graphics::SystemProfileProto_Hardware_Graphics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.Graphics)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.Graphics)
 }
 SystemProfileProto_Hardware_Graphics::SystemProfileProto_Hardware_Graphics(const SystemProfileProto_Hardware_Graphics& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   driver_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    driver_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_driver_version()) {
-    driver_version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_version_);
+    driver_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_driver_version(), 
+      GetArenaForAllocation());
   }
   driver_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    driver_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_driver_date()) {
-    driver_date_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_date_);
+    driver_date_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_driver_date(), 
+      GetArenaForAllocation());
   }
   gl_vendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    gl_vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_gl_vendor()) {
-    gl_vendor_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gl_vendor_);
+    gl_vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_gl_vendor(), 
+      GetArenaForAllocation());
   }
   gl_renderer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    gl_renderer_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_gl_renderer()) {
-    gl_renderer_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gl_renderer_);
+    gl_renderer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_gl_renderer(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&vendor_id_, &from.vendor_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&device_id_) -
@@ -2139,57 +2185,73 @@ SystemProfileProto_Hardware_Graphics::SystemProfileProto_Hardware_Graphics(const
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.Graphics)
 }
 
-void SystemProfileProto_Hardware_Graphics::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto.base);
-  driver_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  driver_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  gl_vendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  gl_renderer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&vendor_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&device_id_) -
-      reinterpret_cast<char*>(&vendor_id_)) + sizeof(device_id_));
+inline void SystemProfileProto_Hardware_Graphics::SharedCtor() {
+driver_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  driver_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+driver_date_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  driver_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+gl_vendor_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  gl_vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+gl_renderer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  gl_renderer_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&vendor_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&device_id_) -
+    reinterpret_cast<char*>(&vendor_id_)) + sizeof(device_id_));
 }
 
 SystemProfileProto_Hardware_Graphics::~SystemProfileProto_Hardware_Graphics() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.Graphics)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_Graphics::SharedDtor() {
+inline void SystemProfileProto_Hardware_Graphics::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   driver_version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   driver_date_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   gl_vendor_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   gl_renderer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_Hardware_Graphics::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_Graphics* _this = reinterpret_cast< SystemProfileProto_Hardware_Graphics* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_Graphics::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_Graphics::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_Graphics& SystemProfileProto_Hardware_Graphics::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_Graphics_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_Graphics::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.Graphics)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      driver_version_.ClearNonDefaultToEmptyNoArena();
+      driver_version_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      driver_date_.ClearNonDefaultToEmptyNoArena();
+      driver_date_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      gl_vendor_.ClearNonDefaultToEmptyNoArena();
+      gl_vendor_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      gl_renderer_.ClearNonDefaultToEmptyNoArena();
+      gl_renderer_.ClearNonDefaultToEmpty();
     }
   }
   if (cached_has_bits & 0x00000030u) {
@@ -2198,90 +2260,98 @@ void SystemProfileProto_Hardware_Graphics::Clear() {
         reinterpret_cast<char*>(&vendor_id_)) + sizeof(device_id_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_Graphics::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional uint32 vendor_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_vendor_id(&has_bits);
-          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 device_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_device_id(&has_bits);
-          device_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          device_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string driver_version = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_driver_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string driver_date = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_driver_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string gl_vendor = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_gl_vendor();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string gl_renderer = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_gl_renderer();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_Graphics::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_Graphics::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.Graphics)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2322,8 +2392,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.Graphics)
   return target;
@@ -2333,7 +2403,7 @@ size_t SystemProfileProto_Hardware_Graphics::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.Graphics)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2369,21 +2439,17 @@ size_t SystemProfileProto_Hardware_Graphics::ByteSizeLong() const {
 
     // optional uint32 vendor_id = 1;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_vendor_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vendor_id());
     }
 
     // optional uint32 device_id = 2;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_device_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_device_id());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2399,27 +2465,22 @@ void SystemProfileProto_Hardware_Graphics::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_Graphics::MergeFrom(const SystemProfileProto_Hardware_Graphics& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.Graphics)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000003fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      driver_version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_version_);
+      _internal_set_driver_version(from._internal_driver_version());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      driver_date_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_date_);
+      _internal_set_driver_date(from._internal_driver_date());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      gl_vendor_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gl_vendor_);
+      _internal_set_gl_vendor(from._internal_gl_vendor());
     }
     if (cached_has_bits & 0x00000008u) {
-      _has_bits_[0] |= 0x00000008u;
-      gl_renderer_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gl_renderer_);
+      _internal_set_gl_renderer(from._internal_gl_renderer());
     }
     if (cached_has_bits & 0x00000010u) {
       vendor_id_ = from.vendor_id_;
@@ -2429,6 +2490,7 @@ void SystemProfileProto_Hardware_Graphics::MergeFrom(const SystemProfileProto_Ha
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_Graphics::CopyFrom(const SystemProfileProto_Hardware_Graphics& from) {
@@ -2444,18 +2506,36 @@ bool SystemProfileProto_Hardware_Graphics::IsInitialized() const {
 
 void SystemProfileProto_Hardware_Graphics::InternalSwap(SystemProfileProto_Hardware_Graphics* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  driver_version_.Swap(&other->driver_version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  driver_date_.Swap(&other->driver_date_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  gl_vendor_.Swap(&other->gl_vendor_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  gl_renderer_.Swap(&other->gl_renderer_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(vendor_id_, other->vendor_id_);
-  swap(device_id_, other->device_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &driver_version_, lhs_arena,
+      &other->driver_version_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &driver_date_, lhs_arena,
+      &other->driver_date_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &gl_vendor_, lhs_arena,
+      &other->gl_vendor_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &gl_renderer_, lhs_arena,
+      &other->gl_renderer_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Graphics, device_id_)
+      + sizeof(SystemProfileProto_Hardware_Graphics::device_id_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Graphics, vendor_id_)>(
+          reinterpret_cast<char*>(&vendor_id_),
+          reinterpret_cast<char*>(&other->vendor_id_));
 }
 
 std::string SystemProfileProto_Hardware_Graphics::GetTypeName() const {
@@ -2465,8 +2545,6 @@ std::string SystemProfileProto_Hardware_Graphics::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_Bluetooth_PairedDevice::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_Bluetooth_PairedDevice::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_Bluetooth_PairedDevice>()._has_bits_);
@@ -2493,48 +2571,56 @@ class SystemProfileProto_Hardware_Bluetooth_PairedDevice::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_Bluetooth_PairedDevice::SystemProfileProto_Hardware_Bluetooth_PairedDevice()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_Bluetooth_PairedDevice::SystemProfileProto_Hardware_Bluetooth_PairedDevice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
 }
 SystemProfileProto_Hardware_Bluetooth_PairedDevice::SystemProfileProto_Hardware_Bluetooth_PairedDevice(const SystemProfileProto_Hardware_Bluetooth_PairedDevice& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&bluetooth_class_, &from.bluetooth_class_,
     static_cast<size_t>(reinterpret_cast<char*>(&vendor_id_source_) -
     reinterpret_cast<char*>(&bluetooth_class_)) + sizeof(vendor_id_source_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
 }
 
-void SystemProfileProto_Hardware_Bluetooth_PairedDevice::SharedCtor() {
-  ::memset(&bluetooth_class_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&vendor_id_source_) -
-      reinterpret_cast<char*>(&bluetooth_class_)) + sizeof(vendor_id_source_));
+inline void SystemProfileProto_Hardware_Bluetooth_PairedDevice::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&bluetooth_class_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&vendor_id_source_) -
+    reinterpret_cast<char*>(&bluetooth_class_)) + sizeof(vendor_id_source_));
 }
 
 SystemProfileProto_Hardware_Bluetooth_PairedDevice::~SystemProfileProto_Hardware_Bluetooth_PairedDevice() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_Bluetooth_PairedDevice::SharedDtor() {
+inline void SystemProfileProto_Hardware_Bluetooth_PairedDevice::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_Hardware_Bluetooth_PairedDevice::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_Bluetooth_PairedDevice* _this = reinterpret_cast< SystemProfileProto_Hardware_Bluetooth_PairedDevice* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_Bluetooth_PairedDevice::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_Bluetooth_PairedDevice::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_Bluetooth_PairedDevice& SystemProfileProto_Hardware_Bluetooth_PairedDevice::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_Bluetooth_PairedDevice_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_Bluetooth_PairedDevice::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2545,106 +2631,115 @@ void SystemProfileProto_Hardware_Bluetooth_PairedDevice::Clear() {
         reinterpret_cast<char*>(&bluetooth_class_)) + sizeof(vendor_id_source_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_Bluetooth_PairedDevice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional uint32 bluetooth_class = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_bluetooth_class(&has_bits);
-          bluetooth_class_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          bluetooth_class_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice.Type type = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type_IsValid(val))) {
             _internal_set_type(static_cast<::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice_Type>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 vendor_prefix = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_vendor_prefix(&has_bits);
-          vendor_prefix_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vendor_prefix_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 vendor_id = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_vendor_id(&has_bits);
-          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 product_id = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_product_id(&has_bits);
-          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 device_id = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_device_id(&has_bits);
-          device_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          device_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice.VendorIDSource vendor_id_source = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource_IsValid(val))) {
             _internal_set_vendor_id_source(static_cast<::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice_VendorIDSource>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(8, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_Bluetooth_PairedDevice::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_Bluetooth_PairedDevice::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2693,8 +2788,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
   return target;
@@ -2704,7 +2799,7 @@ size_t SystemProfileProto_Hardware_Bluetooth_PairedDevice::ByteSizeLong() const 
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2712,9 +2807,7 @@ size_t SystemProfileProto_Hardware_Bluetooth_PairedDevice::ByteSizeLong() const 
   if (cached_has_bits & 0x0000007fu) {
     // optional uint32 bluetooth_class = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_bluetooth_class());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_bluetooth_class());
     }
 
     // optional .metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice.Type type = 2;
@@ -2725,30 +2818,22 @@ size_t SystemProfileProto_Hardware_Bluetooth_PairedDevice::ByteSizeLong() const 
 
     // optional uint32 vendor_prefix = 4;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_vendor_prefix());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vendor_prefix());
     }
 
     // optional uint32 vendor_id = 5;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_vendor_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vendor_id());
     }
 
     // optional uint32 product_id = 6;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_product_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_product_id());
     }
 
     // optional uint32 device_id = 7;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_device_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_device_id());
     }
 
     // optional .metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice.VendorIDSource vendor_id_source = 8;
@@ -2759,7 +2844,7 @@ size_t SystemProfileProto_Hardware_Bluetooth_PairedDevice::ByteSizeLong() const 
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2775,8 +2860,7 @@ void SystemProfileProto_Hardware_Bluetooth_PairedDevice::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_Bluetooth_PairedDevice::MergeFrom(const SystemProfileProto_Hardware_Bluetooth_PairedDevice& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -2804,6 +2888,7 @@ void SystemProfileProto_Hardware_Bluetooth_PairedDevice::MergeFrom(const SystemP
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_Bluetooth_PairedDevice::CopyFrom(const SystemProfileProto_Hardware_Bluetooth_PairedDevice& from) {
@@ -2819,15 +2904,14 @@ bool SystemProfileProto_Hardware_Bluetooth_PairedDevice::IsInitialized() const {
 
 void SystemProfileProto_Hardware_Bluetooth_PairedDevice::InternalSwap(SystemProfileProto_Hardware_Bluetooth_PairedDevice* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(bluetooth_class_, other->bluetooth_class_);
-  swap(type_, other->type_);
-  swap(vendor_prefix_, other->vendor_prefix_);
-  swap(vendor_id_, other->vendor_id_);
-  swap(product_id_, other->product_id_);
-  swap(device_id_, other->device_id_);
-  swap(vendor_id_source_, other->vendor_id_source_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Bluetooth_PairedDevice, vendor_id_source_)
+      + sizeof(SystemProfileProto_Hardware_Bluetooth_PairedDevice::vendor_id_source_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Bluetooth_PairedDevice, bluetooth_class_)>(
+          reinterpret_cast<char*>(&bluetooth_class_),
+          reinterpret_cast<char*>(&other->bluetooth_class_));
 }
 
 std::string SystemProfileProto_Hardware_Bluetooth_PairedDevice::GetTypeName() const {
@@ -2837,8 +2921,6 @@ std::string SystemProfileProto_Hardware_Bluetooth_PairedDevice::GetTypeName() co
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_Bluetooth::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_Bluetooth::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_Bluetooth>()._has_bits_);
@@ -2850,50 +2932,58 @@ class SystemProfileProto_Hardware_Bluetooth::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_Bluetooth::SystemProfileProto_Hardware_Bluetooth()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_Bluetooth::SystemProfileProto_Hardware_Bluetooth(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  paired_device_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.Bluetooth)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.Bluetooth)
 }
 SystemProfileProto_Hardware_Bluetooth::SystemProfileProto_Hardware_Bluetooth(const SystemProfileProto_Hardware_Bluetooth& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       paired_device_(from.paired_device_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&is_present_, &from.is_present_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_enabled_) -
     reinterpret_cast<char*>(&is_present_)) + sizeof(is_enabled_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.Bluetooth)
 }
 
-void SystemProfileProto_Hardware_Bluetooth::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto.base);
-  ::memset(&is_present_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_enabled_) -
-      reinterpret_cast<char*>(&is_present_)) + sizeof(is_enabled_));
+inline void SystemProfileProto_Hardware_Bluetooth::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&is_present_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_enabled_) -
+    reinterpret_cast<char*>(&is_present_)) + sizeof(is_enabled_));
 }
 
 SystemProfileProto_Hardware_Bluetooth::~SystemProfileProto_Hardware_Bluetooth() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.Bluetooth)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_Bluetooth::SharedDtor() {
+inline void SystemProfileProto_Hardware_Bluetooth::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_Hardware_Bluetooth::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_Bluetooth* _this = reinterpret_cast< SystemProfileProto_Hardware_Bluetooth* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_Bluetooth::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_Bluetooth::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_Bluetooth& SystemProfileProto_Hardware_Bluetooth::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_Bluetooth_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_Bluetooth::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.Bluetooth)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2902,36 +2992,37 @@ void SystemProfileProto_Hardware_Bluetooth::Clear() {
       reinterpret_cast<char*>(&is_enabled_) -
       reinterpret_cast<char*>(&is_present_)) + sizeof(is_enabled_));
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_Bluetooth::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool is_present = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_is_present(&has_bits);
-          is_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_present_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_enabled = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_is_enabled(&has_bits);
-          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.Hardware.Bluetooth.PairedDevice paired_device = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -2939,33 +3030,37 @@ const char* SystemProfileProto_Hardware_Bluetooth::_InternalParse(const char* pt
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_Bluetooth::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_Bluetooth::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.Bluetooth)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2990,8 +3085,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.Bluetooth)
   return target;
@@ -3001,7 +3096,7 @@ size_t SystemProfileProto_Hardware_Bluetooth::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.Bluetooth)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3026,7 +3121,7 @@ size_t SystemProfileProto_Hardware_Bluetooth::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3042,8 +3137,7 @@ void SystemProfileProto_Hardware_Bluetooth::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_Bluetooth::MergeFrom(const SystemProfileProto_Hardware_Bluetooth& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.Bluetooth)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   paired_device_.MergeFrom(from.paired_device_);
@@ -3057,6 +3151,7 @@ void SystemProfileProto_Hardware_Bluetooth::MergeFrom(const SystemProfileProto_H
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_Bluetooth::CopyFrom(const SystemProfileProto_Hardware_Bluetooth& from) {
@@ -3072,11 +3167,15 @@ bool SystemProfileProto_Hardware_Bluetooth::IsInitialized() const {
 
 void SystemProfileProto_Hardware_Bluetooth::InternalSwap(SystemProfileProto_Hardware_Bluetooth* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   paired_device_.InternalSwap(&other->paired_device_);
-  swap(is_present_, other->is_present_);
-  swap(is_enabled_, other->is_enabled_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Bluetooth, is_enabled_)
+      + sizeof(SystemProfileProto_Hardware_Bluetooth::is_enabled_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_Bluetooth, is_present_)>(
+          reinterpret_cast<char*>(&is_present_),
+          reinterpret_cast<char*>(&other->is_present_));
 }
 
 std::string SystemProfileProto_Hardware_Bluetooth::GetTypeName() const {
@@ -3086,8 +3185,6 @@ std::string SystemProfileProto_Hardware_Bluetooth::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_TouchScreen::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_TouchScreen::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_TouchScreen>()._has_bits_);
@@ -3099,48 +3196,56 @@ class SystemProfileProto_Hardware_TouchScreen::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_TouchScreen::SystemProfileProto_Hardware_TouchScreen()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_TouchScreen::SystemProfileProto_Hardware_TouchScreen(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.TouchScreen)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.TouchScreen)
 }
 SystemProfileProto_Hardware_TouchScreen::SystemProfileProto_Hardware_TouchScreen(const SystemProfileProto_Hardware_TouchScreen& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&vendor_id_, &from.vendor_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&product_id_) -
     reinterpret_cast<char*>(&vendor_id_)) + sizeof(product_id_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.TouchScreen)
 }
 
-void SystemProfileProto_Hardware_TouchScreen::SharedCtor() {
-  ::memset(&vendor_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&product_id_) -
-      reinterpret_cast<char*>(&vendor_id_)) + sizeof(product_id_));
+inline void SystemProfileProto_Hardware_TouchScreen::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&vendor_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&product_id_) -
+    reinterpret_cast<char*>(&vendor_id_)) + sizeof(product_id_));
 }
 
 SystemProfileProto_Hardware_TouchScreen::~SystemProfileProto_Hardware_TouchScreen() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.TouchScreen)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_TouchScreen::SharedDtor() {
+inline void SystemProfileProto_Hardware_TouchScreen::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_Hardware_TouchScreen::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_TouchScreen* _this = reinterpret_cast< SystemProfileProto_Hardware_TouchScreen* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_TouchScreen::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_TouchScreen::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_TouchScreen& SystemProfileProto_Hardware_TouchScreen::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_TouchScreen_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_TouchScreen::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.TouchScreen)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3151,58 +3256,62 @@ void SystemProfileProto_Hardware_TouchScreen::Clear() {
         reinterpret_cast<char*>(&vendor_id_)) + sizeof(product_id_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_TouchScreen::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional uint32 vendor_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_vendor_id(&has_bits);
-          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vendor_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 product_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_product_id(&has_bits);
-          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_TouchScreen::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_TouchScreen::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.TouchScreen)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3219,8 +3328,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.TouchScreen)
   return target;
@@ -3230,7 +3339,7 @@ size_t SystemProfileProto_Hardware_TouchScreen::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.TouchScreen)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3238,21 +3347,17 @@ size_t SystemProfileProto_Hardware_TouchScreen::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional uint32 vendor_id = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_vendor_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vendor_id());
     }
 
     // optional uint32 product_id = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_product_id());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_product_id());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3268,8 +3373,7 @@ void SystemProfileProto_Hardware_TouchScreen::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_TouchScreen::MergeFrom(const SystemProfileProto_Hardware_TouchScreen& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.TouchScreen)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -3282,6 +3386,7 @@ void SystemProfileProto_Hardware_TouchScreen::MergeFrom(const SystemProfileProto
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_TouchScreen::CopyFrom(const SystemProfileProto_Hardware_TouchScreen& from) {
@@ -3297,10 +3402,14 @@ bool SystemProfileProto_Hardware_TouchScreen::IsInitialized() const {
 
 void SystemProfileProto_Hardware_TouchScreen::InternalSwap(SystemProfileProto_Hardware_TouchScreen* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(vendor_id_, other->vendor_id_);
-  swap(product_id_, other->product_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_TouchScreen, product_id_)
+      + sizeof(SystemProfileProto_Hardware_TouchScreen::product_id_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware_TouchScreen, vendor_id_)>(
+          reinterpret_cast<char*>(&vendor_id_),
+          reinterpret_cast<char*>(&other->vendor_id_));
 }
 
 std::string SystemProfileProto_Hardware_TouchScreen::GetTypeName() const {
@@ -3310,8 +3419,6 @@ std::string SystemProfileProto_Hardware_TouchScreen::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware_Drive::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Hardware_Drive::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware_Drive>()._has_bits_);
@@ -3320,93 +3427,103 @@ class SystemProfileProto_Hardware_Drive::_Internal {
   }
 };
 
-SystemProfileProto_Hardware_Drive::SystemProfileProto_Hardware_Drive()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware_Drive::SystemProfileProto_Hardware_Drive(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware.Drive)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware.Drive)
 }
 SystemProfileProto_Hardware_Drive::SystemProfileProto_Hardware_Drive(const SystemProfileProto_Hardware_Drive& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   has_seek_penalty_ = from.has_seek_penalty_;
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware.Drive)
 }
 
-void SystemProfileProto_Hardware_Drive::SharedCtor() {
-  has_seek_penalty_ = false;
+inline void SystemProfileProto_Hardware_Drive::SharedCtor() {
+has_seek_penalty_ = false;
 }
 
 SystemProfileProto_Hardware_Drive::~SystemProfileProto_Hardware_Drive() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware.Drive)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware_Drive::SharedDtor() {
+inline void SystemProfileProto_Hardware_Drive::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_Hardware_Drive::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware_Drive* _this = reinterpret_cast< SystemProfileProto_Hardware_Drive* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware_Drive::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware_Drive::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware_Drive& SystemProfileProto_Hardware_Drive::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_Drive_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware_Drive::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware.Drive)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   has_seek_penalty_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware_Drive::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool has_seek_penalty = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_has_seek_penalty(&has_bits);
-          has_seek_penalty_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seek_penalty_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware_Drive::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware_Drive::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware.Drive)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3417,8 +3534,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware.Drive)
   return target;
@@ -3428,7 +3545,7 @@ size_t SystemProfileProto_Hardware_Drive::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware.Drive)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3439,7 +3556,7 @@ size_t SystemProfileProto_Hardware_Drive::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3455,13 +3572,13 @@ void SystemProfileProto_Hardware_Drive::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware_Drive::MergeFrom(const SystemProfileProto_Hardware_Drive& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware.Drive)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_has_seek_penalty()) {
     _internal_set_has_seek_penalty(from._internal_has_seek_penalty());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware_Drive::CopyFrom(const SystemProfileProto_Hardware_Drive& from) {
@@ -3477,7 +3594,7 @@ bool SystemProfileProto_Hardware_Drive::IsInitialized() const {
 
 void SystemProfileProto_Hardware_Drive::InternalSwap(SystemProfileProto_Hardware_Drive* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(has_seek_penalty_, other->has_seek_penalty_);
 }
@@ -3489,18 +3606,6 @@ std::string SystemProfileProto_Hardware_Drive::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Hardware::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_Hardware_default_instance_._instance.get_mutable()->cpu_ = const_cast< ::metrics::SystemProfileProto_Hardware_CPU*>(
-      ::metrics::SystemProfileProto_Hardware_CPU::internal_default_instance());
-  ::metrics::_SystemProfileProto_Hardware_default_instance_._instance.get_mutable()->gpu_ = const_cast< ::metrics::SystemProfileProto_Hardware_Graphics*>(
-      ::metrics::SystemProfileProto_Hardware_Graphics::internal_default_instance());
-  ::metrics::_SystemProfileProto_Hardware_default_instance_._instance.get_mutable()->bluetooth_ = const_cast< ::metrics::SystemProfileProto_Hardware_Bluetooth*>(
-      ::metrics::SystemProfileProto_Hardware_Bluetooth::internal_default_instance());
-  ::metrics::_SystemProfileProto_Hardware_default_instance_._instance.get_mutable()->app_drive_ = const_cast< ::metrics::SystemProfileProto_Hardware_Drive*>(
-      ::metrics::SystemProfileProto_Hardware_Drive::internal_default_instance());
-  ::metrics::_SystemProfileProto_Hardware_default_instance_._instance.get_mutable()->user_data_drive_ = const_cast< ::metrics::SystemProfileProto_Hardware_Drive*>(
-      ::metrics::SystemProfileProto_Hardware_Drive::internal_default_instance());
-}
 class SystemProfileProto_Hardware::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Hardware>()._has_bits_);
@@ -3579,24 +3684,36 @@ const ::metrics::SystemProfileProto_Hardware_Drive&
 SystemProfileProto_Hardware::_Internal::user_data_drive(const SystemProfileProto_Hardware* msg) {
   return *msg->user_data_drive_;
 }
-SystemProfileProto_Hardware::SystemProfileProto_Hardware()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Hardware::SystemProfileProto_Hardware(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  external_touchscreen_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Hardware)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Hardware)
 }
 SystemProfileProto_Hardware::SystemProfileProto_Hardware(const SystemProfileProto_Hardware& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       external_touchscreen_(from.external_touchscreen_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   cpu_architecture_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    cpu_architecture_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_cpu_architecture()) {
-    cpu_architecture_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.cpu_architecture_);
+    cpu_architecture_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_cpu_architecture(), 
+      GetArenaForAllocation());
   }
   hardware_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    hardware_class_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_hardware_class()) {
-    hardware_class_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.hardware_class_);
+    hardware_class_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hardware_class(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_gpu()) {
     gpu_ = new ::metrics::SystemProfileProto_Hardware_Graphics(*from.gpu_);
@@ -3629,21 +3746,30 @@ SystemProfileProto_Hardware::SystemProfileProto_Hardware(const SystemProfileProt
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Hardware)
 }
 
-void SystemProfileProto_Hardware::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto.base);
-  cpu_architecture_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  hardware_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&gpu_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&internal_display_supports_touch_) -
-      reinterpret_cast<char*>(&gpu_)) + sizeof(internal_display_supports_touch_));
+inline void SystemProfileProto_Hardware::SharedCtor() {
+cpu_architecture_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  cpu_architecture_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+hardware_class_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  hardware_class_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&gpu_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&internal_display_supports_touch_) -
+    reinterpret_cast<char*>(&gpu_)) + sizeof(internal_display_supports_touch_));
 }
 
 SystemProfileProto_Hardware::~SystemProfileProto_Hardware() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Hardware)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Hardware::SharedDtor() {
+inline void SystemProfileProto_Hardware::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   cpu_architecture_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   hardware_class_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete gpu_;
@@ -3653,18 +3779,19 @@ void SystemProfileProto_Hardware::SharedDtor() {
   if (this != internal_default_instance()) delete user_data_drive_;
 }
 
+void SystemProfileProto_Hardware::ArenaDtor(void* object) {
+  SystemProfileProto_Hardware* _this = reinterpret_cast< SystemProfileProto_Hardware* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Hardware::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Hardware::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Hardware& SystemProfileProto_Hardware::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Hardware_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Hardware::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Hardware)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -3672,10 +3799,10 @@ void SystemProfileProto_Hardware::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
-      cpu_architecture_.ClearNonDefaultToEmptyNoArena();
+      cpu_architecture_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      hardware_class_.ClearNonDefaultToEmptyNoArena();
+      hardware_class_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
       GOOGLE_DCHECK(gpu_ != nullptr);
@@ -3698,136 +3825,149 @@ void SystemProfileProto_Hardware::Clear() {
       user_data_drive_->Clear();
     }
   }
-  system_ram_mb_ = PROTOBUF_LONGLONG(0);
+  system_ram_mb_ = int64_t{0};
   if (cached_has_bits & 0x0000ff00u) {
     ::memset(&dll_base_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&internal_display_supports_touch_) -
         reinterpret_cast<char*>(&dll_base_)) + sizeof(internal_display_supports_touch_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Hardware::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string cpu_architecture = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_cpu_architecture();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 system_ram_mb = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_system_ram_mb(&has_bits);
-          system_ram_mb_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          system_ram_mb_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 dll_base = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_dll_base(&has_bits);
-          dll_base_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dll_base_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string hardware_class = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_hardware_class();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 screen_count = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_screen_count(&has_bits);
-          screen_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          screen_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 primary_screen_width = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_primary_screen_width(&has_bits);
-          primary_screen_width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          primary_screen_width_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 primary_screen_height = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_primary_screen_height(&has_bits);
-          primary_screen_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          primary_screen_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Graphics gpu = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_gpu(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional float max_dpi_x = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 77)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
           _Internal::set_has_max_dpi_x(&has_bits);
           max_dpi_x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional float max_dpi_y = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 85)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
           _Internal::set_has_max_dpi_y(&has_bits);
           max_dpi_y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Bluetooth bluetooth = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           ptr = ctx->ParseMessage(_internal_mutable_bluetooth(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional float primary_screen_scale_factor = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 101)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 101)) {
           _Internal::set_has_primary_screen_scale_factor(&has_bits);
           primary_screen_scale_factor_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.CPU cpu = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr = ctx->ParseMessage(_internal_mutable_cpu(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool internal_display_supports_touch = 14;
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 112)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
           _Internal::set_has_internal_display_supports_touch(&has_bits);
-          internal_display_supports_touch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          internal_display_supports_touch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.Hardware.TouchScreen external_touchscreen = 15;
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -3835,47 +3975,53 @@ const char* SystemProfileProto_Hardware::_InternalParse(const char* ptr, ::PROTO
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Drive app_drive = 16;
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           ptr = ctx->ParseMessage(_internal_mutable_app_drive(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware.Drive user_data_drive = 17;
       case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
           ptr = ctx->ParseMessage(_internal_mutable_user_data_drive(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Hardware::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Hardware::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Hardware)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -3994,8 +4140,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Hardware)
   return target;
@@ -4005,7 +4151,7 @@ size_t SystemProfileProto_Hardware::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Hardware)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4069,39 +4215,29 @@ size_t SystemProfileProto_Hardware::ByteSizeLong() const {
 
     // optional int64 system_ram_mb = 2;
     if (cached_has_bits & 0x00000080u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_system_ram_mb());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_system_ram_mb());
     }
 
   }
   if (cached_has_bits & 0x0000ff00u) {
     // optional int64 dll_base = 3;
     if (cached_has_bits & 0x00000100u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_dll_base());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_dll_base());
     }
 
     // optional int32 screen_count = 5;
     if (cached_has_bits & 0x00000200u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_screen_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_screen_count());
     }
 
     // optional int32 primary_screen_width = 6;
     if (cached_has_bits & 0x00000400u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_primary_screen_width());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_primary_screen_width());
     }
 
     // optional int32 primary_screen_height = 7;
     if (cached_has_bits & 0x00000800u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_primary_screen_height());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_primary_screen_height());
     }
 
     // optional float max_dpi_x = 9;
@@ -4126,7 +4262,7 @@ size_t SystemProfileProto_Hardware::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4142,20 +4278,17 @@ void SystemProfileProto_Hardware::CheckTypeAndMergeFrom(
 void SystemProfileProto_Hardware::MergeFrom(const SystemProfileProto_Hardware& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Hardware)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   external_touchscreen_.MergeFrom(from.external_touchscreen_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      cpu_architecture_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.cpu_architecture_);
+      _internal_set_cpu_architecture(from._internal_cpu_architecture());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      hardware_class_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.hardware_class_);
+      _internal_set_hardware_class(from._internal_hardware_class());
     }
     if (cached_has_bits & 0x00000004u) {
       _internal_mutable_gpu()->::metrics::SystemProfileProto_Hardware_Graphics::MergeFrom(from._internal_gpu());
@@ -4204,6 +4337,7 @@ void SystemProfileProto_Hardware::MergeFrom(const SystemProfileProto_Hardware& f
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Hardware::CopyFrom(const SystemProfileProto_Hardware& from) {
@@ -4219,27 +4353,27 @@ bool SystemProfileProto_Hardware::IsInitialized() const {
 
 void SystemProfileProto_Hardware::InternalSwap(SystemProfileProto_Hardware* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   external_touchscreen_.InternalSwap(&other->external_touchscreen_);
-  cpu_architecture_.Swap(&other->cpu_architecture_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  hardware_class_.Swap(&other->hardware_class_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(gpu_, other->gpu_);
-  swap(bluetooth_, other->bluetooth_);
-  swap(cpu_, other->cpu_);
-  swap(app_drive_, other->app_drive_);
-  swap(user_data_drive_, other->user_data_drive_);
-  swap(system_ram_mb_, other->system_ram_mb_);
-  swap(dll_base_, other->dll_base_);
-  swap(screen_count_, other->screen_count_);
-  swap(primary_screen_width_, other->primary_screen_width_);
-  swap(primary_screen_height_, other->primary_screen_height_);
-  swap(max_dpi_x_, other->max_dpi_x_);
-  swap(max_dpi_y_, other->max_dpi_y_);
-  swap(primary_screen_scale_factor_, other->primary_screen_scale_factor_);
-  swap(internal_display_supports_touch_, other->internal_display_supports_touch_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &cpu_architecture_, lhs_arena,
+      &other->cpu_architecture_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &hardware_class_, lhs_arena,
+      &other->hardware_class_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware, internal_display_supports_touch_)
+      + sizeof(SystemProfileProto_Hardware::internal_display_supports_touch_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Hardware, gpu_)>(
+          reinterpret_cast<char*>(&gpu_),
+          reinterpret_cast<char*>(&other->gpu_));
 }
 
 std::string SystemProfileProto_Hardware::GetTypeName() const {
@@ -4249,8 +4383,6 @@ std::string SystemProfileProto_Hardware::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Network_WifiAccessPoint_VendorInformation::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Network_WifiAccessPoint_VendorInformation>()._has_bits_);
@@ -4265,62 +4397,90 @@ class SystemProfileProto_Network_WifiAccessPoint_VendorInformation::_Internal {
   }
 };
 
-SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SystemProfileProto_Network_WifiAccessPoint_VendorInformation()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SystemProfileProto_Network_WifiAccessPoint_VendorInformation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  element_identifier_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
 }
 SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SystemProfileProto_Network_WifiAccessPoint_VendorInformation(const SystemProfileProto_Network_WifiAccessPoint_VendorInformation& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       element_identifier_(from.element_identifier_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_number()) {
-    model_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_number_);
+    model_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_number(), 
+      GetArenaForAllocation());
   }
   model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_name()) {
-    model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+    model_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_name(), 
+      GetArenaForAllocation());
   }
   device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    device_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_device_name()) {
-    device_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_name_);
+    device_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
 }
 
-void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto.base);
-  model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SharedCtor() {
+model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  device_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SystemProfileProto_Network_WifiAccessPoint_VendorInformation::~SystemProfileProto_Network_WifiAccessPoint_VendorInformation() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SharedDtor() {
+inline void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   model_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::ArenaDtor(void* object) {
+  SystemProfileProto_Network_WifiAccessPoint_VendorInformation* _this = reinterpret_cast< SystemProfileProto_Network_WifiAccessPoint_VendorInformation* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Network_WifiAccessPoint_VendorInformation& SystemProfileProto_Network_WifiAccessPoint_VendorInformation::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Network_WifiAccessPoint_VendorInformation_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4328,91 +4488,97 @@ void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      model_number_.ClearNonDefaultToEmptyNoArena();
+      model_number_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      model_name_.ClearNonDefaultToEmptyNoArena();
+      model_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      device_name_.ClearNonDefaultToEmptyNoArena();
+      device_name_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Network_WifiAccessPoint_VendorInformation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string model_number = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_model_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string model_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_model_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string device_name = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_device_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated uint32 element_identifier = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           ptr -= 1;
           do {
             ptr += 1;
-            _internal_add_element_identifier(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+            _internal_add_element_identifier(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<32>(ptr));
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34) {
+        } else if (static_cast<uint8_t>(tag) == 34) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_element_identifier(), ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Network_WifiAccessPoint_VendorInformation::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Network_WifiAccessPoint_VendorInformation::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4441,8 +4607,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
   return target;
@@ -4452,7 +4618,7 @@ size_t SystemProfileProto_Network_WifiAccessPoint_VendorInformation::ByteSizeLon
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4490,7 +4656,7 @@ size_t SystemProfileProto_Network_WifiAccessPoint_VendorInformation::ByteSizeLon
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4506,26 +4672,23 @@ void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::CheckTypeAndM
 void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::MergeFrom(const SystemProfileProto_Network_WifiAccessPoint_VendorInformation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   element_identifier_.MergeFrom(from.element_identifier_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      model_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_number_);
+      _internal_set_model_number(from._internal_model_number());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+      _internal_set_model_name(from._internal_model_name());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      device_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_name_);
+      _internal_set_device_name(from._internal_device_name());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::CopyFrom(const SystemProfileProto_Network_WifiAccessPoint_VendorInformation& from) {
@@ -4541,15 +4704,26 @@ bool SystemProfileProto_Network_WifiAccessPoint_VendorInformation::IsInitialized
 
 void SystemProfileProto_Network_WifiAccessPoint_VendorInformation::InternalSwap(SystemProfileProto_Network_WifiAccessPoint_VendorInformation* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   element_identifier_.InternalSwap(&other->element_identifier_);
-  model_number_.Swap(&other->model_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  model_name_.Swap(&other->model_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  device_name_.Swap(&other->device_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_number_, lhs_arena,
+      &other->model_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_name_, lhs_arena,
+      &other->model_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_name_, lhs_arena,
+      &other->device_name_, rhs_arena
+  );
 }
 
 std::string SystemProfileProto_Network_WifiAccessPoint_VendorInformation::GetTypeName() const {
@@ -4559,10 +4733,6 @@ std::string SystemProfileProto_Network_WifiAccessPoint_VendorInformation::GetTyp
 
 // ===================================================================
 
-void SystemProfileProto_Network_WifiAccessPoint::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_Network_WifiAccessPoint_default_instance_._instance.get_mutable()->vendor_info_ = const_cast< ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation*>(
-      ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation::internal_default_instance());
-}
 class SystemProfileProto_Network_WifiAccessPoint::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Network_WifiAccessPoint>()._has_bits_);
@@ -4582,16 +4752,19 @@ const ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation&
 SystemProfileProto_Network_WifiAccessPoint::_Internal::vendor_info(const SystemProfileProto_Network_WifiAccessPoint* msg) {
   return *msg->vendor_info_;
 }
-SystemProfileProto_Network_WifiAccessPoint::SystemProfileProto_Network_WifiAccessPoint()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Network_WifiAccessPoint::SystemProfileProto_Network_WifiAccessPoint(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Network.WifiAccessPoint)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Network.WifiAccessPoint)
 }
 SystemProfileProto_Network_WifiAccessPoint::SystemProfileProto_Network_WifiAccessPoint(const SystemProfileProto_Network_WifiAccessPoint& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_vendor_info()) {
     vendor_info_ = new ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation(*from.vendor_info_);
   } else {
@@ -4603,34 +4776,38 @@ SystemProfileProto_Network_WifiAccessPoint::SystemProfileProto_Network_WifiAcces
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Network.WifiAccessPoint)
 }
 
-void SystemProfileProto_Network_WifiAccessPoint::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto.base);
-  ::memset(&vendor_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&security_mode_) -
-      reinterpret_cast<char*>(&vendor_info_)) + sizeof(security_mode_));
+inline void SystemProfileProto_Network_WifiAccessPoint::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&vendor_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&security_mode_) -
+    reinterpret_cast<char*>(&vendor_info_)) + sizeof(security_mode_));
 }
 
 SystemProfileProto_Network_WifiAccessPoint::~SystemProfileProto_Network_WifiAccessPoint() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Network.WifiAccessPoint)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Network_WifiAccessPoint::SharedDtor() {
+inline void SystemProfileProto_Network_WifiAccessPoint::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete vendor_info_;
 }
 
+void SystemProfileProto_Network_WifiAccessPoint::ArenaDtor(void* object) {
+  SystemProfileProto_Network_WifiAccessPoint* _this = reinterpret_cast< SystemProfileProto_Network_WifiAccessPoint* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Network_WifiAccessPoint::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Network_WifiAccessPoint::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Network_WifiAccessPoint& SystemProfileProto_Network_WifiAccessPoint::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Network_WifiAccessPoint_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Network_WifiAccessPoint::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Network.WifiAccessPoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4645,69 +4822,74 @@ void SystemProfileProto_Network_WifiAccessPoint::Clear() {
         reinterpret_cast<char*>(&vendor_prefix_)) + sizeof(security_mode_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Network_WifiAccessPoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional uint32 vendor_prefix = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_vendor_prefix(&has_bits);
-          vendor_prefix_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vendor_prefix_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network.WifiAccessPoint.SecurityMode security_mode = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Network_WifiAccessPoint_SecurityMode_IsValid(val))) {
             _internal_set_security_mode(static_cast<::metrics::SystemProfileProto_Network_WifiAccessPoint_SecurityMode>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network.WifiAccessPoint.VendorInformation vendor_info = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_vendor_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Network_WifiAccessPoint::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Network_WifiAccessPoint::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Network.WifiAccessPoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -4733,8 +4915,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Network.WifiAccessPoint)
   return target;
@@ -4744,7 +4926,7 @@ size_t SystemProfileProto_Network_WifiAccessPoint::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Network.WifiAccessPoint)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4759,9 +4941,7 @@ size_t SystemProfileProto_Network_WifiAccessPoint::ByteSizeLong() const {
 
     // optional uint32 vendor_prefix = 1;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_vendor_prefix());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_vendor_prefix());
     }
 
     // optional .metrics.SystemProfileProto.Network.WifiAccessPoint.SecurityMode security_mode = 2;
@@ -4772,7 +4952,7 @@ size_t SystemProfileProto_Network_WifiAccessPoint::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -4788,8 +4968,7 @@ void SystemProfileProto_Network_WifiAccessPoint::CheckTypeAndMergeFrom(
 void SystemProfileProto_Network_WifiAccessPoint::MergeFrom(const SystemProfileProto_Network_WifiAccessPoint& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Network.WifiAccessPoint)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -4805,6 +4984,7 @@ void SystemProfileProto_Network_WifiAccessPoint::MergeFrom(const SystemProfilePr
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Network_WifiAccessPoint::CopyFrom(const SystemProfileProto_Network_WifiAccessPoint& from) {
@@ -4820,11 +5000,14 @@ bool SystemProfileProto_Network_WifiAccessPoint::IsInitialized() const {
 
 void SystemProfileProto_Network_WifiAccessPoint::InternalSwap(SystemProfileProto_Network_WifiAccessPoint* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(vendor_info_, other->vendor_info_);
-  swap(vendor_prefix_, other->vendor_prefix_);
-  swap(security_mode_, other->security_mode_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Network_WifiAccessPoint, security_mode_)
+      + sizeof(SystemProfileProto_Network_WifiAccessPoint::security_mode_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Network_WifiAccessPoint, vendor_info_)>(
+          reinterpret_cast<char*>(&vendor_info_),
+          reinterpret_cast<char*>(&other->vendor_info_));
 }
 
 std::string SystemProfileProto_Network_WifiAccessPoint::GetTypeName() const {
@@ -4834,10 +5017,6 @@ std::string SystemProfileProto_Network_WifiAccessPoint::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Network::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_Network_default_instance_._instance.get_mutable()->access_point_info_ = const_cast< ::metrics::SystemProfileProto_Network_WifiAccessPoint*>(
-      ::metrics::SystemProfileProto_Network_WifiAccessPoint::internal_default_instance());
-}
 class SystemProfileProto_Network::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Network>()._has_bits_);
@@ -4863,16 +5042,19 @@ const ::metrics::SystemProfileProto_Network_WifiAccessPoint&
 SystemProfileProto_Network::_Internal::access_point_info(const SystemProfileProto_Network* msg) {
   return *msg->access_point_info_;
 }
-SystemProfileProto_Network::SystemProfileProto_Network()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Network::SystemProfileProto_Network(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Network)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Network)
 }
 SystemProfileProto_Network::SystemProfileProto_Network(const SystemProfileProto_Network& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_access_point_info()) {
     access_point_info_ = new ::metrics::SystemProfileProto_Network_WifiAccessPoint(*from.access_point_info_);
   } else {
@@ -4884,34 +5066,38 @@ SystemProfileProto_Network::SystemProfileProto_Network(const SystemProfileProto_
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Network)
 }
 
-void SystemProfileProto_Network::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Network_system_5fprofile_2eproto.base);
-  ::memset(&access_point_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&wifi_phy_layer_protocol_) -
-      reinterpret_cast<char*>(&access_point_info_)) + sizeof(wifi_phy_layer_protocol_));
+inline void SystemProfileProto_Network::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&access_point_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&wifi_phy_layer_protocol_) -
+    reinterpret_cast<char*>(&access_point_info_)) + sizeof(wifi_phy_layer_protocol_));
 }
 
 SystemProfileProto_Network::~SystemProfileProto_Network() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Network)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Network::SharedDtor() {
+inline void SystemProfileProto_Network::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete access_point_info_;
 }
 
+void SystemProfileProto_Network::ArenaDtor(void* object) {
+  SystemProfileProto_Network* _this = reinterpret_cast< SystemProfileProto_Network* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Network::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Network::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Network& SystemProfileProto_Network::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Network_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Network::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Network)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -4926,89 +5112,96 @@ void SystemProfileProto_Network::Clear() {
         reinterpret_cast<char*>(&connection_type_)) + sizeof(wifi_phy_layer_protocol_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Network::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool connection_type_is_ambiguous = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_connection_type_is_ambiguous(&has_bits);
-          connection_type_is_ambiguous_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          connection_type_is_ambiguous_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network.ConnectionType connection_type = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Network_ConnectionType_IsValid(val))) {
             _internal_set_connection_type(static_cast<::metrics::SystemProfileProto_Network_ConnectionType>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool wifi_phy_layer_protocol_is_ambiguous = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_wifi_phy_layer_protocol_is_ambiguous(&has_bits);
-          wifi_phy_layer_protocol_is_ambiguous_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          wifi_phy_layer_protocol_is_ambiguous_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network.WifiPHYLayerProtocol wifi_phy_layer_protocol = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Network_WifiPHYLayerProtocol_IsValid(val))) {
             _internal_set_wifi_phy_layer_protocol(static_cast<::metrics::SystemProfileProto_Network_WifiPHYLayerProtocol>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network.WifiAccessPoint access_point_info = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_access_point_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Network::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Network::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Network)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -5047,8 +5240,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Network)
   return target;
@@ -5058,7 +5251,7 @@ size_t SystemProfileProto_Network::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Network)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -5095,7 +5288,7 @@ size_t SystemProfileProto_Network::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -5111,8 +5304,7 @@ void SystemProfileProto_Network::CheckTypeAndMergeFrom(
 void SystemProfileProto_Network::MergeFrom(const SystemProfileProto_Network& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Network)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -5134,6 +5326,7 @@ void SystemProfileProto_Network::MergeFrom(const SystemProfileProto_Network& fro
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Network::CopyFrom(const SystemProfileProto_Network& from) {
@@ -5149,13 +5342,14 @@ bool SystemProfileProto_Network::IsInitialized() const {
 
 void SystemProfileProto_Network::InternalSwap(SystemProfileProto_Network* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(access_point_info_, other->access_point_info_);
-  swap(connection_type_, other->connection_type_);
-  swap(connection_type_is_ambiguous_, other->connection_type_is_ambiguous_);
-  swap(wifi_phy_layer_protocol_is_ambiguous_, other->wifi_phy_layer_protocol_is_ambiguous_);
-  swap(wifi_phy_layer_protocol_, other->wifi_phy_layer_protocol_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Network, wifi_phy_layer_protocol_)
+      + sizeof(SystemProfileProto_Network::wifi_phy_layer_protocol_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Network, access_point_info_)>(
+          reinterpret_cast<char*>(&access_point_info_),
+          reinterpret_cast<char*>(&other->access_point_info_));
 }
 
 std::string SystemProfileProto_Network::GetTypeName() const {
@@ -5165,8 +5359,6 @@ std::string SystemProfileProto_Network::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_GoogleUpdate_ProductInfo::InitAsDefaultInstance() {
-}
 class SystemProfileProto_GoogleUpdate_ProductInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_GoogleUpdate_ProductInfo>()._has_bits_);
@@ -5187,19 +5379,26 @@ class SystemProfileProto_GoogleUpdate_ProductInfo::_Internal {
   }
 };
 
-SystemProfileProto_GoogleUpdate_ProductInfo::SystemProfileProto_GoogleUpdate_ProductInfo()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_GoogleUpdate_ProductInfo::SystemProfileProto_GoogleUpdate_ProductInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
 }
 SystemProfileProto_GoogleUpdate_ProductInfo::SystemProfileProto_GoogleUpdate_ProductInfo(const SystemProfileProto_GoogleUpdate_ProductInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_version()) {
-    version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&last_update_success_timestamp_, &from.last_update_success_timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&last_extra_error_) -
@@ -5207,41 +5406,48 @@ SystemProfileProto_GoogleUpdate_ProductInfo::SystemProfileProto_GoogleUpdate_Pro
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
 }
 
-void SystemProfileProto_GoogleUpdate_ProductInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto.base);
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&last_update_success_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&last_extra_error_) -
-      reinterpret_cast<char*>(&last_update_success_timestamp_)) + sizeof(last_extra_error_));
+inline void SystemProfileProto_GoogleUpdate_ProductInfo::SharedCtor() {
+version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&last_update_success_timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&last_extra_error_) -
+    reinterpret_cast<char*>(&last_update_success_timestamp_)) + sizeof(last_extra_error_));
 }
 
 SystemProfileProto_GoogleUpdate_ProductInfo::~SystemProfileProto_GoogleUpdate_ProductInfo() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_GoogleUpdate_ProductInfo::SharedDtor() {
+inline void SystemProfileProto_GoogleUpdate_ProductInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_GoogleUpdate_ProductInfo::ArenaDtor(void* object) {
+  SystemProfileProto_GoogleUpdate_ProductInfo* _this = reinterpret_cast< SystemProfileProto_GoogleUpdate_ProductInfo* >(object);
+  (void)_this;
+}
+void SystemProfileProto_GoogleUpdate_ProductInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_GoogleUpdate_ProductInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_GoogleUpdate_ProductInfo& SystemProfileProto_GoogleUpdate_ProductInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_GoogleUpdate_ProductInfo_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_GoogleUpdate_ProductInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    version_.ClearNonDefaultToEmptyNoArena();
+    version_.ClearNonDefaultToEmpty();
   }
   if (cached_has_bits & 0x0000001eu) {
     ::memset(&last_update_success_timestamp_, 0, static_cast<size_t>(
@@ -5249,86 +5455,93 @@ void SystemProfileProto_GoogleUpdate_ProductInfo::Clear() {
         reinterpret_cast<char*>(&last_update_success_timestamp_)) + sizeof(last_extra_error_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_GoogleUpdate_ProductInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string version = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 last_update_success_timestamp = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_last_update_success_timestamp(&has_bits);
-          last_update_success_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_update_success_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.GoogleUpdate.ProductInfo.InstallResult last_result = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult_IsValid(val))) {
             _internal_set_last_result(static_cast<::metrics::SystemProfileProto_GoogleUpdate_ProductInfo_InstallResult>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 last_error = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_last_error(&has_bits);
-          last_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 last_extra_error = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_last_extra_error(&has_bits);
-          last_extra_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_extra_error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_GoogleUpdate_ProductInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_GoogleUpdate_ProductInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -5364,8 +5577,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
   return target;
@@ -5375,7 +5588,7 @@ size_t SystemProfileProto_GoogleUpdate_ProductInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -5390,9 +5603,7 @@ size_t SystemProfileProto_GoogleUpdate_ProductInfo::ByteSizeLong() const {
 
     // optional int64 last_update_success_timestamp = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_update_success_timestamp());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_update_success_timestamp());
     }
 
     // optional .metrics.SystemProfileProto.GoogleUpdate.ProductInfo.InstallResult last_result = 3;
@@ -5403,21 +5614,17 @@ size_t SystemProfileProto_GoogleUpdate_ProductInfo::ByteSizeLong() const {
 
     // optional int32 last_error = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_last_error());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_last_error());
     }
 
     // optional int32 last_extra_error = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_last_extra_error());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_last_extra_error());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -5433,15 +5640,13 @@ void SystemProfileProto_GoogleUpdate_ProductInfo::CheckTypeAndMergeFrom(
 void SystemProfileProto_GoogleUpdate_ProductInfo::MergeFrom(const SystemProfileProto_GoogleUpdate_ProductInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.GoogleUpdate.ProductInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+      _internal_set_version(from._internal_version());
     }
     if (cached_has_bits & 0x00000002u) {
       last_update_success_timestamp_ = from.last_update_success_timestamp_;
@@ -5457,6 +5662,7 @@ void SystemProfileProto_GoogleUpdate_ProductInfo::MergeFrom(const SystemProfileP
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_GoogleUpdate_ProductInfo::CopyFrom(const SystemProfileProto_GoogleUpdate_ProductInfo& from) {
@@ -5472,14 +5678,21 @@ bool SystemProfileProto_GoogleUpdate_ProductInfo::IsInitialized() const {
 
 void SystemProfileProto_GoogleUpdate_ProductInfo::InternalSwap(SystemProfileProto_GoogleUpdate_ProductInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  version_.Swap(&other->version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(last_update_success_timestamp_, other->last_update_success_timestamp_);
-  swap(last_result_, other->last_result_);
-  swap(last_error_, other->last_error_);
-  swap(last_extra_error_, other->last_extra_error_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &version_, lhs_arena,
+      &other->version_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_GoogleUpdate_ProductInfo, last_extra_error_)
+      + sizeof(SystemProfileProto_GoogleUpdate_ProductInfo::last_extra_error_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_GoogleUpdate_ProductInfo, last_update_success_timestamp_)>(
+          reinterpret_cast<char*>(&last_update_success_timestamp_),
+          reinterpret_cast<char*>(&other->last_update_success_timestamp_));
 }
 
 std::string SystemProfileProto_GoogleUpdate_ProductInfo::GetTypeName() const {
@@ -5489,12 +5702,6 @@ std::string SystemProfileProto_GoogleUpdate_ProductInfo::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_GoogleUpdate::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_GoogleUpdate_default_instance_._instance.get_mutable()->google_update_status_ = const_cast< ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo*>(
-      ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo::internal_default_instance());
-  ::metrics::_SystemProfileProto_GoogleUpdate_default_instance_._instance.get_mutable()->client_status_ = const_cast< ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo*>(
-      ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo::internal_default_instance());
-}
 class SystemProfileProto_GoogleUpdate::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_GoogleUpdate>()._has_bits_);
@@ -5525,16 +5732,19 @@ const ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo&
 SystemProfileProto_GoogleUpdate::_Internal::client_status(const SystemProfileProto_GoogleUpdate* msg) {
   return *msg->client_status_;
 }
-SystemProfileProto_GoogleUpdate::SystemProfileProto_GoogleUpdate()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_GoogleUpdate::SystemProfileProto_GoogleUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.GoogleUpdate)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.GoogleUpdate)
 }
 SystemProfileProto_GoogleUpdate::SystemProfileProto_GoogleUpdate(const SystemProfileProto_GoogleUpdate& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_google_update_status()) {
     google_update_status_ = new ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo(*from.google_update_status_);
   } else {
@@ -5551,35 +5761,39 @@ SystemProfileProto_GoogleUpdate::SystemProfileProto_GoogleUpdate(const SystemPro
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.GoogleUpdate)
 }
 
-void SystemProfileProto_GoogleUpdate::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto.base);
-  ::memset(&google_update_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_system_install_) -
-      reinterpret_cast<char*>(&google_update_status_)) + sizeof(is_system_install_));
+inline void SystemProfileProto_GoogleUpdate::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&google_update_status_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_system_install_) -
+    reinterpret_cast<char*>(&google_update_status_)) + sizeof(is_system_install_));
 }
 
 SystemProfileProto_GoogleUpdate::~SystemProfileProto_GoogleUpdate() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.GoogleUpdate)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_GoogleUpdate::SharedDtor() {
+inline void SystemProfileProto_GoogleUpdate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete google_update_status_;
   if (this != internal_default_instance()) delete client_status_;
 }
 
+void SystemProfileProto_GoogleUpdate::ArenaDtor(void* object) {
+  SystemProfileProto_GoogleUpdate* _this = reinterpret_cast< SystemProfileProto_GoogleUpdate* >(object);
+  (void)_this;
+}
+void SystemProfileProto_GoogleUpdate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_GoogleUpdate::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_GoogleUpdate& SystemProfileProto_GoogleUpdate::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_GoogleUpdate_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_GoogleUpdate::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.GoogleUpdate)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -5600,80 +5814,87 @@ void SystemProfileProto_GoogleUpdate::Clear() {
         reinterpret_cast<char*>(&last_automatic_start_timestamp_)) + sizeof(is_system_install_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_GoogleUpdate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool is_system_install = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_is_system_install(&has_bits);
-          is_system_install_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_system_install_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 last_automatic_start_timestamp = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_last_automatic_start_timestamp(&has_bits);
-          last_automatic_start_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_automatic_start_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 last_update_check_timestamp = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_last_update_check_timestamp(&has_bits);
-          last_update_check_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_update_check_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.GoogleUpdate.ProductInfo google_update_status = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_google_update_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.GoogleUpdate.ProductInfo client_status = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_client_status(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_GoogleUpdate::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_GoogleUpdate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.GoogleUpdate)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -5712,8 +5933,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.GoogleUpdate)
   return target;
@@ -5723,7 +5944,7 @@ size_t SystemProfileProto_GoogleUpdate::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.GoogleUpdate)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -5745,16 +5966,12 @@ size_t SystemProfileProto_GoogleUpdate::ByteSizeLong() const {
 
     // optional int64 last_automatic_start_timestamp = 2;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_automatic_start_timestamp());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_automatic_start_timestamp());
     }
 
     // optional int64 last_update_check_timestamp = 3;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_update_check_timestamp());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_update_check_timestamp());
     }
 
     // optional bool is_system_install = 1;
@@ -5764,7 +5981,7 @@ size_t SystemProfileProto_GoogleUpdate::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -5780,8 +5997,7 @@ void SystemProfileProto_GoogleUpdate::CheckTypeAndMergeFrom(
 void SystemProfileProto_GoogleUpdate::MergeFrom(const SystemProfileProto_GoogleUpdate& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.GoogleUpdate)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -5803,6 +6019,7 @@ void SystemProfileProto_GoogleUpdate::MergeFrom(const SystemProfileProto_GoogleU
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_GoogleUpdate::CopyFrom(const SystemProfileProto_GoogleUpdate& from) {
@@ -5818,13 +6035,14 @@ bool SystemProfileProto_GoogleUpdate::IsInitialized() const {
 
 void SystemProfileProto_GoogleUpdate::InternalSwap(SystemProfileProto_GoogleUpdate* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(google_update_status_, other->google_update_status_);
-  swap(client_status_, other->client_status_);
-  swap(last_automatic_start_timestamp_, other->last_automatic_start_timestamp_);
-  swap(last_update_check_timestamp_, other->last_update_check_timestamp_);
-  swap(is_system_install_, other->is_system_install_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_GoogleUpdate, is_system_install_)
+      + sizeof(SystemProfileProto_GoogleUpdate::is_system_install_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_GoogleUpdate, google_update_status_)>(
+          reinterpret_cast<char*>(&google_update_status_),
+          reinterpret_cast<char*>(&other->google_update_status_));
 }
 
 std::string SystemProfileProto_GoogleUpdate::GetTypeName() const {
@@ -5834,8 +6052,6 @@ std::string SystemProfileProto_GoogleUpdate::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Plugin::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Plugin::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Plugin>()._has_bits_);
@@ -5856,27 +6072,42 @@ class SystemProfileProto_Plugin::_Internal {
   }
 };
 
-SystemProfileProto_Plugin::SystemProfileProto_Plugin()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Plugin::SystemProfileProto_Plugin(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Plugin)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Plugin)
 }
 SystemProfileProto_Plugin::SystemProfileProto_Plugin(const SystemProfileProto_Plugin& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_name()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
   }
   filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_filename()) {
-    filename_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.filename_);
+    filename_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_filename(), 
+      GetArenaForAllocation());
   }
   version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_version()) {
-    version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+    version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_version(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&is_disabled_, &from.is_disabled_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_pepper_) -
@@ -5884,134 +6115,154 @@ SystemProfileProto_Plugin::SystemProfileProto_Plugin(const SystemProfileProto_Pl
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Plugin)
 }
 
-void SystemProfileProto_Plugin::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&is_disabled_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_pepper_) -
-      reinterpret_cast<char*>(&is_disabled_)) + sizeof(is_pepper_));
+inline void SystemProfileProto_Plugin::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  filename_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&is_disabled_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_pepper_) -
+    reinterpret_cast<char*>(&is_disabled_)) + sizeof(is_pepper_));
 }
 
 SystemProfileProto_Plugin::~SystemProfileProto_Plugin() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Plugin)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Plugin::SharedDtor() {
+inline void SystemProfileProto_Plugin::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   filename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_Plugin::ArenaDtor(void* object) {
+  SystemProfileProto_Plugin* _this = reinterpret_cast< SystemProfileProto_Plugin* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Plugin::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Plugin::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Plugin& SystemProfileProto_Plugin::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Plugin_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Plugin::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Plugin)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      name_.ClearNonDefaultToEmptyNoArena();
+      name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      filename_.ClearNonDefaultToEmptyNoArena();
+      filename_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      version_.ClearNonDefaultToEmptyNoArena();
+      version_.ClearNonDefaultToEmpty();
     }
   }
   ::memset(&is_disabled_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_pepper_) -
       reinterpret_cast<char*>(&is_disabled_)) + sizeof(is_pepper_));
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Plugin::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string filename = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_filename();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string version = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_disabled = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_is_disabled(&has_bits);
-          is_disabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_disabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_pepper = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_is_pepper(&has_bits);
-          is_pepper_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_pepper_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Plugin::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Plugin::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Plugin)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -6046,8 +6297,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Plugin)
   return target;
@@ -6057,7 +6308,7 @@ size_t SystemProfileProto_Plugin::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Plugin)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -6096,7 +6347,7 @@ size_t SystemProfileProto_Plugin::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -6112,23 +6363,19 @@ void SystemProfileProto_Plugin::CheckTypeAndMergeFrom(
 void SystemProfileProto_Plugin::MergeFrom(const SystemProfileProto_Plugin& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Plugin)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+      _internal_set_name(from._internal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      filename_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.filename_);
+      _internal_set_filename(from._internal_filename());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.version_);
+      _internal_set_version(from._internal_version());
     }
     if (cached_has_bits & 0x00000008u) {
       is_disabled_ = from.is_disabled_;
@@ -6138,6 +6385,7 @@ void SystemProfileProto_Plugin::MergeFrom(const SystemProfileProto_Plugin& from)
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Plugin::CopyFrom(const SystemProfileProto_Plugin& from) {
@@ -6153,16 +6401,31 @@ bool SystemProfileProto_Plugin::IsInitialized() const {
 
 void SystemProfileProto_Plugin::InternalSwap(SystemProfileProto_Plugin* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  filename_.Swap(&other->filename_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  version_.Swap(&other->version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(is_disabled_, other->is_disabled_);
-  swap(is_pepper_, other->is_pepper_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &filename_, lhs_arena,
+      &other->filename_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &version_, lhs_arena,
+      &other->version_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Plugin, is_pepper_)
+      + sizeof(SystemProfileProto_Plugin::is_pepper_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Plugin, is_disabled_)>(
+          reinterpret_cast<char*>(&is_disabled_),
+          reinterpret_cast<char*>(&other->is_disabled_));
 }
 
 std::string SystemProfileProto_Plugin::GetTypeName() const {
@@ -6172,10 +6435,6 @@ std::string SystemProfileProto_Plugin::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Stability_PluginStability::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_Stability_PluginStability_default_instance_._instance.get_mutable()->plugin_ = const_cast< ::metrics::SystemProfileProto_Plugin*>(
-      ::metrics::SystemProfileProto_Plugin::internal_default_instance());
-}
 class SystemProfileProto_Stability_PluginStability::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Stability_PluginStability>()._has_bits_);
@@ -6201,16 +6460,19 @@ const ::metrics::SystemProfileProto_Plugin&
 SystemProfileProto_Stability_PluginStability::_Internal::plugin(const SystemProfileProto_Stability_PluginStability* msg) {
   return *msg->plugin_;
 }
-SystemProfileProto_Stability_PluginStability::SystemProfileProto_Stability_PluginStability()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Stability_PluginStability::SystemProfileProto_Stability_PluginStability(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Stability.PluginStability)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Stability.PluginStability)
 }
 SystemProfileProto_Stability_PluginStability::SystemProfileProto_Stability_PluginStability(const SystemProfileProto_Stability_PluginStability& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_plugin()) {
     plugin_ = new ::metrics::SystemProfileProto_Plugin(*from.plugin_);
   } else {
@@ -6222,34 +6484,38 @@ SystemProfileProto_Stability_PluginStability::SystemProfileProto_Stability_Plugi
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Stability.PluginStability)
 }
 
-void SystemProfileProto_Stability_PluginStability::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto.base);
-  ::memset(&plugin_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&loading_error_count_) -
-      reinterpret_cast<char*>(&plugin_)) + sizeof(loading_error_count_));
+inline void SystemProfileProto_Stability_PluginStability::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&plugin_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&loading_error_count_) -
+    reinterpret_cast<char*>(&plugin_)) + sizeof(loading_error_count_));
 }
 
 SystemProfileProto_Stability_PluginStability::~SystemProfileProto_Stability_PluginStability() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Stability.PluginStability)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Stability_PluginStability::SharedDtor() {
+inline void SystemProfileProto_Stability_PluginStability::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete plugin_;
 }
 
+void SystemProfileProto_Stability_PluginStability::ArenaDtor(void* object) {
+  SystemProfileProto_Stability_PluginStability* _this = reinterpret_cast< SystemProfileProto_Stability_PluginStability* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Stability_PluginStability::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Stability_PluginStability::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Stability_PluginStability& SystemProfileProto_Stability_PluginStability::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Stability_PluginStability_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Stability_PluginStability::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Stability.PluginStability)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -6264,81 +6530,88 @@ void SystemProfileProto_Stability_PluginStability::Clear() {
         reinterpret_cast<char*>(&launch_count_)) + sizeof(loading_error_count_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Stability_PluginStability::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .metrics.SystemProfileProto.Plugin plugin = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_plugin(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 launch_count = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_launch_count(&has_bits);
-          launch_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          launch_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 instance_count = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_instance_count(&has_bits);
-          instance_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          instance_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 crash_count = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_crash_count(&has_bits);
-          crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 loading_error_count = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_loading_error_count(&has_bits);
-          loading_error_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          loading_error_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Stability_PluginStability::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Stability_PluginStability::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Stability.PluginStability)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -6375,8 +6648,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Stability.PluginStability)
   return target;
@@ -6386,7 +6659,7 @@ size_t SystemProfileProto_Stability_PluginStability::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Stability.PluginStability)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -6401,35 +6674,27 @@ size_t SystemProfileProto_Stability_PluginStability::ByteSizeLong() const {
 
     // optional int32 launch_count = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_launch_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_launch_count());
     }
 
     // optional int32 instance_count = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_instance_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_instance_count());
     }
 
     // optional int32 crash_count = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_crash_count());
     }
 
     // optional int32 loading_error_count = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_loading_error_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_loading_error_count());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -6445,8 +6710,7 @@ void SystemProfileProto_Stability_PluginStability::CheckTypeAndMergeFrom(
 void SystemProfileProto_Stability_PluginStability::MergeFrom(const SystemProfileProto_Stability_PluginStability& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Stability.PluginStability)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -6468,6 +6732,7 @@ void SystemProfileProto_Stability_PluginStability::MergeFrom(const SystemProfile
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Stability_PluginStability::CopyFrom(const SystemProfileProto_Stability_PluginStability& from) {
@@ -6483,13 +6748,14 @@ bool SystemProfileProto_Stability_PluginStability::IsInitialized() const {
 
 void SystemProfileProto_Stability_PluginStability::InternalSwap(SystemProfileProto_Stability_PluginStability* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(plugin_, other->plugin_);
-  swap(launch_count_, other->launch_count_);
-  swap(instance_count_, other->instance_count_);
-  swap(crash_count_, other->crash_count_);
-  swap(loading_error_count_, other->loading_error_count_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Stability_PluginStability, loading_error_count_)
+      + sizeof(SystemProfileProto_Stability_PluginStability::loading_error_count_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Stability_PluginStability, plugin_)>(
+          reinterpret_cast<char*>(&plugin_),
+          reinterpret_cast<char*>(&other->plugin_));
 }
 
 std::string SystemProfileProto_Stability_PluginStability::GetTypeName() const {
@@ -6499,8 +6765,6 @@ std::string SystemProfileProto_Stability_PluginStability::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_Stability::InitAsDefaultInstance() {
-}
 class SystemProfileProto_Stability::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_Stability>()._has_bits_);
@@ -6557,50 +6821,58 @@ class SystemProfileProto_Stability::_Internal {
   }
 };
 
-SystemProfileProto_Stability::SystemProfileProto_Stability()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_Stability::SystemProfileProto_Stability(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  plugin_stability_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.Stability)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.Stability)
 }
 SystemProfileProto_Stability::SystemProfileProto_Stability(const SystemProfileProto_Stability& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       plugin_stability_(from.plugin_stability_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&incremental_uptime_sec_, &from.incremental_uptime_sec_,
     static_cast<size_t>(reinterpret_cast<char*>(&uptime_sec_) -
     reinterpret_cast<char*>(&incremental_uptime_sec_)) + sizeof(uptime_sec_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.Stability)
 }
 
-void SystemProfileProto_Stability::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_Stability_system_5fprofile_2eproto.base);
-  ::memset(&incremental_uptime_sec_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&uptime_sec_) -
-      reinterpret_cast<char*>(&incremental_uptime_sec_)) + sizeof(uptime_sec_));
+inline void SystemProfileProto_Stability::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&incremental_uptime_sec_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&uptime_sec_) -
+    reinterpret_cast<char*>(&incremental_uptime_sec_)) + sizeof(uptime_sec_));
 }
 
 SystemProfileProto_Stability::~SystemProfileProto_Stability() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.Stability)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_Stability::SharedDtor() {
+inline void SystemProfileProto_Stability::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_Stability::ArenaDtor(void* object) {
+  SystemProfileProto_Stability* _this = reinterpret_cast< SystemProfileProto_Stability* >(object);
+  (void)_this;
+}
+void SystemProfileProto_Stability::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_Stability::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_Stability& SystemProfileProto_Stability::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_Stability_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_Stability::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.Stability)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -6616,150 +6888,165 @@ void SystemProfileProto_Stability::Clear() {
         reinterpret_cast<char*>(&debugger_present_count_) -
         reinterpret_cast<char*>(&unclean_system_shutdown_count_)) + sizeof(debugger_present_count_));
   }
-  uptime_sec_ = PROTOBUF_LONGLONG(0);
+  uptime_sec_ = int64_t{0};
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_Stability::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int64 incremental_uptime_sec = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_incremental_uptime_sec(&has_bits);
-          incremental_uptime_sec_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          incremental_uptime_sec_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 page_load_count = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_page_load_count(&has_bits);
-          page_load_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          page_load_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 renderer_crash_count = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_renderer_crash_count(&has_bits);
-          renderer_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          renderer_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 renderer_hang_count = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_renderer_hang_count(&has_bits);
-          renderer_hang_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          renderer_hang_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 extension_renderer_crash_count = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_extension_renderer_crash_count(&has_bits);
-          extension_renderer_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          extension_renderer_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 child_process_crash_count = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_child_process_crash_count(&has_bits);
-          child_process_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          child_process_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 other_user_crash_count = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_other_user_crash_count(&has_bits);
-          other_user_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          other_user_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 kernel_crash_count = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           _Internal::set_has_kernel_crash_count(&has_bits);
-          kernel_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          kernel_crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 unclean_system_shutdown_count = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           _Internal::set_has_unclean_system_shutdown_count(&has_bits);
-          unclean_system_shutdown_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          unclean_system_shutdown_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 launch_count = 15;
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
           _Internal::set_has_launch_count(&has_bits);
-          launch_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          launch_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 crash_count = 16;
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
           _Internal::set_has_crash_count(&has_bits);
-          crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          crash_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 incomplete_shutdown_count = 17;
       case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 136)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _Internal::set_has_incomplete_shutdown_count(&has_bits);
-          incomplete_shutdown_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          incomplete_shutdown_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 breakpad_registration_success_count = 18;
       case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
           _Internal::set_has_breakpad_registration_success_count(&has_bits);
-          breakpad_registration_success_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          breakpad_registration_success_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 breakpad_registration_failure_count = 19;
       case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
           _Internal::set_has_breakpad_registration_failure_count(&has_bits);
-          breakpad_registration_failure_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          breakpad_registration_failure_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 debugger_present_count = 20;
       case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 160)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
           _Internal::set_has_debugger_present_count(&has_bits);
-          debugger_present_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          debugger_present_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 debugger_not_present_count = 21;
       case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 168)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
           _Internal::set_has_debugger_not_present_count(&has_bits);
-          debugger_not_present_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          debugger_not_present_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.Stability.PluginStability plugin_stability = 22;
       case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 178)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
           ptr -= 2;
           do {
             ptr += 2;
@@ -6767,41 +7054,46 @@ const char* SystemProfileProto_Stability::_InternalParse(const char* ptr, ::PROT
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 uptime_sec = 23;
       case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 184)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
           _Internal::set_has_uptime_sec(&has_bits);
-          uptime_sec_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          uptime_sec_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_Stability::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_Stability::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.Stability)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -6916,8 +7208,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.Stability)
   return target;
@@ -6927,7 +7219,7 @@ size_t SystemProfileProto_Stability::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.Stability)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -6942,74 +7234,54 @@ size_t SystemProfileProto_Stability::ByteSizeLong() const {
   if (cached_has_bits & 0x000000ffu) {
     // optional int64 incremental_uptime_sec = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_incremental_uptime_sec());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_incremental_uptime_sec());
     }
 
     // optional int32 page_load_count = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_page_load_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_page_load_count());
     }
 
     // optional int32 renderer_crash_count = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_renderer_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_renderer_crash_count());
     }
 
     // optional int32 renderer_hang_count = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_renderer_hang_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_renderer_hang_count());
     }
 
     // optional int32 extension_renderer_crash_count = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_extension_renderer_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_extension_renderer_crash_count());
     }
 
     // optional int32 child_process_crash_count = 6;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_child_process_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_child_process_crash_count());
     }
 
     // optional int32 other_user_crash_count = 7;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_other_user_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_other_user_crash_count());
     }
 
     // optional int32 kernel_crash_count = 8;
     if (cached_has_bits & 0x00000080u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_kernel_crash_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_kernel_crash_count());
     }
 
   }
   if (cached_has_bits & 0x0000ff00u) {
     // optional int32 unclean_system_shutdown_count = 9;
     if (cached_has_bits & 0x00000100u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_unclean_system_shutdown_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_unclean_system_shutdown_count());
     }
 
     // optional int32 launch_count = 15;
     if (cached_has_bits & 0x00000200u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_launch_count());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_launch_count());
     }
 
     // optional int32 crash_count = 16;
@@ -7063,7 +7335,7 @@ size_t SystemProfileProto_Stability::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -7079,8 +7351,7 @@ void SystemProfileProto_Stability::CheckTypeAndMergeFrom(
 void SystemProfileProto_Stability::MergeFrom(const SystemProfileProto_Stability& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.Stability)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   plugin_stability_.MergeFrom(from.plugin_stability_);
@@ -7142,6 +7413,7 @@ void SystemProfileProto_Stability::MergeFrom(const SystemProfileProto_Stability&
   if (cached_has_bits & 0x00010000u) {
     _internal_set_uptime_sec(from._internal_uptime_sec());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_Stability::CopyFrom(const SystemProfileProto_Stability& from) {
@@ -7157,26 +7429,15 @@ bool SystemProfileProto_Stability::IsInitialized() const {
 
 void SystemProfileProto_Stability::InternalSwap(SystemProfileProto_Stability* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   plugin_stability_.InternalSwap(&other->plugin_stability_);
-  swap(incremental_uptime_sec_, other->incremental_uptime_sec_);
-  swap(page_load_count_, other->page_load_count_);
-  swap(renderer_crash_count_, other->renderer_crash_count_);
-  swap(renderer_hang_count_, other->renderer_hang_count_);
-  swap(extension_renderer_crash_count_, other->extension_renderer_crash_count_);
-  swap(child_process_crash_count_, other->child_process_crash_count_);
-  swap(other_user_crash_count_, other->other_user_crash_count_);
-  swap(kernel_crash_count_, other->kernel_crash_count_);
-  swap(unclean_system_shutdown_count_, other->unclean_system_shutdown_count_);
-  swap(launch_count_, other->launch_count_);
-  swap(crash_count_, other->crash_count_);
-  swap(incomplete_shutdown_count_, other->incomplete_shutdown_count_);
-  swap(breakpad_registration_success_count_, other->breakpad_registration_success_count_);
-  swap(debugger_not_present_count_, other->debugger_not_present_count_);
-  swap(breakpad_registration_failure_count_, other->breakpad_registration_failure_count_);
-  swap(debugger_present_count_, other->debugger_present_count_);
-  swap(uptime_sec_, other->uptime_sec_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_Stability, uptime_sec_)
+      + sizeof(SystemProfileProto_Stability::uptime_sec_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_Stability, incremental_uptime_sec_)>(
+          reinterpret_cast<char*>(&incremental_uptime_sec_),
+          reinterpret_cast<char*>(&other->incremental_uptime_sec_));
 }
 
 std::string SystemProfileProto_Stability::GetTypeName() const {
@@ -7186,8 +7447,6 @@ std::string SystemProfileProto_Stability::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_FieldTrial::InitAsDefaultInstance() {
-}
 class SystemProfileProto_FieldTrial::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_FieldTrial>()._has_bits_);
@@ -7199,48 +7458,56 @@ class SystemProfileProto_FieldTrial::_Internal {
   }
 };
 
-SystemProfileProto_FieldTrial::SystemProfileProto_FieldTrial()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_FieldTrial::SystemProfileProto_FieldTrial(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.FieldTrial)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.FieldTrial)
 }
 SystemProfileProto_FieldTrial::SystemProfileProto_FieldTrial(const SystemProfileProto_FieldTrial& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&name_id_, &from.name_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&group_id_) -
     reinterpret_cast<char*>(&name_id_)) + sizeof(group_id_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.FieldTrial)
 }
 
-void SystemProfileProto_FieldTrial::SharedCtor() {
-  ::memset(&name_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&group_id_) -
-      reinterpret_cast<char*>(&name_id_)) + sizeof(group_id_));
+inline void SystemProfileProto_FieldTrial::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&name_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&group_id_) -
+    reinterpret_cast<char*>(&name_id_)) + sizeof(group_id_));
 }
 
 SystemProfileProto_FieldTrial::~SystemProfileProto_FieldTrial() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.FieldTrial)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_FieldTrial::SharedDtor() {
+inline void SystemProfileProto_FieldTrial::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_FieldTrial::ArenaDtor(void* object) {
+  SystemProfileProto_FieldTrial* _this = reinterpret_cast< SystemProfileProto_FieldTrial* >(object);
+  (void)_this;
+}
+void SystemProfileProto_FieldTrial::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_FieldTrial::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_FieldTrial& SystemProfileProto_FieldTrial::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_FieldTrial_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_FieldTrial::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.FieldTrial)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7251,58 +7518,62 @@ void SystemProfileProto_FieldTrial::Clear() {
         reinterpret_cast<char*>(&name_id_)) + sizeof(group_id_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_FieldTrial::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional fixed32 name_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
           _Internal::set_has_name_id(&has_bits);
-          name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint32>(ptr);
-          ptr += sizeof(::PROTOBUF_NAMESPACE_ID::uint32);
-        } else goto handle_unusual;
+          name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
+        } else
+          goto handle_unusual;
         continue;
       // optional fixed32 group_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
           _Internal::set_has_group_id(&has_bits);
-          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint32>(ptr);
-          ptr += sizeof(::PROTOBUF_NAMESPACE_ID::uint32);
-        } else goto handle_unusual;
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint32_t>(ptr);
+          ptr += sizeof(uint32_t);
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_FieldTrial::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_FieldTrial::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.FieldTrial)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -7319,8 +7590,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.FieldTrial)
   return target;
@@ -7330,7 +7601,7 @@ size_t SystemProfileProto_FieldTrial::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.FieldTrial)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7348,7 +7619,7 @@ size_t SystemProfileProto_FieldTrial::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -7364,8 +7635,7 @@ void SystemProfileProto_FieldTrial::CheckTypeAndMergeFrom(
 void SystemProfileProto_FieldTrial::MergeFrom(const SystemProfileProto_FieldTrial& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.FieldTrial)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -7378,6 +7648,7 @@ void SystemProfileProto_FieldTrial::MergeFrom(const SystemProfileProto_FieldTria
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_FieldTrial::CopyFrom(const SystemProfileProto_FieldTrial& from) {
@@ -7393,10 +7664,14 @@ bool SystemProfileProto_FieldTrial::IsInitialized() const {
 
 void SystemProfileProto_FieldTrial::InternalSwap(SystemProfileProto_FieldTrial* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(name_id_, other->name_id_);
-  swap(group_id_, other->group_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_FieldTrial, group_id_)
+      + sizeof(SystemProfileProto_FieldTrial::group_id_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_FieldTrial, name_id_)>(
+          reinterpret_cast<char*>(&name_id_),
+          reinterpret_cast<char*>(&other->name_id_));
 }
 
 std::string SystemProfileProto_FieldTrial::GetTypeName() const {
@@ -7406,8 +7681,6 @@ std::string SystemProfileProto_FieldTrial::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::InitAsDefaultInstance() {
-}
 class SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_ExternalAudioVideoDevice_AudioDescription>()._has_bits_);
@@ -7425,49 +7698,58 @@ class SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::_Internal {
   }
 };
 
-SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  sample_frequency_hz_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
 }
 SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription(const SystemProfileProto_ExternalAudioVideoDevice_AudioDescription& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       sample_frequency_hz_(from.sample_frequency_hz_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&audio_format_, &from.audio_format_,
     static_cast<size_t>(reinterpret_cast<char*>(&bit_depth_) -
     reinterpret_cast<char*>(&audio_format_)) + sizeof(bit_depth_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SharedCtor() {
-  ::memset(&audio_format_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&bit_depth_) -
-      reinterpret_cast<char*>(&audio_format_)) + sizeof(bit_depth_));
+inline void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&audio_format_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bit_depth_) -
+    reinterpret_cast<char*>(&audio_format_)) + sizeof(bit_depth_));
 }
 
 SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::~SystemProfileProto_ExternalAudioVideoDevice_AudioDescription() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SharedDtor() {
+inline void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::ArenaDtor(void* object) {
+  SystemProfileProto_ExternalAudioVideoDevice_AudioDescription* _this = reinterpret_cast< SystemProfileProto_ExternalAudioVideoDevice_AudioDescription* >(object);
+  (void)_this;
+}
+void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_ExternalAudioVideoDevice_AudioDescription& SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7479,93 +7761,100 @@ void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::Clear() {
         reinterpret_cast<char*>(&audio_format_)) + sizeof(bit_depth_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription.AudioFormat audio_format = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat_IsValid(val))) {
             _internal_set_audio_format(static_cast<::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription_AudioFormat>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_channels = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_num_channels(&has_bits);
-          num_channels_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_channels_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated int32 sample_frequency_hz = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           ptr -= 1;
           do {
             ptr += 1;
-            _internal_add_sample_frequency_hz(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+            _internal_add_sample_frequency_hz(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<24>(ptr));
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26) {
+        } else if (static_cast<uint8_t>(tag) == 26) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_sample_frequency_hz(), ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 max_bit_rate_per_second = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_max_bit_rate_per_second(&has_bits);
-          max_bit_rate_per_second_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          max_bit_rate_per_second_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 bit_depth = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_bit_depth(&has_bits);
-          bit_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          bit_depth_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -7601,8 +7890,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
   return target;
@@ -7612,7 +7901,7 @@ size_t SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::ByteSizeLon
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7635,28 +7924,22 @@ size_t SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::ByteSizeLon
 
     // optional int32 num_channels = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_channels());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_channels());
     }
 
     // optional int32 max_bit_rate_per_second = 4;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_max_bit_rate_per_second());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_max_bit_rate_per_second());
     }
 
     // optional int32 bit_depth = 5;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_bit_depth());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_bit_depth());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -7672,8 +7955,7 @@ void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::CheckTypeAndM
 void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::MergeFrom(const SystemProfileProto_ExternalAudioVideoDevice_AudioDescription& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   sample_frequency_hz_.MergeFrom(from.sample_frequency_hz_);
@@ -7693,6 +7975,7 @@ void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::MergeFrom(con
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::CopyFrom(const SystemProfileProto_ExternalAudioVideoDevice_AudioDescription& from) {
@@ -7708,13 +7991,15 @@ bool SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::IsInitialized
 
 void SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::InternalSwap(SystemProfileProto_ExternalAudioVideoDevice_AudioDescription* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   sample_frequency_hz_.InternalSwap(&other->sample_frequency_hz_);
-  swap(audio_format_, other->audio_format_);
-  swap(num_channels_, other->num_channels_);
-  swap(max_bit_rate_per_second_, other->max_bit_rate_per_second_);
-  swap(bit_depth_, other->bit_depth_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice_AudioDescription, bit_depth_)
+      + sizeof(SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::bit_depth_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice_AudioDescription, audio_format_)>(
+          reinterpret_cast<char*>(&audio_format_),
+          reinterpret_cast<char*>(&other->audio_format_));
 }
 
 std::string SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::GetTypeName() const {
@@ -7724,8 +8009,6 @@ std::string SystemProfileProto_ExternalAudioVideoDevice_AudioDescription::GetTyp
 
 // ===================================================================
 
-void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::InitAsDefaultInstance() {
-}
 class SystemProfileProto_ExternalAudioVideoDevice_CECCommand::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_ExternalAudioVideoDevice_CECCommand>()._has_bits_);
@@ -7752,48 +8035,56 @@ class SystemProfileProto_ExternalAudioVideoDevice_CECCommand::_Internal {
   }
 };
 
-SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SystemProfileProto_ExternalAudioVideoDevice_CECCommand()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SystemProfileProto_ExternalAudioVideoDevice_CECCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
 }
 SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SystemProfileProto_ExternalAudioVideoDevice_CECCommand(const SystemProfileProto_ExternalAudioVideoDevice_CECCommand& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&opcode_, &from.opcode_,
     static_cast<size_t>(reinterpret_cast<char*>(&num_aborted_unrecognized_) -
     reinterpret_cast<char*>(&opcode_)) + sizeof(num_aborted_unrecognized_));
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SharedCtor() {
-  ::memset(&opcode_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&num_aborted_unrecognized_) -
-      reinterpret_cast<char*>(&opcode_)) + sizeof(num_aborted_unrecognized_));
+inline void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&opcode_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&num_aborted_unrecognized_) -
+    reinterpret_cast<char*>(&opcode_)) + sizeof(num_aborted_unrecognized_));
 }
 
 SystemProfileProto_ExternalAudioVideoDevice_CECCommand::~SystemProfileProto_ExternalAudioVideoDevice_CECCommand() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SharedDtor() {
+inline void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::ArenaDtor(void* object) {
+  SystemProfileProto_ExternalAudioVideoDevice_CECCommand* _this = reinterpret_cast< SystemProfileProto_ExternalAudioVideoDevice_CECCommand* >(object);
+  (void)_this;
+}
+void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_ExternalAudioVideoDevice_CECCommand& SystemProfileProto_ExternalAudioVideoDevice_CECCommand::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_ExternalAudioVideoDevice_CECCommand_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7804,98 +8095,107 @@ void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::Clear() {
         reinterpret_cast<char*>(&opcode_)) + sizeof(num_aborted_unrecognized_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_ExternalAudioVideoDevice_CECCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 opcode = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_opcode(&has_bits);
-          opcode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          opcode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_received_direct = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_num_received_direct(&has_bits);
-          num_received_direct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_received_direct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_received_broadcast = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_num_received_broadcast(&has_bits);
-          num_received_broadcast_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_received_broadcast_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_sent_direct = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _Internal::set_has_num_sent_direct(&has_bits);
-          num_sent_direct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_sent_direct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_sent_broadcast = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_num_sent_broadcast(&has_bits);
-          num_sent_broadcast_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_sent_broadcast_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_aborted_unknown_reason = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_num_aborted_unknown_reason(&has_bits);
-          num_aborted_unknown_reason_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_aborted_unknown_reason_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 num_aborted_unrecognized = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_num_aborted_unrecognized(&has_bits);
-          num_aborted_unrecognized_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_aborted_unrecognized_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_ExternalAudioVideoDevice_CECCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_ExternalAudioVideoDevice_CECCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -7942,8 +8242,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
   return target;
@@ -7953,7 +8253,7 @@ size_t SystemProfileProto_ExternalAudioVideoDevice_CECCommand::ByteSizeLong() co
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -7961,56 +8261,42 @@ size_t SystemProfileProto_ExternalAudioVideoDevice_CECCommand::ByteSizeLong() co
   if (cached_has_bits & 0x0000007fu) {
     // optional int32 opcode = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_opcode());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_opcode());
     }
 
     // optional int32 num_received_direct = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_received_direct());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_received_direct());
     }
 
     // optional int32 num_received_broadcast = 3;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_received_broadcast());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_received_broadcast());
     }
 
     // optional int32 num_sent_direct = 4;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_sent_direct());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_sent_direct());
     }
 
     // optional int32 num_sent_broadcast = 5;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_sent_broadcast());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_sent_broadcast());
     }
 
     // optional int32 num_aborted_unknown_reason = 6;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_aborted_unknown_reason());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_aborted_unknown_reason());
     }
 
     // optional int32 num_aborted_unrecognized = 7;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_num_aborted_unrecognized());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_num_aborted_unrecognized());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -8026,8 +8312,7 @@ void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::CheckTypeAndMergeFr
 void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::MergeFrom(const SystemProfileProto_ExternalAudioVideoDevice_CECCommand& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -8055,6 +8340,7 @@ void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::MergeFrom(const Sys
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::CopyFrom(const SystemProfileProto_ExternalAudioVideoDevice_CECCommand& from) {
@@ -8070,15 +8356,14 @@ bool SystemProfileProto_ExternalAudioVideoDevice_CECCommand::IsInitialized() con
 
 void SystemProfileProto_ExternalAudioVideoDevice_CECCommand::InternalSwap(SystemProfileProto_ExternalAudioVideoDevice_CECCommand* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(opcode_, other->opcode_);
-  swap(num_received_direct_, other->num_received_direct_);
-  swap(num_received_broadcast_, other->num_received_broadcast_);
-  swap(num_sent_direct_, other->num_sent_direct_);
-  swap(num_sent_broadcast_, other->num_sent_broadcast_);
-  swap(num_aborted_unknown_reason_, other->num_aborted_unknown_reason_);
-  swap(num_aborted_unrecognized_, other->num_aborted_unrecognized_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice_CECCommand, num_aborted_unrecognized_)
+      + sizeof(SystemProfileProto_ExternalAudioVideoDevice_CECCommand::num_aborted_unrecognized_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice_CECCommand, opcode_)>(
+          reinterpret_cast<char*>(&opcode_),
+          reinterpret_cast<char*>(&other->opcode_));
 }
 
 std::string SystemProfileProto_ExternalAudioVideoDevice_CECCommand::GetTypeName() const {
@@ -8088,8 +8373,6 @@ std::string SystemProfileProto_ExternalAudioVideoDevice_CECCommand::GetTypeName(
 
 // ===================================================================
 
-void SystemProfileProto_ExternalAudioVideoDevice::InitAsDefaultInstance() {
-}
 class SystemProfileProto_ExternalAudioVideoDevice::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_ExternalAudioVideoDevice>()._has_bits_);
@@ -8125,30 +8408,48 @@ class SystemProfileProto_ExternalAudioVideoDevice::_Internal {
   }
 };
 
-SystemProfileProto_ExternalAudioVideoDevice::SystemProfileProto_ExternalAudioVideoDevice()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_ExternalAudioVideoDevice::SystemProfileProto_ExternalAudioVideoDevice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  av_device_type_(arena),
+  audio_description_(arena),
+  cec_command_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice)
 }
 SystemProfileProto_ExternalAudioVideoDevice::SystemProfileProto_ExternalAudioVideoDevice(const SystemProfileProto_ExternalAudioVideoDevice& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       av_device_type_(from.av_device_type_),
       audio_description_(from.audio_description_),
       cec_command_(from.cec_command_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   manufacturer_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    manufacturer_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_manufacturer_name()) {
-    manufacturer_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_name_);
+    manufacturer_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_manufacturer_name(), 
+      GetArenaForAllocation());
   }
   model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_name()) {
-    model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+    model_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_name(), 
+      GetArenaForAllocation());
   }
   product_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    product_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_product_code()) {
-    product_code_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.product_code_);
+    product_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_product_code(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&manufacture_year_, &from.manufacture_year_,
     static_cast<size_t>(reinterpret_cast<char*>(&cec_version_) -
@@ -8156,39 +8457,52 @@ SystemProfileProto_ExternalAudioVideoDevice::SystemProfileProto_ExternalAudioVid
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.ExternalAudioVideoDevice)
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto.base);
-  manufacturer_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  product_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&manufacture_year_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cec_version_) -
-      reinterpret_cast<char*>(&manufacture_year_)) + sizeof(cec_version_));
+inline void SystemProfileProto_ExternalAudioVideoDevice::SharedCtor() {
+manufacturer_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  manufacturer_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+product_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  product_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&manufacture_year_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cec_version_) -
+    reinterpret_cast<char*>(&manufacture_year_)) + sizeof(cec_version_));
 }
 
 SystemProfileProto_ExternalAudioVideoDevice::~SystemProfileProto_ExternalAudioVideoDevice() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.ExternalAudioVideoDevice)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_ExternalAudioVideoDevice::SharedDtor() {
+inline void SystemProfileProto_ExternalAudioVideoDevice::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   manufacturer_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   product_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_ExternalAudioVideoDevice::ArenaDtor(void* object) {
+  SystemProfileProto_ExternalAudioVideoDevice* _this = reinterpret_cast< SystemProfileProto_ExternalAudioVideoDevice* >(object);
+  (void)_this;
+}
+void SystemProfileProto_ExternalAudioVideoDevice::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_ExternalAudioVideoDevice::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_ExternalAudioVideoDevice& SystemProfileProto_ExternalAudioVideoDevice::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_ExternalAudioVideoDevice_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_ExternalAudioVideoDevice::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.ExternalAudioVideoDevice)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -8198,13 +8512,13 @@ void SystemProfileProto_ExternalAudioVideoDevice::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      manufacturer_name_.ClearNonDefaultToEmptyNoArena();
+      manufacturer_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      model_name_.ClearNonDefaultToEmptyNoArena();
+      model_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      product_code_.ClearNonDefaultToEmptyNoArena();
+      product_code_.ClearNonDefaultToEmpty();
     }
   }
   if (cached_has_bits & 0x000000f8u) {
@@ -8218,48 +8532,50 @@ void SystemProfileProto_ExternalAudioVideoDevice::Clear() {
         reinterpret_cast<char*>(&is_in_path_to_tv_)) + sizeof(cec_version_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_ExternalAudioVideoDevice::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string manufacturer_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_manufacturer_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string model_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_model_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string product_code = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_product_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.ExternalAudioVideoDevice.AVDeviceType av_device_type = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+            uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
             CHK_(ptr);
             if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_IsValid(val))) {
               _internal_add_av_device_type(static_cast<::metrics::SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType>(val));
@@ -8268,46 +8584,51 @@ const char* SystemProfileProto_ExternalAudioVideoDevice::_InternalParse(const ch
             }
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<32>(ptr));
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_av_device_type(), ptr, ctx, ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_IsValid, &_internal_metadata_, 4);
+        } else if (static_cast<uint8_t>(tag) == 34) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser<std::string>(_internal_mutable_av_device_type(), ptr, ctx, ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AVDeviceType_IsValid, &_internal_metadata_, 4);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 manufacture_year = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_manufacture_year(&has_bits);
-          manufacture_year_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          manufacture_year_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 manufacture_week = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_manufacture_week(&has_bits);
-          manufacture_week_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          manufacture_week_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 horizontal_resolution = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
           _Internal::set_has_horizontal_resolution(&has_bits);
-          horizontal_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          horizontal_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 vertical_resolution = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           _Internal::set_has_vertical_resolution(&has_bits);
-          vertical_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vertical_resolution_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.ExternalAudioVideoDevice.AudioDescription audio_description = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -8315,35 +8636,39 @@ const char* SystemProfileProto_ExternalAudioVideoDevice::_InternalParse(const ch
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 position_in_setup = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _Internal::set_has_position_in_setup(&has_bits);
-          position_in_setup_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          position_in_setup_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_in_path_to_tv = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           _Internal::set_has_is_in_path_to_tv(&has_bits);
-          is_in_path_to_tv_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_in_path_to_tv_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 cec_version = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           _Internal::set_has_cec_version(&has_bits);
-          cec_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          cec_version_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.ExternalAudioVideoDevice.CECCommand cec_command = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -8351,33 +8676,37 @@ const char* SystemProfileProto_ExternalAudioVideoDevice::_InternalParse(const ch
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_ExternalAudioVideoDevice::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_ExternalAudioVideoDevice::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.ExternalAudioVideoDevice)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -8465,8 +8794,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.ExternalAudioVideoDevice)
   return target;
@@ -8476,7 +8805,7 @@ size_t SystemProfileProto_ExternalAudioVideoDevice::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.ExternalAudioVideoDevice)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -8529,37 +8858,27 @@ size_t SystemProfileProto_ExternalAudioVideoDevice::ByteSizeLong() const {
 
     // optional int32 manufacture_year = 5;
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_manufacture_year());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_manufacture_year());
     }
 
     // optional int32 manufacture_week = 6;
     if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_manufacture_week());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_manufacture_week());
     }
 
     // optional int32 horizontal_resolution = 7;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_horizontal_resolution());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_horizontal_resolution());
     }
 
     // optional int32 vertical_resolution = 8;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_vertical_resolution());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_vertical_resolution());
     }
 
     // optional int32 position_in_setup = 10;
     if (cached_has_bits & 0x00000080u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_position_in_setup());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_position_in_setup());
     }
 
   }
@@ -8571,14 +8890,12 @@ size_t SystemProfileProto_ExternalAudioVideoDevice::ByteSizeLong() const {
 
     // optional int32 cec_version = 12;
     if (cached_has_bits & 0x00000200u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_cec_version());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_cec_version());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -8594,8 +8911,7 @@ void SystemProfileProto_ExternalAudioVideoDevice::CheckTypeAndMergeFrom(
 void SystemProfileProto_ExternalAudioVideoDevice::MergeFrom(const SystemProfileProto_ExternalAudioVideoDevice& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.ExternalAudioVideoDevice)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   av_device_type_.MergeFrom(from.av_device_type_);
@@ -8604,16 +8920,13 @@ void SystemProfileProto_ExternalAudioVideoDevice::MergeFrom(const SystemProfileP
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      manufacturer_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_name_);
+      _internal_set_manufacturer_name(from._internal_manufacturer_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+      _internal_set_model_name(from._internal_model_name());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      product_code_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.product_code_);
+      _internal_set_product_code(from._internal_product_code());
     }
     if (cached_has_bits & 0x00000008u) {
       manufacture_year_ = from.manufacture_year_;
@@ -8641,6 +8954,7 @@ void SystemProfileProto_ExternalAudioVideoDevice::MergeFrom(const SystemProfileP
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_ExternalAudioVideoDevice::CopyFrom(const SystemProfileProto_ExternalAudioVideoDevice& from) {
@@ -8656,24 +8970,34 @@ bool SystemProfileProto_ExternalAudioVideoDevice::IsInitialized() const {
 
 void SystemProfileProto_ExternalAudioVideoDevice::InternalSwap(SystemProfileProto_ExternalAudioVideoDevice* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   av_device_type_.InternalSwap(&other->av_device_type_);
   audio_description_.InternalSwap(&other->audio_description_);
   cec_command_.InternalSwap(&other->cec_command_);
-  manufacturer_name_.Swap(&other->manufacturer_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  model_name_.Swap(&other->model_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  product_code_.Swap(&other->product_code_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(manufacture_year_, other->manufacture_year_);
-  swap(manufacture_week_, other->manufacture_week_);
-  swap(horizontal_resolution_, other->horizontal_resolution_);
-  swap(vertical_resolution_, other->vertical_resolution_);
-  swap(position_in_setup_, other->position_in_setup_);
-  swap(is_in_path_to_tv_, other->is_in_path_to_tv_);
-  swap(cec_version_, other->cec_version_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &manufacturer_name_, lhs_arena,
+      &other->manufacturer_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_name_, lhs_arena,
+      &other->model_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &product_code_, lhs_arena,
+      &other->product_code_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice, cec_version_)
+      + sizeof(SystemProfileProto_ExternalAudioVideoDevice::cec_version_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto_ExternalAudioVideoDevice, manufacture_year_)>(
+          reinterpret_cast<char*>(&manufacture_year_),
+          reinterpret_cast<char*>(&other->manufacture_year_));
 }
 
 std::string SystemProfileProto_ExternalAudioVideoDevice::GetTypeName() const {
@@ -8683,8 +9007,6 @@ std::string SystemProfileProto_ExternalAudioVideoDevice::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto_ExternalAccessPoint::InitAsDefaultInstance() {
-}
 class SystemProfileProto_ExternalAccessPoint::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto_ExternalAccessPoint>()._has_bits_);
@@ -8702,154 +9024,194 @@ class SystemProfileProto_ExternalAccessPoint::_Internal {
   }
 };
 
-SystemProfileProto_ExternalAccessPoint::SystemProfileProto_ExternalAccessPoint()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto_ExternalAccessPoint::SystemProfileProto_ExternalAccessPoint(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto.ExternalAccessPoint)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto.ExternalAccessPoint)
 }
 SystemProfileProto_ExternalAccessPoint::SystemProfileProto_ExternalAccessPoint(const SystemProfileProto_ExternalAccessPoint& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   manufacturer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    manufacturer_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_manufacturer()) {
-    manufacturer_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_);
+    manufacturer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_manufacturer(), 
+      GetArenaForAllocation());
   }
   model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_name()) {
-    model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+    model_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_name(), 
+      GetArenaForAllocation());
   }
   model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_number()) {
-    model_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_number_);
+    model_number_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_number(), 
+      GetArenaForAllocation());
   }
   device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    device_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_device_name()) {
-    device_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_name_);
+    device_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_device_name(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto.ExternalAccessPoint)
 }
 
-void SystemProfileProto_ExternalAccessPoint::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto.base);
-  manufacturer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void SystemProfileProto_ExternalAccessPoint::SharedCtor() {
+manufacturer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  manufacturer_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+model_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+model_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+device_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  device_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 SystemProfileProto_ExternalAccessPoint::~SystemProfileProto_ExternalAccessPoint() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto.ExternalAccessPoint)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto_ExternalAccessPoint::SharedDtor() {
+inline void SystemProfileProto_ExternalAccessPoint::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   manufacturer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   model_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   device_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void SystemProfileProto_ExternalAccessPoint::ArenaDtor(void* object) {
+  SystemProfileProto_ExternalAccessPoint* _this = reinterpret_cast< SystemProfileProto_ExternalAccessPoint* >(object);
+  (void)_this;
+}
+void SystemProfileProto_ExternalAccessPoint::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto_ExternalAccessPoint::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto_ExternalAccessPoint& SystemProfileProto_ExternalAccessPoint::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_ExternalAccessPoint_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto_ExternalAccessPoint::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto.ExternalAccessPoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      manufacturer_.ClearNonDefaultToEmptyNoArena();
+      manufacturer_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      model_name_.ClearNonDefaultToEmptyNoArena();
+      model_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      model_number_.ClearNonDefaultToEmptyNoArena();
+      model_number_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      device_name_.ClearNonDefaultToEmptyNoArena();
+      device_name_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto_ExternalAccessPoint::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string manufacturer = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_manufacturer();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string model_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_model_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string model_number = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_model_number();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string device_name = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_device_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto_ExternalAccessPoint::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto_ExternalAccessPoint::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto.ExternalAccessPoint)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -8878,8 +9240,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto.ExternalAccessPoint)
   return target;
@@ -8889,7 +9251,7 @@ size_t SystemProfileProto_ExternalAccessPoint::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto.ExternalAccessPoint)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -8925,7 +9287,7 @@ size_t SystemProfileProto_ExternalAccessPoint::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -8941,29 +9303,25 @@ void SystemProfileProto_ExternalAccessPoint::CheckTypeAndMergeFrom(
 void SystemProfileProto_ExternalAccessPoint::MergeFrom(const SystemProfileProto_ExternalAccessPoint& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto.ExternalAccessPoint)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      manufacturer_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_);
+      _internal_set_manufacturer(from._internal_manufacturer());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      model_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_name_);
+      _internal_set_model_name(from._internal_model_name());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      model_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_number_);
+      _internal_set_model_number(from._internal_model_number());
     }
     if (cached_has_bits & 0x00000008u) {
-      _has_bits_[0] |= 0x00000008u;
-      device_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.device_name_);
+      _internal_set_device_name(from._internal_device_name());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto_ExternalAccessPoint::CopyFrom(const SystemProfileProto_ExternalAccessPoint& from) {
@@ -8979,16 +9337,30 @@ bool SystemProfileProto_ExternalAccessPoint::IsInitialized() const {
 
 void SystemProfileProto_ExternalAccessPoint::InternalSwap(SystemProfileProto_ExternalAccessPoint* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  manufacturer_.Swap(&other->manufacturer_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  model_name_.Swap(&other->model_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  model_number_.Swap(&other->model_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  device_name_.Swap(&other->device_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &manufacturer_, lhs_arena,
+      &other->manufacturer_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_name_, lhs_arena,
+      &other->model_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_number_, lhs_arena,
+      &other->model_number_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &device_name_, lhs_arena,
+      &other->device_name_, rhs_arena
+  );
 }
 
 std::string SystemProfileProto_ExternalAccessPoint::GetTypeName() const {
@@ -8998,22 +9370,6 @@ std::string SystemProfileProto_ExternalAccessPoint::GetTypeName() const {
 
 // ===================================================================
 
-void SystemProfileProto::InitAsDefaultInstance() {
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->brillo_ = const_cast< ::metrics::SystemProfileProto_BrilloDeviceData*>(
-      ::metrics::SystemProfileProto_BrilloDeviceData::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->os_ = const_cast< ::metrics::SystemProfileProto_OS*>(
-      ::metrics::SystemProfileProto_OS::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->hardware_ = const_cast< ::metrics::SystemProfileProto_Hardware*>(
-      ::metrics::SystemProfileProto_Hardware::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->network_ = const_cast< ::metrics::SystemProfileProto_Network*>(
-      ::metrics::SystemProfileProto_Network::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->google_update_ = const_cast< ::metrics::SystemProfileProto_GoogleUpdate*>(
-      ::metrics::SystemProfileProto_GoogleUpdate::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->stability_ = const_cast< ::metrics::SystemProfileProto_Stability*>(
-      ::metrics::SystemProfileProto_Stability::internal_default_instance());
-  ::metrics::_SystemProfileProto_default_instance_._instance.get_mutable()->external_access_point_ = const_cast< ::metrics::SystemProfileProto_ExternalAccessPoint*>(
-      ::metrics::SystemProfileProto_ExternalAccessPoint::internal_default_instance());
-}
 class SystemProfileProto::_Internal {
  public:
   using HasBits = decltype(std::declval<SystemProfileProto>()._has_bits_);
@@ -9105,31 +9461,50 @@ const ::metrics::SystemProfileProto_ExternalAccessPoint&
 SystemProfileProto::_Internal::external_access_point(const SystemProfileProto* msg) {
   return *msg->external_access_point_;
 }
-SystemProfileProto::SystemProfileProto()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SystemProfileProto::SystemProfileProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  plugin_(arena),
+  field_trial_(arena),
+  external_audio_video_device_(arena),
+  occupied_extension_bucket_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:metrics.SystemProfileProto)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:metrics.SystemProfileProto)
 }
 SystemProfileProto::SystemProfileProto(const SystemProfileProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       plugin_(from.plugin_),
       field_trial_(from.field_trial_),
       external_audio_video_device_(from.external_audio_video_device_),
       occupied_extension_bucket_(from.occupied_extension_bucket_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   app_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    app_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_app_version()) {
-    app_version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.app_version_);
+    app_version_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_app_version(), 
+      GetArenaForAllocation());
   }
   application_locale_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    application_locale_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_application_locale()) {
-    application_locale_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.application_locale_);
+    application_locale_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_application_locale(), 
+      GetArenaForAllocation());
   }
   brand_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    brand_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_brand_code()) {
-    brand_code_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.brand_code_);
+    brand_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_brand_code(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_os()) {
     os_ = new ::metrics::SystemProfileProto_OS(*from.os_);
@@ -9172,22 +9547,34 @@ SystemProfileProto::SystemProfileProto(const SystemProfileProto& from)
   // @@protoc_insertion_point(copy_constructor:metrics.SystemProfileProto)
 }
 
-void SystemProfileProto::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_SystemProfileProto_system_5fprofile_2eproto.base);
-  app_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  application_locale_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  brand_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&os_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_asan_build_) -
-      reinterpret_cast<char*>(&os_)) + sizeof(is_asan_build_));
+inline void SystemProfileProto::SharedCtor() {
+app_version_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  app_version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+application_locale_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  application_locale_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+brand_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  brand_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&os_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_asan_build_) -
+    reinterpret_cast<char*>(&os_)) + sizeof(is_asan_build_));
 }
 
 SystemProfileProto::~SystemProfileProto() {
   // @@protoc_insertion_point(destructor:metrics.SystemProfileProto)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SystemProfileProto::SharedDtor() {
+inline void SystemProfileProto::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   app_version_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   application_locale_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   brand_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -9200,18 +9587,19 @@ void SystemProfileProto::SharedDtor() {
   if (this != internal_default_instance()) delete brillo_;
 }
 
+void SystemProfileProto::ArenaDtor(void* object) {
+  SystemProfileProto* _this = reinterpret_cast< SystemProfileProto* >(object);
+  (void)_this;
+}
+void SystemProfileProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SystemProfileProto::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SystemProfileProto& SystemProfileProto::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SystemProfileProto_system_5fprofile_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SystemProfileProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:metrics.SystemProfileProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -9222,13 +9610,13 @@ void SystemProfileProto::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      app_version_.ClearNonDefaultToEmptyNoArena();
+      app_version_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      application_locale_.ClearNonDefaultToEmptyNoArena();
+      application_locale_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      brand_code_.ClearNonDefaultToEmptyNoArena();
+      brand_code_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
       GOOGLE_DCHECK(os_ != nullptr);
@@ -9268,66 +9656,71 @@ void SystemProfileProto::Clear() {
   }
   is_asan_build_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SystemProfileProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int64 build_timestamp = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_build_timestamp(&has_bits);
-          build_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          build_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string app_version = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_app_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 uma_enabled_date = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _Internal::set_has_uma_enabled_date(&has_bits);
-          uma_enabled_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          uma_enabled_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string application_locale = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_application_locale();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.OS os = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_os(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Hardware hardware = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_hardware(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.Plugin plugin = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -9335,18 +9728,20 @@ const char* SystemProfileProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Stability stability = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr = ctx->ParseMessage(_internal_mutable_stability(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.FieldTrial field_trial = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -9354,45 +9749,50 @@ const char* SystemProfileProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Channel channel = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_Channel_IsValid(val))) {
             _internal_set_channel(static_cast<::metrics::SystemProfileProto_Channel>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(10, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.GoogleUpdate google_update = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           ptr = ctx->ParseMessage(_internal_mutable_google_update(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string brand_code = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_brand_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.Network network = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr = ctx->ParseMessage(_internal_mutable_network(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .metrics.SystemProfileProto.ExternalAudioVideoDevice external_audio_video_device = 14;
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -9400,98 +9800,109 @@ const char* SystemProfileProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.ExternalAccessPoint external_access_point = 15;
       case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           ptr = ctx->ParseMessage(_internal_mutable_external_access_point(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int64 install_date = 16;
       case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
           _Internal::set_has_install_date(&has_bits);
-          install_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          install_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 multi_profile_user_count = 17;
       case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 136)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _Internal::set_has_multi_profile_user_count(&has_bits);
-          multi_profile_user_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          multi_profile_user_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated int32 occupied_extension_bucket = 18;
       case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
           ptr -= 2;
           do {
             ptr += 2;
-            _internal_add_occupied_extension_bucket(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+            _internal_add_occupied_extension_bucket(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<144>(ptr));
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146) {
+        } else if (static_cast<uint8_t>(tag) == 146) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_occupied_extension_bucket(), ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.ExtensionsState offstore_extensions_state = 19;
       case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::metrics::SystemProfileProto_ExtensionsState_IsValid(val))) {
             _internal_set_offstore_extensions_state(static_cast<::metrics::SystemProfileProto_ExtensionsState>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(19, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool is_asan_build = 20 [default = false];
       case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 160)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
           _Internal::set_has_is_asan_build(&has_bits);
-          is_asan_build_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_asan_build_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .metrics.SystemProfileProto.BrilloDeviceData brillo = 21;
       case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
           ptr = ctx->ParseMessage(_internal_mutable_brillo(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SystemProfileProto::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SystemProfileProto::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:metrics.SystemProfileProto)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -9644,8 +10055,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:metrics.SystemProfileProto)
   return target;
@@ -9655,7 +10066,7 @@ size_t SystemProfileProto::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:metrics.SystemProfileProto)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -9765,16 +10176,12 @@ size_t SystemProfileProto::ByteSizeLong() const {
 
     // optional int64 build_timestamp = 1;
     if (cached_has_bits & 0x00000400u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_build_timestamp());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_build_timestamp());
     }
 
     // optional int64 uma_enabled_date = 3;
     if (cached_has_bits & 0x00000800u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_uma_enabled_date());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_uma_enabled_date());
     }
 
     // optional .metrics.SystemProfileProto.Channel channel = 10;
@@ -9810,7 +10217,7 @@ size_t SystemProfileProto::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -9826,8 +10233,7 @@ void SystemProfileProto::CheckTypeAndMergeFrom(
 void SystemProfileProto::MergeFrom(const SystemProfileProto& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:metrics.SystemProfileProto)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   plugin_.MergeFrom(from.plugin_);
@@ -9837,16 +10243,13 @@ void SystemProfileProto::MergeFrom(const SystemProfileProto& from) {
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      app_version_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.app_version_);
+      _internal_set_app_version(from._internal_app_version());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      application_locale_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.application_locale_);
+      _internal_set_application_locale(from._internal_application_locale());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      brand_code_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.brand_code_);
+      _internal_set_brand_code(from._internal_brand_code());
     }
     if (cached_has_bits & 0x00000008u) {
       _internal_mutable_os()->::metrics::SystemProfileProto_OS::MergeFrom(from._internal_os());
@@ -9894,6 +10297,7 @@ void SystemProfileProto::MergeFrom(const SystemProfileProto& from) {
   if (cached_has_bits & 0x00010000u) {
     _internal_set_is_asan_build(from._internal_is_asan_build());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SystemProfileProto::CopyFrom(const SystemProfileProto& from) {
@@ -9909,32 +10313,35 @@ bool SystemProfileProto::IsInitialized() const {
 
 void SystemProfileProto::InternalSwap(SystemProfileProto* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   plugin_.InternalSwap(&other->plugin_);
   field_trial_.InternalSwap(&other->field_trial_);
   external_audio_video_device_.InternalSwap(&other->external_audio_video_device_);
   occupied_extension_bucket_.InternalSwap(&other->occupied_extension_bucket_);
-  app_version_.Swap(&other->app_version_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  application_locale_.Swap(&other->application_locale_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  brand_code_.Swap(&other->brand_code_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(os_, other->os_);
-  swap(hardware_, other->hardware_);
-  swap(stability_, other->stability_);
-  swap(google_update_, other->google_update_);
-  swap(network_, other->network_);
-  swap(external_access_point_, other->external_access_point_);
-  swap(brillo_, other->brillo_);
-  swap(build_timestamp_, other->build_timestamp_);
-  swap(uma_enabled_date_, other->uma_enabled_date_);
-  swap(channel_, other->channel_);
-  swap(multi_profile_user_count_, other->multi_profile_user_count_);
-  swap(install_date_, other->install_date_);
-  swap(offstore_extensions_state_, other->offstore_extensions_state_);
-  swap(is_asan_build_, other->is_asan_build_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &app_version_, lhs_arena,
+      &other->app_version_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &application_locale_, lhs_arena,
+      &other->application_locale_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &brand_code_, lhs_arena,
+      &other->brand_code_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SystemProfileProto, is_asan_build_)
+      + sizeof(SystemProfileProto::is_asan_build_)
+      - PROTOBUF_FIELD_OFFSET(SystemProfileProto, os_)>(
+          reinterpret_cast<char*>(&os_),
+          reinterpret_cast<char*>(&other->os_));
 }
 
 std::string SystemProfileProto::GetTypeName() const {
@@ -9946,73 +10353,73 @@ std::string SystemProfileProto::GetTypeName() const {
 }  // namespace metrics
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_BrilloDeviceData* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_BrilloDeviceData >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_BrilloDeviceData >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_BrilloDeviceData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_OS* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_OS >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_OS >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_OS >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_CPU* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_CPU >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_CPU >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_CPU >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_Graphics* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_Graphics >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_Graphics >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_Graphics >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_Bluetooth_PairedDevice >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_Bluetooth* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_Bluetooth >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_Bluetooth >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_Bluetooth >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_TouchScreen* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_TouchScreen >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_TouchScreen >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_TouchScreen >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware_Drive* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware_Drive >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware_Drive >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware_Drive >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Hardware* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Hardware >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Hardware >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Hardware >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Network_WifiAccessPoint_VendorInformation >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Network_WifiAccessPoint* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Network_WifiAccessPoint >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Network_WifiAccessPoint >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Network_WifiAccessPoint >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Network* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Network >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Network >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Network >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_GoogleUpdate_ProductInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_GoogleUpdate* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_GoogleUpdate >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_GoogleUpdate >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_GoogleUpdate >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Plugin* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Plugin >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Plugin >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Plugin >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Stability_PluginStability* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Stability_PluginStability >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Stability_PluginStability >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Stability_PluginStability >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_Stability* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_Stability >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_Stability >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_Stability >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_FieldTrial* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_FieldTrial >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_FieldTrial >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_FieldTrial >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_AudioDescription >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice_CECCommand >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_ExternalAudioVideoDevice* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_ExternalAudioVideoDevice >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_ExternalAudioVideoDevice >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto_ExternalAccessPoint* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto_ExternalAccessPoint >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto_ExternalAccessPoint >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto_ExternalAccessPoint >(arena);
 }
 template<> PROTOBUF_NOINLINE ::metrics::SystemProfileProto* Arena::CreateMaybeMessage< ::metrics::SystemProfileProto >(Arena* arena) {
-  return Arena::CreateInternal< ::metrics::SystemProfileProto >(arena);
+  return Arena::CreateMessageInternal< ::metrics::SystemProfileProto >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

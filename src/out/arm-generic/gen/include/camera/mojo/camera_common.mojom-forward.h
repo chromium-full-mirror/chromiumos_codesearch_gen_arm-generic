@@ -41,39 +41,9 @@ using CameraInfoPtr = mojo::StructPtr<CameraInfo>;
 
 class CameraModuleCallbacks;
 
-using CameraModuleCallbacksPtr = mojo::InterfacePtr<CameraModuleCallbacks>;
-using CameraModuleCallbacksPtrInfo = mojo::InterfacePtrInfo<CameraModuleCallbacks>;
-
-using CameraModuleCallbacksRequest = mojo::InterfaceRequest<CameraModuleCallbacks>;
-using CameraModuleCallbacksAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraModuleCallbacks>;
-
-using CameraModuleCallbacksAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraModuleCallbacks>;
-
 class VendorTagOps;
 
-using VendorTagOpsPtr = mojo::InterfacePtr<VendorTagOps>;
-using VendorTagOpsPtrInfo = mojo::InterfacePtrInfo<VendorTagOps>;
-
-using VendorTagOpsRequest = mojo::InterfaceRequest<VendorTagOps>;
-using VendorTagOpsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<VendorTagOps>;
-
-using VendorTagOpsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<VendorTagOps>;
-
 class CameraModule;
-
-using CameraModulePtr = mojo::InterfacePtr<CameraModule>;
-using CameraModulePtrInfo = mojo::InterfacePtrInfo<CameraModule>;
-
-using CameraModuleRequest = mojo::InterfaceRequest<CameraModule>;
-using CameraModuleAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraModule>;
-
-using CameraModuleAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraModule>;
 
 
 

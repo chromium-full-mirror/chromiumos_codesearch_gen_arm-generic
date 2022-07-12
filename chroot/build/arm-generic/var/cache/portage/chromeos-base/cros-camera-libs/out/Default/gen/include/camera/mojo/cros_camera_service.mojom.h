@@ -33,10 +33,6 @@
 #include <string>
 #include <vector>
 
-#include "mojo/public/cpp/bindings/associated_interface_ptr_info.h"
-#include "mojo/public/cpp/bindings/associated_interface_request.h"
-#include "mojo/public/cpp/bindings/interface_ptr.h"
-#include "mojo/public/cpp/bindings/interface_request.h"
 #include "mojo/public/cpp/bindings/lib/control_message_handler.h"
 #include "mojo/public/cpp/bindings/raw_ptr_impl_ref_traits.h"
 
@@ -61,6 +57,8 @@ class  CameraHalDispatcher
     : public CameraHalDispatcherInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 6;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -126,6 +124,8 @@ class  CameraHalServer
     : public CameraHalServerInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 8;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -178,7 +178,9 @@ class  CameraHalServerCallbacks
     : public CameraHalServerCallbacksInterfaceBase {
  public:
   static const char Name_[];
-  static constexpr uint32_t Version_ = 8;
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
+  static constexpr uint32_t Version_ = 9;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
   static constexpr bool HasUninterruptableMethods_ = false;
@@ -202,7 +204,7 @@ class  CameraHalServerCallbacks
   virtual void CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) = 0;
 
   
-  virtual void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) = 0;
+  virtual void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state, int32_t camera_id) = 0;
 
   
   virtual void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) = 0;
@@ -220,6 +222,8 @@ class  CameraHalClient
     : public CameraHalClientInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;
@@ -303,7 +307,7 @@ class  CameraHalServerCallbacksProxy
   
   void CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) final;
   
-  void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) final;
+  void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state, int32_t camera_id) final;
   
   void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) final;
 

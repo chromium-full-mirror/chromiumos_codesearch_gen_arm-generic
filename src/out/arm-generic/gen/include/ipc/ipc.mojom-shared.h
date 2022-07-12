@@ -95,7 +95,7 @@ class MessageDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBytes(UserType* output) {
+  [[nodiscard]] bool ReadBytes(UserType* output) {
     
     auto* pointer = data_->bytes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -105,7 +105,7 @@ class MessageDataView {
       mojo::ArrayDataView<::mojo::native::SerializedHandleDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadHandles(UserType* output) {
+  [[nodiscard]] bool ReadHandles(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

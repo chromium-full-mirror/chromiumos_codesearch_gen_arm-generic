@@ -10,6 +10,8 @@
 #include <google/protobuf/wire_format_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace reporting {
 }  // namespace reporting
 namespace reporting {
@@ -127,7 +129,7 @@ const std::string& Destination_Name(
                      Destination_strings[idx].get();
 }
 bool Destination_Parse(
-    const std::string& name, Destination* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Destination* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       Destination_entries, 20, name, &int_value);
@@ -198,7 +200,7 @@ const std::string& Priority_Name(
                      Priority_strings[idx].get();
 }
 bool Priority_Parse(
-    const std::string& name, Priority* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Priority* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       Priority_entries, 7, name, &int_value);

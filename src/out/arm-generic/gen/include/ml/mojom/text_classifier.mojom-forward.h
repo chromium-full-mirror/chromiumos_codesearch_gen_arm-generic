@@ -63,16 +63,6 @@ using TextEntityDataPtr = mojo::StructPtr<TextEntityData>;
 
 class TextClassifier;
 
-using TextClassifierPtr = mojo::InterfacePtr<TextClassifier>;
-using TextClassifierPtrInfo = mojo::InterfacePtrInfo<TextClassifier>;
-
-using TextClassifierRequest = mojo::InterfaceRequest<TextClassifier>;
-using TextClassifierAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<TextClassifier>;
-
-using TextClassifierAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<TextClassifier>;
-
 
 
 

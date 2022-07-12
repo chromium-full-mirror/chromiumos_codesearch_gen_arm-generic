@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -124,6 +123,88 @@ bool UsbEventInfo::Validate(
   return Data_::Validate(data, validation_context);
 }
 const char CrosHealthdBluetoothObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdBluetoothObserver";
+
+uint32_t CrosHealthdBluetoothObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdBluetoothObserver_OnAdapterAdded_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterAdded");
+      return value;
+    }
+    case internal::kCrosHealthdBluetoothObserver_OnAdapterRemoved_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterRemoved");
+      return value;
+    }
+    case internal::kCrosHealthdBluetoothObserver_OnAdapterPropertyChanged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterPropertyChanged");
+      return value;
+    }
+    case internal::kCrosHealthdBluetoothObserver_OnDeviceAdded_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceAdded");
+      return value;
+    }
+    case internal::kCrosHealthdBluetoothObserver_OnDeviceRemoved_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceRemoved");
+      return value;
+    }
+    case internal::kCrosHealthdBluetoothObserver_OnDevicePropertyChanged_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDevicePropertyChanged");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdBluetoothObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterAdded_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterAdded";
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterRemoved_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterRemoved";
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterPropertyChanged_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterPropertyChanged";
+      case internal::kCrosHealthdBluetoothObserver_OnDeviceAdded_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceAdded";
+      case internal::kCrosHealthdBluetoothObserver_OnDeviceRemoved_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceRemoved";
+      case internal::kCrosHealthdBluetoothObserver_OnDevicePropertyChanged_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDevicePropertyChanged";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterAdded_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterAdded";
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterRemoved_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterRemoved";
+      case internal::kCrosHealthdBluetoothObserver_OnAdapterPropertyChanged_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterPropertyChanged";
+      case internal::kCrosHealthdBluetoothObserver_OnDeviceAdded_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceAdded";
+      case internal::kCrosHealthdBluetoothObserver_OnDeviceRemoved_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceRemoved";
+      case internal::kCrosHealthdBluetoothObserver_OnDevicePropertyChanged_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDevicePropertyChanged";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdBluetoothObserverProxy::CrosHealthdBluetoothObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -315,15 +396,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdBluetoothObserver_OnAdapterAdded_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterAdded",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterAdded");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnAdapterAdded_Params_Data* params =
@@ -346,15 +418,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdBluetoothObserver_OnAdapterRemoved_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterRemoved",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterRemoved");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnAdapterRemoved_Params_Data* params =
@@ -377,15 +440,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdBluetoothObserver_OnAdapterPropertyChanged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterPropertyChanged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnAdapterPropertyChanged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnAdapterPropertyChanged_Params_Data* params =
@@ -408,15 +462,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdBluetoothObserver_OnDeviceAdded_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceAdded",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceAdded");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnDeviceAdded_Params_Data* params =
@@ -439,15 +484,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdBluetoothObserver_OnDeviceRemoved_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceRemoved",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDeviceRemoved");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnDeviceRemoved_Params_Data* params =
@@ -470,15 +506,6 @@ bool CrosHealthdBluetoothObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdBluetoothObserver_OnDevicePropertyChanged_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDevicePropertyChanged",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdBluetoothObserver::OnDevicePropertyChanged");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdBluetoothObserver_OnDevicePropertyChanged_Params_Data* params =
@@ -558,6 +585,52 @@ bool CrosHealthdBluetoothObserverRequestValidator::Accept(mojo::Message* message
 
 const char CrosHealthdLidObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdLidObserver";
 
+uint32_t CrosHealthdLidObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdLidObserver_OnLidClosed_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidClosed");
+      return value;
+    }
+    case internal::kCrosHealthdLidObserver_OnLidOpened_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidOpened");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdLidObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdLidObserver_OnLidClosed_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidClosed";
+      case internal::kCrosHealthdLidObserver_OnLidOpened_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidOpened";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdLidObserver_OnLidClosed_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidClosed";
+      case internal::kCrosHealthdLidObserver_OnLidOpened_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidOpened";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
+
 CrosHealthdLidObserverProxy::CrosHealthdLidObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
 }
@@ -628,15 +701,6 @@ bool CrosHealthdLidObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdLidObserver_OnLidClosed_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidClosed",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidClosed");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdLidObserver_OnLidClosed_Params_Data* params =
@@ -659,15 +723,6 @@ bool CrosHealthdLidObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdLidObserver_OnLidOpened_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidOpened",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdLidObserver::OnLidOpened");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdLidObserver_OnLidOpened_Params_Data* params =
@@ -726,6 +781,70 @@ bool CrosHealthdLidObserverRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char CrosHealthdPowerObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdPowerObserver";
+
+uint32_t CrosHealthdPowerObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdPowerObserver_OnAcInserted_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcInserted");
+      return value;
+    }
+    case internal::kCrosHealthdPowerObserver_OnAcRemoved_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcRemoved");
+      return value;
+    }
+    case internal::kCrosHealthdPowerObserver_OnOsSuspend_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsSuspend");
+      return value;
+    }
+    case internal::kCrosHealthdPowerObserver_OnOsResume_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsResume");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdPowerObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdPowerObserver_OnAcInserted_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcInserted";
+      case internal::kCrosHealthdPowerObserver_OnAcRemoved_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcRemoved";
+      case internal::kCrosHealthdPowerObserver_OnOsSuspend_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsSuspend";
+      case internal::kCrosHealthdPowerObserver_OnOsResume_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsResume";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdPowerObserver_OnAcInserted_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcInserted";
+      case internal::kCrosHealthdPowerObserver_OnAcRemoved_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcRemoved";
+      case internal::kCrosHealthdPowerObserver_OnOsSuspend_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsSuspend";
+      case internal::kCrosHealthdPowerObserver_OnOsResume_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsResume";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdPowerObserverProxy::CrosHealthdPowerObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -857,15 +976,6 @@ bool CrosHealthdPowerObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdPowerObserver_OnAcInserted_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcInserted",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcInserted");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdPowerObserver_OnAcInserted_Params_Data* params =
@@ -888,15 +998,6 @@ bool CrosHealthdPowerObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdPowerObserver_OnAcRemoved_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcRemoved",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnAcRemoved");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdPowerObserver_OnAcRemoved_Params_Data* params =
@@ -919,15 +1020,6 @@ bool CrosHealthdPowerObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdPowerObserver_OnOsSuspend_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsSuspend",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsSuspend");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdPowerObserver_OnOsSuspend_Params_Data* params =
@@ -950,15 +1042,6 @@ bool CrosHealthdPowerObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdPowerObserver_OnOsResume_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsResume",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdPowerObserver::OnOsResume");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdPowerObserver_OnOsResume_Params_Data* params =
@@ -1027,6 +1110,52 @@ bool CrosHealthdPowerObserverRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char CrosHealthdAudioObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdAudioObserver";
+
+uint32_t CrosHealthdAudioObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdAudioObserver_OnUnderrun_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnUnderrun");
+      return value;
+    }
+    case internal::kCrosHealthdAudioObserver_OnSevereUnderrun_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnSevereUnderrun");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdAudioObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdAudioObserver_OnUnderrun_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnUnderrun";
+      case internal::kCrosHealthdAudioObserver_OnSevereUnderrun_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnSevereUnderrun";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdAudioObserver_OnUnderrun_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnUnderrun";
+      case internal::kCrosHealthdAudioObserver_OnSevereUnderrun_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnSevereUnderrun";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdAudioObserverProxy::CrosHealthdAudioObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -1098,15 +1227,6 @@ bool CrosHealthdAudioObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdAudioObserver_OnUnderrun_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnUnderrun",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnUnderrun");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdAudioObserver_OnUnderrun_Params_Data* params =
@@ -1129,15 +1249,6 @@ bool CrosHealthdAudioObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdAudioObserver_OnSevereUnderrun_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnSevereUnderrun",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdAudioObserver::OnSevereUnderrun");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdAudioObserver_OnSevereUnderrun_Params_Data* params =
@@ -1196,6 +1307,70 @@ bool CrosHealthdAudioObserverRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char CrosHealthdThunderboltObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdThunderboltObserver";
+
+uint32_t CrosHealthdThunderboltObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdThunderboltObserver_OnAdd_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAdd");
+      return value;
+    }
+    case internal::kCrosHealthdThunderboltObserver_OnRemove_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnRemove");
+      return value;
+    }
+    case internal::kCrosHealthdThunderboltObserver_OnAuthorized_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAuthorized");
+      return value;
+    }
+    case internal::kCrosHealthdThunderboltObserver_OnUnAuthorized_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnUnAuthorized");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdThunderboltObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdThunderboltObserver_OnAdd_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAdd";
+      case internal::kCrosHealthdThunderboltObserver_OnRemove_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnRemove";
+      case internal::kCrosHealthdThunderboltObserver_OnAuthorized_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAuthorized";
+      case internal::kCrosHealthdThunderboltObserver_OnUnAuthorized_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnUnAuthorized";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdThunderboltObserver_OnAdd_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAdd";
+      case internal::kCrosHealthdThunderboltObserver_OnRemove_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnRemove";
+      case internal::kCrosHealthdThunderboltObserver_OnAuthorized_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAuthorized";
+      case internal::kCrosHealthdThunderboltObserver_OnUnAuthorized_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnUnAuthorized";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdThunderboltObserverProxy::CrosHealthdThunderboltObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -1327,15 +1502,6 @@ bool CrosHealthdThunderboltObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdThunderboltObserver_OnAdd_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAdd",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAdd");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdThunderboltObserver_OnAdd_Params_Data* params =
@@ -1358,15 +1524,6 @@ bool CrosHealthdThunderboltObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdThunderboltObserver_OnRemove_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnRemove",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnRemove");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdThunderboltObserver_OnRemove_Params_Data* params =
@@ -1389,15 +1546,6 @@ bool CrosHealthdThunderboltObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdThunderboltObserver_OnAuthorized_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAuthorized",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnAuthorized");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdThunderboltObserver_OnAuthorized_Params_Data* params =
@@ -1420,15 +1568,6 @@ bool CrosHealthdThunderboltObserverStubDispatch::Accept(
       return true;
     }
     case internal::kCrosHealthdThunderboltObserver_OnUnAuthorized_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnUnAuthorized",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdThunderboltObserver::OnUnAuthorized");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdThunderboltObserver_OnUnAuthorized_Params_Data* params =
@@ -1497,6 +1636,52 @@ bool CrosHealthdThunderboltObserverRequestValidator::Accept(mojo::Message* messa
 }
 
 const char CrosHealthdUsbObserver::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdUsbObserver";
+
+uint32_t CrosHealthdUsbObserver::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdUsbObserver_OnAdd_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd");
+      return value;
+    }
+    case internal::kCrosHealthdUsbObserver_OnRemove_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdUsbObserver::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdUsbObserver_OnAdd_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd";
+      case internal::kCrosHealthdUsbObserver_OnRemove_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdUsbObserver_OnAdd_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd";
+      case internal::kCrosHealthdUsbObserver_OnRemove_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdUsbObserverProxy::CrosHealthdUsbObserverProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -1604,15 +1789,6 @@ bool CrosHealthdUsbObserverStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdUsbObserver_OnAdd_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdUsbObserver_OnAdd_Params_Data* params =
@@ -1639,15 +1815,6 @@ std::move(p_info));
       return true;
     }
     case internal::kCrosHealthdUsbObserver_OnRemove_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdUsbObserver_OnRemove_Params_Data* params =

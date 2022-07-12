@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -93,6 +92,97 @@ bool ServiceStatus::Validate(
   return Data_::Validate(data, validation_context);
 }
 const char CrosHealthdServiceFactory::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdServiceFactory";
+
+uint32_t CrosHealthdServiceFactory::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdServiceFactory_GetDiagnosticsService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetDiagnosticsService");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_GetEventService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetEventService");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_GetProbeService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetProbeService");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_SendNetworkHealthService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkHealthService");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_SendNetworkDiagnosticsRoutines_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkDiagnosticsRoutines");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_GetSystemService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetSystemService");
+      return value;
+    }
+    case internal::kCrosHealthdServiceFactory_SendChromiumDataCollector_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendChromiumDataCollector");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdServiceFactory::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdServiceFactory_GetDiagnosticsService_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetDiagnosticsService";
+      case internal::kCrosHealthdServiceFactory_GetEventService_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetEventService";
+      case internal::kCrosHealthdServiceFactory_GetProbeService_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetProbeService";
+      case internal::kCrosHealthdServiceFactory_SendNetworkHealthService_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkHealthService";
+      case internal::kCrosHealthdServiceFactory_SendNetworkDiagnosticsRoutines_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkDiagnosticsRoutines";
+      case internal::kCrosHealthdServiceFactory_GetSystemService_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetSystemService";
+      case internal::kCrosHealthdServiceFactory_SendChromiumDataCollector_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendChromiumDataCollector";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdServiceFactory_GetDiagnosticsService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetDiagnosticsService";
+      case internal::kCrosHealthdServiceFactory_GetEventService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetEventService";
+      case internal::kCrosHealthdServiceFactory_GetProbeService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetProbeService";
+      case internal::kCrosHealthdServiceFactory_SendNetworkHealthService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkHealthService";
+      case internal::kCrosHealthdServiceFactory_SendNetworkDiagnosticsRoutines_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkDiagnosticsRoutines";
+      case internal::kCrosHealthdServiceFactory_GetSystemService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetSystemService";
+      case internal::kCrosHealthdServiceFactory_SendChromiumDataCollector_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendChromiumDataCollector";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdServiceFactoryProxy::CrosHealthdServiceFactoryProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -405,15 +495,6 @@ bool CrosHealthdServiceFactoryStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdServiceFactory_GetDiagnosticsService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetDiagnosticsService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetDiagnosticsService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_GetDiagnosticsService_Params_Data* params =
@@ -442,15 +523,6 @@ std::move(p_service));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_GetEventService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetEventService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetEventService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_GetEventService_Params_Data* params =
@@ -479,15 +551,6 @@ std::move(p_service));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_GetProbeService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetProbeService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetProbeService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_GetProbeService_Params_Data* params =
@@ -516,15 +579,6 @@ std::move(p_service));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_SendNetworkHealthService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkHealthService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkHealthService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_SendNetworkHealthService_Params_Data* params =
@@ -553,15 +607,6 @@ std::move(p_remote));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_SendNetworkDiagnosticsRoutines_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkDiagnosticsRoutines",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendNetworkDiagnosticsRoutines");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_SendNetworkDiagnosticsRoutines_Params_Data* params =
@@ -590,15 +635,6 @@ std::move(p_network_diagnostics_routines));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_GetSystemService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetSystemService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::GetSystemService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_GetSystemService_Params_Data* params =
@@ -627,15 +663,6 @@ std::move(p_service));
       return true;
     }
     case internal::kCrosHealthdServiceFactory_SendChromiumDataCollector_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendChromiumDataCollector",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdServiceFactory::SendChromiumDataCollector");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdServiceFactory_SendChromiumDataCollector_Params_Data* params =
@@ -725,6 +752,322 @@ bool CrosHealthdServiceFactoryRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char CrosHealthdDiagnosticsService::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdDiagnosticsService";
+
+uint32_t CrosHealthdDiagnosticsService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdDiagnosticsService_GetAvailableRoutines_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_GetRoutineUpdate_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunUrandomRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunBatteryHealthRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunAcPowerRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunCpuCacheRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunCpuStressRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunDiskReadRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunPrimeSearchRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunBatteryChargeRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunMemoryRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunLanConnectivityRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunSignalStrengthRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunDnsLatencyRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunDnsResolutionRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunCaptivePortalRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunHttpFirewallRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunVideoConferencingRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunArcHttpRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunArcPingRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine");
+      return value;
+    }
+    case internal::kCrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdDiagnosticsService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdDiagnosticsService_GetAvailableRoutines_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines";
+      case internal::kCrosHealthdDiagnosticsService_GetRoutineUpdate_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate";
+      case internal::kCrosHealthdDiagnosticsService_RunUrandomRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryHealthRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunAcPowerRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCpuCacheRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCpuStressRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDiskReadRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunPrimeSearchRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryChargeRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunMemoryRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunLanConnectivityRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunSignalStrengthRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsLatencyRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsResolutionRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCaptivePortalRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpFirewallRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunVideoConferencingRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcHttpRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcPingRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdDiagnosticsService_GetAvailableRoutines_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines";
+      case internal::kCrosHealthdDiagnosticsService_GetRoutineUpdate_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate";
+      case internal::kCrosHealthdDiagnosticsService_RunUrandomRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryHealthRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunAcPowerRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCpuCacheRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCpuStressRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDiskReadRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunPrimeSearchRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunBatteryChargeRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunMemoryRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunLanConnectivityRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunSignalStrengthRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsLatencyRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunDnsResolutionRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunCaptivePortalRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpFirewallRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunVideoConferencingRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcHttpRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcPingRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine";
+      case internal::kCrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CrosHealthdDiagnosticsService_GetAvailableRoutines_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -2458,10 +2801,6 @@ class CrosHealthdDiagnosticsService_GetAvailableRoutines_ProxyToResponder : publ
 
 bool CrosHealthdDiagnosticsService_GetAvailableRoutines_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_GetAvailableRoutines_ResponseParams_Data* params =
@@ -2533,8 +2872,11 @@ void CrosHealthdDiagnosticsService_GetAvailableRoutines_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2585,10 +2927,6 @@ class CrosHealthdDiagnosticsService_GetRoutineUpdate_ProxyToResponder : public :
 
 bool CrosHealthdDiagnosticsService_GetRoutineUpdate_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_GetRoutineUpdate_ResponseParams_Data* params =
@@ -2658,8 +2996,11 @@ void CrosHealthdDiagnosticsService_GetRoutineUpdate_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2710,10 +3051,6 @@ class CrosHealthdDiagnosticsService_RunUrandomRoutine_ProxyToResponder : public 
 
 bool CrosHealthdDiagnosticsService_RunUrandomRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunUrandomRoutine_ResponseParams_Data* params =
@@ -2783,8 +3120,11 @@ void CrosHealthdDiagnosticsService_RunUrandomRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2835,10 +3175,6 @@ class CrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_ProxyToResponder :
 
 bool CrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_ResponseParams_Data* params =
@@ -2908,8 +3244,11 @@ void CrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_ProxyToResponder::R
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -2960,10 +3299,6 @@ class CrosHealthdDiagnosticsService_RunBatteryHealthRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunBatteryHealthRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunBatteryHealthRoutine_ResponseParams_Data* params =
@@ -3033,8 +3368,11 @@ void CrosHealthdDiagnosticsService_RunBatteryHealthRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3085,10 +3423,6 @@ class CrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_ResponseParams_Data* params =
@@ -3158,8 +3492,11 @@ void CrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3210,10 +3547,6 @@ class CrosHealthdDiagnosticsService_RunAcPowerRoutine_ProxyToResponder : public 
 
 bool CrosHealthdDiagnosticsService_RunAcPowerRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunAcPowerRoutine_ResponseParams_Data* params =
@@ -3283,8 +3616,11 @@ void CrosHealthdDiagnosticsService_RunAcPowerRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3335,10 +3671,6 @@ class CrosHealthdDiagnosticsService_RunCpuCacheRoutine_ProxyToResponder : public
 
 bool CrosHealthdDiagnosticsService_RunCpuCacheRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunCpuCacheRoutine_ResponseParams_Data* params =
@@ -3408,8 +3740,11 @@ void CrosHealthdDiagnosticsService_RunCpuCacheRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3460,10 +3795,6 @@ class CrosHealthdDiagnosticsService_RunCpuStressRoutine_ProxyToResponder : publi
 
 bool CrosHealthdDiagnosticsService_RunCpuStressRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunCpuStressRoutine_ResponseParams_Data* params =
@@ -3533,8 +3864,11 @@ void CrosHealthdDiagnosticsService_RunCpuStressRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3585,10 +3919,6 @@ class CrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_ProxyToRespo
 
 bool CrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_ResponseParams_Data* params =
@@ -3658,8 +3988,11 @@ void CrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_ProxyToRespon
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3710,10 +4043,6 @@ class CrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_ResponseParams_Data* params =
@@ -3783,8 +4112,11 @@ void CrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3835,10 +4167,6 @@ class CrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_ProxyToResponder : pu
 
 bool CrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_ResponseParams_Data* params =
@@ -3908,8 +4236,11 @@ void CrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -3960,10 +4291,6 @@ class CrosHealthdDiagnosticsService_RunDiskReadRoutine_ProxyToResponder : public
 
 bool CrosHealthdDiagnosticsService_RunDiskReadRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunDiskReadRoutine_ResponseParams_Data* params =
@@ -4033,8 +4360,11 @@ void CrosHealthdDiagnosticsService_RunDiskReadRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4085,10 +4415,6 @@ class CrosHealthdDiagnosticsService_RunPrimeSearchRoutine_ProxyToResponder : pub
 
 bool CrosHealthdDiagnosticsService_RunPrimeSearchRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunPrimeSearchRoutine_ResponseParams_Data* params =
@@ -4158,8 +4484,11 @@ void CrosHealthdDiagnosticsService_RunPrimeSearchRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4210,10 +4539,6 @@ class CrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_ProxyToResponder 
 
 bool CrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_ResponseParams_Data* params =
@@ -4283,8 +4608,11 @@ void CrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_ProxyToResponder::
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4335,10 +4663,6 @@ class CrosHealthdDiagnosticsService_RunBatteryChargeRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunBatteryChargeRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunBatteryChargeRoutine_ResponseParams_Data* params =
@@ -4408,8 +4732,11 @@ void CrosHealthdDiagnosticsService_RunBatteryChargeRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4460,10 +4787,6 @@ class CrosHealthdDiagnosticsService_RunMemoryRoutine_ProxyToResponder : public :
 
 bool CrosHealthdDiagnosticsService_RunMemoryRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunMemoryRoutine_ResponseParams_Data* params =
@@ -4533,8 +4856,11 @@ void CrosHealthdDiagnosticsService_RunMemoryRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4585,10 +4911,6 @@ class CrosHealthdDiagnosticsService_RunLanConnectivityRoutine_ProxyToResponder :
 
 bool CrosHealthdDiagnosticsService_RunLanConnectivityRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunLanConnectivityRoutine_ResponseParams_Data* params =
@@ -4658,8 +4980,11 @@ void CrosHealthdDiagnosticsService_RunLanConnectivityRoutine_ProxyToResponder::R
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4710,10 +5035,6 @@ class CrosHealthdDiagnosticsService_RunSignalStrengthRoutine_ProxyToResponder : 
 
 bool CrosHealthdDiagnosticsService_RunSignalStrengthRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunSignalStrengthRoutine_ResponseParams_Data* params =
@@ -4783,8 +5104,11 @@ void CrosHealthdDiagnosticsService_RunSignalStrengthRoutine_ProxyToResponder::Ru
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4835,10 +5159,6 @@ class CrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_ProxyToResponde
 
 bool CrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_ResponseParams_Data* params =
@@ -4908,8 +5228,11 @@ void CrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_ProxyToResponder
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -4960,10 +5283,6 @@ class CrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_ProxyToRes
 
 bool CrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_ResponseParams_Data* params =
@@ -5033,8 +5352,11 @@ void CrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_ProxyToResp
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5085,10 +5407,6 @@ class CrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_ProxyToResponde
 
 bool CrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_ResponseParams_Data* params =
@@ -5158,8 +5476,11 @@ void CrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_ProxyToResponder
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5210,10 +5531,6 @@ class CrosHealthdDiagnosticsService_RunDnsLatencyRoutine_ProxyToResponder : publ
 
 bool CrosHealthdDiagnosticsService_RunDnsLatencyRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunDnsLatencyRoutine_ResponseParams_Data* params =
@@ -5283,8 +5600,11 @@ void CrosHealthdDiagnosticsService_RunDnsLatencyRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5335,10 +5655,6 @@ class CrosHealthdDiagnosticsService_RunDnsResolutionRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunDnsResolutionRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunDnsResolutionRoutine_ResponseParams_Data* params =
@@ -5408,8 +5724,11 @@ void CrosHealthdDiagnosticsService_RunDnsResolutionRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5460,10 +5779,6 @@ class CrosHealthdDiagnosticsService_RunCaptivePortalRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunCaptivePortalRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunCaptivePortalRoutine_ResponseParams_Data* params =
@@ -5533,8 +5848,11 @@ void CrosHealthdDiagnosticsService_RunCaptivePortalRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5585,10 +5903,6 @@ class CrosHealthdDiagnosticsService_RunHttpFirewallRoutine_ProxyToResponder : pu
 
 bool CrosHealthdDiagnosticsService_RunHttpFirewallRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunHttpFirewallRoutine_ResponseParams_Data* params =
@@ -5658,8 +5972,11 @@ void CrosHealthdDiagnosticsService_RunHttpFirewallRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5710,10 +6027,6 @@ class CrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_ProxyToResponder : p
 
 bool CrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_ResponseParams_Data* params =
@@ -5783,8 +6096,11 @@ void CrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_ProxyToResponder::Run
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5835,10 +6151,6 @@ class CrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_ProxyToResponder : pu
 
 bool CrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_ResponseParams_Data* params =
@@ -5908,8 +6220,11 @@ void CrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -5960,10 +6275,6 @@ class CrosHealthdDiagnosticsService_RunVideoConferencingRoutine_ProxyToResponder
 
 bool CrosHealthdDiagnosticsService_RunVideoConferencingRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunVideoConferencingRoutine_ResponseParams_Data* params =
@@ -6033,8 +6344,11 @@ void CrosHealthdDiagnosticsService_RunVideoConferencingRoutine_ProxyToResponder:
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -6085,10 +6399,6 @@ class CrosHealthdDiagnosticsService_RunArcHttpRoutine_ProxyToResponder : public 
 
 bool CrosHealthdDiagnosticsService_RunArcHttpRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunArcHttpRoutine_ResponseParams_Data* params =
@@ -6158,8 +6468,11 @@ void CrosHealthdDiagnosticsService_RunArcHttpRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -6210,10 +6523,6 @@ class CrosHealthdDiagnosticsService_RunArcPingRoutine_ProxyToResponder : public 
 
 bool CrosHealthdDiagnosticsService_RunArcPingRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunArcPingRoutine_ResponseParams_Data* params =
@@ -6283,8 +6592,11 @@ void CrosHealthdDiagnosticsService_RunArcPingRoutine_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -6335,10 +6647,6 @@ class CrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_ProxyToResponder 
 
 bool CrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_ResponseParams_Data* params =
@@ -6408,8 +6716,11 @@ void CrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_ProxyToResponder::
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -6529,15 +6840,6 @@ bool CrosHealthdDiagnosticsServiceStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kCrosHealthdDiagnosticsService_GetAvailableRoutines_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetAvailableRoutines");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_GetAvailableRoutines_Params_Data* params =
           reinterpret_cast<
@@ -6563,15 +6865,6 @@ bool CrosHealthdDiagnosticsServiceStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_GetRoutineUpdate_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::GetRoutineUpdate");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_GetRoutineUpdate_Params_Data* params =
           reinterpret_cast<
@@ -6609,15 +6902,6 @@ std::move(p_include_output), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunUrandomRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunUrandomRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunUrandomRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6647,15 +6931,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryCapacityRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunBatteryCapacityRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6681,15 +6956,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunBatteryHealthRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryHealthRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunBatteryHealthRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6715,15 +6981,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSmartctlCheckRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunSmartctlCheckRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6749,15 +7006,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunAcPowerRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunAcPowerRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunAcPowerRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6791,15 +7039,6 @@ std::move(p_expected_power_type), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunCpuCacheRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuCacheRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunCpuCacheRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6829,15 +7068,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunCpuStressRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCpuStressRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunCpuStressRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6867,15 +7097,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunFloatingPointAccuracyRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunFloatingPointAccuracyRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6905,15 +7126,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeWearLevelRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunNvmeWearLevelRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6943,15 +7155,6 @@ std::move(p_wear_level_threshold), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunNvmeSelfTestRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunNvmeSelfTestRoutine_Params_Data* params =
           reinterpret_cast<
@@ -6981,15 +7184,6 @@ std::move(p_nvme_self_test_type), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunDiskReadRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDiskReadRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunDiskReadRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7027,15 +7221,6 @@ std::move(p_file_size_mb), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunPrimeSearchRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunPrimeSearchRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunPrimeSearchRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7065,15 +7250,6 @@ std::move(p_length_seconds), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryDischargeRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunBatteryDischargeRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7107,15 +7283,6 @@ std::move(p_maximum_discharge_percent_allowed), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunBatteryChargeRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunBatteryChargeRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunBatteryChargeRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7149,15 +7316,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunMemoryRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunMemoryRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunMemoryRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7183,15 +7341,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunLanConnectivityRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunLanConnectivityRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunLanConnectivityRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7217,15 +7366,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunSignalStrengthRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunSignalStrengthRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunSignalStrengthRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7251,15 +7391,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunGatewayCanBePingedRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunGatewayCanBePingedRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7285,15 +7416,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHasSecureWiFiConnectionRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunHasSecureWiFiConnectionRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7319,15 +7441,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolverPresentRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunDnsResolverPresentRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7353,15 +7466,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunDnsLatencyRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsLatencyRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunDnsLatencyRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7387,15 +7491,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunDnsResolutionRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunDnsResolutionRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunDnsResolutionRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7421,15 +7516,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunCaptivePortalRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunCaptivePortalRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunCaptivePortalRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7455,15 +7541,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunHttpFirewallRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpFirewallRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunHttpFirewallRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7489,15 +7566,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsFirewallRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunHttpsFirewallRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7523,15 +7591,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunHttpsLatencyRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunHttpsLatencyRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7557,15 +7616,6 @@ std::move(p_minimum_charge_percent_required), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunVideoConferencingRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunVideoConferencingRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunVideoConferencingRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7595,15 +7645,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunArcHttpRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcHttpRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunArcHttpRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7629,15 +7670,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunArcPingRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcPingRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunArcPingRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7663,15 +7695,6 @@ std::move(p_stun_server_hostname), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdDiagnosticsService::RunArcDnsResolutionRoutine");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdDiagnosticsService_RunArcDnsResolutionRoutine_Params_Data* params =
           reinterpret_cast<
@@ -7778,6 +7801,97 @@ bool CrosHealthdDiagnosticsServiceResponseValidator::Accept(mojo::Message* messa
   return mojo::internal::ValidateResponseGenericPacked(message, name, kCrosHealthdDiagnosticsServiceValidationInfo);
 }
 const char CrosHealthdEventService::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdEventService";
+
+uint32_t CrosHealthdEventService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdEventService_AddBluetoothObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddBluetoothObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddLidObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddLidObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddPowerObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddPowerObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddNetworkObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddNetworkObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddAudioObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddAudioObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddThunderboltObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddThunderboltObserver");
+      return value;
+    }
+    case internal::kCrosHealthdEventService_AddUsbObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddUsbObserver");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdEventService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdEventService_AddBluetoothObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddBluetoothObserver";
+      case internal::kCrosHealthdEventService_AddLidObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddLidObserver";
+      case internal::kCrosHealthdEventService_AddPowerObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddPowerObserver";
+      case internal::kCrosHealthdEventService_AddNetworkObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddNetworkObserver";
+      case internal::kCrosHealthdEventService_AddAudioObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddAudioObserver";
+      case internal::kCrosHealthdEventService_AddThunderboltObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddThunderboltObserver";
+      case internal::kCrosHealthdEventService_AddUsbObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddUsbObserver";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdEventService_AddBluetoothObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddBluetoothObserver";
+      case internal::kCrosHealthdEventService_AddLidObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddLidObserver";
+      case internal::kCrosHealthdEventService_AddPowerObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddPowerObserver";
+      case internal::kCrosHealthdEventService_AddNetworkObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddNetworkObserver";
+      case internal::kCrosHealthdEventService_AddAudioObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddAudioObserver";
+      case internal::kCrosHealthdEventService_AddThunderboltObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddThunderboltObserver";
+      case internal::kCrosHealthdEventService_AddUsbObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdEventService::AddUsbObserver";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 CrosHealthdEventServiceProxy::CrosHealthdEventServiceProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -8090,15 +8204,6 @@ bool CrosHealthdEventServiceStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kCrosHealthdEventService_AddBluetoothObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddBluetoothObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddBluetoothObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddBluetoothObserver_Params_Data* params =
@@ -8127,15 +8232,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddLidObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddLidObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddLidObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddLidObserver_Params_Data* params =
@@ -8164,15 +8260,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddPowerObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddPowerObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddPowerObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddPowerObserver_Params_Data* params =
@@ -8201,15 +8288,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddNetworkObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddNetworkObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddNetworkObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddNetworkObserver_Params_Data* params =
@@ -8238,15 +8316,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddAudioObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddAudioObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddAudioObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddAudioObserver_Params_Data* params =
@@ -8275,15 +8344,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddThunderboltObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddThunderboltObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddThunderboltObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddThunderboltObserver_Params_Data* params =
@@ -8312,15 +8372,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kCrosHealthdEventService_AddUsbObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdEventService::AddUsbObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdEventService::AddUsbObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::CrosHealthdEventService_AddUsbObserver_Params_Data* params =
@@ -8410,6 +8461,52 @@ bool CrosHealthdEventServiceRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char CrosHealthdProbeService::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdProbeService";
+
+uint32_t CrosHealthdProbeService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdProbeService_ProbeProcessInfo_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo");
+      return value;
+    }
+    case internal::kCrosHealthdProbeService_ProbeTelemetryInfo_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdProbeService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdProbeService_ProbeProcessInfo_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo";
+      case internal::kCrosHealthdProbeService_ProbeTelemetryInfo_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdProbeService_ProbeProcessInfo_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo";
+      case internal::kCrosHealthdProbeService_ProbeTelemetryInfo_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CrosHealthdProbeService_ProbeProcessInfo_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -8583,10 +8680,6 @@ class CrosHealthdProbeService_ProbeProcessInfo_ProxyToResponder : public ::mojo:
 
 bool CrosHealthdProbeService_ProbeProcessInfo_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdProbeService_ProbeProcessInfo_ResponseParams_Data* params =
@@ -8654,8 +8747,11 @@ void CrosHealthdProbeService_ProbeProcessInfo_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -8706,10 +8802,6 @@ class CrosHealthdProbeService_ProbeTelemetryInfo_ProxyToResponder : public ::moj
 
 bool CrosHealthdProbeService_ProbeTelemetryInfo_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdProbeService_ProbeTelemetryInfo_ResponseParams_Data* params =
@@ -8779,8 +8871,11 @@ void CrosHealthdProbeService_ProbeTelemetryInfo_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -8810,15 +8905,6 @@ bool CrosHealthdProbeServiceStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kCrosHealthdProbeService_ProbeProcessInfo_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeProcessInfo");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdProbeService_ProbeProcessInfo_Params_Data* params =
           reinterpret_cast<
@@ -8848,15 +8934,6 @@ std::move(p_process_id), std::move(callback));
       return true;
     }
     case internal::kCrosHealthdProbeService_ProbeTelemetryInfo_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdProbeService::ProbeTelemetryInfo");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdProbeService_ProbeTelemetryInfo_Params_Data* params =
           reinterpret_cast<
@@ -8907,6 +8984,43 @@ bool CrosHealthdProbeServiceResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kCrosHealthdProbeServiceValidationInfo);
 }
 const char CrosHealthdSystemService::Name_[] = "chromeos.cros_healthd.mojom.CrosHealthdSystemService";
+
+uint32_t CrosHealthdSystemService::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kCrosHealthdSystemService_GetServiceStatus_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* CrosHealthdSystemService::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kCrosHealthdSystemService_GetServiceStatus_Name:
+            return "Receive chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kCrosHealthdSystemService_GetServiceStatus_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class CrosHealthdSystemService_GetServiceStatus_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -9005,10 +9119,6 @@ class CrosHealthdSystemService_GetServiceStatus_ProxyToResponder : public ::mojo
 
 bool CrosHealthdSystemService_GetServiceStatus_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::CrosHealthdSystemService_GetServiceStatus_ResponseParams_Data* params =
@@ -9078,8 +9188,11 @@ void CrosHealthdSystemService_GetServiceStatus_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -9106,15 +9219,6 @@ bool CrosHealthdSystemServiceStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kCrosHealthdSystemService_GetServiceStatus_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::CrosHealthdSystemService::GetServiceStatus");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::CrosHealthdSystemService_GetServiceStatus_Params_Data* params =
           reinterpret_cast<
@@ -9159,6 +9263,70 @@ bool CrosHealthdSystemServiceResponseValidator::Accept(mojo::Message* message) {
   return mojo::internal::ValidateResponseGenericPacked(message, name, kCrosHealthdSystemServiceValidationInfo);
 }
 const char WilcoEcServiceController::Name_[] = "chromeos.cros_healthd.mojom.WilcoEcServiceController";
+
+uint32_t WilcoEcServiceController::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kWilcoEcServiceController_AddEcObserver_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::AddEcObserver");
+      return value;
+    }
+    case internal::kWilcoEcServiceController_GetEcTelemetry_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry");
+      return value;
+    }
+    case internal::kWilcoEcServiceController_StartEcService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::StartEcService");
+      return value;
+    }
+    case internal::kWilcoEcServiceController_ShutdownEcService_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::ShutdownEcService");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* WilcoEcServiceController::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kWilcoEcServiceController_AddEcObserver_Name:
+            return "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::AddEcObserver";
+      case internal::kWilcoEcServiceController_GetEcTelemetry_Name:
+            return "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry";
+      case internal::kWilcoEcServiceController_StartEcService_Name:
+            return "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::StartEcService";
+      case internal::kWilcoEcServiceController_ShutdownEcService_Name:
+            return "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::ShutdownEcService";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kWilcoEcServiceController_AddEcObserver_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::WilcoEcServiceController::AddEcObserver";
+      case internal::kWilcoEcServiceController_GetEcTelemetry_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry";
+      case internal::kWilcoEcServiceController_StartEcService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::WilcoEcServiceController::StartEcService";
+      case internal::kWilcoEcServiceController_ShutdownEcService_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::WilcoEcServiceController::ShutdownEcService";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class WilcoEcServiceController_GetEcTelemetry_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -9378,10 +9546,6 @@ class WilcoEcServiceController_GetEcTelemetry_ProxyToResponder : public ::mojo::
 
 bool WilcoEcServiceController_GetEcTelemetry_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::WilcoEcServiceController_GetEcTelemetry_ResponseParams_Data* params =
@@ -9451,8 +9615,11 @@ void WilcoEcServiceController_GetEcTelemetry_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -9463,15 +9630,6 @@ bool WilcoEcServiceControllerStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kWilcoEcServiceController_AddEcObserver_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::AddEcObserver",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::AddEcObserver");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoEcServiceController_AddEcObserver_Params_Data* params =
@@ -9503,15 +9661,6 @@ std::move(p_observer));
       break;
     }
     case internal::kWilcoEcServiceController_StartEcService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::StartEcService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::StartEcService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoEcServiceController_StartEcService_Params_Data* params =
@@ -9534,15 +9683,6 @@ std::move(p_observer));
       return true;
     }
     case internal::kWilcoEcServiceController_ShutdownEcService_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::ShutdownEcService",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::ShutdownEcService");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::WilcoEcServiceController_ShutdownEcService_Params_Data* params =
@@ -9581,15 +9721,6 @@ bool WilcoEcServiceControllerStubDispatch::AcceptWithResponder(
       break;
     }
     case internal::kWilcoEcServiceController_GetEcTelemetry_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::WilcoEcServiceController::GetEcTelemetry");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::WilcoEcServiceController_GetEcTelemetry_Params_Data* params =
           reinterpret_cast<

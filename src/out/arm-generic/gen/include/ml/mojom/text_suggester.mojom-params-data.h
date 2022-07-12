@@ -70,7 +70,7 @@ class TextSuggester_Suggest_ParamsDataView {
       TextSuggesterQueryDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadQuery(UserType* output) {
+  [[nodiscard]] bool ReadQuery(UserType* output) {
     
     auto* pointer = data_->query.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextSuggesterQueryDataView>(
@@ -97,7 +97,7 @@ class TextSuggester_Suggest_ResponseParamsDataView {
       TextSuggesterResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::TextSuggesterResultDataView>(

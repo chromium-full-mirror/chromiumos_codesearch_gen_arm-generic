@@ -168,7 +168,7 @@ class SmbFsBootstrap_MountShare_ParamsDataView {
       MountOptionsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOptions(UserType* output) {
+  [[nodiscard]] bool ReadOptions(UserType* output) {
     
     auto* pointer = data_->options.Get();
     return mojo::internal::Deserialize<::smbfs::mojom::MountOptionsDataView>(
@@ -201,7 +201,7 @@ class SmbFsBootstrap_MountShare_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     auto data_value = data_->error;
     return mojo::internal::Deserialize<::smbfs::mojom::MountError>(
         data_value, output);
@@ -275,7 +275,7 @@ class SmbFs_DeleteRecursively_ParamsDataView {
       ::smbfs::mojom::FilePathDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPath(UserType* output) {
+  [[nodiscard]] bool ReadPath(UserType* output) {
     
     auto* pointer = data_->path.Get();
     return mojo::internal::Deserialize<::smbfs::mojom::FilePathDataView>(
@@ -299,7 +299,7 @@ class SmbFs_DeleteRecursively_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     auto data_value = data_->error;
     return mojo::internal::Deserialize<::smbfs::mojom::DeleteRecursivelyError>(
         data_value, output);
@@ -344,7 +344,7 @@ class SmbFsDelegate_RequestCredentials_ResponseParamsDataView {
       CredentialsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCredentials(UserType* output) {
+  [[nodiscard]] bool ReadCredentials(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

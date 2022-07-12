@@ -11,242 +11,158 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AuthRequiredRequest_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearUserCredentials_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Credentials_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KerberosConfig_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LogRequest_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtectionSpace_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProxyResolutionReply_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProxyResolutionRequest_worker_5fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_worker_5fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SocketAddress_worker_5fcommon_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace system_proxy {
 namespace worker {
-class ProtectionSpaceDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProtectionSpace> _instance;
-} _ProtectionSpace_default_instance_;
-class CredentialsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Credentials> _instance;
-} _Credentials_default_instance_;
-class SocketAddressDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<SocketAddress> _instance;
-} _SocketAddress_default_instance_;
-class LogRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LogRequest> _instance;
-} _LogRequest_default_instance_;
-class ProxyResolutionRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProxyResolutionRequest> _instance;
-} _ProxyResolutionRequest_default_instance_;
-class ProxyResolutionReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProxyResolutionReply> _instance;
-} _ProxyResolutionReply_default_instance_;
-class AuthRequiredRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AuthRequiredRequest> _instance;
-} _AuthRequiredRequest_default_instance_;
-class WorkerRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WorkerRequest> _instance;
-  const ::system_proxy::worker::LogRequest* log_request_;
-  const ::system_proxy::worker::ProxyResolutionRequest* proxy_resolution_request_;
-  const ::system_proxy::worker::AuthRequiredRequest* auth_required_request_;
-} _WorkerRequest_default_instance_;
-class KerberosConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KerberosConfig> _instance;
-} _KerberosConfig_default_instance_;
-class ClearUserCredentialsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ClearUserCredentials> _instance;
-} _ClearUserCredentials_default_instance_;
-class WorkerConfigsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WorkerConfigs> _instance;
-  const ::system_proxy::worker::Credentials* credentials_;
-  const ::system_proxy::worker::SocketAddress* listening_address_;
-  const ::system_proxy::worker::ProxyResolutionReply* proxy_resolution_reply_;
-  const ::system_proxy::worker::KerberosConfig* kerberos_config_;
-  const ::system_proxy::worker::ClearUserCredentials* clear_user_credentials_;
-} _WorkerConfigs_default_instance_;
+constexpr ProtectionSpace::ProtectionSpace(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : origin_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , realm_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , scheme_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ProtectionSpaceDefaultTypeInternal {
+  constexpr ProtectionSpaceDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProtectionSpaceDefaultTypeInternal() {}
+  union {
+    ProtectionSpace _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProtectionSpaceDefaultTypeInternal _ProtectionSpace_default_instance_;
+constexpr Credentials::Credentials(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : policy_credentials_auth_schemes_()
+  , username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , password_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , protection_space_(nullptr){}
+struct CredentialsDefaultTypeInternal {
+  constexpr CredentialsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CredentialsDefaultTypeInternal() {}
+  union {
+    Credentials _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CredentialsDefaultTypeInternal _Credentials_default_instance_;
+constexpr SocketAddress::SocketAddress(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : addr_(0u)
+  , port_(0u){}
+struct SocketAddressDefaultTypeInternal {
+  constexpr SocketAddressDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SocketAddressDefaultTypeInternal() {}
+  union {
+    SocketAddress _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SocketAddressDefaultTypeInternal _SocketAddress_default_instance_;
+constexpr LogRequest::LogRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct LogRequestDefaultTypeInternal {
+  constexpr LogRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LogRequestDefaultTypeInternal() {}
+  union {
+    LogRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LogRequestDefaultTypeInternal _LogRequest_default_instance_;
+constexpr ProxyResolutionRequest::ProxyResolutionRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : target_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ProxyResolutionRequestDefaultTypeInternal {
+  constexpr ProxyResolutionRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProxyResolutionRequestDefaultTypeInternal() {}
+  union {
+    ProxyResolutionRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProxyResolutionRequestDefaultTypeInternal _ProxyResolutionRequest_default_instance_;
+constexpr ProxyResolutionReply::ProxyResolutionReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : proxy_servers_()
+  , target_url_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ProxyResolutionReplyDefaultTypeInternal {
+  constexpr ProxyResolutionReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ProxyResolutionReplyDefaultTypeInternal() {}
+  union {
+    ProxyResolutionReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ProxyResolutionReplyDefaultTypeInternal _ProxyResolutionReply_default_instance_;
+constexpr AuthRequiredRequest::AuthRequiredRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : protection_space_(nullptr)
+  , bad_cached_credentials_(false){}
+struct AuthRequiredRequestDefaultTypeInternal {
+  constexpr AuthRequiredRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AuthRequiredRequestDefaultTypeInternal() {}
+  union {
+    AuthRequiredRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthRequiredRequestDefaultTypeInternal _AuthRequiredRequest_default_instance_;
+constexpr WorkerRequest::WorkerRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct WorkerRequestDefaultTypeInternal {
+  constexpr WorkerRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~WorkerRequestDefaultTypeInternal() {}
+  union {
+    WorkerRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT WorkerRequestDefaultTypeInternal _WorkerRequest_default_instance_;
+constexpr KerberosConfig::KerberosConfig(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : krb5cc_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , krb5conf_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , enabled_(false){}
+struct KerberosConfigDefaultTypeInternal {
+  constexpr KerberosConfigDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KerberosConfigDefaultTypeInternal() {}
+  union {
+    KerberosConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KerberosConfigDefaultTypeInternal _KerberosConfig_default_instance_;
+constexpr ClearUserCredentials::ClearUserCredentials(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ClearUserCredentialsDefaultTypeInternal {
+  constexpr ClearUserCredentialsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ClearUserCredentialsDefaultTypeInternal() {}
+  union {
+    ClearUserCredentials _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClearUserCredentialsDefaultTypeInternal _ClearUserCredentials_default_instance_;
+constexpr WorkerConfigs::WorkerConfigs(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct WorkerConfigsDefaultTypeInternal {
+  constexpr WorkerConfigsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~WorkerConfigsDefaultTypeInternal() {}
+  union {
+    WorkerConfigs _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT WorkerConfigsDefaultTypeInternal _WorkerConfigs_default_instance_;
 }  // namespace worker
 }  // namespace system_proxy
-static void InitDefaultsscc_info_AuthRequiredRequest_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_AuthRequiredRequest_default_instance_;
-    new (ptr) ::system_proxy::worker::AuthRequiredRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::AuthRequiredRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AuthRequiredRequest_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AuthRequiredRequest_worker_5fcommon_2eproto}, {
-      &scc_info_ProtectionSpace_worker_5fcommon_2eproto.base,}};
-
-static void InitDefaultsscc_info_ClearUserCredentials_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_ClearUserCredentials_default_instance_;
-    new (ptr) ::system_proxy::worker::ClearUserCredentials();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::ClearUserCredentials::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ClearUserCredentials_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ClearUserCredentials_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_Credentials_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_Credentials_default_instance_;
-    new (ptr) ::system_proxy::worker::Credentials();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::Credentials::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Credentials_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Credentials_worker_5fcommon_2eproto}, {
-      &scc_info_ProtectionSpace_worker_5fcommon_2eproto.base,}};
-
-static void InitDefaultsscc_info_KerberosConfig_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_KerberosConfig_default_instance_;
-    new (ptr) ::system_proxy::worker::KerberosConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::KerberosConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KerberosConfig_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KerberosConfig_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_LogRequest_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_LogRequest_default_instance_;
-    new (ptr) ::system_proxy::worker::LogRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::LogRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LogRequest_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LogRequest_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProtectionSpace_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_ProtectionSpace_default_instance_;
-    new (ptr) ::system_proxy::worker::ProtectionSpace();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::ProtectionSpace::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtectionSpace_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProtectionSpace_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProxyResolutionReply_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_ProxyResolutionReply_default_instance_;
-    new (ptr) ::system_proxy::worker::ProxyResolutionReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::ProxyResolutionReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProxyResolutionReply_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProxyResolutionReply_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_ProxyResolutionRequest_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_ProxyResolutionRequest_default_instance_;
-    new (ptr) ::system_proxy::worker::ProxyResolutionRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::ProxyResolutionRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProxyResolutionRequest_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProxyResolutionRequest_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_SocketAddress_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_SocketAddress_default_instance_;
-    new (ptr) ::system_proxy::worker::SocketAddress();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::SocketAddress::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SocketAddress_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_SocketAddress_worker_5fcommon_2eproto}, {}};
-
-static void InitDefaultsscc_info_WorkerConfigs_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_WorkerConfigs_default_instance_;
-    new (ptr) ::system_proxy::worker::WorkerConfigs();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::WorkerConfigs::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_WorkerConfigs_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 5, 0, InitDefaultsscc_info_WorkerConfigs_worker_5fcommon_2eproto}, {
-      &scc_info_Credentials_worker_5fcommon_2eproto.base,
-      &scc_info_SocketAddress_worker_5fcommon_2eproto.base,
-      &scc_info_ProxyResolutionReply_worker_5fcommon_2eproto.base,
-      &scc_info_KerberosConfig_worker_5fcommon_2eproto.base,
-      &scc_info_ClearUserCredentials_worker_5fcommon_2eproto.base,}};
-
-static void InitDefaultsscc_info_WorkerRequest_worker_5fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::system_proxy::worker::_WorkerRequest_default_instance_;
-    new (ptr) ::system_proxy::worker::WorkerRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::system_proxy::worker::WorkerRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_WorkerRequest_worker_5fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_WorkerRequest_worker_5fcommon_2eproto}, {
-      &scc_info_LogRequest_worker_5fcommon_2eproto.base,
-      &scc_info_ProxyResolutionRequest_worker_5fcommon_2eproto.base,
-      &scc_info_AuthRequiredRequest_worker_5fcommon_2eproto.base,}};
-
 namespace system_proxy {
 namespace worker {
 
 // ===================================================================
 
-void ProtectionSpace::InitAsDefaultInstance() {
-}
 class ProtectionSpace::_Internal {
  public:
   using HasBits = decltype(std::declval<ProtectionSpace>()._has_bits_);
@@ -261,137 +177,169 @@ class ProtectionSpace::_Internal {
   }
 };
 
-ProtectionSpace::ProtectionSpace()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ProtectionSpace::ProtectionSpace(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.ProtectionSpace)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.ProtectionSpace)
 }
 ProtectionSpace::ProtectionSpace(const ProtectionSpace& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    origin_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_origin()) {
-    origin_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.origin_);
+    origin_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_origin(), 
+      GetArenaForAllocation());
   }
   realm_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    realm_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_realm()) {
-    realm_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.realm_);
+    realm_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_realm(), 
+      GetArenaForAllocation());
   }
   scheme_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    scheme_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_scheme()) {
-    scheme_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.scheme_);
+    scheme_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_scheme(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.ProtectionSpace)
 }
 
-void ProtectionSpace::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProtectionSpace_worker_5fcommon_2eproto.base);
-  origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  realm_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  scheme_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ProtectionSpace::SharedCtor() {
+origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  origin_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+realm_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  realm_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+scheme_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  scheme_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ProtectionSpace::~ProtectionSpace() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.ProtectionSpace)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ProtectionSpace::SharedDtor() {
+inline void ProtectionSpace::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   origin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   realm_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   scheme_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ProtectionSpace::ArenaDtor(void* object) {
+  ProtectionSpace* _this = reinterpret_cast< ProtectionSpace* >(object);
+  (void)_this;
+}
+void ProtectionSpace::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProtectionSpace::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProtectionSpace& ProtectionSpace::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProtectionSpace_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProtectionSpace::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.ProtectionSpace)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      origin_.ClearNonDefaultToEmptyNoArena();
+      origin_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      realm_.ClearNonDefaultToEmptyNoArena();
+      realm_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      scheme_.ClearNonDefaultToEmptyNoArena();
+      scheme_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ProtectionSpace::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string origin = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_origin();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string realm = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_realm();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string scheme = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_scheme();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ProtectionSpace::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ProtectionSpace::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.ProtectionSpace)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -414,8 +362,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.ProtectionSpace)
   return target;
@@ -425,7 +373,7 @@ size_t ProtectionSpace::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.ProtectionSpace)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -454,7 +402,7 @@ size_t ProtectionSpace::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -470,25 +418,22 @@ void ProtectionSpace::CheckTypeAndMergeFrom(
 void ProtectionSpace::MergeFrom(const ProtectionSpace& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.ProtectionSpace)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      origin_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.origin_);
+      _internal_set_origin(from._internal_origin());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      realm_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.realm_);
+      _internal_set_realm(from._internal_realm());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      scheme_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.scheme_);
+      _internal_set_scheme(from._internal_scheme());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ProtectionSpace::CopyFrom(const ProtectionSpace& from) {
@@ -504,14 +449,25 @@ bool ProtectionSpace::IsInitialized() const {
 
 void ProtectionSpace::InternalSwap(ProtectionSpace* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  origin_.Swap(&other->origin_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  realm_.Swap(&other->realm_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  scheme_.Swap(&other->scheme_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &origin_, lhs_arena,
+      &other->origin_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &realm_, lhs_arena,
+      &other->realm_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &scheme_, lhs_arena,
+      &other->scheme_, rhs_arena
+  );
 }
 
 std::string ProtectionSpace::GetTypeName() const {
@@ -521,10 +477,6 @@ std::string ProtectionSpace::GetTypeName() const {
 
 // ===================================================================
 
-void Credentials::InitAsDefaultInstance() {
-  ::system_proxy::worker::_Credentials_default_instance_._instance.get_mutable()->protection_space_ = const_cast< ::system_proxy::worker::ProtectionSpace*>(
-      ::system_proxy::worker::ProtectionSpace::internal_default_instance());
-}
 class Credentials::_Internal {
  public:
   using HasBits = decltype(std::declval<Credentials>()._has_bits_);
@@ -544,24 +496,36 @@ const ::system_proxy::worker::ProtectionSpace&
 Credentials::_Internal::protection_space(const Credentials* msg) {
   return *msg->protection_space_;
 }
-Credentials::Credentials()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+Credentials::Credentials(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  policy_credentials_auth_schemes_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.Credentials)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.Credentials)
 }
 Credentials::Credentials(const Credentials& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       policy_credentials_auth_schemes_(from.policy_credentials_auth_schemes_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_username()) {
-    username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.username_);
+    username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_username(), 
+      GetArenaForAllocation());
   }
   password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_password()) {
-    password_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.password_);
+    password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_password(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_protection_space()) {
     protection_space_ = new ::system_proxy::worker::ProtectionSpace(*from.protection_space_);
@@ -571,36 +535,45 @@ Credentials::Credentials(const Credentials& from)
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.Credentials)
 }
 
-void Credentials::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Credentials_worker_5fcommon_2eproto.base);
-  username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  protection_space_ = nullptr;
+inline void Credentials::SharedCtor() {
+username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+password_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+protection_space_ = nullptr;
 }
 
 Credentials::~Credentials() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.Credentials)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void Credentials::SharedDtor() {
+inline void Credentials::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   password_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete protection_space_;
 }
 
+void Credentials::ArenaDtor(void* object) {
+  Credentials* _this = reinterpret_cast< Credentials* >(object);
+  (void)_this;
+}
+void Credentials::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Credentials::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Credentials& Credentials::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Credentials_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void Credentials::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.Credentials)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -608,10 +581,10 @@ void Credentials::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      username_.ClearNonDefaultToEmptyNoArena();
+      username_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      password_.ClearNonDefaultToEmptyNoArena();
+      password_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
       GOOGLE_DCHECK(protection_space_ != nullptr);
@@ -619,43 +592,45 @@ void Credentials::Clear() {
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* Credentials::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string username = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_username();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string password = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_password();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .system_proxy.worker.ProtectionSpace protection_space = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_protection_space(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string policy_credentials_auth_schemes = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -664,33 +639,37 @@ const char* Credentials::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Credentials::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* Credentials::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.Credentials)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -721,8 +700,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.Credentials)
   return target;
@@ -732,7 +711,7 @@ size_t Credentials::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.Credentials)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -769,7 +748,7 @@ size_t Credentials::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -785,25 +764,23 @@ void Credentials::CheckTypeAndMergeFrom(
 void Credentials::MergeFrom(const Credentials& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.Credentials)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   policy_credentials_auth_schemes_.MergeFrom(from.policy_credentials_auth_schemes_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      username_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.username_);
+      _internal_set_username(from._internal_username());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      password_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.password_);
+      _internal_set_password(from._internal_password());
     }
     if (cached_has_bits & 0x00000004u) {
       _internal_mutable_protection_space()->::system_proxy::worker::ProtectionSpace::MergeFrom(from._internal_protection_space());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void Credentials::CopyFrom(const Credentials& from) {
@@ -819,13 +796,21 @@ bool Credentials::IsInitialized() const {
 
 void Credentials::InternalSwap(Credentials* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   policy_credentials_auth_schemes_.InternalSwap(&other->policy_credentials_auth_schemes_);
-  username_.Swap(&other->username_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  password_.Swap(&other->password_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &username_, lhs_arena,
+      &other->username_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &password_, lhs_arena,
+      &other->password_, rhs_arena
+  );
   swap(protection_space_, other->protection_space_);
 }
 
@@ -836,8 +821,6 @@ std::string Credentials::GetTypeName() const {
 
 // ===================================================================
 
-void SocketAddress::InitAsDefaultInstance() {
-}
 class SocketAddress::_Internal {
  public:
   using HasBits = decltype(std::declval<SocketAddress>()._has_bits_);
@@ -849,48 +832,56 @@ class SocketAddress::_Internal {
   }
 };
 
-SocketAddress::SocketAddress()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+SocketAddress::SocketAddress(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.SocketAddress)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.SocketAddress)
 }
 SocketAddress::SocketAddress(const SocketAddress& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&addr_, &from.addr_,
     static_cast<size_t>(reinterpret_cast<char*>(&port_) -
     reinterpret_cast<char*>(&addr_)) + sizeof(port_));
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.SocketAddress)
 }
 
-void SocketAddress::SharedCtor() {
-  ::memset(&addr_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&port_) -
-      reinterpret_cast<char*>(&addr_)) + sizeof(port_));
+inline void SocketAddress::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&addr_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&port_) -
+    reinterpret_cast<char*>(&addr_)) + sizeof(port_));
 }
 
 SocketAddress::~SocketAddress() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.SocketAddress)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void SocketAddress::SharedDtor() {
+inline void SocketAddress::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void SocketAddress::ArenaDtor(void* object) {
+  SocketAddress* _this = reinterpret_cast< SocketAddress* >(object);
+  (void)_this;
+}
+void SocketAddress::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SocketAddress::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const SocketAddress& SocketAddress::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_SocketAddress_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void SocketAddress::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.SocketAddress)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -901,58 +892,62 @@ void SocketAddress::Clear() {
         reinterpret_cast<char*>(&addr_)) + sizeof(port_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* SocketAddress::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional uint32 addr = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_addr(&has_bits);
-          addr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          addr_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 port = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_port(&has_bits);
-          port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* SocketAddress::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* SocketAddress::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.SocketAddress)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -969,8 +964,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.SocketAddress)
   return target;
@@ -980,7 +975,7 @@ size_t SocketAddress::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.SocketAddress)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -988,21 +983,17 @@ size_t SocketAddress::ByteSizeLong() const {
   if (cached_has_bits & 0x00000003u) {
     // optional uint32 addr = 1;
     if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_addr());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_addr());
     }
 
     // optional uint32 port = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_port());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_port());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1018,8 +1009,7 @@ void SocketAddress::CheckTypeAndMergeFrom(
 void SocketAddress::MergeFrom(const SocketAddress& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.SocketAddress)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1032,6 +1022,7 @@ void SocketAddress::MergeFrom(const SocketAddress& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void SocketAddress::CopyFrom(const SocketAddress& from) {
@@ -1047,10 +1038,14 @@ bool SocketAddress::IsInitialized() const {
 
 void SocketAddress::InternalSwap(SocketAddress* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(addr_, other->addr_);
-  swap(port_, other->port_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SocketAddress, port_)
+      + sizeof(SocketAddress::port_)
+      - PROTOBUF_FIELD_OFFSET(SocketAddress, addr_)>(
+          reinterpret_cast<char*>(&addr_),
+          reinterpret_cast<char*>(&other->addr_));
 }
 
 std::string SocketAddress::GetTypeName() const {
@@ -1060,8 +1055,6 @@ std::string SocketAddress::GetTypeName() const {
 
 // ===================================================================
 
-void LogRequest::InitAsDefaultInstance() {
-}
 class LogRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<LogRequest>()._has_bits_);
@@ -1070,101 +1063,117 @@ class LogRequest::_Internal {
   }
 };
 
-LogRequest::LogRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+LogRequest::LogRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.LogRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.LogRequest)
 }
 LogRequest::LogRequest(const LogRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_message()) {
-    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.LogRequest)
 }
 
-void LogRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LogRequest_worker_5fcommon_2eproto.base);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void LogRequest::SharedCtor() {
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 LogRequest::~LogRequest() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.LogRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void LogRequest::SharedDtor() {
+inline void LogRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void LogRequest::ArenaDtor(void* object) {
+  LogRequest* _this = reinterpret_cast< LogRequest* >(object);
+  (void)_this;
+}
+void LogRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LogRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const LogRequest& LogRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LogRequest_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void LogRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.LogRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    message_.ClearNonDefaultToEmptyNoArena();
+    message_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* LogRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string message = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_message();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* LogRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LogRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.LogRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1175,8 +1184,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.LogRequest)
   return target;
@@ -1186,7 +1195,7 @@ size_t LogRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.LogRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1199,7 +1208,7 @@ size_t LogRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1215,14 +1224,13 @@ void LogRequest::CheckTypeAndMergeFrom(
 void LogRequest::MergeFrom(const LogRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.LogRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_message()) {
-    _has_bits_[0] |= 0x00000001u;
-    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
+    _internal_set_message(from._internal_message());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void LogRequest::CopyFrom(const LogRequest& from) {
@@ -1238,10 +1246,15 @@ bool LogRequest::IsInitialized() const {
 
 void LogRequest::InternalSwap(LogRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  message_.Swap(&other->message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &message_, lhs_arena,
+      &other->message_, rhs_arena
+  );
 }
 
 std::string LogRequest::GetTypeName() const {
@@ -1251,8 +1264,6 @@ std::string LogRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ProxyResolutionRequest::InitAsDefaultInstance() {
-}
 class ProxyResolutionRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<ProxyResolutionRequest>()._has_bits_);
@@ -1261,101 +1272,117 @@ class ProxyResolutionRequest::_Internal {
   }
 };
 
-ProxyResolutionRequest::ProxyResolutionRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ProxyResolutionRequest::ProxyResolutionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.ProxyResolutionRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.ProxyResolutionRequest)
 }
 ProxyResolutionRequest::ProxyResolutionRequest(const ProxyResolutionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    target_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_target_url()) {
-    target_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.target_url_);
+    target_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_url(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.ProxyResolutionRequest)
 }
 
-void ProxyResolutionRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProxyResolutionRequest_worker_5fcommon_2eproto.base);
-  target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ProxyResolutionRequest::SharedCtor() {
+target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  target_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ProxyResolutionRequest::~ProxyResolutionRequest() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.ProxyResolutionRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ProxyResolutionRequest::SharedDtor() {
+inline void ProxyResolutionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   target_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ProxyResolutionRequest::ArenaDtor(void* object) {
+  ProxyResolutionRequest* _this = reinterpret_cast< ProxyResolutionRequest* >(object);
+  (void)_this;
+}
+void ProxyResolutionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProxyResolutionRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProxyResolutionRequest& ProxyResolutionRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProxyResolutionRequest_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProxyResolutionRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.ProxyResolutionRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    target_url_.ClearNonDefaultToEmptyNoArena();
+    target_url_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ProxyResolutionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string target_url = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_target_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ProxyResolutionRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ProxyResolutionRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.ProxyResolutionRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1366,8 +1393,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.ProxyResolutionRequest)
   return target;
@@ -1377,7 +1404,7 @@ size_t ProxyResolutionRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.ProxyResolutionRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1390,7 +1417,7 @@ size_t ProxyResolutionRequest::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1406,14 +1433,13 @@ void ProxyResolutionRequest::CheckTypeAndMergeFrom(
 void ProxyResolutionRequest::MergeFrom(const ProxyResolutionRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.ProxyResolutionRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_target_url()) {
-    _has_bits_[0] |= 0x00000001u;
-    target_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.target_url_);
+    _internal_set_target_url(from._internal_target_url());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ProxyResolutionRequest::CopyFrom(const ProxyResolutionRequest& from) {
@@ -1429,10 +1455,15 @@ bool ProxyResolutionRequest::IsInitialized() const {
 
 void ProxyResolutionRequest::InternalSwap(ProxyResolutionRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  target_url_.Swap(&other->target_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &target_url_, lhs_arena,
+      &other->target_url_, rhs_arena
+  );
 }
 
 std::string ProxyResolutionRequest::GetTypeName() const {
@@ -1442,8 +1473,6 @@ std::string ProxyResolutionRequest::GetTypeName() const {
 
 // ===================================================================
 
-void ProxyResolutionReply::InitAsDefaultInstance() {
-}
 class ProxyResolutionReply::_Internal {
  public:
   using HasBits = decltype(std::declval<ProxyResolutionReply>()._has_bits_);
@@ -1452,81 +1481,95 @@ class ProxyResolutionReply::_Internal {
   }
 };
 
-ProxyResolutionReply::ProxyResolutionReply()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ProxyResolutionReply::ProxyResolutionReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  proxy_servers_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.ProxyResolutionReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.ProxyResolutionReply)
 }
 ProxyResolutionReply::ProxyResolutionReply(const ProxyResolutionReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       proxy_servers_(from.proxy_servers_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    target_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_target_url()) {
-    target_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.target_url_);
+    target_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target_url(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.ProxyResolutionReply)
 }
 
-void ProxyResolutionReply::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProxyResolutionReply_worker_5fcommon_2eproto.base);
-  target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ProxyResolutionReply::SharedCtor() {
+target_url_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  target_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ProxyResolutionReply::~ProxyResolutionReply() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.ProxyResolutionReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ProxyResolutionReply::SharedDtor() {
+inline void ProxyResolutionReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   target_url_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ProxyResolutionReply::ArenaDtor(void* object) {
+  ProxyResolutionReply* _this = reinterpret_cast< ProxyResolutionReply* >(object);
+  (void)_this;
+}
+void ProxyResolutionReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ProxyResolutionReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ProxyResolutionReply& ProxyResolutionReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProxyResolutionReply_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ProxyResolutionReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.ProxyResolutionReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   proxy_servers_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    target_url_.ClearNonDefaultToEmptyNoArena();
+    target_url_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ProxyResolutionReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string target_url = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_target_url();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string proxy_servers = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1535,33 +1578,37 @@ const char* ProxyResolutionReply::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ProxyResolutionReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ProxyResolutionReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.ProxyResolutionReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1578,8 +1625,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.ProxyResolutionReply)
   return target;
@@ -1589,7 +1636,7 @@ size_t ProxyResolutionReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.ProxyResolutionReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1610,7 +1657,7 @@ size_t ProxyResolutionReply::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1626,15 +1673,14 @@ void ProxyResolutionReply::CheckTypeAndMergeFrom(
 void ProxyResolutionReply::MergeFrom(const ProxyResolutionReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.ProxyResolutionReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   proxy_servers_.MergeFrom(from.proxy_servers_);
   if (from._internal_has_target_url()) {
-    _has_bits_[0] |= 0x00000001u;
-    target_url_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.target_url_);
+    _internal_set_target_url(from._internal_target_url());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ProxyResolutionReply::CopyFrom(const ProxyResolutionReply& from) {
@@ -1650,11 +1696,16 @@ bool ProxyResolutionReply::IsInitialized() const {
 
 void ProxyResolutionReply::InternalSwap(ProxyResolutionReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   proxy_servers_.InternalSwap(&other->proxy_servers_);
-  target_url_.Swap(&other->target_url_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &target_url_, lhs_arena,
+      &other->target_url_, rhs_arena
+  );
 }
 
 std::string ProxyResolutionReply::GetTypeName() const {
@@ -1664,10 +1715,6 @@ std::string ProxyResolutionReply::GetTypeName() const {
 
 // ===================================================================
 
-void AuthRequiredRequest::InitAsDefaultInstance() {
-  ::system_proxy::worker::_AuthRequiredRequest_default_instance_._instance.get_mutable()->protection_space_ = const_cast< ::system_proxy::worker::ProtectionSpace*>(
-      ::system_proxy::worker::ProtectionSpace::internal_default_instance());
-}
 class AuthRequiredRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<AuthRequiredRequest>()._has_bits_);
@@ -1684,16 +1731,19 @@ const ::system_proxy::worker::ProtectionSpace&
 AuthRequiredRequest::_Internal::protection_space(const AuthRequiredRequest* msg) {
   return *msg->protection_space_;
 }
-AuthRequiredRequest::AuthRequiredRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AuthRequiredRequest::AuthRequiredRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.AuthRequiredRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.AuthRequiredRequest)
 }
 AuthRequiredRequest::AuthRequiredRequest(const AuthRequiredRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_protection_space()) {
     protection_space_ = new ::system_proxy::worker::ProtectionSpace(*from.protection_space_);
   } else {
@@ -1703,34 +1753,38 @@ AuthRequiredRequest::AuthRequiredRequest(const AuthRequiredRequest& from)
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.AuthRequiredRequest)
 }
 
-void AuthRequiredRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AuthRequiredRequest_worker_5fcommon_2eproto.base);
-  ::memset(&protection_space_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&bad_cached_credentials_) -
-      reinterpret_cast<char*>(&protection_space_)) + sizeof(bad_cached_credentials_));
+inline void AuthRequiredRequest::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&protection_space_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bad_cached_credentials_) -
+    reinterpret_cast<char*>(&protection_space_)) + sizeof(bad_cached_credentials_));
 }
 
 AuthRequiredRequest::~AuthRequiredRequest() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.AuthRequiredRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AuthRequiredRequest::SharedDtor() {
+inline void AuthRequiredRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete protection_space_;
 }
 
+void AuthRequiredRequest::ArenaDtor(void* object) {
+  AuthRequiredRequest* _this = reinterpret_cast< AuthRequiredRequest* >(object);
+  (void)_this;
+}
+void AuthRequiredRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AuthRequiredRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AuthRequiredRequest& AuthRequiredRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AuthRequiredRequest_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AuthRequiredRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.AuthRequiredRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1741,57 +1795,61 @@ void AuthRequiredRequest::Clear() {
   }
   bad_cached_credentials_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AuthRequiredRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .system_proxy.worker.ProtectionSpace protection_space = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_protection_space(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bool bad_cached_credentials = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_bad_cached_credentials(&has_bits);
-          bad_cached_credentials_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          bad_cached_credentials_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AuthRequiredRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AuthRequiredRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.AuthRequiredRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1810,8 +1868,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.AuthRequiredRequest)
   return target;
@@ -1821,7 +1879,7 @@ size_t AuthRequiredRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.AuthRequiredRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1841,7 +1899,7 @@ size_t AuthRequiredRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1857,8 +1915,7 @@ void AuthRequiredRequest::CheckTypeAndMergeFrom(
 void AuthRequiredRequest::MergeFrom(const AuthRequiredRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.AuthRequiredRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1871,6 +1928,7 @@ void AuthRequiredRequest::MergeFrom(const AuthRequiredRequest& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AuthRequiredRequest::CopyFrom(const AuthRequiredRequest& from) {
@@ -1886,10 +1944,14 @@ bool AuthRequiredRequest::IsInitialized() const {
 
 void AuthRequiredRequest::InternalSwap(AuthRequiredRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(protection_space_, other->protection_space_);
-  swap(bad_cached_credentials_, other->bad_cached_credentials_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AuthRequiredRequest, bad_cached_credentials_)
+      + sizeof(AuthRequiredRequest::bad_cached_credentials_)
+      - PROTOBUF_FIELD_OFFSET(AuthRequiredRequest, protection_space_)>(
+          reinterpret_cast<char*>(&protection_space_),
+          reinterpret_cast<char*>(&other->protection_space_));
 }
 
 std::string AuthRequiredRequest::GetTypeName() const {
@@ -1899,11 +1961,8 @@ std::string AuthRequiredRequest::GetTypeName() const {
 
 // ===================================================================
 
-void WorkerRequest::InitAsDefaultInstance() {
-}
 class WorkerRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<WorkerRequest>()._has_bits_);
   static const ::system_proxy::worker::LogRequest& log_request(const WorkerRequest* msg);
   static const ::system_proxy::worker::ProxyResolutionRequest& proxy_resolution_request(const WorkerRequest* msg);
   static const ::system_proxy::worker::AuthRequiredRequest& auth_required_request(const WorkerRequest* msg);
@@ -1922,10 +1981,11 @@ WorkerRequest::_Internal::auth_required_request(const WorkerRequest* msg) {
   return *msg->params_.auth_required_request_;
 }
 void WorkerRequest::set_allocated_log_request(::system_proxy::worker::LogRequest* log_request) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (log_request) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::LogRequest>::GetOwningArena(log_request);
     if (message_arena != submessage_arena) {
       log_request = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, log_request, submessage_arena);
@@ -1936,10 +1996,11 @@ void WorkerRequest::set_allocated_log_request(::system_proxy::worker::LogRequest
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerRequest.log_request)
 }
 void WorkerRequest::set_allocated_proxy_resolution_request(::system_proxy::worker::ProxyResolutionRequest* proxy_resolution_request) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (proxy_resolution_request) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::ProxyResolutionRequest>::GetOwningArena(proxy_resolution_request);
     if (message_arena != submessage_arena) {
       proxy_resolution_request = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, proxy_resolution_request, submessage_arena);
@@ -1950,10 +2011,11 @@ void WorkerRequest::set_allocated_proxy_resolution_request(::system_proxy::worke
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerRequest.proxy_resolution_request)
 }
 void WorkerRequest::set_allocated_auth_required_request(::system_proxy::worker::AuthRequiredRequest* auth_required_request) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (auth_required_request) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::AuthRequiredRequest>::GetOwningArena(auth_required_request);
     if (message_arena != submessage_arena) {
       auth_required_request = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, auth_required_request, submessage_arena);
@@ -1963,16 +2025,18 @@ void WorkerRequest::set_allocated_auth_required_request(::system_proxy::worker::
   }
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerRequest.auth_required_request)
 }
-WorkerRequest::WorkerRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+WorkerRequest::WorkerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.WorkerRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.WorkerRequest)
 }
 WorkerRequest::WorkerRequest(const WorkerRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   clear_has_params();
   switch (from.params_case()) {
     case kLogRequest: {
@@ -1994,44 +2058,53 @@ WorkerRequest::WorkerRequest(const WorkerRequest& from)
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.WorkerRequest)
 }
 
-void WorkerRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WorkerRequest_worker_5fcommon_2eproto.base);
-  clear_has_params();
+inline void WorkerRequest::SharedCtor() {
+clear_has_params();
 }
 
 WorkerRequest::~WorkerRequest() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.WorkerRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void WorkerRequest::SharedDtor() {
+inline void WorkerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_params()) {
     clear_params();
   }
 }
 
+void WorkerRequest::ArenaDtor(void* object) {
+  WorkerRequest* _this = reinterpret_cast< WorkerRequest* >(object);
+  (void)_this;
+}
+void WorkerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WorkerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const WorkerRequest& WorkerRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WorkerRequest_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void WorkerRequest::clear_params() {
 // @@protoc_insertion_point(one_of_clear_start:system_proxy.worker.WorkerRequest)
   switch (params_case()) {
     case kLogRequest: {
-      delete params_.log_request_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.log_request_;
+      }
       break;
     }
     case kProxyResolutionRequest: {
-      delete params_.proxy_resolution_request_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.proxy_resolution_request_;
+      }
       break;
     }
     case kAuthRequiredRequest: {
-      delete params_.auth_required_request_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.auth_required_request_;
+      }
       break;
     }
     case PARAMS_NOT_SET: {
@@ -2044,67 +2117,71 @@ void WorkerRequest::clear_params() {
 
 void WorkerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.WorkerRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   clear_params();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* WorkerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
-      // optional .system_proxy.worker.LogRequest log_request = 1;
+      // .system_proxy.worker.LogRequest log_request = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_log_request(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.ProxyResolutionRequest proxy_resolution_request = 2;
+      // .system_proxy.worker.ProxyResolutionRequest proxy_resolution_request = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_proxy_resolution_request(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.AuthRequiredRequest auth_required_request = 3;
+      // .system_proxy.worker.AuthRequiredRequest auth_required_request = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_auth_required_request(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* WorkerRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* WorkerRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.WorkerRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (params_case()) {
@@ -2132,8 +2209,8 @@ failure:
     default: ;
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.WorkerRequest)
   return target;
@@ -2143,26 +2220,26 @@ size_t WorkerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.WorkerRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (params_case()) {
-    // optional .system_proxy.worker.LogRequest log_request = 1;
+    // .system_proxy.worker.LogRequest log_request = 1;
     case kLogRequest: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.log_request_);
       break;
     }
-    // optional .system_proxy.worker.ProxyResolutionRequest proxy_resolution_request = 2;
+    // .system_proxy.worker.ProxyResolutionRequest proxy_resolution_request = 2;
     case kProxyResolutionRequest: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.proxy_resolution_request_);
       break;
     }
-    // optional .system_proxy.worker.AuthRequiredRequest auth_required_request = 3;
+    // .system_proxy.worker.AuthRequiredRequest auth_required_request = 3;
     case kAuthRequiredRequest: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2174,7 +2251,7 @@ size_t WorkerRequest::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2190,8 +2267,7 @@ void WorkerRequest::CheckTypeAndMergeFrom(
 void WorkerRequest::MergeFrom(const WorkerRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.WorkerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.params_case()) {
@@ -2211,6 +2287,7 @@ void WorkerRequest::MergeFrom(const WorkerRequest& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void WorkerRequest::CopyFrom(const WorkerRequest& from) {
@@ -2226,8 +2303,7 @@ bool WorkerRequest::IsInitialized() const {
 
 void WorkerRequest::InternalSwap(WorkerRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(params_, other->params_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -2239,8 +2315,6 @@ std::string WorkerRequest::GetTypeName() const {
 
 // ===================================================================
 
-void KerberosConfig::InitAsDefaultInstance() {
-}
 class KerberosConfig::_Internal {
  public:
   using HasBits = decltype(std::declval<KerberosConfig>()._has_bits_);
@@ -2255,131 +2329,156 @@ class KerberosConfig::_Internal {
   }
 };
 
-KerberosConfig::KerberosConfig()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+KerberosConfig::KerberosConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.KerberosConfig)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.KerberosConfig)
 }
 KerberosConfig::KerberosConfig(const KerberosConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   krb5cc_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5cc_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5cc_path()) {
-    krb5cc_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_path_);
+    krb5cc_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5cc_path(), 
+      GetArenaForAllocation());
   }
   krb5conf_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf_path()) {
-    krb5conf_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_path_);
+    krb5conf_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf_path(), 
+      GetArenaForAllocation());
   }
   enabled_ = from.enabled_;
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.KerberosConfig)
 }
 
-void KerberosConfig::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KerberosConfig_worker_5fcommon_2eproto.base);
-  krb5cc_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  krb5conf_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  enabled_ = false;
+inline void KerberosConfig::SharedCtor() {
+krb5cc_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5cc_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+krb5conf_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+enabled_ = false;
 }
 
 KerberosConfig::~KerberosConfig() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.KerberosConfig)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void KerberosConfig::SharedDtor() {
+inline void KerberosConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   krb5cc_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   krb5conf_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void KerberosConfig::ArenaDtor(void* object) {
+  KerberosConfig* _this = reinterpret_cast< KerberosConfig* >(object);
+  (void)_this;
+}
+void KerberosConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void KerberosConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KerberosConfig& KerberosConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KerberosConfig_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void KerberosConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.KerberosConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      krb5cc_path_.ClearNonDefaultToEmptyNoArena();
+      krb5cc_path_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      krb5conf_path_.ClearNonDefaultToEmptyNoArena();
+      krb5conf_path_.ClearNonDefaultToEmpty();
     }
   }
   enabled_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* KerberosConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bool enabled = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_enabled(&has_bits);
-          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes krb5cc_path = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_krb5cc_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes krb5conf_path = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_krb5conf_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KerberosConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* KerberosConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.KerberosConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2402,8 +2501,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.KerberosConfig)
   return target;
@@ -2413,7 +2512,7 @@ size_t KerberosConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.KerberosConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2440,7 +2539,7 @@ size_t KerberosConfig::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2456,25 +2555,23 @@ void KerberosConfig::CheckTypeAndMergeFrom(
 void KerberosConfig::MergeFrom(const KerberosConfig& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.KerberosConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      krb5cc_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_path_);
+      _internal_set_krb5cc_path(from._internal_krb5cc_path());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      krb5conf_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_path_);
+      _internal_set_krb5conf_path(from._internal_krb5conf_path());
     }
     if (cached_has_bits & 0x00000004u) {
       enabled_ = from.enabled_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void KerberosConfig::CopyFrom(const KerberosConfig& from) {
@@ -2490,12 +2587,20 @@ bool KerberosConfig::IsInitialized() const {
 
 void KerberosConfig::InternalSwap(KerberosConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  krb5cc_path_.Swap(&other->krb5cc_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  krb5conf_path_.Swap(&other->krb5conf_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5cc_path_, lhs_arena,
+      &other->krb5cc_path_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_path_, lhs_arena,
+      &other->krb5conf_path_, rhs_arena
+  );
   swap(enabled_, other->enabled_);
 }
 
@@ -2506,87 +2611,91 @@ std::string KerberosConfig::GetTypeName() const {
 
 // ===================================================================
 
-void ClearUserCredentials::InitAsDefaultInstance() {
-}
 class ClearUserCredentials::_Internal {
  public:
-  using HasBits = decltype(std::declval<ClearUserCredentials>()._has_bits_);
 };
 
-ClearUserCredentials::ClearUserCredentials()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ClearUserCredentials::ClearUserCredentials(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.ClearUserCredentials)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.ClearUserCredentials)
 }
 ClearUserCredentials::ClearUserCredentials(const ClearUserCredentials& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.ClearUserCredentials)
 }
 
-void ClearUserCredentials::SharedCtor() {
+inline void ClearUserCredentials::SharedCtor() {
 }
 
 ClearUserCredentials::~ClearUserCredentials() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.ClearUserCredentials)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ClearUserCredentials::SharedDtor() {
+inline void ClearUserCredentials::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ClearUserCredentials::ArenaDtor(void* object) {
+  ClearUserCredentials* _this = reinterpret_cast< ClearUserCredentials* >(object);
+  (void)_this;
+}
+void ClearUserCredentials::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ClearUserCredentials::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ClearUserCredentials& ClearUserCredentials::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ClearUserCredentials_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ClearUserCredentials::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.ClearUserCredentials)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ClearUserCredentials::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ClearUserCredentials::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ClearUserCredentials::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.ClearUserCredentials)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.ClearUserCredentials)
   return target;
@@ -2596,12 +2705,12 @@ size_t ClearUserCredentials::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.ClearUserCredentials)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2617,10 +2726,10 @@ void ClearUserCredentials::CheckTypeAndMergeFrom(
 void ClearUserCredentials::MergeFrom(const ClearUserCredentials& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.ClearUserCredentials)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ClearUserCredentials::CopyFrom(const ClearUserCredentials& from) {
@@ -2636,8 +2745,7 @@ bool ClearUserCredentials::IsInitialized() const {
 
 void ClearUserCredentials::InternalSwap(ClearUserCredentials* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
 }
 
 std::string ClearUserCredentials::GetTypeName() const {
@@ -2647,11 +2755,8 @@ std::string ClearUserCredentials::GetTypeName() const {
 
 // ===================================================================
 
-void WorkerConfigs::InitAsDefaultInstance() {
-}
 class WorkerConfigs::_Internal {
  public:
-  using HasBits = decltype(std::declval<WorkerConfigs>()._has_bits_);
   static const ::system_proxy::worker::Credentials& credentials(const WorkerConfigs* msg);
   static const ::system_proxy::worker::SocketAddress& listening_address(const WorkerConfigs* msg);
   static const ::system_proxy::worker::ProxyResolutionReply& proxy_resolution_reply(const WorkerConfigs* msg);
@@ -2680,10 +2785,11 @@ WorkerConfigs::_Internal::clear_user_credentials(const WorkerConfigs* msg) {
   return *msg->params_.clear_user_credentials_;
 }
 void WorkerConfigs::set_allocated_credentials(::system_proxy::worker::Credentials* credentials) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (credentials) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::Credentials>::GetOwningArena(credentials);
     if (message_arena != submessage_arena) {
       credentials = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, credentials, submessage_arena);
@@ -2694,10 +2800,11 @@ void WorkerConfigs::set_allocated_credentials(::system_proxy::worker::Credential
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerConfigs.credentials)
 }
 void WorkerConfigs::set_allocated_listening_address(::system_proxy::worker::SocketAddress* listening_address) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (listening_address) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::SocketAddress>::GetOwningArena(listening_address);
     if (message_arena != submessage_arena) {
       listening_address = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, listening_address, submessage_arena);
@@ -2708,10 +2815,11 @@ void WorkerConfigs::set_allocated_listening_address(::system_proxy::worker::Sock
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerConfigs.listening_address)
 }
 void WorkerConfigs::set_allocated_proxy_resolution_reply(::system_proxy::worker::ProxyResolutionReply* proxy_resolution_reply) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (proxy_resolution_reply) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::ProxyResolutionReply>::GetOwningArena(proxy_resolution_reply);
     if (message_arena != submessage_arena) {
       proxy_resolution_reply = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, proxy_resolution_reply, submessage_arena);
@@ -2722,10 +2830,11 @@ void WorkerConfigs::set_allocated_proxy_resolution_reply(::system_proxy::worker:
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerConfigs.proxy_resolution_reply)
 }
 void WorkerConfigs::set_allocated_kerberos_config(::system_proxy::worker::KerberosConfig* kerberos_config) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (kerberos_config) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::KerberosConfig>::GetOwningArena(kerberos_config);
     if (message_arena != submessage_arena) {
       kerberos_config = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, kerberos_config, submessage_arena);
@@ -2736,10 +2845,11 @@ void WorkerConfigs::set_allocated_kerberos_config(::system_proxy::worker::Kerber
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerConfigs.kerberos_config)
 }
 void WorkerConfigs::set_allocated_clear_user_credentials(::system_proxy::worker::ClearUserCredentials* clear_user_credentials) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_params();
   if (clear_user_credentials) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::system_proxy::worker::ClearUserCredentials>::GetOwningArena(clear_user_credentials);
     if (message_arena != submessage_arena) {
       clear_user_credentials = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, clear_user_credentials, submessage_arena);
@@ -2749,16 +2859,18 @@ void WorkerConfigs::set_allocated_clear_user_credentials(::system_proxy::worker:
   }
   // @@protoc_insertion_point(field_set_allocated:system_proxy.worker.WorkerConfigs.clear_user_credentials)
 }
-WorkerConfigs::WorkerConfigs()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+WorkerConfigs::WorkerConfigs(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:system_proxy.worker.WorkerConfigs)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:system_proxy.worker.WorkerConfigs)
 }
 WorkerConfigs::WorkerConfigs(const WorkerConfigs& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   clear_has_params();
   switch (from.params_case()) {
     case kCredentials: {
@@ -2788,52 +2900,65 @@ WorkerConfigs::WorkerConfigs(const WorkerConfigs& from)
   // @@protoc_insertion_point(copy_constructor:system_proxy.worker.WorkerConfigs)
 }
 
-void WorkerConfigs::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WorkerConfigs_worker_5fcommon_2eproto.base);
-  clear_has_params();
+inline void WorkerConfigs::SharedCtor() {
+clear_has_params();
 }
 
 WorkerConfigs::~WorkerConfigs() {
   // @@protoc_insertion_point(destructor:system_proxy.worker.WorkerConfigs)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void WorkerConfigs::SharedDtor() {
+inline void WorkerConfigs::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_params()) {
     clear_params();
   }
 }
 
+void WorkerConfigs::ArenaDtor(void* object) {
+  WorkerConfigs* _this = reinterpret_cast< WorkerConfigs* >(object);
+  (void)_this;
+}
+void WorkerConfigs::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WorkerConfigs::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const WorkerConfigs& WorkerConfigs::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WorkerConfigs_worker_5fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void WorkerConfigs::clear_params() {
 // @@protoc_insertion_point(one_of_clear_start:system_proxy.worker.WorkerConfigs)
   switch (params_case()) {
     case kCredentials: {
-      delete params_.credentials_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.credentials_;
+      }
       break;
     }
     case kListeningAddress: {
-      delete params_.listening_address_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.listening_address_;
+      }
       break;
     }
     case kProxyResolutionReply: {
-      delete params_.proxy_resolution_reply_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.proxy_resolution_reply_;
+      }
       break;
     }
     case kKerberosConfig: {
-      delete params_.kerberos_config_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.kerberos_config_;
+      }
       break;
     }
     case kClearUserCredentials: {
-      delete params_.clear_user_credentials_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete params_.clear_user_credentials_;
+      }
       break;
     }
     case PARAMS_NOT_SET: {
@@ -2846,81 +2971,87 @@ void WorkerConfigs::clear_params() {
 
 void WorkerConfigs::Clear() {
 // @@protoc_insertion_point(message_clear_start:system_proxy.worker.WorkerConfigs)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   clear_params();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* WorkerConfigs::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
-      // optional .system_proxy.worker.Credentials credentials = 1;
+      // .system_proxy.worker.Credentials credentials = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_credentials(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.SocketAddress listening_address = 2;
+      // .system_proxy.worker.SocketAddress listening_address = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_listening_address(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.ProxyResolutionReply proxy_resolution_reply = 3;
+      // .system_proxy.worker.ProxyResolutionReply proxy_resolution_reply = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_proxy_resolution_reply(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.KerberosConfig kerberos_config = 4;
+      // .system_proxy.worker.KerberosConfig kerberos_config = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_kerberos_config(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .system_proxy.worker.ClearUserCredentials clear_user_credentials = 5;
+      // .system_proxy.worker.ClearUserCredentials clear_user_credentials = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_clear_user_credentials(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* WorkerConfigs::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* WorkerConfigs::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:system_proxy.worker.WorkerConfigs)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (params_case()) {
@@ -2962,8 +3093,8 @@ failure:
     default: ;
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:system_proxy.worker.WorkerConfigs)
   return target;
@@ -2973,40 +3104,40 @@ size_t WorkerConfigs::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:system_proxy.worker.WorkerConfigs)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (params_case()) {
-    // optional .system_proxy.worker.Credentials credentials = 1;
+    // .system_proxy.worker.Credentials credentials = 1;
     case kCredentials: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.credentials_);
       break;
     }
-    // optional .system_proxy.worker.SocketAddress listening_address = 2;
+    // .system_proxy.worker.SocketAddress listening_address = 2;
     case kListeningAddress: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.listening_address_);
       break;
     }
-    // optional .system_proxy.worker.ProxyResolutionReply proxy_resolution_reply = 3;
+    // .system_proxy.worker.ProxyResolutionReply proxy_resolution_reply = 3;
     case kProxyResolutionReply: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.proxy_resolution_reply_);
       break;
     }
-    // optional .system_proxy.worker.KerberosConfig kerberos_config = 4;
+    // .system_proxy.worker.KerberosConfig kerberos_config = 4;
     case kKerberosConfig: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *params_.kerberos_config_);
       break;
     }
-    // optional .system_proxy.worker.ClearUserCredentials clear_user_credentials = 5;
+    // .system_proxy.worker.ClearUserCredentials clear_user_credentials = 5;
     case kClearUserCredentials: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3018,7 +3149,7 @@ size_t WorkerConfigs::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -3034,8 +3165,7 @@ void WorkerConfigs::CheckTypeAndMergeFrom(
 void WorkerConfigs::MergeFrom(const WorkerConfigs& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:system_proxy.worker.WorkerConfigs)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.params_case()) {
@@ -3063,6 +3193,7 @@ void WorkerConfigs::MergeFrom(const WorkerConfigs& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void WorkerConfigs::CopyFrom(const WorkerConfigs& from) {
@@ -3078,8 +3209,7 @@ bool WorkerConfigs::IsInitialized() const {
 
 void WorkerConfigs::InternalSwap(WorkerConfigs* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(params_, other->params_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -3094,37 +3224,37 @@ std::string WorkerConfigs::GetTypeName() const {
 }  // namespace system_proxy
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::ProtectionSpace* Arena::CreateMaybeMessage< ::system_proxy::worker::ProtectionSpace >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::ProtectionSpace >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::ProtectionSpace >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::Credentials* Arena::CreateMaybeMessage< ::system_proxy::worker::Credentials >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::Credentials >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::Credentials >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::SocketAddress* Arena::CreateMaybeMessage< ::system_proxy::worker::SocketAddress >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::SocketAddress >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::SocketAddress >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::LogRequest* Arena::CreateMaybeMessage< ::system_proxy::worker::LogRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::LogRequest >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::LogRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::ProxyResolutionRequest* Arena::CreateMaybeMessage< ::system_proxy::worker::ProxyResolutionRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::ProxyResolutionRequest >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::ProxyResolutionRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::ProxyResolutionReply* Arena::CreateMaybeMessage< ::system_proxy::worker::ProxyResolutionReply >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::ProxyResolutionReply >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::ProxyResolutionReply >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::AuthRequiredRequest* Arena::CreateMaybeMessage< ::system_proxy::worker::AuthRequiredRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::AuthRequiredRequest >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::AuthRequiredRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::WorkerRequest* Arena::CreateMaybeMessage< ::system_proxy::worker::WorkerRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::WorkerRequest >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::WorkerRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::KerberosConfig* Arena::CreateMaybeMessage< ::system_proxy::worker::KerberosConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::KerberosConfig >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::KerberosConfig >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::ClearUserCredentials* Arena::CreateMaybeMessage< ::system_proxy::worker::ClearUserCredentials >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::ClearUserCredentials >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::ClearUserCredentials >(arena);
 }
 template<> PROTOBUF_NOINLINE ::system_proxy::worker::WorkerConfigs* Arena::CreateMaybeMessage< ::system_proxy::worker::WorkerConfigs >(Arena* arena) {
-  return Arena::CreateInternal< ::system_proxy::worker::WorkerConfigs >(arena);
+  return Arena::CreateMessageInternal< ::system_proxy::worker::WorkerConfigs >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -565,7 +565,7 @@ class NetworkDiagnosticsRoutines_GetResult_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRoutine(UserType* output) const {
+  [[nodiscard]] bool ReadRoutine(UserType* output) const {
     auto data_value = data_->routine;
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineType>(
         data_value, output);
@@ -594,7 +594,7 @@ class NetworkDiagnosticsRoutines_GetResult_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -647,7 +647,7 @@ class NetworkDiagnosticsRoutines_GetAllResults_ResponseParamsDataView {
       mojo::MapDataView<RoutineType, RoutineResultDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResults(UserType* output) {
+  [[nodiscard]] bool ReadResults(UserType* output) {
     
     auto* pointer = data_->results.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<::chromeos::network_diagnostics::mojom::RoutineType, ::chromeos::network_diagnostics::mojom::RoutineResultDataView>>(
@@ -690,7 +690,7 @@ class NetworkDiagnosticsRoutines_RunLanConnectivity_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -733,7 +733,7 @@ class NetworkDiagnosticsRoutines_RunSignalStrength_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -776,7 +776,7 @@ class NetworkDiagnosticsRoutines_RunGatewayCanBePinged_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -819,7 +819,7 @@ class NetworkDiagnosticsRoutines_RunHasSecureWiFiConnection_ResponseParamsDataVi
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -862,7 +862,7 @@ class NetworkDiagnosticsRoutines_RunDnsResolverPresent_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -905,7 +905,7 @@ class NetworkDiagnosticsRoutines_RunDnsLatency_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -948,7 +948,7 @@ class NetworkDiagnosticsRoutines_RunDnsResolution_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -991,7 +991,7 @@ class NetworkDiagnosticsRoutines_RunCaptivePortal_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1034,7 +1034,7 @@ class NetworkDiagnosticsRoutines_RunHttpFirewall_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1077,7 +1077,7 @@ class NetworkDiagnosticsRoutines_RunHttpsFirewall_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1120,7 +1120,7 @@ class NetworkDiagnosticsRoutines_RunHttpsLatency_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1147,7 +1147,7 @@ class NetworkDiagnosticsRoutines_RunVideoConferencing_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStunServerHostname(UserType* output) {
+  [[nodiscard]] bool ReadStunServerHostname(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -1184,7 +1184,7 @@ class NetworkDiagnosticsRoutines_RunVideoConferencing_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1227,7 +1227,7 @@ class NetworkDiagnosticsRoutines_RunArcHttp_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1270,7 +1270,7 @@ class NetworkDiagnosticsRoutines_RunArcPing_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(
@@ -1313,7 +1313,7 @@ class NetworkDiagnosticsRoutines_RunArcDnsResolution_ResponseParamsDataView {
       RoutineResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::network_diagnostics::mojom::RoutineResultDataView>(

@@ -11,107 +11,75 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MountCommand_ipc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnmountAllCommand_ipc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_ipc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnmountCommand_ipc_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace imageloader {
-class ImageCommandDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ImageCommand> _instance;
-  const ::imageloader::MountCommand* mount_command_;
-  const ::imageloader::UnmountAllCommand* unmount_all_command_;
-  const ::imageloader::UnmountCommand* unmount_command_;
-} _ImageCommand_default_instance_;
-class MountCommandDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MountCommand> _instance;
-} _MountCommand_default_instance_;
-class UnmountAllCommandDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UnmountAllCommand> _instance;
-} _UnmountAllCommand_default_instance_;
-class UnmountCommandDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UnmountCommand> _instance;
-} _UnmountCommand_default_instance_;
-class CommandResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CommandResponse> _instance;
-} _CommandResponse_default_instance_;
+constexpr ImageCommand::ImageCommand(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ImageCommandDefaultTypeInternal {
+  constexpr ImageCommandDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ImageCommandDefaultTypeInternal() {}
+  union {
+    ImageCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ImageCommandDefaultTypeInternal _ImageCommand_default_instance_;
+constexpr MountCommand::MountCommand(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : mount_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , table_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , fs_type_(1)
+{}
+struct MountCommandDefaultTypeInternal {
+  constexpr MountCommandDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~MountCommandDefaultTypeInternal() {}
+  union {
+    MountCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MountCommandDefaultTypeInternal _MountCommand_default_instance_;
+constexpr UnmountAllCommand::UnmountAllCommand(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : unmount_rootpath_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , dry_run_(true){}
+struct UnmountAllCommandDefaultTypeInternal {
+  constexpr UnmountAllCommandDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UnmountAllCommandDefaultTypeInternal() {}
+  union {
+    UnmountAllCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnmountAllCommandDefaultTypeInternal _UnmountAllCommand_default_instance_;
+constexpr UnmountCommand::UnmountCommand(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : unmount_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct UnmountCommandDefaultTypeInternal {
+  constexpr UnmountCommandDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~UnmountCommandDefaultTypeInternal() {}
+  union {
+    UnmountCommand _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UnmountCommandDefaultTypeInternal _UnmountCommand_default_instance_;
+constexpr CommandResponse::CommandResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : paths_()
+  , success_(false){}
+struct CommandResponseDefaultTypeInternal {
+  constexpr CommandResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CommandResponseDefaultTypeInternal() {}
+  union {
+    CommandResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CommandResponseDefaultTypeInternal _CommandResponse_default_instance_;
 }  // namespace imageloader
-static void InitDefaultsscc_info_CommandResponse_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::imageloader::_CommandResponse_default_instance_;
-    new (ptr) ::imageloader::CommandResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::imageloader::CommandResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommandResponse_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CommandResponse_ipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_ImageCommand_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::imageloader::_ImageCommand_default_instance_;
-    new (ptr) ::imageloader::ImageCommand();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::imageloader::ImageCommand::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ImageCommand_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_ImageCommand_ipc_2eproto}, {
-      &scc_info_MountCommand_ipc_2eproto.base,
-      &scc_info_UnmountAllCommand_ipc_2eproto.base,
-      &scc_info_UnmountCommand_ipc_2eproto.base,}};
-
-static void InitDefaultsscc_info_MountCommand_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::imageloader::_MountCommand_default_instance_;
-    new (ptr) ::imageloader::MountCommand();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::imageloader::MountCommand::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MountCommand_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MountCommand_ipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_UnmountAllCommand_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::imageloader::_UnmountAllCommand_default_instance_;
-    new (ptr) ::imageloader::UnmountAllCommand();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::imageloader::UnmountAllCommand::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnmountAllCommand_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UnmountAllCommand_ipc_2eproto}, {}};
-
-static void InitDefaultsscc_info_UnmountCommand_ipc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::imageloader::_UnmountCommand_default_instance_;
-    new (ptr) ::imageloader::UnmountCommand();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::imageloader::UnmountCommand::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnmountCommand_ipc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UnmountCommand_ipc_2eproto}, {}};
-
 namespace imageloader {
 bool MountCommand_FileSystem_IsValid(int value) {
   switch (value) {
@@ -155,7 +123,7 @@ const std::string& MountCommand_FileSystem_Name(
                      MountCommand_FileSystem_strings[idx].get();
 }
 bool MountCommand_FileSystem_Parse(
-    const std::string& name, MountCommand_FileSystem* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MountCommand_FileSystem* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       MountCommand_FileSystem_entries, 2, name, &int_value);
@@ -164,21 +132,18 @@ bool MountCommand_FileSystem_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr MountCommand_FileSystem MountCommand::SQUASH;
 constexpr MountCommand_FileSystem MountCommand::EXT4;
 constexpr MountCommand_FileSystem MountCommand::FileSystem_MIN;
 constexpr MountCommand_FileSystem MountCommand::FileSystem_MAX;
 constexpr int MountCommand::FileSystem_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void ImageCommand::InitAsDefaultInstance() {
-}
 class ImageCommand::_Internal {
  public:
-  using HasBits = decltype(std::declval<ImageCommand>()._has_bits_);
   static const ::imageloader::MountCommand& mount_command(const ImageCommand* msg);
   static const ::imageloader::UnmountAllCommand& unmount_all_command(const ImageCommand* msg);
   static const ::imageloader::UnmountCommand& unmount_command(const ImageCommand* msg);
@@ -197,10 +162,11 @@ ImageCommand::_Internal::unmount_command(const ImageCommand* msg) {
   return *msg->op_.unmount_command_;
 }
 void ImageCommand::set_allocated_mount_command(::imageloader::MountCommand* mount_command) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_op();
   if (mount_command) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::imageloader::MountCommand>::GetOwningArena(mount_command);
     if (message_arena != submessage_arena) {
       mount_command = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, mount_command, submessage_arena);
@@ -211,10 +177,11 @@ void ImageCommand::set_allocated_mount_command(::imageloader::MountCommand* moun
   // @@protoc_insertion_point(field_set_allocated:imageloader.ImageCommand.mount_command)
 }
 void ImageCommand::set_allocated_unmount_all_command(::imageloader::UnmountAllCommand* unmount_all_command) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_op();
   if (unmount_all_command) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::imageloader::UnmountAllCommand>::GetOwningArena(unmount_all_command);
     if (message_arena != submessage_arena) {
       unmount_all_command = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, unmount_all_command, submessage_arena);
@@ -225,10 +192,11 @@ void ImageCommand::set_allocated_unmount_all_command(::imageloader::UnmountAllCo
   // @@protoc_insertion_point(field_set_allocated:imageloader.ImageCommand.unmount_all_command)
 }
 void ImageCommand::set_allocated_unmount_command(::imageloader::UnmountCommand* unmount_command) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_op();
   if (unmount_command) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::imageloader::UnmountCommand>::GetOwningArena(unmount_command);
     if (message_arena != submessage_arena) {
       unmount_command = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, unmount_command, submessage_arena);
@@ -238,16 +206,18 @@ void ImageCommand::set_allocated_unmount_command(::imageloader::UnmountCommand* 
   }
   // @@protoc_insertion_point(field_set_allocated:imageloader.ImageCommand.unmount_command)
 }
-ImageCommand::ImageCommand()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ImageCommand::ImageCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:imageloader.ImageCommand)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:imageloader.ImageCommand)
 }
 ImageCommand::ImageCommand(const ImageCommand& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   clear_has_op();
   switch (from.op_case()) {
     case kMountCommand: {
@@ -269,44 +239,53 @@ ImageCommand::ImageCommand(const ImageCommand& from)
   // @@protoc_insertion_point(copy_constructor:imageloader.ImageCommand)
 }
 
-void ImageCommand::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ImageCommand_ipc_2eproto.base);
-  clear_has_op();
+inline void ImageCommand::SharedCtor() {
+clear_has_op();
 }
 
 ImageCommand::~ImageCommand() {
   // @@protoc_insertion_point(destructor:imageloader.ImageCommand)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ImageCommand::SharedDtor() {
+inline void ImageCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_op()) {
     clear_op();
   }
 }
 
+void ImageCommand::ArenaDtor(void* object) {
+  ImageCommand* _this = reinterpret_cast< ImageCommand* >(object);
+  (void)_this;
+}
+void ImageCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ImageCommand::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ImageCommand& ImageCommand::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ImageCommand_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ImageCommand::clear_op() {
 // @@protoc_insertion_point(one_of_clear_start:imageloader.ImageCommand)
   switch (op_case()) {
     case kMountCommand: {
-      delete op_.mount_command_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete op_.mount_command_;
+      }
       break;
     }
     case kUnmountAllCommand: {
-      delete op_.unmount_all_command_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete op_.unmount_all_command_;
+      }
       break;
     }
     case kUnmountCommand: {
-      delete op_.unmount_command_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete op_.unmount_command_;
+      }
       break;
     }
     case OP_NOT_SET: {
@@ -319,67 +298,71 @@ void ImageCommand::clear_op() {
 
 void ImageCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:imageloader.ImageCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   clear_op();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ImageCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
-      // optional .imageloader.MountCommand mount_command = 1;
+      // .imageloader.MountCommand mount_command = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_mount_command(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .imageloader.UnmountAllCommand unmount_all_command = 2;
+      // .imageloader.UnmountAllCommand unmount_all_command = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_unmount_all_command(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      // optional .imageloader.UnmountCommand unmount_command = 3;
+      // .imageloader.UnmountCommand unmount_command = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_unmount_command(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ImageCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ImageCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:imageloader.ImageCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (op_case()) {
@@ -407,8 +390,8 @@ failure:
     default: ;
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:imageloader.ImageCommand)
   return target;
@@ -418,26 +401,26 @@ size_t ImageCommand::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:imageloader.ImageCommand)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   switch (op_case()) {
-    // optional .imageloader.MountCommand mount_command = 1;
+    // .imageloader.MountCommand mount_command = 1;
     case kMountCommand: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *op_.mount_command_);
       break;
     }
-    // optional .imageloader.UnmountAllCommand unmount_all_command = 2;
+    // .imageloader.UnmountAllCommand unmount_all_command = 2;
     case kUnmountAllCommand: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *op_.unmount_all_command_);
       break;
     }
-    // optional .imageloader.UnmountCommand unmount_command = 3;
+    // .imageloader.UnmountCommand unmount_command = 3;
     case kUnmountCommand: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -449,7 +432,7 @@ size_t ImageCommand::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -465,8 +448,7 @@ void ImageCommand::CheckTypeAndMergeFrom(
 void ImageCommand::MergeFrom(const ImageCommand& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:imageloader.ImageCommand)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   switch (from.op_case()) {
@@ -486,6 +468,7 @@ void ImageCommand::MergeFrom(const ImageCommand& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ImageCommand::CopyFrom(const ImageCommand& from) {
@@ -498,20 +481,20 @@ void ImageCommand::CopyFrom(const ImageCommand& from) {
 bool ImageCommand::IsInitialized() const {
   switch (op_case()) {
     case kMountCommand: {
-      if (has_mount_command()) {
-        if (!this->mount_command().IsInitialized()) return false;
+      if (_internal_has_mount_command()) {
+        if (!op_.mount_command_->IsInitialized()) return false;
       }
       break;
     }
     case kUnmountAllCommand: {
-      if (has_unmount_all_command()) {
-        if (!this->unmount_all_command().IsInitialized()) return false;
+      if (_internal_has_unmount_all_command()) {
+        if (!op_.unmount_all_command_->IsInitialized()) return false;
       }
       break;
     }
     case kUnmountCommand: {
-      if (has_unmount_command()) {
-        if (!this->unmount_command().IsInitialized()) return false;
+      if (_internal_has_unmount_command()) {
+        if (!op_.unmount_command_->IsInitialized()) return false;
       }
       break;
     }
@@ -524,8 +507,7 @@ bool ImageCommand::IsInitialized() const {
 
 void ImageCommand::InternalSwap(ImageCommand* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(op_, other->op_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
@@ -537,8 +519,6 @@ std::string ImageCommand::GetTypeName() const {
 
 // ===================================================================
 
-void MountCommand::InitAsDefaultInstance() {
-}
 class MountCommand::_Internal {
  public:
   using HasBits = decltype(std::declval<MountCommand>()._has_bits_);
@@ -551,137 +531,165 @@ class MountCommand::_Internal {
   static void set_has_fs_type(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
 };
 
-MountCommand::MountCommand()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+MountCommand::MountCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:imageloader.MountCommand)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:imageloader.MountCommand)
 }
 MountCommand::MountCommand(const MountCommand& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   mount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    mount_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mount_path()) {
-    mount_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mount_path_);
+    mount_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mount_path(), 
+      GetArenaForAllocation());
   }
   table_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    table_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_table()) {
-    table_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.table_);
+    table_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_table(), 
+      GetArenaForAllocation());
   }
   fs_type_ = from.fs_type_;
   // @@protoc_insertion_point(copy_constructor:imageloader.MountCommand)
 }
 
-void MountCommand::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MountCommand_ipc_2eproto.base);
-  mount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  table_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fs_type_ = 1;
+inline void MountCommand::SharedCtor() {
+mount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  mount_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+table_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  table_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+fs_type_ = 1;
 }
 
 MountCommand::~MountCommand() {
   // @@protoc_insertion_point(destructor:imageloader.MountCommand)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void MountCommand::SharedDtor() {
+inline void MountCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   mount_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   table_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void MountCommand::ArenaDtor(void* object) {
+  MountCommand* _this = reinterpret_cast< MountCommand* >(object);
+  (void)_this;
+}
+void MountCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void MountCommand::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const MountCommand& MountCommand::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MountCommand_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void MountCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:imageloader.MountCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      mount_path_.ClearNonDefaultToEmptyNoArena();
+      mount_path_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      table_.ClearNonDefaultToEmptyNoArena();
+      table_.ClearNonDefaultToEmpty();
     }
     fs_type_ = 1;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* MountCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required string mount_path = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_mount_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // required string table = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_table();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // required .imageloader.MountCommand.FileSystem fs_type = 4 [default = SQUASH];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::imageloader::MountCommand_FileSystem_IsValid(val))) {
             _internal_set_fs_type(static_cast<::imageloader::MountCommand_FileSystem>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* MountCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* MountCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:imageloader.MountCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -705,8 +713,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:imageloader.MountCommand)
   return target;
@@ -760,12 +768,12 @@ size_t MountCommand::ByteSizeLong() const {
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -781,25 +789,23 @@ void MountCommand::CheckTypeAndMergeFrom(
 void MountCommand::MergeFrom(const MountCommand& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:imageloader.MountCommand)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      mount_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mount_path_);
+      _internal_set_mount_path(from._internal_mount_path());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      table_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.table_);
+      _internal_set_table(from._internal_table());
     }
     if (cached_has_bits & 0x00000004u) {
       fs_type_ = from.fs_type_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void MountCommand::CopyFrom(const MountCommand& from) {
@@ -810,18 +816,26 @@ void MountCommand::CopyFrom(const MountCommand& from) {
 }
 
 bool MountCommand::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void MountCommand::InternalSwap(MountCommand* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  mount_path_.Swap(&other->mount_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  table_.Swap(&other->table_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &mount_path_, lhs_arena,
+      &other->mount_path_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &table_, lhs_arena,
+      &other->table_, rhs_arena
+  );
   swap(fs_type_, other->fs_type_);
 }
 
@@ -832,8 +846,6 @@ std::string MountCommand::GetTypeName() const {
 
 // ===================================================================
 
-void UnmountAllCommand::InitAsDefaultInstance() {
-}
 class UnmountAllCommand::_Internal {
  public:
   using HasBits = decltype(std::declval<UnmountAllCommand>()._has_bits_);
@@ -843,116 +855,136 @@ class UnmountAllCommand::_Internal {
   static void set_has_unmount_rootpath(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
 };
 
-UnmountAllCommand::UnmountAllCommand()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UnmountAllCommand::UnmountAllCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:imageloader.UnmountAllCommand)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:imageloader.UnmountAllCommand)
 }
 UnmountAllCommand::UnmountAllCommand(const UnmountAllCommand& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   unmount_rootpath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    unmount_rootpath_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_unmount_rootpath()) {
-    unmount_rootpath_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unmount_rootpath_);
+    unmount_rootpath_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unmount_rootpath(), 
+      GetArenaForAllocation());
   }
   dry_run_ = from.dry_run_;
   // @@protoc_insertion_point(copy_constructor:imageloader.UnmountAllCommand)
 }
 
-void UnmountAllCommand::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnmountAllCommand_ipc_2eproto.base);
-  unmount_rootpath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  dry_run_ = true;
+inline void UnmountAllCommand::SharedCtor() {
+unmount_rootpath_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  unmount_rootpath_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+dry_run_ = true;
 }
 
 UnmountAllCommand::~UnmountAllCommand() {
   // @@protoc_insertion_point(destructor:imageloader.UnmountAllCommand)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UnmountAllCommand::SharedDtor() {
+inline void UnmountAllCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   unmount_rootpath_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void UnmountAllCommand::ArenaDtor(void* object) {
+  UnmountAllCommand* _this = reinterpret_cast< UnmountAllCommand* >(object);
+  (void)_this;
+}
+void UnmountAllCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnmountAllCommand::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UnmountAllCommand& UnmountAllCommand::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UnmountAllCommand_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UnmountAllCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:imageloader.UnmountAllCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      unmount_rootpath_.ClearNonDefaultToEmptyNoArena();
+      unmount_rootpath_.ClearNonDefaultToEmpty();
     }
     dry_run_ = true;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UnmountAllCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required bool dry_run = 5 [default = true];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_dry_run(&has_bits);
-          dry_run_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dry_run_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // required string unmount_rootpath = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_unmount_rootpath();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UnmountAllCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UnmountAllCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:imageloader.UnmountAllCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -969,8 +1001,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:imageloader.UnmountAllCommand)
   return target;
@@ -1010,12 +1042,12 @@ size_t UnmountAllCommand::ByteSizeLong() const {
   } else {
     total_size += RequiredFieldsByteSizeFallback();
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1031,21 +1063,20 @@ void UnmountAllCommand::CheckTypeAndMergeFrom(
 void UnmountAllCommand::MergeFrom(const UnmountAllCommand& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:imageloader.UnmountAllCommand)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      unmount_rootpath_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unmount_rootpath_);
+      _internal_set_unmount_rootpath(from._internal_unmount_rootpath());
     }
     if (cached_has_bits & 0x00000002u) {
       dry_run_ = from.dry_run_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UnmountAllCommand::CopyFrom(const UnmountAllCommand& from) {
@@ -1056,16 +1087,21 @@ void UnmountAllCommand::CopyFrom(const UnmountAllCommand& from) {
 }
 
 bool UnmountAllCommand::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void UnmountAllCommand::InternalSwap(UnmountAllCommand* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  unmount_rootpath_.Swap(&other->unmount_rootpath_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &unmount_rootpath_, lhs_arena,
+      &other->unmount_rootpath_, rhs_arena
+  );
   swap(dry_run_, other->dry_run_);
 }
 
@@ -1076,111 +1112,128 @@ std::string UnmountAllCommand::GetTypeName() const {
 
 // ===================================================================
 
-void UnmountCommand::InitAsDefaultInstance() {
-}
 class UnmountCommand::_Internal {
  public:
   using HasBits = decltype(std::declval<UnmountCommand>()._has_bits_);
   static void set_has_unmount_path(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
 };
 
-UnmountCommand::UnmountCommand()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+UnmountCommand::UnmountCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:imageloader.UnmountCommand)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:imageloader.UnmountCommand)
 }
 UnmountCommand::UnmountCommand(const UnmountCommand& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   unmount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    unmount_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_unmount_path()) {
-    unmount_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unmount_path_);
+    unmount_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_unmount_path(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:imageloader.UnmountCommand)
 }
 
-void UnmountCommand::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnmountCommand_ipc_2eproto.base);
-  unmount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void UnmountCommand::SharedCtor() {
+unmount_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  unmount_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 UnmountCommand::~UnmountCommand() {
   // @@protoc_insertion_point(destructor:imageloader.UnmountCommand)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void UnmountCommand::SharedDtor() {
+inline void UnmountCommand::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   unmount_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void UnmountCommand::ArenaDtor(void* object) {
+  UnmountCommand* _this = reinterpret_cast< UnmountCommand* >(object);
+  (void)_this;
+}
+void UnmountCommand::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnmountCommand::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const UnmountCommand& UnmountCommand::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UnmountCommand_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void UnmountCommand::Clear() {
 // @@protoc_insertion_point(message_clear_start:imageloader.UnmountCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    unmount_path_.ClearNonDefaultToEmptyNoArena();
+    unmount_path_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* UnmountCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required string unmount_path = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_unmount_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* UnmountCommand::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* UnmountCommand::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:imageloader.UnmountCommand)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1191,8 +1244,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:imageloader.UnmountCommand)
   return target;
@@ -1208,12 +1261,12 @@ size_t UnmountCommand::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_unmount_path());
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1229,14 +1282,13 @@ void UnmountCommand::CheckTypeAndMergeFrom(
 void UnmountCommand::MergeFrom(const UnmountCommand& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:imageloader.UnmountCommand)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_unmount_path()) {
-    _has_bits_[0] |= 0x00000001u;
-    unmount_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.unmount_path_);
+    _internal_set_unmount_path(from._internal_unmount_path());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void UnmountCommand::CopyFrom(const UnmountCommand& from) {
@@ -1247,16 +1299,21 @@ void UnmountCommand::CopyFrom(const UnmountCommand& from) {
 }
 
 bool UnmountCommand::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void UnmountCommand::InternalSwap(UnmountCommand* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  unmount_path_.Swap(&other->unmount_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &unmount_path_, lhs_arena,
+      &other->unmount_path_, rhs_arena
+  );
 }
 
 std::string UnmountCommand::GetTypeName() const {
@@ -1266,84 +1323,92 @@ std::string UnmountCommand::GetTypeName() const {
 
 // ===================================================================
 
-void CommandResponse::InitAsDefaultInstance() {
-}
 class CommandResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<CommandResponse>()._has_bits_);
   static void set_has_success(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
 };
 
-CommandResponse::CommandResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+CommandResponse::CommandResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  paths_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:imageloader.CommandResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:imageloader.CommandResponse)
 }
 CommandResponse::CommandResponse(const CommandResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       paths_(from.paths_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:imageloader.CommandResponse)
 }
 
-void CommandResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CommandResponse_ipc_2eproto.base);
-  success_ = false;
+inline void CommandResponse::SharedCtor() {
+success_ = false;
 }
 
 CommandResponse::~CommandResponse() {
   // @@protoc_insertion_point(destructor:imageloader.CommandResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void CommandResponse::SharedDtor() {
+inline void CommandResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void CommandResponse::ArenaDtor(void* object) {
+  CommandResponse* _this = reinterpret_cast< CommandResponse* >(object);
+  (void)_this;
+}
+void CommandResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CommandResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CommandResponse& CommandResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CommandResponse_ipc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CommandResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:imageloader.CommandResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   paths_.Clear();
   success_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* CommandResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // required bool success = 1 [default = false];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_success(&has_bits);
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string paths = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1352,33 +1417,37 @@ const char* CommandResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* CommandResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* CommandResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:imageloader.CommandResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1395,8 +1464,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:imageloader.CommandResponse)
   return target;
@@ -1410,7 +1479,7 @@ size_t CommandResponse::ByteSizeLong() const {
   if (_internal_has_success()) {
     total_size += 1 + 1;
   }
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1423,7 +1492,7 @@ size_t CommandResponse::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1439,14 +1508,14 @@ void CommandResponse::CheckTypeAndMergeFrom(
 void CommandResponse::MergeFrom(const CommandResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:imageloader.CommandResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   paths_.MergeFrom(from.paths_);
   if (from._internal_has_success()) {
     _internal_set_success(from._internal_success());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void CommandResponse::CopyFrom(const CommandResponse& from) {
@@ -1457,13 +1526,13 @@ void CommandResponse::CopyFrom(const CommandResponse& from) {
 }
 
 bool CommandResponse::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   return true;
 }
 
 void CommandResponse::InternalSwap(CommandResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   paths_.InternalSwap(&other->paths_);
   swap(success_, other->success_);
@@ -1478,19 +1547,19 @@ std::string CommandResponse::GetTypeName() const {
 }  // namespace imageloader
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::imageloader::ImageCommand* Arena::CreateMaybeMessage< ::imageloader::ImageCommand >(Arena* arena) {
-  return Arena::CreateInternal< ::imageloader::ImageCommand >(arena);
+  return Arena::CreateMessageInternal< ::imageloader::ImageCommand >(arena);
 }
 template<> PROTOBUF_NOINLINE ::imageloader::MountCommand* Arena::CreateMaybeMessage< ::imageloader::MountCommand >(Arena* arena) {
-  return Arena::CreateInternal< ::imageloader::MountCommand >(arena);
+  return Arena::CreateMessageInternal< ::imageloader::MountCommand >(arena);
 }
 template<> PROTOBUF_NOINLINE ::imageloader::UnmountAllCommand* Arena::CreateMaybeMessage< ::imageloader::UnmountAllCommand >(Arena* arena) {
-  return Arena::CreateInternal< ::imageloader::UnmountAllCommand >(arena);
+  return Arena::CreateMessageInternal< ::imageloader::UnmountAllCommand >(arena);
 }
 template<> PROTOBUF_NOINLINE ::imageloader::UnmountCommand* Arena::CreateMaybeMessage< ::imageloader::UnmountCommand >(Arena* arena) {
-  return Arena::CreateInternal< ::imageloader::UnmountCommand >(arena);
+  return Arena::CreateMessageInternal< ::imageloader::UnmountCommand >(arena);
 }
 template<> PROTOBUF_NOINLINE ::imageloader::CommandResponse* Arena::CreateMaybeMessage< ::imageloader::CommandResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::imageloader::CommandResponse >(arena);
+  return Arena::CreateMessageInternal< ::imageloader::CommandResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

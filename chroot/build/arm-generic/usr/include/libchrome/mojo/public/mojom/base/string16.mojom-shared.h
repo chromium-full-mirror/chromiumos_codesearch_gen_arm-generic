@@ -82,7 +82,7 @@ class String16DataView {
       mojo::ArrayDataView<uint16_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = data_->data.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint16_t>>(
@@ -109,7 +109,7 @@ class BigString16DataView {
       ::mojo_base::mojom::BigBufferDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadData(UserType* output) {
+  [[nodiscard]] bool ReadData(UserType* output) {
     
     auto* pointer = !data_->data.is_null() ? &data_->data : nullptr;
     return mojo::internal::Deserialize<::mojo_base::mojom::BigBufferDataView>(

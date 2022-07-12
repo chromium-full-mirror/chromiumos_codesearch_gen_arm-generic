@@ -73,7 +73,7 @@ class GraphExecutor_Execute_ParamsDataView {
       mojo::MapDataView<mojo::StringDataView, ::chromeos::machine_learning::mojom::TensorDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputs(UserType* output) {
+  [[nodiscard]] bool ReadInputs(UserType* output) {
     
     auto* pointer = data_->inputs.Get();
     return mojo::internal::Deserialize<mojo::MapDataView<mojo::StringDataView, ::chromeos::machine_learning::mojom::TensorDataView>>(
@@ -83,7 +83,7 @@ class GraphExecutor_Execute_ParamsDataView {
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputNames(UserType* output) {
+  [[nodiscard]] bool ReadOutputNames(UserType* output) {
     
     auto* pointer = data_->output_names.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
@@ -107,7 +107,7 @@ class GraphExecutor_Execute_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) const {
+  [[nodiscard]] bool ReadResult(UserType* output) const {
     auto data_value = data_->result;
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::ExecuteResult>(
         data_value, output);
@@ -120,7 +120,7 @@ class GraphExecutor_Execute_ResponseParamsDataView {
       mojo::ArrayDataView<::chromeos::machine_learning::mojom::TensorDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadOutputs(UserType* output) {
+  [[nodiscard]] bool ReadOutputs(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<

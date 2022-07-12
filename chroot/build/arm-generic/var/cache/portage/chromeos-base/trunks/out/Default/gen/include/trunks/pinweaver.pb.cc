@@ -11,277 +11,232 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PinWeaverAuthLogEntry_pinweaver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverTimestamp_pinweaver_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_pinweaver_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ValidPcrValue_pinweaver_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace trunks {
-class PinWeaverInsertLeafLogEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverInsertLeafLogEntry> _instance;
-} _PinWeaverInsertLeafLogEntry_default_instance_;
-class PinWeaverRemoveLeafLogEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverRemoveLeafLogEntry> _instance;
-} _PinWeaverRemoveLeafLogEntry_default_instance_;
-class PinWeaverResetTreeLogEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverResetTreeLogEntry> _instance;
-} _PinWeaverResetTreeLogEntry_default_instance_;
-class PinWeaverTimestampDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverTimestamp> _instance;
-} _PinWeaverTimestamp_default_instance_;
-class PinWeaverAuthLogEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverAuthLogEntry> _instance;
-} _PinWeaverAuthLogEntry_default_instance_;
-class PinWeaverLogEntryDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PinWeaverLogEntry> _instance;
-  const ::trunks::PinWeaverInsertLeafLogEntry* insert_leaf_;
-  const ::trunks::PinWeaverRemoveLeafLogEntry* remove_leaf_;
-  const ::trunks::PinWeaverAuthLogEntry* auth_;
-  const ::trunks::PinWeaverResetTreeLogEntry* reset_tree_;
-} _PinWeaverLogEntry_default_instance_;
-class ValidPcrValueDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ValidPcrValue> _instance;
-} _ValidPcrValue_default_instance_;
-class ValidPcrCriteriaDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ValidPcrCriteria> _instance;
-} _ValidPcrCriteria_default_instance_;
+constexpr PinWeaverInsertLeafLogEntry::PinWeaverInsertLeafLogEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hmac_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct PinWeaverInsertLeafLogEntryDefaultTypeInternal {
+  constexpr PinWeaverInsertLeafLogEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverInsertLeafLogEntryDefaultTypeInternal() {}
+  union {
+    PinWeaverInsertLeafLogEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverInsertLeafLogEntryDefaultTypeInternal _PinWeaverInsertLeafLogEntry_default_instance_;
+constexpr PinWeaverRemoveLeafLogEntry::PinWeaverRemoveLeafLogEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PinWeaverRemoveLeafLogEntryDefaultTypeInternal {
+  constexpr PinWeaverRemoveLeafLogEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverRemoveLeafLogEntryDefaultTypeInternal() {}
+  union {
+    PinWeaverRemoveLeafLogEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverRemoveLeafLogEntryDefaultTypeInternal _PinWeaverRemoveLeafLogEntry_default_instance_;
+constexpr PinWeaverResetTreeLogEntry::PinWeaverResetTreeLogEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PinWeaverResetTreeLogEntryDefaultTypeInternal {
+  constexpr PinWeaverResetTreeLogEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverResetTreeLogEntryDefaultTypeInternal() {}
+  union {
+    PinWeaverResetTreeLogEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverResetTreeLogEntryDefaultTypeInternal _PinWeaverResetTreeLogEntry_default_instance_;
+constexpr PinWeaverTimestamp::PinWeaverTimestamp(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : timer_value_(uint64_t{0u})
+  , boot_count_(0u){}
+struct PinWeaverTimestampDefaultTypeInternal {
+  constexpr PinWeaverTimestampDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverTimestampDefaultTypeInternal() {}
+  union {
+    PinWeaverTimestamp _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverTimestampDefaultTypeInternal _PinWeaverTimestamp_default_instance_;
+constexpr PinWeaverAuthLogEntry::PinWeaverAuthLogEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : timestamp_(nullptr)
+  , return_code_(0u){}
+struct PinWeaverAuthLogEntryDefaultTypeInternal {
+  constexpr PinWeaverAuthLogEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverAuthLogEntryDefaultTypeInternal() {}
+  union {
+    PinWeaverAuthLogEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverAuthLogEntryDefaultTypeInternal _PinWeaverAuthLogEntry_default_instance_;
+constexpr PinWeaverLogEntry::PinWeaverLogEntry(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , label_(uint64_t{0u})
+  , _oneof_case_{}{}
+struct PinWeaverLogEntryDefaultTypeInternal {
+  constexpr PinWeaverLogEntryDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PinWeaverLogEntryDefaultTypeInternal() {}
+  union {
+    PinWeaverLogEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PinWeaverLogEntryDefaultTypeInternal _PinWeaverLogEntry_default_instance_;
+constexpr ValidPcrValue::ValidPcrValue(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : bitmask_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , digest_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ValidPcrValueDefaultTypeInternal {
+  constexpr ValidPcrValueDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ValidPcrValueDefaultTypeInternal() {}
+  union {
+    ValidPcrValue _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ValidPcrValueDefaultTypeInternal _ValidPcrValue_default_instance_;
+constexpr ValidPcrCriteria::ValidPcrCriteria(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : valid_pcr_values_(){}
+struct ValidPcrCriteriaDefaultTypeInternal {
+  constexpr ValidPcrCriteriaDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ValidPcrCriteriaDefaultTypeInternal() {}
+  union {
+    ValidPcrCriteria _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ValidPcrCriteriaDefaultTypeInternal _ValidPcrCriteria_default_instance_;
 }  // namespace trunks
-static void InitDefaultsscc_info_PinWeaverAuthLogEntry_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverAuthLogEntry_default_instance_;
-    new (ptr) ::trunks::PinWeaverAuthLogEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverAuthLogEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PinWeaverAuthLogEntry_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_PinWeaverAuthLogEntry_pinweaver_2eproto}, {
-      &scc_info_PinWeaverTimestamp_pinweaver_2eproto.base,}};
-
-static void InitDefaultsscc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverInsertLeafLogEntry_default_instance_;
-    new (ptr) ::trunks::PinWeaverInsertLeafLogEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverInsertLeafLogEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto}, {}};
-
-static void InitDefaultsscc_info_PinWeaverLogEntry_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverLogEntry_default_instance_;
-    new (ptr) ::trunks::PinWeaverLogEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverLogEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_PinWeaverLogEntry_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_PinWeaverLogEntry_pinweaver_2eproto}, {
-      &scc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto.base,
-      &scc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto.base,
-      &scc_info_PinWeaverAuthLogEntry_pinweaver_2eproto.base,
-      &scc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto.base,}};
-
-static void InitDefaultsscc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverRemoveLeafLogEntry_default_instance_;
-    new (ptr) ::trunks::PinWeaverRemoveLeafLogEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverRemoveLeafLogEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto}, {}};
-
-static void InitDefaultsscc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverResetTreeLogEntry_default_instance_;
-    new (ptr) ::trunks::PinWeaverResetTreeLogEntry();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverResetTreeLogEntry::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto}, {}};
-
-static void InitDefaultsscc_info_PinWeaverTimestamp_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_PinWeaverTimestamp_default_instance_;
-    new (ptr) ::trunks::PinWeaverTimestamp();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::PinWeaverTimestamp::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PinWeaverTimestamp_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PinWeaverTimestamp_pinweaver_2eproto}, {}};
-
-static void InitDefaultsscc_info_ValidPcrCriteria_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_ValidPcrCriteria_default_instance_;
-    new (ptr) ::trunks::ValidPcrCriteria();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::ValidPcrCriteria::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ValidPcrCriteria_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ValidPcrCriteria_pinweaver_2eproto}, {
-      &scc_info_ValidPcrValue_pinweaver_2eproto.base,}};
-
-static void InitDefaultsscc_info_ValidPcrValue_pinweaver_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::trunks::_ValidPcrValue_default_instance_;
-    new (ptr) ::trunks::ValidPcrValue();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::trunks::ValidPcrValue::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ValidPcrValue_pinweaver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ValidPcrValue_pinweaver_2eproto}, {}};
-
 namespace trunks {
 
 // ===================================================================
 
-void PinWeaverInsertLeafLogEntry::InitAsDefaultInstance() {
-}
 class PinWeaverInsertLeafLogEntry::_Internal {
  public:
 };
 
-PinWeaverInsertLeafLogEntry::PinWeaverInsertLeafLogEntry()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverInsertLeafLogEntry::PinWeaverInsertLeafLogEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverInsertLeafLogEntry)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverInsertLeafLogEntry)
 }
 PinWeaverInsertLeafLogEntry::PinWeaverInsertLeafLogEntry(const PinWeaverInsertLeafLogEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   hmac_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    hmac_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_hmac().empty()) {
-    hmac_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.hmac_);
+    hmac_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_hmac(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverInsertLeafLogEntry)
 }
 
-void PinWeaverInsertLeafLogEntry::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto.base);
-  hmac_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void PinWeaverInsertLeafLogEntry::SharedCtor() {
+hmac_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  hmac_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 PinWeaverInsertLeafLogEntry::~PinWeaverInsertLeafLogEntry() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverInsertLeafLogEntry)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverInsertLeafLogEntry::SharedDtor() {
+inline void PinWeaverInsertLeafLogEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   hmac_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void PinWeaverInsertLeafLogEntry::ArenaDtor(void* object) {
+  PinWeaverInsertLeafLogEntry* _this = reinterpret_cast< PinWeaverInsertLeafLogEntry* >(object);
+  (void)_this;
+}
+void PinWeaverInsertLeafLogEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverInsertLeafLogEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverInsertLeafLogEntry& PinWeaverInsertLeafLogEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverInsertLeafLogEntry_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverInsertLeafLogEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverInsertLeafLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  hmac_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  hmac_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverInsertLeafLogEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes hmac = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_hmac();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverInsertLeafLogEntry::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverInsertLeafLogEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverInsertLeafLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes hmac = 1;
-  if (this->hmac().size() > 0) {
+  if (!this->_internal_hmac().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_hmac(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverInsertLeafLogEntry)
   return target;
@@ -291,19 +246,19 @@ size_t PinWeaverInsertLeafLogEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverInsertLeafLogEntry)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes hmac = 1;
-  if (this->hmac().size() > 0) {
+  if (!this->_internal_hmac().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_hmac());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -319,14 +274,13 @@ void PinWeaverInsertLeafLogEntry::CheckTypeAndMergeFrom(
 void PinWeaverInsertLeafLogEntry::MergeFrom(const PinWeaverInsertLeafLogEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverInsertLeafLogEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.hmac().size() > 0) {
-
-    hmac_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.hmac_);
+  if (!from._internal_hmac().empty()) {
+    _internal_set_hmac(from._internal_hmac());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverInsertLeafLogEntry::CopyFrom(const PinWeaverInsertLeafLogEntry& from) {
@@ -342,9 +296,14 @@ bool PinWeaverInsertLeafLogEntry::IsInitialized() const {
 
 void PinWeaverInsertLeafLogEntry::InternalSwap(PinWeaverInsertLeafLogEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  hmac_.Swap(&other->hmac_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &hmac_, lhs_arena,
+      &other->hmac_, rhs_arena
+  );
 }
 
 std::string PinWeaverInsertLeafLogEntry::GetTypeName() const {
@@ -354,84 +313,91 @@ std::string PinWeaverInsertLeafLogEntry::GetTypeName() const {
 
 // ===================================================================
 
-void PinWeaverRemoveLeafLogEntry::InitAsDefaultInstance() {
-}
 class PinWeaverRemoveLeafLogEntry::_Internal {
  public:
 };
 
-PinWeaverRemoveLeafLogEntry::PinWeaverRemoveLeafLogEntry()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverRemoveLeafLogEntry::PinWeaverRemoveLeafLogEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverRemoveLeafLogEntry)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverRemoveLeafLogEntry)
 }
 PinWeaverRemoveLeafLogEntry::PinWeaverRemoveLeafLogEntry(const PinWeaverRemoveLeafLogEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverRemoveLeafLogEntry)
 }
 
-void PinWeaverRemoveLeafLogEntry::SharedCtor() {
+inline void PinWeaverRemoveLeafLogEntry::SharedCtor() {
 }
 
 PinWeaverRemoveLeafLogEntry::~PinWeaverRemoveLeafLogEntry() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverRemoveLeafLogEntry)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverRemoveLeafLogEntry::SharedDtor() {
+inline void PinWeaverRemoveLeafLogEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PinWeaverRemoveLeafLogEntry::ArenaDtor(void* object) {
+  PinWeaverRemoveLeafLogEntry* _this = reinterpret_cast< PinWeaverRemoveLeafLogEntry* >(object);
+  (void)_this;
+}
+void PinWeaverRemoveLeafLogEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverRemoveLeafLogEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverRemoveLeafLogEntry& PinWeaverRemoveLeafLogEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverRemoveLeafLogEntry_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverRemoveLeafLogEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverRemoveLeafLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverRemoveLeafLogEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverRemoveLeafLogEntry::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverRemoveLeafLogEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverRemoveLeafLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverRemoveLeafLogEntry)
   return target;
@@ -441,12 +407,12 @@ size_t PinWeaverRemoveLeafLogEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverRemoveLeafLogEntry)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -462,10 +428,10 @@ void PinWeaverRemoveLeafLogEntry::CheckTypeAndMergeFrom(
 void PinWeaverRemoveLeafLogEntry::MergeFrom(const PinWeaverRemoveLeafLogEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverRemoveLeafLogEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverRemoveLeafLogEntry::CopyFrom(const PinWeaverRemoveLeafLogEntry& from) {
@@ -481,7 +447,7 @@ bool PinWeaverRemoveLeafLogEntry::IsInitialized() const {
 
 void PinWeaverRemoveLeafLogEntry::InternalSwap(PinWeaverRemoveLeafLogEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
 }
 
 std::string PinWeaverRemoveLeafLogEntry::GetTypeName() const {
@@ -491,84 +457,91 @@ std::string PinWeaverRemoveLeafLogEntry::GetTypeName() const {
 
 // ===================================================================
 
-void PinWeaverResetTreeLogEntry::InitAsDefaultInstance() {
-}
 class PinWeaverResetTreeLogEntry::_Internal {
  public:
 };
 
-PinWeaverResetTreeLogEntry::PinWeaverResetTreeLogEntry()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverResetTreeLogEntry::PinWeaverResetTreeLogEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverResetTreeLogEntry)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverResetTreeLogEntry)
 }
 PinWeaverResetTreeLogEntry::PinWeaverResetTreeLogEntry(const PinWeaverResetTreeLogEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverResetTreeLogEntry)
 }
 
-void PinWeaverResetTreeLogEntry::SharedCtor() {
+inline void PinWeaverResetTreeLogEntry::SharedCtor() {
 }
 
 PinWeaverResetTreeLogEntry::~PinWeaverResetTreeLogEntry() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverResetTreeLogEntry)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverResetTreeLogEntry::SharedDtor() {
+inline void PinWeaverResetTreeLogEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PinWeaverResetTreeLogEntry::ArenaDtor(void* object) {
+  PinWeaverResetTreeLogEntry* _this = reinterpret_cast< PinWeaverResetTreeLogEntry* >(object);
+  (void)_this;
+}
+void PinWeaverResetTreeLogEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverResetTreeLogEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverResetTreeLogEntry& PinWeaverResetTreeLogEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverResetTreeLogEntry_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverResetTreeLogEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverResetTreeLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverResetTreeLogEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverResetTreeLogEntry::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverResetTreeLogEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverResetTreeLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverResetTreeLogEntry)
   return target;
@@ -578,12 +551,12 @@ size_t PinWeaverResetTreeLogEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverResetTreeLogEntry)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -599,10 +572,10 @@ void PinWeaverResetTreeLogEntry::CheckTypeAndMergeFrom(
 void PinWeaverResetTreeLogEntry::MergeFrom(const PinWeaverResetTreeLogEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverResetTreeLogEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverResetTreeLogEntry::CopyFrom(const PinWeaverResetTreeLogEntry& from) {
@@ -618,7 +591,7 @@ bool PinWeaverResetTreeLogEntry::IsInitialized() const {
 
 void PinWeaverResetTreeLogEntry::InternalSwap(PinWeaverResetTreeLogEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
 }
 
 std::string PinWeaverResetTreeLogEntry::GetTypeName() const {
@@ -628,124 +601,134 @@ std::string PinWeaverResetTreeLogEntry::GetTypeName() const {
 
 // ===================================================================
 
-void PinWeaverTimestamp::InitAsDefaultInstance() {
-}
 class PinWeaverTimestamp::_Internal {
  public:
 };
 
-PinWeaverTimestamp::PinWeaverTimestamp()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverTimestamp::PinWeaverTimestamp(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverTimestamp)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverTimestamp)
 }
 PinWeaverTimestamp::PinWeaverTimestamp(const PinWeaverTimestamp& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&timer_value_, &from.timer_value_,
     static_cast<size_t>(reinterpret_cast<char*>(&boot_count_) -
     reinterpret_cast<char*>(&timer_value_)) + sizeof(boot_count_));
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverTimestamp)
 }
 
-void PinWeaverTimestamp::SharedCtor() {
-  ::memset(&timer_value_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&boot_count_) -
-      reinterpret_cast<char*>(&timer_value_)) + sizeof(boot_count_));
+inline void PinWeaverTimestamp::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&timer_value_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&boot_count_) -
+    reinterpret_cast<char*>(&timer_value_)) + sizeof(boot_count_));
 }
 
 PinWeaverTimestamp::~PinWeaverTimestamp() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverTimestamp)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverTimestamp::SharedDtor() {
+inline void PinWeaverTimestamp::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void PinWeaverTimestamp::ArenaDtor(void* object) {
+  PinWeaverTimestamp* _this = reinterpret_cast< PinWeaverTimestamp* >(object);
+  (void)_this;
+}
+void PinWeaverTimestamp::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverTimestamp::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverTimestamp& PinWeaverTimestamp::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverTimestamp_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverTimestamp::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverTimestamp)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&timer_value_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&boot_count_) -
       reinterpret_cast<char*>(&timer_value_)) + sizeof(boot_count_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverTimestamp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // uint32 boot_count = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          boot_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          boot_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint64 timer_value = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          timer_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          timer_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverTimestamp::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverTimestamp::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverTimestamp)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 boot_count = 1;
-  if (this->boot_count() != 0) {
+  if (this->_internal_boot_count() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_boot_count(), target);
   }
 
   // uint64 timer_value = 2;
-  if (this->timer_value() != 0) {
+  if (this->_internal_timer_value() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_timer_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverTimestamp)
   return target;
@@ -755,26 +738,22 @@ size_t PinWeaverTimestamp::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverTimestamp)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // uint64 timer_value = 2;
-  if (this->timer_value() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_timer_value());
+  if (this->_internal_timer_value() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_timer_value());
   }
 
   // uint32 boot_count = 1;
-  if (this->boot_count() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_boot_count());
+  if (this->_internal_boot_count() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_boot_count());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -790,16 +769,16 @@ void PinWeaverTimestamp::CheckTypeAndMergeFrom(
 void PinWeaverTimestamp::MergeFrom(const PinWeaverTimestamp& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverTimestamp)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.timer_value() != 0) {
+  if (from._internal_timer_value() != 0) {
     _internal_set_timer_value(from._internal_timer_value());
   }
-  if (from.boot_count() != 0) {
+  if (from._internal_boot_count() != 0) {
     _internal_set_boot_count(from._internal_boot_count());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverTimestamp::CopyFrom(const PinWeaverTimestamp& from) {
@@ -815,9 +794,13 @@ bool PinWeaverTimestamp::IsInitialized() const {
 
 void PinWeaverTimestamp::InternalSwap(PinWeaverTimestamp* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(timer_value_, other->timer_value_);
-  swap(boot_count_, other->boot_count_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PinWeaverTimestamp, boot_count_)
+      + sizeof(PinWeaverTimestamp::boot_count_)
+      - PROTOBUF_FIELD_OFFSET(PinWeaverTimestamp, timer_value_)>(
+          reinterpret_cast<char*>(&timer_value_),
+          reinterpret_cast<char*>(&other->timer_value_));
 }
 
 std::string PinWeaverTimestamp::GetTypeName() const {
@@ -827,10 +810,6 @@ std::string PinWeaverTimestamp::GetTypeName() const {
 
 // ===================================================================
 
-void PinWeaverAuthLogEntry::InitAsDefaultInstance() {
-  ::trunks::_PinWeaverAuthLogEntry_default_instance_._instance.get_mutable()->timestamp_ = const_cast< ::trunks::PinWeaverTimestamp*>(
-      ::trunks::PinWeaverTimestamp::internal_default_instance());
-}
 class PinWeaverAuthLogEntry::_Internal {
  public:
   static const ::trunks::PinWeaverTimestamp& timestamp(const PinWeaverAuthLogEntry* msg);
@@ -840,15 +819,18 @@ const ::trunks::PinWeaverTimestamp&
 PinWeaverAuthLogEntry::_Internal::timestamp(const PinWeaverAuthLogEntry* msg) {
   return *msg->timestamp_;
 }
-PinWeaverAuthLogEntry::PinWeaverAuthLogEntry()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverAuthLogEntry::PinWeaverAuthLogEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverAuthLogEntry)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverAuthLogEntry)
 }
 PinWeaverAuthLogEntry::PinWeaverAuthLogEntry(const PinWeaverAuthLogEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_timestamp()) {
     timestamp_ = new ::trunks::PinWeaverTimestamp(*from.timestamp_);
   } else {
@@ -858,94 +840,102 @@ PinWeaverAuthLogEntry::PinWeaverAuthLogEntry(const PinWeaverAuthLogEntry& from)
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverAuthLogEntry)
 }
 
-void PinWeaverAuthLogEntry::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PinWeaverAuthLogEntry_pinweaver_2eproto.base);
-  ::memset(&timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&return_code_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(return_code_));
+inline void PinWeaverAuthLogEntry::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&return_code_) -
+    reinterpret_cast<char*>(&timestamp_)) + sizeof(return_code_));
 }
 
 PinWeaverAuthLogEntry::~PinWeaverAuthLogEntry() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverAuthLogEntry)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverAuthLogEntry::SharedDtor() {
+inline void PinWeaverAuthLogEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete timestamp_;
 }
 
+void PinWeaverAuthLogEntry::ArenaDtor(void* object) {
+  PinWeaverAuthLogEntry* _this = reinterpret_cast< PinWeaverAuthLogEntry* >(object);
+  (void)_this;
+}
+void PinWeaverAuthLogEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverAuthLogEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverAuthLogEntry& PinWeaverAuthLogEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverAuthLogEntry_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverAuthLogEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverAuthLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && timestamp_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && timestamp_ != nullptr) {
     delete timestamp_;
   }
   timestamp_ = nullptr;
   return_code_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverAuthLogEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .trunks.PinWeaverTimestamp timestamp = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_timestamp(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint32 return_code = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          return_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          return_code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverAuthLogEntry::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverAuthLogEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverAuthLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .trunks.PinWeaverTimestamp timestamp = 1;
-  if (this->has_timestamp()) {
+  if (this->_internal_has_timestamp()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -953,14 +943,14 @@ failure:
   }
 
   // uint32 return_code = 2;
-  if (this->return_code() != 0) {
+  if (this->_internal_return_code() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_return_code(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverAuthLogEntry)
   return target;
@@ -970,26 +960,24 @@ size_t PinWeaverAuthLogEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverAuthLogEntry)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .trunks.PinWeaverTimestamp timestamp = 1;
-  if (this->has_timestamp()) {
+  if (this->_internal_has_timestamp()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *timestamp_);
   }
 
   // uint32 return_code = 2;
-  if (this->return_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_return_code());
+  if (this->_internal_return_code() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_return_code());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1005,16 +993,16 @@ void PinWeaverAuthLogEntry::CheckTypeAndMergeFrom(
 void PinWeaverAuthLogEntry::MergeFrom(const PinWeaverAuthLogEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverAuthLogEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_timestamp()) {
+  if (from._internal_has_timestamp()) {
     _internal_mutable_timestamp()->::trunks::PinWeaverTimestamp::MergeFrom(from._internal_timestamp());
   }
-  if (from.return_code() != 0) {
+  if (from._internal_return_code() != 0) {
     _internal_set_return_code(from._internal_return_code());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverAuthLogEntry::CopyFrom(const PinWeaverAuthLogEntry& from) {
@@ -1030,9 +1018,13 @@ bool PinWeaverAuthLogEntry::IsInitialized() const {
 
 void PinWeaverAuthLogEntry::InternalSwap(PinWeaverAuthLogEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(timestamp_, other->timestamp_);
-  swap(return_code_, other->return_code_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PinWeaverAuthLogEntry, return_code_)
+      + sizeof(PinWeaverAuthLogEntry::return_code_)
+      - PROTOBUF_FIELD_OFFSET(PinWeaverAuthLogEntry, timestamp_)>(
+          reinterpret_cast<char*>(&timestamp_),
+          reinterpret_cast<char*>(&other->timestamp_));
 }
 
 std::string PinWeaverAuthLogEntry::GetTypeName() const {
@@ -1042,8 +1034,6 @@ std::string PinWeaverAuthLogEntry::GetTypeName() const {
 
 // ===================================================================
 
-void PinWeaverLogEntry::InitAsDefaultInstance() {
-}
 class PinWeaverLogEntry::_Internal {
  public:
   static const ::trunks::PinWeaverInsertLeafLogEntry& insert_leaf(const PinWeaverLogEntry* msg);
@@ -1069,10 +1059,11 @@ PinWeaverLogEntry::_Internal::reset_tree(const PinWeaverLogEntry* msg) {
   return *msg->type_.reset_tree_;
 }
 void PinWeaverLogEntry::set_allocated_insert_leaf(::trunks::PinWeaverInsertLeafLogEntry* insert_leaf) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_type();
   if (insert_leaf) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::trunks::PinWeaverInsertLeafLogEntry>::GetOwningArena(insert_leaf);
     if (message_arena != submessage_arena) {
       insert_leaf = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, insert_leaf, submessage_arena);
@@ -1083,10 +1074,11 @@ void PinWeaverLogEntry::set_allocated_insert_leaf(::trunks::PinWeaverInsertLeafL
   // @@protoc_insertion_point(field_set_allocated:trunks.PinWeaverLogEntry.insert_leaf)
 }
 void PinWeaverLogEntry::set_allocated_remove_leaf(::trunks::PinWeaverRemoveLeafLogEntry* remove_leaf) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_type();
   if (remove_leaf) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::trunks::PinWeaverRemoveLeafLogEntry>::GetOwningArena(remove_leaf);
     if (message_arena != submessage_arena) {
       remove_leaf = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, remove_leaf, submessage_arena);
@@ -1097,10 +1089,11 @@ void PinWeaverLogEntry::set_allocated_remove_leaf(::trunks::PinWeaverRemoveLeafL
   // @@protoc_insertion_point(field_set_allocated:trunks.PinWeaverLogEntry.remove_leaf)
 }
 void PinWeaverLogEntry::set_allocated_auth(::trunks::PinWeaverAuthLogEntry* auth) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_type();
   if (auth) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::trunks::PinWeaverAuthLogEntry>::GetOwningArena(auth);
     if (message_arena != submessage_arena) {
       auth = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, auth, submessage_arena);
@@ -1111,10 +1104,11 @@ void PinWeaverLogEntry::set_allocated_auth(::trunks::PinWeaverAuthLogEntry* auth
   // @@protoc_insertion_point(field_set_allocated:trunks.PinWeaverLogEntry.auth)
 }
 void PinWeaverLogEntry::set_allocated_reset_tree(::trunks::PinWeaverResetTreeLogEntry* reset_tree) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_type();
   if (reset_tree) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::trunks::PinWeaverResetTreeLogEntry>::GetOwningArena(reset_tree);
     if (message_arena != submessage_arena) {
       reset_tree = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, reset_tree, submessage_arena);
@@ -1124,18 +1118,25 @@ void PinWeaverLogEntry::set_allocated_reset_tree(::trunks::PinWeaverResetTreeLog
   }
   // @@protoc_insertion_point(field_set_allocated:trunks.PinWeaverLogEntry.reset_tree)
 }
-PinWeaverLogEntry::PinWeaverLogEntry()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+PinWeaverLogEntry::PinWeaverLogEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.PinWeaverLogEntry)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.PinWeaverLogEntry)
 }
 PinWeaverLogEntry::PinWeaverLogEntry(const PinWeaverLogEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    root_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_root().empty()) {
-    root_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.root_);
+    root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_root(), 
+      GetArenaForAllocation());
   }
   label_ = from.label_;
   clear_has_type();
@@ -1163,51 +1164,65 @@ PinWeaverLogEntry::PinWeaverLogEntry(const PinWeaverLogEntry& from)
   // @@protoc_insertion_point(copy_constructor:trunks.PinWeaverLogEntry)
 }
 
-void PinWeaverLogEntry::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PinWeaverLogEntry_pinweaver_2eproto.base);
-  root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  label_ = PROTOBUF_ULONGLONG(0);
-  clear_has_type();
+inline void PinWeaverLogEntry::SharedCtor() {
+root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  root_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+label_ = uint64_t{0u};
+clear_has_type();
 }
 
 PinWeaverLogEntry::~PinWeaverLogEntry() {
   // @@protoc_insertion_point(destructor:trunks.PinWeaverLogEntry)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void PinWeaverLogEntry::SharedDtor() {
+inline void PinWeaverLogEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   root_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (has_type()) {
     clear_type();
   }
 }
 
+void PinWeaverLogEntry::ArenaDtor(void* object) {
+  PinWeaverLogEntry* _this = reinterpret_cast< PinWeaverLogEntry* >(object);
+  (void)_this;
+}
+void PinWeaverLogEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PinWeaverLogEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PinWeaverLogEntry& PinWeaverLogEntry::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PinWeaverLogEntry_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void PinWeaverLogEntry::clear_type() {
 // @@protoc_insertion_point(one_of_clear_start:trunks.PinWeaverLogEntry)
   switch (type_case()) {
     case kInsertLeaf: {
-      delete type_.insert_leaf_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete type_.insert_leaf_;
+      }
       break;
     }
     case kRemoveLeaf: {
-      delete type_.remove_leaf_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete type_.remove_leaf_;
+      }
       break;
     }
     case kAuth: {
-      delete type_.auth_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete type_.auth_;
+      }
       break;
     }
     case kResetTree: {
-      delete type_.reset_tree_;
+      if (GetArenaForAllocation() == nullptr) {
+        delete type_.reset_tree_;
+      }
       break;
     }
     case TYPE_NOT_SET: {
@@ -1220,100 +1235,108 @@ void PinWeaverLogEntry::clear_type() {
 
 void PinWeaverLogEntry::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.PinWeaverLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  root_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  label_ = PROTOBUF_ULONGLONG(0);
+  root_.ClearToEmpty();
+  label_ = uint64_t{0u};
   clear_type();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* PinWeaverLogEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes root = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_root();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // uint64 label = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          label_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          label_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .trunks.PinWeaverInsertLeafLogEntry insert_leaf = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_insert_leaf(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .trunks.PinWeaverRemoveLeafLogEntry remove_leaf = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_remove_leaf(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .trunks.PinWeaverAuthLogEntry auth = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_auth(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .trunks.PinWeaverResetTreeLogEntry reset_tree = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_reset_tree(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PinWeaverLogEntry::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* PinWeaverLogEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.PinWeaverLogEntry)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes root = 1;
-  if (this->root().size() > 0) {
+  if (!this->_internal_root().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_root(), target);
   }
 
   // uint64 label = 2;
-  if (this->label() != 0) {
+  if (this->_internal_label() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_label(), target);
   }
@@ -1351,8 +1374,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.PinWeaverLogEntry)
   return target;
@@ -1362,22 +1385,20 @@ size_t PinWeaverLogEntry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.PinWeaverLogEntry)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes root = 1;
-  if (this->root().size() > 0) {
+  if (!this->_internal_root().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_root());
   }
 
   // uint64 label = 2;
-  if (this->label() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_label());
+  if (this->_internal_label() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_label());
   }
 
   switch (type_case()) {
@@ -1414,7 +1435,7 @@ size_t PinWeaverLogEntry::ByteSizeLong() const {
     }
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1430,15 +1451,13 @@ void PinWeaverLogEntry::CheckTypeAndMergeFrom(
 void PinWeaverLogEntry::MergeFrom(const PinWeaverLogEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.PinWeaverLogEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.root().size() > 0) {
-
-    root_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.root_);
+  if (!from._internal_root().empty()) {
+    _internal_set_root(from._internal_root());
   }
-  if (from.label() != 0) {
+  if (from._internal_label() != 0) {
     _internal_set_label(from._internal_label());
   }
   switch (from.type_case()) {
@@ -1462,6 +1481,7 @@ void PinWeaverLogEntry::MergeFrom(const PinWeaverLogEntry& from) {
       break;
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void PinWeaverLogEntry::CopyFrom(const PinWeaverLogEntry& from) {
@@ -1477,9 +1497,14 @@ bool PinWeaverLogEntry::IsInitialized() const {
 
 void PinWeaverLogEntry::InternalSwap(PinWeaverLogEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  root_.Swap(&other->root_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &root_, lhs_arena,
+      &other->root_, rhs_arena
+  );
   swap(label_, other->label_);
   swap(type_, other->type_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
@@ -1492,126 +1517,148 @@ std::string PinWeaverLogEntry::GetTypeName() const {
 
 // ===================================================================
 
-void ValidPcrValue::InitAsDefaultInstance() {
-}
 class ValidPcrValue::_Internal {
  public:
 };
 
-ValidPcrValue::ValidPcrValue()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ValidPcrValue::ValidPcrValue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.ValidPcrValue)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.ValidPcrValue)
 }
 ValidPcrValue::ValidPcrValue(const ValidPcrValue& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   bitmask_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    bitmask_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_bitmask().empty()) {
-    bitmask_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.bitmask_);
+    bitmask_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_bitmask(), 
+      GetArenaForAllocation());
   }
   digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    digest_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_digest().empty()) {
-    digest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.digest_);
+    digest_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_digest(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:trunks.ValidPcrValue)
 }
 
-void ValidPcrValue::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ValidPcrValue_pinweaver_2eproto.base);
-  bitmask_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void ValidPcrValue::SharedCtor() {
+bitmask_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  bitmask_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  digest_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 ValidPcrValue::~ValidPcrValue() {
   // @@protoc_insertion_point(destructor:trunks.ValidPcrValue)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ValidPcrValue::SharedDtor() {
+inline void ValidPcrValue::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   bitmask_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   digest_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ValidPcrValue::ArenaDtor(void* object) {
+  ValidPcrValue* _this = reinterpret_cast< ValidPcrValue* >(object);
+  (void)_this;
+}
+void ValidPcrValue::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ValidPcrValue::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ValidPcrValue& ValidPcrValue::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ValidPcrValue_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ValidPcrValue::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.ValidPcrValue)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  bitmask_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  digest_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  bitmask_.ClearToEmpty();
+  digest_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ValidPcrValue::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes bitmask = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_bitmask();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string digest = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_digest();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ValidPcrValue::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ValidPcrValue::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.ValidPcrValue)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes bitmask = 1;
-  if (this->bitmask().size() > 0) {
+  if (!this->_internal_bitmask().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_bitmask(), target);
   }
 
   // string digest = 2;
-  if (this->digest().size() > 0) {
+  if (!this->_internal_digest().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_digest().data(), static_cast<int>(this->_internal_digest().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -1621,8 +1668,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.ValidPcrValue)
   return target;
@@ -1632,26 +1679,26 @@ size_t ValidPcrValue::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.ValidPcrValue)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes bitmask = 1;
-  if (this->bitmask().size() > 0) {
+  if (!this->_internal_bitmask().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_bitmask());
   }
 
   // string digest = 2;
-  if (this->digest().size() > 0) {
+  if (!this->_internal_digest().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_digest());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1667,18 +1714,16 @@ void ValidPcrValue::CheckTypeAndMergeFrom(
 void ValidPcrValue::MergeFrom(const ValidPcrValue& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.ValidPcrValue)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.bitmask().size() > 0) {
-
-    bitmask_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.bitmask_);
+  if (!from._internal_bitmask().empty()) {
+    _internal_set_bitmask(from._internal_bitmask());
   }
-  if (from.digest().size() > 0) {
-
-    digest_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.digest_);
+  if (!from._internal_digest().empty()) {
+    _internal_set_digest(from._internal_digest());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ValidPcrValue::CopyFrom(const ValidPcrValue& from) {
@@ -1694,11 +1739,19 @@ bool ValidPcrValue::IsInitialized() const {
 
 void ValidPcrValue::InternalSwap(ValidPcrValue* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  bitmask_.Swap(&other->bitmask_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  digest_.Swap(&other->digest_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &bitmask_, lhs_arena,
+      &other->bitmask_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &digest_, lhs_arena,
+      &other->digest_, rhs_arena
+  );
 }
 
 std::string ValidPcrValue::GetTypeName() const {
@@ -1708,66 +1761,70 @@ std::string ValidPcrValue::GetTypeName() const {
 
 // ===================================================================
 
-void ValidPcrCriteria::InitAsDefaultInstance() {
-}
 class ValidPcrCriteria::_Internal {
  public:
 };
 
-ValidPcrCriteria::ValidPcrCriteria()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ValidPcrCriteria::ValidPcrCriteria(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  valid_pcr_values_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:trunks.ValidPcrCriteria)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:trunks.ValidPcrCriteria)
 }
 ValidPcrCriteria::ValidPcrCriteria(const ValidPcrCriteria& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       valid_pcr_values_(from.valid_pcr_values_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:trunks.ValidPcrCriteria)
 }
 
-void ValidPcrCriteria::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ValidPcrCriteria_pinweaver_2eproto.base);
+inline void ValidPcrCriteria::SharedCtor() {
 }
 
 ValidPcrCriteria::~ValidPcrCriteria() {
   // @@protoc_insertion_point(destructor:trunks.ValidPcrCriteria)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ValidPcrCriteria::SharedDtor() {
+inline void ValidPcrCriteria::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ValidPcrCriteria::ArenaDtor(void* object) {
+  ValidPcrCriteria* _this = reinterpret_cast< ValidPcrCriteria* >(object);
+  (void)_this;
+}
+void ValidPcrCriteria::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ValidPcrCriteria::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ValidPcrCriteria& ValidPcrCriteria::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ValidPcrCriteria_pinweaver_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ValidPcrCriteria::Clear() {
 // @@protoc_insertion_point(message_clear_start:trunks.ValidPcrCriteria)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   valid_pcr_values_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ValidPcrCriteria::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .trunks.ValidPcrValue valid_pcr_values = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1775,32 +1832,36 @@ const char* ValidPcrCriteria::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ValidPcrCriteria::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ValidPcrCriteria::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:trunks.ValidPcrCriteria)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .trunks.ValidPcrValue valid_pcr_values = 1;
@@ -1812,8 +1873,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:trunks.ValidPcrCriteria)
   return target;
@@ -1823,7 +1884,7 @@ size_t ValidPcrCriteria::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:trunks.ValidPcrCriteria)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1835,7 +1896,7 @@ size_t ValidPcrCriteria::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1851,11 +1912,11 @@ void ValidPcrCriteria::CheckTypeAndMergeFrom(
 void ValidPcrCriteria::MergeFrom(const ValidPcrCriteria& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:trunks.ValidPcrCriteria)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   valid_pcr_values_.MergeFrom(from.valid_pcr_values_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ValidPcrCriteria::CopyFrom(const ValidPcrCriteria& from) {
@@ -1871,7 +1932,7 @@ bool ValidPcrCriteria::IsInitialized() const {
 
 void ValidPcrCriteria::InternalSwap(ValidPcrCriteria* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   valid_pcr_values_.InternalSwap(&other->valid_pcr_values_);
 }
 
@@ -1884,28 +1945,28 @@ std::string ValidPcrCriteria::GetTypeName() const {
 }  // namespace trunks
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverInsertLeafLogEntry* Arena::CreateMaybeMessage< ::trunks::PinWeaverInsertLeafLogEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverInsertLeafLogEntry >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverInsertLeafLogEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverRemoveLeafLogEntry* Arena::CreateMaybeMessage< ::trunks::PinWeaverRemoveLeafLogEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverRemoveLeafLogEntry >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverRemoveLeafLogEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverResetTreeLogEntry* Arena::CreateMaybeMessage< ::trunks::PinWeaverResetTreeLogEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverResetTreeLogEntry >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverResetTreeLogEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverTimestamp* Arena::CreateMaybeMessage< ::trunks::PinWeaverTimestamp >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverTimestamp >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverTimestamp >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverAuthLogEntry* Arena::CreateMaybeMessage< ::trunks::PinWeaverAuthLogEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverAuthLogEntry >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverAuthLogEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::PinWeaverLogEntry* Arena::CreateMaybeMessage< ::trunks::PinWeaverLogEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::PinWeaverLogEntry >(arena);
+  return Arena::CreateMessageInternal< ::trunks::PinWeaverLogEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::ValidPcrValue* Arena::CreateMaybeMessage< ::trunks::ValidPcrValue >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::ValidPcrValue >(arena);
+  return Arena::CreateMessageInternal< ::trunks::ValidPcrValue >(arena);
 }
 template<> PROTOBUF_NOINLINE ::trunks::ValidPcrCriteria* Arena::CreateMaybeMessage< ::trunks::ValidPcrCriteria >(Arena* arena) {
-  return Arena::CreateInternal< ::trunks::ValidPcrCriteria >(arena);
+  return Arena::CreateMessageInternal< ::trunks::ValidPcrCriteria >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

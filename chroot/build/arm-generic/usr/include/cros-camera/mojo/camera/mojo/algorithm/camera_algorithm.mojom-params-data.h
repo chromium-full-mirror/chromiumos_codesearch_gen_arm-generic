@@ -286,7 +286,7 @@ class CameraAlgorithmOps_Request_ParamsDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReqHeader(UserType* output) {
+  [[nodiscard]] bool ReadReqHeader(UserType* output) {
     
     auto* pointer = data_->req_header.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -316,7 +316,7 @@ class CameraAlgorithmOps_DeregisterBuffers_ParamsDataView {
       mojo::ArrayDataView<int32_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadBufferHandles(UserType* output) {
+  [[nodiscard]] bool ReadBufferHandles(UserType* output) {
     
     auto* pointer = data_->buffer_handles.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<int32_t>>(
@@ -402,7 +402,7 @@ class CameraAlgorithmCallbackOps_Update_ParamsDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUpdHeader(UserType* output) {
+  [[nodiscard]] bool ReadUpdHeader(UserType* output) {
     
     auto* pointer = data_->upd_header.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

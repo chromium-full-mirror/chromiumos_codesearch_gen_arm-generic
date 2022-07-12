@@ -30,51 +30,11 @@ enum class CameraPrivacySwitchState : int32_t;
 enum class CameraAutoFramingState : int32_t;
 class CameraHalDispatcher;
 
-using CameraHalDispatcherPtr = mojo::InterfacePtr<CameraHalDispatcher>;
-using CameraHalDispatcherPtrInfo = mojo::InterfacePtrInfo<CameraHalDispatcher>;
-
-using CameraHalDispatcherRequest = mojo::InterfaceRequest<CameraHalDispatcher>;
-using CameraHalDispatcherAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraHalDispatcher>;
-
-using CameraHalDispatcherAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraHalDispatcher>;
-
 class CameraHalServer;
-
-using CameraHalServerPtr = mojo::InterfacePtr<CameraHalServer>;
-using CameraHalServerPtrInfo = mojo::InterfacePtrInfo<CameraHalServer>;
-
-using CameraHalServerRequest = mojo::InterfaceRequest<CameraHalServer>;
-using CameraHalServerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraHalServer>;
-
-using CameraHalServerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraHalServer>;
 
 class CameraHalServerCallbacks;
 
-using CameraHalServerCallbacksPtr = mojo::InterfacePtr<CameraHalServerCallbacks>;
-using CameraHalServerCallbacksPtrInfo = mojo::InterfacePtrInfo<CameraHalServerCallbacks>;
-
-using CameraHalServerCallbacksRequest = mojo::InterfaceRequest<CameraHalServerCallbacks>;
-using CameraHalServerCallbacksAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraHalServerCallbacks>;
-
-using CameraHalServerCallbacksAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraHalServerCallbacks>;
-
 class CameraHalClient;
-
-using CameraHalClientPtr = mojo::InterfacePtr<CameraHalClient>;
-using CameraHalClientPtrInfo = mojo::InterfacePtrInfo<CameraHalClient>;
-
-using CameraHalClientRequest = mojo::InterfaceRequest<CameraHalClient>;
-using CameraHalClientAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CameraHalClient>;
-
-using CameraHalClientAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CameraHalClient>;
 
 
 

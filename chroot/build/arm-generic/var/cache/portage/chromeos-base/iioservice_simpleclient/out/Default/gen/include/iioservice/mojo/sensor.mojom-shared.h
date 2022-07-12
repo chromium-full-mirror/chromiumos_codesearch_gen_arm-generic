@@ -325,7 +325,7 @@ class IioEventDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadChanType(UserType* output) const {
+  [[nodiscard]] bool ReadChanType(UserType* output) const {
     auto data_value = data_->chan_type;
     return mojo::internal::Deserialize<::cros::mojom::IioChanType>(
         data_value, output);
@@ -335,7 +335,7 @@ class IioEventDataView {
           static_cast<::cros::mojom::IioChanType>(data_->chan_type));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadEventType(UserType* output) const {
+  [[nodiscard]] bool ReadEventType(UserType* output) const {
     auto data_value = data_->event_type;
     return mojo::internal::Deserialize<::cros::mojom::IioEventType>(
         data_value, output);
@@ -345,7 +345,7 @@ class IioEventDataView {
           static_cast<::cros::mojom::IioEventType>(data_->event_type));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDirection(UserType* output) const {
+  [[nodiscard]] bool ReadDirection(UserType* output) const {
     auto data_value = data_->direction;
     return mojo::internal::Deserialize<::cros::mojom::IioEventDirection>(
         data_value, output);

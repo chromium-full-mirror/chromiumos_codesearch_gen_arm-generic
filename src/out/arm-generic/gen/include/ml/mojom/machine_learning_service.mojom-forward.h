@@ -27,16 +27,6 @@ namespace mojom {
 enum class LoadModelResult : int32_t;
 class MachineLearningService;
 
-using MachineLearningServicePtr = mojo::InterfacePtr<MachineLearningService>;
-using MachineLearningServicePtrInfo = mojo::InterfacePtrInfo<MachineLearningService>;
-
-using MachineLearningServiceRequest = mojo::InterfaceRequest<MachineLearningService>;
-using MachineLearningServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<MachineLearningService>;
-
-using MachineLearningServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<MachineLearningService>;
-
 
 
 

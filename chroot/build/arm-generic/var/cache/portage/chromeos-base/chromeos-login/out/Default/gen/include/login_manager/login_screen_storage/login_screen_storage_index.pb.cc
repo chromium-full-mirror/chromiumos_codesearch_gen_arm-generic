@@ -11,93 +11,90 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace login_manager {
-class LoginScreenStorageIndexDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LoginScreenStorageIndex> _instance;
-} _LoginScreenStorageIndex_default_instance_;
+constexpr LoginScreenStorageIndex::LoginScreenStorageIndex(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : keys_(){}
+struct LoginScreenStorageIndexDefaultTypeInternal {
+  constexpr LoginScreenStorageIndexDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~LoginScreenStorageIndexDefaultTypeInternal() {}
+  union {
+    LoginScreenStorageIndex _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT LoginScreenStorageIndexDefaultTypeInternal _LoginScreenStorageIndex_default_instance_;
 }  // namespace login_manager
-static void InitDefaultsscc_info_LoginScreenStorageIndex_login_5fscreen_5fstorage_5findex_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::login_manager::_LoginScreenStorageIndex_default_instance_;
-    new (ptr) ::login_manager::LoginScreenStorageIndex();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::login_manager::LoginScreenStorageIndex::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LoginScreenStorageIndex_login_5fscreen_5fstorage_5findex_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LoginScreenStorageIndex_login_5fscreen_5fstorage_5findex_2eproto}, {}};
-
 namespace login_manager {
 
 // ===================================================================
 
-void LoginScreenStorageIndex::InitAsDefaultInstance() {
-}
 class LoginScreenStorageIndex::_Internal {
  public:
-  using HasBits = decltype(std::declval<LoginScreenStorageIndex>()._has_bits_);
 };
 
-LoginScreenStorageIndex::LoginScreenStorageIndex()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+LoginScreenStorageIndex::LoginScreenStorageIndex(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  keys_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:login_manager.LoginScreenStorageIndex)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:login_manager.LoginScreenStorageIndex)
 }
 LoginScreenStorageIndex::LoginScreenStorageIndex(const LoginScreenStorageIndex& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       keys_(from.keys_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:login_manager.LoginScreenStorageIndex)
 }
 
-void LoginScreenStorageIndex::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_LoginScreenStorageIndex_login_5fscreen_5fstorage_5findex_2eproto.base);
+inline void LoginScreenStorageIndex::SharedCtor() {
 }
 
 LoginScreenStorageIndex::~LoginScreenStorageIndex() {
   // @@protoc_insertion_point(destructor:login_manager.LoginScreenStorageIndex)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void LoginScreenStorageIndex::SharedDtor() {
+inline void LoginScreenStorageIndex::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void LoginScreenStorageIndex::ArenaDtor(void* object) {
+  LoginScreenStorageIndex* _this = reinterpret_cast< LoginScreenStorageIndex* >(object);
+  (void)_this;
+}
+void LoginScreenStorageIndex::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LoginScreenStorageIndex::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const LoginScreenStorageIndex& LoginScreenStorageIndex::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LoginScreenStorageIndex_login_5fscreen_5fstorage_5findex_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void LoginScreenStorageIndex::Clear() {
 // @@protoc_insertion_point(message_clear_start:login_manager.LoginScreenStorageIndex)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   keys_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* LoginScreenStorageIndex::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string keys = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -106,32 +103,36 @@ const char* LoginScreenStorageIndex::_InternalParse(const char* ptr, ::PROTOBUF_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* LoginScreenStorageIndex::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* LoginScreenStorageIndex::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:login_manager.LoginScreenStorageIndex)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string keys = 1;
@@ -141,8 +142,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:login_manager.LoginScreenStorageIndex)
   return target;
@@ -152,7 +153,7 @@ size_t LoginScreenStorageIndex::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:login_manager.LoginScreenStorageIndex)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -165,7 +166,7 @@ size_t LoginScreenStorageIndex::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -181,11 +182,11 @@ void LoginScreenStorageIndex::CheckTypeAndMergeFrom(
 void LoginScreenStorageIndex::MergeFrom(const LoginScreenStorageIndex& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:login_manager.LoginScreenStorageIndex)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   keys_.MergeFrom(from.keys_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void LoginScreenStorageIndex::CopyFrom(const LoginScreenStorageIndex& from) {
@@ -201,8 +202,7 @@ bool LoginScreenStorageIndex::IsInitialized() const {
 
 void LoginScreenStorageIndex::InternalSwap(LoginScreenStorageIndex* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   keys_.InternalSwap(&other->keys_);
 }
 
@@ -215,7 +215,7 @@ std::string LoginScreenStorageIndex::GetTypeName() const {
 }  // namespace login_manager
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::login_manager::LoginScreenStorageIndex* Arena::CreateMaybeMessage< ::login_manager::LoginScreenStorageIndex >(Arena* arena) {
-  return Arena::CreateInternal< ::login_manager::LoginScreenStorageIndex >(arena);
+  return Arena::CreateMessageInternal< ::login_manager::LoginScreenStorageIndex >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

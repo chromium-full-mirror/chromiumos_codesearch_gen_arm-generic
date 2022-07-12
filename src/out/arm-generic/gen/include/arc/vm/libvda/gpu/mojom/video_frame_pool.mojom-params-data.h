@@ -131,7 +131,7 @@ class VideoFramePool_AddVideoFrame_ParamsDataView {
       VideoFrameDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVideoFrame(UserType* output) {
+  [[nodiscard]] bool ReadVideoFrame(UserType* output) {
     
     auto* pointer = data_->video_frame.Get();
     return mojo::internal::Deserialize<::arc::mojom::VideoFrameDataView>(
@@ -174,7 +174,7 @@ class VideoFramePoolClient_RequestVideoFrames_ParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadFormat(UserType* output) const {
+  [[nodiscard]] bool ReadFormat(UserType* output) const {
     auto data_value = data_->format;
     return mojo::internal::Deserialize<::arc::mojom::VideoPixelFormat>(
         data_value, output);
@@ -187,7 +187,7 @@ class VideoFramePoolClient_RequestVideoFrames_ParamsDataView {
       ::arc::mojom::SizeDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadCodedSize(UserType* output) {
+  [[nodiscard]] bool ReadCodedSize(UserType* output) {
     
     auto* pointer = data_->coded_size.Get();
     return mojo::internal::Deserialize<::arc::mojom::SizeDataView>(
@@ -197,7 +197,7 @@ class VideoFramePoolClient_RequestVideoFrames_ParamsDataView {
       ::arc::mojom::RectDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadVisibleRect(UserType* output) {
+  [[nodiscard]] bool ReadVisibleRect(UserType* output) {
     
     auto* pointer = data_->visible_rect.Get();
     return mojo::internal::Deserialize<::arc::mojom::RectDataView>(

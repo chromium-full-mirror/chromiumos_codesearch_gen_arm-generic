@@ -11,169 +11,139 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_example_5fpreprocessor_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_example_5fpreprocessor_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_example_5fpreprocessor_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_example_5fpreprocessor_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_example_5fpreprocessor_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_example_5fpreprocessor_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_example_5fpreprocessor_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace assist_ranker {
-class ExamplePreprocessorConfig_BoundariesDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExamplePreprocessorConfig_Boundaries> _instance;
-} _ExamplePreprocessorConfig_Boundaries_default_instance_;
-class ExamplePreprocessorConfig_BucketizersEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExamplePreprocessorConfig_BucketizersEntry_DoNotUse> _instance;
-} _ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_default_instance_;
-class ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse> _instance;
-} _ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_default_instance_;
-class ExamplePreprocessorConfig_NormalizersEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExamplePreprocessorConfig_NormalizersEntry_DoNotUse> _instance;
-} _ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_default_instance_;
-class ExamplePreprocessorConfigDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExamplePreprocessorConfig> _instance;
-} _ExamplePreprocessorConfig_default_instance_;
+constexpr ExamplePreprocessorConfig_Boundaries::ExamplePreprocessorConfig_Boundaries(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : boundaries_(){}
+struct ExamplePreprocessorConfig_BoundariesDefaultTypeInternal {
+  constexpr ExamplePreprocessorConfig_BoundariesDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExamplePreprocessorConfig_BoundariesDefaultTypeInternal() {}
+  union {
+    ExamplePreprocessorConfig_Boundaries _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExamplePreprocessorConfig_BoundariesDefaultTypeInternal _ExamplePreprocessorConfig_Boundaries_default_instance_;
+constexpr ExamplePreprocessorConfig_BucketizersEntry_DoNotUse::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ExamplePreprocessorConfig_BucketizersEntry_DoNotUseDefaultTypeInternal {
+  constexpr ExamplePreprocessorConfig_BucketizersEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExamplePreprocessorConfig_BucketizersEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ExamplePreprocessorConfig_BucketizersEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExamplePreprocessorConfig_BucketizersEntry_DoNotUseDefaultTypeInternal _ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_default_instance_;
+constexpr ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUseDefaultTypeInternal {
+  constexpr ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUseDefaultTypeInternal _ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_default_instance_;
+constexpr ExamplePreprocessorConfig_NormalizersEntry_DoNotUse::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ExamplePreprocessorConfig_NormalizersEntry_DoNotUseDefaultTypeInternal {
+  constexpr ExamplePreprocessorConfig_NormalizersEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExamplePreprocessorConfig_NormalizersEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ExamplePreprocessorConfig_NormalizersEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExamplePreprocessorConfig_NormalizersEntry_DoNotUseDefaultTypeInternal _ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_default_instance_;
+constexpr ExamplePreprocessorConfig::ExamplePreprocessorConfig(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : missing_features_()
+  , bucketizers_()
+  , feature_indices_()
+  , normalizers_()
+  , convert_to_string_features_(){}
+struct ExamplePreprocessorConfigDefaultTypeInternal {
+  constexpr ExamplePreprocessorConfigDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ExamplePreprocessorConfigDefaultTypeInternal() {}
+  union {
+    ExamplePreprocessorConfig _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ExamplePreprocessorConfigDefaultTypeInternal _ExamplePreprocessorConfig_default_instance_;
 }  // namespace assist_ranker
-static void InitDefaultsscc_info_ExamplePreprocessorConfig_example_5fpreprocessor_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::assist_ranker::_ExamplePreprocessorConfig_default_instance_;
-    new (ptr) ::assist_ranker::ExamplePreprocessorConfig();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::assist_ranker::ExamplePreprocessorConfig::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ExamplePreprocessorConfig_example_5fpreprocessor_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_ExamplePreprocessorConfig_example_5fpreprocessor_2eproto}, {
-      &scc_info_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_example_5fpreprocessor_2eproto.base,
-      &scc_info_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_example_5fpreprocessor_2eproto.base,
-      &scc_info_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_example_5fpreprocessor_2eproto.base,}};
-
-static void InitDefaultsscc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::assist_ranker::_ExamplePreprocessorConfig_Boundaries_default_instance_;
-    new (ptr) ::assist_ranker::ExamplePreprocessorConfig_Boundaries();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::assist_ranker::ExamplePreprocessorConfig_Boundaries::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto}, {}};
-
-static void InitDefaultsscc_info_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_example_5fpreprocessor_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::assist_ranker::_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_default_instance_;
-    new (ptr) ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse();
-  }
-  ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_example_5fpreprocessor_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ExamplePreprocessorConfig_BucketizersEntry_DoNotUse_example_5fpreprocessor_2eproto}, {
-      &scc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto.base,}};
-
-static void InitDefaultsscc_info_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_example_5fpreprocessor_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::assist_ranker::_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_default_instance_;
-    new (ptr) ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse();
-  }
-  ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_example_5fpreprocessor_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse_example_5fpreprocessor_2eproto}, {}};
-
-static void InitDefaultsscc_info_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_example_5fpreprocessor_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::assist_ranker::_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_default_instance_;
-    new (ptr) ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse();
-  }
-  ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_example_5fpreprocessor_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ExamplePreprocessorConfig_NormalizersEntry_DoNotUse_example_5fpreprocessor_2eproto}, {}};
-
 namespace assist_ranker {
 
 // ===================================================================
 
-void ExamplePreprocessorConfig_Boundaries::InitAsDefaultInstance() {
-}
 class ExamplePreprocessorConfig_Boundaries::_Internal {
  public:
-  using HasBits = decltype(std::declval<ExamplePreprocessorConfig_Boundaries>()._has_bits_);
 };
 
-ExamplePreprocessorConfig_Boundaries::ExamplePreprocessorConfig_Boundaries()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ExamplePreprocessorConfig_Boundaries::ExamplePreprocessorConfig_Boundaries(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  boundaries_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:assist_ranker.ExamplePreprocessorConfig.Boundaries)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:assist_ranker.ExamplePreprocessorConfig.Boundaries)
 }
 ExamplePreprocessorConfig_Boundaries::ExamplePreprocessorConfig_Boundaries(const ExamplePreprocessorConfig_Boundaries& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       boundaries_(from.boundaries_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:assist_ranker.ExamplePreprocessorConfig.Boundaries)
 }
 
-void ExamplePreprocessorConfig_Boundaries::SharedCtor() {
+inline void ExamplePreprocessorConfig_Boundaries::SharedCtor() {
 }
 
 ExamplePreprocessorConfig_Boundaries::~ExamplePreprocessorConfig_Boundaries() {
   // @@protoc_insertion_point(destructor:assist_ranker.ExamplePreprocessorConfig.Boundaries)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ExamplePreprocessorConfig_Boundaries::SharedDtor() {
+inline void ExamplePreprocessorConfig_Boundaries::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ExamplePreprocessorConfig_Boundaries::ArenaDtor(void* object) {
+  ExamplePreprocessorConfig_Boundaries* _this = reinterpret_cast< ExamplePreprocessorConfig_Boundaries* >(object);
+  (void)_this;
+}
+void ExamplePreprocessorConfig_Boundaries::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ExamplePreprocessorConfig_Boundaries::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ExamplePreprocessorConfig_Boundaries& ExamplePreprocessorConfig_Boundaries::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ExamplePreprocessorConfig_Boundaries_example_5fpreprocessor_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ExamplePreprocessorConfig_Boundaries::Clear() {
 // @@protoc_insertion_point(message_clear_start:assist_ranker.ExamplePreprocessorConfig.Boundaries)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   boundaries_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ExamplePreprocessorConfig_Boundaries::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated float boundaries = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -181,35 +151,39 @@ const char* ExamplePreprocessorConfig_Boundaries::_InternalParse(const char* ptr
             ptr += sizeof(float);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<13>(ptr));
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10) {
+        } else if (static_cast<uint8_t>(tag) == 10) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_boundaries(), ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ExamplePreprocessorConfig_Boundaries::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ExamplePreprocessorConfig_Boundaries::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:assist_ranker.ExamplePreprocessorConfig.Boundaries)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated float boundaries = 1;
@@ -219,8 +193,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:assist_ranker.ExamplePreprocessorConfig.Boundaries)
   return target;
@@ -230,7 +204,7 @@ size_t ExamplePreprocessorConfig_Boundaries::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:assist_ranker.ExamplePreprocessorConfig.Boundaries)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -244,7 +218,7 @@ size_t ExamplePreprocessorConfig_Boundaries::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -260,11 +234,11 @@ void ExamplePreprocessorConfig_Boundaries::CheckTypeAndMergeFrom(
 void ExamplePreprocessorConfig_Boundaries::MergeFrom(const ExamplePreprocessorConfig_Boundaries& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:assist_ranker.ExamplePreprocessorConfig.Boundaries)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   boundaries_.MergeFrom(from.boundaries_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ExamplePreprocessorConfig_Boundaries::CopyFrom(const ExamplePreprocessorConfig_Boundaries& from) {
@@ -280,8 +254,7 @@ bool ExamplePreprocessorConfig_Boundaries::IsInitialized() const {
 
 void ExamplePreprocessorConfig_Boundaries::InternalSwap(ExamplePreprocessorConfig_Boundaries* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   boundaries_.InternalSwap(&other->boundaries_);
 }
 
@@ -319,55 +292,62 @@ void ExamplePreprocessorConfig_NormalizersEntry_DoNotUse::MergeFrom(const Exampl
 
 // ===================================================================
 
-void ExamplePreprocessorConfig::InitAsDefaultInstance() {
-}
 class ExamplePreprocessorConfig::_Internal {
  public:
-  using HasBits = decltype(std::declval<ExamplePreprocessorConfig>()._has_bits_);
 };
 
-ExamplePreprocessorConfig::ExamplePreprocessorConfig()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ExamplePreprocessorConfig::ExamplePreprocessorConfig(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  missing_features_(arena),
+  bucketizers_(arena),
+  feature_indices_(arena),
+  normalizers_(arena),
+  convert_to_string_features_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:assist_ranker.ExamplePreprocessorConfig)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:assist_ranker.ExamplePreprocessorConfig)
 }
 ExamplePreprocessorConfig::ExamplePreprocessorConfig(const ExamplePreprocessorConfig& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       missing_features_(from.missing_features_),
       convert_to_string_features_(from.convert_to_string_features_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   bucketizers_.MergeFrom(from.bucketizers_);
   feature_indices_.MergeFrom(from.feature_indices_);
   normalizers_.MergeFrom(from.normalizers_);
   // @@protoc_insertion_point(copy_constructor:assist_ranker.ExamplePreprocessorConfig)
 }
 
-void ExamplePreprocessorConfig::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ExamplePreprocessorConfig_example_5fpreprocessor_2eproto.base);
+inline void ExamplePreprocessorConfig::SharedCtor() {
 }
 
 ExamplePreprocessorConfig::~ExamplePreprocessorConfig() {
   // @@protoc_insertion_point(destructor:assist_ranker.ExamplePreprocessorConfig)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ExamplePreprocessorConfig::SharedDtor() {
+inline void ExamplePreprocessorConfig::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void ExamplePreprocessorConfig::ArenaDtor(void* object) {
+  ExamplePreprocessorConfig* _this = reinterpret_cast< ExamplePreprocessorConfig* >(object);
+  (void)_this;
+}
+void ExamplePreprocessorConfig::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ExamplePreprocessorConfig::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ExamplePreprocessorConfig& ExamplePreprocessorConfig::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ExamplePreprocessorConfig_example_5fpreprocessor_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ExamplePreprocessorConfig::Clear() {
 // @@protoc_insertion_point(message_clear_start:assist_ranker.ExamplePreprocessorConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -376,20 +356,18 @@ void ExamplePreprocessorConfig::Clear() {
   feature_indices_.Clear();
   normalizers_.Clear();
   convert_to_string_features_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string missing_features = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -398,11 +376,12 @@ const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // map<string, .assist_ranker.ExamplePreprocessorConfig.Boundaries> bucketizers = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -410,11 +389,12 @@ const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // map<string, int32> feature_indices = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -422,11 +402,12 @@ const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // map<string, float> normalizers = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -434,11 +415,12 @@ const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string convert_to_string_features = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -447,32 +429,36 @@ const char* ExamplePreprocessorConfig::_InternalParse(const char* ptr, ::PROTOBU
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ExamplePreprocessorConfig::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ExamplePreprocessorConfig::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:assist_ranker.ExamplePreprocessorConfig)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string missing_features = 1;
@@ -489,6 +475,7 @@ failure:
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
     struct Utf8Check {
       static void Check(ConstPtr p) {
+        (void)p;
       }
     };
 
@@ -520,12 +507,13 @@ failure:
 
   // map<string, int32> feature_indices = 3;
   if (!this->_internal_feature_indices().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::int32 >::const_pointer
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, int32_t >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
     struct Utf8Check {
       static void Check(ConstPtr p) {
+        (void)p;
       }
     };
 
@@ -533,9 +521,9 @@ failure:
         this->_internal_feature_indices().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->_internal_feature_indices().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::int32 >::size_type size_type;
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, int32_t >::size_type size_type;
       size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::int32 >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, int32_t >::const_iterator
           it = this->_internal_feature_indices().begin();
           it != this->_internal_feature_indices().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -546,7 +534,7 @@ failure:
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::int32 >::const_iterator
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, int32_t >::const_iterator
           it = this->_internal_feature_indices().begin();
           it != this->_internal_feature_indices().end(); ++it) {
         target = ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse::Funcs::InternalSerialize(3, it->first, it->second, target, stream);
@@ -563,6 +551,7 @@ failure:
     typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
     struct Utf8Check {
       static void Check(ConstPtr p) {
+        (void)p;
       }
     };
 
@@ -599,8 +588,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:assist_ranker.ExamplePreprocessorConfig)
   return target;
@@ -610,7 +599,7 @@ size_t ExamplePreprocessorConfig::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:assist_ranker.ExamplePreprocessorConfig)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -634,7 +623,7 @@ size_t ExamplePreprocessorConfig::ByteSizeLong() const {
   // map<string, int32> feature_indices = 3;
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_feature_indices_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::int32 >::const_iterator
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, int32_t >::const_iterator
       it = this->_internal_feature_indices().begin();
       it != this->_internal_feature_indices().end(); ++it) {
     total_size += ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
@@ -658,7 +647,7 @@ size_t ExamplePreprocessorConfig::ByteSizeLong() const {
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -674,8 +663,7 @@ void ExamplePreprocessorConfig::CheckTypeAndMergeFrom(
 void ExamplePreprocessorConfig::MergeFrom(const ExamplePreprocessorConfig& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:assist_ranker.ExamplePreprocessorConfig)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   missing_features_.MergeFrom(from.missing_features_);
@@ -683,6 +671,7 @@ void ExamplePreprocessorConfig::MergeFrom(const ExamplePreprocessorConfig& from)
   feature_indices_.MergeFrom(from.feature_indices_);
   normalizers_.MergeFrom(from.normalizers_);
   convert_to_string_features_.MergeFrom(from.convert_to_string_features_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ExamplePreprocessorConfig::CopyFrom(const ExamplePreprocessorConfig& from) {
@@ -698,12 +687,11 @@ bool ExamplePreprocessorConfig::IsInitialized() const {
 
 void ExamplePreprocessorConfig::InternalSwap(ExamplePreprocessorConfig* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   missing_features_.InternalSwap(&other->missing_features_);
-  bucketizers_.Swap(&other->bucketizers_);
-  feature_indices_.Swap(&other->feature_indices_);
-  normalizers_.Swap(&other->normalizers_);
+  bucketizers_.InternalSwap(&other->bucketizers_);
+  feature_indices_.InternalSwap(&other->feature_indices_);
+  normalizers_.InternalSwap(&other->normalizers_);
   convert_to_string_features_.InternalSwap(&other->convert_to_string_features_);
 }
 
@@ -716,19 +704,19 @@ std::string ExamplePreprocessorConfig::GetTypeName() const {
 }  // namespace assist_ranker
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::assist_ranker::ExamplePreprocessorConfig_Boundaries* Arena::CreateMaybeMessage< ::assist_ranker::ExamplePreprocessorConfig_Boundaries >(Arena* arena) {
-  return Arena::CreateInternal< ::assist_ranker::ExamplePreprocessorConfig_Boundaries >(arena);
+  return Arena::CreateMessageInternal< ::assist_ranker::ExamplePreprocessorConfig_Boundaries >(arena);
 }
 template<> PROTOBUF_NOINLINE ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse* Arena::CreateMaybeMessage< ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::assist_ranker::ExamplePreprocessorConfig_BucketizersEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse* Arena::CreateMaybeMessage< ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::assist_ranker::ExamplePreprocessorConfig_FeatureIndicesEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse* Arena::CreateMaybeMessage< ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::assist_ranker::ExamplePreprocessorConfig_NormalizersEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::assist_ranker::ExamplePreprocessorConfig* Arena::CreateMaybeMessage< ::assist_ranker::ExamplePreprocessorConfig >(Arena* arena) {
-  return Arena::CreateInternal< ::assist_ranker::ExamplePreprocessorConfig >(arena);
+  return Arena::CreateMessageInternal< ::assist_ranker::ExamplePreprocessorConfig >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

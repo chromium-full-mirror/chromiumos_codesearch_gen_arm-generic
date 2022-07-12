@@ -127,7 +127,7 @@ class TouchscreenDeviceDataView {
       InputDeviceDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInputDevice(UserType* output) {
+  [[nodiscard]] bool ReadInputDevice(UserType* output) {
     
     auto* pointer = data_->input_device.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::internal::mojom::InputDeviceDataView>(
@@ -163,14 +163,14 @@ class InputDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
     auto* pointer = data_->name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadConnectionType(UserType* output) const {
+  [[nodiscard]] bool ReadConnectionType(UserType* output) const {
     auto data_value = data_->connection_type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::internal::mojom::InputDevice_ConnectionType>(
         data_value, output);
@@ -183,7 +183,7 @@ class InputDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPhysicalLocation(UserType* output) {
+  [[nodiscard]] bool ReadPhysicalLocation(UserType* output) {
     
     auto* pointer = data_->physical_location.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -196,7 +196,7 @@ class InputDeviceDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSysfsPath(UserType* output) {
+  [[nodiscard]] bool ReadSysfsPath(UserType* output) {
     
     auto* pointer = data_->sysfs_path.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

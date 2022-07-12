@@ -156,7 +156,7 @@ class EcEventDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EcEvent_Type>(
         data_value, output);
@@ -169,14 +169,14 @@ class EcEventDataView {
       mojo::ArrayDataView<uint16_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPayload(UserType* output) {
+  [[nodiscard]] bool ReadPayload(UserType* output) {
     
     auto* pointer = data_->payload.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint16_t>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadReason(UserType* output) const {
+  [[nodiscard]] bool ReadReason(UserType* output) const {
     auto data_value = data_->reason;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::EcEvent_Reason>(
         data_value, output);
@@ -203,7 +203,7 @@ class GetEcTelemetryResponseDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_Status>(
         data_value, output);
@@ -216,7 +216,7 @@ class GetEcTelemetryResponseDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPayload(UserType* output) {
+  [[nodiscard]] bool ReadPayload(UserType* output) {
     
     auto* pointer = data_->payload.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

@@ -470,16 +470,6 @@ class ArcQuotaProxyMock : public ArcQuotaProxyInterface {
                     base::OnceCallback<void(const user_data_auth::GetCurrentSpaceForArcProjectIdReply& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
-  MOCK_METHOD4(SetProjectId,
-               bool(const user_data_auth::SetProjectIdRequest& /*in_request*/,
-                    user_data_auth::SetProjectIdReply* /*out_reply*/,
-                    brillo::ErrorPtr* /*error*/,
-                    int /*timeout_ms*/));
-  MOCK_METHOD4(SetProjectIdAsync,
-               void(const user_data_auth::SetProjectIdRequest& /*in_request*/,
-                    base::OnceCallback<void(const user_data_auth::SetProjectIdReply& /*reply*/)> /*success_callback*/,
-                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
-                    int /*timeout_ms*/));
   MOCK_METHOD5(SetMediaRWDataFileProjectId,
                bool(const brillo::dbus_utils::FileDescriptor& /*in_fd*/,
                     const user_data_auth::SetMediaRWDataFileProjectIdRequest& /*in_request*/,

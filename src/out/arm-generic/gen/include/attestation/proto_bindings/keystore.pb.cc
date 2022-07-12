@@ -10,6 +10,8 @@
 #include <google/protobuf/wire_format_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace attestation {
 }  // namespace attestation
 namespace attestation {
@@ -55,7 +57,7 @@ const std::string& KeyType_Name(
                      KeyType_strings[idx].get();
 }
 bool KeyType_Parse(
-    const std::string& name, KeyType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, KeyType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       KeyType_entries, 2, name, &int_value);
@@ -106,7 +108,7 @@ const std::string& KeyUsage_Name(
                      KeyUsage_strings[idx].get();
 }
 bool KeyUsage_Parse(
-    const std::string& name, KeyUsage* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, KeyUsage* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       KeyUsage_entries, 2, name, &int_value);

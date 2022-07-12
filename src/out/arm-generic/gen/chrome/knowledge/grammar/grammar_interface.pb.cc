@@ -14,112 +14,86 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_grammar_5finterface_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CorrectionFragment_grammar_5finterface_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_grammar_5finterface_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace chrome_knowledge {
-class GrammarCheckerModelPathsDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GrammarCheckerModelPaths> _instance;
-} _GrammarCheckerModelPaths_default_instance_;
-class GrammarCheckerRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GrammarCheckerRequest> _instance;
-} _GrammarCheckerRequest_default_instance_;
-class CorrectionFragmentDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CorrectionFragment> _instance;
-} _CorrectionFragment_default_instance_;
-class GrammarCheckerCandidateDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GrammarCheckerCandidate> _instance;
-} _GrammarCheckerCandidate_default_instance_;
-class GrammarCheckerResultDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GrammarCheckerResult> _instance;
-} _GrammarCheckerResult_default_instance_;
+constexpr GrammarCheckerModelPaths::GrammarCheckerModelPaths(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : model_path_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GrammarCheckerModelPathsDefaultTypeInternal {
+  constexpr GrammarCheckerModelPathsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GrammarCheckerModelPathsDefaultTypeInternal() {}
+  union {
+    GrammarCheckerModelPaths _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GrammarCheckerModelPathsDefaultTypeInternal _GrammarCheckerModelPaths_default_instance_;
+constexpr GrammarCheckerRequest::GrammarCheckerRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : text_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , language_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GrammarCheckerRequestDefaultTypeInternal {
+  constexpr GrammarCheckerRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GrammarCheckerRequestDefaultTypeInternal() {}
+  union {
+    GrammarCheckerRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GrammarCheckerRequestDefaultTypeInternal _GrammarCheckerRequest_default_instance_;
+constexpr CorrectionFragment::CorrectionFragment(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : replacement_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , offset_(0)
+  , length_(0){}
+struct CorrectionFragmentDefaultTypeInternal {
+  constexpr CorrectionFragmentDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~CorrectionFragmentDefaultTypeInternal() {}
+  union {
+    CorrectionFragment _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CorrectionFragmentDefaultTypeInternal _CorrectionFragment_default_instance_;
+constexpr GrammarCheckerCandidate::GrammarCheckerCandidate(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : fragments_()
+  , text_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , score_(0){}
+struct GrammarCheckerCandidateDefaultTypeInternal {
+  constexpr GrammarCheckerCandidateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GrammarCheckerCandidateDefaultTypeInternal() {}
+  union {
+    GrammarCheckerCandidate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GrammarCheckerCandidateDefaultTypeInternal _GrammarCheckerCandidate_default_instance_;
+constexpr GrammarCheckerResult::GrammarCheckerResult(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : candidates_(){}
+struct GrammarCheckerResultDefaultTypeInternal {
+  constexpr GrammarCheckerResultDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GrammarCheckerResultDefaultTypeInternal() {}
+  union {
+    GrammarCheckerResult _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GrammarCheckerResultDefaultTypeInternal _GrammarCheckerResult_default_instance_;
 }  // namespace chrome_knowledge
-static void InitDefaultsscc_info_CorrectionFragment_grammar_5finterface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome_knowledge::_CorrectionFragment_default_instance_;
-    new (ptr) ::chrome_knowledge::CorrectionFragment();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome_knowledge::CorrectionFragment::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CorrectionFragment_grammar_5finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CorrectionFragment_grammar_5finterface_2eproto}, {}};
-
-static void InitDefaultsscc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome_knowledge::_GrammarCheckerCandidate_default_instance_;
-    new (ptr) ::chrome_knowledge::GrammarCheckerCandidate();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome_knowledge::GrammarCheckerCandidate::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto}, {
-      &scc_info_CorrectionFragment_grammar_5finterface_2eproto.base,}};
-
-static void InitDefaultsscc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome_knowledge::_GrammarCheckerModelPaths_default_instance_;
-    new (ptr) ::chrome_knowledge::GrammarCheckerModelPaths();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome_knowledge::GrammarCheckerModelPaths::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto}, {}};
-
-static void InitDefaultsscc_info_GrammarCheckerRequest_grammar_5finterface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome_knowledge::_GrammarCheckerRequest_default_instance_;
-    new (ptr) ::chrome_knowledge::GrammarCheckerRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome_knowledge::GrammarCheckerRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GrammarCheckerRequest_grammar_5finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GrammarCheckerRequest_grammar_5finterface_2eproto}, {}};
-
-static void InitDefaultsscc_info_GrammarCheckerResult_grammar_5finterface_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::chrome_knowledge::_GrammarCheckerResult_default_instance_;
-    new (ptr) ::chrome_knowledge::GrammarCheckerResult();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::chrome_knowledge::GrammarCheckerResult::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GrammarCheckerResult_grammar_5finterface_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GrammarCheckerResult_grammar_5finterface_2eproto}, {
-      &scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_grammar_5finterface_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_grammar_5finterface_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_grammar_5finterface_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grammar_5finterface_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_grammar_5finterface_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerModelPaths, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerModelPaths, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerModelPaths, model_path_),
   0,
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerRequest, _has_bits_),
@@ -127,6 +101,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grammar_5finterface_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerRequest, text_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerRequest, language_),
   0,
@@ -136,6 +111,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grammar_5finterface_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::CorrectionFragment, offset_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::CorrectionFragment, length_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::CorrectionFragment, replacement_),
@@ -147,26 +123,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_grammar_5finterface_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerCandidate, text_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerCandidate, score_),
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerCandidate, fragments_),
   0,
   1,
   ~0u,
-  PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerResult, _has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerResult, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::chrome_knowledge::GrammarCheckerResult, candidates_),
-  ~0u,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 6, sizeof(::chrome_knowledge::GrammarCheckerModelPaths)},
-  { 7, 14, sizeof(::chrome_knowledge::GrammarCheckerRequest)},
-  { 16, 24, sizeof(::chrome_knowledge::CorrectionFragment)},
-  { 27, 35, sizeof(::chrome_knowledge::GrammarCheckerCandidate)},
-  { 38, 44, sizeof(::chrome_knowledge::GrammarCheckerResult)},
+  { 0, 7, -1, sizeof(::chrome_knowledge::GrammarCheckerModelPaths)},
+  { 8, 16, -1, sizeof(::chrome_knowledge::GrammarCheckerRequest)},
+  { 18, 27, -1, sizeof(::chrome_knowledge::CorrectionFragment)},
+  { 30, 39, -1, sizeof(::chrome_knowledge::GrammarCheckerCandidate)},
+  { 42, -1, -1, sizeof(::chrome_knowledge::GrammarCheckerResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -190,32 +167,23 @@ const char descriptor_table_protodef_grammar_5finterface_2eproto[] PROTOBUF_SECT
   "\022=\n\ncandidates\030\001 \003(\0132).chrome_knowledge."
   "GrammarCheckerCandidate"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_grammar_5finterface_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_grammar_5finterface_2eproto_sccs[5] = {
-  &scc_info_CorrectionFragment_grammar_5finterface_2eproto.base,
-  &scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto.base,
-  &scc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto.base,
-  &scc_info_GrammarCheckerRequest_grammar_5finterface_2eproto.base,
-  &scc_info_GrammarCheckerResult_grammar_5finterface_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_grammar_5finterface_2eproto_once;
-static bool descriptor_table_grammar_5finterface_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grammar_5finterface_2eproto = {
-  &descriptor_table_grammar_5finterface_2eproto_initialized, descriptor_table_protodef_grammar_5finterface_2eproto, "grammar_interface.proto", 423,
-  &descriptor_table_grammar_5finterface_2eproto_once, descriptor_table_grammar_5finterface_2eproto_sccs, descriptor_table_grammar_5finterface_2eproto_deps, 5, 0,
+  false, false, 423, descriptor_table_protodef_grammar_5finterface_2eproto, "grammar_interface.proto", 
+  &descriptor_table_grammar_5finterface_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_grammar_5finterface_2eproto::offsets,
-  file_level_metadata_grammar_5finterface_2eproto, 5, file_level_enum_descriptors_grammar_5finterface_2eproto, file_level_service_descriptors_grammar_5finterface_2eproto,
+  file_level_metadata_grammar_5finterface_2eproto, file_level_enum_descriptors_grammar_5finterface_2eproto, file_level_service_descriptors_grammar_5finterface_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_grammar_5finterface_2eproto_getter() {
+  return &descriptor_table_grammar_5finterface_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_grammar_5finterface_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_grammar_5finterface_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_grammar_5finterface_2eproto(&descriptor_table_grammar_5finterface_2eproto);
 namespace chrome_knowledge {
 
 // ===================================================================
 
-void GrammarCheckerModelPaths::InitAsDefaultInstance() {
-}
 class GrammarCheckerModelPaths::_Internal {
  public:
   using HasBits = decltype(std::declval<GrammarCheckerModelPaths>()._has_bits_);
@@ -224,104 +192,120 @@ class GrammarCheckerModelPaths::_Internal {
   }
 };
 
-GrammarCheckerModelPaths::GrammarCheckerModelPaths()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GrammarCheckerModelPaths::GrammarCheckerModelPaths(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome_knowledge.GrammarCheckerModelPaths)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome_knowledge.GrammarCheckerModelPaths)
 }
 GrammarCheckerModelPaths::GrammarCheckerModelPaths(const GrammarCheckerModelPaths& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   model_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_model_path()) {
-    model_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_path_);
+    model_path_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_model_path(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:chrome_knowledge.GrammarCheckerModelPaths)
 }
 
-void GrammarCheckerModelPaths::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto.base);
-  model_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GrammarCheckerModelPaths::SharedCtor() {
+model_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GrammarCheckerModelPaths::~GrammarCheckerModelPaths() {
   // @@protoc_insertion_point(destructor:chrome_knowledge.GrammarCheckerModelPaths)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GrammarCheckerModelPaths::SharedDtor() {
+inline void GrammarCheckerModelPaths::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   model_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GrammarCheckerModelPaths::ArenaDtor(void* object) {
+  GrammarCheckerModelPaths* _this = reinterpret_cast< GrammarCheckerModelPaths* >(object);
+  (void)_this;
+}
+void GrammarCheckerModelPaths::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GrammarCheckerModelPaths::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GrammarCheckerModelPaths& GrammarCheckerModelPaths::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GrammarCheckerModelPaths_grammar_5finterface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GrammarCheckerModelPaths::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_knowledge.GrammarCheckerModelPaths)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    model_path_.ClearNonDefaultToEmptyNoArena();
+    model_path_.ClearNonDefaultToEmpty();
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GrammarCheckerModelPaths::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string model_path = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_model_path();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
           ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome_knowledge.GrammarCheckerModelPaths.model_path");
           #endif  // !NDEBUG
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GrammarCheckerModelPaths::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GrammarCheckerModelPaths::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_knowledge.GrammarCheckerModelPaths)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -337,7 +321,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome_knowledge.GrammarCheckerModelPaths)
   return target;
@@ -347,7 +331,7 @@ size_t GrammarCheckerModelPaths::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome_knowledge.GrammarCheckerModelPaths)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -359,48 +343,32 @@ size_t GrammarCheckerModelPaths::ByteSizeLong() const {
         this->_internal_model_path());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void GrammarCheckerModelPaths::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome_knowledge.GrammarCheckerModelPaths)
-  GOOGLE_DCHECK_NE(&from, this);
-  const GrammarCheckerModelPaths* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GrammarCheckerModelPaths>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome_knowledge.GrammarCheckerModelPaths)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome_knowledge.GrammarCheckerModelPaths)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GrammarCheckerModelPaths::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GrammarCheckerModelPaths::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GrammarCheckerModelPaths::GetClassData() const { return &_class_data_; }
+
+void GrammarCheckerModelPaths::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GrammarCheckerModelPaths *>(to)->MergeFrom(
+      static_cast<const GrammarCheckerModelPaths &>(from));
 }
+
 
 void GrammarCheckerModelPaths::MergeFrom(const GrammarCheckerModelPaths& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome_knowledge.GrammarCheckerModelPaths)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_has_model_path()) {
-    _has_bits_[0] |= 0x00000001u;
-    model_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.model_path_);
+    _internal_set_model_path(from._internal_model_path());
   }
-}
-
-void GrammarCheckerModelPaths::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome_knowledge.GrammarCheckerModelPaths)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GrammarCheckerModelPaths::CopyFrom(const GrammarCheckerModelPaths& from) {
@@ -416,21 +384,25 @@ bool GrammarCheckerModelPaths::IsInitialized() const {
 
 void GrammarCheckerModelPaths::InternalSwap(GrammarCheckerModelPaths* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  model_path_.Swap(&other->model_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &model_path_, lhs_arena,
+      &other->model_path_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GrammarCheckerModelPaths::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grammar_5finterface_2eproto_getter, &descriptor_table_grammar_5finterface_2eproto_once,
+      file_level_metadata_grammar_5finterface_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void GrammarCheckerRequest::InitAsDefaultInstance() {
-}
 class GrammarCheckerRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<GrammarCheckerRequest>()._has_bits_);
@@ -442,126 +414,150 @@ class GrammarCheckerRequest::_Internal {
   }
 };
 
-GrammarCheckerRequest::GrammarCheckerRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GrammarCheckerRequest::GrammarCheckerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome_knowledge.GrammarCheckerRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome_knowledge.GrammarCheckerRequest)
 }
 GrammarCheckerRequest::GrammarCheckerRequest(const GrammarCheckerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_text()) {
-    text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+    text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_text(), 
+      GetArenaForAllocation());
   }
   language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    language_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_language()) {
-    language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
+    language_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_language(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:chrome_knowledge.GrammarCheckerRequest)
 }
 
-void GrammarCheckerRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GrammarCheckerRequest_grammar_5finterface_2eproto.base);
-  text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GrammarCheckerRequest::SharedCtor() {
+text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+language_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  language_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GrammarCheckerRequest::~GrammarCheckerRequest() {
   // @@protoc_insertion_point(destructor:chrome_knowledge.GrammarCheckerRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GrammarCheckerRequest::SharedDtor() {
+inline void GrammarCheckerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   text_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   language_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GrammarCheckerRequest::ArenaDtor(void* object) {
+  GrammarCheckerRequest* _this = reinterpret_cast< GrammarCheckerRequest* >(object);
+  (void)_this;
+}
+void GrammarCheckerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GrammarCheckerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GrammarCheckerRequest& GrammarCheckerRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GrammarCheckerRequest_grammar_5finterface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GrammarCheckerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_knowledge.GrammarCheckerRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      text_.ClearNonDefaultToEmptyNoArena();
+      text_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      language_.ClearNonDefaultToEmptyNoArena();
+      language_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GrammarCheckerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string text = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_text();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
           ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome_knowledge.GrammarCheckerRequest.text");
           #endif  // !NDEBUG
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string language = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_language();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
           ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome_knowledge.GrammarCheckerRequest.language");
           #endif  // !NDEBUG
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GrammarCheckerRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GrammarCheckerRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_knowledge.GrammarCheckerRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -587,7 +583,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome_knowledge.GrammarCheckerRequest)
   return target;
@@ -597,7 +593,7 @@ size_t GrammarCheckerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome_knowledge.GrammarCheckerRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -618,55 +614,38 @@ size_t GrammarCheckerRequest::ByteSizeLong() const {
     }
 
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void GrammarCheckerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome_knowledge.GrammarCheckerRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const GrammarCheckerRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GrammarCheckerRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome_knowledge.GrammarCheckerRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome_knowledge.GrammarCheckerRequest)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GrammarCheckerRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GrammarCheckerRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GrammarCheckerRequest::GetClassData() const { return &_class_data_; }
+
+void GrammarCheckerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GrammarCheckerRequest *>(to)->MergeFrom(
+      static_cast<const GrammarCheckerRequest &>(from));
 }
+
 
 void GrammarCheckerRequest::MergeFrom(const GrammarCheckerRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome_knowledge.GrammarCheckerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+      _internal_set_text(from._internal_text());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      language_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.language_);
+      _internal_set_language(from._internal_language());
     }
   }
-}
-
-void GrammarCheckerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome_knowledge.GrammarCheckerRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GrammarCheckerRequest::CopyFrom(const GrammarCheckerRequest& from) {
@@ -682,23 +661,30 @@ bool GrammarCheckerRequest::IsInitialized() const {
 
 void GrammarCheckerRequest::InternalSwap(GrammarCheckerRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  text_.Swap(&other->text_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  language_.Swap(&other->language_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &text_, lhs_arena,
+      &other->text_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &language_, lhs_arena,
+      &other->language_, rhs_arena
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GrammarCheckerRequest::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grammar_5finterface_2eproto_getter, &descriptor_table_grammar_5finterface_2eproto_once,
+      file_level_metadata_grammar_5finterface_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void CorrectionFragment::InitAsDefaultInstance() {
-}
 class CorrectionFragment::_Internal {
  public:
   using HasBits = decltype(std::declval<CorrectionFragment>()._has_bits_);
@@ -713,19 +699,26 @@ class CorrectionFragment::_Internal {
   }
 };
 
-CorrectionFragment::CorrectionFragment()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CorrectionFragment::CorrectionFragment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome_knowledge.CorrectionFragment)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome_knowledge.CorrectionFragment)
 }
 CorrectionFragment::CorrectionFragment(const CorrectionFragment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   replacement_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    replacement_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_replacement()) {
-    replacement_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.replacement_);
+    replacement_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_replacement(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&offset_, &from.offset_,
     static_cast<size_t>(reinterpret_cast<char*>(&length_) -
@@ -733,41 +726,48 @@ CorrectionFragment::CorrectionFragment(const CorrectionFragment& from)
   // @@protoc_insertion_point(copy_constructor:chrome_knowledge.CorrectionFragment)
 }
 
-void CorrectionFragment::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CorrectionFragment_grammar_5finterface_2eproto.base);
-  replacement_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&offset_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&length_) -
-      reinterpret_cast<char*>(&offset_)) + sizeof(length_));
+inline void CorrectionFragment::SharedCtor() {
+replacement_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  replacement_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&offset_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&length_) -
+    reinterpret_cast<char*>(&offset_)) + sizeof(length_));
 }
 
 CorrectionFragment::~CorrectionFragment() {
   // @@protoc_insertion_point(destructor:chrome_knowledge.CorrectionFragment)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void CorrectionFragment::SharedDtor() {
+inline void CorrectionFragment::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   replacement_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CorrectionFragment::ArenaDtor(void* object) {
+  CorrectionFragment* _this = reinterpret_cast< CorrectionFragment* >(object);
+  (void)_this;
+}
+void CorrectionFragment::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CorrectionFragment::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const CorrectionFragment& CorrectionFragment::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CorrectionFragment_grammar_5finterface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void CorrectionFragment::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_knowledge.CorrectionFragment)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    replacement_.ClearNonDefaultToEmptyNoArena();
+    replacement_.ClearNonDefaultToEmpty();
   }
   if (cached_has_bits & 0x00000006u) {
     ::memset(&offset_, 0, static_cast<size_t>(
@@ -775,69 +775,74 @@ void CorrectionFragment::Clear() {
         reinterpret_cast<char*>(&offset_)) + sizeof(length_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CorrectionFragment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional int32 offset = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_offset(&has_bits);
-          offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional int32 length = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_length(&has_bits);
-          length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string replacement = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_replacement();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
           ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome_knowledge.CorrectionFragment.replacement");
           #endif  // !NDEBUG
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* CorrectionFragment::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* CorrectionFragment::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_knowledge.CorrectionFragment)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -865,7 +870,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome_knowledge.CorrectionFragment)
   return target;
@@ -875,7 +880,7 @@ size_t CorrectionFragment::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome_knowledge.CorrectionFragment)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -890,55 +895,41 @@ size_t CorrectionFragment::ByteSizeLong() const {
 
     // optional int32 offset = 1;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_offset());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_offset());
     }
 
     // optional int32 length = 2;
     if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-          this->_internal_length());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_length());
     }
 
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void CorrectionFragment::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome_knowledge.CorrectionFragment)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CorrectionFragment* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CorrectionFragment>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome_knowledge.CorrectionFragment)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome_knowledge.CorrectionFragment)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CorrectionFragment::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    CorrectionFragment::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CorrectionFragment::GetClassData() const { return &_class_data_; }
+
+void CorrectionFragment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<CorrectionFragment *>(to)->MergeFrom(
+      static_cast<const CorrectionFragment &>(from));
 }
+
 
 void CorrectionFragment::MergeFrom(const CorrectionFragment& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome_knowledge.CorrectionFragment)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      replacement_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.replacement_);
+      _internal_set_replacement(from._internal_replacement());
     }
     if (cached_has_bits & 0x00000002u) {
       offset_ = from.offset_;
@@ -948,13 +939,7 @@ void CorrectionFragment::MergeFrom(const CorrectionFragment& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void CorrectionFragment::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome_knowledge.CorrectionFragment)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CorrectionFragment::CopyFrom(const CorrectionFragment& from) {
@@ -970,23 +955,31 @@ bool CorrectionFragment::IsInitialized() const {
 
 void CorrectionFragment::InternalSwap(CorrectionFragment* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  replacement_.Swap(&other->replacement_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(offset_, other->offset_);
-  swap(length_, other->length_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &replacement_, lhs_arena,
+      &other->replacement_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CorrectionFragment, length_)
+      + sizeof(CorrectionFragment::length_)
+      - PROTOBUF_FIELD_OFFSET(CorrectionFragment, offset_)>(
+          reinterpret_cast<char*>(&offset_),
+          reinterpret_cast<char*>(&other->offset_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CorrectionFragment::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grammar_5finterface_2eproto_getter, &descriptor_table_grammar_5finterface_2eproto_once,
+      file_level_metadata_grammar_5finterface_2eproto[2]);
 }
-
 
 // ===================================================================
 
-void GrammarCheckerCandidate::InitAsDefaultInstance() {
-}
 class GrammarCheckerCandidate::_Internal {
  public:
   using HasBits = decltype(std::declval<GrammarCheckerCandidate>()._has_bits_);
@@ -998,95 +991,110 @@ class GrammarCheckerCandidate::_Internal {
   }
 };
 
-GrammarCheckerCandidate::GrammarCheckerCandidate()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GrammarCheckerCandidate::GrammarCheckerCandidate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  fragments_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome_knowledge.GrammarCheckerCandidate)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome_knowledge.GrammarCheckerCandidate)
 }
 GrammarCheckerCandidate::GrammarCheckerCandidate(const GrammarCheckerCandidate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       fragments_(from.fragments_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_text()) {
-    text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+    text_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_text(), 
+      GetArenaForAllocation());
   }
   score_ = from.score_;
   // @@protoc_insertion_point(copy_constructor:chrome_knowledge.GrammarCheckerCandidate)
 }
 
-void GrammarCheckerCandidate::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto.base);
-  text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  score_ = 0;
+inline void GrammarCheckerCandidate::SharedCtor() {
+text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+score_ = 0;
 }
 
 GrammarCheckerCandidate::~GrammarCheckerCandidate() {
   // @@protoc_insertion_point(destructor:chrome_knowledge.GrammarCheckerCandidate)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GrammarCheckerCandidate::SharedDtor() {
+inline void GrammarCheckerCandidate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   text_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GrammarCheckerCandidate::ArenaDtor(void* object) {
+  GrammarCheckerCandidate* _this = reinterpret_cast< GrammarCheckerCandidate* >(object);
+  (void)_this;
+}
+void GrammarCheckerCandidate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GrammarCheckerCandidate::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GrammarCheckerCandidate& GrammarCheckerCandidate::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GrammarCheckerCandidate_grammar_5finterface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GrammarCheckerCandidate::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_knowledge.GrammarCheckerCandidate)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   fragments_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    text_.ClearNonDefaultToEmptyNoArena();
+    text_.ClearNonDefaultToEmpty();
   }
   score_ = 0;
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GrammarCheckerCandidate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string text = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_text();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           #ifndef NDEBUG
           ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "chrome_knowledge.GrammarCheckerCandidate.text");
           #endif  // !NDEBUG
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional float score = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
           _Internal::set_has_score(&has_bits);
           score_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .chrome_knowledge.CorrectionFragment fragments = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1094,33 +1102,37 @@ const char* GrammarCheckerCandidate::_InternalParse(const char* ptr, ::PROTOBUF_
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GrammarCheckerCandidate::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GrammarCheckerCandidate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_knowledge.GrammarCheckerCandidate)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1150,7 +1162,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome_knowledge.GrammarCheckerCandidate)
   return target;
@@ -1160,7 +1172,7 @@ size_t GrammarCheckerCandidate::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome_knowledge.GrammarCheckerCandidate)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1186,56 +1198,40 @@ size_t GrammarCheckerCandidate::ByteSizeLong() const {
     }
 
   }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void GrammarCheckerCandidate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome_knowledge.GrammarCheckerCandidate)
-  GOOGLE_DCHECK_NE(&from, this);
-  const GrammarCheckerCandidate* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GrammarCheckerCandidate>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome_knowledge.GrammarCheckerCandidate)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome_knowledge.GrammarCheckerCandidate)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GrammarCheckerCandidate::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GrammarCheckerCandidate::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GrammarCheckerCandidate::GetClassData() const { return &_class_data_; }
+
+void GrammarCheckerCandidate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GrammarCheckerCandidate *>(to)->MergeFrom(
+      static_cast<const GrammarCheckerCandidate &>(from));
 }
+
 
 void GrammarCheckerCandidate::MergeFrom(const GrammarCheckerCandidate& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome_knowledge.GrammarCheckerCandidate)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   fragments_.MergeFrom(from.fragments_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+      _internal_set_text(from._internal_text());
     }
     if (cached_has_bits & 0x00000002u) {
       score_ = from.score_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void GrammarCheckerCandidate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome_knowledge.GrammarCheckerCandidate)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GrammarCheckerCandidate::CopyFrom(const GrammarCheckerCandidate& from) {
@@ -1251,84 +1247,91 @@ bool GrammarCheckerCandidate::IsInitialized() const {
 
 void GrammarCheckerCandidate::InternalSwap(GrammarCheckerCandidate* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   fragments_.InternalSwap(&other->fragments_);
-  text_.Swap(&other->text_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &text_, lhs_arena,
+      &other->text_, rhs_arena
+  );
   swap(score_, other->score_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GrammarCheckerCandidate::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grammar_5finterface_2eproto_getter, &descriptor_table_grammar_5finterface_2eproto_once,
+      file_level_metadata_grammar_5finterface_2eproto[3]);
 }
-
 
 // ===================================================================
 
-void GrammarCheckerResult::InitAsDefaultInstance() {
-}
 class GrammarCheckerResult::_Internal {
  public:
-  using HasBits = decltype(std::declval<GrammarCheckerResult>()._has_bits_);
 };
 
-GrammarCheckerResult::GrammarCheckerResult()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GrammarCheckerResult::GrammarCheckerResult(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  candidates_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:chrome_knowledge.GrammarCheckerResult)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:chrome_knowledge.GrammarCheckerResult)
 }
 GrammarCheckerResult::GrammarCheckerResult(const GrammarCheckerResult& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      _has_bits_(from._has_bits_),
       candidates_(from.candidates_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:chrome_knowledge.GrammarCheckerResult)
 }
 
-void GrammarCheckerResult::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GrammarCheckerResult_grammar_5finterface_2eproto.base);
+inline void GrammarCheckerResult::SharedCtor() {
 }
 
 GrammarCheckerResult::~GrammarCheckerResult() {
   // @@protoc_insertion_point(destructor:chrome_knowledge.GrammarCheckerResult)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GrammarCheckerResult::SharedDtor() {
+inline void GrammarCheckerResult::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void GrammarCheckerResult::ArenaDtor(void* object) {
+  GrammarCheckerResult* _this = reinterpret_cast< GrammarCheckerResult* >(object);
+  (void)_this;
+}
+void GrammarCheckerResult::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GrammarCheckerResult::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GrammarCheckerResult& GrammarCheckerResult::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GrammarCheckerResult_grammar_5finterface_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GrammarCheckerResult::Clear() {
 // @@protoc_insertion_point(message_clear_start:chrome_knowledge.GrammarCheckerResult)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   candidates_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GrammarCheckerResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .chrome_knowledge.GrammarCheckerCandidate candidates = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1336,32 +1339,36 @@ const char* GrammarCheckerResult::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GrammarCheckerResult::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GrammarCheckerResult::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:chrome_knowledge.GrammarCheckerResult)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .chrome_knowledge.GrammarCheckerCandidate candidates = 1;
@@ -1374,7 +1381,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:chrome_knowledge.GrammarCheckerResult)
   return target;
@@ -1384,7 +1391,7 @@ size_t GrammarCheckerResult::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:chrome_knowledge.GrammarCheckerResult)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1395,45 +1402,30 @@ size_t GrammarCheckerResult::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void GrammarCheckerResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:chrome_knowledge.GrammarCheckerResult)
-  GOOGLE_DCHECK_NE(&from, this);
-  const GrammarCheckerResult* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GrammarCheckerResult>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:chrome_knowledge.GrammarCheckerResult)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:chrome_knowledge.GrammarCheckerResult)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GrammarCheckerResult::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GrammarCheckerResult::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GrammarCheckerResult::GetClassData() const { return &_class_data_; }
+
+void GrammarCheckerResult::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GrammarCheckerResult *>(to)->MergeFrom(
+      static_cast<const GrammarCheckerResult &>(from));
 }
+
 
 void GrammarCheckerResult::MergeFrom(const GrammarCheckerResult& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:chrome_knowledge.GrammarCheckerResult)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   candidates_.MergeFrom(from.candidates_);
-}
-
-void GrammarCheckerResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:chrome_knowledge.GrammarCheckerResult)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GrammarCheckerResult::CopyFrom(const GrammarCheckerResult& from) {
@@ -1449,33 +1441,33 @@ bool GrammarCheckerResult::IsInitialized() const {
 
 void GrammarCheckerResult::InternalSwap(GrammarCheckerResult* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   candidates_.InternalSwap(&other->candidates_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GrammarCheckerResult::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_grammar_5finterface_2eproto_getter, &descriptor_table_grammar_5finterface_2eproto_once,
+      file_level_metadata_grammar_5finterface_2eproto[4]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace chrome_knowledge
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::chrome_knowledge::GrammarCheckerModelPaths* Arena::CreateMaybeMessage< ::chrome_knowledge::GrammarCheckerModelPaths >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome_knowledge::GrammarCheckerModelPaths >(arena);
+  return Arena::CreateMessageInternal< ::chrome_knowledge::GrammarCheckerModelPaths >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome_knowledge::GrammarCheckerRequest* Arena::CreateMaybeMessage< ::chrome_knowledge::GrammarCheckerRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome_knowledge::GrammarCheckerRequest >(arena);
+  return Arena::CreateMessageInternal< ::chrome_knowledge::GrammarCheckerRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome_knowledge::CorrectionFragment* Arena::CreateMaybeMessage< ::chrome_knowledge::CorrectionFragment >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome_knowledge::CorrectionFragment >(arena);
+  return Arena::CreateMessageInternal< ::chrome_knowledge::CorrectionFragment >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome_knowledge::GrammarCheckerCandidate* Arena::CreateMaybeMessage< ::chrome_knowledge::GrammarCheckerCandidate >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome_knowledge::GrammarCheckerCandidate >(arena);
+  return Arena::CreateMessageInternal< ::chrome_knowledge::GrammarCheckerCandidate >(arena);
 }
 template<> PROTOBUF_NOINLINE ::chrome_knowledge::GrammarCheckerResult* Arena::CreateMaybeMessage< ::chrome_knowledge::GrammarCheckerResult >(Arena* arena) {
-  return Arena::CreateInternal< ::chrome_knowledge::GrammarCheckerResult >(arena);
+  return Arena::CreateMessageInternal< ::chrome_knowledge::GrammarCheckerResult >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

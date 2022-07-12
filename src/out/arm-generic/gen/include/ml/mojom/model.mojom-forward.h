@@ -47,16 +47,6 @@ using FlatBufferModelSpecPtr = mojo::StructPtr<FlatBufferModelSpec>;
 
 class Model;
 
-using ModelPtr = mojo::InterfacePtr<Model>;
-using ModelPtrInfo = mojo::InterfacePtrInfo<Model>;
-
-using ModelRequest = mojo::InterfaceRequest<Model>;
-using ModelAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<Model>;
-
-using ModelAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<Model>;
-
 
 
 

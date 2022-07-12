@@ -173,7 +173,7 @@ class MjpegDecodeAccelerator_DecodeWithDmaBuf_ParamsDataView {
       ::cros::mojom::DmaBufVideoFrameDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDstFrame(UserType* output) {
+  [[nodiscard]] bool ReadDstFrame(UserType* output) {
     
     auto* pointer = data_->dst_frame.Get();
     return mojo::internal::Deserialize<::cros::mojom::DmaBufVideoFrameDataView>(
@@ -197,7 +197,7 @@ class MjpegDecodeAccelerator_DecodeWithDmaBuf_ResponseParamsDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadError(UserType* output) const {
+  [[nodiscard]] bool ReadError(UserType* output) const {
     auto data_value = data_->error;
     return mojo::internal::Deserialize<::cros::mojom::DecodeError>(
         data_value, output);

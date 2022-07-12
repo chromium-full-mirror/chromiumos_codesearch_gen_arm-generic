@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -87,6 +86,61 @@ bool Message::Validate(
   return Data_::Validate(data, validation_context);
 }
 const char Channel::Name_[] = "IPC.mojom.Channel";
+
+uint32_t Channel::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kChannel_SetPeerPid_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)IPC::mojom::Channel::SetPeerPid");
+      return value;
+    }
+    case internal::kChannel_Receive_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)IPC::mojom::Channel::Receive");
+      return value;
+    }
+    case internal::kChannel_GetAssociatedInterface_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)IPC::mojom::Channel::GetAssociatedInterface");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* Channel::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kChannel_SetPeerPid_Name:
+            return "Receive IPC::mojom::Channel::SetPeerPid";
+      case internal::kChannel_Receive_Name:
+            return "Receive IPC::mojom::Channel::Receive";
+      case internal::kChannel_GetAssociatedInterface_Name:
+            return "Receive IPC::mojom::Channel::GetAssociatedInterface";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kChannel_SetPeerPid_Name:
+            return "Receive reply IPC::mojom::Channel::SetPeerPid";
+      case internal::kChannel_Receive_Name:
+            return "Receive reply IPC::mojom::Channel::Receive";
+      case internal::kChannel_GetAssociatedInterface_Name:
+            return "Receive reply IPC::mojom::Channel::GetAssociatedInterface";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 ChannelProxy::ChannelProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {
@@ -233,15 +287,6 @@ bool ChannelStubDispatch::Accept(
     mojo::Message* message) {
   switch (message->header()->name) {
     case internal::kChannel_SetPeerPid_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive IPC::mojom::Channel::SetPeerPid",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)IPC::mojom::Channel::SetPeerPid");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::Channel_SetPeerPid_Params_Data* params =
@@ -268,15 +313,6 @@ std::move(p_pid));
       return true;
     }
     case internal::kChannel_Receive_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive IPC::mojom::Channel::Receive",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)IPC::mojom::Channel::Receive");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::Channel_Receive_Params_Data* params =
@@ -303,15 +339,6 @@ std::move(p_message));
       return true;
     }
     case internal::kChannel_GetAssociatedInterface_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive IPC::mojom::Channel::GetAssociatedInterface",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)IPC::mojom::Channel::GetAssociatedInterface");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::Channel_GetAssociatedInterface_Params_Data* params =
@@ -379,6 +406,24 @@ bool ChannelRequestValidator::Accept(mojo::Message* message) {
 }
 
 const char ChannelBootstrap::Name_[] = "IPC.mojom.ChannelBootstrap";
+
+uint32_t ChannelBootstrap::MessageToStableIPCHash_(mojo::Message& message) {
+  return 0;
+}
+
+
+const char* ChannelBootstrap::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 ChannelBootstrapProxy::ChannelBootstrapProxy(mojo::MessageReceiverWithResponder* receiver)
     : receiver_(receiver) {

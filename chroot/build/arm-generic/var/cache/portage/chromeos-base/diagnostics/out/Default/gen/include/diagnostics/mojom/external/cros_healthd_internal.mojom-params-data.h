@@ -117,7 +117,7 @@ class ChromiumDataCollector_GetTouchscreenDevices_ResponseParamsDataView {
       mojo::ArrayDataView<TouchscreenDeviceDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadDevices(UserType* output) {
+  [[nodiscard]] bool ReadDevices(UserType* output) {
     
     auto* pointer = data_->devices.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::cros_healthd::internal::mojom::TouchscreenDeviceDataView>>(
@@ -160,7 +160,7 @@ class ChromiumDataCollector_GetTouchpadLibraryName_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadLibraryName(UserType* output) {
+  [[nodiscard]] bool ReadLibraryName(UserType* output) {
     
     auto* pointer = data_->library_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

@@ -177,7 +177,7 @@ class SignalStrengthStatsDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSamples(UserType* output) {
+  [[nodiscard]] bool ReadSamples(UserType* output) {
     
     auto* pointer = data_->samples.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(
@@ -201,7 +201,7 @@ class NetworkDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadType(UserType* output) const {
+  [[nodiscard]] bool ReadType(UserType* output) const {
     auto data_value = data_->type;
     return mojo::internal::Deserialize<::chromeos::network_config::mojom::NetworkType>(
         data_value, output);
@@ -211,7 +211,7 @@ class NetworkDataView {
           static_cast<::chromeos::network_config::mojom::NetworkType>(data_->type));
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadState(UserType* output) const {
+  [[nodiscard]] bool ReadState(UserType* output) const {
     auto data_value = data_->state;
     return mojo::internal::Deserialize<::chromeos::network_health::mojom::NetworkState>(
         data_value, output);
@@ -224,7 +224,7 @@ class NetworkDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadGuid(UserType* output) {
+  [[nodiscard]] bool ReadGuid(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -244,7 +244,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadName(UserType* output) {
+  [[nodiscard]] bool ReadName(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -264,7 +264,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadMacAddress(UserType* output) {
+  [[nodiscard]] bool ReadMacAddress(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -284,7 +284,7 @@ static_assert(
       UInt32ValueDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSignalStrength(UserType* output) {
+  [[nodiscard]] bool ReadSignalStrength(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -304,7 +304,7 @@ static_assert(
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIpv4Address(UserType* output) {
+  [[nodiscard]] bool ReadIpv4Address(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -324,14 +324,14 @@ static_assert(
       mojo::ArrayDataView<mojo::StringDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadIpv6Addresses(UserType* output) {
+  [[nodiscard]] bool ReadIpv6Addresses(UserType* output) {
     
     auto* pointer = data_->ipv6_addresses.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<mojo::StringDataView>>(
         pointer, output, message_);
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadPortalState(UserType* output) const {
+  [[nodiscard]] bool ReadPortalState(UserType* output) const {
     auto data_value = data_->portal_state;
     return mojo::internal::Deserialize<::chromeos::network_config::mojom::PortalState>(
         data_value, output);
@@ -344,7 +344,7 @@ static_assert(
       SignalStrengthStatsDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadSignalStrengthStats(UserType* output) {
+  [[nodiscard]] bool ReadSignalStrengthStats(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -382,7 +382,7 @@ class NetworkHealthStateDataView {
       mojo::ArrayDataView<NetworkDataView>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNetworks(UserType* output) {
+  [[nodiscard]] bool ReadNetworks(UserType* output) {
     
     auto* pointer = data_->networks.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<::chromeos::network_health::mojom::NetworkDataView>>(

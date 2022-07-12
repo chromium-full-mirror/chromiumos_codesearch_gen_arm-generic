@@ -355,7 +355,7 @@ class Executor_GetFanSpeed_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -398,7 +398,7 @@ class Executor_GetInterfaces_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -425,7 +425,7 @@ class Executor_GetLink_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaceName(UserType* output) {
+  [[nodiscard]] bool ReadInterfaceName(UserType* output) {
     
     auto* pointer = data_->interface_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -452,7 +452,7 @@ class Executor_GetLink_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -479,7 +479,7 @@ class Executor_GetInfo_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaceName(UserType* output) {
+  [[nodiscard]] bool ReadInterfaceName(UserType* output) {
     
     auto* pointer = data_->interface_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -506,7 +506,7 @@ class Executor_GetInfo_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -533,7 +533,7 @@ class Executor_GetScanDump_ParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInterfaceName(UserType* output) {
+  [[nodiscard]] bool ReadInterfaceName(UserType* output) {
     
     auto* pointer = data_->interface_name.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -560,7 +560,7 @@ class Executor_GetScanDump_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -603,7 +603,7 @@ class Executor_RunMemtester_ResponseParamsDataView {
       ExecutedProcessResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::ExecutedProcessResultDataView>(
@@ -665,7 +665,7 @@ class Executor_GetProcessIOContents_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadContents(UserType* output) {
+  [[nodiscard]] bool ReadContents(UserType* output) {
     
     auto* pointer = data_->contents.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -714,7 +714,7 @@ class Executor_ReadMsr_ResponseParamsDataView {
       ::chromeos::cros_healthd::mojom::NullableUint64DataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadValue(UserType* output) {
+  [[nodiscard]] bool ReadValue(UserType* output) {
     
 static_assert(
     mojo::internal::IsValidUserTypeForOptionalValue<
@@ -767,7 +767,7 @@ class Executor_GetUEFISecureBootContent_ResponseParamsDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadContents(UserType* output) {
+  [[nodiscard]] bool ReadContents(UserType* output) {
     
     auto* pointer = data_->contents.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(

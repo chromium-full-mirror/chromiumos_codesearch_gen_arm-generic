@@ -70,7 +70,7 @@ class HandwritingRecognizer_Recognize_ParamsDataView {
       HandwritingRecognitionQueryDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadQuery(UserType* output) {
+  [[nodiscard]] bool ReadQuery(UserType* output) {
     
     auto* pointer = data_->query.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::HandwritingRecognitionQueryDataView>(
@@ -97,7 +97,7 @@ class HandwritingRecognizer_Recognize_ResponseParamsDataView {
       HandwritingRecognizerResultDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadResult(UserType* output) {
+  [[nodiscard]] bool ReadResult(UserType* output) {
     
     auto* pointer = data_->result.Get();
     return mojo::internal::Deserialize<::chromeos::machine_learning::mojom::HandwritingRecognizerResultDataView>(

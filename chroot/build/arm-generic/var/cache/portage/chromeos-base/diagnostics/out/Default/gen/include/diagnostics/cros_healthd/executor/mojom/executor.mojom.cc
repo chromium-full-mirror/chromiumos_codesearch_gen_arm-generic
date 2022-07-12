@@ -18,7 +18,6 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/task/common/task_annotator.h"
 #include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
@@ -106,6 +105,124 @@ bool ExecutedProcessResult::Validate(
   return Data_::Validate(data, validation_context);
 }
 const char Executor::Name_[] = "chromeos.cros_healthd.mojom.Executor";
+
+uint32_t Executor::MessageToStableIPCHash_(mojo::Message& message) {
+  switch (message.name()) {
+    case internal::kExecutor_GetFanSpeed_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetFanSpeed");
+      return value;
+    }
+    case internal::kExecutor_GetInterfaces_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetInterfaces");
+      return value;
+    }
+    case internal::kExecutor_GetLink_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetLink");
+      return value;
+    }
+    case internal::kExecutor_GetInfo_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetInfo");
+      return value;
+    }
+    case internal::kExecutor_GetScanDump_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetScanDump");
+      return value;
+    }
+    case internal::kExecutor_RunMemtester_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::RunMemtester");
+      return value;
+    }
+    case internal::kExecutor_KillMemtester_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::KillMemtester");
+      return value;
+    }
+    case internal::kExecutor_GetProcessIOContents_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetProcessIOContents");
+      return value;
+    }
+    case internal::kExecutor_ReadMsr_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::ReadMsr");
+      return value;
+    }
+    case internal::kExecutor_GetUEFISecureBootContent_Name: {
+      constexpr uint32_t value = base::MD5Hash32Constexpr(
+              "(Impl)chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent");
+      return value;
+    }
+  }
+  return 0;
+}
+
+
+const char* Executor::MessageToMethodName_(mojo::Message& message) {
+#if BUILDFLAG(MOJO_TRACE_ENABLED)
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (!is_response) {
+    switch (message.name()) {
+      case internal::kExecutor_GetFanSpeed_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetFanSpeed";
+      case internal::kExecutor_GetInterfaces_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetInterfaces";
+      case internal::kExecutor_GetLink_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetLink";
+      case internal::kExecutor_GetInfo_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetInfo";
+      case internal::kExecutor_GetScanDump_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetScanDump";
+      case internal::kExecutor_RunMemtester_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::RunMemtester";
+      case internal::kExecutor_KillMemtester_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::KillMemtester";
+      case internal::kExecutor_GetProcessIOContents_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetProcessIOContents";
+      case internal::kExecutor_ReadMsr_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::ReadMsr";
+      case internal::kExecutor_GetUEFISecureBootContent_Name:
+            return "Receive chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent";
+    }
+  } else {
+    switch (message.name()) {
+      case internal::kExecutor_GetFanSpeed_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetFanSpeed";
+      case internal::kExecutor_GetInterfaces_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetInterfaces";
+      case internal::kExecutor_GetLink_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetLink";
+      case internal::kExecutor_GetInfo_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetInfo";
+      case internal::kExecutor_GetScanDump_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetScanDump";
+      case internal::kExecutor_RunMemtester_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::RunMemtester";
+      case internal::kExecutor_KillMemtester_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::KillMemtester";
+      case internal::kExecutor_GetProcessIOContents_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetProcessIOContents";
+      case internal::kExecutor_ReadMsr_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::ReadMsr";
+      case internal::kExecutor_GetUEFISecureBootContent_Name:
+            return "Receive reply chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent";
+    }
+  }
+  return "Receive unknown mojo message";
+#else
+  bool is_response = message.has_flag(mojo::Message::kFlagIsResponse);
+  if (is_response) {
+    return "Receive mojo reply";
+  } else {
+    return "Receive mojo message";
+  }
+#endif // BUILDFLAG(MOJO_TRACE_ENABLED)
+}
 
 class Executor_GetFanSpeed_ForwardToCallback
     : public mojo::MessageReceiver {
@@ -684,10 +801,6 @@ class Executor_GetFanSpeed_ProxyToResponder : public ::mojo::internal::ProxyToRe
 
 bool Executor_GetFanSpeed_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetFanSpeed",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetFanSpeed_ResponseParams_Data* params =
@@ -757,8 +870,11 @@ void Executor_GetFanSpeed_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -809,10 +925,6 @@ class Executor_GetInterfaces_ProxyToResponder : public ::mojo::internal::ProxyTo
 
 bool Executor_GetInterfaces_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetInterfaces",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetInterfaces_ResponseParams_Data* params =
@@ -882,8 +994,11 @@ void Executor_GetInterfaces_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -934,10 +1049,6 @@ class Executor_GetLink_ProxyToResponder : public ::mojo::internal::ProxyToRespon
 
 bool Executor_GetLink_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetLink",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetLink_ResponseParams_Data* params =
@@ -1007,8 +1118,11 @@ void Executor_GetLink_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1059,10 +1173,6 @@ class Executor_GetInfo_ProxyToResponder : public ::mojo::internal::ProxyToRespon
 
 bool Executor_GetInfo_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetInfo",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetInfo_ResponseParams_Data* params =
@@ -1132,8 +1242,11 @@ void Executor_GetInfo_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1184,10 +1297,6 @@ class Executor_GetScanDump_ProxyToResponder : public ::mojo::internal::ProxyToRe
 
 bool Executor_GetScanDump_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetScanDump",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetScanDump_ResponseParams_Data* params =
@@ -1257,8 +1366,11 @@ void Executor_GetScanDump_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1309,10 +1421,6 @@ class Executor_RunMemtester_ProxyToResponder : public ::mojo::internal::ProxyToR
 
 bool Executor_RunMemtester_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::RunMemtester",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_RunMemtester_ResponseParams_Data* params =
@@ -1382,8 +1490,11 @@ void Executor_RunMemtester_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1434,10 +1545,6 @@ class Executor_GetProcessIOContents_ProxyToResponder : public ::mojo::internal::
 
 bool Executor_GetProcessIOContents_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetProcessIOContents",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetProcessIOContents_ResponseParams_Data* params =
@@ -1507,8 +1614,11 @@ void Executor_GetProcessIOContents_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1559,10 +1669,6 @@ class Executor_ReadMsr_ProxyToResponder : public ::mojo::internal::ProxyToRespon
 
 bool Executor_ReadMsr_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::ReadMsr",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_ReadMsr_ResponseParams_Data* params =
@@ -1628,8 +1734,11 @@ void Executor_ReadMsr_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1680,10 +1789,6 @@ class Executor_GetUEFISecureBootContent_ProxyToResponder : public ::mojo::intern
 
 bool Executor_GetUEFISecureBootContent_ForwardToCallback::Accept(
     mojo::Message* message) {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT("toplevel", "Receive reply chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent",
-               perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
 
   DCHECK(message->is_serialized());
   internal::Executor_GetUEFISecureBootContent_ResponseParams_Data* params =
@@ -1753,8 +1858,11 @@ void Executor_GetUEFISecureBootContent_ProxyToResponder::Run(
   message.set_request_id(request_id_);
   message.set_trace_nonce(trace_nonce_);
   ::mojo::internal::SendMessage(*responder_, message);
-  // TODO(darin): Accept() returning false indicates a malformed message, and
-  // that may be good reason to close the connection. However, we don't have a
+  // SendMessage fails silently if the responder connection is closed,
+  // or if the message is malformed.
+  //
+  // TODO(darin): If Accept() returns false due to a malformed message, that
+  // may be good reason to close the connection. However, we don't have a
   // way to do that from here. We should add a way.
   responder_ = nullptr;
 }
@@ -1783,15 +1891,6 @@ bool ExecutorStubDispatch::Accept(
       break;
     }
     case internal::kExecutor_KillMemtester_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::KillMemtester",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::KillMemtester");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       DCHECK(message->is_serialized());
       internal::Executor_KillMemtester_Params_Data* params =
@@ -1836,15 +1935,6 @@ bool ExecutorStubDispatch::AcceptWithResponder(
   [[maybe_unused]] const uint64_t request_id = message->request_id();
   switch (message->header()->name) {
     case internal::kExecutor_GetFanSpeed_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetFanSpeed",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetFanSpeed");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetFanSpeed_Params_Data* params =
           reinterpret_cast<
@@ -1870,15 +1960,6 @@ bool ExecutorStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kExecutor_GetInterfaces_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetInterfaces",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetInterfaces");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetInterfaces_Params_Data* params =
           reinterpret_cast<
@@ -1904,15 +1985,6 @@ bool ExecutorStubDispatch::AcceptWithResponder(
       return true;
     }
     case internal::kExecutor_GetLink_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetLink",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetLink");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetLink_Params_Data* params =
           reinterpret_cast<
@@ -1942,15 +2014,6 @@ std::move(p_interface_name), std::move(callback));
       return true;
     }
     case internal::kExecutor_GetInfo_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetInfo",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetInfo");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetInfo_Params_Data* params =
           reinterpret_cast<
@@ -1980,15 +2043,6 @@ std::move(p_interface_name), std::move(callback));
       return true;
     }
     case internal::kExecutor_GetScanDump_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetScanDump",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetScanDump");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetScanDump_Params_Data* params =
           reinterpret_cast<
@@ -2018,15 +2072,6 @@ std::move(p_interface_name), std::move(callback));
       return true;
     }
     case internal::kExecutor_RunMemtester_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::RunMemtester",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::RunMemtester");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_RunMemtester_Params_Data* params =
           reinterpret_cast<
@@ -2055,15 +2100,6 @@ std::move(p_interface_name), std::move(callback));
       break;
     }
     case internal::kExecutor_GetProcessIOContents_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetProcessIOContents",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetProcessIOContents");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetProcessIOContents_Params_Data* params =
           reinterpret_cast<
@@ -2093,15 +2129,6 @@ std::move(p_pid), std::move(callback));
       return true;
     }
     case internal::kExecutor_ReadMsr_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::ReadMsr",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::ReadMsr");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_ReadMsr_Params_Data* params =
           reinterpret_cast<
@@ -2135,15 +2162,6 @@ std::move(p_cpu_index), std::move(callback));
       return true;
     }
     case internal::kExecutor_GetUEFISecureBootContent_Name: {
-#if BUILDFLAG(MOJO_TRACE_ENABLED)
-      TRACE_EVENT(
-          "toplevel",
-          "Receive chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent",
-          perfetto::libchrome::Flow::Global(message->GetTraceId()));
-#endif
-      static constexpr uint32_t kMessageHash = base::MD5Hash32Constexpr(
-              "(Impl)chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent");
-      base::TaskAnnotator::ScopedSetIpcHash scoped_ipc_hash(kMessageHash);
 
       internal::Executor_GetUEFISecureBootContent_Params_Data* params =
           reinterpret_cast<

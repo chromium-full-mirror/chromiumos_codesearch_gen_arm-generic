@@ -31,75 +31,15 @@ using UsbEventInfoPtr = mojo::StructPtr<UsbEventInfo>;
 
 class CrosHealthdBluetoothObserver;
 
-using CrosHealthdBluetoothObserverPtr = mojo::InterfacePtr<CrosHealthdBluetoothObserver>;
-using CrosHealthdBluetoothObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdBluetoothObserver>;
-
-using CrosHealthdBluetoothObserverRequest = mojo::InterfaceRequest<CrosHealthdBluetoothObserver>;
-using CrosHealthdBluetoothObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdBluetoothObserver>;
-
-using CrosHealthdBluetoothObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdBluetoothObserver>;
-
 class CrosHealthdLidObserver;
-
-using CrosHealthdLidObserverPtr = mojo::InterfacePtr<CrosHealthdLidObserver>;
-using CrosHealthdLidObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdLidObserver>;
-
-using CrosHealthdLidObserverRequest = mojo::InterfaceRequest<CrosHealthdLidObserver>;
-using CrosHealthdLidObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdLidObserver>;
-
-using CrosHealthdLidObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdLidObserver>;
 
 class CrosHealthdPowerObserver;
 
-using CrosHealthdPowerObserverPtr = mojo::InterfacePtr<CrosHealthdPowerObserver>;
-using CrosHealthdPowerObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdPowerObserver>;
-
-using CrosHealthdPowerObserverRequest = mojo::InterfaceRequest<CrosHealthdPowerObserver>;
-using CrosHealthdPowerObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdPowerObserver>;
-
-using CrosHealthdPowerObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdPowerObserver>;
-
 class CrosHealthdAudioObserver;
-
-using CrosHealthdAudioObserverPtr = mojo::InterfacePtr<CrosHealthdAudioObserver>;
-using CrosHealthdAudioObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdAudioObserver>;
-
-using CrosHealthdAudioObserverRequest = mojo::InterfaceRequest<CrosHealthdAudioObserver>;
-using CrosHealthdAudioObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdAudioObserver>;
-
-using CrosHealthdAudioObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdAudioObserver>;
 
 class CrosHealthdThunderboltObserver;
 
-using CrosHealthdThunderboltObserverPtr = mojo::InterfacePtr<CrosHealthdThunderboltObserver>;
-using CrosHealthdThunderboltObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdThunderboltObserver>;
-
-using CrosHealthdThunderboltObserverRequest = mojo::InterfaceRequest<CrosHealthdThunderboltObserver>;
-using CrosHealthdThunderboltObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdThunderboltObserver>;
-
-using CrosHealthdThunderboltObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdThunderboltObserver>;
-
 class CrosHealthdUsbObserver;
-
-using CrosHealthdUsbObserverPtr = mojo::InterfacePtr<CrosHealthdUsbObserver>;
-using CrosHealthdUsbObserverPtrInfo = mojo::InterfacePtrInfo<CrosHealthdUsbObserver>;
-
-using CrosHealthdUsbObserverRequest = mojo::InterfaceRequest<CrosHealthdUsbObserver>;
-using CrosHealthdUsbObserverAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdUsbObserver>;
-
-using CrosHealthdUsbObserverAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdUsbObserver>;
 
 
 

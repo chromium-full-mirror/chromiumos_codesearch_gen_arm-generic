@@ -71,7 +71,7 @@ class  CameraHalServerAsyncWaiter {
 class  CameraHalServerCallbacksInterceptorForTesting : public CameraHalServerCallbacks {
   virtual CameraHalServerCallbacks* GetForwardingInterface() = 0;
   void CameraDeviceActivityChange(int32_t camera_id, bool opened, CameraClientType type) override;
-  void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state) override;
+  void CameraPrivacySwitchStateChange(CameraPrivacySwitchState state, int32_t camera_id) override;
   void CameraSWPrivacySwitchStateChange(CameraPrivacySwitchState state) override;
 };
 class  CameraHalServerCallbacksAsyncWaiter {

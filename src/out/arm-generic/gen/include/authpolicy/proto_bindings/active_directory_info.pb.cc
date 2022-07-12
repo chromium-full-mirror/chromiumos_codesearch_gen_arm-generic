@@ -11,118 +11,101 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_active_5fdirectory_5finfo_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace authpolicy {
-class ActiveDirectoryAccountInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ActiveDirectoryAccountInfo> _instance;
-} _ActiveDirectoryAccountInfo_default_instance_;
-class ActiveDirectoryUserStatusDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ActiveDirectoryUserStatus> _instance;
-} _ActiveDirectoryUserStatus_default_instance_;
-class KerberosFilesDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<KerberosFiles> _instance;
-} _KerberosFiles_default_instance_;
-class JoinDomainRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<JoinDomainRequest> _instance;
-} _JoinDomainRequest_default_instance_;
-class AuthenticateUserRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AuthenticateUserRequest> _instance;
-} _AuthenticateUserRequest_default_instance_;
-class GetUserStatusRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetUserStatusRequest> _instance;
-} _GetUserStatusRequest_default_instance_;
+constexpr ActiveDirectoryAccountInfo::ActiveDirectoryAccountInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : account_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , display_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , given_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , sam_account_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , common_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , pwd_last_set_(uint64_t{0u})
+  , user_account_control_(0u){}
+struct ActiveDirectoryAccountInfoDefaultTypeInternal {
+  constexpr ActiveDirectoryAccountInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ActiveDirectoryAccountInfoDefaultTypeInternal() {}
+  union {
+    ActiveDirectoryAccountInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ActiveDirectoryAccountInfoDefaultTypeInternal _ActiveDirectoryAccountInfo_default_instance_;
+constexpr ActiveDirectoryUserStatus::ActiveDirectoryUserStatus(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : account_info_(nullptr)
+  , tgt_status_(0)
+
+  , password_status_(0)
+{}
+struct ActiveDirectoryUserStatusDefaultTypeInternal {
+  constexpr ActiveDirectoryUserStatusDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ActiveDirectoryUserStatusDefaultTypeInternal() {}
+  union {
+    ActiveDirectoryUserStatus _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ActiveDirectoryUserStatusDefaultTypeInternal _ActiveDirectoryUserStatus_default_instance_;
+constexpr KerberosFiles::KerberosFiles(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : krb5cc_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , krb5conf_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct KerberosFilesDefaultTypeInternal {
+  constexpr KerberosFilesDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~KerberosFilesDefaultTypeInternal() {}
+  union {
+    KerberosFiles _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KerberosFilesDefaultTypeInternal _KerberosFiles_default_instance_;
+constexpr JoinDomainRequest::JoinDomainRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : machine_ou_()
+  , user_principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , machine_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , machine_domain_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , dm_token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , kerberos_encryption_types_(1)
+{}
+struct JoinDomainRequestDefaultTypeInternal {
+  constexpr JoinDomainRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~JoinDomainRequestDefaultTypeInternal() {}
+  union {
+    JoinDomainRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT JoinDomainRequestDefaultTypeInternal _JoinDomainRequest_default_instance_;
+constexpr AuthenticateUserRequest::AuthenticateUserRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : user_principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , account_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct AuthenticateUserRequestDefaultTypeInternal {
+  constexpr AuthenticateUserRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AuthenticateUserRequestDefaultTypeInternal() {}
+  union {
+    AuthenticateUserRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthenticateUserRequestDefaultTypeInternal _AuthenticateUserRequest_default_instance_;
+constexpr GetUserStatusRequest::GetUserStatusRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : user_principal_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , account_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct GetUserStatusRequestDefaultTypeInternal {
+  constexpr GetUserStatusRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetUserStatusRequestDefaultTypeInternal() {}
+  union {
+    GetUserStatusRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetUserStatusRequestDefaultTypeInternal _GetUserStatusRequest_default_instance_;
 }  // namespace authpolicy
-static void InitDefaultsscc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_ActiveDirectoryAccountInfo_default_instance_;
-    new (ptr) ::authpolicy::ActiveDirectoryAccountInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::ActiveDirectoryAccountInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto}, {}};
-
-static void InitDefaultsscc_info_ActiveDirectoryUserStatus_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_ActiveDirectoryUserStatus_default_instance_;
-    new (ptr) ::authpolicy::ActiveDirectoryUserStatus();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::ActiveDirectoryUserStatus::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ActiveDirectoryUserStatus_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ActiveDirectoryUserStatus_active_5fdirectory_5finfo_2eproto}, {
-      &scc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto.base,}};
-
-static void InitDefaultsscc_info_AuthenticateUserRequest_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_AuthenticateUserRequest_default_instance_;
-    new (ptr) ::authpolicy::AuthenticateUserRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::AuthenticateUserRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AuthenticateUserRequest_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AuthenticateUserRequest_active_5fdirectory_5finfo_2eproto}, {}};
-
-static void InitDefaultsscc_info_GetUserStatusRequest_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_GetUserStatusRequest_default_instance_;
-    new (ptr) ::authpolicy::GetUserStatusRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::GetUserStatusRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetUserStatusRequest_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetUserStatusRequest_active_5fdirectory_5finfo_2eproto}, {}};
-
-static void InitDefaultsscc_info_JoinDomainRequest_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_JoinDomainRequest_default_instance_;
-    new (ptr) ::authpolicy::JoinDomainRequest();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::JoinDomainRequest::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_JoinDomainRequest_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_JoinDomainRequest_active_5fdirectory_5finfo_2eproto}, {}};
-
-static void InitDefaultsscc_info_KerberosFiles_active_5fdirectory_5finfo_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::authpolicy::_KerberosFiles_default_instance_;
-    new (ptr) ::authpolicy::KerberosFiles();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::authpolicy::KerberosFiles::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KerberosFiles_active_5fdirectory_5finfo_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_KerberosFiles_active_5fdirectory_5finfo_2eproto}, {}};
-
 namespace authpolicy {
 bool ActiveDirectoryUserStatus_TgtStatus_IsValid(int value) {
   switch (value) {
@@ -170,7 +153,7 @@ const std::string& ActiveDirectoryUserStatus_TgtStatus_Name(
                      ActiveDirectoryUserStatus_TgtStatus_strings[idx].get();
 }
 bool ActiveDirectoryUserStatus_TgtStatus_Parse(
-    const std::string& name, ActiveDirectoryUserStatus_TgtStatus* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ActiveDirectoryUserStatus_TgtStatus* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ActiveDirectoryUserStatus_TgtStatus_entries, 3, name, &int_value);
@@ -179,14 +162,14 @@ bool ActiveDirectoryUserStatus_TgtStatus_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ActiveDirectoryUserStatus_TgtStatus ActiveDirectoryUserStatus::TGT_VALID;
 constexpr ActiveDirectoryUserStatus_TgtStatus ActiveDirectoryUserStatus::TGT_EXPIRED;
 constexpr ActiveDirectoryUserStatus_TgtStatus ActiveDirectoryUserStatus::TGT_NOT_FOUND;
 constexpr ActiveDirectoryUserStatus_TgtStatus ActiveDirectoryUserStatus::TgtStatus_MIN;
 constexpr ActiveDirectoryUserStatus_TgtStatus ActiveDirectoryUserStatus::TgtStatus_MAX;
 constexpr int ActiveDirectoryUserStatus::TgtStatus_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool ActiveDirectoryUserStatus_PasswordStatus_IsValid(int value) {
   switch (value) {
     case 0:
@@ -233,7 +216,7 @@ const std::string& ActiveDirectoryUserStatus_PasswordStatus_Name(
                      ActiveDirectoryUserStatus_PasswordStatus_strings[idx].get();
 }
 bool ActiveDirectoryUserStatus_PasswordStatus_Parse(
-    const std::string& name, ActiveDirectoryUserStatus_PasswordStatus* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ActiveDirectoryUserStatus_PasswordStatus* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ActiveDirectoryUserStatus_PasswordStatus_entries, 3, name, &int_value);
@@ -242,14 +225,14 @@ bool ActiveDirectoryUserStatus_PasswordStatus_Parse(
   }
   return success;
 }
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr ActiveDirectoryUserStatus_PasswordStatus ActiveDirectoryUserStatus::PASSWORD_VALID;
 constexpr ActiveDirectoryUserStatus_PasswordStatus ActiveDirectoryUserStatus::PASSWORD_EXPIRED;
 constexpr ActiveDirectoryUserStatus_PasswordStatus ActiveDirectoryUserStatus::PASSWORD_CHANGED;
 constexpr ActiveDirectoryUserStatus_PasswordStatus ActiveDirectoryUserStatus::PasswordStatus_MIN;
 constexpr ActiveDirectoryUserStatus_PasswordStatus ActiveDirectoryUserStatus::PasswordStatus_MAX;
 constexpr int ActiveDirectoryUserStatus::PasswordStatus_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool ErrorType_IsValid(int value) {
   switch (value) {
     case 0:
@@ -444,7 +427,7 @@ const std::string& ErrorType_Name(
                      ErrorType_strings[idx].get();
 }
 bool ErrorType_Parse(
-    const std::string& name, ErrorType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ErrorType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ErrorType_entries, 40, name, &int_value);
@@ -503,7 +486,7 @@ const std::string& KerberosEncryptionTypes_Name(
                      KerberosEncryptionTypes_strings[idx].get();
 }
 bool KerberosEncryptionTypes_Parse(
-    const std::string& name, KerberosEncryptionTypes* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, KerberosEncryptionTypes* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       KerberosEncryptionTypes_entries, 4, name, &int_value);
@@ -515,8 +498,6 @@ bool KerberosEncryptionTypes_Parse(
 
 // ===================================================================
 
-void ActiveDirectoryAccountInfo::InitAsDefaultInstance() {
-}
 class ActiveDirectoryAccountInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<ActiveDirectoryAccountInfo>()._has_bits_);
@@ -543,35 +524,58 @@ class ActiveDirectoryAccountInfo::_Internal {
   }
 };
 
-ActiveDirectoryAccountInfo::ActiveDirectoryAccountInfo()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ActiveDirectoryAccountInfo::ActiveDirectoryAccountInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.ActiveDirectoryAccountInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.ActiveDirectoryAccountInfo)
 }
 ActiveDirectoryAccountInfo::ActiveDirectoryAccountInfo(const ActiveDirectoryAccountInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_account_id()) {
-    account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+    account_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_account_id(), 
+      GetArenaForAllocation());
   }
   display_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    display_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_display_name()) {
-    display_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.display_name_);
+    display_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_display_name(), 
+      GetArenaForAllocation());
   }
   given_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    given_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_given_name()) {
-    given_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.given_name_);
+    given_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_given_name(), 
+      GetArenaForAllocation());
   }
   sam_account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    sam_account_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_sam_account_name()) {
-    sam_account_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sam_account_name_);
+    sam_account_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_sam_account_name(), 
+      GetArenaForAllocation());
   }
   common_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    common_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_common_name()) {
-    common_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.common_name_);
+    common_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_common_name(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&pwd_last_set_, &from.pwd_last_set_,
     static_cast<size_t>(reinterpret_cast<char*>(&user_account_control_) -
@@ -579,24 +583,42 @@ ActiveDirectoryAccountInfo::ActiveDirectoryAccountInfo(const ActiveDirectoryAcco
   // @@protoc_insertion_point(copy_constructor:authpolicy.ActiveDirectoryAccountInfo)
 }
 
-void ActiveDirectoryAccountInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto.base);
-  account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  display_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  given_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  sam_account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  common_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&pwd_last_set_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&user_account_control_) -
-      reinterpret_cast<char*>(&pwd_last_set_)) + sizeof(user_account_control_));
+inline void ActiveDirectoryAccountInfo::SharedCtor() {
+account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+display_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  display_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+given_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  given_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+sam_account_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  sam_account_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+common_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  common_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&pwd_last_set_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&user_account_control_) -
+    reinterpret_cast<char*>(&pwd_last_set_)) + sizeof(user_account_control_));
 }
 
 ActiveDirectoryAccountInfo::~ActiveDirectoryAccountInfo() {
   // @@protoc_insertion_point(destructor:authpolicy.ActiveDirectoryAccountInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ActiveDirectoryAccountInfo::SharedDtor() {
+inline void ActiveDirectoryAccountInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   account_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   display_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   given_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -604,37 +626,38 @@ void ActiveDirectoryAccountInfo::SharedDtor() {
   common_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ActiveDirectoryAccountInfo::ArenaDtor(void* object) {
+  ActiveDirectoryAccountInfo* _this = reinterpret_cast< ActiveDirectoryAccountInfo* >(object);
+  (void)_this;
+}
+void ActiveDirectoryAccountInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ActiveDirectoryAccountInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ActiveDirectoryAccountInfo& ActiveDirectoryAccountInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ActiveDirectoryAccountInfo_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ActiveDirectoryAccountInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.ActiveDirectoryAccountInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      account_id_.ClearNonDefaultToEmptyNoArena();
+      account_id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      display_name_.ClearNonDefaultToEmptyNoArena();
+      display_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      given_name_.ClearNonDefaultToEmptyNoArena();
+      given_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      sam_account_name_.ClearNonDefaultToEmptyNoArena();
+      sam_account_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000010u) {
-      common_name_.ClearNonDefaultToEmptyNoArena();
+      common_name_.ClearNonDefaultToEmpty();
     }
   }
   if (cached_has_bits & 0x00000060u) {
@@ -643,98 +666,107 @@ void ActiveDirectoryAccountInfo::Clear() {
         reinterpret_cast<char*>(&pwd_last_set_)) + sizeof(user_account_control_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ActiveDirectoryAccountInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string account_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_account_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string display_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_display_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string given_name = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_given_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string sam_account_name = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_sam_account_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint64 pwd_last_set = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           _Internal::set_has_pwd_last_set(&has_bits);
-          pwd_last_set_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          pwd_last_set_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional uint32 user_account_control = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_user_account_control(&has_bits);
-          user_account_control_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          user_account_control_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string common_name = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_common_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ActiveDirectoryAccountInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ActiveDirectoryAccountInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.ActiveDirectoryAccountInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -781,8 +813,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.ActiveDirectoryAccountInfo)
   return target;
@@ -792,7 +824,7 @@ size_t ActiveDirectoryAccountInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.ActiveDirectoryAccountInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -835,21 +867,17 @@ size_t ActiveDirectoryAccountInfo::ByteSizeLong() const {
 
     // optional uint64 pwd_last_set = 5;
     if (cached_has_bits & 0x00000020u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-          this->_internal_pwd_last_set());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_pwd_last_set());
     }
 
     // optional uint32 user_account_control = 6;
     if (cached_has_bits & 0x00000040u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_user_account_control());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_user_account_control());
     }
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -865,31 +893,25 @@ void ActiveDirectoryAccountInfo::CheckTypeAndMergeFrom(
 void ActiveDirectoryAccountInfo::MergeFrom(const ActiveDirectoryAccountInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.ActiveDirectoryAccountInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+      _internal_set_account_id(from._internal_account_id());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      display_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.display_name_);
+      _internal_set_display_name(from._internal_display_name());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      given_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.given_name_);
+      _internal_set_given_name(from._internal_given_name());
     }
     if (cached_has_bits & 0x00000008u) {
-      _has_bits_[0] |= 0x00000008u;
-      sam_account_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sam_account_name_);
+      _internal_set_sam_account_name(from._internal_sam_account_name());
     }
     if (cached_has_bits & 0x00000010u) {
-      _has_bits_[0] |= 0x00000010u;
-      common_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.common_name_);
+      _internal_set_common_name(from._internal_common_name());
     }
     if (cached_has_bits & 0x00000020u) {
       pwd_last_set_ = from.pwd_last_set_;
@@ -899,6 +921,7 @@ void ActiveDirectoryAccountInfo::MergeFrom(const ActiveDirectoryAccountInfo& fro
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ActiveDirectoryAccountInfo::CopyFrom(const ActiveDirectoryAccountInfo& from) {
@@ -914,20 +937,41 @@ bool ActiveDirectoryAccountInfo::IsInitialized() const {
 
 void ActiveDirectoryAccountInfo::InternalSwap(ActiveDirectoryAccountInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  account_id_.Swap(&other->account_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  display_name_.Swap(&other->display_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  given_name_.Swap(&other->given_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  sam_account_name_.Swap(&other->sam_account_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  common_name_.Swap(&other->common_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(pwd_last_set_, other->pwd_last_set_);
-  swap(user_account_control_, other->user_account_control_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &account_id_, lhs_arena,
+      &other->account_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &display_name_, lhs_arena,
+      &other->display_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &given_name_, lhs_arena,
+      &other->given_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &sam_account_name_, lhs_arena,
+      &other->sam_account_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &common_name_, lhs_arena,
+      &other->common_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ActiveDirectoryAccountInfo, user_account_control_)
+      + sizeof(ActiveDirectoryAccountInfo::user_account_control_)
+      - PROTOBUF_FIELD_OFFSET(ActiveDirectoryAccountInfo, pwd_last_set_)>(
+          reinterpret_cast<char*>(&pwd_last_set_),
+          reinterpret_cast<char*>(&other->pwd_last_set_));
 }
 
 std::string ActiveDirectoryAccountInfo::GetTypeName() const {
@@ -937,10 +981,6 @@ std::string ActiveDirectoryAccountInfo::GetTypeName() const {
 
 // ===================================================================
 
-void ActiveDirectoryUserStatus::InitAsDefaultInstance() {
-  ::authpolicy::_ActiveDirectoryUserStatus_default_instance_._instance.get_mutable()->account_info_ = const_cast< ::authpolicy::ActiveDirectoryAccountInfo*>(
-      ::authpolicy::ActiveDirectoryAccountInfo::internal_default_instance());
-}
 class ActiveDirectoryUserStatus::_Internal {
  public:
   using HasBits = decltype(std::declval<ActiveDirectoryUserStatus>()._has_bits_);
@@ -960,16 +1000,19 @@ const ::authpolicy::ActiveDirectoryAccountInfo&
 ActiveDirectoryUserStatus::_Internal::account_info(const ActiveDirectoryUserStatus* msg) {
   return *msg->account_info_;
 }
-ActiveDirectoryUserStatus::ActiveDirectoryUserStatus()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+ActiveDirectoryUserStatus::ActiveDirectoryUserStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.ActiveDirectoryUserStatus)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.ActiveDirectoryUserStatus)
 }
 ActiveDirectoryUserStatus::ActiveDirectoryUserStatus(const ActiveDirectoryUserStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_account_info()) {
     account_info_ = new ::authpolicy::ActiveDirectoryAccountInfo(*from.account_info_);
   } else {
@@ -981,34 +1024,38 @@ ActiveDirectoryUserStatus::ActiveDirectoryUserStatus(const ActiveDirectoryUserSt
   // @@protoc_insertion_point(copy_constructor:authpolicy.ActiveDirectoryUserStatus)
 }
 
-void ActiveDirectoryUserStatus::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ActiveDirectoryUserStatus_active_5fdirectory_5finfo_2eproto.base);
-  ::memset(&account_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&password_status_) -
-      reinterpret_cast<char*>(&account_info_)) + sizeof(password_status_));
+inline void ActiveDirectoryUserStatus::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&account_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&password_status_) -
+    reinterpret_cast<char*>(&account_info_)) + sizeof(password_status_));
 }
 
 ActiveDirectoryUserStatus::~ActiveDirectoryUserStatus() {
   // @@protoc_insertion_point(destructor:authpolicy.ActiveDirectoryUserStatus)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void ActiveDirectoryUserStatus::SharedDtor() {
+inline void ActiveDirectoryUserStatus::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete account_info_;
 }
 
+void ActiveDirectoryUserStatus::ArenaDtor(void* object) {
+  ActiveDirectoryUserStatus* _this = reinterpret_cast< ActiveDirectoryUserStatus* >(object);
+  (void)_this;
+}
+void ActiveDirectoryUserStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ActiveDirectoryUserStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ActiveDirectoryUserStatus& ActiveDirectoryUserStatus::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ActiveDirectoryUserStatus_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ActiveDirectoryUserStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.ActiveDirectoryUserStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1023,73 +1070,78 @@ void ActiveDirectoryUserStatus::Clear() {
         reinterpret_cast<char*>(&tgt_status_)) + sizeof(password_status_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* ActiveDirectoryUserStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional .authpolicy.ActiveDirectoryAccountInfo account_info = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_account_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .authpolicy.ActiveDirectoryUserStatus.TgtStatus tgt_status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::authpolicy::ActiveDirectoryUserStatus_TgtStatus_IsValid(val))) {
             _internal_set_tgt_status(static_cast<::authpolicy::ActiveDirectoryUserStatus_TgtStatus>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .authpolicy.ActiveDirectoryUserStatus.PasswordStatus password_status = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::authpolicy::ActiveDirectoryUserStatus_PasswordStatus_IsValid(val))) {
             _internal_set_password_status(static_cast<::authpolicy::ActiveDirectoryUserStatus_PasswordStatus>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ActiveDirectoryUserStatus::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ActiveDirectoryUserStatus::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.ActiveDirectoryUserStatus)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1116,8 +1168,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.ActiveDirectoryUserStatus)
   return target;
@@ -1127,7 +1179,7 @@ size_t ActiveDirectoryUserStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.ActiveDirectoryUserStatus)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1154,7 +1206,7 @@ size_t ActiveDirectoryUserStatus::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1170,8 +1222,7 @@ void ActiveDirectoryUserStatus::CheckTypeAndMergeFrom(
 void ActiveDirectoryUserStatus::MergeFrom(const ActiveDirectoryUserStatus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.ActiveDirectoryUserStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
@@ -1187,6 +1238,7 @@ void ActiveDirectoryUserStatus::MergeFrom(const ActiveDirectoryUserStatus& from)
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void ActiveDirectoryUserStatus::CopyFrom(const ActiveDirectoryUserStatus& from) {
@@ -1202,11 +1254,14 @@ bool ActiveDirectoryUserStatus::IsInitialized() const {
 
 void ActiveDirectoryUserStatus::InternalSwap(ActiveDirectoryUserStatus* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(account_info_, other->account_info_);
-  swap(tgt_status_, other->tgt_status_);
-  swap(password_status_, other->password_status_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ActiveDirectoryUserStatus, password_status_)
+      + sizeof(ActiveDirectoryUserStatus::password_status_)
+      - PROTOBUF_FIELD_OFFSET(ActiveDirectoryUserStatus, account_info_)>(
+          reinterpret_cast<char*>(&account_info_),
+          reinterpret_cast<char*>(&other->account_info_));
 }
 
 std::string ActiveDirectoryUserStatus::GetTypeName() const {
@@ -1216,8 +1271,6 @@ std::string ActiveDirectoryUserStatus::GetTypeName() const {
 
 // ===================================================================
 
-void KerberosFiles::InitAsDefaultInstance() {
-}
 class KerberosFiles::_Internal {
  public:
   using HasBits = decltype(std::declval<KerberosFiles>()._has_bits_);
@@ -1229,120 +1282,144 @@ class KerberosFiles::_Internal {
   }
 };
 
-KerberosFiles::KerberosFiles()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+KerberosFiles::KerberosFiles(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.KerberosFiles)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.KerberosFiles)
 }
 KerberosFiles::KerberosFiles(const KerberosFiles& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5cc_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5cc()) {
-    krb5cc_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_);
+    krb5cc_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5cc(), 
+      GetArenaForAllocation());
   }
   krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_krb5conf()) {
-    krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+    krb5conf_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_krb5conf(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:authpolicy.KerberosFiles)
 }
 
-void KerberosFiles::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_KerberosFiles_active_5fdirectory_5finfo_2eproto.base);
-  krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void KerberosFiles::SharedCtor() {
+krb5cc_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5cc_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+krb5conf_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  krb5conf_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 KerberosFiles::~KerberosFiles() {
   // @@protoc_insertion_point(destructor:authpolicy.KerberosFiles)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void KerberosFiles::SharedDtor() {
+inline void KerberosFiles::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   krb5cc_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   krb5conf_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void KerberosFiles::ArenaDtor(void* object) {
+  KerberosFiles* _this = reinterpret_cast< KerberosFiles* >(object);
+  (void)_this;
+}
+void KerberosFiles::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void KerberosFiles::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const KerberosFiles& KerberosFiles::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_KerberosFiles_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void KerberosFiles::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.KerberosFiles)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      krb5cc_.ClearNonDefaultToEmptyNoArena();
+      krb5cc_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      krb5conf_.ClearNonDefaultToEmptyNoArena();
+      krb5conf_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* KerberosFiles::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional bytes krb5cc = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_krb5cc();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional bytes krb5conf = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_krb5conf();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* KerberosFiles::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* KerberosFiles::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.KerberosFiles)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1359,8 +1436,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.KerberosFiles)
   return target;
@@ -1370,7 +1447,7 @@ size_t KerberosFiles::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.KerberosFiles)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1392,7 +1469,7 @@ size_t KerberosFiles::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1408,21 +1485,19 @@ void KerberosFiles::CheckTypeAndMergeFrom(
 void KerberosFiles::MergeFrom(const KerberosFiles& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.KerberosFiles)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      krb5cc_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5cc_);
+      _internal_set_krb5cc(from._internal_krb5cc());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      krb5conf_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.krb5conf_);
+      _internal_set_krb5conf(from._internal_krb5conf());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void KerberosFiles::CopyFrom(const KerberosFiles& from) {
@@ -1438,12 +1513,20 @@ bool KerberosFiles::IsInitialized() const {
 
 void KerberosFiles::InternalSwap(KerberosFiles* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  krb5cc_.Swap(&other->krb5cc_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  krb5conf_.Swap(&other->krb5conf_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5cc_, lhs_arena,
+      &other->krb5cc_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &krb5conf_, lhs_arena,
+      &other->krb5conf_, rhs_arena
+  );
 }
 
 std::string KerberosFiles::GetTypeName() const {
@@ -1453,8 +1536,6 @@ std::string KerberosFiles::GetTypeName() const {
 
 // ===================================================================
 
-void JoinDomainRequest::InitAsDefaultInstance() {
-}
 class JoinDomainRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<JoinDomainRequest>()._has_bits_);
@@ -1475,70 +1556,105 @@ class JoinDomainRequest::_Internal {
   }
 };
 
-JoinDomainRequest::JoinDomainRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+JoinDomainRequest::JoinDomainRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  machine_ou_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.JoinDomainRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.JoinDomainRequest)
 }
 JoinDomainRequest::JoinDomainRequest(const JoinDomainRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_),
       machine_ou_(from.machine_ou_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_user_principal_name()) {
-    user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+    user_principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_principal_name(), 
+      GetArenaForAllocation());
   }
   machine_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    machine_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_machine_name()) {
-    machine_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.machine_name_);
+    machine_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_machine_name(), 
+      GetArenaForAllocation());
   }
   machine_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    machine_domain_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_machine_domain()) {
-    machine_domain_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.machine_domain_);
+    machine_domain_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_machine_domain(), 
+      GetArenaForAllocation());
   }
   dm_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    dm_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_dm_token()) {
-    dm_token_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dm_token_);
+    dm_token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_dm_token(), 
+      GetArenaForAllocation());
   }
   kerberos_encryption_types_ = from.kerberos_encryption_types_;
   // @@protoc_insertion_point(copy_constructor:authpolicy.JoinDomainRequest)
 }
 
-void JoinDomainRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_JoinDomainRequest_active_5fdirectory_5finfo_2eproto.base);
-  user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  machine_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  machine_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  dm_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  kerberos_encryption_types_ = 1;
+inline void JoinDomainRequest::SharedCtor() {
+user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+machine_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  machine_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+machine_domain_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  machine_domain_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+dm_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  dm_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+kerberos_encryption_types_ = 1;
 }
 
 JoinDomainRequest::~JoinDomainRequest() {
   // @@protoc_insertion_point(destructor:authpolicy.JoinDomainRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void JoinDomainRequest::SharedDtor() {
+inline void JoinDomainRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   user_principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   machine_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   machine_domain_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   dm_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void JoinDomainRequest::ArenaDtor(void* object) {
+  JoinDomainRequest* _this = reinterpret_cast< JoinDomainRequest* >(object);
+  (void)_this;
+}
+void JoinDomainRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void JoinDomainRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const JoinDomainRequest& JoinDomainRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_JoinDomainRequest_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void JoinDomainRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.JoinDomainRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1546,58 +1662,60 @@ void JoinDomainRequest::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      user_principal_name_.ClearNonDefaultToEmptyNoArena();
+      user_principal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      machine_name_.ClearNonDefaultToEmptyNoArena();
+      machine_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      machine_domain_.ClearNonDefaultToEmptyNoArena();
+      machine_domain_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      dm_token_.ClearNonDefaultToEmptyNoArena();
+      dm_token_.ClearNonDefaultToEmpty();
     }
     kerberos_encryption_types_ = 1;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* JoinDomainRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string user_principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_user_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string machine_name = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_machine_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string machine_domain = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_machine_domain();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated string machine_ou = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1606,53 +1724,59 @@ const char* JoinDomainRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional .authpolicy.KerberosEncryptionTypes kerberos_encryption_types = 5 [default = ENC_TYPES_STRONG];
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::authpolicy::KerberosEncryptionTypes_IsValid(val))) {
             _internal_set_kerberos_encryption_types(static_cast<::authpolicy::KerberosEncryptionTypes>(val));
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(5, val, mutable_unknown_fields());
           }
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string dm_token = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_dm_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* JoinDomainRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* JoinDomainRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.JoinDomainRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1694,8 +1818,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.JoinDomainRequest)
   return target;
@@ -1705,7 +1829,7 @@ size_t JoinDomainRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.JoinDomainRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1755,7 +1879,7 @@ size_t JoinDomainRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -1771,34 +1895,30 @@ void JoinDomainRequest::CheckTypeAndMergeFrom(
 void JoinDomainRequest::MergeFrom(const JoinDomainRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.JoinDomainRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   machine_ou_.MergeFrom(from.machine_ou_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+      _internal_set_user_principal_name(from._internal_user_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      machine_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.machine_name_);
+      _internal_set_machine_name(from._internal_machine_name());
     }
     if (cached_has_bits & 0x00000004u) {
-      _has_bits_[0] |= 0x00000004u;
-      machine_domain_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.machine_domain_);
+      _internal_set_machine_domain(from._internal_machine_domain());
     }
     if (cached_has_bits & 0x00000008u) {
-      _has_bits_[0] |= 0x00000008u;
-      dm_token_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dm_token_);
+      _internal_set_dm_token(from._internal_dm_token());
     }
     if (cached_has_bits & 0x00000010u) {
       kerberos_encryption_types_ = from.kerberos_encryption_types_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void JoinDomainRequest::CopyFrom(const JoinDomainRequest& from) {
@@ -1814,17 +1934,31 @@ bool JoinDomainRequest::IsInitialized() const {
 
 void JoinDomainRequest::InternalSwap(JoinDomainRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   machine_ou_.InternalSwap(&other->machine_ou_);
-  user_principal_name_.Swap(&other->user_principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  machine_name_.Swap(&other->machine_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  machine_domain_.Swap(&other->machine_domain_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  dm_token_.Swap(&other->dm_token_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_principal_name_, lhs_arena,
+      &other->user_principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &machine_name_, lhs_arena,
+      &other->machine_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &machine_domain_, lhs_arena,
+      &other->machine_domain_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &dm_token_, lhs_arena,
+      &other->dm_token_, rhs_arena
+  );
   swap(kerberos_encryption_types_, other->kerberos_encryption_types_);
 }
 
@@ -1835,8 +1969,6 @@ std::string JoinDomainRequest::GetTypeName() const {
 
 // ===================================================================
 
-void AuthenticateUserRequest::InitAsDefaultInstance() {
-}
 class AuthenticateUserRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<AuthenticateUserRequest>()._has_bits_);
@@ -1848,120 +1980,144 @@ class AuthenticateUserRequest::_Internal {
   }
 };
 
-AuthenticateUserRequest::AuthenticateUserRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+AuthenticateUserRequest::AuthenticateUserRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.AuthenticateUserRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.AuthenticateUserRequest)
 }
 AuthenticateUserRequest::AuthenticateUserRequest(const AuthenticateUserRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_user_principal_name()) {
-    user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+    user_principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_principal_name(), 
+      GetArenaForAllocation());
   }
   account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_account_id()) {
-    account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+    account_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_account_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:authpolicy.AuthenticateUserRequest)
 }
 
-void AuthenticateUserRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AuthenticateUserRequest_active_5fdirectory_5finfo_2eproto.base);
-  user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void AuthenticateUserRequest::SharedCtor() {
+user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 AuthenticateUserRequest::~AuthenticateUserRequest() {
   // @@protoc_insertion_point(destructor:authpolicy.AuthenticateUserRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void AuthenticateUserRequest::SharedDtor() {
+inline void AuthenticateUserRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   user_principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   account_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void AuthenticateUserRequest::ArenaDtor(void* object) {
+  AuthenticateUserRequest* _this = reinterpret_cast< AuthenticateUserRequest* >(object);
+  (void)_this;
+}
+void AuthenticateUserRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AuthenticateUserRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AuthenticateUserRequest& AuthenticateUserRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AuthenticateUserRequest_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void AuthenticateUserRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.AuthenticateUserRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      user_principal_name_.ClearNonDefaultToEmptyNoArena();
+      user_principal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      account_id_.ClearNonDefaultToEmptyNoArena();
+      account_id_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* AuthenticateUserRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string user_principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_user_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string account_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_account_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AuthenticateUserRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* AuthenticateUserRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.AuthenticateUserRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -1978,8 +2134,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.AuthenticateUserRequest)
   return target;
@@ -1989,7 +2145,7 @@ size_t AuthenticateUserRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.AuthenticateUserRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2011,7 +2167,7 @@ size_t AuthenticateUserRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2027,21 +2183,19 @@ void AuthenticateUserRequest::CheckTypeAndMergeFrom(
 void AuthenticateUserRequest::MergeFrom(const AuthenticateUserRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.AuthenticateUserRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+      _internal_set_user_principal_name(from._internal_user_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+      _internal_set_account_id(from._internal_account_id());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void AuthenticateUserRequest::CopyFrom(const AuthenticateUserRequest& from) {
@@ -2057,12 +2211,20 @@ bool AuthenticateUserRequest::IsInitialized() const {
 
 void AuthenticateUserRequest::InternalSwap(AuthenticateUserRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  user_principal_name_.Swap(&other->user_principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  account_id_.Swap(&other->account_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_principal_name_, lhs_arena,
+      &other->user_principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &account_id_, lhs_arena,
+      &other->account_id_, rhs_arena
+  );
 }
 
 std::string AuthenticateUserRequest::GetTypeName() const {
@@ -2072,8 +2234,6 @@ std::string AuthenticateUserRequest::GetTypeName() const {
 
 // ===================================================================
 
-void GetUserStatusRequest::InitAsDefaultInstance() {
-}
 class GetUserStatusRequest::_Internal {
  public:
   using HasBits = decltype(std::declval<GetUserStatusRequest>()._has_bits_);
@@ -2085,120 +2245,144 @@ class GetUserStatusRequest::_Internal {
   }
 };
 
-GetUserStatusRequest::GetUserStatusRequest()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+GetUserStatusRequest::GetUserStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:authpolicy.GetUserStatusRequest)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:authpolicy.GetUserStatusRequest)
 }
 GetUserStatusRequest::GetUserStatusRequest(const GetUserStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_user_principal_name()) {
-    user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+    user_principal_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_principal_name(), 
+      GetArenaForAllocation());
   }
   account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_account_id()) {
-    account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+    account_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_account_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:authpolicy.GetUserStatusRequest)
 }
 
-void GetUserStatusRequest::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetUserStatusRequest_active_5fdirectory_5finfo_2eproto.base);
-  user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void GetUserStatusRequest::SharedCtor() {
+user_principal_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  user_principal_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+account_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  account_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 GetUserStatusRequest::~GetUserStatusRequest() {
   // @@protoc_insertion_point(destructor:authpolicy.GetUserStatusRequest)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void GetUserStatusRequest::SharedDtor() {
+inline void GetUserStatusRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   user_principal_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   account_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetUserStatusRequest::ArenaDtor(void* object) {
+  GetUserStatusRequest* _this = reinterpret_cast< GetUserStatusRequest* >(object);
+  (void)_this;
+}
+void GetUserStatusRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetUserStatusRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetUserStatusRequest& GetUserStatusRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetUserStatusRequest_active_5fdirectory_5finfo_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void GetUserStatusRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:authpolicy.GetUserStatusRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      user_principal_name_.ClearNonDefaultToEmptyNoArena();
+      user_principal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      account_id_.ClearNonDefaultToEmptyNoArena();
+      account_id_.ClearNonDefaultToEmpty();
     }
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* GetUserStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // optional string user_principal_name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_user_principal_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // optional string account_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_account_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetUserStatusRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetUserStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:authpolicy.GetUserStatusRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
@@ -2215,8 +2399,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:authpolicy.GetUserStatusRequest)
   return target;
@@ -2226,7 +2410,7 @@ size_t GetUserStatusRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:authpolicy.GetUserStatusRequest)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -2248,7 +2432,7 @@ size_t GetUserStatusRequest::ByteSizeLong() const {
 
   }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -2264,21 +2448,19 @@ void GetUserStatusRequest::CheckTypeAndMergeFrom(
 void GetUserStatusRequest::MergeFrom(const GetUserStatusRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:authpolicy.GetUserStatusRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _has_bits_[0] |= 0x00000001u;
-      user_principal_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.user_principal_name_);
+      _internal_set_user_principal_name(from._internal_user_principal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _has_bits_[0] |= 0x00000002u;
-      account_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.account_id_);
+      _internal_set_account_id(from._internal_account_id());
     }
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void GetUserStatusRequest::CopyFrom(const GetUserStatusRequest& from) {
@@ -2294,12 +2476,20 @@ bool GetUserStatusRequest::IsInitialized() const {
 
 void GetUserStatusRequest::InternalSwap(GetUserStatusRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  user_principal_name_.Swap(&other->user_principal_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  account_id_.Swap(&other->account_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &user_principal_name_, lhs_arena,
+      &other->user_principal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &account_id_, lhs_arena,
+      &other->account_id_, rhs_arena
+  );
 }
 
 std::string GetUserStatusRequest::GetTypeName() const {
@@ -2311,22 +2501,22 @@ std::string GetUserStatusRequest::GetTypeName() const {
 }  // namespace authpolicy
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::authpolicy::ActiveDirectoryAccountInfo* Arena::CreateMaybeMessage< ::authpolicy::ActiveDirectoryAccountInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::ActiveDirectoryAccountInfo >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::ActiveDirectoryAccountInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::authpolicy::ActiveDirectoryUserStatus* Arena::CreateMaybeMessage< ::authpolicy::ActiveDirectoryUserStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::ActiveDirectoryUserStatus >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::ActiveDirectoryUserStatus >(arena);
 }
 template<> PROTOBUF_NOINLINE ::authpolicy::KerberosFiles* Arena::CreateMaybeMessage< ::authpolicy::KerberosFiles >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::KerberosFiles >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::KerberosFiles >(arena);
 }
 template<> PROTOBUF_NOINLINE ::authpolicy::JoinDomainRequest* Arena::CreateMaybeMessage< ::authpolicy::JoinDomainRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::JoinDomainRequest >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::JoinDomainRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::authpolicy::AuthenticateUserRequest* Arena::CreateMaybeMessage< ::authpolicy::AuthenticateUserRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::AuthenticateUserRequest >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::AuthenticateUserRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::authpolicy::GetUserStatusRequest* Arena::CreateMaybeMessage< ::authpolicy::GetUserStatusRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::authpolicy::GetUserStatusRequest >(arena);
+  return Arena::CreateMessageInternal< ::authpolicy::GetUserStatusRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

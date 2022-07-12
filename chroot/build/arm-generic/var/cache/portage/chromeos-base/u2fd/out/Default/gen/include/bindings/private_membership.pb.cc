@@ -11,44 +11,36 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace private_membership {
-class DoublyEncryptedIdDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DoublyEncryptedId> _instance;
-} _DoublyEncryptedId_default_instance_;
-class MembershipResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MembershipResponse> _instance;
-} _MembershipResponse_default_instance_;
+constexpr DoublyEncryptedId::DoublyEncryptedId(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : queried_encrypted_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , doubly_encrypted_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct DoublyEncryptedIdDefaultTypeInternal {
+  constexpr DoublyEncryptedIdDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DoublyEncryptedIdDefaultTypeInternal() {}
+  union {
+    DoublyEncryptedId _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DoublyEncryptedIdDefaultTypeInternal _DoublyEncryptedId_default_instance_;
+constexpr MembershipResponse::MembershipResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , is_member_(false){}
+struct MembershipResponseDefaultTypeInternal {
+  constexpr MembershipResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~MembershipResponseDefaultTypeInternal() {}
+  union {
+    MembershipResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MembershipResponseDefaultTypeInternal _MembershipResponse_default_instance_;
 }  // namespace private_membership
-static void InitDefaultsscc_info_DoublyEncryptedId_private_5fmembership_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::private_membership::_DoublyEncryptedId_default_instance_;
-    new (ptr) ::private_membership::DoublyEncryptedId();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::private_membership::DoublyEncryptedId::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DoublyEncryptedId_private_5fmembership_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DoublyEncryptedId_private_5fmembership_2eproto}, {}};
-
-static void InitDefaultsscc_info_MembershipResponse_private_5fmembership_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::private_membership::_MembershipResponse_default_instance_;
-    new (ptr) ::private_membership::MembershipResponse();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::private_membership::MembershipResponse::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MembershipResponse_private_5fmembership_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MembershipResponse_private_5fmembership_2eproto}, {}};
-
 namespace private_membership {
 bool HashType_IsValid(int value) {
   switch (value) {
@@ -96,7 +88,7 @@ const std::string& HashType_Name(
                      HashType_strings[idx].get();
 }
 bool HashType_Parse(
-    const std::string& name, HashType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, HashType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       HashType_entries, 3, name, &int_value);
@@ -151,7 +143,7 @@ const std::string& EncryptedBucketHashType_Name(
                      EncryptedBucketHashType_strings[idx].get();
 }
 bool EncryptedBucketHashType_Parse(
-    const std::string& name, EncryptedBucketHashType* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EncryptedBucketHashType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       EncryptedBucketHashType_entries, 3, name, &int_value);
@@ -163,132 +155,154 @@ bool EncryptedBucketHashType_Parse(
 
 // ===================================================================
 
-void DoublyEncryptedId::InitAsDefaultInstance() {
-}
 class DoublyEncryptedId::_Internal {
  public:
 };
 
-DoublyEncryptedId::DoublyEncryptedId()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+DoublyEncryptedId::DoublyEncryptedId(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:private_membership.DoublyEncryptedId)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:private_membership.DoublyEncryptedId)
 }
 DoublyEncryptedId::DoublyEncryptedId(const DoublyEncryptedId& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   queried_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    queried_encrypted_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_queried_encrypted_id().empty()) {
-    queried_encrypted_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.queried_encrypted_id_);
+    queried_encrypted_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_queried_encrypted_id(), 
+      GetArenaForAllocation());
   }
   doubly_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    doubly_encrypted_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_doubly_encrypted_id().empty()) {
-    doubly_encrypted_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.doubly_encrypted_id_);
+    doubly_encrypted_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_doubly_encrypted_id(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:private_membership.DoublyEncryptedId)
 }
 
-void DoublyEncryptedId::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_DoublyEncryptedId_private_5fmembership_2eproto.base);
-  queried_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  doubly_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void DoublyEncryptedId::SharedCtor() {
+queried_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  queried_encrypted_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+doubly_encrypted_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  doubly_encrypted_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 DoublyEncryptedId::~DoublyEncryptedId() {
   // @@protoc_insertion_point(destructor:private_membership.DoublyEncryptedId)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void DoublyEncryptedId::SharedDtor() {
+inline void DoublyEncryptedId::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   queried_encrypted_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   doubly_encrypted_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DoublyEncryptedId::ArenaDtor(void* object) {
+  DoublyEncryptedId* _this = reinterpret_cast< DoublyEncryptedId* >(object);
+  (void)_this;
+}
+void DoublyEncryptedId::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DoublyEncryptedId::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const DoublyEncryptedId& DoublyEncryptedId::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DoublyEncryptedId_private_5fmembership_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void DoublyEncryptedId::Clear() {
 // @@protoc_insertion_point(message_clear_start:private_membership.DoublyEncryptedId)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  queried_encrypted_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  doubly_encrypted_id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  queried_encrypted_id_.ClearToEmpty();
+  doubly_encrypted_id_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* DoublyEncryptedId::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes queried_encrypted_id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           auto str = _internal_mutable_queried_encrypted_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bytes doubly_encrypted_id = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_doubly_encrypted_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* DoublyEncryptedId::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* DoublyEncryptedId::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:private_membership.DoublyEncryptedId)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bytes queried_encrypted_id = 1;
-  if (this->queried_encrypted_id().size() > 0) {
+  if (!this->_internal_queried_encrypted_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_queried_encrypted_id(), target);
   }
 
   // bytes doubly_encrypted_id = 2;
-  if (this->doubly_encrypted_id().size() > 0) {
+  if (!this->_internal_doubly_encrypted_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_doubly_encrypted_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:private_membership.DoublyEncryptedId)
   return target;
@@ -298,26 +312,26 @@ size_t DoublyEncryptedId::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:private_membership.DoublyEncryptedId)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bytes queried_encrypted_id = 1;
-  if (this->queried_encrypted_id().size() > 0) {
+  if (!this->_internal_queried_encrypted_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_queried_encrypted_id());
   }
 
   // bytes doubly_encrypted_id = 2;
-  if (this->doubly_encrypted_id().size() > 0) {
+  if (!this->_internal_doubly_encrypted_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_doubly_encrypted_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -333,18 +347,16 @@ void DoublyEncryptedId::CheckTypeAndMergeFrom(
 void DoublyEncryptedId::MergeFrom(const DoublyEncryptedId& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:private_membership.DoublyEncryptedId)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.queried_encrypted_id().size() > 0) {
-
-    queried_encrypted_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.queried_encrypted_id_);
+  if (!from._internal_queried_encrypted_id().empty()) {
+    _internal_set_queried_encrypted_id(from._internal_queried_encrypted_id());
   }
-  if (from.doubly_encrypted_id().size() > 0) {
-
-    doubly_encrypted_id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.doubly_encrypted_id_);
+  if (!from._internal_doubly_encrypted_id().empty()) {
+    _internal_set_doubly_encrypted_id(from._internal_doubly_encrypted_id());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void DoublyEncryptedId::CopyFrom(const DoublyEncryptedId& from) {
@@ -360,11 +372,19 @@ bool DoublyEncryptedId::IsInitialized() const {
 
 void DoublyEncryptedId::InternalSwap(DoublyEncryptedId* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  queried_encrypted_id_.Swap(&other->queried_encrypted_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  doubly_encrypted_id_.Swap(&other->doubly_encrypted_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &queried_encrypted_id_, lhs_arena,
+      &other->queried_encrypted_id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &doubly_encrypted_id_, lhs_arena,
+      &other->doubly_encrypted_id_, rhs_arena
+  );
 }
 
 std::string DoublyEncryptedId::GetTypeName() const {
@@ -374,121 +394,136 @@ std::string DoublyEncryptedId::GetTypeName() const {
 
 // ===================================================================
 
-void MembershipResponse::InitAsDefaultInstance() {
-}
 class MembershipResponse::_Internal {
  public:
 };
 
-MembershipResponse::MembershipResponse()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+MembershipResponse::MembershipResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:private_membership.MembershipResponse)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:private_membership.MembershipResponse)
 }
 MembershipResponse::MembershipResponse(const MembershipResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_value().empty()) {
-    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
+      GetArenaForAllocation());
   }
   is_member_ = from.is_member_;
   // @@protoc_insertion_point(copy_constructor:private_membership.MembershipResponse)
 }
 
-void MembershipResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MembershipResponse_private_5fmembership_2eproto.base);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  is_member_ = false;
+inline void MembershipResponse::SharedCtor() {
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+is_member_ = false;
 }
 
 MembershipResponse::~MembershipResponse() {
   // @@protoc_insertion_point(destructor:private_membership.MembershipResponse)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void MembershipResponse::SharedDtor() {
+inline void MembershipResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void MembershipResponse::ArenaDtor(void* object) {
+  MembershipResponse* _this = reinterpret_cast< MembershipResponse* >(object);
+  (void)_this;
+}
+void MembershipResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void MembershipResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const MembershipResponse& MembershipResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MembershipResponse_private_5fmembership_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void MembershipResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:private_membership.MembershipResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.ClearToEmpty();
   is_member_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* MembershipResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bool is_member = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          is_member_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          is_member_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string value = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* MembershipResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* MembershipResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:private_membership.MembershipResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool is_member = 1;
-  if (this->is_member() != 0) {
+  if (this->_internal_is_member() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_is_member(), target);
   }
 
   // string value = 2;
-  if (this->value().size() > 0) {
+  if (!this->_internal_value().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -498,8 +533,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:private_membership.MembershipResponse)
   return target;
@@ -509,24 +544,24 @@ size_t MembershipResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:private_membership.MembershipResponse)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string value = 2;
-  if (this->value().size() > 0) {
+  if (!this->_internal_value().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_value());
   }
 
   // bool is_member = 1;
-  if (this->is_member() != 0) {
+  if (this->_internal_is_member() != 0) {
     total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -542,17 +577,16 @@ void MembershipResponse::CheckTypeAndMergeFrom(
 void MembershipResponse::MergeFrom(const MembershipResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:private_membership.MembershipResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.value().size() > 0) {
-
-    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
+  if (!from._internal_value().empty()) {
+    _internal_set_value(from._internal_value());
   }
-  if (from.is_member() != 0) {
+  if (from._internal_is_member() != 0) {
     _internal_set_is_member(from._internal_is_member());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void MembershipResponse::CopyFrom(const MembershipResponse& from) {
@@ -568,9 +602,14 @@ bool MembershipResponse::IsInitialized() const {
 
 void MembershipResponse::InternalSwap(MembershipResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &value_, lhs_arena,
+      &other->value_, rhs_arena
+  );
   swap(is_member_, other->is_member_);
 }
 
@@ -583,10 +622,10 @@ std::string MembershipResponse::GetTypeName() const {
 }  // namespace private_membership
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::private_membership::DoublyEncryptedId* Arena::CreateMaybeMessage< ::private_membership::DoublyEncryptedId >(Arena* arena) {
-  return Arena::CreateInternal< ::private_membership::DoublyEncryptedId >(arena);
+  return Arena::CreateMessageInternal< ::private_membership::DoublyEncryptedId >(arena);
 }
 template<> PROTOBUF_NOINLINE ::private_membership::MembershipResponse* Arena::CreateMaybeMessage< ::private_membership::MembershipResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::private_membership::MembershipResponse >(arena);
+  return Arena::CreateMessageInternal< ::private_membership::MembershipResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

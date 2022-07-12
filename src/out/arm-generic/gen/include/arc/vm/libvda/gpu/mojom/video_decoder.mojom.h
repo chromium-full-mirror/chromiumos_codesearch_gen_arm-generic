@@ -31,10 +31,6 @@
 #include <string>
 #include <vector>
 
-#include "mojo/public/cpp/bindings/associated_interface_ptr_info.h"
-#include "mojo/public/cpp/bindings/associated_interface_request.h"
-#include "mojo/public/cpp/bindings/interface_ptr.h"
-#include "mojo/public/cpp/bindings/interface_request.h"
 #include "mojo/public/cpp/bindings/lib/control_message_handler.h"
 #include "mojo/public/cpp/bindings/raw_ptr_impl_ref_traits.h"
 
@@ -59,6 +55,8 @@ class  VideoDecoder
     : public VideoDecoderInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = true;
   static constexpr bool HasSyncMethods_ = false;
@@ -111,6 +109,8 @@ class  VideoDecoderClient
     : public VideoDecoderClientInterfaceBase {
  public:
   static const char Name_[];
+  static uint32_t MessageToStableIPCHash_(mojo::Message& message);
+  static const char* MessageToMethodName_(mojo::Message& message);
   static constexpr uint32_t Version_ = 0;
   static constexpr bool PassesAssociatedKinds_ = false;
   static constexpr bool HasSyncMethods_ = false;

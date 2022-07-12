@@ -72,7 +72,7 @@ class IPAddressDataView {
       mojo::ArrayDataView<uint8_t>* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadAddressBytes(UserType* output) {
+  [[nodiscard]] bool ReadAddressBytes(UserType* output) {
     
     auto* pointer = data_->address_bytes.Get();
     return mojo::internal::Deserialize<mojo::ArrayDataView<uint8_t>>(

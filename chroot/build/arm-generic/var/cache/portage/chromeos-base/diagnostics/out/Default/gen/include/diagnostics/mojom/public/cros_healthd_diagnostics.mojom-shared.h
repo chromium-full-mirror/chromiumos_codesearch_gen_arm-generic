@@ -356,7 +356,7 @@ class RunRoutineResponseDataView {
     return data_->id;
   }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum>(
         data_value, output);
@@ -382,7 +382,7 @@ class InteractiveRoutineUpdateDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadUserMessage(UserType* output) const {
+  [[nodiscard]] bool ReadUserMessage(UserType* output) const {
     auto data_value = data_->user_message;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnum>(
         data_value, output);
@@ -408,7 +408,7 @@ class NonInteractiveRoutineUpdateDataView {
 
   bool is_null() const { return !data_; }
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatus(UserType* output) const {
+  [[nodiscard]] bool ReadStatus(UserType* output) const {
     auto data_value = data_->status;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum>(
         data_value, output);
@@ -421,7 +421,7 @@ class NonInteractiveRoutineUpdateDataView {
       mojo::StringDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadStatusMessage(UserType* output) {
+  [[nodiscard]] bool ReadStatusMessage(UserType* output) {
     
     auto* pointer = data_->status_message.Get();
     return mojo::internal::Deserialize<mojo::StringDataView>(
@@ -459,7 +459,7 @@ class RoutineUpdateDataView {
       RoutineUpdateUnionDataView* output);
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadRoutineUpdateUnion(UserType* output) {
+  [[nodiscard]] bool ReadRoutineUpdateUnion(UserType* output) {
     
     auto* pointer = !data_->routine_update_union.is_null() ? &data_->routine_update_union : nullptr;
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::RoutineUpdateUnionDataView>(
@@ -495,7 +495,7 @@ class RoutineUpdateUnionDataView {
       InteractiveRoutineUpdateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadInteractiveUpdate(UserType* output) const {
+  [[nodiscard]] bool ReadInteractiveUpdate(UserType* output) const {
     
     CHECK(is_interactive_update());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::InteractiveRoutineUpdateDataView>(
@@ -506,7 +506,7 @@ class RoutineUpdateUnionDataView {
       NonInteractiveRoutineUpdateDataView* output) const;
 
   template <typename UserType>
-  WARN_UNUSED_RESULT bool ReadNoninteractiveUpdate(UserType* output) const {
+  [[nodiscard]] bool ReadNoninteractiveUpdate(UserType* output) const {
     
     CHECK(is_noninteractive_update());
     return mojo::internal::Deserialize<::chromeos::cros_healthd::mojom::NonInteractiveRoutineUpdateDataView>(

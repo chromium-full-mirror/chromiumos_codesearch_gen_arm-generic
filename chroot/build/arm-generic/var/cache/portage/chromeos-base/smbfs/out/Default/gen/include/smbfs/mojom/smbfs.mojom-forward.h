@@ -58,39 +58,9 @@ using CredentialsPtr = mojo::StructPtr<Credentials>;
 
 class SmbFsBootstrap;
 
-using SmbFsBootstrapPtr = mojo::InterfacePtr<SmbFsBootstrap>;
-using SmbFsBootstrapPtrInfo = mojo::InterfacePtrInfo<SmbFsBootstrap>;
-
-using SmbFsBootstrapRequest = mojo::InterfaceRequest<SmbFsBootstrap>;
-using SmbFsBootstrapAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SmbFsBootstrap>;
-
-using SmbFsBootstrapAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SmbFsBootstrap>;
-
 class SmbFs;
 
-using SmbFsPtr = mojo::InterfacePtr<SmbFs>;
-using SmbFsPtrInfo = mojo::InterfacePtrInfo<SmbFs>;
-
-using SmbFsRequest = mojo::InterfaceRequest<SmbFs>;
-using SmbFsAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SmbFs>;
-
-using SmbFsAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SmbFs>;
-
 class SmbFsDelegate;
-
-using SmbFsDelegatePtr = mojo::InterfacePtr<SmbFsDelegate>;
-using SmbFsDelegatePtrInfo = mojo::InterfacePtrInfo<SmbFsDelegate>;
-
-using SmbFsDelegateRequest = mojo::InterfaceRequest<SmbFsDelegate>;
-using SmbFsDelegateAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<SmbFsDelegate>;
-
-using SmbFsDelegateAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<SmbFsDelegate>;
 
 
 

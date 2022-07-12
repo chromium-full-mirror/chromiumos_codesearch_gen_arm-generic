@@ -31,75 +31,15 @@ using ServiceStatusPtr = mojo::InlinedStructPtr<ServiceStatus>;
 
 class CrosHealthdServiceFactory;
 
-using CrosHealthdServiceFactoryPtr = mojo::InterfacePtr<CrosHealthdServiceFactory>;
-using CrosHealthdServiceFactoryPtrInfo = mojo::InterfacePtrInfo<CrosHealthdServiceFactory>;
-
-using CrosHealthdServiceFactoryRequest = mojo::InterfaceRequest<CrosHealthdServiceFactory>;
-using CrosHealthdServiceFactoryAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdServiceFactory>;
-
-using CrosHealthdServiceFactoryAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdServiceFactory>;
-
 class CrosHealthdDiagnosticsService;
-
-using CrosHealthdDiagnosticsServicePtr = mojo::InterfacePtr<CrosHealthdDiagnosticsService>;
-using CrosHealthdDiagnosticsServicePtrInfo = mojo::InterfacePtrInfo<CrosHealthdDiagnosticsService>;
-
-using CrosHealthdDiagnosticsServiceRequest = mojo::InterfaceRequest<CrosHealthdDiagnosticsService>;
-using CrosHealthdDiagnosticsServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdDiagnosticsService>;
-
-using CrosHealthdDiagnosticsServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdDiagnosticsService>;
 
 class CrosHealthdEventService;
 
-using CrosHealthdEventServicePtr = mojo::InterfacePtr<CrosHealthdEventService>;
-using CrosHealthdEventServicePtrInfo = mojo::InterfacePtrInfo<CrosHealthdEventService>;
-
-using CrosHealthdEventServiceRequest = mojo::InterfaceRequest<CrosHealthdEventService>;
-using CrosHealthdEventServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdEventService>;
-
-using CrosHealthdEventServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdEventService>;
-
 class CrosHealthdProbeService;
-
-using CrosHealthdProbeServicePtr = mojo::InterfacePtr<CrosHealthdProbeService>;
-using CrosHealthdProbeServicePtrInfo = mojo::InterfacePtrInfo<CrosHealthdProbeService>;
-
-using CrosHealthdProbeServiceRequest = mojo::InterfaceRequest<CrosHealthdProbeService>;
-using CrosHealthdProbeServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdProbeService>;
-
-using CrosHealthdProbeServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdProbeService>;
 
 class CrosHealthdSystemService;
 
-using CrosHealthdSystemServicePtr = mojo::InterfacePtr<CrosHealthdSystemService>;
-using CrosHealthdSystemServicePtrInfo = mojo::InterfacePtrInfo<CrosHealthdSystemService>;
-
-using CrosHealthdSystemServiceRequest = mojo::InterfaceRequest<CrosHealthdSystemService>;
-using CrosHealthdSystemServiceAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<CrosHealthdSystemService>;
-
-using CrosHealthdSystemServiceAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<CrosHealthdSystemService>;
-
 class WilcoEcServiceController;
-
-using WilcoEcServiceControllerPtr = mojo::InterfacePtr<WilcoEcServiceController>;
-using WilcoEcServiceControllerPtrInfo = mojo::InterfacePtrInfo<WilcoEcServiceController>;
-
-using WilcoEcServiceControllerRequest = mojo::InterfaceRequest<WilcoEcServiceController>;
-using WilcoEcServiceControllerAssociatedPtrInfo =
-    mojo::AssociatedInterfacePtrInfo<WilcoEcServiceController>;
-
-using WilcoEcServiceControllerAssociatedRequest =
-    mojo::AssociatedInterfaceRequest<WilcoEcServiceController>;
 
 
 

@@ -10,6 +10,8 @@
 #include <google/protobuf/wire_format_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace biod {
 }  // namespace biod
 namespace biod {
@@ -79,7 +81,7 @@ const std::string& FingerprintError_Name(
                      FingerprintError_strings[idx].get();
 }
 bool FingerprintError_Parse(
-    const std::string& name, FingerprintError* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, FingerprintError* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       FingerprintError_entries, 8, name, &int_value);
@@ -158,7 +160,7 @@ const std::string& ScanResult_Name(
                      ScanResult_strings[idx].get();
 }
 bool ScanResult_Parse(
-    const std::string& name, ScanResult* value) {
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ScanResult* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
       ScanResult_entries, 9, name, &int_value);

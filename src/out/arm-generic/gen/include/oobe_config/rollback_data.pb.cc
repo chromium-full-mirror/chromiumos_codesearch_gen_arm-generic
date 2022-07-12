@@ -11,48 +11,51 @@
 #include <google/protobuf/io/zero_copy_stream_impl_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace oobe_config {
-class RollbackDataDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RollbackData> _instance;
-} _RollbackData_default_instance_;
+constexpr RollbackData::RollbackData(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : network_config_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , eula_send_statistics_(false)
+  , eula_auto_accept_(false){}
+struct RollbackDataDefaultTypeInternal {
+  constexpr RollbackDataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RollbackDataDefaultTypeInternal() {}
+  union {
+    RollbackData _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RollbackDataDefaultTypeInternal _RollbackData_default_instance_;
 }  // namespace oobe_config
-static void InitDefaultsscc_info_RollbackData_rollback_5fdata_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::oobe_config::_RollbackData_default_instance_;
-    new (ptr) ::oobe_config::RollbackData();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::oobe_config::RollbackData::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RollbackData_rollback_5fdata_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RollbackData_rollback_5fdata_2eproto}, {}};
-
 namespace oobe_config {
 
 // ===================================================================
 
-void RollbackData::InitAsDefaultInstance() {
-}
 class RollbackData::_Internal {
  public:
 };
 
-RollbackData::RollbackData()
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(), _internal_metadata_(nullptr) {
+RollbackData::RollbackData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:oobe_config.RollbackData)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:oobe_config.RollbackData)
 }
 RollbackData::RollbackData(const RollbackData& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   network_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    network_config_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_network_config().empty()) {
-    network_config_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.network_config_);
+    network_config_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_network_config(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&eula_send_statistics_, &from.eula_send_statistics_,
     static_cast<size_t>(reinterpret_cast<char*>(&eula_auto_accept_) -
@@ -60,115 +63,127 @@ RollbackData::RollbackData(const RollbackData& from)
   // @@protoc_insertion_point(copy_constructor:oobe_config.RollbackData)
 }
 
-void RollbackData::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RollbackData_rollback_5fdata_2eproto.base);
-  network_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&eula_send_statistics_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&eula_auto_accept_) -
-      reinterpret_cast<char*>(&eula_send_statistics_)) + sizeof(eula_auto_accept_));
+inline void RollbackData::SharedCtor() {
+network_config_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  network_config_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&eula_send_statistics_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&eula_auto_accept_) -
+    reinterpret_cast<char*>(&eula_send_statistics_)) + sizeof(eula_auto_accept_));
 }
 
 RollbackData::~RollbackData() {
   // @@protoc_insertion_point(destructor:oobe_config.RollbackData)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<std::string>();
 }
 
-void RollbackData::SharedDtor() {
+inline void RollbackData::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   network_config_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RollbackData::ArenaDtor(void* object) {
+  RollbackData* _this = reinterpret_cast< RollbackData* >(object);
+  (void)_this;
+}
+void RollbackData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RollbackData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RollbackData& RollbackData::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RollbackData_rollback_5fdata_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void RollbackData::Clear() {
 // @@protoc_insertion_point(message_clear_start:oobe_config.RollbackData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  network_config_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  network_config_.ClearToEmpty();
   ::memset(&eula_send_statistics_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&eula_auto_accept_) -
       reinterpret_cast<char*>(&eula_send_statistics_)) + sizeof(eula_auto_accept_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<std::string>();
 }
 
 const char* RollbackData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bool eula_send_statistics = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          eula_send_statistics_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          eula_send_statistics_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // bool eula_auto_accept = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          eula_auto_accept_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          eula_auto_accept_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // string network_config = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           auto str = _internal_mutable_network_config();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RollbackData::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* RollbackData::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:oobe_config.RollbackData)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool eula_send_statistics = 1;
-  if (this->eula_send_statistics() != 0) {
+  if (this->_internal_eula_send_statistics() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_eula_send_statistics(), target);
   }
 
   // bool eula_auto_accept = 2;
-  if (this->eula_auto_accept() != 0) {
+  if (this->_internal_eula_auto_accept() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_eula_auto_accept(), target);
   }
 
   // string network_config = 3;
-  if (this->network_config().size() > 0) {
+  if (!this->_internal_network_config().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_network_config().data(), static_cast<int>(this->_internal_network_config().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -178,8 +193,8 @@ failure:
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields().data(),
-        static_cast<int>(_internal_metadata_.unknown_fields().size()), target);
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:oobe_config.RollbackData)
   return target;
@@ -189,29 +204,29 @@ size_t RollbackData::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:oobe_config.RollbackData)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string network_config = 3;
-  if (this->network_config().size() > 0) {
+  if (!this->_internal_network_config().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_network_config());
   }
 
   // bool eula_send_statistics = 1;
-  if (this->eula_send_statistics() != 0) {
+  if (this->_internal_eula_send_statistics() != 0) {
     total_size += 1 + 1;
   }
 
   // bool eula_auto_accept = 2;
-  if (this->eula_auto_accept() != 0) {
+  if (this->_internal_eula_auto_accept() != 0) {
     total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields().size();
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
@@ -227,20 +242,19 @@ void RollbackData::CheckTypeAndMergeFrom(
 void RollbackData::MergeFrom(const RollbackData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:oobe_config.RollbackData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.network_config().size() > 0) {
-
-    network_config_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.network_config_);
+  if (!from._internal_network_config().empty()) {
+    _internal_set_network_config(from._internal_network_config());
   }
-  if (from.eula_send_statistics() != 0) {
+  if (from._internal_eula_send_statistics() != 0) {
     _internal_set_eula_send_statistics(from._internal_eula_send_statistics());
   }
-  if (from.eula_auto_accept() != 0) {
+  if (from._internal_eula_auto_accept() != 0) {
     _internal_set_eula_auto_accept(from._internal_eula_auto_accept());
   }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
 
 void RollbackData::CopyFrom(const RollbackData& from) {
@@ -256,11 +270,20 @@ bool RollbackData::IsInitialized() const {
 
 void RollbackData::InternalSwap(RollbackData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  network_config_.Swap(&other->network_config_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(eula_send_statistics_, other->eula_send_statistics_);
-  swap(eula_auto_accept_, other->eula_auto_accept_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &network_config_, lhs_arena,
+      &other->network_config_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RollbackData, eula_auto_accept_)
+      + sizeof(RollbackData::eula_auto_accept_)
+      - PROTOBUF_FIELD_OFFSET(RollbackData, eula_send_statistics_)>(
+          reinterpret_cast<char*>(&eula_send_statistics_),
+          reinterpret_cast<char*>(&other->eula_send_statistics_));
 }
 
 std::string RollbackData::GetTypeName() const {
@@ -272,7 +295,7 @@ std::string RollbackData::GetTypeName() const {
 }  // namespace oobe_config
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::oobe_config::RollbackData* Arena::CreateMaybeMessage< ::oobe_config::RollbackData >(Arena* arena) {
-  return Arena::CreateInternal< ::oobe_config::RollbackData >(arena);
+  return Arena::CreateMessageInternal< ::oobe_config::RollbackData >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

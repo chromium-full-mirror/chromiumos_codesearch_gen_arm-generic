@@ -14,153 +14,117 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_hardware_5fverifier_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ComponentInfo_hardware_5fverifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_hardware_5fverifier_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_HwVerificationReport_hardware_5fverifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_hardware_5fverifier_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<8> scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_hardware_5fverifier_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AudioCodec_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Battery_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Camera_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<9> scc_info_ComponentFields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Edid_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_InputDevice_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Memory_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Network_Fields_runtime_5fprobe_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_runtime_5fprobe_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Storage_Fields_runtime_5fprobe_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace hardware_verifier {
-class ComponentInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ComponentInfo> _instance;
-} _ComponentInfo_default_instance_;
-class HwVerificationSpec_GenericComponentValueAllowlistDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HwVerificationSpec_GenericComponentValueAllowlist> _instance;
-} _HwVerificationSpec_GenericComponentValueAllowlist_default_instance_;
-class HwVerificationSpecDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HwVerificationSpec> _instance;
-} _HwVerificationSpec_default_instance_;
-class HwVerificationReport_GenericDeviceInfoDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HwVerificationReport_GenericDeviceInfo> _instance;
-} _HwVerificationReport_GenericDeviceInfo_default_instance_;
-class HwVerificationReportDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<HwVerificationReport> _instance;
-} _HwVerificationReport_default_instance_;
-class VerifyComponentsReplyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VerifyComponentsReply> _instance;
-} _VerifyComponentsReply_default_instance_;
+constexpr ComponentInfo::ComponentInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : component_uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , component_fields_(nullptr)
+  , qualification_status_(0)
+
+  , component_category_(0)
+{}
+struct ComponentInfoDefaultTypeInternal {
+  constexpr ComponentInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ComponentInfoDefaultTypeInternal() {}
+  union {
+    ComponentInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ComponentInfoDefaultTypeInternal _ComponentInfo_default_instance_;
+constexpr HwVerificationSpec_GenericComponentValueAllowlist::HwVerificationSpec_GenericComponentValueAllowlist(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : field_names_()
+  , component_category_(0)
+{}
+struct HwVerificationSpec_GenericComponentValueAllowlistDefaultTypeInternal {
+  constexpr HwVerificationSpec_GenericComponentValueAllowlistDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HwVerificationSpec_GenericComponentValueAllowlistDefaultTypeInternal() {}
+  union {
+    HwVerificationSpec_GenericComponentValueAllowlist _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HwVerificationSpec_GenericComponentValueAllowlistDefaultTypeInternal _HwVerificationSpec_GenericComponentValueAllowlist_default_instance_;
+constexpr HwVerificationSpec::HwVerificationSpec(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : component_infos_()
+  , generic_component_value_allowlists_(){}
+struct HwVerificationSpecDefaultTypeInternal {
+  constexpr HwVerificationSpecDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HwVerificationSpecDefaultTypeInternal() {}
+  union {
+    HwVerificationSpec _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HwVerificationSpecDefaultTypeInternal _HwVerificationSpec_default_instance_;
+constexpr HwVerificationReport_GenericDeviceInfo::HwVerificationReport_GenericDeviceInfo(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : audio_codec_()
+  , battery_()
+  , storage_()
+  , network_()
+  , camera_()
+  , stylus_()
+  , touchpad_()
+  , touchscreen_()
+  , dram_()
+  , display_panel_()
+  , cellular_()
+  , ethernet_()
+  , wireless_(){}
+struct HwVerificationReport_GenericDeviceInfoDefaultTypeInternal {
+  constexpr HwVerificationReport_GenericDeviceInfoDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HwVerificationReport_GenericDeviceInfoDefaultTypeInternal() {}
+  union {
+    HwVerificationReport_GenericDeviceInfo _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HwVerificationReport_GenericDeviceInfoDefaultTypeInternal _HwVerificationReport_GenericDeviceInfo_default_instance_;
+constexpr HwVerificationReport::HwVerificationReport(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : found_component_infos_()
+  , generic_device_info_(nullptr)
+  , is_compliant_(false){}
+struct HwVerificationReportDefaultTypeInternal {
+  constexpr HwVerificationReportDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~HwVerificationReportDefaultTypeInternal() {}
+  union {
+    HwVerificationReport _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT HwVerificationReportDefaultTypeInternal _HwVerificationReport_default_instance_;
+constexpr VerifyComponentsReply::VerifyComponentsReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : hw_verification_report_(nullptr)
+  , error_(0)
+{}
+struct VerifyComponentsReplyDefaultTypeInternal {
+  constexpr VerifyComponentsReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~VerifyComponentsReplyDefaultTypeInternal() {}
+  union {
+    VerifyComponentsReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT VerifyComponentsReplyDefaultTypeInternal _VerifyComponentsReply_default_instance_;
 }  // namespace hardware_verifier
-static void InitDefaultsscc_info_ComponentInfo_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_ComponentInfo_default_instance_;
-    new (ptr) ::hardware_verifier::ComponentInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::ComponentInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ComponentInfo_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ComponentInfo_hardware_5fverifier_2eproto}, {
-      &scc_info_ComponentFields_runtime_5fprobe_2eproto.base,}};
-
-static void InitDefaultsscc_info_HwVerificationReport_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_HwVerificationReport_default_instance_;
-    new (ptr) ::hardware_verifier::HwVerificationReport();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::HwVerificationReport::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_HwVerificationReport_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_HwVerificationReport_hardware_5fverifier_2eproto}, {
-      &scc_info_ComponentInfo_hardware_5fverifier_2eproto.base,
-      &scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto.base,}};
-
-static void InitDefaultsscc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_HwVerificationReport_GenericDeviceInfo_default_instance_;
-    new (ptr) ::hardware_verifier::HwVerificationReport_GenericDeviceInfo();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::HwVerificationReport_GenericDeviceInfo::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<8> scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 8, 0, InitDefaultsscc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto}, {
-      &scc_info_AudioCodec_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Battery_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Storage_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Network_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Camera_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_InputDevice_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Memory_Fields_runtime_5fprobe_2eproto.base,
-      &scc_info_Edid_Fields_runtime_5fprobe_2eproto.base,}};
-
-static void InitDefaultsscc_info_HwVerificationSpec_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_HwVerificationSpec_default_instance_;
-    new (ptr) ::hardware_verifier::HwVerificationSpec();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::HwVerificationSpec::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_HwVerificationSpec_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_HwVerificationSpec_hardware_5fverifier_2eproto}, {
-      &scc_info_ComponentInfo_hardware_5fverifier_2eproto.base,
-      &scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto.base,}};
-
-static void InitDefaultsscc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_HwVerificationSpec_GenericComponentValueAllowlist_default_instance_;
-    new (ptr) ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto}, {}};
-
-static void InitDefaultsscc_info_VerifyComponentsReply_hardware_5fverifier_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::hardware_verifier::_VerifyComponentsReply_default_instance_;
-    new (ptr) ::hardware_verifier::VerifyComponentsReply();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::hardware_verifier::VerifyComponentsReply::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_VerifyComponentsReply_hardware_5fverifier_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_VerifyComponentsReply_hardware_5fverifier_2eproto}, {
-      &scc_info_HwVerificationReport_hardware_5fverifier_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_hardware_5fverifier_2eproto[6];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_hardware_5fverifier_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_hardware_5fverifier_2eproto = nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+const uint32_t TableStruct_hardware_5fverifier_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::ComponentInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::ComponentInfo, component_category_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::ComponentInfo, component_uuid_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::ComponentInfo, qualification_status_),
@@ -170,6 +134,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist, component_category_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist, field_names_),
   ~0u,  // no _has_bits_
@@ -177,6 +142,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationSpec, component_infos_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationSpec, generic_component_value_allowlists_),
   ~0u,  // no _has_bits_
@@ -184,6 +150,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport_GenericDeviceInfo, audio_codec_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport_GenericDeviceInfo, battery_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport_GenericDeviceInfo, storage_),
@@ -202,6 +169,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport, is_compliant_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport, found_component_infos_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::HwVerificationReport, generic_device_info_),
@@ -210,16 +178,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_hardware_5fverifier_2eproto::o
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::VerifyComponentsReply, error_),
   PROTOBUF_FIELD_OFFSET(::hardware_verifier::VerifyComponentsReply, hw_verification_report_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::hardware_verifier::ComponentInfo)},
-  { 9, -1, sizeof(::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist)},
-  { 16, -1, sizeof(::hardware_verifier::HwVerificationSpec)},
-  { 23, -1, sizeof(::hardware_verifier::HwVerificationReport_GenericDeviceInfo)},
-  { 41, -1, sizeof(::hardware_verifier::HwVerificationReport)},
-  { 49, -1, sizeof(::hardware_verifier::VerifyComponentsReply)},
+  { 0, -1, -1, sizeof(::hardware_verifier::ComponentInfo)},
+  { 10, -1, -1, sizeof(::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist)},
+  { 18, -1, -1, sizeof(::hardware_verifier::HwVerificationSpec)},
+  { 26, -1, -1, sizeof(::hardware_verifier::HwVerificationReport_GenericDeviceInfo)},
+  { 45, -1, -1, sizeof(::hardware_verifier::HwVerificationReport)},
+  { 54, -1, -1, sizeof(::hardware_verifier::VerifyComponentsReply)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -287,25 +256,19 @@ const char descriptor_table_protodef_hardware_5fverifier_2eproto[] PROTOBUF_SECT
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_hardware_5fverifier_2eproto_deps[1] = {
   &::descriptor_table_runtime_5fprobe_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_hardware_5fverifier_2eproto_sccs[6] = {
-  &scc_info_ComponentInfo_hardware_5fverifier_2eproto.base,
-  &scc_info_HwVerificationReport_hardware_5fverifier_2eproto.base,
-  &scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto.base,
-  &scc_info_HwVerificationSpec_hardware_5fverifier_2eproto.base,
-  &scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto.base,
-  &scc_info_VerifyComponentsReply_hardware_5fverifier_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_hardware_5fverifier_2eproto_once;
-static bool descriptor_table_hardware_5fverifier_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_hardware_5fverifier_2eproto = {
-  &descriptor_table_hardware_5fverifier_2eproto_initialized, descriptor_table_protodef_hardware_5fverifier_2eproto, "hardware_verifier.proto", 2038,
-  &descriptor_table_hardware_5fverifier_2eproto_once, descriptor_table_hardware_5fverifier_2eproto_sccs, descriptor_table_hardware_5fverifier_2eproto_deps, 6, 1,
+  false, false, 2038, descriptor_table_protodef_hardware_5fverifier_2eproto, "hardware_verifier.proto", 
+  &descriptor_table_hardware_5fverifier_2eproto_once, descriptor_table_hardware_5fverifier_2eproto_deps, 1, 6,
   schemas, file_default_instances, TableStruct_hardware_5fverifier_2eproto::offsets,
-  file_level_metadata_hardware_5fverifier_2eproto, 6, file_level_enum_descriptors_hardware_5fverifier_2eproto, file_level_service_descriptors_hardware_5fverifier_2eproto,
+  file_level_metadata_hardware_5fverifier_2eproto, file_level_enum_descriptors_hardware_5fverifier_2eproto, file_level_service_descriptors_hardware_5fverifier_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_hardware_5fverifier_2eproto_getter() {
+  return &descriptor_table_hardware_5fverifier_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_hardware_5fverifier_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_hardware_5fverifier_2eproto), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_hardware_5fverifier_2eproto(&descriptor_table_hardware_5fverifier_2eproto);
 namespace hardware_verifier {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* QualificationStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_hardware_5fverifier_2eproto);
@@ -346,10 +309,6 @@ bool ErrorCode_IsValid(int value) {
 
 // ===================================================================
 
-void ComponentInfo::InitAsDefaultInstance() {
-  ::hardware_verifier::_ComponentInfo_default_instance_._instance.get_mutable()->component_fields_ = const_cast< ::runtime_probe::ComponentFields*>(
-      ::runtime_probe::ComponentFields::internal_default_instance());
-}
 class ComponentInfo::_Internal {
  public:
   static const ::runtime_probe::ComponentFields& component_fields(const ComponentInfo* msg);
@@ -360,23 +319,30 @@ ComponentInfo::_Internal::component_fields(const ComponentInfo* msg) {
   return *msg->component_fields_;
 }
 void ComponentInfo::clear_component_fields() {
-  if (GetArenaNoVirtual() == nullptr && component_fields_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && component_fields_ != nullptr) {
     delete component_fields_;
   }
   component_fields_ = nullptr;
 }
-ComponentInfo::ComponentInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ComponentInfo::ComponentInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.ComponentInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.ComponentInfo)
 }
 ComponentInfo::ComponentInfo(const ComponentInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   component_uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    component_uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_component_uuid().empty()) {
-    component_uuid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.component_uuid_);
+    component_uuid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_component_uuid(), 
+      GetArenaForAllocation());
   }
   if (from._internal_has_component_fields()) {
     component_fields_ = new ::runtime_probe::ComponentFields(*from.component_fields_);
@@ -389,117 +355,130 @@ ComponentInfo::ComponentInfo(const ComponentInfo& from)
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.ComponentInfo)
 }
 
-void ComponentInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ComponentInfo_hardware_5fverifier_2eproto.base);
-  component_uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&component_fields_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&component_category_) -
-      reinterpret_cast<char*>(&component_fields_)) + sizeof(component_category_));
+inline void ComponentInfo::SharedCtor() {
+component_uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  component_uuid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&component_fields_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&component_category_) -
+    reinterpret_cast<char*>(&component_fields_)) + sizeof(component_category_));
 }
 
 ComponentInfo::~ComponentInfo() {
   // @@protoc_insertion_point(destructor:hardware_verifier.ComponentInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void ComponentInfo::SharedDtor() {
+inline void ComponentInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   component_uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete component_fields_;
 }
 
+void ComponentInfo::ArenaDtor(void* object) {
+  ComponentInfo* _this = reinterpret_cast< ComponentInfo* >(object);
+  (void)_this;
+}
+void ComponentInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ComponentInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ComponentInfo& ComponentInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ComponentInfo_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void ComponentInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.ComponentInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  component_uuid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && component_fields_ != nullptr) {
+  component_uuid_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && component_fields_ != nullptr) {
     delete component_fields_;
   }
   component_fields_ = nullptr;
   ::memset(&qualification_status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&component_category_) -
       reinterpret_cast<char*>(&qualification_status_)) + sizeof(component_category_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ComponentInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // string component_uuid = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_component_uuid();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "hardware_verifier.ComponentInfo.component_uuid"));
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .hardware_verifier.QualificationStatus qualification_status = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_qualification_status(static_cast<::hardware_verifier::QualificationStatus>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .runtime_probe.ProbeRequest.SupportCategory component_category = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_component_category(static_cast<::runtime_probe::ProbeRequest_SupportCategory>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .runtime_probe.ComponentFields component_fields = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_component_fields(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* ComponentInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* ComponentInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.ComponentInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // string component_uuid = 2;
-  if (this->component_uuid().size() > 0) {
+  if (!this->_internal_component_uuid().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_component_uuid().data(), static_cast<int>(this->_internal_component_uuid().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -509,21 +488,21 @@ failure:
   }
 
   // .hardware_verifier.QualificationStatus qualification_status = 3;
-  if (this->qualification_status() != 0) {
+  if (this->_internal_qualification_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       3, this->_internal_qualification_status(), target);
   }
 
   // .runtime_probe.ProbeRequest.SupportCategory component_category = 4;
-  if (this->component_category() != 0) {
+  if (this->_internal_component_category() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       4, this->_internal_component_category(), target);
   }
 
   // .runtime_probe.ComponentFields component_fields = 5;
-  if (this->has_component_fields()) {
+  if (this->_internal_has_component_fields()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -532,7 +511,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.ComponentInfo)
   return target;
@@ -542,87 +521,71 @@ size_t ComponentInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.ComponentInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string component_uuid = 2;
-  if (this->component_uuid().size() > 0) {
+  if (!this->_internal_component_uuid().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_component_uuid());
   }
 
   // .runtime_probe.ComponentFields component_fields = 5;
-  if (this->has_component_fields()) {
+  if (this->_internal_has_component_fields()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *component_fields_);
   }
 
   // .hardware_verifier.QualificationStatus qualification_status = 3;
-  if (this->qualification_status() != 0) {
+  if (this->_internal_qualification_status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_qualification_status());
   }
 
   // .runtime_probe.ProbeRequest.SupportCategory component_category = 4;
-  if (this->component_category() != 0) {
+  if (this->_internal_component_category() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_component_category());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void ComponentInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.ComponentInfo)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ComponentInfo* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ComponentInfo>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.ComponentInfo)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.ComponentInfo)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ComponentInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ComponentInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ComponentInfo::GetClassData() const { return &_class_data_; }
+
+void ComponentInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ComponentInfo *>(to)->MergeFrom(
+      static_cast<const ComponentInfo &>(from));
 }
+
 
 void ComponentInfo::MergeFrom(const ComponentInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.ComponentInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.component_uuid().size() > 0) {
-
-    component_uuid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.component_uuid_);
+  if (!from._internal_component_uuid().empty()) {
+    _internal_set_component_uuid(from._internal_component_uuid());
   }
-  if (from.has_component_fields()) {
+  if (from._internal_has_component_fields()) {
     _internal_mutable_component_fields()->::runtime_probe::ComponentFields::MergeFrom(from._internal_component_fields());
   }
-  if (from.qualification_status() != 0) {
+  if (from._internal_qualification_status() != 0) {
     _internal_set_qualification_status(from._internal_qualification_status());
   }
-  if (from.component_category() != 0) {
+  if (from._internal_component_category() != 0) {
     _internal_set_component_category(from._internal_component_category());
   }
-}
-
-void ComponentInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.ComponentInfo)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ComponentInfo::CopyFrom(const ComponentInfo& from) {
@@ -638,84 +601,97 @@ bool ComponentInfo::IsInitialized() const {
 
 void ComponentInfo::InternalSwap(ComponentInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  component_uuid_.Swap(&other->component_uuid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(component_fields_, other->component_fields_);
-  swap(qualification_status_, other->qualification_status_);
-  swap(component_category_, other->component_category_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &component_uuid_, lhs_arena,
+      &other->component_uuid_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ComponentInfo, component_category_)
+      + sizeof(ComponentInfo::component_category_)
+      - PROTOBUF_FIELD_OFFSET(ComponentInfo, component_fields_)>(
+          reinterpret_cast<char*>(&component_fields_),
+          reinterpret_cast<char*>(&other->component_fields_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ComponentInfo::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void HwVerificationSpec_GenericComponentValueAllowlist::InitAsDefaultInstance() {
-}
 class HwVerificationSpec_GenericComponentValueAllowlist::_Internal {
  public:
 };
 
-HwVerificationSpec_GenericComponentValueAllowlist::HwVerificationSpec_GenericComponentValueAllowlist()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+HwVerificationSpec_GenericComponentValueAllowlist::HwVerificationSpec_GenericComponentValueAllowlist(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  field_names_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
 }
 HwVerificationSpec_GenericComponentValueAllowlist::HwVerificationSpec_GenericComponentValueAllowlist(const HwVerificationSpec_GenericComponentValueAllowlist& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       field_names_(from.field_names_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   component_category_ = from.component_category_;
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
 }
 
-void HwVerificationSpec_GenericComponentValueAllowlist::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto.base);
-  component_category_ = 0;
+inline void HwVerificationSpec_GenericComponentValueAllowlist::SharedCtor() {
+component_category_ = 0;
 }
 
 HwVerificationSpec_GenericComponentValueAllowlist::~HwVerificationSpec_GenericComponentValueAllowlist() {
   // @@protoc_insertion_point(destructor:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void HwVerificationSpec_GenericComponentValueAllowlist::SharedDtor() {
+inline void HwVerificationSpec_GenericComponentValueAllowlist::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void HwVerificationSpec_GenericComponentValueAllowlist::ArenaDtor(void* object) {
+  HwVerificationSpec_GenericComponentValueAllowlist* _this = reinterpret_cast< HwVerificationSpec_GenericComponentValueAllowlist* >(object);
+  (void)_this;
+}
+void HwVerificationSpec_GenericComponentValueAllowlist::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HwVerificationSpec_GenericComponentValueAllowlist::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HwVerificationSpec_GenericComponentValueAllowlist& HwVerificationSpec_GenericComponentValueAllowlist::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HwVerificationSpec_GenericComponentValueAllowlist_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HwVerificationSpec_GenericComponentValueAllowlist::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   field_names_.Clear();
   component_category_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* HwVerificationSpec_GenericComponentValueAllowlist::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated string field_names = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -725,40 +701,45 @@ const char* HwVerificationSpec_GenericComponentValueAllowlist::_InternalParse(co
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .runtime_probe.ProbeRequest.SupportCategory component_category = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_component_category(static_cast<::runtime_probe::ProbeRequest_SupportCategory>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HwVerificationSpec_GenericComponentValueAllowlist::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HwVerificationSpec_GenericComponentValueAllowlist::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated string field_names = 2;
@@ -772,7 +753,7 @@ failure:
   }
 
   // .runtime_probe.ProbeRequest.SupportCategory component_category = 3;
-  if (this->component_category() != 0) {
+  if (this->_internal_component_category() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       3, this->_internal_component_category(), target);
@@ -780,7 +761,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
   return target;
@@ -790,7 +771,7 @@ size_t HwVerificationSpec_GenericComponentValueAllowlist::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -803,53 +784,38 @@ size_t HwVerificationSpec_GenericComponentValueAllowlist::ByteSizeLong() const {
   }
 
   // .runtime_probe.ProbeRequest.SupportCategory component_category = 3;
-  if (this->component_category() != 0) {
+  if (this->_internal_component_category() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_component_category());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void HwVerificationSpec_GenericComponentValueAllowlist::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-  GOOGLE_DCHECK_NE(&from, this);
-  const HwVerificationSpec_GenericComponentValueAllowlist* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HwVerificationSpec_GenericComponentValueAllowlist>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HwVerificationSpec_GenericComponentValueAllowlist::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HwVerificationSpec_GenericComponentValueAllowlist::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HwVerificationSpec_GenericComponentValueAllowlist::GetClassData() const { return &_class_data_; }
+
+void HwVerificationSpec_GenericComponentValueAllowlist::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HwVerificationSpec_GenericComponentValueAllowlist *>(to)->MergeFrom(
+      static_cast<const HwVerificationSpec_GenericComponentValueAllowlist &>(from));
 }
+
 
 void HwVerificationSpec_GenericComponentValueAllowlist::MergeFrom(const HwVerificationSpec_GenericComponentValueAllowlist& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   field_names_.MergeFrom(from.field_names_);
-  if (from.component_category() != 0) {
+  if (from._internal_component_category() != 0) {
     _internal_set_component_category(from._internal_component_category());
   }
-}
-
-void HwVerificationSpec_GenericComponentValueAllowlist::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HwVerificationSpec_GenericComponentValueAllowlist::CopyFrom(const HwVerificationSpec_GenericComponentValueAllowlist& from) {
@@ -865,80 +831,86 @@ bool HwVerificationSpec_GenericComponentValueAllowlist::IsInitialized() const {
 
 void HwVerificationSpec_GenericComponentValueAllowlist::InternalSwap(HwVerificationSpec_GenericComponentValueAllowlist* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   field_names_.InternalSwap(&other->field_names_);
   swap(component_category_, other->component_category_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HwVerificationSpec_GenericComponentValueAllowlist::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[1]);
 }
-
 
 // ===================================================================
 
-void HwVerificationSpec::InitAsDefaultInstance() {
-}
 class HwVerificationSpec::_Internal {
  public:
 };
 
-HwVerificationSpec::HwVerificationSpec()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+HwVerificationSpec::HwVerificationSpec(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  component_infos_(arena),
+  generic_component_value_allowlists_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.HwVerificationSpec)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.HwVerificationSpec)
 }
 HwVerificationSpec::HwVerificationSpec(const HwVerificationSpec& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       component_infos_(from.component_infos_),
       generic_component_value_allowlists_(from.generic_component_value_allowlists_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.HwVerificationSpec)
 }
 
-void HwVerificationSpec::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HwVerificationSpec_hardware_5fverifier_2eproto.base);
+inline void HwVerificationSpec::SharedCtor() {
 }
 
 HwVerificationSpec::~HwVerificationSpec() {
   // @@protoc_insertion_point(destructor:hardware_verifier.HwVerificationSpec)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void HwVerificationSpec::SharedDtor() {
+inline void HwVerificationSpec::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void HwVerificationSpec::ArenaDtor(void* object) {
+  HwVerificationSpec* _this = reinterpret_cast< HwVerificationSpec* >(object);
+  (void)_this;
+}
+void HwVerificationSpec::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HwVerificationSpec::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HwVerificationSpec& HwVerificationSpec::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HwVerificationSpec_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HwVerificationSpec::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.HwVerificationSpec)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   component_infos_.Clear();
   generic_component_value_allowlists_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* HwVerificationSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .hardware_verifier.ComponentInfo component_infos = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -946,11 +918,12 @@ const char* HwVerificationSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .hardware_verifier.HwVerificationSpec.GenericComponentValueAllowlist generic_component_value_allowlists = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -958,32 +931,36 @@ const char* HwVerificationSpec::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HwVerificationSpec::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HwVerificationSpec::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.HwVerificationSpec)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .hardware_verifier.ComponentInfo component_infos = 1;
@@ -1004,7 +981,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.HwVerificationSpec)
   return target;
@@ -1014,7 +991,7 @@ size_t HwVerificationSpec::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.HwVerificationSpec)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1032,46 +1009,31 @@ size_t HwVerificationSpec::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void HwVerificationSpec::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.HwVerificationSpec)
-  GOOGLE_DCHECK_NE(&from, this);
-  const HwVerificationSpec* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HwVerificationSpec>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.HwVerificationSpec)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.HwVerificationSpec)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HwVerificationSpec::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HwVerificationSpec::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HwVerificationSpec::GetClassData() const { return &_class_data_; }
+
+void HwVerificationSpec::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HwVerificationSpec *>(to)->MergeFrom(
+      static_cast<const HwVerificationSpec &>(from));
 }
+
 
 void HwVerificationSpec::MergeFrom(const HwVerificationSpec& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.HwVerificationSpec)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   component_infos_.MergeFrom(from.component_infos_);
   generic_component_value_allowlists_.MergeFrom(from.generic_component_value_allowlists_);
-}
-
-void HwVerificationSpec::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.HwVerificationSpec)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HwVerificationSpec::CopyFrom(const HwVerificationSpec& from) {
@@ -1087,20 +1049,19 @@ bool HwVerificationSpec::IsInitialized() const {
 
 void HwVerificationSpec::InternalSwap(HwVerificationSpec* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   component_infos_.InternalSwap(&other->component_infos_);
   generic_component_value_allowlists_.InternalSwap(&other->generic_component_value_allowlists_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HwVerificationSpec::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[2]);
 }
-
 
 // ===================================================================
 
-void HwVerificationReport_GenericDeviceInfo::InitAsDefaultInstance() {
-}
 class HwVerificationReport_GenericDeviceInfo::_Internal {
  public:
 };
@@ -1144,14 +1105,30 @@ void HwVerificationReport_GenericDeviceInfo::clear_ethernet() {
 void HwVerificationReport_GenericDeviceInfo::clear_wireless() {
   wireless_.Clear();
 }
-HwVerificationReport_GenericDeviceInfo::HwVerificationReport_GenericDeviceInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+HwVerificationReport_GenericDeviceInfo::HwVerificationReport_GenericDeviceInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  audio_codec_(arena),
+  battery_(arena),
+  storage_(arena),
+  network_(arena),
+  camera_(arena),
+  stylus_(arena),
+  touchpad_(arena),
+  touchscreen_(arena),
+  dram_(arena),
+  display_panel_(arena),
+  cellular_(arena),
+  ethernet_(arena),
+  wireless_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
 }
 HwVerificationReport_GenericDeviceInfo::HwVerificationReport_GenericDeviceInfo(const HwVerificationReport_GenericDeviceInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       audio_codec_(from.audio_codec_),
       battery_(from.battery_),
       storage_(from.storage_),
@@ -1165,34 +1142,37 @@ HwVerificationReport_GenericDeviceInfo::HwVerificationReport_GenericDeviceInfo(c
       cellular_(from.cellular_),
       ethernet_(from.ethernet_),
       wireless_(from.wireless_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
 }
 
-void HwVerificationReport_GenericDeviceInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto.base);
+inline void HwVerificationReport_GenericDeviceInfo::SharedCtor() {
 }
 
 HwVerificationReport_GenericDeviceInfo::~HwVerificationReport_GenericDeviceInfo() {
   // @@protoc_insertion_point(destructor:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void HwVerificationReport_GenericDeviceInfo::SharedDtor() {
+inline void HwVerificationReport_GenericDeviceInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
+void HwVerificationReport_GenericDeviceInfo::ArenaDtor(void* object) {
+  HwVerificationReport_GenericDeviceInfo* _this = reinterpret_cast< HwVerificationReport_GenericDeviceInfo* >(object);
+  (void)_this;
+}
+void HwVerificationReport_GenericDeviceInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HwVerificationReport_GenericDeviceInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HwVerificationReport_GenericDeviceInfo& HwVerificationReport_GenericDeviceInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HwVerificationReport_GenericDeviceInfo_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HwVerificationReport_GenericDeviceInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1209,19 +1189,18 @@ void HwVerificationReport_GenericDeviceInfo::Clear() {
   cellular_.Clear();
   ethernet_.Clear();
   wireless_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .runtime_probe.AudioCodec.Fields audio_codec = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1229,11 +1208,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Battery.Fields battery = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1241,11 +1221,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Storage.Fields storage = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1253,11 +1234,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Network.Fields network = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1265,11 +1247,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Camera.Fields camera = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1277,11 +1260,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.InputDevice.Fields stylus = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1289,11 +1273,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.InputDevice.Fields touchpad = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1301,11 +1286,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.InputDevice.Fields touchscreen = 8;
       case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1313,11 +1299,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Memory.Fields dram = 9;
       case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1325,11 +1312,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Edid.Fields display_panel = 10;
       case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1337,11 +1325,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Network.Fields cellular = 11;
       case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1349,11 +1338,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Network.Fields ethernet = 12;
       case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1361,11 +1351,12 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .runtime_probe.Network.Fields wireless = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1373,32 +1364,36 @@ const char* HwVerificationReport_GenericDeviceInfo::_InternalParse(const char* p
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HwVerificationReport_GenericDeviceInfo::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HwVerificationReport_GenericDeviceInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .runtime_probe.AudioCodec.Fields audio_codec = 1;
@@ -1507,7 +1502,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
   return target;
@@ -1517,7 +1512,7 @@ size_t HwVerificationReport_GenericDeviceInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1612,35 +1607,26 @@ size_t HwVerificationReport_GenericDeviceInfo::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void HwVerificationReport_GenericDeviceInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-  GOOGLE_DCHECK_NE(&from, this);
-  const HwVerificationReport_GenericDeviceInfo* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HwVerificationReport_GenericDeviceInfo>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HwVerificationReport_GenericDeviceInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HwVerificationReport_GenericDeviceInfo::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HwVerificationReport_GenericDeviceInfo::GetClassData() const { return &_class_data_; }
+
+void HwVerificationReport_GenericDeviceInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HwVerificationReport_GenericDeviceInfo *>(to)->MergeFrom(
+      static_cast<const HwVerificationReport_GenericDeviceInfo &>(from));
 }
+
 
 void HwVerificationReport_GenericDeviceInfo::MergeFrom(const HwVerificationReport_GenericDeviceInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   audio_codec_.MergeFrom(from.audio_codec_);
@@ -1656,13 +1642,7 @@ void HwVerificationReport_GenericDeviceInfo::MergeFrom(const HwVerificationRepor
   cellular_.MergeFrom(from.cellular_);
   ethernet_.MergeFrom(from.ethernet_);
   wireless_.MergeFrom(from.wireless_);
-}
-
-void HwVerificationReport_GenericDeviceInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.HwVerificationReport.GenericDeviceInfo)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HwVerificationReport_GenericDeviceInfo::CopyFrom(const HwVerificationReport_GenericDeviceInfo& from) {
@@ -1678,7 +1658,7 @@ bool HwVerificationReport_GenericDeviceInfo::IsInitialized() const {
 
 void HwVerificationReport_GenericDeviceInfo::InternalSwap(HwVerificationReport_GenericDeviceInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   audio_codec_.InternalSwap(&other->audio_codec_);
   battery_.InternalSwap(&other->battery_);
   storage_.InternalSwap(&other->storage_);
@@ -1695,16 +1675,13 @@ void HwVerificationReport_GenericDeviceInfo::InternalSwap(HwVerificationReport_G
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HwVerificationReport_GenericDeviceInfo::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[3]);
 }
-
 
 // ===================================================================
 
-void HwVerificationReport::InitAsDefaultInstance() {
-  ::hardware_verifier::_HwVerificationReport_default_instance_._instance.get_mutable()->generic_device_info_ = const_cast< ::hardware_verifier::HwVerificationReport_GenericDeviceInfo*>(
-      ::hardware_verifier::HwVerificationReport_GenericDeviceInfo::internal_default_instance());
-}
 class HwVerificationReport::_Internal {
  public:
   static const ::hardware_verifier::HwVerificationReport_GenericDeviceInfo& generic_device_info(const HwVerificationReport* msg);
@@ -1714,16 +1691,20 @@ const ::hardware_verifier::HwVerificationReport_GenericDeviceInfo&
 HwVerificationReport::_Internal::generic_device_info(const HwVerificationReport* msg) {
   return *msg->generic_device_info_;
 }
-HwVerificationReport::HwVerificationReport()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+HwVerificationReport::HwVerificationReport(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  found_component_infos_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.HwVerificationReport)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.HwVerificationReport)
 }
 HwVerificationReport::HwVerificationReport(const HwVerificationReport& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       found_component_infos_(from.found_component_infos_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_generic_device_info()) {
     generic_device_info_ = new ::hardware_verifier::HwVerificationReport_GenericDeviceInfo(*from.generic_device_info_);
   } else {
@@ -1733,63 +1714,67 @@ HwVerificationReport::HwVerificationReport(const HwVerificationReport& from)
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.HwVerificationReport)
 }
 
-void HwVerificationReport::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_HwVerificationReport_hardware_5fverifier_2eproto.base);
-  ::memset(&generic_device_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&is_compliant_) -
-      reinterpret_cast<char*>(&generic_device_info_)) + sizeof(is_compliant_));
+inline void HwVerificationReport::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&generic_device_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&is_compliant_) -
+    reinterpret_cast<char*>(&generic_device_info_)) + sizeof(is_compliant_));
 }
 
 HwVerificationReport::~HwVerificationReport() {
   // @@protoc_insertion_point(destructor:hardware_verifier.HwVerificationReport)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void HwVerificationReport::SharedDtor() {
+inline void HwVerificationReport::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete generic_device_info_;
 }
 
+void HwVerificationReport::ArenaDtor(void* object) {
+  HwVerificationReport* _this = reinterpret_cast< HwVerificationReport* >(object);
+  (void)_this;
+}
+void HwVerificationReport::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void HwVerificationReport::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const HwVerificationReport& HwVerificationReport::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_HwVerificationReport_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void HwVerificationReport::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.HwVerificationReport)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   found_component_infos_.Clear();
-  if (GetArenaNoVirtual() == nullptr && generic_device_info_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && generic_device_info_ != nullptr) {
     delete generic_device_info_;
   }
   generic_device_info_ = nullptr;
   is_compliant_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* HwVerificationReport::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bool is_compliant = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          is_compliant_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          is_compliant_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // repeated .hardware_verifier.ComponentInfo found_component_infos = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
@@ -1797,43 +1782,48 @@ const char* HwVerificationReport::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .hardware_verifier.HwVerificationReport.GenericDeviceInfo generic_device_info = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_generic_device_info(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* HwVerificationReport::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* HwVerificationReport::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.HwVerificationReport)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // bool is_compliant = 1;
-  if (this->is_compliant() != 0) {
+  if (this->_internal_is_compliant() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_is_compliant(), target);
   }
@@ -1847,7 +1837,7 @@ failure:
   }
 
   // .hardware_verifier.HwVerificationReport.GenericDeviceInfo generic_device_info = 3;
-  if (this->has_generic_device_info()) {
+  if (this->_internal_has_generic_device_info()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -1856,7 +1846,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.HwVerificationReport)
   return target;
@@ -1866,7 +1856,7 @@ size_t HwVerificationReport::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.HwVerificationReport)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1878,62 +1868,47 @@ size_t HwVerificationReport::ByteSizeLong() const {
   }
 
   // .hardware_verifier.HwVerificationReport.GenericDeviceInfo generic_device_info = 3;
-  if (this->has_generic_device_info()) {
+  if (this->_internal_has_generic_device_info()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *generic_device_info_);
   }
 
   // bool is_compliant = 1;
-  if (this->is_compliant() != 0) {
+  if (this->_internal_is_compliant() != 0) {
     total_size += 1 + 1;
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void HwVerificationReport::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.HwVerificationReport)
-  GOOGLE_DCHECK_NE(&from, this);
-  const HwVerificationReport* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<HwVerificationReport>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.HwVerificationReport)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.HwVerificationReport)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HwVerificationReport::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HwVerificationReport::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HwVerificationReport::GetClassData() const { return &_class_data_; }
+
+void HwVerificationReport::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HwVerificationReport *>(to)->MergeFrom(
+      static_cast<const HwVerificationReport &>(from));
 }
+
 
 void HwVerificationReport::MergeFrom(const HwVerificationReport& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.HwVerificationReport)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   found_component_infos_.MergeFrom(from.found_component_infos_);
-  if (from.has_generic_device_info()) {
+  if (from._internal_has_generic_device_info()) {
     _internal_mutable_generic_device_info()->::hardware_verifier::HwVerificationReport_GenericDeviceInfo::MergeFrom(from._internal_generic_device_info());
   }
-  if (from.is_compliant() != 0) {
+  if (from._internal_is_compliant() != 0) {
     _internal_set_is_compliant(from._internal_is_compliant());
   }
-}
-
-void HwVerificationReport::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.HwVerificationReport)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HwVerificationReport::CopyFrom(const HwVerificationReport& from) {
@@ -1949,23 +1924,24 @@ bool HwVerificationReport::IsInitialized() const {
 
 void HwVerificationReport::InternalSwap(HwVerificationReport* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   found_component_infos_.InternalSwap(&other->found_component_infos_);
-  swap(generic_device_info_, other->generic_device_info_);
-  swap(is_compliant_, other->is_compliant_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(HwVerificationReport, is_compliant_)
+      + sizeof(HwVerificationReport::is_compliant_)
+      - PROTOBUF_FIELD_OFFSET(HwVerificationReport, generic_device_info_)>(
+          reinterpret_cast<char*>(&generic_device_info_),
+          reinterpret_cast<char*>(&other->generic_device_info_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HwVerificationReport::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[4]);
 }
-
 
 // ===================================================================
 
-void VerifyComponentsReply::InitAsDefaultInstance() {
-  ::hardware_verifier::_VerifyComponentsReply_default_instance_._instance.get_mutable()->hw_verification_report_ = const_cast< ::hardware_verifier::HwVerificationReport*>(
-      ::hardware_verifier::HwVerificationReport::internal_default_instance());
-}
 class VerifyComponentsReply::_Internal {
  public:
   static const ::hardware_verifier::HwVerificationReport& hw_verification_report(const VerifyComponentsReply* msg);
@@ -1975,15 +1951,18 @@ const ::hardware_verifier::HwVerificationReport&
 VerifyComponentsReply::_Internal::hw_verification_report(const VerifyComponentsReply* msg) {
   return *msg->hw_verification_report_;
 }
-VerifyComponentsReply::VerifyComponentsReply()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+VerifyComponentsReply::VerifyComponentsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:hardware_verifier.VerifyComponentsReply)
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:hardware_verifier.VerifyComponentsReply)
 }
 VerifyComponentsReply::VerifyComponentsReply(const VerifyComponentsReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_hw_verification_report()) {
     hw_verification_report_ = new ::hardware_verifier::HwVerificationReport(*from.hw_verification_report_);
   } else {
@@ -1993,102 +1972,110 @@ VerifyComponentsReply::VerifyComponentsReply(const VerifyComponentsReply& from)
   // @@protoc_insertion_point(copy_constructor:hardware_verifier.VerifyComponentsReply)
 }
 
-void VerifyComponentsReply::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VerifyComponentsReply_hardware_5fverifier_2eproto.base);
-  ::memset(&hw_verification_report_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&error_) -
-      reinterpret_cast<char*>(&hw_verification_report_)) + sizeof(error_));
+inline void VerifyComponentsReply::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&hw_verification_report_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&error_) -
+    reinterpret_cast<char*>(&hw_verification_report_)) + sizeof(error_));
 }
 
 VerifyComponentsReply::~VerifyComponentsReply() {
   // @@protoc_insertion_point(destructor:hardware_verifier.VerifyComponentsReply)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void VerifyComponentsReply::SharedDtor() {
+inline void VerifyComponentsReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete hw_verification_report_;
 }
 
+void VerifyComponentsReply::ArenaDtor(void* object) {
+  VerifyComponentsReply* _this = reinterpret_cast< VerifyComponentsReply* >(object);
+  (void)_this;
+}
+void VerifyComponentsReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VerifyComponentsReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const VerifyComponentsReply& VerifyComponentsReply::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VerifyComponentsReply_hardware_5fverifier_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void VerifyComponentsReply::Clear() {
 // @@protoc_insertion_point(message_clear_start:hardware_verifier.VerifyComponentsReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && hw_verification_report_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && hw_verification_report_ != nullptr) {
     delete hw_verification_report_;
   }
   hw_verification_report_ = nullptr;
   error_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* VerifyComponentsReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .hardware_verifier.ErrorCode error = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_error(static_cast<::hardware_verifier::ErrorCode>(val));
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
       // .hardware_verifier.HwVerificationReport hw_verification_report = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_hw_verification_report(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
+        } else
+          goto handle_unusual;
         continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
+      default:
+        goto handle_unusual;
     }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
   }  // while
-success:
+message_done:
   return ptr;
 failure:
   ptr = nullptr;
-  goto success;
+  goto message_done;
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* VerifyComponentsReply::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+uint8_t* VerifyComponentsReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:hardware_verifier.VerifyComponentsReply)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .hardware_verifier.ErrorCode error = 1;
-  if (this->error() != 0) {
+  if (this->_internal_error() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_error(), target);
   }
 
   // .hardware_verifier.HwVerificationReport hw_verification_report = 2;
-  if (this->has_hw_verification_report()) {
+  if (this->_internal_has_hw_verification_report()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -2097,7 +2084,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:hardware_verifier.VerifyComponentsReply)
   return target;
@@ -2107,67 +2094,52 @@ size_t VerifyComponentsReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:hardware_verifier.VerifyComponentsReply)
   size_t total_size = 0;
 
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .hardware_verifier.HwVerificationReport hw_verification_report = 2;
-  if (this->has_hw_verification_report()) {
+  if (this->_internal_has_hw_verification_report()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *hw_verification_report_);
   }
 
   // .hardware_verifier.ErrorCode error = 1;
-  if (this->error() != 0) {
+  if (this->_internal_error() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_error());
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void VerifyComponentsReply::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:hardware_verifier.VerifyComponentsReply)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VerifyComponentsReply* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VerifyComponentsReply>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:hardware_verifier.VerifyComponentsReply)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:hardware_verifier.VerifyComponentsReply)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VerifyComponentsReply::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    VerifyComponentsReply::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VerifyComponentsReply::GetClassData() const { return &_class_data_; }
+
+void VerifyComponentsReply::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<VerifyComponentsReply *>(to)->MergeFrom(
+      static_cast<const VerifyComponentsReply &>(from));
 }
+
 
 void VerifyComponentsReply::MergeFrom(const VerifyComponentsReply& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:hardware_verifier.VerifyComponentsReply)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_hw_verification_report()) {
+  if (from._internal_has_hw_verification_report()) {
     _internal_mutable_hw_verification_report()->::hardware_verifier::HwVerificationReport::MergeFrom(from._internal_hw_verification_report());
   }
-  if (from.error() != 0) {
+  if (from._internal_error() != 0) {
     _internal_set_error(from._internal_error());
   }
-}
-
-void VerifyComponentsReply::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:hardware_verifier.VerifyComponentsReply)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void VerifyComponentsReply::CopyFrom(const VerifyComponentsReply& from) {
@@ -2183,36 +2155,41 @@ bool VerifyComponentsReply::IsInitialized() const {
 
 void VerifyComponentsReply::InternalSwap(VerifyComponentsReply* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(hw_verification_report_, other->hw_verification_report_);
-  swap(error_, other->error_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VerifyComponentsReply, error_)
+      + sizeof(VerifyComponentsReply::error_)
+      - PROTOBUF_FIELD_OFFSET(VerifyComponentsReply, hw_verification_report_)>(
+          reinterpret_cast<char*>(&hw_verification_report_),
+          reinterpret_cast<char*>(&other->hw_verification_report_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VerifyComponentsReply::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_hardware_5fverifier_2eproto_getter, &descriptor_table_hardware_5fverifier_2eproto_once,
+      file_level_metadata_hardware_5fverifier_2eproto[5]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace hardware_verifier
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::hardware_verifier::ComponentInfo* Arena::CreateMaybeMessage< ::hardware_verifier::ComponentInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::ComponentInfo >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::ComponentInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist* Arena::CreateMaybeMessage< ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::HwVerificationSpec_GenericComponentValueAllowlist >(arena);
 }
 template<> PROTOBUF_NOINLINE ::hardware_verifier::HwVerificationSpec* Arena::CreateMaybeMessage< ::hardware_verifier::HwVerificationSpec >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::HwVerificationSpec >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::HwVerificationSpec >(arena);
 }
 template<> PROTOBUF_NOINLINE ::hardware_verifier::HwVerificationReport_GenericDeviceInfo* Arena::CreateMaybeMessage< ::hardware_verifier::HwVerificationReport_GenericDeviceInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::HwVerificationReport_GenericDeviceInfo >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::HwVerificationReport_GenericDeviceInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::hardware_verifier::HwVerificationReport* Arena::CreateMaybeMessage< ::hardware_verifier::HwVerificationReport >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::HwVerificationReport >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::HwVerificationReport >(arena);
 }
 template<> PROTOBUF_NOINLINE ::hardware_verifier::VerifyComponentsReply* Arena::CreateMaybeMessage< ::hardware_verifier::VerifyComponentsReply >(Arena* arena) {
-  return Arena::CreateInternal< ::hardware_verifier::VerifyComponentsReply >(arena);
+  return Arena::CreateMessageInternal< ::hardware_verifier::VerifyComponentsReply >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
