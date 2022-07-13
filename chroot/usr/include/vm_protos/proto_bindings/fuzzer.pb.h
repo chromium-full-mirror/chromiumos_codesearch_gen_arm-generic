@@ -137,7 +137,6 @@ class ContainerListenerFuzzerSingleAction final :
     kGetDiskInfoRequest = 52,
     kRequestSpaceRequest = 53,
     kReleaseSpaceRequest = 54,
-    kReportMetricsRequest = 57,
     kMetricsConsentRequest = 33,
     kSendCrashReportRequest = 42,
     kSendFailureReportRequest = 46,
@@ -291,7 +290,6 @@ class ContainerListenerFuzzerSingleAction final :
     kGetDiskInfoRequestFieldNumber = 52,
     kRequestSpaceRequestFieldNumber = 53,
     kReleaseSpaceRequestFieldNumber = 54,
-    kReportMetricsRequestFieldNumber = 57,
     kMetricsConsentRequestFieldNumber = 33,
     kSendCrashReportRequestFieldNumber = 42,
     kSendFailureReportRequestFieldNumber = 46,
@@ -1149,24 +1147,6 @@ class ContainerListenerFuzzerSingleAction final :
       ::vm_tools::container::ReleaseSpaceRequest* release_space_request);
   ::vm_tools::container::ReleaseSpaceRequest* unsafe_arena_release_release_space_request();
 
-  // .vm_tools.container.ReportMetricsRequest report_metrics_request = 57;
-  bool has_report_metrics_request() const;
-  private:
-  bool _internal_has_report_metrics_request() const;
-  public:
-  void clear_report_metrics_request();
-  const ::vm_tools::container::ReportMetricsRequest& report_metrics_request() const;
-  PROTOBUF_NODISCARD ::vm_tools::container::ReportMetricsRequest* release_report_metrics_request();
-  ::vm_tools::container::ReportMetricsRequest* mutable_report_metrics_request();
-  void set_allocated_report_metrics_request(::vm_tools::container::ReportMetricsRequest* report_metrics_request);
-  private:
-  const ::vm_tools::container::ReportMetricsRequest& _internal_report_metrics_request() const;
-  ::vm_tools::container::ReportMetricsRequest* _internal_mutable_report_metrics_request();
-  public:
-  void unsafe_arena_set_allocated_report_metrics_request(
-      ::vm_tools::container::ReportMetricsRequest* report_metrics_request);
-  ::vm_tools::container::ReportMetricsRequest* unsafe_arena_release_report_metrics_request();
-
   // .vm_tools.EmptyMessage metrics_consent_request = 33;
   bool has_metrics_consent_request() const;
   private:
@@ -1441,7 +1421,6 @@ class ContainerListenerFuzzerSingleAction final :
   void set_has_get_disk_info_request();
   void set_has_request_space_request();
   void set_has_release_space_request();
-  void set_has_report_metrics_request();
   void set_has_metrics_consent_request();
   void set_has_send_crash_report_request();
   void set_has_send_failure_report_request();
@@ -1523,7 +1502,6 @@ class ContainerListenerFuzzerSingleAction final :
     ::vm_tools::container::GetDiskInfoRequest* get_disk_info_request_;
     ::vm_tools::container::RequestSpaceRequest* request_space_request_;
     ::vm_tools::container::ReleaseSpaceRequest* release_space_request_;
-    ::vm_tools::container::ReportMetricsRequest* report_metrics_request_;
     ::vm_tools::EmptyMessage* metrics_consent_request_;
     ::vm_tools::cicerone::CrashReport* send_crash_report_request_;
     ::vm_tools::cicerone::FailureReport* send_failure_report_request_;
@@ -2829,72 +2807,6 @@ inline ::vm_tools::container::ReleaseSpaceRequest* ContainerListenerFuzzerSingle
 inline ::vm_tools::container::ReleaseSpaceRequest* ContainerListenerFuzzerSingleAction::mutable_release_space_request() {
   ::vm_tools::container::ReleaseSpaceRequest* _msg = _internal_mutable_release_space_request();
   // @@protoc_insertion_point(field_mutable:vm_tools.container.ContainerListenerFuzzerSingleAction.release_space_request)
-  return _msg;
-}
-
-// .vm_tools.container.ReportMetricsRequest report_metrics_request = 57;
-inline bool ContainerListenerFuzzerSingleAction::_internal_has_report_metrics_request() const {
-  return input_case() == kReportMetricsRequest;
-}
-inline bool ContainerListenerFuzzerSingleAction::has_report_metrics_request() const {
-  return _internal_has_report_metrics_request();
-}
-inline void ContainerListenerFuzzerSingleAction::set_has_report_metrics_request() {
-  _oneof_case_[0] = kReportMetricsRequest;
-}
-inline ::vm_tools::container::ReportMetricsRequest* ContainerListenerFuzzerSingleAction::release_report_metrics_request() {
-  // @@protoc_insertion_point(field_release:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
-  if (_internal_has_report_metrics_request()) {
-    clear_has_input();
-      ::vm_tools::container::ReportMetricsRequest* temp = input_.report_metrics_request_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    input_.report_metrics_request_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::vm_tools::container::ReportMetricsRequest& ContainerListenerFuzzerSingleAction::_internal_report_metrics_request() const {
-  return _internal_has_report_metrics_request()
-      ? *input_.report_metrics_request_
-      : reinterpret_cast< ::vm_tools::container::ReportMetricsRequest&>(::vm_tools::container::_ReportMetricsRequest_default_instance_);
-}
-inline const ::vm_tools::container::ReportMetricsRequest& ContainerListenerFuzzerSingleAction::report_metrics_request() const {
-  // @@protoc_insertion_point(field_get:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
-  return _internal_report_metrics_request();
-}
-inline ::vm_tools::container::ReportMetricsRequest* ContainerListenerFuzzerSingleAction::unsafe_arena_release_report_metrics_request() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
-  if (_internal_has_report_metrics_request()) {
-    clear_has_input();
-    ::vm_tools::container::ReportMetricsRequest* temp = input_.report_metrics_request_;
-    input_.report_metrics_request_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void ContainerListenerFuzzerSingleAction::unsafe_arena_set_allocated_report_metrics_request(::vm_tools::container::ReportMetricsRequest* report_metrics_request) {
-  clear_input();
-  if (report_metrics_request) {
-    set_has_report_metrics_request();
-    input_.report_metrics_request_ = report_metrics_request;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
-}
-inline ::vm_tools::container::ReportMetricsRequest* ContainerListenerFuzzerSingleAction::_internal_mutable_report_metrics_request() {
-  if (!_internal_has_report_metrics_request()) {
-    clear_input();
-    set_has_report_metrics_request();
-    input_.report_metrics_request_ = CreateMaybeMessage< ::vm_tools::container::ReportMetricsRequest >(GetArenaForAllocation());
-  }
-  return input_.report_metrics_request_;
-}
-inline ::vm_tools::container::ReportMetricsRequest* ContainerListenerFuzzerSingleAction::mutable_report_metrics_request() {
-  ::vm_tools::container::ReportMetricsRequest* _msg = _internal_mutable_report_metrics_request();
-  // @@protoc_insertion_point(field_mutable:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
   return _msg;
 }
 
