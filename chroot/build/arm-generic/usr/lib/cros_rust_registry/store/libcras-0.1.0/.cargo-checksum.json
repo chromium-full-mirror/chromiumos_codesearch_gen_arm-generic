@@ -1,5 +1,5 @@
 {
-	"package": "94af7cb9f50a2817b0357db7450a413654590f933a511d16a6646ecfe29e5ffb",
+	"package": "f72bd9f100f30d4366e0a7edf2d5bd426ee968adee1b9e77d5352430ac99027c",
 	"files": {
 		"Cargo.toml.orig": "c2a073cc584b7e5899f0cad39b7b4b46b91fb1b71d5fc42a1695772ed21d0a75",
 		"Android.bp": "6935900c897d6df04ceb4269360754b93d824b02742a465335b701ae5aa392e3",
@@ -10,7 +10,7 @@
 		"src/cras_shm.rs": "feab6c40dded9bd7dfa2c5ec322a777e9862c06fb39c49884d8074a92b35b019",
 		"src/audio_socket.rs": "211746da689a24e4282a489099d0aa5a66b67ef3a0be4cd2ab56780e8c0f1618",
 		"src/cras_stream.rs": "e1f71f16d707f0c2c97e57142952017bb6b3b8641c2c7a13dcdd069f15b05a45",
-		"src/async_.rs": "256396844d8010e9a812419ba9f2473f9d2dcd6d3b57a6e565f2bd0fee59f94e",
+		"src/async_.rs": "0276c0f3d39d3690110db10e96e972ce58b2be37aea54d45f1961c6d096f5b54",
 		"src/cras_server_socket.rs": "64f8eaf7bd7798a9f669b9dd80f69f7cb22c37685544b313dd42799797362636"
 	}
 }

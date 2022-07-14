@@ -205,6 +205,7 @@ suite:check_setup_cts_N
 suite:check_setup_storage_qual
 suite:chrome-informational
 suite:cros-av-analysis
+suite:crosbolt_arc_perf_qual
 suite:crosbolt_perf_nightly
 suite:crosbolt_perf_parallels_nightly
 suite:crosbolt_perf_parallels_perbuild
@@ -413,6 +414,8 @@ suite:vmtest-informational2
 suite:vmtest-informational3
 suite:wifi_atten_perf
 suite:wifi_atten_roam_perf
+suite:wifi_cross_device_p2p
+suite:wifi_cross_device_tdls
 suite:wifi_endtoend
 suite:wifi_flaky
 suite:wifi_func_tast

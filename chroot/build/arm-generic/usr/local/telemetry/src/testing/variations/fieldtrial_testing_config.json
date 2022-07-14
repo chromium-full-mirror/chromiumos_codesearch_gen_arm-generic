@@ -2719,6 +2719,21 @@
             ]
         }
     ],
+    "CommerceHintAndroid": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "enabled_commerce_hint_20220623",
+                    "enable_features": [
+                        "CommerceHintAndroid"
+                    ]
+                }
+            ]
+        }
+    ],
     "CommerceMerchantViewer": [
         {
             "platforms": [
@@ -5053,6 +5068,7 @@
                 {
                     "name": "Blocks_1_20211021",
                     "params": {
+                        "ActivelySampledFonts": "Arial,Helvetica,Times New Roman",
                         "BlockWeights": "5202,37515,33617,35842,36929,33922,20441,31021,28500,34490,24343",
                         "BlockedHashes": "44033,44289,286465,680961,681473,693249,693505,693761,694017,696065,880129,881409,881665,881921",
                         "BlockedTypes": "13,25,28",
@@ -5587,26 +5603,6 @@
             ]
         }
     ],
-    "LocalFrameRootPrePostFCPMetrics": [
-        {
-            "platforms": [
-                "android",
-                "chromeos",
-                "chromeos_lacros",
-                "linux",
-                "mac",
-                "windows"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "LocalFrameRootPrePostFCPMetrics"
-                    ]
-                }
-            ]
-        }
-    ],
     "LocationBarModelOptimizations": [
         {
             "platforms": [
@@ -5945,31 +5941,6 @@
                     "name": "Enabled",
                     "enable_features": [
                         "NearbySharingOnePageOnboarding"
-                    ]
-                }
-            ]
-        }
-    ],
-    "NeuralPalmRejectionModelV2AndAdaptiveHold": [
-        {
-            "platforms": [
-                "chromeos"
-            ],
-            "experiments": [
-                {
-                    "name": "NeuralPalmRejectionAdaptiveHold_20220207",
-                    "enable_features": [
-                        "EnableNeuralPalmAdaptiveHold",
-                        "EnableNeuralPalmRejectionModelV2"
-                    ]
-                },
-                {
-                    "name": "NeuralPalmRejectionModelV2_20220207",
-                    "enable_features": [
-                        "EnableNeuralPalmRejectionModelV2"
-                    ],
-                    "disable_features": [
-                        "EnableNeuralPalmAdaptiveHold"
                     ]
                 }
             ]
@@ -9208,19 +9179,19 @@
             ],
             "experiments": [
                 {
-                    "name": "NoMapSpace",
+                    "name": "CompactInOldSpace_V1",
                     "disable_features": [
                         "V8UseMapSpace"
                     ]
                 },
                 {
-                    "name": "CompactMaps",
+                    "name": "CompactInMapSpace_V1",
                     "enable_features": [
                         "V8CompactMaps"
                     ]
                 },
                 {
-                    "name": "Default"
+                    "name": "Control_V1"
                 }
             ]
         }
@@ -9417,6 +9388,46 @@
                         "should_update_history": "true",
                         "url": "true",
                         "url_is_unreachable": "true"
+                    },
+                    "enable_features": [
+                        "VerifyDidCommitParams"
+                    ],
+                    "disable_features": []
+                },
+                {
+                    "name": "EnabledWithoutShouldReplace",
+                    "params": {
+                        "gesture": "true",
+                        "http_status_code": "true",
+                        "intended_as_new_entry": "true",
+                        "is_overriding_user_agent": "true",
+                        "method": "true",
+                        "origin": "true",
+                        "post_id": "true",
+                        "should_replace_current_entry": "false",
+                        "should_update_history": "true",
+                        "url": "true",
+                        "url_is_unreachable": "true"
+                    },
+                    "enable_features": [
+                        "VerifyDidCommitParams"
+                    ],
+                    "disable_features": []
+                },
+                {
+                    "name": "EnabledWithoutShouldReplaceAndURLIsUnreachable",
+                    "params": {
+                        "gesture": "true",
+                        "http_status_code": "true",
+                        "intended_as_new_entry": "true",
+                        "is_overriding_user_agent": "true",
+                        "method": "true",
+                        "origin": "true",
+                        "post_id": "true",
+                        "should_replace_current_entry": "false",
+                        "should_update_history": "true",
+                        "url": "true",
+                        "url_is_unreachable": "false"
                     },
                     "enable_features": [
                         "VerifyDidCommitParams"
