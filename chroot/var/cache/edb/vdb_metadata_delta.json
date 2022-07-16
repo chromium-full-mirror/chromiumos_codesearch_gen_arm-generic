@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1657949199.2893996, "deltas": [{"event": "add", "package": "chromeos-base/libec", "version": "0.0.1-r217", "slot": "0", "counter": "1572"}, {"event": "add", "package": "chromeos-base/ec-devutils", "version": "0.0.2-r11507", "slot": "0", "counter": "1573"}, {"event": "add", "package": "chromeos-base/tast-cmd", "version": "0.0.1-r1610", "slot": "0", "counter": "1574"}, {"event": "add", "package": "chromeos-base/tast-remote-tests-cros", "version": "0.0.2-r11570", "slot": "0", "counter": "1575"}]}
+{"version": "1", "timestamp": 1657975058.9698822}

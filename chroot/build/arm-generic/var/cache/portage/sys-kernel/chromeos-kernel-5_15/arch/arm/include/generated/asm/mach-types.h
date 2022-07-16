@@ -1,5 +1,5 @@
 /*
- * This was automagically generated from /build/arm-generic/tmp/portage/sys-kernel/chromeos-kernel-5_15-5.15.55-r645/work/chromeos-kernel-5_15-5.15.55/arch/arm/tools/mach-types!
+ * This was automagically generated from /build/arm-generic/tmp/portage/sys-kernel/chromeos-kernel-5_15-5.15.55-r646/work/chromeos-kernel-5_15-5.15.55/arch/arm/tools/mach-types!
  * Do NOT edit
  */
 
