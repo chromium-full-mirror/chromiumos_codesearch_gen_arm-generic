@@ -158,11 +158,12 @@ enum CryptohomeErrorCode : int {
   CRYPTOHOME_ADD_CREDENTIALS_FAILED = 50,
   CRYPTOHOME_ERROR_UNAUTHENTICATED_AUTH_SESSION = 51,
   CRYPTOHOME_ERROR_UNKNOWN_LEGACY = 52,
-  CRYPTOHOME_ERROR_UNUSABLE_VAULT = 53
+  CRYPTOHOME_ERROR_UNUSABLE_VAULT = 53,
+  CRYPTOHOME_REMOVE_CREDENTIALS_FAILED = 54
 };
 bool CryptohomeErrorCode_IsValid(int value);
 constexpr CryptohomeErrorCode CryptohomeErrorCode_MIN = CRYPTOHOME_ERROR_NOT_SET;
-constexpr CryptohomeErrorCode CryptohomeErrorCode_MAX = CRYPTOHOME_ERROR_UNUSABLE_VAULT;
+constexpr CryptohomeErrorCode CryptohomeErrorCode_MAX = CRYPTOHOME_REMOVE_CREDENTIALS_FAILED;
 constexpr int CryptohomeErrorCode_ARRAYSIZE = CryptohomeErrorCode_MAX + 1;
 
 const std::string& CryptohomeErrorCode_Name(CryptohomeErrorCode value);

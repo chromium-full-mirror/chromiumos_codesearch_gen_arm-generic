@@ -1,5 +1,5 @@
 {
-	"package": "9fcd3ce0d8afb0d457f1a4d9aeafe95d61d4eafaaa4834673252d6a831143df3",
+	"package": "76d80f3a9be2f0c21374e0021bfe374e85bc6f851d0e905b1e8b61b447f791f5",
 	"files": {
 		"Cargo.toml.orig": "552f7f1a701bf09ec87a7e7c0032477bb1ae98e298cfe98877978e7407b2c60c",
 		"tests/ok.rs": "a8c1925ac8647d185c7490ed1e33e3ce3203f5945bd3db4dcaf50ea55078df29",
@@ -35,7 +35,7 @@
 		"tests/ui/proc_macro_hack.stderr": "65e887dc208b92bfcd44405e76d5d05e315c3c5c5f637070954b7d593c723731",
 		"tests/macro-errors.rs": "7f793921dfbec692bfb2bbb067faf0480c0e7eeec83982b5e9fcddd817817616",
 		"tests/runtime-errors.rs": "e53aa7d8e6c0e5128a90e856105eb05e4e7e72ea6db1bd580f3fe439bff62f24",
-		"Cargo.toml": "f15d52543f434d32e1cdffaf68cb64f54cb832d7d67daee9275b57b423fb90fe",
+		"Cargo.toml": "fa6a0c0d2a5a10775b2583d1f7ff0bae3a6ad14f25258b8f1807e23ae9483138",
 		"LICENSE-MIT": "544b3aed1fd723d0cadea567affdcfe0431e43e18d997a718f9d67256b814fde",
 		"LICENSE-APACHE": "4665f973ccb9393807a7fb1264add6b3513d19abc6b357e4cb52c6fe59cc6a3b",
 		"README.md": "72d59787d0a1f7bf161e292d0bc1bc25fdfb08cd6ad379a34cc3ed1b388d11fa",

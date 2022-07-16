@@ -1,7 +1,7 @@
 {
-	"package": "af87512dd30358987328e6bdb087378d033a3e6ee43b499c6075c44edad8c7b9",
+	"package": "9791e3a95bb6cbb2334cb0237367ea9190b14d19be4fb470583a9fe8588bf0fd",
 	"files": {
-		"Cargo.toml.orig": "9ffd4020d81c55d1b55c9115ebef1bd42c747c973c86c23b335ad4192d085fe4",
+		"Cargo.toml.orig": "d8a97faae1db862eb2c489ff647a7f70260e2d32d717a33efef85d351e2ac4d8",
 		"tests/integration.rs": "d491a0ae0d50c3194cd7b81720262f55ccb234251346f188284ce29729823dc2",
 		"tests/round_trip/elf.rs": "690015fb4d3e79ee6d41c4d3a8e89a6806f1a0c313804707b83e44fceefac472",
 		"tests/round_trip/mod.rs": "b741ba432fdee2156699743962c64aaf2d1e9629c432e40953ac4d410688ea5a",
@@ -11,7 +11,7 @@
 		"tests/round_trip/common.rs": "ced08ff559ca4d343ceef54bb4c581a3405cd96d6a1628ba43b7aab82070800b",
 		"tests/round_trip/bss.rs": "849d69b063fd757fed02219dd81e9d13b82068a2025d2cc5cfd40cf557e31bda",
 		"tests/parse_self.rs": "81b44b2dd1de9a5d8c18d9bd8926156e39fb83931837afa8ca344da0d309aeee",
-		"Cargo.toml": "25d9117cc582983d4936682578ec0c463734a986f78d75e8fa23b5b1a224229f",
+		"Cargo.toml": "4bf23814c04dac3ed51643c337c75d5f7f328d0712b42f12c4eeb73e9195d362",
 		"clippy.toml": "50fd0cdaae995561b1d688c9410fe99335fc7ac3916a400dafd25ff63f8215f7",
 		"LICENSE-MIT": "0b74dfa0bcee5c420c6b7f67b4b2658f9ab8388c97b8e733975f2cecbdd668a6",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",

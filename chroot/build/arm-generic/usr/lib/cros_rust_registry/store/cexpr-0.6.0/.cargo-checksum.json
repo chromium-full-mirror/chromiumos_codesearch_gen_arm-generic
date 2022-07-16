@@ -1,7 +1,7 @@
 {
-	"package": "f08b1ef0481c152c573b78955c28b178ea7a0f1f7f3b3e3d78c1c76e6e2fbf19",
+	"package": "2e8d46ab501b0a7ff357320682ae65c57b259fa66d7a39f816a5cc80c2053499",
 	"files": {
-		"Cargo.toml.orig": "cb6c93b8f4c1b681296427608ca2e7c6772ba3a6b824df6d968ed027afb1d851",
+		"Cargo.toml.orig": "b88ae237de0c65681aaa508ad14fe744773aafdb80691ab9497604cc16cbf03d",
 		"tests/clang.rs": "5bb9807f35f760065d15cb9dfb7d8b79c2f734aef7ba5fe3737154155ed8ee73",
 		"tests/input/int_unsigned.h": "7b8023ba468ec76b184912692bc40e8fbcdd92ad86ec5a7c0dbcb02f2b8d961d",
 		"tests/input/floats.h": "28ec664e793c494e1a31f3bc5b790014e9921fc741bf475a86319b9a9eee5915",
@@ -11,7 +11,7 @@
 		"tests/input/strings.h": "2dd11bc066f34e8cb1916a28353e9e9a3a21cd406651b2f94fc47e89c95d9cba",
 		"tests/input/int_signed.h": "934199eded85dd7820ca08c0beb1381ee6d9339970d2720a69c23025571707ce",
 		"bors.toml": "1c81ede536a37edd30fe4e622ff0531b25372403ac9475a5d6c50f14156565a2",
-		"Cargo.toml": "b88ae237de0c65681aaa508ad14fe744773aafdb80691ab9497604cc16cbf03d",
+		"Cargo.toml": "9d96a766debfb2e557b296f0a6e3fd37ce65fffd14b2a013d0f374b5215ba9ae",
 		"LICENSE-MIT": "d9771b8c6cf4426d3846de54c1febe20907f1eeadf7adfb5ade89a83bd9ea77f",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"rustfmt.toml": "d8e7f616455a670ba75e3e94bf6f88f4c168c481664d12501820c7dfff5c3cc2",

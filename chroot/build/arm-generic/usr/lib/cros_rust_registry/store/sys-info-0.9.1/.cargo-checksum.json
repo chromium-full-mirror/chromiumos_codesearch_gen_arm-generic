@@ -1,5 +1,5 @@
 {
-	"package": "99b6acd75c40d6cb09cf6488d1eb09296cd5cedcb27adb564155930411aae409",
+	"package": "5533c8e0e637a89a8dd477ab81879b4b789858dcd5bed255b267c0dd4cc9efae",
 	"files": {
 		"c/info.h": "4b7de9e0b88ccf958e3934b7062c179f57ef2e721b16e78563b9f75d6167893b",
 		"c/windows.c": "e39e9c5aadffb812b9356e6cac6f72069aba6d6057b16f9f35ef2a4bcf0a147d",
@@ -9,8 +9,8 @@
 		"c/darwin.c": "8500507a6ef36867bd3270b73f56d025f51c3cdd1bcfd3894ea3402551b9171c",
 		"c/linux.c": "de6065f06660e2b9c9a463699aebe6704a25847adc3b5869ed99f7ca1eebc36c",
 		"c/freebsd.c": "ff5ca403dc4010cb2eadf8c1f4bddfd4aea0852aedcff9bdf77fd43651afef4b",
-		"Cargo.toml.orig": "33270bed6d80cdb7dfa1cf61d2ff5429551eb4c198b5b235184a4b9278d4a2a2",
-		"Cargo.toml": "ca9e7165a2cf907da4cf3b2e97eb4611bfb46d626f5e2e21c02ce2a63623ccae",
+		"Cargo.toml.orig": "ce4b92d7dd4e06c9d3dfe71d0ba1136820cc03570c2e7826e2cce211ca860fdc",
+		"Cargo.toml": "8ae713271846db3a0efed584f1e9cd4af2e7ef217d79016e1cf603e6859a81f4",
 		"lib.rs": "e04a1480d89b16496642f9190976b7dbdf5821bcc89e618308442f8313db2cbf",
 		"LICENSE": "b0a82e5cbc0310bd2bd6ac55adfd582d6bd86a4bcaab97e734278f7135ecc2b2",
 		"README.md": "0a54bbe233758c777b6b1944e8af7fd90442471a8e34306f09f68c1373c383e0",

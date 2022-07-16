@@ -1,8 +1,8 @@
 {
-	"package": "d614f4b2efc503df8820ceffd618dd7d3f430b7bb651846e8970d8180ffc6de7",
+	"package": "852627c66cb0a96fb987c9d439bceeb7d4e9f47e5a4505209100ca431425835f",
 	"files": {
 		"asm.s": "eb4e034d77c73b27e825abf5d15d533617fac459905be79c23cd779e3194c134",
-		"Cargo.toml.orig": "1f3d5b88aedf38be6ffc083f6493ce6cf6055463d695a3552ab95d19c6dfd5c5",
+		"Cargo.toml.orig": "704821533b6b4ac8baca8a4544bed4f3d021f35c613d6329b9c37d68362c7ea4",
 		"asm-v8-main.s": "0982ca56d6a06719e3e33d250f853f224f5aab321530be94682df5b5460ca8ba",
 		"bin/thumbv8m.main-none-eabi.a": "b9ac52ffe012c22378824d3c722ca65c1c8a65373dc493ed06834b813ad12958",
 		"bin/thumbv8m.base-none-eabi.a": "186b5f8f588cd773cbbf67616c0a9d31fc74cde9d24e8e306426e05944ac279e",
@@ -12,7 +12,7 @@
 		"bin/thumbv7m-none-eabi.a": "c5ef625038b38a4297f386b1d7b6d46b2e55154e5b80dabb116da5c7b7cf1b9b",
 		"bin/thumbv7em-none-eabi.a": "0a1b8a1e29423950de8465cb6e8bbe4c231913193f1aa078d3d56da12a95bebe",
 		"assemble.sh": "aced58cee8df2b46eea4dfb6d948fa0d723f44aaaebd410f3b362052d1bb8fcd",
-		"Cargo.toml": "a83090fe654537b12c5329e0880d6cdddbdd006c0bec034a4cd75fb710fea01f",
+		"Cargo.toml": "4a8916356d0e95a32fc7e167a52da9141b587dc872dfbe2462fc8fd13a55e004",
 		"LICENSE-MIT": "0a633406531735659d570e7903394ec52f7707195a3c4af10279f06eec7acc76",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "a894920bce1a2cebee2b91c59b8ac77a007d20fc2c0f041b69488465e0e74097",

@@ -1,8 +1,8 @@
 {
-	"package": "436fc22c4cf855e7b1626bd89e0b6c1344ca13e55fd71fcc5c8bc22af20a7790",
+	"package": "f0f611165170d357461ab8d951d986d49e725903111837afdd9d15218e70bd0c",
 	"files": {
-		"Cargo.toml.orig": "06a1af0e619f74f689a85ffd6b9dfc226d0a8674e620f2e6973819869bdac348",
-		"Cargo.lock": "616a5cace18357bf192fdbfe5e18d81afddd2ad6405b10cd7807e145990a70c9",
+		"Cargo.toml.orig": "0fe0a51bf68855e4a36799610eedd4880ead6b9ca62f2595bd0e62e5827b6bc8",
+		"Cargo.lock": "79804c323de608e933d4a58f1cd1daeb756d05e66acf3a16cb8cd28753add67c",
 		"docs/parsing.md": "55dc4cb8a7aeb53f110f6c72dabe55988b0207b6697a533f7d0578db1ce09bc4",
 		"tests/api.rs": "dda410bb5108d0a5b92beed046cd86911d6b658803152680c28073c92e06c63b",
 		"tests/files/ns_err_011.yaml": "924d55de0160997577ed55868c0023a97b1c5c8efdaf06f05f1184805e5c2654",
@@ -178,7 +178,7 @@
 		"tests/files/ns_004.xml": "8096c1201b5fb537b73faed8c83a5b7bed5dd8e7483b2b663e024875ae0487bf",
 		"tests/dom-api.rs": "3fd516f9b8ae097b814056963259973732206793ebb7f74ea005b39bcd77c37d",
 		"tests/ast.rs": "90e7e573bf1f9fcf9d0ea5a3f7617be118340a5d0c8e5c8f7bbdf8da8f4f1e65",
-		"Cargo.toml": "45fa071b2eac2f92a183fee3488b2c69915ef64f96d61ad31f0338e71de56fbc",
+		"Cargo.toml": "8beb160a3e82ac70d81f98924c2ad6b866b965ee17d3404259469d6da253b6bd",
 		"LICENSE-MIT": "0b5f24524360e15bcf9fb79bca875f5aa62f01f94f2988e23238c7ec0e6e8784",
 		"testing-tools/lxml-ast.py": "3cdee8aac142ed299f60145e3838550459607384a5384205ae6c247a2376c230",
 		"testing-tools/test-lxml.py": "665c0c86ca9be82b1e480681a7b2f04c8668d25a08f3ed7d89cdee1f8546e6af",

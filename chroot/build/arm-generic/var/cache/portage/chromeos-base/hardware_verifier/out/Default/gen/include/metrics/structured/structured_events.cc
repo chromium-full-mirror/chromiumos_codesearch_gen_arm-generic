@@ -584,6 +584,19 @@ AdditionalActivity& AdditionalActivity::SetActivityType(const int64_t value) {
   return *this;
 }
 
+StateOverallTime::StateOverallTime() :
+  ::metrics::structured::EventBase(kEventNameHash, kProjectNameHash, kIdType, kEventType) {}
+StateOverallTime::~StateOverallTime() = default;
+StateOverallTime& StateOverallTime::SetStateCase(const int64_t value) {
+  AddIntMetric(kStateCaseNameHash, value);
+  return *this;
+}
+
+StateOverallTime& StateOverallTime::SetOverallTime(const int64_t value) {
+  AddIntMetric(kOverallTimeNameHash, value);
+  return *this;
+}
+
 }  // namespace rmad
 
 namespace wi_fi_chipset {

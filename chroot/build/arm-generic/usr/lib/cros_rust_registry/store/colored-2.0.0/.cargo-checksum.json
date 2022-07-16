@@ -1,10 +1,10 @@
 {
-	"package": "2ca8caceda4c70460e3207c877518926101e747caf6e791998a647fe5c7103d8",
+	"package": "c905084f728ddc7fbc0d97e1da72317afdc0742ff92eeba63416cca01a04c1f0",
 	"files": {
-		"Cargo.toml.orig": "9b086e1546f2e9e1a686d232fc092d1e0163958e63eb0e7c4b26151ea9ac3c13",
-		"Cargo.lock": "c41d9df0a90e4f9e84022761df03fa7b1b4e7f05be7df9a3e7a3fa38c2cbd68d",
+		"Cargo.toml.orig": "f7710efa1484ac4138206305b2cb62a7dcf610e63e2fd0967b94a2e8b9c63af8",
+		"Cargo.lock": "a63026e071e221b2a1be0d6e1cfa886ca46c7495f0d066d46e6766d904acce52",
 		"tests/ansi_term_compat.rs": "5658c3d0de456c23ffdca07c92d6a931a7ab3c6ac563417fccb54808cb2d6166",
-		"Cargo.toml": "a645e746255fd9fb86e905ade1ef6e1240da4aeda151a9ae5d1d7f7de08572ce",
+		"Cargo.toml": "1f668c9fc51d27a9ac730d7e5955a48c114adfa527abfc3d9e2045570187d333",
 		"LICENSE": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
 		"README.md": "0807a71aaca98bb5ff5911df7f13305d6a59434b72130c3c54b37b508abc322a",
 		"Dockerfile": "e57d9b655c28d967c6b1b46a1db2e434ea9a4dc55fe1635add74b00265bb3153",

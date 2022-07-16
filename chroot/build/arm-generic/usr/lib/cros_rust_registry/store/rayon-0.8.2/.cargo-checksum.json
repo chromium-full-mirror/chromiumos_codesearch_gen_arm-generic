@@ -1,8 +1,8 @@
 {
-	"package": "2d549626a14e3a71d490931b706f396de748ad2d85f73a63e2f57412f8041e39",
+	"package": "4f13148c8ed282f5fbef82dcafbf08b64383c7d1adb8b7d5d8e40d2f806fc500",
 	"files": {
 		"Cargo.toml.orig": "5048b000ba4e4204a73d9fd8eece01507c979945506aeb078a81454851f11cb1",
-		"Cargo.lock": "306960d0b6751176ae5866c3b44f743e8d7af4d61b70f1893866cb39c679a983",
+		"Cargo.lock": "25cfb56d6c27202436379527277f2cf003531b02634e4ece0249f1cd225b330a",
 		"appveyor.yml": "7e9559e0e28af2d5da74b1d8598dffc0f42817b0e7f0fefda2d67dce1e6d5bc6",
 		"RELEASES.md": "41fcefb8206d971bb953b552b15c232bb290145e56ab2ecee8ce9f4e0c685c98",
 		"tests/run-pass/named-threads.rs": "511a75feed739de04033efe4bb2986fd1549bd03a086db8e12ec3b9751d27771",
@@ -32,7 +32,7 @@
 		"tests/compile-fail/rc_return.rs": "c9b1cf6d94f3eff00674ee9820b34b2ae3fa5f29bdf1f389edfe04bd82930c76",
 		"tests/compile-fail/rc_upvar.rs": "200c4583e17eb09547cabcf1b2f3ab02d2176f58e11f6ae9fff864ff9a6c9655",
 		"tests/compile-fail/cell_par_iter.rs": "3a20e18d488b0769f7b7679387cfe05f383b657dd07d155f3d4391676e36e857",
-		"Cargo.toml": "5166f39eecb1ae4fab4b0fdb34520772bc0607be74efec73d0ae5aadf3abbd81",
+		"Cargo.toml": "e11eb689feff6c020154c3f71e4e8859b358f36301fa349b64c67fe1daa60d51",
 		"LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "40bcc4505c71815463bb4fef4ca2158091cdc97ac51dee49ab5559b62401b493",

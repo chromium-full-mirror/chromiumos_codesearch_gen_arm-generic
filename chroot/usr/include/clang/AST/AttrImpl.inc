@@ -10645,6 +10645,122 @@ const char *FormatArgAttr::getSpelling() const {
 }
 
 
+// FunctionReturnThunksAttr implementation
+
+FunctionReturnThunksAttr *FunctionReturnThunksAttr::CreateImplicit(ASTContext &Ctx, Kind ThunkType, const AttributeCommonInfo &CommonInfo) {
+  auto *A = new (Ctx) FunctionReturnThunksAttr(Ctx, CommonInfo, ThunkType);
+  A->setImplicit(true);
+  if (!A->isAttributeSpellingListCalculated() && !A->getAttrName())
+    A->setAttributeSpellingListIndex(0);
+  return A;
+}
+
+FunctionReturnThunksAttr *FunctionReturnThunksAttr::Create(ASTContext &Ctx, Kind ThunkType, const AttributeCommonInfo &CommonInfo) {
+  auto *A = new (Ctx) FunctionReturnThunksAttr(Ctx, CommonInfo, ThunkType);
+  if (!A->isAttributeSpellingListCalculated() && !A->getAttrName())
+    A->setAttributeSpellingListIndex(0);
+  return A;
+}
+
+FunctionReturnThunksAttr *FunctionReturnThunksAttr::CreateImplicit(ASTContext &Ctx, Kind ThunkType, SourceRange Range, AttributeCommonInfo::Syntax Syntax) {
+  AttributeCommonInfo I(Range, NoSemaHandlerAttribute, Syntax);
+  return CreateImplicit(Ctx, ThunkType, I);
+}
+
+FunctionReturnThunksAttr *FunctionReturnThunksAttr::Create(ASTContext &Ctx, Kind ThunkType, SourceRange Range, AttributeCommonInfo::Syntax Syntax) {
+  AttributeCommonInfo I(Range, NoSemaHandlerAttribute, Syntax);
+  return Create(Ctx, ThunkType, I);
+}
+
+FunctionReturnThunksAttr::FunctionReturnThunksAttr(ASTContext &Ctx, const AttributeCommonInfo &CommonInfo
+              , Kind ThunkType
+             )
+  : InheritableAttr(Ctx, CommonInfo, attr::FunctionReturnThunks, false, false)
+              , thunkType(ThunkType)
+  {
+}
+
+
+
+bool FunctionReturnThunksAttr::ConvertStrToKind(StringRef Val, Kind &Out) {
+  Optional<Kind> R = llvm::StringSwitch<Optional<Kind>>(Val)
+    .Case("keep", FunctionReturnThunksAttr::Keep)
+    .Case("thunk-extern", FunctionReturnThunksAttr::Extern)
+    .Default(Optional<Kind>());
+  if (R) {
+    Out = *R;
+      return true;
+    }
+  return false;
+}
+
+const char *FunctionReturnThunksAttr::ConvertKindToStr(Kind Val) {
+  switch(Val) {
+  case FunctionReturnThunksAttr::Keep: return "keep";
+  case FunctionReturnThunksAttr::Extern: return "thunk-extern";
+  }
+  llvm_unreachable("No enumerator with that value");
+}
+FunctionReturnThunksAttr *FunctionReturnThunksAttr::clone(ASTContext &C) const {
+  auto *A = new (C) FunctionReturnThunksAttr(C, *this, thunkType);
+  A->Inherited = Inherited;
+  A->IsPackExpansion = IsPackExpansion;
+  A->setImplicit(Implicit);
+  return A;
+}
+
+void FunctionReturnThunksAttr::printPretty(raw_ostream &OS, const PrintingPolicy &Policy) const {
+  bool IsFirstArgument = true; (void)IsFirstArgument;
+  unsigned TrailingOmittedArgs = 0; (void)TrailingOmittedArgs;
+  switch (getAttributeSpellingListIndex()) {
+  default:
+    llvm_unreachable("Unknown attribute spelling!");
+    break;
+  case 0 : {
+    OS << " __attribute__((function_return";
+    DelimitAttributeArgument(OS, IsFirstArgument);
+    OS << "\"" << FunctionReturnThunksAttr::ConvertKindToStr(getThunkType()) << "\"";
+    if (!IsFirstArgument)
+      OS << ")";
+    OS << "))";
+    break;
+  }
+  case 1 : {
+    OS << " [[gnu::function_return";
+    DelimitAttributeArgument(OS, IsFirstArgument);
+    OS << "\"" << FunctionReturnThunksAttr::ConvertKindToStr(getThunkType()) << "\"";
+    if (!IsFirstArgument)
+      OS << ")";
+    OS << "]]";
+    break;
+  }
+  case 2 : {
+    OS << " [[gnu::function_return";
+    DelimitAttributeArgument(OS, IsFirstArgument);
+    OS << "\"" << FunctionReturnThunksAttr::ConvertKindToStr(getThunkType()) << "\"";
+    if (!IsFirstArgument)
+      OS << ")";
+    OS << "]]";
+    break;
+  }
+}
+}
+
+const char *FunctionReturnThunksAttr::getSpelling() const {
+  switch (getAttributeSpellingListIndex()) {
+  default:
+    llvm_unreachable("Unknown attribute spelling!");
+    return "(No spelling)";
+  case 0:
+    return "function_return";
+  case 1:
+    return "function_return";
+  case 2:
+    return "function_return";
+  }
+}
+
+
 // GNUInlineAttr implementation
 
 GNUInlineAttr *GNUInlineAttr::CreateImplicit(ASTContext &Ctx, const AttributeCommonInfo &CommonInfo) {
@@ -32106,6 +32222,8 @@ const char *Attr::getSpelling() const {
     return cast<FormatAttr>(this)->getSpelling();
   case attr::FormatArg:
     return cast<FormatArgAttr>(this)->getSpelling();
+  case attr::FunctionReturnThunks:
+    return cast<FunctionReturnThunksAttr>(this)->getSpelling();
   case attr::GNUInline:
     return cast<GNUInlineAttr>(this)->getSpelling();
   case attr::GuardedBy:
@@ -32812,6 +32930,8 @@ Attr *Attr::clone(ASTContext &C) const {
     return cast<FormatAttr>(this)->clone(C);
   case attr::FormatArg:
     return cast<FormatArgAttr>(this)->clone(C);
+  case attr::FunctionReturnThunks:
+    return cast<FunctionReturnThunksAttr>(this)->clone(C);
   case attr::GNUInline:
     return cast<GNUInlineAttr>(this)->clone(C);
   case attr::GuardedBy:
@@ -33518,6 +33638,8 @@ void Attr::printPretty(raw_ostream &OS, const PrintingPolicy &Policy) const {
     return cast<FormatAttr>(this)->printPretty(OS, Policy);
   case attr::FormatArg:
     return cast<FormatArgAttr>(this)->printPretty(OS, Policy);
+  case attr::FunctionReturnThunks:
+    return cast<FunctionReturnThunksAttr>(this)->printPretty(OS, Policy);
   case attr::GNUInline:
     return cast<GNUInlineAttr>(this)->printPretty(OS, Policy);
   case attr::GuardedBy:

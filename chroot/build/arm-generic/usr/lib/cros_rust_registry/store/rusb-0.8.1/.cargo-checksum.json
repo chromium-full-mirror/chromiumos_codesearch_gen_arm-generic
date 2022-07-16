@@ -1,9 +1,9 @@
 {
-	"package": "9eddbff792a6e93754cdb34da078f7e3becf469525681a509fe843333657937e",
+	"package": "10bc2474b7c3332a574b3d24558bdf51504daf2cfec4f0e3bd40f6c8a3d7e24c",
 	"files": {
 		"Cargo.toml.orig": "9ecdbeea452cc699646c9be6a616194c0d244ca12165cef0c52fb70ce14d59fa",
-		"Cargo.lock": "6497506c855ba8d443b61c2efb9ab13136001b42a3dc72945215f5a06533d3e1",
-		"Cargo.toml": "9a24259efcdd657f32ce046728155f04485461f3fcc91ba6817d95acb5af8d22",
+		"Cargo.lock": "34886db9f3b44ea2c552ead7b5f20544b9f54992fdc7bbf991c8b5eca38cffe7",
+		"Cargo.toml": "7e3b8c7c91cf2223b3cc9ea97f3e4d507857cf0ab3e11aaa398502ebce8cd877",
 		"LICENSE": "871afd9d691846de71e0b83812ba9c7ff00bc7b3ad102dedcaa109f2246d52ad",
 		"README.md": "a1fbe2c944835e997e1c10d98a2fd8f4b18c20c7bc18b51ec5ef534f2a5467f8",
 		"examples/hotplug.rs": "b39cc648b66ebc3876126b610b9be89c4400e392bb9b7313fea33448d134cb50",

@@ -1,8 +1,8 @@
 {
-	"package": "96215ef91e87750a5293f8ee0287bbc42d85395a78d3cbbaf0380d4a7695b3de",
+	"package": "c4c128815092df18bf274c908e817d50f493a4310fff7f9d3cbee6ab57584a1a",
 	"files": {
 		"Cargo.toml.orig": "bbcc3577089c2d029842f2800e4b780279166a13d1efa82c12cad6b84dc4d7fb",
-		"Cargo.toml": "ce1e412c2bbdbcc7b888be3c1840f1cc446faac0addb4cf63bbcc3c17240a101",
+		"Cargo.toml": "ca5ecc3b05025a3627478182895af5c41e212c8025303e8c8ab369f56c4f1120",
 		"bindgen.sh": "aac3fcb2af487c0e03e2cd06af5f16f341fa4d0edb9e478ad5cb65412a8333c2",
 		"DEPRECATED.md": "9085c62776d8fc105c87f2a04a177723d476ba7ec7f384edfc9fb4dee6a266f7",
 		"src/lib.rs": "4570339779730379dcb38524cf9bc924d375f29d86956b3609f0910dd9b4cce9",

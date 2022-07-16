@@ -1263,6 +1263,17 @@
     New->setPackExpansion(isPackExpansion);
     break;
   }
+  case attr::FunctionReturnThunks: {
+    bool isInherited = Record.readInt();
+    bool isImplicit = Record.readInt();
+    bool isPackExpansion = Record.readInt();
+    FunctionReturnThunksAttr::Kind thunkType(static_cast<FunctionReturnThunksAttr::Kind>(Record.readInt()));
+    New = new (Context) FunctionReturnThunksAttr(Context, Info, thunkType);
+    cast<InheritableAttr>(New)->setInherited(isInherited);
+    New->setImplicit(isImplicit);
+    New->setPackExpansion(isPackExpansion);
+    break;
+  }
   case attr::GNUInline: {
     bool isInherited = Record.readInt();
     bool isImplicit = Record.readInt();

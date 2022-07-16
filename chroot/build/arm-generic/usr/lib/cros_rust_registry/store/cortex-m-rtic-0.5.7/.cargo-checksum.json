@@ -1,10 +1,10 @@
 {
-	"package": "ec9546507137579c16b632df2f8b0d80e1e1767e428a95e1ba19b7a3e385dc2f",
+	"package": "ed0d9067e22c2a9d40960b1bb2d022f0b7f875be1c8eab3998c9e06aedc66e06",
 	"files": {
 		"Cargo.toml.orig": "e8018ac7a76fde56f0611cac5c93a483dcd202a605a9cfbe2b4ab871867810e5",
-		"Cargo.lock": "7c65a5567d07c31ff62b89f64349d526e4f3cf5c2a8425f0fcab7f5facf5e2a6",
+		"Cargo.lock": "c4ba1ca780faaa935a8170cc0318ec9868525bc685dacb9efb2c8e2620f576c1",
 		"tests/single.rs": "b7ad0f2ff3e5f0189fc4c426f85c8a8365203aa403ad0b8387295b9bfeac78b6",
-		"Cargo.toml": "20b2ff1c372487de1ad115c47ece3f16ae0646f8e9b2cbd381cbe0e15ee3c291",
+		"Cargo.toml": "93a6236bd2db5a7b56e20c575c86da917733e076a34ce491b365ead6800149db",
 		"LICENSE-MIT": "49bb3c83f554c764e207d47ed778c3639ea049ac206afe7bf1125836574ad69d",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"ui/single/exception-systick-used.stderr": "392c00a16ca1c164dd3365bf327d23230e8c482cbef4e914e4a2c6e6ab695cd3",

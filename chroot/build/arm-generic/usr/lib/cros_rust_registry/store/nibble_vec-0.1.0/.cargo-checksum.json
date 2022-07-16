@@ -1,10 +1,10 @@
 {
-	"package": "80192daa46c273a95322932e05e088362b8fdb2d9fe255815f5e3261a1f1fd2a",
+	"package": "0f04d9f48c31a4674ef89c8f23aedbed299243f8bf6ab759e54100b274fd342f",
 	"files": {
-		"Cargo.toml.orig": "8bba3eb56dfe5b4c9f0aec4a64323ada2ccf91574b64fc08aac7731a4bf92823",
-		"Cargo.lock": "58d7c849d1de91d59dcf5c7df06179052f33d251a24f7c3c5c00d14a93b10138",
+		"Cargo.toml.orig": "5ce40d88c3ac1fac0478ab107ecb38c344385bad2b27c9045f8f1a56e0bcd73a",
+		"Cargo.lock": "3e7418fd3cbb508970d570e642c730f7851f7596d1ac976cadd6098736f4d5a8",
 		"benches/nib_bench.rs": "e532ccb6a5c7d2a9bd6030dd18cef9c30ee7b765cde674236b4d3e93460f50ea",
-		"Cargo.toml": "fa3cef17d8bd4de705fb33384b5d9e1972925f8727537fd73e696bb449356d6f",
+		"Cargo.toml": "4fee06d71c9ae5ca3c39da341b1ff8a6a44b4ea220138736c0275b43449ceaea",
 		"LICENSE": "e4e06f4bee6b18fbe6ab33b26331739a0b2bda0c1037cfa869e7d97512e9fcf7",
 		"README.md": "cbc998295ee8d7d6c5ab51c113df05a97d354aff79d690cc92b8019300961e0f",
 		"examples/debug.rs": "97f2c42913e8aa1a33fb60b9a930f5d6b190658484f3fe83f0f6cc56976ad30c",

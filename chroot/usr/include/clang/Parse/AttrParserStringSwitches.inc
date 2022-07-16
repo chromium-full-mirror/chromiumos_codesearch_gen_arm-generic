@@ -49,6 +49,7 @@
 .Case("consumable", true)
 .Case("enum_extensibility", true)
 .Case("format", true)
+.Case("function_return", true)
 .Case("loop", true)
 .Case("unroll", true)
 .Case("nounroll", true)

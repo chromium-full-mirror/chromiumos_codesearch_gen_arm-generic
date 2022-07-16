@@ -5338,6 +5338,59 @@ bool isParamExpr(size_t N) const override {
 static const ParsedAttrInfoFormatArg Instance;
 };
 const ParsedAttrInfoFormatArg ParsedAttrInfoFormatArg::Instance;
+static constexpr ParsedAttrInfo::Spelling FunctionReturnThunksSpellings[] = {
+  {AttributeCommonInfo::AS_GNU, "function_return"},
+  {AttributeCommonInfo::AS_CXX11, "gnu::function_return"},
+  {AttributeCommonInfo::AS_C2x, "gnu::function_return"},
+};
+static constexpr const char *FunctionReturnThunksArgNames[] = {
+"ThunkType",};
+struct ParsedAttrInfoFunctionReturnThunks final : public ParsedAttrInfo {
+  constexpr ParsedAttrInfoFunctionReturnThunks() : ParsedAttrInfo(
+    /*AttrKind=*/ParsedAttr::AT_FunctionReturnThunks,
+    /*NumArgs=*/1,
+    /*OptArgs=*/0,
+    /*NumArgMembers=*/1,
+    /*HasCustomParsing=*/0,
+    /*AcceptsExprPack=*/0,
+    /*IsTargetSpecific=*/1,
+    /*IsType=*/0,
+    /*IsStmt=*/0,
+    /*IsKnownToGCC=*/1,
+    /*IsSupportedByPragmaAttribute=*/1,
+    /*Spellings=*/FunctionReturnThunksSpellings,
+    /*ArgNames=*/FunctionReturnThunksArgNames) {}
+bool diagAppertainsToDecl(Sema &S, const ParsedAttr &Attr, const Decl *D) const override {
+  if (!isa<FunctionDecl>(D)) {
+    S.Diag(Attr.getLoc(), diag::warn_attribute_wrong_decl_type_str)
+      << Attr << "functions";
+    return false;
+  }
+  return true;
+}
+
+bool diagAppertainsToStmt(Sema &S, const ParsedAttr &AL, const Stmt *St) const override {
+  S.Diag(AL.getLoc(), diag::err_decl_attribute_invalid_on_stmt)
+    << AL << St->getBeginLoc();
+  return false;
+}
+
+bool existsInTarget(const TargetInfo &Target) const override {
+  const llvm::Triple &T = Target.getTriple(); (void)T;
+  return true && (T.getArch() == llvm::Triple::x86 || T.getArch() == llvm::Triple::x86_64);
+}
+
+void getPragmaAttributeMatchRules(llvm::SmallVectorImpl<std::pair<attr::SubjectMatchRule, bool>> &MatchRules, const LangOptions &LangOpts) const override {
+  MatchRules.push_back(std::make_pair(attr::SubjectMatchRule_function, /*IsSupported=*/true));
+}
+
+bool isParamExpr(size_t N) const override {
+  return false;
+}
+
+static const ParsedAttrInfoFunctionReturnThunks Instance;
+};
+const ParsedAttrInfoFunctionReturnThunks ParsedAttrInfoFunctionReturnThunks::Instance;
 static constexpr ParsedAttrInfo::Spelling GNUInlineSpellings[] = {
   {AttributeCommonInfo::AS_GNU, "gnu_inline"},
   {AttributeCommonInfo::AS_CXX11, "gnu::gnu_inline"},
@@ -15904,6 +15957,7 @@ static const ParsedAttrInfo *AttrInfoMap[] = {
 &ParsedAttrInfoFlatten::Instance,
 &ParsedAttrInfoFormat::Instance,
 &ParsedAttrInfoFormatArg::Instance,
+&ParsedAttrInfoFunctionReturnThunks::Instance,
 &ParsedAttrInfoGNUInline::Instance,
 &ParsedAttrInfoGuardedBy::Instance,
 &ParsedAttrInfoGuardedVar::Instance,

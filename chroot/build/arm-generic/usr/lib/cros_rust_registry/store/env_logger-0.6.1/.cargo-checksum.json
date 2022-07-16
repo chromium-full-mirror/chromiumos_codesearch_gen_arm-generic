@@ -1,12 +1,12 @@
 {
-	"package": "9ede95b5639b219041730198704bfbeca8987313bbecddab2d4a45df86f18501",
+	"package": "84ad1ed29491efee9b18170a5fde3d6280afd47b4de7d35fad03b59ecf369e6a",
 	"files": {
-		"Cargo.toml.orig": "60c12ed647a3f9ff30f4be30607555d620726a597a593c9e3b11888e8ab5b09e",
-		"Cargo.lock": "f2ddea0e53ead2594ed7a27e7e63953740593ab9a08b2d55b0dc607df091f493",
+		"Cargo.toml.orig": "5afe5de072c821338f440269ecaf7c3afd896c1c783806db38ea4539918c78f2",
+		"Cargo.lock": "9c5ff103aa3ada8bcf6a7fb8ebf3e40815bedb68c9a638ba78edaccc8944a008",
 		"tests/init-twice-retains-filter.rs": "00524ce0f6779981b695bad1fdd244f87b76c126aeccd8b4ff77ef9e6325478b",
 		"tests/regexp_filter.rs": "44aa6c39de894be090e37083601e501cfffb15e3c0cd36209c48abdf3e2cb120",
 		"tests/log-in-log.rs": "41126910998adfbac771c2a1237fecbc5437344f8e4dfc2f93235bab764a087e",
-		"Cargo.toml": "7e68145440573250cd739fb1df25e33b0725f89f03a7027a25da28f995a5a7cb",
+		"Cargo.toml": "ea8fdc2d0964fe453faf0bb0721e90e0cd6a6dd2a6aeae3b0046923f7e411386",
 		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "691180eede732996639d46470b671d148f4c72d8a14abf8eb2da59dd6feaf12d",

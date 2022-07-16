@@ -1,7 +1,7 @@
 {
-	"package": "d4d85226e45fc7cf7418f28a8daa2dee3c2b9eded3c61b8d153cb6e2b9385c8f",
+	"package": "b2d00a682fe91cbb7e3601332cfb9d592478d231118eb5573db8537db8b2e799",
 	"files": {
-		"Cargo.toml.orig": "a16f4c030ef0d7f2d4df9486458e8f22ed95ebfc0c35af884a0155a725e55b7c",
+		"Cargo.toml.orig": "87a94ae6514536093767c5d8e4d067fe00f03d218e1dab64ef3bd1192a7253ae",
 		"tests/test.rs": "b2ce9c87350753a0f60c7492b04582e5f20773ec1f5639ee8827ae8ef2677330",
 		"tests/include/basic.rs": "9e399b682bc74c899d26924c2cab52a911f7392e29300defb6521e561fafafe4",
 		"tests/ui/invalid-bounds.rs": "f86f23d377df015182f2f5dae6464a4f98c37f2198e0646f721fedc4017cb82c",
@@ -27,7 +27,7 @@
 		"tests/proper_unpin.rs": "4089d17e67c0974b9791986625c7871e7fee723432706fbe78459ddbb6f67a59",
 		"tests/auxiliary/mod.rs": "10d721e608f6c667da4eaff7ddcc0efce175c7c92bbf3b4c7755c00a57e29d73",
 		"tests/lint.rs": "c730a6b2fed1cb9dcd729f97410f48909aae3d2609a8bb41c5fad0e8e9d216f0",
-		"Cargo.toml": "f4c652f7503744501eb64f25adba4c66ebd1ffe2bdfa3e26a94cdd3e43963b0f",
+		"Cargo.toml": "3af3e3c07ef155d191210f36782a47b2089019925d3dd7eae6516518a4de7990",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
 		"README.md": "3a264d888ee576c8d7a639e3ab5ededfa52e5d992a053b3e9af4e66e0a05ba34",

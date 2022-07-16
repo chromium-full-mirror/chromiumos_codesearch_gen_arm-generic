@@ -1,7 +1,7 @@
 {
-	"package": "d3e80127e802d2c5d33aff7a432f4346de7b5ea341fe61ed22750fd70078e002",
+	"package": "3283f58a6bda892d7c96ecd1ce981e9bf3870241e20dc94d2e8ba0ce20d4a99a",
 	"files": {
-		"Cargo.toml.orig": "8160461009b043e3fff4a758f7536c00a435d4d9541a1188d9c96c21c51073a9",
+		"Cargo.toml.orig": "5291df3bfbd7f13019595338d74a5c87b31627d97a79cb9f3f4f059a15e2d10d",
 		"tests/executor/mod.rs": "620975b33cc2a494efb6bce230cf285a462b85e5fe12d71561b5bacd9d507b28",
 		"tests/test.rs": "3c429103bf0a7c12ef554b9d1af4094410a359fc1bdf7addc67ed47fcd8948a5",
 		"tests/ui/must-use.stderr": "e6cb190e02f0226df6444065aaca3051f7db8ae599bba18a685155c52bb799b6",
@@ -19,7 +19,7 @@
 		"tests/ui/missing-body.stderr": "636a03cc42933b59d73032ce6cea862e33c16efb9c7fe7f27749247998bc9f23",
 		"tests/ui/unsupported-self.stderr": "2b30517b790c666ea85442afc1c701ddc235d091372e175009aa084bd57b7070",
 		"tests/compiletest.rs": "0a52a44786aea1c299c695bf948b2ed2081e4cc344e5c2cadceab4eb03d0010d",
-		"Cargo.toml": "16c8ef6e0fcc4157ad15cb49dcc382c9d2a081b2157fab0695d8211947c26360",
+		"Cargo.toml": "aeb5652192225c69909323de9580d61c60f79e9d83f1de1147d8306ee219f167",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "1d97889a5b4b981a025a8d6fb3e080bac1885c84f7d1df7982ca90dac3a72ac6",

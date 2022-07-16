@@ -303,6 +303,17 @@
     const auto *SA = cast<FormatArgAttr>(A); (void)SA;
     OS << " " << SA->getFormatIdx().getSourceIndex();
   }
+  void VisitFunctionReturnThunksAttr(const FunctionReturnThunksAttr *A) {
+    const auto *SA = cast<FunctionReturnThunksAttr>(A); (void)SA;
+    switch(SA->getThunkType()) {
+    case FunctionReturnThunksAttr::Keep:
+      OS << " Keep";
+      break;
+    case FunctionReturnThunksAttr::Extern:
+      OS << " Extern";
+      break;
+    }
+  }
   void VisitHLSLNumThreadsAttr(const HLSLNumThreadsAttr *A) {
     const auto *SA = cast<HLSLNumThreadsAttr>(A); (void)SA;
     OS << " " << SA->getX();

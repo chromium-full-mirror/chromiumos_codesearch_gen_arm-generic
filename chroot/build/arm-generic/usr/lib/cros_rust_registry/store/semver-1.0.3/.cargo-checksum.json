@@ -1,14 +1,14 @@
 {
-	"package": "a9ed867be992a9b8c33f0f6a24462ee42d41462608db933a42e9aebd364a1b8d",
+	"package": "b51af5d177c74a2e03967da90bc37d5fc7ce8bf150fd683ca49d2201e02dbc7a",
 	"files": {
-		"Cargo.toml.orig": "af1b460f32e4157549b07fdaed64eb0c755188e3f6c26ff771d0dfb1a22a2656",
+		"Cargo.toml.orig": "057b0b1d5734d2535e9df8f9dc33ea136781358ebd54444c7e9df980f6209c03",
 		"benches/parse.rs": "6531f66f80ce2fc83878f9bf84f94c42e96f1e709466f2b88be8d95a3cec1511",
 		"tests/node/mod.rs": "2a4a43f5ce8dd5dc1a0c1d62418f7a4935ef49d4361b79c4b4314c97386e6201",
 		"tests/test_identifier.rs": "a4723f61735b77b8f560039618b96e815ce4a54518a2dfe95da3375efe59a7e4",
 		"tests/test_version.rs": "32bc28cba9c048d81edbc840c4999e857143c078ef1475518084aa5ff3e069c8",
 		"tests/util/mod.rs": "db61c2cd86af864d8be4f2a3d5f25c86d7712201cc6ab47b715facf5f7f275b7",
 		"tests/test_version_req.rs": "cecb8e1d0011516d50bf3be9dd26831bd8c08ecb2b964a51b6d818b35fa45e5b",
-		"Cargo.toml": "10ae02690d1e255ddef239bc00cf7d4d91302cacfeaf44ae4bf8eb64da89e7f7",
+		"Cargo.toml": "1369078f9177e858dbe89be5a6e2b54cab42c5fb4d45d8617354b2edad8e3ad3",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "bf8425471508b8e2b4bca009f9deefd48f79348becaaf8a9931c65fbfd22759e",

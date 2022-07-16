@@ -354,6 +354,7 @@
 #define __NR_pkey_alloc (__NR_SYSCALL_BASE + 395)
 #define __NR_pkey_free (__NR_SYSCALL_BASE + 396)
 #define __NR_statx (__NR_SYSCALL_BASE + 397)
+#define __NR_rseq (__NR_SYSCALL_BASE + 398)
 #define __NR_clock_gettime64 (__NR_SYSCALL_BASE + 403)
 #define __NR_clock_settime64 (__NR_SYSCALL_BASE + 404)
 #define __NR_clock_adjtime64 (__NR_SYSCALL_BASE + 405)

@@ -1,8 +1,8 @@
 {
-	"package": "60baca72947687b236111abeb88851335751813a82bb7f4c59fd537ff2918fce",
+	"package": "6e62baf15979b0b6541b7ac137745bcb39f6c2f3ccb7af958f5e092040ee0671",
 	"files": {
 		"assets/defmt.png": "dcd1f67b41905dc1738454618a0c3a16932e5fa8adea73429bbc4db7d7d358ce",
-		"Cargo.toml.orig": "f4269f1da24264a6380648a100767a09320fe990e74f63039ffcdffd14b7fcbc",
+		"Cargo.toml.orig": "7abc78e60fa8c7c8344f0149f18f5309c40c2a1dde3d59f38369f838cf6b4146",
 		"tests/basic_usage.rs": "5fe2f0f826d9271fa8707c9cbf993d4fa02b0189d50584a70ca4e36b3e069acf",
 		"tests/ui.rs": "06e2c242a79d2b646d21e4269638a1ade4034601517aed180f8b449f9be00a39",
 		"tests/ui/write-for-loop.rs": "145d9976e3f69205bdac85ade6b9e7f3db642c61ebbd40596cec44ca37326bc8",
@@ -26,7 +26,7 @@
 		"tests/ui/fmt-twice.rs": "6bbff04ec3d82c3ccf694054d723361141bf1ce69ef7d8940a1081146c16130e",
 		"tests/ui/fmt-for-loop.stderr": "d9635e52e4325a3839c45eadcfb3414be7becb5864059d2a8649a0865cbd20fe",
 		"tests/encode.rs": "c468a7281200375f4540f2aab63a21355551abdf4657f6a142c3101456a2866e",
-		"Cargo.toml": "04dbac033a0eff83c6c0ee318681b5790454c92c74bec17fd2dc547cba91e57c",
+		"Cargo.toml": "38a9a0830f235e2fa49a745bce653bc9681a2be811ff3169282d69fb570f8adf",
 		"LICENSE-MIT": "30fefc3a7d6a0041541858293bcbea2dde4caa4c0a5802f996a7f7e8c0085652",
 		"LICENSE-APACHE": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
 		"README.md": "8ef4639f5b74193ef029985edc0396c930b7c95f9d6b9f46209ff61c5ca0678b",

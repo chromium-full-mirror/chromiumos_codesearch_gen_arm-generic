@@ -1,5 +1,5 @@
 {
-	"package": "9f200ed0b2813f30b7b24e8cbc5b31875a96fa0f284e8a0c430697fce87910c8",
+	"package": "cce8bbfe811dd1fcc4fe3993b9ed549aa19672c80adbf3eef5907256dbcdf1b1",
 	"files": {
 		"Cargo.toml.orig": "8f0cdacc663b3e6a07f803c2c436d18254a9ad55057782ff350aaf4bfb2121e2",
 		"tests/libm_tests.rs": "6941e74d7d0adf021edc93b9919275e82810687ff33147a10361613073b22669",
@@ -14,7 +14,7 @@
 		"tests/rounding_tests.rs": "99f38b768ad15e726559c446825f9f1bad67935cdd28ffcc1cbcd3e031a901ea",
 		"tests/stackvec.rs": "f040611995bcd1bd2cb47694e74aa02ff4fabdffe007f712c9bb788d82dfb8a7",
 		"tests/slow_tests.rs": "36c4c2538d2f5a1c1af5deb26ec4eba47f19f9a3c280a13d10704267a16d3b3f",
-		"Cargo.toml": "6c485fa605a0d3de6ec0af125b67c55224515354034f990334b1a1a86988c632",
+		"Cargo.toml": "96a16ccfd3075cf932a94362e7267825888a27f73a68c503e36f34158cdc4ad0",
 		"LICENSE.md": "dbe1fff0fb1314b6af94f161511406275cf01c5a32441fbf24528a57a051d599",
 		"clippy.toml": "8d3aafbcf358ccf45cc148cd705f5fe71e777dabc391ed9a2bae32af73291fe8",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",

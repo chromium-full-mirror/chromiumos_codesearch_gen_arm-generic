@@ -1,5 +1,5 @@
 {
-	"package": "dd11387c3bf2fa6b1d5cc29ab4a81656c9d438e04614405998a12e56e2c856a9",
+	"package": "904ca5eff4468b944d59fb915aec73c2a7bd0f09ce306f96ddac68725428a553",
 	"files": {
 		"Cargo.toml.orig": "6df808987e7819ac739e7f3ec208438e72d4917381f1cee64a339716bfe9c99b",
 		"benches/shootout-pidigits.rs": "c2a48133f5b679928f7e3f4e764c78aaa8c5b811f58b86fe57fae8c63cb07136",
@@ -17,7 +17,7 @@
 		"tests/biguint.rs": "2a1abe152daa1603c1af6b41bc02ee81bc794626c0a6dab12f21bc9bb6d14782",
 		"tests/bigint_bitwise.rs": "e6a2f76fa1eb919e7c513d7e30a8a2a963841a295a71103462fb8ab9792419b5",
 		"tests/biguint_scalar.rs": "f16450c0dfcaf23b6fb85669b3de7c2bb6f594a65e3cdf91014b2e49c941cc95",
-		"Cargo.toml": "5cf40d6ef3500d2340464d38d81a44114e94292915e477d3c4cb297776a1b672",
+		"Cargo.toml": "539d4400c67bef518fc1c9c12fafaad03fc357491438d0a9e34112361c7ba396",
 		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "d8a18a6efa61a27d8d8e454d4aa9d03808119a7be7c378da9e200d941a74c17b",

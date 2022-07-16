@@ -172,6 +172,7 @@ suite:bvt-tast-cq-vm
 suite:bvt-tast-cq-wallpaper
 suite:bvt-tast-cq-webrtc
 suite:bvt-tast-cq-wifi
+suite:bvt-tast-cq-wifi-cft
 suite:bvt-tast-cq-wilco
 suite:bvt-tast-cq-wmp
 suite:bvt-tast-informational
@@ -300,6 +301,7 @@ suite:manual_platform_suite
 suite:memory_qual
 suite:memory_qual2
 suite:memory_qual_quick
+suite:ml_benchmark_nightly
 suite:mmc_qual
 suite:moblab
 suite:moblab_quick

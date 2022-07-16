@@ -1,8 +1,8 @@
 {
-	"package": "9edf016c1b1f6e6d189b5da045ea0417998ded2db57636071eaad3046f8bd9a6",
+	"package": "0ae7dcc437ae70cec40c076c8ecba5a2d87df723161538a4f2fcc5294d91967f",
 	"files": {
 		"Cargo.toml.orig": "9c7615ef1a94fc83fb5011117e5e8db74169730aafabdb379c8fbe9b1fffd64d",
-		"Cargo.toml": "ef0c89484117ef373b85dd7b867cc814349a7db64c9a6b5038ccf45b3670e59f",
+		"Cargo.toml": "808a909a6fa962a909571f1326ebd927244a0230410e0dfdae245a2550d1e76f",
 		"README.md": "e91f8073b0e387f5f6c2a9b966aca4ce70904c5c37b1edbfc7a540a5fa84f8c4",
 		"build.rs": "a73976a57b487af02aef3eb0fbb9dc63a0ff9468ba81908c663ef06fa01c0fbd",
 		"src/stm32g070/tim14.rs": "57aa4b4c3242dbb71ed9a8234a5bd23cc8894a5a2e42507142766e7a9978f483",

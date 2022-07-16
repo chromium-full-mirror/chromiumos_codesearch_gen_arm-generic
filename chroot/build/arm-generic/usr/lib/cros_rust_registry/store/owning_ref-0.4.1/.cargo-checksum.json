@@ -1,8 +1,8 @@
 {
-	"package": "1bf23b113cdd0d3afc77f410e5fdf021908e500f1754b7d4f35d86c57508f184",
+	"package": "c0e28576bde45a343a3f59fa0f9c5e471fa627aed38851d0211ac9cec71ec926",
 	"files": {
-		"Cargo.toml.orig": "e1cdeac057f3cbc7c4d2fd0c6024213580392fdc8fdc48ed2ef29a3b2e9a1aa4",
-		"Cargo.toml": "0e0e3c0f21e05c52a233d9f4e2bd245cafc0c294128e3d6871726b223b057600",
+		"Cargo.toml.orig": "91184e6b143ddf621fe7e6757fb28d8eb4c0e01f541fbd0dc440bf076ebfd20d",
+		"Cargo.toml": "1dfa578bec999346ca23e2082f7fc505ece2acaf5c906b9555d1fc44acb4a6da",
 		"LICENSE": "90bc15ed094593083fd129fdd1a03607be80fe8839c5564616a5961ab7f7a194",
 		"README.md": "0dfea39ad1662ed0a61bb1453eafc207a53dfe577e7846c87d3a5161574fdb12",
 		"CHANGELOG.md": "9a3880e4d5435ca03c0197c45d4ce6b6db6d3fb7eda855f297bafc2ec28af836",

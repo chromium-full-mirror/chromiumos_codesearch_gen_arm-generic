@@ -1,8 +1,8 @@
 {
-	"package": "1c542c124fd3f4998fea2efadfcb0da7734f8967ebe39f9cb096db551763e41d",
+	"package": "22d2186a4a92b008a0efcf5ed3d508bf89cc455a08b3e7c065132eb3f7687659",
 	"files": {
-		"Cargo.toml.orig": "45d2c10222fa9ff0f5b3f04ed21ca0e0e3862b518e8c3fbbdff356267cc4f1ac",
-		"Cargo.toml": "9d41c22fbd618255d1b745a47be5b4998a0df5dca966d98480c6deb8839708c7",
+		"Cargo.toml.orig": "f242643068b3e1f1452b88ca43ab63bf73dc0a086e098c099bad9f0fc5dc7068",
+		"Cargo.toml": "2c82c20820caa66661169fc85887f12cd400801abbf5a5d8ccd00462d2163c4d",
 		"LICENSE": "3234ac55816264ee7b6c7ee27efd61cf0a1fe775806870e3d9b4c41ea73c5cb1",
 		"README.md": "a04fb6dddb88b92e8d9393106f078d320269b4e3efe1242f71a9e2984f6f6afd",
 		"ci/miri.sh": "ad7410b0a5bd6e346f55e9d96ec0719a085a2d1ce266bddfe6fe73333a1eb8ec",

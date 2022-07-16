@@ -1,7 +1,7 @@
 {
-	"package": "d247ed2e9b0050e776c8f1ba70e2a0f81008eab1427867d7a4e2f0ba139d133d",
+	"package": "5336d3acd8568da575ed712373f62b698c92234c1daf7d812c2a358600cbb5fc",
 	"files": {
-		"Cargo.toml.orig": "3da004bc8dfeb8b50a4179cb2d5c30b7e77803579b74842044cdbdbaf7a2eea4",
+		"Cargo.toml.orig": "e7e15afaa38819b1966530626f6b92838122e94624cdd564f20e603b32d1ff5e",
 		"libssh2/CMakeLists.txt": "c7b13895dd2b31d8ca29a9e3a96c6f8a06c0a81382265992c6bcab7b1e19fcbf",
 		"libssh2/configure.ac": "dfb29e8abcfe176bcd7826d4c2e6e7963c043880be3058a493cead734405b67d",
 		"libssh2/NMakefile": "2d1cbda9bccd886de3c99dae77f09ac75a7f09f1834272b4a9154d2a0ae9a81a",
@@ -390,7 +390,7 @@
 		"libssh2/src/kex.c": "fc5adb2c7278a59679ab6317c18ef5304708b964d01ff3ef0153fd51dcbd95cd",
 		"libssh2/src/mac.c": "3ff6c3d22e5e9a0cc2d69b2f840606f560b83b9d40e276927d0854c20ec35b27",
 		"libssh2/Makefile.OpenSSL.inc": "8e82af68b172ddccf94c65c1b4e38b69b3b7f027cc14a54b6d660c5f2bcd4de9",
-		"Cargo.toml": "7457f3c25edfd5578a822f09f78ba12db8fc293417bf6def14b401332bf0ccfb",
+		"Cargo.toml": "90eb028551e46385d385e388712865ee7aa04fd1052e3f99ef642122fd749464",
 		"lib.rs": "a492c9de49f6baccc49302e0db54964e69227760a0a0226e6c3fb315b9c309af",
 		"build.rs": "6b4d20e50aec1c00defcd414f91ec4e3c8e9bdc4c1a0da2f9f96d5833879ac7a"
 	}

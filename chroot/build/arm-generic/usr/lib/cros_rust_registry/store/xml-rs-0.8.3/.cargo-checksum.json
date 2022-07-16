@@ -1,5 +1,5 @@
 {
-	"package": "3add5b88d923fe8b21dfd53306789bff17fe189599be02e3bd67324d642ffa27",
+	"package": "c5094c51b0f1561b9bc83356520d7503fa784f6110fffc7d5f39cc1310681d55",
 	"files": {
 		"Cargo.toml.orig": "7548b78526ed3afe0e1ef26f0db52860d87a8bb3468007afc4a28e10f09ed251",
 		"Cargo.lock": "cc5501debd9fa55a7c743561f4f5662511932e65eaee2870985bf2a3d8d6171f",
@@ -22,7 +22,7 @@
 		"tests/documents/sample_4_full.txt": "f4f2419b336b04af9746ee12ac908a9b82cebca8fc280ad5422d0ab5483ee817",
 		"tests/documents/sample_1_full.txt": "efc646390dd6693c4122bb4a7d0c77e31bba7fda0e5767aa1de501bddc64174f",
 		"tests/documents/sample_2_short.txt": "b94bc0600a84acf0999775d19c5a7169d24f88c74cc605a1f30b981181bacfeb",
-		"Cargo.toml": "910d3e040799a768eaefd11865ce712bd8c51ae96d65c581bf674ac0575a679a",
+		"Cargo.toml": "bfebab810b9ae6e03a528ce500979a8667ebcd4dc8f2a1ef1de39302b280336a",
 		"design.md": "59eb3e89c9fe3e2c9e7dfd464ddceb56d8bb0fac7459d5b12d3f304487fdfcde",
 		"Readme.md": "66c454517eec06c4505880f87eb0abed422a1a60153f48b337f54a5009f64983",
 		"LICENSE": "0dc18d924dc0a5f41172a393012843a5eaaef338e795b3645da9cc3b6068220b",

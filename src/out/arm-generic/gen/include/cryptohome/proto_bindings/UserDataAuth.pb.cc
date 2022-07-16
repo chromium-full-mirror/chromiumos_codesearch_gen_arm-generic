@@ -1742,7 +1742,8 @@ struct RemoveAuthFactorRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveAuthFactorRequestDefaultTypeInternal _RemoveAuthFactorRequest_default_instance_;
 constexpr RemoveAuthFactorReply::RemoveAuthFactorReply(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : error_(0)
+  : error_info_(nullptr)
+  , error_(0)
 {}
 struct RemoveAuthFactorReplyDefaultTypeInternal {
   constexpr RemoveAuthFactorReplyDefaultTypeInternal()
@@ -1903,13 +1904,14 @@ bool CryptohomeErrorCode_IsValid(int value) {
     case 51:
     case 52:
     case 53:
+    case 54:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> CryptohomeErrorCode_strings[54] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> CryptohomeErrorCode_strings[55] = {};
 
 static const char CryptohomeErrorCode_names[] =
   "CRYPTOHOME_ADD_CREDENTIALS_FAILED"
@@ -1965,6 +1967,7 @@ static const char CryptohomeErrorCode_names[] =
   "CRYPTOHOME_ERROR_UPDATE_USER_ACTIVITY_TIMESTAMP_FAILED"
   "CRYPTOHOME_ERROR_VAULT_UNRECOVERABLE"
   "CRYPTOHOME_INVALID_AUTH_SESSION_TOKEN"
+  "CRYPTOHOME_REMOVE_CREDENTIALS_FAILED"
   "CRYPTOHOME_TOKEN_SERIALIZATION_FAILED";
 
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry CryptohomeErrorCode_entries[] = {
@@ -2021,7 +2024,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry CryptohomeErrorCode_en
   { {CryptohomeErrorCode_names + 1949, 54}, 37 },
   { {CryptohomeErrorCode_names + 2003, 36}, 45 },
   { {CryptohomeErrorCode_names + 2039, 37}, 49 },
-  { {CryptohomeErrorCode_names + 2076, 37}, 48 },
+  { {CryptohomeErrorCode_names + 2076, 36}, 54 },
+  { {CryptohomeErrorCode_names + 2112, 37}, 48 },
 };
 
 static const int CryptohomeErrorCode_entries_by_number[] = {
@@ -2073,12 +2077,13 @@ static const int CryptohomeErrorCode_entries_by_number[] = {
   51, // 45 -> CRYPTOHOME_ERROR_VAULT_UNRECOVERABLE
   15, // 46 -> CRYPTOHOME_ERROR_FIDO_MAKE_CREDENTIAL_FAILED
   14, // 47 -> CRYPTOHOME_ERROR_FIDO_GET_ASSERTION_FAILED
-  53, // 48 -> CRYPTOHOME_TOKEN_SERIALIZATION_FAILED
+  54, // 48 -> CRYPTOHOME_TOKEN_SERIALIZATION_FAILED
   52, // 49 -> CRYPTOHOME_INVALID_AUTH_SESSION_TOKEN
   0, // 50 -> CRYPTOHOME_ADD_CREDENTIALS_FAILED
   46, // 51 -> CRYPTOHOME_ERROR_UNAUTHENTICATED_AUTH_SESSION
   47, // 52 -> CRYPTOHOME_ERROR_UNKNOWN_LEGACY
   48, // 53 -> CRYPTOHOME_ERROR_UNUSABLE_VAULT
+  53, // 54 -> CRYPTOHOME_REMOVE_CREDENTIALS_FAILED
 };
 
 const std::string& CryptohomeErrorCode_Name(
@@ -2087,12 +2092,12 @@ const std::string& CryptohomeErrorCode_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           CryptohomeErrorCode_entries,
           CryptohomeErrorCode_entries_by_number,
-          54, CryptohomeErrorCode_strings);
+          55, CryptohomeErrorCode_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       CryptohomeErrorCode_entries,
       CryptohomeErrorCode_entries_by_number,
-      54, value);
+      55, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      CryptohomeErrorCode_strings[idx].get();
 }
@@ -2100,7 +2105,7 @@ bool CryptohomeErrorCode_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CryptohomeErrorCode* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      CryptohomeErrorCode_entries, 54, name, &int_value);
+      CryptohomeErrorCode_entries, 55, name, &int_value);
   if (success) {
     *value = static_cast<CryptohomeErrorCode>(int_value);
   }
@@ -30696,8 +30701,13 @@ std::string RemoveAuthFactorRequest::GetTypeName() const {
 
 class RemoveAuthFactorReply::_Internal {
  public:
+  static const ::user_data_auth::CryptohomeErrorInfo& error_info(const RemoveAuthFactorReply* msg);
 };
 
+const ::user_data_auth::CryptohomeErrorInfo&
+RemoveAuthFactorReply::_Internal::error_info(const RemoveAuthFactorReply* msg) {
+  return *msg->error_info_;
+}
 RemoveAuthFactorReply::RemoveAuthFactorReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
@@ -30710,12 +30720,20 @@ RemoveAuthFactorReply::RemoveAuthFactorReply(::PROTOBUF_NAMESPACE_ID::Arena* are
 RemoveAuthFactorReply::RemoveAuthFactorReply(const RemoveAuthFactorReply& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  if (from._internal_has_error_info()) {
+    error_info_ = new ::user_data_auth::CryptohomeErrorInfo(*from.error_info_);
+  } else {
+    error_info_ = nullptr;
+  }
   error_ = from.error_;
   // @@protoc_insertion_point(copy_constructor:user_data_auth.RemoveAuthFactorReply)
 }
 
 inline void RemoveAuthFactorReply::SharedCtor() {
-error_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&error_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&error_) -
+    reinterpret_cast<char*>(&error_info_)) + sizeof(error_));
 }
 
 RemoveAuthFactorReply::~RemoveAuthFactorReply() {
@@ -30727,6 +30745,7 @@ RemoveAuthFactorReply::~RemoveAuthFactorReply() {
 
 inline void RemoveAuthFactorReply::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete error_info_;
 }
 
 void RemoveAuthFactorReply::ArenaDtor(void* object) {
@@ -30745,6 +30764,10 @@ void RemoveAuthFactorReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaForAllocation() == nullptr && error_info_ != nullptr) {
+    delete error_info_;
+  }
+  error_info_ = nullptr;
   error_ = 0;
   _internal_metadata_.Clear<std::string>();
 }
@@ -30761,6 +30784,14 @@ const char* RemoveAuthFactorReply::_InternalParse(const char* ptr, ::PROTOBUF_NA
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_error(static_cast<::user_data_auth::CryptohomeErrorCode>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error_info(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -30800,6 +30831,14 @@ uint8_t* RemoveAuthFactorReply::_InternalSerialize(
       1, this->_internal_error(), target);
   }
 
+  // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+  if (this->_internal_has_error_info()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error_info(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
@@ -30815,6 +30854,13 @@ size_t RemoveAuthFactorReply::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+  if (this->_internal_has_error_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *error_info_);
+  }
 
   // .user_data_auth.CryptohomeErrorCode error = 1;
   if (this->_internal_error() != 0) {
@@ -30842,6 +30888,9 @@ void RemoveAuthFactorReply::MergeFrom(const RemoveAuthFactorReply& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_has_error_info()) {
+    _internal_mutable_error_info()->::user_data_auth::CryptohomeErrorInfo::MergeFrom(from._internal_error_info());
+  }
   if (from._internal_error() != 0) {
     _internal_set_error(from._internal_error());
   }
@@ -30862,7 +30911,12 @@ bool RemoveAuthFactorReply::IsInitialized() const {
 void RemoveAuthFactorReply::InternalSwap(RemoveAuthFactorReply* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(error_, other->error_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RemoveAuthFactorReply, error_)
+      + sizeof(RemoveAuthFactorReply::error_)
+      - PROTOBUF_FIELD_OFFSET(RemoveAuthFactorReply, error_info_)>(
+          reinterpret_cast<char*>(&error_info_),
+          reinterpret_cast<char*>(&other->error_info_));
 }
 
 std::string RemoveAuthFactorReply::GetTypeName() const {

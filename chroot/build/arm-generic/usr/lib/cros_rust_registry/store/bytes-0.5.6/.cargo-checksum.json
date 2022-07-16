@@ -1,5 +1,5 @@
 {
-	"package": "f5a520610ab9e35149fdc5e7825f89c8407f350199b7d764d0995c5ea35e8a38",
+	"package": "8d7a1e4f15b9b13532e18a0db7c6b7c7f88f8680379009be92014ff11138df42",
 	"files": {
 		"Cargo.toml.orig": "a687f4983bd3bcc2958bbacc888d0d06a7aaca554a1b3bf926e549954ee429e4",
 		"benches/bytes_mut.rs": "1326fe6224b26826228e02b4133151e756f38152c2d9cfe66adf83af76c3ec98",
@@ -16,7 +16,7 @@
 		"tests/test_buf_mut.rs": "56636e439cb07af2fabdfb60a08995829680c9730a8ebe5c6ad2f54dbf208e32",
 		"tests/test_serde.rs": "2691f891796ba259de0ecf926de05c514f4912cc5fcd3e6a1591efbcd23ed4d0",
 		"tests/test_bytes_odd_alloc.rs": "87d51d4ab6ad98193b140ea8158f6631eba985a204c2ea94d34b3bb157791a16",
-		"Cargo.toml": "bfab8ed5fd3a4389d80173a2e653090498153fcd8c49b7ee418fa52d87787a8d",
+		"Cargo.toml": "83f549fdfdc9bc385fe6d52886f6c3c260b9fb1be2b121807bdac713fe07c1b0",
 		"LICENSE": "45f522cacecb1023856e46df79ca625dfc550c94910078bd8aec6e02880b3d42",
 		"README.md": "2c2f6f1a240ad375f9dbd8e7f023510b645d98e327ea0a42ba339c94fd9baaa9",
 		"ci/test-stable.sh": "6e010f1a95b72fea7bebdd217fda78427f3eb07b1e753f79507c71d982b2d38a",

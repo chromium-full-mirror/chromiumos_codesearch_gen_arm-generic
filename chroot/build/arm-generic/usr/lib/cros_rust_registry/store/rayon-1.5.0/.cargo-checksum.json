@@ -1,8 +1,8 @@
 {
-	"package": "c1bd729951d5d7b98f40fe8d3968177666733c7dba6e6a6e3bf6d0945caf3259",
+	"package": "32953f9c0b30a5200094374163b3220b58ed4f6f4baaa2215576900184d5a7a5",
 	"files": {
-		"Cargo.toml.orig": "137b9c12665fe71d84b7411ed5877ce446bc07f502a972d0b4f65b8b29148e80",
-		"Cargo.lock": "bfc7c4ae0c6f1b58d8d00ee838960e1284e1818fbccd66896fea70ef1a55d6c6",
+		"Cargo.toml.orig": "d13fb78c85ea4565af6579ec88386c453599dd1a41b07a6b97ba4cb961d32726",
+		"Cargo.lock": "7547e57a4dc0aa8a68363fccfd415aba5fa712c9d3c1eec9d6a78303f443ffbe",
 		"RELEASES.md": "f34f8803ba6b3f447116b113f9514295a21b915e9b442e84cc931843210cb663",
 		"tests/issue671-unzip.rs": "d5eb38d8a6d8f66fdf1c40293abbf58f3ac42b5acfc5dca62b02c7ace5bfc1a4",
 		"tests/clones.rs": "2df3f7dc33a6cfe1a20f46a002213873ae7900f0bfd801b9887b3bd2f5059641",
@@ -18,7 +18,7 @@
 		"tests/octillion.rs": "65e12a22f5bc6e22316b93c57c82c2556ef8a5afd4d846a6431ce8c0499ce804",
 		"tests/sort-panic-safe.rs": "62391908ced36ea8f9fb69ade25bae6c07d6edc7e1cc492b0ade7b85e1b1e920",
 		"tests/debug.rs": "ac7de83ff22db97288df0c9d7a2e90cb1a250710e422b1707fb5e6d7f08773dc",
-		"Cargo.toml": "6ae0212bce2448afa93c852253871c99305078b068f98d73cb49ebb5dbb62611",
+		"Cargo.toml": "2dbd459df070e72aa973e1c52b8d05b2c7c567e34d429aec9f380b54b8d7583c",
 		"LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "6c6c62c67e063ccc69ae704c0e2906e9518ee703a240b254d9908b99ca0b6c1c",

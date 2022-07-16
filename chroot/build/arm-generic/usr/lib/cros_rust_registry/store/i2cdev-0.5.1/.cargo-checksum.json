@@ -1,9 +1,9 @@
 {
-	"package": "0a50fbe1ea7773da7dce79f643176e463963a80f05f0671c91faf3caa0ade362",
+	"package": "fa5d10fb6944a7ad0c342ad84402d0164b8ed6ae1f966cb335e31863c28d2e17",
 	"files": {
-		"Cargo.toml.orig": "4776a239e7e4b2259d54b7c98451fdc2915ce39f5c58b2791aca299aefcb93f2",
-		"Cargo.lock": "614b43c2bf3ea60d6378a32392a84a851ae2ada7a6f2a88ccee7dcb28c5172e0",
-		"Cargo.toml": "7ab73667acdb095df3b370e64d0906b41037aaa5afdd74f3a3f904766ff286e9",
+		"Cargo.toml.orig": "7ab73667acdb095df3b370e64d0906b41037aaa5afdd74f3a3f904766ff286e9",
+		"Cargo.lock": "fbec075643dfcfcf5b4029c52723c9c261a109bfd55b4c8811e1669af4ddf2e8",
+		"Cargo.toml": "34f9f12fbf936aadc8abc2caa2783985c3cae4703e116a06cae4bd5b337db983",
 		"LICENSE-MIT": "2b934901b672172a8224b55d3a4ddab2efc0c673f32182a56ab6e716de36e8ef",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "6004aa9b9233d24983fb685df824f8a07bd467213c5900e60cdc3af441b6d156",

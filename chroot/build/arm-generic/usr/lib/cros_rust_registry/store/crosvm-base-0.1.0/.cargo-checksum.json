@@ -1,8 +1,8 @@
 {
-	"package": "001f1c3523eded61b80056c0ec0a966e74bd240fd2c6b1c9344eb2112bc7269a",
+	"package": "fa48b1d1ca23de7cee7dc5ccf55e05a5f4477bc7250625e5343c94fd583ba6f2",
 	"files": {
 		"Cargo.toml.orig": "9c7161b55cde14e472cd6fb312da91ba16177a56d89390e7b8ffc1843acf7c67",
-		"Cargo.toml": "61c9506777688061944966dd01e2f3f80d7c3155bd3dbe67a9d8c0afb8666efa",
+		"Cargo.toml": "45b3abb8428c7f0a40494438ebd3bbca5029225891068c0de07b9797b303640a",
 		"src/notifiers.rs": "fa6552d0e8253ca11031f8a9510f16ebdb2764c2acd041ac9e7e2186f9b9a1b6",
 		"src/timer.rs": "3a6c84cc0cc2fddbf72fbd84952dde821fa70a84136e68098b950a7fafca0686",
 		"src/external_mapping.rs": "599dfef14427e8c86676c5800f8eaabe7d3fb6a2ab4d29de900783d1c3a616da",

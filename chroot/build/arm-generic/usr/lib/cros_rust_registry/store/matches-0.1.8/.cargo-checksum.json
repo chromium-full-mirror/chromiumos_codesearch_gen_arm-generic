@@ -1,7 +1,7 @@
 {
-	"package": "55dd7335b0e61b0923bde8a4a7b178c0e81371a5beaf35679a789b7e507c58d6",
+	"package": "7fbdb6c9bd46a8958f6013ee9bcd518cd9cbce697406a1cb30440317d51116ec",
 	"files": {
-		"Cargo.toml.orig": "d1c62a29a95dffde39fa2f0052fab0d12d683e3fb7cb6b0c89dfa38223aafbc9",
+		"Cargo.toml.orig": "b54a1f583b0b495de45e38e226e76827fd136dbda6f08e8aaab1131effa962ae",
 		"tests/macro_use_one.rs": "4f599fae16f1aef369050bf0ad74cbefec06c430b29e0c9ab0811ac9592e997a",
 		"Cargo.toml": "7496429f0930821e311f7d576b72e39f55ff54c3f64a21f715a45a61fc3bbbaf",
 		"lib.rs": "a78ab8c8db5af687988fedf40e9de77e5f52b6891f4c87190103b852ba6bef4e",

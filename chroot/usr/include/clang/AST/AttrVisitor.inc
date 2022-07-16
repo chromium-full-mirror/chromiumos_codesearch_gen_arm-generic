@@ -456,6 +456,10 @@
   bool VisitFormatArgAttr(FormatArgAttr *A) {
     return true; 
   }
+  bool TraverseFunctionReturnThunksAttr(FunctionReturnThunksAttr *A);
+  bool VisitFunctionReturnThunksAttr(FunctionReturnThunksAttr *A) {
+    return true; 
+  }
   bool TraverseGNUInlineAttr(GNUInlineAttr *A);
   bool VisitGNUInlineAttr(GNUInlineAttr *A) {
     return true; 
@@ -2518,6 +2522,15 @@ bool VISITORCLASS<Derived>::TraverseFormatArgAttr(FormatArgAttr *A) {
   if (!getDerived().VisitAttr(A))
     return false;
   if (!getDerived().VisitFormatArgAttr(A))
+    return false;
+  return true;
+}
+
+template <typename Derived>
+bool VISITORCLASS<Derived>::TraverseFunctionReturnThunksAttr(FunctionReturnThunksAttr *A) {
+  if (!getDerived().VisitAttr(A))
+    return false;
+  if (!getDerived().VisitFunctionReturnThunksAttr(A))
     return false;
   return true;
 }
@@ -5032,6 +5045,8 @@ bool VISITORCLASS<Derived>::TraverseAttr(Attr *A) {
       return getDerived().TraverseFormatAttr(cast<FormatAttr>(A));
     case attr::FormatArg:
       return getDerived().TraverseFormatArgAttr(cast<FormatArgAttr>(A));
+    case attr::FunctionReturnThunks:
+      return getDerived().TraverseFunctionReturnThunksAttr(cast<FunctionReturnThunksAttr>(A));
     case attr::GNUInline:
       return getDerived().TraverseGNUInlineAttr(cast<GNUInlineAttr>(A));
     case attr::GuardedBy:

@@ -198,6 +198,9 @@ std::string GetProtoDebugStringWithIndent(CryptohomeErrorCode value,
   if (value == CRYPTOHOME_ERROR_UNUSABLE_VAULT) {
     return "CRYPTOHOME_ERROR_UNUSABLE_VAULT";
   }
+  if (value == CRYPTOHOME_REMOVE_CREDENTIALS_FAILED) {
+    return "CRYPTOHOME_REMOVE_CREDENTIALS_FAILED";
+  }
   return "<unknown>";
 }
 
@@ -3644,6 +3647,13 @@ std::string GetProtoDebugStringWithIndent(const RemoveAuthFactorReply& value,
   base::StringAppendF(
       &output, "%s",
       GetProtoDebugStringWithIndent(value.error(), indent_size + 2).c_str());
+  output += "\n";
+
+  output += indent + "  error_info: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error_info(), indent_size + 2)
+          .c_str());
   output += "\n";
 
   output += indent + "}\n";

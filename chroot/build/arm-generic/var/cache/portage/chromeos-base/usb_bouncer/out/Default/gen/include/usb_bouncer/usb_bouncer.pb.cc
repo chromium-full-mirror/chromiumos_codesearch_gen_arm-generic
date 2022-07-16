@@ -52,10 +52,22 @@ struct RuleDB_TrashEntry_DoNotUseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleDB_TrashEntry_DoNotUseDefaultTypeInternal _RuleDB_TrashEntry_DoNotUse_default_instance_;
+constexpr RuleDB_DevpathsEntry_DoNotUse::RuleDB_DevpathsEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct RuleDB_DevpathsEntry_DoNotUseDefaultTypeInternal {
+  constexpr RuleDB_DevpathsEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RuleDB_DevpathsEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    RuleDB_DevpathsEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleDB_DevpathsEntry_DoNotUseDefaultTypeInternal _RuleDB_DevpathsEntry_DoNotUse_default_instance_;
 constexpr RuleDB::RuleDB(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : entries_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
-  , trash_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
+  , trash_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , devpaths_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
 struct RuleDBDefaultTypeInternal {
   constexpr RuleDBDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -66,7 +78,7 @@ struct RuleDBDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RuleDBDefaultTypeInternal _RuleDB_default_instance_;
 }  // namespace usb_bouncer
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_usb_5fbouncer_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_usb_5fbouncer_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_usb_5fbouncer_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_usb_5fbouncer_2eproto = nullptr;
 
@@ -99,6 +111,16 @@ const uint32_t TableStruct_usb_5fbouncer_2eproto::offsets[] PROTOBUF_SECTION_VAR
   PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB_TrashEntry_DoNotUse, value_),
   0,
   1,
+  PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -107,18 +129,21 @@ const uint32_t TableStruct_usb_5fbouncer_2eproto::offsets[] PROTOBUF_SECTION_VAR
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB, entries_),
   PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB, trash_),
+  PROTOBUF_FIELD_OFFSET(::usb_bouncer::RuleDB, devpaths_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::usb_bouncer::RuleEntry)},
   { 8, 16, -1, sizeof(::usb_bouncer::RuleDB_EntriesEntry_DoNotUse)},
   { 18, 26, -1, sizeof(::usb_bouncer::RuleDB_TrashEntry_DoNotUse)},
-  { 28, -1, -1, sizeof(::usb_bouncer::RuleDB)},
+  { 28, 36, -1, sizeof(::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse)},
+  { 38, -1, -1, sizeof(::usb_bouncer::RuleDB)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::usb_bouncer::_RuleEntry_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::usb_bouncer::_RuleDB_EntriesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::usb_bouncer::_RuleDB_TrashEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::usb_bouncer::_RuleDB_DevpathsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::usb_bouncer::_RuleDB_default_instance_),
 };
 
@@ -126,21 +151,24 @@ const char descriptor_table_protodef_usb_5fbouncer_2eproto[] PROTOBUF_SECTION_VA
   "\n\021usb_bouncer.proto\022\013usb_bouncer\032\037google"
   "/protobuf/timestamp.proto\"I\n\tRuleEntry\022-"
   "\n\tlast_used\030\001 \001(\0132\032.google.protobuf.Time"
-  "stamp\022\r\n\005rules\030\002 \003(\t\"\370\001\n\006RuleDB\0221\n\007entri"
+  "stamp\022\r\n\005rules\030\002 \003(\t\"\336\002\n\006RuleDB\0221\n\007entri"
   "es\030\001 \003(\0132 .usb_bouncer.RuleDB.EntriesEnt"
   "ry\022-\n\005trash\030\002 \003(\0132\036.usb_bouncer.RuleDB.T"
-  "rashEntry\032F\n\014EntriesEntry\022\013\n\003key\030\001 \001(\t\022%"
-  "\n\005value\030\002 \001(\0132\026.usb_bouncer.RuleEntry:\0028"
-  "\001\032D\n\nTrashEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 "
-  "\001(\0132\026.usb_bouncer.RuleEntry:\0028\001b\006proto3"
+  "rashEntry\0223\n\010devpaths\030\003 \003(\0132!.usb_bounce"
+  "r.RuleDB.DevpathsEntry\032F\n\014EntriesEntry\022\013"
+  "\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.usb_bouncer"
+  ".RuleEntry:\0028\001\032D\n\nTrashEntry\022\013\n\003key\030\001 \001("
+  "\t\022%\n\005value\030\002 \001(\0132\026.usb_bouncer.RuleEntry"
+  ":\0028\001\032/\n\rDevpathsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+  "lue\030\002 \001(\t:\0028\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_usb_5fbouncer_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_usb_5fbouncer_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_usb_5fbouncer_2eproto = {
-  false, false, 399, descriptor_table_protodef_usb_5fbouncer_2eproto, "usb_bouncer.proto", 
-  &descriptor_table_usb_5fbouncer_2eproto_once, descriptor_table_usb_5fbouncer_2eproto_deps, 1, 4,
+  false, false, 501, descriptor_table_protodef_usb_5fbouncer_2eproto, "usb_bouncer.proto", 
+  &descriptor_table_usb_5fbouncer_2eproto_once, descriptor_table_usb_5fbouncer_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_usb_5fbouncer_2eproto::offsets,
   file_level_metadata_usb_5fbouncer_2eproto, file_level_enum_descriptors_usb_5fbouncer_2eproto, file_level_service_descriptors_usb_5fbouncer_2eproto,
 };
@@ -421,6 +449,20 @@ void RuleDB_TrashEntry_DoNotUse::MergeFrom(const RuleDB_TrashEntry_DoNotUse& oth
 
 // ===================================================================
 
+RuleDB_DevpathsEntry_DoNotUse::RuleDB_DevpathsEntry_DoNotUse() {}
+RuleDB_DevpathsEntry_DoNotUse::RuleDB_DevpathsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void RuleDB_DevpathsEntry_DoNotUse::MergeFrom(const RuleDB_DevpathsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata RuleDB_DevpathsEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_usb_5fbouncer_2eproto_getter, &descriptor_table_usb_5fbouncer_2eproto_once,
+      file_level_metadata_usb_5fbouncer_2eproto[3]);
+}
+
+// ===================================================================
+
 class RuleDB::_Internal {
  public:
 };
@@ -429,7 +471,8 @@ RuleDB::RuleDB(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   entries_(arena),
-  trash_(arena) {
+  trash_(arena),
+  devpaths_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -441,6 +484,7 @@ RuleDB::RuleDB(const RuleDB& from)
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   entries_.MergeFrom(from.entries_);
   trash_.MergeFrom(from.trash_);
+  devpaths_.MergeFrom(from.devpaths_);
   // @@protoc_insertion_point(copy_constructor:usb_bouncer.RuleDB)
 }
 
@@ -463,6 +507,7 @@ void RuleDB::ArenaDtor(void* object) {
   (void)_this;
   _this->entries_. ~MapField();
   _this->trash_. ~MapField();
+  _this->devpaths_. ~MapField();
 }
 inline void RuleDB::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
   if (arena != nullptr) {
@@ -481,6 +526,7 @@ void RuleDB::Clear() {
 
   entries_.Clear();
   trash_.Clear();
+  devpaths_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -513,6 +559,19 @@ const char* RuleDB::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, string> devpaths = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&devpaths_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -629,6 +688,52 @@ uint8_t* RuleDB::_InternalSerialize(
     }
   }
 
+  // map<string, string> devpaths = 3;
+  if (!this->_internal_devpaths().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "usb_bouncer.RuleDB.DevpathsEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "usb_bouncer.RuleDB.DevpathsEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_devpaths().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_devpaths().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_devpaths().begin();
+          it != this->_internal_devpaths().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = RuleDB_DevpathsEntry_DoNotUse::Funcs::InternalSerialize(3, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_devpaths().begin();
+          it != this->_internal_devpaths().end(); ++it) {
+        target = RuleDB_DevpathsEntry_DoNotUse::Funcs::InternalSerialize(3, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -663,6 +768,15 @@ size_t RuleDB::ByteSizeLong() const {
     total_size += RuleDB_TrashEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
+  // map<string, string> devpaths = 3;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_devpaths_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_devpaths().begin();
+      it != this->_internal_devpaths().end(); ++it) {
+    total_size += RuleDB_DevpathsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -687,6 +801,7 @@ void RuleDB::MergeFrom(const RuleDB& from) {
 
   entries_.MergeFrom(from.entries_);
   trash_.MergeFrom(from.trash_);
+  devpaths_.MergeFrom(from.devpaths_);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -706,12 +821,13 @@ void RuleDB::InternalSwap(RuleDB* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   entries_.InternalSwap(&other->entries_);
   trash_.InternalSwap(&other->trash_);
+  devpaths_.InternalSwap(&other->devpaths_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RuleDB::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_usb_5fbouncer_2eproto_getter, &descriptor_table_usb_5fbouncer_2eproto_once,
-      file_level_metadata_usb_5fbouncer_2eproto[3]);
+      file_level_metadata_usb_5fbouncer_2eproto[4]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -725,6 +841,9 @@ template<> PROTOBUF_NOINLINE ::usb_bouncer::RuleDB_EntriesEntry_DoNotUse* Arena:
 }
 template<> PROTOBUF_NOINLINE ::usb_bouncer::RuleDB_TrashEntry_DoNotUse* Arena::CreateMaybeMessage< ::usb_bouncer::RuleDB_TrashEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::usb_bouncer::RuleDB_TrashEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse* Arena::CreateMaybeMessage< ::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::usb_bouncer::RuleDB_DevpathsEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::usb_bouncer::RuleDB* Arena::CreateMaybeMessage< ::usb_bouncer::RuleDB >(Arena* arena) {
   return Arena::CreateMessageInternal< ::usb_bouncer::RuleDB >(arena);

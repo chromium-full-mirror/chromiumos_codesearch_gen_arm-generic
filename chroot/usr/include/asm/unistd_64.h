@@ -334,6 +334,7 @@
 #define __NR_pkey_alloc 330
 #define __NR_pkey_free 331
 #define __NR_statx 332
+#define __NR_rseq 334
 #define __NR_io_uring_setup 425
 #define __NR_io_uring_enter 426
 #define __NR_faccessat2 439

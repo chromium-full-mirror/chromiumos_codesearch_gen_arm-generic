@@ -1,7 +1,7 @@
 {
-	"package": "569529a37584380318430ad9b92dbce4259d2018ae23a323bfbd026516ec88f2",
+	"package": "bb18dd592b626911bae313eddcb15d520ee974d5bc78607cbc3d99b27b0f9267",
 	"files": {
-		"Cargo.toml.orig": "64ed6e559d8058339269a55900136e184b7a02d776a7c932d5b1df678302c213",
+		"Cargo.toml.orig": "24a2307ea777fd9ec658c992b097bad5cae80cf6419911566019cc80b8fb2189",
 		"CODEOWNERS": "2196aad5760b74fc2ccf3450f49a748f0f482fe5119832b3d13e996d674cdb29",
 		"README.tpl": "6c3c04de0e4e0619218947a64d4de5d0ade44765f0f733c3c68a430465e16e91",
 		"benches/format_str.rs": "2c571eaedbfa5070a6e45a79914cfe2ea186a2dc85626cd4c6017dcdd3a84cb9",
@@ -11,7 +11,7 @@
 		"benches/slog_support/mod.rs": "633fc467b0d1f65a2da554a39f80ec3a2e807eeed1680dee2bb072026ab2b7df",
 		"benches/valid_parse_str.rs": "d618d789c3e97cdfe47b8b8556bb4f8f578d92fff308ac0713d327d09afd6c56",
 		"benches/invalid_parse_str.rs": "551479b152118ea22d657f0d2ef7f681f2331b3c8efb1707ea46adaf1bebd1be",
-		"Cargo.toml": "c0927d408607bb6613226f02153acf5cea4642a271bb804d6883f33af3ccf807",
+		"Cargo.toml": "a03e40bcb19f3aa1b21c35a0f17e550a1fff457353d8625bbfb9d12c1ab9bcd5",
 		"LICENSE-MIT": "dd23b9037fa9f086b90fb5e908f896a3ed2b4a3eca961792ee0caf77444ea587",
 		"LICENSE-APACHE": "7cfd738c53d61c79f07e348f622bf7707c9084237054d37fbe07788a75f5881c",
 		"README.md": "651a0d4ff4db342fa7be7a9e738becaaae29f3d652f41053989b1beb76df7c3a",

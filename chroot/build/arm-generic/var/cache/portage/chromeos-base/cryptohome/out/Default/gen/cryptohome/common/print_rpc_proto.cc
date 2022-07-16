@@ -195,6 +195,9 @@ std::string GetProtoDebugStringWithIndent(CryptohomeErrorCode value,
   if (value == CRYPTOHOME_ERROR_UNUSABLE_VAULT) {
     return "CRYPTOHOME_ERROR_UNUSABLE_VAULT";
   }
+  if (value == CRYPTOHOME_REMOVE_CREDENTIALS_FAILED) {
+    return "CRYPTOHOME_REMOVE_CREDENTIALS_FAILED";
+  }
   return "<unknown>";
 }
 

@@ -1,7 +1,7 @@
 {
-	"package": "3aaf2dc2c5b2b7d647150768a5fe185bf70189d0bd98c8617e2363f986ec2417",
+	"package": "85e62267e8dbcbcc151ab17b74042f7fa180c67cbe1c3f60de19c43f9b422316",
 	"files": {
-		"Cargo.toml.orig": "3b6727e709c45b31bdd5521a5a54e2e0ea51528618eda6201b90eab09190a9da",
+		"Cargo.toml.orig": "0f723486c18b6a74830c8163ab3a450388d21f2ac413d93ce822341d8930b802",
 		"tests/ui/unsorted-enum.stderr": "f9aa2b4602a91d7b78c0a3317342b3e34e48d9634e2141353e152aecffcf7687",
 		"tests/ui/unsorted-struct.stderr": "4aef8f57dfb087a662f29a73908c45ea7f61c041b9b8ff2ce304f3c384f45d9f",
 		"tests/ui/match-unstable.rs": "374b606c355ce781406115c9920447bdf517dfd6a5bc9199fd5a1899bfd9b3bf",
@@ -32,7 +32,7 @@
 		"tests/compiletest.rs": "0a52a44786aea1c299c695bf948b2ed2081e4cc344e5c2cadceab4eb03d0010d",
 		"tests/unstable.rs": "b2fd9ab549f431443047f05e947c18cde81cc59094bfc7a2a3cfc9fe6ceb7ccf",
 		"tests/stable.rs": "c1e04dd5687aae80d1acbc5555aaf785e40fa72c502a5de7a8a22a04af4525cc",
-		"Cargo.toml": "53fa1a9466a5992cd4eaeeeea9a0c10432aaaa942eaa853649a293e41c38f0f7",
+		"Cargo.toml": "6bad208315537ad194086fe062dc6cd7bcf17e42d95229108445cdfcfebdd6c8",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "8f3d1f5adf804148a018d5e2f09d5d301bb60f85da0175e3197e9e1069660512",

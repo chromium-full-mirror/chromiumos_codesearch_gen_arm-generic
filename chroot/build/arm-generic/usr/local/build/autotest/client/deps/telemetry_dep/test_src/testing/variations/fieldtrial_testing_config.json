@@ -167,26 +167,6 @@
             ]
         }
     ],
-    "AndroidFullDynamicColor": [
-        {
-            "platforms": [
-                "android"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "params": {
-                        "dynamic_color_full": "true"
-                    },
-                    "enable_features": [
-                        "DynamicColorAndroid",
-                        "DynamicColorButtonsAndroid"
-                    ],
-                    "min_os_version": "12.0.0"
-                }
-            ]
-        }
-    ],
     "AndroidHatsNext": [
         {
             "platforms": [
@@ -289,6 +269,21 @@
             ]
         }
     ],
+    "AndroidScrollOptimizations": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "AndroidScrollOptimizations"
+                    ]
+                }
+            ]
+        }
+    ],
     "AndroidSearchEnginePromoV2": [
         {
             "platforms": [
@@ -348,6 +343,30 @@
                     },
                     "enable_features": [
                         "NotificationPermissionVariant"
+                    ]
+                }
+            ]
+        }
+    ],
+    "AppCloseRefreshClankStudy": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Open30",
+                    "enable_features": [
+                        "FeedCloseRefresh"
+                    ]
+                },
+                {
+                    "name": "Interact30",
+                    "params": {
+                        "require_interaction": "true"
+                    },
+                    "enable_features": [
+                        "FeedCloseRefresh"
                     ]
                 }
             ]
@@ -775,27 +794,6 @@
             ]
         }
     ],
-    "AutofillComplementCountryCodeOnImport": [
-        {
-            "platforms": [
-                "android",
-                "chromeos",
-                "chromeos_lacros",
-                "ios",
-                "linux",
-                "mac",
-                "windows"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "AutofillComplementCountryCodeOnImport"
-                    ]
-                }
-            ]
-        }
-    ],
     "AutofillConsiderVariationCountryCodeForPhoneNumbers": [
         {
             "platforms": [
@@ -1053,28 +1051,6 @@
                     "name": "Enabled",
                     "enable_features": [
                         "AutofillFillCreditCardAsPerFormatString"
-                    ]
-                }
-            ]
-        }
-    ],
-    "AutofillFixServerQueriesIfPasswordManagerIsEnabled": [
-        {
-            "platforms": [
-                "android",
-                "android_webview",
-                "chromeos",
-                "chromeos_lacros",
-                "ios",
-                "linux",
-                "mac",
-                "windows"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "AutofillFixServerQueriesIfPasswordManagerIsEnabled"
                     ]
                 }
             ]
@@ -2018,6 +1994,21 @@
                     },
                     "enable_features": [
                         "PermissionOnDeviceNotificationPredictions"
+                    ]
+                }
+            ]
+        }
+    ],
+    "CWPCollectsETM": [
+        {
+            "platforms": [
+                "chromeos"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "CWPCollectsETM"
                     ]
                 }
             ]
@@ -3113,6 +3104,29 @@
             ]
         }
     ],
+    "DelayAsyncScriptExecution": [
+        {
+            "platforms": [
+                "android",
+                "chromeos",
+                "chromeos_lacros",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "params": {
+                        "delay_type": "first_paint_or_finished_parsing"
+                    },
+                    "enable_features": [
+                        "DelayAsyncScriptExecution"
+                    ]
+                }
+            ]
+        }
+    ],
     "DelayFirstParkingOfStrings": [
         {
             "platforms": [
@@ -3528,13 +3542,12 @@
             ],
             "experiments": [
                 {
-                    "name": "enabled_ntp_dialog_20220323",
+                    "name": "enabled_ntp_native_dialog_20220713",
                     "params": {
-                        "discount-consent-ntp-variation": "3",
+                        "discount-consent-ntp-variation": "4",
                         "step-one-one-cart-content": "Get discount codes for $1",
                         "step-one-three-carts-content": "Get discount codes for $1, $2, and more",
-                        "step-one-two-carts-content": "Get discount codes for $1 and $2",
-                        "step-two-content": "Let Google use your carts to find personalized discounts when available"
+                        "step-one-two-carts-content": "Get discount codes for $1 and $2"
                     },
                     "enable_features": [
                         "DiscountConsentV2"
@@ -3719,9 +3732,9 @@
             ],
             "experiments": [
                 {
-                    "name": "Enabled_MovementThreshold_10_20220419",
+                    "name": "Enabled_MovementThreshold_24_20220711",
                     "params": {
-                        "DragAndDropMovementThresholdDipParam": "10"
+                        "DragAndDropMovementThresholdDipParam": "24"
                     },
                     "enable_features": [
                         "ContextMenuPopupStyle",
@@ -5066,14 +5079,17 @@
             ],
             "experiments": [
                 {
-                    "name": "Blocks_1_20211021",
+                    "name": "Reid_score_AND_Blocks_1_20211021",
                     "params": {
                         "ActivelySampledFonts": "Arial,Helvetica,Times New Roman",
                         "BlockWeights": "5202,37515,33617,35842,36929,33922,20441,31021,28500,34490,24343",
                         "BlockedHashes": "44033,44289,286465,680961,681473,693249,693505,693761,694017,696065,880129,881409,881665,881921",
                         "BlockedTypes": "13,25,28",
                         "Blocks": "9129224;865032;8710152;8678920;9305096;8942088;8939784;1722309467823238416;3972031034286914064;2988159541422276624;8328626426974190352;9545333389081804304;13173218182366896400;12249551522105410064;18426709255769621264;789,681729;690945;9305096;1722309467823238416;3972031034286914064;2988159541422276624;12249551522105410064;789,695297;9304840;9585928;680705;9305352;3873813933275956760;18009598079355128088,691201;680449;690945;142593;8939784;9128968;865032;3158419467;1722309467823238416;11068226492212177680;7532279523433960728,680193;681729;692225;8939784;9304840;9216356244107974160;8328626426974190352;533,680193;9129224;679425;695297;8710152;7532279523433960728,681729;18009598079355128088,690689;679425;542977;201473;681217;3873813933275956760;7191660495369152024,142593;201217;680193;691713;681217;542977;9586184;8716040;3158419467;789,680705;642817;201473;838401;8678664;865032;9585928;9586184;9305096;7532279523433960728;533;7191660495369152024,681729;642817;542977;9585928;3873813933275956760;7532279523433960728;13014994009983628312",
-                        "Gen": "7"
+                        "EnableActiveSampling": "true",
+                        "Gen": "8",
+                        "ReidBlocks": "18009598079355128088,9223784233214641190;10735872651981970214",
+                        "ReidBlocksSaltsRanges": "1000,1000000"
                     },
                     "enable_features": [
                         "IdentifiabilityStudy"
@@ -6234,6 +6250,28 @@
             ]
         }
     ],
+    "OmniboxStrippedGurlOptimizations": [
+        {
+            "platforms": [
+                "android",
+                "chromeos_lacros",
+                "chromeos",
+                "ios",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "OmniboxDocumentProviderDedupingOptimization",
+                        "OmniboxStrippedGurlOptimization"
+                    ]
+                }
+            ]
+        }
+    ],
     "OnDemandAT": [
         {
             "platforms": [
@@ -6502,10 +6540,7 @@
             ],
             "experiments": [
                 {
-                    "name": "Enabled_20220706",
-                    "params": {
-                        "allow_srp": "false"
-                    },
+                    "name": "Enabled_20220711",
                     "enable_features": [
                         "PaintPreviewShowOnStartup"
                     ]
@@ -9181,13 +9216,15 @@
                 {
                     "name": "CompactInOldSpace_V1",
                     "disable_features": [
+                        "V8CompactMaps",
                         "V8UseMapSpace"
                     ]
                 },
                 {
                     "name": "CompactInMapSpace_V1",
                     "enable_features": [
-                        "V8CompactMaps"
+                        "V8CompactMaps",
+                        "V8UseMapSpace"
                     ]
                 },
                 {

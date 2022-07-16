@@ -1,9 +1,9 @@
 {
-	"package": "e1372ec4a79e74112469cec1c7e45367ee4ea241dc908593c6110c8f943a4c1d",
+	"package": "ac2ebab27775098d0e2561c0ba8c035b99eb12b8d22c339c2108694af2587a33",
 	"files": {
 		"link.x": "e67743478f59abf6105ffb63c456644f758ebad90f1fa572b734075276d22a29",
-		"Cargo.toml.orig": "a8f2d8ffce868e03efbe1080f12dcf6992ffaf9201c996ad2dc9249b627b4114",
-		"Cargo.lock": "99a742e689e39437601c58c0e55ad24cc66f2702aa850b0ff529b190e98a4794",
+		"Cargo.toml.orig": "ede1b515f0c8822b28a1c338c116ce73646090bb923fc22df5a4bc7ff1ad8332",
+		"Cargo.lock": "db698341a8f485567d05f758a6031648d1cc563972de87212b59ccae9ddbfa48",
 		"asm.S": "b4cd0bcc19bfdf3eaaebb521a520b41fb45a0f3e5c38a6d1feffdbfe34bb03a3",
 		"bin/riscv32ifc-unknown-none-elf.a": "c799b42955734801b7781e074f75af5db735e98587e3133a1e02b4144a575ac6",
 		"bin/riscv64imfc-unknown-none-elf.a": "17e0b9a30cb182fddccca5c208b2eead5eefc818821ef350ce204ca662cd3ad9",
@@ -30,7 +30,7 @@
 		"bin/riscv64im-unknown-none-elf.a": "e1bdf1d8ae8fcd1bff3ee1be9bca50bfb4c8894894fc5b0474a64992a39f3901",
 		"bin/riscv32imfc-unknown-none-elf.a": "1892349acfacd5cdb3d0cd364b342c6c9071354735047546c4af8a095c4a2717",
 		"assemble.sh": "40391778a1d7006642df5fb590867086ee7e423132bb8b7f8453e9541c9838e0",
-		"Cargo.toml": "88b156f5a9a2f5bff5e5c8e0b3e3d88bf7f6a92b8f92ba1a85569e4a6369d19b",
+		"Cargo.toml": "f47f399b52fa7cc10097dd462acad75804415015d379846f3ec3829c90226c5e",
 		"assemble.ps1": "540eb7d98109774e9a8eb8527eb448dcf737d05c9fdad0f66bb7f95b6cc2144b",
 		"README.md": "4dbdb0b72d783531c9653aba9029136b3456541cd5576fa406adee0a2b9ddb72",
 		"examples/multi_core.rs": "3123b6ef8b724eb46f8001766512cdf8d1ddd96f58e0e5c486f9f16de27bb5b9",

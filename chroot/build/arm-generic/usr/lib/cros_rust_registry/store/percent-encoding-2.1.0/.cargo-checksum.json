@@ -1,7 +1,7 @@
 {
-	"package": "e7443cc9d1860c4c47170bac5ebf889c64e4e1a27f3beb8c384ecd0361279945",
+	"package": "aeecc361236117d3aa2440ae4e1a81641ff46fd4ac4e79524842705420ea8b08",
 	"files": {
-		"Cargo.toml.orig": "3a5fdc7001a5d7e00f5eeac45d6ddce5a333e36f1303305b28f7477325b35853",
+		"Cargo.toml.orig": "dd59f4e6c033f011625ede444aa27fc8df4be53297af238b4f76d05144de5878",
 		"Cargo.toml": "5bd9a30f054d7e5d89fcc24ccf617914f537b5c4c77beae3826fa9660244d7f5",
 		"lib.rs": "b9dd3a27fb0f56aebe3c4c411ea768a106a54e480ac08d9023c35bbba0bdcbdc",
 		"LICENSE-MIT": "20c7855c364d57ea4c97889a5e8d98470a9952dade37bd9248b9a54431670e5e",

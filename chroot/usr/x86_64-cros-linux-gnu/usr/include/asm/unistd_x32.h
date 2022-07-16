@@ -287,6 +287,7 @@
 #define __NR_pkey_alloc (__X32_SYSCALL_BIT + 330)
 #define __NR_pkey_free (__X32_SYSCALL_BIT + 331)
 #define __NR_statx (__X32_SYSCALL_BIT + 332)
+#define __NR_rseq (__X32_SYSCALL_BIT + 334)
 #define __NR_io_uring_setup (__X32_SYSCALL_BIT + 425)
 #define __NR_io_uring_enter (__X32_SYSCALL_BIT + 426)
 #define __NR_faccessat2 (__X32_SYSCALL_BIT + 439)

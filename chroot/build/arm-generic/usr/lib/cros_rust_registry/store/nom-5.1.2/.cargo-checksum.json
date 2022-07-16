@@ -1,10 +1,10 @@
 {
-	"package": "40f2e9847c5af82fb9aee09c78b0c27cc93401765ef1abc143ff3f3812debf66",
+	"package": "97365a1387d358d736724be608cdab8b405548d421b9fc05fb8f937880170a9d",
 	"files": {
 		".travis.yml": "124c5613de02fe2088a7410a7057b0e0ed49dcbc8509704b690de98e83b289e0",
 		"Cargo.toml.orig": "b3d9fd6c60f7731900aaf47db78c7c0a7f59f1fedd3f1d4a1d6f6fc321250bfc",
 		".gitignore": "2c91a954097faa129627c9ca7a0bc45a7a28f78b8e197a1d32470f0f0c92bdb1",
-		"Cargo.lock": "e6afa120bdcafa93553ed93801b7e1312aaf6942f582311e10cc07cf96d4c205",
+		"Cargo.lock": "c2b3b48c321f19a88f7950cb6ec801d47be16eff36a385e4a68cb21bad0e0d92",
 		"tests/reborrow_fold.rs": "9328deafc2143c2a2d1a0be86e2448b644cffcb5f0935c8b24eb469f1f9477c0",
 		"tests/named_args.rs": "bd8095c3abc6fb806c9181c6025c0111d1e7f3b7269ea89ae122bf3bb8ed7e7d",
 		"tests/overflow.rs": "d1d6d8ce9b34ed47b42a5f7250ce711805a397691dc6cad3cc8945ec230da161",
@@ -23,7 +23,7 @@
 		"tests/json.rs": "25476ec2daca19295f5f99b621eecc859a5db5789ac35be381eaf8703a70bce8",
 		"tests/arithmetic_ast.rs": "8fbc4c5d8850fa1cf0a16f97e8718d5427b2657f12ca4a0b3b6c1b47fd9e67d4",
 		"tests/test1.rs": "06fc9e52638f16bfc3ef69cd26b927e0cf55706d6f132ab7c0f1072208475853",
-		"Cargo.toml": "5d17ccc67946047b107fc3ac3bdb122aa088e38909d43bf0f5f3b54139c26a52",
+		"Cargo.toml": "8536cb03830fac21be0531fbef6e27f8dcb58ab4f7ed6903dc0c476296485bb1",
 		"LICENSE": "4dbda04344456f09a7a588140455413a9ac59b6b26a1ef7cdf9c800c012d87f0",
 		"README.md": "125b8000c6e967c45e200b475dcef5baa8af552a2a80c5094b96b73531a267b7",
 		"build.rs": "fd66799ca3bd6a83b10f18a62e6ffc3b1ac94074fe65de4e4c1c447bf71d6ebb",

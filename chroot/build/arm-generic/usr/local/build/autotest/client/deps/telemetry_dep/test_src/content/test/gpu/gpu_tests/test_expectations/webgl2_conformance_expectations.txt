@@ -220,6 +220,7 @@ crbug.com/1336010 [ android ] conformance2/extensions/oes-draw-buffers-indexed.h
 # Failing on at least NVIDIA and Intel
 crbug.com/1336010 [ linux ] conformance2/extensions/oes-draw-buffers-indexed.html [ Failure ]
 crbug.com/1336010 [ win ] conformance2/extensions/oes-draw-buffers-indexed.html [ Failure ]
+crbug.com/1336010 [ chromeos chromeos-board-amd64-generic ] conformance2/extensions/oes-draw-buffers-indexed.html [ Failure ]
 
 # The validating command decoder suppressions here will not be fixed.
 crbug.com/angleproject/6245 [ no-passthrough ] conformance/extensions/ext-texture-compression-bptc.html [ Failure ]
@@ -507,6 +508,8 @@ crbug.com/1037958 [ mac amd-0x679e ] conformance2/transform_feedback/switching-o
 crbug.com/636648 [ mac amd ] deqp/functional/gles3/shaderindexing/mat_01.html [ RetryOnFailure ]
 
 crbug.com/642822 [ mac amd ] conformance2/rendering/clipping-wide-points.html [ Failure ]
+
+crbug.com/1343793 [ mac amd-0x6821 angle-opengl ] deqp/functional/gles3/texturefiltering/3d_combinations_24.html [ RetryOnFailure ]
 
 crbug.com/1227762 [ bigsur amd-0x6821 angle-disabled no-passthrough skia-renderer-gl ] conformance2/textures/canvas/tex-2d-rgb5_a1-rgba-unsigned_byte.html [ Failure ]
 crbug.com/1227762 [ bigsur amd-0x6821 angle-disabled no-passthrough skia-renderer-gl ] conformance2/textures/canvas_sub_rectangle/tex-2d-rgb5_a1-rgba-unsigned_byte.html [ Failure ]
@@ -875,6 +878,12 @@ crbug.com/1328444 [ chromeos chromeos-board-kevin ] conformance2/textures/misc/t
 
 crbug.com/1337803 [ chromeos chromeos-board-kevin ] conformance2/misc/expando-loss-2.html [ Failure ]
 
+# Must investigate ChromeOS failures with passthrough command decoder.
+crbug.com/angleproject/5038 [ chromeos passthrough ] conformance/extensions/ext-color-buffer-half-float.html [ Failure ]
+
+# Failures on validating command decoder only; won't fix.
+crbug.com/angleproject/5038 [ chromeos no-passthrough ] conformance/extensions/ext-color-buffer-half-float.html [ Failure ]
+
 ##############################
 # Lacros-like Linux Failures #
 ##############################
@@ -886,6 +895,9 @@ crbug.com/1210240 [ linux intel display-server-wayland no-passthrough ] conforma
 crbug.com/1215700 [ linux intel display-server-wayland no-passthrough ] deqp/functional/gles3/negativetextureapi.html [ Failure ]
 crbug.com/1218607 [ linux intel display-server-wayland no-passthrough ] conformance2/reading/read-pixels-from-fbo-test.html [ Failure ]
 crbug.com/1231736 [ linux intel display-server-wayland no-passthrough ] deqp/functional/gles3/clipping.html [ Failure ]
+
+# Failures on validating command decoder only; won't fix.
+crbug.com/angleproject/5038 [ linux intel display-server-wayland no-passthrough ] conformance/extensions/ext-color-buffer-half-float.html [ Failure ]
 
 # Conflicting expectations to test that the
 # "Expectations have no collisions" unittest works.

@@ -1,5 +1,5 @@
 {
-	"package": "47848d8c6dd93bf9e3f18cb58b68b0eb92c7a27bd76347dc3953f30f6acca492",
+	"package": "3fc8a6f0a6f1bc08d46a7b65c543085509b0e73978b1b28db22f198a8b6e3c2a",
 	"files": {
 		"Cargo.toml.orig": "ead963853cf21b5e7f75a76259a6fb4b40cab7ccd33d16907ec2627a1b3cdddd",
 		"tests/io_write.rs": "2676c41b74bb86a225aab4bd855920c696bf6b630227b93b5a686ea91eeab306",
@@ -54,7 +54,7 @@
 		"tests/future_try_flatten_stream.rs": "c3a96f69a68f1f05395831037e33bbacfe547c068f59b219f4e1cb80ad5dc503",
 		"tests/io_read_until.rs": "28a7f8a9b3b2c38f4f6c0ecec101241c3532d9c5426ec8fa5e9e92681e56cf24",
 		"tests/io_read.rs": "3e3514a9c36a4eb725c90a7a1603b8cf1f4ae223f6062deef125839cca439b71",
-		"Cargo.toml": "85f3e83fee0a3ed351d92a1a8df61f3e7a91fcdb6acf97f194218978f7c0d095",
+		"Cargo.toml": "539958775f31c67512ad889f88c09c2dc3c6b90257bedcce9aca4fc675b2fe59",
 		"LICENSE-MIT": "6652c868f35dfe5e8ef636810a4e576b9d663f3a17fb0f5613ad73583e1b88fd",
 		"LICENSE-APACHE": "275c491d6d1160553c32fd6127061d7f9606c3ea25abfad6ca3f6ed088785427",
 		"tests_disabled/all.rs": "038e4dc5b6a3585437a20ef3218bcc3f1010d59395d261ab0a71ecc2530fb348",

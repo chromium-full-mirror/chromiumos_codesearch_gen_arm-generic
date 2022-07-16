@@ -129,7 +129,19 @@ playEarcon(earcon,opt_location){}
 cancelEarcon(earcon){}
 earconsAvailable(){return true;}
 get enabled(){return localStorage['earcons']==='true';}
-set enabled(value){localStorage['earcons']=value;}};goog.provide('AutomationTreeWalker');goog.provide('AutomationTreeWalkerPhase');goog.provide('AutomationTreeWalkerRestriction');goog.require('constants');AutomationTreeWalkerPhase={INITIAL:'initial',ANCESTOR:'ancestor',DESCENDANT:'descendant',OTHER:'other'};let AutomationTreeWalkerRestriction;AutomationTreeWalker=class{constructor(node,dir,opt_restrictions){this.node_=node;this.phase_=AutomationTreeWalkerPhase.INITIAL;this.dir_=dir;this.initialNode_=node;this.backwardAncestor_=node.parent||null;const restrictions=opt_restrictions||{};this.visitPred_=function(node){if(this.skipInitialAncestry_&&this.phase_===AutomationTreeWalkerPhase.ANCESTOR){return false;}
+set enabled(value){localStorage['earcons']=value;}};goog.provide('AncestryRecoveryStrategy');goog.provide('RecoveryStrategy');goog.provide('TreePathRecoveryStrategy');goog.scope(function(){const AutomationNode=chrome.automation.AutomationNode;const RoleType=chrome.automation.RoleType;RecoveryStrategy=class{constructor(node){this.node_=node;}
+get node(){if(this.requiresRecovery()){this.node_=this.recover()||this.node_;}
+return this.node_;}
+requiresRecovery(){return!this.node_||!this.node_.role;}
+recover(){return null;}
+equalsWithoutRecovery(rhs){return this.node_===rhs.node_;}};AncestryRecoveryStrategy=class extends RecoveryStrategy{constructor(node){super(node);this.ancestry_=[];let nodeWalker=node;while(nodeWalker){this.ancestry_.push(nodeWalker);nodeWalker=nodeWalker.parent;if(nodeWalker&&nodeWalker.role===RoleType.WINDOW){break;}}}
+recover(){return this.ancestry_[this.getFirstValidNodeIndex_()];}
+getFirstValidNodeIndex_(){for(let i=0;i<this.ancestry_.length;i++){const firstValidNode=this.ancestry_[i];if(firstValidNode!=null&&firstValidNode.role!==undefined&&firstValidNode.root!==undefined){return i;}}
+return 0;}};TreePathRecoveryStrategy=class extends AncestryRecoveryStrategy{constructor(node){super(node);this.recoveryChildIndex_=[];let nodeWalker=node;while(nodeWalker){this.recoveryChildIndex_.push(nodeWalker.indexInParent);nodeWalker=nodeWalker.parent;if(nodeWalker&&nodeWalker.role===RoleType.WINDOW){break;}}}
+recover(){const index=this.getFirstValidNodeIndex_();if(index===0){return this.ancestry_[index];}
+let node=this.ancestry_[index];for(let j=index-1;j>=0;j--){const childIndex=this.recoveryChildIndex_[j];const children=node.children;if(!children[childIndex]){return node;}
+node=children[childIndex];}
+return node;}};});goog.provide('AutomationTreeWalker');goog.provide('AutomationTreeWalkerPhase');goog.provide('AutomationTreeWalkerRestriction');goog.require('constants');AutomationTreeWalkerPhase={INITIAL:'initial',ANCESTOR:'ancestor',DESCENDANT:'descendant',OTHER:'other'};let AutomationTreeWalkerRestriction;AutomationTreeWalker=class{constructor(node,dir,opt_restrictions){this.node_=node;this.phase_=AutomationTreeWalkerPhase.INITIAL;this.dir_=dir;this.initialNode_=node;this.backwardAncestor_=node.parent||null;const restrictions=opt_restrictions||{};this.visitPred_=function(node){if(this.skipInitialAncestry_&&this.phase_===AutomationTreeWalkerPhase.ANCESTOR){return false;}
 if(this.skipInitialSubtree_&&this.phase_!==AutomationTreeWalkerPhase.ANCESTOR&&this.phase_!==AutomationTreeWalkerPhase.OTHER){return false;}
 if(restrictions.visit){return restrictions.visit(node);}
 return true;};this.leafPred_=restrictions.leaf?restrictions.leaf:AutomationTreeWalker.falsePredicate_;this.rootPred_=restrictions.root?restrictions.root:AutomationTreeWalker.falsePredicate_;this.skipInitialAncestry_=restrictions.skipInitialAncestry||false;this.skipInitialSubtree_=restrictions.skipInitialSubtree||false;}
@@ -413,85 +425,7 @@ static previousCodePointOffset(str,offset){if(offset<=0){return-1;}
 if(offset>1&&str.codePointAt(offset-2)>StringUtil.MAX_BMP_CODEPOINT){return offset-2;}
 return offset-1;}
 static getUnicodeSubstring_(text,startIndex,endIndex){let result='';const textSymbolArray=[...text];for(let i=startIndex;i<endIndex;++i){result+=textSymbolArray[i];}
-return result;}};StringUtil.MAX_BMP_CODEPOINT=65535;goog.provide('AncestryRecoveryStrategy');goog.provide('RecoveryStrategy');goog.provide('TreePathRecoveryStrategy');goog.scope(function(){const AutomationNode=chrome.automation.AutomationNode;const RoleType=chrome.automation.RoleType;RecoveryStrategy=class{constructor(node){this.node_=node;}
-get node(){if(this.requiresRecovery()){this.node_=this.recover()||this.node_;}
-return this.node_;}
-requiresRecovery(){return!this.node_||!this.node_.role;}
-recover(){return null;}
-equalsWithoutRecovery(rhs){return this.node_===rhs.node_;}};AncestryRecoveryStrategy=class extends RecoveryStrategy{constructor(node){super(node);this.ancestry_=[];let nodeWalker=node;while(nodeWalker){this.ancestry_.push(nodeWalker);nodeWalker=nodeWalker.parent;if(nodeWalker&&nodeWalker.role===RoleType.WINDOW){break;}}}
-recover(){return this.ancestry_[this.getFirstValidNodeIndex_()];}
-getFirstValidNodeIndex_(){for(let i=0;i<this.ancestry_.length;i++){const firstValidNode=this.ancestry_[i];if(firstValidNode!=null&&firstValidNode.role!==undefined&&firstValidNode.root!==undefined){return i;}}
-return 0;}};TreePathRecoveryStrategy=class extends AncestryRecoveryStrategy{constructor(node){super(node);this.recoveryChildIndex_=[];let nodeWalker=node;while(nodeWalker){this.recoveryChildIndex_.push(nodeWalker.indexInParent);nodeWalker=nodeWalker.parent;if(nodeWalker&&nodeWalker.role===RoleType.WINDOW){break;}}}
-recover(){const index=this.getFirstValidNodeIndex_();if(index===0){return this.ancestry_[index];}
-let node=this.ancestry_[index];for(let j=index-1;j>=0;j--){const childIndex=this.recoveryChildIndex_[j];const children=node.children;if(!children[childIndex]){return node;}
-node=children[childIndex];}
-return node;}};});goog.provide('cursors.Cursor');goog.provide('cursors.Movement');goog.provide('cursors.Unit');goog.require('AncestryRecoveryStrategy');goog.require('AutomationPredicate');goog.require('AutomationUtil');goog.require('RecoveryStrategy');goog.require('StringUtil');goog.require('constants');goog.scope(function(){const AutomationNode=chrome.automation.AutomationNode;const Dir=constants.Dir;const RoleType=chrome.automation.RoleType;const StateType=chrome.automation.StateType;cursors.NODE_INDEX=-1;cursors.Unit={CHARACTER:'character',WORD:'word',TEXT:'text',NODE:'node',GESTURE_NODE:'gesture_node',LINE:'line'};cursors.Movement={BOUND:'bound',DIRECTIONAL:'directional',SYNC:'sync'};cursors.Cursor=class{constructor(node,index,args={}){if(node.role===RoleType.STATIC_TEXT&&node.name.length===index&&!args.preferNodeStartEquivalent){const nextNode=AutomationUtil.findNextNode(node,Dir.FORWARD,AutomationPredicate.leafOrStaticText,{root:r=>r===node.root});if(node&&node.nextOnLine&&node.nextOnLine.role&&nextNode){node=nextNode;index=0;}}
-this.index_=index;this.recovery_=new AncestryRecoveryStrategy(node);this.wrapped_=args.wrapped||false;}
-static fromNode(node){return new cursors.Cursor(node,cursors.NODE_INDEX);}
-static getLeafPredForUnit(unit){switch(unit){case cursors.Unit.TEXT:return AutomationPredicate.leaf;case cursors.Unit.GESTURE_NODE:return AutomationPredicate.gestureObject;default:return AutomationPredicate.object;}}
-equals(rhs){return this.node===rhs.node&&this.index===rhs.index;}
-equalsWithoutRecovery(rhs){return this.recovery_.equalsWithoutRecovery(rhs.recovery_);}
-contentEquals(rhs){let lNode=this.node;let rNode=rhs.node;while(lNode&&(lNode.role===RoleType.INLINE_TEXT_BOX||lNode.role===RoleType.STATIC_TEXT)){lNode=lNode.parent;}
-while(rNode&&(rNode.role===RoleType.INLINE_TEXT_BOX||rNode.role===RoleType.STATIC_TEXT)){rNode=rNode.parent;}
-return lNode===rNode&&lNode!==undefined;}
-compare(rhs){if(!this.node||!rhs.node){return Dir.FORWARD;}
-if(rhs.node===this.node){return rhs.index<this.index?Dir.BACKWARD:Dir.FORWARD;}
-return AutomationUtil.getDirection(this.node,rhs.node);}
-get node(){if(this.requiresRecovery()){this.index_=cursors.NODE_INDEX;}
-return this.recovery_.node;}
-get index(){return this.index_;}
-get selectionNode(){return this.node;}
-get selectionIndex(){return this.index_===cursors.NODE_INDEX?0:this.index_;}
-getText(){return AutomationUtil.getText(this.node);}
-move(unit,movement,dir){const originalNode=this.node;if(!originalNode){return this;}
-let newNode=originalNode;let newIndex=this.index_;switch(unit){case cursors.Unit.CHARACTER:const text=this.getText();switch(movement){case cursors.Movement.BOUND:case cursors.Movement.DIRECTIONAL:if(newIndex===cursors.NODE_INDEX){newIndex=0;}
-newIndex=dir===Dir.FORWARD?StringUtil.nextCodePointOffset(text,newIndex):StringUtil.previousCodePointOffset(text,newIndex);if(newIndex<0||newIndex>=text.length){newNode=AutomationUtil.findNextNode(newNode,dir,AutomationPredicate.leafWithText);if(newNode){const newText=AutomationUtil.getText(newNode);newIndex=dir===Dir.FORWARD?0:StringUtil.previousCodePointOffset(newText,newText.length);newIndex=Math.max(newIndex,0);}else{newIndex=this.index_;}}
-break;case cursors.Movement.SYNC:if(newIndex===cursors.NODE_INDEX){newIndex=dir===Dir.FORWARD?0:StringUtil.previousCodePointOffset(text,text.length);}else{newIndex=dir===Dir.FORWARD?StringUtil.nextCodePointOffset(text,newIndex):StringUtil.previousCodePointOffset(text,newIndex);}
-if(newIndex<0||newIndex>=text.length){newIndex=this.index_;}
-break;}
-break;case cursors.Unit.WORD:if(!AutomationPredicate.leafWithWordStop(newNode)){newNode=AutomationUtil.findNextNode(newNode,Dir.FORWARD,AutomationPredicate.leafWithWordStop,{skipInitialSubtree:false})||newNode;}
-const firstWordStart=(newNode.wordStarts&&newNode.wordStarts.length)?newNode.wordStarts[0]:0;if(newIndex<firstWordStart&&movement!==cursors.Movement.SYNC){newIndex=firstWordStart;}
-switch(movement){case cursors.Movement.BOUND:{let wordStarts,wordEnds;if(newNode.role===RoleType.INLINE_TEXT_BOX){wordStarts=newNode.wordStarts;wordEnds=newNode.wordEnds;}else{wordStarts=newNode.nonInlineTextWordStarts;wordEnds=newNode.nonInlineTextWordEnds;}
-let start,end;for(let i=0;i<wordStarts.length;i++){if(newIndex>=wordStarts[i]&&newIndex<wordEnds[i]){start=wordStarts[i];end=wordEnds[i];break;}}
-if(goog.isDef(start)&&goog.isDef(end)){newIndex=dir===Dir.FORWARD?end:start;}}break;case cursors.Movement.SYNC:if(newIndex===cursors.NODE_INDEX){newIndex=dir===Dir.FORWARD?firstWordStart-1:this.getText().length;}
-case cursors.Movement.DIRECTIONAL:{let wordStarts,wordEnds;let start;if(newNode.role===RoleType.INLINE_TEXT_BOX){wordStarts=newNode.wordStarts;wordEnds=newNode.wordEnds;}else{wordStarts=newNode.nonInlineTextWordStarts;wordEnds=newNode.nonInlineTextWordEnds;}
-for(let i=0;i<wordStarts.length;i++){if((dir===Dir.FORWARD&&newIndex<wordStarts[i])||(dir===Dir.BACKWARD&&newIndex>=wordEnds[i])){start=wordStarts[i];if(dir===Dir.FORWARD){break;}}}
-if(goog.isDef(start)){newIndex=start;}else if(movement===cursors.Movement.DIRECTIONAL){if(dir===Dir.BACKWARD&&newIndex>firstWordStart){newIndex=firstWordStart;}else{newNode=AutomationUtil.findNextNode(newNode,dir,AutomationPredicate.leafWithWordStop,{root:r=>r===newNode.root});if(newNode){let starts;if(newNode.role===RoleType.INLINE_TEXT_BOX){starts=newNode.wordStarts;}else{starts=newNode.nonInlineTextWordStarts;}
-if(starts.length){newIndex=dir===Dir.BACKWARD?starts[starts.length-1]:starts[0];}}}}}}
-break;case cursors.Unit.TEXT:case cursors.Unit.NODE:case cursors.Unit.GESTURE_NODE:switch(movement){case cursors.Movement.BOUND:newIndex=dir===Dir.FORWARD?this.getText().length-1:0;break;case cursors.Movement.DIRECTIONAL:const pred=cursors.Cursor.getLeafPredForUnit(unit);newNode=AutomationUtil.findNextNode(newNode,dir,pred)||originalNode;newIndex=cursors.NODE_INDEX;break;}
-break;case cursors.Unit.LINE:switch(movement){case cursors.Movement.BOUND:newNode=AutomationUtil.findNodeUntil(newNode,dir,AutomationPredicate.linebreak,true);newNode=newNode||originalNode;newIndex=dir===Dir.FORWARD?AutomationUtil.getText(newNode).length:0;break;case cursors.Movement.DIRECTIONAL:newNode=AutomationUtil.findNodeUntil(newNode,dir,AutomationPredicate.linebreak);if(newNode){newIndex=0;}
-break;}
-break;default:throw Error('Unrecognized unit: '+unit);}
-newNode=newNode||originalNode;newIndex=(newIndex!==undefined)?newIndex:this.index_;return new cursors.Cursor(newNode,newIndex);}
-get deepEquivalent(){let newNode=this.node;let newIndex=this.index_;let isTextIndex=false;while(newNode.firstChild){if(AutomationPredicate.editText(newNode)&&!newNode.state[StateType.MULTILINE]){break;}else if(newNode.role===RoleType.STATIC_TEXT){isTextIndex=true;let target=newNode.firstChild;let length=0;while(target&&length<newIndex){const newLength=length+target.name.length;if((length<=newIndex&&newIndex<newLength)||(newIndex===newLength&&!target.nextSibling)){break;}
-length=newLength;target=target.nextSibling;}
-if(target){newNode=target;newIndex=newIndex-length;}
-break;}else if(newNode.role!==RoleType.INLINE_TEXT_BOX&&(!newNode.state[StateType.EDITABLE]||newNode.state[StateType.RICHLY_EDITABLE])&&newIndex<=newNode.children.length){if(newIndex===newNode.children.length){newNode=newNode.lastChild;if(newNode.role===RoleType.STATIC_TEXT){newIndex=newNode.name.length;isTextIndex=true;break;}
-newIndex=newNode.children.length;}else{newNode=newNode.children[newIndex];newIndex=0;}}else{isTextIndex=true;const lines=this.getAllLeaves_(newNode);if(!lines.length){break;}
-let targetLine,targetIndex=0;for(let i=0,line,cur=0;line=lines[i];i++){const lineLength=line.name?line.name.length:1;cur+=lineLength;if(cur>newIndex){targetLine=line;if(!line.name){targetIndex=cursors.NODE_INDEX;}else{targetIndex=newIndex-(cur-lineLength);}
-break;}}
-if(!targetLine){targetLine=lines[lines.length-1];targetIndex=targetLine?targetLine.name.length:cursors.NODE_INDEX;}
-newNode=targetLine;newIndex=targetIndex;break;}}
-if(!isTextIndex){newIndex=cursors.NODE_INDEX;}
-return new this.constructor(newNode,newIndex);}
-isValid(){return this.node!=null;}
-requiresRecovery(){return this.recovery_.requiresRecovery();}
-getAllLeaves_(node){let ret=[];if(!node.firstChild){ret.push(node);return ret;}
-for(let i=0;i<node.children.length;i++){ret=ret.concat(this.getAllLeaves_(node.children[i]));}
-return ret;}
-get wrapped(){return this.wrapped_;}};cursors.WrappingCursor=class extends cursors.Cursor{constructor(node,index,args={}){super(node,index,args);}
-static fromNode(node){return new cursors.WrappingCursor(node,cursors.NODE_INDEX);}
-move(unit,movement,dir){let result=this;if(!result.node){return this;}
-if(!AutomationPredicate.root(this.node)||dir===Dir.FORWARD||movement===cursors.Movement.BOUND){result=cursors.Cursor.prototype.move.call(this,unit,movement,dir);}
-if(movement===cursors.Movement.BOUND||movement===cursors.Movement.SYNC){return new cursors.WrappingCursor(result.node,result.index);}
-if(movement===cursors.Movement.DIRECTIONAL&&result.equals(this)){const pred=cursors.Cursor.getLeafPredForUnit(unit);let endpoint=this.node;if(!endpoint){return this;}
-const getDirectedFocus=function(node){return dir===Dir.FORWARD?node.nextFocus:node.previousFocus;};let directedFocus;while(endpoint.parent){if(directedFocus=getDirectedFocus(endpoint)){break;}
-if(AutomationPredicate.root(endpoint)){break;}
-endpoint=endpoint.parent;}
-if(directedFocus){directedFocus=(dir===Dir.FORWARD?AutomationUtil.findNodePre(directedFocus,dir,AutomationPredicate.object):AutomationUtil.findLastNode(directedFocus,pred))||directedFocus;return new cursors.WrappingCursor(directedFocus,cursors.NODE_INDEX);}
-let wrapped=dir===Dir.FORWARD;if(dir===Dir.BACKWARD&&endpoint===this.node){wrapped=true;endpoint=AutomationUtil.findLastNode(endpoint,pred)||endpoint;}
-return new cursors.WrappingCursor(endpoint,cursors.NODE_INDEX,{wrapped});}
-return new cursors.WrappingCursor(result.node,result.index);}};});goog.provide('goog.debug.Error');goog.debug.Error=function(opt_msg){if(Error.captureStackTrace){Error.captureStackTrace(this,goog.debug.Error);}else{var stack=new Error().stack;if(stack){this.stack=stack;}}
+return result;}};StringUtil.MAX_BMP_CODEPOINT=65535;goog.provide('goog.debug.Error');goog.debug.Error=function(opt_msg){if(Error.captureStackTrace){Error.captureStackTrace(this,goog.debug.Error);}else{var stack=new Error().stack;if(stack){this.stack=stack;}}
 if(opt_msg){this.message=String(opt_msg);}};goog.inherits(goog.debug.Error,Error);goog.debug.Error.prototype.name='CustomError';goog.provide('goog.dom.NodeType');goog.dom.NodeType={ELEMENT:1,ATTRIBUTE:2,TEXT:3,CDATA_SECTION:4,ENTITY_REFERENCE:5,ENTITY:6,PROCESSING_INSTRUCTION:7,COMMENT:8,DOCUMENT:9,DOCUMENT_TYPE:10,DOCUMENT_FRAGMENT:11,NOTATION:12};goog.provide('goog.string');goog.string.subs=function(str,var_args){var splitParts=str.split('%s');var returnString='';var subsArguments=Array.prototype.slice.call(arguments,1);while(subsArguments.length&&splitParts.length>1){returnString+=splitParts.shift()+subsArguments.shift();}
 return returnString+splitParts.join('%s');};goog.provide('goog.asserts');goog.provide('goog.asserts.AssertionError');goog.require('goog.debug.Error');goog.require('goog.dom.NodeType');goog.require('goog.string');goog.asserts.ENABLE_ASSERTS=goog.define('goog.asserts.ENABLE_ASSERTS',goog.DEBUG);goog.asserts.AssertionError=function(messagePattern,messageArgs){messageArgs.unshift(messagePattern);goog.debug.Error.call(this,goog.string.subs.apply(null,messageArgs));messageArgs.shift();this.messagePattern=messagePattern;};goog.inherits(goog.asserts.AssertionError,goog.debug.Error);goog.asserts.AssertionError.prototype.name='AssertionError';goog.asserts.doAssertFailure_=function(defaultMessage,defaultArgs,givenMessage,givenArgs){var message='Assertion failed';if(givenMessage){message+=': '+givenMessage;var args=givenArgs;}else if(defaultMessage){message+=': '+defaultMessage;args=defaultArgs;}
 throw new goog.asserts.AssertionError(''+message,args||[]);};goog.asserts.assert=function(condition,opt_message,var_args){if(goog.asserts.ENABLE_ASSERTS&&!condition){goog.asserts.doAssertFailure_('',null,opt_message,Array.prototype.slice.call(arguments,2));}
@@ -855,4 +789,4 @@ return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffs
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
 goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in plural statement.');return result;};goog.i18n.MessageFormat.prototype.parseOrdinalBlock_=function(pattern){var argumentIndex='';var replaceRegex=goog.i18n.MessageFormat.ORDINAL_BLOCK_RE_;pattern=pattern.replace(replaceRegex,function(string,name){argumentIndex=name;return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffset=0;var parts=this.extractParts_(pattern);var pos=0;while(pos<parts.length){var key=parts[pos].value;goog.asserts.assertString(key,'Missing ordinal key element.');pos++;goog.asserts.assert(pos<parts.length,'Missing or invalid ordinal value element.');if(goog.i18n.MessageFormat.Element_.BLOCK==parts[pos].type){var value=this.parseBlock_(parts[pos].value);}else{goog.asserts.fail('Expected block type.');}
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
-goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('AutomationPredicate');goog.require('AutomationTreeWalker');goog.require('AutomationUtil');goog.require('BrailleDisplayState');goog.require('BrailleInterface');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('BridgeHelper');goog.require('ChromeVox');goog.require('FocusBounds');goog.require('JaPhoneticData');goog.require('KeyCode');goog.require('LibLouis');goog.require('LibLouis.FormType');goog.require('LogStore');goog.require('LogType');goog.require('Msgs');goog.require('NavBraille');goog.require('OutputAction');goog.require('OutputContextOrder');goog.require('OutputEarconAction');goog.require('OutputEventType');goog.require('OutputNodeSpan');goog.require('OutputSelectionSpan');goog.require('OutputSpeechProperties');goog.require('PanelBridge');goog.require('PanelNodeMenuData');goog.require('PanelTabMenuItemData');goog.require('QueueMode');goog.require('Spannable');goog.require('SpeechLog');goog.require('StringUtil');goog.require('TextLog');goog.require('TreeDumper');goog.require('TreePathRecoveryStrategy');goog.require('TtsCategory');goog.require('TtsInterface');goog.require('constants');goog.require('cursors.Cursor');goog.require('cursors.Unit');goog.require('goog.i18n.MessageFormat');goog.require('ALL_NODE_MENU_DATA');import('/chromevox/background/es6_loader.js');
+goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('AncestryRecoveryStrategy');goog.require('AutomationPredicate');goog.require('AutomationTreeWalker');goog.require('AutomationUtil');goog.require('BrailleDisplayState');goog.require('BrailleInterface');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('BridgeHelper');goog.require('ChromeVox');goog.require('FocusBounds');goog.require('JaPhoneticData');goog.require('KeyCode');goog.require('LibLouis');goog.require('LibLouis.FormType');goog.require('LogStore');goog.require('LogType');goog.require('Msgs');goog.require('NavBraille');goog.require('OutputAction');goog.require('OutputContextOrder');goog.require('OutputEarconAction');goog.require('OutputEventType');goog.require('OutputNodeSpan');goog.require('OutputSelectionSpan');goog.require('OutputSpeechProperties');goog.require('PanelBridge');goog.require('PanelNodeMenuData');goog.require('PanelTabMenuItemData');goog.require('QueueMode');goog.require('RecoveryStrategy');goog.require('Spannable');goog.require('SpeechLog');goog.require('StringUtil');goog.require('TextLog');goog.require('TreeDumper');goog.require('TreePathRecoveryStrategy');goog.require('TtsCategory');goog.require('TtsInterface');goog.require('constants');goog.require('goog.i18n.MessageFormat');goog.require('ALL_NODE_MENU_DATA');import('/chromevox/background/es6_loader.js');

@@ -1,10 +1,10 @@
 {
-	"package": "f48c59108e900ae0a49f95bf191ea57d8d93c3718309f1b0693d2787218d2180",
+	"package": "64c411207d4762cbc12f42f8a25d4049dbadef7f4586f8d6e84611fbcb0d5394",
 	"files": {
 		"link.x.in": "45c6719d7db41b0ca63313e2e41d5d0b7ca3b7ef2ec3082e0fe6204497e51266",
 		"asm.s": "6795620aa261c066954c35a851eac88bd1dbc2dd392a083b7553cb32d838fd48",
-		"Cargo.toml.orig": "2fed852698fd96705177869f76d173c26ff0427882083de7fc0fd8f50f111cc3",
-		"Cargo.lock": "809d057d675aa20213333c68d577aa7013d6c80d09722cb8321c43762d195f3f",
+		"Cargo.toml.orig": "3cc091b57bc9551c6a71bf23ed6893312d3716534aeaf898b0d7b106e0349d8f",
+		"Cargo.lock": "defb26be43033e236ef99ffcd6f948e042f8b091b3c02b93196b9b43802bccdb",
 		"bin/thumbv8m.main-none-eabi.a": "cec038db268819bc5eacc777368151633a35312ba658446e7a0e7e141de92d7a",
 		"bin/thumbv8m.base-none-eabi.a": "beb229c8292c1bfcb60846388fda933843e81790bca054763f848b503483efed",
 		"bin/thumbv8m.main-none-eabihf.a": "cec038db268819bc5eacc777368151633a35312ba658446e7a0e7e141de92d7a",
@@ -50,7 +50,7 @@
 		"tests/compile-fail/exception-twice.rs": "bba3c0c92d22a99a7672aaf1037001b35a77eb0527191753bdfd585b6e279af0",
 		"tests/compile-fail/default-handler-bad-signature-2.rs": "77dd8d83d5cf5bbe87336f0706b45ee91913d7e0bcfbb431e9117afd93eadfc6",
 		"tests/compile-fail/interrupt-bad-signature-1.rs": "4c5cc9501b4787011316ddaecee819aa2bfbb2e675a2929da609e78849de6669",
-		"Cargo.toml": "db2ffac39899533cd884772831b8dd14696f2965356223cce3d9e524619ce32d",
+		"Cargo.toml": "8a07c9f033fb86ba9605a1817288121294f6b8e85cd5bb586545beced2c093e7",
 		"LICENSE-MIT": "035e70219855119df4273b3c5b97543ae82e0dd60c520416e759107c602f651b",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "a480b9190a0d40281cee3fa777473a4bce5dd9e72972092b66f1029c1bcef45f",

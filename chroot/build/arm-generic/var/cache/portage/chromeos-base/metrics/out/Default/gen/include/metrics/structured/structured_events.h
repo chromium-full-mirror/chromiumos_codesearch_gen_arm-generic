@@ -563,6 +563,25 @@ class BRILLO_EXPORT AdditionalActivity final : public ::metrics::structured::Eve
 
 };
 
+class BRILLO_EXPORT StateOverallTime final : public ::metrics::structured::EventBase {
+ public:
+  StateOverallTime();
+  ~StateOverallTime() override;
+
+  static constexpr uint64_t kEventNameHash = UINT64_C(5497427121012459949);
+  static constexpr uint64_t kProjectNameHash = UINT64_C(9675127341789951965);
+  static constexpr IdType kIdType = IdType::kProjectId;
+  static constexpr StructuredEventProto_EventType kEventType =
+    StructuredEventProto_EventType_REGULAR;
+
+  static constexpr uint64_t kStateCaseNameHash = UINT64_C(13460237998353539460);
+  StateOverallTime& SetStateCase(const int64_t value);
+
+  static constexpr uint64_t kOverallTimeNameHash = UINT64_C(9999132872938351554);
+  StateOverallTime& SetOverallTime(const int64_t value);
+
+};
+
 }  // namespace rmad
 
 namespace wi_fi_chipset {

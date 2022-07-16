@@ -1,8 +1,8 @@
 {
-	"package": "49dd6ddc39fc58947500be6095331df91dabf28a753209baccadfaeb36c95776",
+	"package": "276aa50858065b1676e70885e0dde5ac148ba8967e83855ef56803cff2202ed2",
 	"files": {
 		"Cargo.toml.orig": "306ebd23b76ffc1d1a51584ac1605cbb0bdc16b0fe901bac1ce8a90067731d10",
-		"Cargo.toml": "741bf8ac4666e8d891f4b2f6fc4f69e29780273505fb3682edcfa3b322191114",
+		"Cargo.toml": "1a45671217aa5f579025f8e4fc47716af21ce3fa140256dda4bea8975aa426c4",
 		"src/volatile_memory.rs": "ebfe238597cb60b7af164390904bfccf9178bce8d9f2236e73174b2e4c8f5bcc",
 		"src/endian.rs": "dcea6af430679b873493fcdd40a3c6b9235e6d6d8f2a191433fa0f6f4fa7f38b",
 		"src/lib.rs": "e1ed8e98961624cfe2a9a3db8fc0a239c6252226a64992e26ba90ece8071b63f",

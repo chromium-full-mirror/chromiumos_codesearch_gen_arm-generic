@@ -1,10 +1,10 @@
 {
-	"package": "50818a5ee4ac871bbea590c89ee855360bcbf29a5e8e192dc56ea15812dc4fc6",
+	"package": "5a3a8eb8e89f21337033f69725d3a4e5dc703afc36c6f9394e52766bc1e4a87c",
 	"files": {
-		"Cargo.toml.orig": "1c4c35c3afcd87978c9d18b32c3617c8867c259c910fff1a05559712e42062d1",
+		"Cargo.toml.orig": "8b15277a550cfa8c57b8c2d6e4f700f5090302a79abb1ccc321197f91c83f7cb",
 		"benches/bench.rs": "a80bf3cd446c9b6c0cca3865c4de047bdf4644b74cdf696822f8ff87adfa1fca",
 		"UNLICENSE": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c",
-		"Cargo.toml": "4cdd9bf740bbefde244e3ec46ca20fd5113dd7750e8d4230edc3c0c5de3201d8",
+		"Cargo.toml": "838ee9b19a974609c961b0aaa779c527ba87ed6d5f9b9b5d18d796cee9aca9f0",
 		"LICENSE-MIT": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
 		"README.md": "9d57556868344534de2489317e3c6bb611348ecd44438dcb982bd8d2a55a5a1b",
 		"COPYING": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",

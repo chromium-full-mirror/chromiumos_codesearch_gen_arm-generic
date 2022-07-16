@@ -1,14 +1,14 @@
 {
-	"package": "ae0bb143c892b4871e768df9e339ec0f9fbd5f045676b54e49ea7dab0ec7b072",
+	"package": "434a8bfaca23c5c3dae3ec04dc91bc2f0d6f3315224212ad355e847b10bcc028",
 	"files": {
-		"Cargo.toml.orig": "089a6f7c9651ee811d6c6270da314bd788b034bdb2c38df4203ecdebfe50a86f",
+		"Cargo.toml.orig": "b6fd2faa254f64e5f1108a8f1d1e8d21d35a38ea2fe749d07ace02fae07ff7f0",
 		"tests/scoped_threadpool.rs": "0f6475f440a57b6f91ecdd720228395f4feaa6165b136558f65267e185fd7127",
 		"tests/stack_overflow_crash.rs": "e8865d33d51a58f5c6639f457d91f82f2a4379cf5129094eaa521e95bad72d51",
 		"tests/simple_panic.rs": "916d40d36c1a0fad3e1dfb31550f0672641feab4b03d480f039143dbe2f2445f",
 		"tests/double_init_fail.rs": "f6f6e1b45bdba6ef8f18d1981e5356a6d5ef2f3bbecd0c8ce4341c126a3a6f1d",
 		"tests/init_zero_threads.rs": "57f66d1662f7782848d45942faa613a608188eb400943e4efa4c3ec3375e1dac",
 		"tests/scope_join.rs": "56f570c4b6a01704aacf93e7f17f89fe0f40f46ed6f9ede517abfe9adaf91f83",
-		"Cargo.toml": "254b1f5151f11a8ee209e669876317f669be586d957adaee6b549af090b8c996",
+		"Cargo.toml": "151ec0175d4e91052a23ece377b3b17941186b14ab21d1dd9a80f6182fc2467c",
 		"LICENSE-MIT": "0621878e61f0d0fda054bcbe02df75192c28bde1ecc8289cbd86aeba2dd72720",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "27837a5d829f46e889bf9a4a8dff964709c8a3cfc0a24bc4f0ef1e9034798b41",

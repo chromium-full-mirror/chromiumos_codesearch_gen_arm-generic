@@ -1,7 +1,7 @@
 {
-	"package": "39ef5bb9f7ef7d462c5fc036abeff2eb38a9f903007563f0359795e1db02d42c",
+	"package": "d6dd1dab3dd4b050ef684cc1e853c4c44795bfe163dc5461d493c05d4cddd315",
 	"files": {
-		"Cargo.toml.orig": "3b8a92f277f802b65fbc5e65174fd6b5891c926b7e51d944c38feac9abf5b862",
+		"Cargo.toml.orig": "b4b975265a565070b59e3a4224efdd58ec458d585b4a50fbbe917fc94283b852",
 		"benches/futures_unordered.rs": "fa2d3b5e6cdfe1e941d78c119a696fb583341fa0a0895ec2692e6d374ceb9a0e",
 		"benches/bilock.rs": "60b9e0814b8396e0320d299273c6f91c2ccc09a2bb59eec92df74a1f0919e54f",
 		"benches/thread_notify.rs": "1992b1e2b352fbc15a611d1318ac1bf6f19318d769086d55c80e6863f1b0e106",
@@ -35,7 +35,7 @@
 		"tests/stream.rs": "9cc5fc74be8e299491927f04008665da108aa47ba68d42256a07c79030da171e",
 		"tests/unsync-oneshot.rs": "e676b37a64e1d6c0816d55cf443d86249ec2ff8180f1fc0d009de51e6842dac8",
 		"tests/channel.rs": "cf5b59e84722b54e37aed7edaef5e2d1036b3ff7c278167228157dd4e9dae323",
-		"Cargo.toml": "08709513927c189d019c4dc993dc380a56d5f786d97311e5183dbf5009be951c",
+		"Cargo.toml": "0a920618f4b4a621608b06c56f6161e2a45a8af8a8f1db40dc0688eb92b02e36",
 		"LICENSE-MIT": "69036b033e4bb951821964dbc3d9b1efe6913a6e36d9c1f206de4035a1a85cc4",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "453b187f7ca8e04f4a11e0a1a57ac13019823161a4ba72835ed16d1539bc2bbd",

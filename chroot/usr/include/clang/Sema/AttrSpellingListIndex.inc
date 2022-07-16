@@ -904,6 +904,15 @@
         return 2;
     break;
   }
+  case AT_FunctionReturnThunks: {
+    if (Name == "function_return" && getSyntax() == AttributeCommonInfo::AS_GNU && Scope == "")
+        return 0;
+    if (Name == "function_return" && getSyntax() == AttributeCommonInfo::AS_CXX11 && Scope == "gnu")
+        return 1;
+    if (Name == "function_return" && getSyntax() == AttributeCommonInfo::AS_C2x && Scope == "gnu")
+        return 2;
+    break;
+  }
   case AT_GNUInline: {
     if (Name == "gnu_inline" && getSyntax() == AttributeCommonInfo::AS_GNU && Scope == "")
         return 0;

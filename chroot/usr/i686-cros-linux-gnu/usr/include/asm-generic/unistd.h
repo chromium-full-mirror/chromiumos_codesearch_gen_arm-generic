@@ -732,7 +732,9 @@ __SYSCALL(__NR_pkey_alloc,    sys_pkey_alloc)
 __SYSCALL(__NR_pkey_free,     sys_pkey_free)
 #define __NR_statx 291
 __SYSCALL(__NR_statx,     sys_statx)
-/* 292 through 402 are unassigned to sync up with generic numbers, don't use */
+#define __NR_rseq 293
+__SYSCALL(__NR_rseq, sys_rseq)
+/* 294 through 402 are unassigned to sync up with generic numbers, don't use */
 #if __BITS_PER_LONG == 32
 #define __NR_clock_gettime64 403
 __SYSCALL(__NR_clock_gettime64, sys_clock_gettime)

@@ -1,13 +1,13 @@
 {
-	"package": "2acf51ed5b1cc81c63d09ff338f58ebf65b571d3dc2885164c70a6756ef40cbb",
+	"package": "1b4ec1ba66a992fc1fcf73796ba7edfae4122100d92b6c57bca185d0ee367faf",
 	"files": {
-		"Cargo.toml.orig": "613108fea6fa1be8e7e4ce6bea53fdda55cd65924ae080c0b7a862a6ce68d7a9",
+		"Cargo.toml.orig": "fcecd8d63e7dcf0abca35130ffcafaad1206436ef5a7085203cc11e7887e6907",
 		"benches/bench.rs": "43546a3d5aed2dd8f71f5d236f4df63d82a3767aec90d86f4ab1d1496619b45d",
 		"tests/set.rs": "374bd312c01a01cf8953bbbc9494f431b260c2657d7c79cc250e977b869a76ad",
 		"tests/hasher.rs": "9a8fdf67e4415618e16729969c386eefe71408cded5d46cf7b67d969276a3452",
 		"tests/rayon.rs": "2286707a87b139f41902c82488c355b9fb402a3e734f392f3a73e87b9b932795",
 		"tests/serde.rs": "6bac8054db722dd049901b37a6e006535bac30f425eb5cd91af19b5bc1dfe78e",
-		"Cargo.toml": "e8fb539b77845c4bdad7b3d5ae2d2376aeecc80cbf929eb4fb3cd460bf2cafc5",
+		"Cargo.toml": "7cf3d6a69abc71c6a158c1bc95c323443c405e90da33e4df44f455acfdd0f9d7",
 		"clippy.toml": "7535949f908c6d9aea4f9a9f3a7625552c93fc29e963d059d40f4def9d77ea7b",
 		"LICENSE-MIT": "ff8f68cb076caf8cefe7a6430d4ac086ce6af2ca8ce2c4e5a2004d4552ef52a2",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",

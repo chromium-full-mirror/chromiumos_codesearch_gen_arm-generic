@@ -1,8 +1,8 @@
 {
-	"package": "0bdec04dac719cf347b41d69243e121e44336ae3248be6eda1306ce583e0c7f9",
+	"package": "fe321d27f7fb5520a8f75460cf9be8fd2e0c051f8930a22d2ef4fa9400d33842",
 	"files": {
-		"Cargo.toml.orig": "d24b8d523fa59f67bd198baf19248909b6bcc143089353b92fd7320bda5d714d",
-		"Cargo.lock": "9ca2de9cdd2a6a02d1a3fe1688de3df0c4760bf3c31c6de1346d3f6939a2bc6e",
+		"Cargo.toml.orig": "72c0355d0a62a0e602d9b8ba237fd45400c5993a56a1ebdd7e4e6eaa1129281e",
+		"Cargo.lock": "712aee4382d74a7a020474765298214c300371feb7a9c6643a6c82da9ebcc2c4",
 		"test": "0d62fdca7da12fc19ea5306b5de1d83e68d9365a029c043d524334da138b0304",
 		"HACKING.md": "17818f7a17723608f6bdbe6388ad0a913d4f96f76a16649aaf4e274b1fa0ea97",
 		"tests/regression.rs": "4d4aecf57ce5accf73fe8818267e8d45c9a15896d40093a5b5e1a09007a121a1",
@@ -39,7 +39,7 @@
 		"tests/word_boundary_ascii.rs": "cd0be5b5b485de0ba7994b42e2864585556c3d2d8bf5eab05b58931d9aaf4b87",
 		"tests/crazy.rs": "c0d56380dff19bdd5d7a3eb731d0e2dc564e169a1b73c81e1879b1e87f5f5f77",
 		"tests/test_nfa.rs": "f119fc43a018249c39c813d57096b0654ff69f337345f2bbd9b0e61cc9137285",
-		"Cargo.toml": "0f5fa5fc24f6ba4361eba038a2f6b405be875aa7faac0080bdc1fe7ae15037e4",
+		"Cargo.toml": "72c0355d0a62a0e602d9b8ba237fd45400c5993a56a1ebdd7e4e6eaa1129281e",
 		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "6125b1c70b9b560412529c54dc6aacdfd39cc82f69b5ad7776fa86e4cb720347",

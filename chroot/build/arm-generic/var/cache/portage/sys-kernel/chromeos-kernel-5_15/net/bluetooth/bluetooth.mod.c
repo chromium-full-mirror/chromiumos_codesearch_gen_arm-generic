@@ -30,4 +30,4 @@ MODULE_INFO(retpoline, "Y");
 MODULE_INFO(depends, "ecdh_generic");
 
 
-MODULE_INFO(srcversion, "BC528206C36354A871C0A21");
+MODULE_INFO(srcversion, "AEED14F2CAEE7F010E16D09");

@@ -1,8 +1,8 @@
 {
-	"package": "c79ed7c187eae5cf5b2e3ec5d01e5af0b71700330f85fdc6ba6bd495b87c9232",
+	"package": "a313caaf910b67bd1431448af1c7eb97617cc27f178ba58337787a4cda869438",
 	"files": {
-		"Cargo.toml.orig": "121f1fad826522d7e35ddc2317e8c2492230b57abed297bd626552e0188a010e",
-		"Cargo.lock": "7147cc538a39d064e5b9f0c5926c8edacf8a2c46f6a569bafb66ea5ebe76d3c9",
+		"Cargo.toml.orig": "6abb07e3e04e3e13bc57c16346e338d4a575b07fa19fc6034a26ec128997174e",
+		"Cargo.lock": "a2859a502d14fabdbf779eea79554db36d9ca612993e1a0fcbfa8fe73f4db831",
 		"tests/flags.rs": "5260622c155665f5d21399d145b889d5cf7b7573be7c866a587b1bee3d1d1711",
 		"tests/generics.rs": "efc5df250b6a7d7153f5631759a361dbd0056dc2ed222e4c345b05df7032feb9",
 		"tests/nested-subcommands.rs": "6e958296bec2570e676c74666c503e72f65ea7c49fcb4ee0273b687685de8044",
@@ -95,7 +95,7 @@
 		"tests/utils.rs": "1e666ab59ddb69f021f9e4488e9339cecc07fb2f4ba6dd64764af06edf000af3",
 		"tests/macro-errors.rs": "141f0632b4418df60faeaf0718821142e9f27e28b66386a1ed193bfc70a28793",
 		"tests/we_need_syn_full.rs": "af218506cfadcfc2ba56de4f537c035c724d612987a85ec36481ed31807a0a99",
-		"Cargo.toml": "ce1cc42cf506d1f69bc636951237c04d57f205e992940af6b59a69cbc0e4edbd",
+		"Cargo.toml": "f8bff674a71c6cbeac92bedee45b24519207533307c5a308c2a69d48e8242340",
 		"LICENSE-MIT": "8a44e151af3f22ffe260a07253995300e3600614fba131f0315aa7d9d5c88470",
 		"LICENSE-APACHE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
 		"README.md": "7c0e9e91191ae990bb39d6a2115d1f421f0765a882ce6645edb8f180401c0e85",

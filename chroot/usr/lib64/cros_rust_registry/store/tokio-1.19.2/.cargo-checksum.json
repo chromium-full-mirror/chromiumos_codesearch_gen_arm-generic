@@ -1,7 +1,7 @@
 {
-	"package": "a459047364da579f78410d425e767011a77d3bdf2bcbb413b06a47c82052bd94",
+	"package": "e4685747c060fa343f275e79e6e349a593de5ee095e9f5590aca6c3f54f4a331",
 	"files": {
-		"Cargo.toml.orig": "33565bbd450b6c3346d9ee52fd290de53076bd1e821e454b01a411e7784c2486",
+		"Cargo.toml.orig": "01b68cbb65774f0846ad428dec339a87bd980e36f893f0cc39dac51e16d05895",
 		"docs/reactor-refactor.md": "f7dcc42be8ae33446be399add73f234fc217a5d67478cfcac65601058ab50d47",
 		"tests/io_write.rs": "98668a8c8feae0f85714df1dfecfcd94fba4ba347bdc3d8aaa4ea8b175055c69",
 		"tests/signal_twice.rs": "bce33093eed151955d13c334d6d8a5bc5ca67cf5b37c246e435a24c15bc166a0",
@@ -115,7 +115,7 @@
 		"tests/io_read.rs": "beb3ec157a40b8c986e4d81a241e86898b5048010e6e799de42c4acbfd6c4356",
 		"tests/task_local.rs": "eb6fbfc6ba024885863dd5d633611f21bffdd2f96a7fbb596598dfc0c151bf9d",
 		"tests/rt_basic.rs": "c43409b5c9300c3cf8b14521ede32355124637558143dc4f25ff02dfdb7de1e5",
-		"Cargo.toml": "6535d73011fd3a630ccc40cf1881e6597044301aeb75caad33e7459d23e75b4b",
+		"Cargo.toml": "3634d43a657ea041d4614849b73a8be320210005f2ee268bcc2c02eac4aede0b",
 		"LICENSE": "697fc7385b1b0593f77d00db6e3ae8c146c2ccef505c4f09327bbedf952bfe35",
 		"README.md": "fcb522a61d41bfa31b3ee897b36058a8ee7dd957fcc7206ddedd4aee2c1054e3",
 		"CHANGELOG.md": "980b8cc5fbf63beeab6b72d6d7f7987c5a30df469e705a15c5e997604a1f2661",

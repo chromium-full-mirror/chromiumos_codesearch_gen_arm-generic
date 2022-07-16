@@ -1,9 +1,9 @@
 {
-	"package": "135c0cba3133e5b3aa18d9ddc5e42d10f971683f5b40c2ad274ff05ece80d012",
+	"package": "7b7db2b719f370af3a197b758246de9e78bc73b87f678e12a079c05c84f31e24",
 	"files": {
-		"Cargo.toml.orig": "7e44b0377c95501bd59e96ccb00d8f6e42049d950019a1908de9f182a329be17",
+		"Cargo.toml.orig": "c778dcbd92e9a13a2b36d0844e63709fb9b5c4b6ddc5f711a456a68edf85cc0a",
 		"tests/basic.rs": "b74d237be059e0a1fe342f3cbd11ceccc62403e52bb08e1fcf86f2230647bc7d",
-		"Cargo.toml": "f94b6f1e5eff84bea5464a34adc051ceba83bebe10d8c0d64c7d62c869253398",
+		"Cargo.toml": "655ca54a9e48d67aa115448dccfacaf74b16e6d06b6ac59145aeccd62a797c5b",
 		"README.md": "97d5802695b8438b1abfe69616079e2f1b08cd0a09a67aec38a97c120b3514ae",
 		"LICENSE.txt": "0041560f5d419c30e1594567f3b7ac2bc078ff6a68f437e0348ba85d9cf99112",
 		"src/finder.rs": "13c1626a267bf4aecbeea8f7229b87f324d4d785f5627b72a2a4e5cdd8196cfe",

@@ -382,6 +382,7 @@
 #define __NR_pkey_free 382
 #define __NR_statx 383
 #define __NR_arch_prctl 384
+#define __NR_rseq 386
 #define __NR_clock_gettime64 403
 #define __NR_clock_settime64 404
 #define __NR_clock_adjtime64 405

@@ -1,9 +1,9 @@
 {
-	"package": "890147ecf6fce5eef8574a5d9a15a6703637118d03ddf53fdcb607a8535029fc",
+	"package": "f513a694ab924bba7bfe995fb6008ac4cdaf24be9dd6c3f98411dd308ebedb42",
 	"files": {
-		"Cargo.toml.orig": "a162f4e46b39b32ac29d28bd42c8d0b7bb68c0d8f487e8a8707687c692d7036c",
-		"Cargo.lock": "19b19f1f8ac072f439a6718c0ae1aa6ed2da77b46bab2124fa954f05a8c1662c",
-		"Cargo.toml": "35476b0b265ee00ab5f1e01eaedaf5e222239f0118b4d97835bd58a4abc39fd6",
+		"Cargo.toml.orig": "bc37c1813c0d197dccc2a0c5dd59162db48a9c593da8a4ce3a3f1539b3a94c24",
+		"Cargo.lock": "d5afdc7103becc4f811121b2bbd00c2d18a436639f8ef35474c374ab8259f568",
+		"Cargo.toml": "5a81ab71016ca479e7c5b4b1b9fb8259d62e08abb5a8e7ab007057ba7155b71d",
 		"README.md": "0a9be8bc979ded11ffa906ec4fdafa0d22f9e1a86748654b6e03e6022c639ab0",
 		"LICENSE.txt": "97647e63047ef75a82ee2928b335df94f45c87e08777dc033393c73294f3a57a",
 		"src/bin/protobuf-bin-gen-rust-do-not-use.rs": "ce3a0ad1de076613018afb7bd3df409878b179b4f947d0a6dac636aacdb850ee",

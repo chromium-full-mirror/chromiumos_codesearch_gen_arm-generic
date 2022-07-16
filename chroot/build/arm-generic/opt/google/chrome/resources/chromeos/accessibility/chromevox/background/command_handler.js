@@ -5,30 +5,32 @@
 /**
  * @fileoverview ChromeVox commands.
  */
-import {AutoScrollHandler} from '/chromevox/background/auto_scroll_handler.js';
-import {BrailleBackground} from '/chromevox/background/braille/braille_background.js';
-import {BrailleCaptionsBackground} from '/chromevox/background/braille/braille_captions_background.js';
-import {ChromeVoxState} from '/chromevox/background/chromevox_state.js';
-import {ChromeVoxBackground} from '/chromevox/background/classic_background.js';
-import {Color} from '/chromevox/background/color.js';
-import {CommandHandlerInterface} from '/chromevox/background/command_handler_interface.js';
-import {DesktopAutomationInterface} from '/chromevox/background/desktop_automation_interface.js';
-import {TypingEcho} from '/chromevox/background/editing/editable_text_base.js';
-import {EventSourceState} from '/chromevox/background/event_source.js';
-import {GestureInterface} from '/chromevox/background/gesture_interface.js';
-import {Output} from '/chromevox/background/output/output.js';
-import {PhoneticData} from '/chromevox/background/phonetic_data.js';
-import {ChromeVoxPrefs} from '/chromevox/background/prefs.js';
-import {SmartStickyMode} from '/chromevox/background/smart_sticky_mode.js';
-import {AbstractTts} from '/chromevox/common/abstract_tts.js';
-import {CommandStore} from '/chromevox/common/command_store.js';
-import {ChromeVoxEvent, CustomAutomationEvent} from '/chromevox/common/custom_automation_event.js';
-import {EventSourceType} from '/chromevox/common/event_source_type.js';
-import {GestureGranularity} from '/chromevox/common/gesture_command_data.js';
-import {ChromeVoxKbHandler} from '/chromevox/common/keyboard_handler.js';
-import {PanelCommand, PanelCommandType} from '/chromevox/common/panel_command.js';
-import {CursorRange} from '/common/cursors/range.js';
-import {EventGenerator} from '/common/event_generator.js';
+import {Cursor, CursorUnit} from '../../common/cursors/cursor.js';
+import {CursorRange} from '../../common/cursors/range.js';
+import {EventGenerator} from '../../common/event_generator.js';
+import {AbstractTts} from '../common/abstract_tts.js';
+import {CommandStore} from '../common/command_store.js';
+import {ChromeVoxEvent, CustomAutomationEvent} from '../common/custom_automation_event.js';
+import {EventSourceType} from '../common/event_source_type.js';
+import {GestureGranularity} from '../common/gesture_command_data.js';
+import {ChromeVoxKbHandler} from '../common/keyboard_handler.js';
+import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
+
+import {AutoScrollHandler} from './auto_scroll_handler.js';
+import {BrailleBackground} from './braille/braille_background.js';
+import {BrailleCaptionsBackground} from './braille/braille_captions_background.js';
+import {ChromeVoxState} from './chromevox_state.js';
+import {ChromeVoxBackground} from './classic_background.js';
+import {Color} from './color.js';
+import {CommandHandlerInterface} from './command_handler_interface.js';
+import {DesktopAutomationInterface} from './desktop_automation_interface.js';
+import {TypingEcho} from './editing/editable_text_base.js';
+import {EventSourceState} from './event_source.js';
+import {GestureInterface} from './gesture_interface.js';
+import {Output} from './output/output.js';
+import {PhoneticData} from './phonetic_data.js';
+import {ChromeVoxPrefs} from './prefs.js';
+import {SmartStickyMode} from './smart_sticky_mode.js';
 
 const AutomationNode = chrome.automation.AutomationNode;
 const Dir = constants.Dir;
@@ -417,15 +419,15 @@ export class CommandHandler extends CommandHandlerInterface {
       case 'nextCharacter':
         didNavigate = true;
         speechProps['phoneticCharacters'] = true;
-        unit = cursors.Unit.CHARACTER;
-        current = current.move(cursors.Unit.CHARACTER, Dir.FORWARD);
+        unit = CursorUnit.CHARACTER;
+        current = current.move(CursorUnit.CHARACTER, Dir.FORWARD);
         break;
       case 'previousCharacter':
         dir = Dir.BACKWARD;
         didNavigate = true;
         speechProps['phoneticCharacters'] = true;
-        unit = cursors.Unit.CHARACTER;
-        current = current.move(cursors.Unit.CHARACTER, dir);
+        unit = CursorUnit.CHARACTER;
+        current = current.move(CursorUnit.CHARACTER, dir);
         break;
       case 'nativeNextCharacter':
       case 'nativePreviousCharacter':
@@ -439,14 +441,14 @@ export class CommandHandler extends CommandHandlerInterface {
         return true;
       case 'nextWord':
         didNavigate = true;
-        unit = cursors.Unit.WORD;
-        current = current.move(cursors.Unit.WORD, Dir.FORWARD);
+        unit = CursorUnit.WORD;
+        current = current.move(CursorUnit.WORD, Dir.FORWARD);
         break;
       case 'previousWord':
         dir = Dir.BACKWARD;
         didNavigate = true;
-        unit = cursors.Unit.WORD;
-        current = current.move(cursors.Unit.WORD, dir);
+        unit = CursorUnit.WORD;
+        current = current.move(CursorUnit.WORD, dir);
         break;
       case 'nativeNextWord':
       case 'nativePreviousWord':
@@ -463,15 +465,15 @@ export class CommandHandler extends CommandHandlerInterface {
       case 'forward':
       case 'nextLine':
         didNavigate = true;
-        unit = cursors.Unit.LINE;
-        current = current.move(cursors.Unit.LINE, Dir.FORWARD);
+        unit = CursorUnit.LINE;
+        current = current.move(CursorUnit.LINE, Dir.FORWARD);
         break;
       case 'backward':
       case 'previousLine':
         dir = Dir.BACKWARD;
         didNavigate = true;
-        unit = cursors.Unit.LINE;
-        current = current.move(cursors.Unit.LINE, dir);
+        unit = CursorUnit.LINE;
+        current = current.move(CursorUnit.LINE, dir);
         break;
       case 'nextButton':
         dir = Dir.FORWARD;
@@ -647,8 +649,8 @@ export class CommandHandler extends CommandHandlerInterface {
         skipSettingSelection = true;
         didNavigate = true;
         unit = (EventSourceState.get() === EventSourceType.TOUCH_GESTURE) ?
-            cursors.Unit.GESTURE_NODE :
-            cursors.Unit.NODE;
+            CursorUnit.GESTURE_NODE :
+            CursorUnit.NODE;
         current = current.move(unit, dir);
         current = this.skipLabelOrDescriptionFor(current, dir);
         break;
@@ -780,7 +782,7 @@ export class CommandHandler extends CommandHandlerInterface {
 
           const prevRange = ChromeVoxState.instance.currentRange;
           const newRange = ChromeVoxState.instance.currentRange.move(
-              cursors.Unit.NODE, Dir.FORWARD);
+              CursorUnit.NODE, Dir.FORWARD);
 
           // Stop if we've wrapped back to the document.
           const maybeDoc = newRange.start.node;
@@ -913,10 +915,9 @@ export class CommandHandler extends CommandHandlerInterface {
           const root = ChromeVoxState.instance.currentRange.start.node.root;
           if (root && root.selectionStartObject && root.selectionEndObject) {
             const sel = new CursorRange(
-                new cursors.Cursor(
+                new Cursor(
                     root.selectionStartObject, root.selectionStartOffset),
-                new cursors.Cursor(
-                    root.selectionEndObject, root.selectionEndOffset));
+                new Cursor(root.selectionEndObject, root.selectionEndOffset));
             const o =
                 new Output()
                     .format('@end_selection')
@@ -1495,7 +1496,7 @@ export class CommandHandler extends CommandHandlerInterface {
         ancestor = ancestor.parent;
       }
       if (ancestor) {
-        current = current.move(cursors.Unit.NODE, dir);
+        current = current.move(CursorUnit.NODE, dir);
       } else {
         break;
       }

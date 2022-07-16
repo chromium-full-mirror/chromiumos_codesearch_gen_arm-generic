@@ -1,9 +1,9 @@
 {
-	"package": "149fe6ddc2dfdb4451f010d1a1ea9c790563e2a729942fd9e882811c1725b58c",
+	"package": "cd82eaf87b7cbff69706a9e05b742c82ee5bffa75d6eb81dfe018bd82a975cc2",
 	"files": {
-		"Cargo.toml.orig": "d122ad8ac0fddd09f2c6755f7054443f0f261411503fc2b2a60ab1cbc3647db3",
-		"Cargo.lock": "a57490bf113206c3e1c20230601a2f14bebd42fef64ae6ccbdaf8580104ae55a",
-		"Cargo.toml": "4fdcf373233cd5d5ac94630aaa8786c459c6159618f43fb59ee16d829e5995c3",
+		"Cargo.toml.orig": "decb75604013c8afd30fb90a0911d92ca20afc12270b82ec00f490e205d3b020",
+		"Cargo.lock": "f6fc216d95deeb2331d35814a71339d590b5129babe614c285f6e26417708f08",
+		"Cargo.toml": "e6d28fa3c7d4f84d3a3840f2050b0659ab70e7e9617f0331cbd86583f7583bd3",
 		"examples/properties_msgitem.rs": "b51e2cd87dc38696e8f0f98bac974d802ba00d69e0aff1102460fdfbf4448ffc",
 		"examples/adv_server.rs": "b1c9b8ebfc73cf45f9d093f6c42b716dc19623f9ba9651a3fccaf59049808b72",
 		"examples/unity_focused_window.rs": "f1098e4ebce0feda47af862c6f3e755d6d74f78928731a75f15416bd76577fe1",

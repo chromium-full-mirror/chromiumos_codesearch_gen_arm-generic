@@ -1,7 +1,7 @@
 /*
  *
  * Automatically generated file; DO NOT EDIT.
- * Linux/arm 5.15.53 Kernel Configuration
+ * Linux/arm 5.15.55 Kernel Configuration
  *
  */
 #define CONFIG_RING_BUFFER 1
@@ -787,7 +787,7 @@
 #define CONFIG_SKB_EXTENSIONS 1
 #define CONFIG_PM_OPP 1
 #define CONFIG_GPIO_CDEV 1
-#define CONFIG_CC_VERSION_TEXT "Chromium OS 15.0_pre458507_p20220602-r8 clang version 15.0.0 (/var/tmp/portage/sys-devel/llvm-15.0_pre458507_p20220602-r8/work/llvm-15.0_pre458507_p20220602/clang a58d0af058038595c93de961b725f86997cf8d4a)"
+#define CONFIG_CC_VERSION_TEXT "Chromium OS 15.0_pre458507_p20220602-r10 clang version 15.0.0 (/var/tmp/portage/sys-devel/llvm-15.0_pre458507_p20220602-r10/work/llvm-15.0_pre458507_p20220602/clang a58d0af058038595c93de961b725f86997cf8d4a)"
 #define CONFIG_NET_IP_TUNNEL_MODULE 1
 #define CONFIG_MTD_CFI_I1 1
 #define CONFIG_NF_NAT 1

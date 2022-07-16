@@ -1,5 +1,5 @@
 {
-	"package": "964d661bda6947f61f5f17037ee8a8806ad7a7595dcebca7a32dbea3ad149ec7",
+	"package": "4df3d46cb008ed0558bca2c18feaeb1dbc2adf2063708c344ea190ee89ede02f",
 	"files": {
 		"Cargo.toml.orig": "f29bf9835314b08f9d0b034088176ce358136459cbe37bb3025a89cd7a1b6d5f",
 		"benches/decode.rs": "2da1d892d16af0faa3aed7bdb3b5af8550efd5619204071b2afce532f70ada86",
@@ -8,7 +8,7 @@
 		"benches/copy_from.rs": "0dbfaaf1037170f912833bd4c36ba23515d3c47b7008f47d43b82f967760e4ec",
 		"CHANGES.md": "51b812a2384ab0dd92240ccfdc50102531a5d66c1f138aaa52d01dffd81a975a",
 		"docs/2019-04-23-memory-unsafety.md": "b59a9af84bdb5efa1bc1f33c8aa22ff42590701817fb03f55ca2dd50af91bb8d",
-		"Cargo.toml": "9c82a115df021464f1ccc072e77a78a7df3efd0ebb281debd2dba3ca065d3082",
+		"Cargo.toml": "f7274322e57292d48cd099471faa03d0ff4feb3c265dd76e4b19d1350b1ce022",
 		"clippy.toml": "d7a417d90eaf33103036c79a5b178bbf6d12f042b0d89a3d5dad8146ac67b452",
 		"release.sh": "70f8d6272ab65f5ca80ac95e6ceeeb5041f9c183c87a1fdac2b7f2d16e0827d4",
 		"LICENSE": "c7766d2e29f88a4be81b6ac6216c62d2d0918c7d3f2fc98be6fecac8f6595e60",

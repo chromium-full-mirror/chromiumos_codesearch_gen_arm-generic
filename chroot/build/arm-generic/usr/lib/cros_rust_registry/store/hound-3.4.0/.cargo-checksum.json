@@ -1,12 +1,12 @@
 {
-	"package": "a0783642d0267c5f6e9ff69b500bd35a39817ce01284b7e5bda176c758fc1de6",
+	"package": "4d0c07349ea0489ad8d221a3def8202f982758e6e33a9f5aeb3c1f723e4f014e",
 	"files": {
 		"contributing.md": "29266cc64b33e30df489c35aa3fd5b28cd9475d36b68711e08f01981648d2302",
 		"license": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
 		"Cargo.toml.orig": "8925b7a948e8049e85261647f5d50cf126e19142e6512b7bd77bca3cc65a150c",
 		"Cargo.lock": "4e2a6f7245018bd3f66bb09b161999072bffdcd2b4ae6f4425b13e891bdeaffc",
 		"changelog.md": "1c785cbb6841c7d82afdd4a63085587452a565a88ee163d28cffef197f4cb55f",
-		"Cargo.toml": "0be0dc17946625753160e768633def4d900a46816526eaebdcfb5027dfc6a50c",
+		"Cargo.toml": "c903096db572299632e6746ab53c608fbea13a1a64e36fb7325514acfb2512ab",
 		"testsamples/pcmwaveformat-8bit-44100Hz-mono.wav": "58727f6cb954dbca1a0592d6fb33c71d103419c3857a246d8578ef1d64e270fb",
 		"testsamples/nonstandard-01.wav": "3377a068b31b7db0f00744b3dfaeee19f046621f4106fc463d8a743f47c015b2",
 		"testsamples/waveformatex-16bit-44100Hz-stereo.wav": "83346c35b24de1950b52988be8a90449969bf6eb4a40b194ecd66a08afb44cac",

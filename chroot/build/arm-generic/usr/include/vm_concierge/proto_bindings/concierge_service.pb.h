@@ -2499,6 +2499,7 @@ class StartArcVmRequest final :
     kArcGeneratePlayAutoInstallFieldNumber = 30,
     kDisableDownloadProviderFieldNumber = 31,
     kGuestZramSizeFieldNumber = 32,
+    kGuestSwappinessFieldNumber = 33,
   };
   // repeated .vm_tools.concierge.DiskImage disks = 2;
   int disks_size() const;
@@ -2845,6 +2846,15 @@ class StartArcVmRequest final :
   void _internal_set_guest_zram_size(int32_t value);
   public:
 
+  // int32 guest_swappiness = 33;
+  void clear_guest_swappiness();
+  int32_t guest_swappiness() const;
+  void set_guest_swappiness(int32_t value);
+  private:
+  int32_t _internal_guest_swappiness() const;
+  void _internal_set_guest_swappiness(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:vm_tools.concierge.StartArcVmRequest)
  private:
   class _Internal;
@@ -2884,6 +2894,7 @@ class StartArcVmRequest final :
   bool arc_generate_play_auto_install_;
   bool disable_download_provider_;
   int32_t guest_zram_size_;
+  int32_t guest_swappiness_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_concierge_5fservice_2eproto;
 };
@@ -14558,6 +14569,26 @@ inline void StartArcVmRequest::_internal_set_guest_zram_size(int32_t value) {
 inline void StartArcVmRequest::set_guest_zram_size(int32_t value) {
   _internal_set_guest_zram_size(value);
   // @@protoc_insertion_point(field_set:vm_tools.concierge.StartArcVmRequest.guest_zram_size)
+}
+
+// int32 guest_swappiness = 33;
+inline void StartArcVmRequest::clear_guest_swappiness() {
+  guest_swappiness_ = 0;
+}
+inline int32_t StartArcVmRequest::_internal_guest_swappiness() const {
+  return guest_swappiness_;
+}
+inline int32_t StartArcVmRequest::guest_swappiness() const {
+  // @@protoc_insertion_point(field_get:vm_tools.concierge.StartArcVmRequest.guest_swappiness)
+  return _internal_guest_swappiness();
+}
+inline void StartArcVmRequest::_internal_set_guest_swappiness(int32_t value) {
+  
+  guest_swappiness_ = value;
+}
+inline void StartArcVmRequest::set_guest_swappiness(int32_t value) {
+  _internal_set_guest_swappiness(value);
+  // @@protoc_insertion_point(field_set:vm_tools.concierge.StartArcVmRequest.guest_swappiness)
 }
 
 // -------------------------------------------------------------------

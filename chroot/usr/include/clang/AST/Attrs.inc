@@ -4243,6 +4243,50 @@ public:
   static bool classof(const Attr *A) { return A->getKind() == attr::FormatArg; }
 };
 
+class FunctionReturnThunksAttr : public InheritableAttr {
+public:
+  enum Kind {
+    Keep,
+    Extern
+  };
+private:
+  Kind thunkType;
+
+public:
+  enum Spelling {
+    GNU_function_return = 0,
+    CXX11_gnu_function_return = 1,
+    C2x_gnu_function_return = 2,
+  SpellingNotCalculated = 15
+
+  };
+
+  // Factory methods
+  static FunctionReturnThunksAttr *CreateImplicit(ASTContext &Ctx, Kind ThunkType, const AttributeCommonInfo &CommonInfo = {SourceRange{}});
+  static FunctionReturnThunksAttr *Create(ASTContext &Ctx, Kind ThunkType, const AttributeCommonInfo &CommonInfo);
+  static FunctionReturnThunksAttr *CreateImplicit(ASTContext &Ctx, Kind ThunkType, SourceRange Range, AttributeCommonInfo::Syntax Syntax);
+  static FunctionReturnThunksAttr *Create(ASTContext &Ctx, Kind ThunkType, SourceRange Range, AttributeCommonInfo::Syntax Syntax);
+
+  // Constructors
+  FunctionReturnThunksAttr(ASTContext &Ctx, const AttributeCommonInfo &CommonInfo
+              , Kind ThunkType
+             );
+
+  FunctionReturnThunksAttr *clone(ASTContext &C) const;
+  void printPretty(raw_ostream &OS,
+                   const PrintingPolicy &Policy) const;
+  const char *getSpelling() const;
+  Kind getThunkType() const {
+    return thunkType;
+  }
+
+  static bool ConvertStrToKind(StringRef Val, Kind &Out);
+  static const char *ConvertKindToStr(Kind Val);
+
+
+  static bool classof(const Attr *A) { return A->getKind() == attr::FunctionReturnThunks; }
+};
+
 class GNUInlineAttr : public InheritableAttr {
 public:
   enum Spelling {

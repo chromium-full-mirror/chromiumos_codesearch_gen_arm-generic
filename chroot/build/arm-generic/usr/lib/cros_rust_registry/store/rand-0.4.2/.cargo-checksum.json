@@ -1,7 +1,7 @@
 {
-	"package": "7086802abd417b7c8988c61dbe0362fbe0762225f7111d9972d914951c051376",
+	"package": "633b09a82651a6b2bcb88a31e57f88a8d1351f0e6e85938dd610eb0d984bc741",
 	"files": {
-		"Cargo.toml.orig": "02e9cb4d497d9ffbcb3cc0a227a9c7497e905a7d889a175b048aa03f8600cb16",
+		"Cargo.toml.orig": "09b6978ce09c8df87e5fe605d1ff5ea920747da588523df8f2f5d1ca3292db80",
 		"benches/bench.rs": "35c4ab609f2a5f5aab6c52c257415258dc0780621b492b5a82bb12d048cab6db",
 		"benches/distributions/exponential.rs": "99cb59c013a0b6bb390d34c5649b341fc3b88ea7df0caf2470bdda8798f9fe3d",
 		"benches/distributions/normal.rs": "4e10c18cb583ccb96301ea953c8e0aa9ee3b6662060271d1b8d19ca23364dc6b",
@@ -10,7 +10,7 @@
 		"benches/misc.rs": "bd2f7c5a16f0fcb59022d5aeef66ed3c94e89ebf6c06667851dd23d0b1595504",
 		"benches/generators.rs": "aaa2f1dbfb399df8323d8a5796b92add6210cd5f0f1d916895ffdd81d60f812b",
 		"appveyor.yml": "8796156caf7041ef2a43f7a313df21ea639de3f2563b6181bba1096b1c489f1b",
-		"Cargo.toml": "4af2e376c87edb80c14e402e7e2e70d15318136691996418c4132dcbbb477bf3",
+		"Cargo.toml": "7e4b2ec96afbb9faad79c08d9537a0127686043876e0e8c598db9052e2ead7c3",
 		"LICENSE-MIT": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "f15d6584b8f417cc743ebcad6b69776874a6ac30807d0ce0ed28f3779be1f151",

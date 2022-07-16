@@ -1,5 +1,5 @@
 {
-	"package": "35137b548cf24f7337f22fcdd5a6e2a18df02f9523bb35087dabb6aef089e7a6",
+	"package": "c8e3c174f5abade7ed10e694546e1d45bb4ca931a3ac36cc7018908515583cba",
 	"files": {
 		"Cargo.toml.orig": "bca19e693a853b02a1e8a1e722f8704ae8e7b77a2dd45ad103d3225611ea66b5",
 		"rust-toolchain.toml": "6bbb61302978c736b2da03e4fb40e3beab908f85d533ab46fd541e637b5f3e0f",
@@ -31,7 +31,7 @@
 		"tests/drop/mod.rs": "08c3e553c1cc0d2dbd936fc45f4b5b1105057186affd6865e8d261e05f0f0646",
 		"tests/test_ffi.rs": "d0cb4c1d6d9154090982dee72ae3ebe05a5981f976058c3250f1c9da5a45edef",
 		"tests/common/mod.rs": "f9088c2d7afafa64ff730b629272045b776bfafc2f5957508242da630635f2e1",
-		"Cargo.toml": "723bbd7db853882daed348689103b67c574bd101a9599be7fe5001fba819cdc5",
+		"Cargo.toml": "c85af3364bd996915483d6ab690af7636ed9d61ca8a8f150bebd6d40cabeb332",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "f6bffe3676b128afe14aaf91c972d69c37f2e5afe4e02b99a974f7b7393f4cda",

@@ -1,8 +1,8 @@
 {
-	"package": "5db2b8ff7691b84f10941e55aa6aff6c39cf4ff11b886fa9a35850acac93e208",
+	"package": "ac62c165910a87f0698ad1dbccfa426cca19a05fe9fc6a36a6e0e12972b876a4",
 	"files": {
-		"Cargo.toml.orig": "1d536e56dd4887a5854edb0231b768719daefb9a80402f3d0e133efc1215133b",
-		"Cargo.lock": "ae30f7b852366579f5af0cc2d0b328f92bea2acd5292513c504403b0e28e51e6",
+		"Cargo.toml.orig": "3e0068f1f3750b8022085ab9d72db696cfdca34d0abf6bef920e66db3812432d",
+		"Cargo.lock": "f048a1042d6bb50a8e4190d7b80eff5c24726f10434ed814f1ea19cee178df81",
 		"benches/bench.rs": "aafdce667395776862af8a05cdb47f892c4cc029db68aff806128d110c8c4ebc",
 		"tests/input-tests.rs": "86fba951baff502d91f19fabb8746f129089d0f55f194d321dfdd0ffda915da8",
 		"tests/simple-test.rs": "6124fe5b14ab1f83348eef2d58c18bd02e52a9e517af9f125a0bc8a9ae209941",
@@ -10,7 +10,7 @@
 		"tests/unblock-test.rs": "f4a474b808bc0832cf6b1c0e1db754d81a2ae2ea6cf1f539838ac23051e5f8f7",
 		"tests/support/mod.rs": "8b6bc6fb49bd5be73c372ea37354077333e1efb243ed21c48e0740a2fd874ce9",
 		"tests/network.rs": "51f4a0274f44505f5b8455800ca14b27042c9be6b618c36a8a76364f53aa54e3",
-		"Cargo.toml": "c03cd8e233016b1728c36a6d6d363fd69afc66f7503beb3143a3409ecd4ea1af",
+		"Cargo.toml": "ef1b86d11641f216c29f86feb99389cd91ff92aab544ef969394a71fa18a6274",
 		"LICENSE-MIT": "e69bb98ae371fc43e5ef9cb1fc648762faf92edd93a8afd71411fac419b1b550",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "f203575ebc9f61ddefdedd7fdbd9d39c5673026ca5dfc7ba710d499f082a799f",

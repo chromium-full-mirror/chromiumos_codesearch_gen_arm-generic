@@ -38,6 +38,7 @@
       "//imageloader:all",
       "//libutf:all",
       "//camera/common:all",
+      "//runtime_probe:all",
       "//debugd/client:all",
       "//missive:all",
       "//patchpanel/dbus:all",
@@ -58,6 +59,7 @@
       "//libtextclassifier:all",
       "//camera/hal/usb:all",
       "//libec:all",
+      "//runtime_probe/client:all",
       "//ml/ml-client:all",
       "//hardware_verifier/proto:all",
       "//diagnostics/grpc:all",
@@ -101,7 +103,6 @@
       "//secure-wipe:all",
       "//rgbkbd:all",
       "//system-proxy:all",
-      "//runtime_probe:all",
       "//lexmark-fax-pnh:all",
       "//secanomalyd:all",
       "//camera/tools/cros_camera_tool:all",
@@ -551,7 +552,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -571,7 +572,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "check_includes": true,
     "configs": [
@@ -640,6 +641,7 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/cryptohome_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/shill-net_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/imageloader_libtestrunner.a",
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/missive_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/patchpanel-client_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/mems_setup_libtestrunner.a",
@@ -676,7 +678,6 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/ml_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/rgbkbd_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/system-proxy_libtestrunner.a",
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lexmark-fax-pnh_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/secanomalyd_libtestrunner.a",
       "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/hardware_verifier_libtestrunner.a",
@@ -23095,7 +23096,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23116,7 +23117,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23256,7 +23257,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23275,7 +23276,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23449,7 +23450,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23468,7 +23469,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23669,7 +23670,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23688,7 +23689,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23881,7 +23882,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -23900,7 +23901,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24087,7 +24088,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24106,7 +24107,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24294,7 +24295,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24313,7 +24314,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24594,7 +24595,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24613,7 +24614,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24800,7 +24801,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24819,7 +24820,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24988,7 +24989,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25007,7 +25008,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25186,7 +25187,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25205,7 +25206,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25402,7 +25403,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25421,7 +25422,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25614,7 +25615,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25633,7 +25634,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25826,7 +25827,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25845,7 +25846,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26038,7 +26039,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26057,7 +26058,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26250,7 +26251,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26269,7 +26270,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26454,7 +26455,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26473,7 +26474,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26656,7 +26657,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26675,7 +26676,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26868,7 +26869,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26887,7 +26888,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27080,7 +27081,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27099,7 +27100,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27293,7 +27294,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27312,7 +27313,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -29968,7 +29969,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -29987,7 +29988,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -30167,7 +30168,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -30186,7 +30187,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -48724,6 +48725,7 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/device_claimer_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/device_id_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/device_info_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/device_portal_detector_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/device_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/dns_client_test.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/shill/dns_util_test.cc",
@@ -54873,7 +54875,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -54893,7 +54895,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "check_includes": true,
     "configs": [
@@ -55021,7 +55023,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -55041,7 +55043,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\""
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\""
     ],
     "check_includes": true,
     "configs": [
@@ -55266,6 +55268,1723 @@
     "testonly": false,
     "toolchain": "//common-mk/toolchain:toolchain",
     "type": "action",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/function_templates:function_templates": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/function_templates:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "deps": [],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/function_templates/network.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/function_templates/storage.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/functions:functions": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/functions:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "deps": [
+      "//runtime_probe/function_templates:function_templates"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "ec",
+      "base",
+      "pthread",
+      "usb-1.0",
+      "pcrecpp"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/all_functions.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ata_storage.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/cellular_network.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ectool_i2cread.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/edid.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ethernet_network.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_battery.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_network.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_storage.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/gpu.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/input_device.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/memory.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/mmc_storage.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/nvme_storage.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sequence.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sysfs.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/tcpc.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/usb_camera.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/vpd_cached.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/wireless_network.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/functions:test": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/functions:target_defaults",
+      "//common-mk:test",
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//runtime_probe/functions:functions",
+      "//runtime_probe/utils:test_utils"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pthread",
+      "-Wl,-rpath=$ORIGIN/lib/",
+      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "ec",
+      "base",
+      "pthread",
+      "usb-1.0",
+      "pcrecpp",
+      "gmock",
+      "gtest"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/edid_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/gpu_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sequence_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sysfs_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/tcpc_test.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/system:system": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/system:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_impl.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_runtime_impl.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/helper_invoker_debugd_impl.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/system:test_utils": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread"
+    ],
+    "metadata": {},
+    "public": "*",
+    "public_configs": [
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_mock_impl.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/fake_helper_invoker.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/utils:test": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/utils:target_defaults",
+      "//common-mk:test",
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//runtime_probe/utils:test_utils",
+      "//runtime_probe/utils:utils"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pthread",
+      "-Wl,-rpath=$ORIGIN/lib/",
+      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread",
+      "gmock",
+      "gtest"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_test_utils_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_utils_test.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/utils:test_utils": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/utils:target_defaults",
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//runtime_probe/system:test_utils"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread"
+    ],
+    "metadata": {},
+    "public": "*",
+    "public_configs": [
+      "//runtime_probe/system:target_defaults",
+      "//runtime_probe/system:test_pkg_deps"
+    ],
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_test_utils.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/function_test_utils.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/utils:utils": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe/utils:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64"
+    ],
+    "deps": [],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/edid.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_utils.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/input_device.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/pipe_utils.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/type_utils.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/value_utils.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe:all": {
+    "deps": [
+      "//runtime_probe:runtime_probe",
+      "//runtime_probe:unittest_runner"
+    ],
+    "metadata": {},
+    "public": "*",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "group",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe:dbus-adaptors": {
+    "args": [
+      "go-generate-chromeos-dbus-bindings",
+      "-adaptor=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/{{source_name_part}}.h",
+      "-service-config=/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/dbus-service-config.json",
+      "{{source}}"
+    ],
+    "deps": [],
+    "metadata": {},
+    "output_patterns": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/{{source_name_part}}.h"
+    ],
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/org.chromium.RuntimeProbe.h"
+    ],
+    "public": "*",
+    "script": "/b/s/w/ir/cache/builder/chromiumos/src/platform2/common-mk/file_generator_wrapper.py",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/org.chromium.RuntimeProbe.xml"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "action_foreach",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe:lib": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//runtime_probe:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//runtime_probe:dbus-adaptors",
+      "//runtime_probe/functions:functions",
+      "//runtime_probe/system:system",
+      "//runtime_probe/utils:utils"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread",
+      "cros_config",
+      "protobuf",
+      "system_api-hps-protos",
+      "system_api-power_manager-protos",
+      "system_api-authpolicy-protos",
+      "system_api-biod-protos",
+      "system_api-protos",
+      "system_api-kerberos-protos",
+      "system_api-login_manager-protos",
+      "system_api-lorgnette-protos",
+      "system_api-smbprovider-protos",
+      "system_api-vm_concierge-protos",
+      "system_api-vm_applications-protos",
+      "system_api-vm_disk_management-protos",
+      "system_api-vm_launch-protos",
+      "system_api-vm_sk_forwarding-protos",
+      "system_api-vm_cicerone-protos",
+      "system_api-seneschal-protos",
+      "system_api-oobe_config-protos",
+      "system_api-runtime_probe-protos",
+      "system_api-dlcservice-protos",
+      "system_api-update_engine-protos",
+      "system_api-vm_plugin_dispatcher-protos",
+      "system_api-u2f-protos",
+      "system_api-chunneld-protos",
+      "system_api-system_proxy-protos",
+      "system_api-vm_permission_service-protos",
+      "system_api-anomaly_detector-protos",
+      "system_api-minios-protos",
+      "system_api-dlp-protos",
+      "system_api-rmad-protos",
+      "system_api-fusebox-protos",
+      "system_api-privacy_screen-protos",
+      "system_api-cdm_oemcrypto-protos",
+      "system_api-ml-protos",
+      "system_api-lvmd-protos",
+      "system_api",
+      "vboot_host",
+      "ec",
+      "usb-1.0",
+      "pcrecpp"
+    ],
+    "metadata": {},
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/component_category.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/field_converter.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_loader_impl.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function_argument.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_result_checker.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_statement.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system_property_impl.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/daemon.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "source_set",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe:runtime_probe": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-fPIE",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//common-mk:pie",
+      "//runtime_probe:target_defaults"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//runtime_probe:lib"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pie"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread",
+      "cros_config",
+      "protobuf",
+      "system_api-hps-protos",
+      "system_api-power_manager-protos",
+      "system_api-authpolicy-protos",
+      "system_api-biod-protos",
+      "system_api-protos",
+      "system_api-kerberos-protos",
+      "system_api-login_manager-protos",
+      "system_api-lorgnette-protos",
+      "system_api-smbprovider-protos",
+      "system_api-vm_concierge-protos",
+      "system_api-vm_applications-protos",
+      "system_api-vm_disk_management-protos",
+      "system_api-vm_launch-protos",
+      "system_api-vm_sk_forwarding-protos",
+      "system_api-vm_cicerone-protos",
+      "system_api-seneschal-protos",
+      "system_api-oobe_config-protos",
+      "system_api-runtime_probe-protos",
+      "system_api-dlcservice-protos",
+      "system_api-update_engine-protos",
+      "system_api-vm_plugin_dispatcher-protos",
+      "system_api-u2f-protos",
+      "system_api-chunneld-protos",
+      "system_api-system_proxy-protos",
+      "system_api-vm_permission_service-protos",
+      "system_api-anomaly_detector-protos",
+      "system_api-minios-protos",
+      "system_api-dlp-protos",
+      "system_api-rmad-protos",
+      "system_api-fusebox-protos",
+      "system_api-privacy_screen-protos",
+      "system_api-cdm_oemcrypto-protos",
+      "system_api-ml-protos",
+      "system_api-lvmd-protos",
+      "system_api",
+      "vboot_host",
+      "ec",
+      "usb-1.0",
+      "pcrecpp"
+    ],
+    "metadata": {},
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe"
+    ],
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/runtime_probe.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "executable",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe:unittest_runner": {
+    "allow_circular_includes_from": [],
+    "cflags": [
+      "-Wall",
+      "-Wunused",
+      "-Wbool-operation",
+      "-Wfree-nonheap-object",
+      "-Wint-in-bool-context",
+      "-Wstring-compare",
+      "-Wstring-plus-int",
+      "-Wxor-used-as-pow",
+      "-Wimplicit-int-float-conversion",
+      "-Wno-c99-designator",
+      "-Wno-unused-parameter",
+      "-Wunreachable-code",
+      "-Wunreachable-code-return",
+      "-ggdb3",
+      "-fstack-protector-strong",
+      "-Wformat=2",
+      "-fvisibility=internal",
+      "-Wa,--noexecstack",
+      "-Wimplicit-fallthrough",
+      "-Werror",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-fPIE",
+      "-DUSE_RTTI_FOR_TYPE_TAGS",
+      "-Wno-unused-local-typedefs",
+      "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
+    ],
+    "cflags_c": [
+      "-std=gnu17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "cflags_cc": [
+      "-std=gnu++17",
+      "-D_FILE_OFFSET_BITS=64",
+      "-D_LARGEFILE_SOURCE",
+      "-D_LARGEFILE64_SOURCE",
+      "-Os",
+      "-pipe",
+      "-march=armv7-a",
+      "-mtune=cortex-a15",
+      "-mfpu=neon",
+      "-mfloat-abi=hard",
+      "-g",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fno-exceptions",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables"
+    ],
+    "check_includes": true,
+    "configs": [
+      "//common-mk:compiler_defaults",
+      "//common-mk:no_exceptions",
+      "//common-mk:pie",
+      "//runtime_probe:target_defaults",
+      "//common-mk:test"
+    ],
+    "defines": [
+      "_LARGEFILE_SOURCE",
+      "_LARGEFILE64_SOURCE",
+      "_FILE_OFFSET_BITS=64",
+      "USE_FACTORY_RUNTIME_PROBE=false"
+    ],
+    "deps": [
+      "//common-mk/testrunner:testrunner",
+      "//runtime_probe:dbus-adaptors",
+      "//runtime_probe:lib",
+      "//runtime_probe/functions:test",
+      "//runtime_probe/utils:test"
+    ],
+    "externs": {},
+    "include_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
+    ],
+    "ldflags": [
+      "-Wl,-O2",
+      "-Wl,--as-needed",
+      "-Wl,--gc-sections",
+      "-Wl,--icf=all",
+      "-Wl,-z,relro",
+      "-Wl,-z,noexecstack",
+      "-Wl,-z,now",
+      "-Wl,--as-needed",
+      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pie",
+      "-pthread",
+      "-Wl,-rpath=$ORIGIN/lib/",
+      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
+    ],
+    "lib_dirs": [
+      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
+    ],
+    "libs": [
+      "brillo",
+      "grpc",
+      "base",
+      "pthread",
+      "cros_config",
+      "protobuf",
+      "system_api-hps-protos",
+      "system_api-power_manager-protos",
+      "system_api-authpolicy-protos",
+      "system_api-biod-protos",
+      "system_api-protos",
+      "system_api-kerberos-protos",
+      "system_api-login_manager-protos",
+      "system_api-lorgnette-protos",
+      "system_api-smbprovider-protos",
+      "system_api-vm_concierge-protos",
+      "system_api-vm_applications-protos",
+      "system_api-vm_disk_management-protos",
+      "system_api-vm_launch-protos",
+      "system_api-vm_sk_forwarding-protos",
+      "system_api-vm_cicerone-protos",
+      "system_api-seneschal-protos",
+      "system_api-oobe_config-protos",
+      "system_api-runtime_probe-protos",
+      "system_api-dlcservice-protos",
+      "system_api-update_engine-protos",
+      "system_api-vm_plugin_dispatcher-protos",
+      "system_api-u2f-protos",
+      "system_api-chunneld-protos",
+      "system_api-system_proxy-protos",
+      "system_api-vm_permission_service-protos",
+      "system_api-anomaly_detector-protos",
+      "system_api-minios-protos",
+      "system_api-dlp-protos",
+      "system_api-rmad-protos",
+      "system_api-fusebox-protos",
+      "system_api-privacy_screen-protos",
+      "system_api-cdm_oemcrypto-protos",
+      "system_api-ml-protos",
+      "system_api-lvmd-protos",
+      "system_api",
+      "vboot_host",
+      "gmock",
+      "gtest",
+      "ec",
+      "usb-1.0",
+      "pcrecpp",
+      "base-test"
+    ],
+    "metadata": {},
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/unittest_runner"
+    ],
+    "public": "*",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/field_converter_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_loader_impl_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function_argument_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_result_checker_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_statement_test.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/daemon_test.cc"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "executable",
     "visibility": [
       "*"
     ]
@@ -72305,7 +74024,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72324,7 +74043,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72439,7 +74158,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72458,7 +74177,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72634,7 +74353,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -72653,7 +74372,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75527,7 +77246,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75546,7 +77265,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75713,7 +77432,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75732,7 +77451,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75874,7 +77593,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -75893,7 +77612,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76004,6 +77723,138 @@
     "testonly": false,
     "toolchain": "//common-mk/toolchain:toolchain",
     "type": "executable",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:_runtime_probe-client-pc-install_config": {
+    "deps": [],
+    "metadata": {
+      "_install_config": [
+        {
+          "install_path": "/usr/lib/pkgconfig",
+          "sources": [
+            "/build/arm-generic/var/cache/portage/chromeos-base/runtime_probe-client/out/Default/obj/runtime_probe/client/libruntime_probe-client.pc"
+          ]
+        }
+      ]
+    },
+    "public": "*",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "group",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:_runtime_probe-client-test-pc-install_config": {
+    "deps": [],
+    "metadata": {
+      "_install_config": [
+        {
+          "install_path": "/usr/lib/pkgconfig",
+          "sources": [
+            "/build/arm-generic/var/cache/portage/chromeos-base/runtime_probe-client/out/Default/obj/runtime_probe/client/libruntime_probe-client-test.pc"
+          ]
+        }
+      ]
+    },
+    "public": "*",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "group",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:all": {
+    "deps": [
+      "//runtime_probe/client:runtime_probe-client-headers",
+      "//runtime_probe/client:runtime_probe-client-pc",
+      "//runtime_probe/client:runtime_probe-client-test-pc"
+    ],
+    "metadata": {},
+    "public": "*",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "group",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:runtime_probe-client-headers": {
+    "args": [
+      "go-generate-chromeos-dbus-bindings",
+      "-service-config=/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/dbus-service-config.json",
+      "-proxy=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus-proxies.h",
+      "-mock=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus-proxy-mocks.h",
+      "-proxy-path-for-mocks=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe/dbus-proxies.h",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/org.chromium.RuntimeProbe.xml"
+    ],
+    "deps": [],
+    "metadata": {},
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus-proxies.h",
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus-proxy-mocks.h"
+    ],
+    "public": "*",
+    "script": "/b/s/w/ir/cache/builder/chromiumos/src/platform2/common-mk/file_generator_wrapper.py",
+    "sources": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/org.chromium.RuntimeProbe.xml"
+    ],
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "action",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:runtime_probe-client-pc": {
+    "args": [
+      "--output",
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/obj/runtime_probe/client/libruntime_probe-client.pc",
+      "--name=libruntime_probe-client",
+      "--description=Runtime Probe client interface library",
+      "--version=",
+      "--cflags=-I/b/s/w/ir/cache/builder/chromiumos/chroot/usr/include/runtime_probe-client"
+    ],
+    "deps": [
+      "//runtime_probe/client:_runtime_probe-client-pc-install_config"
+    ],
+    "metadata": {},
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/obj/runtime_probe/client/libruntime_probe-client.pc"
+    ],
+    "public": "*",
+    "script": "/b/s/w/ir/cache/builder/chromiumos/src/platform2/common-mk/generate-pc.py",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "action",
+    "visibility": [
+      "*"
+    ]
+  },
+  "//runtime_probe/client:runtime_probe-client-test-pc": {
+    "args": [
+      "--output",
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/obj/runtime_probe/client/libruntime_probe-client-test.pc",
+      "--name=libruntime_probe-client-test",
+      "--description=Runtime Probe client interface mock library",
+      "--version=",
+      "--cflags=-I/b/s/w/ir/cache/builder/chromiumos/chroot/usr/include/runtime_probe-client-test"
+    ],
+    "deps": [
+      "//runtime_probe/client:_runtime_probe-client-test-pc-install_config"
+    ],
+    "metadata": {},
+    "outputs": [
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/obj/runtime_probe/client/libruntime_probe-client-test.pc"
+    ],
+    "public": "*",
+    "script": "/b/s/w/ir/cache/builder/chromiumos/src/platform2/common-mk/generate-pc.py",
+    "testonly": false,
+    "toolchain": "//common-mk/toolchain:toolchain",
+    "type": "action",
     "visibility": [
       "*"
     ]
@@ -76801,7 +78652,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76820,7 +78671,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -76993,7 +78844,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77014,7 +78865,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -97509,7 +99360,7 @@
       ]
     },
     "outputs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/unittest_runner"
+      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/chromeos-imageburner_unittest_runner"
     ],
     "public": "*",
     "sources": [
@@ -128398,1723 +130249,6 @@
       "//system-proxy:*"
     ]
   },
-  "//runtime_probe/function_templates:function_templates": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/function_templates:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64"
-    ],
-    "deps": [],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/function_templates/network.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/function_templates/storage.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/functions:functions": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/functions:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64"
-    ],
-    "deps": [
-      "//runtime_probe/function_templates:function_templates"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "ec",
-      "base",
-      "pthread",
-      "usb-1.0",
-      "pcrecpp"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/all_functions.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ata_storage.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/cellular_network.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ectool_i2cread.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/edid.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/ethernet_network.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_battery.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_network.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/generic_storage.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/gpu.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/input_device.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/memory.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/mmc_storage.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/nvme_storage.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sequence.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sysfs.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/tcpc.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/usb_camera.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/vpd_cached.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/wireless_network.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/functions:test": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/functions:target_defaults",
-      "//common-mk:test",
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//runtime_probe/functions:functions",
-      "//runtime_probe/utils:test_utils"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-pthread",
-      "-Wl,-rpath=$ORIGIN/lib/",
-      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "ec",
-      "base",
-      "pthread",
-      "usb-1.0",
-      "pcrecpp",
-      "gmock",
-      "gtest"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/edid_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/gpu_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sequence_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/sysfs_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/functions/tcpc_test.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/system:system": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/system:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_impl.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_runtime_impl.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/helper_invoker_debugd_impl.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/system:test_utils": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread"
-    ],
-    "metadata": {},
-    "public": "*",
-    "public_configs": [
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/context_mock_impl.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system/fake_helper_invoker.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/utils:test": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/utils:target_defaults",
-      "//common-mk:test",
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//runtime_probe/utils:test_utils",
-      "//runtime_probe/utils:utils"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-pthread",
-      "-Wl,-rpath=$ORIGIN/lib/",
-      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread",
-      "gmock",
-      "gtest"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_test_utils_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_utils_test.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/utils:test_utils": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/debugd-client-test"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/utils:target_defaults",
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//runtime_probe/system:test_utils"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread"
-    ],
-    "metadata": {},
-    "public": "*",
-    "public_configs": [
-      "//runtime_probe/system:target_defaults",
-      "//runtime_probe/system:test_pkg_deps"
-    ],
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_test_utils.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/function_test_utils.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe/utils:utils": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe/utils:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64"
-    ],
-    "deps": [],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/edid.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/file_utils.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/input_device.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/pipe_utils.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/type_utils.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/utils/value_utils.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe:all": {
-    "deps": [
-      "//runtime_probe:runtime_probe",
-      "//runtime_probe:unittest_runner"
-    ],
-    "metadata": {},
-    "public": "*",
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "group",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe:dbus-adaptors": {
-    "args": [
-      "go-generate-chromeos-dbus-bindings",
-      "-adaptor=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/{{source_name_part}}.h",
-      "-service-config=/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/dbus-service-config.json",
-      "{{source}}"
-    ],
-    "deps": [],
-    "metadata": {},
-    "output_patterns": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/{{source_name_part}}.h"
-    ],
-    "outputs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include/runtime_probe/dbus_adaptors/org.chromium.RuntimeProbe.h"
-    ],
-    "public": "*",
-    "script": "/b/s/w/ir/cache/builder/chromiumos/src/platform2/common-mk/file_generator_wrapper.py",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/dbus_bindings/org.chromium.RuntimeProbe.xml"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "action_foreach",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe:lib": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//runtime_probe:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//runtime_probe:dbus-adaptors",
-      "//runtime_probe/functions:functions",
-      "//runtime_probe/system:system",
-      "//runtime_probe/utils:utils"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread",
-      "cros_config",
-      "protobuf",
-      "system_api-hps-protos",
-      "system_api-power_manager-protos",
-      "system_api-authpolicy-protos",
-      "system_api-biod-protos",
-      "system_api-protos",
-      "system_api-kerberos-protos",
-      "system_api-login_manager-protos",
-      "system_api-lorgnette-protos",
-      "system_api-smbprovider-protos",
-      "system_api-vm_concierge-protos",
-      "system_api-vm_applications-protos",
-      "system_api-vm_disk_management-protos",
-      "system_api-vm_launch-protos",
-      "system_api-vm_sk_forwarding-protos",
-      "system_api-vm_cicerone-protos",
-      "system_api-seneschal-protos",
-      "system_api-oobe_config-protos",
-      "system_api-runtime_probe-protos",
-      "system_api-dlcservice-protos",
-      "system_api-update_engine-protos",
-      "system_api-vm_plugin_dispatcher-protos",
-      "system_api-u2f-protos",
-      "system_api-chunneld-protos",
-      "system_api-system_proxy-protos",
-      "system_api-vm_permission_service-protos",
-      "system_api-anomaly_detector-protos",
-      "system_api-minios-protos",
-      "system_api-dlp-protos",
-      "system_api-rmad-protos",
-      "system_api-fusebox-protos",
-      "system_api-privacy_screen-protos",
-      "system_api-cdm_oemcrypto-protos",
-      "system_api-ml-protos",
-      "system_api-lvmd-protos",
-      "system_api",
-      "vboot_host",
-      "ec",
-      "usb-1.0",
-      "pcrecpp"
-    ],
-    "metadata": {},
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/component_category.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/field_converter.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_loader_impl.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function_argument.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_result_checker.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_statement.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/system_property_impl.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/daemon.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "source_set",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe:runtime_probe": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-fPIE",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//common-mk:pie",
-      "//runtime_probe:target_defaults"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//runtime_probe:lib"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-pie"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread",
-      "cros_config",
-      "protobuf",
-      "system_api-hps-protos",
-      "system_api-power_manager-protos",
-      "system_api-authpolicy-protos",
-      "system_api-biod-protos",
-      "system_api-protos",
-      "system_api-kerberos-protos",
-      "system_api-login_manager-protos",
-      "system_api-lorgnette-protos",
-      "system_api-smbprovider-protos",
-      "system_api-vm_concierge-protos",
-      "system_api-vm_applications-protos",
-      "system_api-vm_disk_management-protos",
-      "system_api-vm_launch-protos",
-      "system_api-vm_sk_forwarding-protos",
-      "system_api-vm_cicerone-protos",
-      "system_api-seneschal-protos",
-      "system_api-oobe_config-protos",
-      "system_api-runtime_probe-protos",
-      "system_api-dlcservice-protos",
-      "system_api-update_engine-protos",
-      "system_api-vm_plugin_dispatcher-protos",
-      "system_api-u2f-protos",
-      "system_api-chunneld-protos",
-      "system_api-system_proxy-protos",
-      "system_api-vm_permission_service-protos",
-      "system_api-anomaly_detector-protos",
-      "system_api-minios-protos",
-      "system_api-dlp-protos",
-      "system_api-rmad-protos",
-      "system_api-fusebox-protos",
-      "system_api-privacy_screen-protos",
-      "system_api-cdm_oemcrypto-protos",
-      "system_api-ml-protos",
-      "system_api-lvmd-protos",
-      "system_api",
-      "vboot_host",
-      "ec",
-      "usb-1.0",
-      "pcrecpp"
-    ],
-    "metadata": {},
-    "outputs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe"
-    ],
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/runtime_probe.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "executable",
-    "visibility": [
-      "*"
-    ]
-  },
-  "//runtime_probe:unittest_runner": {
-    "allow_circular_includes_from": [],
-    "cflags": [
-      "-Wall",
-      "-Wunused",
-      "-Wbool-operation",
-      "-Wfree-nonheap-object",
-      "-Wint-in-bool-context",
-      "-Wstring-compare",
-      "-Wstring-plus-int",
-      "-Wxor-used-as-pow",
-      "-Wimplicit-int-float-conversion",
-      "-Wno-c99-designator",
-      "-Wno-unused-parameter",
-      "-Wunreachable-code",
-      "-Wunreachable-code-return",
-      "-ggdb3",
-      "-fstack-protector-strong",
-      "-Wformat=2",
-      "-fvisibility=internal",
-      "-Wa,--noexecstack",
-      "-Wimplicit-fallthrough",
-      "-Werror",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-fPIE",
-      "-DUSE_RTTI_FOR_TYPE_TAGS",
-      "-Wno-unused-local-typedefs",
-      "-DBASE_VER=989897",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/glib-2.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos"
-    ],
-    "cflags_c": [
-      "-std=gnu17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "cflags_cc": [
-      "-std=gnu++17",
-      "-D_FILE_OFFSET_BITS=64",
-      "-D_LARGEFILE_SOURCE",
-      "-D_LARGEFILE64_SOURCE",
-      "-Os",
-      "-pipe",
-      "-march=armv7-a",
-      "-mtune=cortex-a15",
-      "-mfpu=neon",
-      "-mfloat-abi=hard",
-      "-g",
-      "-ffunction-sections",
-      "-fdata-sections",
-      "-fno-exceptions",
-      "-fno-unwind-tables",
-      "-fno-asynchronous-unwind-tables"
-    ],
-    "check_includes": true,
-    "configs": [
-      "//common-mk:compiler_defaults",
-      "//common-mk:no_exceptions",
-      "//common-mk:pie",
-      "//runtime_probe:target_defaults",
-      "//common-mk:test"
-    ],
-    "defines": [
-      "_LARGEFILE_SOURCE",
-      "_LARGEFILE64_SOURCE",
-      "_FILE_OFFSET_BITS=64",
-      "USE_FACTORY_RUNTIME_PROBE=false"
-    ],
-    "deps": [
-      "//common-mk/testrunner:testrunner",
-      "//runtime_probe:dbus-adaptors",
-      "//runtime_probe:lib",
-      "//runtime_probe/functions:test",
-      "//runtime_probe/utils:test"
-    ],
-    "externs": {},
-    "include_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/gen/include",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2",
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include"
-    ],
-    "ldflags": [
-      "-Wl,-O2",
-      "-Wl,--as-needed",
-      "-Wl,--gc-sections",
-      "-Wl,--icf=all",
-      "-Wl,-z,relro",
-      "-Wl,-z,noexecstack",
-      "-Wl,-z,now",
-      "-Wl,--as-needed",
-      "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
-      "-pie",
-      "-pthread",
-      "-Wl,-rpath=$ORIGIN/lib/",
-      "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib"
-    ],
-    "lib_dirs": [
-      "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib"
-    ],
-    "libs": [
-      "brillo",
-      "grpc",
-      "base",
-      "pthread",
-      "cros_config",
-      "protobuf",
-      "system_api-hps-protos",
-      "system_api-power_manager-protos",
-      "system_api-authpolicy-protos",
-      "system_api-biod-protos",
-      "system_api-protos",
-      "system_api-kerberos-protos",
-      "system_api-login_manager-protos",
-      "system_api-lorgnette-protos",
-      "system_api-smbprovider-protos",
-      "system_api-vm_concierge-protos",
-      "system_api-vm_applications-protos",
-      "system_api-vm_disk_management-protos",
-      "system_api-vm_launch-protos",
-      "system_api-vm_sk_forwarding-protos",
-      "system_api-vm_cicerone-protos",
-      "system_api-seneschal-protos",
-      "system_api-oobe_config-protos",
-      "system_api-runtime_probe-protos",
-      "system_api-dlcservice-protos",
-      "system_api-update_engine-protos",
-      "system_api-vm_plugin_dispatcher-protos",
-      "system_api-u2f-protos",
-      "system_api-chunneld-protos",
-      "system_api-system_proxy-protos",
-      "system_api-vm_permission_service-protos",
-      "system_api-anomaly_detector-protos",
-      "system_api-minios-protos",
-      "system_api-dlp-protos",
-      "system_api-rmad-protos",
-      "system_api-fusebox-protos",
-      "system_api-privacy_screen-protos",
-      "system_api-cdm_oemcrypto-protos",
-      "system_api-ml-protos",
-      "system_api-lvmd-protos",
-      "system_api",
-      "vboot_host",
-      "gmock",
-      "gtest",
-      "ec",
-      "usb-1.0",
-      "pcrecpp",
-      "base-test"
-    ],
-    "metadata": {},
-    "outputs": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/runtime_probe_unittest_runner"
-    ],
-    "public": "*",
-    "sources": [
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/field_converter_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_loader_impl_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_config_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_function_argument_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_result_checker_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/probe_statement_test.cc",
-      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/runtime_probe/daemon_test.cc"
-    ],
-    "testonly": false,
-    "toolchain": "//common-mk/toolchain:toolchain",
-    "type": "executable",
-    "visibility": [
-      "*"
-    ]
-  },
   "//lexmark-fax-pnh:all": {
     "deps": [
       "//lexmark-fax-pnh:fax-pnh-filter",
@@ -131149,7 +131283,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/runtime_probe-client"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -131333,7 +131468,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/runtime_probe-client"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -131524,7 +131660,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/runtime_probe-client"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -131704,7 +131841,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nss",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/nspr",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/dbus-1.0",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/runtime_probe-client"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -136396,7 +136534,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -136415,7 +136553,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -136608,7 +136746,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -136627,7 +136765,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -136829,7 +136967,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -136848,7 +136986,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137056,7 +137194,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137075,7 +137213,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137283,7 +137421,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137302,7 +137440,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137489,7 +137627,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137508,7 +137646,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137704,7 +137842,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137723,7 +137861,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137935,7 +138073,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -137954,7 +138092,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138154,7 +138292,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138173,7 +138311,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138421,7 +138559,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138440,7 +138578,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138652,7 +138790,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138671,7 +138809,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138855,7 +138993,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -138874,7 +139012,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139047,7 +139185,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139066,7 +139204,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139282,7 +139420,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139301,7 +139439,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139532,7 +139670,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139551,7 +139689,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139802,7 +139940,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -139821,7 +139959,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140064,7 +140202,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140083,7 +140221,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140298,7 +140436,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140317,7 +140455,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140534,7 +140672,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140553,7 +140691,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140743,7 +140881,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140762,7 +140900,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140934,7 +141072,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -140953,7 +141091,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141121,7 +141259,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141140,7 +141278,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141308,7 +141446,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141327,7 +141465,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141495,7 +141633,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141514,7 +141652,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141683,7 +141821,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141702,7 +141840,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141873,7 +142011,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141892,7 +142030,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-6aa5894fa2100e0cc0ed61124526bfe49bc60979\"",
+      "-DVCSID=\"9999-282a5461d61428868371e73641088f0b407e016b\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",

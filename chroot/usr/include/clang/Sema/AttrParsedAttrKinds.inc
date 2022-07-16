@@ -1127,7 +1127,7 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
       return AttributeCommonInfo::AT_TestTypestate;	 // "test_typestate"
     }
     break;
-  case 15:	 // 17 strings to match.
+  case 15:	 // 18 strings to match.
     switch (Name[0]) {
     default: break;
     case 'a':	 // 3 strings to match.
@@ -1158,6 +1158,10 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
       if (memcmp(Name.data()+1, "xt_vector_type", 14) != 0)
         break;
       return AttributeCommonInfo::AT_ExtVectorType;	 // "ext_vector_type"
+    case 'f':	 // 1 string to match.
+      if (memcmp(Name.data()+1, "unction_return", 14) != 0)
+        break;
+      return AttributeCommonInfo::AT_FunctionReturnThunks;	 // "function_return"
     case 'n':	 // 2 strings to match.
       switch (Name[1]) {
       default: break;
@@ -3190,7 +3194,7 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
       break;
     }
     break;
-  case 20:	 // 14 strings to match.
+  case 20:	 // 15 strings to match.
     switch (Name[0]) {
     default: break;
     case 'c':	 // 13 strings to match.
@@ -3262,10 +3266,21 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
         return AttributeCommonInfo::AT_XRayLogArgs;	 // "clang::xray_log_args"
       }
       break;
-    case 'g':	 // 1 string to match.
-      if (memcmp(Name.data()+1, "nu::returns_nonnull", 19) != 0)
+    case 'g':	 // 2 strings to match.
+      if (memcmp(Name.data()+1, "nu::", 4) != 0)
         break;
-      return AttributeCommonInfo::AT_ReturnsNonNull;	 // "gnu::returns_nonnull"
+      switch (Name[5]) {
+      default: break;
+      case 'f':	 // 1 string to match.
+        if (memcmp(Name.data()+6, "unction_return", 14) != 0)
+          break;
+        return AttributeCommonInfo::AT_FunctionReturnThunks;	 // "gnu::function_return"
+      case 'r':	 // 1 string to match.
+        if (memcmp(Name.data()+6, "eturns_nonnull", 14) != 0)
+          break;
+        return AttributeCommonInfo::AT_ReturnsNonNull;	 // "gnu::returns_nonnull"
+      }
+      break;
     }
     break;
   case 21:	 // 12 strings to match.
@@ -4994,7 +5009,7 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
       break;
     }
     break;
-  case 20:	 // 9 strings to match.
+  case 20:	 // 10 strings to match.
     switch (Name[0]) {
     default: break;
     case 'c':	 // 8 strings to match.
@@ -5041,10 +5056,21 @@ static AttributeCommonInfo::Kind getAttrKind(StringRef Name, AttributeCommonInfo
         return AttributeCommonInfo::AT_XRayLogArgs;	 // "clang::xray_log_args"
       }
       break;
-    case 'g':	 // 1 string to match.
-      if (memcmp(Name.data()+1, "nu::returns_nonnull", 19) != 0)
+    case 'g':	 // 2 strings to match.
+      if (memcmp(Name.data()+1, "nu::", 4) != 0)
         break;
-      return AttributeCommonInfo::AT_ReturnsNonNull;	 // "gnu::returns_nonnull"
+      switch (Name[5]) {
+      default: break;
+      case 'f':	 // 1 string to match.
+        if (memcmp(Name.data()+6, "unction_return", 14) != 0)
+          break;
+        return AttributeCommonInfo::AT_FunctionReturnThunks;	 // "gnu::function_return"
+      case 'r':	 // 1 string to match.
+        if (memcmp(Name.data()+6, "eturns_nonnull", 14) != 0)
+          break;
+        return AttributeCommonInfo::AT_ReturnsNonNull;	 // "gnu::returns_nonnull"
+      }
+      break;
     }
     break;
   case 21:	 // 7 strings to match.

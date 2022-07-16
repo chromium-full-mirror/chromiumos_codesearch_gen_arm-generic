@@ -1,8 +1,8 @@
 {
-	"package": "3420c73c05cd68370a40d4d293663b1f492fc838d019f62bd500545a4b27eddc",
+	"package": "24733ebf86e86ea0d373d7908c3e556dae9ca886703dcafd461434f124f7c907",
 	"files": {
 		"CONVENTIONS.md": "df0d4fe9fe65af0bfa4723dc7b641d5130087259799e6b404ad63884f79031cb",
-		"Cargo.toml.orig": "d9de48b3bb055424fd8b605e359f6e58219a605a6d9f17d0c725e9f4aa3572d5",
+		"Cargo.toml.orig": "669de50a6d32f0e97950b32225d5dfdcfc8fd8186d705997d4ccd3bf6c0047af",
 		"test/test_mq.rs": "ee653fade4d769576702fa54440660d353ed7ab1284aa5a321f73fa1f6fedf93",
 		"test/test_net.rs": "ec6d580b87292519d514b0236bdd5abdd576fcf4835cfe49ed1ddb47c5f1aea3",
 		"test/test_nix_path.rs": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -38,7 +38,7 @@
 		"test/sys/test_ptrace.rs": "9d7c0ba12d8957522ad274b915aa0b771c9c61981c74ad203dfc09510143ec23",
 		"test/sys/test_aio.rs": "c9844cfd4259f1c84f4da2f9f32bba22f03ff71d7bea49da79e1b437b1ea3ead",
 		"test/test_dir.rs": "5d137a62f11d1a4993b4bb35dccc38a4c4416b7da374887f2335a9895b4fdee4",
-		"Cargo.toml": "6fd39ba9d923c6c264d462684eda2934db32ccc5d90d3562f68ace0a4f911e8e",
+		"Cargo.toml": "28d974bad3257d769042960cfcccd53484e287f168fcdcd375840d953aa4d23e",
 		"LICENSE": "66e3ee1fa7f909ad3c612d556f2a0cdabcd809ad6e66f3b0605015ac64841b70",
 		"README.md": "a19b713af6c2516fbb47448d2220c83d83343db222e399937a9fc8f0881030a9",
 		"CONTRIBUTING.md": "a9101e3d1487170d691d5f062ff49a433c167582ac8984dd41a744be92652f74",
