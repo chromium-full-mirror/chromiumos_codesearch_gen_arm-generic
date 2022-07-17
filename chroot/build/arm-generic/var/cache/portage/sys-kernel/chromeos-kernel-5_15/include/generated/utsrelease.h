@@ -1,1 +1,1 @@
-#define UTS_RELEASE "5.15.55-06679-g5ac68a473ef4"
+#define UTS_RELEASE "5.15.55-06678-gbe2f7aefd2c1"

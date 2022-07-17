@@ -1,20 +1,20 @@
 {
-	"package": "cc6b6003cc7c76dde95cd15379d87a1764a403ae1e7048a0bae0b1f4c78edac3",
+	"package": "811e3d0f1c971ca1509143dea6c43e6708e20730bba72457f5cd5a30e7f0fd76",
 	"files": {
-		"Cargo.toml.orig": "561c3f19001cad24f89f9bb4d09806dcc8650761a270641db41e9c5dcee98d84",
-		"Cargo.lock": "f404970b145a9fea87d0b7076a4f2959e08eb2ab88159f989690cf2a33c3b3d8",
-		"Cargo.toml": "785abca0dcf10a840f0791692dbc67bcb2cb7df534e6d458eba91e266165fc40",
-		"LICENSE-MIT": "d3f5e6ccc611fb4d38f37d320ea169432e857c998d88c10bfd5bc9aea6cfa1ba",
+		"CHANGELOG.md": "f2cd265d1f066e6e7208e4d2fcfe252253555cb52336630abd23fbc1a836cbf5",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "ea8270ea78fdec635932dbb68bfd5d783cedbb3d786cd72b1d8ddd1d7b06a213",
-		"examples/transactional-i2c.rs": "22ea1656249ab01c951e0da4fd4dd0be736770bf5eec2e293826e35297fac444",
-		"triagebot.toml": "a135e10c777cd13459559bdf74fb704c1379af7c9b0f70bc49fa6f5a837daa81",
 		"CODE_OF_CONDUCT.md": "df13084387009607b5da4cf25c41fcc37709f7687f4a035ddaab6a15293cc49d",
-		"CHANGELOG.md": "f2cd265d1f066e6e7208e4d2fcfe252253555cb52336630abd23fbc1a836cbf5",
-		"src/timer.rs": "0216b7ddc4515b39ac3f4877afd44a5f7e19d651455b708a14d43c69af60afe6",
+		"Cargo.lock": "bfbec13a75318ea0a38df252e3667113fee8785d8b5be9a487ea269c2d6c5808",
+		"examples/transactional-i2c.rs": "22ea1656249ab01c951e0da4fd4dd0be736770bf5eec2e293826e35297fac444",
 		"src/cdev_pin.rs": "6b0d647540c4648ee2264e980318856a5028677d956ea86ea6cd29c66ce6eeb8",
-		"src/lib.rs": "f5f7bea0719cb591291e814f9f696c5f8e6aa9ecec2c86e0995424d73f117fc3",
 		"src/sysfs_pin.rs": "9e47a729586d43af75f169da2c4f7196604cb051a418c19b0b2e3e46b288a67a",
-		"src/serial.rs": "6632223b0685cbc976a48d91bdab7549fb55861c5bab434be0f9cd2e44e82019"
+		"src/timer.rs": "0216b7ddc4515b39ac3f4877afd44a5f7e19d651455b708a14d43c69af60afe6",
+		"src/lib.rs": "f5f7bea0719cb591291e814f9f696c5f8e6aa9ecec2c86e0995424d73f117fc3",
+		"src/serial.rs": "6632223b0685cbc976a48d91bdab7549fb55861c5bab434be0f9cd2e44e82019",
+		"LICENSE-MIT": "d3f5e6ccc611fb4d38f37d320ea169432e857c998d88c10bfd5bc9aea6cfa1ba",
+		"Cargo.toml": "3b8ede1a7c1671a6718cb5fe63dc3bf9853b07bdfab2a836db6326cd998456a1",
+		"Cargo.toml.orig": "561c3f19001cad24f89f9bb4d09806dcc8650761a270641db41e9c5dcee98d84",
+		"triagebot.toml": "a135e10c777cd13459559bdf74fb704c1379af7c9b0f70bc49fa6f5a837daa81"
 	}
 }

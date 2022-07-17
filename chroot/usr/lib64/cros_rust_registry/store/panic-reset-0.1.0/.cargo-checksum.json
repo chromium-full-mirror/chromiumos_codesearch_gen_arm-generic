@@ -1,14 +1,14 @@
 {
-	"package": "5ec5cf469dd08e8324926c5543d6ecbc8eac009faf0be48b4644e0e1b2821a39",
+	"package": "1743f4d64388c718385fc23fa10cf2a2611097ee05e4346daf52d5f647560d79",
 	"files": {
-		"Cargo.toml.orig": "801da86db0880fae1d8cf91b61e2e2e55e92f0b00dea6dba9b5df03b77c82cdb",
-		"Cargo.toml": "068749d08e44f941be6044d38cf05264d60d71926b377b58c57aa9fddecf7fb7",
-		"LICENSE-MIT": "c986bcdb83103d4ddf58aeb7b5302359782e54dc4eea14a0cc27c62dcbd50729",
+		"CHANGELOG.md": "640f82e3302dd3c2d75d6b2ead5bb08fd5711471b3db0d73c86a6e4777254504",
+		"ci/install.sh": "e295d97db9e12ac6ee3e523e4597ad58fedcca2b8aa3a21302951ad2327b88a9",
+		"ci/script.sh": "08265dc695d44a4b4a6bbe1ad0464efaa116a5343ff8725fe47bfc321eb360ec",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"README.md": "3327ec2d6ae70ccf250579b4c3dbe7c191b23377cdbe76b1a1156a3a7a20f91f",
-		"ci/script.sh": "08265dc695d44a4b4a6bbe1ad0464efaa116a5343ff8725fe47bfc321eb360ec",
-		"ci/install.sh": "e295d97db9e12ac6ee3e523e4597ad58fedcca2b8aa3a21302951ad2327b88a9",
-		"CHANGELOG.md": "640f82e3302dd3c2d75d6b2ead5bb08fd5711471b3db0d73c86a6e4777254504",
-		"src/lib.rs": "578b35c55ff47bd78957533b33bba9be29bcecb476540f10fe926e9ff05fa297"
+		"src/lib.rs": "578b35c55ff47bd78957533b33bba9be29bcecb476540f10fe926e9ff05fa297",
+		"LICENSE-MIT": "c986bcdb83103d4ddf58aeb7b5302359782e54dc4eea14a0cc27c62dcbd50729",
+		"Cargo.toml": "79a0d8b926151453680cd02acd74152a5ed3112a1082b9266b0be35742f6478e",
+		"Cargo.toml.orig": "801da86db0880fae1d8cf91b61e2e2e55e92f0b00dea6dba9b5df03b77c82cdb"
 	}
 }

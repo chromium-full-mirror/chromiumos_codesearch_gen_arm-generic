@@ -45,7 +45,7 @@ struct TableStruct_patchpanel_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[36]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[35]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -100,9 +100,6 @@ extern ModifyPortRuleResponseDefaultTypeInternal _ModifyPortRuleResponse_default
 class NeighborReachabilityEventSignal;
 struct NeighborReachabilityEventSignalDefaultTypeInternal;
 extern NeighborReachabilityEventSignalDefaultTypeInternal _NeighborReachabilityEventSignal_default_instance_;
-class NetworkConfigurationChangedSignal;
-struct NetworkConfigurationChangedSignalDefaultTypeInternal;
-extern NetworkConfigurationChangedSignalDefaultTypeInternal _NetworkConfigurationChangedSignal_default_instance_;
 class NetworkDevice;
 struct NetworkDeviceDefaultTypeInternal;
 extern NetworkDeviceDefaultTypeInternal _NetworkDevice_default_instance_;
@@ -178,7 +175,6 @@ template<> ::patchpanel::IPv4Subnet* Arena::CreateMaybeMessage<::patchpanel::IPv
 template<> ::patchpanel::ModifyPortRuleRequest* Arena::CreateMaybeMessage<::patchpanel::ModifyPortRuleRequest>(Arena*);
 template<> ::patchpanel::ModifyPortRuleResponse* Arena::CreateMaybeMessage<::patchpanel::ModifyPortRuleResponse>(Arena*);
 template<> ::patchpanel::NeighborReachabilityEventSignal* Arena::CreateMaybeMessage<::patchpanel::NeighborReachabilityEventSignal>(Arena*);
-template<> ::patchpanel::NetworkConfigurationChangedSignal* Arena::CreateMaybeMessage<::patchpanel::NetworkConfigurationChangedSignal>(Arena*);
 template<> ::patchpanel::NetworkDevice* Arena::CreateMaybeMessage<::patchpanel::NetworkDevice>(Arena*);
 template<> ::patchpanel::NetworkDeviceChangedSignal* Arena::CreateMaybeMessage<::patchpanel::NetworkDeviceChangedSignal>(Arena*);
 template<> ::patchpanel::PluginVmShutdownRequest* Arena::CreateMaybeMessage<::patchpanel::PluginVmShutdownRequest>(Arena*);
@@ -1363,8 +1359,6 @@ class NetworkDevice final :
     kIfnameFieldNumber = 1,
     kPhysIfnameFieldNumber = 5,
     kGuestIfnameFieldNumber = 7,
-    kDnsProxyIpv4AddrFieldNumber = 8,
-    kDnsProxyIpv6AddrFieldNumber = 9,
     kIpv4SubnetFieldNumber = 3,
     kIpv4AddrFieldNumber = 2,
     kGuestTypeFieldNumber = 4,
@@ -1410,34 +1404,6 @@ class NetworkDevice final :
   const std::string& _internal_guest_ifname() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_guest_ifname(const std::string& value);
   std::string* _internal_mutable_guest_ifname();
-  public:
-
-  // bytes dns_proxy_ipv4_addr = 8;
-  void clear_dns_proxy_ipv4_addr();
-  const std::string& dns_proxy_ipv4_addr() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_dns_proxy_ipv4_addr(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_dns_proxy_ipv4_addr();
-  PROTOBUF_NODISCARD std::string* release_dns_proxy_ipv4_addr();
-  void set_allocated_dns_proxy_ipv4_addr(std::string* dns_proxy_ipv4_addr);
-  private:
-  const std::string& _internal_dns_proxy_ipv4_addr() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_dns_proxy_ipv4_addr(const std::string& value);
-  std::string* _internal_mutable_dns_proxy_ipv4_addr();
-  public:
-
-  // bytes dns_proxy_ipv6_addr = 9;
-  void clear_dns_proxy_ipv6_addr();
-  const std::string& dns_proxy_ipv6_addr() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_dns_proxy_ipv6_addr(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_dns_proxy_ipv6_addr();
-  PROTOBUF_NODISCARD std::string* release_dns_proxy_ipv6_addr();
-  void set_allocated_dns_proxy_ipv6_addr(std::string* dns_proxy_ipv6_addr);
-  private:
-  const std::string& _internal_dns_proxy_ipv6_addr() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_dns_proxy_ipv6_addr(const std::string& value);
-  std::string* _internal_mutable_dns_proxy_ipv6_addr();
   public:
 
   // .patchpanel.IPv4Subnet ipv4_subnet = 3;
@@ -1495,8 +1461,6 @@ class NetworkDevice final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ifname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phys_ifname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr guest_ifname_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dns_proxy_ipv4_addr_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr dns_proxy_ipv6_addr_;
   ::patchpanel::IPv4Subnet* ipv4_subnet_;
   uint32_t ipv4_addr_;
   int guest_type_;
@@ -5893,123 +5857,6 @@ class SetDnsRedirectionRuleResponse final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_patchpanel_5fservice_2eproto;
 };
-// -------------------------------------------------------------------
-
-class NetworkConfigurationChangedSignal final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.NetworkConfigurationChangedSignal) */ {
- public:
-  inline NetworkConfigurationChangedSignal() : NetworkConfigurationChangedSignal(nullptr) {}
-  ~NetworkConfigurationChangedSignal() override;
-  explicit constexpr NetworkConfigurationChangedSignal(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  NetworkConfigurationChangedSignal(const NetworkConfigurationChangedSignal& from);
-  NetworkConfigurationChangedSignal(NetworkConfigurationChangedSignal&& from) noexcept
-    : NetworkConfigurationChangedSignal() {
-    *this = ::std::move(from);
-  }
-
-  inline NetworkConfigurationChangedSignal& operator=(const NetworkConfigurationChangedSignal& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline NetworkConfigurationChangedSignal& operator=(NetworkConfigurationChangedSignal&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const NetworkConfigurationChangedSignal& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const NetworkConfigurationChangedSignal* internal_default_instance() {
-    return reinterpret_cast<const NetworkConfigurationChangedSignal*>(
-               &_NetworkConfigurationChangedSignal_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    35;
-
-  friend void swap(NetworkConfigurationChangedSignal& a, NetworkConfigurationChangedSignal& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(NetworkConfigurationChangedSignal* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(NetworkConfigurationChangedSignal* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  NetworkConfigurationChangedSignal* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<NetworkConfigurationChangedSignal>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const NetworkConfigurationChangedSignal& from);
-  void MergeFrom(const NetworkConfigurationChangedSignal& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(NetworkConfigurationChangedSignal* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "patchpanel.NetworkConfigurationChangedSignal";
-  }
-  protected:
-  explicit NetworkConfigurationChangedSignal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:patchpanel.NetworkConfigurationChangedSignal)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_patchpanel_5fservice_2eproto;
-};
 // ===================================================================
 
 
@@ -6446,108 +6293,6 @@ inline void NetworkDevice::_internal_set_guest_type(::patchpanel::NetworkDevice_
 inline void NetworkDevice::set_guest_type(::patchpanel::NetworkDevice_GuestType value) {
   _internal_set_guest_type(value);
   // @@protoc_insertion_point(field_set:patchpanel.NetworkDevice.guest_type)
-}
-
-// bytes dns_proxy_ipv4_addr = 8;
-inline void NetworkDevice::clear_dns_proxy_ipv4_addr() {
-  dns_proxy_ipv4_addr_.ClearToEmpty();
-}
-inline const std::string& NetworkDevice::dns_proxy_ipv4_addr() const {
-  // @@protoc_insertion_point(field_get:patchpanel.NetworkDevice.dns_proxy_ipv4_addr)
-  return _internal_dns_proxy_ipv4_addr();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NetworkDevice::set_dns_proxy_ipv4_addr(ArgT0&& arg0, ArgT... args) {
- 
- dns_proxy_ipv4_addr_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:patchpanel.NetworkDevice.dns_proxy_ipv4_addr)
-}
-inline std::string* NetworkDevice::mutable_dns_proxy_ipv4_addr() {
-  std::string* _s = _internal_mutable_dns_proxy_ipv4_addr();
-  // @@protoc_insertion_point(field_mutable:patchpanel.NetworkDevice.dns_proxy_ipv4_addr)
-  return _s;
-}
-inline const std::string& NetworkDevice::_internal_dns_proxy_ipv4_addr() const {
-  return dns_proxy_ipv4_addr_.Get();
-}
-inline void NetworkDevice::_internal_set_dns_proxy_ipv4_addr(const std::string& value) {
-  
-  dns_proxy_ipv4_addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NetworkDevice::_internal_mutable_dns_proxy_ipv4_addr() {
-  
-  return dns_proxy_ipv4_addr_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NetworkDevice::release_dns_proxy_ipv4_addr() {
-  // @@protoc_insertion_point(field_release:patchpanel.NetworkDevice.dns_proxy_ipv4_addr)
-  return dns_proxy_ipv4_addr_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NetworkDevice::set_allocated_dns_proxy_ipv4_addr(std::string* dns_proxy_ipv4_addr) {
-  if (dns_proxy_ipv4_addr != nullptr) {
-    
-  } else {
-    
-  }
-  dns_proxy_ipv4_addr_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), dns_proxy_ipv4_addr,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (dns_proxy_ipv4_addr_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    dns_proxy_ipv4_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:patchpanel.NetworkDevice.dns_proxy_ipv4_addr)
-}
-
-// bytes dns_proxy_ipv6_addr = 9;
-inline void NetworkDevice::clear_dns_proxy_ipv6_addr() {
-  dns_proxy_ipv6_addr_.ClearToEmpty();
-}
-inline const std::string& NetworkDevice::dns_proxy_ipv6_addr() const {
-  // @@protoc_insertion_point(field_get:patchpanel.NetworkDevice.dns_proxy_ipv6_addr)
-  return _internal_dns_proxy_ipv6_addr();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void NetworkDevice::set_dns_proxy_ipv6_addr(ArgT0&& arg0, ArgT... args) {
- 
- dns_proxy_ipv6_addr_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:patchpanel.NetworkDevice.dns_proxy_ipv6_addr)
-}
-inline std::string* NetworkDevice::mutable_dns_proxy_ipv6_addr() {
-  std::string* _s = _internal_mutable_dns_proxy_ipv6_addr();
-  // @@protoc_insertion_point(field_mutable:patchpanel.NetworkDevice.dns_proxy_ipv6_addr)
-  return _s;
-}
-inline const std::string& NetworkDevice::_internal_dns_proxy_ipv6_addr() const {
-  return dns_proxy_ipv6_addr_.Get();
-}
-inline void NetworkDevice::_internal_set_dns_proxy_ipv6_addr(const std::string& value) {
-  
-  dns_proxy_ipv6_addr_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* NetworkDevice::_internal_mutable_dns_proxy_ipv6_addr() {
-  
-  return dns_proxy_ipv6_addr_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* NetworkDevice::release_dns_proxy_ipv6_addr() {
-  // @@protoc_insertion_point(field_release:patchpanel.NetworkDevice.dns_proxy_ipv6_addr)
-  return dns_proxy_ipv6_addr_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void NetworkDevice::set_allocated_dns_proxy_ipv6_addr(std::string* dns_proxy_ipv6_addr) {
-  if (dns_proxy_ipv6_addr != nullptr) {
-    
-  } else {
-    
-  }
-  dns_proxy_ipv6_addr_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), dns_proxy_ipv6_addr,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (dns_proxy_ipv6_addr_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    dns_proxy_ipv6_addr_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:patchpanel.NetworkDevice.dns_proxy_ipv6_addr)
 }
 
 // -------------------------------------------------------------------
@@ -8654,15 +8399,9 @@ inline void SetDnsRedirectionRuleResponse::set_success(bool value) {
   // @@protoc_insertion_point(field_set:patchpanel.SetDnsRedirectionRuleResponse.success)
 }
 
-// -------------------------------------------------------------------
-
-// NetworkConfigurationChangedSignal
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
