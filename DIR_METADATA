@@ -1,0 +1,5 @@
+monorail {
+  project: "chromium"
+  component: "Infra>Codesearch"
+}
+team_email: "chops-source-team@google.com"
