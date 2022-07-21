@@ -90,8 +90,7 @@ class PolicyDetails:
       raise RuntimeError('Platform "%s" is not supported' % platform)
     return PLATFORM_STRINGS[platform]
 
-  def __init__(self, policy, chrome_major_version, deprecation_milestone_buffer,
-               target_platform, valid_tags):
+  def __init__(self, policy, chrome_major_version, target_platform, valid_tags):
     self.id = policy['id']
     self.name = policy['name']
     self.tags = policy.get('tags', None)
@@ -113,8 +112,7 @@ class PolicyDetails:
       self.enterprise_default = policy['default_for_enterprise_users']
     if self.has_enterprise_default:
       self.default_policy_level = policy.get('default_policy_level', '')
-      if (self.default_policy_level == 'recommended'
-          and not self.can_be_recommended):
+      if self.default_policy_level == 'recommended' and not self.can_be_recommended:
         raise RuntimeError('Policy ' + self.name +
                            ' has default_policy_level set to ' +
                            self.default_policy_level + ', '
@@ -135,9 +133,8 @@ class PolicyDetails:
       # Skip if filtering by Chromium version and the current Chromium version
       # does not support the policy.
       if chrome_major_version:
-        if (int(version_min) > chrome_major_version
-            or version_max != '' and int(version_max) <
-            chrome_major_version - deprecation_milestone_buffer):
+        if (int(version_min) > chrome_major_version or
+            version_max != '' and int(version_max) < chrome_major_version):
           continue
       self.platforms.update(self._ConvertPlatform(platform))
 
@@ -334,13 +331,6 @@ def main():
       dest='policy_templates_file',
       help='path to the policy_templates.json input file',
       metavar='FILE')
-  parser.add_argument(
-      '--deprecation-milestone-buffer',
-      dest='deprecation_milestone_buffer',
-      type=int,
-      help='Number of major versions before a code for a policy stops being '
-      'generated',
-      default=2)
   args = parser.parse_args()
 
   has_arg_error = False
@@ -368,7 +358,6 @@ def main():
   version_path = args.chrome_version_file
   target_platform = args.target_platform
   template_file_name = args.policy_templates_file
-  deprecation_milestone_buffer = int(args.deprecation_milestone_buffer)
 
   # --target-platform accepts "chromeos" as its input because that's what is
   # used within GN. Within policy templates, "chrome_os" is used instead.
@@ -383,8 +372,8 @@ def main():
   template_file_contents = _LoadJSONFile(template_file_name)
   risk_tags = RiskTags(template_file_contents)
   policy_details = [
-      PolicyDetails(policy, chrome_major_version, deprecation_milestone_buffer,
-                    target_platform, risk_tags.GetValidTags())
+      PolicyDetails(policy, chrome_major_version, target_platform,
+                    risk_tags.GetValidTags())
       for policy in template_file_contents['policy_definitions']
       if policy['type'] != 'group'
   ]
@@ -490,7 +479,8 @@ def _OutputComment(f, comment):
 
 def _LoadJSONFile(json_file):
   with codecs.open(json_file, 'r', encoding='utf-8') as f:
-    return json.load(f)
+    text = f.read()
+  return ast.literal_eval(text)
 
 
 def _GetSupportedChromeUserPolicies(policies, protobuf_type):
@@ -500,31 +490,19 @@ def _GetSupportedChromeUserPolicies(policies, protobuf_type):
   ]
 
 
-# Returns the policies supported by at least one platform.
-# Ensure only windows supported policies are returned when building for windows.
-# Eventually only supported policies on every platforms will be returned.
-def _GetSupportedPolicies(policies, target_platform):
-  if target_platform in ['win', 'linux', 'mac']:
-    return [policy for policy in policies if policy.is_supported]
-
-  return [
-      policy for policy in policies
-      if len(policy.platforms) + len(policy.future_on) > 0
-  ]
-
 #------------------ policy constants header ------------------------#
 
 
 # Return a list of all policies of type |metapolicy_type|.
 def _GetMetapoliciesOfType(policies, metapolicy_type):
   return [
-      policy for policy in policies if policy.metapolicy_type == metapolicy_type
+      policy.name for policy in policies
+      if policy.metapolicy_type == metapolicy_type
   ]
 
 
-def _WritePolicyConstantHeader(all_policies, policy_atomic_groups,
-                               target_platform, f, risk_tags):
-  policies = _GetSupportedPolicies(all_policies, target_platform)
+def _WritePolicyConstantHeader(policies, policy_atomic_groups, target_platform,
+                               f, risk_tags):
   f.write('''#ifndef COMPONENTS_POLICY_POLICY_CONSTANTS_H_
 #define COMPONENTS_POLICY_POLICY_CONSTANTS_H_
 
@@ -1112,10 +1090,8 @@ def _GenerateDefaultValue(value):
   return [], None
 
 
-def _WritePolicyConstantSource(all_policies, policy_atomic_groups,
-                               target_platform, f, risk_tags):
-  policies = _GetSupportedPolicies(all_policies, target_platform)
-  policy_names = [policy.name for policy in policies]
+def _WritePolicyConstantSource(policies, policy_atomic_groups, target_platform,
+                               f, risk_tags):
   f.write('''#include "components/policy/policy_constants.h"
 
 #include <algorithm>
@@ -1320,8 +1296,7 @@ void SetEnterpriseUsersDefaults(PolicyMap* policy_map) {
   for group in policy_atomic_groups:
     f.write('const char* const %s[] = {' % (group.name))
     for policy in group.policies:
-      if policy in policy_names:
-        f.write('key::k%s, ' % (policy))
+      f.write('key::k%s, ' % (policy))
     f.write('nullptr};\n')
   f.write('\n}  // namespace\n')
   f.write('\n}  // namespace group\n\n')
@@ -1344,7 +1319,7 @@ void SetEnterpriseUsersDefaults(PolicyMap* policy_map) {
                                               METAPOLICY_TYPE['merge'])
   f.write('const char* const kMerge[%s] = {\n' % len(merge_metapolicies))
   for metapolicy in merge_metapolicies:
-    f.write('  key::k%s,\n' % metapolicy.name)
+    f.write('  key::k%s,\n' % metapolicy)
   f.write('};\n\n')
 
   # Populate precedence metapolicy array.
@@ -1353,7 +1328,7 @@ void SetEnterpriseUsersDefaults(PolicyMap* policy_map) {
   f.write('const char* const kPrecedence[%s] = {\n' %
           len(precedence_metapolicies))
   for metapolicy in precedence_metapolicies:
-    f.write('  key::k%s,\n' % metapolicy.name)
+    f.write('  key::k%s,\n' % metapolicy)
   f.write('};\n\n')
   f.write('}  // namespace metapolicy\n\n')
 

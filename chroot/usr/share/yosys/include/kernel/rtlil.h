@@ -168,7 +168,7 @@ namespace RTLIL
 			log_assert(p[1] != 0);
 			for (const char *c = p; *c; c++)
 				if ((unsigned)*c <= (unsigned)' ')
-					log_error("Found control character or space (0x%02x) in string '%s' which is not allowed in RTLIL identifiers\n", *c, p);
+					log_error("Found control character or space (0x%02hhx) in string '%s' which is not allowed in RTLIL identifiers\n", *c, p);
 
 		#ifndef YOSYS_NO_IDS_REFCNT
 			if (global_free_idx_list_.empty()) {
@@ -636,12 +636,12 @@ struct RTLIL::Const
 	std::vector<RTLIL::State> bits;
 
 	Const();
-	Const(const std::string &str);
+	Const(std::string str);
 	Const(int val, int width = 32);
 	Const(RTLIL::State bit, int width = 1);
 	Const(const std::vector<RTLIL::State> &bits) : bits(bits) { flags = CONST_FLAG_NONE; }
 	Const(const std::vector<bool> &bits);
-	Const(const RTLIL::Const &c) = default;
+	Const(const RTLIL::Const &c);
 	RTLIL::Const &operator =(const RTLIL::Const &other) = default;
 
 	bool operator <(const RTLIL::Const &other) const;

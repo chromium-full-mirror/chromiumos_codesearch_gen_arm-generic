@@ -1,0 +1,18 @@
+{
+	"package": "6dc35318ced7615273c7ca77f720e27abe06b85e787bf3866aa3ee632f0ff881",
+	"files": {
+		"Cargo.toml.orig": "34a2e39f2210c3512739da120f5fa87ed5c66df912f6dc924ff76b99cb31ea21",
+		"Cargo.lock": "c62e9d4ee722f0a4b93a3030c461605dc2c4063d711879e65698085a193d886c",
+		"Cargo.toml": "f6bbcb29f1ee1b01f4fc3dbdbf77a61ac26cf425ee0a54a1c56e027e9ece7b06",
+		"LICENSE-MIT": "e4205e6e9efd8746e38f36ccc8c4338effb8bbc29c1a9668edff6a5f11b7094c",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"README.md": "6b7affc6520b934a1f92cce79280bc05e654aa887c5a6a1a1fa2d26501cd3ec1",
+		"examples/process.rs": "3436cb2be458af49a2b93de95ef3597541a26f7f9d543f1f89a9bc386f5e7f49",
+		"CHANGELOG.md": "340f45f02d397adde17bad356ed12f86a93052cf99c032b4df00a4209b1e68cd",
+		"test_data/regular_file.txt": "ec43a617f8a7e47d00109f09ea1406250c1beb67afc6dd6aba0456880e359026",
+		"src/writer.rs": "9590d22969789e005ad1dfd0096fed9232eb1e34d50f9ba6a9125e6d611ee645",
+		"src/lib.rs": "c897f1abf785df787ca3d4784859b3dce60b3deb6c40df529252063228cae82c",
+		"src/reader.rs": "cb26a41e6e5f4f004e0981f5719152c7698c9b2ff768eeac308d81ad5c15aab5",
+		"src/utils.rs": "d9e7dd80f6103943ad106d9b47af46907687d5a2c21f217c935df27711c2fbc9"
+	}
+}

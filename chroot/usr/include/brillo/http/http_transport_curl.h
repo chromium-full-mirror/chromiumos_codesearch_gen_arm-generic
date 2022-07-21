@@ -55,11 +55,11 @@ class BRILLO_EXPORT Transport : public http::Transport {
       brillo::ErrorPtr* error) override;
 
   void RunCallbackAsync(const base::Location& from_here,
-                        base::OnceClosure callback) override;
+                        const base::Closure& callback) override;
 
   RequestID StartAsyncTransfer(http::Connection* connection,
-                               SuccessCallback success_callback,
-                               ErrorCallback error_callback) override;
+                               const SuccessCallback& success_callback,
+                               const ErrorCallback& error_callback) override;
 
   bool CancelRequest(RequestID request_id) override;
 

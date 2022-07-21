@@ -458,19 +458,11 @@ AutomationPredicate = class {
 
     return AutomationPredicate.match({
       anyRole: [
-        Role.GENERIC_CONTAINER,
-        Role.DOCUMENT,
-        Role.GROUP,
-        Role.LIST,
-        Role.LIST_ITEM,
-        Role.TAB,
-        Role.TAB_PANEL,
-        Role.TOOLBAR,
-        Role.WINDOW,
+        Role.GENERIC_CONTAINER, Role.DOCUMENT, Role.GROUP, Role.LIST,
+        Role.LIST_ITEM, Role.TAB, Role.TAB_PANEL, Role.TOOLBAR, Role.WINDOW
       ],
       anyPredicate: [
-        AutomationPredicate.landmark,
-        AutomationPredicate.structuralContainer,
+        AutomationPredicate.landmark, AutomationPredicate.structuralContainer,
         function(node) {
           // For example, crosh.
           return node.role === Role.TEXT_FIELD &&
@@ -480,8 +472,8 @@ AutomationPredicate = class {
           return (
               node.state[State.EDITABLE] && node.parent &&
               !node.parent.state[State.EDITABLE]);
-        },
-      ],
+        }
+      ]
     })(node);
   }
 
@@ -594,16 +586,9 @@ AutomationPredicate = class {
 
     // Ignore some roles.
     return AutomationPredicate.leaf(node) && (AutomationPredicate.roles([
-             Role.CLIENT,
-             Role.COLUMN,
-             Role.GENERIC_CONTAINER,
-             Role.GROUP,
-             Role.IMAGE,
-             Role.PARAGRAPH,
-             Role.STATIC_TEXT,
-             Role.SVG_ROOT,
-             Role.TABLE_HEADER_CONTAINER,
-             Role.UNKNOWN,
+             Role.CLIENT, Role.COLUMN, Role.GENERIC_CONTAINER, Role.GROUP,
+             Role.IMAGE, Role.PARAGRAPH, Role.STATIC_TEXT, Role.SVG_ROOT,
+             Role.TABLE_HEADER_CONTAINER, Role.UNKNOWN
            ])(node));
   }
 
@@ -764,11 +749,9 @@ AutomationPredicate = class {
     return AutomationPredicate.match({
       anyRole: [Role.HEADING, Role.LIST, Role.PARAGRAPH],
       anyPredicate: [
-        AutomationPredicate.editText,
-        AutomationPredicate.formField,
-        AutomationPredicate.object,
-        AutomationPredicate.table,
-      ],
+        AutomationPredicate.editText, AutomationPredicate.formField,
+        AutomationPredicate.object, AutomationPredicate.table
+      ]
     })(node);
   }
 
@@ -848,25 +831,19 @@ AutomationPredicate.simpleListItem = AutomationPredicate.match({
   anyPredicate:
       [node => node.role === Role.LIST_ITEM && node.children.length === 2 &&
            node.firstChild.role === Role.LIST_MARKER &&
-           node.lastChild.role === Role.STATIC_TEXT],
+           node.lastChild.role === Role.STATIC_TEXT]
 });
 
 /** @type {AutomationPredicate.Unary} */
 AutomationPredicate.formField = AutomationPredicate.match({
   anyPredicate: [
-    AutomationPredicate.button,
-    AutomationPredicate.comboBox,
-    AutomationPredicate.editText,
+    AutomationPredicate.button, AutomationPredicate.comboBox,
+    AutomationPredicate.editText
   ],
   anyRole: [
-    Role.CHECK_BOX,
-    Role.COLOR_WELL,
-    Role.LIST_BOX,
-    Role.SLIDER,
-    Role.SWITCH,
-    Role.TAB,
-    Role.TREE,
-  ],
+    Role.CHECK_BOX, Role.COLOR_WELL, Role.LIST_BOX, Role.SLIDER, Role.SWITCH,
+    Role.TAB, Role.TREE
+  ]
 });
 
 /** @type {AutomationPredicate.Unary} */
@@ -875,13 +852,9 @@ AutomationPredicate.control = AutomationPredicate.match({
     AutomationPredicate.formField,
   ],
   anyRole: [
-    Role.DISCLOSURE_TRIANGLE,
-    Role.MENU_ITEM,
-    Role.MENU_ITEM_CHECK_BOX,
-    Role.MENU_ITEM_RADIO,
-    Role.MENU_LIST_OPTION,
-    Role.SCROLL_BAR,
-  ],
+    Role.DISCLOSURE_TRIANGLE, Role.MENU_ITEM, Role.MENU_ITEM_CHECK_BOX,
+    Role.MENU_ITEM_RADIO, Role.MENU_LIST_OPTION, Role.SCROLL_BAR
+  ]
 });
 
 
@@ -891,15 +864,8 @@ AutomationPredicate.linkOrControl = AutomationPredicate.match(
 
 /** @type {AutomationPredicate.Unary} */
 AutomationPredicate.landmark = AutomationPredicate.roles([
-  Role.APPLICATION,
-  Role.BANNER,
-  Role.COMPLEMENTARY,
-  Role.CONTENT_INFO,
-  Role.FORM,
-  Role.MAIN,
-  Role.NAVIGATION,
-  Role.REGION,
-  Role.SEARCH,
+  Role.APPLICATION, Role.BANNER, Role.COMPLEMENTARY, Role.CONTENT_INFO,
+  Role.FORM, Role.MAIN, Role.NAVIGATION, Role.REGION, Role.SEARCH
 ]);
 
 /**
@@ -909,21 +875,10 @@ AutomationPredicate.landmark = AutomationPredicate.roles([
  * @return {boolean}
  */
 AutomationPredicate.structuralContainer = AutomationPredicate.roles([
-  Role.ALERT_DIALOG,
-  Role.CLIENT,
-  Role.DIALOG,
-  Role.LAYOUT_TABLE,
-  Role.LAYOUT_TABLE_CELL,
-  Role.LAYOUT_TABLE_ROW,
-  Role.ROOT_WEB_AREA,
-  Role.WEB_VIEW,
-  Role.WINDOW,
-  Role.EMBEDDED_OBJECT,
-  Role.IFRAME,
-  Role.IFRAME_PRESENTATIONAL,
-  Role.PLUGIN_OBJECT,
-  Role.UNKNOWN,
-  Role.PANE,
+  Role.ALERT_DIALOG, Role.CLIENT, Role.DIALOG, Role.LAYOUT_TABLE,
+  Role.LAYOUT_TABLE_CELL, Role.LAYOUT_TABLE_ROW, Role.ROOT_WEB_AREA,
+  Role.WEB_VIEW, Role.WINDOW, Role.EMBEDDED_OBJECT, Role.IFRAME,
+  Role.IFRAME_PRESENTATIONAL, Role.PLUGIN_OBJECT, Role.UNKNOWN, Role.PANE
 ]);
 
 
@@ -934,14 +889,13 @@ AutomationPredicate.structuralContainer = AutomationPredicate.roles([
  */
 AutomationPredicate.clickable = AutomationPredicate.match({
   anyPredicate: [
-    AutomationPredicate.button,
-    AutomationPredicate.link,
+    AutomationPredicate.button, AutomationPredicate.link,
     node => {
       return node.defaultActionVerb ===
           chrome.automation.DefaultActionVerb.CLICK;
-    },
+    }
   ],
-  anyAttribute: {clickable: true},
+  anyAttribute: {clickable: true}
 });
 
 // Table related predicates.
@@ -985,10 +939,7 @@ AutomationPredicate.text = AutomationPredicate.roles(
  * @return {boolean}
  */
 AutomationPredicate.selectableText = AutomationPredicate.roles([
-  Role.STATIC_TEXT,
-  Role.INLINE_TEXT_BOX,
-  Role.LINE_BREAK,
-  Role.LIST_MARKER,
+  Role.STATIC_TEXT, Role.INLINE_TEXT_BOX, Role.LINE_BREAK, Role.LIST_MARKER
 ]);
 
 });  // goog.scope

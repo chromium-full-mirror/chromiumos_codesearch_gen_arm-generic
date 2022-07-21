@@ -3,9 +3,7 @@
 // found in the LICENSE file.
 
 import {EditingUtil} from './editing_util.js';
-import {FocusHandler} from './focus_handler.js';
 
-const AutomationNode = chrome.automation.AutomationNode;
 const EventType = chrome.automation.EventType;
 
 /** InputController handles interaction with input fields for Dictation. */
@@ -107,9 +105,11 @@ export class InputController {
     const useSmartSpacingAndCapitalization =
         InputController.SMART_SPACING_AND_CAPITALIZATION_LANGUAGES_.includes(
             language);
-    const data = this.getEditableNodeData_();
-    if (useSmartSpacingAndCapitalization && data) {
-      const {value, caretIndex} = data;
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (editableNode && useSmartSpacingAndCapitalization &&
+        editableNode.textSelStart === editableNode.textSelEnd) {
+      const value = editableNode.value;
+      const caretIndex = editableNode.textSelStart;
       text = EditingUtil.smartCapitalization(value, caretIndex, text);
       text = EditingUtil.smartSpacing(value, caretIndex, text);
     }
@@ -153,12 +153,14 @@ export class InputController {
    * intersects.
    */
   deletePrevSentence() {
-    const data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {value, caretIndex} = data;
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
     const prevSentenceStart = EditingUtil.navPrevSent(value, caretIndex);
     const length = caretIndex - prevSentenceStart;
     this.deleteSurroundingText_(length, -length);
@@ -175,7 +177,7 @@ export class InputController {
       contextID: this.activeImeContextId_,
       engineID: InputController.IME_ENGINE_ID,
       length,
-      offset,
+      offset
     });
   }
 
@@ -196,16 +198,19 @@ export class InputController {
    * @param {string} insertPhrase The phrase to be inserted.
    */
   replacePhrase(deletePhrase, insertPhrase) {
-    let data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {value, caretIndex} = data;
-    data = EditingUtil.replacePhrase(
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
+    const data = EditingUtil.replacePhrase(
         value, caretIndex, deletePhrase, insertPhrase);
     const newValue = data.value;
-    const newIndex = data.caretIndex;
+    const newIndex = data.index;
+
     this.setEditableValueAndUpdateCaretPosition_(newValue, newIndex);
   }
 
@@ -218,16 +223,19 @@ export class InputController {
    * @param {string} beforePhrase
    */
   insertBefore(insertPhrase, beforePhrase) {
-    let data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {value, caretIndex} = data;
-    data =
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
+    const data =
         EditingUtil.insertBefore(value, caretIndex, insertPhrase, beforePhrase);
     const newValue = data.value;
-    const newIndex = data.caretIndex;
+    const newIndex = data.index;
+
     this.setEditableValueAndUpdateCaretPosition_(newValue, newIndex);
   }
 
@@ -240,43 +248,49 @@ export class InputController {
    * @param {string} endPhrase
    */
   selectBetween(startPhrase, endPhrase) {
-    const data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {node, value, caretIndex} = data;
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
     const selection =
         EditingUtil.selectBetween(value, caretIndex, startPhrase, endPhrase);
     if (!selection) {
       return;
     }
 
-    node.setSelection(selection.start, selection.end);
+    editableNode.setSelection(selection.start, selection.end);
   }
 
   /** Moves the text caret to the next sentence. */
   navNextSent() {
-    const data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {node, value, caretIndex} = data;
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
     const newCaretIndex = EditingUtil.navNextSent(value, caretIndex);
-    node.setSelection(newCaretIndex, newCaretIndex);
+    editableNode.setSelection(newCaretIndex, newCaretIndex);
   }
 
   /** Moves the text caret to the previous sentence. */
   navPrevSent() {
-    const data = this.getEditableNodeData_();
-    if (!data) {
+    const editableNode = this.focusHandler_.getEditableNode();
+    if (!editableNode || !editableNode.value ||
+        editableNode.textSelStart !== editableNode.textSelEnd) {
       return;
     }
 
-    const {node, value, caretIndex} = data;
+    const value = editableNode.value;
+    const caretIndex = editableNode.textSelStart;
     const newCaretIndex = EditingUtil.navPrevSent(value, caretIndex);
-    node.setSelection(newCaretIndex, newCaretIndex);
+    editableNode.setSelection(newCaretIndex, newCaretIndex);
   }
 
   /** @param {string} locale */
@@ -300,30 +314,14 @@ export class InputController {
     const setSelection = () => {
       if (!handled) {
         // Ensure this listener only runs once.
-        editableNode.removeEventListener(
-            EventType.VALUE_CHANGED, setSelection, false);
+        editableNode.removeEventListener(setSelection);
         editableNode.setSelection(index, index);
         handled = true;
       }
     };
 
-    editableNode.addEventListener(EventType.VALUE_CHANGED, setSelection, false);
+    editableNode.addEventListener(EventType.VALUE_CHANGED, setSelection);
     editableNode.setValue(value);
-  }
-
-  /**
-   * Returns the value and caret index of the currently focused editable node.
-   * @return {!{node: !AutomationNode, value: string, caretIndex: number}|null}
-   * @private
-   */
-  getEditableNodeData_() {
-    const node = this.focusHandler_.getEditableNode();
-    if (!node || node.value === undefined || node.textSelStart === undefined ||
-        node.textSelStart !== node.textSelEnd) {
-      return null;
-    }
-
-    return {node, value: node.value, caretIndex: node.textSelStart};
   }
 }
 

@@ -43,7 +43,7 @@ class BRILLO_EXPORT Transport : public http::Transport {
 
   // Server handler callback signature.
   using HandlerCallback =
-      base::RepeatingCallback<void(const ServerRequest&, ServerResponse*)>;
+      base::Callback<void(const ServerRequest&, ServerResponse*)>;
 
   // This method allows the test code to provide a callback to handle requests
   // for specific URL/HTTP-verb combination. When a specific |method| request
@@ -100,11 +100,11 @@ class BRILLO_EXPORT Transport : public http::Transport {
       brillo::ErrorPtr* error) override;
 
   void RunCallbackAsync(const base::Location& from_here,
-                        base::OnceClosure callback) override;
+                        const base::Closure& callback) override;
 
   RequestID StartAsyncTransfer(http::Connection* connection,
-                               SuccessCallback success_callback,
-                               ErrorCallback error_callback) override;
+                               const SuccessCallback& success_callback,
+                               const ErrorCallback& error_callback) override;
 
   bool CancelRequest(RequestID request_id) override;
 
@@ -130,7 +130,7 @@ class BRILLO_EXPORT Transport : public http::Transport {
   bool async_{false};
   // A list of queued callbacks that need to be called at some point.
   // Call HandleOneAsyncRequest() or HandleAllAsyncRequests() to invoke them.
-  std::queue<base::OnceClosure> async_callback_queue_;
+  std::queue<base::Closure> async_callback_queue_;
 
   // Fake error to be returned from CreateConnection method.
   brillo::ErrorPtr create_connection_error_;

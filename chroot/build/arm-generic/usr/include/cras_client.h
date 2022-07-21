@@ -1013,10 +1013,7 @@ int cras_client_swap_node_left_right(struct cras_client *client,
  *    client - The client from cras_client_create.
  *    node_id - ID of the node.
  *    gain - New capture gain for the node, in range (0, 100) which will
- *        linearly maps to [0, 50) to [-2000, 0) and [50, 100] to [0, max_gain]
- *        100*dBFS. If it is an internal mic, it will query
- *        max_internal_mic_gain from board.ini instead of using the default
- *        value 2000.
+ *        linearly maps to (-4000, 4000) 100*dBFS.
  */
 int cras_client_set_node_capture_gain(struct cras_client *client,
 				      cras_node_id_t node_id, long gain);
@@ -1367,7 +1364,7 @@ int cras_client_set_num_active_streams_changed_callback(
  *    than the supported version, this inline function will return -ENOSYS.
  */
 
-#define CRAS_API_VERSION 6
+#define CRAS_API_VERSION 5
 #define CHECK_VERSION(object, version)                                         \
 	if (object->api_version < version) {                                   \
 		return -ENOSYS;                                                \
@@ -1430,8 +1427,6 @@ struct libcras_client {
 	int (*get_floop_dev_idx_by_client_types)(struct cras_client *client,
 						 int64_t client_types_mask);
 	int (*get_system_capture_muted)(struct cras_client *client, int *muted);
-	int (*set_aec_dump)(struct cras_client *client,
-			    cras_stream_id_t stream_id, int start, int fd);
 };
 
 struct cras_stream_cb_data;
@@ -1751,25 +1746,6 @@ libcras_client_get_system_capture_muted(struct libcras_client *client,
 {
 	CHECK_VERSION(client, 5);
 	return client->get_system_capture_muted(client->client_, muted);
-}
-
-/*
- * Starts or stops the aec dump task on server side.
- * Args:
- *    client - The client from cras_client_create.
- *    stream_id - The id of the input stream running with aec effect.
- *    start - True to start APM debugging, otherwise to stop it.
- *    fd - File descriptor of the file to store aec dump result.
- * Returns:
- *    0 on success negative error code on failure (from errno.h).
- */
-DISABLE_CFI_ICALL
-inline int libcras_client_set_aec_dump(struct libcras_client *client,
-				       cras_stream_id_t stream_id, int start,
-				       int fd)
-{
-	CHECK_VERSION(client, 6);
-	return client->set_aec_dump(client->client_, stream_id, start, fd);
 }
 
 /*

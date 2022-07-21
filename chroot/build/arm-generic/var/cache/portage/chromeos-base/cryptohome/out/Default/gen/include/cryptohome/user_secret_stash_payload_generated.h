@@ -11,11 +11,20 @@ namespace _serialized_ {
 
 struct ResetSecretMapping;
 struct ResetSecretMappingBuilder;
+struct ResetSecretMappingT;
 
 struct UserSecretStashPayload;
 struct UserSecretStashPayloadBuilder;
+struct UserSecretStashPayloadT;
+
+struct ResetSecretMappingT : public flatbuffers::NativeTable {
+  typedef ResetSecretMapping TableType;
+  std::string auth_factor_label{};
+  std::vector<uint8_t> reset_secret{};
+};
 
 struct ResetSecretMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef ResetSecretMappingT NativeTableType;
   typedef ResetSecretMappingBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_AUTH_FACTOR_LABEL = 4,
@@ -35,6 +44,9 @@ struct ResetSecretMapping FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyVector(reset_secret()) &&
            verifier.EndTable();
   }
+  ResetSecretMappingT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(ResetSecretMappingT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<ResetSecretMapping> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ResetSecretMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ResetSecretMappingBuilder {
@@ -80,7 +92,22 @@ inline flatbuffers::Offset<ResetSecretMapping> CreateResetSecretMappingDirect(
       reset_secret__);
 }
 
+flatbuffers::Offset<ResetSecretMapping> CreateResetSecretMapping(flatbuffers::FlatBufferBuilder &_fbb, const ResetSecretMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+struct UserSecretStashPayloadT : public flatbuffers::NativeTable {
+  typedef UserSecretStashPayload TableType;
+  std::vector<uint8_t> fek{};
+  std::vector<uint8_t> fnek{};
+  std::vector<uint8_t> fek_salt{};
+  std::vector<uint8_t> fnek_salt{};
+  std::vector<uint8_t> fek_sig{};
+  std::vector<uint8_t> fnek_sig{};
+  std::vector<uint8_t> chaps_key{};
+  std::vector<std::unique_ptr<cryptohome::_serialized_::ResetSecretMappingT>> reset_secrets{};
+};
+
 struct UserSecretStashPayload FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef UserSecretStashPayloadT NativeTableType;
   typedef UserSecretStashPayloadBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_FEK = 4,
@@ -137,6 +164,9 @@ struct UserSecretStashPayload FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tab
            verifier.VerifyVectorOfTables(reset_secrets()) &&
            verifier.EndTable();
   }
+  UserSecretStashPayloadT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(UserSecretStashPayloadT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<UserSecretStashPayload> Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashPayloadT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct UserSecretStashPayloadBuilder {
@@ -230,6 +260,84 @@ inline flatbuffers::Offset<UserSecretStashPayload> CreateUserSecretStashPayloadD
       reset_secrets__);
 }
 
+flatbuffers::Offset<UserSecretStashPayload> CreateUserSecretStashPayload(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashPayloadT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline ResetSecretMappingT *ResetSecretMapping::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = std::unique_ptr<ResetSecretMappingT>(new ResetSecretMappingT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
+}
+
+inline void ResetSecretMapping::UnPackTo(ResetSecretMappingT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = auth_factor_label(); if (_e) _o->auth_factor_label = _e->str(); }
+  { auto _e = reset_secret(); if (_e) { _o->reset_secret.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->reset_secret.begin()); } }
+}
+
+inline flatbuffers::Offset<ResetSecretMapping> ResetSecretMapping::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ResetSecretMappingT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateResetSecretMapping(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<ResetSecretMapping> CreateResetSecretMapping(flatbuffers::FlatBufferBuilder &_fbb, const ResetSecretMappingT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ResetSecretMappingT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _auth_factor_label = _o->auth_factor_label.empty() ? 0 : _fbb.CreateString(_o->auth_factor_label);
+  auto _reset_secret = _o->reset_secret.size() ? _fbb.CreateVector(_o->reset_secret) : 0;
+  return cryptohome::_serialized_::CreateResetSecretMapping(
+      _fbb,
+      _auth_factor_label,
+      _reset_secret);
+}
+
+inline UserSecretStashPayloadT *UserSecretStashPayload::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = std::unique_ptr<UserSecretStashPayloadT>(new UserSecretStashPayloadT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
+}
+
+inline void UserSecretStashPayload::UnPackTo(UserSecretStashPayloadT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = fek(); if (_e) { _o->fek.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fek.begin()); } }
+  { auto _e = fnek(); if (_e) { _o->fnek.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fnek.begin()); } }
+  { auto _e = fek_salt(); if (_e) { _o->fek_salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fek_salt.begin()); } }
+  { auto _e = fnek_salt(); if (_e) { _o->fnek_salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fnek_salt.begin()); } }
+  { auto _e = fek_sig(); if (_e) { _o->fek_sig.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fek_sig.begin()); } }
+  { auto _e = fnek_sig(); if (_e) { _o->fnek_sig.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fnek_sig.begin()); } }
+  { auto _e = chaps_key(); if (_e) { _o->chaps_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->chaps_key.begin()); } }
+  { auto _e = reset_secrets(); if (_e) { _o->reset_secrets.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->reset_secrets[_i] = std::unique_ptr<cryptohome::_serialized_::ResetSecretMappingT>(_e->Get(_i)->UnPack(_resolver)); } } }
+}
+
+inline flatbuffers::Offset<UserSecretStashPayload> UserSecretStashPayload::Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashPayloadT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateUserSecretStashPayload(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<UserSecretStashPayload> CreateUserSecretStashPayload(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashPayloadT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const UserSecretStashPayloadT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _fek = _o->fek.size() ? _fbb.CreateVector(_o->fek) : 0;
+  auto _fnek = _o->fnek.size() ? _fbb.CreateVector(_o->fnek) : 0;
+  auto _fek_salt = _o->fek_salt.size() ? _fbb.CreateVector(_o->fek_salt) : 0;
+  auto _fnek_salt = _o->fnek_salt.size() ? _fbb.CreateVector(_o->fnek_salt) : 0;
+  auto _fek_sig = _o->fek_sig.size() ? _fbb.CreateVector(_o->fek_sig) : 0;
+  auto _fnek_sig = _o->fnek_sig.size() ? _fbb.CreateVector(_o->fnek_sig) : 0;
+  auto _chaps_key = _o->chaps_key.size() ? _fbb.CreateVector(_o->chaps_key) : 0;
+  auto _reset_secrets = _o->reset_secrets.size() ? _fbb.CreateVector<flatbuffers::Offset<cryptohome::_serialized_::ResetSecretMapping>> (_o->reset_secrets.size(), [](size_t i, _VectorArgs *__va) { return CreateResetSecretMapping(*__va->__fbb, __va->__o->reset_secrets[i].get(), __va->__rehasher); }, &_va ) : 0;
+  return cryptohome::_serialized_::CreateUserSecretStashPayload(
+      _fbb,
+      _fek,
+      _fnek,
+      _fek_salt,
+      _fnek_salt,
+      _fek_sig,
+      _fnek_sig,
+      _chaps_key,
+      _reset_secrets);
+}
+
 inline const cryptohome::_serialized_::UserSecretStashPayload *GetUserSecretStashPayload(const void *buf) {
   return flatbuffers::GetRoot<cryptohome::_serialized_::UserSecretStashPayload>(buf);
 }
@@ -258,6 +366,18 @@ inline void FinishSizePrefixedUserSecretStashPayloadBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<cryptohome::_serialized_::UserSecretStashPayload> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<cryptohome::_serialized_::UserSecretStashPayloadT> UnPackUserSecretStashPayload(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<cryptohome::_serialized_::UserSecretStashPayloadT>(GetUserSecretStashPayload(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<cryptohome::_serialized_::UserSecretStashPayloadT> UnPackSizePrefixedUserSecretStashPayload(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<cryptohome::_serialized_::UserSecretStashPayloadT>(GetSizePrefixedUserSecretStashPayload(buf)->UnPack(res));
 }
 
 }  // namespace _serialized_

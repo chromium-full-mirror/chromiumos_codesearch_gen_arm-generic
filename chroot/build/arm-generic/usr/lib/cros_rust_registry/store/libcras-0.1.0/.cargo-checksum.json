@@ -1,12 +1,12 @@
 {
-	"package": "714144f6ad5c4710d83fd960d6ca6bbbce7cf19d83d5b50dd86564dd0baf9e32",
+	"package": "634d70d3d4b88f6caeca0345cacaa6cf2c9833c41e781883c938b5f51a4c3882",
 	"files": {
 		"Cargo.toml.orig": "c2a073cc584b7e5899f0cad39b7b4b46b91fb1b71d5fc42a1695772ed21d0a75",
 		"Android.bp": "6935900c897d6df04ceb4269360754b93d824b02742a465335b701ae5aa392e3",
 		"Cargo.toml": "2b1f8c1c3bb874dbbcd37f863070e77c981e43e951da8c63a9eff37906d9fb15",
 		"src/cras_client_message.rs": "c4bffd5e765293ee3c4361974ba4bf6c34b26a91cf754a09fed55beb5ca621ba",
 		"src/cras_shm_stream.rs": "80716b448de902316dc115df4d9762b9e1b6c2220718004962af46f74f26b8d9",
-		"src/libcras.rs": "41fb1a1eaef86417b9e2e68e36b905d722e4544df513b7fc923879376009f1bf",
+		"src/libcras.rs": "fffcac8d49d9f8579f3f0415a2ae37ca9c1084f03cae74ce48df2175d1c0da89",
 		"src/cras_shm.rs": "feab6c40dded9bd7dfa2c5ec322a777e9862c06fb39c49884d8074a92b35b019",
 		"src/audio_socket.rs": "211746da689a24e4282a489099d0aa5a66b67ef3a0be4cd2ab56780e8c0f1618",
 		"src/cras_stream.rs": "e1f71f16d707f0c2c97e57142952017bb6b3b8641c2c7a13dcdd069f15b05a45",

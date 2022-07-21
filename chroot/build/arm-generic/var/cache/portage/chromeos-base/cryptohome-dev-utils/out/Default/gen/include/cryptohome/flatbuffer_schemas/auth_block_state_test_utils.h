@@ -6,32 +6,25 @@
 // Generated with command:
 // gen/python/flatbuffer_cpp_binding_generator.py
 // --output_dir=/build/arm-generic/var/cache/portage/chromeos-base/cryptohome-dev-utils/out/Default/gen/include/cryptohome/flatbuffer_schemas
-// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE
-// --header_include_paths cryptohome/flatbuffer_schemas/structures.h
+// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS
 // --flatbuffer_header_include_paths cryptohome/auth_block_state_generated.h
 // --flatbuffer_header_include_paths
 // cryptohome/flatbuffer_schemas/auth_block_state.h
 // --flatbuffer_header_include_paths
-// cryptohome/flatbuffer_schemas/structures_flatbuffer.h
-// --flatbuffer_header_include_paths
-// libhwsec-foundation/flatbuffers/basic_objects.h --impl_include_paths
-// cryptohome/flatbuffer_schemas/auth_block_state.h --impl_include_paths
-// cryptohome/flatbuffer_schemas/auth_block_state_flatbuffer.h
-// --impl_include_paths cryptohome/flatbuffer_schemas/structures_flatbuffer.h
+// cryptohome/flatbuffer_schemas/basic_objects.h
+// --flatbuffer_header_include_paths cryptohome/structures_generated.h
+// --impl_include_paths cryptohome/flatbuffer_schemas/auth_block_state.h
 // --impl_include_paths
-// libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h
+// cryptohome/flatbuffer_schemas/auth_block_state_flatbuffer.h
+// --impl_include_paths cryptohome/flatbuffer_secure_allocator_bridge.h
 // --test_utils_header_include_path
 // cryptohome/flatbuffer_schemas/auth_block_state.h
-// --test_utils_header_include_path
-// cryptohome/flatbuffer_schemas/structures_test_utils.h
 // /build/arm-generic/var/cache/portage/chromeos-base/cryptohome-dev-utils/out/Default/gen/bfbs/auth_block_state.bfbs
-// --filter_by_namespace cryptohome
 
-#ifndef CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_TEST_UTILS_H_
-#define CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_TEST_UTILS_H_
+#ifndef CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_TEST_UTILS_H_
+#define CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_TEST_UTILS_H_
 
 #include "cryptohome/flatbuffer_schemas/auth_block_state.h"
-#include "cryptohome/flatbuffer_schemas/structures_test_utils.h"
 
 namespace cryptohome {
 
@@ -95,6 +88,56 @@ inline bool operator!=(const LibScryptCompatAuthBlockState& lhs,
 }
 
 }  // namespace cryptohome
+
+namespace cryptohome::structure {
+
+inline bool operator==(const Tpm2PolicySignedData& lhs,
+                       const Tpm2PolicySignedData& rhs) {
+  return true && lhs.public_key_spki_der == rhs.public_key_spki_der &&
+         lhs.srk_wrapped_secret == rhs.srk_wrapped_secret &&
+         lhs.scheme == rhs.scheme && lhs.hash_alg == rhs.hash_alg &&
+         lhs.default_pcr_policy_digest == rhs.default_pcr_policy_digest &&
+         lhs.extended_pcr_policy_digest == rhs.extended_pcr_policy_digest;
+}
+inline bool operator!=(const Tpm2PolicySignedData& lhs,
+                       const Tpm2PolicySignedData& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace cryptohome::structure
+
+namespace cryptohome::structure {
+
+inline bool operator==(const Tpm12CertifiedMigratableKeyData& lhs,
+                       const Tpm12CertifiedMigratableKeyData& rhs) {
+  return true && lhs.public_key_spki_der == rhs.public_key_spki_der &&
+         lhs.srk_wrapped_cmk == rhs.srk_wrapped_cmk &&
+         lhs.cmk_pubkey == rhs.cmk_pubkey &&
+         lhs.cmk_wrapped_auth_data == rhs.cmk_wrapped_auth_data &&
+         lhs.default_pcr_bound_secret == rhs.default_pcr_bound_secret &&
+         lhs.extended_pcr_bound_secret == rhs.extended_pcr_bound_secret;
+}
+inline bool operator!=(const Tpm12CertifiedMigratableKeyData& lhs,
+                       const Tpm12CertifiedMigratableKeyData& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace cryptohome::structure
+
+namespace cryptohome::structure {
+
+inline bool operator==(const SignatureChallengeInfo& lhs,
+                       const SignatureChallengeInfo& rhs) {
+  return true && lhs.public_key_spki_der == rhs.public_key_spki_der &&
+         lhs.sealed_secret == rhs.sealed_secret && lhs.salt == rhs.salt &&
+         lhs.salt_signature_algorithm == rhs.salt_signature_algorithm;
+}
+inline bool operator!=(const SignatureChallengeInfo& lhs,
+                       const SignatureChallengeInfo& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace cryptohome::structure
 
 namespace cryptohome {
 
@@ -197,4 +240,18 @@ inline bool operator!=(const AuthBlockState& lhs, const AuthBlockState& rhs) {
 
 }  // namespace cryptohome
 
-#endif  // CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_TEST_UTILS_H_
+namespace cryptohome::structure {
+
+inline bool operator==(const ChallengePublicKeyInfo& lhs,
+                       const ChallengePublicKeyInfo& rhs) {
+  return true && lhs.public_key_spki_der == rhs.public_key_spki_der &&
+         lhs.signature_algorithm == rhs.signature_algorithm;
+}
+inline bool operator!=(const ChallengePublicKeyInfo& lhs,
+                       const ChallengePublicKeyInfo& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace cryptohome::structure
+
+#endif  // CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_TEST_UTILS_H_

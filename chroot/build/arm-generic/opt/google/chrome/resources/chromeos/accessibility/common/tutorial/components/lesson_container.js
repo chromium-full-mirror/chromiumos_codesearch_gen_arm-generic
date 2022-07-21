@@ -101,5 +101,5 @@ export const LessonContainer = Polymer({
     }
 
     return lessons;
-  },
+  }
 });

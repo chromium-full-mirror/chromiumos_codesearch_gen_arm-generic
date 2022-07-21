@@ -3,16 +3,17 @@
  * Copyright (C) 2009, 2010 Red Hat Inc, Steven Rostedt <srostedt@redhat.com>
  *
  */
-#ifndef __TEP_PARSE_EVENTS_H
-#define __TEP_PARSE_EVENTS_H
+#ifndef _PARSE_EVENTS_H
+#define _PARSE_EVENTS_H
 
 #include <stdbool.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <regex.h>
 #include <string.h>
+#include <sys/uio.h>
 
-#include "trace-seq.h"
+#include "traceevent/trace-seq.h"
 
 #ifndef __maybe_unused
 #define __maybe_unused __attribute__((unused))
@@ -125,7 +126,6 @@ enum tep_format_flags {
 	TEP_FIELD_IS_LONG	= 32,
 	TEP_FIELD_IS_FLAG	= 64,
 	TEP_FIELD_IS_SYMBOLIC	= 128,
-	TEP_FIELD_IS_RELATIVE	= 256,
 };
 
 struct tep_format_field {
@@ -154,14 +154,12 @@ struct tep_print_arg_atom {
 
 struct tep_print_arg_string {
 	char			*string;
-	int			offset;		// for backward compatibility
-	struct tep_format_field	*field;
+	int			offset;
 };
 
 struct tep_print_arg_bitmask {
 	char			*bitmask;
-	int			offset;		// for backward compatibility
-	struct tep_format_field	*field;
+	int			offset;
 };
 
 struct tep_print_arg_field {
@@ -371,7 +369,7 @@ enum tep_errno {
 	 * errno since SUS requires the errno has distinct positive values.
 	 * See 'Issue 6' in the link below.
 	 *
-	 * https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/errno.h.html
+	 * http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/errno.h.html
 	 */
 	__TEP_ERRNO__START			= -100000,
 
@@ -442,16 +440,11 @@ int tep_set_function_resolver(struct tep_handle *tep,
 void tep_reset_function_resolver(struct tep_handle *tep);
 int tep_register_comm(struct tep_handle *tep, const char *comm, int pid);
 int tep_override_comm(struct tep_handle *tep, const char *comm, int pid);
-int tep_parse_saved_cmdlines(struct tep_handle *tep, const char *buf);
-int tep_parse_kallsyms(struct tep_handle *tep, const char *kallsyms);
 int tep_register_function(struct tep_handle *tep, char *name,
 			  unsigned long long addr, char *mod);
-int tep_parse_printk_formats(struct tep_handle *tep, const char *buf);
 int tep_register_print_string(struct tep_handle *tep, const char *fmt,
 			      unsigned long long addr);
 bool tep_is_pid_registered(struct tep_handle *tep, int pid);
-
-struct tep_event *tep_get_event(struct tep_handle *tep, int index);
 
 #define TEP_PRINT_INFO		"INFO"
 #define TEP_PRINT_INFO_RAW	"INFO_RAW"
@@ -528,6 +521,7 @@ int tep_read_number_field(struct tep_format_field *field, const void *data,
 			  unsigned long long *value);
 
 struct tep_event *tep_get_first_event(struct tep_handle *tep);
+struct tep_event *tep_get_event(struct tep_handle *tep, int index);
 int tep_get_events_count(struct tep_handle *tep);
 struct tep_event *tep_find_event(struct tep_handle *tep, int id);
 
@@ -546,27 +540,19 @@ struct tep_cmdline *tep_data_pid_from_comm(struct tep_handle *tep, const char *c
 					   struct tep_cmdline *next);
 int tep_cmdline_pid(struct tep_handle *tep, struct tep_cmdline *cmdline);
 
-void tep_print_field_content(struct trace_seq *s, void *data, int size,
-			     struct tep_format_field *field);
-void tep_record_print_fields(struct trace_seq *s,
-			     struct tep_record *record,
-			     struct tep_event *event);
-void tep_record_print_selected_fields(struct trace_seq *s,
-				      struct tep_record *record,
-				      struct tep_event *event,
-				      unsigned long long select_mask);
+void tep_print_field(struct trace_seq *s, void *data,
+		     struct tep_format_field *field);
 void tep_print_fields(struct trace_seq *s, void *data,
 		      int size __maybe_unused, struct tep_event *event);
 int tep_strerror(struct tep_handle *tep, enum tep_errno errnum,
 		 char *buf, size_t buflen);
 
-struct tep_event **tep_list_events(struct tep_handle *tep, enum tep_event_sort_type);
+struct tep_event **tep_list_events(struct tep_handle *tep,
+				   enum tep_event_sort_type);
 struct tep_event **tep_list_events_copy(struct tep_handle *tep,
 					enum tep_event_sort_type);
 struct tep_format_field **tep_event_common_fields(struct tep_event *event);
 struct tep_format_field **tep_event_fields(struct tep_event *event);
-
-int tep_get_function_count(struct tep_handle *tep);
 
 enum tep_endian {
         TEP_LITTLE_ENDIAN = 0,
@@ -577,7 +563,6 @@ void tep_set_cpus(struct tep_handle *tep, int cpus);
 int tep_get_long_size(struct tep_handle *tep);
 void tep_set_long_size(struct tep_handle *tep, int long_size);
 int tep_get_page_size(struct tep_handle *tep);
-int tep_get_sub_buffer_size(struct tep_handle *tep);
 void tep_set_page_size(struct tep_handle *tep, int _page_size);
 bool tep_is_file_bigendian(struct tep_handle *tep);
 void tep_set_file_bigendian(struct tep_handle *tep, enum tep_endian endian);
@@ -593,6 +578,14 @@ void tep_free(struct tep_handle *tep);
 void tep_ref(struct tep_handle *tep);
 void tep_unref(struct tep_handle *tep);
 int tep_get_ref(struct tep_handle *tep);
+
+/* access to the internal parser */
+void tep_buffer_init(const char *buf, unsigned long long size);
+enum tep_event_type tep_read_token(char **tok);
+void tep_free_token(char *token);
+int tep_peek_char(void);
+const char *tep_get_input_buf(void);
+unsigned long long tep_get_input_buf_ptr(void);
 
 /* for debugging */
 void tep_print_funcs(struct tep_handle *tep);
@@ -761,21 +754,5 @@ int tep_filter_remove_event(struct tep_event_filter *filter,
 int tep_filter_copy(struct tep_event_filter *dest, struct tep_event_filter *source);
 
 int tep_filter_compare(struct tep_event_filter *filter1, struct tep_event_filter *filter2);
-
-/* Control library logs */
-enum tep_loglevel {
-	TEP_LOG_NONE = 0,
-	TEP_LOG_CRITICAL,
-	TEP_LOG_ERROR,
-	TEP_LOG_WARNING,
-	TEP_LOG_INFO,
-	TEP_LOG_DEBUG,
-	TEP_LOG_ALL
-};
-void tep_set_loglevel(enum tep_loglevel level);
-
-/* DEPRECATED */
-void tep_print_field(struct trace_seq *s, void *data,
-		     struct tep_format_field *field);
 
 #endif /* _PARSE_EVENTS_H */

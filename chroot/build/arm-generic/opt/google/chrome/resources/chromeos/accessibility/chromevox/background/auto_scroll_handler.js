@@ -205,8 +205,7 @@ export class AutoScrollHandler {
 
     // If the focus has been changed for some reason, do nothing to
     // prevent disturbing the latest navigation.
-    if (!ChromeVoxState.instance.currentRange ||
-        !this.rangeBeforeScroll_.equals(ChromeVoxState.instance.currentRange)) {
+    if (!this.rangeBeforeScroll_.equals(ChromeVoxState.instance.currentRange)) {
       return;
     }
 
@@ -354,7 +353,7 @@ AutoScrollHandler.RELATED_SCROLL_EVENT_TYPES = [
   EventType.SCROLL_POSITION_CHANGED,
   // These two events are sent by Web and Views via AXEventGenerator.
   EventType.SCROLL_HORIZONTAL_POSITION_CHANGED,
-  EventType.SCROLL_VERTICAL_POSITION_CHANGED,
+  EventType.SCROLL_VERTICAL_POSITION_CHANGED
 ];
 
 /**

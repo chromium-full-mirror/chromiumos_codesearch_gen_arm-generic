@@ -6,11 +6,15 @@
 
 #include "flatbuffers/flatbuffers.h"
 
-#include "libhwsec/structures/signature_sealed_data_generated.h"
-
 namespace cryptohome {
 namespace structure {
 namespace _serialized_ {
+
+struct Tpm2PolicySignedData;
+struct Tpm2PolicySignedDataBuilder;
+
+struct Tpm12CertifiedMigratableKeyData;
+struct Tpm12CertifiedMigratableKeyDataBuilder;
 
 struct SignatureChallengeInfo;
 struct SignatureChallengeInfoBuilder;
@@ -54,6 +58,292 @@ inline const char *EnumNameChallengeSignatureAlgorithm(ChallengeSignatureAlgorit
   return EnumNamesChallengeSignatureAlgorithm()[index];
 }
 
+enum class SignatureSealedData : uint8_t {
+  NONE = 0,
+  Tpm2PolicySignedData = 1,
+  Tpm12CertifiedMigratableKeyData = 2,
+  MIN = NONE,
+  MAX = Tpm12CertifiedMigratableKeyData
+};
+
+inline const SignatureSealedData (&EnumValuesSignatureSealedData())[3] {
+  static const SignatureSealedData values[] = {
+    SignatureSealedData::NONE,
+    SignatureSealedData::Tpm2PolicySignedData,
+    SignatureSealedData::Tpm12CertifiedMigratableKeyData
+  };
+  return values;
+}
+
+inline const char * const *EnumNamesSignatureSealedData() {
+  static const char * const names[4] = {
+    "NONE",
+    "Tpm2PolicySignedData",
+    "Tpm12CertifiedMigratableKeyData",
+    nullptr
+  };
+  return names;
+}
+
+inline const char *EnumNameSignatureSealedData(SignatureSealedData e) {
+  if (flatbuffers::IsOutRange(e, SignatureSealedData::NONE, SignatureSealedData::Tpm12CertifiedMigratableKeyData)) return "";
+  const size_t index = static_cast<size_t>(e);
+  return EnumNamesSignatureSealedData()[index];
+}
+
+template<typename T> struct SignatureSealedDataTraits {
+  static const SignatureSealedData enum_value = SignatureSealedData::NONE;
+};
+
+template<> struct SignatureSealedDataTraits<cryptohome::structure::_serialized_::Tpm2PolicySignedData> {
+  static const SignatureSealedData enum_value = SignatureSealedData::Tpm2PolicySignedData;
+};
+
+template<> struct SignatureSealedDataTraits<cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData> {
+  static const SignatureSealedData enum_value = SignatureSealedData::Tpm12CertifiedMigratableKeyData;
+};
+
+bool VerifySignatureSealedData(flatbuffers::Verifier &verifier, const void *obj, SignatureSealedData type);
+bool VerifySignatureSealedDataVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types);
+
+struct Tpm2PolicySignedData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Tpm2PolicySignedDataBuilder Builder;
+  enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
+    VT_PUBLIC_KEY_SPKI_DER = 4,
+    VT_SRK_WRAPPED_SECRET = 6,
+    VT_SCHEME = 8,
+    VT_HASH_ALG = 10,
+    VT_DEFAULT_PCR_POLICY_DIGEST = 12,
+    VT_EXTENDED_PCR_POLICY_DIGEST = 14
+  };
+  const flatbuffers::Vector<uint8_t> *public_key_spki_der() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_PUBLIC_KEY_SPKI_DER);
+  }
+  const flatbuffers::Vector<uint8_t> *srk_wrapped_secret() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_SRK_WRAPPED_SECRET);
+  }
+  flatbuffers::Optional<int32_t> scheme() const {
+    return GetOptional<int32_t, int32_t>(VT_SCHEME);
+  }
+  flatbuffers::Optional<int32_t> hash_alg() const {
+    return GetOptional<int32_t, int32_t>(VT_HASH_ALG);
+  }
+  const flatbuffers::Vector<uint8_t> *default_pcr_policy_digest() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_DEFAULT_PCR_POLICY_DIGEST);
+  }
+  const flatbuffers::Vector<uint8_t> *extended_pcr_policy_digest() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_EXTENDED_PCR_POLICY_DIGEST);
+  }
+  bool Verify(flatbuffers::Verifier &verifier) const {
+    return VerifyTableStart(verifier) &&
+           VerifyOffset(verifier, VT_PUBLIC_KEY_SPKI_DER) &&
+           verifier.VerifyVector(public_key_spki_der()) &&
+           VerifyOffset(verifier, VT_SRK_WRAPPED_SECRET) &&
+           verifier.VerifyVector(srk_wrapped_secret()) &&
+           VerifyField<int32_t>(verifier, VT_SCHEME) &&
+           VerifyField<int32_t>(verifier, VT_HASH_ALG) &&
+           VerifyOffset(verifier, VT_DEFAULT_PCR_POLICY_DIGEST) &&
+           verifier.VerifyVector(default_pcr_policy_digest()) &&
+           VerifyOffset(verifier, VT_EXTENDED_PCR_POLICY_DIGEST) &&
+           verifier.VerifyVector(extended_pcr_policy_digest()) &&
+           verifier.EndTable();
+  }
+};
+
+struct Tpm2PolicySignedDataBuilder {
+  typedef Tpm2PolicySignedData Table;
+  flatbuffers::FlatBufferBuilder &fbb_;
+  flatbuffers::uoffset_t start_;
+  void add_public_key_spki_der(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der) {
+    fbb_.AddOffset(Tpm2PolicySignedData::VT_PUBLIC_KEY_SPKI_DER, public_key_spki_der);
+  }
+  void add_srk_wrapped_secret(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> srk_wrapped_secret) {
+    fbb_.AddOffset(Tpm2PolicySignedData::VT_SRK_WRAPPED_SECRET, srk_wrapped_secret);
+  }
+  void add_scheme(int32_t scheme) {
+    fbb_.AddElement<int32_t>(Tpm2PolicySignedData::VT_SCHEME, scheme);
+  }
+  void add_hash_alg(int32_t hash_alg) {
+    fbb_.AddElement<int32_t>(Tpm2PolicySignedData::VT_HASH_ALG, hash_alg);
+  }
+  void add_default_pcr_policy_digest(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> default_pcr_policy_digest) {
+    fbb_.AddOffset(Tpm2PolicySignedData::VT_DEFAULT_PCR_POLICY_DIGEST, default_pcr_policy_digest);
+  }
+  void add_extended_pcr_policy_digest(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> extended_pcr_policy_digest) {
+    fbb_.AddOffset(Tpm2PolicySignedData::VT_EXTENDED_PCR_POLICY_DIGEST, extended_pcr_policy_digest);
+  }
+  explicit Tpm2PolicySignedDataBuilder(flatbuffers::FlatBufferBuilder &_fbb)
+        : fbb_(_fbb) {
+    start_ = fbb_.StartTable();
+  }
+  flatbuffers::Offset<Tpm2PolicySignedData> Finish() {
+    const auto end = fbb_.EndTable(start_);
+    auto o = flatbuffers::Offset<Tpm2PolicySignedData>(end);
+    return o;
+  }
+};
+
+inline flatbuffers::Offset<Tpm2PolicySignedData> CreateTpm2PolicySignedData(
+    flatbuffers::FlatBufferBuilder &_fbb,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> srk_wrapped_secret = 0,
+    flatbuffers::Optional<int32_t> scheme = flatbuffers::nullopt,
+    flatbuffers::Optional<int32_t> hash_alg = flatbuffers::nullopt,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> default_pcr_policy_digest = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> extended_pcr_policy_digest = 0) {
+  Tpm2PolicySignedDataBuilder builder_(_fbb);
+  builder_.add_extended_pcr_policy_digest(extended_pcr_policy_digest);
+  builder_.add_default_pcr_policy_digest(default_pcr_policy_digest);
+  if(hash_alg) { builder_.add_hash_alg(*hash_alg); }
+  if(scheme) { builder_.add_scheme(*scheme); }
+  builder_.add_srk_wrapped_secret(srk_wrapped_secret);
+  builder_.add_public_key_spki_der(public_key_spki_der);
+  return builder_.Finish();
+}
+
+inline flatbuffers::Offset<Tpm2PolicySignedData> CreateTpm2PolicySignedDataDirect(
+    flatbuffers::FlatBufferBuilder &_fbb,
+    const std::vector<uint8_t> *public_key_spki_der = nullptr,
+    const std::vector<uint8_t> *srk_wrapped_secret = nullptr,
+    flatbuffers::Optional<int32_t> scheme = flatbuffers::nullopt,
+    flatbuffers::Optional<int32_t> hash_alg = flatbuffers::nullopt,
+    const std::vector<uint8_t> *default_pcr_policy_digest = nullptr,
+    const std::vector<uint8_t> *extended_pcr_policy_digest = nullptr) {
+  auto public_key_spki_der__ = public_key_spki_der ? _fbb.CreateVector<uint8_t>(*public_key_spki_der) : 0;
+  auto srk_wrapped_secret__ = srk_wrapped_secret ? _fbb.CreateVector<uint8_t>(*srk_wrapped_secret) : 0;
+  auto default_pcr_policy_digest__ = default_pcr_policy_digest ? _fbb.CreateVector<uint8_t>(*default_pcr_policy_digest) : 0;
+  auto extended_pcr_policy_digest__ = extended_pcr_policy_digest ? _fbb.CreateVector<uint8_t>(*extended_pcr_policy_digest) : 0;
+  return cryptohome::structure::_serialized_::CreateTpm2PolicySignedData(
+      _fbb,
+      public_key_spki_der__,
+      srk_wrapped_secret__,
+      scheme,
+      hash_alg,
+      default_pcr_policy_digest__,
+      extended_pcr_policy_digest__);
+}
+
+struct Tpm12CertifiedMigratableKeyData FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef Tpm12CertifiedMigratableKeyDataBuilder Builder;
+  enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
+    VT_PUBLIC_KEY_SPKI_DER = 4,
+    VT_SRK_WRAPPED_CMK = 6,
+    VT_CMK_PUBKEY = 8,
+    VT_CMK_WRAPPED_AUTH_DATA = 10,
+    VT_DEFAULT_PCR_BOUND_SECRET = 12,
+    VT_EXTENDED_PCR_BOUND_SECRET = 14
+  };
+  const flatbuffers::Vector<uint8_t> *public_key_spki_der() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_PUBLIC_KEY_SPKI_DER);
+  }
+  const flatbuffers::Vector<uint8_t> *srk_wrapped_cmk() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_SRK_WRAPPED_CMK);
+  }
+  const flatbuffers::Vector<uint8_t> *cmk_pubkey() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_CMK_PUBKEY);
+  }
+  const flatbuffers::Vector<uint8_t> *cmk_wrapped_auth_data() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_CMK_WRAPPED_AUTH_DATA);
+  }
+  const flatbuffers::Vector<uint8_t> *default_pcr_bound_secret() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_DEFAULT_PCR_BOUND_SECRET);
+  }
+  const flatbuffers::Vector<uint8_t> *extended_pcr_bound_secret() const {
+    return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_EXTENDED_PCR_BOUND_SECRET);
+  }
+  bool Verify(flatbuffers::Verifier &verifier) const {
+    return VerifyTableStart(verifier) &&
+           VerifyOffset(verifier, VT_PUBLIC_KEY_SPKI_DER) &&
+           verifier.VerifyVector(public_key_spki_der()) &&
+           VerifyOffset(verifier, VT_SRK_WRAPPED_CMK) &&
+           verifier.VerifyVector(srk_wrapped_cmk()) &&
+           VerifyOffset(verifier, VT_CMK_PUBKEY) &&
+           verifier.VerifyVector(cmk_pubkey()) &&
+           VerifyOffset(verifier, VT_CMK_WRAPPED_AUTH_DATA) &&
+           verifier.VerifyVector(cmk_wrapped_auth_data()) &&
+           VerifyOffset(verifier, VT_DEFAULT_PCR_BOUND_SECRET) &&
+           verifier.VerifyVector(default_pcr_bound_secret()) &&
+           VerifyOffset(verifier, VT_EXTENDED_PCR_BOUND_SECRET) &&
+           verifier.VerifyVector(extended_pcr_bound_secret()) &&
+           verifier.EndTable();
+  }
+};
+
+struct Tpm12CertifiedMigratableKeyDataBuilder {
+  typedef Tpm12CertifiedMigratableKeyData Table;
+  flatbuffers::FlatBufferBuilder &fbb_;
+  flatbuffers::uoffset_t start_;
+  void add_public_key_spki_der(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_PUBLIC_KEY_SPKI_DER, public_key_spki_der);
+  }
+  void add_srk_wrapped_cmk(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> srk_wrapped_cmk) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_SRK_WRAPPED_CMK, srk_wrapped_cmk);
+  }
+  void add_cmk_pubkey(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> cmk_pubkey) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_CMK_PUBKEY, cmk_pubkey);
+  }
+  void add_cmk_wrapped_auth_data(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> cmk_wrapped_auth_data) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_CMK_WRAPPED_AUTH_DATA, cmk_wrapped_auth_data);
+  }
+  void add_default_pcr_bound_secret(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> default_pcr_bound_secret) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_DEFAULT_PCR_BOUND_SECRET, default_pcr_bound_secret);
+  }
+  void add_extended_pcr_bound_secret(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> extended_pcr_bound_secret) {
+    fbb_.AddOffset(Tpm12CertifiedMigratableKeyData::VT_EXTENDED_PCR_BOUND_SECRET, extended_pcr_bound_secret);
+  }
+  explicit Tpm12CertifiedMigratableKeyDataBuilder(flatbuffers::FlatBufferBuilder &_fbb)
+        : fbb_(_fbb) {
+    start_ = fbb_.StartTable();
+  }
+  flatbuffers::Offset<Tpm12CertifiedMigratableKeyData> Finish() {
+    const auto end = fbb_.EndTable(start_);
+    auto o = flatbuffers::Offset<Tpm12CertifiedMigratableKeyData>(end);
+    return o;
+  }
+};
+
+inline flatbuffers::Offset<Tpm12CertifiedMigratableKeyData> CreateTpm12CertifiedMigratableKeyData(
+    flatbuffers::FlatBufferBuilder &_fbb,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> srk_wrapped_cmk = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> cmk_pubkey = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> cmk_wrapped_auth_data = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> default_pcr_bound_secret = 0,
+    flatbuffers::Offset<flatbuffers::Vector<uint8_t>> extended_pcr_bound_secret = 0) {
+  Tpm12CertifiedMigratableKeyDataBuilder builder_(_fbb);
+  builder_.add_extended_pcr_bound_secret(extended_pcr_bound_secret);
+  builder_.add_default_pcr_bound_secret(default_pcr_bound_secret);
+  builder_.add_cmk_wrapped_auth_data(cmk_wrapped_auth_data);
+  builder_.add_cmk_pubkey(cmk_pubkey);
+  builder_.add_srk_wrapped_cmk(srk_wrapped_cmk);
+  builder_.add_public_key_spki_der(public_key_spki_der);
+  return builder_.Finish();
+}
+
+inline flatbuffers::Offset<Tpm12CertifiedMigratableKeyData> CreateTpm12CertifiedMigratableKeyDataDirect(
+    flatbuffers::FlatBufferBuilder &_fbb,
+    const std::vector<uint8_t> *public_key_spki_der = nullptr,
+    const std::vector<uint8_t> *srk_wrapped_cmk = nullptr,
+    const std::vector<uint8_t> *cmk_pubkey = nullptr,
+    const std::vector<uint8_t> *cmk_wrapped_auth_data = nullptr,
+    const std::vector<uint8_t> *default_pcr_bound_secret = nullptr,
+    const std::vector<uint8_t> *extended_pcr_bound_secret = nullptr) {
+  auto public_key_spki_der__ = public_key_spki_der ? _fbb.CreateVector<uint8_t>(*public_key_spki_der) : 0;
+  auto srk_wrapped_cmk__ = srk_wrapped_cmk ? _fbb.CreateVector<uint8_t>(*srk_wrapped_cmk) : 0;
+  auto cmk_pubkey__ = cmk_pubkey ? _fbb.CreateVector<uint8_t>(*cmk_pubkey) : 0;
+  auto cmk_wrapped_auth_data__ = cmk_wrapped_auth_data ? _fbb.CreateVector<uint8_t>(*cmk_wrapped_auth_data) : 0;
+  auto default_pcr_bound_secret__ = default_pcr_bound_secret ? _fbb.CreateVector<uint8_t>(*default_pcr_bound_secret) : 0;
+  auto extended_pcr_bound_secret__ = extended_pcr_bound_secret ? _fbb.CreateVector<uint8_t>(*extended_pcr_bound_secret) : 0;
+  return cryptohome::structure::_serialized_::CreateTpm12CertifiedMigratableKeyData(
+      _fbb,
+      public_key_spki_der__,
+      srk_wrapped_cmk__,
+      cmk_pubkey__,
+      cmk_wrapped_auth_data__,
+      default_pcr_bound_secret__,
+      extended_pcr_bound_secret__);
+}
+
 struct SignatureChallengeInfo FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
   typedef SignatureChallengeInfoBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
@@ -66,18 +356,18 @@ struct SignatureChallengeInfo FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tab
   const flatbuffers::Vector<uint8_t> *public_key_spki_der() const {
     return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_PUBLIC_KEY_SPKI_DER);
   }
-  hwsec::_serialized_::SignatureSealedData sealed_secret_type() const {
-    return static_cast<hwsec::_serialized_::SignatureSealedData>(GetField<uint8_t>(VT_SEALED_SECRET_TYPE, 0));
+  cryptohome::structure::_serialized_::SignatureSealedData sealed_secret_type() const {
+    return static_cast<cryptohome::structure::_serialized_::SignatureSealedData>(GetField<uint8_t>(VT_SEALED_SECRET_TYPE, 0));
   }
   const void *sealed_secret() const {
     return GetPointer<const void *>(VT_SEALED_SECRET);
   }
   template<typename T> const T *sealed_secret_as() const;
-  const hwsec::_serialized_::Tpm2PolicySignedData *sealed_secret_as_Tpm2PolicySignedData() const {
-    return sealed_secret_type() == hwsec::_serialized_::SignatureSealedData::Tpm2PolicySignedData ? static_cast<const hwsec::_serialized_::Tpm2PolicySignedData *>(sealed_secret()) : nullptr;
+  const cryptohome::structure::_serialized_::Tpm2PolicySignedData *sealed_secret_as_Tpm2PolicySignedData() const {
+    return sealed_secret_type() == cryptohome::structure::_serialized_::SignatureSealedData::Tpm2PolicySignedData ? static_cast<const cryptohome::structure::_serialized_::Tpm2PolicySignedData *>(sealed_secret()) : nullptr;
   }
-  const hwsec::_serialized_::Tpm12CertifiedMigratableKeyData *sealed_secret_as_Tpm12CertifiedMigratableKeyData() const {
-    return sealed_secret_type() == hwsec::_serialized_::SignatureSealedData::Tpm12CertifiedMigratableKeyData ? static_cast<const hwsec::_serialized_::Tpm12CertifiedMigratableKeyData *>(sealed_secret()) : nullptr;
+  const cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData *sealed_secret_as_Tpm12CertifiedMigratableKeyData() const {
+    return sealed_secret_type() == cryptohome::structure::_serialized_::SignatureSealedData::Tpm12CertifiedMigratableKeyData ? static_cast<const cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData *>(sealed_secret()) : nullptr;
   }
   const flatbuffers::Vector<uint8_t> *salt() const {
     return GetPointer<const flatbuffers::Vector<uint8_t> *>(VT_SALT);
@@ -99,11 +389,11 @@ struct SignatureChallengeInfo FLATBUFFERS_FINAL_CLASS : private flatbuffers::Tab
   }
 };
 
-template<> inline const hwsec::_serialized_::Tpm2PolicySignedData *SignatureChallengeInfo::sealed_secret_as<hwsec::_serialized_::Tpm2PolicySignedData>() const {
+template<> inline const cryptohome::structure::_serialized_::Tpm2PolicySignedData *SignatureChallengeInfo::sealed_secret_as<cryptohome::structure::_serialized_::Tpm2PolicySignedData>() const {
   return sealed_secret_as_Tpm2PolicySignedData();
 }
 
-template<> inline const hwsec::_serialized_::Tpm12CertifiedMigratableKeyData *SignatureChallengeInfo::sealed_secret_as<hwsec::_serialized_::Tpm12CertifiedMigratableKeyData>() const {
+template<> inline const cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData *SignatureChallengeInfo::sealed_secret_as<cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData>() const {
   return sealed_secret_as_Tpm12CertifiedMigratableKeyData();
 }
 
@@ -114,7 +404,7 @@ struct SignatureChallengeInfoBuilder {
   void add_public_key_spki_der(flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der) {
     fbb_.AddOffset(SignatureChallengeInfo::VT_PUBLIC_KEY_SPKI_DER, public_key_spki_der);
   }
-  void add_sealed_secret_type(hwsec::_serialized_::SignatureSealedData sealed_secret_type) {
+  void add_sealed_secret_type(cryptohome::structure::_serialized_::SignatureSealedData sealed_secret_type) {
     fbb_.AddElement<uint8_t>(SignatureChallengeInfo::VT_SEALED_SECRET_TYPE, static_cast<uint8_t>(sealed_secret_type), 0);
   }
   void add_sealed_secret(flatbuffers::Offset<void> sealed_secret) {
@@ -140,7 +430,7 @@ struct SignatureChallengeInfoBuilder {
 inline flatbuffers::Offset<SignatureChallengeInfo> CreateSignatureChallengeInfo(
     flatbuffers::FlatBufferBuilder &_fbb,
     flatbuffers::Offset<flatbuffers::Vector<uint8_t>> public_key_spki_der = 0,
-    hwsec::_serialized_::SignatureSealedData sealed_secret_type = hwsec::_serialized_::SignatureSealedData::NONE,
+    cryptohome::structure::_serialized_::SignatureSealedData sealed_secret_type = cryptohome::structure::_serialized_::SignatureSealedData::NONE,
     flatbuffers::Offset<void> sealed_secret = 0,
     flatbuffers::Offset<flatbuffers::Vector<uint8_t>> salt = 0,
     flatbuffers::Optional<cryptohome::structure::_serialized_::ChallengeSignatureAlgorithm> salt_signature_algorithm = flatbuffers::nullopt) {
@@ -156,7 +446,7 @@ inline flatbuffers::Offset<SignatureChallengeInfo> CreateSignatureChallengeInfo(
 inline flatbuffers::Offset<SignatureChallengeInfo> CreateSignatureChallengeInfoDirect(
     flatbuffers::FlatBufferBuilder &_fbb,
     const std::vector<uint8_t> *public_key_spki_der = nullptr,
-    hwsec::_serialized_::SignatureSealedData sealed_secret_type = hwsec::_serialized_::SignatureSealedData::NONE,
+    cryptohome::structure::_serialized_::SignatureSealedData sealed_secret_type = cryptohome::structure::_serialized_::SignatureSealedData::NONE,
     flatbuffers::Offset<void> sealed_secret = 0,
     const std::vector<uint8_t> *salt = nullptr,
     flatbuffers::Optional<cryptohome::structure::_serialized_::ChallengeSignatureAlgorithm> salt_signature_algorithm = flatbuffers::nullopt) {
@@ -234,6 +524,35 @@ inline flatbuffers::Offset<ChallengePublicKeyInfo> CreateChallengePublicKeyInfoD
       _fbb,
       public_key_spki_der__,
       signature_algorithm__);
+}
+
+inline bool VerifySignatureSealedData(flatbuffers::Verifier &verifier, const void *obj, SignatureSealedData type) {
+  switch (type) {
+    case SignatureSealedData::NONE: {
+      return true;
+    }
+    case SignatureSealedData::Tpm2PolicySignedData: {
+      auto ptr = reinterpret_cast<const cryptohome::structure::_serialized_::Tpm2PolicySignedData *>(obj);
+      return verifier.VerifyTable(ptr);
+    }
+    case SignatureSealedData::Tpm12CertifiedMigratableKeyData: {
+      auto ptr = reinterpret_cast<const cryptohome::structure::_serialized_::Tpm12CertifiedMigratableKeyData *>(obj);
+      return verifier.VerifyTable(ptr);
+    }
+    default: return true;
+  }
+}
+
+inline bool VerifySignatureSealedDataVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types) {
+  if (!values || !types) return !values && !types;
+  if (values->size() != types->size()) return false;
+  for (flatbuffers::uoffset_t i = 0; i < values->size(); ++i) {
+    if (!VerifySignatureSealedData(
+        verifier,  values->Get(i), types->GetEnum<SignatureSealedData>(i))) {
+      return false;
+    }
+  }
+  return true;
 }
 
 inline const cryptohome::structure::_serialized_::SignatureChallengeInfo *GetSignatureChallengeInfo(const void *buf) {

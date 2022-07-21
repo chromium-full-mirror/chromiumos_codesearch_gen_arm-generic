@@ -7,7 +7,6 @@
  * with keyboard events.
  */
 import {KeySequence} from './key_sequence.js';
-import {Msgs} from './msgs.js';
 
 export class KeyUtil {
   /**

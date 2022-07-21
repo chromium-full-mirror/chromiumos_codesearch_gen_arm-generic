@@ -325,7 +325,6 @@ class BluetoothBaseFacadeLocal(object):
             'Realtek-RTL8822C-USB': [(('0x10ec', '0xc822'), 'USB')],
             'Realtek-RTL8822C-UART': [(('0x10ec', '0xc822'), 'UART')],
             'Realtek-RTL8852A-USB': [(('0x10ec', '0x8852'), 'USB')],
-            'Realtek-RTL8852C-USB': [(('0x10ec', '0xc852'), 'USB')],
             'Mediatek-MTK7921-USB': [(('0x14c3', '0x7961'), 'USB')],
             'Mediatek-MTK7921-SDIO': [(('0x037a', '0x7901'), 'SDIO')]
 
@@ -1826,21 +1825,6 @@ class BluezFacadeLocal(BluetoothBaseFacadeLocal):
                            GLib.Variant('(yy)', (bluez_vb, kernel_vb)),
                            GLib.VariantType.new('()'))
         return
-
-    @dbus_safe(False)
-    def set_ll_privacy(self, enable):
-        """Enable or disable the link layer privacy feature in the DUT.
-
-        If the controller is on, the command will first turn it off, set
-        the value, then turn it back on.
-
-        @param enable: True to enable
-        """
-        debug_object = self.bus.get(
-                self.BLUEZ_SERVICE_NAME,
-                self.BLUEZ_DEBUG_LOG_PATH)[self.BLUEZ_DEBUG_LOG_IFACE]
-        debug_object.SetLLPrivacy(enable)
-        return True
 
     @dbus_safe(False)
     def set_quality_debug_log(self, enable):

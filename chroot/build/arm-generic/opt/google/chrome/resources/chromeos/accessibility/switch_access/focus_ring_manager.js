@@ -24,8 +24,7 @@ export class FocusRingManager {
 
     /** @private {!Map<SAConstants.Focus.ID, SAChildNode>} */
     this.ringNodesForTesting_ = new Map([
-      [SAConstants.Focus.ID.PRIMARY, null],
-      [SAConstants.Focus.ID.PREVIEW, null],
+      [SAConstants.Focus.ID.PRIMARY, null], [SAConstants.Focus.ID.PREVIEW, null]
     ]);
 
     /**
@@ -156,7 +155,7 @@ export class FocusRingManager {
       rects: [],
       type: chrome.accessibilityPrivate.FocusType.SOLID,
       color: SAConstants.Focus.PRIMARY_COLOR,
-      secondaryColor: SAConstants.Focus.OUTER_COLOR,
+      secondaryColor: SAConstants.Focus.OUTER_COLOR
     };
 
     const previewRing = {
@@ -164,12 +163,12 @@ export class FocusRingManager {
       rects: [],
       type: chrome.accessibilityPrivate.FocusType.DASHED,
       color: SAConstants.Focus.PREVIEW_COLOR,
-      secondaryColor: SAConstants.Focus.OUTER_COLOR,
+      secondaryColor: SAConstants.Focus.OUTER_COLOR
     };
 
     return new Map([
       [SAConstants.Focus.ID.PRIMARY, primaryRing],
-      [SAConstants.Focus.ID.PREVIEW, previewRing],
+      [SAConstants.Focus.ID.PREVIEW, previewRing]
     ]);
   }
 

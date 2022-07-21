@@ -27,7 +27,7 @@ MODULE_INFO(intree, "Y");
 MODULE_INFO(retpoline, "Y");
 #endif
 
-MODULE_INFO(depends, "btmrvl,bluetooth");
+MODULE_INFO(depends, "bluetooth,btmrvl");
 
 MODULE_ALIAS("sdio:c*v02DFd9105*");
 MODULE_ALIAS("sdio:c*v02DFd911A*");
@@ -39,4 +39,4 @@ MODULE_ALIAS("sdio:c*v02DFd9146*");
 MODULE_ALIAS("sdio:c*v02DFd914A*");
 MODULE_ALIAS("sdio:c*v02DFd9142*");
 
-MODULE_INFO(srcversion, "F0D5B9A0F2C1E08D74C3871");
+MODULE_INFO(srcversion, "FC5B7AFB277A64632424B95");

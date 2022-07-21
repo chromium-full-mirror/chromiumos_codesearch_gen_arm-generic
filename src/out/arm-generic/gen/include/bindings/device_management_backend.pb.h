@@ -2427,7 +2427,7 @@ bool ClientCertificateProvisioningResponse_Error_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ClientCertificateProvisioningResponse_Error* value);
 enum BrowserPublicKeyUploadRequest_KeyTrustLevel : int {
   BrowserPublicKeyUploadRequest_KeyTrustLevel_KEY_TRUST_LEVEL_UNSPECIFIED = 0,
-  BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_HW_KEY = 1,
+  BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_TPM_KEY = 1,
   BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_OS_KEY = 2
 };
 bool BrowserPublicKeyUploadRequest_KeyTrustLevel_IsValid(int value);
@@ -39339,8 +39339,8 @@ class BrowserPublicKeyUploadRequest final :
   typedef BrowserPublicKeyUploadRequest_KeyTrustLevel KeyTrustLevel;
   static constexpr KeyTrustLevel KEY_TRUST_LEVEL_UNSPECIFIED =
     BrowserPublicKeyUploadRequest_KeyTrustLevel_KEY_TRUST_LEVEL_UNSPECIFIED;
-  static constexpr KeyTrustLevel CHROME_BROWSER_HW_KEY =
-    BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_HW_KEY;
+  static constexpr KeyTrustLevel CHROME_BROWSER_TPM_KEY =
+    BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_TPM_KEY;
   static constexpr KeyTrustLevel CHROME_BROWSER_OS_KEY =
     BrowserPublicKeyUploadRequest_KeyTrustLevel_CHROME_BROWSER_OS_KEY;
   static inline bool KeyTrustLevel_IsValid(int value) {

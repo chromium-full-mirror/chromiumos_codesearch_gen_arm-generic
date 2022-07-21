@@ -12,7 +12,7 @@
 // --flatbuffer_header_include_paths
 // cryptohome/user_secret_stash_payload_generated.h
 // --flatbuffer_header_include_paths
-// libhwsec-foundation/flatbuffers/basic_objects.h --impl_include_paths
+// cryptohome/flatbuffer_schemas/basic_objects.h --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_container.h
 // --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_container_flatbuffer.h
@@ -20,8 +20,7 @@
 // cryptohome/flatbuffer_schemas/user_secret_stash_payload.h
 // --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_payload_flatbuffer.h
-// --impl_include_paths
-// libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h
+// --impl_include_paths cryptohome/flatbuffer_secure_allocator_bridge.h
 // --test_utils_header_include_path
 // cryptohome/flatbuffer_schemas/user_secret_stash.h
 // /build/arm-generic/var/cache/portage/chromeos-base/cryptohome-dev-utils/out/Default/gen/bfbs/user_secret_stash_container.bfbs
@@ -40,11 +39,11 @@
 #include <brillo/secure_blob.h>
 #include <flatbuffers/flatbuffers.h>
 
+#include "cryptohome/flatbuffer_schemas/basic_objects.h"
 #include "cryptohome/user_secret_stash_container_generated.h"
 #include "cryptohome/user_secret_stash_payload_generated.h"
-#include "libhwsec-foundation/flatbuffers/basic_objects.h"
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct ToFlatBuffer<::cryptohome::UserSecretStashEncryptionAlgorithm> {
@@ -58,9 +57,9 @@ struct ToFlatBuffer<::cryptohome::UserSecretStashEncryptionAlgorithm> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct FromFlatBuffer<::cryptohome::UserSecretStashEncryptionAlgorithm> {
@@ -80,9 +79,9 @@ struct FromFlatBuffer<::cryptohome::UserSecretStashEncryptionAlgorithm> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct ToFlatBuffer<::cryptohome::UserSecretStashWrappedKeyBlock> {
@@ -107,9 +106,9 @@ struct ToFlatBuffer<::cryptohome::UserSecretStashWrappedKeyBlock> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct FromFlatBuffer<::cryptohome::UserSecretStashWrappedKeyBlock> {
@@ -132,9 +131,9 @@ struct FromFlatBuffer<::cryptohome::UserSecretStashWrappedKeyBlock> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct ToFlatBuffer<::cryptohome::UserSecretStashContainer> {
@@ -162,9 +161,9 @@ struct ToFlatBuffer<::cryptohome::UserSecretStashContainer> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
-namespace hwsec_foundation {
+namespace cryptohome {
 
 template <>
 struct FromFlatBuffer<::cryptohome::UserSecretStashContainer> {
@@ -190,6 +189,6 @@ struct FromFlatBuffer<::cryptohome::UserSecretStashContainer> {
   }
 };
 
-}  // namespace hwsec_foundation
+}  // namespace cryptohome
 
 #endif  // CRYPTOHOME_FLATBUFFER_SCHEMAS_USER_SECRET_STASH_CONTAINER_FLATBUFFER_H_
