@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/var/tmp/portage/dev-embedded/hps-sdk-0.0.1-r3/work/riscv-gcc-03cb20e5433cd8e65af6a1a6baaf3fe4c72785f6/gcc/config/riscv/riscv.md'.  */
+   from the machine description file '/var/tmp/portage/dev-embedded/hps-sdk-0.0.1-r4/work/riscv-gcc-03cb20e5433cd8e65af6a1a6baaf3fe4c72785f6/gcc/config/riscv/riscv.md'.  */
 
 #ifndef GCC_TM_PREDS_H
 #define GCC_TM_PREDS_H

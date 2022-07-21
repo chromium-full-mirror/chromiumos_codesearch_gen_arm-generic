@@ -6,23 +6,29 @@
 // Generated with command:
 // gen/python/flatbuffer_cpp_binding_generator.py
 // --output_dir=/build/arm-generic/var/cache/portage/chromeos-base/cryptohome-dev-utils/out/Default/gen/include/cryptohome/flatbuffer_schemas
-// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS
+// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE
+// --header_include_paths cryptohome/flatbuffer_schemas/structures.h
 // --flatbuffer_header_include_paths cryptohome/auth_block_state_generated.h
 // --flatbuffer_header_include_paths
 // cryptohome/flatbuffer_schemas/auth_block_state.h
 // --flatbuffer_header_include_paths
-// cryptohome/flatbuffer_schemas/basic_objects.h
-// --flatbuffer_header_include_paths cryptohome/structures_generated.h
-// --impl_include_paths cryptohome/flatbuffer_schemas/auth_block_state.h
-// --impl_include_paths
+// cryptohome/flatbuffer_schemas/structures_flatbuffer.h
+// --flatbuffer_header_include_paths
+// libhwsec-foundation/flatbuffers/basic_objects.h --impl_include_paths
+// cryptohome/flatbuffer_schemas/auth_block_state.h --impl_include_paths
 // cryptohome/flatbuffer_schemas/auth_block_state_flatbuffer.h
-// --impl_include_paths cryptohome/flatbuffer_secure_allocator_bridge.h
+// --impl_include_paths cryptohome/flatbuffer_schemas/structures_flatbuffer.h
+// --impl_include_paths
+// libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h
 // --test_utils_header_include_path
 // cryptohome/flatbuffer_schemas/auth_block_state.h
+// --test_utils_header_include_path
+// cryptohome/flatbuffer_schemas/structures_test_utils.h
 // /build/arm-generic/var/cache/portage/chromeos-base/cryptohome-dev-utils/out/Default/gen/bfbs/auth_block_state.bfbs
+// --filter_by_namespace cryptohome
 
-#ifndef CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_H_
-#define CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_H_
+#ifndef CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_H_
+#define CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_H_
 
 #include <stdint.h>
 #include <optional>
@@ -31,6 +37,8 @@
 #include <vector>
 
 #include <brillo/secure_blob.h>
+
+#include "cryptohome/flatbuffer_schemas/structures.h"
 
 namespace cryptohome {
 
@@ -78,67 +86,6 @@ struct LibScryptCompatAuthBlockState {
 };
 
 }  // namespace cryptohome
-
-namespace cryptohome::structure {
-
-enum class ChallengeSignatureAlgorithm : int32_t {
-  kRsassaPkcs1V15Sha1 = 1,
-  kRsassaPkcs1V15Sha256 = 2,
-  kRsassaPkcs1V15Sha384 = 3,
-  kRsassaPkcs1V15Sha512 = 4,
-};
-
-}  // namespace cryptohome::structure
-
-namespace cryptohome::structure {
-
-struct Tpm2PolicySignedData {
-  brillo::Blob public_key_spki_der;
-  brillo::Blob srk_wrapped_secret;
-  std::optional<int32_t> scheme;
-  std::optional<int32_t> hash_alg;
-  brillo::Blob default_pcr_policy_digest;
-  brillo::Blob extended_pcr_policy_digest;
-};
-
-}  // namespace cryptohome::structure
-
-namespace cryptohome::structure {
-
-struct Tpm12CertifiedMigratableKeyData {
-  brillo::Blob public_key_spki_der;
-  brillo::Blob srk_wrapped_cmk;
-  brillo::Blob cmk_pubkey;
-  brillo::Blob cmk_wrapped_auth_data;
-  brillo::Blob default_pcr_bound_secret;
-  brillo::Blob extended_pcr_bound_secret;
-};
-
-}  // namespace cryptohome::structure
-
-namespace cryptohome::structure {
-
-using SignatureSealedData =
-    std::variant<std::monostate,
-                 ::cryptohome::structure::Tpm2PolicySignedData,
-                 ::cryptohome::structure::Tpm12CertifiedMigratableKeyData>;
-
-}  // namespace cryptohome::structure
-
-namespace cryptohome::structure {
-
-struct SignatureChallengeInfo {
-  std::optional<brillo::Blob> Serialize() const;
-  static std::optional<SignatureChallengeInfo> Deserialize(const brillo::Blob&);
-
-  brillo::Blob public_key_spki_der;
-  ::cryptohome::structure::SignatureSealedData sealed_secret;
-  brillo::Blob salt;
-  std::optional<::cryptohome::structure::ChallengeSignatureAlgorithm>
-      salt_signature_algorithm;
-};
-
-}  // namespace cryptohome::structure
 
 namespace cryptohome {
 
@@ -233,14 +180,4 @@ struct AuthBlockState {
 
 }  // namespace cryptohome
 
-namespace cryptohome::structure {
-
-struct ChallengePublicKeyInfo {
-  brillo::Blob public_key_spki_der;
-  std::vector<::cryptohome::structure::ChallengeSignatureAlgorithm>
-      signature_algorithm;
-};
-
-}  // namespace cryptohome::structure
-
-#endif  // CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_H_
+#endif  // CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE_AUTH_BLOCK_STATE_H_

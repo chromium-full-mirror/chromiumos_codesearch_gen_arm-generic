@@ -25,13 +25,15 @@ message Filter {
   required Type type = 1;
   // A regular expression specifying the values that are *accepted* by this
   // filter. The field to be tested is chosen by the |type|.
-  // The regular expression should be specified as an extended POSIX regular
-  // expression.
+  // The regular expression should be specified as a re2 regular expression.
   optional string regex = 2;
   // Rather than a regular expression, the filter can be expressed by one
   // or several numerical ranges.
   // The value will be accepted if start <= value <= end for one of the ranges.
   repeated FilterRange range = 3;
+  // Same as regex, but the result is inverted. This is needed because re2
+  // doesn't support negative lookahead.
+  optional string exclude_regex = 4;
 }
 
 message LocalizedName {
@@ -66,6 +68,8 @@ message MobileAPN {
     IPV4V6 = 3;
   }
   optional IpType ip_type = 10 [default = IPV4];
+  // When a filter is present, only select the APN if all filters match.
+  repeated Filter apn_filter = 11;
 }
 
 message OnlinePortal {

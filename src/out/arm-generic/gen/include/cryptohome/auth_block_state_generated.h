@@ -6,6 +6,7 @@
 
 #include "flatbuffers/flatbuffers.h"
 
+#include "libhwsec/structures/signature_sealed_data_generated.h"
 #include "structures_generated.h"
 
 namespace cryptohome {
@@ -13,47 +14,36 @@ namespace _serialized_ {
 
 struct TpmNotBoundToPcrAuthBlockState;
 struct TpmNotBoundToPcrAuthBlockStateBuilder;
-struct TpmNotBoundToPcrAuthBlockStateT;
 
 struct TpmBoundToPcrAuthBlockState;
 struct TpmBoundToPcrAuthBlockStateBuilder;
-struct TpmBoundToPcrAuthBlockStateT;
 
 struct PinWeaverAuthBlockState;
 struct PinWeaverAuthBlockStateBuilder;
-struct PinWeaverAuthBlockStateT;
 
 struct LibScryptCompatAuthBlockState;
 struct LibScryptCompatAuthBlockStateBuilder;
-struct LibScryptCompatAuthBlockStateT;
 
 struct ChallengeCredentialAuthBlockState;
 struct ChallengeCredentialAuthBlockStateBuilder;
-struct ChallengeCredentialAuthBlockStateT;
 
 struct DoubleWrappedCompatAuthBlockState;
 struct DoubleWrappedCompatAuthBlockStateBuilder;
-struct DoubleWrappedCompatAuthBlockStateT;
 
 struct CryptohomeRecoveryAuthBlockState;
 struct CryptohomeRecoveryAuthBlockStateBuilder;
-struct CryptohomeRecoveryAuthBlockStateT;
 
 struct TpmEccAuthBlockState;
 struct TpmEccAuthBlockStateBuilder;
-struct TpmEccAuthBlockStateT;
 
 struct ScryptAuthBlockState;
 struct ScryptAuthBlockStateBuilder;
-struct ScryptAuthBlockStateT;
 
 struct RevocationState;
 struct RevocationStateBuilder;
-struct RevocationStateT;
 
 struct AuthBlockState;
 struct AuthBlockStateBuilder;
-struct AuthBlockStateT;
 
 enum class AuthBlockStateUnion : uint8_t {
   NONE = 0,
@@ -149,126 +139,10 @@ template<> struct AuthBlockStateUnionTraits<cryptohome::_serialized_::ScryptAuth
   static const AuthBlockStateUnion enum_value = AuthBlockStateUnion::ScryptAuthBlockState;
 };
 
-struct AuthBlockStateUnionUnion {
-  AuthBlockStateUnion type;
-  void *value;
-
-  AuthBlockStateUnionUnion() : type(AuthBlockStateUnion::NONE), value(nullptr) {}
-  AuthBlockStateUnionUnion(AuthBlockStateUnionUnion&& u) FLATBUFFERS_NOEXCEPT :
-    type(AuthBlockStateUnion::NONE), value(nullptr)
-    { std::swap(type, u.type); std::swap(value, u.value); }
-  AuthBlockStateUnionUnion(const AuthBlockStateUnionUnion &);
-  AuthBlockStateUnionUnion &operator=(const AuthBlockStateUnionUnion &u)
-    { AuthBlockStateUnionUnion t(u); std::swap(type, t.type); std::swap(value, t.value); return *this; }
-  AuthBlockStateUnionUnion &operator=(AuthBlockStateUnionUnion &&u) FLATBUFFERS_NOEXCEPT
-    { std::swap(type, u.type); std::swap(value, u.value); return *this; }
-  ~AuthBlockStateUnionUnion() { Reset(); }
-
-  void Reset();
-
-#ifndef FLATBUFFERS_CPP98_STL
-  template <typename T>
-  void Set(T&& val) {
-    using RT = typename std::remove_reference<T>::type;
-    Reset();
-    type = AuthBlockStateUnionTraits<typename RT::TableType>::enum_value;
-    if (type != AuthBlockStateUnion::NONE) {
-      value = new RT(std::forward<T>(val));
-    }
-  }
-#endif  // FLATBUFFERS_CPP98_STL
-
-  static void *UnPack(const void *obj, AuthBlockStateUnion type, const flatbuffers::resolver_function_t *resolver);
-  flatbuffers::Offset<void> Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher = nullptr) const;
-
-  cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *AsTpmBoundToPcrAuthBlockState() {
-    return type == AuthBlockStateUnion::TpmBoundToPcrAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *AsTpmBoundToPcrAuthBlockState() const {
-    return type == AuthBlockStateUnion::TpmBoundToPcrAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *AsTpmNotBoundToPcrAuthBlockState() {
-    return type == AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *AsTpmNotBoundToPcrAuthBlockState() const {
-    return type == AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::PinWeaverAuthBlockStateT *AsPinWeaverAuthBlockState() {
-    return type == AuthBlockStateUnion::PinWeaverAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::PinWeaverAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::PinWeaverAuthBlockStateT *AsPinWeaverAuthBlockState() const {
-    return type == AuthBlockStateUnion::PinWeaverAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::PinWeaverAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *AsLibScryptCompatAuthBlockState() {
-    return type == AuthBlockStateUnion::LibScryptCompatAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *AsLibScryptCompatAuthBlockState() const {
-    return type == AuthBlockStateUnion::LibScryptCompatAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *AsChallengeCredentialAuthBlockState() {
-    return type == AuthBlockStateUnion::ChallengeCredentialAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *AsChallengeCredentialAuthBlockState() const {
-    return type == AuthBlockStateUnion::ChallengeCredentialAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *AsDoubleWrappedCompatAuthBlockState() {
-    return type == AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *AsDoubleWrappedCompatAuthBlockState() const {
-    return type == AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *AsCryptohomeRecoveryAuthBlockState() {
-    return type == AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *AsCryptohomeRecoveryAuthBlockState() const {
-    return type == AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::TpmEccAuthBlockStateT *AsTpmEccAuthBlockState() {
-    return type == AuthBlockStateUnion::TpmEccAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::TpmEccAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::TpmEccAuthBlockStateT *AsTpmEccAuthBlockState() const {
-    return type == AuthBlockStateUnion::TpmEccAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::TpmEccAuthBlockStateT *>(value) : nullptr;
-  }
-  cryptohome::_serialized_::ScryptAuthBlockStateT *AsScryptAuthBlockState() {
-    return type == AuthBlockStateUnion::ScryptAuthBlockState ?
-      reinterpret_cast<cryptohome::_serialized_::ScryptAuthBlockStateT *>(value) : nullptr;
-  }
-  const cryptohome::_serialized_::ScryptAuthBlockStateT *AsScryptAuthBlockState() const {
-    return type == AuthBlockStateUnion::ScryptAuthBlockState ?
-      reinterpret_cast<const cryptohome::_serialized_::ScryptAuthBlockStateT *>(value) : nullptr;
-  }
-};
-
 bool VerifyAuthBlockStateUnion(flatbuffers::Verifier &verifier, const void *obj, AuthBlockStateUnion type);
 bool VerifyAuthBlockStateUnionVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types);
 
-struct TpmNotBoundToPcrAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef TpmNotBoundToPcrAuthBlockState TableType;
-  flatbuffers::Optional<bool> scrypt_derived = flatbuffers::nullopt;
-  std::vector<uint8_t> salt{};
-  flatbuffers::Optional<uint32_t> password_rounds = flatbuffers::nullopt;
-  std::vector<uint8_t> tpm_key{};
-  std::vector<uint8_t> tpm_public_key_hash{};
-};
-
 struct TpmNotBoundToPcrAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef TpmNotBoundToPcrAuthBlockStateT NativeTableType;
   typedef TpmNotBoundToPcrAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SCRYPT_DERIVED = 4,
@@ -304,9 +178,6 @@ struct TpmNotBoundToPcrAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuff
            verifier.VerifyVector(tpm_public_key_hash()) &&
            verifier.EndTable();
   }
-  TpmNotBoundToPcrAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(TpmNotBoundToPcrAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<TpmNotBoundToPcrAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmNotBoundToPcrAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TpmNotBoundToPcrAuthBlockStateBuilder {
@@ -374,19 +245,7 @@ inline flatbuffers::Offset<TpmNotBoundToPcrAuthBlockState> CreateTpmNotBoundToPc
       tpm_public_key_hash__);
 }
 
-flatbuffers::Offset<TpmNotBoundToPcrAuthBlockState> CreateTpmNotBoundToPcrAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmNotBoundToPcrAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct TpmBoundToPcrAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef TpmBoundToPcrAuthBlockState TableType;
-  flatbuffers::Optional<bool> scrypt_derived = flatbuffers::nullopt;
-  std::vector<uint8_t> salt{};
-  std::vector<uint8_t> tpm_key{};
-  std::vector<uint8_t> extended_tpm_key{};
-  std::vector<uint8_t> tpm_public_key_hash{};
-};
-
 struct TpmBoundToPcrAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef TpmBoundToPcrAuthBlockStateT NativeTableType;
   typedef TpmBoundToPcrAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SCRYPT_DERIVED = 4,
@@ -423,9 +282,6 @@ struct TpmBoundToPcrAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers
            verifier.VerifyVector(tpm_public_key_hash()) &&
            verifier.EndTable();
   }
-  TpmBoundToPcrAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(TpmBoundToPcrAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<TpmBoundToPcrAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmBoundToPcrAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TpmBoundToPcrAuthBlockStateBuilder {
@@ -494,19 +350,7 @@ inline flatbuffers::Offset<TpmBoundToPcrAuthBlockState> CreateTpmBoundToPcrAuthB
       tpm_public_key_hash__);
 }
 
-flatbuffers::Offset<TpmBoundToPcrAuthBlockState> CreateTpmBoundToPcrAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmBoundToPcrAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct PinWeaverAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef PinWeaverAuthBlockState TableType;
-  flatbuffers::Optional<uint64_t> le_label = flatbuffers::nullopt;
-  std::vector<uint8_t> salt{};
-  std::vector<uint8_t> chaps_iv{};
-  std::vector<uint8_t> fek_iv{};
-  std::vector<uint8_t> reset_salt{};
-};
-
 struct PinWeaverAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef PinWeaverAuthBlockStateT NativeTableType;
   typedef PinWeaverAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_LE_LABEL = 4,
@@ -543,9 +387,6 @@ struct PinWeaverAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Ta
            verifier.VerifyVector(reset_salt()) &&
            verifier.EndTable();
   }
-  PinWeaverAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(PinWeaverAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<PinWeaverAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const PinWeaverAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct PinWeaverAuthBlockStateBuilder {
@@ -614,18 +455,7 @@ inline flatbuffers::Offset<PinWeaverAuthBlockState> CreatePinWeaverAuthBlockStat
       reset_salt__);
 }
 
-flatbuffers::Offset<PinWeaverAuthBlockState> CreatePinWeaverAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const PinWeaverAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct LibScryptCompatAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef LibScryptCompatAuthBlockState TableType;
-  std::vector<uint8_t> wrapped_keyset{};
-  std::vector<uint8_t> wrapped_chaps_key{};
-  std::vector<uint8_t> wrapped_reset_seed{};
-  std::vector<uint8_t> salt{};
-};
-
 struct LibScryptCompatAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef LibScryptCompatAuthBlockStateT NativeTableType;
   typedef LibScryptCompatAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_WRAPPED_KEYSET = 4,
@@ -657,9 +487,6 @@ struct LibScryptCompatAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffe
            verifier.VerifyVector(salt()) &&
            verifier.EndTable();
   }
-  LibScryptCompatAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(LibScryptCompatAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<LibScryptCompatAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const LibScryptCompatAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct LibScryptCompatAuthBlockStateBuilder {
@@ -721,16 +548,7 @@ inline flatbuffers::Offset<LibScryptCompatAuthBlockState> CreateLibScryptCompatA
       salt__);
 }
 
-flatbuffers::Offset<LibScryptCompatAuthBlockState> CreateLibScryptCompatAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const LibScryptCompatAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct ChallengeCredentialAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef ChallengeCredentialAuthBlockState TableType;
-  std::unique_ptr<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT> scrypt_state{};
-  std::unique_ptr<cryptohome::structure::_serialized_::SignatureChallengeInfoT> keyset_challenge_info{};
-};
-
 struct ChallengeCredentialAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef ChallengeCredentialAuthBlockStateT NativeTableType;
   typedef ChallengeCredentialAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SCRYPT_STATE = 4,
@@ -750,9 +568,6 @@ struct ChallengeCredentialAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatb
            verifier.VerifyTable(keyset_challenge_info()) &&
            verifier.EndTable();
   }
-  ChallengeCredentialAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(ChallengeCredentialAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<ChallengeCredentialAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ChallengeCredentialAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ChallengeCredentialAuthBlockStateBuilder {
@@ -786,16 +601,7 @@ inline flatbuffers::Offset<ChallengeCredentialAuthBlockState> CreateChallengeCre
   return builder_.Finish();
 }
 
-flatbuffers::Offset<ChallengeCredentialAuthBlockState> CreateChallengeCredentialAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const ChallengeCredentialAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct DoubleWrappedCompatAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef DoubleWrappedCompatAuthBlockState TableType;
-  std::unique_ptr<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT> scrypt_state{};
-  std::unique_ptr<cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT> tpm_state{};
-};
-
 struct DoubleWrappedCompatAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef DoubleWrappedCompatAuthBlockStateT NativeTableType;
   typedef DoubleWrappedCompatAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SCRYPT_STATE = 4,
@@ -815,9 +621,6 @@ struct DoubleWrappedCompatAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatb
            verifier.VerifyTable(tpm_state()) &&
            verifier.EndTable();
   }
-  DoubleWrappedCompatAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(DoubleWrappedCompatAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<DoubleWrappedCompatAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const DoubleWrappedCompatAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct DoubleWrappedCompatAuthBlockStateBuilder {
@@ -851,20 +654,7 @@ inline flatbuffers::Offset<DoubleWrappedCompatAuthBlockState> CreateDoubleWrappe
   return builder_.Finish();
 }
 
-flatbuffers::Offset<DoubleWrappedCompatAuthBlockState> CreateDoubleWrappedCompatAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const DoubleWrappedCompatAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct CryptohomeRecoveryAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef CryptohomeRecoveryAuthBlockState TableType;
-  std::vector<uint8_t> hsm_payload{};
-  std::vector<uint8_t> salt{};
-  std::vector<uint8_t> encrypted_destination_share{};
-  std::vector<uint8_t> channel_pub_key{};
-  std::vector<uint8_t> encrypted_channel_priv_key{};
-  std::vector<uint8_t> encrypted_rsa_priv_key{};
-};
-
 struct CryptohomeRecoveryAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef CryptohomeRecoveryAuthBlockStateT NativeTableType;
   typedef CryptohomeRecoveryAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_HSM_PAYLOAD = 4,
@@ -908,9 +698,6 @@ struct CryptohomeRecoveryAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbu
            verifier.VerifyVector(encrypted_rsa_priv_key()) &&
            verifier.EndTable();
   }
-  CryptohomeRecoveryAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(CryptohomeRecoveryAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<CryptohomeRecoveryAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const CryptohomeRecoveryAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct CryptohomeRecoveryAuthBlockStateBuilder {
@@ -988,21 +775,7 @@ inline flatbuffers::Offset<CryptohomeRecoveryAuthBlockState> CreateCryptohomeRec
       encrypted_rsa_priv_key__);
 }
 
-flatbuffers::Offset<CryptohomeRecoveryAuthBlockState> CreateCryptohomeRecoveryAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const CryptohomeRecoveryAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct TpmEccAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef TpmEccAuthBlockState TableType;
-  std::vector<uint8_t> salt{};
-  std::vector<uint8_t> vkk_iv{};
-  flatbuffers::Optional<uint32_t> auth_value_rounds = flatbuffers::nullopt;
-  std::vector<uint8_t> sealed_hvkkm{};
-  std::vector<uint8_t> extended_sealed_hvkkm{};
-  std::vector<uint8_t> tpm_public_key_hash{};
-  std::vector<uint8_t> wrapped_reset_seed{};
-};
-
 struct TpmEccAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef TpmEccAuthBlockStateT NativeTableType;
   typedef TpmEccAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SALT = 4,
@@ -1051,9 +824,6 @@ struct TpmEccAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table
            verifier.VerifyVector(wrapped_reset_seed()) &&
            verifier.EndTable();
   }
-  TpmEccAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(TpmEccAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<TpmEccAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmEccAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct TpmEccAuthBlockStateBuilder {
@@ -1138,18 +908,7 @@ inline flatbuffers::Offset<TpmEccAuthBlockState> CreateTpmEccAuthBlockStateDirec
       wrapped_reset_seed__);
 }
 
-flatbuffers::Offset<TpmEccAuthBlockState> CreateTpmEccAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmEccAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct ScryptAuthBlockStateT : public flatbuffers::NativeTable {
-  typedef ScryptAuthBlockState TableType;
-  std::vector<uint8_t> salt{};
-  flatbuffers::Optional<int32_t> work_factor = flatbuffers::nullopt;
-  flatbuffers::Optional<uint32_t> block_size = flatbuffers::nullopt;
-  flatbuffers::Optional<uint32_t> parallel_factor = flatbuffers::nullopt;
-};
-
 struct ScryptAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef ScryptAuthBlockStateT NativeTableType;
   typedef ScryptAuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_SALT = 4,
@@ -1178,9 +937,6 @@ struct ScryptAuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table
            VerifyField<uint32_t>(verifier, VT_PARALLEL_FACTOR) &&
            verifier.EndTable();
   }
-  ScryptAuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(ScryptAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<ScryptAuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const ScryptAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct ScryptAuthBlockStateBuilder {
@@ -1239,15 +995,7 @@ inline flatbuffers::Offset<ScryptAuthBlockState> CreateScryptAuthBlockStateDirec
       parallel_factor);
 }
 
-flatbuffers::Offset<ScryptAuthBlockState> CreateScryptAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const ScryptAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct RevocationStateT : public flatbuffers::NativeTable {
-  typedef RevocationState TableType;
-  flatbuffers::Optional<uint64_t> le_label = flatbuffers::nullopt;
-};
-
 struct RevocationState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef RevocationStateT NativeTableType;
   typedef RevocationStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_LE_LABEL = 4
@@ -1260,9 +1008,6 @@ struct RevocationState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            VerifyField<uint64_t>(verifier, VT_LE_LABEL) &&
            verifier.EndTable();
   }
-  RevocationStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(RevocationStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<RevocationState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const RevocationStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct RevocationStateBuilder {
@@ -1291,16 +1036,7 @@ inline flatbuffers::Offset<RevocationState> CreateRevocationState(
   return builder_.Finish();
 }
 
-flatbuffers::Offset<RevocationState> CreateRevocationState(flatbuffers::FlatBufferBuilder &_fbb, const RevocationStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct AuthBlockStateT : public flatbuffers::NativeTable {
-  typedef AuthBlockState TableType;
-  cryptohome::_serialized_::AuthBlockStateUnionUnion state{};
-  std::unique_ptr<cryptohome::_serialized_::RevocationStateT> revocation_state{};
-};
-
 struct AuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef AuthBlockStateT NativeTableType;
   typedef AuthBlockStateBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_STATE_TYPE = 4,
@@ -1353,9 +1089,6 @@ struct AuthBlockState FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
            verifier.VerifyTable(revocation_state()) &&
            verifier.EndTable();
   }
-  AuthBlockStateT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(AuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<AuthBlockState> Pack(flatbuffers::FlatBufferBuilder &_fbb, const AuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 template<> inline const cryptohome::_serialized_::TpmBoundToPcrAuthBlockState *AuthBlockState::state_as<cryptohome::_serialized_::TpmBoundToPcrAuthBlockState>() const {
@@ -1430,393 +1163,6 @@ inline flatbuffers::Offset<AuthBlockState> CreateAuthBlockState(
   return builder_.Finish();
 }
 
-flatbuffers::Offset<AuthBlockState> CreateAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const AuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-inline TpmNotBoundToPcrAuthBlockStateT *TpmNotBoundToPcrAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<TpmNotBoundToPcrAuthBlockStateT>(new TpmNotBoundToPcrAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void TpmNotBoundToPcrAuthBlockState::UnPackTo(TpmNotBoundToPcrAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = scrypt_derived(); _o->scrypt_derived = _e; }
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = password_rounds(); _o->password_rounds = _e; }
-  { auto _e = tpm_key(); if (_e) { _o->tpm_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->tpm_key.begin()); } }
-  { auto _e = tpm_public_key_hash(); if (_e) { _o->tpm_public_key_hash.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->tpm_public_key_hash.begin()); } }
-}
-
-inline flatbuffers::Offset<TpmNotBoundToPcrAuthBlockState> TpmNotBoundToPcrAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmNotBoundToPcrAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateTpmNotBoundToPcrAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<TpmNotBoundToPcrAuthBlockState> CreateTpmNotBoundToPcrAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmNotBoundToPcrAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TpmNotBoundToPcrAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _scrypt_derived = _o->scrypt_derived;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _password_rounds = _o->password_rounds;
-  auto _tpm_key = _o->tpm_key.size() ? _fbb.CreateVector(_o->tpm_key) : 0;
-  auto _tpm_public_key_hash = _o->tpm_public_key_hash.size() ? _fbb.CreateVector(_o->tpm_public_key_hash) : 0;
-  return cryptohome::_serialized_::CreateTpmNotBoundToPcrAuthBlockState(
-      _fbb,
-      _scrypt_derived,
-      _salt,
-      _password_rounds,
-      _tpm_key,
-      _tpm_public_key_hash);
-}
-
-inline TpmBoundToPcrAuthBlockStateT *TpmBoundToPcrAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<TpmBoundToPcrAuthBlockStateT>(new TpmBoundToPcrAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void TpmBoundToPcrAuthBlockState::UnPackTo(TpmBoundToPcrAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = scrypt_derived(); _o->scrypt_derived = _e; }
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = tpm_key(); if (_e) { _o->tpm_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->tpm_key.begin()); } }
-  { auto _e = extended_tpm_key(); if (_e) { _o->extended_tpm_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->extended_tpm_key.begin()); } }
-  { auto _e = tpm_public_key_hash(); if (_e) { _o->tpm_public_key_hash.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->tpm_public_key_hash.begin()); } }
-}
-
-inline flatbuffers::Offset<TpmBoundToPcrAuthBlockState> TpmBoundToPcrAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmBoundToPcrAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateTpmBoundToPcrAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<TpmBoundToPcrAuthBlockState> CreateTpmBoundToPcrAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmBoundToPcrAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TpmBoundToPcrAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _scrypt_derived = _o->scrypt_derived;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _tpm_key = _o->tpm_key.size() ? _fbb.CreateVector(_o->tpm_key) : 0;
-  auto _extended_tpm_key = _o->extended_tpm_key.size() ? _fbb.CreateVector(_o->extended_tpm_key) : 0;
-  auto _tpm_public_key_hash = _o->tpm_public_key_hash.size() ? _fbb.CreateVector(_o->tpm_public_key_hash) : 0;
-  return cryptohome::_serialized_::CreateTpmBoundToPcrAuthBlockState(
-      _fbb,
-      _scrypt_derived,
-      _salt,
-      _tpm_key,
-      _extended_tpm_key,
-      _tpm_public_key_hash);
-}
-
-inline PinWeaverAuthBlockStateT *PinWeaverAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<PinWeaverAuthBlockStateT>(new PinWeaverAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void PinWeaverAuthBlockState::UnPackTo(PinWeaverAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = le_label(); _o->le_label = _e; }
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = chaps_iv(); if (_e) { _o->chaps_iv.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->chaps_iv.begin()); } }
-  { auto _e = fek_iv(); if (_e) { _o->fek_iv.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->fek_iv.begin()); } }
-  { auto _e = reset_salt(); if (_e) { _o->reset_salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->reset_salt.begin()); } }
-}
-
-inline flatbuffers::Offset<PinWeaverAuthBlockState> PinWeaverAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const PinWeaverAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreatePinWeaverAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<PinWeaverAuthBlockState> CreatePinWeaverAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const PinWeaverAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const PinWeaverAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _le_label = _o->le_label;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _chaps_iv = _o->chaps_iv.size() ? _fbb.CreateVector(_o->chaps_iv) : 0;
-  auto _fek_iv = _o->fek_iv.size() ? _fbb.CreateVector(_o->fek_iv) : 0;
-  auto _reset_salt = _o->reset_salt.size() ? _fbb.CreateVector(_o->reset_salt) : 0;
-  return cryptohome::_serialized_::CreatePinWeaverAuthBlockState(
-      _fbb,
-      _le_label,
-      _salt,
-      _chaps_iv,
-      _fek_iv,
-      _reset_salt);
-}
-
-inline LibScryptCompatAuthBlockStateT *LibScryptCompatAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<LibScryptCompatAuthBlockStateT>(new LibScryptCompatAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void LibScryptCompatAuthBlockState::UnPackTo(LibScryptCompatAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = wrapped_keyset(); if (_e) { _o->wrapped_keyset.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->wrapped_keyset.begin()); } }
-  { auto _e = wrapped_chaps_key(); if (_e) { _o->wrapped_chaps_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->wrapped_chaps_key.begin()); } }
-  { auto _e = wrapped_reset_seed(); if (_e) { _o->wrapped_reset_seed.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->wrapped_reset_seed.begin()); } }
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-}
-
-inline flatbuffers::Offset<LibScryptCompatAuthBlockState> LibScryptCompatAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const LibScryptCompatAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateLibScryptCompatAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<LibScryptCompatAuthBlockState> CreateLibScryptCompatAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const LibScryptCompatAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const LibScryptCompatAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _wrapped_keyset = _o->wrapped_keyset.size() ? _fbb.CreateVector(_o->wrapped_keyset) : 0;
-  auto _wrapped_chaps_key = _o->wrapped_chaps_key.size() ? _fbb.CreateVector(_o->wrapped_chaps_key) : 0;
-  auto _wrapped_reset_seed = _o->wrapped_reset_seed.size() ? _fbb.CreateVector(_o->wrapped_reset_seed) : 0;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  return cryptohome::_serialized_::CreateLibScryptCompatAuthBlockState(
-      _fbb,
-      _wrapped_keyset,
-      _wrapped_chaps_key,
-      _wrapped_reset_seed,
-      _salt);
-}
-
-inline ChallengeCredentialAuthBlockStateT *ChallengeCredentialAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<ChallengeCredentialAuthBlockStateT>(new ChallengeCredentialAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void ChallengeCredentialAuthBlockState::UnPackTo(ChallengeCredentialAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = scrypt_state(); if (_e) _o->scrypt_state = std::unique_ptr<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT>(_e->UnPack(_resolver)); }
-  { auto _e = keyset_challenge_info(); if (_e) _o->keyset_challenge_info = std::unique_ptr<cryptohome::structure::_serialized_::SignatureChallengeInfoT>(_e->UnPack(_resolver)); }
-}
-
-inline flatbuffers::Offset<ChallengeCredentialAuthBlockState> ChallengeCredentialAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ChallengeCredentialAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateChallengeCredentialAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<ChallengeCredentialAuthBlockState> CreateChallengeCredentialAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const ChallengeCredentialAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ChallengeCredentialAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _scrypt_state = _o->scrypt_state ? CreateLibScryptCompatAuthBlockState(_fbb, _o->scrypt_state.get(), _rehasher) : 0;
-  auto _keyset_challenge_info = _o->keyset_challenge_info ? CreateSignatureChallengeInfo(_fbb, _o->keyset_challenge_info.get(), _rehasher) : 0;
-  return cryptohome::_serialized_::CreateChallengeCredentialAuthBlockState(
-      _fbb,
-      _scrypt_state,
-      _keyset_challenge_info);
-}
-
-inline DoubleWrappedCompatAuthBlockStateT *DoubleWrappedCompatAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<DoubleWrappedCompatAuthBlockStateT>(new DoubleWrappedCompatAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void DoubleWrappedCompatAuthBlockState::UnPackTo(DoubleWrappedCompatAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = scrypt_state(); if (_e) _o->scrypt_state = std::unique_ptr<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT>(_e->UnPack(_resolver)); }
-  { auto _e = tpm_state(); if (_e) _o->tpm_state = std::unique_ptr<cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT>(_e->UnPack(_resolver)); }
-}
-
-inline flatbuffers::Offset<DoubleWrappedCompatAuthBlockState> DoubleWrappedCompatAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const DoubleWrappedCompatAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateDoubleWrappedCompatAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<DoubleWrappedCompatAuthBlockState> CreateDoubleWrappedCompatAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const DoubleWrappedCompatAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const DoubleWrappedCompatAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _scrypt_state = _o->scrypt_state ? CreateLibScryptCompatAuthBlockState(_fbb, _o->scrypt_state.get(), _rehasher) : 0;
-  auto _tpm_state = _o->tpm_state ? CreateTpmNotBoundToPcrAuthBlockState(_fbb, _o->tpm_state.get(), _rehasher) : 0;
-  return cryptohome::_serialized_::CreateDoubleWrappedCompatAuthBlockState(
-      _fbb,
-      _scrypt_state,
-      _tpm_state);
-}
-
-inline CryptohomeRecoveryAuthBlockStateT *CryptohomeRecoveryAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<CryptohomeRecoveryAuthBlockStateT>(new CryptohomeRecoveryAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void CryptohomeRecoveryAuthBlockState::UnPackTo(CryptohomeRecoveryAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = hsm_payload(); if (_e) { _o->hsm_payload.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->hsm_payload.begin()); } }
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = encrypted_destination_share(); if (_e) { _o->encrypted_destination_share.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->encrypted_destination_share.begin()); } }
-  { auto _e = channel_pub_key(); if (_e) { _o->channel_pub_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->channel_pub_key.begin()); } }
-  { auto _e = encrypted_channel_priv_key(); if (_e) { _o->encrypted_channel_priv_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->encrypted_channel_priv_key.begin()); } }
-  { auto _e = encrypted_rsa_priv_key(); if (_e) { _o->encrypted_rsa_priv_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->encrypted_rsa_priv_key.begin()); } }
-}
-
-inline flatbuffers::Offset<CryptohomeRecoveryAuthBlockState> CryptohomeRecoveryAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const CryptohomeRecoveryAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateCryptohomeRecoveryAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<CryptohomeRecoveryAuthBlockState> CreateCryptohomeRecoveryAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const CryptohomeRecoveryAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const CryptohomeRecoveryAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _hsm_payload = _o->hsm_payload.size() ? _fbb.CreateVector(_o->hsm_payload) : 0;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _encrypted_destination_share = _o->encrypted_destination_share.size() ? _fbb.CreateVector(_o->encrypted_destination_share) : 0;
-  auto _channel_pub_key = _o->channel_pub_key.size() ? _fbb.CreateVector(_o->channel_pub_key) : 0;
-  auto _encrypted_channel_priv_key = _o->encrypted_channel_priv_key.size() ? _fbb.CreateVector(_o->encrypted_channel_priv_key) : 0;
-  auto _encrypted_rsa_priv_key = _o->encrypted_rsa_priv_key.size() ? _fbb.CreateVector(_o->encrypted_rsa_priv_key) : 0;
-  return cryptohome::_serialized_::CreateCryptohomeRecoveryAuthBlockState(
-      _fbb,
-      _hsm_payload,
-      _salt,
-      _encrypted_destination_share,
-      _channel_pub_key,
-      _encrypted_channel_priv_key,
-      _encrypted_rsa_priv_key);
-}
-
-inline TpmEccAuthBlockStateT *TpmEccAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<TpmEccAuthBlockStateT>(new TpmEccAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void TpmEccAuthBlockState::UnPackTo(TpmEccAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = vkk_iv(); if (_e) { _o->vkk_iv.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->vkk_iv.begin()); } }
-  { auto _e = auth_value_rounds(); _o->auth_value_rounds = _e; }
-  { auto _e = sealed_hvkkm(); if (_e) { _o->sealed_hvkkm.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->sealed_hvkkm.begin()); } }
-  { auto _e = extended_sealed_hvkkm(); if (_e) { _o->extended_sealed_hvkkm.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->extended_sealed_hvkkm.begin()); } }
-  { auto _e = tpm_public_key_hash(); if (_e) { _o->tpm_public_key_hash.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->tpm_public_key_hash.begin()); } }
-  { auto _e = wrapped_reset_seed(); if (_e) { _o->wrapped_reset_seed.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->wrapped_reset_seed.begin()); } }
-}
-
-inline flatbuffers::Offset<TpmEccAuthBlockState> TpmEccAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const TpmEccAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateTpmEccAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<TpmEccAuthBlockState> CreateTpmEccAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const TpmEccAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const TpmEccAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _vkk_iv = _o->vkk_iv.size() ? _fbb.CreateVector(_o->vkk_iv) : 0;
-  auto _auth_value_rounds = _o->auth_value_rounds;
-  auto _sealed_hvkkm = _o->sealed_hvkkm.size() ? _fbb.CreateVector(_o->sealed_hvkkm) : 0;
-  auto _extended_sealed_hvkkm = _o->extended_sealed_hvkkm.size() ? _fbb.CreateVector(_o->extended_sealed_hvkkm) : 0;
-  auto _tpm_public_key_hash = _o->tpm_public_key_hash.size() ? _fbb.CreateVector(_o->tpm_public_key_hash) : 0;
-  auto _wrapped_reset_seed = _o->wrapped_reset_seed.size() ? _fbb.CreateVector(_o->wrapped_reset_seed) : 0;
-  return cryptohome::_serialized_::CreateTpmEccAuthBlockState(
-      _fbb,
-      _salt,
-      _vkk_iv,
-      _auth_value_rounds,
-      _sealed_hvkkm,
-      _extended_sealed_hvkkm,
-      _tpm_public_key_hash,
-      _wrapped_reset_seed);
-}
-
-inline ScryptAuthBlockStateT *ScryptAuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<ScryptAuthBlockStateT>(new ScryptAuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void ScryptAuthBlockState::UnPackTo(ScryptAuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = salt(); if (_e) { _o->salt.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->salt.begin()); } }
-  { auto _e = work_factor(); _o->work_factor = _e; }
-  { auto _e = block_size(); _o->block_size = _e; }
-  { auto _e = parallel_factor(); _o->parallel_factor = _e; }
-}
-
-inline flatbuffers::Offset<ScryptAuthBlockState> ScryptAuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const ScryptAuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateScryptAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<ScryptAuthBlockState> CreateScryptAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const ScryptAuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const ScryptAuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _salt = _o->salt.size() ? _fbb.CreateVector(_o->salt) : 0;
-  auto _work_factor = _o->work_factor;
-  auto _block_size = _o->block_size;
-  auto _parallel_factor = _o->parallel_factor;
-  return cryptohome::_serialized_::CreateScryptAuthBlockState(
-      _fbb,
-      _salt,
-      _work_factor,
-      _block_size,
-      _parallel_factor);
-}
-
-inline RevocationStateT *RevocationState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<RevocationStateT>(new RevocationStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void RevocationState::UnPackTo(RevocationStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = le_label(); _o->le_label = _e; }
-}
-
-inline flatbuffers::Offset<RevocationState> RevocationState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const RevocationStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateRevocationState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<RevocationState> CreateRevocationState(flatbuffers::FlatBufferBuilder &_fbb, const RevocationStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const RevocationStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _le_label = _o->le_label;
-  return cryptohome::_serialized_::CreateRevocationState(
-      _fbb,
-      _le_label);
-}
-
-inline AuthBlockStateT *AuthBlockState::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<AuthBlockStateT>(new AuthBlockStateT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void AuthBlockState::UnPackTo(AuthBlockStateT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = state_type(); _o->state.type = _e; }
-  { auto _e = state(); if (_e) _o->state.value = cryptohome::_serialized_::AuthBlockStateUnionUnion::UnPack(_e, state_type(), _resolver); }
-  { auto _e = revocation_state(); if (_e) _o->revocation_state = std::unique_ptr<cryptohome::_serialized_::RevocationStateT>(_e->UnPack(_resolver)); }
-}
-
-inline flatbuffers::Offset<AuthBlockState> AuthBlockState::Pack(flatbuffers::FlatBufferBuilder &_fbb, const AuthBlockStateT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateAuthBlockState(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<AuthBlockState> CreateAuthBlockState(flatbuffers::FlatBufferBuilder &_fbb, const AuthBlockStateT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const AuthBlockStateT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _state_type = _o->state.type;
-  auto _state = _o->state.Pack(_fbb);
-  auto _revocation_state = _o->revocation_state ? CreateRevocationState(_fbb, _o->revocation_state.get(), _rehasher) : 0;
-  return cryptohome::_serialized_::CreateAuthBlockState(
-      _fbb,
-      _state_type,
-      _state,
-      _revocation_state);
-}
-
 inline bool VerifyAuthBlockStateUnion(flatbuffers::Verifier &verifier, const void *obj, AuthBlockStateUnion type) {
   switch (type) {
     case AuthBlockStateUnion::NONE: {
@@ -1874,186 +1220,6 @@ inline bool VerifyAuthBlockStateUnionVector(flatbuffers::Verifier &verifier, con
   return true;
 }
 
-inline void *AuthBlockStateUnionUnion::UnPack(const void *obj, AuthBlockStateUnion type, const flatbuffers::resolver_function_t *resolver) {
-  switch (type) {
-    case AuthBlockStateUnion::TpmBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmBoundToPcrAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::PinWeaverAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::PinWeaverAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::LibScryptCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::LibScryptCompatAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::ChallengeCredentialAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::ChallengeCredentialAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::DoubleWrappedCompatAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::CryptohomeRecoveryAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::TpmEccAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmEccAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case AuthBlockStateUnion::ScryptAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::ScryptAuthBlockState *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    default: return nullptr;
-  }
-}
-
-inline flatbuffers::Offset<void> AuthBlockStateUnionUnion::Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher) const {
-  switch (type) {
-    case AuthBlockStateUnion::TpmBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *>(value);
-      return CreateTpmBoundToPcrAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *>(value);
-      return CreateTpmNotBoundToPcrAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::PinWeaverAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::PinWeaverAuthBlockStateT *>(value);
-      return CreatePinWeaverAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::LibScryptCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *>(value);
-      return CreateLibScryptCompatAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::ChallengeCredentialAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *>(value);
-      return CreateChallengeCredentialAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *>(value);
-      return CreateDoubleWrappedCompatAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *>(value);
-      return CreateCryptohomeRecoveryAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::TpmEccAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::TpmEccAuthBlockStateT *>(value);
-      return CreateTpmEccAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    case AuthBlockStateUnion::ScryptAuthBlockState: {
-      auto ptr = reinterpret_cast<const cryptohome::_serialized_::ScryptAuthBlockStateT *>(value);
-      return CreateScryptAuthBlockState(_fbb, ptr, _rehasher).Union();
-    }
-    default: return 0;
-  }
-}
-
-inline AuthBlockStateUnionUnion::AuthBlockStateUnionUnion(const AuthBlockStateUnionUnion &u) : type(u.type), value(nullptr) {
-  switch (type) {
-    case AuthBlockStateUnion::TpmBoundToPcrAuthBlockState: {
-      value = new cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState: {
-      value = new cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::PinWeaverAuthBlockState: {
-      value = new cryptohome::_serialized_::PinWeaverAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::PinWeaverAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::LibScryptCompatAuthBlockState: {
-      value = new cryptohome::_serialized_::LibScryptCompatAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::ChallengeCredentialAuthBlockState: {
-      FLATBUFFERS_ASSERT(false);  // cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT not copyable.
-      break;
-    }
-    case AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState: {
-      FLATBUFFERS_ASSERT(false);  // cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT not copyable.
-      break;
-    }
-    case AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState: {
-      value = new cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::TpmEccAuthBlockState: {
-      value = new cryptohome::_serialized_::TpmEccAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::TpmEccAuthBlockStateT *>(u.value));
-      break;
-    }
-    case AuthBlockStateUnion::ScryptAuthBlockState: {
-      value = new cryptohome::_serialized_::ScryptAuthBlockStateT(*reinterpret_cast<cryptohome::_serialized_::ScryptAuthBlockStateT *>(u.value));
-      break;
-    }
-    default:
-      break;
-  }
-}
-
-inline void AuthBlockStateUnionUnion::Reset() {
-  switch (type) {
-    case AuthBlockStateUnion::TpmBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::TpmBoundToPcrAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::TpmNotBoundToPcrAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::TpmNotBoundToPcrAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::PinWeaverAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::PinWeaverAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::LibScryptCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::LibScryptCompatAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::ChallengeCredentialAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::ChallengeCredentialAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::DoubleWrappedCompatAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::DoubleWrappedCompatAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::CryptohomeRecoveryAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::CryptohomeRecoveryAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::TpmEccAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::TpmEccAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    case AuthBlockStateUnion::ScryptAuthBlockState: {
-      auto ptr = reinterpret_cast<cryptohome::_serialized_::ScryptAuthBlockStateT *>(value);
-      delete ptr;
-      break;
-    }
-    default: break;
-  }
-  value = nullptr;
-  type = AuthBlockStateUnion::NONE;
-}
-
 inline const cryptohome::_serialized_::AuthBlockState *GetAuthBlockState(const void *buf) {
   return flatbuffers::GetRoot<cryptohome::_serialized_::AuthBlockState>(buf);
 }
@@ -2082,18 +1248,6 @@ inline void FinishSizePrefixedAuthBlockStateBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<cryptohome::_serialized_::AuthBlockState> root) {
   fbb.FinishSizePrefixed(root);
-}
-
-inline std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT> UnPackAuthBlockState(
-    const void *buf,
-    const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT>(GetAuthBlockState(buf)->UnPack(res));
-}
-
-inline std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT> UnPackSizePrefixedAuthBlockState(
-    const void *buf,
-    const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT>(GetSizePrefixedAuthBlockState(buf)->UnPack(res));
 }
 
 }  // namespace _serialized_

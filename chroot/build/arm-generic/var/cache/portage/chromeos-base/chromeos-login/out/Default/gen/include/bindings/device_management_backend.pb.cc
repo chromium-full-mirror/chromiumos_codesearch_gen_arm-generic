@@ -8490,20 +8490,20 @@ bool BrowserPublicKeyUploadRequest_KeyTrustLevel_IsValid(int value) {
 static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> BrowserPublicKeyUploadRequest_KeyTrustLevel_strings[3] = {};
 
 static const char BrowserPublicKeyUploadRequest_KeyTrustLevel_names[] =
+  "CHROME_BROWSER_HW_KEY"
   "CHROME_BROWSER_OS_KEY"
-  "CHROME_BROWSER_TPM_KEY"
   "KEY_TRUST_LEVEL_UNSPECIFIED";
 
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry BrowserPublicKeyUploadRequest_KeyTrustLevel_entries[] = {
-  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 0, 21}, 2 },
-  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 21, 22}, 1 },
-  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 43, 27}, 0 },
+  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 0, 21}, 1 },
+  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 21, 21}, 2 },
+  { {BrowserPublicKeyUploadRequest_KeyTrustLevel_names + 42, 27}, 0 },
 };
 
 static const int BrowserPublicKeyUploadRequest_KeyTrustLevel_entries_by_number[] = {
   2, // 0 -> KEY_TRUST_LEVEL_UNSPECIFIED
-  1, // 1 -> CHROME_BROWSER_TPM_KEY
-  0, // 2 -> CHROME_BROWSER_OS_KEY
+  0, // 1 -> CHROME_BROWSER_HW_KEY
+  1, // 2 -> CHROME_BROWSER_OS_KEY
 };
 
 const std::string& BrowserPublicKeyUploadRequest_KeyTrustLevel_Name(
@@ -8533,7 +8533,7 @@ bool BrowserPublicKeyUploadRequest_KeyTrustLevel_Parse(
 }
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::KEY_TRUST_LEVEL_UNSPECIFIED;
-constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::CHROME_BROWSER_TPM_KEY;
+constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::CHROME_BROWSER_HW_KEY;
 constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::CHROME_BROWSER_OS_KEY;
 constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::KeyTrustLevel_MIN;
 constexpr BrowserPublicKeyUploadRequest_KeyTrustLevel BrowserPublicKeyUploadRequest::KeyTrustLevel_MAX;

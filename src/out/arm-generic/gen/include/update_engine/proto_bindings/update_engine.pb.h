@@ -85,13 +85,15 @@ enum Operation : int {
   ATTEMPTING_ROLLBACK = 8,
   DISABLED = 9,
   NEED_PERMISSION_TO_UPDATE = 10,
+  CLEANUP_PREVIOUS_UPDATE = 11,
+  UPDATED_BUT_DEFERRED = 12,
   ERROR = -1,
   Operation_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   Operation_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool Operation_IsValid(int value);
 constexpr Operation Operation_MIN = ERROR;
-constexpr Operation Operation_MAX = NEED_PERMISSION_TO_UPDATE;
+constexpr Operation Operation_MAX = UPDATED_BUT_DEFERRED;
 constexpr int Operation_ARRAYSIZE = Operation_MAX + 1;
 
 const std::string& Operation_Name(Operation value);
