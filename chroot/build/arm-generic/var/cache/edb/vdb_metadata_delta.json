@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1658376101.196825, "deltas": [{"event": "add", "package": "chromeos-base/chromeos-trim", "version": "9999", "slot": "0", "counter": "1567"}, {"event": "add", "package": "chromeos-base/dns-proxy", "version": "9999", "slot": "0", "counter": "1568"}]}
+{"version": "1", "timestamp": 1658385557.2896132, "deltas": [{"event": "add", "package": "chromeos-base/dns-proxy", "version": "9999", "slot": "0", "counter": "1564"}, {"event": "add", "package": "chromeos-base/system-proxy", "version": "9999", "slot": "0", "counter": "1565"}]}
