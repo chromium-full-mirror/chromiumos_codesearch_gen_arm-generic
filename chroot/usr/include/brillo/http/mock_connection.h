@@ -27,7 +27,7 @@ class MockConnection : public Connection {
   MOCK_METHOD(bool, FinishRequest, (ErrorPtr*), (override));
   MOCK_METHOD(RequestID,
               FinishRequestAsync,
-              (SuccessCallback, ErrorCallback),
+              (const SuccessCallback&, const ErrorCallback&),
               (override));
   MOCK_METHOD(int, GetResponseStatusCode, (), (const, override));
   MOCK_METHOD(std::string, GetResponseStatusText, (), (const, override));

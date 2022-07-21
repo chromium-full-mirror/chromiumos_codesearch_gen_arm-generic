@@ -7,11 +7,8 @@
  * panel.
  */
 import {CursorRange} from '../../../common/cursors/range.js';
-import {Msgs} from '../../common/msgs.js';
-import {PanelBridge} from '../../common/panel_bridge.js';
 import {ChromeVoxState} from '../chromevox_state.js';
 import {Output} from '../output/output.js';
-import {OutputEventType} from '../output/output_types.js';
 
 const AutomationNode = chrome.automation.AutomationNode;
 
@@ -42,12 +39,12 @@ export class PanelNodeMenuBackground {
 
   /** @param {number} callbackNodeIndex */
   static focusNodeCallback(callbackNodeIndex) {
-    if (!PanelNodeMenuBackground.callbackNodes_[callbackNodeIndex]) {
+    if (callbackNodeIndex < 0 ||
+        callbackNodeIndex >= PanelNodeMenuBackground.callbackNodes_.length) {
       return;
     }
     ChromeVoxState.instance.navigateToRange(CursorRange.fromNode(
-        /** @type {!AutomationNode} */ (
-            PanelNodeMenuBackground.callbackNodes_[callbackNodeIndex])));
+        PanelNodeMenuBackground.callbackNodes_[callbackNodeIndex]));
   }
 
   /**
@@ -69,7 +66,7 @@ export class PanelNodeMenuBackground {
     this.walker_ = new AutomationTreeWalker(root, constants.Dir.FORWARD, {
       visit(node) {
         return !AutomationPredicate.shouldIgnoreNode(node);
-      },
+      }
     });
     this.nodeCount_ = 0;
     this.findMoreNodes_();

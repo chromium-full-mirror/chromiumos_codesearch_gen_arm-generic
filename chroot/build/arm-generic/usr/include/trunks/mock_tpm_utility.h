@@ -107,15 +107,6 @@ class MockTpmUtility : public TpmUtility {
                       const std::string&,
                       AuthorizationDelegate*,
                       std::string*));
-  MOCK_METHOD8(ImportECCKeyWithPolicyDigest,
-               TPM_RC(AsymmetricKeyUsage,
-                      TPMI_ECC_CURVE,
-                      const std::string&,
-                      const std::string&,
-                      const std::string&,
-                      const std::string&,
-                      AuthorizationDelegate*,
-                      std::string*));
   MOCK_METHOD10(CreateRSAKeyPair,
                 TPM_RC(AsymmetricKeyUsage,
                        int,

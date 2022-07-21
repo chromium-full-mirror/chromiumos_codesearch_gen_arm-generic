@@ -9,7 +9,6 @@
  */
 import {CursorRange} from '../../common/cursors/range.js';
 
-import {TtsBackground} from './tts_background.js';
 import {UserActionMonitor} from './user_action_monitor.js';
 
 /**
@@ -74,27 +73,32 @@ export class ChromeVoxState {
   /**
    * Return the current range, but focus recovery is not applied to it.
    * @return {CursorRange} The current range.
+   * @abstract
    */
   getCurrentRangeWithoutRecovery() {}
 
   /**
    * @param {CursorRange} newRange The new range.
    * @param {boolean=} opt_fromEditing
+   * @abstract
    */
   setCurrentRange(newRange, opt_fromEditing) {}
 
   /**
-   * @param {TtsBackground} newBackgroundTts
+   * @param {TtsBackground}
+   * @abstract
    */
   set backgroundTts(newBackgroundTts) {}
 
   /**
    * @param {boolean} newValue
+   * @abstract
    */
   set isReadingContinuously(newValue) {}
 
   /**
-   * @param {CursorRange} newPageSel
+   * @param {CursorRange}
+   * @abstract
    */
   set pageSel(newPageSel) {}
 
@@ -111,12 +115,14 @@ export class ChromeVoxState {
    * @param {Object=} opt_speechProps Speech properties.
    * @param {boolean=} opt_skipSettingSelection If true, does not set
    *     the selection, otherwise it does by default.
+   * @abstract
    */
   navigateToRange(range, opt_focus, opt_speechProps, opt_skipSettingSelection) {
   }
 
   /**
    * Restores the last valid ChromeVox range.
+   * @abstract
    */
   restoreLastValidRangeIfNeeded() {}
 
@@ -125,11 +131,13 @@ export class ChromeVoxState {
    * @param {!BrailleKeyEvent} evt
    * @param {!NavBraille} content
    * @return {boolean} True if evt was processed.
+   * @abstract
    */
   onBrailleKeyEvent(evt, content) {}
 
   /**
    * Forces the reading of the next change to the clipboard.
+   * @abstract
    */
   readNextClipboardDataChange() {}
 }

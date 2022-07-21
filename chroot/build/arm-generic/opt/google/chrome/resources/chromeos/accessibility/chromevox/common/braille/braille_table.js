@@ -6,8 +6,6 @@
  * @fileoverview Holds information about a braille table.
  */
 
-import {Msgs} from '../msgs.js';
-
 export const BrailleTable = {};
 
 /**

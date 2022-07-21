@@ -27,7 +27,6 @@ static const char* Maitred_method_names[] = {
   "/vm_tools.Maitred/Mount",
   "/vm_tools.Maitred/StartTermina",
   "/vm_tools.Maitred/SetTime",
-  "/vm_tools.Maitred/SetTimezone",
   "/vm_tools.Maitred/Mount9P",
   "/vm_tools.Maitred/SetResolvConfig",
   "/vm_tools.Maitred/GetKernelVersion",
@@ -54,15 +53,14 @@ Maitred::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_Mount_(Maitred_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_StartTermina_(Maitred_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetTime_(Maitred_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetTimezone_(Maitred_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Mount9P_(Maitred_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetResolvConfig_(Maitred_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetKernelVersion_(Maitred_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_ResizeFilesystem_(Maitred_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetResizeStatus_(Maitred_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetResizeBounds_(Maitred_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAvailableSpace_(Maitred_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PrepareToSuspend_(Maitred_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Mount9P_(Maitred_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetResolvConfig_(Maitred_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetKernelVersion_(Maitred_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ResizeFilesystem_(Maitred_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetResizeStatus_(Maitred_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetResizeBounds_(Maitred_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAvailableSpace_(Maitred_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PrepareToSuspend_(Maitred_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Maitred::Stub::ConfigureNetwork(::grpc::ClientContext* context, const ::vm_tools::NetworkConfigRequest& request, ::vm_tools::EmptyMessage* response) {
@@ -207,22 +205,6 @@ void Maitred::Stub::experimental_async::SetTime(::grpc::ClientContext* context, 
 
 ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* Maitred::Stub::PrepareAsyncSetTimeRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::EmptyMessage>::Create(channel_.get(), cq, rpcmethod_SetTime_, context, request, false);
-}
-
-::grpc::Status Maitred::Stub::SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::vm_tools::EmptyMessage* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SetTimezone_, context, request, response);
-}
-
-void Maitred::Stub::experimental_async::SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)> f) {
-  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SetTimezone_, context, request, response, std::move(f));
-}
-
-::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* Maitred::Stub::AsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::EmptyMessage>::Create(channel_.get(), cq, rpcmethod_SetTimezone_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* Maitred::Stub::PrepareAsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::EmptyMessage>::Create(channel_.get(), cq, rpcmethod_SetTimezone_, context, request, false);
 }
 
 ::grpc::Status Maitred::Stub::Mount9P(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::vm_tools::MountResponse* response) {
@@ -402,45 +384,40 @@ Maitred::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Maitred_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::SetTimezoneRequest, ::vm_tools::EmptyMessage>(
-          std::mem_fn(&Maitred::Service::SetTimezone), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[10],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::Mount9PRequest, ::vm_tools::MountResponse>(
           std::mem_fn(&Maitred::Service::Mount9P), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[11],
+      Maitred_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::SetResolvConfigRequest, ::vm_tools::EmptyMessage>(
           std::mem_fn(&Maitred::Service::SetResolvConfig), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[12],
+      Maitred_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::EmptyMessage, ::vm_tools::GetKernelVersionResponse>(
           std::mem_fn(&Maitred::Service::GetKernelVersion), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[13],
+      Maitred_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::ResizeFilesystemRequest, ::vm_tools::ResizeFilesystemResponse>(
           std::mem_fn(&Maitred::Service::ResizeFilesystem), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[14],
+      Maitred_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::EmptyMessage, ::vm_tools::GetResizeStatusResponse>(
           std::mem_fn(&Maitred::Service::GetResizeStatus), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[15],
+      Maitred_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::EmptyMessage, ::vm_tools::GetResizeBoundsResponse>(
           std::mem_fn(&Maitred::Service::GetResizeBounds), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[16],
+      Maitred_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::EmptyMessage, ::vm_tools::GetAvailableSpaceResponse>(
           std::mem_fn(&Maitred::Service::GetAvailableSpace), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Maitred_method_names[17],
+      Maitred_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Maitred::Service, ::vm_tools::EmptyMessage, ::vm_tools::EmptyMessage>(
           std::mem_fn(&Maitred::Service::PrepareToSuspend), this)));
@@ -506,13 +483,6 @@ Maitred::Service::~Service() {
 }
 
 ::grpc::Status Maitred::Service::SetTime(::grpc::ServerContext* context, const ::vm_tools::SetTimeRequest* request, ::vm_tools::EmptyMessage* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status Maitred::Service::SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response) {
   (void) context;
   (void) request;
   (void) response;

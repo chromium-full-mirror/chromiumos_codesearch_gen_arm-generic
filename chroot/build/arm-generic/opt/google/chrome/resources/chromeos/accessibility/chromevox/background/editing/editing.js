@@ -10,13 +10,11 @@ import {Cursor, CursorMovement, CursorUnit} from '../../../common/cursors/cursor
 import {CursorRange} from '../../../common/cursors/range.js';
 import {AbstractTts} from '../../common/abstract_tts.js';
 import {ChromeVoxEvent} from '../../common/custom_automation_event.js';
-import {Msgs} from '../../common/msgs.js';
 import {BrailleBackground} from '../braille/braille_background.js';
 import {BrailleTextStyleSpan, ValueSelectionSpan, ValueSpan} from '../braille/spans.js';
 import {ChromeVoxState, ChromeVoxStateObserver} from '../chromevox_state.js';
 import {Color} from '../color.js';
 import {Output} from '../output/output.js';
-import {OutputEventType, OutputNodeSpan} from '../output/output_types.js';
 
 import {EditableLine} from './editable_line.js';
 import {ChromeVoxEditableTextBase, TextChangeEvent} from './editable_text_base.js';

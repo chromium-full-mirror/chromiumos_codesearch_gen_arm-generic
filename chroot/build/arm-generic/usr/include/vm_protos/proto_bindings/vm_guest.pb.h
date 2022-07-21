@@ -52,7 +52,7 @@ struct TableStruct_vm_5fguest_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -114,9 +114,6 @@ extern SetResolvConfigRequestDefaultTypeInternal _SetResolvConfigRequest_default
 class SetTimeRequest;
 struct SetTimeRequestDefaultTypeInternal;
 extern SetTimeRequestDefaultTypeInternal _SetTimeRequest_default_instance_;
-class SetTimezoneRequest;
-struct SetTimezoneRequestDefaultTypeInternal;
-extern SetTimezoneRequestDefaultTypeInternal _SetTimezoneRequest_default_instance_;
 class StartTerminaRequest;
 struct StartTerminaRequestDefaultTypeInternal;
 extern StartTerminaRequestDefaultTypeInternal _StartTerminaRequest_default_instance_;
@@ -143,7 +140,6 @@ template<> ::vm_tools::ResizeFilesystemResponse* Arena::CreateMaybeMessage<::vm_
 template<> ::vm_tools::ResolvConfig* Arena::CreateMaybeMessage<::vm_tools::ResolvConfig>(Arena*);
 template<> ::vm_tools::SetResolvConfigRequest* Arena::CreateMaybeMessage<::vm_tools::SetResolvConfigRequest>(Arena*);
 template<> ::vm_tools::SetTimeRequest* Arena::CreateMaybeMessage<::vm_tools::SetTimeRequest>(Arena*);
-template<> ::vm_tools::SetTimezoneRequest* Arena::CreateMaybeMessage<::vm_tools::SetTimezoneRequest>(Arena*);
 template<> ::vm_tools::StartTerminaRequest* Arena::CreateMaybeMessage<::vm_tools::StartTerminaRequest>(Arena*);
 template<> ::vm_tools::StartTerminaResponse* Arena::CreateMaybeMessage<::vm_tools::StartTerminaResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -2651,168 +2647,6 @@ class SetTimeRequest final :
 };
 // -------------------------------------------------------------------
 
-class SetTimezoneRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vm_tools.SetTimezoneRequest) */ {
- public:
-  inline SetTimezoneRequest() : SetTimezoneRequest(nullptr) {}
-  ~SetTimezoneRequest() override;
-  explicit constexpr SetTimezoneRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  SetTimezoneRequest(const SetTimezoneRequest& from);
-  SetTimezoneRequest(SetTimezoneRequest&& from) noexcept
-    : SetTimezoneRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline SetTimezoneRequest& operator=(const SetTimezoneRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline SetTimezoneRequest& operator=(SetTimezoneRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const SetTimezoneRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const SetTimezoneRequest* internal_default_instance() {
-    return reinterpret_cast<const SetTimezoneRequest*>(
-               &_SetTimezoneRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(SetTimezoneRequest& a, SetTimezoneRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(SetTimezoneRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(SetTimezoneRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  SetTimezoneRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<SetTimezoneRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const SetTimezoneRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const SetTimezoneRequest& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SetTimezoneRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "vm_tools.SetTimezoneRequest";
-  }
-  protected:
-  explicit SetTimezoneRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kTimezoneNameFieldNumber = 1,
-    kUseBindMountFieldNumber = 2,
-  };
-  // string timezone_name = 1;
-  void clear_timezone_name();
-  const std::string& timezone_name() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_timezone_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_timezone_name();
-  PROTOBUF_NODISCARD std::string* release_timezone_name();
-  void set_allocated_timezone_name(std::string* timezone_name);
-  private:
-  const std::string& _internal_timezone_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_timezone_name(const std::string& value);
-  std::string* _internal_mutable_timezone_name();
-  public:
-
-  // bool use_bind_mount = 2;
-  void clear_use_bind_mount();
-  bool use_bind_mount() const;
-  void set_use_bind_mount(bool value);
-  private:
-  bool _internal_use_bind_mount() const;
-  void _internal_set_use_bind_mount(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:vm_tools.SetTimezoneRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr timezone_name_;
-  bool use_bind_mount_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_vm_5fguest_2eproto;
-};
-// -------------------------------------------------------------------
-
 class GetKernelVersionResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:vm_tools.GetKernelVersionResponse) */ {
  public:
@@ -2861,7 +2695,7 @@ class GetKernelVersionResponse final :
                &_GetKernelVersionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   friend void swap(GetKernelVersionResponse& a, GetKernelVersionResponse& b) {
     a.Swap(&b);
@@ -3028,7 +2862,7 @@ class ResizeFilesystemRequest final :
                &_ResizeFilesystemRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   friend void swap(ResizeFilesystemRequest& a, ResizeFilesystemRequest& b) {
     a.Swap(&b);
@@ -3174,7 +3008,7 @@ class ResizeFilesystemResponse final :
                &_ResizeFilesystemResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   friend void swap(ResizeFilesystemResponse& a, ResizeFilesystemResponse& b) {
     a.Swap(&b);
@@ -3352,7 +3186,7 @@ class GetResizeStatusResponse final :
                &_GetResizeStatusResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   friend void swap(GetResizeStatusResponse& a, GetResizeStatusResponse& b) {
     a.Swap(&b);
@@ -3520,7 +3354,7 @@ class GetResizeBoundsResponse final :
                &_GetResizeBoundsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   friend void swap(GetResizeBoundsResponse& a, GetResizeBoundsResponse& b) {
     a.Swap(&b);
@@ -3666,7 +3500,7 @@ class GetAvailableSpaceResponse final :
                &_GetAvailableSpaceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   friend void swap(GetAvailableSpaceResponse& a, GetAvailableSpaceResponse& b) {
     a.Swap(&b);
@@ -5266,81 +5100,6 @@ inline void SetTimeRequest::set_allocated_time(::PROTOBUF_NAMESPACE_ID::Timestam
 
 // -------------------------------------------------------------------
 
-// SetTimezoneRequest
-
-// string timezone_name = 1;
-inline void SetTimezoneRequest::clear_timezone_name() {
-  timezone_name_.ClearToEmpty();
-}
-inline const std::string& SetTimezoneRequest::timezone_name() const {
-  // @@protoc_insertion_point(field_get:vm_tools.SetTimezoneRequest.timezone_name)
-  return _internal_timezone_name();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void SetTimezoneRequest::set_timezone_name(ArgT0&& arg0, ArgT... args) {
- 
- timezone_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:vm_tools.SetTimezoneRequest.timezone_name)
-}
-inline std::string* SetTimezoneRequest::mutable_timezone_name() {
-  std::string* _s = _internal_mutable_timezone_name();
-  // @@protoc_insertion_point(field_mutable:vm_tools.SetTimezoneRequest.timezone_name)
-  return _s;
-}
-inline const std::string& SetTimezoneRequest::_internal_timezone_name() const {
-  return timezone_name_.Get();
-}
-inline void SetTimezoneRequest::_internal_set_timezone_name(const std::string& value) {
-  
-  timezone_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* SetTimezoneRequest::_internal_mutable_timezone_name() {
-  
-  return timezone_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* SetTimezoneRequest::release_timezone_name() {
-  // @@protoc_insertion_point(field_release:vm_tools.SetTimezoneRequest.timezone_name)
-  return timezone_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void SetTimezoneRequest::set_allocated_timezone_name(std::string* timezone_name) {
-  if (timezone_name != nullptr) {
-    
-  } else {
-    
-  }
-  timezone_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), timezone_name,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (timezone_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    timezone_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:vm_tools.SetTimezoneRequest.timezone_name)
-}
-
-// bool use_bind_mount = 2;
-inline void SetTimezoneRequest::clear_use_bind_mount() {
-  use_bind_mount_ = false;
-}
-inline bool SetTimezoneRequest::_internal_use_bind_mount() const {
-  return use_bind_mount_;
-}
-inline bool SetTimezoneRequest::use_bind_mount() const {
-  // @@protoc_insertion_point(field_get:vm_tools.SetTimezoneRequest.use_bind_mount)
-  return _internal_use_bind_mount();
-}
-inline void SetTimezoneRequest::_internal_set_use_bind_mount(bool value) {
-  
-  use_bind_mount_ = value;
-}
-inline void SetTimezoneRequest::set_use_bind_mount(bool value) {
-  _internal_set_use_bind_mount(value);
-  // @@protoc_insertion_point(field_set:vm_tools.SetTimezoneRequest.use_bind_mount)
-}
-
-// -------------------------------------------------------------------
-
 // GetKernelVersionResponse
 
 // string kernel_release = 1;
@@ -5608,8 +5367,6 @@ inline void GetAvailableSpaceResponse::set_available_space(uint64_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

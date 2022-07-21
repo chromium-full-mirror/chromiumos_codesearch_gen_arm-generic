@@ -148,5 +148,5 @@ cr-link-row {
    */
   shouldHideLessonButton_(validCurriculums, curriculum) {
     return !validCurriculums.includes(curriculum);
-  },
+  }
 });

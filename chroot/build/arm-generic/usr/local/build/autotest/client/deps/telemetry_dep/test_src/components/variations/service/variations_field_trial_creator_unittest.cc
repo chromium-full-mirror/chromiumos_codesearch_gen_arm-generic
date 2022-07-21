@@ -29,7 +29,6 @@
 #include "base/version.h"
 #include "build/branding_buildflags.h"
 #include "build/build_config.h"
-#include "components/metrics/clean_exit_beacon.h"
 #include "components/metrics/client_info.h"
 #include "components/metrics/metrics_service.h"
 #include "components/metrics/metrics_state_manager.h"
@@ -42,6 +41,7 @@
 #include "components/variations/scoped_variations_ids_provider.h"
 #include "components/variations/service/buildflags.h"
 #include "components/variations/service/safe_seed_manager.h"
+#include "components/variations/service/variations_safe_mode_constants.h"
 #include "components/variations/service/variations_service.h"
 #include "components/variations/service/variations_service_client.h"
 #include "components/variations/variations_seed_store.h"
@@ -1203,8 +1203,8 @@ TEST_F(FieldTrialCreatorTest, DoNotWriteBeaconFile) {
   base::HistogramTester histogram_tester;
   ASSERT_TRUE(field_trial_creator.SetUpFieldTrials());
 
-  EXPECT_FALSE(base::PathExists(
-      user_data_dir_path().Append(metrics::kCleanExitBeaconFilename)));
+  EXPECT_FALSE(
+      base::PathExists(user_data_dir_path().Append(kCleanExitBeaconFilename)));
   histogram_tester.ExpectTotalCount(
       "Variations.ExtendedSafeMode.BeaconFileWrite", 0);
 }
@@ -1246,8 +1246,8 @@ TEST_P(FieldTrialCreatorTestWithStartupVisibility,
   ASSERT_TRUE(field_trial_creator.SetUpFieldTrials());
 
   // Verify that Chrome did (or did not) start watching for crashes.
-  EXPECT_EQ(base::PathExists(
-                user_data_dir_path().Append(metrics::kCleanExitBeaconFilename)),
+  EXPECT_EQ(base::PathExists(user_data_dir_path().Append(
+                variations::kCleanExitBeaconFilename)),
             params.extend_safe_mode);
 }
 
@@ -1267,7 +1267,7 @@ TEST_F(FieldTrialCreatorTest, WriteBeaconFile) {
 
   // Verify that the beacon file was written and that the contents are correct.
   const base::FilePath variations_file_path =
-      user_data_dir_path().Append(metrics::kCleanExitBeaconFilename);
+      user_data_dir_path().Append(variations::kCleanExitBeaconFilename);
   EXPECT_TRUE(base::PathExists(variations_file_path));
   std::string beacon_file_contents;
   ASSERT_TRUE(

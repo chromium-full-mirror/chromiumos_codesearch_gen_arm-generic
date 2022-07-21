@@ -394,6 +394,21 @@ class debugdProxyInterface {
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
+  // Fills the journal log in export format for feedback reports in the
+  // file whose file descriptor is given.
+  virtual bool GetJournalLog(
+      const brillo::dbus_utils::FileDescriptor& in_outfd,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  // Fills the journal log in export format for feedback reports in the
+  // file whose file descriptor is given.
+  virtual void GetJournalLogAsync(
+      const brillo::dbus_utils::FileDescriptor& in_outfd,
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
   // Example method. See /doc/hacking.md.
   virtual bool GetExample(
       std::string* out_result,
@@ -2327,6 +2342,40 @@ class debugdProxy final : public debugdProxyInterface {
         std::move(success_callback),
         std::move(error_callback),
         in_username);
+  }
+
+  // Fills the journal log in export format for feedback reports in the
+  // file whose file descriptor is given.
+  bool GetJournalLog(
+      const brillo::dbus_utils::FileDescriptor& in_outfd,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.debugd",
+        "GetJournalLog",
+        error,
+        in_outfd);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error);
+  }
+
+  // Fills the journal log in export format for feedback reports in the
+  // file whose file descriptor is given.
+  void GetJournalLogAsync(
+      const brillo::dbus_utils::FileDescriptor& in_outfd,
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.debugd",
+        "GetJournalLog",
+        std::move(success_callback),
+        std::move(error_callback),
+        in_outfd);
   }
 
   // Example method. See /doc/hacking.md.

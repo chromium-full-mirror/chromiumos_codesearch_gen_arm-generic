@@ -7,7 +7,10 @@
  * tutorial content.
  */
 
-/** @polymerBehavior */
+/**
+ * @polymerBehavior
+ * @suppress {undefinedVars|missingProperties}
+ */
 export const Localization = {
   /**
    * Returns the message with the given message id from the ChromeVox namespace.
@@ -16,11 +19,6 @@ export const Localization = {
    * @return {string} The localized message.
    */
   getMsg(id, opt_subs) {
-    const message = chrome.i18n.getMessage('chromevox_' + id, opt_subs);
-    if (message === undefined || message === '') {
-      throw new Error('Invalid ChromeVox message id: ' + id);
-    }
-
-    return message;
-  },
+    return Msgs.getMsg(id, opt_subs);
+  }
 };

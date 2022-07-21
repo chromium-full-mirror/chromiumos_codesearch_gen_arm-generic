@@ -8,7 +8,6 @@
 import {AbstractTts} from '../common/abstract_tts.js';
 import {BrailleTable} from '../common/braille/braille_table.js';
 import {ExtensionBridge} from '../common/extension_bridge.js';
-import {Msgs} from '../common/msgs.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 
 import {BluetoothBrailleDisplayUI} from './bluetooth_braille_display_ui.js';
@@ -442,10 +441,8 @@ export class OptionsPage {
    */
   static setEventStreamFilter(name, enabled) {
     BackgroundBridge.ChromeVoxPrefs.setPref(name, enabled);
-
-    // TODO(accessibility): the below cast needs to be validated.
     BackgroundBridge.EventStreamLogger.notifyEventStreamFilterChanged(
-        /** @type {chrome.automation.EventType} */ (name), enabled);
+        name, enabled);
   }
 
   /**

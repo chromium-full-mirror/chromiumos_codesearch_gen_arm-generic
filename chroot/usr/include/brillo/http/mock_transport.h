@@ -33,11 +33,11 @@ class MockTransport : public Transport {
               (override));
   MOCK_METHOD(void,
               RunCallbackAsync,
-              (const base::Location&, base::OnceClosure),
+              (const base::Location&, const base::Closure&),
               (override));
   MOCK_METHOD(RequestID,
               StartAsyncTransfer,
-              (Connection*, SuccessCallback, ErrorCallback),
+              (Connection*, const SuccessCallback&, const ErrorCallback&),
               (override));
   MOCK_METHOD(bool, CancelRequest, (RequestID), (override));
   MOCK_METHOD(void, SetDefaultTimeout, (base::TimeDelta), (override));

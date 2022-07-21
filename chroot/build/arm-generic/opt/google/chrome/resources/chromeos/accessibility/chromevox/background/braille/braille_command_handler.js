@@ -13,7 +13,6 @@ import {CommandHandlerInterface} from '../command_handler_interface.js';
 import {DesktopAutomationInterface} from '../desktop_automation_interface.js';
 import {EventSourceState} from '../event_source.js';
 import {Output} from '../output/output.js';
-import {OutputNodeSpan, OutputSelectionSpan} from '../output/output_types.js';
 
 const RoleType = chrome.automation.RoleType;
 const StateType = chrome.automation.StateType;
@@ -159,7 +158,7 @@ export class BrailleCommandHandler {
         anchorObject: actionNode,
         anchorOffset: targetPosition,
         focusObject: actionNode,
-        focusOffset: targetPosition,
+        focusOffset: targetPosition
       });
     } else {
       const start = text.getSpanStart(selectionSpan);

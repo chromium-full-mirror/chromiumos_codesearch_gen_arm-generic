@@ -689,8 +689,8 @@ static const flex_int16_t yy_rule_linenum[41] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
-#line 2 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 1 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 2 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 
 #include <string>
 #include <map>
@@ -1065,9 +1065,9 @@ YY_DECL
 
 	{
 /* %% [7.0] user's declarations go here */
-#line 42 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 42 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 
-#line 44 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 44 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
   /* NOTE:
    * Rule ordering is important in order to establist priority. Some
    * rules are a superset of other rules and will cause the sub rules to
@@ -1170,112 +1170,112 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 52 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 52 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { BEGIN(COMMENT_STATE); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 53 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 53 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { BEGIN(INITIAL); }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 54 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 54 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { yylloc->lines(yyleng); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 55 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 55 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { /* do nothing */ }
 	YY_BREAK
 /* Line Comment */
 case 5:
 YY_RULE_SETUP
-#line 58 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 58 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { /* do nothing */ }
 	YY_BREAK
 /* Begin reserved keyword definitions */
 /* Fields */
 case 6:
 YY_RULE_SETUP
-#line 62 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 62 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::BODY); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 63 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 63 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::PAYLOAD); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 64 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 64 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::SIZE); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 65 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 65 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::COUNT); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 66 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 66 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::FIXED); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 67 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 67 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::RESERVED); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 68 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 68 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::CHECKSUM_START); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 69 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 69 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::PADDING); }
 	YY_BREAK
 /* Types */
 case 14:
 YY_RULE_SETUP
-#line 71 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 71 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::CHECKSUM); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 72 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 72 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::CUSTOM_FIELD); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 73 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 73 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::ENUM); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 74 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 74 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::GROUP); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 75 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 75 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::PACKET); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 76 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 76 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::TEST); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 77 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 77 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(token::STRUCT); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 78 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 78 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->integer = 1;
                           return token::IS_LITTLE_ENDIAN;
@@ -1283,7 +1283,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 82 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 82 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->integer = 0;
                           return token::IS_LITTLE_ENDIAN;
@@ -1292,7 +1292,7 @@ YY_RULE_SETUP
 /* Begin identifier definitions */
 case 23:
 YY_RULE_SETUP
-#line 88 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 88 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           std::string with_quotes = std::string(yytext);
                           yylval->string = new std::string(with_quotes.begin() + 1, with_quotes.end() - 1);
@@ -1301,7 +1301,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 94 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 94 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->string = new std::string(yytext);
                           return token::SIZE_MODIFIER;
@@ -1309,7 +1309,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 99 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 99 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->string = new std::string(yytext);
                           return token::IDENTIFIER;
@@ -1317,7 +1317,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 104 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 104 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->integer = std::stoull(std::string(yytext), nullptr, 10);
                           return token::INTEGER;
@@ -1325,7 +1325,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 109 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 109 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 {
                           yylval->integer = std::stoull(std::string(yytext), nullptr, 16);
                           return token::INTEGER;
@@ -1334,73 +1334,73 @@ YY_RULE_SETUP
 /* Begin token definitions */
 case 28:
 YY_RULE_SETUP
-#line 115 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 115 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(':'); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 116 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 116 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('{'); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 117 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 117 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('}'); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 118 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 118 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('['); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 119 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 119 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(']'); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 120 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 120 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('('); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 121 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 121 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(')'); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 122 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 122 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('<'); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 123 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 123 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('>'); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 124 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 124 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return('='); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 125 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 125 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { return(','); }
 	YY_BREAK
 case 39:
 /* rule 39 can match eol */
 YY_RULE_SETUP
-#line 127 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 127 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { yylloc->lines(yyleng); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 128 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 128 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 { /* Ignore all other whitespace */ }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 130 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 130 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 ECHO;
 	YY_BREAK
 #line 1406 "/build/arm-generic/var/cache/portage/net-wireless/floss/out/Default/gen/bt/system/gd/packet/parser/language_l.cc"
@@ -2707,7 +2707,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 /* %ok-for-header */
 
-#line 130 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1342/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
+#line 130 "../../../../../../../tmp/portage/net-wireless/floss-0.0.2-r1323/work/floss-0.0.2/platform2/bt/system/gd/packet/parser/language_l.ll"
 
 
 

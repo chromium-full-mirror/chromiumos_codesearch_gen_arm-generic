@@ -48,11 +48,8 @@ function validateInterestGroup(interestGroup) {
   }
 
   if (!interestGroup.trustedBiddingSignalsUrl.startsWith('https://a.test') ||
-      (!interestGroup.trustedBiddingSignalsUrl.includes(
-          'trusted_bidding_signals.json') &&
-       // TODO(mmenke): Remove this once v1 format is no longer supported.
-       !interestGroup.trustedBiddingSignalsUrl.includes(
-          'trusted_bidding_signals_v1.json'))) {
+      !interestGroup.trustedBiddingSignalsUrl.includes(
+          'trusted_bidding_signals.json')) {
     throw 'Incorrect trustedBiddingSignalsUrl ' +
         interestGroup.trustedBiddingSignalsUrl;
   }

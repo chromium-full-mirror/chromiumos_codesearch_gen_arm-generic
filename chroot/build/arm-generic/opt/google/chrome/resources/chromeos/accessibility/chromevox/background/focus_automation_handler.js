@@ -11,7 +11,6 @@ import {ChromeVoxEvent} from '../common/custom_automation_event.js';
 import {BaseAutomationHandler} from './base_automation_handler.js';
 import {ChromeVoxState} from './chromevox_state.js';
 import {Output} from './output/output.js';
-import {OutputEventType} from './output/output_types.js';
 
 const AutomationEvent = chrome.automation.AutomationEvent;
 const AutomationNode = chrome.automation.AutomationNode;

@@ -7,13 +7,12 @@
  * panel.
  */
 
-import {Msgs} from '../../common/msgs.js';
-
 export class PanelTabMenuBackground {
   /**
    * @param {number} windowId
    * @param {number} tabId
    * @return {!Promise}
+   * @private
    */
   static async focusTab(windowId, tabId) {
     await new Promise(

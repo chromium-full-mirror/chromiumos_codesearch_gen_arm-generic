@@ -10,7 +10,6 @@ from autotest_lib.client.common_lib.cros.network import ping_runner
 from autotest_lib.client.common_lib.cros.network import xmlrpc_datatypes
 from autotest_lib.server import hosts
 from autotest_lib.server import site_linux_router
-from autotest_lib.server import site_linux_rpi
 from autotest_lib.server import site_linux_system
 from autotest_lib.server.cros import dnsname_mangler
 from autotest_lib.server.cros.network import attenuator_controller
@@ -32,7 +31,6 @@ class WiFiTestContextManager(object):
     CMDLINE_PACKET_CAPTURE_SNAPLEN = 'capture_snaplen'
     CMDLINE_ROUTER_ADDR = 'router_addr'
     CMDLINE_PCAP_ADDR = 'pcap_addr'
-    CMDLINE_RPI_ADDR = 'rpi_addr'
     CMDLINE_PACKET_CAPTURES = 'packet_capture'
     CMDLINE_USE_WPA_CLI = 'use_wpa_cli'
 
@@ -63,11 +61,6 @@ class WiFiTestContextManager(object):
         """@return Dedicated packet capture host or None."""
         return self._pcap_host
 
-    @property
-    def rpi(self):
-        """@return Dedicated RaspberryPi object or None."""
-        return self._rpi
-
 
     @property
     def capture_host(self):
@@ -95,7 +88,6 @@ class WiFiTestContextManager(object):
         self._attenuator = None
         self._router = None
         self._pcap_host = None
-        self._rpi = None
         self._enable_client_packet_captures = False
         self._enable_packet_captures = False
         self._packet_capture_snaplen = None
@@ -238,15 +230,6 @@ class WiFiTestContextManager(object):
                                   hosts.create_host(pcap_addr),'pcap')
 
 
-    def _setup_rpi(self):
-        """Set up the RaspberryPi device."""
-        self._rpi = site_linux_rpi.build_rpi_proxy(
-                client_hostname=self.client.host.hostname,
-                rpi_addr=self._cmdline_args.get(self.CMDLINE_RPI_ADDR,
-                                                None))
-        self.rpi.sync_host_times()
-
-
     def _setup_attenuator(self):
         """
         Set up the attenuator device.
@@ -267,7 +250,7 @@ class WiFiTestContextManager(object):
                     attenuator_addr)
 
     def setup(self, include_router=True, include_pcap=True,
-            include_attenuator=True, pcap_as_router=False, include_rpi=False):
+            include_attenuator=True, pcap_as_router=False):
         """
         Construct the state used in a WiFi test.
 
@@ -279,8 +262,6 @@ class WiFiTestContextManager(object):
                 attenuator is not used by the test
         @param pcap_as_router optional bool which should be True if the pcap
                 should be configured as a router.
-        @param include_rpi bool which should be False if a RaspberryPi
-                is not used by the test
         """
         if include_router:
             self._setup_router()
@@ -289,8 +270,6 @@ class WiFiTestContextManager(object):
             self._pcap_as_router = pcap_as_router
         if include_attenuator:
             self._setup_attenuator()
-        if include_rpi:
-            self._setup_rpi()
 
         # Set up a clean context to conduct WiFi tests in.
         self.client.shill.init_test_network_state()
@@ -311,7 +290,7 @@ class WiFiTestContextManager(object):
         """Teardown the state used in a WiFi test."""
         logging.debug('Tearing down the test context.')
         for system in [self._attenuator, self._client_proxy,
-                       self._router, self._pcap_host, self._rpi]:
+                       self._router, self._pcap_host]:
             if system is not None:
                 system.close()
 

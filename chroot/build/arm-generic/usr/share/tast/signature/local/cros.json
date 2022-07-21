@@ -1,4 +1,4 @@
 {
-  "https://chromium.googlesource.com/chromiumos/platform/tast": "6922a070b4304bd3ebaede92588a015942a9f113",
-  "https://chromium.googlesource.com/chromiumos/platform/tast-tests": "643e99be6f6f26f51afefe3886196f077ae9fc45"
+  "https://chromium.googlesource.com/chromiumos/platform/tast": "ad24f40133a6ab600213daaec72b470598461755",
+  "https://chromium.googlesource.com/chromiumos/platform/tast-tests": "334c53edc8b4a51a7a68675ab376879b98b2395e"
 }

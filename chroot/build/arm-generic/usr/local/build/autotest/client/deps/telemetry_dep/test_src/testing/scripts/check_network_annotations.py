@@ -6,12 +6,7 @@
 """//testing/scripts wrapper for the network traffic annotations checks.
 This script is used to run check_annotations.py on the trybots to ensure that
 all network traffic annotations have correct syntax and semantics, and all
-functions requiring annotations have one.
-
-This is a wrapper around tools/traffic_annotation/scripts/auditor.py.
-
-See tools/traffic_annotation/scripts/auditor/README.md for instructions on
-running locally."""
+functions requiring annotations have one."""
 
 import json
 import os

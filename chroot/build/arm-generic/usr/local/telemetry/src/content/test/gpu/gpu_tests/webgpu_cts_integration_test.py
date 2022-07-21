@@ -178,8 +178,6 @@ class WebGpuCtsIntegrationTest(gpu_integration_test.GpuIntegrationTest):
         # since it could technically be hit on any platform.
         '--disable-backgrounding-occluded-windows',
     ]
-    if cls._use_webgpu_adapter:
-      browser_args.append('--use-webgpu-adapter=%s' % cls._use_webgpu_adapter)
     if cls._enable_dawn_backend_validation:
       if sys.platform == 'win32':
         browser_args.append('--enable-dawn-backend-validation=partial')
@@ -312,14 +310,9 @@ class WebGpuCtsIntegrationTest(gpu_integration_test.GpuIntegrationTest):
                       log_str)
       elif status == 'fail':
         self.fail(log_str)
-    except asyncio.TimeoutError:
+    finally:
       if JAVASCRIPT_DURATION not in self.additionalTags:
         self.additionalTags[JAVASCRIPT_DURATION] = '%.9fs' % timeout
-      raise
-    except websockets.exceptions.ConnectionClosedOK as e:
-      raise RuntimeError(
-          'Detected closed websocket - likely caused by renderer crash') from e
-    finally:
       WebGpuCtsIntegrationTest.total_tests_run += 1
 
   @classmethod

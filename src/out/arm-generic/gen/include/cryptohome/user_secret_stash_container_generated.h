@@ -11,9 +11,11 @@ namespace _serialized_ {
 
 struct UserSecretStashContainer;
 struct UserSecretStashContainerBuilder;
+struct UserSecretStashContainerT;
 
 struct UserSecretStashWrappedKeyBlock;
 struct UserSecretStashWrappedKeyBlockBuilder;
+struct UserSecretStashWrappedKeyBlockT;
 
 enum class UserSecretStashEncryptionAlgorithm : int32_t {
   AES_GCM_256 = 1,
@@ -42,7 +44,18 @@ inline const char *EnumNameUserSecretStashEncryptionAlgorithm(UserSecretStashEnc
   return EnumNamesUserSecretStashEncryptionAlgorithm()[index];
 }
 
+struct UserSecretStashContainerT : public flatbuffers::NativeTable {
+  typedef UserSecretStashContainer TableType;
+  flatbuffers::Optional<cryptohome::_serialized_::UserSecretStashEncryptionAlgorithm> encryption_algorithm = flatbuffers::nullopt;
+  std::vector<uint8_t> ciphertext{};
+  std::vector<uint8_t> iv{};
+  std::vector<uint8_t> gcm_tag{};
+  std::vector<std::unique_ptr<cryptohome::_serialized_::UserSecretStashWrappedKeyBlockT>> wrapped_key_blocks{};
+  std::string created_on_os_version{};
+};
+
 struct UserSecretStashContainer FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef UserSecretStashContainerT NativeTableType;
   typedef UserSecretStashContainerBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_ENCRYPTION_ALGORITHM = 4,
@@ -86,6 +99,9 @@ struct UserSecretStashContainer FLATBUFFERS_FINAL_CLASS : private flatbuffers::T
            verifier.VerifyString(created_on_os_version()) &&
            verifier.EndTable();
   }
+  UserSecretStashContainerT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(UserSecretStashContainerT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<UserSecretStashContainer> Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashContainerT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct UserSecretStashContainerBuilder {
@@ -162,7 +178,19 @@ inline flatbuffers::Offset<UserSecretStashContainer> CreateUserSecretStashContai
       created_on_os_version__);
 }
 
+flatbuffers::Offset<UserSecretStashContainer> CreateUserSecretStashContainer(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashContainerT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+struct UserSecretStashWrappedKeyBlockT : public flatbuffers::NativeTable {
+  typedef UserSecretStashWrappedKeyBlock TableType;
+  std::string wrapping_id{};
+  flatbuffers::Optional<cryptohome::_serialized_::UserSecretStashEncryptionAlgorithm> encryption_algorithm = flatbuffers::nullopt;
+  std::vector<uint8_t> encrypted_key{};
+  std::vector<uint8_t> iv{};
+  std::vector<uint8_t> gcm_tag{};
+};
+
 struct UserSecretStashWrappedKeyBlock FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
+  typedef UserSecretStashWrappedKeyBlockT NativeTableType;
   typedef UserSecretStashWrappedKeyBlockBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_WRAPPING_ID = 4,
@@ -199,6 +227,9 @@ struct UserSecretStashWrappedKeyBlock FLATBUFFERS_FINAL_CLASS : private flatbuff
            verifier.VerifyVector(gcm_tag()) &&
            verifier.EndTable();
   }
+  UserSecretStashWrappedKeyBlockT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  void UnPackTo(UserSecretStashWrappedKeyBlockT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
+  static flatbuffers::Offset<UserSecretStashWrappedKeyBlock> Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashWrappedKeyBlockT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct UserSecretStashWrappedKeyBlockBuilder {
@@ -267,6 +298,87 @@ inline flatbuffers::Offset<UserSecretStashWrappedKeyBlock> CreateUserSecretStash
       gcm_tag__);
 }
 
+flatbuffers::Offset<UserSecretStashWrappedKeyBlock> CreateUserSecretStashWrappedKeyBlock(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashWrappedKeyBlockT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
+
+inline UserSecretStashContainerT *UserSecretStashContainer::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = std::unique_ptr<UserSecretStashContainerT>(new UserSecretStashContainerT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
+}
+
+inline void UserSecretStashContainer::UnPackTo(UserSecretStashContainerT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = encryption_algorithm(); _o->encryption_algorithm = _e; }
+  { auto _e = ciphertext(); if (_e) { _o->ciphertext.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->ciphertext.begin()); } }
+  { auto _e = iv(); if (_e) { _o->iv.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->iv.begin()); } }
+  { auto _e = gcm_tag(); if (_e) { _o->gcm_tag.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->gcm_tag.begin()); } }
+  { auto _e = wrapped_key_blocks(); if (_e) { _o->wrapped_key_blocks.resize(_e->size()); for (flatbuffers::uoffset_t _i = 0; _i < _e->size(); _i++) { _o->wrapped_key_blocks[_i] = std::unique_ptr<cryptohome::_serialized_::UserSecretStashWrappedKeyBlockT>(_e->Get(_i)->UnPack(_resolver)); } } }
+  { auto _e = created_on_os_version(); if (_e) _o->created_on_os_version = _e->str(); }
+}
+
+inline flatbuffers::Offset<UserSecretStashContainer> UserSecretStashContainer::Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashContainerT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateUserSecretStashContainer(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<UserSecretStashContainer> CreateUserSecretStashContainer(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashContainerT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const UserSecretStashContainerT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _encryption_algorithm = _o->encryption_algorithm;
+  auto _ciphertext = _o->ciphertext.size() ? _fbb.CreateVector(_o->ciphertext) : 0;
+  auto _iv = _o->iv.size() ? _fbb.CreateVector(_o->iv) : 0;
+  auto _gcm_tag = _o->gcm_tag.size() ? _fbb.CreateVector(_o->gcm_tag) : 0;
+  auto _wrapped_key_blocks = _o->wrapped_key_blocks.size() ? _fbb.CreateVector<flatbuffers::Offset<cryptohome::_serialized_::UserSecretStashWrappedKeyBlock>> (_o->wrapped_key_blocks.size(), [](size_t i, _VectorArgs *__va) { return CreateUserSecretStashWrappedKeyBlock(*__va->__fbb, __va->__o->wrapped_key_blocks[i].get(), __va->__rehasher); }, &_va ) : 0;
+  auto _created_on_os_version = _o->created_on_os_version.empty() ? 0 : _fbb.CreateString(_o->created_on_os_version);
+  return cryptohome::_serialized_::CreateUserSecretStashContainer(
+      _fbb,
+      _encryption_algorithm,
+      _ciphertext,
+      _iv,
+      _gcm_tag,
+      _wrapped_key_blocks,
+      _created_on_os_version);
+}
+
+inline UserSecretStashWrappedKeyBlockT *UserSecretStashWrappedKeyBlock::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
+  auto _o = std::unique_ptr<UserSecretStashWrappedKeyBlockT>(new UserSecretStashWrappedKeyBlockT());
+  UnPackTo(_o.get(), _resolver);
+  return _o.release();
+}
+
+inline void UserSecretStashWrappedKeyBlock::UnPackTo(UserSecretStashWrappedKeyBlockT *_o, const flatbuffers::resolver_function_t *_resolver) const {
+  (void)_o;
+  (void)_resolver;
+  { auto _e = wrapping_id(); if (_e) _o->wrapping_id = _e->str(); }
+  { auto _e = encryption_algorithm(); _o->encryption_algorithm = _e; }
+  { auto _e = encrypted_key(); if (_e) { _o->encrypted_key.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->encrypted_key.begin()); } }
+  { auto _e = iv(); if (_e) { _o->iv.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->iv.begin()); } }
+  { auto _e = gcm_tag(); if (_e) { _o->gcm_tag.resize(_e->size()); std::copy(_e->begin(), _e->end(), _o->gcm_tag.begin()); } }
+}
+
+inline flatbuffers::Offset<UserSecretStashWrappedKeyBlock> UserSecretStashWrappedKeyBlock::Pack(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashWrappedKeyBlockT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
+  return CreateUserSecretStashWrappedKeyBlock(_fbb, _o, _rehasher);
+}
+
+inline flatbuffers::Offset<UserSecretStashWrappedKeyBlock> CreateUserSecretStashWrappedKeyBlock(flatbuffers::FlatBufferBuilder &_fbb, const UserSecretStashWrappedKeyBlockT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
+  (void)_rehasher;
+  (void)_o;
+  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const UserSecretStashWrappedKeyBlockT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
+  auto _wrapping_id = _o->wrapping_id.empty() ? 0 : _fbb.CreateString(_o->wrapping_id);
+  auto _encryption_algorithm = _o->encryption_algorithm;
+  auto _encrypted_key = _o->encrypted_key.size() ? _fbb.CreateVector(_o->encrypted_key) : 0;
+  auto _iv = _o->iv.size() ? _fbb.CreateVector(_o->iv) : 0;
+  auto _gcm_tag = _o->gcm_tag.size() ? _fbb.CreateVector(_o->gcm_tag) : 0;
+  return cryptohome::_serialized_::CreateUserSecretStashWrappedKeyBlock(
+      _fbb,
+      _wrapping_id,
+      _encryption_algorithm,
+      _encrypted_key,
+      _iv,
+      _gcm_tag);
+}
+
 inline const cryptohome::_serialized_::UserSecretStashContainer *GetUserSecretStashContainer(const void *buf) {
   return flatbuffers::GetRoot<cryptohome::_serialized_::UserSecretStashContainer>(buf);
 }
@@ -295,6 +407,18 @@ inline void FinishSizePrefixedUserSecretStashContainerBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<cryptohome::_serialized_::UserSecretStashContainer> root) {
   fbb.FinishSizePrefixed(root);
+}
+
+inline std::unique_ptr<cryptohome::_serialized_::UserSecretStashContainerT> UnPackUserSecretStashContainer(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<cryptohome::_serialized_::UserSecretStashContainerT>(GetUserSecretStashContainer(buf)->UnPack(res));
+}
+
+inline std::unique_ptr<cryptohome::_serialized_::UserSecretStashContainerT> UnPackSizePrefixedUserSecretStashContainer(
+    const void *buf,
+    const flatbuffers::resolver_function_t *res = nullptr) {
+  return std::unique_ptr<cryptohome::_serialized_::UserSecretStashContainerT>(GetSizePrefixedUserSecretStashContainer(buf)->UnPack(res));
 }
 
 }  // namespace _serialized_

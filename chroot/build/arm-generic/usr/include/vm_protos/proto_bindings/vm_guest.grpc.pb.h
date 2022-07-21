@@ -119,14 +119,6 @@ class Maitred final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>> PrepareAsyncSetTime(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>>(PrepareAsyncSetTimeRaw(context, request, cq));
     }
-    // Set the VM timezone to a specified value.
-    virtual ::grpc::Status SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::vm_tools::EmptyMessage* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>> AsyncSetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>>(AsyncSetTimezoneRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>> PrepareAsyncSetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>>(PrepareAsyncSetTimezoneRaw(context, request, cq));
-    }
     // Mount a 9P server using a vsock socket.  This uses the trans=fd option
     // when mounting the 9P server, which requires first connecting a socket
     // to the server.  Other transports should use the normal Mount rpc instead.
@@ -220,8 +212,6 @@ class Maitred final {
       // This RPC is to address cases where the guest loses time for some reason
       // (e.g. due to the host being suspended for a while).
       virtual void SetTime(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)>) = 0;
-      // Set the VM timezone to a specified value.
-      virtual void SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)>) = 0;
       // Mount a 9P server using a vsock socket.  This uses the trans=fd option
       // when mounting the 9P server, which requires first connecting a socket
       // to the server.  Other transports should use the normal Mount rpc instead.
@@ -261,8 +251,6 @@ class Maitred final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::StartTerminaResponse>* PrepareAsyncStartTerminaRaw(::grpc::ClientContext* context, const ::vm_tools::StartTerminaRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>* AsyncSetTimeRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>* PrepareAsyncSetTimeRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>* AsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>* PrepareAsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::MountResponse>* AsyncMount9PRaw(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::MountResponse>* PrepareAsyncMount9PRaw(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::EmptyMessage>* AsyncSetResolvConfigRaw(::grpc::ClientContext* context, const ::vm_tools::SetResolvConfigRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -346,13 +334,6 @@ class Maitred final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>> PrepareAsyncSetTime(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>>(PrepareAsyncSetTimeRaw(context, request, cq));
     }
-    ::grpc::Status SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::vm_tools::EmptyMessage* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>> AsyncSetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>>(AsyncSetTimezoneRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>> PrepareAsyncSetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>>(PrepareAsyncSetTimezoneRaw(context, request, cq));
-    }
     ::grpc::Status Mount9P(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::vm_tools::MountResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::MountResponse>> AsyncMount9P(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::MountResponse>>(AsyncMount9PRaw(context, request, cq));
@@ -421,7 +402,6 @@ class Maitred final {
       void Mount(::grpc::ClientContext* context, const ::vm_tools::MountRequest* request, ::vm_tools::MountResponse* response, std::function<void(::grpc::Status)>) override;
       void StartTermina(::grpc::ClientContext* context, const ::vm_tools::StartTerminaRequest* request, ::vm_tools::StartTerminaResponse* response, std::function<void(::grpc::Status)>) override;
       void SetTime(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)>) override;
-      void SetTimezone(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)>) override;
       void Mount9P(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest* request, ::vm_tools::MountResponse* response, std::function<void(::grpc::Status)>) override;
       void SetResolvConfig(::grpc::ClientContext* context, const ::vm_tools::SetResolvConfigRequest* request, ::vm_tools::EmptyMessage* response, std::function<void(::grpc::Status)>) override;
       void GetKernelVersion(::grpc::ClientContext* context, const ::vm_tools::EmptyMessage* request, ::vm_tools::GetKernelVersionResponse* response, std::function<void(::grpc::Status)>) override;
@@ -459,8 +439,6 @@ class Maitred final {
     ::grpc::ClientAsyncResponseReader< ::vm_tools::StartTerminaResponse>* PrepareAsyncStartTerminaRaw(::grpc::ClientContext* context, const ::vm_tools::StartTerminaRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* AsyncSetTimeRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* PrepareAsyncSetTimeRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimeRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* AsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* PrepareAsyncSetTimezoneRaw(::grpc::ClientContext* context, const ::vm_tools::SetTimezoneRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::MountResponse>* AsyncMount9PRaw(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::MountResponse>* PrepareAsyncMount9PRaw(::grpc::ClientContext* context, const ::vm_tools::Mount9PRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::EmptyMessage>* AsyncSetResolvConfigRaw(::grpc::ClientContext* context, const ::vm_tools::SetResolvConfigRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -486,7 +464,6 @@ class Maitred final {
     const ::grpc::internal::RpcMethod rpcmethod_Mount_;
     const ::grpc::internal::RpcMethod rpcmethod_StartTermina_;
     const ::grpc::internal::RpcMethod rpcmethod_SetTime_;
-    const ::grpc::internal::RpcMethod rpcmethod_SetTimezone_;
     const ::grpc::internal::RpcMethod rpcmethod_Mount9P_;
     const ::grpc::internal::RpcMethod rpcmethod_SetResolvConfig_;
     const ::grpc::internal::RpcMethod rpcmethod_GetKernelVersion_;
@@ -526,8 +503,6 @@ class Maitred final {
     // This RPC is to address cases where the guest loses time for some reason
     // (e.g. due to the host being suspended for a while).
     virtual ::grpc::Status SetTime(::grpc::ServerContext* context, const ::vm_tools::SetTimeRequest* request, ::vm_tools::EmptyMessage* response);
-    // Set the VM timezone to a specified value.
-    virtual ::grpc::Status SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response);
     // Mount a 9P server using a vsock socket.  This uses the trans=fd option
     // when mounting the 9P server, which requires first connecting a socket
     // to the server.  Other transports should use the normal Mount rpc instead.
@@ -728,32 +703,12 @@ class Maitred final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_SetTimezone : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithAsyncMethod_SetTimezone() {
-      ::grpc::Service::MarkMethodAsync(9);
-    }
-    ~WithAsyncMethod_SetTimezone() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSetTimezone(::grpc::ServerContext* context, ::vm_tools::SetTimezoneRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::EmptyMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_Mount9P : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_Mount9P() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_Mount9P() override {
       BaseClassMustBeDerivedFromService(this);
@@ -764,7 +719,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMount9P(::grpc::ServerContext* context, ::vm_tools::Mount9PRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::MountResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -773,7 +728,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_SetResolvConfig() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_SetResolvConfig() override {
       BaseClassMustBeDerivedFromService(this);
@@ -784,7 +739,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetResolvConfig(::grpc::ServerContext* context, ::vm_tools::SetResolvConfigRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::EmptyMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -793,7 +748,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetKernelVersion() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_GetKernelVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -804,7 +759,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetKernelVersion(::grpc::ServerContext* context, ::vm_tools::EmptyMessage* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::GetKernelVersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -813,7 +768,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_ResizeFilesystem() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_ResizeFilesystem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -824,7 +779,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestResizeFilesystem(::grpc::ServerContext* context, ::vm_tools::ResizeFilesystemRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::ResizeFilesystemResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -833,7 +788,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetResizeStatus() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_GetResizeStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -844,7 +799,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetResizeStatus(::grpc::ServerContext* context, ::vm_tools::EmptyMessage* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::GetResizeStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -853,7 +808,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetResizeBounds() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_GetResizeBounds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -864,7 +819,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetResizeBounds(::grpc::ServerContext* context, ::vm_tools::EmptyMessage* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::GetResizeBoundsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -873,7 +828,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_GetAvailableSpace() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_GetAvailableSpace() override {
       BaseClassMustBeDerivedFromService(this);
@@ -884,7 +839,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAvailableSpace(::grpc::ServerContext* context, ::vm_tools::EmptyMessage* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::GetAvailableSpaceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -893,7 +848,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithAsyncMethod_PrepareToSuspend() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_PrepareToSuspend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -904,10 +859,10 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareToSuspend(::grpc::ServerContext* context, ::vm_tools::EmptyMessage* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::EmptyMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ConfigureNetwork<WithAsyncMethod_ConfigureContainerGuest<WithAsyncMethod_ResetIPv6<WithAsyncMethod_OnHostNetworkChanged<WithAsyncMethod_Shutdown<WithAsyncMethod_LaunchProcess<WithAsyncMethod_Mount<WithAsyncMethod_StartTermina<WithAsyncMethod_SetTime<WithAsyncMethod_SetTimezone<WithAsyncMethod_Mount9P<WithAsyncMethod_SetResolvConfig<WithAsyncMethod_GetKernelVersion<WithAsyncMethod_ResizeFilesystem<WithAsyncMethod_GetResizeStatus<WithAsyncMethod_GetResizeBounds<WithAsyncMethod_GetAvailableSpace<WithAsyncMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_ConfigureNetwork<WithAsyncMethod_ConfigureContainerGuest<WithAsyncMethod_ResetIPv6<WithAsyncMethod_OnHostNetworkChanged<WithAsyncMethod_Shutdown<WithAsyncMethod_LaunchProcess<WithAsyncMethod_Mount<WithAsyncMethod_StartTermina<WithAsyncMethod_SetTime<WithAsyncMethod_Mount9P<WithAsyncMethod_SetResolvConfig<WithAsyncMethod_GetKernelVersion<WithAsyncMethod_ResizeFilesystem<WithAsyncMethod_GetResizeStatus<WithAsyncMethod_GetResizeBounds<WithAsyncMethod_GetAvailableSpace<WithAsyncMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_ConfigureNetwork : public BaseClass {
    private:
@@ -1062,29 +1017,12 @@ class Maitred final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_SetTimezone : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithGenericMethod_SetTimezone() {
-      ::grpc::Service::MarkMethodGeneric(9);
-    }
-    ~WithGenericMethod_SetTimezone() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_Mount9P : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_Mount9P() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_Mount9P() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1101,7 +1039,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_SetResolvConfig() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_SetResolvConfig() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1118,7 +1056,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetKernelVersion() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_GetKernelVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1135,7 +1073,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_ResizeFilesystem() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_ResizeFilesystem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1152,7 +1090,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetResizeStatus() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_GetResizeStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1169,7 +1107,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetResizeBounds() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_GetResizeBounds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1186,7 +1124,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_GetAvailableSpace() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_GetAvailableSpace() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1203,7 +1141,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithGenericMethod_PrepareToSuspend() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_PrepareToSuspend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1395,32 +1333,12 @@ class Maitred final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_SetTimezone : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithRawMethod_SetTimezone() {
-      ::grpc::Service::MarkMethodRaw(9);
-    }
-    ~WithRawMethod_SetTimezone() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestSetTimezone(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_Mount9P : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_Mount9P() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_Mount9P() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1431,7 +1349,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMount9P(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1440,7 +1358,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_SetResolvConfig() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_SetResolvConfig() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1451,7 +1369,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetResolvConfig(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1460,7 +1378,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetKernelVersion() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_GetKernelVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1471,7 +1389,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetKernelVersion(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1480,7 +1398,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_ResizeFilesystem() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_ResizeFilesystem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1491,7 +1409,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestResizeFilesystem(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1500,7 +1418,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetResizeStatus() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_GetResizeStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1511,7 +1429,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetResizeStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1520,7 +1438,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetResizeBounds() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_GetResizeBounds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1531,7 +1449,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetResizeBounds(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1540,7 +1458,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_GetAvailableSpace() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_GetAvailableSpace() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1551,7 +1469,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAvailableSpace(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1560,7 +1478,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithRawMethod_PrepareToSuspend() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_PrepareToSuspend() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1571,7 +1489,7 @@ class Maitred final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestPrepareToSuspend(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1755,32 +1673,12 @@ class Maitred final {
     virtual ::grpc::Status StreamedSetTime(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::SetTimeRequest,::vm_tools::EmptyMessage>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_SetTimezone : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service *service) {}
-   public:
-    WithStreamedUnaryMethod_SetTimezone() {
-      ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::SetTimezoneRequest, ::vm_tools::EmptyMessage>(std::bind(&WithStreamedUnaryMethod_SetTimezone<BaseClass>::StreamedSetTimezone, this, std::placeholders::_1, std::placeholders::_2)));
-    }
-    ~WithStreamedUnaryMethod_SetTimezone() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status SetTimezone(::grpc::ServerContext* context, const ::vm_tools::SetTimezoneRequest* request, ::vm_tools::EmptyMessage* response) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSetTimezone(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::SetTimezoneRequest,::vm_tools::EmptyMessage>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_Mount9P : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_Mount9P() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::Mount9PRequest, ::vm_tools::MountResponse>(std::bind(&WithStreamedUnaryMethod_Mount9P<BaseClass>::StreamedMount9P, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_Mount9P() override {
@@ -1800,7 +1698,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_SetResolvConfig() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::SetResolvConfigRequest, ::vm_tools::EmptyMessage>(std::bind(&WithStreamedUnaryMethod_SetResolvConfig<BaseClass>::StreamedSetResolvConfig, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_SetResolvConfig() override {
@@ -1820,7 +1718,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetKernelVersion() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::EmptyMessage, ::vm_tools::GetKernelVersionResponse>(std::bind(&WithStreamedUnaryMethod_GetKernelVersion<BaseClass>::StreamedGetKernelVersion, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetKernelVersion() override {
@@ -1840,7 +1738,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_ResizeFilesystem() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::ResizeFilesystemRequest, ::vm_tools::ResizeFilesystemResponse>(std::bind(&WithStreamedUnaryMethod_ResizeFilesystem<BaseClass>::StreamedResizeFilesystem, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_ResizeFilesystem() override {
@@ -1860,7 +1758,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetResizeStatus() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::EmptyMessage, ::vm_tools::GetResizeStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetResizeStatus<BaseClass>::StreamedGetResizeStatus, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetResizeStatus() override {
@@ -1880,7 +1778,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetResizeBounds() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::EmptyMessage, ::vm_tools::GetResizeBoundsResponse>(std::bind(&WithStreamedUnaryMethod_GetResizeBounds<BaseClass>::StreamedGetResizeBounds, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetResizeBounds() override {
@@ -1900,7 +1798,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_GetAvailableSpace() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::EmptyMessage, ::vm_tools::GetAvailableSpaceResponse>(std::bind(&WithStreamedUnaryMethod_GetAvailableSpace<BaseClass>::StreamedGetAvailableSpace, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetAvailableSpace() override {
@@ -1920,7 +1818,7 @@ class Maitred final {
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
     WithStreamedUnaryMethod_PrepareToSuspend() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::EmptyMessage, ::vm_tools::EmptyMessage>(std::bind(&WithStreamedUnaryMethod_PrepareToSuspend<BaseClass>::StreamedPrepareToSuspend, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_PrepareToSuspend() override {
@@ -1934,9 +1832,9 @@ class Maitred final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedPrepareToSuspend(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::EmptyMessage,::vm_tools::EmptyMessage>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ConfigureNetwork<WithStreamedUnaryMethod_ConfigureContainerGuest<WithStreamedUnaryMethod_ResetIPv6<WithStreamedUnaryMethod_OnHostNetworkChanged<WithStreamedUnaryMethod_Shutdown<WithStreamedUnaryMethod_LaunchProcess<WithStreamedUnaryMethod_Mount<WithStreamedUnaryMethod_StartTermina<WithStreamedUnaryMethod_SetTime<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_Mount9P<WithStreamedUnaryMethod_SetResolvConfig<WithStreamedUnaryMethod_GetKernelVersion<WithStreamedUnaryMethod_ResizeFilesystem<WithStreamedUnaryMethod_GetResizeStatus<WithStreamedUnaryMethod_GetResizeBounds<WithStreamedUnaryMethod_GetAvailableSpace<WithStreamedUnaryMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_ConfigureNetwork<WithStreamedUnaryMethod_ConfigureContainerGuest<WithStreamedUnaryMethod_ResetIPv6<WithStreamedUnaryMethod_OnHostNetworkChanged<WithStreamedUnaryMethod_Shutdown<WithStreamedUnaryMethod_LaunchProcess<WithStreamedUnaryMethod_Mount<WithStreamedUnaryMethod_StartTermina<WithStreamedUnaryMethod_SetTime<WithStreamedUnaryMethod_Mount9P<WithStreamedUnaryMethod_SetResolvConfig<WithStreamedUnaryMethod_GetKernelVersion<WithStreamedUnaryMethod_ResizeFilesystem<WithStreamedUnaryMethod_GetResizeStatus<WithStreamedUnaryMethod_GetResizeBounds<WithStreamedUnaryMethod_GetAvailableSpace<WithStreamedUnaryMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ConfigureNetwork<WithStreamedUnaryMethod_ConfigureContainerGuest<WithStreamedUnaryMethod_ResetIPv6<WithStreamedUnaryMethod_OnHostNetworkChanged<WithStreamedUnaryMethod_Shutdown<WithStreamedUnaryMethod_LaunchProcess<WithStreamedUnaryMethod_Mount<WithStreamedUnaryMethod_StartTermina<WithStreamedUnaryMethod_SetTime<WithStreamedUnaryMethod_SetTimezone<WithStreamedUnaryMethod_Mount9P<WithStreamedUnaryMethod_SetResolvConfig<WithStreamedUnaryMethod_GetKernelVersion<WithStreamedUnaryMethod_ResizeFilesystem<WithStreamedUnaryMethod_GetResizeStatus<WithStreamedUnaryMethod_GetResizeBounds<WithStreamedUnaryMethod_GetAvailableSpace<WithStreamedUnaryMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ConfigureNetwork<WithStreamedUnaryMethod_ConfigureContainerGuest<WithStreamedUnaryMethod_ResetIPv6<WithStreamedUnaryMethod_OnHostNetworkChanged<WithStreamedUnaryMethod_Shutdown<WithStreamedUnaryMethod_LaunchProcess<WithStreamedUnaryMethod_Mount<WithStreamedUnaryMethod_StartTermina<WithStreamedUnaryMethod_SetTime<WithStreamedUnaryMethod_Mount9P<WithStreamedUnaryMethod_SetResolvConfig<WithStreamedUnaryMethod_GetKernelVersion<WithStreamedUnaryMethod_ResizeFilesystem<WithStreamedUnaryMethod_GetResizeStatus<WithStreamedUnaryMethod_GetResizeBounds<WithStreamedUnaryMethod_GetAvailableSpace<WithStreamedUnaryMethod_PrepareToSuspend<Service > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace vm_tools

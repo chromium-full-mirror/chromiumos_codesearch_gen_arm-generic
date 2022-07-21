@@ -20,7 +20,7 @@ import sys, re, os, signal
 import subprocess
 if os.name == "posix":
     import resource
-from copy import copy
+from copy import deepcopy
 from select import select
 from time import time
 from queue import Queue, Empty
@@ -123,7 +123,6 @@ class SmtIo:
         self.forall = False
         self.timeout = 0
         self.produce_models = True
-        self.recheck = False
         self.smt2cache = [list()]
         self.smt2_options = dict()
         self.p = None
@@ -177,10 +176,7 @@ class SmtIo:
             self.unroll = False
 
         if self.solver == "yices":
-            if self.forall:
-                self.noincr = True
-
-            if self.noincr:
+            if self.noincr or self.forall:
                 self.popen_vargs = ['yices-smt2'] + self.solver_opts
             else:
                 self.popen_vargs = ['yices-smt2', '--incremental'] + self.solver_opts
@@ -193,12 +189,11 @@ class SmtIo:
             if self.timeout != 0:
                 self.popen_vargs.append('-T:%d' % self.timeout);
 
-        if self.solver in ["cvc4", "cvc5"]:
-            self.recheck = True
+        if self.solver == "cvc4":
             if self.noincr:
-                self.popen_vargs = [self.solver, '--lang', 'smt2.6' if self.logic_dt else 'smt2'] + self.solver_opts
+                self.popen_vargs = ['cvc4', '--lang', 'smt2.6' if self.logic_dt else 'smt2'] + self.solver_opts
             else:
-                self.popen_vargs = [self.solver, '--incremental', '--lang', 'smt2.6' if self.logic_dt else 'smt2'] + self.solver_opts
+                self.popen_vargs = ['cvc4', '--incremental', '--lang', 'smt2.6' if self.logic_dt else 'smt2'] + self.solver_opts
             if self.timeout != 0:
                 self.popen_vargs.append('--tlimit=%d000' % self.timeout);
 
@@ -306,7 +301,7 @@ class SmtIo:
 
             key = tuple(stmt)
             if key not in self.unroll_cache:
-                decl = copy(self.unroll_decls[key[0]])
+                decl = deepcopy(self.unroll_decls[key[0]])
 
                 self.unroll_cache[key] = "|UNROLL#%d|" % self.unroll_idcnt
                 decl[1] = self.unroll_cache[key]
@@ -409,15 +404,6 @@ class SmtIo:
             stmt = re.sub(r" *;.*", "", stmt)
             if stmt == "": return
 
-        recheck = None
-
-        if self.solver != "dummy":
-            if self.noincr:
-                # Don't close the solver yet, if we're just unrolling definitions
-                # required for a (get-...) statement
-                if self.p is not None and not stmt.startswith("(get-") and unroll:
-                    self.p_close()
-
         if unroll and self.unroll:
             stmt = self.unroll_buffer + stmt
             self.unroll_buffer = ""
@@ -428,9 +414,6 @@ class SmtIo:
                 return
 
             s = self.parse(stmt)
-
-            if self.recheck and s and s[0].startswith("get-"):
-                recheck = self.unroll_idcnt
 
             if self.debug_print:
                 print("-> %s" % s)
@@ -457,15 +440,12 @@ class SmtIo:
 
             stmt = self.unparse(self.unroll_stmt(s))
 
-            if recheck is not None and recheck != self.unroll_idcnt:
-                self.check_sat(["sat"])
-
             if stmt == "(push 1)":
                 self.unroll_stack.append((
-                    copy(self.unroll_sorts),
-                    copy(self.unroll_objs),
-                    copy(self.unroll_decls),
-                    copy(self.unroll_cache),
+                    deepcopy(self.unroll_sorts),
+                    deepcopy(self.unroll_objs),
+                    deepcopy(self.unroll_decls),
+                    deepcopy(self.unroll_cache),
                 ))
 
             if stmt == "(pop 1)":
@@ -480,6 +460,8 @@ class SmtIo:
 
         if self.solver != "dummy":
             if self.noincr:
+                if self.p is not None and not stmt.startswith("(get-"):
+                    self.p_close()
                 if stmt == "(push 1)":
                     self.smt2cache.append(list())
                 elif stmt == "(pop 1)":
@@ -554,16 +536,10 @@ class SmtIo:
                     self.modinfo[self.curmod].clocks[fields[2]] = "event"
 
         if fields[1] == "yosys-smt2-assert":
-            if len(fields) > 4:
-                self.modinfo[self.curmod].asserts["%s_a %s" % (self.curmod, fields[2])] = f'{fields[4]} ({fields[3]})'
-            else:
-                self.modinfo[self.curmod].asserts["%s_a %s" % (self.curmod, fields[2])] = fields[3]
+            self.modinfo[self.curmod].asserts["%s_a %s" % (self.curmod, fields[2])] = fields[3]
 
         if fields[1] == "yosys-smt2-cover":
-            if len(fields) > 4:
-                self.modinfo[self.curmod].covers["%s_c %s" % (self.curmod, fields[2])] = f'{fields[4]} ({fields[3]})'
-            else:
-                self.modinfo[self.curmod].covers["%s_c %s" % (self.curmod, fields[2])] = fields[3]
+            self.modinfo[self.curmod].covers["%s_c %s" % (self.curmod, fields[2])] = fields[3]
 
         if fields[1] == "yosys-smt2-maximize":
             self.modinfo[self.curmod].maximize.add(fields[2])

@@ -14,7 +14,6 @@ import {ChromeVoxEvent, CustomAutomationEvent} from '../common/custom_automation
 import {EventSourceType} from '../common/event_source_type.js';
 import {GestureGranularity} from '../common/gesture_command_data.js';
 import {ChromeVoxKbHandler} from '../common/keyboard_handler.js';
-import {Msgs} from '../common/msgs.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 
 import {AutoScrollHandler} from './auto_scroll_handler.js';
@@ -29,7 +28,6 @@ import {TypingEcho} from './editing/editable_text_base.js';
 import {EventSourceState} from './event_source.js';
 import {GestureInterface} from './gesture_interface.js';
 import {Output} from './output/output.js';
-import {OutputEventType} from './output/output_types.js';
 import {PhoneticData} from './phonetic_data.js';
 import {ChromeVoxPrefs} from './prefs.js';
 import {SmartStickyMode} from './smart_sticky_mode.js';
@@ -115,10 +113,8 @@ export class CommandHandler extends CommandHandlerInterface {
         break;
       case 'toggleStickyMode':
         ChromeVoxBackground.setPref('sticky', !ChromeVox.isStickyPrefOn, true);
-        if (ChromeVoxState.instance.currentRange) {
-          this.smartStickyMode_.onStickyModeCommand(
-              ChromeVoxState.instance.currentRange);
-        }
+        this.smartStickyMode_.onStickyModeCommand(
+            ChromeVoxState.instance.currentRange);
         return false;
       case 'passThroughMode':
         ChromeVox.passThroughMode = true;
@@ -127,7 +123,7 @@ export class CommandHandler extends CommandHandlerInterface {
       case 'showLearnModePage':
         const explorerPage = {
           url: 'chromevox/learn_mode/learn_mode.html',
-          type: 'panel',
+          type: 'panel'
         };
         chrome.windows.create(explorerPage);
         break;
@@ -439,8 +435,7 @@ export class CommandHandler extends CommandHandlerInterface {
           DesktopAutomationInterface.instance.textEditHandler
               .injectInferredIntents([{
                 command: chrome.automation.IntentCommandType.MOVE_SELECTION,
-                textBoundary:
-                    chrome.automation.IntentTextBoundaryType.CHARACTER,
+                textBoundary: chrome.automation.IntentTextBoundaryType.CHARACTER
               }]);
         }
         return true;
@@ -463,7 +458,7 @@ export class CommandHandler extends CommandHandlerInterface {
                 command: chrome.automation.IntentCommandType.MOVE_SELECTION,
                 textBoundary: command === 'nativeNextWord' ?
                     chrome.automation.IntentTextBoundaryType.WORD_END :
-                    chrome.automation.IntentTextBoundaryType.WORD_START,
+                    chrome.automation.IntentTextBoundaryType.WORD_START
               }]);
         }
         return true;
@@ -715,9 +710,6 @@ export class CommandHandler extends CommandHandlerInterface {
         skipInitialAncestry = false;
         break;
       case 'jumpToTop': {
-        if (!current.start.node || !current.start.node.root) {
-          break;
-        }
         const node = AutomationUtil.findNodePost(
             current.start.node.root, Dir.FORWARD, AutomationPredicate.object);
         if (node) {
@@ -726,9 +718,6 @@ export class CommandHandler extends CommandHandlerInterface {
         tryScrolling = false;
       } break;
       case 'jumpToBottom': {
-        if (!current.start.node || !current.start.node.root) {
-          break;
-        }
         const node = AutomationUtil.findLastNode(
             current.start.node.root, AutomationPredicate.object);
         if (node) {
@@ -904,7 +893,7 @@ export class CommandHandler extends CommandHandlerInterface {
 
         if (!target) {
           output.format('@no_title');
-        } else if (target.name) {
+        } else {
           output.withString(target.name);
         }
 
@@ -924,16 +913,11 @@ export class CommandHandler extends CommandHandlerInterface {
               true);
         } else {
           const root = ChromeVoxState.instance.currentRange.start.node.root;
-          if (root && root.selectionStartObject && root.selectionEndObject &&
-              !isNaN(Number(root.selectionStartOffset)) &&
-              !isNaN(Number(root.selectionEndOffset))) {
+          if (root && root.selectionStartObject && root.selectionEndObject) {
             const sel = new CursorRange(
                 new Cursor(
-                    root.selectionStartObject,
-                    /** @type {number} */ (root.selectionStartOffset)),
-                new Cursor(
-                    root.selectionEndObject,
-                    /** @type {number} */ (root.selectionEndOffset)));
+                    root.selectionStartObject, root.selectionStartOffset),
+                new Cursor(root.selectionEndObject, root.selectionEndOffset));
             const o =
                 new Output()
                     .format('@end_selection')
@@ -1044,7 +1028,7 @@ export class CommandHandler extends CommandHandlerInterface {
         // matching that node.
         let startNode = node.lastChild;
         while (startNode.lastChild &&
-               !AutomationPredicate.cellLike(startNode)) {
+               !AutomationPredicate.cellLike(startNode.role)) {
           startNode = startNode.lastChild;
         }
         current = CursorRange.fromNode(startNode);
@@ -1215,8 +1199,6 @@ export class CommandHandler extends CommandHandlerInterface {
           'Accessibility.ChromeVox.Navigate');
     }
 
-    // TODO(accessibility): extract this block and remove explicit type casts
-    // after re-writing.
     if (pred) {
       chrome.metricsPrivate.recordUserAction('Accessibility.ChromeVox.Jump');
 
@@ -1267,13 +1249,11 @@ export class CommandHandler extends CommandHandlerInterface {
             bound = root;
           } else {
             bound = AutomationUtil.findNodePost(
-                        /** @type {!AutomationNode} */ (root), dir,
-                        AutomationPredicate.leaf) ||
+                        root, dir, AutomationPredicate.leaf) ||
                 bound;
           }
-          node = AutomationUtil.findNextNode(
-              /** @type {!AutomationNode} */ (bound), dir, pred,
-              {root: rootPred});
+          node =
+              AutomationUtil.findNextNode(bound, dir, pred, {root: rootPred});
 
           if (node && !skipSync) {
             node = AutomationUtil.findNodePre(
@@ -1295,8 +1275,7 @@ export class CommandHandler extends CommandHandlerInterface {
       }
     }
 
-    // TODO(accessibility): extract into function.
-    if (tryScrolling && current &&
+    if (tryScrolling &&
         !AutoScrollHandler.getInstance().onCommandNavigation(
             current, dir, pred, unit, speechProps, rootPred, () => {
               this.onCommand(command);
@@ -1532,7 +1511,7 @@ export class CommandHandler extends CommandHandlerInterface {
    */
   checkForLossOfFocus_(focusedNode) {
     const cur = ChromeVoxState.instance.currentRange;
-    if (cur && !cur.isValid() && focusedNode) {
+    if (cur && !cur.isValid()) {
       ChromeVoxState.instance.setCurrentRange(
           CursorRange.fromNode(focusedNode));
     }

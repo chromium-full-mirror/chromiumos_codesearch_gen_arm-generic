@@ -12,7 +12,6 @@ import {GestureCommandData} from '../common/gesture_command_data.js';
 import {KeyMap} from '../common/key_map.js';
 import {KeyUtil} from '../common/key_util.js';
 import {ChromeVoxKbHandler} from '../common/keyboard_handler.js';
-import {Msgs} from '../common/msgs.js';
 
 /**
  * Class to manage the keyboard explorer.
@@ -82,13 +81,8 @@ export class LearnMode {
         return true;
       }
 
-      BackgroundBridge.UserActionMonitor.onKeyDown(evt).then(
-          (shouldPropagate) => {
-            if (shouldPropagate) {
-              ChromeVoxKbHandler.basicKeyDownActionsListener(evt);
-            }
-            LearnMode.clearRange();
-          });
+      ChromeVoxKbHandler.basicKeyDownActionsListener(evt);
+      LearnMode.clearRange();
     }
 
     evt.preventDefault();

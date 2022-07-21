@@ -5,8 +5,6 @@
 /**
  * @fileoverview A drop-down menu in the ChromeVox panel.
  */
-import {Msgs} from '../common/msgs.js';
-
 import {PanelMenuItem} from './panel_menu_item.js';
 
 export class PanelMenu {

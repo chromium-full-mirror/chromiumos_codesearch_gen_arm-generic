@@ -95,20 +95,17 @@ bool Operation_IsValid(int value) {
     case 8:
     case 9:
     case 10:
-    case 11:
-    case 12:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Operation_strings[14] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> Operation_strings[12] = {};
 
 static const char Operation_names[] =
   "ATTEMPTING_ROLLBACK"
   "CHECKING_FOR_UPDATE"
-  "CLEANUP_PREVIOUS_UPDATE"
   "DISABLED"
   "DOWNLOADING"
   "ERROR"
@@ -116,7 +113,6 @@ static const char Operation_names[] =
   "IDLE"
   "NEED_PERMISSION_TO_UPDATE"
   "REPORTING_ERROR_EVENT"
-  "UPDATED_BUT_DEFERRED"
   "UPDATED_NEED_REBOOT"
   "UPDATE_AVAILABLE"
   "VERIFYING";
@@ -124,35 +120,31 @@ static const char Operation_names[] =
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry Operation_entries[] = {
   { {Operation_names + 0, 19}, 8 },
   { {Operation_names + 19, 19}, 1 },
-  { {Operation_names + 38, 23}, 11 },
-  { {Operation_names + 61, 8}, 9 },
-  { {Operation_names + 69, 11}, 3 },
-  { {Operation_names + 80, 5}, -1 },
-  { {Operation_names + 85, 10}, 5 },
-  { {Operation_names + 95, 4}, 0 },
-  { {Operation_names + 99, 25}, 10 },
-  { {Operation_names + 124, 21}, 7 },
-  { {Operation_names + 145, 20}, 12 },
-  { {Operation_names + 165, 19}, 6 },
-  { {Operation_names + 184, 16}, 2 },
-  { {Operation_names + 200, 9}, 4 },
+  { {Operation_names + 38, 8}, 9 },
+  { {Operation_names + 46, 11}, 3 },
+  { {Operation_names + 57, 5}, -1 },
+  { {Operation_names + 62, 10}, 5 },
+  { {Operation_names + 72, 4}, 0 },
+  { {Operation_names + 76, 25}, 10 },
+  { {Operation_names + 101, 21}, 7 },
+  { {Operation_names + 122, 19}, 6 },
+  { {Operation_names + 141, 16}, 2 },
+  { {Operation_names + 157, 9}, 4 },
 };
 
 static const int Operation_entries_by_number[] = {
-  5, // -1 -> ERROR
-  7, // 0 -> IDLE
+  4, // -1 -> ERROR
+  6, // 0 -> IDLE
   1, // 1 -> CHECKING_FOR_UPDATE
-  12, // 2 -> UPDATE_AVAILABLE
-  4, // 3 -> DOWNLOADING
-  13, // 4 -> VERIFYING
-  6, // 5 -> FINALIZING
-  11, // 6 -> UPDATED_NEED_REBOOT
-  9, // 7 -> REPORTING_ERROR_EVENT
+  10, // 2 -> UPDATE_AVAILABLE
+  3, // 3 -> DOWNLOADING
+  11, // 4 -> VERIFYING
+  5, // 5 -> FINALIZING
+  9, // 6 -> UPDATED_NEED_REBOOT
+  8, // 7 -> REPORTING_ERROR_EVENT
   0, // 8 -> ATTEMPTING_ROLLBACK
-  3, // 9 -> DISABLED
-  8, // 10 -> NEED_PERMISSION_TO_UPDATE
-  2, // 11 -> CLEANUP_PREVIOUS_UPDATE
-  10, // 12 -> UPDATED_BUT_DEFERRED
+  2, // 9 -> DISABLED
+  7, // 10 -> NEED_PERMISSION_TO_UPDATE
 };
 
 const std::string& Operation_Name(
@@ -161,12 +153,12 @@ const std::string& Operation_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           Operation_entries,
           Operation_entries_by_number,
-          14, Operation_strings);
+          12, Operation_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       Operation_entries,
       Operation_entries_by_number,
-      14, value);
+      12, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      Operation_strings[idx].get();
 }
@@ -174,7 +166,7 @@ bool Operation_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Operation* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      Operation_entries, 14, name, &int_value);
+      Operation_entries, 12, name, &int_value);
   if (success) {
     *value = static_cast<Operation>(int_value);
   }

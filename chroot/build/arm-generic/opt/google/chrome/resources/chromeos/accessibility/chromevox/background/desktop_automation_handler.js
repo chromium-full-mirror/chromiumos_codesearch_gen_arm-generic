@@ -9,7 +9,6 @@ import {WrappingCursor} from '../../common/cursors/cursor.js';
 import {CursorRange} from '../../common/cursors/range.js';
 import {ChromeVoxEvent, CustomAutomationEvent} from '../common/custom_automation_event.js';
 import {EventSourceType} from '../common/event_source_type.js';
-import {Msgs} from '../common/msgs.js';
 
 import {AutoScrollHandler} from './auto_scroll_handler.js';
 import {AutomationObjectConstructorInstaller} from './automation_object_constructor_installer.js';
@@ -19,7 +18,6 @@ import {DesktopAutomationInterface} from './desktop_automation_interface.js';
 import {TextEditHandler} from './editing/editing.js';
 import {EventSourceState} from './event_source.js';
 import {Output} from './output/output.js';
-import {OutputEventType} from './output/output_types.js';
 
 const ActionType = chrome.automation.ActionType;
 const AutomationNode = chrome.automation.AutomationNode;
@@ -271,7 +269,7 @@ export class DesktopAutomationHandler extends DesktopAutomationInterface {
           new CustomAutomationEvent(evt.type, selectionStart, {
             eventFrom: evt.eventFrom,
             eventFromAction: evt.eventFromAction,
-            intents: evt.intents,
+            intents: evt.intents
           }));
     }
 
@@ -336,7 +334,7 @@ export class DesktopAutomationHandler extends DesktopAutomationInterface {
     const event = new CustomAutomationEvent(EventType.FOCUS, node, {
       eventFrom: evt.eventFrom,
       eventFromAction: evt.eventFromAction,
-      intents: evt.intents,
+      intents: evt.intents
     });
     this.onEventDefault(event);
 
@@ -869,9 +867,6 @@ export class DesktopAutomationHandler extends DesktopAutomationInterface {
     }
 
     ChromeVoxState.instance.setCurrentRange(CursorRange.fromNode(focus));
-    if (!ChromeVoxState.instance.currentRange) {
-      return;
-    }
 
     o.withRichSpeechAndBraille(
          ChromeVoxState.instance.currentRange, null, evt.type)

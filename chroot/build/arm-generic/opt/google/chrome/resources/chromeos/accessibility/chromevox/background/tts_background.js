@@ -8,7 +8,6 @@
  */
 
 import {AbstractTts} from '../common/abstract_tts.js';
-import {Msgs} from '../common/msgs.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 import {ChromeTtsBase} from '../common/tts_base.js';
 
@@ -893,17 +892,8 @@ TtsBackground.hint_delay_ms_ = 1000;
  * @const
  */
 TtsBackground.ALLOWED_PROPERTIES_ = [
-  'desiredEventTypes',
-  'enqueue',
-  'extensionId',
-  'gender',
-  'lang',
-  'onEvent',
-  'pitch',
-  'rate',
-  'requiredEventTypes',
-  'voiceName',
-  'volume',
+  'desiredEventTypes', 'enqueue', 'extensionId', 'gender', 'lang', 'onEvent',
+  'pitch', 'rate', 'requiredEventTypes', 'voiceName', 'volume'
 ];
 
 

@@ -210,19 +210,6 @@ struct SetTimeRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTimeRequestDefaultTypeInternal _SetTimeRequest_default_instance_;
-constexpr SetTimezoneRequest::SetTimezoneRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : timezone_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , use_bind_mount_(false){}
-struct SetTimezoneRequestDefaultTypeInternal {
-  constexpr SetTimezoneRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SetTimezoneRequestDefaultTypeInternal() {}
-  union {
-    SetTimezoneRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetTimezoneRequestDefaultTypeInternal _SetTimezoneRequest_default_instance_;
 constexpr GetKernelVersionResponse::GetKernelVersionResponse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : kernel_release_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -300,7 +287,7 @@ struct GetAvailableSpaceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetAvailableSpaceResponseDefaultTypeInternal _GetAvailableSpaceResponse_default_instance_;
 }  // namespace vm_tools
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vm_5fguest_2eproto[21];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_vm_5fguest_2eproto[20];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_vm_5fguest_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_vm_5fguest_2eproto = nullptr;
 
@@ -430,14 +417,6 @@ const uint32_t TableStruct_vm_5fguest_2eproto::offsets[] PROTOBUF_SECTION_VARIAB
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::vm_tools::SetTimeRequest, time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::vm_tools::SetTimezoneRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::vm_tools::SetTimezoneRequest, timezone_name_),
-  PROTOBUF_FIELD_OFFSET(::vm_tools::SetTimezoneRequest, use_bind_mount_),
-  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::vm_tools::GetKernelVersionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -498,13 +477,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 101, -1, -1, sizeof(::vm_tools::StartTerminaResponse)},
   { 110, -1, -1, sizeof(::vm_tools::SetResolvConfigRequest)},
   { 117, -1, -1, sizeof(::vm_tools::SetTimeRequest)},
-  { 124, -1, -1, sizeof(::vm_tools::SetTimezoneRequest)},
-  { 132, -1, -1, sizeof(::vm_tools::GetKernelVersionResponse)},
-  { 140, -1, -1, sizeof(::vm_tools::ResizeFilesystemRequest)},
-  { 147, -1, -1, sizeof(::vm_tools::ResizeFilesystemResponse)},
-  { 154, -1, -1, sizeof(::vm_tools::GetResizeStatusResponse)},
-  { 163, -1, -1, sizeof(::vm_tools::GetResizeBoundsResponse)},
-  { 170, -1, -1, sizeof(::vm_tools::GetAvailableSpaceResponse)},
+  { 124, -1, -1, sizeof(::vm_tools::GetKernelVersionResponse)},
+  { 132, -1, -1, sizeof(::vm_tools::ResizeFilesystemRequest)},
+  { 139, -1, -1, sizeof(::vm_tools::ResizeFilesystemResponse)},
+  { 146, -1, -1, sizeof(::vm_tools::GetResizeStatusResponse)},
+  { 155, -1, -1, sizeof(::vm_tools::GetResizeBoundsResponse)},
+  { 162, -1, -1, sizeof(::vm_tools::GetAvailableSpaceResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -522,7 +500,6 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_StartTerminaResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_SetResolvConfigRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_SetTimeRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_SetTimezoneRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_GetKernelVersionResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_ResizeFilesystemRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::_ResizeFilesystemResponse_default_instance_),
@@ -570,58 +547,54 @@ const char descriptor_table_protodef_vm_5fguest_2eproto[] PROTOBUF_SECTION_VARIA
   "TA_LOSS\020\002\022\013\n\007FAILURE\020\003\"G\n\026SetResolvConfi"
   "gRequest\022-\n\rresolv_config\030\001 \001(\0132\026.vm_too"
   "ls.ResolvConfig\":\n\016SetTimeRequest\022(\n\004tim"
-  "e\030\001 \001(\0132\032.google.protobuf.Timestamp\"C\n\022S"
-  "etTimezoneRequest\022\025\n\rtimezone_name\030\001 \001(\t"
-  "\022\026\n\016use_bind_mount\030\002 \001(\010\"J\n\030GetKernelVer"
-  "sionResponse\022\026\n\016kernel_release\030\001 \001(\t\022\026\n\016"
-  "kernel_version\030\002 \001(\t\"\'\n\027ResizeFilesystem"
-  "Request\022\014\n\004size\030\001 \001(\004\"\235\001\n\030ResizeFilesyst"
-  "emResponse\022\?\n\006status\030\001 \001(\0162/.vm_tools.Re"
-  "sizeFilesystemResponse.ResizeStatus\"@\n\014R"
-  "esizeStatus\022\n\n\006FAILED\020\000\022\027\n\023ALREADY_IN_PR"
-  "OGRESS\020\001\022\013\n\007STARTED\020\002\"`\n\027GetResizeStatus"
-  "Response\022\032\n\022resize_in_progress\030\001 \001(\010\022\024\n\014"
-  "current_size\030\002 \001(\004\022\023\n\013target_size\030\003 \001(\004\""
-  "/\n\027GetResizeBoundsResponse\022\024\n\014minimum_si"
-  "ze\030\001 \001(\004\"4\n\031GetAvailableSpaceResponse\022\027\n"
-  "\017available_space\030\001 \001(\004*P\n\rProcessStatus\022"
-  "\013\n\007UNKNOWN\020\000\022\n\n\006EXITED\020\001\022\014\n\010SIGNALED\020\002\022\014"
-  "\n\010LAUNCHED\020\003\022\n\n\006FAILED\020\0042\270\n\n\007Maitred\022J\n\020"
-  "ConfigureNetwork\022\036.vm_tools.NetworkConfi"
-  "gRequest\032\026.vm_tools.EmptyMessage\022[\n\027Conf"
-  "igureContainerGuest\022(.vm_tools.Configure"
-  "ContainerGuestRequest\032\026.vm_tools.EmptyMe"
-  "ssage\022;\n\tResetIPv6\022\026.vm_tools.EmptyMessa"
-  "ge\032\026.vm_tools.EmptyMessage\022F\n\024OnHostNetw"
-  "orkChanged\022\026.vm_tools.EmptyMessage\032\026.vm_"
-  "tools.EmptyMessage\022:\n\010Shutdown\022\026.vm_tool"
-  "s.EmptyMessage\032\026.vm_tools.EmptyMessage\022P"
-  "\n\rLaunchProcess\022\036.vm_tools.LaunchProcess"
-  "Request\032\037.vm_tools.LaunchProcessResponse"
-  "\0228\n\005Mount\022\026.vm_tools.MountRequest\032\027.vm_t"
-  "ools.MountResponse\022M\n\014StartTermina\022\035.vm_"
-  "tools.StartTerminaRequest\032\036.vm_tools.Sta"
-  "rtTerminaResponse\022;\n\007SetTime\022\030.vm_tools."
-  "SetTimeRequest\032\026.vm_tools.EmptyMessage\022C"
-  "\n\013SetTimezone\022\034.vm_tools.SetTimezoneRequ"
-  "est\032\026.vm_tools.EmptyMessage\022<\n\007Mount9P\022\030"
-  ".vm_tools.Mount9PRequest\032\027.vm_tools.Moun"
-  "tResponse\022K\n\017SetResolvConfig\022 .vm_tools."
-  "SetResolvConfigRequest\032\026.vm_tools.EmptyM"
-  "essage\022N\n\020GetKernelVersion\022\026.vm_tools.Em"
-  "ptyMessage\032\".vm_tools.GetKernelVersionRe"
-  "sponse\022Y\n\020ResizeFilesystem\022!.vm_tools.Re"
-  "sizeFilesystemRequest\032\".vm_tools.ResizeF"
-  "ilesystemResponse\022L\n\017GetResizeStatus\022\026.v"
-  "m_tools.EmptyMessage\032!.vm_tools.GetResiz"
-  "eStatusResponse\022L\n\017GetResizeBounds\022\026.vm_"
-  "tools.EmptyMessage\032!.vm_tools.GetResizeB"
-  "oundsResponse\022P\n\021GetAvailableSpace\022\026.vm_"
-  "tools.EmptyMessage\032#.vm_tools.GetAvailab"
-  "leSpaceResponse\022B\n\020PrepareToSuspend\022\026.vm"
-  "_tools.EmptyMessage\032\026.vm_tools.EmptyMess"
-  "ageB\037Z\032chromiumos/vm_tools/vm_rpc\370\001\001b\006pr"
-  "oto3"
+  "e\030\001 \001(\0132\032.google.protobuf.Timestamp\"J\n\030G"
+  "etKernelVersionResponse\022\026\n\016kernel_releas"
+  "e\030\001 \001(\t\022\026\n\016kernel_version\030\002 \001(\t\"\'\n\027Resiz"
+  "eFilesystemRequest\022\014\n\004size\030\001 \001(\004\"\235\001\n\030Res"
+  "izeFilesystemResponse\022\?\n\006status\030\001 \001(\0162/."
+  "vm_tools.ResizeFilesystemResponse.Resize"
+  "Status\"@\n\014ResizeStatus\022\n\n\006FAILED\020\000\022\027\n\023AL"
+  "READY_IN_PROGRESS\020\001\022\013\n\007STARTED\020\002\"`\n\027GetR"
+  "esizeStatusResponse\022\032\n\022resize_in_progres"
+  "s\030\001 \001(\010\022\024\n\014current_size\030\002 \001(\004\022\023\n\013target_"
+  "size\030\003 \001(\004\"/\n\027GetResizeBoundsResponse\022\024\n"
+  "\014minimum_size\030\001 \001(\004\"4\n\031GetAvailableSpace"
+  "Response\022\027\n\017available_space\030\001 \001(\004*P\n\rPro"
+  "cessStatus\022\013\n\007UNKNOWN\020\000\022\n\n\006EXITED\020\001\022\014\n\010S"
+  "IGNALED\020\002\022\014\n\010LAUNCHED\020\003\022\n\n\006FAILED\020\0042\363\t\n\007"
+  "Maitred\022J\n\020ConfigureNetwork\022\036.vm_tools.N"
+  "etworkConfigRequest\032\026.vm_tools.EmptyMess"
+  "age\022[\n\027ConfigureContainerGuest\022(.vm_tool"
+  "s.ConfigureContainerGuestRequest\032\026.vm_to"
+  "ols.EmptyMessage\022;\n\tResetIPv6\022\026.vm_tools"
+  ".EmptyMessage\032\026.vm_tools.EmptyMessage\022F\n"
+  "\024OnHostNetworkChanged\022\026.vm_tools.EmptyMe"
+  "ssage\032\026.vm_tools.EmptyMessage\022:\n\010Shutdow"
+  "n\022\026.vm_tools.EmptyMessage\032\026.vm_tools.Emp"
+  "tyMessage\022P\n\rLaunchProcess\022\036.vm_tools.La"
+  "unchProcessRequest\032\037.vm_tools.LaunchProc"
+  "essResponse\0228\n\005Mount\022\026.vm_tools.MountReq"
+  "uest\032\027.vm_tools.MountResponse\022M\n\014StartTe"
+  "rmina\022\035.vm_tools.StartTerminaRequest\032\036.v"
+  "m_tools.StartTerminaResponse\022;\n\007SetTime\022"
+  "\030.vm_tools.SetTimeRequest\032\026.vm_tools.Emp"
+  "tyMessage\022<\n\007Mount9P\022\030.vm_tools.Mount9PR"
+  "equest\032\027.vm_tools.MountResponse\022K\n\017SetRe"
+  "solvConfig\022 .vm_tools.SetResolvConfigReq"
+  "uest\032\026.vm_tools.EmptyMessage\022N\n\020GetKerne"
+  "lVersion\022\026.vm_tools.EmptyMessage\032\".vm_to"
+  "ols.GetKernelVersionResponse\022Y\n\020ResizeFi"
+  "lesystem\022!.vm_tools.ResizeFilesystemRequ"
+  "est\032\".vm_tools.ResizeFilesystemResponse\022"
+  "L\n\017GetResizeStatus\022\026.vm_tools.EmptyMessa"
+  "ge\032!.vm_tools.GetResizeStatusResponse\022L\n"
+  "\017GetResizeBounds\022\026.vm_tools.EmptyMessage"
+  "\032!.vm_tools.GetResizeBoundsResponse\022P\n\021G"
+  "etAvailableSpace\022\026.vm_tools.EmptyMessage"
+  "\032#.vm_tools.GetAvailableSpaceResponse\022B\n"
+  "\020PrepareToSuspend\022\026.vm_tools.EmptyMessag"
+  "e\032\026.vm_tools.EmptyMessageB\037Z\032chromiumos/"
+  "vm_tools/vm_rpc\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vm_5fguest_2eproto_deps[2] = {
   &::descriptor_table_common_2eproto,
@@ -629,8 +602,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vm_5fguest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vm_5fguest_2eproto = {
-  false, false, 3564, descriptor_table_protodef_vm_5fguest_2eproto, "vm_guest.proto", 
-  &descriptor_table_vm_5fguest_2eproto_once, descriptor_table_vm_5fguest_2eproto_deps, 2, 21,
+  false, false, 3426, descriptor_table_protodef_vm_5fguest_2eproto, "vm_guest.proto", 
+  &descriptor_table_vm_5fguest_2eproto_once, descriptor_table_vm_5fguest_2eproto_deps, 2, 20,
   schemas, file_default_instances, TableStruct_vm_5fguest_2eproto::offsets,
   file_level_metadata_vm_5fguest_2eproto, file_level_enum_descriptors_vm_5fguest_2eproto, file_level_service_descriptors_vm_5fguest_2eproto,
 };
@@ -4073,235 +4046,6 @@ void SetTimeRequest::InternalSwap(SetTimeRequest* other) {
 
 // ===================================================================
 
-class SetTimezoneRequest::_Internal {
- public:
-};
-
-SetTimezoneRequest::SetTimezoneRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:vm_tools.SetTimezoneRequest)
-}
-SetTimezoneRequest::SetTimezoneRequest(const SetTimezoneRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  timezone_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    timezone_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_timezone_name().empty()) {
-    timezone_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_timezone_name(), 
-      GetArenaForAllocation());
-  }
-  use_bind_mount_ = from.use_bind_mount_;
-  // @@protoc_insertion_point(copy_constructor:vm_tools.SetTimezoneRequest)
-}
-
-inline void SetTimezoneRequest::SharedCtor() {
-timezone_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  timezone_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-use_bind_mount_ = false;
-}
-
-SetTimezoneRequest::~SetTimezoneRequest() {
-  // @@protoc_insertion_point(destructor:vm_tools.SetTimezoneRequest)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void SetTimezoneRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  timezone_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void SetTimezoneRequest::ArenaDtor(void* object) {
-  SetTimezoneRequest* _this = reinterpret_cast< SetTimezoneRequest* >(object);
-  (void)_this;
-}
-void SetTimezoneRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void SetTimezoneRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void SetTimezoneRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:vm_tools.SetTimezoneRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  timezone_name_.ClearToEmpty();
-  use_bind_mount_ = false;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* SetTimezoneRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string timezone_name = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_timezone_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.SetTimezoneRequest.timezone_name"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool use_bind_mount = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          use_bind_mount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* SetTimezoneRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:vm_tools.SetTimezoneRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string timezone_name = 1;
-  if (!this->_internal_timezone_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_timezone_name().data(), static_cast<int>(this->_internal_timezone_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "vm_tools.SetTimezoneRequest.timezone_name");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_timezone_name(), target);
-  }
-
-  // bool use_bind_mount = 2;
-  if (this->_internal_use_bind_mount() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_use_bind_mount(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:vm_tools.SetTimezoneRequest)
-  return target;
-}
-
-size_t SetTimezoneRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:vm_tools.SetTimezoneRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string timezone_name = 1;
-  if (!this->_internal_timezone_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_timezone_name());
-  }
-
-  // bool use_bind_mount = 2;
-  if (this->_internal_use_bind_mount() != 0) {
-    total_size += 1 + 1;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTimezoneRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    SetTimezoneRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTimezoneRequest::GetClassData() const { return &_class_data_; }
-
-void SetTimezoneRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<SetTimezoneRequest *>(to)->MergeFrom(
-      static_cast<const SetTimezoneRequest &>(from));
-}
-
-
-void SetTimezoneRequest::MergeFrom(const SetTimezoneRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.SetTimezoneRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_timezone_name().empty()) {
-    _internal_set_timezone_name(from._internal_timezone_name());
-  }
-  if (from._internal_use_bind_mount() != 0) {
-    _internal_set_use_bind_mount(from._internal_use_bind_mount());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void SetTimezoneRequest::CopyFrom(const SetTimezoneRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:vm_tools.SetTimezoneRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SetTimezoneRequest::IsInitialized() const {
-  return true;
-}
-
-void SetTimezoneRequest::InternalSwap(SetTimezoneRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &timezone_name_, lhs_arena,
-      &other->timezone_name_, rhs_arena
-  );
-  swap(use_bind_mount_, other->use_bind_mount_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata SetTimezoneRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[14]);
-}
-
-// ===================================================================
-
 class GetKernelVersionResponse::_Internal {
  public:
 };
@@ -4549,7 +4293,7 @@ void GetKernelVersionResponse::InternalSwap(GetKernelVersionResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetKernelVersionResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[15]);
+      file_level_metadata_vm_5fguest_2eproto[14]);
 }
 
 // ===================================================================
@@ -4727,7 +4471,7 @@ void ResizeFilesystemRequest::InternalSwap(ResizeFilesystemRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeFilesystemRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[16]);
+      file_level_metadata_vm_5fguest_2eproto[15]);
 }
 
 // ===================================================================
@@ -4908,7 +4652,7 @@ void ResizeFilesystemResponse::InternalSwap(ResizeFilesystemResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ResizeFilesystemResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[17]);
+      file_level_metadata_vm_5fguest_2eproto[16]);
 }
 
 // ===================================================================
@@ -5142,7 +4886,7 @@ void GetResizeStatusResponse::InternalSwap(GetResizeStatusResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetResizeStatusResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[18]);
+      file_level_metadata_vm_5fguest_2eproto[17]);
 }
 
 // ===================================================================
@@ -5320,7 +5064,7 @@ void GetResizeBoundsResponse::InternalSwap(GetResizeBoundsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetResizeBoundsResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[19]);
+      file_level_metadata_vm_5fguest_2eproto[18]);
 }
 
 // ===================================================================
@@ -5498,7 +5242,7 @@ void GetAvailableSpaceResponse::InternalSwap(GetAvailableSpaceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAvailableSpaceResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_vm_5fguest_2eproto_getter, &descriptor_table_vm_5fguest_2eproto_once,
-      file_level_metadata_vm_5fguest_2eproto[20]);
+      file_level_metadata_vm_5fguest_2eproto[19]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -5545,9 +5289,6 @@ template<> PROTOBUF_NOINLINE ::vm_tools::SetResolvConfigRequest* Arena::CreateMa
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::SetTimeRequest* Arena::CreateMaybeMessage< ::vm_tools::SetTimeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vm_tools::SetTimeRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::vm_tools::SetTimezoneRequest* Arena::CreateMaybeMessage< ::vm_tools::SetTimezoneRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::vm_tools::SetTimezoneRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::GetKernelVersionResponse* Arena::CreateMaybeMessage< ::vm_tools::GetKernelVersionResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vm_tools::GetKernelVersionResponse >(arena);

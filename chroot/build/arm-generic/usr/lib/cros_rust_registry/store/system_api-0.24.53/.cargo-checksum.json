@@ -1,5 +1,5 @@
 {
-	"package": "555215a0e557257689210c13a20c07906173f6bc0644182ecbd192bd20a5ce95",
+	"package": "60358c37597b6bad30e4af28231886d4b52b0b1f23dfae58588d5d902a84ac92",
 	"files": {
 		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
 		"Cargo.toml": "40cbb98e01f71f3930f0ec25fc1639611aa68f978f8fb0b66f9dae3f7b7c669f",
@@ -7,7 +7,7 @@
 		"src/bindings/client/org_chromium_authpolicy.rs": "7fdd12522a2cfaee176700c912862f5da0ad0900315417b8f78d61a75ecf968f",
 		"src/bindings/client/org_chromium_sessionmanagerinterface.rs": "b964d553f62f9fb25774160f945ca89dec65c2e3ead48cb5950673c0322b2f87",
 		"src/bindings/client/org_chromium_power_manager.rs": "c80810ef5a9aca5ef006e48823814f019fa4593746711bebd7447e8fbfbcc819",
-		"src/bindings/client/org_chromium_debugd.rs": "00ff00c1c8653a909ec2b12e94f67c9b6141c9222afe5782625bd4b5cbdd796e",
+		"src/bindings/client/org_chromium_debugd.rs": "cb4a7da9e0e3c964a62fc60c58dfc649ba8dbffbd1db086cb840f81b092c281b",
 		"src/bindings/client/org_chromium_userdataauth.rs": "30397a747024a46215bdcea2e172952068daac980fdc678f56ba5115743ac6f9",
 		"src/bindings/client/org_chromium_flimflam_manager.rs": "806b693e170a728be72eea5f12f4f3edaa79c494a2e5577a8fc4299a6894c4e5",
 		"src/bindings/client/org_chromium_vtpm.rs": "2fe321efb81b496a3d418b2e0a7c1fb1b9323a63459e1c42c5d67399a3833455",
