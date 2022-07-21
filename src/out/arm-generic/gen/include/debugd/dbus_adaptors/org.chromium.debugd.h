@@ -137,10 +137,6 @@ class debugdInterface {
   // If delete operation fails, an error is logged.
   virtual void DeleteArcBugReportBackup(
       const std::string& in_username) = 0;
-  // Fills the journal log in export format for feedback reports in the
-  // file whose file descriptor is given.
-  virtual void GetJournalLog(
-      const base::ScopedFD& in_outfd) = 0;
   // Example method. See /doc/hacking.md.
   virtual std::string GetExample() = 0;
   // Add a printer that can be auto-configured to CUPS.  Immediately attempt
@@ -565,10 +561,6 @@ class debugdAdaptor {
         base::Unretained(interface_),
         &debugdInterface::DeleteArcBugReportBackup);
     itf->AddSimpleMethodHandler(
-        "GetJournalLog",
-        base::Unretained(interface_),
-        &debugdInterface::GetJournalLog);
-    itf->AddSimpleMethodHandler(
         "GetExample",
         base::Unretained(interface_),
         &debugdInterface::GetExample);
@@ -964,9 +956,6 @@ class debugdAdaptor {
         "    </method>\n"
         "    <method name=\"DeleteArcBugReportBackup\">\n"
         "      <arg name=\"username\" type=\"s\" direction=\"in\"/>\n"
-        "    </method>\n"
-        "    <method name=\"GetJournalLog\">\n"
-        "      <arg name=\"outfd\" type=\"h\" direction=\"in\"/>\n"
         "    </method>\n"
         "    <method name=\"GetExample\">\n"
         "      <arg name=\"result\" type=\"s\" direction=\"out\"/>\n"

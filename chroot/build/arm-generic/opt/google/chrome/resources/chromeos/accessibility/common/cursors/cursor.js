@@ -12,6 +12,7 @@ const Dir = constants.Dir;
 const RoleType = chrome.automation.RoleType;
 const StateType = chrome.automation.StateType;
 
+import {StringUtil} from '../string_util.js';
 
 /**
  * The special index that represents a cursor pointing to a node without
@@ -43,7 +44,7 @@ export const CursorUnit = {
    * A node or in line textbox that immediately precedes or follows a visual
    *     line break.
    */
-  LINE: 'line'
+  LINE: 'line',
 };
 
 /**
@@ -61,7 +62,7 @@ export const CursorMovement = {
    * Move to the beginning or end of the current cursor. Only supports
    * Unit.CHARACTER and Unit.WORD
    */
-  SYNC: 'sync'
+  SYNC: 'sync',
 };
 
 /**
@@ -118,8 +119,8 @@ export class Cursor {
 
   /**
    * Gives a function that returns true for leaf types for |unit| navigations.
-   * @param {!cursor.Unit} unit
-   * @return {function}
+   * @param {!CursorUnit} unit
+   * @return {AutomationPredicate.Unary}
    */
   static getLeafPredForUnit(unit) {
     switch (unit) {
@@ -244,7 +245,7 @@ export class Cursor {
    * given direction using the given movement type.
    * @param {CursorUnit} unit
    * @param {CursorMovement} movement
-   * @param {Dir} dir
+   * @param {constants.Dir} dir
    * @return {!Cursor} The moved cursor.
    */
   move(unit, movement, dir) {

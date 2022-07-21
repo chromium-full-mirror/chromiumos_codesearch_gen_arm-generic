@@ -487,6 +487,7 @@ class Filter final :
   enum : int {
     kRangeFieldNumber = 3,
     kRegexFieldNumber = 2,
+    kExcludeRegexFieldNumber = 4,
     kTypeFieldNumber = 1,
   };
   // repeated .shill.mobile_operator_db.FilterRange range = 3;
@@ -525,6 +526,24 @@ class Filter final :
   std::string* _internal_mutable_regex();
   public:
 
+  // optional string exclude_regex = 4;
+  bool has_exclude_regex() const;
+  private:
+  bool _internal_has_exclude_regex() const;
+  public:
+  void clear_exclude_regex();
+  const std::string& exclude_regex() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_exclude_regex(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_exclude_regex();
+  PROTOBUF_NODISCARD std::string* release_exclude_regex();
+  void set_allocated_exclude_regex(std::string* exclude_regex);
+  private:
+  const std::string& _internal_exclude_regex() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_exclude_regex(const std::string& value);
+  std::string* _internal_mutable_exclude_regex();
+  public:
+
   // required .shill.mobile_operator_db.Filter.Type type = 1;
   bool has_type() const;
   private:
@@ -549,6 +568,7 @@ class Filter final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::FilterRange > range_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr regex_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr exclude_regex_;
   int type_;
   friend struct ::TableStruct_mobile_5foperator_5fdb_2eproto;
 };
@@ -894,6 +914,7 @@ class MobileAPN final :
   enum : int {
     kLocalizedNameFieldNumber = 3,
     kOBSOLETEDnsFieldNumber = 7,
+    kApnFilterFieldNumber = 11,
     kApnFieldNumber = 1,
     kOBSOLETEGatewayFieldNumber = 4,
     kUsernameFieldNumber = 5,
@@ -943,6 +964,24 @@ class MobileAPN final :
   const std::string& _internal_obsolete_dns(int index) const;
   std::string* _internal_add_obsolete_dns();
   public:
+
+  // repeated .shill.mobile_operator_db.Filter apn_filter = 11;
+  int apn_filter_size() const;
+  private:
+  int _internal_apn_filter_size() const;
+  public:
+  void clear_apn_filter();
+  ::shill::mobile_operator_db::Filter* mutable_apn_filter(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter >*
+      mutable_apn_filter();
+  private:
+  const ::shill::mobile_operator_db::Filter& _internal_apn_filter(int index) const;
+  ::shill::mobile_operator_db::Filter* _internal_add_apn_filter();
+  public:
+  const ::shill::mobile_operator_db::Filter& apn_filter(int index) const;
+  ::shill::mobile_operator_db::Filter* add_apn_filter();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter >&
+      apn_filter() const;
 
   // required string apn = 1;
   bool has_apn() const;
@@ -1066,6 +1105,7 @@ class MobileAPN final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::LocalizedName > localized_name_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> obsolete_dns_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter > apn_filter_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr apn_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr obsolete_gateway_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
@@ -2284,7 +2324,7 @@ inline void FilterRange::set_end(uint64_t value) {
 
 // required .shill.mobile_operator_db.Filter.Type type = 1;
 inline bool Filter::_internal_has_type() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool Filter::has_type() const {
@@ -2292,7 +2332,7 @@ inline bool Filter::has_type() const {
 }
 inline void Filter::clear_type() {
   type_ = 1;
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline ::shill::mobile_operator_db::Filter_Type Filter::_internal_type() const {
   return static_cast< ::shill::mobile_operator_db::Filter_Type >(type_);
@@ -2303,7 +2343,7 @@ inline ::shill::mobile_operator_db::Filter_Type Filter::type() const {
 }
 inline void Filter::_internal_set_type(::shill::mobile_operator_db::Filter_Type value) {
   assert(::shill::mobile_operator_db::Filter_Type_IsValid(value));
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   type_ = value;
 }
 inline void Filter::set_type(::shill::mobile_operator_db::Filter_Type value) {
@@ -2418,6 +2458,75 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator
 Filter::range() const {
   // @@protoc_insertion_point(field_list:shill.mobile_operator_db.Filter.range)
   return range_;
+}
+
+// optional string exclude_regex = 4;
+inline bool Filter::_internal_has_exclude_regex() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool Filter::has_exclude_regex() const {
+  return _internal_has_exclude_regex();
+}
+inline void Filter::clear_exclude_regex() {
+  exclude_regex_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& Filter::exclude_regex() const {
+  // @@protoc_insertion_point(field_get:shill.mobile_operator_db.Filter.exclude_regex)
+  return _internal_exclude_regex();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Filter::set_exclude_regex(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000002u;
+ exclude_regex_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Filter.exclude_regex)
+}
+inline std::string* Filter::mutable_exclude_regex() {
+  std::string* _s = _internal_mutable_exclude_regex();
+  // @@protoc_insertion_point(field_mutable:shill.mobile_operator_db.Filter.exclude_regex)
+  return _s;
+}
+inline const std::string& Filter::_internal_exclude_regex() const {
+  return exclude_regex_.Get();
+}
+inline void Filter::_internal_set_exclude_regex(const std::string& value) {
+  _has_bits_[0] |= 0x00000002u;
+  exclude_regex_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Filter::_internal_mutable_exclude_regex() {
+  _has_bits_[0] |= 0x00000002u;
+  return exclude_regex_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Filter::release_exclude_regex() {
+  // @@protoc_insertion_point(field_release:shill.mobile_operator_db.Filter.exclude_regex)
+  if (!_internal_has_exclude_regex()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000002u;
+  auto* p = exclude_regex_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (exclude_regex_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    exclude_regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void Filter::set_allocated_exclude_regex(std::string* exclude_regex) {
+  if (exclude_regex != nullptr) {
+    _has_bits_[0] |= 0x00000002u;
+  } else {
+    _has_bits_[0] &= ~0x00000002u;
+  }
+  exclude_regex_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), exclude_regex,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (exclude_regex_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    exclude_regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:shill.mobile_operator_db.Filter.exclude_regex)
 }
 
 // -------------------------------------------------------------------
@@ -3041,6 +3150,46 @@ inline void MobileAPN::_internal_set_ip_type(::shill::mobile_operator_db::Mobile
 inline void MobileAPN::set_ip_type(::shill::mobile_operator_db::MobileAPN_IpType value) {
   _internal_set_ip_type(value);
   // @@protoc_insertion_point(field_set:shill.mobile_operator_db.MobileAPN.ip_type)
+}
+
+// repeated .shill.mobile_operator_db.Filter apn_filter = 11;
+inline int MobileAPN::_internal_apn_filter_size() const {
+  return apn_filter_.size();
+}
+inline int MobileAPN::apn_filter_size() const {
+  return _internal_apn_filter_size();
+}
+inline void MobileAPN::clear_apn_filter() {
+  apn_filter_.Clear();
+}
+inline ::shill::mobile_operator_db::Filter* MobileAPN::mutable_apn_filter(int index) {
+  // @@protoc_insertion_point(field_mutable:shill.mobile_operator_db.MobileAPN.apn_filter)
+  return apn_filter_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter >*
+MobileAPN::mutable_apn_filter() {
+  // @@protoc_insertion_point(field_mutable_list:shill.mobile_operator_db.MobileAPN.apn_filter)
+  return &apn_filter_;
+}
+inline const ::shill::mobile_operator_db::Filter& MobileAPN::_internal_apn_filter(int index) const {
+  return apn_filter_.Get(index);
+}
+inline const ::shill::mobile_operator_db::Filter& MobileAPN::apn_filter(int index) const {
+  // @@protoc_insertion_point(field_get:shill.mobile_operator_db.MobileAPN.apn_filter)
+  return _internal_apn_filter(index);
+}
+inline ::shill::mobile_operator_db::Filter* MobileAPN::_internal_add_apn_filter() {
+  return apn_filter_.Add();
+}
+inline ::shill::mobile_operator_db::Filter* MobileAPN::add_apn_filter() {
+  ::shill::mobile_operator_db::Filter* _add = _internal_add_apn_filter();
+  // @@protoc_insertion_point(field_add:shill.mobile_operator_db.MobileAPN.apn_filter)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter >&
+MobileAPN::apn_filter() const {
+  // @@protoc_insertion_point(field_list:shill.mobile_operator_db.MobileAPN.apn_filter)
+  return apn_filter_;
 }
 
 // -------------------------------------------------------------------

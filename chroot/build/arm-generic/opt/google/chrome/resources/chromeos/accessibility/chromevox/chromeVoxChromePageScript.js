@@ -74,6 +74,6 @@ static dispatchApiMessage(message){let method;switch(message['cmd']){case'speak'
 if(!method){throw'Unknown API call: '+message['cmd'];}
 method.apply(ApiImplementation,message['args']);}
 static speak(callbackId,textString,queueMode,properties){if(!properties){properties={};}
-setupEndCallback_(properties,callbackId);const message={'target':'TTS','action':'speak','text':textString,queueMode,properties};ContentExtensionBridge.send(message);}};ApiImplementation.DISCONNECT_MSG='Disconnect';function setupEndCallback_(properties,callbackId){const endCallback=function(){ApiImplementation.port.postMessage(JSON.stringify({'id':callbackId}));};if(properties){properties['endCallback']=endCallback;}}
+setupEndCallback_(properties,callbackId);const message={'target':'TTS','action':'speak','text':textString,queueMode,properties,};ContentExtensionBridge.send(message);}};ApiImplementation.DISCONNECT_MSG='Disconnect';function setupEndCallback_(properties,callbackId){const endCallback=function(){ApiImplementation.port.postMessage(JSON.stringify({'id':callbackId}));};if(properties){properties['endCallback']=endCallback;}}
 goog.require('ApiImplementation');function initMin(){ApiImplementation.init();}
 initMin();

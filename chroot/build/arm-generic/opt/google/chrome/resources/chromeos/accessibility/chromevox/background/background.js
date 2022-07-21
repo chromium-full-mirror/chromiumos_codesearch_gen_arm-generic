@@ -6,6 +6,7 @@ import {CursorRange} from '../../common/cursors/range.js';
 import {InstanceChecker} from '../../common/instance_checker.js';
 import {ExtensionBridge} from '../common/extension_bridge.js';
 import {LocaleOutputHelper} from '../common/locale_output_helper.js';
+import {Msgs} from '../common/msgs.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 import {JaPhoneticMap} from '../third_party/tamachiyomi/ja_phonetic_map.js';
 
@@ -21,17 +22,19 @@ import {DownloadHandler} from './download_handler.js';
 import {Earcons} from './earcons.js';
 import {FindHandler} from './find_handler.js';
 import {FocusAutomationHandler} from './focus_automation_handler.js';
+import {FocusBounds} from './focus_bounds.js';
 import {GestureCommandHandler} from './gesture_command_handler.js';
 import {BackgroundKeyboardHandler} from './keyboard_handler.js';
 import {LiveRegions} from './live_regions.js';
 import {MathHandler} from './math_handler.js';
 import {MediaAutomationHandler} from './media_automation_handler.js';
 import {Output} from './output/output.js';
+import {OutputEventType} from './output/output_types.js';
 import {PageLoadSoundHandler} from './page_load_sound_handler.js';
 import {PanelBackground} from './panel/panel_background.js';
 import {ChromeVoxPrefs} from './prefs.js';
 import {RangeAutomationHandler} from './range_automation_handler.js';
-
+import {TtsBackground} from './tts_background.js';
 
 /**
  * @fileoverview The entry point for all ChromeVox related code for the
@@ -222,7 +225,7 @@ export class Background extends ChromeVoxState {
 
   /** @override */
   set typingEcho(newTypingEcho) {
-    localStorage['typingEcho'] = value;
+    localStorage['typingEcho'] = newTypingEcho;
   }
 
   /**
@@ -379,7 +382,7 @@ export class Background extends ChromeVoxState {
     textarea.remove();
     ChromeVox.tts.speak(
         Msgs.getMsg(eventType, [clipboardContent]), QueueMode.FLUSH);
-    ChromeVoxState.instance.pageSel_ = null;
+    ChromeVoxState.instance.pageSel = null;
   }
 
   /** @private */

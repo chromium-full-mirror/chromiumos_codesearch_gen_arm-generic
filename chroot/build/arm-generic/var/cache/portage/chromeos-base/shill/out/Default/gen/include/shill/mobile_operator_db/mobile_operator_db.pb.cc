@@ -32,6 +32,7 @@ constexpr Filter::Filter(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : range_()
   , regex_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , exclude_regex_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , type_(1)
 {}
 struct FilterDefaultTypeInternal {
@@ -60,6 +61,7 @@ constexpr MobileAPN::MobileAPN(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : localized_name_()
   , obsolete_dns_()
+  , apn_filter_()
   , apn_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , obsolete_gateway_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -682,13 +684,16 @@ class Filter::_Internal {
  public:
   using HasBits = decltype(std::declval<Filter>()._has_bits_);
   static void set_has_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_regex(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static void set_has_exclude_regex(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000002) ^ 0x00000002) != 0;
+    return ((has_bits[0] & 0x00000004) ^ 0x00000004) != 0;
   }
 };
 
@@ -715,6 +720,14 @@ Filter::Filter(const Filter& from)
     regex_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_regex(), 
       GetArenaForAllocation());
   }
+  exclude_regex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    exclude_regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_exclude_regex()) {
+    exclude_regex_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_exclude_regex(), 
+      GetArenaForAllocation());
+  }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:shill.mobile_operator_db.Filter)
 }
@@ -723,6 +736,10 @@ inline void Filter::SharedCtor() {
 regex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+exclude_regex_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  exclude_regex_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 type_ = 1;
 }
@@ -737,6 +754,7 @@ Filter::~Filter() {
 inline void Filter::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   regex_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  exclude_regex_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Filter::ArenaDtor(void* object) {
@@ -757,9 +775,12 @@ void Filter::Clear() {
 
   range_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       regex_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      exclude_regex_.ClearNonDefaultToEmpty();
     }
     type_ = 1;
   }
@@ -809,6 +830,15 @@ const char* Filter::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         } else
           goto handle_unusual;
         continue;
+      // optional string exclude_regex = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_exclude_regex();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -841,7 +871,7 @@ uint8_t* Filter::_InternalSerialize(
 
   cached_has_bits = _has_bits_[0];
   // required .shill.mobile_operator_db.Filter.Type type = 1;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       1, this->_internal_type(), target);
@@ -859,6 +889,12 @@ uint8_t* Filter::_InternalSerialize(
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, this->_internal_range(i), target, stream);
+  }
+
+  // optional string exclude_regex = 4;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_exclude_regex(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -889,14 +925,23 @@ size_t Filter::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // optional string regex = 2;
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_regex());
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional string regex = 2;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_regex());
+    }
 
+    // optional string exclude_regex = 4;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_exclude_regex());
+    }
+
+  }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
@@ -919,11 +964,14 @@ void Filter::MergeFrom(const Filter& from) {
 
   range_.MergeFrom(from.range_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _internal_set_regex(from._internal_regex());
     }
     if (cached_has_bits & 0x00000002u) {
+      _internal_set_exclude_regex(from._internal_exclude_regex());
+    }
+    if (cached_has_bits & 0x00000004u) {
       type_ = from.type_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -956,6 +1004,11 @@ void Filter::InternalSwap(Filter* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &regex_, lhs_arena,
       &other->regex_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &exclude_regex_, lhs_arena,
+      &other->exclude_regex_, rhs_arena
   );
   swap(type_, other->type_);
 }
@@ -1266,7 +1319,8 @@ MobileAPN::MobileAPN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
   localized_name_(arena),
-  obsolete_dns_(arena) {
+  obsolete_dns_(arena),
+  apn_filter_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -1277,7 +1331,8 @@ MobileAPN::MobileAPN(const MobileAPN& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
       _has_bits_(from._has_bits_),
       localized_name_(from.localized_name_),
-      obsolete_dns_(from.obsolete_dns_) {
+      obsolete_dns_(from.obsolete_dns_),
+      apn_filter_(from.apn_filter_) {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   apn_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1374,6 +1429,7 @@ void MobileAPN::Clear() {
 
   localized_name_.Clear();
   obsolete_dns_.Clear();
+  apn_filter_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1504,6 +1560,19 @@ const char* MobileAPN::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         } else
           goto handle_unusual;
         continue;
+      // repeated .shill.mobile_operator_db.Filter apn_filter = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_apn_filter(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1593,6 +1662,14 @@ uint8_t* MobileAPN::_InternalSerialize(
       10, this->_internal_ip_type(), target);
   }
 
+  // repeated .shill.mobile_operator_db.Filter apn_filter = 11;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_apn_filter_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(11, this->_internal_apn_filter(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
@@ -1628,6 +1705,13 @@ size_t MobileAPN::ByteSizeLong() const {
   for (int i = 0, n = obsolete_dns_.size(); i < n; i++) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
       obsolete_dns_.Get(i));
+  }
+
+  // repeated .shill.mobile_operator_db.Filter apn_filter = 11;
+  total_size += 1UL * this->_internal_apn_filter_size();
+  for (const auto& msg : this->apn_filter_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   cached_has_bits = _has_bits_[0];
@@ -1693,6 +1777,7 @@ void MobileAPN::MergeFrom(const MobileAPN& from) {
 
   localized_name_.MergeFrom(from.localized_name_);
   obsolete_dns_.MergeFrom(from.obsolete_dns_);
+  apn_filter_.MergeFrom(from.apn_filter_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000007fu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1732,6 +1817,8 @@ bool MobileAPN::IsInitialized() const {
   if (_Internal::MissingRequiredFields(_has_bits_)) return false;
   if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(localized_name_))
     return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(apn_filter_))
+    return false;
   return true;
 }
 
@@ -1743,6 +1830,7 @@ void MobileAPN::InternalSwap(MobileAPN* other) {
   swap(_has_bits_[0], other->_has_bits_[0]);
   localized_name_.InternalSwap(&other->localized_name_);
   obsolete_dns_.InternalSwap(&other->obsolete_dns_);
+  apn_filter_.InternalSwap(&other->apn_filter_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &apn_, lhs_arena,

@@ -212,7 +212,7 @@ export class Dictation {
   /**
    * Sets the timeout to stop Dictation.
    * @param {number} durationMs
-   * @param {string?} debugInfo Optional debugging information for why Dictation
+   * @param {string=} debugInfo Optional debugging information for why Dictation
    *     stopped automatically.
    * @private
    */
@@ -438,7 +438,7 @@ export class Dictation {
     // TODO(crbug.com/1288964): Finalize string and internationalization.
     this.uiController_.setState(UIState.MACRO_FAIL, {
       text: `Failed to run command: ${transcript}`,
-      context: HintContext.STANDBY
+      context: HintContext.STANDBY,
     });
   }
 
@@ -487,7 +487,7 @@ export class Dictation {
   }
 
   /**
-   * @param {!MacroName} Name The macro to run.
+   * @param {!MacroName} name The macro to run.
    * @param {string} arg
    */
   runHiddenMacroWithStringArgForTesting(name, arg) {
@@ -509,8 +509,11 @@ export class Dictation {
    * @private
    */
   propagateLocale_(locale) {
-    this.speechParser_.initialize(locale);
+    const commandsSupported =
+        SpeechParser.areCommandsSupported(locale, chrome.i18n.getUILanguage());
+    this.speechParser_.initialize(locale, commandsSupported);
     this.inputController_.setLocale(locale);
+    this.uiController_.setHintsSupported(commandsSupported);
   }
 }
 

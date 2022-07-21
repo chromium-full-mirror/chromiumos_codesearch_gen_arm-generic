@@ -6,20 +6,26 @@
 // Generated with command:
 // gen/python/flatbuffer_cpp_binding_generator.py
 // --output_dir=/build/arm-generic/var/cache/portage/chromeos-base/cryptohome/out/Default/gen/include/cryptohome/flatbuffer_schemas
-// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS
+// --guard_prefix=CRYPTOHOME_FLATBUFFER_SCHEMAS_AUTH_BLOCK_STATE
+// --header_include_paths cryptohome/flatbuffer_schemas/structures.h
 // --flatbuffer_header_include_paths cryptohome/auth_block_state_generated.h
 // --flatbuffer_header_include_paths
 // cryptohome/flatbuffer_schemas/auth_block_state.h
 // --flatbuffer_header_include_paths
-// cryptohome/flatbuffer_schemas/basic_objects.h
-// --flatbuffer_header_include_paths cryptohome/structures_generated.h
-// --impl_include_paths cryptohome/flatbuffer_schemas/auth_block_state.h
-// --impl_include_paths
+// cryptohome/flatbuffer_schemas/structures_flatbuffer.h
+// --flatbuffer_header_include_paths
+// libhwsec-foundation/flatbuffers/basic_objects.h --impl_include_paths
+// cryptohome/flatbuffer_schemas/auth_block_state.h --impl_include_paths
 // cryptohome/flatbuffer_schemas/auth_block_state_flatbuffer.h
-// --impl_include_paths cryptohome/flatbuffer_secure_allocator_bridge.h
+// --impl_include_paths cryptohome/flatbuffer_schemas/structures_flatbuffer.h
+// --impl_include_paths
+// libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h
 // --test_utils_header_include_path
 // cryptohome/flatbuffer_schemas/auth_block_state.h
+// --test_utils_header_include_path
+// cryptohome/flatbuffer_schemas/structures_test_utils.h
 // /build/arm-generic/var/cache/portage/chromeos-base/cryptohome/out/Default/gen/bfbs/auth_block_state.bfbs
+// --filter_by_namespace cryptohome
 
 #include <stdint.h>
 #include <optional>
@@ -33,61 +39,22 @@
 
 #include "cryptohome/flatbuffer_schemas/auth_block_state.h"
 #include "cryptohome/flatbuffer_schemas/auth_block_state_flatbuffer.h"
-#include "cryptohome/flatbuffer_secure_allocator_bridge.h"
+#include "cryptohome/flatbuffer_schemas/structures_flatbuffer.h"
+#include "libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h"
 
 namespace {
 [[maybe_unused]] constexpr int kFlatbufferAllocatorInitialSize = 4096;
 }  // namespace
 
-namespace cryptohome::structure {
-
-std::optional<brillo::Blob> SignatureChallengeInfo::Serialize() const {
-  flatbuffers::FlatBufferBuilder builder;
-  auto buffer = cryptohome::ToFlatBuffer<
-      ::cryptohome::structure::SignatureChallengeInfo>()(&builder, *this);
-  if (buffer.IsNull()) {
-    LOG(ERROR) << "SignatureChallengeInfo cannot be serialized.";
-    return std::nullopt;
-  }
-  builder.Finish(buffer);
-  uint8_t* buf = builder.GetBufferPointer();
-  int size = builder.GetSize();
-  return brillo::Blob(buf, buf + size);
-}
-
-}  // namespace cryptohome::structure
-
-namespace cryptohome::structure {
-
-// static
-std::optional<::cryptohome::structure::SignatureChallengeInfo>
-SignatureChallengeInfo::Deserialize(const brillo::Blob& blob) {
-  flatbuffers::Verifier verifier(blob.data(), blob.size());
-  if (!::cryptohome::structure::_serialized_::
-          VerifySignatureChallengeInfoBuffer(verifier)) {
-    LOG(ERROR) << "SignatureChallengeInfo cannot be deserialized.";
-    return std::nullopt;
-  }
-
-  const ::cryptohome::structure::_serialized_::SignatureChallengeInfo* object =
-      flatbuffers::GetRoot<
-          ::cryptohome::structure::_serialized_::SignatureChallengeInfo>(
-          blob.data());
-
-  return cryptohome::FromFlatBuffer<
-      ::cryptohome::structure::SignatureChallengeInfo>()(object);
-}
-
-}  // namespace cryptohome::structure
-
 namespace cryptohome {
 
-std::optional<brillo::SecureBlob> AuthBlockState::Serialize() const {
-  FlatbufferSecureAllocatorBridge allocator;
+__attribute__((visibility("default"))) std::optional<brillo::SecureBlob>
+AuthBlockState::Serialize() const {
+  hwsec_foundation::FlatbufferSecureAllocatorBridge allocator;
   flatbuffers::FlatBufferBuilder builder(kFlatbufferAllocatorInitialSize,
                                          &allocator);
-  auto buffer =
-      cryptohome::ToFlatBuffer<::cryptohome::AuthBlockState>()(&builder, *this);
+  auto buffer = hwsec_foundation::ToFlatBuffer<::cryptohome::AuthBlockState>()(
+      &builder, *this);
   if (buffer.IsNull()) {
     LOG(ERROR) << "AuthBlockState cannot be serialized.";
     return std::nullopt;
@@ -103,8 +70,9 @@ std::optional<brillo::SecureBlob> AuthBlockState::Serialize() const {
 namespace cryptohome {
 
 // static
-std::optional<::cryptohome::AuthBlockState> AuthBlockState::Deserialize(
-    const brillo::SecureBlob& blob) {
+__attribute__((visibility("default")))
+std::optional<::cryptohome::AuthBlockState>
+AuthBlockState::Deserialize(const brillo::SecureBlob& blob) {
   flatbuffers::Verifier verifier(blob.data(), blob.size());
   if (!::cryptohome::_serialized_::VerifyAuthBlockStateBuffer(verifier)) {
     LOG(ERROR) << "AuthBlockState cannot be deserialized.";
@@ -115,7 +83,8 @@ std::optional<::cryptohome::AuthBlockState> AuthBlockState::Deserialize(
       flatbuffers::GetRoot<::cryptohome::_serialized_::AuthBlockState>(
           blob.data());
 
-  return cryptohome::FromFlatBuffer<::cryptohome::AuthBlockState>()(object);
+  return hwsec_foundation::FromFlatBuffer<::cryptohome::AuthBlockState>()(
+      object);
 }
 
 }  // namespace cryptohome

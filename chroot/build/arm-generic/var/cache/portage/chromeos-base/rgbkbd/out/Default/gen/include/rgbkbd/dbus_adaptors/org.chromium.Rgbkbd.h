@@ -26,7 +26,8 @@ class RgbkbdInterface {
   // Retrieve whether or not RGB keyboard is supported for the current device. It
   // can be one of the enum values of rgbkbd::RgbKeyboardCapabilities. See
   // platform2/system_api/dbus/rgbkbd/dbus-constants.h
-  virtual uint32_t GetRgbKeyboardCapabilities() = 0;
+  virtual void GetRgbKeyboardCapabilities(
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<uint32_t>> response) = 0;
   // When caps lock is enabled, both shift keys are highlighted to a preset
   // caps lock highlight color. If the preset color conflicts with the
   // colors set for the rest of the keys, an alternate highlight color will
@@ -71,7 +72,7 @@ class RgbkbdAdaptor {
     brillo::dbus_utils::DBusInterface* itf =
         object->AddOrGetInterface("org.chromium.Rgbkbd");
 
-    itf->AddSimpleMethodHandler(
+    itf->AddMethodHandler(
         "GetRgbKeyboardCapabilities",
         base::Unretained(interface_),
         &RgbkbdInterface::GetRgbKeyboardCapabilities);

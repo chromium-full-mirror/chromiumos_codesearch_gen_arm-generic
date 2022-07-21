@@ -14,6 +14,7 @@
  * or to provide other customizations.
  */
 import {AbstractTts} from '../../common/abstract_tts.js';
+import {Msgs} from '../../common/msgs.js';
 import {ChromeVoxState} from '../chromevox_state.js';
 
 /**
@@ -68,7 +69,7 @@ export const TypingEcho = {
   WORD: 1,
   CHARACTER_AND_WORD: 2,
   NONE: 3,
-  COUNT: 4
+  COUNT: 4,
 };
 
 
@@ -116,7 +117,7 @@ export class ChromeVoxEditableTextBase {
       }.bind(this),
       set: function(val) {
         this.value_ = val.replace('\u00a0', ' ');
-      }.bind(this)
+      }.bind(this),
     });
     this.value = value;
 
@@ -304,7 +305,7 @@ export class ChromeVoxEditableTextBase {
     if (this.isPassword) {
       this.speak(
           (new goog.i18n.MessageFormat(Msgs.getMsg('bullet')).format({
-            'COUNT': 1
+            'COUNT': 1,
           })),
           evt.triggeredByUser);
       return;
@@ -413,7 +414,7 @@ export class ChromeVoxEditableTextBase {
     if (this.isPassword) {
       this.speak(
           (new goog.i18n.MessageFormat(Msgs.getMsg('bullet')).format({
-            'COUNT': 1
+            'COUNT': 1,
           })),
           evt.triggeredByUser, personality);
       return;

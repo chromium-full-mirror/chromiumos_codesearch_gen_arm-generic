@@ -140,6 +140,14 @@ class Garcon final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::RemoveFileWatchResponse>> PrepareAsyncRemoveFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::RemoveFileWatchResponse>>(PrepareAsyncRemoveFileWatchRaw(context, request, cq));
     }
+    // Requests Garcon to send information about the current session
+    virtual ::grpc::Status GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::vm_tools::container::GetGarconSessionInfoResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>> AsyncGetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>>(AsyncGetGarconSessionInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>> PrepareAsyncGetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>>(PrepareAsyncGetGarconSessionInfoRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -169,6 +177,8 @@ class Garcon final {
       virtual void AddFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::AddFileWatchRequest* request, ::vm_tools::container::AddFileWatchResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Stop watching files in the specified directory.
       virtual void RemoveFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest* request, ::vm_tools::container::RemoveFileWatchResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Requests Garcon to send information about the current session
+      virtual void GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -196,6 +206,8 @@ class Garcon final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::AddFileWatchResponse>* PrepareAsyncAddFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::AddFileWatchRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::RemoveFileWatchResponse>* AsyncRemoveFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::RemoveFileWatchResponse>* PrepareAsyncRemoveFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>* AsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::GetGarconSessionInfoResponse>* PrepareAsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -284,6 +296,13 @@ class Garcon final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::RemoveFileWatchResponse>> PrepareAsyncRemoveFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::RemoveFileWatchResponse>>(PrepareAsyncRemoveFileWatchRaw(context, request, cq));
     }
+    ::grpc::Status GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::vm_tools::container::GetGarconSessionInfoResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>> AsyncGetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>>(AsyncGetGarconSessionInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>> PrepareAsyncGetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>>(PrepareAsyncGetGarconSessionInfoRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -299,6 +318,7 @@ class Garcon final {
       void ConfigureForArcSideload(::grpc::ClientContext* context, const ::vm_tools::container::ConfigureForArcSideloadRequest* request, ::vm_tools::container::ConfigureForArcSideloadResponse* response, std::function<void(::grpc::Status)>) override;
       void AddFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::AddFileWatchRequest* request, ::vm_tools::container::AddFileWatchResponse* response, std::function<void(::grpc::Status)>) override;
       void RemoveFileWatch(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest* request, ::vm_tools::container::RemoveFileWatchResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -334,6 +354,8 @@ class Garcon final {
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::AddFileWatchResponse>* PrepareAsyncAddFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::AddFileWatchRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::RemoveFileWatchResponse>* AsyncRemoveFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::RemoveFileWatchResponse>* PrepareAsyncRemoveFileWatchRaw(::grpc::ClientContext* context, const ::vm_tools::container::RemoveFileWatchRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>* AsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>* PrepareAsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_LaunchApplication_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIcon_;
     const ::grpc::internal::RpcMethod rpcmethod_LaunchVshd_;
@@ -346,6 +368,7 @@ class Garcon final {
     const ::grpc::internal::RpcMethod rpcmethod_ConfigureForArcSideload_;
     const ::grpc::internal::RpcMethod rpcmethod_AddFileWatch_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveFileWatch_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetGarconSessionInfo_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -379,6 +402,8 @@ class Garcon final {
     virtual ::grpc::Status AddFileWatch(::grpc::ServerContext* context, const ::vm_tools::container::AddFileWatchRequest* request, ::vm_tools::container::AddFileWatchResponse* response);
     // Stop watching files in the specified directory.
     virtual ::grpc::Status RemoveFileWatch(::grpc::ServerContext* context, const ::vm_tools::container::RemoveFileWatchRequest* request, ::vm_tools::container::RemoveFileWatchResponse* response);
+    // Requests Garcon to send information about the current session
+    virtual ::grpc::Status GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_LaunchApplication : public BaseClass {
@@ -620,7 +645,27 @@ class Garcon final {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_LaunchApplication<WithAsyncMethod_GetIcon<WithAsyncMethod_LaunchVshd<WithAsyncMethod_GetLinuxPackageInfo<WithAsyncMethod_InstallLinuxPackage<WithAsyncMethod_UninstallPackageOwningFile<WithAsyncMethod_GetDebugInformation<WithAsyncMethod_ConnectChunnel<WithAsyncMethod_ApplyAnsiblePlaybook<WithAsyncMethod_ConfigureForArcSideload<WithAsyncMethod_AddFileWatch<WithAsyncMethod_RemoveFileWatch<Service > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetGarconSessionInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GetGarconSessionInfo() {
+      ::grpc::Service::MarkMethodAsync(12);
+    }
+    ~WithAsyncMethod_GetGarconSessionInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetGarconSessionInfo(::grpc::ServerContext* context, ::vm_tools::container::GetGarconSessionInfoRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::container::GetGarconSessionInfoResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_LaunchApplication<WithAsyncMethod_GetIcon<WithAsyncMethod_LaunchVshd<WithAsyncMethod_GetLinuxPackageInfo<WithAsyncMethod_InstallLinuxPackage<WithAsyncMethod_UninstallPackageOwningFile<WithAsyncMethod_GetDebugInformation<WithAsyncMethod_ConnectChunnel<WithAsyncMethod_ApplyAnsiblePlaybook<WithAsyncMethod_ConfigureForArcSideload<WithAsyncMethod_AddFileWatch<WithAsyncMethod_RemoveFileWatch<WithAsyncMethod_GetGarconSessionInfo<Service > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_LaunchApplication : public BaseClass {
    private:
@@ -821,6 +866,23 @@ class Garcon final {
     }
     // disable synchronous version of this method
     ::grpc::Status RemoveFileWatch(::grpc::ServerContext* context, const ::vm_tools::container::RemoveFileWatchRequest* request, ::vm_tools::container::RemoveFileWatchResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetGarconSessionInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GetGarconSessionInfo() {
+      ::grpc::Service::MarkMethodGeneric(12);
+    }
+    ~WithGenericMethod_GetGarconSessionInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1066,6 +1128,26 @@ class Garcon final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetGarconSessionInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GetGarconSessionInfo() {
+      ::grpc::Service::MarkMethodRaw(12);
+    }
+    ~WithRawMethod_GetGarconSessionInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetGarconSessionInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_LaunchApplication : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1305,9 +1387,29 @@ class Garcon final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedRemoveFileWatch(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::container::RemoveFileWatchRequest,::vm_tools::container::RemoveFileWatchResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_LaunchApplication<WithStreamedUnaryMethod_GetIcon<WithStreamedUnaryMethod_LaunchVshd<WithStreamedUnaryMethod_GetLinuxPackageInfo<WithStreamedUnaryMethod_InstallLinuxPackage<WithStreamedUnaryMethod_UninstallPackageOwningFile<WithStreamedUnaryMethod_GetDebugInformation<WithStreamedUnaryMethod_ConnectChunnel<WithStreamedUnaryMethod_ApplyAnsiblePlaybook<WithStreamedUnaryMethod_ConfigureForArcSideload<WithStreamedUnaryMethod_AddFileWatch<WithStreamedUnaryMethod_RemoveFileWatch<Service > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetGarconSessionInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GetGarconSessionInfo() {
+      ::grpc::Service::MarkMethodStreamed(12,
+        new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::container::GetGarconSessionInfoRequest, ::vm_tools::container::GetGarconSessionInfoResponse>(std::bind(&WithStreamedUnaryMethod_GetGarconSessionInfo<BaseClass>::StreamedGetGarconSessionInfo, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetGarconSessionInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetGarconSessionInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::container::GetGarconSessionInfoRequest,::vm_tools::container::GetGarconSessionInfoResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_LaunchApplication<WithStreamedUnaryMethod_GetIcon<WithStreamedUnaryMethod_LaunchVshd<WithStreamedUnaryMethod_GetLinuxPackageInfo<WithStreamedUnaryMethod_InstallLinuxPackage<WithStreamedUnaryMethod_UninstallPackageOwningFile<WithStreamedUnaryMethod_GetDebugInformation<WithStreamedUnaryMethod_ConnectChunnel<WithStreamedUnaryMethod_ApplyAnsiblePlaybook<WithStreamedUnaryMethod_ConfigureForArcSideload<WithStreamedUnaryMethod_AddFileWatch<WithStreamedUnaryMethod_RemoveFileWatch<WithStreamedUnaryMethod_GetGarconSessionInfo<Service > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_LaunchApplication<WithStreamedUnaryMethod_GetIcon<WithStreamedUnaryMethod_LaunchVshd<WithStreamedUnaryMethod_GetLinuxPackageInfo<WithStreamedUnaryMethod_InstallLinuxPackage<WithStreamedUnaryMethod_UninstallPackageOwningFile<WithStreamedUnaryMethod_GetDebugInformation<WithStreamedUnaryMethod_ConnectChunnel<WithStreamedUnaryMethod_ApplyAnsiblePlaybook<WithStreamedUnaryMethod_ConfigureForArcSideload<WithStreamedUnaryMethod_AddFileWatch<WithStreamedUnaryMethod_RemoveFileWatch<Service > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_LaunchApplication<WithStreamedUnaryMethod_GetIcon<WithStreamedUnaryMethod_LaunchVshd<WithStreamedUnaryMethod_GetLinuxPackageInfo<WithStreamedUnaryMethod_InstallLinuxPackage<WithStreamedUnaryMethod_UninstallPackageOwningFile<WithStreamedUnaryMethod_GetDebugInformation<WithStreamedUnaryMethod_ConnectChunnel<WithStreamedUnaryMethod_ApplyAnsiblePlaybook<WithStreamedUnaryMethod_ConfigureForArcSideload<WithStreamedUnaryMethod_AddFileWatch<WithStreamedUnaryMethod_RemoveFileWatch<WithStreamedUnaryMethod_GetGarconSessionInfo<Service > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace container
