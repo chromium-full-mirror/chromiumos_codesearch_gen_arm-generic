@@ -242,15 +242,6 @@ class debugdProxyMock : public debugdProxyInterface {
                     base::OnceCallback<void()> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
-  MOCK_METHOD3(GetJournalLog,
-               bool(const brillo::dbus_utils::FileDescriptor& /*in_outfd*/,
-                    brillo::ErrorPtr* /*error*/,
-                    int /*timeout_ms*/));
-  MOCK_METHOD4(GetJournalLogAsync,
-               void(const brillo::dbus_utils::FileDescriptor& /*in_outfd*/,
-                    base::OnceCallback<void()> /*success_callback*/,
-                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
-                    int /*timeout_ms*/));
   MOCK_METHOD3(GetExample,
                bool(std::string* /*out_result*/,
                     brillo::ErrorPtr* /*error*/,

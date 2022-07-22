@@ -350,10 +350,38 @@ struct RemoveFileWatchResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveFileWatchResponseDefaultTypeInternal _RemoveFileWatchResponse_default_instance_;
+constexpr GetGarconSessionInfoRequest::GetGarconSessionInfoRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct GetGarconSessionInfoRequestDefaultTypeInternal {
+  constexpr GetGarconSessionInfoRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetGarconSessionInfoRequestDefaultTypeInternal() {}
+  union {
+    GetGarconSessionInfoRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetGarconSessionInfoRequestDefaultTypeInternal _GetGarconSessionInfoRequest_default_instance_;
+constexpr GetGarconSessionInfoResponse::GetGarconSessionInfoResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : failure_reason_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , container_username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , container_homedir_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , status_(0)
+
+  , sftp_vsock_port_(0u){}
+struct GetGarconSessionInfoResponseDefaultTypeInternal {
+  constexpr GetGarconSessionInfoResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~GetGarconSessionInfoResponseDefaultTypeInternal() {}
+  union {
+    GetGarconSessionInfoResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT GetGarconSessionInfoResponseDefaultTypeInternal _GetGarconSessionInfoResponse_default_instance_;
 }  // namespace container
 }  // namespace vm_tools
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_container_5fguest_2eproto[25];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_container_5fguest_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_container_5fguest_2eproto[27];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_container_5fguest_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_container_5fguest_2eproto = nullptr;
 
 const uint32_t TableStruct_container_5fguest_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -556,6 +584,23 @@ const uint32_t TableStruct_container_5fguest_2eproto::offsets[] PROTOBUF_SECTION
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::RemoveFileWatchResponse, status_),
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::RemoveFileWatchResponse, failure_reason_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, failure_reason_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, container_username_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, container_homedir_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::GetGarconSessionInfoResponse, sftp_vsock_port_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::vm_tools::container::LaunchApplicationRequest)},
@@ -583,6 +628,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 176, -1, -1, sizeof(::vm_tools::container::AddFileWatchResponse)},
   { 184, -1, -1, sizeof(::vm_tools::container::RemoveFileWatchRequest)},
   { 191, -1, -1, sizeof(::vm_tools::container::RemoveFileWatchResponse)},
+  { 199, -1, -1, sizeof(::vm_tools::container::GetGarconSessionInfoRequest)},
+  { 205, -1, -1, sizeof(::vm_tools::container::GetGarconSessionInfoResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -611,6 +658,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_AddFileWatchResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_RemoveFileWatchRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_RemoveFileWatchResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_GetGarconSessionInfoRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_GetGarconSessionInfoResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_container_5fguest_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -678,47 +727,58 @@ const char descriptor_table_protodef_container_5fguest_2eproto[] PROTOBUF_SECTIO
   "sponse\022B\n\006status\030\001 \001(\01622.vm_tools.contai"
   "ner.RemoveFileWatchResponse.Status\022\026\n\016fa"
   "ilure_reason\030\002 \001(\t\"0\n\006Status\022\013\n\007UNKNOWN\020"
-  "\000\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\0012\315\n\n\006Garcon\022"
-  "p\n\021LaunchApplication\022,.vm_tools.containe"
-  "r.LaunchApplicationRequest\032-.vm_tools.co"
-  "ntainer.LaunchApplicationResponse\022L\n\007Get"
-  "Icon\022\037.vm_tools.container.IconRequest\032 ."
-  "vm_tools.container.IconResponse\022[\n\nLaunc"
-  "hVshd\022%.vm_tools.container.LaunchVshdReq"
-  "uest\032&.vm_tools.container.LaunchVshdResp"
-  "onse\022p\n\023GetLinuxPackageInfo\022+.vm_tools.c"
-  "ontainer.LinuxPackageInfoRequest\032,.vm_to"
-  "ols.container.LinuxPackageInfoResponse\022v"
-  "\n\023InstallLinuxPackage\022..vm_tools.contain"
-  "er.InstallLinuxPackageRequest\032/.vm_tools"
-  ".container.InstallLinuxPackageResponse\022\213"
-  "\001\n\032UninstallPackageOwningFile\0225.vm_tools"
-  ".container.UninstallPackageOwningFileReq"
-  "uest\0326.vm_tools.container.UninstallPacka"
-  "geOwningFileResponse\022v\n\023GetDebugInformat"
-  "ion\022..vm_tools.container.GetDebugInforma"
-  "tionRequest\032/.vm_tools.container.GetDebu"
-  "gInformationResponse\022g\n\016ConnectChunnel\022)"
-  ".vm_tools.container.ConnectChunnelReques"
-  "t\032*.vm_tools.container.ConnectChunnelRes"
-  "ponse\022y\n\024ApplyAnsiblePlaybook\022/.vm_tools"
-  ".container.ApplyAnsiblePlaybookRequest\0320"
-  ".vm_tools.container.ApplyAnsiblePlaybook"
-  "Response\022\202\001\n\027ConfigureForArcSideload\0222.v"
-  "m_tools.container.ConfigureForArcSideloa"
-  "dRequest\0323.vm_tools.container.ConfigureF"
-  "orArcSideloadResponse\022a\n\014AddFileWatch\022\'."
-  "vm_tools.container.AddFileWatchRequest\032("
-  ".vm_tools.container.AddFileWatchResponse"
-  "\022j\n\017RemoveFileWatch\022*.vm_tools.container"
-  ".RemoveFileWatchRequest\032+.vm_tools.conta"
-  "iner.RemoveFileWatchResponseB(Z#chromium"
-  "os/vm_tools/container_proto\370\001\001b\006proto3"
+  "\000\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILED\020\001\"\035\n\033GetGarco"
+  "nSessionInfoRequest\"\201\002\n\034GetGarconSession"
+  "InfoResponse\022G\n\006status\030\001 \001(\01627.vm_tools."
+  "container.GetGarconSessionInfoResponse.S"
+  "tatus\022\026\n\016failure_reason\030\002 \001(\t\022\032\n\022contain"
+  "er_username\030\003 \001(\t\022\031\n\021container_homedir\030\004"
+  " \001(\t\022\027\n\017sftp_vsock_port\030\005 \001(\r\"0\n\006Status\022"
+  "\013\n\007UNKNOWN\020\000\022\n\n\006FAILED\020\001\022\r\n\tSUCCEEDED\020\0022"
+  "\310\013\n\006Garcon\022p\n\021LaunchApplication\022,.vm_too"
+  "ls.container.LaunchApplicationRequest\032-."
+  "vm_tools.container.LaunchApplicationResp"
+  "onse\022L\n\007GetIcon\022\037.vm_tools.container.Ico"
+  "nRequest\032 .vm_tools.container.IconRespon"
+  "se\022[\n\nLaunchVshd\022%.vm_tools.container.La"
+  "unchVshdRequest\032&.vm_tools.container.Lau"
+  "nchVshdResponse\022p\n\023GetLinuxPackageInfo\022+"
+  ".vm_tools.container.LinuxPackageInfoRequ"
+  "est\032,.vm_tools.container.LinuxPackageInf"
+  "oResponse\022v\n\023InstallLinuxPackage\022..vm_to"
+  "ols.container.InstallLinuxPackageRequest"
+  "\032/.vm_tools.container.InstallLinuxPackag"
+  "eResponse\022\213\001\n\032UninstallPackageOwningFile"
+  "\0225.vm_tools.container.UninstallPackageOw"
+  "ningFileRequest\0326.vm_tools.container.Uni"
+  "nstallPackageOwningFileResponse\022v\n\023GetDe"
+  "bugInformation\022..vm_tools.container.GetD"
+  "ebugInformationRequest\032/.vm_tools.contai"
+  "ner.GetDebugInformationResponse\022g\n\016Conne"
+  "ctChunnel\022).vm_tools.container.ConnectCh"
+  "unnelRequest\032*.vm_tools.container.Connec"
+  "tChunnelResponse\022y\n\024ApplyAnsiblePlaybook"
+  "\022/.vm_tools.container.ApplyAnsiblePlaybo"
+  "okRequest\0320.vm_tools.container.ApplyAnsi"
+  "blePlaybookResponse\022\202\001\n\027ConfigureForArcS"
+  "ideload\0222.vm_tools.container.ConfigureFo"
+  "rArcSideloadRequest\0323.vm_tools.container"
+  ".ConfigureForArcSideloadResponse\022a\n\014AddF"
+  "ileWatch\022\'.vm_tools.container.AddFileWat"
+  "chRequest\032(.vm_tools.container.AddFileWa"
+  "tchResponse\022j\n\017RemoveFileWatch\022*.vm_tool"
+  "s.container.RemoveFileWatchRequest\032+.vm_"
+  "tools.container.RemoveFileWatchResponse\022"
+  "y\n\024GetGarconSessionInfo\022/.vm_tools.conta"
+  "iner.GetGarconSessionInfoRequest\0320.vm_to"
+  "ols.container.GetGarconSessionInfoRespon"
+  "seB(Z#chromiumos/vm_tools/container_prot"
+  "o\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_container_5fguest_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_container_5fguest_2eproto = {
-  false, false, 3998, descriptor_table_protodef_container_5fguest_2eproto, "container_guest.proto", 
-  &descriptor_table_container_5fguest_2eproto_once, nullptr, 0, 25,
+  false, false, 4412, descriptor_table_protodef_container_5fguest_2eproto, "container_guest.proto", 
+  &descriptor_table_container_5fguest_2eproto_once, nullptr, 0, 27,
   schemas, file_default_instances, TableStruct_container_5fguest_2eproto::offsets,
   file_level_metadata_container_5fguest_2eproto, file_level_enum_descriptors_container_5fguest_2eproto, file_level_service_descriptors_container_5fguest_2eproto,
 };
@@ -909,6 +969,29 @@ constexpr RemoveFileWatchResponse_Status RemoveFileWatchResponse::FAILED;
 constexpr RemoveFileWatchResponse_Status RemoveFileWatchResponse::Status_MIN;
 constexpr RemoveFileWatchResponse_Status RemoveFileWatchResponse::Status_MAX;
 constexpr int RemoveFileWatchResponse::Status_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetGarconSessionInfoResponse_Status_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_container_5fguest_2eproto);
+  return file_level_enum_descriptors_container_5fguest_2eproto[8];
+}
+bool GetGarconSessionInfoResponse_Status_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr GetGarconSessionInfoResponse_Status GetGarconSessionInfoResponse::UNKNOWN;
+constexpr GetGarconSessionInfoResponse_Status GetGarconSessionInfoResponse::FAILED;
+constexpr GetGarconSessionInfoResponse_Status GetGarconSessionInfoResponse::SUCCEEDED;
+constexpr GetGarconSessionInfoResponse_Status GetGarconSessionInfoResponse::Status_MIN;
+constexpr GetGarconSessionInfoResponse_Status GetGarconSessionInfoResponse::Status_MAX;
+constexpr int GetGarconSessionInfoResponse::Status_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
@@ -6515,6 +6598,409 @@ void RemoveFileWatchResponse::InternalSwap(RemoveFileWatchResponse* other) {
       file_level_metadata_container_5fguest_2eproto[24]);
 }
 
+// ===================================================================
+
+class GetGarconSessionInfoRequest::_Internal {
+ public:
+};
+
+GetGarconSessionInfoRequest::GetGarconSessionInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:vm_tools.container.GetGarconSessionInfoRequest)
+}
+GetGarconSessionInfoRequest::GetGarconSessionInfoRequest(const GetGarconSessionInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:vm_tools.container.GetGarconSessionInfoRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetGarconSessionInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetGarconSessionInfoRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGarconSessionInfoRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_container_5fguest_2eproto_getter, &descriptor_table_container_5fguest_2eproto_once,
+      file_level_metadata_container_5fguest_2eproto[25]);
+}
+
+// ===================================================================
+
+class GetGarconSessionInfoResponse::_Internal {
+ public:
+};
+
+GetGarconSessionInfoResponse::GetGarconSessionInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.container.GetGarconSessionInfoResponse)
+}
+GetGarconSessionInfoResponse::GetGarconSessionInfoResponse(const GetGarconSessionInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  failure_reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    failure_reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_failure_reason().empty()) {
+    failure_reason_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_failure_reason(), 
+      GetArenaForAllocation());
+  }
+  container_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    container_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_container_username().empty()) {
+    container_username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_container_username(), 
+      GetArenaForAllocation());
+  }
+  container_homedir_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    container_homedir_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_container_homedir().empty()) {
+    container_homedir_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_container_homedir(), 
+      GetArenaForAllocation());
+  }
+  ::memcpy(&status_, &from.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&sftp_vsock_port_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(sftp_vsock_port_));
+  // @@protoc_insertion_point(copy_constructor:vm_tools.container.GetGarconSessionInfoResponse)
+}
+
+inline void GetGarconSessionInfoResponse::SharedCtor() {
+failure_reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  failure_reason_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+container_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  container_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+container_homedir_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  container_homedir_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&status_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&sftp_vsock_port_) -
+    reinterpret_cast<char*>(&status_)) + sizeof(sftp_vsock_port_));
+}
+
+GetGarconSessionInfoResponse::~GetGarconSessionInfoResponse() {
+  // @@protoc_insertion_point(destructor:vm_tools.container.GetGarconSessionInfoResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void GetGarconSessionInfoResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  failure_reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  container_username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  container_homedir_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetGarconSessionInfoResponse::ArenaDtor(void* object) {
+  GetGarconSessionInfoResponse* _this = reinterpret_cast< GetGarconSessionInfoResponse* >(object);
+  (void)_this;
+}
+void GetGarconSessionInfoResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetGarconSessionInfoResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void GetGarconSessionInfoResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vm_tools.container.GetGarconSessionInfoResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  failure_reason_.ClearToEmpty();
+  container_username_.ClearToEmpty();
+  container_homedir_.ClearToEmpty();
+  ::memset(&status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&sftp_vsock_port_) -
+      reinterpret_cast<char*>(&status_)) + sizeof(sftp_vsock_port_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetGarconSessionInfoResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .vm_tools.container.GetGarconSessionInfoResponse.Status status = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::vm_tools::container::GetGarconSessionInfoResponse_Status>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // string failure_reason = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_failure_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.container.GetGarconSessionInfoResponse.failure_reason"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string container_username = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_container_username();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.container.GetGarconSessionInfoResponse.container_username"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string container_homedir = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_container_homedir();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.container.GetGarconSessionInfoResponse.container_homedir"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 sftp_vsock_port = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          sftp_vsock_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetGarconSessionInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vm_tools.container.GetGarconSessionInfoResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .vm_tools.container.GetGarconSessionInfoResponse.Status status = 1;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_status(), target);
+  }
+
+  // string failure_reason = 2;
+  if (!this->_internal_failure_reason().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_failure_reason().data(), static_cast<int>(this->_internal_failure_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vm_tools.container.GetGarconSessionInfoResponse.failure_reason");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_failure_reason(), target);
+  }
+
+  // string container_username = 3;
+  if (!this->_internal_container_username().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_container_username().data(), static_cast<int>(this->_internal_container_username().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vm_tools.container.GetGarconSessionInfoResponse.container_username");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_container_username(), target);
+  }
+
+  // string container_homedir = 4;
+  if (!this->_internal_container_homedir().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_container_homedir().data(), static_cast<int>(this->_internal_container_homedir().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vm_tools.container.GetGarconSessionInfoResponse.container_homedir");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_container_homedir(), target);
+  }
+
+  // uint32 sftp_vsock_port = 5;
+  if (this->_internal_sftp_vsock_port() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_sftp_vsock_port(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vm_tools.container.GetGarconSessionInfoResponse)
+  return target;
+}
+
+size_t GetGarconSessionInfoResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vm_tools.container.GetGarconSessionInfoResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string failure_reason = 2;
+  if (!this->_internal_failure_reason().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_failure_reason());
+  }
+
+  // string container_username = 3;
+  if (!this->_internal_container_username().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_container_username());
+  }
+
+  // string container_homedir = 4;
+  if (!this->_internal_container_homedir().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_container_homedir());
+  }
+
+  // .vm_tools.container.GetGarconSessionInfoResponse.Status status = 1;
+  if (this->_internal_status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  // uint32 sftp_vsock_port = 5;
+  if (this->_internal_sftp_vsock_port() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32SizePlusOne(this->_internal_sftp_vsock_port());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetGarconSessionInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    GetGarconSessionInfoResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetGarconSessionInfoResponse::GetClassData() const { return &_class_data_; }
+
+void GetGarconSessionInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<GetGarconSessionInfoResponse *>(to)->MergeFrom(
+      static_cast<const GetGarconSessionInfoResponse &>(from));
+}
+
+
+void GetGarconSessionInfoResponse::MergeFrom(const GetGarconSessionInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.container.GetGarconSessionInfoResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_failure_reason().empty()) {
+    _internal_set_failure_reason(from._internal_failure_reason());
+  }
+  if (!from._internal_container_username().empty()) {
+    _internal_set_container_username(from._internal_container_username());
+  }
+  if (!from._internal_container_homedir().empty()) {
+    _internal_set_container_homedir(from._internal_container_homedir());
+  }
+  if (from._internal_status() != 0) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from._internal_sftp_vsock_port() != 0) {
+    _internal_set_sftp_vsock_port(from._internal_sftp_vsock_port());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetGarconSessionInfoResponse::CopyFrom(const GetGarconSessionInfoResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vm_tools.container.GetGarconSessionInfoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetGarconSessionInfoResponse::IsInitialized() const {
+  return true;
+}
+
+void GetGarconSessionInfoResponse::InternalSwap(GetGarconSessionInfoResponse* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &failure_reason_, lhs_arena,
+      &other->failure_reason_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &container_username_, lhs_arena,
+      &other->container_username_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &container_homedir_, lhs_arena,
+      &other->container_homedir_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetGarconSessionInfoResponse, sftp_vsock_port_)
+      + sizeof(GetGarconSessionInfoResponse::sftp_vsock_port_)
+      - PROTOBUF_FIELD_OFFSET(GetGarconSessionInfoResponse, status_)>(
+          reinterpret_cast<char*>(&status_),
+          reinterpret_cast<char*>(&other->status_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGarconSessionInfoResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_container_5fguest_2eproto_getter, &descriptor_table_container_5fguest_2eproto_once,
+      file_level_metadata_container_5fguest_2eproto[26]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace container
 }  // namespace vm_tools
@@ -6593,6 +7079,12 @@ template<> PROTOBUF_NOINLINE ::vm_tools::container::RemoveFileWatchRequest* Aren
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::container::RemoveFileWatchResponse* Arena::CreateMaybeMessage< ::vm_tools::container::RemoveFileWatchResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vm_tools::container::RemoveFileWatchResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vm_tools::container::GetGarconSessionInfoRequest* Arena::CreateMaybeMessage< ::vm_tools::container::GetGarconSessionInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vm_tools::container::GetGarconSessionInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vm_tools::container::GetGarconSessionInfoResponse* Arena::CreateMaybeMessage< ::vm_tools::container::GetGarconSessionInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vm_tools::container::GetGarconSessionInfoResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

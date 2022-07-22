@@ -12,7 +12,7 @@
 // --flatbuffer_header_include_paths
 // cryptohome/user_secret_stash_payload_generated.h
 // --flatbuffer_header_include_paths
-// cryptohome/flatbuffer_schemas/basic_objects.h --impl_include_paths
+// libhwsec-foundation/flatbuffers/basic_objects.h --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_container.h
 // --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_container_flatbuffer.h
@@ -20,7 +20,8 @@
 // cryptohome/flatbuffer_schemas/user_secret_stash_payload.h
 // --impl_include_paths
 // cryptohome/flatbuffer_schemas/user_secret_stash_payload_flatbuffer.h
-// --impl_include_paths cryptohome/flatbuffer_secure_allocator_bridge.h
+// --impl_include_paths
+// libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h
 // --test_utils_header_include_path
 // cryptohome/flatbuffer_schemas/user_secret_stash.h
 // /build/arm-generic/var/cache/portage/chromeos-base/cryptohome/out/Default/gen/bfbs/user_secret_stash_container.bfbs
@@ -40,7 +41,7 @@
 #include "cryptohome/flatbuffer_schemas/user_secret_stash_container_flatbuffer.h"
 #include "cryptohome/flatbuffer_schemas/user_secret_stash_payload.h"
 #include "cryptohome/flatbuffer_schemas/user_secret_stash_payload_flatbuffer.h"
-#include "cryptohome/flatbuffer_secure_allocator_bridge.h"
+#include "libhwsec-foundation/flatbuffers/flatbuffer_secure_allocator_bridge.h"
 
 namespace {
 [[maybe_unused]] constexpr int kFlatbufferAllocatorInitialSize = 4096;
@@ -48,13 +49,14 @@ namespace {
 
 namespace cryptohome {
 
-std::optional<brillo::SecureBlob> UserSecretStashPayload::Serialize() const {
-  FlatbufferSecureAllocatorBridge allocator;
+__attribute__((visibility("default"))) std::optional<brillo::SecureBlob>
+UserSecretStashPayload::Serialize() const {
+  hwsec_foundation::FlatbufferSecureAllocatorBridge allocator;
   flatbuffers::FlatBufferBuilder builder(kFlatbufferAllocatorInitialSize,
                                          &allocator);
   auto buffer =
-      cryptohome::ToFlatBuffer<::cryptohome::UserSecretStashPayload>()(&builder,
-                                                                       *this);
+      hwsec_foundation::ToFlatBuffer<::cryptohome::UserSecretStashPayload>()(
+          &builder, *this);
   if (buffer.IsNull()) {
     LOG(ERROR) << "UserSecretStashPayload cannot be serialized.";
     return std::nullopt;
@@ -70,6 +72,7 @@ std::optional<brillo::SecureBlob> UserSecretStashPayload::Serialize() const {
 namespace cryptohome {
 
 // static
+__attribute__((visibility("default")))
 std::optional<::cryptohome::UserSecretStashPayload>
 UserSecretStashPayload::Deserialize(const brillo::SecureBlob& blob) {
   flatbuffers::Verifier verifier(blob.data(), blob.size());
@@ -83,8 +86,8 @@ UserSecretStashPayload::Deserialize(const brillo::SecureBlob& blob) {
       flatbuffers::GetRoot<::cryptohome::_serialized_::UserSecretStashPayload>(
           blob.data());
 
-  return cryptohome::FromFlatBuffer<::cryptohome::UserSecretStashPayload>()(
-      object);
+  return hwsec_foundation::FromFlatBuffer<
+      ::cryptohome::UserSecretStashPayload>()(object);
 }
 
 }  // namespace cryptohome

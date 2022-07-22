@@ -6,26 +6,23 @@
 
 #include "flatbuffers/flatbuffers.h"
 
-#include "structures_generated.h"
 #include "auth_block_state_generated.h"
+#include "libhwsec/structures/signature_sealed_data_generated.h"
+#include "structures_generated.h"
 
 namespace cryptohome {
 
 struct SerializedPasswordMetadata;
 struct SerializedPasswordMetadataBuilder;
-struct SerializedPasswordMetadataT;
 
 struct SerializedPinMetadata;
 struct SerializedPinMetadataBuilder;
-struct SerializedPinMetadataT;
 
 struct SerializedCryptohomeRecoveryMetadata;
 struct SerializedCryptohomeRecoveryMetadataBuilder;
-struct SerializedCryptohomeRecoveryMetadataT;
 
 struct SerializedAuthFactor;
 struct SerializedAuthFactorBuilder;
-struct SerializedAuthFactorT;
 
 enum class SerializedAuthFactorMetadata : uint8_t {
   NONE = 0,
@@ -79,81 +76,15 @@ template<> struct SerializedAuthFactorMetadataTraits<cryptohome::SerializedCrypt
   static const SerializedAuthFactorMetadata enum_value = SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata;
 };
 
-struct SerializedAuthFactorMetadataUnion {
-  SerializedAuthFactorMetadata type;
-  void *value;
-
-  SerializedAuthFactorMetadataUnion() : type(SerializedAuthFactorMetadata::NONE), value(nullptr) {}
-  SerializedAuthFactorMetadataUnion(SerializedAuthFactorMetadataUnion&& u) FLATBUFFERS_NOEXCEPT :
-    type(SerializedAuthFactorMetadata::NONE), value(nullptr)
-    { std::swap(type, u.type); std::swap(value, u.value); }
-  SerializedAuthFactorMetadataUnion(const SerializedAuthFactorMetadataUnion &);
-  SerializedAuthFactorMetadataUnion &operator=(const SerializedAuthFactorMetadataUnion &u)
-    { SerializedAuthFactorMetadataUnion t(u); std::swap(type, t.type); std::swap(value, t.value); return *this; }
-  SerializedAuthFactorMetadataUnion &operator=(SerializedAuthFactorMetadataUnion &&u) FLATBUFFERS_NOEXCEPT
-    { std::swap(type, u.type); std::swap(value, u.value); return *this; }
-  ~SerializedAuthFactorMetadataUnion() { Reset(); }
-
-  void Reset();
-
-#ifndef FLATBUFFERS_CPP98_STL
-  template <typename T>
-  void Set(T&& val) {
-    using RT = typename std::remove_reference<T>::type;
-    Reset();
-    type = SerializedAuthFactorMetadataTraits<typename RT::TableType>::enum_value;
-    if (type != SerializedAuthFactorMetadata::NONE) {
-      value = new RT(std::forward<T>(val));
-    }
-  }
-#endif  // FLATBUFFERS_CPP98_STL
-
-  static void *UnPack(const void *obj, SerializedAuthFactorMetadata type, const flatbuffers::resolver_function_t *resolver);
-  flatbuffers::Offset<void> Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher = nullptr) const;
-
-  cryptohome::SerializedPasswordMetadataT *AsSerializedPasswordMetadata() {
-    return type == SerializedAuthFactorMetadata::SerializedPasswordMetadata ?
-      reinterpret_cast<cryptohome::SerializedPasswordMetadataT *>(value) : nullptr;
-  }
-  const cryptohome::SerializedPasswordMetadataT *AsSerializedPasswordMetadata() const {
-    return type == SerializedAuthFactorMetadata::SerializedPasswordMetadata ?
-      reinterpret_cast<const cryptohome::SerializedPasswordMetadataT *>(value) : nullptr;
-  }
-  cryptohome::SerializedPinMetadataT *AsSerializedPinMetadata() {
-    return type == SerializedAuthFactorMetadata::SerializedPinMetadata ?
-      reinterpret_cast<cryptohome::SerializedPinMetadataT *>(value) : nullptr;
-  }
-  const cryptohome::SerializedPinMetadataT *AsSerializedPinMetadata() const {
-    return type == SerializedAuthFactorMetadata::SerializedPinMetadata ?
-      reinterpret_cast<const cryptohome::SerializedPinMetadataT *>(value) : nullptr;
-  }
-  cryptohome::SerializedCryptohomeRecoveryMetadataT *AsSerializedCryptohomeRecoveryMetadata() {
-    return type == SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata ?
-      reinterpret_cast<cryptohome::SerializedCryptohomeRecoveryMetadataT *>(value) : nullptr;
-  }
-  const cryptohome::SerializedCryptohomeRecoveryMetadataT *AsSerializedCryptohomeRecoveryMetadata() const {
-    return type == SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata ?
-      reinterpret_cast<const cryptohome::SerializedCryptohomeRecoveryMetadataT *>(value) : nullptr;
-  }
-};
-
 bool VerifySerializedAuthFactorMetadata(flatbuffers::Verifier &verifier, const void *obj, SerializedAuthFactorMetadata type);
 bool VerifySerializedAuthFactorMetadataVector(flatbuffers::Verifier &verifier, const flatbuffers::Vector<flatbuffers::Offset<void>> *values, const flatbuffers::Vector<uint8_t> *types);
 
-struct SerializedPasswordMetadataT : public flatbuffers::NativeTable {
-  typedef SerializedPasswordMetadata TableType;
-};
-
 struct SerializedPasswordMetadata FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef SerializedPasswordMetadataT NativeTableType;
   typedef SerializedPasswordMetadataBuilder Builder;
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            verifier.EndTable();
   }
-  SerializedPasswordMetadataT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(SerializedPasswordMetadataT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<SerializedPasswordMetadata> Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPasswordMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct SerializedPasswordMetadataBuilder {
@@ -177,22 +108,12 @@ inline flatbuffers::Offset<SerializedPasswordMetadata> CreateSerializedPasswordM
   return builder_.Finish();
 }
 
-flatbuffers::Offset<SerializedPasswordMetadata> CreateSerializedPasswordMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPasswordMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct SerializedPinMetadataT : public flatbuffers::NativeTable {
-  typedef SerializedPinMetadata TableType;
-};
-
 struct SerializedPinMetadata FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef SerializedPinMetadataT NativeTableType;
   typedef SerializedPinMetadataBuilder Builder;
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            verifier.EndTable();
   }
-  SerializedPinMetadataT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(SerializedPinMetadataT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<SerializedPinMetadata> Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPinMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct SerializedPinMetadataBuilder {
@@ -216,22 +137,12 @@ inline flatbuffers::Offset<SerializedPinMetadata> CreateSerializedPinMetadata(
   return builder_.Finish();
 }
 
-flatbuffers::Offset<SerializedPinMetadata> CreateSerializedPinMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPinMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct SerializedCryptohomeRecoveryMetadataT : public flatbuffers::NativeTable {
-  typedef SerializedCryptohomeRecoveryMetadata TableType;
-};
-
 struct SerializedCryptohomeRecoveryMetadata FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef SerializedCryptohomeRecoveryMetadataT NativeTableType;
   typedef SerializedCryptohomeRecoveryMetadataBuilder Builder;
   bool Verify(flatbuffers::Verifier &verifier) const {
     return VerifyTableStart(verifier) &&
            verifier.EndTable();
   }
-  SerializedCryptohomeRecoveryMetadataT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(SerializedCryptohomeRecoveryMetadataT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<SerializedCryptohomeRecoveryMetadata> Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedCryptohomeRecoveryMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 struct SerializedCryptohomeRecoveryMetadataBuilder {
@@ -255,16 +166,7 @@ inline flatbuffers::Offset<SerializedCryptohomeRecoveryMetadata> CreateSerialize
   return builder_.Finish();
 }
 
-flatbuffers::Offset<SerializedCryptohomeRecoveryMetadata> CreateSerializedCryptohomeRecoveryMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedCryptohomeRecoveryMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-struct SerializedAuthFactorT : public flatbuffers::NativeTable {
-  typedef SerializedAuthFactor TableType;
-  std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT> auth_block_state{};
-  cryptohome::SerializedAuthFactorMetadataUnion metadata{};
-};
-
 struct SerializedAuthFactor FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table {
-  typedef SerializedAuthFactorT NativeTableType;
   typedef SerializedAuthFactorBuilder Builder;
   enum FlatBuffersVTableOffset FLATBUFFERS_VTABLE_UNDERLYING_TYPE {
     VT_AUTH_BLOCK_STATE = 4,
@@ -299,9 +201,6 @@ struct SerializedAuthFactor FLATBUFFERS_FINAL_CLASS : private flatbuffers::Table
            VerifySerializedAuthFactorMetadata(verifier, metadata(), metadata_type()) &&
            verifier.EndTable();
   }
-  SerializedAuthFactorT *UnPack(const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  void UnPackTo(SerializedAuthFactorT *_o, const flatbuffers::resolver_function_t *_resolver = nullptr) const;
-  static flatbuffers::Offset<SerializedAuthFactor> Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedAuthFactorT* _o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
 };
 
 template<> inline const cryptohome::SerializedPasswordMetadata *SerializedAuthFactor::metadata_as<cryptohome::SerializedPasswordMetadata>() const {
@@ -352,109 +251,6 @@ inline flatbuffers::Offset<SerializedAuthFactor> CreateSerializedAuthFactor(
   return builder_.Finish();
 }
 
-flatbuffers::Offset<SerializedAuthFactor> CreateSerializedAuthFactor(flatbuffers::FlatBufferBuilder &_fbb, const SerializedAuthFactorT *_o, const flatbuffers::rehasher_function_t *_rehasher = nullptr);
-
-inline SerializedPasswordMetadataT *SerializedPasswordMetadata::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<SerializedPasswordMetadataT>(new SerializedPasswordMetadataT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void SerializedPasswordMetadata::UnPackTo(SerializedPasswordMetadataT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-}
-
-inline flatbuffers::Offset<SerializedPasswordMetadata> SerializedPasswordMetadata::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPasswordMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateSerializedPasswordMetadata(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<SerializedPasswordMetadata> CreateSerializedPasswordMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPasswordMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const SerializedPasswordMetadataT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  return cryptohome::CreateSerializedPasswordMetadata(
-      _fbb);
-}
-
-inline SerializedPinMetadataT *SerializedPinMetadata::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<SerializedPinMetadataT>(new SerializedPinMetadataT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void SerializedPinMetadata::UnPackTo(SerializedPinMetadataT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-}
-
-inline flatbuffers::Offset<SerializedPinMetadata> SerializedPinMetadata::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPinMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateSerializedPinMetadata(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<SerializedPinMetadata> CreateSerializedPinMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedPinMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const SerializedPinMetadataT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  return cryptohome::CreateSerializedPinMetadata(
-      _fbb);
-}
-
-inline SerializedCryptohomeRecoveryMetadataT *SerializedCryptohomeRecoveryMetadata::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<SerializedCryptohomeRecoveryMetadataT>(new SerializedCryptohomeRecoveryMetadataT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void SerializedCryptohomeRecoveryMetadata::UnPackTo(SerializedCryptohomeRecoveryMetadataT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-}
-
-inline flatbuffers::Offset<SerializedCryptohomeRecoveryMetadata> SerializedCryptohomeRecoveryMetadata::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedCryptohomeRecoveryMetadataT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateSerializedCryptohomeRecoveryMetadata(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<SerializedCryptohomeRecoveryMetadata> CreateSerializedCryptohomeRecoveryMetadata(flatbuffers::FlatBufferBuilder &_fbb, const SerializedCryptohomeRecoveryMetadataT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const SerializedCryptohomeRecoveryMetadataT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  return cryptohome::CreateSerializedCryptohomeRecoveryMetadata(
-      _fbb);
-}
-
-inline SerializedAuthFactorT *SerializedAuthFactor::UnPack(const flatbuffers::resolver_function_t *_resolver) const {
-  auto _o = std::unique_ptr<SerializedAuthFactorT>(new SerializedAuthFactorT());
-  UnPackTo(_o.get(), _resolver);
-  return _o.release();
-}
-
-inline void SerializedAuthFactor::UnPackTo(SerializedAuthFactorT *_o, const flatbuffers::resolver_function_t *_resolver) const {
-  (void)_o;
-  (void)_resolver;
-  { auto _e = auth_block_state(); if (_e) _o->auth_block_state = std::unique_ptr<cryptohome::_serialized_::AuthBlockStateT>(_e->UnPack(_resolver)); }
-  { auto _e = metadata_type(); _o->metadata.type = _e; }
-  { auto _e = metadata(); if (_e) _o->metadata.value = cryptohome::SerializedAuthFactorMetadataUnion::UnPack(_e, metadata_type(), _resolver); }
-}
-
-inline flatbuffers::Offset<SerializedAuthFactor> SerializedAuthFactor::Pack(flatbuffers::FlatBufferBuilder &_fbb, const SerializedAuthFactorT* _o, const flatbuffers::rehasher_function_t *_rehasher) {
-  return CreateSerializedAuthFactor(_fbb, _o, _rehasher);
-}
-
-inline flatbuffers::Offset<SerializedAuthFactor> CreateSerializedAuthFactor(flatbuffers::FlatBufferBuilder &_fbb, const SerializedAuthFactorT *_o, const flatbuffers::rehasher_function_t *_rehasher) {
-  (void)_rehasher;
-  (void)_o;
-  struct _VectorArgs { flatbuffers::FlatBufferBuilder *__fbb; const SerializedAuthFactorT* __o; const flatbuffers::rehasher_function_t *__rehasher; } _va = { &_fbb, _o, _rehasher}; (void)_va;
-  auto _auth_block_state = _o->auth_block_state ? CreateAuthBlockState(_fbb, _o->auth_block_state.get(), _rehasher) : 0;
-  auto _metadata_type = _o->metadata.type;
-  auto _metadata = _o->metadata.Pack(_fbb);
-  return cryptohome::CreateSerializedAuthFactor(
-      _fbb,
-      _auth_block_state,
-      _metadata_type,
-      _metadata);
-}
-
 inline bool VerifySerializedAuthFactorMetadata(flatbuffers::Verifier &verifier, const void *obj, SerializedAuthFactorMetadata type) {
   switch (type) {
     case SerializedAuthFactorMetadata::NONE: {
@@ -488,84 +284,6 @@ inline bool VerifySerializedAuthFactorMetadataVector(flatbuffers::Verifier &veri
   return true;
 }
 
-inline void *SerializedAuthFactorMetadataUnion::UnPack(const void *obj, SerializedAuthFactorMetadata type, const flatbuffers::resolver_function_t *resolver) {
-  switch (type) {
-    case SerializedAuthFactorMetadata::SerializedPasswordMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedPasswordMetadata *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case SerializedAuthFactorMetadata::SerializedPinMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedPinMetadata *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    case SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedCryptohomeRecoveryMetadata *>(obj);
-      return ptr->UnPack(resolver);
-    }
-    default: return nullptr;
-  }
-}
-
-inline flatbuffers::Offset<void> SerializedAuthFactorMetadataUnion::Pack(flatbuffers::FlatBufferBuilder &_fbb, const flatbuffers::rehasher_function_t *_rehasher) const {
-  switch (type) {
-    case SerializedAuthFactorMetadata::SerializedPasswordMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedPasswordMetadataT *>(value);
-      return CreateSerializedPasswordMetadata(_fbb, ptr, _rehasher).Union();
-    }
-    case SerializedAuthFactorMetadata::SerializedPinMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedPinMetadataT *>(value);
-      return CreateSerializedPinMetadata(_fbb, ptr, _rehasher).Union();
-    }
-    case SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata: {
-      auto ptr = reinterpret_cast<const cryptohome::SerializedCryptohomeRecoveryMetadataT *>(value);
-      return CreateSerializedCryptohomeRecoveryMetadata(_fbb, ptr, _rehasher).Union();
-    }
-    default: return 0;
-  }
-}
-
-inline SerializedAuthFactorMetadataUnion::SerializedAuthFactorMetadataUnion(const SerializedAuthFactorMetadataUnion &u) : type(u.type), value(nullptr) {
-  switch (type) {
-    case SerializedAuthFactorMetadata::SerializedPasswordMetadata: {
-      value = new cryptohome::SerializedPasswordMetadataT(*reinterpret_cast<cryptohome::SerializedPasswordMetadataT *>(u.value));
-      break;
-    }
-    case SerializedAuthFactorMetadata::SerializedPinMetadata: {
-      value = new cryptohome::SerializedPinMetadataT(*reinterpret_cast<cryptohome::SerializedPinMetadataT *>(u.value));
-      break;
-    }
-    case SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata: {
-      value = new cryptohome::SerializedCryptohomeRecoveryMetadataT(*reinterpret_cast<cryptohome::SerializedCryptohomeRecoveryMetadataT *>(u.value));
-      break;
-    }
-    default:
-      break;
-  }
-}
-
-inline void SerializedAuthFactorMetadataUnion::Reset() {
-  switch (type) {
-    case SerializedAuthFactorMetadata::SerializedPasswordMetadata: {
-      auto ptr = reinterpret_cast<cryptohome::SerializedPasswordMetadataT *>(value);
-      delete ptr;
-      break;
-    }
-    case SerializedAuthFactorMetadata::SerializedPinMetadata: {
-      auto ptr = reinterpret_cast<cryptohome::SerializedPinMetadataT *>(value);
-      delete ptr;
-      break;
-    }
-    case SerializedAuthFactorMetadata::SerializedCryptohomeRecoveryMetadata: {
-      auto ptr = reinterpret_cast<cryptohome::SerializedCryptohomeRecoveryMetadataT *>(value);
-      delete ptr;
-      break;
-    }
-    default: break;
-  }
-  value = nullptr;
-  type = SerializedAuthFactorMetadata::NONE;
-}
-
 inline const cryptohome::SerializedAuthFactor *GetSerializedAuthFactor(const void *buf) {
   return flatbuffers::GetRoot<cryptohome::SerializedAuthFactor>(buf);
 }
@@ -594,18 +312,6 @@ inline void FinishSizePrefixedSerializedAuthFactorBuffer(
     flatbuffers::FlatBufferBuilder &fbb,
     flatbuffers::Offset<cryptohome::SerializedAuthFactor> root) {
   fbb.FinishSizePrefixed(root);
-}
-
-inline std::unique_ptr<cryptohome::SerializedAuthFactorT> UnPackSerializedAuthFactor(
-    const void *buf,
-    const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<cryptohome::SerializedAuthFactorT>(GetSerializedAuthFactor(buf)->UnPack(res));
-}
-
-inline std::unique_ptr<cryptohome::SerializedAuthFactorT> UnPackSizePrefixedSerializedAuthFactor(
-    const void *buf,
-    const flatbuffers::resolver_function_t *res = nullptr) {
-  return std::unique_ptr<cryptohome::SerializedAuthFactorT>(GetSizePrefixedSerializedAuthFactor(buf)->UnPack(res));
 }
 
 }  // namespace cryptohome

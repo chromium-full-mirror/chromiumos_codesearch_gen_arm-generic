@@ -6,6 +6,7 @@
  * @fileoverview Monitors user actions.
  */
 import {KeySequence} from '../common/key_sequence.js';
+import {KeyUtil} from '../common/key_util.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 
 import {CommandHandlerInterface} from './command_handler_interface.js';
@@ -106,6 +107,16 @@ export class UserActionMonitor {
     this.expectedActionMatched_();
     return expectedAction.shouldPropagate;
   }
+
+  /**
+   * @param {Event} evt The key down event to process.
+   * @return {boolean} Whether the event should continue propagating.
+   */
+  onKeyDown(evt) {
+    const keySequence = KeyUtil.keyEventToKeySequence(evt);
+    return this.onKeySequence(keySequence);
+  }
+
 
   // Private methods.
 
@@ -307,7 +318,7 @@ UserActionMonitor.Action = class {
       value,
       shouldPropagate,
       beforeActionCallback,
-      afterActionCallback
+      afterActionCallback,
     });
   }
 
@@ -353,9 +364,20 @@ UserActionMonitor.Action = class {
 UserActionMonitor.instance;
 
 BridgeHelper.registerHandler(
-    BridgeTargets.USER_ACTION_MONITOR, BridgeActions.CREATE,
+    BridgeConstants.UserActionMonitor.TARGET,
+    BridgeConstants.UserActionMonitor.Action.CREATE,
     actions =>
         new Promise(resolve => UserActionMonitor.create(actions, resolve)));
 BridgeHelper.registerHandler(
-    BridgeTargets.USER_ACTION_MONITOR, BridgeActions.DESTROY,
+    BridgeConstants.UserActionMonitor.TARGET,
+    BridgeConstants.UserActionMonitor.Action.DESTROY,
     () => UserActionMonitor.destroy());
+BridgeHelper.registerHandler(
+    BridgeConstants.UserActionMonitor.TARGET,
+    BridgeConstants.UserActionMonitor.Action.ON_KEY_DOWN, (evt) => {
+      if (!UserActionMonitor.instance) {
+        // Continue propagating.
+        return true;
+      }
+      return UserActionMonitor.instance.onKeyDown(evt);
+    });

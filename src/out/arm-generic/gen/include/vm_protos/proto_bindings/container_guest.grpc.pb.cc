@@ -31,6 +31,7 @@ static const char* Garcon_method_names[] = {
   "/vm_tools.container.Garcon/ConfigureForArcSideload",
   "/vm_tools.container.Garcon/AddFileWatch",
   "/vm_tools.container.Garcon/RemoveFileWatch",
+  "/vm_tools.container.Garcon/GetGarconSessionInfo",
 };
 
 std::unique_ptr< Garcon::Stub> Garcon::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -52,6 +53,7 @@ Garcon::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_ConfigureForArcSideload_(Garcon_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddFileWatch_(Garcon_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RemoveFileWatch_(Garcon_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetGarconSessionInfo_(Garcon_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Garcon::Stub::LaunchApplication(::grpc::ClientContext* context, const ::vm_tools::container::LaunchApplicationRequest& request, ::vm_tools::container::LaunchApplicationResponse* response) {
@@ -246,6 +248,22 @@ void Garcon::Stub::experimental_async::RemoveFileWatch(::grpc::ClientContext* co
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::RemoveFileWatchResponse>::Create(channel_.get(), cq, rpcmethod_RemoveFileWatch_, context, request, false);
 }
 
+::grpc::Status Garcon::Stub::GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::vm_tools::container::GetGarconSessionInfoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetGarconSessionInfo_, context, request, response);
+}
+
+void Garcon::Stub::experimental_async::GetGarconSessionInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGarconSessionInfo_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>* Garcon::Stub::AsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::GetGarconSessionInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetGarconSessionInfo_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::vm_tools::container::GetGarconSessionInfoResponse>* Garcon::Stub::PrepareAsyncGetGarconSessionInfoRaw(::grpc::ClientContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::vm_tools::container::GetGarconSessionInfoResponse>::Create(channel_.get(), cq, rpcmethod_GetGarconSessionInfo_, context, request, false);
+}
+
 Garcon::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Garcon_method_names[0],
@@ -307,6 +325,11 @@ Garcon::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Garcon::Service, ::vm_tools::container::RemoveFileWatchRequest, ::vm_tools::container::RemoveFileWatchResponse>(
           std::mem_fn(&Garcon::Service::RemoveFileWatch), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Garcon_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Garcon::Service, ::vm_tools::container::GetGarconSessionInfoRequest, ::vm_tools::container::GetGarconSessionInfoResponse>(
+          std::mem_fn(&Garcon::Service::GetGarconSessionInfo), this)));
 }
 
 Garcon::Service::~Service() {
@@ -390,6 +413,13 @@ Garcon::Service::~Service() {
 }
 
 ::grpc::Status Garcon::Service::RemoveFileWatch(::grpc::ServerContext* context, const ::vm_tools::container::RemoveFileWatchRequest* request, ::vm_tools::container::RemoveFileWatchResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Garcon::Service::GetGarconSessionInfo(::grpc::ServerContext* context, const ::vm_tools::container::GetGarconSessionInfoRequest* request, ::vm_tools::container::GetGarconSessionInfoResponse* response) {
   (void) context;
   (void) request;
   (void) response;
