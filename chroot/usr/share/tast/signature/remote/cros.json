@@ -1,5 +1,5 @@
 {
   "https://chromium.googlesource.com/chromiumos/platform/fw-testing-configs": "70aea2a75a8252d86552ec538c136a63bbdc25e3",
-  "https://chromium.googlesource.com/chromiumos/platform/tast": "ff3e46e9424023ab8889b8e68e99f64f7115be00",
-  "https://chromium.googlesource.com/chromiumos/platform/tast-tests": "7898352de59d7143d74e3b3abb5a5873544e04fc"
+  "https://chromium.googlesource.com/chromiumos/platform/tast": "0ec2ef87393dd23bda9cf30c5949b1d08ccb9bb0",
+  "https://chromium.googlesource.com/chromiumos/platform/tast-tests": "69250f503f0461ca104a4a747846753579f897ac"
 }
