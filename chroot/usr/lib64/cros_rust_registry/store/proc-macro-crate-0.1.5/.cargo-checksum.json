@@ -1,8 +1,8 @@
 {
-	"package": "c2173d6246f296a1a1e427b4f1bf4a5cc04109aef1d526ced74dadc0a560dabf",
+	"package": "a877b35a4fc760cd695f7afd79113d8c4cc0db308d0f92b980c892c0ad15a8a5",
 	"files": {
+		"Cargo.toml.orig": "b8ddaf534cdc7977dea41b3b367a75fc761064714738e7a24186ff96e78ec837",
 		"Cargo.toml": "7ccd80e759ae88479e8d5dfb82d63d4bf577dd0a0a9ba56371864678d2e9f023",
-		"Cargo.toml.orig": "aafcd2852cc7a04e39cc63b8cca4b19855e0bab6b75a5e23210e74a801602858",
 		"src/lib.rs": "e0b9efd49c866268b412b84251ebf027bab97a4dd7fb3b557c3bfe5cd6e14f66",
 		"README.md": "122ef01cacbc3d6cbbbac6e744a4e1c2946dc045e22739b116265c2bf3a02f26",
 		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",

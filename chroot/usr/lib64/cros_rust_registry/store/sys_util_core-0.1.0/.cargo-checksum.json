@@ -1,12 +1,12 @@
 {
 	"package": "ed30eddd6e4801a834685aeb542067fea810a20ae3269ddc798902a9d7e4e62d",
 	"files": {
-		"Cargo.toml": "df4bf69dc5197aa16bdd4db21f8c481aff304647aeef1b9d7ff7e7fc64bc9f8c",
 		"Cargo.toml.orig": "402094e37bf59617f5caad491db53acdc8f2965c960b1a6470d6fc3641465c53",
-		"src/errno.rs": "51dd1bb251bf4a9b8352d3f520ebe11a61f67e3eda99613de76a968c46fd1659",
-		"src/external_mapping.rs": "599dfef14427e8c86676c5800f8eaabe7d3fb6a2ab4d29de900783d1c3a616da",
+		"Cargo.toml": "df4bf69dc5197aa16bdd4db21f8c481aff304647aeef1b9d7ff7e7fc64bc9f8c",
 		"src/lib.rs": "5b9b042eaa8eb68ea70204b07cd4eb69b80fe19ca3156b67c8793dcf9025fcdf",
+		"src/external_mapping.rs": "599dfef14427e8c86676c5800f8eaabe7d3fb6a2ab4d29de900783d1c3a616da",
 		"src/scoped_event_macro.rs": "9a255532d095b9254fc6e18ce633ea7cac744c6a410222f9eaa93f34e8bf1ecb",
-		"src/alloc.rs": "2bfae341e031dc51096ae8b187007b6ca74afc8cc74a0fd763211cccb469d750"
+		"src/alloc.rs": "2bfae341e031dc51096ae8b187007b6ca74afc8cc74a0fd763211cccb469d750",
+		"src/errno.rs": "51dd1bb251bf4a9b8352d3f520ebe11a61f67e3eda99613de76a968c46fd1659"
 	}
 }

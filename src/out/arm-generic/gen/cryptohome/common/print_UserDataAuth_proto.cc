@@ -3566,8 +3566,8 @@ std::string GetProtoDebugStringWithIndent(const UpdateAuthFactorRequest& value,
                           .c_str());
   output += "\n";
 
-  output += indent + "  old_auth_factor_label: ";
-  base::StringAppendF(&output, "%s", value.old_auth_factor_label().c_str());
+  output += indent + "  auth_factor_label: ";
+  base::StringAppendF(&output, "%s", value.auth_factor_label().c_str());
   output += "\n";
 
   output += indent + "  auth_factor: ";

@@ -554,6 +554,10 @@ def parse_opts(tmpcmdline, silent=False):
 				" actions, unless --usepkg is enabled"),
 			"choices":("y", "n")
 		},
+		"--with-bdepends": {
+			"help":"include BDEPENDS dependencies",
+			"choices":("y", "n")
+		},
 		"--reinstall": {
 			"help":"specify conditions to trigger package reinstallation",
 			"choices":["changed-use"]

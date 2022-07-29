@@ -1,5 +1,5 @@
 {
-	"package": "711a06b2c11071535f330c1053d74c4fdfa51faa754960fd584adf108e3e9e1f",
+	"package": "e120bc58dacf02a6cfba9188f1d835a7d6e55bd17ad795c27213d6a384e92851",
 	"files": {
 		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
 		"Cargo.toml": "40cbb98e01f71f3930f0ec25fc1639611aa68f978f8fb0b66f9dae3f7b7c669f",
@@ -19,7 +19,7 @@
 		"src/protos/vtpm_interface.rs": "d29a48b7a2ba3a14b87b552deecd32772f6ae96f57428415ddcba1ca482b60b5",
 		"src/protos/auth_factor.rs": "4b8bf7f197158035354a3f5c2732b86c83d1cbd7b9656e85bbe96ec84548b0c1",
 		"src/protos/dlcservice.rs": "d5831fe5eb972321e9197314c84f218b76652c1fe9303fe55d55cb37a0fce1b3",
-		"src/protos/UserDataAuth.rs": "29ccd587a9f64f523fbe78bd3f31f9a0c6ad6de0dbc2a44123e12567ba074f07",
+		"src/protos/UserDataAuth.rs": "46d0f83240447424d3f3fa7ef3f5f7d9c9563658172c0118a723279d219f26a2",
 		"src/protos/fido.rs": "f2e2e1e52320ff65c97a2b883437bef59225f7ea4b96eef68f0764d745369a0f",
 		"src/protos/include_protos.rs": "05e66958a997e5d3e6c47509315c466ce4cc1bde30b305d4f7492462dd0ca464",
 		"src/protos/key.rs": "3cf3877f30c3679f88f58ca25baf18182828b7a159b73a9ea46297fad54816c5"

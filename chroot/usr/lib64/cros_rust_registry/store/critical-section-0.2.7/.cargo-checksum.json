@@ -1,14 +1,14 @@
 {
 	"package": "491715eddf885bd4c3aa6d056948d44344d561bc1c00c1a99fa6e86863523b05",
 	"files": {
-		"Cargo.toml.orig": "07d40b4abbda283b2ec5da392ff6e0bc664b9e608c7825f6b9740ff1a7045fee",
-		"rust-toolchain.toml": "05e4460116e5cb4ff2767ac152180f5194641a1386be73236596bfd1db63cb87",
-		"Cargo.toml": "dfd07dbbf4df55d8ed03b016159a3e82a84977c442353255293f6a48ceb23fd6",
-		"README.md": "969e3b8774b4b05558d6c8c6e4976560f0840c03b9e1dde2741736e251c3a7f6",
-		"ci.sh": "6af62bda47fe536d648c64bffb7b14ecd8cf7fcc95d51c6c846365b1cbb9825d",
-		"avr-specs/avr-atmega328p.json": "be57d2161089a894ee68ae7cd0b60f39ae6967e0b8eca2221b509bac7eba08bb",
 		"build.rs": "86f5012b79ebf1e3bc6518c7ddd46d9ad1cafb1e8059c42102aa8d961fa2dae2",
+		"Cargo.toml.orig": "07d40b4abbda283b2ec5da392ff6e0bc664b9e608c7825f6b9740ff1a7045fee",
+		"Cargo.toml": "dfd07dbbf4df55d8ed03b016159a3e82a84977c442353255293f6a48ceb23fd6",
+		"src/lib.rs": "3f896b7df9cadca0e80a2b05d437391d6fa222e2d1ab20851b3034b59bea64ee",
+		"README.md": "969e3b8774b4b05558d6c8c6e4976560f0840c03b9e1dde2741736e251c3a7f6",
 		"CHANGELOG.md": "2310651fa0ed3c9b7adacd3a474fffb43944fcb134ea8e79c98d75f9d16f293e",
-		"src/lib.rs": "3f896b7df9cadca0e80a2b05d437391d6fa222e2d1ab20851b3034b59bea64ee"
+		"ci.sh": "6af62bda47fe536d648c64bffb7b14ecd8cf7fcc95d51c6c846365b1cbb9825d",
+		"rust-toolchain.toml": "05e4460116e5cb4ff2767ac152180f5194641a1386be73236596bfd1db63cb87",
+		"avr-specs/avr-atmega328p.json": "be57d2161089a894ee68ae7cd0b60f39ae6967e0b8eca2221b509bac7eba08bb"
 	}
 }

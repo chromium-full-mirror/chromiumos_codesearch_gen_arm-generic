@@ -1,11 +1,11 @@
 {
 	"package": "438c4f1e1ac25b4d26b4a3623e3c68cb5046426aecd9529c2e29409734183bda",
 	"files": {
-		"Cargo.toml": "eb773bc12700a708777085b619f076157fd41357b52f69db561f8a333df89efc",
 		"Cargo.toml.orig": "b5e3a3ccd52a52641d1525b74bca51f9ff77c4d06be93ba42b6aacbce5c51459",
+		"Cargo.toml": "eb773bc12700a708777085b619f076157fd41357b52f69db561f8a333df89efc",
 		"src/lib.rs": "56a0ac07240650c401ff3c7ce7f3ac90c02f9cc5637a85c9d9941438bd9ffd50",
 		"README.md": "c37816e9c669072371d30bd3a533d1a7a0282f2919b8caf0beaa3513d1390dfb",
-		"tests/nested_rpc.rs": "cc2fcd5c09be1c3cb44dc07f5a24deba681c397263cf79728587ae308e1c44b8",
-		"tests/smoke.rs": "408c17c86da5eba315bb7951acf697c5e3390bcd0495725498203fa0a34ec943"
+		"tests/smoke.rs": "408c17c86da5eba315bb7951acf697c5e3390bcd0495725498203fa0a34ec943",
+		"tests/nested_rpc.rs": "cc2fcd5c09be1c3cb44dc07f5a24deba681c397263cf79728587ae308e1c44b8"
 	}
 }

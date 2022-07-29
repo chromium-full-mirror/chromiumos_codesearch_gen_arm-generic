@@ -37,9 +37,14 @@ def create_depgraph_params(myopts, myaction):
 	bdeps = myopts.get("--with-bdeps")
 	if bdeps is not None:
 		myparams["bdeps"] = bdeps
+		myparams["bdepends"] = bdeps
 	elif myaction == "remove" or (
 		myopts.get("--with-bdeps-auto") != "n" and "--usepkg" not in myopts):
 		myparams["bdeps"] = "auto"
+
+	bdepends = myopts.get("--with-bdepends")
+	if bdepends is not None:
+		myparams["bdepends"] = bdepends
 
 	ignore_built_slot_operator_deps = myopts.get("--ignore-built-slot-operator-deps")
 	if ignore_built_slot_operator_deps is not None:

@@ -1702,7 +1702,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthenticateAuthFactorReplyDefa
 constexpr UpdateAuthFactorRequest::UpdateAuthFactorRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : auth_session_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , old_auth_factor_label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , auth_factor_label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , auth_factor_(nullptr)
   , auth_input_(nullptr){}
 struct UpdateAuthFactorRequestDefaultTypeInternal {
@@ -29975,12 +29975,12 @@ UpdateAuthFactorRequest::UpdateAuthFactorRequest(const UpdateAuthFactorRequest& 
     auth_session_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_auth_session_id(), 
       GetArenaForAllocation());
   }
-  old_auth_factor_label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  auth_factor_label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    old_auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_old_auth_factor_label().empty()) {
-    old_auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_old_auth_factor_label(), 
+  if (!from._internal_auth_factor_label().empty()) {
+    auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_auth_factor_label(), 
       GetArenaForAllocation());
   }
   if (from._internal_has_auth_factor()) {
@@ -30001,9 +30001,9 @@ auth_session_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptySt
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   auth_session_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-old_auth_factor_label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+auth_factor_label_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  old_auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&auth_factor_) - reinterpret_cast<char*>(this)),
@@ -30021,7 +30021,7 @@ UpdateAuthFactorRequest::~UpdateAuthFactorRequest() {
 inline void UpdateAuthFactorRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   auth_session_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  old_auth_factor_label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  auth_factor_label_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete auth_factor_;
   if (this != internal_default_instance()) delete auth_input_;
 }
@@ -30043,7 +30043,7 @@ void UpdateAuthFactorRequest::Clear() {
   (void) cached_has_bits;
 
   auth_session_id_.ClearToEmpty();
-  old_auth_factor_label_.ClearToEmpty();
+  auth_factor_label_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && auth_factor_ != nullptr) {
     delete auth_factor_;
   }
@@ -30070,10 +30070,10 @@ const char* UpdateAuthFactorRequest::_InternalParse(const char* ptr, ::PROTOBUF_
         } else
           goto handle_unusual;
         continue;
-      // string old_auth_factor_label = 2;
+      // string auth_factor_label = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_old_auth_factor_label();
+          auto str = _internal_mutable_auth_factor_label();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
           CHK_(ptr);
@@ -30131,14 +30131,14 @@ uint8_t* UpdateAuthFactorRequest::_InternalSerialize(
         1, this->_internal_auth_session_id(), target);
   }
 
-  // string old_auth_factor_label = 2;
-  if (!this->_internal_old_auth_factor_label().empty()) {
+  // string auth_factor_label = 2;
+  if (!this->_internal_auth_factor_label().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_old_auth_factor_label().data(), static_cast<int>(this->_internal_old_auth_factor_label().length()),
+      this->_internal_auth_factor_label().data(), static_cast<int>(this->_internal_auth_factor_label().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label");
+      "user_data_auth.UpdateAuthFactorRequest.auth_factor_label");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_old_auth_factor_label(), target);
+        2, this->_internal_auth_factor_label(), target);
   }
 
   // .user_data_auth.AuthFactor auth_factor = 3;
@@ -30180,11 +30180,11 @@ size_t UpdateAuthFactorRequest::ByteSizeLong() const {
         this->_internal_auth_session_id());
   }
 
-  // string old_auth_factor_label = 2;
-  if (!this->_internal_old_auth_factor_label().empty()) {
+  // string auth_factor_label = 2;
+  if (!this->_internal_auth_factor_label().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_old_auth_factor_label());
+        this->_internal_auth_factor_label());
   }
 
   // .user_data_auth.AuthFactor auth_factor = 3;
@@ -30224,8 +30224,8 @@ void UpdateAuthFactorRequest::MergeFrom(const UpdateAuthFactorRequest& from) {
   if (!from._internal_auth_session_id().empty()) {
     _internal_set_auth_session_id(from._internal_auth_session_id());
   }
-  if (!from._internal_old_auth_factor_label().empty()) {
-    _internal_set_old_auth_factor_label(from._internal_old_auth_factor_label());
+  if (!from._internal_auth_factor_label().empty()) {
+    _internal_set_auth_factor_label(from._internal_auth_factor_label());
   }
   if (from._internal_has_auth_factor()) {
     _internal_mutable_auth_factor()->::user_data_auth::AuthFactor::MergeFrom(from._internal_auth_factor());
@@ -30259,8 +30259,8 @@ void UpdateAuthFactorRequest::InternalSwap(UpdateAuthFactorRequest* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &old_auth_factor_label_, lhs_arena,
-      &other->old_auth_factor_label_, rhs_arena
+      &auth_factor_label_, lhs_arena,
+      &other->auth_factor_label_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UpdateAuthFactorRequest, auth_input_)

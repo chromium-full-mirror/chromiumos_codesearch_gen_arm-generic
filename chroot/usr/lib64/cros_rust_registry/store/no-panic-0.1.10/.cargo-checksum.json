@@ -1,13 +1,13 @@
 {
-	"package": "7ae14dfaf83e180202c198b39c57380cbbc97844e6ca2efb4fd5630d3ff6000f",
+	"package": "c58f53d5f25ea1e24acb6770712afb916ef26950ac497d474bb37c2ab0a9a54e",
 	"files": {
+		"Cargo.toml.orig": "8da96d6934df4e9ea48b940e6de94d9c463ffdc972ef61a6c7050bc876cb379b",
 		"Cargo.toml": "6e1578d41cbcb07ffee51b2add527f0e5ff8108795dd6d4e07be23876ff4ac22",
-		"Cargo.toml.orig": "26ce692db153743b6b416ebafb58f3622121d0025f805a0b7e2bdbf468bbca66",
 		"src/lib.rs": "58f00894798dfa48275d8368474d4df1fbc8897d612a7a684b238be4586a6178",
 		"README.md": "970376ba96e7ff2988a8f532951e02e27c15f500b1e99ac7a7a905baf0f8e78a",
-		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"tests/test.rs": "6e725539dc9f8ebac4d668963dec84232e0d36ef940b125bbe6ac274b59fd6c5",
 		"tests/compiletest/mod.rs": "aa45ddd9b9e19d95b0aee4b6e7d9da612399dc8c3a21d1159988ad91e09762cb",
+		"LICENSE-MIT": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
 	}
 }

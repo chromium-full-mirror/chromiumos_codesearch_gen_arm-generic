@@ -3325,8 +3325,8 @@ class depgraph(object):
 			ignore_build_time_deps = True
 
 		ignore_depend_deps = ignore_build_time_deps
-		ignore_bdepend_deps = ignore_build_time_deps
-		ignore_hdepend_deps = ignore_build_time_deps
+		ignore_bdepend_deps = self._dynamic_config.myparams.get("bdepends", "y") == "n"
+		ignore_hdepend_deps = ignore_bdepend_deps
 
 		if removal_action:
 			depend_root = myroot

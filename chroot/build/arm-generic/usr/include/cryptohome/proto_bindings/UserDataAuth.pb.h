@@ -19412,7 +19412,7 @@ class UpdateAuthFactorRequest final :
 
   enum : int {
     kAuthSessionIdFieldNumber = 1,
-    kOldAuthFactorLabelFieldNumber = 2,
+    kAuthFactorLabelFieldNumber = 2,
     kAuthFactorFieldNumber = 3,
     kAuthInputFieldNumber = 4,
   };
@@ -19430,18 +19430,18 @@ class UpdateAuthFactorRequest final :
   std::string* _internal_mutable_auth_session_id();
   public:
 
-  // string old_auth_factor_label = 2;
-  void clear_old_auth_factor_label();
-  const std::string& old_auth_factor_label() const;
+  // string auth_factor_label = 2;
+  void clear_auth_factor_label();
+  const std::string& auth_factor_label() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_old_auth_factor_label(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_old_auth_factor_label();
-  PROTOBUF_NODISCARD std::string* release_old_auth_factor_label();
-  void set_allocated_old_auth_factor_label(std::string* old_auth_factor_label);
+  void set_auth_factor_label(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_auth_factor_label();
+  PROTOBUF_NODISCARD std::string* release_auth_factor_label();
+  void set_allocated_auth_factor_label(std::string* auth_factor_label);
   private:
-  const std::string& _internal_old_auth_factor_label() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_old_auth_factor_label(const std::string& value);
-  std::string* _internal_mutable_old_auth_factor_label();
+  const std::string& _internal_auth_factor_label() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_auth_factor_label(const std::string& value);
+  std::string* _internal_mutable_auth_factor_label();
   public:
 
   // .user_data_auth.AuthFactor auth_factor = 3;
@@ -19488,7 +19488,7 @@ class UpdateAuthFactorRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr auth_session_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr old_auth_factor_label_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr auth_factor_label_;
   ::user_data_auth::AuthFactor* auth_factor_;
   ::user_data_auth::AuthInput* auth_input_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -30910,55 +30910,55 @@ inline void UpdateAuthFactorRequest::set_allocated_auth_session_id(std::string* 
   // @@protoc_insertion_point(field_set_allocated:user_data_auth.UpdateAuthFactorRequest.auth_session_id)
 }
 
-// string old_auth_factor_label = 2;
-inline void UpdateAuthFactorRequest::clear_old_auth_factor_label() {
-  old_auth_factor_label_.ClearToEmpty();
+// string auth_factor_label = 2;
+inline void UpdateAuthFactorRequest::clear_auth_factor_label() {
+  auth_factor_label_.ClearToEmpty();
 }
-inline const std::string& UpdateAuthFactorRequest::old_auth_factor_label() const {
-  // @@protoc_insertion_point(field_get:user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label)
-  return _internal_old_auth_factor_label();
+inline const std::string& UpdateAuthFactorRequest::auth_factor_label() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.UpdateAuthFactorRequest.auth_factor_label)
+  return _internal_auth_factor_label();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void UpdateAuthFactorRequest::set_old_auth_factor_label(ArgT0&& arg0, ArgT... args) {
+void UpdateAuthFactorRequest::set_auth_factor_label(ArgT0&& arg0, ArgT... args) {
  
- old_auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label)
+ auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:user_data_auth.UpdateAuthFactorRequest.auth_factor_label)
 }
-inline std::string* UpdateAuthFactorRequest::mutable_old_auth_factor_label() {
-  std::string* _s = _internal_mutable_old_auth_factor_label();
-  // @@protoc_insertion_point(field_mutable:user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label)
+inline std::string* UpdateAuthFactorRequest::mutable_auth_factor_label() {
+  std::string* _s = _internal_mutable_auth_factor_label();
+  // @@protoc_insertion_point(field_mutable:user_data_auth.UpdateAuthFactorRequest.auth_factor_label)
   return _s;
 }
-inline const std::string& UpdateAuthFactorRequest::_internal_old_auth_factor_label() const {
-  return old_auth_factor_label_.Get();
+inline const std::string& UpdateAuthFactorRequest::_internal_auth_factor_label() const {
+  return auth_factor_label_.Get();
 }
-inline void UpdateAuthFactorRequest::_internal_set_old_auth_factor_label(const std::string& value) {
+inline void UpdateAuthFactorRequest::_internal_set_auth_factor_label(const std::string& value) {
   
-  old_auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  auth_factor_label_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* UpdateAuthFactorRequest::_internal_mutable_old_auth_factor_label() {
+inline std::string* UpdateAuthFactorRequest::_internal_mutable_auth_factor_label() {
   
-  return old_auth_factor_label_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return auth_factor_label_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* UpdateAuthFactorRequest::release_old_auth_factor_label() {
-  // @@protoc_insertion_point(field_release:user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label)
-  return old_auth_factor_label_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* UpdateAuthFactorRequest::release_auth_factor_label() {
+  // @@protoc_insertion_point(field_release:user_data_auth.UpdateAuthFactorRequest.auth_factor_label)
+  return auth_factor_label_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void UpdateAuthFactorRequest::set_allocated_old_auth_factor_label(std::string* old_auth_factor_label) {
-  if (old_auth_factor_label != nullptr) {
+inline void UpdateAuthFactorRequest::set_allocated_auth_factor_label(std::string* auth_factor_label) {
+  if (auth_factor_label != nullptr) {
     
   } else {
     
   }
-  old_auth_factor_label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), old_auth_factor_label,
+  auth_factor_label_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), auth_factor_label,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (old_auth_factor_label_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    old_auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (auth_factor_label_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    auth_factor_label_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:user_data_auth.UpdateAuthFactorRequest.old_auth_factor_label)
+  // @@protoc_insertion_point(field_set_allocated:user_data_auth.UpdateAuthFactorRequest.auth_factor_label)
 }
 
 // .user_data_auth.AuthFactor auth_factor = 3;

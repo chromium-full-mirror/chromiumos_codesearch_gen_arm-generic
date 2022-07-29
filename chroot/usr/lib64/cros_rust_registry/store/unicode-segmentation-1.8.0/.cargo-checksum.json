@@ -1,23 +1,23 @@
 {
-	"package": "6ee244fbefac2b566120f6368555fd2eb5a46fffd4df182f1835f3befa48a1b7",
+	"package": "392e37f1e833382a2ef29c81c3fef5a56fc53c0e875a85574b7c337a2f6e1dda",
 	"files": {
+		"Cargo.toml.orig": "4598c2804bd962b988bd248fc119ca9cd39ff931232177f3bf2f246cc9792f1c",
 		"Cargo.toml": "1c48e58ff268588228610b315173758261d33ad25a5e3b974869cf3791f89e6a",
-		"scripts/unicode.py": "5bc2d5bc88a8b8c43fcb36ad24f9e2fe9d5733fcf827c592c63dac2d2cab8c78",
+		"src/test.rs": "eb63e48b8b594eec8c1ac35ea0a87de4f2dfde157689f2c90e2a63518dbc810a",
+		"src/lib.rs": "dd4dbcd94a90ec4f5cfceaedf54296530e78c7a9da382b41c801261fa6f3928e",
+		"src/sentence.rs": "b83793ff7540a457c49cd1ffd2a2fead4e584e31eac255f832da352d9eda3816",
+		"src/word.rs": "b1d837116e6661825256c3722dfbca2e01a949fb19b622fcac713c8a3a8b96e0",
+		"src/tables.rs": "6ddaa67756dbaa666b8704ea5bdeab2aee3a67ca125110bb7fb79d686878ffb2",
+		"src/testdata.rs": "45f1877163fde1d801b41fcf13d7754437bb0a0f83e4b0b4fa3f37048ed6f12a",
+		"src/grapheme.rs": "9ceef75d9213073b09be9a769e4a1f7806d7c3ef7b7983553ec91324570bc3b1",
+		"README.md": "b8e6a4e1d40dde69fba80fa6335c15392d6c99b508f45969fc494cdae4ae73fe",
 		"scripts/unicode_gen_breaktests.py": "ee96982d8959bec75c2382233cfca7e239f12a89a1be5fbf942601a215bb9283",
+		"scripts/unicode.py": "5bc2d5bc88a8b8c43fcb36ad24f9e2fe9d5733fcf827c592c63dac2d2cab8c78",
+		"LICENSE-MIT": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+		"COPYRIGHT": "23860c2a7b5d96b21569afedf033469bab9fe14a1b24a35068b8641c578ce24d",
 		"benches/word_bounds.rs": "c0e88ba4189e18e147f3ca5eb6508ae6d2f150e65fccff1ee6c603df1b4b8680",
 		"benches/graphemes.rs": "189bb618682c9749e75634d21270fa0983994af94e41f4ba6934aae18029f8f5",
-		"benches/unicode_words.rs": "4661395ee20443651d3dd8d8e3a27f12853cfbd69c070479971ecd5a554a9b8d",
-		"Cargo.toml.orig": "606dc3a7319e5c16bcf67a1b625997f65b79ba522d037c42f52cf31e65f1807f",
-		"src/test.rs": "eb63e48b8b594eec8c1ac35ea0a87de4f2dfde157689f2c90e2a63518dbc810a",
-		"src/tables.rs": "6ddaa67756dbaa666b8704ea5bdeab2aee3a67ca125110bb7fb79d686878ffb2",
-		"src/grapheme.rs": "9ceef75d9213073b09be9a769e4a1f7806d7c3ef7b7983553ec91324570bc3b1",
-		"src/sentence.rs": "b83793ff7540a457c49cd1ffd2a2fead4e584e31eac255f832da352d9eda3816",
-		"src/lib.rs": "dd4dbcd94a90ec4f5cfceaedf54296530e78c7a9da382b41c801261fa6f3928e",
-		"src/testdata.rs": "45f1877163fde1d801b41fcf13d7754437bb0a0f83e4b0b4fa3f37048ed6f12a",
-		"src/word.rs": "b1d837116e6661825256c3722dfbca2e01a949fb19b622fcac713c8a3a8b96e0",
-		"README.md": "b8e6a4e1d40dde69fba80fa6335c15392d6c99b508f45969fc494cdae4ae73fe",
-		"LICENSE-MIT": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0",
-		"COPYRIGHT": "23860c2a7b5d96b21569afedf033469bab9fe14a1b24a35068b8641c578ce24d",
-		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+		"benches/unicode_words.rs": "4661395ee20443651d3dd8d8e3a27f12853cfbd69c070479971ecd5a554a9b8d"
 	}
 }
