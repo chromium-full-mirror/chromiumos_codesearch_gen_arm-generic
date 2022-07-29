@@ -59,9 +59,9 @@ size_t ProcessId::Hash(size_t seed) const {
 }
 
 void ProcessId::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "pid"), this->pid,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

@@ -55,9 +55,9 @@ DictionaryValue::DictionaryValue(
 DictionaryValue::~DictionaryValue() = default;
 
 void DictionaryValue::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "storage"), this->storage,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -83,9 +83,9 @@ ListValue::ListValue(
 ListValue::~ListValue() = default;
 
 void ListValue::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "storage"), this->storage,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -111,9 +111,9 @@ DeprecatedDictionaryValue::DeprecatedDictionaryValue(
 DeprecatedDictionaryValue::~DeprecatedDictionaryValue() = default;
 
 void DeprecatedDictionaryValue::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "storage"), this->storage,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -139,9 +139,9 @@ DeprecatedListValue::DeprecatedListValue(
 DeprecatedListValue::~DeprecatedListValue() = default;
 
 void DeprecatedListValue::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "storage"), this->storage,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

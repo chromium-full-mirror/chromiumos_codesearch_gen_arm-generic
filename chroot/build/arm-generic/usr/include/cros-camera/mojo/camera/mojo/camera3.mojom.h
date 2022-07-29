@@ -419,7 +419,7 @@ class  CropRotateScaleInfo {
   Camera3StreamRotation crop_rotate_scale_degrees;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -567,7 +567,7 @@ class  Camera3ErrorMsg {
   Camera3ErrorMsgCode error_code;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -708,7 +708,7 @@ class  Camera3ShutterMsg {
   uint64_t timestamp;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1047,7 +1047,7 @@ Camera3Stream& operator=(const Camera3Stream&) = delete;
   absl::optional<std::string> physical_camera_id;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1196,7 +1196,7 @@ Camera3StreamConfiguration& operator=(const Camera3StreamConfiguration&) = delet
   ::cros::mojom::CameraMetadataPtr session_parameters;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1364,7 +1364,7 @@ CameraBufferHandle& operator=(const CameraBufferHandle&) = delete;
   absl::optional<std::vector<uint32_t>> sizes;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1520,7 +1520,7 @@ Camera3StreamBuffer& operator=(const Camera3StreamBuffer&) = delete;
   CameraBufferHandlePtr buffer_handle;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1664,7 +1664,7 @@ Camera3NotifyMsg& operator=(const Camera3NotifyMsg&) = delete;
   Camera3NotifyMsgMessagePtr message;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1806,7 +1806,7 @@ Camera3PhyscamMetadata& operator=(const Camera3PhyscamMetadata&) = delete;
   ::cros::mojom::CameraMetadataPtr metadata;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1958,7 +1958,7 @@ Camera3CaptureRequest& operator=(const Camera3CaptureRequest&) = delete;
   absl::optional<std::vector<Camera3PhyscamMetadataPtr>> physcam_settings;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2114,7 +2114,7 @@ Camera3CaptureResult& operator=(const Camera3CaptureResult&) = delete;
   absl::optional<std::vector<Camera3PhyscamMetadataPtr>> physcam_metadata;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

@@ -264,7 +264,7 @@ class  HandwritingDrawingSegment {
   uint32_t end_point_index;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -412,7 +412,7 @@ HandwritingPoint& operator=(const HandwritingPoint&) = delete;
   absl::optional<base::TimeDelta> t;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -551,7 +551,7 @@ HandwritingStroke& operator=(const HandwritingStroke&) = delete;
   std::vector<HandwritingPointPtr> points;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -700,7 +700,7 @@ HandwritingSegment& operator=(const HandwritingSegment&) = delete;
   std::vector<HandwritingDrawingSegmentPtr> drawing_segments;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -842,7 +842,7 @@ HandwritingPrediction& operator=(const HandwritingPrediction&) = delete;
   std::vector<HandwritingSegmentPtr> segmentation_result;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -997,7 +997,7 @@ class  HandwritingHints {
   absl::optional<std::string> text_context;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1134,7 +1134,7 @@ class  HandwritingModelConstraint {
   std::vector<std::string> languages;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

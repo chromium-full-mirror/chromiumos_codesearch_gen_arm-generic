@@ -673,7 +673,6 @@ class BASE_EXPORT GSL_OWNER Value {
   // DEPRECATED: prefer direct use of `base::Value::List` where possible, or
   // `std::move(value.GetList())` otherwise.
   DeprecatedListStorage TakeListDeprecated() &&;
-  ListStorage TakeList() && { return std::move(*this).TakeListDeprecated(); }
 
   // Appends `value` to the end of the list.
   //
@@ -1068,7 +1067,7 @@ class BASE_EXPORT GSL_OWNER Value {
 
 #if BUILDFLAG(ENABLE_BASE_TRACING)
   // Write this object into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue) const;
 #endif  // BUILDFLAG(ENABLE_BASE_TRACING)
 
   template <typename Visitor>

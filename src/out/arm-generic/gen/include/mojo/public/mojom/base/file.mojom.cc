@@ -58,9 +58,9 @@ File::File(
 File::~File() = default;
 
 void File::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "fd"), this->fd,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -69,7 +69,7 @@ void File::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "async"), this->async,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

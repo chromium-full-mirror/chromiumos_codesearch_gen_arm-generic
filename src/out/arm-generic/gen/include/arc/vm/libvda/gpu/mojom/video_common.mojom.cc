@@ -63,9 +63,9 @@ size_t VideoFramePlane::Hash(size_t seed) const {
 }
 
 void VideoFramePlane::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "offset"), this->offset,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -74,7 +74,7 @@ void VideoFramePlane::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "stride"), this->stride,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -112,9 +112,9 @@ size_t ColorPlaneLayout::Hash(size_t seed) const {
 }
 
 void ColorPlaneLayout::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "stride"), this->stride,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -123,7 +123,7 @@ void ColorPlaneLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "offset"), this->offset,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -132,7 +132,7 @@ void ColorPlaneLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "size"), this->size,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -173,9 +173,9 @@ VideoFrameLayout::VideoFrameLayout(
 VideoFrameLayout::~VideoFrameLayout() = default;
 
 void VideoFrameLayout::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "format"), this->format,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -184,7 +184,7 @@ void VideoFrameLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "coded_size"), this->coded_size,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -193,7 +193,7 @@ void VideoFrameLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "planes"), this->planes,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -202,7 +202,7 @@ void VideoFrameLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "is_multi_planar"), this->is_multi_planar,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -211,7 +211,7 @@ void VideoFrameLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "buffer_addr_align"), this->buffer_addr_align,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -220,7 +220,7 @@ void VideoFrameLayout::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "modifier"), this->modifier,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

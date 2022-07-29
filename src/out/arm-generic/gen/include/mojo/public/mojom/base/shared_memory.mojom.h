@@ -150,7 +150,7 @@ ReadOnlySharedMemoryRegion& operator=(const ReadOnlySharedMemoryRegion&) = delet
   ::mojo::ScopedSharedBufferHandle buffer;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -284,7 +284,7 @@ WritableSharedMemoryRegion& operator=(const WritableSharedMemoryRegion&) = delet
   ::mojo::ScopedSharedBufferHandle buffer;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -418,7 +418,7 @@ UnsafeSharedMemoryRegion& operator=(const UnsafeSharedMemoryRegion&) = delete;
   ::mojo::ScopedSharedBufferHandle buffer;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

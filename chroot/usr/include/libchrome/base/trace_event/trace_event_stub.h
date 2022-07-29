@@ -267,9 +267,8 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
 }  // namespace base
 
 // Stub implementation for
-// perfetto::libchrome::StaticString/ThreadTrack/TracedValue/TracedDictionary/TracedArray.
-namespace perfetto {
-namespace libchrome {
+// perfetto_libchrome::StaticString/ThreadTrack/TracedValue/TracedDictionary/TracedArray.
+namespace perfetto_libchrome{
 
 namespace internal {
 template <typename T>
@@ -342,7 +341,6 @@ void WriteIntoTracedValueWithFallback(TracedValue context,
                                       T&& value,
                                       const std::string&) {}
 
-}  // namespace libchrome
 }  // namespace perfetto
 
 #endif  // BASE_TRACE_EVENT_TRACE_EVENT_STUB_H_

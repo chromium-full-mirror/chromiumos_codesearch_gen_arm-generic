@@ -277,7 +277,7 @@ TouchscreenDevice& operator=(const TouchscreenDevice&) = delete;
   bool has_stylus_garage_switch;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -428,7 +428,7 @@ class  InputDevice {
   std::string sysfs_path;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

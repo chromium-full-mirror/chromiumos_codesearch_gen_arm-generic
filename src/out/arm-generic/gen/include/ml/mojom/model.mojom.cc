@@ -81,9 +81,9 @@ size_t GraphExecutorOptions::Hash(size_t seed) const {
 }
 
 void GraphExecutorOptions::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "use_nnapi"), this->use_nnapi,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -92,7 +92,7 @@ void GraphExecutorOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "use_gpu"), this->use_gpu,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -101,7 +101,7 @@ void GraphExecutorOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "gpu_delegate_api"), this->gpu_delegate_api,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -131,9 +131,9 @@ size_t BuiltinModelSpec::Hash(size_t seed) const {
 }
 
 void BuiltinModelSpec::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "id"), this->id,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -168,9 +168,9 @@ FlatBufferModelSpec::FlatBufferModelSpec(
 FlatBufferModelSpec::~FlatBufferModelSpec() = default;
 
 void FlatBufferModelSpec::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "model_string"), this->model_string,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -179,7 +179,7 @@ void FlatBufferModelSpec::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "inputs"), this->inputs,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -188,7 +188,7 @@ void FlatBufferModelSpec::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "outputs"), this->outputs,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -197,7 +197,7 @@ void FlatBufferModelSpec::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "metrics_model_name"), this->metrics_model_name,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -302,9 +302,9 @@ void ModelProxy::REMOVED_0(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::Model::REMOVED_0", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::GraphExecutor>>");
    });
@@ -346,12 +346,12 @@ void ModelProxy::CreateGraphExecutor(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::Model::CreateGraphExecutor", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("options"), in_options,
                         "<value of type GraphExecutorOptionsPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::GraphExecutor>>");
    });
@@ -476,9 +476,9 @@ void Model_REMOVED_0_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::Model::REMOVED_0", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type CreateGraphExecutorResult>");
    });
@@ -591,9 +591,9 @@ void Model_CreateGraphExecutor_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::Model::CreateGraphExecutor", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type CreateGraphExecutorResult>");
    });

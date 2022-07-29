@@ -540,15 +540,13 @@ inline void PictureBufferFormatDataView::GetCodedSizeDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::arc::mojom::VideoDecodeAccelerator_Result> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::arc::mojom::VideoDecodeAccelerator_Result value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::arc::mojom::VideoDecodeAccelerator_Result value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ARC_VM_LIBVDA_GPU_MOJOM_VIDEO_DECODE_ACCELERATOR_MOJOM_SHARED_H_

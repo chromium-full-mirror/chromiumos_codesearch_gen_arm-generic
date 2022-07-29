@@ -158,7 +158,7 @@ DmaBufPlane& operator=(const DmaBufPlane&) = delete;
   uint32_t size;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -301,7 +301,7 @@ DmaBufVideoFrame& operator=(const DmaBufVideoFrame&) = delete;
   std::vector<DmaBufPlanePtr> planes;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

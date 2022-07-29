@@ -352,15 +352,13 @@ inline void CameraMetadataDataView::GetEntriesDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::EntryType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::EntryType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::EntryType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // CAMERA_MOJO_CAMERA_METADATA_MOJOM_SHARED_H_

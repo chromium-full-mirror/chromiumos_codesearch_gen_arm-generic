@@ -1025,9 +1025,9 @@ class TRIVIAL_ABI GSL_POINTER raw_ptr {
   // If T can be serialised into trace, its alias is also
   // serialisable.
   template <class U = T>
-  typename perfetto::libchrome::check_traced_value_support<U>::type WriteIntoTrace(
-      perfetto::libchrome::TracedValue&& context) const {
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), get());
+  typename perfetto_libchrome::check_traced_value_support<U>::type WriteIntoTrace(
+      perfetto_libchrome::TracedValue&& context) const {
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), get());
   }
 
  private:

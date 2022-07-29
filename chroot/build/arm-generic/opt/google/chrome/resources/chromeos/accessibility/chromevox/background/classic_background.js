@@ -12,6 +12,7 @@ import {Msgs} from '../common/msgs.js';
 
 import {BrailleBackground} from './braille/braille_background.js';
 import {BrailleCaptionsBackground} from './braille/braille_captions_background.js';
+import {ChromeVox} from './chromevox.js';
 import {ChromeVoxState} from './chromevox_state.js';
 import {ConsoleTts} from './console_tts.js';
 import {ChromeVoxEditableTextBase, TypingEcho} from './editing/editable_text_base.js';
@@ -54,7 +55,8 @@ export class ChromeVoxBackground {
     ChromeVox.tts = this.tts;
     ChromeVox.braille = this.backgroundBraille_;
 
-    this.onIntroduceChromeVox();
+    chrome.accessibilityPrivate.onIntroduceChromeVox.addListener(
+        this.onIntroduceChromeVox);
 
     // Set up a message passing system for goog.provide() calls from
     // within the content scripts.
@@ -164,7 +166,7 @@ export class ChromeVoxBackground {
         chrome.runtime.getManifest()['content_scripts'][0]['js'];
     const stageTwo = function(code) {
       for (let i = 0, tab; tab = tabs[i]; i++) {
-        window.console.log('Injecting into ' + tab.id, tab);
+        globalThis.console.log('Injecting into ' + tab.id, tab);
         let sawError = false;
 
         /**

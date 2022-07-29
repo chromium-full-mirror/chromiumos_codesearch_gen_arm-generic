@@ -135,9 +135,9 @@ void RollbackNetworkConfigProxy::RollbackConfigImport(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::rollback_network_config::mojom::RollbackNetworkConfig::RollbackConfigImport", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("config"), in_config,
                         "<value of type const std::string&>");
    });
@@ -287,9 +287,9 @@ void RollbackNetworkConfig_RollbackConfigImport_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::rollback_network_config::mojom::RollbackNetworkConfig::RollbackConfigImport", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("success"), in_success,
                         "<value of type bool>");
    });
@@ -401,9 +401,9 @@ void RollbackNetworkConfig_RollbackConfigExport_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::rollback_network_config::mojom::RollbackNetworkConfig::RollbackConfigExport", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("config"), in_config,
                         "<value of type const std::string&>");
    });

@@ -827,14 +827,12 @@ MachineLearningService_REMOVED_4_ResponseParams_Data::MachineLearningService_REM
 }  // namespace machine_learning
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::LoadModelResult>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::LoadModelResult value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::LoadModelResult value) {
   return std::move(context).WriteString(::chromeos::machine_learning::mojom::LoadModelResultToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

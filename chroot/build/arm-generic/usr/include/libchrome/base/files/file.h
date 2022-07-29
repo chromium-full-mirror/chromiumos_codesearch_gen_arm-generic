@@ -321,7 +321,7 @@ class BASE_EXPORT File {
   bool async() const { return async_; }
 
   // Serialise this object into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue context) const;
 
 #if BUILDFLAG(IS_WIN)
   // Sets or clears the DeleteFile disposition on the file. Returns true if

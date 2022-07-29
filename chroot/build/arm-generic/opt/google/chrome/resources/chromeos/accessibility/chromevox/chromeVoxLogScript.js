@@ -59,14 +59,7 @@ increaseOrDecreaseProperty(propertyName,increase){}
 propertyToPercentage(property){}
 getDefaultProperty(property){}
 toggleSpeechOnOrOff(){}
-resetTextToSpeechSettings(){}};goog.provide('BaseLog');goog.provide('EventLog');goog.provide('LogType');goog.provide('SpeechLog');goog.provide('TextLog');goog.provide('TreeLog');goog.require('QueueMode');LogType={SPEECH:'speech',SPEECH_RULE:'speechRule',BRAILLE:'braille',BRAILLE_RULE:'brailleRule',EARCON:'earcon',EVENT:'event',TEXT:'text',TREE:'tree',};BaseLog=class{constructor(logType){this.logType=logType;this.date=new Date();}
-toString(){return'';}};EventLog=class extends BaseLog{constructor(event){super(LogType.EVENT);this.type_=event.type;this.targetName_=event.target.name;this.rootName_=event.target.root.name;this.docUrl_=event.target.docUrl;}
-toString(){return`EventType = ${this.type_}, TargetName = ${this.targetName_}, `+`RootName = ${this.rootName_}, DocumentURL = ${this.docUrl_}`;}};SpeechLog=class extends BaseLog{constructor(textString,queueMode,category){super(LogType.SPEECH);this.textString_=textString;this.queueMode_=queueMode;this.category_=category;}
-toString(){let logStr='Speak';if(this.queueMode_===QueueMode.FLUSH){logStr+=' (F)';}else if(this.queueMode_===QueueMode.CATEGORY_FLUSH){logStr+=' (C)';}else if(this.queueMode_===QueueMode.INTERJECT){logStr+=' (I)';}else{logStr+=' (Q)';}
-if(this.category_){logStr+=' category='+this.category_;}
-logStr+=' "'+this.textString_+'"';return logStr;}};TextLog=class extends BaseLog{constructor(logStr,logType){super(logType);this.logStr_=logStr;}
-toString(){return this.logStr_;}};TreeLog=class extends BaseLog{constructor(logTree){super(LogType.TREE);this.logTree_=logTree;}
-toString(){return this.logTree_.treeToString();}};goog.provide('SimpleAutomationNode');goog.provide('TreeDumper');const AutomationNode=chrome.automation.AutomationNode;SimpleAutomationNode=class{constructor(node){this.name=node.name;this.role=node.role;this.value=node.value;this.url=node.url;this.location=Object.assign({},node.location);this.children=[];for(let i=0;i<node.children.length;i++){this.children.push(new SimpleAutomationNode(node.children[i]));}
+resetTextToSpeechSettings(){}};goog.provide('SimpleAutomationNode');goog.provide('TreeDumper');const AutomationNode=chrome.automation.AutomationNode;SimpleAutomationNode=class{constructor(node){this.name=node.name;this.role=node.role;this.value=node.value;this.url=node.url;this.location=Object.assign({},node.location);this.children=[];for(let i=0;i<node.children.length;i++){this.children.push(new SimpleAutomationNode(node.children[i]));}
 this.logStr='';this.toString=function(){if(this.logStr.length){return this.logStr;}
 if(node.name){this.logStr+='name='+node.name+' ';}
 if(node.role){this.logStr+='role='+node.role+' ';}
@@ -78,21 +71,11 @@ treeToString(){if(!this.treeStr_){this.treeStr_=this.formatTree_();}
 return this.treeStr_;}
 createTreeRecursive_(node,rank){let nodeStr='';nodeStr+='++'.repeat(rank);nodeStr+=node.toString();nodeStr+='\n';for(let i=0;i<node.children.length;i++){const nextNode=node.children[i];nodeStr+=this.createTreeRecursive_(nextNode,rank+1);}
 return nodeStr;}
-formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.provide('LogStore');goog.require('TreeDumper');goog.require('BaseLog');goog.require('EventLog');goog.require('LogType');goog.require('SpeechLog');goog.require('TextLog');goog.require('TreeLog');LogStore=class{constructor(){this.logs_=Array(LogStore.LOG_LIMIT);this.shouldSkipOutput_=false;this.startIndex_=0;}
-getLogsOfType(logType){const returnLogs=[];for(let i=0;i<LogStore.LOG_LIMIT;i++){const index=(this.startIndex_+i)%LogStore.LOG_LIMIT;if(!this.logs_[index]){continue;}
-if(this.logs_[index].logType===logType){returnLogs.push(this.logs_[index]);}}
-return returnLogs;}
-getLogs(){const returnLogs=[];for(let i=0;i<LogStore.LOG_LIMIT;i++){const index=(this.startIndex_+i)%LogStore.LOG_LIMIT;if(!this.logs_[index]){continue;}
-returnLogs.push(this.logs_[index]);}
-return returnLogs;}
-writeTextLog(logContent,logType){if(this.shouldSkipOutput_){return;}
-this.writeLog(new TextLog(logContent,logType));}
-writeTreeLog(logContent){if(this.shouldSkipOutput_){return;}
-this.writeLog(new TreeLog(logContent));}
-writeLog(log){if(this.shouldSkipOutput_){return;}
-this.logs_[this.startIndex_]=log;this.startIndex_+=1;if(this.startIndex_===LogStore.LOG_LIMIT){this.startIndex_=0;}}
-clearLog(){this.logs_=Array(LogStore.LOG_LIMIT);this.startIndex_=0;}
-set shouldSkipOutput(newValue){this.shouldSkipOutput_=newValue;}
-static init(){LogStore.getInstance();}
-static getInstance(){if(!LogStore.instance){LogStore.instance=new LogStore();}
-return LogStore.instance;}};LogStore.LOG_LIMIT=3000;LogStore.instance;BridgeHelper.registerHandler(BridgeConstants.LogStore.TARGET,BridgeConstants.LogStore.Action.CLEAR_LOG,()=>LogStore.instance.clearLog());BridgeHelper.registerHandler(BridgeConstants.LogStore.TARGET,BridgeConstants.LogStore.Action.GET_LOGS,()=>LogStore.instance.getLogs());goog.require('BackgroundBridge');goog.require('LogStore');goog.require('LogType');goog.require('TreeLog');
+formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.provide('BaseLog');goog.provide('EventLog');goog.provide('LogType');goog.provide('SpeechLog');goog.provide('TextLog');goog.provide('TreeLog');goog.require('QueueMode');goog.require('TreeDumper');LogType={SPEECH:'speech',SPEECH_RULE:'speechRule',BRAILLE:'braille',BRAILLE_RULE:'brailleRule',EARCON:'earcon',EVENT:'event',TEXT:'text',TREE:'tree',};BaseLog=class{constructor(logType){this.logType=logType;this.date=new Date();}
+toString(){return'';}};EventLog=class extends BaseLog{constructor(event){super(LogType.EVENT);this.type_=event.type;this.targetName_=event.target.name;this.rootName_=event.target.root.name;this.docUrl_=event.target.docUrl;}
+toString(){return`EventType = ${this.type_}, TargetName = ${this.targetName_}, `+`RootName = ${this.rootName_}, DocumentURL = ${this.docUrl_}`;}};SpeechLog=class extends BaseLog{constructor(textString,queueMode,category){super(LogType.SPEECH);this.textString_=textString;this.queueMode_=queueMode;this.category_=category;}
+toString(){let logStr='Speak';if(this.queueMode_===QueueMode.FLUSH){logStr+=' (F)';}else if(this.queueMode_===QueueMode.CATEGORY_FLUSH){logStr+=' (C)';}else if(this.queueMode_===QueueMode.INTERJECT){logStr+=' (I)';}else{logStr+=' (Q)';}
+if(this.category_){logStr+=' category='+this.category_;}
+logStr+=' "'+this.textString_+'"';return logStr;}};TextLog=class extends BaseLog{constructor(logStr,logType){super(logType);this.logStr_=logStr;}
+toString(){return this.logStr_;}};TreeLog=class extends BaseLog{constructor(logTree){super(LogType.TREE);this.logTree_=logTree;}
+toString(){return this.logTree_.treeToString();}};goog.require('BackgroundBridge');goog.require('BaseLog');goog.require('EventLog');goog.require('LogType');goog.require('SpeechLog');goog.require('TextLog');goog.require('TreeDumper');goog.require('TreeLog');

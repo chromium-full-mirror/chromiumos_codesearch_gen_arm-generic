@@ -224,6 +224,7 @@ struct ProcessState_Data {
       case 5:
       case 6:
       case 7:
+      case 8:
         return true;
     }
     return false;
@@ -2293,6 +2294,11 @@ class  ProcessInfo_Data {
   uint64_t physical_bytes_read;
   uint64_t physical_bytes_written;
   uint64_t cancelled_bytes_written;
+  mojo::internal::Pointer<mojo::internal::String_Data> name;
+  uint32_t parent_process_id;
+  uint32_t process_group_id;
+  uint32_t threads;
+  uint8_t padfinal_[4];
 
  private:
   friend class mojo::internal::MessageFragment<ProcessInfo_Data>;
@@ -2300,7 +2306,7 @@ class  ProcessInfo_Data {
   ProcessInfo_Data();
   ~ProcessInfo_Data() = delete;
 };
-static_assert(sizeof(ProcessInfo_Data) == 104,
+static_assert(sizeof(ProcessInfo_Data) == 128,
               "Bad sizeof(ProcessInfo_Data)");
 // Used by ProcessInfo::WrapAsMessage to lazily serialize the struct.
 template <typename UserType, typename DataView>

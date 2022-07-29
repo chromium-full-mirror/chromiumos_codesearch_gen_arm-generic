@@ -813,37 +813,31 @@ inline void TextSuggestionCandidateDataView::GetMultiWordDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::TextSuggestionMode> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::TextSuggestionMode value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::TextSuggestionMode value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::MultiWordExperimentGroup> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::MultiWordExperimentGroup value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::MultiWordExperimentGroup value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::TextSuggesterResult_Status> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::TextSuggesterResult_Status value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::TextSuggesterResult_Status value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ML_MOJOM_TEXT_SUGGESTER_MOJOM_SHARED_H_

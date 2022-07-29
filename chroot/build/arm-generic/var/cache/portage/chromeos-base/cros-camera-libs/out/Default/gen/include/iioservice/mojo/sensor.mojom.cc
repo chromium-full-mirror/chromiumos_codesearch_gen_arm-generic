@@ -48,11 +48,14 @@ namespace mojom {
 const char kScale[] = "scale";
 const char kSamplingFrequencyAvailable[] = "sampling_frequency_available";
 const char kLocation[] = "location";
+const char kLabel[] = "label";
 const char kDeviceName[] = "name";
 const char kSysPath[] = "syspath";
 const char kLocationBase[] = "base";
 const char kLocationLid[] = "lid";
 const char kLocationCamera[] = "camera";
+const char kLabelBase[] = "accel-base";
+const char kLabelLid[] = "accel-display";
 const char kAccelerometerChannel[] = "accel";
 const char kGyroscopeChannel[] = "anglvel";
 const char kMagnetometerChannel[] = "magn";
@@ -90,9 +93,9 @@ size_t IioEvent::Hash(size_t seed) const {
 }
 
 void IioEvent::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "chan_type"), this->chan_type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -101,7 +104,7 @@ void IioEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "event_type"), this->event_type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -110,7 +113,7 @@ void IioEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "direction"), this->direction,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -119,7 +122,7 @@ void IioEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "channel"), this->channel,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -128,7 +131,7 @@ void IioEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "timestamp"), this->timestamp,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -251,9 +254,9 @@ void SensorServiceProxy::GetDeviceIds(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorService::GetDeviceIds", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("type"), in_type,
                         "<value of type DeviceType>");
    });
@@ -322,12 +325,12 @@ void SensorServiceProxy::GetDevice(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorService::GetDevice", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_device_id"), in_iio_device_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("device_request"), in_device_request,
                         "<value of type ::mojo::PendingReceiver<SensorDevice>>");
    });
@@ -369,9 +372,9 @@ void SensorServiceProxy::RegisterNewDevicesObserver(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorService::RegisterNewDevicesObserver", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("observer"), in_observer,
                         "<value of type ::mojo::PendingRemote<SensorServiceNewDevicesObserver>>");
    });
@@ -484,9 +487,9 @@ void SensorService_GetDeviceIds_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorService::GetDeviceIds", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_device_ids"), in_iio_device_ids,
                         "<value of type const std::vector<int32_t>&>");
    });
@@ -610,9 +613,9 @@ void SensorService_GetAllDeviceIds_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorService::GetAllDeviceIds", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_device_ids_types"), in_iio_device_ids_types,
                         "<value of type const base::flat_map<int32_t, std::vector<DeviceType>>&>");
    });
@@ -1162,9 +1165,9 @@ void SensorDeviceProxy::SetTimeout(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::SetTimeout", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("timeout"), in_timeout,
                         "<value of type uint32_t>");
    });
@@ -1200,9 +1203,9 @@ void SensorDeviceProxy::GetAttributes(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::GetAttributes", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("attr_names"), in_attr_names,
                         "<value of type const std::vector<std::string>&>");
    });
@@ -1251,9 +1254,9 @@ void SensorDeviceProxy::SetFrequency(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::SetFrequency", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("frequency"), in_frequency,
                         "<value of type double>");
    });
@@ -1290,9 +1293,9 @@ void SensorDeviceProxy::StartReadingSamples(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::StartReadingSamples", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("observer"), in_observer,
                         "<value of type ::mojo::PendingRemote<SensorDeviceSamplesObserver>>");
    });
@@ -1394,12 +1397,12 @@ void SensorDeviceProxy::SetChannelsEnabled(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::SetChannelsEnabled", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_chn_indices"), in_iio_chn_indices,
                         "<value of type const std::vector<int32_t>&>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("en"), in_en,
                         "<value of type bool>");
    });
@@ -1449,9 +1452,9 @@ void SensorDeviceProxy::GetChannelsEnabled(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::GetChannelsEnabled", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_chn_indices"), in_iio_chn_indices,
                         "<value of type const std::vector<int32_t>&>");
    });
@@ -1500,12 +1503,12 @@ void SensorDeviceProxy::GetChannelsAttributes(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::GetChannelsAttributes", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_chn_indices"), in_iio_chn_indices,
                         "<value of type const std::vector<int32_t>&>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("attr_name"), in_attr_name,
                         "<value of type const std::string&>");
    });
@@ -1596,12 +1599,12 @@ void SensorDeviceProxy::SetEventsEnabled(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::SetEventsEnabled", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_event_indices"), in_iio_event_indices,
                         "<value of type const std::vector<int32_t>&>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("en"), in_en,
                         "<value of type bool>");
    });
@@ -1651,9 +1654,9 @@ void SensorDeviceProxy::GetEventsEnabled(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::GetEventsEnabled", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_event_indices"), in_iio_event_indices,
                         "<value of type const std::vector<int32_t>&>");
    });
@@ -1702,12 +1705,12 @@ void SensorDeviceProxy::GetEventsAttributes(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::GetEventsAttributes", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_event_indices"), in_iio_event_indices,
                         "<value of type const std::vector<int32_t>&>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("attr_name"), in_attr_name,
                         "<value of type const std::string&>");
    });
@@ -1767,9 +1770,9 @@ void SensorDeviceProxy::StartReadingEvents(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDevice::StartReadingEvents", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("observer"), in_observer,
                         "<value of type ::mojo::PendingRemote<SensorDeviceEventsObserver>>");
    });
@@ -1912,9 +1915,9 @@ void SensorDevice_GetAttributes_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetAttributes", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("values"), in_values,
                         "<value of type const std::vector<absl::optional<std::string>>&>");
    });
@@ -2038,9 +2041,9 @@ void SensorDevice_SetFrequency_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::SetFrequency", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result_freq"), in_result_freq,
                         "<value of type double>");
    });
@@ -2152,9 +2155,9 @@ void SensorDevice_GetAllChannelIds_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetAllChannelIds", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_chn_ids"), in_iio_chn_ids,
                         "<value of type const std::vector<std::string>&>");
    });
@@ -2278,9 +2281,9 @@ void SensorDevice_SetChannelsEnabled_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::SetChannelsEnabled", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("failed_indices"), in_failed_indices,
                         "<value of type const std::vector<int32_t>&>");
    });
@@ -2404,9 +2407,9 @@ void SensorDevice_GetChannelsEnabled_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetChannelsEnabled", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("enabled"), in_enabled,
                         "<value of type const std::vector<bool>&>");
    });
@@ -2530,9 +2533,9 @@ void SensorDevice_GetChannelsAttributes_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetChannelsAttributes", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("values"), in_values,
                         "<value of type const std::vector<absl::optional<std::string>>&>");
    });
@@ -2656,9 +2659,9 @@ void SensorDevice_GetAllEvents_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetAllEvents", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_events"), in_iio_events,
                         "<value of type std::vector<IioEventPtr>>");
    });
@@ -2782,9 +2785,9 @@ void SensorDevice_SetEventsEnabled_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::SetEventsEnabled", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("failed_indices"), in_failed_indices,
                         "<value of type const std::vector<int32_t>&>");
    });
@@ -2908,9 +2911,9 @@ void SensorDevice_GetEventsEnabled_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetEventsEnabled", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("enabled"), in_enabled,
                         "<value of type const std::vector<bool>&>");
    });
@@ -3034,9 +3037,9 @@ void SensorDevice_GetEventsAttributes_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::SensorDevice::GetEventsAttributes", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("values"), in_values,
                         "<value of type const std::vector<absl::optional<std::string>>&>");
    });
@@ -3674,9 +3677,9 @@ void SensorDeviceSamplesObserverProxy::OnSampleUpdated(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDeviceSamplesObserver::OnSampleUpdated", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("sample"), in_sample,
                         "<value of type const base::flat_map<int32_t, int64_t>&>");
    });
@@ -3724,9 +3727,9 @@ void SensorDeviceSamplesObserverProxy::OnErrorOccurred(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDeviceSamplesObserver::OnErrorOccurred", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("type"), in_type,
                         "<value of type ObserverErrorType>");
    });
@@ -3899,12 +3902,12 @@ void SensorServiceNewDevicesObserverProxy::OnNewDeviceAdded(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorServiceNewDevicesObserver::OnNewDeviceAdded", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_device_id"), in_iio_device_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("types"), in_types,
                         "<value of type const std::vector<DeviceType>&>");
    });
@@ -4071,9 +4074,9 @@ void SensorDeviceEventsObserverProxy::OnEventUpdated(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDeviceEventsObserver::OnEventUpdated", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("iio_event"), in_iio_event,
                         "<value of type IioEventPtr>");
    });
@@ -4119,9 +4122,9 @@ void SensorDeviceEventsObserverProxy::OnErrorOccurred(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorDeviceEventsObserver::OnErrorOccurred", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("type"), in_type,
                         "<value of type ObserverErrorType>");
    });

@@ -154,7 +154,7 @@ class  ProbeError {
   std::string msg;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -303,7 +303,7 @@ class  VirtualizationInfo {
   VirtualizationInfo::SMTControl smt_control;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -445,7 +445,7 @@ class  VulnerabilityInfo {
   std::string message;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -583,7 +583,7 @@ class  KeylockerInfo {
   bool keylocker_configured;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -729,7 +729,7 @@ class  CpuVirtualizationInfo {
   bool is_locked;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -871,7 +871,7 @@ class  CpuCStateInfo {
   uint64_t time_in_state_since_last_boot_us;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1011,7 +1011,7 @@ class  CpuTemperatureChannel {
   int32_t temperature_celsius;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1152,7 +1152,7 @@ class  TimezoneInfo {
   std::string region;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1300,7 +1300,7 @@ class  MemoryEncryptionInfo {
   CryptoAlgorithm active_algorithm;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1444,7 +1444,7 @@ class  BacklightInfo {
   uint32_t brightness;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1582,7 +1582,7 @@ class  FanInfo {
   uint32_t speed_rpm;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1729,7 +1729,7 @@ class  StatefulPartitionInfo {
   std::string mount_source;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -1878,7 +1878,7 @@ class  SupportedCapabilities {
   int16_t max_tx_power;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2028,7 +2028,7 @@ class  OsVersion {
   std::string release_channel;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2176,7 +2176,7 @@ class  HDAudioCodec {
   uint8_t address;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2321,7 +2321,7 @@ class  FwupdFirmwareVersionInfo {
   FwupdVersionFormat version_format;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2468,7 +2468,7 @@ class  TpmStatus {
   bool owner_password_is_present;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2615,7 +2615,7 @@ class  TpmDictionaryAttack {
   uint32_t lockout_seconds_remaining;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2756,7 +2756,7 @@ class  TpmAttestation {
   bool enrolled;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -2903,7 +2903,7 @@ class  TpmSupportedFeatures {
   bool is_allowed;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -3061,7 +3061,7 @@ class  InputDevice {
   bool is_enabled;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -3159,7 +3159,6 @@ class  ProcessResult {
             typename std::enable_if<std::is_same<
                 T, ProcessResult>::value>::type* = nullptr>
   bool operator==(const T& rhs) const { return Equals(rhs); }
-  size_t Hash(size_t seed) const;
 
   Tag which() const {
     return tag_;
@@ -6608,6 +6607,28 @@ class  ProcessInfo {
       uint64_t physical_bytes_written,
       uint64_t cancelled_bytes_written);
 
+  ProcessInfo(
+      const std::string& command,
+      uint32_t user_id,
+      int8_t priority,
+      int8_t nice,
+      uint64_t uptime_ticks,
+      ProcessState state,
+      uint32_t total_memory_kib,
+      uint32_t resident_memory_kib,
+      uint32_t free_memory_kib,
+      uint64_t bytes_read,
+      uint64_t bytes_written,
+      uint64_t read_system_calls,
+      uint64_t write_system_calls,
+      uint64_t physical_bytes_read,
+      uint64_t physical_bytes_written,
+      uint64_t cancelled_bytes_written,
+      const absl::optional<std::string>& name,
+      uint32_t parent_process_id,
+      uint32_t process_group_id,
+      uint32_t threads);
+
 
   ~ProcessInfo();
 
@@ -6625,7 +6646,6 @@ class  ProcessInfo {
 
   template <typename T, ProcessInfo::EnableIfSame<T>* = nullptr>
   bool operator==(const T& rhs) const { return Equals(rhs); }
-  size_t Hash(size_t seed) const;
   template <typename UserType>
   static std::vector<uint8_t> Serialize(UserType* input) {
     return mojo::internal::SerializeImpl<
@@ -6713,9 +6733,17 @@ class  ProcessInfo {
   uint64_t physical_bytes_written;
   
   uint64_t cancelled_bytes_written;
+  
+  absl::optional<std::string> name;
+  
+  uint32_t parent_process_id;
+  
+  uint32_t process_group_id;
+  
+  uint32_t threads;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -6893,7 +6921,7 @@ BatteryInfo& operator=(const BatteryInfo&) = delete;
   ::chromeos::cros_healthd::mojom::NullableUint64Ptr temperature;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7080,7 +7108,7 @@ NonRemovableBlockDeviceInfo& operator=(const NonRemovableBlockDeviceInfo&) = del
   uint32_t serial;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7244,7 +7272,7 @@ CpuInfo& operator=(const CpuInfo&) = delete;
   absl::optional<base::flat_map<std::string, VulnerabilityInfoPtr>> vulnerabilities;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7399,7 +7427,7 @@ PhysicalCpuInfo& operator=(const PhysicalCpuInfo&) = delete;
   CpuVirtualizationInfoPtr virtualization;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7557,7 +7585,7 @@ LogicalCpuInfo& operator=(const LogicalCpuInfo&) = delete;
   std::vector<CpuCStateInfoPtr> c_states;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7717,7 +7745,7 @@ MemoryInfo& operator=(const MemoryInfo&) = delete;
   MemoryEncryptionInfoPtr memory_encryption_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -7907,7 +7935,7 @@ BluetoothAdapterInfo& operator=(const BluetoothAdapterInfo&) = delete;
   SupportedCapabilitiesPtr supported_capabilities;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8080,7 +8108,7 @@ BluetoothDeviceInfo& operator=(const BluetoothDeviceInfo&) = delete;
   ::chromeos::cros_healthd::mojom::NullableUint8Ptr battery_percentage;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8253,7 +8281,7 @@ SystemInfo& operator=(const SystemInfo&) = delete;
   OsVersionPtr os_version;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8398,7 +8426,7 @@ SystemInfoV2& operator=(const SystemInfoV2&) = delete;
   DmiInfoPtr dmi_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8555,7 +8583,7 @@ OsInfo& operator=(const OsInfo&) = delete;
   absl::optional<std::string> oem_name;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8708,7 +8736,7 @@ class  VpdInfo {
   absl::optional<std::string> model_name;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -8877,7 +8905,7 @@ DmiInfo& operator=(const DmiInfo&) = delete;
   absl::optional<std::string> sys_vendor;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9022,7 +9050,7 @@ WirelessInterfaceInfo& operator=(const WirelessInterfaceInfo&) = delete;
   WirelessLinkInfoPtr wireless_link_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9178,7 +9206,7 @@ class  WirelessLinkInfo {
   int32_t signal_level_dBm;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9337,7 +9365,7 @@ class  AudioInfo {
   uint32_t severe_underruns;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9476,7 +9504,7 @@ AudioHardwareInfo& operator=(const AudioHardwareInfo&) = delete;
   std::vector<AudioCardPtr> audio_cards;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9621,7 +9649,7 @@ AudioCard& operator=(const AudioCard&) = delete;
   std::vector<HDAudioCodecPtr> hd_audio_codecs;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9772,7 +9800,7 @@ class  BootPerformanceInfo {
   std::string shutdown_reason;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -9920,7 +9948,7 @@ BusDevice& operator=(const BusDevice&) = delete;
   BusInfoPtr bus_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10072,7 +10100,7 @@ class  PciBusInfo {
   absl::optional<std::string> driver;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10237,7 +10265,7 @@ UsbBusInfo& operator=(const UsbBusInfo&) = delete;
   FwupdFirmwareVersionInfoPtr fwupd_firmware_version_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10387,7 +10415,7 @@ class  UsbBusInterfaceInfo {
   absl::optional<std::string> driver;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10541,7 +10569,7 @@ TpmInfo& operator=(const TpmInfo&) = delete;
   absl::optional<std::string> did_vid;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10696,7 +10724,7 @@ class  TpmVersion {
   absl::optional<std::string> vendor_specific;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10842,7 +10870,7 @@ GraphicsInfo& operator=(const GraphicsInfo&) = delete;
   EGLInfoPtr egl_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -10991,7 +11019,7 @@ class  GLESInfo {
   std::vector<std::string> extensions;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11137,7 +11165,7 @@ class  EGLInfo {
   std::vector<std::string> extensions;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11282,7 +11310,7 @@ DisplayInfo& operator=(const DisplayInfo&) = delete;
   absl::optional<std::vector<ExternalDisplayInfoPtr>> dp_infos;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11476,7 +11504,7 @@ EmbeddedDisplayInfo& operator=(const EmbeddedDisplayInfo&) = delete;
   absl::optional<std::string> display_name;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11658,7 +11686,7 @@ ExternalDisplayInfo& operator=(const ExternalDisplayInfo&) = delete;
   absl::optional<std::string> display_name;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11817,7 +11845,7 @@ class  ThunderboltBusInterfaceInfo {
   std::string device_fw_version;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -11959,7 +11987,7 @@ ThunderboltBusInfo& operator=(const ThunderboltBusInfo&) = delete;
   std::vector<ThunderboltBusInterfaceInfoPtr> thunderbolt_interfaces;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -12101,7 +12129,7 @@ InputInfo& operator=(const InputInfo&) = delete;
   std::vector<TouchscreenDevicePtr> touchscreen_devices;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -12250,7 +12278,7 @@ TouchscreenDevice& operator=(const TouchscreenDevice&) = delete;
   bool has_stylus_garage_switch;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -12532,7 +12560,7 @@ TelemetryInfo& operator=(const TelemetryInfo&) = delete;
   AudioHardwareResultPtr audio_hardware_result;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -13533,7 +13561,11 @@ ProcessInfoPtr ProcessInfo::Clone() const {
       mojo::Clone(write_system_calls),
       mojo::Clone(physical_bytes_read),
       mojo::Clone(physical_bytes_written),
-      mojo::Clone(cancelled_bytes_written)
+      mojo::Clone(cancelled_bytes_written),
+      mojo::Clone(name),
+      mojo::Clone(parent_process_id),
+      mojo::Clone(process_group_id),
+      mojo::Clone(threads)
   );
 }
 
@@ -13570,6 +13602,14 @@ bool ProcessInfo::Equals(const T& other_struct) const {
   if (!mojo::Equals(this->physical_bytes_written, other_struct.physical_bytes_written))
     return false;
   if (!mojo::Equals(this->cancelled_bytes_written, other_struct.cancelled_bytes_written))
+    return false;
+  if (!mojo::Equals(this->name, other_struct.name))
+    return false;
+  if (!mojo::Equals(this->parent_process_id, other_struct.parent_process_id))
+    return false;
+  if (!mojo::Equals(this->process_group_id, other_struct.process_group_id))
+    return false;
+  if (!mojo::Equals(this->threads, other_struct.threads))
     return false;
   return true;
 }
@@ -13639,6 +13679,22 @@ bool operator<(const T& lhs, const T& rhs) {
   if (lhs.cancelled_bytes_written < rhs.cancelled_bytes_written)
     return true;
   if (rhs.cancelled_bytes_written < lhs.cancelled_bytes_written)
+    return false;
+  if (lhs.name < rhs.name)
+    return true;
+  if (rhs.name < lhs.name)
+    return false;
+  if (lhs.parent_process_id < rhs.parent_process_id)
+    return true;
+  if (rhs.parent_process_id < lhs.parent_process_id)
+    return false;
+  if (lhs.process_group_id < rhs.process_group_id)
+    return true;
+  if (rhs.process_group_id < lhs.process_group_id)
+    return false;
+  if (lhs.threads < rhs.threads)
+    return true;
+  if (rhs.threads < lhs.threads)
     return false;
   return false;
 }
@@ -16744,6 +16800,26 @@ struct  StructTraits<::chromeos::cros_healthd::mojom::ProcessInfo::DataView,
   static decltype(::chromeos::cros_healthd::mojom::ProcessInfo::cancelled_bytes_written) cancelled_bytes_written(
       const ::chromeos::cros_healthd::mojom::ProcessInfoPtr& input) {
     return input->cancelled_bytes_written;
+  }
+
+  static const decltype(::chromeos::cros_healthd::mojom::ProcessInfo::name)& name(
+      const ::chromeos::cros_healthd::mojom::ProcessInfoPtr& input) {
+    return input->name;
+  }
+
+  static decltype(::chromeos::cros_healthd::mojom::ProcessInfo::parent_process_id) parent_process_id(
+      const ::chromeos::cros_healthd::mojom::ProcessInfoPtr& input) {
+    return input->parent_process_id;
+  }
+
+  static decltype(::chromeos::cros_healthd::mojom::ProcessInfo::process_group_id) process_group_id(
+      const ::chromeos::cros_healthd::mojom::ProcessInfoPtr& input) {
+    return input->process_group_id;
+  }
+
+  static decltype(::chromeos::cros_healthd::mojom::ProcessInfo::threads) threads(
+      const ::chromeos::cros_healthd::mojom::ProcessInfoPtr& input) {
+    return input->threads;
   }
 
   static bool Read(::chromeos::cros_healthd::mojom::ProcessInfo::DataView input, ::chromeos::cros_healthd::mojom::ProcessInfoPtr* output);

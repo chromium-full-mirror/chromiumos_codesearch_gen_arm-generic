@@ -6,6 +6,7 @@ drm_atomic
 legacy_keyboard
 legacy_power_button
 ml_service
+mojo_service_manager
 neon
 ondevice_document_scanner
 ondevice_grammar

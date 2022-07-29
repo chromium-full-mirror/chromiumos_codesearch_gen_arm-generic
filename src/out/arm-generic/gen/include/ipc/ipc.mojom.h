@@ -351,7 +351,7 @@ Message& operator=(const Message&) = delete;
   absl::optional<std::vector<::mojo::native::SerializedHandlePtr>> handles;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

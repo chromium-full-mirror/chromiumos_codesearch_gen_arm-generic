@@ -111,7 +111,7 @@ class  Executor
 
   using RunMemtesterCallback = base::OnceCallback<void(ExecutedProcessResultPtr)>;
   
-  virtual void RunMemtester(RunMemtesterCallback callback) = 0;
+  virtual void RunMemtester(uint32_t test_mem_kib, RunMemtesterCallback callback) = 0;
 
   
   virtual void KillMemtester() = 0;
@@ -151,7 +151,7 @@ class  ExecutorProxy
   
   void GetScanDump(const std::string& interface_name, GetScanDumpCallback callback) final;
   
-  void RunMemtester(RunMemtesterCallback callback) final;
+  void RunMemtester(uint32_t test_mem_kib, RunMemtesterCallback callback) final;
   
   void KillMemtester() final;
   
@@ -330,7 +330,7 @@ class  ExecutedProcessResult {
   std::string err;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

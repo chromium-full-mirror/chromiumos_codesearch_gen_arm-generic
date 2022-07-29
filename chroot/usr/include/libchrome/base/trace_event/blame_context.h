@@ -108,7 +108,7 @@ class BASE_EXPORT BlameContext
   void OnTraceLogEnabled() override;
   void OnTraceLogDisabled() override;
 
-  void WriteIntoTrace(perfetto::libchrome::TracedValue context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue context) const;
 
  protected:
   // Serialize the properties of this blame context into |state|. Subclasses can

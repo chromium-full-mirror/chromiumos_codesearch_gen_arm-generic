@@ -936,8 +936,10 @@ enum class ProcessState : int32_t {
   kTracingStop = 5,
   
   kDead = 6,
+  
+  kIdle = 8,
   kMinValue = 0,
-  kMaxValue = 7,
+  kMaxValue = 8,
   kDefaultValue = 7
 };
 
@@ -1460,6 +1462,42 @@ class ProcessInfoDataView {
   }
   uint64_t cancelled_bytes_written() const {
     return data_->cancelled_bytes_written;
+  }
+  inline void GetNameDataView(
+      mojo::StringDataView* output);
+
+  template <typename UserType>
+  [[nodiscard]] bool ReadName(UserType* output) {
+    
+static_assert(
+    mojo::internal::IsValidUserTypeForOptionalValue<
+        mojo::StringDataView, UserType>(),
+    "Attempting to read the optional `name` field into a type which "
+    "cannot represent a null value. Either wrap the destination object "
+    "with absl::optional, ensure that any corresponding "
+    "{Struct/Union/Array/String}Traits define the necessary IsNull and "
+    "SetToNull methods, or use `MaybeReadName` instead "
+    "of `ReadName if you're fine with null values being "
+    "silently ignored in this case.");
+    auto* pointer = data_->header_.version >= 1
+                    ? data_->name.Get() : nullptr;
+    return mojo::internal::Deserialize<mojo::StringDataView>(
+        pointer, output, message_);
+  }
+  uint32_t parent_process_id() const {
+    if (data_->header_.version < 1)
+      return uint32_t{};
+    return data_->parent_process_id;
+  }
+  uint32_t process_group_id() const {
+    if (data_->header_.version < 1)
+      return uint32_t{};
+    return data_->process_group_id;
+  }
+  uint32_t threads() const {
+    if (data_->header_.version < 1)
+      return uint32_t{};
+    return data_->threads;
   }
  private:
   internal::ProcessInfo_Data* data_ = nullptr;
@@ -7677,6 +7715,17 @@ struct Serializer<::chromeos::cros_healthd::mojom::ProcessInfoDataView, MaybeCon
     fragment->physical_bytes_read = Traits::physical_bytes_read(input);
     fragment->physical_bytes_written = Traits::physical_bytes_written(input);
     fragment->cancelled_bytes_written = Traits::cancelled_bytes_written(input);
+    decltype(Traits::name(input)) in_name = Traits::name(input);
+    mojo::internal::MessageFragment<
+        typename decltype(fragment->name)::BaseType> name_fragment(
+            fragment.message());
+    mojo::internal::Serialize<mojo::StringDataView>(
+        in_name, name_fragment);
+    fragment->name.Set(
+        name_fragment.is_null() ? nullptr : name_fragment.data());
+    fragment->parent_process_id = Traits::parent_process_id(input);
+    fragment->process_group_id = Traits::process_group_id(input);
+    fragment->threads = Traits::threads(input);
   }
 
   static bool Deserialize(::chromeos::cros_healthd::mojom::internal::ProcessInfo_Data* input,
@@ -13258,6 +13307,12 @@ inline void ProcessInfoDataView::GetCommandDataView(
   auto pointer = data_->command.Get();
   *output = mojo::StringDataView(pointer, message_);
 }
+inline void ProcessInfoDataView::GetNameDataView(
+    mojo::StringDataView* output) {
+  auto pointer = data_->header_.version >= 1
+                 ? data_->name.Get() : nullptr;
+  *output = mojo::StringDataView(pointer, message_);
+}
 
 
 inline void BatteryInfoDataView::GetVendorDataView(
@@ -14605,202 +14660,166 @@ inline void InputResultDataView::GetErrorDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuArchitectureEnum> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CpuArchitectureEnum value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CpuArchitectureEnum value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProbeCategoryEnum> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ProbeCategoryEnum value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ProbeCategoryEnum value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ErrorType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ErrorType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ErrorType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProcessState> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ProcessState value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ProcessState value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::StorageDevicePurpose> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::StorageDevicePurpose value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::StorageDevicePurpose value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EncryptionState> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EncryptionState value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EncryptionState value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CryptoAlgorithm> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CryptoAlgorithm value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CryptoAlgorithm value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BluetoothDeviceType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BluetoothDeviceType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BluetoothDeviceType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BootMode> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BootMode value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BootMode value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BusDeviceClass> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BusDeviceClass value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::BusDeviceClass value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::FwupdVersionFormat> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::FwupdVersionFormat value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::FwupdVersionFormat value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::TpmGSCVersion> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::TpmGSCVersion value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::TpmGSCVersion value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DisplayInputType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DisplayInputType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DisplayInputType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::InputDevice_ConnectionType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::InputDevice_ConnectionType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::InputDevice_ConnectionType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // DIAGNOSTICS_MOJOM_PUBLIC_CROS_HEALTHD_PROBE_MOJOM_SHARED_H_

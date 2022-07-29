@@ -124,14 +124,12 @@ DmaBufVideoFrame_Data::DmaBufVideoFrame_Data()
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::cros::mojom::VideoPixelFormat>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::cros::mojom::VideoPixelFormat value) {
+   perfetto_libchrome::TracedValue context, ::cros::mojom::VideoPixelFormat value) {
   return std::move(context).WriteString(::cros::mojom::VideoPixelFormatToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

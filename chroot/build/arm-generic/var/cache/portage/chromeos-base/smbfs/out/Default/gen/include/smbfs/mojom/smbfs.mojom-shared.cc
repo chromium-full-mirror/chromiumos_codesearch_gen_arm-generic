@@ -584,38 +584,32 @@ SmbFsDelegate_RequestCredentials_ResponseParams_Data::SmbFsDelegate_RequestCrede
 }  // namespace mojom
 }  // namespace smbfs
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::smbfs::mojom::MountError>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::smbfs::mojom::MountError value) {
+   perfetto_libchrome::TracedValue context, ::smbfs::mojom::MountError value) {
   return std::move(context).WriteString(::smbfs::mojom::MountErrorToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::smbfs::mojom::DeleteRecursivelyError>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::smbfs::mojom::DeleteRecursivelyError value) {
+   perfetto_libchrome::TracedValue context, ::smbfs::mojom::DeleteRecursivelyError value) {
   return std::move(context).WriteString(::smbfs::mojom::DeleteRecursivelyErrorToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::smbfs::mojom::KerberosConfig_Source>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::smbfs::mojom::KerberosConfig_Source value) {
+   perfetto_libchrome::TracedValue context, ::smbfs::mojom::KerberosConfig_Source value) {
   return std::move(context).WriteString(::smbfs::mojom::KerberosConfig_SourceToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

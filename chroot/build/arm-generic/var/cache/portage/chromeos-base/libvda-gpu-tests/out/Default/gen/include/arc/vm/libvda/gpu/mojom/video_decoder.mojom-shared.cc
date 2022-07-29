@@ -436,14 +436,12 @@ VideoDecoderClient_OnError_Params_Data::VideoDecoderClient_OnError_Params_Data()
 }  // namespace mojom
 }  // namespace arc
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::arc::mojom::DecoderStatus>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::arc::mojom::DecoderStatus value) {
+   perfetto_libchrome::TracedValue context, ::arc::mojom::DecoderStatus value) {
   return std::move(context).WriteString(::arc::mojom::DecoderStatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

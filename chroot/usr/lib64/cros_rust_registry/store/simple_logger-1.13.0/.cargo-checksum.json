@@ -1,16 +1,16 @@
 {
-	"package": "33b213579bdace2ddb944ee40b8b5504094db91e7709a28a1143165c78862229",
+	"package": "04c271435d6878baf9d45c0d98e23e9b15a14ba65383e14ee35415fafe5942bb",
 	"files": {
-		"README.md": "6f27034adc857590f7ece2a7ab7651816236fac4099fac6432cc3e7cb3533ebb",
-		"Cargo.lock": "af181c568ee11052e7ceffdba3c94434eaeb4332f2c1c4042cb7cea49e66c261",
-		"examples/init_with_target_level.rs": "4f4d1bc1a6e647bf114816c805abd653e25418a28e4b10d90642a3ec0a0a03e7",
-		"examples/init.rs": "88ebcb8ef5deabc141d1baf6930462643ab1fca75bbaa2246bcf5d08cb03519e",
-		"examples/colors.rs": "113a97617aed3f4d03d48c19e345e947a7ca89e9d3700ccd9c79dfbe82402539",
-		"examples/timestamps.rs": "d7005f007bb166dc97f0755053ee2eebff2930fcd1f1486f070df815171c2a0f",
-		"examples/init_with_level.rs": "51cb403bf059a229e1b8a5816c0c34a60fb16f489f9aea4f3f40836520b6373f",
-		"src/lib.rs": "a9d923e78cc53beae94c75aa144768f272df9249faf286b114001c04989b014a",
 		"LICENSE": "f4191fd27e4cd16e1821fbab4f3db82e22dbfc28c42265df90a659ed8d975817",
+		"examples/timestamps.rs": "d7005f007bb166dc97f0755053ee2eebff2930fcd1f1486f070df815171c2a0f",
+		"examples/init_with_target_level.rs": "4f4d1bc1a6e647bf114816c805abd653e25418a28e4b10d90642a3ec0a0a03e7",
+		"examples/colors.rs": "113a97617aed3f4d03d48c19e345e947a7ca89e9d3700ccd9c79dfbe82402539",
+		"examples/init_with_level.rs": "51cb403bf059a229e1b8a5816c0c34a60fb16f489f9aea4f3f40836520b6373f",
+		"examples/init.rs": "88ebcb8ef5deabc141d1baf6930462643ab1fca75bbaa2246bcf5d08cb03519e",
 		"Cargo.toml": "062984be17e67286d62f92b8d770df1804a5e73ebd3a676e7d7d4f997d304403",
-		"Cargo.toml.orig": "d0c7fa313c6f1753b18ee1c748023152619c293b815862b0d369cb7d5c796888"
+		"Cargo.lock": "4719b9105fe8926d0f69ab94864bb6a1940fd007afe15e1a1dd2bbc547f434da",
+		"Cargo.toml.orig": "d0c7fa313c6f1753b18ee1c748023152619c293b815862b0d369cb7d5c796888",
+		"src/lib.rs": "a9d923e78cc53beae94c75aa144768f272df9249faf286b114001c04989b014a",
+		"README.md": "6f27034adc857590f7ece2a7ab7651816236fac4099fac6432cc3e7cb3533ebb"
 	}
 }

@@ -79,9 +79,9 @@ size_t FileInfo::Hash(size_t seed) const {
 }
 
 void FileInfo::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "size"), this->size,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -90,7 +90,7 @@ void FileInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "is_directory"), this->is_directory,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -99,7 +99,7 @@ void FileInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "is_symbolic_link"), this->is_symbolic_link,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -108,7 +108,7 @@ void FileInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "last_modified"), this->last_modified,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -117,7 +117,7 @@ void FileInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "last_accessed"), this->last_accessed,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -126,7 +126,7 @@ void FileInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "creation_time"), this->creation_time,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

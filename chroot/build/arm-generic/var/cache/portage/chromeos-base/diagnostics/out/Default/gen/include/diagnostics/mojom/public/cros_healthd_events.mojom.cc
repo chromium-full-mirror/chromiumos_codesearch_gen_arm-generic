@@ -68,9 +68,9 @@ UsbEventInfo::UsbEventInfo(
 UsbEventInfo::~UsbEventInfo() = default;
 
 void UsbEventInfo::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "vendor"), this->vendor,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -79,7 +79,7 @@ void UsbEventInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -88,7 +88,7 @@ void UsbEventInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "vid"), this->vid,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -97,7 +97,7 @@ void UsbEventInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "pid"), this->pid,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -106,7 +106,7 @@ void UsbEventInfo::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "categories"), this->categories,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -1692,9 +1692,9 @@ void CrosHealthdUsbObserverProxy::OnAdd(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnAdd", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("info"), in_info,
                         "<value of type UsbEventInfoPtr>");
    });
@@ -1740,9 +1740,9 @@ void CrosHealthdUsbObserverProxy::OnRemove(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::CrosHealthdUsbObserver::OnRemove", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("info"), in_info,
                         "<value of type UsbEventInfoPtr>");
    });

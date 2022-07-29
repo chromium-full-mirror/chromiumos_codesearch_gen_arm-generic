@@ -567,14 +567,12 @@ TextClassifier_REMOVED_1_ResponseParams_Data::TextClassifier_REMOVED_1_ResponseP
 }  // namespace machine_learning
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::AnnotationUsecase>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::AnnotationUsecase value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::AnnotationUsecase value) {
   return std::move(context).WriteString(::chromeos::machine_learning::mojom::AnnotationUsecaseToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

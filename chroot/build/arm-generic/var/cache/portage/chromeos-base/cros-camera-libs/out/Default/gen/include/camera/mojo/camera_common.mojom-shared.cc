@@ -905,38 +905,32 @@ CameraModule_SetCallbacksAssociated_ResponseParams_Data::CameraModule_SetCallbac
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraFacing>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::cros::mojom::CameraFacing value) {
+   perfetto_libchrome::TracedValue context, ::cros::mojom::CameraFacing value) {
   return std::move(context).WriteString(::cros::mojom::CameraFacingToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraDeviceStatus>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::cros::mojom::CameraDeviceStatus value) {
+   perfetto_libchrome::TracedValue context, ::cros::mojom::CameraDeviceStatus value) {
   return std::move(context).WriteString(::cros::mojom::CameraDeviceStatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::cros::mojom::TorchModeStatus>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::cros::mojom::TorchModeStatus value) {
+   perfetto_libchrome::TracedValue context, ::cros::mojom::TorchModeStatus value) {
   return std::move(context).WriteString(::cros::mojom::TorchModeStatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

@@ -62,9 +62,9 @@ EcEvent::EcEvent(
 EcEvent::~EcEvent() = default;
 
 void EcEvent::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -73,7 +73,7 @@ void EcEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "payload"), this->payload,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -82,7 +82,7 @@ void EcEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "reason"), this->reason,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -116,9 +116,9 @@ size_t GetEcTelemetryResponse::Hash(size_t seed) const {
 }
 
 void GetEcTelemetryResponse::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "status"), this->status,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -127,7 +127,7 @@ void GetEcTelemetryResponse::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "payload"), this->payload,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -191,9 +191,9 @@ void WilcoEcObserverProxy::OnEcEvent(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::WilcoEcObserver::OnEcEvent", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("ec_event"), in_ec_event,
                         "<value of type EcEventPtr>");
    });

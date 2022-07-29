@@ -60,9 +60,9 @@ size_t NullableUint8::Hash(size_t seed) const {
 }
 
 void NullableUint8::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -92,9 +92,9 @@ size_t NullableInt16::Hash(size_t seed) const {
 }
 
 void NullableInt16::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -124,9 +124,9 @@ size_t NullableUint16::Hash(size_t seed) const {
 }
 
 void NullableUint16::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -156,9 +156,9 @@ size_t NullableUint32::Hash(size_t seed) const {
 }
 
 void NullableUint32::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -188,9 +188,9 @@ size_t NullableUint64::Hash(size_t seed) const {
 }
 
 void NullableUint64::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -220,9 +220,9 @@ size_t NullableDouble::Hash(size_t seed) const {
 }
 
 void NullableDouble::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

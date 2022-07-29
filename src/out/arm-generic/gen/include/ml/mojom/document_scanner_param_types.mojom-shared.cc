@@ -57,14 +57,12 @@ namespace internal {
 }  // namespace machine_learning
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::Rotation>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::Rotation value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::Rotation value) {
   return std::move(context).WriteString(::chromeos::machine_learning::mojom::RotationToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

@@ -1,15 +1,15 @@
 {
 	"package": "6f92c5e272b8d91a99b0a203c2a3dbec295f8e3d7102e44aa3f5e18717ebba08",
 	"files": {
-		"CHANGELOG.md": "479ecc970a05b376560b258933f10250e620b41add0be0c36be1163107778c1c",
-		"benches/nib_bench.rs": "e532ccb6a5c7d2a9bd6030dd18cef9c30ee7b765cde674236b4d3e93460f50ea",
-		"README.md": "cbc998295ee8d7d6c5ab51c113df05a97d354aff79d690cc92b8019300961e0f",
-		"Cargo.lock": "8b053b080a002c7531c7b291a72336c9bb56cb811cbf1874ac3a6c5b7436a4c3",
+		"LICENSE": "e4e06f4bee6b18fbe6ab33b26331739a0b2bda0c1037cfa869e7d97512e9fcf7",
 		"examples/debug.rs": "97f2c42913e8aa1a33fb60b9a930f5d6b190658484f3fe83f0f6cc56976ad30c",
+		"Cargo.toml": "4fee06d71c9ae5ca3c39da341b1ff8a6a44b4ea220138736c0275b43449ceaea",
+		"benches/nib_bench.rs": "e532ccb6a5c7d2a9bd6030dd18cef9c30ee7b765cde674236b4d3e93460f50ea",
+		"Cargo.lock": "8b053b080a002c7531c7b291a72336c9bb56cb811cbf1874ac3a6c5b7436a4c3",
+		"Cargo.toml.orig": "8bba3eb56dfe5b4c9f0aec4a64323ada2ccf91574b64fc08aac7731a4bf92823",
 		"src/test.rs": "758b48af39226cb18b3da62a79da03ab0fed321d5d2012c35c2aa95b5dedf960",
 		"src/lib.rs": "c020c9ae28accc69d86f856e9a4973858b4e46e5951856ce4550d057fad6eed6",
-		"LICENSE": "e4e06f4bee6b18fbe6ab33b26331739a0b2bda0c1037cfa869e7d97512e9fcf7",
-		"Cargo.toml": "4fee06d71c9ae5ca3c39da341b1ff8a6a44b4ea220138736c0275b43449ceaea",
-		"Cargo.toml.orig": "8bba3eb56dfe5b4c9f0aec4a64323ada2ccf91574b64fc08aac7731a4bf92823"
+		"README.md": "cbc998295ee8d7d6c5ab51c113df05a97d354aff79d690cc92b8019300961e0f",
+		"CHANGELOG.md": "479ecc970a05b376560b258933f10250e620b41add0be0c36be1163107778c1c"
 	}
 }

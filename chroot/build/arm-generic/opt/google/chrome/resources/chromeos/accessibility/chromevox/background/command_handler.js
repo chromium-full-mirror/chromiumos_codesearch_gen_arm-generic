@@ -20,6 +20,7 @@ import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
 import {AutoScrollHandler} from './auto_scroll_handler.js';
 import {BrailleBackground} from './braille/braille_background.js';
 import {BrailleCaptionsBackground} from './braille/braille_captions_background.js';
+import {ChromeVox} from './chromevox.js';
 import {ChromeVoxState} from './chromevox_state.js';
 import {ChromeVoxBackground} from './classic_background.js';
 import {Color} from './color.js';
@@ -28,6 +29,7 @@ import {DesktopAutomationInterface} from './desktop_automation_interface.js';
 import {TypingEcho} from './editing/editable_text_base.js';
 import {EventSourceState} from './event_source.js';
 import {GestureInterface} from './gesture_interface.js';
+import {LogStore} from './logging/log_store.js';
 import {Output} from './output/output.js';
 import {OutputEventType} from './output/output_types.js';
 import {PhoneticData} from './phonetic_data.js';
@@ -1135,7 +1137,8 @@ export class CommandHandler extends CommandHandlerInterface {
         }
 
         // Get word start and end indices.
-        let wordStarts, wordEnds;
+        let wordStarts;
+        let wordEnds;
         if (node.role === RoleType.INLINE_TEXT_BOX) {
           wordStarts = node.wordStarts;
           wordEnds = node.wordEnds;

@@ -113,9 +113,9 @@ class StructPtr {
   // If T is serialisable into trace, StructPtr<T> is also serialisable.
 #if 0
   template <class U = S>
-  typename perfetto::libchrome::check_traced_value_support<U>::type WriteIntoTrace(
-      perfetto::libchrome::TracedValue&& context) const {
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), ptr_);
+  typename perfetto_libchrome::check_traced_value_support<U>::type WriteIntoTrace(
+      perfetto_libchrome::TracedValue&& context) const {
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), ptr_);
   }
 #endif
 
@@ -217,9 +217,9 @@ class InlinedStructPtr {
 #if 0
   // If T is serialisable into trace, StructPtr<T> is also serialisable.
   template <class U = S>
-  typename perfetto::libchrome::check_traced_value_support<U>::type WriteIntoTrace(
-      perfetto::libchrome::TracedValue&& context) const {
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), get());
+  typename perfetto_libchrome::check_traced_value_support<U>::type WriteIntoTrace(
+      perfetto_libchrome::TracedValue&& context) const {
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), get());
   }
 #endif
 

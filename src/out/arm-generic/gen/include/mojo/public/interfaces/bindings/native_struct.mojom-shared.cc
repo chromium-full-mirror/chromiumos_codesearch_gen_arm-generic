@@ -135,14 +135,12 @@ NativeStruct_Data::NativeStruct_Data()
 }  // namespace native
 }  // namespace mojo
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::mojo::native::SerializedHandleType>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::mojo::native::SerializedHandleType value) {
+   perfetto_libchrome::TracedValue context, ::mojo::native::SerializedHandleType value) {
   return std::move(context).WriteString(::mojo::native::SerializedHandleTypeToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

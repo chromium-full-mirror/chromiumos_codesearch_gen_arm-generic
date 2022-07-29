@@ -1454,48 +1454,40 @@ inline void SpeechRecognizerEventDataView::GetFinalResultDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::OptionalBool> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::OptionalBool value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::OptionalBool value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::SodaRecognitionMode> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::SodaRecognitionMode value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::SodaRecognitionMode value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointerType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::EndpointerType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::EndpointerType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointReason> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::EndpointReason value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::EndpointReason value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ML_MOJOM_SODA_MOJOM_SHARED_H_

@@ -363,7 +363,7 @@ class  CreateModelLoaderOptions {
   DevicePreference device_preference;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -511,7 +511,7 @@ class  TensorInfo {
   std::vector<uint32_t> dimensions;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -653,7 +653,7 @@ ModelInfo& operator=(const ModelInfo&) = delete;
   base::flat_map<std::string, TensorInfoPtr> output_tensor_info;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

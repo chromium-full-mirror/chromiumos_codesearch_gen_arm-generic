@@ -174,21 +174,21 @@ void MjpegDecodeAcceleratorProxy::DecodeWithDmaBuf(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::MjpegDecodeAccelerator::DecodeWithDmaBuf", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("task_id"), in_task_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("src_dmabuf_fd"), in_src_dmabuf_fd,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("src_size"), in_src_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("src_offset"), in_src_offset,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("dst_frame"), in_dst_frame,
                         "<value of type ::cros::mojom::DmaBufVideoFramePtr>");
    });
@@ -346,9 +346,9 @@ void MjpegDecodeAccelerator_Initialize_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::MjpegDecodeAccelerator::Initialize", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("success"), in_success,
                         "<value of type bool>");
    });
@@ -460,9 +460,9 @@ void MjpegDecodeAccelerator_DecodeWithDmaBuf_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::MjpegDecodeAccelerator::DecodeWithDmaBuf", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("error"), in_error,
                         "<value of type DecodeError>");
    });

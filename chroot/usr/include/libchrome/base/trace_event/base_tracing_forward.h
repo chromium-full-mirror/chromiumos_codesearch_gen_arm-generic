@@ -14,8 +14,7 @@
 #include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"  // nogncheck
 #else
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 class TracedValue;
 class EventContext;
@@ -32,7 +31,6 @@ struct check_traced_value_support {
   using type = ResultType;
 };
 
-}  // namespace libchrome
 }  // namespace perfetto
 
 #endif  // !BUILDFLAG(ENABLE_BASE_TRACING)

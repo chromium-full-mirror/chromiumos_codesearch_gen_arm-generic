@@ -4315,7 +4315,7 @@ class dblink(object):
 					'at https://crbug.com/new so we can get the blockers added.',
 					'',
 					'Please see the documentation for more details:',
-					'  https://chromium.googlesource.com/chromiumos/docs/+/master'
+					'  https://chromium.googlesource.com/chromiumos/docs/+/HEAD'
 					'/portage/ebuild_faq.md#How-do-I-handle-file-collisions',
 				])
 				return 1

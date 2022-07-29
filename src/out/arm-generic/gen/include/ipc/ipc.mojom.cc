@@ -58,9 +58,9 @@ Message::Message(
 Message::~Message() = default;
 
 void Message::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "bytes"), this->bytes,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -69,7 +69,7 @@ void Message::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "handles"), this->handles,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -151,9 +151,9 @@ void ChannelProxy::SetPeerPid(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send IPC::mojom::Channel::SetPeerPid", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("pid"), in_pid,
                         "<value of type int32_t>");
    });
@@ -189,9 +189,9 @@ void ChannelProxy::Receive(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send IPC::mojom::Channel::Receive", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("message"), in_message,
                         "<value of type MessagePtr>");
    });
@@ -238,9 +238,9 @@ void ChannelProxy::GetAssociatedInterface(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send IPC::mojom::Channel::GetAssociatedInterface", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo_base::mojom::GenericPendingAssociatedReceiverPtr>");
    });

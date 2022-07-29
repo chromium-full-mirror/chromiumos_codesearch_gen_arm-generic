@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1659029890.983725}
+{"version": "1", "timestamp": 1659073113.7905078, "deltas": [{"event": "add", "package": "chromeos-base/dns-proxy", "version": "9999", "slot": "0", "counter": "1554"}, {"event": "add", "package": "chromeos-base/debugd", "version": "9999", "slot": "0", "counter": "1555"}, {"event": "add", "package": "chromeos-base/chromeos-trim", "version": "9999", "slot": "0", "counter": "1556"}]}

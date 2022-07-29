@@ -861,6 +861,8 @@ MODULE_ALIAS("usb:v0403pA5ACd*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v0403pA5ADd*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v0403pA5AEd*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v0403pA5AFd*dc*dsc*dp*ic*isc*ip*in*");
+MODULE_ALIAS("usb:v0403p8050d*dc*dsc*dp*ic*isc*ip*in*");
+MODULE_ALIAS("usb:v0403pC811d*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v1B5Cp0103d*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v1B5Cp0104d*dc*dsc*dp*ic*isc*ip*in*");
 MODULE_ALIAS("usb:v1B5Cp0105d*dc*dsc*dp*ic*isc*ip*in*");

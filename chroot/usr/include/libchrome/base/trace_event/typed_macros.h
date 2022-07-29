@@ -37,35 +37,35 @@
 // |category| is enabled for the tracing session.
 //
 // The slice is thread-scoped (i.e., written to the default track of the current
-// thread) unless overridden with a custom track object (see perfetto::libchrome::Track).
+// thread) unless overridden with a custom track object (see perfetto_libchrome::Track).
 //
 // |name| must be a string with static lifetime (i.e., the same address must not
 // be used for a different event name in the future). If you want to use a
 // dynamically allocated name, do this:
 //
-//   TRACE_EVENT("category", nullptr, [&](perfetto::libchrome::EventContext ctx) {
+//   TRACE_EVENT("category", nullptr, [&](perfetto_libchrome::EventContext ctx) {
 //     ctx.event()->set_name(dynamic_name);
 //   });
 //
-// The varargs can include a perfetto::libchrome::Track (e.g. async events), a
+// The varargs can include a perfetto_libchrome::Track (e.g. async events), a
 // base::TimeTicks timestamp, and a trace lambda. If passed, the lambda is
 // executed synchronously.
 //
 // Examples:
 //
 //   // Sync event with typed field.
-//   TRACE_EVENT("cat", "Name", [](perfetto::libchrome::EventContext ctx) {
-//       auto* event = ctx.event<perfetto::libchrome::protos::pbzero::ChromeTrackEvent>();
+//   TRACE_EVENT("cat", "Name", [](perfetto_libchrome::EventContext ctx) {
+//       auto* event = ctx.event<perfetto_libchrome::protos::pbzero::ChromeTrackEvent>();
 //       // Fill in some field in event.
 //       event->set_my_chrome_field();
 //   });
 //
 //   // Async event.
-//   TRACE_EVENT_BEGIN("cat", "Name", perfetto::libchrome::Track(1234));
+//   TRACE_EVENT_BEGIN("cat", "Name", perfetto_libchrome::Track(1234));
 //
 //   // Async event with explicit timestamp.
 //   base::TimeTicks time_ticks;
-//   TRACE_EVENT_BEGIN("cat", "Name", perfetto::libchrome::Track(1234), time_ticks);
+//   TRACE_EVENT_BEGIN("cat", "Name", perfetto_libchrome::Track(1234), time_ticks);
 
 // Begin a slice under |category| with the title |name|.
 // Defaults to the current thread's track.

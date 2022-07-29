@@ -63,9 +63,9 @@ Password::Password(
 Password::~Password() = default;
 
 void Password::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "fd"), this->fd,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -74,7 +74,7 @@ void Password::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "length"), this->length,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -108,9 +108,9 @@ size_t KerberosConfig::Hash(size_t seed) const {
 }
 
 void KerberosConfig::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "source"), this->source,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -119,7 +119,7 @@ void KerberosConfig::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "identity"), this->identity,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -148,9 +148,9 @@ CredentialStorageOptions::CredentialStorageOptions(
 CredentialStorageOptions::~CredentialStorageOptions() = default;
 
 void CredentialStorageOptions::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "account_hash"), this->account_hash,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -159,7 +159,7 @@ void CredentialStorageOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "salt"), this->salt,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -228,9 +228,9 @@ MountOptions::MountOptions(
 MountOptions::~MountOptions() = default;
 
 void MountOptions::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "share_path"), this->share_path,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -239,7 +239,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "resolved_host"), this->resolved_host,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -248,7 +248,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "username"), this->username,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -257,7 +257,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "workgroup"), this->workgroup,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -266,7 +266,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "password"), this->password,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -275,7 +275,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "kerberos_config"), this->kerberos_config,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -284,7 +284,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "allow_ntlm"), this->allow_ntlm,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -293,7 +293,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "skip_connect"), this->skip_connect,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -302,7 +302,7 @@ void MountOptions::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "credential_storage_options"), this->credential_storage_options,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -334,9 +334,9 @@ Credentials::Credentials(
 Credentials::~Credentials() = default;
 
 void Credentials::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "username"), this->username,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -345,7 +345,7 @@ void Credentials::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "workgroup"), this->workgroup,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -354,7 +354,7 @@ void Credentials::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "password"), this->password,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -434,12 +434,12 @@ void SmbFsBootstrapProxy::MountShare(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send smbfs::mojom::SmbFsBootstrap::MountShare", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("options"), in_options,
                         "<value of type MountOptionsPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("delegate"), in_delegate,
                         "<value of type ::mojo::PendingRemote<SmbFsDelegate>>");
    });
@@ -570,12 +570,12 @@ void SmbFsBootstrap_MountShare_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply smbfs::mojom::SmbFsBootstrap::MountShare", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("error"), in_error,
                         "<value of type MountError>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("smbfs"), in_smbfs,
                         "<value of type ::mojo::PendingRemote<SmbFs>>");
    });
@@ -808,9 +808,9 @@ void SmbFsProxy::DeleteRecursively(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send smbfs::mojom::SmbFs::DeleteRecursively", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("path"), in_path,
                         "<value of type const base::FilePath&>");
    });
@@ -929,9 +929,9 @@ void SmbFs_RemoveSavedCredentials_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply smbfs::mojom::SmbFs::RemoveSavedCredentials", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("success"), in_success,
                         "<value of type bool>");
    });
@@ -1043,9 +1043,9 @@ void SmbFs_DeleteRecursively_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply smbfs::mojom::SmbFs::DeleteRecursively", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("error"), in_error,
                         "<value of type DeleteRecursivelyError>");
    });
@@ -1347,9 +1347,9 @@ void SmbFsDelegate_RequestCredentials_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply smbfs::mojom::SmbFsDelegate::RequestCredentials", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("credentials"), in_credentials,
                         "<value of type CredentialsPtr>");
    });

@@ -230,38 +230,32 @@ WilcoEcObserver_OnEcEvent_Params_Data::WilcoEcObserver_OnEcEvent_Params_Data()
 }  // namespace cros_healthd
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Reason>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EcEvent_Reason value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EcEvent_Reason value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::EcEvent_ReasonToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Type>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EcEvent_Type value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::EcEvent_Type value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::EcEvent_TypeToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_Status>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_Status value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_Status value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_StatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

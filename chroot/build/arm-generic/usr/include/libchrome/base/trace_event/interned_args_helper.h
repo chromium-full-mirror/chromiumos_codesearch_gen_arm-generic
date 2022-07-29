@@ -69,31 +69,31 @@ namespace base {
 namespace trace_event {
 
 struct BASE_EXPORT InternedSourceLocation
-    : public perfetto::libchrome::TrackEventInternedDataIndex<
+    : public perfetto_libchrome::TrackEventInternedDataIndex<
           InternedSourceLocation,
-          perfetto::libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
+          perfetto_libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
           TraceSourceLocation> {
-  static void Add(perfetto::libchrome::protos::pbzero::InternedData* interned_data,
+  static void Add(perfetto_libchrome::protos::pbzero::InternedData* interned_data,
                   size_t iid,
                   const TraceSourceLocation& location);
-  using perfetto::libchrome::TrackEventInternedDataIndex<
+  using perfetto_libchrome::TrackEventInternedDataIndex<
       InternedSourceLocation,
-      perfetto::libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
+      perfetto_libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
       TraceSourceLocation>::Get;
-  static size_t Get(perfetto::libchrome::EventContext* ctx, const Location& location) {
-    return perfetto::libchrome::TrackEventInternedDataIndex<
+  static size_t Get(perfetto_libchrome::EventContext* ctx, const Location& location) {
+    return perfetto_libchrome::TrackEventInternedDataIndex<
         InternedSourceLocation,
-        perfetto::libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
+        perfetto_libchrome::protos::pbzero::InternedData::kSourceLocationsFieldNumber,
         TraceSourceLocation>::Get(ctx, TraceSourceLocation(location));
   }
 };
 
 struct BASE_EXPORT InternedLogMessage
-    : public perfetto::libchrome::TrackEventInternedDataIndex<
+    : public perfetto_libchrome::TrackEventInternedDataIndex<
           InternedLogMessage,
-          perfetto::libchrome::protos::pbzero::InternedData::kLogMessageBodyFieldNumber,
+          perfetto_libchrome::protos::pbzero::InternedData::kLogMessageBodyFieldNumber,
           std::string> {
-  static void Add(perfetto::libchrome::protos::pbzero::InternedData* interned_data,
+  static void Add(perfetto_libchrome::protos::pbzero::InternedData* interned_data,
                   size_t iid,
                   const std::string& log_message);
 };

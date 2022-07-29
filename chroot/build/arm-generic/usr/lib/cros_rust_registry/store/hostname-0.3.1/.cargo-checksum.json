@@ -1,0 +1,16 @@
+{
+	"package": "76d287875d7798bd29bc2f211d5522dd6f40e5466570bfda97799ca454118cc0",
+	"files": {
+		"Cargo.toml.orig": "6a23d2d55e4e9ce0294a02196ac8c4d71817f210c93c6481ecfa56ed3556ae56",
+		"Cargo.lock": "6ebf3de9a330f141324b9d155a675b1fddffc388a51ae05b88e3fa7e0e9963dd",
+		"tests/version.rs": "73301b7bfe500eada5ede66f0dce89bd3e354af50a8e7a123b02931cd5eb8e16",
+		"Cargo.toml": "349dec3e3628cc81609d2ff7db1129767b3e488fd1e4ba947ef800ec3782bbb9",
+		"LICENSE": "2e4213e573312c8c75e6e7e2c55a45283427e759432b56014afaf3c7d950a568",
+		"README.md": "58ef1caa99fc5abb3aed80c442ef0a3efb409072d688adf7414fb05182f03e3d",
+		"examples/hostname.rs": "fb2de1da4f0e02524f0c78618a233dbe332c96e2dabba5a459cd515cba7f754b",
+		"CHANGELOG.md": "0bdb89343743c9b6f8ba873d6d8182541caca8f67bad72f7c80cfc277e19aeaa",
+		"src/lib.rs": "3c65385ddc995373c4f8a69d4520414e8088245fb1b896ffc8c0c4a2d7f89102",
+		"src/windows.rs": "436f043978f1f577c6d715eb1aca31eb0c0db3418a416301d5f6de6aa2d0811c",
+		"src/nix.rs": "607420e55c9ac48c1ced381cc35c7410b021847d70864d972eed49d4fec263c1"
+	}
+}

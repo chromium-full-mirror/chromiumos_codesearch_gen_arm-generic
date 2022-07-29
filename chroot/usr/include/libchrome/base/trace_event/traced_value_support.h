@@ -17,48 +17,48 @@
 
 // This file contains specialisations for trace serialisation for key
 // widely-used //base classes. As these specialisations require full definition
-// of perfetto::libchrome::TracedValue and almost every source unit in Chromium requires
+// of perfetto_libchrome::TracedValue and almost every source unit in Chromium requires
 // one of these //base concepts, include specialiazations here and expose them
 // to the users including trace_event.h, rather than adding a dependency from
 // scoped_refptr.h et al on traced_value.h.
 
-namespace perfetto {
+namespace perfetto_libchrome{
 
 // If T is serialisable into a trace, scoped_refptr<T> is serialisable as well.
 template <class T>
 struct TraceFormatTraits<scoped_refptr<T>,
-                         perfetto::libchrome::check_traced_value_support_t<T>> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+                         perfetto_libchrome::check_traced_value_support_t<T>> {
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const scoped_refptr<T>& value) {
     if (!value) {
       std::move(context).WritePointer(nullptr);
       return;
     }
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), *value);
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), *value);
   }
 
   template <class MessageType>
-  static void WriteIntoTrace(perfetto::libchrome::TracedProto<MessageType> context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedProto<MessageType> context,
                              const scoped_refptr<T>& value) {
     if (value) {
       // Proto message without any fields is treated as nullptr.
       return;
     }
-    perfetto::libchrome::WriteIntoTracedProto(std::move(context), *value);
+    perfetto_libchrome::WriteIntoTracedProto(std::move(context), *value);
   }
 };
 
 // If T is serialisable into a trace, base::WeakPtr<T> is serialisable as well.
 template <class T>
 struct TraceFormatTraits<::base::WeakPtr<T>,
-                         perfetto::libchrome::check_traced_value_support_t<T>> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+                         perfetto_libchrome::check_traced_value_support_t<T>> {
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::base::WeakPtr<T>& value) {
     if (!value) {
       std::move(context).WritePointer(nullptr);
       return;
     }
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), *value);
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), *value);
   }
 };
 
@@ -69,23 +69,23 @@ struct TraceFormatTraits<::base::WeakPtr<T>,
 // absl::optional<T>& gives you const T&.
 template <class T>
 struct TraceFormatTraits<::absl::optional<T>,
-                         perfetto::libchrome::check_traced_value_support_t<T>> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+                         perfetto_libchrome::check_traced_value_support_t<T>> {
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::absl::optional<T>& value) {
     if (!value) {
       std::move(context).WritePointer(nullptr);
       return;
     }
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), *value);
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), *value);
   }
 
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              ::absl::optional<T>& value) {
     if (!value) {
       std::move(context).WritePointer(nullptr);
       return;
     }
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), *value);
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), *value);
   }
 };
 
@@ -94,7 +94,7 @@ struct TraceFormatTraits<::absl::optional<T>,
 // UI.
 template <>
 struct TraceFormatTraits<::base::TimeDelta> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::base::TimeDelta& value) {
     std::move(context).WriteUInt64(value.InMicroseconds());
   }
@@ -102,17 +102,17 @@ struct TraceFormatTraits<::base::TimeDelta> {
 
 template <>
 struct TraceFormatTraits<::base::TimeTicks> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::base::TimeTicks& value) {
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), value.since_origin());
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), value.since_origin());
   }
 };
 
 template <>
 struct TraceFormatTraits<::base::Time> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::base::Time& value) {
-    perfetto::libchrome::WriteIntoTracedValue(std::move(context), value.since_origin());
+    perfetto_libchrome::WriteIntoTracedValue(std::move(context), value.since_origin());
   }
 };
 
@@ -121,7 +121,7 @@ struct TraceFormatTraits<::base::Time> {
 // human-comprehensible alias for all unguessable tokens instead.
 template <>
 struct TraceFormatTraits<::base::UnguessableToken> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const ::base::UnguessableToken& value) {
     return std::move(context).WriteString(value.ToString());
   }
@@ -130,7 +130,7 @@ struct TraceFormatTraits<::base::UnguessableToken> {
 // UTF-16 string support.
 template <>
 struct TraceFormatTraits<std::u16string> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const std::u16string& value) {
     return std::move(context).WriteString(::base::UTF16ToUTF8(value));
   }
@@ -138,7 +138,7 @@ struct TraceFormatTraits<std::u16string> {
 
 template <size_t N>
 struct TraceFormatTraits<char16_t[N]> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const char16_t value[N]) {
     return std::move(context).WriteString(
         ::base::UTF16ToUTF8(::base::StringPiece16(value)));
@@ -147,7 +147,7 @@ struct TraceFormatTraits<char16_t[N]> {
 
 template <>
 struct TraceFormatTraits<const char16_t*> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const char16_t* value) {
     return std::move(context).WriteString(
         ::base::UTF16ToUTF8(::base::StringPiece16(value)));
@@ -157,7 +157,7 @@ struct TraceFormatTraits<const char16_t*> {
 // Wide string support.
 template <>
 struct TraceFormatTraits<std::wstring> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const std::wstring& value) {
     return std::move(context).WriteString(::base::WideToUTF8(value));
   }
@@ -165,7 +165,7 @@ struct TraceFormatTraits<std::wstring> {
 
 template <size_t N>
 struct TraceFormatTraits<wchar_t[N]> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const wchar_t value[N]) {
     return std::move(context).WriteString(
         ::base::WideToUTF8(::base::WStringPiece(value)));
@@ -174,7 +174,7 @@ struct TraceFormatTraits<wchar_t[N]> {
 
 template <>
 struct TraceFormatTraits<const wchar_t*> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              const wchar_t* value) {
     return std::move(context).WriteString(
         ::base::WideToUTF8(::base::WStringPiece(value)));
@@ -184,7 +184,7 @@ struct TraceFormatTraits<const wchar_t*> {
 // base::StringPiece support.
 template <>
 struct TraceFormatTraits<::base::StringPiece> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              ::base::StringPiece value) {
     return std::move(context).WriteString(value.data(), value.length());
   }
@@ -192,7 +192,7 @@ struct TraceFormatTraits<::base::StringPiece> {
 
 template <>
 struct TraceFormatTraits<::base::StringPiece16> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              ::base::StringPiece16 value) {
     return std::move(context).WriteString(::base::UTF16ToUTF8(value));
   }
@@ -200,7 +200,7 @@ struct TraceFormatTraits<::base::StringPiece16> {
 
 template <>
 struct TraceFormatTraits<::base::WStringPiece> {
-  static void WriteIntoTrace(perfetto::libchrome::TracedValue context,
+  static void WriteIntoTrace(perfetto_libchrome::TracedValue context,
                              ::base::WStringPiece value) {
     return std::move(context).WriteString(::base::WideToUTF8(value));
   }

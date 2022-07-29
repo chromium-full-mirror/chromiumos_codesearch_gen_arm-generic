@@ -370,9 +370,9 @@ void MachineLearningServiceProxy::Clone(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::Clone", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<MachineLearningService>>");
    });
@@ -413,12 +413,12 @@ void MachineLearningServiceProxy::LoadBuiltinModel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("spec"), in_spec,
                         "<value of type ::chromeos::machine_learning::mojom::BuiltinModelSpecPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::Model>>");
    });
@@ -471,12 +471,12 @@ void MachineLearningServiceProxy::LoadFlatBufferModel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("spec"), in_spec,
                         "<value of type ::chromeos::machine_learning::mojom::FlatBufferModelSpecPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::Model>>");
    });
@@ -529,9 +529,9 @@ void MachineLearningServiceProxy::LoadTextClassifier(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::TextClassifier>>");
    });
@@ -573,12 +573,12 @@ void MachineLearningServiceProxy::LoadHandwritingModel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("spec"), in_spec,
                         "<value of type ::chromeos::machine_learning::mojom::HandwritingRecognizerSpecPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::HandwritingRecognizer>>");
    });
@@ -631,15 +631,15 @@ void MachineLearningServiceProxy::LoadSpeechRecognizer(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("config"), in_config,
                         "<value of type ::chromeos::machine_learning::mojom::SodaConfigPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("soda_client"), in_soda_client,
                         "<value of type ::mojo::PendingRemote<::chromeos::machine_learning::mojom::SodaClient>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("soda_recognizer"), in_soda_recognizer,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::SodaRecognizer>>");
    });
@@ -698,9 +698,9 @@ void MachineLearningServiceProxy::LoadGrammarChecker(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::GrammarChecker>>");
    });
@@ -742,12 +742,12 @@ void MachineLearningServiceProxy::LoadTextSuggester(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::TextSuggester>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("spec"), in_spec,
                         "<value of type ::chromeos::machine_learning::mojom::TextSuggesterSpecPtr>");
    });
@@ -796,12 +796,12 @@ void MachineLearningServiceProxy::LoadWebPlatformHandwritingModel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("constraint"), in_constraint,
                         "<value of type ::chromeos::machine_learning::web_platform::mojom::HandwritingModelConstraintPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::web_platform::mojom::HandwritingRecognizer>>");
    });
@@ -854,12 +854,12 @@ void MachineLearningServiceProxy::LoadDocumentScanner(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::DocumentScanner>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("config"), in_config,
                         "<value of type ::chromeos::machine_learning::mojom::DocumentScannerConfigPtr>");
    });
@@ -908,12 +908,12 @@ void MachineLearningServiceProxy::CreateWebPlatformModelLoader(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::ml::model_loader::mojom::ModelLoader>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("options"), in_options,
                         "<value of type ::ml::model_loader::mojom::CreateModelLoaderOptionsPtr>");
    });
@@ -966,12 +966,12 @@ void MachineLearningServiceProxy::REMOVED_4(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("spec"), in_spec,
                         "<value of type ::chromeos::machine_learning::mojom::HandwritingRecognizerSpecPtr>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("receiver"), in_receiver,
                         "<value of type ::mojo::PendingReceiver<::chromeos::machine_learning::mojom::HandwritingRecognizer>>");
    });
@@ -1096,9 +1096,9 @@ void MachineLearningService_LoadBuiltinModel_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadBuiltinModel", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1211,9 +1211,9 @@ void MachineLearningService_LoadFlatBufferModel_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadFlatBufferModel", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1326,9 +1326,9 @@ void MachineLearningService_LoadTextClassifier_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextClassifier", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1441,9 +1441,9 @@ void MachineLearningService_LoadHandwritingModel_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadHandwritingModel", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ::chromeos::machine_learning::mojom::LoadHandwritingModelResult>");
    });
@@ -1556,9 +1556,9 @@ void MachineLearningService_LoadSpeechRecognizer_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadSpeechRecognizer", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1671,9 +1671,9 @@ void MachineLearningService_LoadGrammarChecker_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadGrammarChecker", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1786,9 +1786,9 @@ void MachineLearningService_LoadTextSuggester_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadTextSuggester", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -1901,9 +1901,9 @@ void MachineLearningService_LoadWebPlatformHandwritingModel_ProxyToResponder::Ru
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadWebPlatformHandwritingModel", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ::chromeos::machine_learning::mojom::LoadHandwritingModelResult>");
    });
@@ -2016,9 +2016,9 @@ void MachineLearningService_LoadDocumentScanner_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::LoadDocumentScanner", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });
@@ -2131,9 +2131,9 @@ void MachineLearningService_CreateWebPlatformModelLoader_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::CreateWebPlatformModelLoader", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ::ml::model_loader::mojom::CreateModelLoaderResult>");
    });
@@ -2246,9 +2246,9 @@ void MachineLearningService_REMOVED_4_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::MachineLearningService::REMOVED_4", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type LoadModelResult>");
    });

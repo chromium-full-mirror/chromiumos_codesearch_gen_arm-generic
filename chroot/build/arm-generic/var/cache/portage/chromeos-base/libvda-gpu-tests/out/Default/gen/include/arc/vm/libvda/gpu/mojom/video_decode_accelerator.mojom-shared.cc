@@ -624,14 +624,12 @@ VideoDecodeClient_ProvidePictureBuffers_Params_Data::VideoDecodeClient_ProvidePi
 }  // namespace mojom
 }  // namespace arc
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoDecodeAccelerator_Result>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::arc::mojom::VideoDecodeAccelerator_Result value) {
+   perfetto_libchrome::TracedValue context, ::arc::mojom::VideoDecodeAccelerator_Result value) {
   return std::move(context).WriteString(::arc::mojom::VideoDecodeAccelerator_ResultToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

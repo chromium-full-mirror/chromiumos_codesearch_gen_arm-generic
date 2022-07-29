@@ -251,37 +251,31 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraClientType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::CameraClientType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::CameraClientType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraPrivacySwitchState> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::CameraPrivacySwitchState value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::CameraPrivacySwitchState value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraAutoFramingState> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::CameraAutoFramingState value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::CameraAutoFramingState value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // CAMERA_MOJO_CROS_CAMERA_SERVICE_MOJOM_SHARED_H_

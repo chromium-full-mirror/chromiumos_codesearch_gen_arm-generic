@@ -11,8 +11,10 @@ import {EventSourceType} from '../../common/event_source_type.js';
 import {LocaleOutputHelper} from '../../common/locale_output_helper.js';
 import {Msgs} from '../../common/msgs.js';
 import {ValueSelectionSpan, ValueSpan} from '../braille/spans.js';
+import {ChromeVox} from '../chromevox.js';
 import {EventSourceState} from '../event_source.js';
 import {FocusBounds} from '../focus_bounds.js';
+import {LogStore} from '../logging/log_store.js';
 import {PhoneticData} from '../phonetic_data.js';
 
 import {OutputAncestryInfo} from './output_ancestry_info.js';
@@ -553,7 +555,8 @@ export class Output {
     if (this.brailleBuffer_.length) {
       const buff = this.mergeBraille_(this.brailleBuffer_);
       const selSpan = buff.getSpanInstanceOf(OutputSelectionSpan);
-      let startIndex = -1, endIndex = -1;
+      let startIndex = -1;
+      let endIndex = -1;
       if (selSpan) {
         const valueStart = buff.getSpanStart(selSpan);
         const valueEnd = buff.getSpanEnd(selSpan);

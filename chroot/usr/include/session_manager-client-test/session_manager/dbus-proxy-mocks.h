@@ -432,6 +432,35 @@ class SessionManagerInterfaceProxyMock : public SessionManagerInterfaceProxyInte
                void(base::OnceCallback<void()> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
+  MOCK_METHOD2(UnblockDevModeForInitialStateDetermination,
+               bool(brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(UnblockDevModeForInitialStateDeterminationAsync,
+               void(base::OnceCallback<void()> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD2(UnblockDevModeForEnrollment,
+               bool(brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(UnblockDevModeForEnrollmentAsync,
+               void(base::OnceCallback<void()> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD2(UnblockDevModeForCarrierLock,
+               bool(brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(UnblockDevModeForCarrierLockAsync,
+               void(base::OnceCallback<void()> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(IsDevModeBlockedForCarrierLock,
+               bool(bool* /*out_is_blocked*/,
+                    brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(IsDevModeBlockedForCarrierLockAsync,
+               void(base::OnceCallback<void(bool /*is_blocked*/)> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
   void RegisterLoginPromptVisibleSignalHandler(
     base::RepeatingClosure signal_callback,
     dbus::ObjectProxy::OnConnectedCallback on_connected_callback) {

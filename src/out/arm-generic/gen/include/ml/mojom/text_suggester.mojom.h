@@ -256,7 +256,7 @@ class  NextWordCompletionCandidate {
   float normalized_score;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -398,7 +398,7 @@ class  MultiWordSuggestionCandidate {
   float normalized_score;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -537,7 +537,7 @@ class  TextSuggesterSpec {
   MultiWordExperimentGroup multi_word_experiment;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -788,7 +788,7 @@ TextSuggesterQuery& operator=(const TextSuggesterQuery&) = delete;
   TextSuggestionMode suggestion_mode;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -932,7 +932,7 @@ TextSuggesterResult& operator=(const TextSuggesterResult&) = delete;
   std::vector<TextSuggestionCandidatePtr> candidates;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

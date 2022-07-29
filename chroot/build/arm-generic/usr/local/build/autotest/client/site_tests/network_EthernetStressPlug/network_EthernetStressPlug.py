@@ -15,7 +15,7 @@ import subprocess
 import sys
 import time
 
-from autotest_lib.client.bin import test, utils
+from autotest_lib.client.bin import test
 from autotest_lib.client.common_lib import error
 
 
@@ -25,7 +25,6 @@ class EthernetDongle(object):
     def __init__(self, expect_speed='100', expect_duplex='full'):
         # Expected values for parameters.
         self.expected_parameters = {
-            'ifconfig_status': 0,
             'duplex': expect_duplex,
             'speed': expect_speed,
             'mac_address': None,
@@ -40,6 +39,21 @@ class network_EthernetStressPlug(test.test):
     """ base class for test """
     version = 1
 
+    def link_is_up(self, interface=None):
+        """ Determines and defines the bus information and interface info. """
+        sysnet = os.path.join('/', 'sys', 'class', 'net')
+        syslink = os.path.join(sysnet, interface, 'operstate')
+        link_status = None
+        try:
+            link_file = open(syslink)
+            link_status = link_file.readline().strip()
+            link_file.close()
+        except:
+            # (re)authorized device might not be present yet - so open() fails
+            return False
+
+        return "up" == link_status
+
     def initialize(self, interface=None):
         """ Determines and defines the bus information and interface info. """
 
@@ -47,7 +61,7 @@ class network_EthernetStressPlug(test.test):
         sysnet = os.path.join('/', 'sys', 'class', 'net')
 
         def get_ethernet_interface(interface):
-            """ Valid interface requires link and duplex status."""
+            """ Valid interface requires link status."""
             avail_eth_interfaces=[]
             if interface is None:
                 # This is not the (bridged) eth dev we are looking for.
@@ -61,34 +75,13 @@ class network_EthernetStressPlug(test.test):
                 if os.path.exists(sysdev):
                     avail_eth_interfaces.append(interface)
                 else:
-                    raise error.TestError('Network Interface %s is not a device ' % iface)
-
-            link_status = 'unknown'
-            duplex_status = 'unknown'
-            iface = 'unknown'
+                    raise error.TestError('Network Interface %s is not a device' % interface)
 
             for iface in avail_eth_interfaces:
-                syslink = os.path.join(sysnet, iface, 'operstate')
-                try:
-                    link_file = open(syslink)
-                    link_status = link_file.readline().strip()
-                    link_file.close()
-                except:
-                    pass
-
-                sysduplex = os.path.join(sysnet, iface, 'duplex')
-                try:
-                    duplex_file = open(sysduplex)
-                    duplex_status = duplex_file.readline().strip()
-                    duplex_file.close()
-                except:
-                    pass
-
-                if link_status == 'up':
+                if self.link_is_up(iface):
                     return iface
 
-            raise error.TestError('Network Interface %s not usable (%s, %s)'
-                                  % (iface, link_status, duplex_status))
+            raise error.TestError('No Network Interface has a link: %s' % ','.join(avail_eth_interfaces))
 
         def get_net_device_path(device=''):
             """ Uses udev to get the path of the desired internet device.
@@ -180,8 +173,6 @@ class network_EthernetStressPlug(test.test):
 
         eth_out = self.ParseEthTool()
         ethernet_status = {
-            'ifconfig_status': utils.system('ifconfig %s' % self.interface,
-                                            ignore_status=True),
             'duplex': eth_out.get('Duplex'),
             'speed': eth_out.get('Speed'),
             'mac_address': ReadEthVal('address'),
@@ -274,7 +265,7 @@ class network_EthernetStressPlug(test.test):
                      state change.
 
         Returns:
-            The time in seconds required for device to transfer to the desired
+            The time in seconds the device needed to transition to the requested
             state.
 
         Raises:
@@ -283,27 +274,44 @@ class network_EthernetStressPlug(test.test):
 
         start_time = time.time()
         end_time = start_time + timeout
+        link_down_cnt = 0
 
         power_str = ['off', 'on']
         self._PowerEthernet(power)
 
         while time.time() < end_time:
+            # If we turned on power but don't yet have a link, give the NIC
+            # time to negotiate one. Most GigE NICs are ready in < 1 second.
+            # "atlantic" 10GigE needs 4-5 seconds to negotiate normal gige link.
+            if power:
+                if self.link_is_up(self.interface):
+                    if link_down_cnt > 0:
+                        logging.debug('%s : Link up in %s seconds', self.interface,
+                                  link_down_cnt)
+                        link_down_cnt = 0
+                else:
+                    link_down_cnt += 1
+                    if link_down_cnt < 10:
+                        time.sleep(1)
+                        continue
+
             status = self.GetEthernetStatus()
 
-
-            # If GetEthernetStatus() detects the wrong link rate, "bouncing"
-            # the link _should_ recover. Keep count of how many times this
-            # happens. Test should fail if happens "frequently".
-            if power and not status and 'speed' in self.test_status['reason']:
-                self._PowerEthernet(0)
-                time.sleep(1)
-                self._PowerEthernet(power)
-                self.link_speed_failures += 1
-                logging.warning('Link Renegotiated %s',
-                                self.test_status['reason'])
+            if power and not status:
+                # If GetEthernetStatus() detects a "different" link rate,
+                # "bouncing" the link _should_ recover.
+                # Keep count of how many times this happens.
+                # Test should fail if happens "frequently".
+                if 'speed' in self.test_status['reason']:
+                    self._PowerEthernet(0)
+                    time.sleep(1)
+                    self._PowerEthernet(1)
+                    self.link_speed_failures += 1
+                    logging.warning('Link Renegotiated %s',
+                                    self.test_status['reason'])
 
             # If ethernet is enabled  and has an IP, OR
-            # if ethernet is disabled and does not have an IP,
+            # if ethernet is disabled and has no IP,
             # then we are in the desired state.
             # Return the number of "seconds" for this to happen.
             # (translated to an approximation of the number of seconds)
@@ -312,7 +320,7 @@ class network_EthernetStressPlug(test.test):
                 or \
                 (not power and not status and \
                 self.test_status['ipaddress'] is None):
-                return time.time()-start_time
+                return (time.time() - start_time)
 
             time.sleep(1)
 
@@ -479,17 +487,26 @@ class network_EthernetStressPlug(test.test):
             raise error.TestFail('Unable to parse ethtool output for %s.',
                                  self.interface)
 
-        # Ethtool output is ordered in terms of speed so this obtains the
-        # fastest speed supported by dongle.
-        # QCA ESS EDMA driver doesn't report "Supported link modes".
-        if ethtool_dict.get('Advertised link modes', None):
-            max_link = ethtool_dict['Advertised link modes'][-1]
-            return EthernetDongle(expect_speed=max_link['Speed'],
-                                  expect_duplex=max_link['Duplex'])
-        else:
-            # Pre-v5.13 cdc_ncm driver doesn't report speed or duplex.
-            # v5.13 (and later) will report speed, but not duplex.
-            return EthernetDongle(expect_speed=None, expect_duplex=None)
+        # We should normally have a link at this point. Use the reported link
+        # speed to verify the link comes up at the same speed on each iteration.
+        initial_speed = ethtool_dict.get('Speed')
+        initial_duplex = ethtool_dict.get('Duplex')
+
+        # Pre-v5.13 cdc_ncm driver doesn't report speed or duplex.
+        # v5.13 (and later) will report speed, but not duplex.
+        if initial_speed is None:
+
+            # Use max supported speed as the "expected" link rate.
+            # QCA ESS EDMA driver doesn't report "Supported link modes".
+            if ethtool_dict.get('Advertised link modes'):
+                # Ethtool output is ordered in terms of speed so this obtains
+                # the fastest speed supported by dongle.
+                max_link = ethtool_dict['Advertised link modes'][-1]
+                initial_speed = max_link['Speed']
+                initial_duplex = max_link['Duplex']
+
+        return EthernetDongle(expect_speed=initial_speed,
+                              expect_duplex=initial_duplex)
 
     def run_once(self, num_iterations=1):
         try:

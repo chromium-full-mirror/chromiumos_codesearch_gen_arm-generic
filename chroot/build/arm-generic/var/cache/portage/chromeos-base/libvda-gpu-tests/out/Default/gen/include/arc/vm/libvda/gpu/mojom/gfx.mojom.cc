@@ -71,9 +71,9 @@ size_t Rect::Hash(size_t seed) const {
 }
 
 void Rect::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "left"), this->left,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -82,7 +82,7 @@ void Rect::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "top"), this->top,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -91,7 +91,7 @@ void Rect::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "right"), this->right,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -100,7 +100,7 @@ void Rect::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "bottom"), this->bottom,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -134,9 +134,9 @@ size_t Range::Hash(size_t seed) const {
 }
 
 void Range::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "start"), this->start,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -145,7 +145,7 @@ void Range::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "end"), this->end,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -179,9 +179,9 @@ size_t Size::Hash(size_t seed) const {
 }
 
 void Size::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "width"), this->width,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -190,7 +190,7 @@ void Size::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "height"), this->height,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

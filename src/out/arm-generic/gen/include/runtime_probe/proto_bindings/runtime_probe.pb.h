@@ -1810,6 +1810,8 @@ class Storage_Fields final :
     kMmcNameFieldNumber = 6,
     kAtaVendorFieldNumber = 13,
     kAtaModelFieldNumber = 14,
+    kUfsVendorFieldNumber = 16,
+    kUfsModelFieldNumber = 17,
     kSectorsFieldNumber = 2,
     kSizeFieldNumber = 3,
     kMmcManfidFieldNumber = 5,
@@ -1889,6 +1891,34 @@ class Storage_Fields final :
   const std::string& _internal_ata_model() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_ata_model(const std::string& value);
   std::string* _internal_mutable_ata_model();
+  public:
+
+  // string ufs_vendor = 16;
+  void clear_ufs_vendor();
+  const std::string& ufs_vendor() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ufs_vendor(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ufs_vendor();
+  PROTOBUF_NODISCARD std::string* release_ufs_vendor();
+  void set_allocated_ufs_vendor(std::string* ufs_vendor);
+  private:
+  const std::string& _internal_ufs_vendor() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ufs_vendor(const std::string& value);
+  std::string* _internal_mutable_ufs_vendor();
+  public:
+
+  // string ufs_model = 17;
+  void clear_ufs_model();
+  const std::string& ufs_model() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_ufs_model(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_ufs_model();
+  PROTOBUF_NODISCARD std::string* release_ufs_model();
+  void set_allocated_ufs_model(std::string* ufs_model);
+  private:
+  const std::string& _internal_ufs_model() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_ufs_model(const std::string& value);
+  std::string* _internal_mutable_ufs_model();
   public:
 
   // int64 sectors = 2;
@@ -1993,6 +2023,8 @@ class Storage_Fields final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mmc_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ata_vendor_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ata_model_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ufs_vendor_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr ufs_model_;
   int64_t sectors_;
   int64_t size_;
   uint32_t mmc_manfid_;
@@ -7754,6 +7786,108 @@ inline void Storage_Fields::set_allocated_ata_model(std::string* ata_model) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:runtime_probe.Storage.Fields.ata_model)
+}
+
+// string ufs_vendor = 16;
+inline void Storage_Fields::clear_ufs_vendor() {
+  ufs_vendor_.ClearToEmpty();
+}
+inline const std::string& Storage_Fields::ufs_vendor() const {
+  // @@protoc_insertion_point(field_get:runtime_probe.Storage.Fields.ufs_vendor)
+  return _internal_ufs_vendor();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Storage_Fields::set_ufs_vendor(ArgT0&& arg0, ArgT... args) {
+ 
+ ufs_vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:runtime_probe.Storage.Fields.ufs_vendor)
+}
+inline std::string* Storage_Fields::mutable_ufs_vendor() {
+  std::string* _s = _internal_mutable_ufs_vendor();
+  // @@protoc_insertion_point(field_mutable:runtime_probe.Storage.Fields.ufs_vendor)
+  return _s;
+}
+inline const std::string& Storage_Fields::_internal_ufs_vendor() const {
+  return ufs_vendor_.Get();
+}
+inline void Storage_Fields::_internal_set_ufs_vendor(const std::string& value) {
+  
+  ufs_vendor_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Storage_Fields::_internal_mutable_ufs_vendor() {
+  
+  return ufs_vendor_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Storage_Fields::release_ufs_vendor() {
+  // @@protoc_insertion_point(field_release:runtime_probe.Storage.Fields.ufs_vendor)
+  return ufs_vendor_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Storage_Fields::set_allocated_ufs_vendor(std::string* ufs_vendor) {
+  if (ufs_vendor != nullptr) {
+    
+  } else {
+    
+  }
+  ufs_vendor_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ufs_vendor,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (ufs_vendor_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    ufs_vendor_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:runtime_probe.Storage.Fields.ufs_vendor)
+}
+
+// string ufs_model = 17;
+inline void Storage_Fields::clear_ufs_model() {
+  ufs_model_.ClearToEmpty();
+}
+inline const std::string& Storage_Fields::ufs_model() const {
+  // @@protoc_insertion_point(field_get:runtime_probe.Storage.Fields.ufs_model)
+  return _internal_ufs_model();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Storage_Fields::set_ufs_model(ArgT0&& arg0, ArgT... args) {
+ 
+ ufs_model_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:runtime_probe.Storage.Fields.ufs_model)
+}
+inline std::string* Storage_Fields::mutable_ufs_model() {
+  std::string* _s = _internal_mutable_ufs_model();
+  // @@protoc_insertion_point(field_mutable:runtime_probe.Storage.Fields.ufs_model)
+  return _s;
+}
+inline const std::string& Storage_Fields::_internal_ufs_model() const {
+  return ufs_model_.Get();
+}
+inline void Storage_Fields::_internal_set_ufs_model(const std::string& value) {
+  
+  ufs_model_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* Storage_Fields::_internal_mutable_ufs_model() {
+  
+  return ufs_model_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* Storage_Fields::release_ufs_model() {
+  // @@protoc_insertion_point(field_release:runtime_probe.Storage.Fields.ufs_model)
+  return ufs_model_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void Storage_Fields::set_allocated_ufs_model(std::string* ufs_model) {
+  if (ufs_model != nullptr) {
+    
+  } else {
+    
+  }
+  ufs_model_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ufs_model,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (ufs_model_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    ufs_model_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:runtime_probe.Storage.Fields.ufs_model)
 }
 
 // -------------------------------------------------------------------

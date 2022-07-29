@@ -562,37 +562,31 @@ inline void FlatBufferModelSpecDataView::GetMetricsModelNameDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::BuiltinModelId> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::BuiltinModelId value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::BuiltinModelId value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::GpuDelegateApi> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::GpuDelegateApi value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::GpuDelegateApi value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::CreateGraphExecutorResult> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::CreateGraphExecutorResult value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::CreateGraphExecutorResult value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ML_MOJOM_MODEL_MOJOM_SHARED_H_

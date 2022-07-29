@@ -547,7 +547,7 @@ class  CameraResourceCost {
   uint32_t resource_cost;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -711,7 +711,7 @@ CameraInfo& operator=(const CameraInfo&) = delete;
   absl::optional<std::vector<std::string>> conflicting_devices;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

@@ -263,38 +263,32 @@ VideoFrameLayout_Data::VideoFrameLayout_Data()
 }  // namespace mojom
 }  // namespace arc
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoCodecProfile>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::arc::mojom::VideoCodecProfile value) {
+   perfetto_libchrome::TracedValue context, ::arc::mojom::VideoCodecProfile value) {
   return std::move(context).WriteString(::arc::mojom::VideoCodecProfileToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::arc::mojom::HalPixelFormat>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::arc::mojom::HalPixelFormat value) {
+   perfetto_libchrome::TracedValue context, ::arc::mojom::HalPixelFormat value) {
   return std::move(context).WriteString(::arc::mojom::HalPixelFormatToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoPixelFormat>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::arc::mojom::VideoPixelFormat value) {
+   perfetto_libchrome::TracedValue context, ::arc::mojom::VideoPixelFormat value) {
   return std::move(context).WriteString(::arc::mojom::VideoPixelFormatToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

@@ -399,9 +399,47 @@ struct ReleaseSpaceResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReleaseSpaceResponseDefaultTypeInternal _ReleaseSpaceResponse_default_instance_;
+constexpr Metric::Metric(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(int64_t{0}){}
+struct MetricDefaultTypeInternal {
+  constexpr MetricDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~MetricDefaultTypeInternal() {}
+  union {
+    Metric _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MetricDefaultTypeInternal _Metric_default_instance_;
+constexpr ReportMetricsRequest::ReportMetricsRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : metric_()
+  , token_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ReportMetricsRequestDefaultTypeInternal {
+  constexpr ReportMetricsRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReportMetricsRequestDefaultTypeInternal() {}
+  union {
+    ReportMetricsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReportMetricsRequestDefaultTypeInternal _ReportMetricsRequest_default_instance_;
+constexpr ReportMetricsResponse::ReportMetricsResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : error_(int64_t{0}){}
+struct ReportMetricsResponseDefaultTypeInternal {
+  constexpr ReportMetricsResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ReportMetricsResponseDefaultTypeInternal() {}
+  union {
+    ReportMetricsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ReportMetricsResponseDefaultTypeInternal _ReportMetricsResponse_default_instance_;
 }  // namespace container
 }  // namespace vm_tools
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_container_5fhost_2eproto[28];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_container_5fhost_2eproto[31];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_container_5fhost_2eproto[3];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_container_5fhost_2eproto = nullptr;
 
@@ -648,6 +686,29 @@ const uint32_t TableStruct_container_5fhost_2eproto::offsets[] PROTOBUF_SECTION_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReleaseSpaceResponse, space_released_),
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReleaseSpaceResponse, error_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::Metric, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::Metric, name_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::Metric, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReportMetricsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReportMetricsRequest, token_),
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReportMetricsRequest, metric_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReportMetricsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::vm_tools::container::ReportMetricsResponse, error_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::vm_tools::container::ContainerStartupInfo)},
@@ -678,6 +739,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 218, -1, -1, sizeof(::vm_tools::container::RequestSpaceResponse)},
   { 226, -1, -1, sizeof(::vm_tools::container::ReleaseSpaceRequest)},
   { 234, -1, -1, sizeof(::vm_tools::container::ReleaseSpaceResponse)},
+  { 242, -1, -1, sizeof(::vm_tools::container::Metric)},
+  { 250, -1, -1, sizeof(::vm_tools::container::ReportMetricsRequest)},
+  { 258, -1, -1, sizeof(::vm_tools::container::ReportMetricsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -709,6 +773,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_RequestSpaceResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_ReleaseSpaceRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_ReleaseSpaceResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_Metric_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_ReportMetricsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::vm_tools::container::_ReportMetricsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_container_5fhost_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -783,58 +850,65 @@ const char descriptor_table_protodef_container_5fhost_2eproto[] PROTOBUF_SECTION
   "rror\030\002 \001(\003\">\n\023ReleaseSpaceRequest\022\r\n\005tok"
   "en\030\001 \001(\t\022\030\n\020space_to_release\030\002 \001(\004\"=\n\024Re"
   "leaseSpaceResponse\022\026\n\016space_released\030\001 \001"
-  "(\004\022\r\n\005error\030\002 \001(\0032\205\r\n\021ContainerListener\022"
-  "R\n\016ContainerReady\022(.vm_tools.container.C"
-  "ontainerStartupInfo\032\026.vm_tools.EmptyMess"
-  "age\022V\n\021ContainerShutdown\022).vm_tools.cont"
-  "ainer.ContainerShutdownInfo\032\026.vm_tools.E"
-  "mptyMessage\022a\n\025UpdateApplicationList\0220.v"
-  "m_tools.container.UpdateApplicationListR"
-  "equest\032\026.vm_tools.EmptyMessage\022j\n!Pendin"
-  "gUpdateApplicationListCalls\022-.vm_tools.c"
-  "ontainer.PendingAppListUpdateCount\032\026.vm_"
-  "tools.EmptyMessage\022E\n\007OpenUrl\022\".vm_tools"
-  ".container.OpenUrlRequest\032\026.vm_tools.Emp"
-  "tyMessage\022j\n\033InstallLinuxPackageProgress"
-  "\0223.vm_tools.container.InstallLinuxPackag"
-  "eProgressInfo\032\026.vm_tools.EmptyMessage\022d\n"
-  "\030UninstallPackageProgress\0220.vm_tools.con"
-  "tainer.UninstallPackageProgressInfo\032\026.vm"
-  "_tools.EmptyMessage\022l\n\034ApplyAnsiblePlayb"
-  "ookProgress\0224.vm_tools.container.ApplyAn"
-  "siblePlaybookProgressInfo\032\026.vm_tools.Emp"
-  "tyMessage\022O\n\014OpenTerminal\022\'.vm_tools.con"
-  "tainer.OpenTerminalRequest\032\026.vm_tools.Em"
-  "ptyMessage\022U\n\017UpdateMimeTypes\022*.vm_tools"
-  ".container.UpdateMimeTypesRequest\032\026.vm_t"
-  "ools.EmptyMessage\022X\n\022FileWatchTriggered\022"
-  "*.vm_tools.container.FileWatchTriggeredI"
-  "nfo\032\026.vm_tools.EmptyMessage\022^\n\025LowDiskSp"
-  "aceTriggered\022-.vm_tools.container.LowDis"
-  "kSpaceTriggeredInfo\032\026.vm_tools.EmptyMess"
-  "age\022\210\001\n\031ForwardSecurityKeyMessage\0224.vm_t"
-  "ools.container.ForwardSecurityKeyMessage"
-  "Request\0325.vm_tools.container.ForwardSecu"
-  "rityKeyMessageResponse\022[\n\nSelectFile\022%.v"
-  "m_tools.container.SelectFileRequest\032&.vm"
-  "_tools.container.SelectFileResponse\022^\n\013G"
-  "etDiskInfo\022&.vm_tools.container.GetDiskI"
-  "nfoRequest\032\'.vm_tools.container.GetDiskI"
-  "nfoResponse\022a\n\014RequestSpace\022\'.vm_tools.c"
-  "ontainer.RequestSpaceRequest\032(.vm_tools."
-  "container.RequestSpaceResponse\022a\n\014Releas"
-  "eSpace\022\'.vm_tools.container.ReleaseSpace"
-  "Request\032(.vm_tools.container.ReleaseSpac"
-  "eResponseB(Z#chromiumos/vm_tools/contain"
-  "er_proto\370\001\001b\006proto3"
+  "(\004\022\r\n\005error\030\002 \001(\003\"%\n\006Metric\022\014\n\004name\030\001 \001("
+  "\t\022\r\n\005value\030\002 \001(\003\"Q\n\024ReportMetricsRequest"
+  "\022\r\n\005token\030\001 \001(\t\022*\n\006metric\030\002 \003(\0132\032.vm_too"
+  "ls.container.Metric\"&\n\025ReportMetricsResp"
+  "onse\022\r\n\005error\030\001 \001(\0032\353\r\n\021ContainerListene"
+  "r\022R\n\016ContainerReady\022(.vm_tools.container"
+  ".ContainerStartupInfo\032\026.vm_tools.EmptyMe"
+  "ssage\022V\n\021ContainerShutdown\022).vm_tools.co"
+  "ntainer.ContainerShutdownInfo\032\026.vm_tools"
+  ".EmptyMessage\022a\n\025UpdateApplicationList\0220"
+  ".vm_tools.container.UpdateApplicationLis"
+  "tRequest\032\026.vm_tools.EmptyMessage\022j\n!Pend"
+  "ingUpdateApplicationListCalls\022-.vm_tools"
+  ".container.PendingAppListUpdateCount\032\026.v"
+  "m_tools.EmptyMessage\022E\n\007OpenUrl\022\".vm_too"
+  "ls.container.OpenUrlRequest\032\026.vm_tools.E"
+  "mptyMessage\022j\n\033InstallLinuxPackageProgre"
+  "ss\0223.vm_tools.container.InstallLinuxPack"
+  "ageProgressInfo\032\026.vm_tools.EmptyMessage\022"
+  "d\n\030UninstallPackageProgress\0220.vm_tools.c"
+  "ontainer.UninstallPackageProgressInfo\032\026."
+  "vm_tools.EmptyMessage\022l\n\034ApplyAnsiblePla"
+  "ybookProgress\0224.vm_tools.container.Apply"
+  "AnsiblePlaybookProgressInfo\032\026.vm_tools.E"
+  "mptyMessage\022O\n\014OpenTerminal\022\'.vm_tools.c"
+  "ontainer.OpenTerminalRequest\032\026.vm_tools."
+  "EmptyMessage\022U\n\017UpdateMimeTypes\022*.vm_too"
+  "ls.container.UpdateMimeTypesRequest\032\026.vm"
+  "_tools.EmptyMessage\022X\n\022FileWatchTriggere"
+  "d\022*.vm_tools.container.FileWatchTriggere"
+  "dInfo\032\026.vm_tools.EmptyMessage\022^\n\025LowDisk"
+  "SpaceTriggered\022-.vm_tools.container.LowD"
+  "iskSpaceTriggeredInfo\032\026.vm_tools.EmptyMe"
+  "ssage\022\210\001\n\031ForwardSecurityKeyMessage\0224.vm"
+  "_tools.container.ForwardSecurityKeyMessa"
+  "geRequest\0325.vm_tools.container.ForwardSe"
+  "curityKeyMessageResponse\022[\n\nSelectFile\022%"
+  ".vm_tools.container.SelectFileRequest\032&."
+  "vm_tools.container.SelectFileResponse\022^\n"
+  "\013GetDiskInfo\022&.vm_tools.container.GetDis"
+  "kInfoRequest\032\'.vm_tools.container.GetDis"
+  "kInfoResponse\022a\n\014RequestSpace\022\'.vm_tools"
+  ".container.RequestSpaceRequest\032(.vm_tool"
+  "s.container.RequestSpaceResponse\022a\n\014Rele"
+  "aseSpace\022\'.vm_tools.container.ReleaseSpa"
+  "ceRequest\032(.vm_tools.container.ReleaseSp"
+  "aceResponse\022d\n\rReportMetrics\022(.vm_tools."
+  "container.ReportMetricsRequest\032).vm_tool"
+  "s.container.ReportMetricsResponseB(Z#chr"
+  "omiumos/vm_tools/container_proto\370\001\001b\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_container_5fhost_2eproto_deps[1] = {
   &::descriptor_table_common_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_container_5fhost_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_container_5fhost_2eproto = {
-  false, false, 4579, descriptor_table_protodef_container_5fhost_2eproto, "container_host.proto", 
-  &descriptor_table_container_5fhost_2eproto_once, descriptor_table_container_5fhost_2eproto_deps, 1, 28,
+  false, false, 4843, descriptor_table_protodef_container_5fhost_2eproto, "container_host.proto", 
+  &descriptor_table_container_5fhost_2eproto_once, descriptor_table_container_5fhost_2eproto_deps, 1, 31,
   schemas, file_default_instances, TableStruct_container_5fhost_2eproto::offsets,
   file_level_metadata_container_5fhost_2eproto, file_level_enum_descriptors_container_5fhost_2eproto, file_level_service_descriptors_container_5fhost_2eproto,
 };
@@ -7974,6 +8048,649 @@ void ReleaseSpaceResponse::InternalSwap(ReleaseSpaceResponse* other) {
       file_level_metadata_container_5fhost_2eproto[27]);
 }
 
+// ===================================================================
+
+class Metric::_Internal {
+ public:
+};
+
+Metric::Metric(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.container.Metric)
+}
+Metric::Metric(const Metric& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_name(), 
+      GetArenaForAllocation());
+  }
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:vm_tools.container.Metric)
+}
+
+inline void Metric::SharedCtor() {
+name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+value_ = int64_t{0};
+}
+
+Metric::~Metric() {
+  // @@protoc_insertion_point(destructor:vm_tools.container.Metric)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Metric::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Metric::ArenaDtor(void* object) {
+  Metric* _this = reinterpret_cast< Metric* >(object);
+  (void)_this;
+}
+void Metric::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Metric::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Metric::Clear() {
+// @@protoc_insertion_point(message_clear_start:vm_tools.container.Metric)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmpty();
+  value_ = int64_t{0};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Metric::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.container.Metric.name"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 value = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Metric::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vm_tools.container.Metric)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vm_tools.container.Metric.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // int64 value = 2;
+  if (this->_internal_value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(2, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vm_tools.container.Metric)
+  return target;
+}
+
+size_t Metric::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vm_tools.container.Metric)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // int64 value = 2;
+  if (this->_internal_value() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_value());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Metric::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Metric::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Metric::GetClassData() const { return &_class_data_; }
+
+void Metric::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Metric *>(to)->MergeFrom(
+      static_cast<const Metric &>(from));
+}
+
+
+void Metric::MergeFrom(const Metric& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.container.Metric)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _internal_set_name(from._internal_name());
+  }
+  if (from._internal_value() != 0) {
+    _internal_set_value(from._internal_value());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Metric::CopyFrom(const Metric& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vm_tools.container.Metric)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Metric::IsInitialized() const {
+  return true;
+}
+
+void Metric::InternalSwap(Metric* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &name_, lhs_arena,
+      &other->name_, rhs_arena
+  );
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Metric::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_container_5fhost_2eproto_getter, &descriptor_table_container_5fhost_2eproto_once,
+      file_level_metadata_container_5fhost_2eproto[28]);
+}
+
+// ===================================================================
+
+class ReportMetricsRequest::_Internal {
+ public:
+};
+
+ReportMetricsRequest::ReportMetricsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  metric_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.container.ReportMetricsRequest)
+}
+ReportMetricsRequest::ReportMetricsRequest(const ReportMetricsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      metric_(from.metric_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_token().empty()) {
+    token_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_token(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:vm_tools.container.ReportMetricsRequest)
+}
+
+inline void ReportMetricsRequest::SharedCtor() {
+token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ReportMetricsRequest::~ReportMetricsRequest() {
+  // @@protoc_insertion_point(destructor:vm_tools.container.ReportMetricsRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ReportMetricsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ReportMetricsRequest::ArenaDtor(void* object) {
+  ReportMetricsRequest* _this = reinterpret_cast< ReportMetricsRequest* >(object);
+  (void)_this;
+}
+void ReportMetricsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ReportMetricsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ReportMetricsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:vm_tools.container.ReportMetricsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  metric_.Clear();
+  token_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ReportMetricsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string token = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "vm_tools.container.ReportMetricsRequest.token"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .vm_tools.container.Metric metric = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_metric(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ReportMetricsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vm_tools.container.ReportMetricsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "vm_tools.container.ReportMetricsRequest.token");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_token(), target);
+  }
+
+  // repeated .vm_tools.container.Metric metric = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_metric_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_metric(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vm_tools.container.ReportMetricsRequest)
+  return target;
+}
+
+size_t ReportMetricsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vm_tools.container.ReportMetricsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .vm_tools.container.Metric metric = 2;
+  total_size += 1UL * this->_internal_metric_size();
+  for (const auto& msg : this->metric_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string token = 1;
+  if (!this->_internal_token().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_token());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReportMetricsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ReportMetricsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReportMetricsRequest::GetClassData() const { return &_class_data_; }
+
+void ReportMetricsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ReportMetricsRequest *>(to)->MergeFrom(
+      static_cast<const ReportMetricsRequest &>(from));
+}
+
+
+void ReportMetricsRequest::MergeFrom(const ReportMetricsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.container.ReportMetricsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  metric_.MergeFrom(from.metric_);
+  if (!from._internal_token().empty()) {
+    _internal_set_token(from._internal_token());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ReportMetricsRequest::CopyFrom(const ReportMetricsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vm_tools.container.ReportMetricsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReportMetricsRequest::IsInitialized() const {
+  return true;
+}
+
+void ReportMetricsRequest::InternalSwap(ReportMetricsRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  metric_.InternalSwap(&other->metric_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &token_, lhs_arena,
+      &other->token_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReportMetricsRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_container_5fhost_2eproto_getter, &descriptor_table_container_5fhost_2eproto_once,
+      file_level_metadata_container_5fhost_2eproto[29]);
+}
+
+// ===================================================================
+
+class ReportMetricsResponse::_Internal {
+ public:
+};
+
+ReportMetricsResponse::ReportMetricsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:vm_tools.container.ReportMetricsResponse)
+}
+ReportMetricsResponse::ReportMetricsResponse(const ReportMetricsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  error_ = from.error_;
+  // @@protoc_insertion_point(copy_constructor:vm_tools.container.ReportMetricsResponse)
+}
+
+inline void ReportMetricsResponse::SharedCtor() {
+error_ = int64_t{0};
+}
+
+ReportMetricsResponse::~ReportMetricsResponse() {
+  // @@protoc_insertion_point(destructor:vm_tools.container.ReportMetricsResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ReportMetricsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ReportMetricsResponse::ArenaDtor(void* object) {
+  ReportMetricsResponse* _this = reinterpret_cast< ReportMetricsResponse* >(object);
+  (void)_this;
+}
+void ReportMetricsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ReportMetricsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ReportMetricsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:vm_tools.container.ReportMetricsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  error_ = int64_t{0};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ReportMetricsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int64 error = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          error_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ReportMetricsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:vm_tools.container.ReportMetricsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 error = 1;
+  if (this->_internal_error() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_error(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:vm_tools.container.ReportMetricsResponse)
+  return target;
+}
+
+size_t ReportMetricsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:vm_tools.container.ReportMetricsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int64 error = 1;
+  if (this->_internal_error() != 0) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_error());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReportMetricsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ReportMetricsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReportMetricsResponse::GetClassData() const { return &_class_data_; }
+
+void ReportMetricsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ReportMetricsResponse *>(to)->MergeFrom(
+      static_cast<const ReportMetricsResponse &>(from));
+}
+
+
+void ReportMetricsResponse::MergeFrom(const ReportMetricsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:vm_tools.container.ReportMetricsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_error() != 0) {
+    _internal_set_error(from._internal_error());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ReportMetricsResponse::CopyFrom(const ReportMetricsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:vm_tools.container.ReportMetricsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ReportMetricsResponse::IsInitialized() const {
+  return true;
+}
+
+void ReportMetricsResponse::InternalSwap(ReportMetricsResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(error_, other->error_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ReportMetricsResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_container_5fhost_2eproto_getter, &descriptor_table_container_5fhost_2eproto_once,
+      file_level_metadata_container_5fhost_2eproto[30]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace container
 }  // namespace vm_tools
@@ -8061,6 +8778,15 @@ template<> PROTOBUF_NOINLINE ::vm_tools::container::ReleaseSpaceRequest* Arena::
 }
 template<> PROTOBUF_NOINLINE ::vm_tools::container::ReleaseSpaceResponse* Arena::CreateMaybeMessage< ::vm_tools::container::ReleaseSpaceResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::vm_tools::container::ReleaseSpaceResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vm_tools::container::Metric* Arena::CreateMaybeMessage< ::vm_tools::container::Metric >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vm_tools::container::Metric >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vm_tools::container::ReportMetricsRequest* Arena::CreateMaybeMessage< ::vm_tools::container::ReportMetricsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vm_tools::container::ReportMetricsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::vm_tools::container::ReportMetricsResponse* Arena::CreateMaybeMessage< ::vm_tools::container::ReportMetricsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::vm_tools::container::ReportMetricsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

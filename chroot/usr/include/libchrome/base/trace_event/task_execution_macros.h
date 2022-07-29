@@ -15,8 +15,8 @@
 // Implementation detail: internal macro to trace a log message, with the source
 // location of the log statement.
 #define INTERNAL_TRACE_LOG_MESSAGE(file, message, line)                      \
-  TRACE_EVENT_INSTANT("log", "LogMessage", [&](perfetto::libchrome::EventContext ctx) { \
-    perfetto::libchrome::protos::pbzero::LogMessage* log =                              \
+  TRACE_EVENT_INSTANT("log", "LogMessage", [&](perfetto_libchrome::EventContext ctx) { \
+    perfetto_libchrome::protos::pbzero::LogMessage* log =                              \
         ctx.event()->set_log_message();                                      \
     log->set_source_location_iid(                                            \
         base::trace_event::InternedSourceLocation::Get(                      \

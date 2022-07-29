@@ -55,9 +55,9 @@ RunOrClosePipeMessageParams::RunOrClosePipeMessageParams(
 RunOrClosePipeMessageParams::~RunOrClosePipeMessageParams() = default;
 
 void RunOrClosePipeMessageParams::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "input"), this->input,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -91,9 +91,9 @@ size_t DisconnectReason::Hash(size_t seed) const {
 }
 
 void DisconnectReason::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "custom_reason"), this->custom_reason,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -102,7 +102,7 @@ void DisconnectReason::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "description"), this->description,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -131,9 +131,9 @@ PeerAssociatedEndpointClosedEvent::PeerAssociatedEndpointClosedEvent(
 PeerAssociatedEndpointClosedEvent::~PeerAssociatedEndpointClosedEvent() = default;
 
 void PeerAssociatedEndpointClosedEvent::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "id"), this->id,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -142,7 +142,7 @@ void PeerAssociatedEndpointClosedEvent::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "disconnect_reason"), this->disconnect_reason,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -168,9 +168,9 @@ PauseUntilFlushCompletes::PauseUntilFlushCompletes(
 PauseUntilFlushCompletes::~PauseUntilFlushCompletes() = default;
 
 void PauseUntilFlushCompletes::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "flush_pipe"), this->flush_pipe,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -196,9 +196,9 @@ FlushAsync::FlushAsync(
 FlushAsync::~FlushAsync() = default;
 
 void FlushAsync::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "flusher_pipe"), this->flusher_pipe,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

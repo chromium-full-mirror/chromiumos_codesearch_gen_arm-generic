@@ -595,81 +595,67 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::DeviceType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::DeviceType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::DeviceType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::ObserverErrorType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::ObserverErrorType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::ObserverErrorType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::SensorServiceDisconnectReason> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::SensorServiceDisconnectReason value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::SensorServiceDisconnectReason value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::SensorDeviceDisconnectReason> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::SensorDeviceDisconnectReason value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::SensorDeviceDisconnectReason value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioChanType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::IioChanType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::IioChanType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioEventType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::IioEventType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::IioEventType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioEventDirection> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::IioEventDirection value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::IioEventDirection value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // IIOSERVICE_MOJO_SENSOR_MOJOM_SHARED_H_

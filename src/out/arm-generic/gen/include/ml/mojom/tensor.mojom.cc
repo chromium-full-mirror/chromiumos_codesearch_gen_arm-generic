@@ -56,9 +56,9 @@ StringList::StringList(
 StringList::~StringList() = default;
 
 void StringList::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -84,9 +84,9 @@ FloatList::FloatList(
 FloatList::~FloatList() = default;
 
 void FloatList::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -112,9 +112,9 @@ Int64List::Int64List(
 Int64List::~Int64List() = default;
 
 void Int64List::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -143,9 +143,9 @@ Tensor::Tensor(
 Tensor::~Tensor() = default;
 
 void Tensor::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "data"), this->data,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -154,7 +154,7 @@ void Tensor::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "shape"), this->shape,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

@@ -1,10 +1,11 @@
 {
-	"package": "442396143bbb424bc85cd16778b75fd2b61a231d0e554c4c4101f8c479503a2d",
+	"package": "67d3c627d5d5f3ba1fcd0461d3dba94252dedd43c31ba7142912dff6b313b092",
 	"files": {
-		"Cargo.toml.orig": "7369646ecf276ce681f3ad5d10e2d4bcf609da2c3121d8aeff90dd8e6f23a06f",
-		"Cargo.toml": "bd9d7633656d50989560d9ef6fc0cb41a6d2e213cbf6ff294ff45f0bc0b618e5",
-		"src/headers/rate_estimator.h": "54dcfea6a7b7748a51397a1584530b118bfa0e11bc59b177b200a50feb94385a",
-		"src/rate_estimator_bindings.rs": "f882dfe5ddb519c2b2ba65290ef4f1862fe4ccdc0304db8030b244010e8a7189",
-		"src/rate_estimator.rs": "6f529a40df485856d3d84ba68fcfcfdab27d0a2f72f6ea52200f55b91e89837a"
+		"Cargo.toml.orig": "ca410330aca88d2af9368622a7c887898299dadd8280ecfb64d31d39e6166294",
+		"Cargo.toml": "d53b12620a86cb88ebd2638f44b8221259a87e67fa641255ffae5abf515e26b3",
+		"include/rate_estimator.h": "cd04b76c7c6cdfa1adfa2615a88b45d9ba152db3768d655fd7fb5e8ed188fbba",
+		"src/lib.rs": "997db7484bd39c730739621a4ad6ec5d1fc7842aaf18d0ec8e1cf65c611a2e3a",
+		"src/rate_estimator_bindings.rs": "390c9fd80d0bc71c63d4daf902d4d27d0480d515e91473344bbf686744f35522",
+		"src/rate_estimator.rs": "9ee49fe956dfc14da217d5d7062993dbdba9e6c197f16ee2b4862e3f8d8805b0"
 	}
 }

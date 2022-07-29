@@ -369,8 +369,8 @@ PERFETTO_DEFINE_TEST_CATEGORY_PREFIXES("cat",
                                        TRACE_DISABLED_BY_DEFAULT("Testing"),
                                        TRACE_DISABLED_BY_DEFAULT("NotTesting"));
 
-#define INTERNAL_CATEGORY(X) perfetto::libchrome::Category(X),
-#define INTERNAL_CATEGORY_GROUP(X) perfetto::libchrome::Category::Group(X),
+#define INTERNAL_CATEGORY(X) perfetto_libchrome::Category(X),
+#define INTERNAL_CATEGORY_GROUP(X) perfetto_libchrome::Category::Group(X),
 
 // Define a Perfetto TrackEvent data source using the list of categories defined
 // above. See https://perfetto.dev/docs/instrumentation/track-events.

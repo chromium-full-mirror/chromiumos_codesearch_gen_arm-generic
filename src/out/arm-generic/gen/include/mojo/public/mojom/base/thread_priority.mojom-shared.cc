@@ -55,14 +55,12 @@ namespace internal {
 }  // namespace mojom
 }  // namespace mojo_base
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::mojo_base::mojom::ThreadPriority>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::mojo_base::mojom::ThreadPriority value) {
+   perfetto_libchrome::TracedValue context, ::mojo_base::mojom::ThreadPriority value) {
   return std::move(context).WriteString(::mojo_base::mojom::ThreadPriorityToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

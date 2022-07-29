@@ -58,9 +58,9 @@ SerializedHandle::SerializedHandle(
 SerializedHandle::~SerializedHandle() = default;
 
 void SerializedHandle::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "the_handle"), this->the_handle,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -69,7 +69,7 @@ void SerializedHandle::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -98,9 +98,9 @@ NativeStruct::NativeStruct(
 NativeStruct::~NativeStruct() = default;
 
 void NativeStruct::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "data"), this->data,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -109,7 +109,7 @@ void NativeStruct::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "handles"), this->handles,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

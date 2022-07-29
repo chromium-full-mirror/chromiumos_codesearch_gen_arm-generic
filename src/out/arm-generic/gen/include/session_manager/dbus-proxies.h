@@ -530,6 +530,43 @@ class SessionManagerInterfaceProxyInterface {
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
+  virtual bool UnblockDevModeForInitialStateDetermination(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual void UnblockDevModeForInitialStateDeterminationAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual bool UnblockDevModeForEnrollment(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual void UnblockDevModeForEnrollmentAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual bool UnblockDevModeForCarrierLock(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual void UnblockDevModeForCarrierLockAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual bool IsDevModeBlockedForCarrierLock(
+      bool* out_is_blocked,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
+  virtual void IsDevModeBlockedForCarrierLockAsync(
+      base::OnceCallback<void(bool /*is_blocked*/)> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
+
   virtual void RegisterLoginPromptVisibleSignalHandler(
       base::RepeatingClosure signal_callback,
       dbus::ObjectProxy::OnConnectedCallback on_connected_callback) = 0;
@@ -2007,6 +2044,111 @@ class SessionManagerInterfaceProxy final : public SessionManagerInterfaceProxyIn
         dbus_object_proxy_,
         "org.chromium.SessionManagerInterface",
         "StartBrowserDataMigration",
+        std::move(success_callback),
+        std::move(error_callback));
+  }
+
+  bool UnblockDevModeForInitialStateDetermination(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForInitialStateDetermination",
+        error);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error);
+  }
+
+  void UnblockDevModeForInitialStateDeterminationAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForInitialStateDetermination",
+        std::move(success_callback),
+        std::move(error_callback));
+  }
+
+  bool UnblockDevModeForEnrollment(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForEnrollment",
+        error);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error);
+  }
+
+  void UnblockDevModeForEnrollmentAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForEnrollment",
+        std::move(success_callback),
+        std::move(error_callback));
+  }
+
+  bool UnblockDevModeForCarrierLock(
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForCarrierLock",
+        error);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error);
+  }
+
+  void UnblockDevModeForCarrierLockAsync(
+      base::OnceCallback<void()> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "UnblockDevModeForCarrierLock",
+        std::move(success_callback),
+        std::move(error_callback));
+  }
+
+  bool IsDevModeBlockedForCarrierLock(
+      bool* out_is_blocked,
+      brillo::ErrorPtr* error,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "IsDevModeBlockedForCarrierLock",
+        error);
+    return response && brillo::dbus_utils::ExtractMethodCallResults(
+        response.get(), error, out_is_blocked);
+  }
+
+  void IsDevModeBlockedForCarrierLockAsync(
+      base::OnceCallback<void(bool /*is_blocked*/)> success_callback,
+      base::OnceCallback<void(brillo::Error*)> error_callback,
+      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
+    brillo::dbus_utils::CallMethodWithTimeout(
+        timeout_ms,
+        dbus_object_proxy_,
+        "org.chromium.SessionManagerInterface",
+        "IsDevModeBlockedForCarrierLock",
         std::move(success_callback),
         std::move(error_callback));
   }

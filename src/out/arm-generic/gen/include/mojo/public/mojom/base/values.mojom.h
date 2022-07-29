@@ -400,7 +400,7 @@ DictionaryValue& operator=(const DictionaryValue&) = delete;
   base::flat_map<std::string, ValuePtr> storage;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -539,7 +539,7 @@ ListValue& operator=(const ListValue&) = delete;
   std::vector<ValuePtr> storage;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -678,7 +678,7 @@ DeprecatedDictionaryValue& operator=(const DeprecatedDictionaryValue&) = delete;
   base::flat_map<std::string, ValuePtr> storage;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -817,7 +817,7 @@ DeprecatedListValue& operator=(const DeprecatedListValue&) = delete;
   std::vector<ValuePtr> storage;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

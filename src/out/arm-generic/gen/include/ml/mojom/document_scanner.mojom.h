@@ -285,7 +285,7 @@ DocumentScannerConfig& operator=(const DocumentScannerConfig&) = delete;
   ::mojo_base::mojom::FilePathPtr library_dlc_path;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -427,7 +427,7 @@ DetectCornersResult& operator=(const DetectCornersResult&) = delete;
   std::vector<::gfx::mojom::PointFPtr> corners;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -567,7 +567,7 @@ class  DoPostProcessingResult {
   std::vector<uint8_t> processed_jpeg_image;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

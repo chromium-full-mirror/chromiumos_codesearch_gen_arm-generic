@@ -303,15 +303,13 @@ inline void DmaBufVideoFrameDataView::GetPlanesDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::VideoPixelFormat> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::VideoPixelFormat value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::VideoPixelFormat value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // CAMERA_MOJO_GPU_DMABUF_MOJOM_SHARED_H_

@@ -18,7 +18,7 @@
 #include "base/unguessable_token.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 
-namespace perfetto {
+namespace perfetto_libchrome{
 namespace protos {
 namespace pbzero {
 class MemoryTrackerSnapshot_ProcessSnapshot_MemoryNode;
@@ -109,7 +109,7 @@ class BASE_EXPORT MemoryAllocatorDump {
   void AsValueInto(TracedValue* value) const;
 
   void AsProtoInto(
-      perfetto::libchrome::protos::pbzero::
+      perfetto_libchrome::protos::pbzero::
           MemoryTrackerSnapshot_ProcessSnapshot_MemoryNode* memory_node) const;
 
   // Get the size for this dump.

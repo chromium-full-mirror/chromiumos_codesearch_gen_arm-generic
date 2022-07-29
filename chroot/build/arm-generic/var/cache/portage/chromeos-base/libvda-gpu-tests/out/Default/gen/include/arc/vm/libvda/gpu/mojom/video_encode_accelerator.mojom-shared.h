@@ -768,37 +768,31 @@ inline void BitrateDataView::GetVariableDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::arc::mojom::VideoFrameStorageType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::arc::mojom::VideoFrameStorageType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::arc::mojom::VideoFrameStorageType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::arc::mojom::VideoEncodeAccelerator_Error> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::arc::mojom::VideoEncodeAccelerator_Error value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::arc::mojom::VideoEncodeAccelerator_Error value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::arc::mojom::VideoEncodeAccelerator_Result> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::arc::mojom::VideoEncodeAccelerator_Result value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::arc::mojom::VideoEncodeAccelerator_Result value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ARC_VM_LIBVDA_GPU_MOJOM_VIDEO_ENCODE_ACCELERATOR_MOJOM_SHARED_H_

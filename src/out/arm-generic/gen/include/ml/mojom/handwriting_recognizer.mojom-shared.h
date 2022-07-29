@@ -1331,26 +1331,22 @@ inline void HandwritingRecognizerSpecDataView::GetLibraryDlcPathDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::LoadHandwritingModelResult> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::LoadHandwritingModelResult value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::LoadHandwritingModelResult value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::HandwritingRecognizerResult_Status> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::HandwritingRecognizerResult_Status value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::HandwritingRecognizerResult_Status value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ML_MOJOM_HANDWRITING_RECOGNIZER_MOJOM_SHARED_H_

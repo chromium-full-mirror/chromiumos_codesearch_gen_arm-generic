@@ -216,12 +216,12 @@ void VideoHost_OnBootstrapVideoAcceleratorFactory_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply arc::mojom::VideoHost::OnBootstrapVideoAcceleratorFactory", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("channel_handle"), in_channel_handle,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("token"), in_token,
                         "<value of type const std::string&>");
    });
@@ -402,9 +402,9 @@ void VideoInstanceProxy::Init(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send arc::mojom::VideoInstance::Init", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("host_remote"), in_host_remote,
                         "<value of type ::mojo::PendingRemote<VideoHost>>");
    });
@@ -690,9 +690,9 @@ void VideoAcceleratorFactoryProxy::CreateEncodeAccelerator(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send arc::mojom::VideoAcceleratorFactory::CreateEncodeAccelerator", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("video_encoder"), in_video_encoder,
                         "<value of type ::mojo::PendingReceiver<::arc::mojom::VideoEncodeAccelerator>>");
    });
@@ -733,9 +733,9 @@ void VideoAcceleratorFactoryProxy::CreateDecodeAccelerator(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send arc::mojom::VideoAcceleratorFactory::CreateDecodeAccelerator", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("video_decoder"), in_video_decoder,
                         "<value of type ::mojo::PendingReceiver<::arc::mojom::VideoDecodeAccelerator>>");
    });
@@ -776,9 +776,9 @@ void VideoAcceleratorFactoryProxy::CreateVideoDecoder(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send arc::mojom::VideoAcceleratorFactory::CreateVideoDecoder", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("video_decoder"), in_video_decoder,
                         "<value of type ::mojo::PendingReceiver<::arc::mojom::VideoDecoder>>");
    });
@@ -819,9 +819,9 @@ void VideoAcceleratorFactoryProxy::CreateProtectedBufferAllocator(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send arc::mojom::VideoAcceleratorFactory::CreateProtectedBufferAllocator", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("video_protected_buffer_allocator"), in_video_protected_buffer_allocator,
                         "<value of type ::mojo::PendingReceiver<::arc::mojom::VideoProtectedBufferAllocator>>");
    });

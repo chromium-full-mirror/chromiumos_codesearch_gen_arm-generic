@@ -270,15 +270,13 @@ inline void NativeStructDataView::GetHandlesDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::mojo::native::SerializedHandleType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::mojo::native::SerializedHandleType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::mojo::native::SerializedHandleType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // MOJO_PUBLIC_INTERFACES_BINDINGS_NATIVE_STRUCT_MOJOM_SHARED_H_

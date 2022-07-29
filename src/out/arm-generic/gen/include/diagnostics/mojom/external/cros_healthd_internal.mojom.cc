@@ -73,9 +73,9 @@ size_t TouchscreenDevice::Hash(size_t seed) const {
 }
 
 void TouchscreenDevice::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "input_device"), this->input_device,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -84,7 +84,7 @@ void TouchscreenDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "touch_points"), this->touch_points,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -93,7 +93,7 @@ void TouchscreenDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "has_stylus"), this->has_stylus,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -102,7 +102,7 @@ void TouchscreenDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "has_stylus_garage_switch"), this->has_stylus_garage_switch,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -148,9 +148,9 @@ size_t InputDevice::Hash(size_t seed) const {
 }
 
 void InputDevice::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -159,7 +159,7 @@ void InputDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "connection_type"), this->connection_type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -168,7 +168,7 @@ void InputDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "physical_location"), this->physical_location,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -177,7 +177,7 @@ void InputDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "is_enabled"), this->is_enabled,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -186,7 +186,7 @@ void InputDevice::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "sysfs_path"), this->sysfs_path,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -425,9 +425,9 @@ void ChromiumDataCollector_GetTouchscreenDevices_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::internal::mojom::ChromiumDataCollector::GetTouchscreenDevices", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("devices"), in_devices,
                         "<value of type std::vector<TouchscreenDevicePtr>>");
    });
@@ -551,9 +551,9 @@ void ChromiumDataCollector_GetTouchpadLibraryName_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::internal::mojom::ChromiumDataCollector::GetTouchpadLibraryName", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("library_name"), in_library_name,
                         "<value of type const std::string&>");
    });

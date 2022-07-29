@@ -190,33 +190,33 @@ void JpegEncodeAcceleratorProxy::EncodeWithFD(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::JpegEncodeAccelerator::EncodeWithFD", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("task_id"), in_task_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("input_fd"), in_input_fd,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("input_buffer_size"), in_input_buffer_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("coded_size_width"), in_coded_size_width,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("coded_size_height"), in_coded_size_height,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("exif_fd"), in_exif_fd,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("exif_buffer_size"), in_exif_buffer_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("output_fd"), in_output_fd,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("output_buffer_size"), in_output_buffer_size,
                         "<value of type uint32_t>");
    });
@@ -276,33 +276,33 @@ void JpegEncodeAcceleratorProxy::EncodeWithDmaBuf(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::JpegEncodeAccelerator::EncodeWithDmaBuf", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("task_id"), in_task_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("input_format"), in_input_format,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("input_planes"), in_input_planes,
                         "<value of type std::vector<::cros::mojom::DmaBufPlanePtr>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("output_planes"), in_output_planes,
                         "<value of type std::vector<::cros::mojom::DmaBufPlanePtr>>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("exif_handle"), in_exif_handle,
                         "<value of type ::mojo::ScopedHandle>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("exif_buffer_size"), in_exif_buffer_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("coded_size_width"), in_coded_size_width,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("coded_size_height"), in_coded_size_height,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("quality"), in_quality,
                         "<value of type int32_t>");
    });
@@ -448,9 +448,9 @@ void JpegEncodeAccelerator_Initialize_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::JpegEncodeAccelerator::Initialize", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("success"), in_success,
                         "<value of type bool>");
    });
@@ -570,15 +570,15 @@ void JpegEncodeAccelerator_EncodeWithFD_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::JpegEncodeAccelerator::EncodeWithFD", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("task_id"), in_task_id,
                         "<value of type int32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("encoded_buffer_size"), in_encoded_buffer_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("status"), in_status,
                         "<value of type EncodeStatus>");
    });
@@ -697,12 +697,12 @@ void JpegEncodeAccelerator_EncodeWithDmaBuf_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply cros::mojom::JpegEncodeAccelerator::EncodeWithDmaBuf", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("encoded_buffer_size"), in_encoded_buffer_size,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("status"), in_status,
                         "<value of type EncodeStatus>");
    });

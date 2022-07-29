@@ -126,6 +126,7 @@ const uint32_t TableStruct_fuzzer_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::ContainerListenerFuzzerSingleAction, peer_address_),
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::ContainerListenerFuzzerSingleAction, return_dbus_response_),
   PROTOBUF_FIELD_OFFSET(::vm_tools::container::ContainerListenerFuzzerSingleAction, tremplin_create_container_status_),
@@ -177,7 +178,7 @@ const uint32_t TableStruct_fuzzer_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(p
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::vm_tools::container::ContainerListenerFuzzerSingleAction)},
-  { 78, -1, -1, sizeof(::vm_tools::container::ContainerListenerFuzzerInput)},
+  { 79, -1, -1, sizeof(::vm_tools::container::ContainerListenerFuzzerInput)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -188,7 +189,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_fuzzer_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014fuzzer.proto\022\022vm_tools.container\032\014comm"
   "on.proto\032\024container_host.proto\032\016tremplin"
-  ".proto\032\016vm_crash.proto\"\207(\n#ContainerList"
+  ".proto\032\016vm_crash.proto\"\323(\n#ContainerList"
   "enerFuzzerSingleAction\022J\n\026container_star"
   "tup_info\030\001 \001(\0132(.vm_tools.container.Cont"
   "ainerStartupInfoH\000\022L\n\027container_shutdown"
@@ -224,103 +225,105 @@ const char descriptor_table_protodef_fuzzer_2eproto[] PROTOBUF_SECTION_VARIABLE(
   "estH\000\022H\n\025request_space_request\0305 \001(\0132\'.v"
   "m_tools.container.RequestSpaceRequestH\000\022"
   "H\n\025release_space_request\0306 \001(\0132\'.vm_tool"
-  "s.container.ReleaseSpaceRequestH\000\0229\n\027met"
-  "rics_consent_request\030! \001(\0132\026.vm_tools.Em"
-  "ptyMessageH\000\022C\n\031send_crash_report_reques"
-  "t\030* \001(\0132\036.vm_tools.cicerone.CrashReportH"
-  "\000\022G\n\033send_failure_report_request\030. \001(\0132 "
-  ".vm_tools.cicerone.FailureReportH\000\022G\n\025tr"
-  "emplin_startup_info\030d \001(\0132&.vm_tools.tre"
-  "mplin.TremplinStartupInfoH\000\022S\n\033container"
-  "_creation_progress\030e \001(\0132,.vm_tools.trem"
-  "plin.ContainerCreationProgressH\000\022S\n\033cont"
-  "ainer_deletion_progress\030f \001(\0132,.vm_tools"
-  ".tremplin.ContainerDeletionProgressH\000\022M\n"
-  "\030container_start_progress\030g \001(\0132).vm_too"
-  "ls.tremplin.ContainerStartProgressH\000\022O\n\031"
-  "container_export_progress\030h \001(\0132*.vm_too"
-  "ls.tremplin.ContainerExportProgressH\000\022O\n"
-  "\031container_import_progress\030i \001(\0132*.vm_to"
-  "ols.tremplin.ContainerImportProgressH\000\022T"
-  "\n tremplin_container_shutdown_info\030j \001(\013"
-  "2(.vm_tools.tremplin.ContainerShutdownIn"
-  "foH\000\022Q\n\032upgrade_container_progress\030k \001(\013"
-  "2+.vm_tools.tremplin.UpgradeContainerPro"
-  "gressH\000\022F\n\026update_listening_ports\030l \001(\0132"
-  "$.vm_tools.tremplin.ListeningPortInfoH\000\022"
-  "A\n\022start_lxd_progress\030m \001(\0132#.vm_tools.t"
-  "remplin.StartLxdProgressH\000\022K\n\027container_"
-  "stop_progress\030n \001(\0132(.vm_tools.tremplin."
-  "ContainerStopProgressH\000\022\024\n\014peer_address\030"
-  "\t \001(\t\022\034\n\024return_dbus_response\030\n \001(\010\022(\n t"
-  "remplin_create_container_status\030\013 \001(\005\022V\n"
-  "\"tremplin_create_container_response\030\014 \001("
-  "\0132*.vm_tools.tremplin.CreateContainerRes"
-  "ponse\022\'\n\037tremplin_start_container_status"
-  "\030\r \001(\005\022T\n!tremplin_start_container_respo"
-  "nse\030\016 \001(\0132).vm_tools.tremplin.StartConta"
-  "inerResponse\022&\n\036tremplin_stop_container_"
-  "status\0307 \001(\005\022R\n tremplin_stop_container_"
-  "response\0308 \001(\0132(.vm_tools.tremplin.StopC"
-  "ontainerResponse\022.\n&tremplin_get_contain"
-  "er_username_status\030\017 \001(\005\022a\n(tremplin_get"
-  "_container_username_response\030\020 \001(\0132/.vm_"
-  "tools.tremplin.GetContainerUsernameRespo"
-  "nse\022#\n\033tremplin_set_up_user_status\030\021 \001(\005"
-  "\022K\n\035tremplin_set_up_user_response\030\022 \001(\0132"
-  "$.vm_tools.tremplin.SetUpUserResponse\022*\n"
-  "\"tremplin_get_container_info_status\030\023 \001("
-  "\005\022Y\n$tremplin_get_container_info_respons"
-  "e\030\024 \001(\0132+.vm_tools.tremplin.GetContainer"
-  "InfoResponse\022$\n\034tremplin_set_timezone_st"
-  "atus\030\025 \001(\005\022N\n\036tremplin_set_timezone_resp"
-  "onse\030\026 \001(\0132&.vm_tools.tremplin.SetTimezo"
-  "neResponse\022(\n tremplin_export_container_"
-  "status\030\027 \001(\005\022V\n\"tremplin_export_containe"
-  "r_response\030\030 \001(\0132*.vm_tools.tremplin.Exp"
-  "ortContainerResponse\022(\n tremplin_import_"
-  "container_status\030\031 \001(\005\022V\n\"tremplin_impor"
-  "t_container_response\030\032 \001(\0132*.vm_tools.tr"
-  "emplin.ImportContainerResponse\022)\n!trempl"
-  "in_upgrade_container_status\030\035 \001(\005\022X\n#tre"
-  "mplin_upgrade_container_response\030\036 \001(\0132+"
-  ".vm_tools.tremplin.UpgradeContainerRespo"
-  "nse\0220\n(tremplin_cancel_upgrade_container"
-  "_status\030\037 \001(\005\022e\n*tremplin_cancel_upgrade"
-  "_container_response\030  \001(\01321.vm_tools.tre"
-  "mplin.CancelUpgradeContainerResponse\022(\n "
-  "tremplin_delete_container_status\030\" \001(\005\022V"
-  "\n\"tremplin_delete_container_response\030# \001"
-  "(\0132*.vm_tools.tremplin.DeleteContainerRe"
-  "sponse\022/\n\'tremplin_cancel_export_contain"
-  "er_status\030$ \001(\005\022c\n)tremplin_cancel_expor"
-  "t_container_response\030% \001(\01320.vm_tools.tr"
-  "emplin.CancelExportContainerResponse\022/\n\'"
-  "tremplin_cancel_import_container_status\030"
-  "& \001(\005\022c\n)tremplin_cancel_import_containe"
-  "r_response\030\' \001(\01320.vm_tools.tremplin.Can"
-  "celImportContainerResponse\022,\n$tremplin_h"
-  "ost_network_changed_status\030( \001(\005\022]\n&trem"
-  "plin_host_network_changed_response\030) \001(\013"
-  "2-.vm_tools.tremplin.HostNetworkChangedR"
-  "esponse\022!\n\031tremplin_start_lxd_status\030+ \001"
-  "(\005\022H\n\033tremplin_start_lxd_response\030, \001(\0132"
-  "#.vm_tools.tremplin.StartLxdResponse\022&\n\036"
-  "tremplin_get_debug_info_status\030/ \001(\005\022Q\n "
-  "tremplin_get_debug_info_response\0300 \001(\0132\'"
-  ".vm_tools.tremplin.GetDebugInfoResponse\022"
-  "/\n\'tremplin_attach_usb_to_container_stat"
-  "us\030: \001(\005\022b\n)tremplin_attach_usb_to_conta"
-  "iner_response\030; \001(\0132/.vm_tools.tremplin."
-  "AttachUsbToContainerResponse\0221\n)tremplin"
-  "_detach_usb_from_container_status\030< \001(\005\022"
-  "f\n+tremplin_detach_usb_from_container_re"
-  "sponse\030= \001(\01321.vm_tools.tremplin.DetachU"
-  "sbFromContainerResponseB\007\n\005input\"g\n\034Cont"
-  "ainerListenerFuzzerInput\022G\n\006action\030\001 \003(\013"
-  "27.vm_tools.container.ContainerListenerF"
-  "uzzerSingleActionB(Z#chromiumos/vm_tools"
-  "/container_proto\370\001\001b\006proto3"
+  "s.container.ReleaseSpaceRequestH\000\022J\n\026rep"
+  "ort_metrics_request\0309 \001(\0132(.vm_tools.con"
+  "tainer.ReportMetricsRequestH\000\0229\n\027metrics"
+  "_consent_request\030! \001(\0132\026.vm_tools.EmptyM"
+  "essageH\000\022C\n\031send_crash_report_request\030* "
+  "\001(\0132\036.vm_tools.cicerone.CrashReportH\000\022G\n"
+  "\033send_failure_report_request\030. \001(\0132 .vm_"
+  "tools.cicerone.FailureReportH\000\022G\n\025trempl"
+  "in_startup_info\030d \001(\0132&.vm_tools.trempli"
+  "n.TremplinStartupInfoH\000\022S\n\033container_cre"
+  "ation_progress\030e \001(\0132,.vm_tools.tremplin"
+  ".ContainerCreationProgressH\000\022S\n\033containe"
+  "r_deletion_progress\030f \001(\0132,.vm_tools.tre"
+  "mplin.ContainerDeletionProgressH\000\022M\n\030con"
+  "tainer_start_progress\030g \001(\0132).vm_tools.t"
+  "remplin.ContainerStartProgressH\000\022O\n\031cont"
+  "ainer_export_progress\030h \001(\0132*.vm_tools.t"
+  "remplin.ContainerExportProgressH\000\022O\n\031con"
+  "tainer_import_progress\030i \001(\0132*.vm_tools."
+  "tremplin.ContainerImportProgressH\000\022T\n tr"
+  "emplin_container_shutdown_info\030j \001(\0132(.v"
+  "m_tools.tremplin.ContainerShutdownInfoH\000"
+  "\022Q\n\032upgrade_container_progress\030k \001(\0132+.v"
+  "m_tools.tremplin.UpgradeContainerProgres"
+  "sH\000\022F\n\026update_listening_ports\030l \001(\0132$.vm"
+  "_tools.tremplin.ListeningPortInfoH\000\022A\n\022s"
+  "tart_lxd_progress\030m \001(\0132#.vm_tools.tremp"
+  "lin.StartLxdProgressH\000\022K\n\027container_stop"
+  "_progress\030n \001(\0132(.vm_tools.tremplin.Cont"
+  "ainerStopProgressH\000\022\024\n\014peer_address\030\t \001("
+  "\t\022\034\n\024return_dbus_response\030\n \001(\010\022(\n tremp"
+  "lin_create_container_status\030\013 \001(\005\022V\n\"tre"
+  "mplin_create_container_response\030\014 \001(\0132*."
+  "vm_tools.tremplin.CreateContainerRespons"
+  "e\022\'\n\037tremplin_start_container_status\030\r \001"
+  "(\005\022T\n!tremplin_start_container_response\030"
+  "\016 \001(\0132).vm_tools.tremplin.StartContainer"
+  "Response\022&\n\036tremplin_stop_container_stat"
+  "us\0307 \001(\005\022R\n tremplin_stop_container_resp"
+  "onse\0308 \001(\0132(.vm_tools.tremplin.StopConta"
+  "inerResponse\022.\n&tremplin_get_container_u"
+  "sername_status\030\017 \001(\005\022a\n(tremplin_get_con"
+  "tainer_username_response\030\020 \001(\0132/.vm_tool"
+  "s.tremplin.GetContainerUsernameResponse\022"
+  "#\n\033tremplin_set_up_user_status\030\021 \001(\005\022K\n\035"
+  "tremplin_set_up_user_response\030\022 \001(\0132$.vm"
+  "_tools.tremplin.SetUpUserResponse\022*\n\"tre"
+  "mplin_get_container_info_status\030\023 \001(\005\022Y\n"
+  "$tremplin_get_container_info_response\030\024 "
+  "\001(\0132+.vm_tools.tremplin.GetContainerInfo"
+  "Response\022$\n\034tremplin_set_timezone_status"
+  "\030\025 \001(\005\022N\n\036tremplin_set_timezone_response"
+  "\030\026 \001(\0132&.vm_tools.tremplin.SetTimezoneRe"
+  "sponse\022(\n tremplin_export_container_stat"
+  "us\030\027 \001(\005\022V\n\"tremplin_export_container_re"
+  "sponse\030\030 \001(\0132*.vm_tools.tremplin.ExportC"
+  "ontainerResponse\022(\n tremplin_import_cont"
+  "ainer_status\030\031 \001(\005\022V\n\"tremplin_import_co"
+  "ntainer_response\030\032 \001(\0132*.vm_tools.trempl"
+  "in.ImportContainerResponse\022)\n!tremplin_u"
+  "pgrade_container_status\030\035 \001(\005\022X\n#trempli"
+  "n_upgrade_container_response\030\036 \001(\0132+.vm_"
+  "tools.tremplin.UpgradeContainerResponse\022"
+  "0\n(tremplin_cancel_upgrade_container_sta"
+  "tus\030\037 \001(\005\022e\n*tremplin_cancel_upgrade_con"
+  "tainer_response\030  \001(\01321.vm_tools.trempli"
+  "n.CancelUpgradeContainerResponse\022(\n trem"
+  "plin_delete_container_status\030\" \001(\005\022V\n\"tr"
+  "emplin_delete_container_response\030# \001(\0132*"
+  ".vm_tools.tremplin.DeleteContainerRespon"
+  "se\022/\n\'tremplin_cancel_export_container_s"
+  "tatus\030$ \001(\005\022c\n)tremplin_cancel_export_co"
+  "ntainer_response\030% \001(\01320.vm_tools.trempl"
+  "in.CancelExportContainerResponse\022/\n\'trem"
+  "plin_cancel_import_container_status\030& \001("
+  "\005\022c\n)tremplin_cancel_import_container_re"
+  "sponse\030\' \001(\01320.vm_tools.tremplin.CancelI"
+  "mportContainerResponse\022,\n$tremplin_host_"
+  "network_changed_status\030( \001(\005\022]\n&tremplin"
+  "_host_network_changed_response\030) \001(\0132-.v"
+  "m_tools.tremplin.HostNetworkChangedRespo"
+  "nse\022!\n\031tremplin_start_lxd_status\030+ \001(\005\022H"
+  "\n\033tremplin_start_lxd_response\030, \001(\0132#.vm"
+  "_tools.tremplin.StartLxdResponse\022&\n\036trem"
+  "plin_get_debug_info_status\030/ \001(\005\022Q\n trem"
+  "plin_get_debug_info_response\0300 \001(\0132\'.vm_"
+  "tools.tremplin.GetDebugInfoResponse\022/\n\'t"
+  "remplin_attach_usb_to_container_status\030:"
+  " \001(\005\022b\n)tremplin_attach_usb_to_container"
+  "_response\030; \001(\0132/.vm_tools.tremplin.Atta"
+  "chUsbToContainerResponse\0221\n)tremplin_det"
+  "ach_usb_from_container_status\030< \001(\005\022f\n+t"
+  "remplin_detach_usb_from_container_respon"
+  "se\030= \001(\01321.vm_tools.tremplin.DetachUsbFr"
+  "omContainerResponseB\007\n\005input\"g\n\034Containe"
+  "rListenerFuzzerInput\022G\n\006action\030\001 \003(\01327.v"
+  "m_tools.container.ContainerListenerFuzze"
+  "rSingleActionB(Z#chromiumos/vm_tools/con"
+  "tainer_proto\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_fuzzer_2eproto_deps[4] = {
   &::descriptor_table_common_2eproto,
@@ -330,7 +333,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_fuzzer_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_fuzzer_2eproto = {
-  false, false, 5387, descriptor_table_protodef_fuzzer_2eproto, "fuzzer.proto", 
+  false, false, 5463, descriptor_table_protodef_fuzzer_2eproto, "fuzzer.proto", 
   &descriptor_table_fuzzer_2eproto_once, descriptor_table_fuzzer_2eproto_deps, 4, 2,
   schemas, file_default_instances, TableStruct_fuzzer_2eproto::offsets,
   file_level_metadata_fuzzer_2eproto, file_level_enum_descriptors_fuzzer_2eproto, file_level_service_descriptors_fuzzer_2eproto,
@@ -365,6 +368,7 @@ class ContainerListenerFuzzerSingleAction::_Internal {
   static const ::vm_tools::container::GetDiskInfoRequest& get_disk_info_request(const ContainerListenerFuzzerSingleAction* msg);
   static const ::vm_tools::container::RequestSpaceRequest& request_space_request(const ContainerListenerFuzzerSingleAction* msg);
   static const ::vm_tools::container::ReleaseSpaceRequest& release_space_request(const ContainerListenerFuzzerSingleAction* msg);
+  static const ::vm_tools::container::ReportMetricsRequest& report_metrics_request(const ContainerListenerFuzzerSingleAction* msg);
   static const ::vm_tools::EmptyMessage& metrics_consent_request(const ContainerListenerFuzzerSingleAction* msg);
   static const ::vm_tools::cicerone::CrashReport& send_crash_report_request(const ContainerListenerFuzzerSingleAction* msg);
   static const ::vm_tools::cicerone::FailureReport& send_failure_report_request(const ContainerListenerFuzzerSingleAction* msg);
@@ -467,6 +471,10 @@ ContainerListenerFuzzerSingleAction::_Internal::request_space_request(const Cont
 const ::vm_tools::container::ReleaseSpaceRequest&
 ContainerListenerFuzzerSingleAction::_Internal::release_space_request(const ContainerListenerFuzzerSingleAction* msg) {
   return *msg->input_.release_space_request_;
+}
+const ::vm_tools::container::ReportMetricsRequest&
+ContainerListenerFuzzerSingleAction::_Internal::report_metrics_request(const ContainerListenerFuzzerSingleAction* msg) {
+  return *msg->input_.report_metrics_request_;
 }
 const ::vm_tools::EmptyMessage&
 ContainerListenerFuzzerSingleAction::_Internal::metrics_consent_request(const ContainerListenerFuzzerSingleAction* msg) {
@@ -1021,6 +1029,31 @@ void ContainerListenerFuzzerSingleAction::clear_release_space_request() {
   if (_internal_has_release_space_request()) {
     if (GetArenaForAllocation() == nullptr) {
       delete input_.release_space_request_;
+    }
+    clear_has_input();
+  }
+}
+void ContainerListenerFuzzerSingleAction::set_allocated_report_metrics_request(::vm_tools::container::ReportMetricsRequest* report_metrics_request) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_input();
+  if (report_metrics_request) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(report_metrics_request));
+    if (message_arena != submessage_arena) {
+      report_metrics_request = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, report_metrics_request, submessage_arena);
+    }
+    set_has_report_metrics_request();
+    input_.report_metrics_request_ = report_metrics_request;
+  }
+  // @@protoc_insertion_point(field_set_allocated:vm_tools.container.ContainerListenerFuzzerSingleAction.report_metrics_request)
+}
+void ContainerListenerFuzzerSingleAction::clear_report_metrics_request() {
+  if (_internal_has_report_metrics_request()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete input_.report_metrics_request_;
     }
     clear_has_input();
   }
@@ -1677,6 +1710,10 @@ ContainerListenerFuzzerSingleAction::ContainerListenerFuzzerSingleAction(const C
       _internal_mutable_release_space_request()->::vm_tools::container::ReleaseSpaceRequest::MergeFrom(from._internal_release_space_request());
       break;
     }
+    case kReportMetricsRequest: {
+      _internal_mutable_report_metrics_request()->::vm_tools::container::ReportMetricsRequest::MergeFrom(from._internal_report_metrics_request());
+      break;
+    }
     case kMetricsConsentRequest: {
       _internal_mutable_metrics_consent_request()->::vm_tools::EmptyMessage::MergeFrom(from._internal_metrics_consent_request());
       break;
@@ -1898,6 +1935,12 @@ void ContainerListenerFuzzerSingleAction::clear_input() {
     case kReleaseSpaceRequest: {
       if (GetArenaForAllocation() == nullptr) {
         delete input_.release_space_request_;
+      }
+      break;
+    }
+    case kReportMetricsRequest: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete input_.report_metrics_request_;
       }
       break;
     }
@@ -2539,6 +2582,14 @@ const char* ContainerListenerFuzzerSingleAction::_InternalParse(const char* ptr,
         } else
           goto handle_unusual;
         continue;
+      // .vm_tools.container.ReportMetricsRequest report_metrics_request = 57;
+      case 57:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
+          ptr = ctx->ParseMessage(_internal_mutable_report_metrics_request(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       // int32 tremplin_attach_usb_to_container_status = 58;
       case 58:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
@@ -3102,6 +3153,14 @@ uint8_t* ContainerListenerFuzzerSingleAction::_InternalSerialize(
         56, _Internal::tremplin_stop_container_response(this), target, stream);
   }
 
+  // .vm_tools.container.ReportMetricsRequest report_metrics_request = 57;
+  if (_internal_has_report_metrics_request()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        57, _Internal::report_metrics_request(this), target, stream);
+  }
+
   // int32 tremplin_attach_usb_to_container_status = 58;
   if (this->_internal_tremplin_attach_usb_to_container_status() != 0) {
     target = stream->EnsureSpace(target);
@@ -3626,6 +3685,13 @@ size_t ContainerListenerFuzzerSingleAction::ByteSizeLong() const {
           *input_.release_space_request_);
       break;
     }
+    // .vm_tools.container.ReportMetricsRequest report_metrics_request = 57;
+    case kReportMetricsRequest: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *input_.report_metrics_request_);
+      break;
+    }
     // .vm_tools.EmptyMessage metrics_consent_request = 33;
     case kMetricsConsentRequest: {
       total_size += 2 +
@@ -3937,6 +4003,10 @@ void ContainerListenerFuzzerSingleAction::MergeFrom(const ContainerListenerFuzze
     }
     case kReleaseSpaceRequest: {
       _internal_mutable_release_space_request()->::vm_tools::container::ReleaseSpaceRequest::MergeFrom(from._internal_release_space_request());
+      break;
+    }
+    case kReportMetricsRequest: {
+      _internal_mutable_report_metrics_request()->::vm_tools::container::ReportMetricsRequest::MergeFrom(from._internal_report_metrics_request());
       break;
     }
     case kMetricsConsentRequest: {

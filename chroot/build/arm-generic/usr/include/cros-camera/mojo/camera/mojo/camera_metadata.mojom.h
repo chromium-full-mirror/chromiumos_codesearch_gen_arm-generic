@@ -164,7 +164,7 @@ class  CameraMetadataEntry {
   std::vector<uint8_t> data;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -318,7 +318,7 @@ CameraMetadata& operator=(const CameraMetadata&) = delete;
   absl::optional<std::vector<CameraMetadataEntryPtr>> entries;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

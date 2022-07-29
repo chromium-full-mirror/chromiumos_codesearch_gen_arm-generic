@@ -561,38 +561,32 @@ WilcoDtcSupportdClient_GetCrosHealthdProbeService_Params_Data::WilcoDtcSupportdC
 }  // namespace wilco_dtc_supportd
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethod>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethod value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethod value) {
   return std::move(context).WriteString(::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethodToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatus>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatus value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatus value) {
   return std::move(context).WriteString(::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEvent>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEvent value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEvent value) {
   return std::move(context).WriteString(::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEventToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

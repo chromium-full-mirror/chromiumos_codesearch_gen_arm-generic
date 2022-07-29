@@ -106,15 +106,13 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraSensorSyncTimestamp> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::cros::mojom::CameraSensorSyncTimestamp value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::cros::mojom::CameraSensorSyncTimestamp value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // CAMERA_MOJO_CROS_CAMERA_ENUM_MOJOM_SHARED_H_

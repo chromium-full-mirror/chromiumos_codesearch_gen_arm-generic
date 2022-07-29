@@ -563,22 +563,34 @@ class BRILLO_EXPORT AdditionalActivity final : public ::metrics::structured::Eve
 
 };
 
-class BRILLO_EXPORT StateOverallTime final : public ::metrics::structured::EventBase {
+class BRILLO_EXPORT ShimlessRmaStateReport final : public ::metrics::structured::EventBase {
  public:
-  StateOverallTime();
-  ~StateOverallTime() override;
+  ShimlessRmaStateReport();
+  ~ShimlessRmaStateReport() override;
 
-  static constexpr uint64_t kEventNameHash = UINT64_C(5497427121012459949);
+  static constexpr uint64_t kEventNameHash = UINT64_C(16392598288670824837);
   static constexpr uint64_t kProjectNameHash = UINT64_C(9675127341789951965);
   static constexpr IdType kIdType = IdType::kProjectId;
   static constexpr StructuredEventProto_EventType kEventType =
     StructuredEventProto_EventType_REGULAR;
 
   static constexpr uint64_t kStateCaseNameHash = UINT64_C(13460237998353539460);
-  StateOverallTime& SetStateCase(const int64_t value);
+  ShimlessRmaStateReport& SetStateCase(const int64_t value);
+
+  static constexpr uint64_t kIsAbortedNameHash = UINT64_C(13515923925635749904);
+  ShimlessRmaStateReport& SetIsAborted(const int64_t value);
 
   static constexpr uint64_t kOverallTimeNameHash = UINT64_C(9999132872938351554);
-  StateOverallTime& SetOverallTime(const int64_t value);
+  ShimlessRmaStateReport& SetOverallTime(const int64_t value);
+
+  static constexpr uint64_t kTransitionCountNameHash = UINT64_C(7754660623504676373);
+  ShimlessRmaStateReport& SetTransitionCount(const int64_t value);
+
+  static constexpr uint64_t kGetLogCountNameHash = UINT64_C(17272710721354435355);
+  ShimlessRmaStateReport& SetGetLogCount(const int64_t value);
+
+  static constexpr uint64_t kSaveLogCountNameHash = UINT64_C(6565524739584770050);
+  ShimlessRmaStateReport& SetSaveLogCount(const int64_t value);
 
 };
 

@@ -153,7 +153,7 @@ class  DisconnectReason {
   std::string description;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -432,7 +432,7 @@ RunOrClosePipeMessageParams& operator=(const RunOrClosePipeMessageParams&) = del
   RunOrClosePipeInputPtr input;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -575,7 +575,7 @@ PeerAssociatedEndpointClosedEvent& operator=(const PeerAssociatedEndpointClosedE
   DisconnectReasonPtr disconnect_reason;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -709,7 +709,7 @@ PauseUntilFlushCompletes& operator=(const PauseUntilFlushCompletes&) = delete;
   ::mojo::ScopedMessagePipeHandle flush_pipe;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,
@@ -843,7 +843,7 @@ FlushAsync& operator=(const FlushAsync&) = delete;
   ::mojo::ScopedMessagePipeHandle flusher_pipe;
 
   // Serialise this struct into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue traced_context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue traced_context) const;
 
  private:
   static bool Validate(const void* data,

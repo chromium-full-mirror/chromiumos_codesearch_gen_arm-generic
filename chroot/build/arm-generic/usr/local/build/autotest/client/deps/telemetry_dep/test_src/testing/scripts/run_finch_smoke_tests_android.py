@@ -74,12 +74,14 @@ from skia_gold_infra import finch_skia_gold_session_manager
 from skia_gold_infra import finch_skia_gold_utils
 from run_wpt_tests import add_emulator_args, get_device
 
+LOGCAT_TAG = 'finch_test_runner_py'
 LOGCAT_FILTERS = [
   'chromium:v',
   'cr_*:v',
   'DEBUG:I',
   'StrictMode:D',
-  'WebView*:v'
+  'WebView*:v',
+  '%s:I' % LOGCAT_TAG
 ]
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -143,6 +145,23 @@ class FinchTestCase(wpt_common.BaseWptScriptAdapter):
     # TODO(crbug.com/1285152): Implement seed download test
     # for Chrome and WebLayer.
     return True
+
+  @contextlib.contextmanager
+  def _archive_logcat(self, filename, endpoint_name):
+    with logcat_monitor.LogcatMonitor(
+        self._device.adb,
+        filter_specs=LOGCAT_FILTERS,
+        output_file=filename,
+        check_error=False):
+      try:
+        self._device.RunShellCommand(['log', '-p', 'i', '-t', LOGCAT_TAG,
+                                      'START {}'.format(endpoint_name)],
+                                     check_return=True)
+        yield
+      finally:
+        self._device.RunShellCommand(['log', '-p', 'i', '-t', LOGCAT_TAG,
+                                      'END {}'.format(endpoint_name)],
+                                     check_return=True)
 
   def parse_args(self, args=None):
     super(FinchTestCase, self).parse_args(args)
@@ -290,10 +309,6 @@ class FinchTestCase(wpt_common.BaseWptScriptAdapter):
     return _process_test_leaves(results_dict['tests'])
 
   @contextlib.contextmanager
-  def _install_apks(self):
-    yield
-
-  @contextlib.contextmanager
   def install_apks(self):
     """Install apks for testing"""
     self._device.Uninstall(self.browser_package_name)
@@ -320,17 +335,33 @@ class FinchTestCase(wpt_common.BaseWptScriptAdapter):
     Returns:
       True if browser did not crash or False if the browser crashed.
     """
+    isolate_root_dir = os.path.dirname(
+        self.options.isolated_script_test_output)
+    logcat_filename = '{}_{}_test_run_logcat.txt'.format(
+        self.product_name(), test_run_variation)
     self.layout_test_results_subdir = ('%s_smoke_test_artifacts' %
                                        test_run_variation)
     self.test_specific_browser_args = extra_browser_args or []
 
-    # Make sure the browser is not running before the tests run
-    self.stop_browser()
-    ret = super(FinchTestCase, self).run_test()
-    self.stop_browser()
+    with self._archive_logcat(os.path.join(isolate_root_dir, logcat_filename),
+                              '{} {} tests'.format(self.product_name(),
+                                                   test_run_variation)):
+      # Make sure the browser is not running before the tests run
+      self.stop_browser()
+      ret = super(FinchTestCase, self).run_test()
+      self.stop_browser()
+
+    self._include_variation_prefix(test_run_variation)
+    self.process_and_upload_results()
+
+    final_logcat_path = os.path.join(isolate_root_dir,
+                                     self.layout_test_results_subdir,
+                                     logcat_filename)
+    shutil.move(os.path.join(isolate_root_dir, logcat_filename),
+                final_logcat_path)
 
     with open(self.wpt_output, 'r') as curr_test_results:
-      curr_results_dict = json.loads(curr_test_results.read())
+      curr_results_dict = json.load(curr_test_results)
       results_dict['tests'][test_run_variation] = curr_results_dict['tests']
       # Compare screenshots with baselines stored in Skia Gold
       ret |= self._compare_screenshots_with_baselines(curr_results_dict)
@@ -340,6 +371,13 @@ class FinchTestCase(wpt_common.BaseWptScriptAdapter):
         results_dict['num_failures_by_type'][result] += count
 
     return ret
+
+  def _include_variation_prefix(self, test_run_variation):
+    with open(self.wpt_output, 'r') as test_results_file:
+      results = json.load(test_results_file)
+    results.setdefault('metadata', {})['test_name_prefix'] = test_run_variation
+    with open(self.wpt_output, 'w+') as test_results_file:
+      json.dump(results, test_results_file)
 
   def stop_browser(self):
     logger.info('Stopping package %s', self.browser_package_name)
@@ -459,12 +497,6 @@ class WebViewFinchTestCase(FinchTestCase):
   def wpt_product_name(cls):
     return ANDROID_WEBVIEW
 
-  @property
-  def tests(self):
-    return super(WebViewFinchTestCase, self).tests + [
-        'svg/pservers/reftests/radialgradient-basic-002.svg',
-    ]
-
   @classmethod
   def finch_seed_download_args(cls):
     return [
@@ -530,29 +562,36 @@ class WebViewFinchTestCase(FinchTestCase):
     Returns:
       None
     """
-    app_data_dir = posixpath.join(
-        self._device.GetApplicationDataDirectory(self.browser_package_name),
-        self.app_user_sub_dir())
-    self._device.RunShellCommand(['mkdir', '-p', app_data_dir],
-                                run_as=self.browser_package_name)
+    logcat_file = os.path.join(
+        os.path.dirname(self.options.isolated_script_test_output),
+        'install_seed_for_on_device.txt')
 
-    seed_path = posixpath.join(app_data_dir, 'variations_seed')
-    seed_new_path = posixpath.join(app_data_dir, 'variations_seed_new')
-    seed_stamp = posixpath.join(app_data_dir, 'variations_stamp')
+    with self._archive_logcat(
+        logcat_file,
+        'install seed on device {}'.format(self._device.serial)):
+      app_data_dir = posixpath.join(
+          self._device.GetApplicationDataDirectory(self.browser_package_name),
+          self.app_user_sub_dir())
+      self._device.RunShellCommand(['mkdir', '-p', app_data_dir],
+                                  run_as=self.browser_package_name)
 
-    self._device.adb.Push(self.options.finch_seed_path, seed_path)
-    self._device.adb.Push(self.options.finch_seed_path, seed_new_path)
-    self._device.RunShellCommand(
-        ['touch', seed_stamp], check_return=True,
-        run_as=self.browser_package_name)
+      seed_path = posixpath.join(app_data_dir, 'variations_seed')
+      seed_new_path = posixpath.join(app_data_dir, 'variations_seed_new')
+      seed_stamp = posixpath.join(app_data_dir, 'variations_stamp')
 
-    # We need to make the WebView shell package an owner of the seeds,
-    # see crbug.com/1191169#c19
-    user_id = self._device.GetUidForPackage(self.browser_package_name)
-    logger.info('Setting owner of seed files to %r', user_id)
-    self._device.RunShellCommand(['chown', user_id, seed_path], as_root=True)
-    self._device.RunShellCommand(
-        ['chown', user_id, seed_new_path], as_root=True)
+      self._device.adb.Push(self.options.finch_seed_path, seed_path)
+      self._device.adb.Push(self.options.finch_seed_path, seed_new_path)
+      self._device.RunShellCommand(
+          ['touch', seed_stamp], check_return=True,
+          run_as=self.browser_package_name)
+
+      # We need to make the WebView shell package an owner of the seeds,
+      # see crbug.com/1191169#c19
+      user_id = self._device.GetUidForPackage(self.browser_package_name)
+      logger.info('Setting owner of seed files to %r', user_id)
+      self._device.RunShellCommand(['chown', user_id, seed_path], as_root=True)
+      self._device.RunShellCommand(
+          ['chown', user_id, seed_new_path], as_root=True)
 
 
 class WebLayerFinchTestCase(FinchTestCase):

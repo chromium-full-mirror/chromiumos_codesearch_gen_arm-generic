@@ -276,14 +276,12 @@ GrammarChecker_Check_ResponseParams_Data::GrammarChecker_Check_ResponseParams_Da
 }  // namespace machine_learning
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::GrammarCheckerResult_Status>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::machine_learning::mojom::GrammarCheckerResult_Status value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::machine_learning::mojom::GrammarCheckerResult_Status value) {
   return std::move(context).WriteString(::chromeos::machine_learning::mojom::GrammarCheckerResult_StatusToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

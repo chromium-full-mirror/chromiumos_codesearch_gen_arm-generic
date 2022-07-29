@@ -145,6 +145,14 @@ class SessionManagerInterfaceInterface {
   virtual void StartBrowserDataMigration(
       dbus::MethodCall* method_call,
       brillo::dbus_utils::ResponseSender sender) = 0;
+  virtual void UnblockDevModeForInitialStateDetermination(
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<>> response) = 0;
+  virtual void UnblockDevModeForEnrollment(
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<>> response) = 0;
+  virtual void UnblockDevModeForCarrierLock(
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<>> response) = 0;
+  virtual void IsDevModeBlockedForCarrierLock(
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<bool>> response) = 0;
 };
 
 // Interface adaptor for org::chromium::SessionManagerInterface.
@@ -338,6 +346,22 @@ class SessionManagerInterfaceAdaptor {
         "StartBrowserDataMigration",
         base::Unretained(interface_),
         &SessionManagerInterfaceInterface::StartBrowserDataMigration);
+    itf->AddMethodHandler(
+        "UnblockDevModeForInitialStateDetermination",
+        base::Unretained(interface_),
+        &SessionManagerInterfaceInterface::UnblockDevModeForInitialStateDetermination);
+    itf->AddMethodHandler(
+        "UnblockDevModeForEnrollment",
+        base::Unretained(interface_),
+        &SessionManagerInterfaceInterface::UnblockDevModeForEnrollment);
+    itf->AddMethodHandler(
+        "UnblockDevModeForCarrierLock",
+        base::Unretained(interface_),
+        &SessionManagerInterfaceInterface::UnblockDevModeForCarrierLock);
+    itf->AddMethodHandler(
+        "IsDevModeBlockedForCarrierLock",
+        base::Unretained(interface_),
+        &SessionManagerInterfaceInterface::IsDevModeBlockedForCarrierLock);
 
     signal_LoginPromptVisible_ = itf->RegisterSignalOfType<SignalLoginPromptVisibleType>("LoginPromptVisible");
     signal_SessionStateChanged_ = itf->RegisterSignalOfType<SignalSessionStateChangedType>("SessionStateChanged");
@@ -539,6 +563,15 @@ class SessionManagerInterfaceAdaptor {
         "      <arg name=\"reply\" type=\"b\" direction=\"out\"/>\n"
         "    </method>\n"
         "    <method name=\"StartBrowserDataMigration\">\n"
+        "    </method>\n"
+        "    <method name=\"UnblockDevModeForInitialStateDetermination\">\n"
+        "    </method>\n"
+        "    <method name=\"UnblockDevModeForEnrollment\">\n"
+        "    </method>\n"
+        "    <method name=\"UnblockDevModeForCarrierLock\">\n"
+        "    </method>\n"
+        "    <method name=\"IsDevModeBlockedForCarrierLock\">\n"
+        "      <arg name=\"is_blocked\" type=\"b\" direction=\"out\"/>\n"
         "    </method>\n"
         "    <signal name=\"LoginPromptVisible\">\n"
         "    </signal>\n"

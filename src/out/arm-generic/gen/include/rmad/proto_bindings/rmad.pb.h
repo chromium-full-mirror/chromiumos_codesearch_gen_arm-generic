@@ -216,12 +216,14 @@ enum ProvisionStatus_Error : int {
   ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_LID_ACCELEROMETER = 7,
   ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_BASE_GYROSCOPE = 8,
   ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE = 9,
+  ProvisionStatus_Error_RMAD_PROVISION_ERROR_CR50 = 10,
+  ProvisionStatus_Error_RMAD_PROVISION_ERROR_GBB = 11,
   ProvisionStatus_Error_ProvisionStatus_Error_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   ProvisionStatus_Error_ProvisionStatus_Error_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool ProvisionStatus_Error_IsValid(int value);
 constexpr ProvisionStatus_Error ProvisionStatus_Error_Error_MIN = ProvisionStatus_Error_RMAD_PROVISION_ERROR_UNKNOWN;
-constexpr ProvisionStatus_Error ProvisionStatus_Error_Error_MAX = ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE;
+constexpr ProvisionStatus_Error ProvisionStatus_Error_Error_MAX = ProvisionStatus_Error_RMAD_PROVISION_ERROR_GBB;
 constexpr int ProvisionStatus_Error_Error_ARRAYSIZE = ProvisionStatus_Error_Error_MAX + 1;
 
 const std::string& ProvisionStatus_Error_Name(ProvisionStatus_Error value);
@@ -1082,6 +1084,10 @@ class ProvisionStatus final :
     ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_BASE_GYROSCOPE;
   static constexpr Error RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE =
     ProvisionStatus_Error_RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE;
+  static constexpr Error RMAD_PROVISION_ERROR_CR50 =
+    ProvisionStatus_Error_RMAD_PROVISION_ERROR_CR50;
+  static constexpr Error RMAD_PROVISION_ERROR_GBB =
+    ProvisionStatus_Error_RMAD_PROVISION_ERROR_GBB;
   static inline bool Error_IsValid(int value) {
     return ProvisionStatus_Error_IsValid(value);
   }

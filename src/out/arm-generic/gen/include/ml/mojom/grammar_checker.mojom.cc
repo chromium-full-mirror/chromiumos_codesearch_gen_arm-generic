@@ -64,9 +64,9 @@ size_t GrammarCheckerQuery::Hash(size_t seed) const {
 }
 
 void GrammarCheckerQuery::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -75,7 +75,7 @@ void GrammarCheckerQuery::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "language"), this->language,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -113,9 +113,9 @@ size_t GrammarCorrectionFragment::Hash(size_t seed) const {
 }
 
 void GrammarCorrectionFragment::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "offset"), this->offset,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -124,7 +124,7 @@ void GrammarCorrectionFragment::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "length"), this->length,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -133,7 +133,7 @@ void GrammarCorrectionFragment::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "replacement"), this->replacement,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -165,9 +165,9 @@ GrammarCheckerCandidate::GrammarCheckerCandidate(
 GrammarCheckerCandidate::~GrammarCheckerCandidate() = default;
 
 void GrammarCheckerCandidate::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -176,7 +176,7 @@ void GrammarCheckerCandidate::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "score"), this->score,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -185,7 +185,7 @@ void GrammarCheckerCandidate::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "fragments"), this->fragments,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -214,9 +214,9 @@ GrammarCheckerResult::GrammarCheckerResult(
 GrammarCheckerResult::~GrammarCheckerResult() = default;
 
 void GrammarCheckerResult::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "status"), this->status,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -225,7 +225,7 @@ void GrammarCheckerResult::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "candidates"), this->candidates,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -305,9 +305,9 @@ void GrammarCheckerProxy::Check(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::GrammarChecker::Check", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("query"), in_query,
                         "<value of type GrammarCheckerQueryPtr>");
    });
@@ -426,9 +426,9 @@ void GrammarChecker_Check_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::GrammarChecker::Check", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type GrammarCheckerResultPtr>");
    });

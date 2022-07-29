@@ -46,6 +46,8 @@ extern const char kSamplingFrequencyAvailable[];
 
 extern const char kLocation[];
 
+extern const char kLabel[];
+
 extern const char kDeviceName[];
 
 extern const char kSysPath[];
@@ -55,6 +57,10 @@ extern const char kLocationBase[];
 extern const char kLocationLid[];
 
 extern const char kLocationCamera[];
+
+extern const char kLabelBase[];
+
+extern const char kLabelLid[];
 
 extern const char kAccelerometerChannel[];
 

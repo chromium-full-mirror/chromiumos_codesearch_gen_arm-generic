@@ -584,16 +584,36 @@ AdditionalActivity& AdditionalActivity::SetActivityType(const int64_t value) {
   return *this;
 }
 
-StateOverallTime::StateOverallTime() :
+ShimlessRmaStateReport::ShimlessRmaStateReport() :
   ::metrics::structured::EventBase(kEventNameHash, kProjectNameHash, kIdType, kEventType) {}
-StateOverallTime::~StateOverallTime() = default;
-StateOverallTime& StateOverallTime::SetStateCase(const int64_t value) {
+ShimlessRmaStateReport::~ShimlessRmaStateReport() = default;
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetStateCase(const int64_t value) {
   AddIntMetric(kStateCaseNameHash, value);
   return *this;
 }
 
-StateOverallTime& StateOverallTime::SetOverallTime(const int64_t value) {
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetIsAborted(const int64_t value) {
+  AddIntMetric(kIsAbortedNameHash, value);
+  return *this;
+}
+
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetOverallTime(const int64_t value) {
   AddIntMetric(kOverallTimeNameHash, value);
+  return *this;
+}
+
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetTransitionCount(const int64_t value) {
+  AddIntMetric(kTransitionCountNameHash, value);
+  return *this;
+}
+
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetGetLogCount(const int64_t value) {
+  AddIntMetric(kGetLogCountNameHash, value);
+  return *this;
+}
+
+ShimlessRmaStateReport& ShimlessRmaStateReport::SetSaveLogCount(const int64_t value) {
+  AddIntMetric(kSaveLogCountNameHash, value);
   return *this;
 }
 

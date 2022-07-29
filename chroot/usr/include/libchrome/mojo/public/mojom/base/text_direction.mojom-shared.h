@@ -106,15 +106,13 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::mojo_base::mojom::TextDirection> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::mojo_base::mojom::TextDirection value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::mojo_base::mojom::TextDirection value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // MOJO_PUBLIC_MOJOM_BASE_TEXT_DIRECTION_MOJOM_SHARED_H_

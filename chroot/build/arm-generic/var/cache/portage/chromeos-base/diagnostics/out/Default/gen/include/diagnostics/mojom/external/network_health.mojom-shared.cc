@@ -467,14 +467,12 @@ NetworkHealthService_GetHealthSnapshot_ResponseParams_Data::NetworkHealthService
 }  // namespace network_health
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::network_health::mojom::NetworkState>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::network_health::mojom::NetworkState value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::network_health::mojom::NetworkState value) {
   return std::move(context).WriteString(::chromeos::network_health::mojom::NetworkStateToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

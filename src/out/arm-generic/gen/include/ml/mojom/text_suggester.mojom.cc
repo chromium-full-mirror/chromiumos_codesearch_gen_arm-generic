@@ -64,9 +64,9 @@ size_t NextWordCompletionCandidate::Hash(size_t seed) const {
 }
 
 void NextWordCompletionCandidate::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -75,7 +75,7 @@ void NextWordCompletionCandidate::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "normalized_score"), this->normalized_score,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -114,9 +114,9 @@ TextSuggesterQuery::TextSuggesterQuery(
 TextSuggesterQuery::~TextSuggesterQuery() = default;
 
 void TextSuggesterQuery::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -125,7 +125,7 @@ void TextSuggesterQuery::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "next_word_candidates"), this->next_word_candidates,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -134,7 +134,7 @@ void TextSuggesterQuery::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "suggestion_mode"), this->suggestion_mode,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -168,9 +168,9 @@ size_t MultiWordSuggestionCandidate::Hash(size_t seed) const {
 }
 
 void MultiWordSuggestionCandidate::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -179,7 +179,7 @@ void MultiWordSuggestionCandidate::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "normalized_score"), this->normalized_score,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -208,9 +208,9 @@ TextSuggesterResult::TextSuggesterResult(
 TextSuggesterResult::~TextSuggesterResult() = default;
 
 void TextSuggesterResult::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "status"), this->status,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -219,7 +219,7 @@ void TextSuggesterResult::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "candidates"), this->candidates,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -249,9 +249,9 @@ size_t TextSuggesterSpec::Hash(size_t seed) const {
 }
 
 void TextSuggesterSpec::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "multi_word_experiment"), this->multi_word_experiment,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -378,9 +378,9 @@ void TextSuggesterProxy::Suggest(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::machine_learning::mojom::TextSuggester::Suggest", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("query"), in_query,
                         "<value of type TextSuggesterQueryPtr>");
    });
@@ -499,9 +499,9 @@ void TextSuggester_Suggest_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::machine_learning::mojom::TextSuggester::Suggest", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type TextSuggesterResultPtr>");
    });

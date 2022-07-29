@@ -142,7 +142,7 @@ class TraceEventMemoryOverhead;
 // to them.
 class BASE_EXPORT ConvertableToTraceFormat
 #if BUILDFLAG(USE_PERFETTO_CLIENT_LIBRARY)
-    : public perfetto::libchrome::DebugAnnotation
+    : public perfetto_libchrome::DebugAnnotation
 #endif
 {
  public:
@@ -180,7 +180,7 @@ class BASE_EXPORT ConvertableToTraceFormat
 
 #if BUILDFLAG(USE_PERFETTO_CLIENT_LIBRARY)
   // DebugAnnotation implementation.
-  void Add(perfetto::libchrome::protos::pbzero::DebugAnnotation*) const override;
+  void Add(perfetto_libchrome::protos::pbzero::DebugAnnotation*) const override;
 #endif
 };
 
@@ -226,7 +226,7 @@ union BASE_EXPORT TraceValue {
   const void* as_pointer;
   const char* as_string;
   ConvertableToTraceFormat* as_convertable;
-  protozero::HeapBuffered<perfetto::libchrome::protos::pbzero::DebugAnnotation>* as_proto;
+  protozero::HeapBuffered<perfetto_libchrome::protos::pbzero::DebugAnnotation>* as_proto;
 
   // Static method to create a new TraceValue instance from a given
   // initialization value. Note that this deduces the TRACE_VALUE_TYPE_XXX
@@ -340,7 +340,7 @@ union BASE_EXPORT TraceValue {
   struct TypeFor<T,
                  typename std::enable_if<
                      !HasHelperSupport<typename InnerType<T>::type>::value &&
-                     perfetto::libchrome::internal::has_traced_value_support<
+                     perfetto_libchrome::internal::has_traced_value_support<
                          typename InnerType<T>::type>::value>::type> {
     static const unsigned char value = TRACE_VALUE_TYPE_PROTO;
   };
@@ -352,7 +352,7 @@ union BASE_EXPORT TraceValue {
   template <typename T,
             class = std::enable_if_t<
                 HasHelperSupport<typename InnerType<T>::type>::value ||
-                perfetto::libchrome::internal::has_traced_value_support<
+                perfetto_libchrome::internal::has_traced_value_support<
                     typename InnerType<T>::type>::value>>
   struct TypeCheck {
     static const bool value = true;
@@ -382,13 +382,13 @@ union BASE_EXPORT TraceValue {
   template <class T>
   typename std::enable_if<
       !HasHelperSupport<typename InnerType<T>::type>::value &&
-      perfetto::libchrome::internal::has_traced_value_support<
+      perfetto_libchrome::internal::has_traced_value_support<
           typename InnerType<T>::type>::value>::type
   Init(T&& value) {
     as_proto = new protozero::HeapBuffered<
-        perfetto::libchrome::protos::pbzero::DebugAnnotation>();
-    perfetto::libchrome::WriteIntoTracedValue(
-        perfetto::libchrome::internal::CreateTracedValueFromProto(as_proto->get()),
+        perfetto_libchrome::protos::pbzero::DebugAnnotation>();
+    perfetto_libchrome::WriteIntoTracedValue(
+        perfetto_libchrome::internal::CreateTracedValueFromProto(as_proto->get()),
         std::forward<T>(value));
   }
 };

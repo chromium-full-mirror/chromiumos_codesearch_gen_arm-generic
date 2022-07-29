@@ -953,37 +953,31 @@ inline void CredentialsDataView::GetPasswordDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::smbfs::mojom::MountError> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::smbfs::mojom::MountError value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::smbfs::mojom::MountError value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::smbfs::mojom::DeleteRecursivelyError> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::smbfs::mojom::DeleteRecursivelyError value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::smbfs::mojom::DeleteRecursivelyError value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::smbfs::mojom::KerberosConfig_Source> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::smbfs::mojom::KerberosConfig_Source value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::smbfs::mojom::KerberosConfig_Source value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // SMBFS_MOJOM_SMBFS_MOJOM_SHARED_H_

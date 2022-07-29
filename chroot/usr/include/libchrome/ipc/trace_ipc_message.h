@@ -19,7 +19,7 @@
 // event name and typed arguments for the message's type (message class and line
 // number).
 #define TRACE_IPC_MESSAGE_SEND(category, name, msg)                          \
-  TRACE_EVENT(category, name, [msg](perfetto::libchrome::EventContext ctx) {            \
+  TRACE_EVENT(category, name, [msg](perfetto_libchrome::EventContext ctx) {            \
     IPC::WriteIpcMessageIdAsProtozero(msg->type(),                           \
                                       ctx.event()->set_chrome_legacy_ipc()); \
   });
@@ -32,7 +32,7 @@ namespace IPC {
 // them to the protozero message |ChromeLegacyIpc| for trace events.
 void COMPONENT_EXPORT(IPC)
     WriteIpcMessageIdAsProtozero(uint32_t message_id,
-                                 perfetto::libchrome::protos::pbzero::ChromeLegacyIpc*);
+                                 perfetto_libchrome::protos::pbzero::ChromeLegacyIpc*);
 
 }  // namespace IPC
 

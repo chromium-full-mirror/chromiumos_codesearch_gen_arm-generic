@@ -440,15 +440,13 @@ inline void DecoderBufferDataView::GetBufferDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::arc::mojom::DecoderStatus> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::arc::mojom::DecoderStatus value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::arc::mojom::DecoderStatus value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // ARC_VM_LIBVDA_GPU_MOJOM_VIDEO_DECODER_MOJOM_SHARED_H_

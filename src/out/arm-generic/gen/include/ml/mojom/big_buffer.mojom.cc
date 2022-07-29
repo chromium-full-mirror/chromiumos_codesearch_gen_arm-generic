@@ -58,9 +58,9 @@ BigBufferSharedMemoryRegion::BigBufferSharedMemoryRegion(
 BigBufferSharedMemoryRegion::~BigBufferSharedMemoryRegion() = default;
 
 void BigBufferSharedMemoryRegion::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "buffer_handle"), this->buffer_handle,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -69,7 +69,7 @@ void BigBufferSharedMemoryRegion::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "size"), this->size,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

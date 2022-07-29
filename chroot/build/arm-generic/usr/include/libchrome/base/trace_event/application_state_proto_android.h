@@ -11,8 +11,8 @@
 
 #define TRACE_APPLICATION_STATE(state)                                  \
   TRACE_EVENT_INSTANT(                                                  \
-      "Java", "ApplicationState", perfetto::libchrome::Track::Global(0),           \
-      [state](perfetto::libchrome::EventContext ctx) {                             \
+      "Java", "ApplicationState", perfetto_libchrome::Track::Global(0),           \
+      [state](perfetto_libchrome::EventContext ctx) {                             \
         ctx.event()                                                     \
             ->set_chrome_application_state_info()                       \
             ->set_application_state(                                    \
@@ -23,7 +23,7 @@ namespace base {
 namespace trace_event {
 
 BASE_EXPORT
-perfetto::libchrome::protos::pbzero::ChromeApplicationStateInfo::ChromeApplicationState
+perfetto_libchrome::protos::pbzero::ChromeApplicationStateInfo::ChromeApplicationState
 ApplicationStateToTraceEnum(base::android::ApplicationState state);
 
 }  // namespace trace_event

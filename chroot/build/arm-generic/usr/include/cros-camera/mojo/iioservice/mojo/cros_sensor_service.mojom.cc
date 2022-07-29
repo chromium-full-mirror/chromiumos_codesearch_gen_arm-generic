@@ -93,9 +93,9 @@ void SensorHalServerProxy::CreateChannel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorHalServer::CreateChannel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("sensor_service_request"), in_sensor_service_request,
                         "<value of type ::mojo::PendingReceiver<::cros::mojom::SensorService>>");
    });
@@ -243,9 +243,9 @@ void SensorHalClientProxy::SetUpChannel(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send cros::mojom::SensorHalClient::SetUpChannel", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("sensor_service_ptr"), in_sensor_service_ptr,
                         "<value of type ::mojo::PendingRemote<::cros::mojom::SensorService>>");
    });

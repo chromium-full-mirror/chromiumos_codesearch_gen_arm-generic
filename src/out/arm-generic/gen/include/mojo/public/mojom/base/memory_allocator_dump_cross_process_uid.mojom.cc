@@ -59,9 +59,9 @@ size_t MemoryAllocatorDumpCrossProcessUid::Hash(size_t seed) const {
 }
 
 void MemoryAllocatorDumpCrossProcessUid::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "value"), this->value,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

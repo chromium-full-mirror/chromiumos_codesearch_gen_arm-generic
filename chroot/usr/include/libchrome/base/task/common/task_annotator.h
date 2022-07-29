@@ -45,7 +45,7 @@ class BASE_EXPORT TaskAnnotator {
   // giving one last chance for this TaskAnnotator to add metadata to
   // |pending_task| before it is moved into the queue. |task_queue_name| must
   // live for the duration of the process.
-  void WillQueueTask(perfetto::libchrome::StaticString trace_event_name,
+  void WillQueueTask(perfetto_libchrome::StaticString trace_event_name,
                      PendingTask* pending_task,
                      const char* task_queue_name);
 
@@ -61,12 +61,12 @@ class BASE_EXPORT TaskAnnotator {
   // are used (i.e. lambdas are invoked) before this function exits, so it's
   // safe to pass reference-capturing lambdas here.
   template <typename... Args>
-  void RunTask(perfetto::libchrome::StaticString event_name,
+  void RunTask(perfetto_libchrome::StaticString event_name,
                PendingTask& pending_task,
                Args&&... args) {
     TRACE_EVENT(
         "toplevel", event_name,
-        [&](perfetto::libchrome::EventContext& ctx) {
+        [&](perfetto_libchrome::EventContext& ctx) {
           EmitTaskLocation(ctx, pending_task);
           MaybeEmitIncomingTaskFlow(ctx, pending_task);
           MaybeEmitIPCHashAndDelay(ctx, pending_task);
@@ -90,15 +90,15 @@ class BASE_EXPORT TaskAnnotator {
 #if BUILDFLAG(ENABLE_BASE_TRACING)
   // TRACE_EVENT argument helper, writing the task location data into
   // EventContext.
-  void EmitTaskLocation(perfetto::libchrome::EventContext& ctx,
+  void EmitTaskLocation(perfetto_libchrome::EventContext& ctx,
                         const PendingTask& task) const;
 
   // TRACE_EVENT argument helper, writing the incoming task flow information
   // into EventContext if toplevel.flow category is enabled.
-  void MaybeEmitIncomingTaskFlow(perfetto::libchrome::EventContext& ctx,
+  void MaybeEmitIncomingTaskFlow(perfetto_libchrome::EventContext& ctx,
                                  const PendingTask& task) const;
 
-  void MaybeEmitIPCHashAndDelay(perfetto::libchrome::EventContext& ctx,
+  void MaybeEmitIPCHashAndDelay(perfetto_libchrome::EventContext& ctx,
                                 const PendingTask& task) const;
 #endif  //  BUILDFLAG(ENABLE_BASE_TRACING)
 };

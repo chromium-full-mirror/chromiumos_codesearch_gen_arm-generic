@@ -541,17 +541,21 @@ bool ProvisionStatus_Error_IsValid(int value) {
     case 7:
     case 8:
     case 9:
+    case 10:
+    case 11:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> ProvisionStatus_Error_strings[10] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> ProvisionStatus_Error_strings[12] = {};
 
 static const char ProvisionStatus_Error_names[] =
   "RMAD_PROVISION_ERROR_CANNOT_READ"
   "RMAD_PROVISION_ERROR_CANNOT_WRITE"
+  "RMAD_PROVISION_ERROR_CR50"
+  "RMAD_PROVISION_ERROR_GBB"
   "RMAD_PROVISION_ERROR_GENERATE_SECRET"
   "RMAD_PROVISION_ERROR_INTERNAL"
   "RMAD_PROVISION_ERROR_MISSING_BASE_ACCELEROMETER"
@@ -564,27 +568,31 @@ static const char ProvisionStatus_Error_names[] =
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry ProvisionStatus_Error_entries[] = {
   { {ProvisionStatus_Error_names + 0, 32}, 3 },
   { {ProvisionStatus_Error_names + 32, 33}, 4 },
-  { {ProvisionStatus_Error_names + 65, 36}, 5 },
-  { {ProvisionStatus_Error_names + 101, 29}, 1 },
-  { {ProvisionStatus_Error_names + 130, 47}, 6 },
-  { {ProvisionStatus_Error_names + 177, 43}, 8 },
-  { {ProvisionStatus_Error_names + 220, 46}, 7 },
-  { {ProvisionStatus_Error_names + 266, 42}, 9 },
-  { {ProvisionStatus_Error_names + 308, 28}, 0 },
-  { {ProvisionStatus_Error_names + 336, 31}, 2 },
+  { {ProvisionStatus_Error_names + 65, 25}, 10 },
+  { {ProvisionStatus_Error_names + 90, 24}, 11 },
+  { {ProvisionStatus_Error_names + 114, 36}, 5 },
+  { {ProvisionStatus_Error_names + 150, 29}, 1 },
+  { {ProvisionStatus_Error_names + 179, 47}, 6 },
+  { {ProvisionStatus_Error_names + 226, 43}, 8 },
+  { {ProvisionStatus_Error_names + 269, 46}, 7 },
+  { {ProvisionStatus_Error_names + 315, 42}, 9 },
+  { {ProvisionStatus_Error_names + 357, 28}, 0 },
+  { {ProvisionStatus_Error_names + 385, 31}, 2 },
 };
 
 static const int ProvisionStatus_Error_entries_by_number[] = {
-  8, // 0 -> RMAD_PROVISION_ERROR_UNKNOWN
-  3, // 1 -> RMAD_PROVISION_ERROR_INTERNAL
-  9, // 2 -> RMAD_PROVISION_ERROR_WP_ENABLED
+  10, // 0 -> RMAD_PROVISION_ERROR_UNKNOWN
+  5, // 1 -> RMAD_PROVISION_ERROR_INTERNAL
+  11, // 2 -> RMAD_PROVISION_ERROR_WP_ENABLED
   0, // 3 -> RMAD_PROVISION_ERROR_CANNOT_READ
   1, // 4 -> RMAD_PROVISION_ERROR_CANNOT_WRITE
-  2, // 5 -> RMAD_PROVISION_ERROR_GENERATE_SECRET
-  4, // 6 -> RMAD_PROVISION_ERROR_MISSING_BASE_ACCELEROMETER
-  6, // 7 -> RMAD_PROVISION_ERROR_MISSING_LID_ACCELEROMETER
-  5, // 8 -> RMAD_PROVISION_ERROR_MISSING_BASE_GYROSCOPE
-  7, // 9 -> RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE
+  4, // 5 -> RMAD_PROVISION_ERROR_GENERATE_SECRET
+  6, // 6 -> RMAD_PROVISION_ERROR_MISSING_BASE_ACCELEROMETER
+  8, // 7 -> RMAD_PROVISION_ERROR_MISSING_LID_ACCELEROMETER
+  7, // 8 -> RMAD_PROVISION_ERROR_MISSING_BASE_GYROSCOPE
+  9, // 9 -> RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE
+  2, // 10 -> RMAD_PROVISION_ERROR_CR50
+  3, // 11 -> RMAD_PROVISION_ERROR_GBB
 };
 
 const std::string& ProvisionStatus_Error_Name(
@@ -593,12 +601,12 @@ const std::string& ProvisionStatus_Error_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           ProvisionStatus_Error_entries,
           ProvisionStatus_Error_entries_by_number,
-          10, ProvisionStatus_Error_strings);
+          12, ProvisionStatus_Error_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       ProvisionStatus_Error_entries,
       ProvisionStatus_Error_entries_by_number,
-      10, value);
+      12, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      ProvisionStatus_Error_strings[idx].get();
 }
@@ -606,7 +614,7 @@ bool ProvisionStatus_Error_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ProvisionStatus_Error* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      ProvisionStatus_Error_entries, 10, name, &int_value);
+      ProvisionStatus_Error_entries, 12, name, &int_value);
   if (success) {
     *value = static_cast<ProvisionStatus_Error>(int_value);
   }
@@ -623,6 +631,8 @@ constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_MISSING_BA
 constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_MISSING_LID_ACCELEROMETER;
 constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_MISSING_BASE_GYROSCOPE;
 constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_MISSING_LID_GYROSCOPE;
+constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_CR50;
+constexpr ProvisionStatus_Error ProvisionStatus::RMAD_PROVISION_ERROR_GBB;
 constexpr ProvisionStatus_Error ProvisionStatus::Error_MIN;
 constexpr ProvisionStatus_Error ProvisionStatus::Error_MAX;
 constexpr int ProvisionStatus::Error_ARRAYSIZE;

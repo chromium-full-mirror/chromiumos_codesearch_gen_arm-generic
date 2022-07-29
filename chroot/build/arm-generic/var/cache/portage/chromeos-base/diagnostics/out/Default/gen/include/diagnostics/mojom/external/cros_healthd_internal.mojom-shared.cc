@@ -266,14 +266,12 @@ ChromiumDataCollector_GetTouchpadLibraryName_ResponseParams_Data::ChromiumDataCo
 }  // namespace cros_healthd
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::internal::mojom::InputDevice_ConnectionType>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::internal::mojom::InputDevice_ConnectionType value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::internal::mojom::InputDevice_ConnectionType value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::internal::mojom::InputDevice_ConnectionTypeToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

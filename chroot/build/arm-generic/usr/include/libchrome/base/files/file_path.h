@@ -459,7 +459,7 @@ class BASE_EXPORT FilePath {
   }
 
   // Serialise this object into a trace.
-  void WriteIntoTrace(perfetto::libchrome::TracedValue context) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue context) const;
 
 #if BUILDFLAG(IS_APPLE)
   // Returns the string in the special canonical decomposed form as defined for

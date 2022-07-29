@@ -184,6 +184,8 @@ class  Executor_RunMemtester_Params_Data {
                        mojo::internal::ValidationContext* validation_context);
 
   mojo::internal::StructHeader header_;
+  uint32_t test_mem_kib;
+  uint8_t padfinal_[4];
 
  private:
   friend class mojo::internal::MessageFragment<Executor_RunMemtester_Params_Data>;
@@ -191,7 +193,7 @@ class  Executor_RunMemtester_Params_Data {
   Executor_RunMemtester_Params_Data();
   ~Executor_RunMemtester_Params_Data() = delete;
 };
-static_assert(sizeof(Executor_RunMemtester_Params_Data) == 8,
+static_assert(sizeof(Executor_RunMemtester_Params_Data) == 16,
               "Bad sizeof(Executor_RunMemtester_Params_Data)");
 class  Executor_RunMemtester_ResponseParams_Data {
  public:
@@ -583,6 +585,9 @@ class Executor_RunMemtester_ParamsDataView {
       : data_(data) {}
 
   bool is_null() const { return !data_; }
+  uint32_t test_mem_kib() const {
+    return data_->test_mem_kib;
+  }
  private:
   internal::Executor_RunMemtester_Params_Data* data_ = nullptr;
 };

@@ -476,86 +476,72 @@ RoutineUpdate_Data::RoutineUpdate_Data()
 }  // namespace cros_healthd
 }  // namespace chromeos
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::DiagnosticRoutineEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineCommandEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineCommandEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::DiagnosticRoutineCommandEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::DiagnosticRoutineCommandEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::AcPowerStatusEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::AcPowerStatusEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::AcPowerStatusEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::AcPowerStatusEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::NvmeSelfTestTypeEnum>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::NvmeSelfTestTypeEnum value) {
+   perfetto_libchrome::TracedValue context, ::chromeos::cros_healthd::mojom::NvmeSelfTestTypeEnum value) {
   return std::move(context).WriteString(::chromeos::cros_healthd::mojom::NvmeSelfTestTypeEnumToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

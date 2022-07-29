@@ -22,7 +22,7 @@ class  ExecutorInterceptorForTesting : public Executor {
   void GetLink(const std::string& interface_name, GetLinkCallback callback) override;
   void GetInfo(const std::string& interface_name, GetInfoCallback callback) override;
   void GetScanDump(const std::string& interface_name, GetScanDumpCallback callback) override;
-  void RunMemtester(RunMemtesterCallback callback) override;
+  void RunMemtester(uint32_t test_mem_kib, RunMemtesterCallback callback) override;
   void KillMemtester() override;
   void GetProcessIOContents(uint32_t pid, GetProcessIOContentsCallback callback) override;
   void ReadMsr(uint32_t msr_reg, uint32_t cpu_index, ReadMsrCallback callback) override;
@@ -47,7 +47,7 @@ class  ExecutorAsyncWaiter {
   void GetScanDump(
       const std::string& interface_name, ExecutedProcessResultPtr* out_result);
   void RunMemtester(
-      ExecutedProcessResultPtr* out_result);
+      uint32_t test_mem_kib, ExecutedProcessResultPtr* out_result);
   void GetProcessIOContents(
       uint32_t pid, std::string* out_contents);
   void ReadMsr(

@@ -486,7 +486,7 @@ crbug.com/1276186 [ mac nvidia-0xfe9 no-passthrough ] conformance/textures/misc/
 crbug.com/1338004 [ mac nvidia-0xfe9 passthrough ] deqp/functional/gles3/multisample/fbo_4_samples.html [ RetryOnFailure ]
 
 
-# Mac AMD
+# Mac AMD Retina
 # AMD Radeon HD 8870M (1002:6821)
 # TODO(kbr): uncomment the following two exepectations after test
 # has been made more robust.
@@ -510,7 +510,21 @@ crbug.com/636648 [ mac amd ] deqp/functional/gles3/shaderindexing/mat_01.html [ 
 
 crbug.com/642822 [ mac amd ] conformance2/rendering/clipping-wide-points.html [ Failure ]
 
-crbug.com/1343793 [ mac amd-0x6821 angle-opengl ] deqp/functional/gles3/texturefiltering/3d_combinations_24.html [ RetryOnFailure ]
+# Trying skipping this one test to see if it resolves the subsequent failures
+crbug.com/1343793 [ mac amd-0x6821 angle-opengl ] deqp/functional/gles3/texturefiltering/3d_combinations_24.html [ Skip ]
+
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/shaderoperator/binary_operator_14.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/3d_sizes_00.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_formats_05.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_formats_06.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_no_edges_visible.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/basic_teximage3d_2d_array_00.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/basic_texsubimage2d_cube_04.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage2d_depth.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage2d_pbo_cube_00.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage3d_depth.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/texstorage2d_format_cube_01.html [ RetryOnFailure ]
+crbug.com/1345782 [ mac amd-0x6821 angle-opengl passthrough ] deqp/functional/gles3/texturespecification/texstorage3d_format_depth_stencil.html [ RetryOnFailure ]
 
 crbug.com/1227762 [ bigsur amd-0x6821 angle-disabled no-passthrough skia-renderer-gl ] conformance2/textures/canvas/tex-2d-rgb5_a1-rgba-unsigned_byte.html [ Failure ]
 crbug.com/1227762 [ bigsur amd-0x6821 angle-disabled no-passthrough skia-renderer-gl ] conformance2/textures/canvas_sub_rectangle/tex-2d-rgb5_a1-rgba-unsigned_byte.html [ Failure ]
@@ -618,6 +632,19 @@ crbug.com/angleproject/5221 [ mac passthrough angle-opengl intel ] deqp/function
 # AMD Radeon HD 7800 GPU (1002:679e)
 crbug.com/1276186 [ mac amd-0x679e angle-opengl passthrough ] conformance/rendering/clear-default-framebuffer-with-scissor-test.html [ Failure ]
 crbug.com/1240443 [ mac amd-0x679e angle-opengl passthrough ] conformance/renderbuffers/stencil-renderbuffer-initialization.html [ Failure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/shaderoperator/binary_operator_14.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/3d_combinations_24.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/3d_sizes_00.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_formats_05.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_formats_06.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturefiltering/cube_no_edges_visible.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/basic_teximage3d_2d_array_00.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/basic_texsubimage2d_cube_04.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage2d_depth.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage2d_pbo_cube_00.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/teximage3d_depth.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/texstorage2d_format_cube_01.html [ RetryOnFailure ]
+crbug.com/1345755 [ mac amd-0x679e angle-opengl passthrough ] deqp/functional/gles3/texturespecification/texstorage3d_format_depth_stencil.html [ RetryOnFailure ]
 
 # Mac / M1 / OpenGL
 crbug.com/1130112 [ mac apple-apple-m1 passthrough angle-opengl ] deqp/functional/gles3/texturefiltering/cube_combinations_00.html [ Failure ]
@@ -838,7 +865,9 @@ crbug.com/1218162 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/unifor
 crbug.com/1218162 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/uniformbuffers/single_basic_type.html [ Failure ]
 crbug.com/1218169 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fragmentoutput/array.float.html [ Failure ]
 crbug.com/1218169 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fragmentoutput/basic.float.html [ Failure ]
-crbug.com/1218509 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fbomultisample.8_samples.html [ Failure ]
+crbug.com/1218509 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fbomultisample.2_samples.html [ RetryOnFailure ]
+crbug.com/1218509 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fbomultisample.4_samples.html [ RetryOnFailure ]
+crbug.com/1218509 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/fbomultisample.8_samples.html [ RetryOnFailure ]
 crbug.com/1218512 [ chromeos chromeos-board-kevin ] deqp/functional/gles3/shadertexturefunction/texturelodoffset.html [ Failure ]
 crbug.com/1218516 [ chromeos chromeos-board-kevin ] deqp/data/gles3/shaders/arrays.html [ Failure ]
 crbug.com/1218607 [ chromeos chromeos-board-kevin ] conformance2/reading/read-pixels-pack-parameters.html [ Failure ]

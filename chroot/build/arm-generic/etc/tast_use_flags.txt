@@ -19,6 +19,7 @@ mbo
 memd
 ml_benchmark_drivers
 ml_service
+mojo_service_manager
 nacl
 ondevice_document_scanner
 ondevice_grammar

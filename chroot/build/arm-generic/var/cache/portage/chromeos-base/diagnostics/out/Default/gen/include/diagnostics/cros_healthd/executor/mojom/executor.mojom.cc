@@ -68,9 +68,9 @@ size_t ExecutedProcessResult::Hash(size_t seed) const {
 }
 
 void ExecutedProcessResult::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "return_code"), this->return_code,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -79,7 +79,7 @@ void ExecutedProcessResult::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "out"), this->out,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -88,7 +88,7 @@ void ExecutedProcessResult::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "err"), this->err,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -439,9 +439,9 @@ void ExecutorProxy::GetLink(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::Executor::GetLink", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("interface_name"), in_interface_name,
                         "<value of type const std::string&>");
    });
@@ -488,9 +488,9 @@ void ExecutorProxy::GetInfo(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::Executor::GetInfo", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("interface_name"), in_interface_name,
                         "<value of type const std::string&>");
    });
@@ -537,9 +537,9 @@ void ExecutorProxy::GetScanDump(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::Executor::GetScanDump", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("interface_name"), in_interface_name,
                         "<value of type const std::string&>");
    });
@@ -582,9 +582,16 @@ void ExecutorProxy::GetScanDump(
 }
 
 void ExecutorProxy::RunMemtester(
-    RunMemtesterCallback callback) {
+    uint32_t in_test_mem_kib, RunMemtesterCallback callback) {
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
-  TRACE_EVENT0("mojom", "Send chromeos::cros_healthd::mojom::Executor::RunMemtester");
+  TRACE_EVENT1(
+    "mojom", "Send chromeos::cros_healthd::mojom::Executor::RunMemtester", "input_parameters",
+    [&](perfetto_libchrome::TracedValue context){
+      auto dict = std::move(context).WriteDictionary();
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
+           dict.AddItem("test_mem_kib"), in_test_mem_kib,
+                        "<value of type uint32_t>");
+   });
 #endif
   const bool kExpectsResponse = true;
   const bool kIsSync = false;
@@ -601,6 +608,7 @@ void ExecutorProxy::RunMemtester(
       ::chromeos::cros_healthd::mojom::internal::Executor_RunMemtester_Params_Data> params(
           message);
   params.Allocate();
+  params->test_mem_kib = in_test_mem_kib;
 
 #if defined(ENABLE_IPC_FUZZER)
   message.set_interface_name(Executor::Name_);
@@ -647,9 +655,9 @@ void ExecutorProxy::GetProcessIOContents(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::Executor::GetProcessIOContents", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("pid"), in_pid,
                         "<value of type uint32_t>");
    });
@@ -686,12 +694,12 @@ void ExecutorProxy::ReadMsr(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send chromeos::cros_healthd::mojom::Executor::ReadMsr", "input_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("msr_reg"), in_msr_reg,
                         "<value of type uint32_t>");
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("cpu_index"), in_cpu_index,
                         "<value of type uint32_t>");
    });
@@ -832,9 +840,9 @@ void Executor_GetFanSpeed_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetFanSpeed", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -956,9 +964,9 @@ void Executor_GetInterfaces_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetInterfaces", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -1080,9 +1088,9 @@ void Executor_GetLink_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetLink", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -1204,9 +1212,9 @@ void Executor_GetInfo_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetInfo", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -1328,9 +1336,9 @@ void Executor_GetScanDump_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetScanDump", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -1452,9 +1460,9 @@ void Executor_RunMemtester_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::RunMemtester", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("result"), in_result,
                         "<value of type ExecutedProcessResultPtr>");
    });
@@ -1576,9 +1584,9 @@ void Executor_GetProcessIOContents_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetProcessIOContents", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("contents"), in_contents,
                         "<value of type const std::string&>");
    });
@@ -1700,9 +1708,9 @@ void Executor_ReadMsr_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::ReadMsr", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("value"), in_value,
                         "<value of type ::chromeos::cros_healthd::mojom::NullableUint64Ptr>");
    });
@@ -1820,9 +1828,9 @@ void Executor_GetUEFISecureBootContent_ProxyToResponder::Run(
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
   TRACE_EVENT1(
     "mojom", "Send reply chromeos::cros_healthd::mojom::Executor::GetUEFISecureBootContent", "async_response_parameters",
-    [&](perfetto::libchrome::TracedValue context){
+    [&](perfetto_libchrome::TracedValue context){
       auto dict = std::move(context).WriteDictionary();
-      perfetto::libchrome::WriteIntoTracedValueWithFallback(
+      perfetto_libchrome::WriteIntoTracedValueWithFallback(
            dict.AddItem("contents"), in_contents,
                         "<value of type const std::string&>");
    });
@@ -2079,8 +2087,11 @@ std::move(p_interface_name), std::move(callback));
                   message->mutable_payload());
       
       bool success = true;
+      uint32_t p_test_mem_kib{};
       Executor_RunMemtester_ParamsDataView input_data_view(params, message);
       
+      if (success)
+        p_test_mem_kib = input_data_view.test_mem_kib();
       if (!success) {
         ReportValidationErrorForMessage(
             message,
@@ -2093,7 +2104,8 @@ std::move(p_interface_name), std::move(callback));
               *message, std::move(responder));
       // A null |impl| means no implementation was bound.
       DCHECK(impl);
-      impl->RunMemtester(std::move(callback));
+      impl->RunMemtester(
+std::move(p_test_mem_kib), std::move(callback));
       return true;
     }
     case internal::kExecutor_KillMemtester_Name: {
@@ -2277,8 +2289,8 @@ void ExecutorInterceptorForTesting::GetInfo(const std::string& interface_name, G
 void ExecutorInterceptorForTesting::GetScanDump(const std::string& interface_name, GetScanDumpCallback callback) {
   GetForwardingInterface()->GetScanDump(std::move(interface_name), std::move(callback));
 }
-void ExecutorInterceptorForTesting::RunMemtester(RunMemtesterCallback callback) {
-  GetForwardingInterface()->RunMemtester(std::move(callback));
+void ExecutorInterceptorForTesting::RunMemtester(uint32_t test_mem_kib, RunMemtesterCallback callback) {
+  GetForwardingInterface()->RunMemtester(std::move(test_mem_kib), std::move(callback));
 }
 void ExecutorInterceptorForTesting::KillMemtester() {
   GetForwardingInterface()->KillMemtester();
@@ -2373,9 +2385,9 @@ void ExecutorAsyncWaiter::GetScanDump(
   loop.Run();
 }
 void ExecutorAsyncWaiter::RunMemtester(
-    ExecutedProcessResultPtr* out_result) {
+    uint32_t test_mem_kib, ExecutedProcessResultPtr* out_result) {
   base::RunLoop loop;
-  proxy_->RunMemtester(
+  proxy_->RunMemtester(std::move(test_mem_kib),
       base::BindOnce(
           [](base::RunLoop* loop,
              ExecutedProcessResultPtr* out_result

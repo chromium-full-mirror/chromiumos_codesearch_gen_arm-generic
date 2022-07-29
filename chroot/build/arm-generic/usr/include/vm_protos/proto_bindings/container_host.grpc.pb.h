@@ -187,6 +187,13 @@ class ContainerListener final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReleaseSpaceResponse>> PrepareAsyncReleaseSpace(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReleaseSpaceResponse>>(PrepareAsyncReleaseSpaceRaw(context, request, cq));
     }
+    virtual ::grpc::Status ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::vm_tools::container::ReportMetricsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>> AsyncReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>>(AsyncReportMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>> PrepareAsyncReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>>(PrepareAsyncReportMetricsRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -233,6 +240,7 @@ class ContainerListener final {
       virtual void RequestSpace(::grpc::ClientContext* context, const ::vm_tools::container::RequestSpaceRequest* request, ::vm_tools::container::RequestSpaceResponse* response, std::function<void(::grpc::Status)>) = 0;
       // Called by a container when it no longer needs as much space.
       virtual void ReleaseSpace(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest* request, ::vm_tools::container::ReleaseSpaceResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -270,6 +278,8 @@ class ContainerListener final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::RequestSpaceResponse>* PrepareAsyncRequestSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::RequestSpaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReleaseSpaceResponse>* AsyncReleaseSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReleaseSpaceResponse>* PrepareAsyncReleaseSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>* AsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::vm_tools::container::ReportMetricsResponse>* PrepareAsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -393,6 +403,13 @@ class ContainerListener final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReleaseSpaceResponse>> PrepareAsyncReleaseSpace(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReleaseSpaceResponse>>(PrepareAsyncReleaseSpaceRaw(context, request, cq));
     }
+    ::grpc::Status ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::vm_tools::container::ReportMetricsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>> AsyncReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>>(AsyncReportMetricsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>> PrepareAsyncReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>>(PrepareAsyncReportMetricsRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -413,6 +430,7 @@ class ContainerListener final {
       void GetDiskInfo(::grpc::ClientContext* context, const ::vm_tools::container::GetDiskInfoRequest* request, ::vm_tools::container::GetDiskInfoResponse* response, std::function<void(::grpc::Status)>) override;
       void RequestSpace(::grpc::ClientContext* context, const ::vm_tools::container::RequestSpaceRequest* request, ::vm_tools::container::RequestSpaceResponse* response, std::function<void(::grpc::Status)>) override;
       void ReleaseSpace(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest* request, ::vm_tools::container::ReleaseSpaceResponse* response, std::function<void(::grpc::Status)>) override;
+      void ReportMetrics(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -458,6 +476,8 @@ class ContainerListener final {
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::RequestSpaceResponse>* PrepareAsyncRequestSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::RequestSpaceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReleaseSpaceResponse>* AsyncReleaseSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReleaseSpaceResponse>* PrepareAsyncReleaseSpaceRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReleaseSpaceRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>* AsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::vm_tools::container::ReportMetricsResponse>* PrepareAsyncReportMetricsRaw(::grpc::ClientContext* context, const ::vm_tools::container::ReportMetricsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_ContainerReady_;
     const ::grpc::internal::RpcMethod rpcmethod_ContainerShutdown_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateApplicationList_;
@@ -475,6 +495,7 @@ class ContainerListener final {
     const ::grpc::internal::RpcMethod rpcmethod_GetDiskInfo_;
     const ::grpc::internal::RpcMethod rpcmethod_RequestSpace_;
     const ::grpc::internal::RpcMethod rpcmethod_ReleaseSpace_;
+    const ::grpc::internal::RpcMethod rpcmethod_ReportMetrics_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -525,6 +546,7 @@ class ContainerListener final {
     virtual ::grpc::Status RequestSpace(::grpc::ServerContext* context, const ::vm_tools::container::RequestSpaceRequest* request, ::vm_tools::container::RequestSpaceResponse* response);
     // Called by a container when it no longer needs as much space.
     virtual ::grpc::Status ReleaseSpace(::grpc::ServerContext* context, const ::vm_tools::container::ReleaseSpaceRequest* request, ::vm_tools::container::ReleaseSpaceResponse* response);
+    virtual ::grpc::Status ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_ContainerReady : public BaseClass {
@@ -866,7 +888,27 @@ class ContainerListener final {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ContainerReady<WithAsyncMethod_ContainerShutdown<WithAsyncMethod_UpdateApplicationList<WithAsyncMethod_PendingUpdateApplicationListCalls<WithAsyncMethod_OpenUrl<WithAsyncMethod_InstallLinuxPackageProgress<WithAsyncMethod_UninstallPackageProgress<WithAsyncMethod_ApplyAnsiblePlaybookProgress<WithAsyncMethod_OpenTerminal<WithAsyncMethod_UpdateMimeTypes<WithAsyncMethod_FileWatchTriggered<WithAsyncMethod_LowDiskSpaceTriggered<WithAsyncMethod_ForwardSecurityKeyMessage<WithAsyncMethod_SelectFile<WithAsyncMethod_GetDiskInfo<WithAsyncMethod_RequestSpace<WithAsyncMethod_ReleaseSpace<Service > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_ReportMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_ReportMetrics() {
+      ::grpc::Service::MarkMethodAsync(17);
+    }
+    ~WithAsyncMethod_ReportMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReportMetrics(::grpc::ServerContext* context, ::vm_tools::container::ReportMetricsRequest* request, ::grpc::ServerAsyncResponseWriter< ::vm_tools::container::ReportMetricsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_ContainerReady<WithAsyncMethod_ContainerShutdown<WithAsyncMethod_UpdateApplicationList<WithAsyncMethod_PendingUpdateApplicationListCalls<WithAsyncMethod_OpenUrl<WithAsyncMethod_InstallLinuxPackageProgress<WithAsyncMethod_UninstallPackageProgress<WithAsyncMethod_ApplyAnsiblePlaybookProgress<WithAsyncMethod_OpenTerminal<WithAsyncMethod_UpdateMimeTypes<WithAsyncMethod_FileWatchTriggered<WithAsyncMethod_LowDiskSpaceTriggered<WithAsyncMethod_ForwardSecurityKeyMessage<WithAsyncMethod_SelectFile<WithAsyncMethod_GetDiskInfo<WithAsyncMethod_RequestSpace<WithAsyncMethod_ReleaseSpace<WithAsyncMethod_ReportMetrics<Service > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_ContainerReady : public BaseClass {
    private:
@@ -1152,6 +1194,23 @@ class ContainerListener final {
     }
     // disable synchronous version of this method
     ::grpc::Status ReleaseSpace(::grpc::ServerContext* context, const ::vm_tools::container::ReleaseSpaceRequest* request, ::vm_tools::container::ReleaseSpaceResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ReportMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_ReportMetrics() {
+      ::grpc::Service::MarkMethodGeneric(17);
+    }
+    ~WithGenericMethod_ReportMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1497,6 +1556,26 @@ class ContainerListener final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ReportMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_ReportMetrics() {
+      ::grpc::Service::MarkMethodRaw(17);
+    }
+    ~WithRawMethod_ReportMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestReportMetrics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_ContainerReady : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -1836,9 +1915,29 @@ class ContainerListener final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedReleaseSpace(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::container::ReleaseSpaceRequest,::vm_tools::container::ReleaseSpaceResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ContainerReady<WithStreamedUnaryMethod_ContainerShutdown<WithStreamedUnaryMethod_UpdateApplicationList<WithStreamedUnaryMethod_PendingUpdateApplicationListCalls<WithStreamedUnaryMethod_OpenUrl<WithStreamedUnaryMethod_InstallLinuxPackageProgress<WithStreamedUnaryMethod_UninstallPackageProgress<WithStreamedUnaryMethod_ApplyAnsiblePlaybookProgress<WithStreamedUnaryMethod_OpenTerminal<WithStreamedUnaryMethod_UpdateMimeTypes<WithStreamedUnaryMethod_FileWatchTriggered<WithStreamedUnaryMethod_LowDiskSpaceTriggered<WithStreamedUnaryMethod_ForwardSecurityKeyMessage<WithStreamedUnaryMethod_SelectFile<WithStreamedUnaryMethod_GetDiskInfo<WithStreamedUnaryMethod_RequestSpace<WithStreamedUnaryMethod_ReleaseSpace<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_ReportMetrics : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_ReportMetrics() {
+      ::grpc::Service::MarkMethodStreamed(17,
+        new ::grpc::internal::StreamedUnaryHandler< ::vm_tools::container::ReportMetricsRequest, ::vm_tools::container::ReportMetricsResponse>(std::bind(&WithStreamedUnaryMethod_ReportMetrics<BaseClass>::StreamedReportMetrics, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ReportMetrics() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ReportMetrics(::grpc::ServerContext* context, const ::vm_tools::container::ReportMetricsRequest* request, ::vm_tools::container::ReportMetricsResponse* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedReportMetrics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::vm_tools::container::ReportMetricsRequest,::vm_tools::container::ReportMetricsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_ContainerReady<WithStreamedUnaryMethod_ContainerShutdown<WithStreamedUnaryMethod_UpdateApplicationList<WithStreamedUnaryMethod_PendingUpdateApplicationListCalls<WithStreamedUnaryMethod_OpenUrl<WithStreamedUnaryMethod_InstallLinuxPackageProgress<WithStreamedUnaryMethod_UninstallPackageProgress<WithStreamedUnaryMethod_ApplyAnsiblePlaybookProgress<WithStreamedUnaryMethod_OpenTerminal<WithStreamedUnaryMethod_UpdateMimeTypes<WithStreamedUnaryMethod_FileWatchTriggered<WithStreamedUnaryMethod_LowDiskSpaceTriggered<WithStreamedUnaryMethod_ForwardSecurityKeyMessage<WithStreamedUnaryMethod_SelectFile<WithStreamedUnaryMethod_GetDiskInfo<WithStreamedUnaryMethod_RequestSpace<WithStreamedUnaryMethod_ReleaseSpace<WithStreamedUnaryMethod_ReportMetrics<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ContainerReady<WithStreamedUnaryMethod_ContainerShutdown<WithStreamedUnaryMethod_UpdateApplicationList<WithStreamedUnaryMethod_PendingUpdateApplicationListCalls<WithStreamedUnaryMethod_OpenUrl<WithStreamedUnaryMethod_InstallLinuxPackageProgress<WithStreamedUnaryMethod_UninstallPackageProgress<WithStreamedUnaryMethod_ApplyAnsiblePlaybookProgress<WithStreamedUnaryMethod_OpenTerminal<WithStreamedUnaryMethod_UpdateMimeTypes<WithStreamedUnaryMethod_FileWatchTriggered<WithStreamedUnaryMethod_LowDiskSpaceTriggered<WithStreamedUnaryMethod_ForwardSecurityKeyMessage<WithStreamedUnaryMethod_SelectFile<WithStreamedUnaryMethod_GetDiskInfo<WithStreamedUnaryMethod_RequestSpace<WithStreamedUnaryMethod_ReleaseSpace<Service > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_ContainerReady<WithStreamedUnaryMethod_ContainerShutdown<WithStreamedUnaryMethod_UpdateApplicationList<WithStreamedUnaryMethod_PendingUpdateApplicationListCalls<WithStreamedUnaryMethod_OpenUrl<WithStreamedUnaryMethod_InstallLinuxPackageProgress<WithStreamedUnaryMethod_UninstallPackageProgress<WithStreamedUnaryMethod_ApplyAnsiblePlaybookProgress<WithStreamedUnaryMethod_OpenTerminal<WithStreamedUnaryMethod_UpdateMimeTypes<WithStreamedUnaryMethod_FileWatchTriggered<WithStreamedUnaryMethod_LowDiskSpaceTriggered<WithStreamedUnaryMethod_ForwardSecurityKeyMessage<WithStreamedUnaryMethod_SelectFile<WithStreamedUnaryMethod_GetDiskInfo<WithStreamedUnaryMethod_RequestSpace<WithStreamedUnaryMethod_ReleaseSpace<WithStreamedUnaryMethod_ReportMetrics<Service > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace container

@@ -360,70 +360,58 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::ConnectionStateType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::ConnectionStateType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::ConnectionStateType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::DeviceStateType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::DeviceStateType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::DeviceStateType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::NetworkType> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::NetworkType value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::NetworkType value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::OncSource> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::OncSource value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::OncSource value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::PolicySource> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::PolicySource value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::PolicySource value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::PortalState> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::chromeos::network_config::mojom::PortalState value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::chromeos::network_config::mojom::PortalState value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // DIAGNOSTICS_MOJOM_EXTERNAL_NETWORK_TYPES_MOJOM_SHARED_H_

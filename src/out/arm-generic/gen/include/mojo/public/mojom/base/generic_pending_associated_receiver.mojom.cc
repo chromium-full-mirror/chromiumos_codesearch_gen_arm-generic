@@ -58,9 +58,9 @@ GenericPendingAssociatedReceiver::GenericPendingAssociatedReceiver(
 GenericPendingAssociatedReceiver::~GenericPendingAssociatedReceiver() = default;
 
 void GenericPendingAssociatedReceiver::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "interface_name"), this->interface_name,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -69,7 +69,7 @@ void GenericPendingAssociatedReceiver::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "receiver"), this->receiver,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

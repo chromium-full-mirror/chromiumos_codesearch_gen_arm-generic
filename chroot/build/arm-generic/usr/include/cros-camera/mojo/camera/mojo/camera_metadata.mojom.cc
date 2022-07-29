@@ -67,9 +67,9 @@ CameraMetadataEntry::CameraMetadataEntry(
 CameraMetadataEntry::~CameraMetadataEntry() = default;
 
 void CameraMetadataEntry::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "index"), this->index,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -78,7 +78,7 @@ void CameraMetadataEntry::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "tag"), this->tag,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -87,7 +87,7 @@ void CameraMetadataEntry::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -96,7 +96,7 @@ void CameraMetadataEntry::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "count"), this->count,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -105,7 +105,7 @@ void CameraMetadataEntry::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "data"), this->data,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -146,9 +146,9 @@ CameraMetadata::CameraMetadata(
 CameraMetadata::~CameraMetadata() = default;
 
 void CameraMetadata::WriteIntoTrace(
-    perfetto::libchrome::TracedValue traced_context) const {
+    perfetto_libchrome::TracedValue traced_context) const {
   auto dict = std::move(traced_context).WriteDictionary();
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "size"), this->size,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -157,7 +157,7 @@ void CameraMetadata::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "entry_count"), this->entry_count,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -166,7 +166,7 @@ void CameraMetadata::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "entry_capacity"), this->entry_capacity,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -175,7 +175,7 @@ void CameraMetadata::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "data_count"), this->data_count,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -184,7 +184,7 @@ void CameraMetadata::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "data_capacity"), this->data_capacity,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)
@@ -193,7 +193,7 @@ void CameraMetadata::WriteIntoTrace(
       "<value>"
 #endif  // BUILDFLAG(MOJO_TRACE_ENABLED)
     );
-  perfetto::libchrome::WriteIntoTracedValueWithFallback(
+  perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "entries"), this->entries,
 #if BUILDFLAG(MOJO_TRACE_ENABLED)

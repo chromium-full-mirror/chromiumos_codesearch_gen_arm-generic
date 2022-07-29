@@ -108,15 +108,13 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 template <>
 struct  TraceFormatTraits<::mojo_base::mojom::ThreadPriority> {
- static void WriteIntoTrace(perfetto::libchrome::TracedValue context, ::mojo_base::mojom::ThreadPriority value);
+ static void WriteIntoTrace(perfetto_libchrome::TracedValue context, ::mojo_base::mojom::ThreadPriority value);
 };
 
-} // namespace libchrome
 } // namespace perfetto
 
 #endif  // MOJO_PUBLIC_MOJOM_BASE_THREAD_PRIORITY_MOJOM_SHARED_H_

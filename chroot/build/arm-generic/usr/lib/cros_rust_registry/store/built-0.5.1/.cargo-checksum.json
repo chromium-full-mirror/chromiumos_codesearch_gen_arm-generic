@@ -1,0 +1,13 @@
+{
+	"package": "c80e2903e349c455dba4adf797835bc23a2fb0fd9e59fdcb0e14e819cf23760f",
+	"files": {
+		"Cargo.toml.orig": "3636dc285f6c61352b672be5a9881a3ce33b6a0e22fc972514536c72576ade4d",
+		"appveyor.yml": "5dade684df6aa386dbf7440b3dcc9cc75d0f620bece06573de1401464b59412e",
+		"tests/testbox_tests.rs": "1d282582b506e7717a395cc00ddbd6d5b422b7f28557ad4033f080645cebec65",
+		"Cargo.toml": "9e82ef0277ba89e37483138d6b59c0db99a784970f41b5b8440e6d5d68dba9e6",
+		"LICENSE": "6c49aa26761bba62798c3c0d95af95545fac524c5616f613563117e238271de8",
+		"README.md": "b5e18103a3d20b96261eac89ae05e4d718ef7f4303348864f687bd90e64c9282",
+		"src/lib.rs": "03e84cfa7ec1b59ddaeceb5af7d3a71d04425834461c523723c6b58cdcd7adf3",
+		"src/util.rs": "bf190e276dfe2de9a8fddc380e84ab48e43993136f1044c48fb3d7bde9179ab7"
+	}
+}

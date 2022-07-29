@@ -1,7 +1,7 @@
 /*
  *
  * Automatically generated file; DO NOT EDIT.
- * Linux/arm 5.15.55 Kernel Configuration
+ * Linux/arm 5.15.57 Kernel Configuration
  *
  */
 #define CONFIG_RING_BUFFER 1
@@ -164,7 +164,6 @@
 #define CONFIG_IIO_KFIFO_BUF_MODULE 1
 #define CONFIG_ZRAM_DEF_COMP_LZORLE 1
 #define CONFIG_CFG80211_MODULE 1
-#define CONFIG_DEBUG_INFO_DWARF4 1
 #define CONFIG_SSB_BLOCKIO 1
 #define CONFIG_OF_RESERVED_MEM 1
 #define CONFIG_DM_CRYPT 1
@@ -717,6 +716,7 @@
 #define CONFIG_BCMA_MODULE 1
 #define CONFIG_DMADEVICES 1
 #define CONFIG_NF_CONNTRACK_EVENTS 1
+#define CONFIG_DEBUG_INFO_DWARF5 1
 #define CONFIG_TEGRA_AHB 1
 #define CONFIG_PINCTRL 1
 #define CONFIG_IPV6_NDISC_NODETYPE 1
@@ -787,7 +787,7 @@
 #define CONFIG_SKB_EXTENSIONS 1
 #define CONFIG_PM_OPP 1
 #define CONFIG_GPIO_CDEV 1
-#define CONFIG_CC_VERSION_TEXT "Chromium OS 15.0_pre458507_p20220602-r12 clang version 15.0.0 (/var/tmp/portage/sys-devel/llvm-15.0_pre458507_p20220602-r12/work/llvm-15.0_pre458507_p20220602/clang a58d0af058038595c93de961b725f86997cf8d4a)"
+#define CONFIG_CC_VERSION_TEXT "Chromium OS 15.0_pre458507_p20220602-r16 clang version 15.0.0 (/var/tmp/portage/sys-devel/llvm-15.0_pre458507_p20220602-r16/work/llvm-15.0_pre458507_p20220602/clang a58d0af058038595c93de961b725f86997cf8d4a)"
 #define CONFIG_NET_IP_TUNNEL_MODULE 1
 #define CONFIG_MTD_CFI_I1 1
 #define CONFIG_NF_NAT 1

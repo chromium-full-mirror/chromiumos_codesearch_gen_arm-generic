@@ -463,74 +463,62 @@ Model_Compute_ResponseParams_Data::Model_Compute_ResponseParams_Data()
 }  // namespace model_loader
 }  // namespace ml
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::ModelFormat>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::ModelFormat value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::ModelFormat value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::ModelFormatToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::DevicePreference>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::DevicePreference value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::DevicePreference value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::DevicePreferenceToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::DataType>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::DataType value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::DataType value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::DataTypeToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::LoadModelResult>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::LoadModelResult value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::LoadModelResult value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::LoadModelResultToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::CreateModelLoaderResult>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::CreateModelLoaderResult value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::CreateModelLoaderResult value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::CreateModelLoaderResultToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::ComputeResult>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::ml::model_loader::mojom::ComputeResult value) {
+   perfetto_libchrome::TracedValue context, ::ml::model_loader::mojom::ComputeResult value) {
   return std::move(context).WriteString(::ml::model_loader::mojom::ComputeResultToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto

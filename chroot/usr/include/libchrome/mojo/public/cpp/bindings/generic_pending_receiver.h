@@ -64,7 +64,7 @@ class COMPONENT_EXPORT(MOJO_CPP_BINDINGS) GenericPendingReceiver {
     return mojo::PendingReceiver<Interface>(PassPipeIfNameIs(Interface::Name_));
   }
 
-  void WriteIntoTrace(perfetto::libchrome::TracedValue ctx) const;
+  void WriteIntoTrace(perfetto_libchrome::TracedValue ctx) const;
 
  private:
   mojo::ScopedMessagePipeHandle PassPipeIfNameIs(const char* interface_name);

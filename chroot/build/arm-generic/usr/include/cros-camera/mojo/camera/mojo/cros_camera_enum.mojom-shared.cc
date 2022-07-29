@@ -53,14 +53,12 @@ namespace internal {
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto {
-namespace libchrome {
+namespace perfetto_libchrome{
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraSensorSyncTimestamp>::WriteIntoTrace(
-   perfetto::libchrome::TracedValue context, ::cros::mojom::CameraSensorSyncTimestamp value) {
+   perfetto_libchrome::TracedValue context, ::cros::mojom::CameraSensorSyncTimestamp value) {
   return std::move(context).WriteString(::cros::mojom::CameraSensorSyncTimestampToString(value));
 }
 
-} // namespace libchrome
 } // namespace perfetto
