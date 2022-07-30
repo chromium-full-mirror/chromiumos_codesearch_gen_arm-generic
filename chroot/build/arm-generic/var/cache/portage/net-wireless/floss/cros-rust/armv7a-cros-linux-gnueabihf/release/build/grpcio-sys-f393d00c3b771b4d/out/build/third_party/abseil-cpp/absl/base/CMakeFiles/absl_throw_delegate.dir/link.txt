@@ -1,2 +1,0 @@
-/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_throw_delegate.a CMakeFiles/absl_throw_delegate.dir/internal/throw_delegate.cc.o
-/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_throw_delegate.a
