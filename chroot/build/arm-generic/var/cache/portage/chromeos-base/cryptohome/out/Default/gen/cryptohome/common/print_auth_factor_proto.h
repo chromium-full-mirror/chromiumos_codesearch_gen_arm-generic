@@ -28,10 +28,6 @@ namespace user_data_auth {
 std::string GetProtoDebugStringWithIndent(AuthFactorType value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(AuthFactorType value);
-std::string GetProtoDebugStringWithIndent(const AuthFactorIdentifier& value,
-                                          int indent_size);
-BRILLO_EXPORT std::string GetProtoDebugString(
-    const AuthFactorIdentifier& value);
 std::string GetProtoDebugStringWithIndent(const PasswordAuthInput& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const PasswordAuthInput& value);

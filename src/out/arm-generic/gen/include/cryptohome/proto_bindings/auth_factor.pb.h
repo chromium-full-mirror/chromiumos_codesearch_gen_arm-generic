@@ -45,7 +45,7 @@ struct TableStruct_auth_5ffactor_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,9 +55,6 @@ namespace user_data_auth {
 class AuthFactor;
 struct AuthFactorDefaultTypeInternal;
 extern AuthFactorDefaultTypeInternal _AuthFactor_default_instance_;
-class AuthFactorIdentifier;
-struct AuthFactorIdentifierDefaultTypeInternal;
-extern AuthFactorIdentifierDefaultTypeInternal _AuthFactorIdentifier_default_instance_;
 class AuthInput;
 struct AuthInputDefaultTypeInternal;
 extern AuthInputDefaultTypeInternal _AuthInput_default_instance_;
@@ -82,7 +79,6 @@ extern PinMetadataDefaultTypeInternal _PinMetadata_default_instance_;
 }  // namespace user_data_auth
 PROTOBUF_NAMESPACE_OPEN
 template<> ::user_data_auth::AuthFactor* Arena::CreateMaybeMessage<::user_data_auth::AuthFactor>(Arena*);
-template<> ::user_data_auth::AuthFactorIdentifier* Arena::CreateMaybeMessage<::user_data_auth::AuthFactorIdentifier>(Arena*);
 template<> ::user_data_auth::AuthInput* Arena::CreateMaybeMessage<::user_data_auth::AuthInput>(Arena*);
 template<> ::user_data_auth::CryptohomeRecoveryAuthInput* Arena::CreateMaybeMessage<::user_data_auth::CryptohomeRecoveryAuthInput>(Arena*);
 template<> ::user_data_auth::CryptohomeRecoveryMetadata* Arena::CreateMaybeMessage<::user_data_auth::CryptohomeRecoveryMetadata>(Arena*);
@@ -117,123 +113,6 @@ inline const std::string& AuthFactorType_Name(T enum_t_value) {
 bool AuthFactorType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, AuthFactorType* value);
 // ===================================================================
-
-class AuthFactorIdentifier final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.AuthFactorIdentifier) */ {
- public:
-  inline AuthFactorIdentifier() : AuthFactorIdentifier(nullptr) {}
-  ~AuthFactorIdentifier() override;
-  explicit constexpr AuthFactorIdentifier(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  AuthFactorIdentifier(const AuthFactorIdentifier& from);
-  AuthFactorIdentifier(AuthFactorIdentifier&& from) noexcept
-    : AuthFactorIdentifier() {
-    *this = ::std::move(from);
-  }
-
-  inline AuthFactorIdentifier& operator=(const AuthFactorIdentifier& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline AuthFactorIdentifier& operator=(AuthFactorIdentifier&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const AuthFactorIdentifier& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const AuthFactorIdentifier* internal_default_instance() {
-    return reinterpret_cast<const AuthFactorIdentifier*>(
-               &_AuthFactorIdentifier_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(AuthFactorIdentifier& a, AuthFactorIdentifier& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(AuthFactorIdentifier* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(AuthFactorIdentifier* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  AuthFactorIdentifier* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<AuthFactorIdentifier>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const AuthFactorIdentifier& from);
-  void MergeFrom(const AuthFactorIdentifier& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(AuthFactorIdentifier* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "user_data_auth.AuthFactorIdentifier";
-  }
-  protected:
-  explicit AuthFactorIdentifier(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:user_data_auth.AuthFactorIdentifier)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_auth_5ffactor_2eproto;
-};
-// -------------------------------------------------------------------
 
 class PasswordAuthInput final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.PasswordAuthInput) */ {
@@ -274,7 +153,7 @@ class PasswordAuthInput final :
                &_PasswordAuthInput_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(PasswordAuthInput& a, PasswordAuthInput& b) {
     a.Swap(&b);
@@ -409,7 +288,7 @@ class PinAuthInput final :
                &_PinAuthInput_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   friend void swap(PinAuthInput& a, PinAuthInput& b) {
     a.Swap(&b);
@@ -544,7 +423,7 @@ class CryptohomeRecoveryAuthInput final :
                &_CryptohomeRecoveryAuthInput_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(CryptohomeRecoveryAuthInput& a, CryptohomeRecoveryAuthInput& b) {
     a.Swap(&b);
@@ -718,7 +597,7 @@ class AuthInput final :
                &_AuthInput_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(AuthInput& a, AuthInput& b) {
     a.Swap(&b);
@@ -911,7 +790,7 @@ class PasswordMetadata final :
                &_PasswordMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(PasswordMetadata& a, PasswordMetadata& b) {
     a.Swap(&b);
@@ -1028,7 +907,7 @@ class PinMetadata final :
                &_PinMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(PinMetadata& a, PinMetadata& b) {
     a.Swap(&b);
@@ -1158,7 +1037,7 @@ class CryptohomeRecoveryMetadata final :
                &_CryptohomeRecoveryMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(CryptohomeRecoveryMetadata& a, CryptohomeRecoveryMetadata& b) {
     a.Swap(&b);
@@ -1282,7 +1161,7 @@ class AuthFactor final :
                &_AuthFactor_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(AuthFactor& a, AuthFactor& b) {
     a.Swap(&b);
@@ -1481,10 +1360,6 @@ class AuthFactor final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// AuthFactorIdentifier
-
-// -------------------------------------------------------------------
-
 // PasswordAuthInput
 
 // bytes secret = 1;
@@ -2346,8 +2221,6 @@ inline AuthFactor::MetadataCase AuthFactor::metadata_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

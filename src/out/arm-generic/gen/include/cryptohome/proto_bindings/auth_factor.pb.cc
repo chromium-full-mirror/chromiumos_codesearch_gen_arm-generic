@@ -14,17 +14,6 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace user_data_auth {
-constexpr AuthFactorIdentifier::AuthFactorIdentifier(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct AuthFactorIdentifierDefaultTypeInternal {
-  constexpr AuthFactorIdentifierDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~AuthFactorIdentifierDefaultTypeInternal() {}
-  union {
-    AuthFactorIdentifier _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuthFactorIdentifierDefaultTypeInternal _AuthFactorIdentifier_default_instance_;
 constexpr PasswordAuthInput::PasswordAuthInput(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : secret_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -186,150 +175,6 @@ bool AuthFactorType_Parse(
   }
   return success;
 }
-
-// ===================================================================
-
-class AuthFactorIdentifier::_Internal {
- public:
-};
-
-AuthFactorIdentifier::AuthFactorIdentifier(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:user_data_auth.AuthFactorIdentifier)
-}
-AuthFactorIdentifier::AuthFactorIdentifier(const AuthFactorIdentifier& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:user_data_auth.AuthFactorIdentifier)
-}
-
-inline void AuthFactorIdentifier::SharedCtor() {
-}
-
-AuthFactorIdentifier::~AuthFactorIdentifier() {
-  // @@protoc_insertion_point(destructor:user_data_auth.AuthFactorIdentifier)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<std::string>();
-}
-
-inline void AuthFactorIdentifier::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void AuthFactorIdentifier::ArenaDtor(void* object) {
-  AuthFactorIdentifier* _this = reinterpret_cast< AuthFactorIdentifier* >(object);
-  (void)_this;
-}
-void AuthFactorIdentifier::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void AuthFactorIdentifier::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void AuthFactorIdentifier::Clear() {
-// @@protoc_insertion_point(message_clear_start:user_data_auth.AuthFactorIdentifier)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear<std::string>();
-}
-
-const char* AuthFactorIdentifier::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* AuthFactorIdentifier::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:user_data_auth.AuthFactorIdentifier)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:user_data_auth.AuthFactorIdentifier)
-  return target;
-}
-
-size_t AuthFactorIdentifier::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:user_data_auth.AuthFactorIdentifier)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void AuthFactorIdentifier::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const AuthFactorIdentifier*>(
-      &from));
-}
-
-void AuthFactorIdentifier::MergeFrom(const AuthFactorIdentifier& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:user_data_auth.AuthFactorIdentifier)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-}
-
-void AuthFactorIdentifier::CopyFrom(const AuthFactorIdentifier& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:user_data_auth.AuthFactorIdentifier)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool AuthFactorIdentifier::IsInitialized() const {
-  return true;
-}
-
-void AuthFactorIdentifier::InternalSwap(AuthFactorIdentifier* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-}
-
-std::string AuthFactorIdentifier::GetTypeName() const {
-  return "user_data_auth.AuthFactorIdentifier";
-}
-
 
 // ===================================================================
 
@@ -2292,9 +2137,6 @@ std::string AuthFactor::GetTypeName() const {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace user_data_auth
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::user_data_auth::AuthFactorIdentifier* Arena::CreateMaybeMessage< ::user_data_auth::AuthFactorIdentifier >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::user_data_auth::AuthFactorIdentifier >(arena);
-}
 template<> PROTOBUF_NOINLINE ::user_data_auth::PasswordAuthInput* Arena::CreateMaybeMessage< ::user_data_auth::PasswordAuthInput >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::PasswordAuthInput >(arena);
 }

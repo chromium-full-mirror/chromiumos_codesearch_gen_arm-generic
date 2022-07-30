@@ -3,7 +3,7 @@
 	"files": {
 		"Cargo.toml.orig": "61210e5ffce61f8d158ec8af0201a33c5512a758e4e8845537b9dc556bd88266",
 		"Cargo.toml": "b59b1ed2a77423b5cf674c8542e7d73ab10977eace9c031db2afab060df9e592",
-		"tests.rs": "92e53ac0d3e221027df425913cf0d922705beffd4b45ebe02aa9f9eb7ba7bd94",
-		"event_token_derive.rs": "dc38e19d7f2adf5b088cd81d8c24191f963631f216c9b4e77a5cb5e35ebd438f"
+		"event_token_derive.rs": "dc38e19d7f2adf5b088cd81d8c24191f963631f216c9b4e77a5cb5e35ebd438f",
+		"tests.rs": "92e53ac0d3e221027df425913cf0d922705beffd4b45ebe02aa9f9eb7ba7bd94"
 	}
 }

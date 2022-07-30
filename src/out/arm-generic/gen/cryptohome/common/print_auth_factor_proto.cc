@@ -46,20 +46,6 @@ std::string GetProtoDebugStringWithIndent(AuthFactorType value,
   return "<unknown>";
 }
 
-std::string GetProtoDebugString(const AuthFactorIdentifier& value) {
-  return GetProtoDebugStringWithIndent(value, 0);
-}
-
-std::string GetProtoDebugStringWithIndent(const AuthFactorIdentifier& value,
-                                          int indent_size) {
-  std::string indent(indent_size, ' ');
-  std::string output =
-      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
-
-  output += indent + "}\n";
-  return output;
-}
-
 std::string GetProtoDebugString(const PasswordAuthInput& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
