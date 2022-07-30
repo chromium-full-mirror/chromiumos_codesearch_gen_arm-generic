@@ -1466,11 +1466,8 @@ class Data final :
     kRoamingFilterFieldNumber = 9,
     kMccmncFieldNumber = 21,
     kMobileApnFieldNumber = 22,
-    kSidFieldNumber = 41,
-    kNidFieldNumber = 42,
     kUuidFieldNumber = 1,
     kCountryFieldNumber = 3,
-    kActivationCodeFieldNumber = 43,
     kRequiresRoamingFieldNumber = 5,
     kPrioritizesNameFieldNumber = 8,
     kMtuFieldNumber = 7,
@@ -1571,54 +1568,6 @@ class Data final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::MobileAPN >&
       mobile_apn() const;
 
-  // repeated string sid = 41;
-  int sid_size() const;
-  private:
-  int _internal_sid_size() const;
-  public:
-  void clear_sid();
-  const std::string& sid(int index) const;
-  std::string* mutable_sid(int index);
-  void set_sid(int index, const std::string& value);
-  void set_sid(int index, std::string&& value);
-  void set_sid(int index, const char* value);
-  void set_sid(int index, const char* value, size_t size);
-  std::string* add_sid();
-  void add_sid(const std::string& value);
-  void add_sid(std::string&& value);
-  void add_sid(const char* value);
-  void add_sid(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& sid() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_sid();
-  private:
-  const std::string& _internal_sid(int index) const;
-  std::string* _internal_add_sid();
-  public:
-
-  // repeated string nid = 42;
-  int nid_size() const;
-  private:
-  int _internal_nid_size() const;
-  public:
-  void clear_nid();
-  const std::string& nid(int index) const;
-  std::string* mutable_nid(int index);
-  void set_nid(int index, const std::string& value);
-  void set_nid(int index, std::string&& value);
-  void set_nid(int index, const char* value);
-  void set_nid(int index, const char* value, size_t size);
-  std::string* add_nid();
-  void add_nid(const std::string& value);
-  void add_nid(std::string&& value);
-  void add_nid(const char* value);
-  void add_nid(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& nid() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_nid();
-  private:
-  const std::string& _internal_nid(int index) const;
-  std::string* _internal_add_nid();
-  public:
-
   // required string uuid = 1;
   bool has_uuid() const;
   private:
@@ -1653,24 +1602,6 @@ class Data final :
   const std::string& _internal_country() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_country(const std::string& value);
   std::string* _internal_mutable_country();
-  public:
-
-  // optional string activation_code = 43;
-  bool has_activation_code() const;
-  private:
-  bool _internal_has_activation_code() const;
-  public:
-  void clear_activation_code();
-  const std::string& activation_code() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_activation_code(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_activation_code();
-  PROTOBUF_NODISCARD std::string* release_activation_code();
-  void set_allocated_activation_code(std::string* activation_code);
-  private:
-  const std::string& _internal_activation_code() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_activation_code(const std::string& value);
-  std::string* _internal_mutable_activation_code();
   public:
 
   // optional bool requires_roaming = 5 [default = false];
@@ -1726,11 +1657,8 @@ class Data final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::Filter > roaming_filter_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> mccmnc_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator_db::MobileAPN > mobile_apn_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> sid_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> nid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr country_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr activation_code_;
   bool requires_roaming_;
   bool prioritizes_name_;
   int32_t mtu_;
@@ -3637,7 +3565,7 @@ Data::localized_name() const {
 
 // optional bool requires_roaming = 5 [default = false];
 inline bool Data::_internal_has_requires_roaming() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool Data::has_requires_roaming() const {
@@ -3645,7 +3573,7 @@ inline bool Data::has_requires_roaming() const {
 }
 inline void Data::clear_requires_roaming() {
   requires_roaming_ = false;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline bool Data::_internal_requires_roaming() const {
   return requires_roaming_;
@@ -3655,7 +3583,7 @@ inline bool Data::requires_roaming() const {
   return _internal_requires_roaming();
 }
 inline void Data::_internal_set_requires_roaming(bool value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000004u;
   requires_roaming_ = value;
 }
 inline void Data::set_requires_roaming(bool value) {
@@ -3705,7 +3633,7 @@ Data::olp() const {
 
 // optional int32 mtu = 7;
 inline bool Data::_internal_has_mtu() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool Data::has_mtu() const {
@@ -3713,7 +3641,7 @@ inline bool Data::has_mtu() const {
 }
 inline void Data::clear_mtu() {
   mtu_ = 0;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline int32_t Data::_internal_mtu() const {
   return mtu_;
@@ -3723,7 +3651,7 @@ inline int32_t Data::mtu() const {
   return _internal_mtu();
 }
 inline void Data::_internal_set_mtu(int32_t value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
   mtu_ = value;
 }
 inline void Data::set_mtu(int32_t value) {
@@ -3733,7 +3661,7 @@ inline void Data::set_mtu(int32_t value) {
 
 // optional bool prioritizes_name = 8 [default = false];
 inline bool Data::_internal_has_prioritizes_name() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool Data::has_prioritizes_name() const {
@@ -3741,7 +3669,7 @@ inline bool Data::has_prioritizes_name() const {
 }
 inline void Data::clear_prioritizes_name() {
   prioritizes_name_ = false;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline bool Data::_internal_prioritizes_name() const {
   return prioritizes_name_;
@@ -3751,7 +3679,7 @@ inline bool Data::prioritizes_name() const {
   return _internal_prioritizes_name();
 }
 inline void Data::_internal_set_prioritizes_name(bool value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
   prioritizes_name_ = value;
 }
 inline void Data::set_prioritizes_name(bool value) {
@@ -3912,225 +3840,6 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::shill::mobile_operator
 Data::mobile_apn() const {
   // @@protoc_insertion_point(field_list:shill.mobile_operator_db.Data.mobile_apn)
   return mobile_apn_;
-}
-
-// repeated string sid = 41;
-inline int Data::_internal_sid_size() const {
-  return sid_.size();
-}
-inline int Data::sid_size() const {
-  return _internal_sid_size();
-}
-inline void Data::clear_sid() {
-  sid_.Clear();
-}
-inline std::string* Data::add_sid() {
-  std::string* _s = _internal_add_sid();
-  // @@protoc_insertion_point(field_add_mutable:shill.mobile_operator_db.Data.sid)
-  return _s;
-}
-inline const std::string& Data::_internal_sid(int index) const {
-  return sid_.Get(index);
-}
-inline const std::string& Data::sid(int index) const {
-  // @@protoc_insertion_point(field_get:shill.mobile_operator_db.Data.sid)
-  return _internal_sid(index);
-}
-inline std::string* Data::mutable_sid(int index) {
-  // @@protoc_insertion_point(field_mutable:shill.mobile_operator_db.Data.sid)
-  return sid_.Mutable(index);
-}
-inline void Data::set_sid(int index, const std::string& value) {
-  sid_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::set_sid(int index, std::string&& value) {
-  sid_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::set_sid(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  sid_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::set_sid(int index, const char* value, size_t size) {
-  sid_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:shill.mobile_operator_db.Data.sid)
-}
-inline std::string* Data::_internal_add_sid() {
-  return sid_.Add();
-}
-inline void Data::add_sid(const std::string& value) {
-  sid_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::add_sid(std::string&& value) {
-  sid_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::add_sid(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  sid_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:shill.mobile_operator_db.Data.sid)
-}
-inline void Data::add_sid(const char* value, size_t size) {
-  sid_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:shill.mobile_operator_db.Data.sid)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-Data::sid() const {
-  // @@protoc_insertion_point(field_list:shill.mobile_operator_db.Data.sid)
-  return sid_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-Data::mutable_sid() {
-  // @@protoc_insertion_point(field_mutable_list:shill.mobile_operator_db.Data.sid)
-  return &sid_;
-}
-
-// repeated string nid = 42;
-inline int Data::_internal_nid_size() const {
-  return nid_.size();
-}
-inline int Data::nid_size() const {
-  return _internal_nid_size();
-}
-inline void Data::clear_nid() {
-  nid_.Clear();
-}
-inline std::string* Data::add_nid() {
-  std::string* _s = _internal_add_nid();
-  // @@protoc_insertion_point(field_add_mutable:shill.mobile_operator_db.Data.nid)
-  return _s;
-}
-inline const std::string& Data::_internal_nid(int index) const {
-  return nid_.Get(index);
-}
-inline const std::string& Data::nid(int index) const {
-  // @@protoc_insertion_point(field_get:shill.mobile_operator_db.Data.nid)
-  return _internal_nid(index);
-}
-inline std::string* Data::mutable_nid(int index) {
-  // @@protoc_insertion_point(field_mutable:shill.mobile_operator_db.Data.nid)
-  return nid_.Mutable(index);
-}
-inline void Data::set_nid(int index, const std::string& value) {
-  nid_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::set_nid(int index, std::string&& value) {
-  nid_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::set_nid(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  nid_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::set_nid(int index, const char* value, size_t size) {
-  nid_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:shill.mobile_operator_db.Data.nid)
-}
-inline std::string* Data::_internal_add_nid() {
-  return nid_.Add();
-}
-inline void Data::add_nid(const std::string& value) {
-  nid_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::add_nid(std::string&& value) {
-  nid_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::add_nid(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  nid_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:shill.mobile_operator_db.Data.nid)
-}
-inline void Data::add_nid(const char* value, size_t size) {
-  nid_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:shill.mobile_operator_db.Data.nid)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-Data::nid() const {
-  // @@protoc_insertion_point(field_list:shill.mobile_operator_db.Data.nid)
-  return nid_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-Data::mutable_nid() {
-  // @@protoc_insertion_point(field_mutable_list:shill.mobile_operator_db.Data.nid)
-  return &nid_;
-}
-
-// optional string activation_code = 43;
-inline bool Data::_internal_has_activation_code() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool Data::has_activation_code() const {
-  return _internal_has_activation_code();
-}
-inline void Data::clear_activation_code() {
-  activation_code_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline const std::string& Data::activation_code() const {
-  // @@protoc_insertion_point(field_get:shill.mobile_operator_db.Data.activation_code)
-  return _internal_activation_code();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void Data::set_activation_code(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000004u;
- activation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:shill.mobile_operator_db.Data.activation_code)
-}
-inline std::string* Data::mutable_activation_code() {
-  std::string* _s = _internal_mutable_activation_code();
-  // @@protoc_insertion_point(field_mutable:shill.mobile_operator_db.Data.activation_code)
-  return _s;
-}
-inline const std::string& Data::_internal_activation_code() const {
-  return activation_code_.Get();
-}
-inline void Data::_internal_set_activation_code(const std::string& value) {
-  _has_bits_[0] |= 0x00000004u;
-  activation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* Data::_internal_mutable_activation_code() {
-  _has_bits_[0] |= 0x00000004u;
-  return activation_code_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* Data::release_activation_code() {
-  // @@protoc_insertion_point(field_release:shill.mobile_operator_db.Data.activation_code)
-  if (!_internal_has_activation_code()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000004u;
-  auto* p = activation_code_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (activation_code_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    activation_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void Data::set_allocated_activation_code(std::string* activation_code) {
-  if (activation_code != nullptr) {
-    _has_bits_[0] |= 0x00000004u;
-  } else {
-    _has_bits_[0] &= ~0x00000004u;
-  }
-  activation_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), activation_code,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (activation_code_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    activation_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:shill.mobile_operator_db.Data.activation_code)
 }
 
 // -------------------------------------------------------------------

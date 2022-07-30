@@ -103,11 +103,8 @@ constexpr Data::Data(
   , roaming_filter_()
   , mccmnc_()
   , mobile_apn_()
-  , sid_()
-  , nid_()
   , uuid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , country_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , activation_code_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , requires_roaming_(false)
   , prioritizes_name_(false)
   , mtu_(0){}
@@ -2251,16 +2248,13 @@ class Data::_Internal {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_requires_roaming(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_mtu(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_prioritizes_name(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
-  static void set_has_activation_code(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+  static void set_has_prioritizes_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
   }
   static bool MissingRequiredFields(const HasBits& has_bits) {
     return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
@@ -2274,9 +2268,7 @@ Data::Data(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   olp_(arena),
   roaming_filter_(arena),
   mccmnc_(arena),
-  mobile_apn_(arena),
-  sid_(arena),
-  nid_(arena) {
+  mobile_apn_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2290,9 +2282,7 @@ Data::Data(const Data& from)
       olp_(from.olp_),
       roaming_filter_(from.roaming_filter_),
       mccmnc_(from.mccmnc_),
-      mobile_apn_(from.mobile_apn_),
-      sid_(from.sid_),
-      nid_(from.nid_) {
+      mobile_apn_(from.mobile_apn_) {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -2310,14 +2300,6 @@ Data::Data(const Data& from)
     country_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_country(), 
       GetArenaForAllocation());
   }
-  activation_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    activation_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_activation_code()) {
-    activation_code_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_activation_code(), 
-      GetArenaForAllocation());
-  }
   ::memcpy(&requires_roaming_, &from.requires_roaming_,
     static_cast<size_t>(reinterpret_cast<char*>(&mtu_) -
     reinterpret_cast<char*>(&requires_roaming_)) + sizeof(mtu_));
@@ -2332,10 +2314,6 @@ uuid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlready
 country_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   country_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-activation_code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  activation_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&requires_roaming_) - reinterpret_cast<char*>(this)),
@@ -2354,7 +2332,6 @@ inline void Data::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   uuid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   country_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  activation_code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Data::ArenaDtor(void* object) {
@@ -2378,21 +2355,16 @@ void Data::Clear() {
   roaming_filter_.Clear();
   mccmnc_.Clear();
   mobile_apn_.Clear();
-  sid_.Clear();
-  nid_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
       uuid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
       country_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000004u) {
-      activation_code_.ClearNonDefaultToEmpty();
-    }
   }
-  if (cached_has_bits & 0x00000038u) {
+  if (cached_has_bits & 0x0000001cu) {
     ::memset(&requires_roaming_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&mtu_) -
         reinterpret_cast<char*>(&requires_roaming_)) + sizeof(mtu_));
@@ -2519,43 +2491,6 @@ const char* Data::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // repeated string sid = 41;
-      case 41:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_sid();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<330>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated string nid = 42;
-      case 42:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            auto str = _internal_add_nid();
-            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<338>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string activation_code = 43;
-      case 43:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
-          auto str = _internal_mutable_activation_code();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -2608,7 +2543,7 @@ uint8_t* Data::_InternalSerialize(
   }
 
   // optional bool requires_roaming = 5 [default = false];
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_requires_roaming(), target);
   }
@@ -2622,13 +2557,13 @@ uint8_t* Data::_InternalSerialize(
   }
 
   // optional int32 mtu = 7;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_mtu(), target);
   }
 
   // optional bool prioritizes_name = 8 [default = false];
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_prioritizes_name(), target);
   }
@@ -2653,24 +2588,6 @@ uint8_t* Data::_InternalSerialize(
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(22, this->_internal_mobile_apn(i), target, stream);
-  }
-
-  // repeated string sid = 41;
-  for (int i = 0, n = this->_internal_sid_size(); i < n; i++) {
-    const auto& s = this->_internal_sid(i);
-    target = stream->WriteString(41, s, target);
-  }
-
-  // repeated string nid = 42;
-  for (int i = 0, n = this->_internal_nid_size(); i < n; i++) {
-    const auto& s = this->_internal_nid(i);
-    target = stream->WriteString(42, s, target);
-  }
-
-  // optional string activation_code = 43;
-  if (cached_has_bits & 0x00000004u) {
-    target = stream->WriteStringMaybeAliased(
-        43, this->_internal_activation_code(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2731,24 +2648,8 @@ size_t Data::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated string sid = 41;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(sid_.size());
-  for (int i = 0, n = sid_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      sid_.Get(i));
-  }
-
-  // repeated string nid = 42;
-  total_size += 2 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(nid_.size());
-  for (int i = 0, n = nid_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      nid_.Get(i));
-  }
-
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003eu) {
+  if (cached_has_bits & 0x0000001eu) {
     // optional string country = 3;
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
@@ -2756,25 +2657,18 @@ size_t Data::ByteSizeLong() const {
           this->_internal_country());
     }
 
-    // optional string activation_code = 43;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_activation_code());
-    }
-
     // optional bool requires_roaming = 5 [default = false];
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 1;
     }
 
     // optional bool prioritizes_name = 8 [default = false];
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 + 1;
     }
 
     // optional int32 mtu = 7;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_mtu());
     }
 
@@ -2804,10 +2698,8 @@ void Data::MergeFrom(const Data& from) {
   roaming_filter_.MergeFrom(from.roaming_filter_);
   mccmnc_.MergeFrom(from.mccmnc_);
   mobile_apn_.MergeFrom(from.mobile_apn_);
-  sid_.MergeFrom(from.sid_);
-  nid_.MergeFrom(from.nid_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
       _internal_set_uuid(from._internal_uuid());
     }
@@ -2815,15 +2707,12 @@ void Data::MergeFrom(const Data& from) {
       _internal_set_country(from._internal_country());
     }
     if (cached_has_bits & 0x00000004u) {
-      _internal_set_activation_code(from._internal_activation_code());
-    }
-    if (cached_has_bits & 0x00000008u) {
       requires_roaming_ = from.requires_roaming_;
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       prioritizes_name_ = from.prioritizes_name_;
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       mtu_ = from.mtu_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -2862,8 +2751,6 @@ void Data::InternalSwap(Data* other) {
   roaming_filter_.InternalSwap(&other->roaming_filter_);
   mccmnc_.InternalSwap(&other->mccmnc_);
   mobile_apn_.InternalSwap(&other->mobile_apn_);
-  sid_.InternalSwap(&other->sid_);
-  nid_.InternalSwap(&other->nid_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &uuid_, lhs_arena,
@@ -2873,11 +2760,6 @@ void Data::InternalSwap(Data* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &country_, lhs_arena,
       &other->country_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &activation_code_, lhs_arena,
-      &other->activation_code_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Data, mtu_)
