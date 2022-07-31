@@ -57,7 +57,7 @@ tryToPingBackgroundPage_(){if(this.connected_){return;}
 this.pingAttempts_++;if(this.pingAttempts_>ContentExtensionBridge.MAX_PING_ATTEMPTS){this.disconnectListeners_.forEach(listener=>listener());return;}
 const msg={[ContentExtensionBridge.PING_MSG]:1,};if(!this.backgroundPort_){this.setupBackgroundPort_();}
 if(this.backgroundPort_){this.backgroundPort_.postMessage(msg);}
-window.setTimeout(()=>this.tryToPingBackgroundPage_(),ContentExtensionBridge.TIME_BETWEEN_PINGS_MS);}
+setTimeout(()=>this.tryToPingBackgroundPage_(),ContentExtensionBridge.TIME_BETWEEN_PINGS_MS);}
 gotPongFromBackgroundPage_(pongId){this.connected_=true;this.id_=pongId;while(this.queuedMessages_.length>0){this.send_(this.queuedMessages_.shift());}}
 send_(message){if(!this.connected_){this.queuedMessages_.push(message);return;}
 if(this.backgroundPort_){this.backgroundPort_.postMessage(message);}else{chrome.extension.sendMessage(message);}}};ContentExtensionBridge.PORT_NAME='ExtensionBridge.Port';ContentExtensionBridge.PING_MSG='ExtensionBridge.Ping';ContentExtensionBridge.PONG_MSG='ExtensionBridge.Pong';ContentExtensionBridge.MAX_PING_ATTEMPTS=5;ContentExtensionBridge.TIME_BETWEEN_PINGS_MS=500;ContentExtensionBridge.init();goog.provide('ScriptInstaller');ScriptInstaller.denylistPattern=/chrome:\/\/|chrome-extension:\/\//;ScriptInstaller.installScript=function(srcs,uid,opt_onload,opt_chromevoxScriptBase){if(ScriptInstaller.denylistPattern.test(document.URL)){return false;}

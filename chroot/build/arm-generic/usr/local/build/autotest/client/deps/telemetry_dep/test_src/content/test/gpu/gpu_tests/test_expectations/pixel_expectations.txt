@@ -303,7 +303,7 @@ crbug.com/1136875 [ fuchsia-board-qemu-x64 ] Pixel_PrecisionRoundedCorner [ Retr
 
 # Still fails on Nexus 5 after all other Pixel_CanvasLowLatency* pass.
 crbug.com/1097752 [ android android-nexus-5 ] Pixel_CanvasLowLatencyWebGLAlphaFalse [ Failure ]
-crbug.com/1097752 [ android android-nexus-5 ] Pixel_VideoStreamFromWebGLCanvas [ Failure ]
+crbug.com/1097752 [ android android-nexus-5 ] Pixel_VideoStreamFromWebGLAlphaCanvas [ Failure ]
 
 # Fails on Fuchsia emulators
 crbug.com/1302427 [ fuchsia-board-qemu-x64 ] Pixel_CanvasLowLatencyWebGLAlphaFalse [ Failure ]
@@ -331,9 +331,7 @@ crbug.com/1271184 [ linux display-server-wayland intel skia-renderer-gl ] Pixel_
 crbug.com/1215747 [ android android-pixel-4 skia-renderer-gl android-webview-instrumentation ] Pixel_OffscreenCanvasWebGLDefault [ RetryOnFailure ]
 crbug.com/1276605 [ android android-pixel-4 skia-renderer-gl android-webview-instrumentation ] Pixel_OffscreenCanvasTransferToImageBitmap [ RetryOnFailure ]
 
-# Pixel tests are flakily asserting in GPU process on SkiaRenderer/Vulkan
-crbug.com/1230743 [ linux skia-renderer-vulkan ] Pixel_* [ RetryOnFailure ]
-
+# Pixel tests failing to create SwapChains on SkiaRenderer/Vulkan
 crbug.com/1295079 [ linux skia-renderer-vulkan intel-0x5912 ] Pixel_CanvasDisplaySRGBAccelerated2D [ Failure ]
 
 # WebGPU pixel tests flakily hang in the metal shader compiler on Mac.
@@ -430,7 +428,14 @@ crbug.com/982292 [ mac release intel-0x3e9b ] Pixel_Video_MP4_FourColors_Rot_270
 # Flaking on Linux FYI Release (AMD RX 5500 XT)
 crbug.com/1340081 [ linux release amd-0x7340 ] Pixel_ScissorTestWithPreserveDrawingBuffer [ RetryOnFailure ]
 
-crbug.com/1345777 [ android ] Pixel_VideoStreamFromWebGLAlphaCanvas [ Skip ]
+crbug.com/1345777 [ android ] Pixel_VideoStreamFromWebGLCanvas [ Skip ]
+
+# Pixel_VideoStreamFromWebGL* tests sporadically fail on Linux FYI Release (NVIDIA) bot
+crbug.com/1348002 [ linux nvidia ] Pixel_VideoStreamFromWebGLCanvas [ RetryOnFailure ]
+crbug.com/1348002 [ linux nvidia ] Pixel_VideoStreamFromWebGLAlphaCanvas [ Failure ]
+
+# Pixel_VideoStreamFromWebGLCanvas fails consistently on Linux FYI Release (AMD RX 500 XT)
+crbug.com/1348122 [ linux amd-0x7340 ] Pixel_VideoStreamFromWebGLCanvas [ Failure ]
 
 #######################################################################
 # Automated Entries After This Point - Do Not Manually Add Below Here #

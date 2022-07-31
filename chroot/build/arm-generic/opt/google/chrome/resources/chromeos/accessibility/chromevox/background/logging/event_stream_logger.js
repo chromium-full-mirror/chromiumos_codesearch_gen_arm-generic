@@ -6,6 +6,9 @@
  * @fileoverview Creates event stream logger.
  */
 
+import {BridgeConstants} from '../../common/bridge_constants.js';
+import {BridgeHelper} from '../../common/bridge_helper.js';
+
 import {LogStore} from './log_store.js';
 
 const AutomationEvent = chrome.automation.AutomationEvent;

@@ -7,6 +7,9 @@
  * the ChromeVox panel.
  */
 
+import {BridgeConstants} from './bridge_constants.js';
+import {BridgeHelper} from './bridge_helper.js';
+
 export class PanelBridge {
   /**
    * @param {!PanelNodeMenuItemData} itemData

@@ -8,6 +8,8 @@
  *     object and to facilitate mocking for tests.
  */
 import {CursorRange} from '../../common/cursors/range.js';
+import {BridgeConstants} from '../common/bridge_constants.js';
+import {BridgeHelper} from '../common/bridge_helper.js';
 
 import {TtsBackground} from './tts_background.js';
 import {UserActionMonitor} from './user_action_monitor.js';

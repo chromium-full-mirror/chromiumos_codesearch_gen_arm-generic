@@ -66,7 +66,10 @@ extension_harness_additional_script = r"""
 
 # For whatever reason, these tests don't like being run in parallel, so run them
 # serially.
-SERIAL_TESTS = {}
+SERIAL_TESTS = {
+    # crbug.com/1347970.
+    'conformance/textures/misc/texture-video-transparent.html',
+}
 
 SERIAL_TEST_GLOBS = {
     # crbug.com/1345466. Can be removed once OpenGL is no longer used on Mac.
@@ -74,6 +77,8 @@ SERIAL_TEST_GLOBS = {
     # crbug.com/1345782. Can be removed once OpenGL is no longer used on Mac.
     'deqp/functional/gles3/texturefiltering/*',
     'deqp/functional/gles3/texturespecification/*',
+    # crbug.com/1347970. Flaking for unknown reasons on Metal backend.
+    'deqp/functional/gles3/textureshadow/*',
 }
 
 

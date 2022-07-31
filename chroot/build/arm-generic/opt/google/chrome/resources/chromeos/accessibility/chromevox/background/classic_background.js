@@ -6,6 +6,8 @@
  * @fileoverview Script that runs on the background page.
  */
 import {AbstractTts} from '../common/abstract_tts.js';
+import {BridgeConstants} from '../common/bridge_constants.js';
+import {BridgeHelper} from '../common/bridge_helper.js';
 import {CompositeTts} from '../common/composite_tts.js';
 import {ExtensionBridge} from '../common/extension_bridge.js';
 import {Msgs} from '../common/msgs.js';
@@ -186,23 +188,8 @@ export class ChromeVoxBackground {
           });
         };
 
-        // There is a scenario where two copies of the content script can get
-        // loaded into the same tab on browser startup - one automatically and
-        // one because the background page injects the content script into every
-        // tab on startup. To work around potential bugs resulting from this,
-        // ChromeVox exports a global function called disableChromeVox() that
-        // can be used here to disable any existing running instance before we
-        // inject a new instance of the content script into this tab.
-        //
-        // It's harmless if there wasn't a copy of ChromeVox already running.
-        //
-        // Also, set some variables so that Closure deps work correctly and so
-        // that ChromeVox knows not to announce feedback as if a page just
-        // loaded.
-        executeScript(
-            'try { window.disableChromeVox(); } catch(e) { }\n' +
-            'window.INJECTED_AFTER_LOAD = true;\n' +
-            'window.CLOSURE_NO_DEPS = true\n');
+        // Set a variable so that Closure deps work correctly.
+        executeScript('window.CLOSURE_NO_DEPS = true');
 
         // Now inject the ChromeVox content script code into the tab.
         listOfFiles.forEach(file => executeScript(code[file]));

@@ -25,9 +25,6 @@
         "test_id_prefix": "ninja://third_party/abseil-cpp:absl_hardening_tests/"
       },
       {
-        "args": [
-          "angle_unittests"
-        ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_isolated_script_merge.py"
@@ -896,9 +893,6 @@
         "test_id_prefix": "ninja://third_party/abseil-cpp:absl_hardening_tests/"
       },
       {
-        "args": [
-          "angle_unittests"
-        ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_isolated_script_merge.py"
@@ -1840,7 +1834,6 @@
           ],
           "expiration": 36000,
           "hard_timeout": 10800,
-          "ignore_task_failure": false,
           "io_timeout": 3600,
           "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com",
           "shards": 10
@@ -1947,9 +1940,6 @@
         "test_id_prefix": "ninja://ui/accessibility:accessibility_unittests/"
       },
       {
-        "args": [
-          "angle_unittests"
-        ],
         "isolate_profile_data": true,
         "merge": {
           "args": [],
@@ -3536,6 +3526,29 @@
         "test_id_prefix": "ninja://:blink_python_tests/"
       },
       {
+        "isolate_name": "blink_pytype",
+        "isolate_profile_data": true,
+        "merge": {
+          "args": [],
+          "script": "//testing/merge_scripts/standard_isolated_script_merge.py"
+        },
+        "name": "blink_pytype",
+        "resultdb": {
+          "enable": true,
+          "has_native_resultdb_integration": true
+        },
+        "swarming": {
+          "can_use_on_swarming_builders": true,
+          "dimension_sets": [
+            {
+              "os": "Ubuntu-18.04"
+            }
+          ],
+          "service_account": "chromium-tester@chops-service-accounts.iam.gserviceaccount.com"
+        },
+        "test_id_prefix": "ninja://third_party/blink/tools:blink_pytype/"
+      },
+      {
         "args": [
           "--num-retries=3",
           "--git-revision=${got_revision}",
@@ -4179,7 +4192,6 @@
       },
       {
         "args": [
-          "angle_unittests",
           "--no-xvfb",
           "--use-weston",
           "--ozone-platform=wayland"
@@ -6055,9 +6067,6 @@
         "test_id_prefix": "ninja://ui/accessibility:accessibility_unittests/"
       },
       {
-        "args": [
-          "angle_unittests"
-        ],
         "merge": {
           "args": [],
           "script": "//testing/merge_scripts/standard_isolated_script_merge.py"
