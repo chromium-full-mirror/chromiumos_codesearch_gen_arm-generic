@@ -524,15 +524,15 @@ build_time_vars = {'ABIFLAGS': '',
                    '/usr/include/python3.8',
  'INCLUDEDIR': '/usr/include',
  'INCLUDEPY': '/usr/include/python3.8',
- 'INSTALL': '/var/tmp/portage/._portage_reinstall_.b0jbh63y/bin/ebuild-helpers/xattr/install '
+ 'INSTALL': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
             '-c',
- 'INSTALL_DATA': '/var/tmp/portage/._portage_reinstall_.b0jbh63y/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_DATA': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
                  '-c -m 644',
- 'INSTALL_PROGRAM': '/var/tmp/portage/._portage_reinstall_.b0jbh63y/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_PROGRAM': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
                     '-c',
- 'INSTALL_SCRIPT': '/var/tmp/portage/._portage_reinstall_.b0jbh63y/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_SCRIPT': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
                    '-c',
- 'INSTALL_SHARED': '/var/tmp/portage/._portage_reinstall_.b0jbh63y/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_SHARED': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
                    '-c -m 755',
  'INSTSONAME': 'libpython3.8.so.1.0',
  'IO_H': 'Modules/_io/_iomodule.h',
@@ -633,7 +633,7 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHONFRAMEWORKPREFIX': '',
  'PYTHONPATH': '',
  'PYTHON_FOR_BUILD': './python -E',
- 'PYTHON_FOR_REGEN': 'python3',
+ 'PYTHON_FOR_REGEN': 'python3.8',
  'PYTHON_HEADERS': '\\',
  'PYTHON_OBJS': '\\',
  'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare '
@@ -733,7 +733,7 @@ build_time_vars = {'ABIFLAGS': '',
  'TM_IN_SYS_TIME': 0,
  'UNICODE_DEPS': '\\',
  'UNIVERSALSDK': '',
- 'UPDATE_FILE': 'python3 ./Tools/scripts/update_file.py',
+ 'UPDATE_FILE': 'python3.8 ./Tools/scripts/update_file.py',
  'USE_COMPUTED_GOTOS': 1,
  'VERSION': '3.8',
  'WINDOW_HAS_FLAGS': 1,

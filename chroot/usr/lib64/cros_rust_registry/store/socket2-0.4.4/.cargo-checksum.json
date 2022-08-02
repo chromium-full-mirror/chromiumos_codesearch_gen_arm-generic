@@ -1,16 +1,16 @@
 {
 	"package": "6a7bc4c4847621eb95ebf324ddde16ca7839fcd7abddac968c31f8dc654b9e2a",
 	"files": {
-		"Cargo.toml.orig": "eb8d5820a9c651d610d536a987f2fcbace797cb789a6c7e59817838cf7f8c656",
-		"Cargo.toml": "c7b1fd6afabd38504c1661b498118ec4b39d9da6928862779c762b74b4938f5f",
-		"src/lib.rs": "b4409a10c9b4c1e16f20cc4b6cd087ad5fa0ec8fc701653bc93fedeb158583d2",
-		"src/sys/unix.rs": "b784e64a55ce666d8b3c8e30949b6d4965d6961c1bb964017f7fc54c109b7ad7",
+		"README.md": "b870d442505bc8047b641815c8283f29fc213dcfd1331894802e6ae55cc09f1b",
+		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
 		"src/sys/windows.rs": "85840bf5c99fc984c9126cebfb065caefa7a8158b1c6bbc1d876f347187eefdb",
-		"src/sockaddr.rs": "bed988fb306072fdb67718f3a215180d18f78f32321fecf64797f4c1d6bc7d84",
+		"src/sys/unix.rs": "b784e64a55ce666d8b3c8e30949b6d4965d6961c1bb964017f7fc54c109b7ad7",
 		"src/sockref.rs": "02de263cce039aaddaee5d6c2bb3940bdfae5697a3fc9df47d226fb3cac03cd9",
 		"src/socket.rs": "2beb154dfbadeb79408d987d074acd4a8daaf28e2dcadac0357e2d4fd4be7526",
-		"README.md": "b870d442505bc8047b641815c8283f29fc213dcfd1331894802e6ae55cc09f1b",
+		"src/sockaddr.rs": "bed988fb306072fdb67718f3a215180d18f78f32321fecf64797f4c1d6bc7d84",
+		"src/lib.rs": "b4409a10c9b4c1e16f20cc4b6cd087ad5fa0ec8fc701653bc93fedeb158583d2",
 		"LICENSE-MIT": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
-		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+		"Cargo.toml": "c7b1fd6afabd38504c1661b498118ec4b39d9da6928862779c762b74b4938f5f",
+		"Cargo.toml.orig": "eb8d5820a9c651d610d536a987f2fcbace797cb789a6c7e59817838cf7f8c656"
 	}
 }
