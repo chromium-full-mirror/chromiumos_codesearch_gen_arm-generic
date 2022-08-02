@@ -2,9 +2,9 @@
 	"package": "1f940d305fb890c2fa8da0168f68a4f9357e130a5a9a7418b72aea43bdd6eb01",
 	"files": {
 		"build.rs": "75cd7cbf278f89ef8e20942e45a91de705dbcfff7cc98b5ec60c2df9ea13ae33",
-		"crossystem.h": "4d375a311e27424749faccb32bc88a9b3f75f565489d6ea7b0d729f0fb0af791",
 		"Cargo.toml": "03f65351fc527009aaab5d4e9e4863b333e1c759c0423521530cd8e6155ab8e6",
-		"Cargo.toml.orig": "1e9cc8897ef9a1eae15d4ec1d17bfa1e0a413129492fd9f6d263fd2af5742e3d",
-		"lib.rs": "959c81703636370b7a8f3f21cbc9cfd32ffaa8d6d58485c940f0d5ebdede06ed"
+		"crossystem.h": "4d375a311e27424749faccb32bc88a9b3f75f565489d6ea7b0d729f0fb0af791",
+		"lib.rs": "959c81703636370b7a8f3f21cbc9cfd32ffaa8d6d58485c940f0d5ebdede06ed",
+		"Cargo.toml.orig": "1e9cc8897ef9a1eae15d4ec1d17bfa1e0a413129492fd9f6d263fd2af5742e3d"
 	}
 }

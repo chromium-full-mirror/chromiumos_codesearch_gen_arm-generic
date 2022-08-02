@@ -45,31 +45,39 @@ struct TableStruct_ipc_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
   static const uint32_t offsets[];
 };
 namespace patchpanel {
+class ControlMessage;
+struct ControlMessageDefaultTypeInternal;
+extern ControlMessageDefaultTypeInternal _ControlMessage_default_instance_;
 class DeviceMessage;
 struct DeviceMessageDefaultTypeInternal;
 extern DeviceMessageDefaultTypeInternal _DeviceMessage_default_instance_;
+class FeedbackMessage;
+struct FeedbackMessageDefaultTypeInternal;
+extern FeedbackMessageDefaultTypeInternal _FeedbackMessage_default_instance_;
 class GuestMessage;
 struct GuestMessageDefaultTypeInternal;
 extern GuestMessageDefaultTypeInternal _GuestMessage_default_instance_;
-class IpHelperMessage;
-struct IpHelperMessageDefaultTypeInternal;
-extern IpHelperMessageDefaultTypeInternal _IpHelperMessage_default_instance_;
 class NDProxyMessage;
 struct NDProxyMessageDefaultTypeInternal;
 extern NDProxyMessageDefaultTypeInternal _NDProxyMessage_default_instance_;
+class SubprocessMessage;
+struct SubprocessMessageDefaultTypeInternal;
+extern SubprocessMessageDefaultTypeInternal _SubprocessMessage_default_instance_;
 }  // namespace patchpanel
 PROTOBUF_NAMESPACE_OPEN
+template<> ::patchpanel::ControlMessage* Arena::CreateMaybeMessage<::patchpanel::ControlMessage>(Arena*);
 template<> ::patchpanel::DeviceMessage* Arena::CreateMaybeMessage<::patchpanel::DeviceMessage>(Arena*);
+template<> ::patchpanel::FeedbackMessage* Arena::CreateMaybeMessage<::patchpanel::FeedbackMessage>(Arena*);
 template<> ::patchpanel::GuestMessage* Arena::CreateMaybeMessage<::patchpanel::GuestMessage>(Arena*);
-template<> ::patchpanel::IpHelperMessage* Arena::CreateMaybeMessage<::patchpanel::IpHelperMessage>(Arena*);
 template<> ::patchpanel::NDProxyMessage* Arena::CreateMaybeMessage<::patchpanel::NDProxyMessage>(Arena*);
+template<> ::patchpanel::SubprocessMessage* Arena::CreateMaybeMessage<::patchpanel::SubprocessMessage>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace patchpanel {
 
@@ -138,6 +146,539 @@ bool NDProxyMessage_NDProxyEventType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, NDProxyMessage_NDProxyEventType* value);
 // ===================================================================
 
+class SubprocessMessage final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.SubprocessMessage) */ {
+ public:
+  inline SubprocessMessage() : SubprocessMessage(nullptr) {}
+  ~SubprocessMessage() override;
+  explicit constexpr SubprocessMessage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SubprocessMessage(const SubprocessMessage& from);
+  SubprocessMessage(SubprocessMessage&& from) noexcept
+    : SubprocessMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline SubprocessMessage& operator=(const SubprocessMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubprocessMessage& operator=(SubprocessMessage&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const SubprocessMessage& default_instance() {
+    return *internal_default_instance();
+  }
+  enum MessageTypeCase {
+    kControlMessage = 1,
+    kFeedbackMessage = 2,
+    MESSAGE_TYPE_NOT_SET = 0,
+  };
+
+  static inline const SubprocessMessage* internal_default_instance() {
+    return reinterpret_cast<const SubprocessMessage*>(
+               &_SubprocessMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(SubprocessMessage& a, SubprocessMessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SubprocessMessage* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubprocessMessage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SubprocessMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SubprocessMessage>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SubprocessMessage& from);
+  void MergeFrom(const SubprocessMessage& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SubprocessMessage* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "patchpanel.SubprocessMessage";
+  }
+  protected:
+  explicit SubprocessMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kControlMessageFieldNumber = 1,
+    kFeedbackMessageFieldNumber = 2,
+  };
+  // .patchpanel.ControlMessage control_message = 1;
+  bool has_control_message() const;
+  private:
+  bool _internal_has_control_message() const;
+  public:
+  void clear_control_message();
+  const ::patchpanel::ControlMessage& control_message() const;
+  PROTOBUF_NODISCARD ::patchpanel::ControlMessage* release_control_message();
+  ::patchpanel::ControlMessage* mutable_control_message();
+  void set_allocated_control_message(::patchpanel::ControlMessage* control_message);
+  private:
+  const ::patchpanel::ControlMessage& _internal_control_message() const;
+  ::patchpanel::ControlMessage* _internal_mutable_control_message();
+  public:
+  void unsafe_arena_set_allocated_control_message(
+      ::patchpanel::ControlMessage* control_message);
+  ::patchpanel::ControlMessage* unsafe_arena_release_control_message();
+
+  // .patchpanel.FeedbackMessage feedback_message = 2;
+  bool has_feedback_message() const;
+  private:
+  bool _internal_has_feedback_message() const;
+  public:
+  void clear_feedback_message();
+  const ::patchpanel::FeedbackMessage& feedback_message() const;
+  PROTOBUF_NODISCARD ::patchpanel::FeedbackMessage* release_feedback_message();
+  ::patchpanel::FeedbackMessage* mutable_feedback_message();
+  void set_allocated_feedback_message(::patchpanel::FeedbackMessage* feedback_message);
+  private:
+  const ::patchpanel::FeedbackMessage& _internal_feedback_message() const;
+  ::patchpanel::FeedbackMessage* _internal_mutable_feedback_message();
+  public:
+  void unsafe_arena_set_allocated_feedback_message(
+      ::patchpanel::FeedbackMessage* feedback_message);
+  ::patchpanel::FeedbackMessage* unsafe_arena_release_feedback_message();
+
+  void clear_message_type();
+  MessageTypeCase message_type_case() const;
+  // @@protoc_insertion_point(class_scope:patchpanel.SubprocessMessage)
+ private:
+  class _Internal;
+  void set_has_control_message();
+  void set_has_feedback_message();
+
+  inline bool has_message_type() const;
+  inline void clear_has_message_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union MessageTypeUnion {
+    constexpr MessageTypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::patchpanel::ControlMessage* control_message_;
+    ::patchpanel::FeedbackMessage* feedback_message_;
+  } message_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_ipc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ControlMessage final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.ControlMessage) */ {
+ public:
+  inline ControlMessage() : ControlMessage(nullptr) {}
+  ~ControlMessage() override;
+  explicit constexpr ControlMessage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ControlMessage(const ControlMessage& from);
+  ControlMessage(ControlMessage&& from) noexcept
+    : ControlMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline ControlMessage& operator=(const ControlMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ControlMessage& operator=(ControlMessage&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const ControlMessage& default_instance() {
+    return *internal_default_instance();
+  }
+  enum MessageTypeCase {
+    kGuestMessage = 1,
+    kDeviceMessage = 2,
+    MESSAGE_TYPE_NOT_SET = 0,
+  };
+
+  static inline const ControlMessage* internal_default_instance() {
+    return reinterpret_cast<const ControlMessage*>(
+               &_ControlMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(ControlMessage& a, ControlMessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ControlMessage* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ControlMessage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ControlMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ControlMessage>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const ControlMessage& from);
+  void MergeFrom(const ControlMessage& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ControlMessage* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "patchpanel.ControlMessage";
+  }
+  protected:
+  explicit ControlMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGuestMessageFieldNumber = 1,
+    kDeviceMessageFieldNumber = 2,
+  };
+  // .patchpanel.GuestMessage guest_message = 1;
+  bool has_guest_message() const;
+  private:
+  bool _internal_has_guest_message() const;
+  public:
+  void clear_guest_message();
+  const ::patchpanel::GuestMessage& guest_message() const;
+  PROTOBUF_NODISCARD ::patchpanel::GuestMessage* release_guest_message();
+  ::patchpanel::GuestMessage* mutable_guest_message();
+  void set_allocated_guest_message(::patchpanel::GuestMessage* guest_message);
+  private:
+  const ::patchpanel::GuestMessage& _internal_guest_message() const;
+  ::patchpanel::GuestMessage* _internal_mutable_guest_message();
+  public:
+  void unsafe_arena_set_allocated_guest_message(
+      ::patchpanel::GuestMessage* guest_message);
+  ::patchpanel::GuestMessage* unsafe_arena_release_guest_message();
+
+  // .patchpanel.DeviceMessage device_message = 2;
+  bool has_device_message() const;
+  private:
+  bool _internal_has_device_message() const;
+  public:
+  void clear_device_message();
+  const ::patchpanel::DeviceMessage& device_message() const;
+  PROTOBUF_NODISCARD ::patchpanel::DeviceMessage* release_device_message();
+  ::patchpanel::DeviceMessage* mutable_device_message();
+  void set_allocated_device_message(::patchpanel::DeviceMessage* device_message);
+  private:
+  const ::patchpanel::DeviceMessage& _internal_device_message() const;
+  ::patchpanel::DeviceMessage* _internal_mutable_device_message();
+  public:
+  void unsafe_arena_set_allocated_device_message(
+      ::patchpanel::DeviceMessage* device_message);
+  ::patchpanel::DeviceMessage* unsafe_arena_release_device_message();
+
+  void clear_message_type();
+  MessageTypeCase message_type_case() const;
+  // @@protoc_insertion_point(class_scope:patchpanel.ControlMessage)
+ private:
+  class _Internal;
+  void set_has_guest_message();
+  void set_has_device_message();
+
+  inline bool has_message_type() const;
+  inline void clear_has_message_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union MessageTypeUnion {
+    constexpr MessageTypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::patchpanel::GuestMessage* guest_message_;
+    ::patchpanel::DeviceMessage* device_message_;
+  } message_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_ipc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FeedbackMessage final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.FeedbackMessage) */ {
+ public:
+  inline FeedbackMessage() : FeedbackMessage(nullptr) {}
+  ~FeedbackMessage() override;
+  explicit constexpr FeedbackMessage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FeedbackMessage(const FeedbackMessage& from);
+  FeedbackMessage(FeedbackMessage&& from) noexcept
+    : FeedbackMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline FeedbackMessage& operator=(const FeedbackMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FeedbackMessage& operator=(FeedbackMessage&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const FeedbackMessage& default_instance() {
+    return *internal_default_instance();
+  }
+  enum MessageTypeCase {
+    kNdproxyMessage = 1,
+    MESSAGE_TYPE_NOT_SET = 0,
+  };
+
+  static inline const FeedbackMessage* internal_default_instance() {
+    return reinterpret_cast<const FeedbackMessage*>(
+               &_FeedbackMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(FeedbackMessage& a, FeedbackMessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FeedbackMessage* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FeedbackMessage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FeedbackMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FeedbackMessage>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const FeedbackMessage& from);
+  void MergeFrom(const FeedbackMessage& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(FeedbackMessage* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "patchpanel.FeedbackMessage";
+  }
+  protected:
+  explicit FeedbackMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNdproxyMessageFieldNumber = 1,
+  };
+  // .patchpanel.NDProxyMessage ndproxy_message = 1;
+  bool has_ndproxy_message() const;
+  private:
+  bool _internal_has_ndproxy_message() const;
+  public:
+  void clear_ndproxy_message();
+  const ::patchpanel::NDProxyMessage& ndproxy_message() const;
+  PROTOBUF_NODISCARD ::patchpanel::NDProxyMessage* release_ndproxy_message();
+  ::patchpanel::NDProxyMessage* mutable_ndproxy_message();
+  void set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message);
+  private:
+  const ::patchpanel::NDProxyMessage& _internal_ndproxy_message() const;
+  ::patchpanel::NDProxyMessage* _internal_mutable_ndproxy_message();
+  public:
+  void unsafe_arena_set_allocated_ndproxy_message(
+      ::patchpanel::NDProxyMessage* ndproxy_message);
+  ::patchpanel::NDProxyMessage* unsafe_arena_release_ndproxy_message();
+
+  void clear_message_type();
+  MessageTypeCase message_type_case() const;
+  // @@protoc_insertion_point(class_scope:patchpanel.FeedbackMessage)
+ private:
+  class _Internal;
+  void set_has_ndproxy_message();
+
+  inline bool has_message_type() const;
+  inline void clear_has_message_type();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union MessageTypeUnion {
+    constexpr MessageTypeUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::patchpanel::NDProxyMessage* ndproxy_message_;
+  } message_type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_ipc_2eproto;
+};
+// -------------------------------------------------------------------
+
 class DeviceMessage final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.DeviceMessage) */ {
  public:
@@ -184,7 +725,7 @@ class DeviceMessage final :
                &_DeviceMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    3;
 
   friend void swap(DeviceMessage& a, DeviceMessage& b) {
     a.Swap(&b);
@@ -381,7 +922,7 @@ class GuestMessage final :
                &_GuestMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    4;
 
   friend void swap(GuestMessage& a, GuestMessage& b) {
     a.Swap(&b);
@@ -631,7 +1172,7 @@ class NDProxyMessage final :
                &_NDProxyMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    5;
 
   friend void swap(NDProxyMessage& a, NDProxyMessage& b) {
     a.Swap(&b);
@@ -798,213 +1339,6 @@ class NDProxyMessage final :
   int type_;
   friend struct ::TableStruct_ipc_2eproto;
 };
-// -------------------------------------------------------------------
-
-class IpHelperMessage final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:patchpanel.IpHelperMessage) */ {
- public:
-  inline IpHelperMessage() : IpHelperMessage(nullptr) {}
-  ~IpHelperMessage() override;
-  explicit constexpr IpHelperMessage(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  IpHelperMessage(const IpHelperMessage& from);
-  IpHelperMessage(IpHelperMessage&& from) noexcept
-    : IpHelperMessage() {
-    *this = ::std::move(from);
-  }
-
-  inline IpHelperMessage& operator=(const IpHelperMessage& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline IpHelperMessage& operator=(IpHelperMessage&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const std::string& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
-  }
-  inline std::string* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<std::string>();
-  }
-
-  static const IpHelperMessage& default_instance() {
-    return *internal_default_instance();
-  }
-  enum MessageTypeCase {
-    kGuestMessage = 1,
-    kDeviceMessage = 2,
-    kNdproxyMessage = 3,
-    MESSAGE_TYPE_NOT_SET = 0,
-  };
-
-  static inline const IpHelperMessage* internal_default_instance() {
-    return reinterpret_cast<const IpHelperMessage*>(
-               &_IpHelperMessage_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(IpHelperMessage& a, IpHelperMessage& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(IpHelperMessage* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(IpHelperMessage* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  IpHelperMessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IpHelperMessage>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const IpHelperMessage& from);
-  void MergeFrom(const IpHelperMessage& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(IpHelperMessage* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "patchpanel.IpHelperMessage";
-  }
-  protected:
-  explicit IpHelperMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kGuestMessageFieldNumber = 1,
-    kDeviceMessageFieldNumber = 2,
-    kNdproxyMessageFieldNumber = 3,
-  };
-  // .patchpanel.GuestMessage guest_message = 1;
-  bool has_guest_message() const;
-  private:
-  bool _internal_has_guest_message() const;
-  public:
-  void clear_guest_message();
-  const ::patchpanel::GuestMessage& guest_message() const;
-  PROTOBUF_NODISCARD ::patchpanel::GuestMessage* release_guest_message();
-  ::patchpanel::GuestMessage* mutable_guest_message();
-  void set_allocated_guest_message(::patchpanel::GuestMessage* guest_message);
-  private:
-  const ::patchpanel::GuestMessage& _internal_guest_message() const;
-  ::patchpanel::GuestMessage* _internal_mutable_guest_message();
-  public:
-  void unsafe_arena_set_allocated_guest_message(
-      ::patchpanel::GuestMessage* guest_message);
-  ::patchpanel::GuestMessage* unsafe_arena_release_guest_message();
-
-  // .patchpanel.DeviceMessage device_message = 2;
-  bool has_device_message() const;
-  private:
-  bool _internal_has_device_message() const;
-  public:
-  void clear_device_message();
-  const ::patchpanel::DeviceMessage& device_message() const;
-  PROTOBUF_NODISCARD ::patchpanel::DeviceMessage* release_device_message();
-  ::patchpanel::DeviceMessage* mutable_device_message();
-  void set_allocated_device_message(::patchpanel::DeviceMessage* device_message);
-  private:
-  const ::patchpanel::DeviceMessage& _internal_device_message() const;
-  ::patchpanel::DeviceMessage* _internal_mutable_device_message();
-  public:
-  void unsafe_arena_set_allocated_device_message(
-      ::patchpanel::DeviceMessage* device_message);
-  ::patchpanel::DeviceMessage* unsafe_arena_release_device_message();
-
-  // .patchpanel.NDProxyMessage ndproxy_message = 3;
-  bool has_ndproxy_message() const;
-  private:
-  bool _internal_has_ndproxy_message() const;
-  public:
-  void clear_ndproxy_message();
-  const ::patchpanel::NDProxyMessage& ndproxy_message() const;
-  PROTOBUF_NODISCARD ::patchpanel::NDProxyMessage* release_ndproxy_message();
-  ::patchpanel::NDProxyMessage* mutable_ndproxy_message();
-  void set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message);
-  private:
-  const ::patchpanel::NDProxyMessage& _internal_ndproxy_message() const;
-  ::patchpanel::NDProxyMessage* _internal_mutable_ndproxy_message();
-  public:
-  void unsafe_arena_set_allocated_ndproxy_message(
-      ::patchpanel::NDProxyMessage* ndproxy_message);
-  ::patchpanel::NDProxyMessage* unsafe_arena_release_ndproxy_message();
-
-  void clear_message_type();
-  MessageTypeCase message_type_case() const;
-  // @@protoc_insertion_point(class_scope:patchpanel.IpHelperMessage)
- private:
-  class _Internal;
-  void set_has_guest_message();
-  void set_has_device_message();
-  void set_has_ndproxy_message();
-
-  inline bool has_message_type() const;
-  inline void clear_has_message_type();
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  union MessageTypeUnion {
-    constexpr MessageTypeUnion() : _constinit_{} {}
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::patchpanel::GuestMessage* guest_message_;
-    ::patchpanel::DeviceMessage* device_message_;
-    ::patchpanel::NDProxyMessage* ndproxy_message_;
-  } message_type_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  uint32_t _oneof_case_[1];
-
-  friend struct ::TableStruct_ipc_2eproto;
-};
 // ===================================================================
 
 
@@ -1014,6 +1348,415 @@ class IpHelperMessage final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// SubprocessMessage
+
+// .patchpanel.ControlMessage control_message = 1;
+inline bool SubprocessMessage::_internal_has_control_message() const {
+  return message_type_case() == kControlMessage;
+}
+inline bool SubprocessMessage::has_control_message() const {
+  return _internal_has_control_message();
+}
+inline void SubprocessMessage::set_has_control_message() {
+  _oneof_case_[0] = kControlMessage;
+}
+inline void SubprocessMessage::clear_control_message() {
+  if (_internal_has_control_message()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete message_type_.control_message_;
+    }
+    clear_has_message_type();
+  }
+}
+inline ::patchpanel::ControlMessage* SubprocessMessage::release_control_message() {
+  // @@protoc_insertion_point(field_release:patchpanel.SubprocessMessage.control_message)
+  if (_internal_has_control_message()) {
+    clear_has_message_type();
+      ::patchpanel::ControlMessage* temp = message_type_.control_message_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    message_type_.control_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::patchpanel::ControlMessage& SubprocessMessage::_internal_control_message() const {
+  return _internal_has_control_message()
+      ? *message_type_.control_message_
+      : reinterpret_cast< ::patchpanel::ControlMessage&>(::patchpanel::_ControlMessage_default_instance_);
+}
+inline const ::patchpanel::ControlMessage& SubprocessMessage::control_message() const {
+  // @@protoc_insertion_point(field_get:patchpanel.SubprocessMessage.control_message)
+  return _internal_control_message();
+}
+inline ::patchpanel::ControlMessage* SubprocessMessage::unsafe_arena_release_control_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.SubprocessMessage.control_message)
+  if (_internal_has_control_message()) {
+    clear_has_message_type();
+    ::patchpanel::ControlMessage* temp = message_type_.control_message_;
+    message_type_.control_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void SubprocessMessage::unsafe_arena_set_allocated_control_message(::patchpanel::ControlMessage* control_message) {
+  clear_message_type();
+  if (control_message) {
+    set_has_control_message();
+    message_type_.control_message_ = control_message;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.SubprocessMessage.control_message)
+}
+inline ::patchpanel::ControlMessage* SubprocessMessage::_internal_mutable_control_message() {
+  if (!_internal_has_control_message()) {
+    clear_message_type();
+    set_has_control_message();
+    message_type_.control_message_ = CreateMaybeMessage< ::patchpanel::ControlMessage >(GetArenaForAllocation());
+  }
+  return message_type_.control_message_;
+}
+inline ::patchpanel::ControlMessage* SubprocessMessage::mutable_control_message() {
+  ::patchpanel::ControlMessage* _msg = _internal_mutable_control_message();
+  // @@protoc_insertion_point(field_mutable:patchpanel.SubprocessMessage.control_message)
+  return _msg;
+}
+
+// .patchpanel.FeedbackMessage feedback_message = 2;
+inline bool SubprocessMessage::_internal_has_feedback_message() const {
+  return message_type_case() == kFeedbackMessage;
+}
+inline bool SubprocessMessage::has_feedback_message() const {
+  return _internal_has_feedback_message();
+}
+inline void SubprocessMessage::set_has_feedback_message() {
+  _oneof_case_[0] = kFeedbackMessage;
+}
+inline void SubprocessMessage::clear_feedback_message() {
+  if (_internal_has_feedback_message()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete message_type_.feedback_message_;
+    }
+    clear_has_message_type();
+  }
+}
+inline ::patchpanel::FeedbackMessage* SubprocessMessage::release_feedback_message() {
+  // @@protoc_insertion_point(field_release:patchpanel.SubprocessMessage.feedback_message)
+  if (_internal_has_feedback_message()) {
+    clear_has_message_type();
+      ::patchpanel::FeedbackMessage* temp = message_type_.feedback_message_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    message_type_.feedback_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::patchpanel::FeedbackMessage& SubprocessMessage::_internal_feedback_message() const {
+  return _internal_has_feedback_message()
+      ? *message_type_.feedback_message_
+      : reinterpret_cast< ::patchpanel::FeedbackMessage&>(::patchpanel::_FeedbackMessage_default_instance_);
+}
+inline const ::patchpanel::FeedbackMessage& SubprocessMessage::feedback_message() const {
+  // @@protoc_insertion_point(field_get:patchpanel.SubprocessMessage.feedback_message)
+  return _internal_feedback_message();
+}
+inline ::patchpanel::FeedbackMessage* SubprocessMessage::unsafe_arena_release_feedback_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.SubprocessMessage.feedback_message)
+  if (_internal_has_feedback_message()) {
+    clear_has_message_type();
+    ::patchpanel::FeedbackMessage* temp = message_type_.feedback_message_;
+    message_type_.feedback_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void SubprocessMessage::unsafe_arena_set_allocated_feedback_message(::patchpanel::FeedbackMessage* feedback_message) {
+  clear_message_type();
+  if (feedback_message) {
+    set_has_feedback_message();
+    message_type_.feedback_message_ = feedback_message;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.SubprocessMessage.feedback_message)
+}
+inline ::patchpanel::FeedbackMessage* SubprocessMessage::_internal_mutable_feedback_message() {
+  if (!_internal_has_feedback_message()) {
+    clear_message_type();
+    set_has_feedback_message();
+    message_type_.feedback_message_ = CreateMaybeMessage< ::patchpanel::FeedbackMessage >(GetArenaForAllocation());
+  }
+  return message_type_.feedback_message_;
+}
+inline ::patchpanel::FeedbackMessage* SubprocessMessage::mutable_feedback_message() {
+  ::patchpanel::FeedbackMessage* _msg = _internal_mutable_feedback_message();
+  // @@protoc_insertion_point(field_mutable:patchpanel.SubprocessMessage.feedback_message)
+  return _msg;
+}
+
+inline bool SubprocessMessage::has_message_type() const {
+  return message_type_case() != MESSAGE_TYPE_NOT_SET;
+}
+inline void SubprocessMessage::clear_has_message_type() {
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+inline SubprocessMessage::MessageTypeCase SubprocessMessage::message_type_case() const {
+  return SubprocessMessage::MessageTypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// ControlMessage
+
+// .patchpanel.GuestMessage guest_message = 1;
+inline bool ControlMessage::_internal_has_guest_message() const {
+  return message_type_case() == kGuestMessage;
+}
+inline bool ControlMessage::has_guest_message() const {
+  return _internal_has_guest_message();
+}
+inline void ControlMessage::set_has_guest_message() {
+  _oneof_case_[0] = kGuestMessage;
+}
+inline void ControlMessage::clear_guest_message() {
+  if (_internal_has_guest_message()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete message_type_.guest_message_;
+    }
+    clear_has_message_type();
+  }
+}
+inline ::patchpanel::GuestMessage* ControlMessage::release_guest_message() {
+  // @@protoc_insertion_point(field_release:patchpanel.ControlMessage.guest_message)
+  if (_internal_has_guest_message()) {
+    clear_has_message_type();
+      ::patchpanel::GuestMessage* temp = message_type_.guest_message_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    message_type_.guest_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::patchpanel::GuestMessage& ControlMessage::_internal_guest_message() const {
+  return _internal_has_guest_message()
+      ? *message_type_.guest_message_
+      : reinterpret_cast< ::patchpanel::GuestMessage&>(::patchpanel::_GuestMessage_default_instance_);
+}
+inline const ::patchpanel::GuestMessage& ControlMessage::guest_message() const {
+  // @@protoc_insertion_point(field_get:patchpanel.ControlMessage.guest_message)
+  return _internal_guest_message();
+}
+inline ::patchpanel::GuestMessage* ControlMessage::unsafe_arena_release_guest_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.ControlMessage.guest_message)
+  if (_internal_has_guest_message()) {
+    clear_has_message_type();
+    ::patchpanel::GuestMessage* temp = message_type_.guest_message_;
+    message_type_.guest_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ControlMessage::unsafe_arena_set_allocated_guest_message(::patchpanel::GuestMessage* guest_message) {
+  clear_message_type();
+  if (guest_message) {
+    set_has_guest_message();
+    message_type_.guest_message_ = guest_message;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.ControlMessage.guest_message)
+}
+inline ::patchpanel::GuestMessage* ControlMessage::_internal_mutable_guest_message() {
+  if (!_internal_has_guest_message()) {
+    clear_message_type();
+    set_has_guest_message();
+    message_type_.guest_message_ = CreateMaybeMessage< ::patchpanel::GuestMessage >(GetArenaForAllocation());
+  }
+  return message_type_.guest_message_;
+}
+inline ::patchpanel::GuestMessage* ControlMessage::mutable_guest_message() {
+  ::patchpanel::GuestMessage* _msg = _internal_mutable_guest_message();
+  // @@protoc_insertion_point(field_mutable:patchpanel.ControlMessage.guest_message)
+  return _msg;
+}
+
+// .patchpanel.DeviceMessage device_message = 2;
+inline bool ControlMessage::_internal_has_device_message() const {
+  return message_type_case() == kDeviceMessage;
+}
+inline bool ControlMessage::has_device_message() const {
+  return _internal_has_device_message();
+}
+inline void ControlMessage::set_has_device_message() {
+  _oneof_case_[0] = kDeviceMessage;
+}
+inline void ControlMessage::clear_device_message() {
+  if (_internal_has_device_message()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete message_type_.device_message_;
+    }
+    clear_has_message_type();
+  }
+}
+inline ::patchpanel::DeviceMessage* ControlMessage::release_device_message() {
+  // @@protoc_insertion_point(field_release:patchpanel.ControlMessage.device_message)
+  if (_internal_has_device_message()) {
+    clear_has_message_type();
+      ::patchpanel::DeviceMessage* temp = message_type_.device_message_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    message_type_.device_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::patchpanel::DeviceMessage& ControlMessage::_internal_device_message() const {
+  return _internal_has_device_message()
+      ? *message_type_.device_message_
+      : reinterpret_cast< ::patchpanel::DeviceMessage&>(::patchpanel::_DeviceMessage_default_instance_);
+}
+inline const ::patchpanel::DeviceMessage& ControlMessage::device_message() const {
+  // @@protoc_insertion_point(field_get:patchpanel.ControlMessage.device_message)
+  return _internal_device_message();
+}
+inline ::patchpanel::DeviceMessage* ControlMessage::unsafe_arena_release_device_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.ControlMessage.device_message)
+  if (_internal_has_device_message()) {
+    clear_has_message_type();
+    ::patchpanel::DeviceMessage* temp = message_type_.device_message_;
+    message_type_.device_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ControlMessage::unsafe_arena_set_allocated_device_message(::patchpanel::DeviceMessage* device_message) {
+  clear_message_type();
+  if (device_message) {
+    set_has_device_message();
+    message_type_.device_message_ = device_message;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.ControlMessage.device_message)
+}
+inline ::patchpanel::DeviceMessage* ControlMessage::_internal_mutable_device_message() {
+  if (!_internal_has_device_message()) {
+    clear_message_type();
+    set_has_device_message();
+    message_type_.device_message_ = CreateMaybeMessage< ::patchpanel::DeviceMessage >(GetArenaForAllocation());
+  }
+  return message_type_.device_message_;
+}
+inline ::patchpanel::DeviceMessage* ControlMessage::mutable_device_message() {
+  ::patchpanel::DeviceMessage* _msg = _internal_mutable_device_message();
+  // @@protoc_insertion_point(field_mutable:patchpanel.ControlMessage.device_message)
+  return _msg;
+}
+
+inline bool ControlMessage::has_message_type() const {
+  return message_type_case() != MESSAGE_TYPE_NOT_SET;
+}
+inline void ControlMessage::clear_has_message_type() {
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+inline ControlMessage::MessageTypeCase ControlMessage::message_type_case() const {
+  return ControlMessage::MessageTypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// FeedbackMessage
+
+// .patchpanel.NDProxyMessage ndproxy_message = 1;
+inline bool FeedbackMessage::_internal_has_ndproxy_message() const {
+  return message_type_case() == kNdproxyMessage;
+}
+inline bool FeedbackMessage::has_ndproxy_message() const {
+  return _internal_has_ndproxy_message();
+}
+inline void FeedbackMessage::set_has_ndproxy_message() {
+  _oneof_case_[0] = kNdproxyMessage;
+}
+inline void FeedbackMessage::clear_ndproxy_message() {
+  if (_internal_has_ndproxy_message()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete message_type_.ndproxy_message_;
+    }
+    clear_has_message_type();
+  }
+}
+inline ::patchpanel::NDProxyMessage* FeedbackMessage::release_ndproxy_message() {
+  // @@protoc_insertion_point(field_release:patchpanel.FeedbackMessage.ndproxy_message)
+  if (_internal_has_ndproxy_message()) {
+    clear_has_message_type();
+      ::patchpanel::NDProxyMessage* temp = message_type_.ndproxy_message_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    message_type_.ndproxy_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::patchpanel::NDProxyMessage& FeedbackMessage::_internal_ndproxy_message() const {
+  return _internal_has_ndproxy_message()
+      ? *message_type_.ndproxy_message_
+      : reinterpret_cast< ::patchpanel::NDProxyMessage&>(::patchpanel::_NDProxyMessage_default_instance_);
+}
+inline const ::patchpanel::NDProxyMessage& FeedbackMessage::ndproxy_message() const {
+  // @@protoc_insertion_point(field_get:patchpanel.FeedbackMessage.ndproxy_message)
+  return _internal_ndproxy_message();
+}
+inline ::patchpanel::NDProxyMessage* FeedbackMessage::unsafe_arena_release_ndproxy_message() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.FeedbackMessage.ndproxy_message)
+  if (_internal_has_ndproxy_message()) {
+    clear_has_message_type();
+    ::patchpanel::NDProxyMessage* temp = message_type_.ndproxy_message_;
+    message_type_.ndproxy_message_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void FeedbackMessage::unsafe_arena_set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message) {
+  clear_message_type();
+  if (ndproxy_message) {
+    set_has_ndproxy_message();
+    message_type_.ndproxy_message_ = ndproxy_message;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.FeedbackMessage.ndproxy_message)
+}
+inline ::patchpanel::NDProxyMessage* FeedbackMessage::_internal_mutable_ndproxy_message() {
+  if (!_internal_has_ndproxy_message()) {
+    clear_message_type();
+    set_has_ndproxy_message();
+    message_type_.ndproxy_message_ = CreateMaybeMessage< ::patchpanel::NDProxyMessage >(GetArenaForAllocation());
+  }
+  return message_type_.ndproxy_message_;
+}
+inline ::patchpanel::NDProxyMessage* FeedbackMessage::mutable_ndproxy_message() {
+  ::patchpanel::NDProxyMessage* _msg = _internal_mutable_ndproxy_message();
+  // @@protoc_insertion_point(field_mutable:patchpanel.FeedbackMessage.ndproxy_message)
+  return _msg;
+}
+
+inline bool FeedbackMessage::has_message_type() const {
+  return message_type_case() != MESSAGE_TYPE_NOT_SET;
+}
+inline void FeedbackMessage::clear_has_message_type() {
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+inline FeedbackMessage::MessageTypeCase FeedbackMessage::message_type_case() const {
+  return FeedbackMessage::MessageTypeCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
 // DeviceMessage
 
 // required string dev_ifname = 1;
@@ -1499,244 +2242,13 @@ inline void NDProxyMessage::set_allocated_ip6addr(std::string* ip6addr) {
   // @@protoc_insertion_point(field_set_allocated:patchpanel.NDProxyMessage.ip6addr)
 }
 
-// -------------------------------------------------------------------
-
-// IpHelperMessage
-
-// .patchpanel.GuestMessage guest_message = 1;
-inline bool IpHelperMessage::_internal_has_guest_message() const {
-  return message_type_case() == kGuestMessage;
-}
-inline bool IpHelperMessage::has_guest_message() const {
-  return _internal_has_guest_message();
-}
-inline void IpHelperMessage::set_has_guest_message() {
-  _oneof_case_[0] = kGuestMessage;
-}
-inline void IpHelperMessage::clear_guest_message() {
-  if (_internal_has_guest_message()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete message_type_.guest_message_;
-    }
-    clear_has_message_type();
-  }
-}
-inline ::patchpanel::GuestMessage* IpHelperMessage::release_guest_message() {
-  // @@protoc_insertion_point(field_release:patchpanel.IpHelperMessage.guest_message)
-  if (_internal_has_guest_message()) {
-    clear_has_message_type();
-      ::patchpanel::GuestMessage* temp = message_type_.guest_message_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    message_type_.guest_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::patchpanel::GuestMessage& IpHelperMessage::_internal_guest_message() const {
-  return _internal_has_guest_message()
-      ? *message_type_.guest_message_
-      : reinterpret_cast< ::patchpanel::GuestMessage&>(::patchpanel::_GuestMessage_default_instance_);
-}
-inline const ::patchpanel::GuestMessage& IpHelperMessage::guest_message() const {
-  // @@protoc_insertion_point(field_get:patchpanel.IpHelperMessage.guest_message)
-  return _internal_guest_message();
-}
-inline ::patchpanel::GuestMessage* IpHelperMessage::unsafe_arena_release_guest_message() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.IpHelperMessage.guest_message)
-  if (_internal_has_guest_message()) {
-    clear_has_message_type();
-    ::patchpanel::GuestMessage* temp = message_type_.guest_message_;
-    message_type_.guest_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void IpHelperMessage::unsafe_arena_set_allocated_guest_message(::patchpanel::GuestMessage* guest_message) {
-  clear_message_type();
-  if (guest_message) {
-    set_has_guest_message();
-    message_type_.guest_message_ = guest_message;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.IpHelperMessage.guest_message)
-}
-inline ::patchpanel::GuestMessage* IpHelperMessage::_internal_mutable_guest_message() {
-  if (!_internal_has_guest_message()) {
-    clear_message_type();
-    set_has_guest_message();
-    message_type_.guest_message_ = CreateMaybeMessage< ::patchpanel::GuestMessage >(GetArenaForAllocation());
-  }
-  return message_type_.guest_message_;
-}
-inline ::patchpanel::GuestMessage* IpHelperMessage::mutable_guest_message() {
-  ::patchpanel::GuestMessage* _msg = _internal_mutable_guest_message();
-  // @@protoc_insertion_point(field_mutable:patchpanel.IpHelperMessage.guest_message)
-  return _msg;
-}
-
-// .patchpanel.DeviceMessage device_message = 2;
-inline bool IpHelperMessage::_internal_has_device_message() const {
-  return message_type_case() == kDeviceMessage;
-}
-inline bool IpHelperMessage::has_device_message() const {
-  return _internal_has_device_message();
-}
-inline void IpHelperMessage::set_has_device_message() {
-  _oneof_case_[0] = kDeviceMessage;
-}
-inline void IpHelperMessage::clear_device_message() {
-  if (_internal_has_device_message()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete message_type_.device_message_;
-    }
-    clear_has_message_type();
-  }
-}
-inline ::patchpanel::DeviceMessage* IpHelperMessage::release_device_message() {
-  // @@protoc_insertion_point(field_release:patchpanel.IpHelperMessage.device_message)
-  if (_internal_has_device_message()) {
-    clear_has_message_type();
-      ::patchpanel::DeviceMessage* temp = message_type_.device_message_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    message_type_.device_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::patchpanel::DeviceMessage& IpHelperMessage::_internal_device_message() const {
-  return _internal_has_device_message()
-      ? *message_type_.device_message_
-      : reinterpret_cast< ::patchpanel::DeviceMessage&>(::patchpanel::_DeviceMessage_default_instance_);
-}
-inline const ::patchpanel::DeviceMessage& IpHelperMessage::device_message() const {
-  // @@protoc_insertion_point(field_get:patchpanel.IpHelperMessage.device_message)
-  return _internal_device_message();
-}
-inline ::patchpanel::DeviceMessage* IpHelperMessage::unsafe_arena_release_device_message() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.IpHelperMessage.device_message)
-  if (_internal_has_device_message()) {
-    clear_has_message_type();
-    ::patchpanel::DeviceMessage* temp = message_type_.device_message_;
-    message_type_.device_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void IpHelperMessage::unsafe_arena_set_allocated_device_message(::patchpanel::DeviceMessage* device_message) {
-  clear_message_type();
-  if (device_message) {
-    set_has_device_message();
-    message_type_.device_message_ = device_message;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.IpHelperMessage.device_message)
-}
-inline ::patchpanel::DeviceMessage* IpHelperMessage::_internal_mutable_device_message() {
-  if (!_internal_has_device_message()) {
-    clear_message_type();
-    set_has_device_message();
-    message_type_.device_message_ = CreateMaybeMessage< ::patchpanel::DeviceMessage >(GetArenaForAllocation());
-  }
-  return message_type_.device_message_;
-}
-inline ::patchpanel::DeviceMessage* IpHelperMessage::mutable_device_message() {
-  ::patchpanel::DeviceMessage* _msg = _internal_mutable_device_message();
-  // @@protoc_insertion_point(field_mutable:patchpanel.IpHelperMessage.device_message)
-  return _msg;
-}
-
-// .patchpanel.NDProxyMessage ndproxy_message = 3;
-inline bool IpHelperMessage::_internal_has_ndproxy_message() const {
-  return message_type_case() == kNdproxyMessage;
-}
-inline bool IpHelperMessage::has_ndproxy_message() const {
-  return _internal_has_ndproxy_message();
-}
-inline void IpHelperMessage::set_has_ndproxy_message() {
-  _oneof_case_[0] = kNdproxyMessage;
-}
-inline void IpHelperMessage::clear_ndproxy_message() {
-  if (_internal_has_ndproxy_message()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete message_type_.ndproxy_message_;
-    }
-    clear_has_message_type();
-  }
-}
-inline ::patchpanel::NDProxyMessage* IpHelperMessage::release_ndproxy_message() {
-  // @@protoc_insertion_point(field_release:patchpanel.IpHelperMessage.ndproxy_message)
-  if (_internal_has_ndproxy_message()) {
-    clear_has_message_type();
-      ::patchpanel::NDProxyMessage* temp = message_type_.ndproxy_message_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    message_type_.ndproxy_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::patchpanel::NDProxyMessage& IpHelperMessage::_internal_ndproxy_message() const {
-  return _internal_has_ndproxy_message()
-      ? *message_type_.ndproxy_message_
-      : reinterpret_cast< ::patchpanel::NDProxyMessage&>(::patchpanel::_NDProxyMessage_default_instance_);
-}
-inline const ::patchpanel::NDProxyMessage& IpHelperMessage::ndproxy_message() const {
-  // @@protoc_insertion_point(field_get:patchpanel.IpHelperMessage.ndproxy_message)
-  return _internal_ndproxy_message();
-}
-inline ::patchpanel::NDProxyMessage* IpHelperMessage::unsafe_arena_release_ndproxy_message() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:patchpanel.IpHelperMessage.ndproxy_message)
-  if (_internal_has_ndproxy_message()) {
-    clear_has_message_type();
-    ::patchpanel::NDProxyMessage* temp = message_type_.ndproxy_message_;
-    message_type_.ndproxy_message_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void IpHelperMessage::unsafe_arena_set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message) {
-  clear_message_type();
-  if (ndproxy_message) {
-    set_has_ndproxy_message();
-    message_type_.ndproxy_message_ = ndproxy_message;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:patchpanel.IpHelperMessage.ndproxy_message)
-}
-inline ::patchpanel::NDProxyMessage* IpHelperMessage::_internal_mutable_ndproxy_message() {
-  if (!_internal_has_ndproxy_message()) {
-    clear_message_type();
-    set_has_ndproxy_message();
-    message_type_.ndproxy_message_ = CreateMaybeMessage< ::patchpanel::NDProxyMessage >(GetArenaForAllocation());
-  }
-  return message_type_.ndproxy_message_;
-}
-inline ::patchpanel::NDProxyMessage* IpHelperMessage::mutable_ndproxy_message() {
-  ::patchpanel::NDProxyMessage* _msg = _internal_mutable_ndproxy_message();
-  // @@protoc_insertion_point(field_mutable:patchpanel.IpHelperMessage.ndproxy_message)
-  return _msg;
-}
-
-inline bool IpHelperMessage::has_message_type() const {
-  return message_type_case() != MESSAGE_TYPE_NOT_SET;
-}
-inline void IpHelperMessage::clear_has_message_type() {
-  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
-}
-inline IpHelperMessage::MessageTypeCase IpHelperMessage::message_type_case() const {
-  return IpHelperMessage::MessageTypeCase(_oneof_case_[0]);
-}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

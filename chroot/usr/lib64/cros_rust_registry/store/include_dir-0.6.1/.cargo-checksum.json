@@ -1,12 +1,12 @@
 {
 	"package": "7d2d1cb0f9f28ecbd950f71741e453465d890cd836a35a593951ba41fa87e628",
 	"files": {
-		"src/file.rs": "1dac2627ea96eec186eb0615317b8c5fad2e0bde75d170efc29db24cb8f78723",
-		"src/globs.rs": "ac81a8a88b08ce73490eeb73ab14de1e8123164d40c3c0fef50912fe289f1843",
-		"src/dir.rs": "efa4219ee5af4c7ff56f28ca6996505aae1e8e21e37f3d808fc8ea19752e27b2",
-		"src/lib.rs": "b5dfd25b7265c689902fd43b1c53b70d7a9032b41d4b5b67c0319f32febfaea3",
 		"tests/integration_test.rs": "1a5087590bcc522ae3a7b5a1697a840b14aef43c5b6df34b61689a8c7f526bea",
 		"Cargo.toml": "35e60e5cf91a597de1469df973339a6868ec749b1ad4ec7aa30f97c9ec215ab0",
+		"src/file.rs": "1dac2627ea96eec186eb0615317b8c5fad2e0bde75d170efc29db24cb8f78723",
+		"src/dir.rs": "efa4219ee5af4c7ff56f28ca6996505aae1e8e21e37f3d808fc8ea19752e27b2",
+		"src/globs.rs": "ac81a8a88b08ce73490eeb73ab14de1e8123164d40c3c0fef50912fe289f1843",
+		"src/lib.rs": "b5dfd25b7265c689902fd43b1c53b70d7a9032b41d4b5b67c0319f32febfaea3",
 		"Cargo.toml.orig": "8dc18b5613b43edceb40f80ef37e7d62c688a516b809945940db1958165eef7e"
 	}
 }

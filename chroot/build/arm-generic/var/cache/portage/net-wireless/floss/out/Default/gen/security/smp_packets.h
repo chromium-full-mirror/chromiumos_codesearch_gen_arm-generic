@@ -148,7 +148,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingRequest { ";ss << ""  << "io_capability = " << IoCapabilityText(GetIoCapability()) << ", oob_data_flag = " << OobDataFlagText(GetOobDataFlag()) << ", auth_req = " << +GetAuthReq() << ", maximum_encryption_key_size = " << +GetMaximumEncryptionKeySize() << ", initiator_key_distribution = " << +GetInitiatorKeyDistribution() << ", responder_key_distribution = " << +GetResponderKeyDistribution();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingRequest { ";ss << ""  << "io_capability = " << IoCapabilityText(GetIoCapability()) << ", oob_data_flag = " << OobDataFlagText(GetOobDataFlag()) << ", auth_req = " << static_cast<uint64_t>(GetAuthReq()) << ", maximum_encryption_key_size = " << static_cast<uint64_t>(GetMaximumEncryptionKeySize()) << ", initiator_key_distribution = " << static_cast<uint64_t>(GetInitiatorKeyDistribution()) << ", responder_key_distribution = " << static_cast<uint64_t>(GetResponderKeyDistribution());ss << " }";return ss.str();}
 
  protected:
 explicit PairingRequestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -174,7 +174,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingResponse { ";ss << ""  << "io_capability = " << IoCapabilityText(GetIoCapability()) << ", oob_data_flag = " << OobDataFlagText(GetOobDataFlag()) << ", auth_req = " << +GetAuthReq() << ", maximum_encryption_key_size = " << +GetMaximumEncryptionKeySize() << ", initiator_key_distribution = " << +GetInitiatorKeyDistribution() << ", responder_key_distribution = " << +GetResponderKeyDistribution();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingResponse { ";ss << ""  << "io_capability = " << IoCapabilityText(GetIoCapability()) << ", oob_data_flag = " << OobDataFlagText(GetOobDataFlag()) << ", auth_req = " << static_cast<uint64_t>(GetAuthReq()) << ", maximum_encryption_key_size = " << static_cast<uint64_t>(GetMaximumEncryptionKeySize()) << ", initiator_key_distribution = " << static_cast<uint64_t>(GetInitiatorKeyDistribution()) << ", responder_key_distribution = " << static_cast<uint64_t>(GetResponderKeyDistribution());ss << " }";return ss.str();}
 
  protected:
 explicit PairingResponseView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -189,7 +189,7 @@ std::array<uint8_t,16> GetConfirmValue() {ASSERT(was_validated_);size_t end_inde
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::PAIRING_CONFIRM) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingConfirm { ";ss << ""  << "confirm_value = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetConfirmValue()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingConfirm { ";ss << ""  << "confirm_value = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetConfirmValue()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit PairingConfirmView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -204,7 +204,7 @@ std::array<uint8_t,16> GetRandomValue() {ASSERT(was_validated_);size_t end_index
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::PAIRING_RANDOM) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingRandom { ";ss << ""  << "random_value = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRandomValue()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingRandom { ";ss << ""  << "random_value = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRandomValue()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit PairingRandomView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -233,7 +233,7 @@ std::array<uint8_t,16> GetLongTermKey() {ASSERT(was_validated_);size_t end_index
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::ENCRYPTION_INFORMATION) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionInformation { ";ss << ""  << "long_term_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLongTermKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionInformation { ";ss << ""  << "long_term_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLongTermKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit EncryptionInformationView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -250,7 +250,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CentralIdentification { ";ss << ""  << "ediv = " << +GetEdiv() << ", rand = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRand()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CentralIdentification { ";ss << ""  << "ediv = " << static_cast<uint64_t>(GetEdiv()) << ", rand = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRand()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit CentralIdentificationView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -265,7 +265,7 @@ std::array<uint8_t,16> GetIdentityResolvingKey() {ASSERT(was_validated_);size_t 
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::IDENTITY_INFORMATION) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IdentityInformation { ";ss << ""  << "identity_resolving_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetIdentityResolvingKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IdentityInformation { ";ss << ""  << "identity_resolving_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetIdentityResolvingKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit IdentityInformationView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -296,7 +296,7 @@ std::array<uint8_t,16> GetSignatureKey() {ASSERT(was_validated_);size_t end_inde
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::SIGNING_INFORMATION) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SigningInformation { ";ss << ""  << "signature_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetSignatureKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SigningInformation { ";ss << ""  << "signature_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetSignatureKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit SigningInformationView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -310,7 +310,7 @@ uint8_t GetAuthReq() const {ASSERT(was_validated_);auto to_bound = begin();auto 
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::SECURITY_REQUEST) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SecurityRequest { ";ss << ""  << "auth_req = " << +GetAuthReq();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SecurityRequest { ";ss << ""  << "auth_req = " << static_cast<uint64_t>(GetAuthReq());ss << " }";return ss.str();}
 
  protected:
 explicit SecurityRequestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -328,7 +328,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingPublicKey { ";ss << ""  << "public_key_x = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << +(GetPublicKeyX()[index]);}ss << "]" << ", public_key_y = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << +(GetPublicKeyY()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingPublicKey { ";ss << ""  << "public_key_x = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetPublicKeyX()[index]));}ss << "]" << ", public_key_y = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetPublicKeyY()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit PairingPublicKeyView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -343,7 +343,7 @@ std::array<uint8_t,16> GetDhKeyCheck() {ASSERT(was_validated_);size_t end_index 
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 8 + /* Dynamic: */ 0) / 8;it += 16 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != Code::PAIRING_DH_KEY_CHECK) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingDhKeyCheck { ";ss << ""  << "dh_key_check = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetDhKeyCheck()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PairingDhKeyCheck { ";ss << ""  << "dh_key_check = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDhKeyCheck()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit PairingDhKeyCheckView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};

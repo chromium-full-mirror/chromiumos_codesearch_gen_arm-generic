@@ -537,18 +537,20 @@ bool CertificateProfile_IsValid(int value) {
     case 8:
     case 9:
     case 10:
+    case 11:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> CertificateProfile_strings[11] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> CertificateProfile_strings[12] = {};
 
 static const char CertificateProfile_names[] =
   "CAST_CERTIFICATE"
   "CONTENT_PROTECTION_CERTIFICATE"
   "CONTENT_PROTECTION_CERTIFICATE_WITH_STABLE_ID"
+  "DEVICE_SETUP_CERTIFICATE"
   "ENTERPRISE_ENROLLMENT_CERTIFICATE"
   "ENTERPRISE_MACHINE_CERTIFICATE"
   "ENTERPRISE_USER_CERTIFICATE"
@@ -562,28 +564,30 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry CertificateProfile_ent
   { {CertificateProfile_names + 0, 16}, 4 },
   { {CertificateProfile_names + 16, 30}, 2 },
   { {CertificateProfile_names + 46, 45}, 3 },
-  { {CertificateProfile_names + 91, 33}, 7 },
-  { {CertificateProfile_names + 124, 30}, 0 },
-  { {CertificateProfile_names + 154, 27}, 1 },
-  { {CertificateProfile_names + 181, 30}, 9 },
-  { {CertificateProfile_names + 211, 16}, 5 },
-  { {CertificateProfile_names + 227, 21}, 6 },
-  { {CertificateProfile_names + 248, 21}, 10 },
-  { {CertificateProfile_names + 269, 15}, 8 },
+  { {CertificateProfile_names + 91, 24}, 11 },
+  { {CertificateProfile_names + 115, 33}, 7 },
+  { {CertificateProfile_names + 148, 30}, 0 },
+  { {CertificateProfile_names + 178, 27}, 1 },
+  { {CertificateProfile_names + 205, 30}, 9 },
+  { {CertificateProfile_names + 235, 16}, 5 },
+  { {CertificateProfile_names + 251, 21}, 6 },
+  { {CertificateProfile_names + 272, 21}, 10 },
+  { {CertificateProfile_names + 293, 15}, 8 },
 };
 
 static const int CertificateProfile_entries_by_number[] = {
-  4, // 0 -> ENTERPRISE_MACHINE_CERTIFICATE
-  5, // 1 -> ENTERPRISE_USER_CERTIFICATE
+  5, // 0 -> ENTERPRISE_MACHINE_CERTIFICATE
+  6, // 1 -> ENTERPRISE_USER_CERTIFICATE
   1, // 2 -> CONTENT_PROTECTION_CERTIFICATE
   2, // 3 -> CONTENT_PROTECTION_CERTIFICATE_WITH_STABLE_ID
   0, // 4 -> CAST_CERTIFICATE
-  7, // 5 -> GFSC_CERTIFICATE
-  8, // 6 -> JETSTREAM_CERTIFICATE
-  3, // 7 -> ENTERPRISE_ENROLLMENT_CERTIFICATE
-  10, // 8 -> XTS_CERTIFICATE
-  6, // 9 -> ENTERPRISE_VTPM_EK_CERTIFICATE
-  9, // 10 -> SOFT_BIND_CERTIFICATE
+  8, // 5 -> GFSC_CERTIFICATE
+  9, // 6 -> JETSTREAM_CERTIFICATE
+  4, // 7 -> ENTERPRISE_ENROLLMENT_CERTIFICATE
+  11, // 8 -> XTS_CERTIFICATE
+  7, // 9 -> ENTERPRISE_VTPM_EK_CERTIFICATE
+  10, // 10 -> SOFT_BIND_CERTIFICATE
+  3, // 11 -> DEVICE_SETUP_CERTIFICATE
 };
 
 const std::string& CertificateProfile_Name(
@@ -592,12 +596,12 @@ const std::string& CertificateProfile_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           CertificateProfile_entries,
           CertificateProfile_entries_by_number,
-          11, CertificateProfile_strings);
+          12, CertificateProfile_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       CertificateProfile_entries,
       CertificateProfile_entries_by_number,
-      11, value);
+      12, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      CertificateProfile_strings[idx].get();
 }
@@ -605,7 +609,7 @@ bool CertificateProfile_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CertificateProfile* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      CertificateProfile_entries, 11, name, &int_value);
+      CertificateProfile_entries, 12, name, &int_value);
   if (success) {
     *value = static_cast<CertificateProfile>(int_value);
   }

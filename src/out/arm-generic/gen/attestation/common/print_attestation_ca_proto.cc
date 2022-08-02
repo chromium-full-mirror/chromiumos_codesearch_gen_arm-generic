@@ -61,6 +61,9 @@ std::string GetProtoDebugStringWithIndent(CertificateProfile value,
   if (value == SOFT_BIND_CERTIFICATE) {
     return "SOFT_BIND_CERTIFICATE";
   }
+  if (value == DEVICE_SETUP_CERTIFICATE) {
+    return "DEVICE_SETUP_CERTIFICATE";
+  }
   return "<unknown>";
 }
 

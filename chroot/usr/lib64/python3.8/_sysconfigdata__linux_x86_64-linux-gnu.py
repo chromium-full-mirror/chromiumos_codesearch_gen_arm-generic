@@ -524,15 +524,15 @@ build_time_vars = {'ABIFLAGS': '',
                    '/usr/include/python3.8',
  'INCLUDEDIR': '/usr/include',
  'INCLUDEPY': '/usr/include/python3.8',
- 'INSTALL': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
+ 'INSTALL': '/var/tmp/portage/._portage_reinstall_.0px1q739/bin/ebuild-helpers/xattr/install '
             '-c',
- 'INSTALL_DATA': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_DATA': '/var/tmp/portage/._portage_reinstall_.0px1q739/bin/ebuild-helpers/xattr/install '
                  '-c -m 644',
- 'INSTALL_PROGRAM': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_PROGRAM': '/var/tmp/portage/._portage_reinstall_.0px1q739/bin/ebuild-helpers/xattr/install '
                     '-c',
- 'INSTALL_SCRIPT': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_SCRIPT': '/var/tmp/portage/._portage_reinstall_.0px1q739/bin/ebuild-helpers/xattr/install '
                    '-c',
- 'INSTALL_SHARED': '/var/tmp/portage/._portage_reinstall_.26i45r8m/bin/ebuild-helpers/xattr/install '
+ 'INSTALL_SHARED': '/var/tmp/portage/._portage_reinstall_.0px1q739/bin/ebuild-helpers/xattr/install '
                    '-c -m 755',
  'INSTSONAME': 'libpython3.8.so.1.0',
  'IO_H': 'Modules/_io/_iomodule.h',

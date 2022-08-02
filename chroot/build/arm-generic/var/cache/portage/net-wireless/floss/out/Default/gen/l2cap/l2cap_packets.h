@@ -317,7 +317,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::MTU){ return false;}return true;}
 static MtuConfigurationOption* Specialize(ConfigurationOption* parent) {ASSERT(MtuConfigurationOption::IsInstance(*parent));return static_cast<MtuConfigurationOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "MtuConfigurationOption { ";ss << "mtu = " << +mtu_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "MtuConfigurationOption { ";ss << "mtu = " << static_cast<uint64_t>(mtu_);ss << " }";return ss.str();}
 
 uint16_t mtu_{};};
 
@@ -340,7 +340,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::FLUSH_TIMEOUT){ return false;}return true;}
 static FlushTimeoutConfigurationOption* Specialize(ConfigurationOption* parent) {ASSERT(FlushTimeoutConfigurationOption::IsInstance(*parent));return static_cast<FlushTimeoutConfigurationOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "FlushTimeoutConfigurationOption { ";ss << "flush_timeout = " << +flush_timeout_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "FlushTimeoutConfigurationOption { ";ss << "flush_timeout = " << static_cast<uint64_t>(flush_timeout_);ss << " }";return ss.str();}
 
 uint16_t flush_timeout_{};};
 
@@ -364,7 +364,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::QUALITY_OF_SERVICE){ return false;}return true;}
 static QualityOfServiceConfigurationOption* Specialize(ConfigurationOption* parent) {ASSERT(QualityOfServiceConfigurationOption::IsInstance(*parent));return static_cast<QualityOfServiceConfigurationOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "QualityOfServiceConfigurationOption { ";ss << "service_type = " << QosServiceTypeText(service_type_) << ", token_rate = " << +token_rate_ << ", token_bucket_size = " << +token_bucket_size_ << ", peak_bandwidth = " << +peak_bandwidth_ << ", latency = " << +latency_ << ", delay_variation = " << +delay_variation_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "QualityOfServiceConfigurationOption { ";ss << "service_type = " << QosServiceTypeText(service_type_) << ", token_rate = " << static_cast<uint64_t>(token_rate_) << ", token_bucket_size = " << static_cast<uint64_t>(token_bucket_size_) << ", peak_bandwidth = " << static_cast<uint64_t>(peak_bandwidth_) << ", latency = " << static_cast<uint64_t>(latency_) << ", delay_variation = " << static_cast<uint64_t>(delay_variation_);ss << " }";return ss.str();}
 
 QosServiceType service_type_{};uint32_t token_rate_{};uint32_t token_bucket_size_{};uint32_t peak_bandwidth_{};uint32_t latency_{};uint32_t delay_variation_{};};
 
@@ -387,7 +387,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::RETRANSMISSION_AND_FLOW_CONTROL){ return false;}return true;}
 static RetransmissionAndFlowControlConfigurationOption* Specialize(ConfigurationOption* parent) {ASSERT(RetransmissionAndFlowControlConfigurationOption::IsInstance(*parent));return static_cast<RetransmissionAndFlowControlConfigurationOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "RetransmissionAndFlowControlConfigurationOption { ";ss << "mode = " << RetransmissionAndFlowControlModeOptionText(mode_) << ", tx_window_size = " << +tx_window_size_ << ", max_transmit = " << +max_transmit_ << ", retransmission_time_out = " << +retransmission_time_out_ << ", monitor_time_out = " << +monitor_time_out_ << ", maximum_pdu_size = " << +maximum_pdu_size_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "RetransmissionAndFlowControlConfigurationOption { ";ss << "mode = " << RetransmissionAndFlowControlModeOptionText(mode_) << ", tx_window_size = " << static_cast<uint64_t>(tx_window_size_) << ", max_transmit = " << static_cast<uint64_t>(max_transmit_) << ", retransmission_time_out = " << static_cast<uint64_t>(retransmission_time_out_) << ", monitor_time_out = " << static_cast<uint64_t>(monitor_time_out_) << ", maximum_pdu_size = " << static_cast<uint64_t>(maximum_pdu_size_);ss << " }";return ss.str();}
 
 RetransmissionAndFlowControlModeOption mode_{};uint8_t tx_window_size_{};uint8_t max_transmit_{};uint16_t retransmission_time_out_{};uint16_t monitor_time_out_{};uint16_t maximum_pdu_size_{};};
 
@@ -433,7 +433,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::EXTENDED_FLOW_SPECIFICATION){ return false;}return true;}
 static ExtendedFlowSpecificationOption* Specialize(ConfigurationOption* parent) {ASSERT(ExtendedFlowSpecificationOption::IsInstance(*parent));return static_cast<ExtendedFlowSpecificationOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ExtendedFlowSpecificationOption { ";ss << "identifier = " << +identifier_ << ", service_type = " << QosServiceTypeText(service_type_) << ", maximum_sdu_size = " << +maximum_sdu_size_ << ", sdu_interarrival_time = " << +sdu_interarrival_time_ << ", access_latency = " << +access_latency_ << ", flush_timeout = " << +flush_timeout_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ExtendedFlowSpecificationOption { ";ss << "identifier = " << static_cast<uint64_t>(identifier_) << ", service_type = " << QosServiceTypeText(service_type_) << ", maximum_sdu_size = " << static_cast<uint64_t>(maximum_sdu_size_) << ", sdu_interarrival_time = " << static_cast<uint64_t>(sdu_interarrival_time_) << ", access_latency = " << static_cast<uint64_t>(access_latency_) << ", flush_timeout = " << static_cast<uint64_t>(flush_timeout_);ss << " }";return ss.str();}
 
 uint8_t identifier_{};QosServiceType service_type_{};uint16_t maximum_sdu_size_{};uint32_t sdu_interarrival_time_{};uint32_t access_latency_{};uint32_t flush_timeout_{};};
 
@@ -456,7 +456,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 static bool IsInstance(const ConfigurationOption& parent) {if (parent.type_ != ConfigurationOptionType::EXTENDED_WINDOW_SIZE){ return false;}return true;}
 static ExtendedWindowSizeOption* Specialize(ConfigurationOption* parent) {ASSERT(ExtendedWindowSizeOption::IsInstance(*parent));return static_cast<ExtendedWindowSizeOption*>(parent);}
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ExtendedWindowSizeOption { ";ss << "max_window_size = " << +max_window_size_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ExtendedWindowSizeOption { ";ss << "max_window_size = " << static_cast<uint64_t>(max_window_size_);ss << " }";return ss.str();}
 
 uint16_t max_window_size_{};};
 
@@ -480,7 +480,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "BasicFrame { ";ss << ""  << "payload_size = " << GetPayloadSize() << ", channel_id = " << +GetChannelId() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "BasicFrame { ";ss << ""  << "payload_size = " << GetPayloadSize() << ", channel_id = " << static_cast<uint64_t>(GetChannelId()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit BasicFrameView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -507,7 +507,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "BasicFrameWithFcs { ";ss << ""  << "payload_size = " << GetPayloadSize() << ", channel_id = " << +GetChannelId() << ", payload = " << "PAYLOAD[]" << ", fcs = " << "CHECKSUM";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "BasicFrameWithFcs { ";ss << ""  << "payload_size = " << GetPayloadSize() << ", channel_id = " << static_cast<uint64_t>(GetChannelId()) << ", payload = " << "PAYLOAD[]" << ", fcs = " << "CHECKSUM";ss << " }";return ss.str();}
 
  protected:
 explicit BasicFrameWithFcsView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -526,7 +526,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "GroupFrame { ";ss << ""  << "psm = " << +GetPsm() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "GroupFrame { ";ss << ""  << "psm = " << static_cast<uint64_t>(GetPsm()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit GroupFrameView(BasicFrameView parent) : BasicFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -581,7 +581,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardSupervisoryFrame { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << +GetReqSeq();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardSupervisoryFrame { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq());ss << " }";return ss.str();}
 
  protected:
 explicit StandardSupervisoryFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; } private:
@@ -607,7 +607,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardSupervisoryFrameWithFcs { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << +GetReqSeq();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardSupervisoryFrameWithFcs { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq());ss << " }";return ss.str();}
 
  protected:
 explicit StandardSupervisoryFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; } private:
@@ -635,7 +635,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationFrame { ";ss << ""  << "tx_seq = " << +GetTxSeq() << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationFrame { ";ss << ""  << "tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit StandardInformationFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -660,7 +660,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationFrameWithFcs { ";ss << ""  << "tx_seq = " << +GetTxSeq() << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationFrameWithFcs { ";ss << ""  << "tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", r = " << RetransmissionDisableText(GetR()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit StandardInformationFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -679,7 +679,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit StandardInformationStartFrameView(StandardInformationFrameView parent) : StandardInformationFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -698,7 +698,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "StandardInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit StandardInformationStartFrameWithFcsView(StandardInformationFrameWithFcsView parent) : StandardInformationFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -723,7 +723,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSupervisoryFrame { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP()) << ", f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSupervisoryFrame { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP()) << ", f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedSupervisoryFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; } private:
@@ -751,7 +751,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSupervisoryFrameWithFcs { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP()) << ", f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSupervisoryFrameWithFcs { ";ss << ""  << "s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP()) << ", f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedSupervisoryFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; } private:
@@ -779,7 +779,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationFrame { ";ss << ""  << "tx_seq = " << +GetTxSeq() << ", f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationFrame { ";ss << ""  << "tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedInformationFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -804,7 +804,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationFrameWithFcs { ";ss << ""  << "tx_seq = " << +GetTxSeq() << ", f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationFrameWithFcs { ";ss << ""  << "tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedInformationFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -823,7 +823,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedInformationStartFrameView(EnhancedInformationFrameView parent) : EnhancedInformationFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -842,7 +842,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedInformationStartFrameWithFcsView(EnhancedInformationFrameWithFcsView parent) : EnhancedInformationFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -866,7 +866,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedSupervisoryFrame { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedSupervisoryFrame { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP());ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedSupervisoryFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -890,7 +890,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedSupervisoryFrameWithFcs { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedSupervisoryFrameWithFcs { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", s = " << SupervisoryFunctionText(GetS()) << ", p = " << PollText(GetP());ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedSupervisoryFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -915,7 +915,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationFrame { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", tx_seq = " << +GetTxSeq() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationFrame { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedInformationFrameView(StandardFrameView parent) : StandardFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -940,7 +940,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationFrameWithFcs { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << +GetReqSeq() << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", tx_seq = " << +GetTxSeq() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationFrameWithFcs { ";ss << ""  << "f = " << FinalText(GetF()) << ", req_seq = " << static_cast<uint64_t>(GetReqSeq()) << ", sar = " << SegmentationAndReassemblyText(GetSar()) << ", tx_seq = " << static_cast<uint64_t>(GetTxSeq()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedInformationFrameWithFcsView(StandardFrameWithFcsView parent) : StandardFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -959,7 +959,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationStartFrame { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedInformationStartFrameView(ExtendedInformationFrameView parent) : ExtendedInformationFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -978,7 +978,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInformationStartFrameWithFcs { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedInformationStartFrameWithFcsView(ExtendedInformationFrameWithFcsView parent) : ExtendedInformationFrameWithFcsView(std::move(parent)) { was_validated_ = false; }};
@@ -997,7 +997,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FirstLeInformationFrame { ";ss << ""  << "l2cap_sdu_length = " << +GetL2capSduLength() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FirstLeInformationFrame { ";ss << ""  << "l2cap_sdu_length = " << static_cast<uint64_t>(GetL2capSduLength()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit FirstLeInformationFrameView(BasicFrameView parent) : BasicFrameView(std::move(parent)) { was_validated_ = false; }};
@@ -1039,7 +1039,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Control { ";ss << ""  << "code = " << CommandCodeText(GetCode()) << ", identifier = " << +GetIdentifier() << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Control { ";ss << ""  << "code = " << CommandCodeText(GetCode()) << ", identifier = " << static_cast<uint64_t>(GetIdentifier()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit ControlView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -1081,7 +1081,7 @@ uint16_t GetActualMtu() const {ASSERT(was_validated_);auto to_bound = begin();au
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandRejectView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 48 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetReason() != CommandRejectReason::SIGNALING_MTU_EXCEEDED) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandRejectMtuExceeded { ";ss << ""  << "actual_mtu = " << +GetActualMtu();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandRejectMtuExceeded { ";ss << ""  << "actual_mtu = " << static_cast<uint64_t>(GetActualMtu());ss << " }";return ss.str();}
 
  protected:
 explicit CommandRejectMtuExceededView(CommandRejectView parent) : CommandRejectView(std::move(parent)) { was_validated_ = false; }};
@@ -1097,7 +1097,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandRejectInvalidCid { ";ss << ""  << "local_channel = " << +GetLocalChannel() << ", remote_channel = " << +GetRemoteChannel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandRejectInvalidCid { ";ss << ""  << "local_channel = " << static_cast<uint64_t>(GetLocalChannel()) << ", remote_channel = " << static_cast<uint64_t>(GetRemoteChannel());ss << " }";return ss.str();}
 
  protected:
 explicit CommandRejectInvalidCidView(CommandRejectView parent) : CommandRejectView(std::move(parent)) { was_validated_ = false; }};
@@ -1113,7 +1113,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionRequest { ";ss << ""  << "psm = " << +GetPsm() << ", source_cid = " << +GetSourceCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionRequest { ";ss << ""  << "psm = " << static_cast<uint64_t>(GetPsm()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid());ss << " }";return ss.str();}
 
  protected:
 explicit ConnectionRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1133,7 +1133,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionResponse { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid() << ", result = " << ConnectionResponseResultText(GetResult()) << ", status = " << ConnectionResponseStatusText(GetStatus());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionResponse { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid()) << ", result = " << ConnectionResponseResultText(GetResult()) << ", status = " << ConnectionResponseStatusText(GetStatus());ss << " }";return ss.str();}
 
  protected:
 explicit ConnectionResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1154,7 +1154,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigurationRequest { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", continuation = " << ContinuationText(GetContinuation()) << ", config = " << "VECTOR[";for (size_t index = 0; index < GetConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << "REPRESENTATION_UNIMPLEMENTED VariableLengthStructField (GetConfig()[index])";}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigurationRequest { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", continuation = " << ContinuationText(GetContinuation()) << ", config = " << "VECTOR[";for (size_t index = 0; index < GetConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << "REPRESENTATION_UNIMPLEMENTED VariableLengthStructField (GetConfig()[index])";}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ConfigurationRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1177,7 +1177,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigurationResponse { ";ss << ""  << "source_cid = " << +GetSourceCid() << ", continuation = " << ContinuationText(GetContinuation()) << ", result = " << ConfigurationResponseResultText(GetResult()) << ", config = " << "VECTOR[";for (size_t index = 0; index < GetConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << "REPRESENTATION_UNIMPLEMENTED VariableLengthStructField (GetConfig()[index])";}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigurationResponse { ";ss << ""  << "source_cid = " << static_cast<uint64_t>(GetSourceCid()) << ", continuation = " << ContinuationText(GetContinuation()) << ", result = " << ConfigurationResponseResultText(GetResult()) << ", config = " << "VECTOR[";for (size_t index = 0; index < GetConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << "REPRESENTATION_UNIMPLEMENTED VariableLengthStructField (GetConfig()[index])";}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ConfigurationResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1193,7 +1193,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionRequest { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionRequest { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid());ss << " }";return ss.str();}
 
  protected:
 explicit DisconnectionRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1209,7 +1209,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionResponse { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionResponse { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid());ss << " }";return ss.str();}
 
  protected:
 explicit DisconnectionResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1289,7 +1289,7 @@ uint16_t GetConnectionlessMtu() const {ASSERT(was_validated_);auto to_bound = be
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!InformationResponseView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 64 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetInfoType() != InformationRequestInfoType::CONNECTIONLESS_MTU) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseConnectionlessMtu { ";ss << ""  << "connectionless_mtu = " << +GetConnectionlessMtu();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseConnectionlessMtu { ";ss << ""  << "connectionless_mtu = " << static_cast<uint64_t>(GetConnectionlessMtu());ss << " }";return ss.str();}
 
  protected:
 explicit InformationResponseConnectionlessMtuView(InformationResponseView parent) : InformationResponseView(std::move(parent)) { was_validated_ = false; }};
@@ -1325,7 +1325,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseExtendedFeatures { ";ss << ""  << "flow_control_mode = " << +GetFlowControlMode() << ", retransmission_mode = " << +GetRetransmissionMode() << ", bi_directional_qoS = " << +GetBiDirectionalQoS() << ", enhanced_retransmission_mode = " << +GetEnhancedRetransmissionMode() << ", streaming_mode = " << +GetStreamingMode() << ", fcs_option = " << +GetFcsOption() << ", extended_flow_specification_for_br_edr = " << +GetExtendedFlowSpecificationForBrEdr() << ", fixed_channels = " << +GetFixedChannels() << ", extended_window_size = " << +GetExtendedWindowSize() << ", unicast_connectionless_data_reception = " << +GetUnicastConnectionlessDataReception() << ", enhanced_credit_based_flow_control_mode = " << +GetEnhancedCreditBasedFlowControlMode();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseExtendedFeatures { ";ss << ""  << "flow_control_mode = " << static_cast<uint64_t>(GetFlowControlMode()) << ", retransmission_mode = " << static_cast<uint64_t>(GetRetransmissionMode()) << ", bi_directional_qoS = " << static_cast<uint64_t>(GetBiDirectionalQoS()) << ", enhanced_retransmission_mode = " << static_cast<uint64_t>(GetEnhancedRetransmissionMode()) << ", streaming_mode = " << static_cast<uint64_t>(GetStreamingMode()) << ", fcs_option = " << static_cast<uint64_t>(GetFcsOption()) << ", extended_flow_specification_for_br_edr = " << static_cast<uint64_t>(GetExtendedFlowSpecificationForBrEdr()) << ", fixed_channels = " << static_cast<uint64_t>(GetFixedChannels()) << ", extended_window_size = " << static_cast<uint64_t>(GetExtendedWindowSize()) << ", unicast_connectionless_data_reception = " << static_cast<uint64_t>(GetUnicastConnectionlessDataReception()) << ", enhanced_credit_based_flow_control_mode = " << static_cast<uint64_t>(GetEnhancedCreditBasedFlowControlMode());ss << " }";return ss.str();}
 
  protected:
 explicit InformationResponseExtendedFeaturesView(InformationResponseView parent) : InformationResponseView(std::move(parent)) { was_validated_ = false; }};
@@ -1339,7 +1339,7 @@ uint64_t GetFixedChannels() const {ASSERT(was_validated_);auto to_bound = begin(
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!InformationResponseView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 64 + /* Dynamic: */ 0) / 8;it += 8 /* Total size of the fixed fields */;if (it > end()) return false;if (GetInfoType() != InformationRequestInfoType::FIXED_CHANNELS_SUPPORTED) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseFixedChannels { ";ss << ""  << "fixed_channels = " << +GetFixedChannels();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InformationResponseFixedChannels { ";ss << ""  << "fixed_channels = " << static_cast<uint64_t>(GetFixedChannels());ss << " }";return ss.str();}
 
  protected:
 explicit InformationResponseFixedChannelsView(InformationResponseView parent) : InformationResponseView(std::move(parent)) { was_validated_ = false; }};
@@ -1357,7 +1357,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateChannelRequest { ";ss << ""  << "psm = " << +GetPsm() << ", source_cid = " << +GetSourceCid() << ", controller_id = " << +GetControllerId();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateChannelRequest { ";ss << ""  << "psm = " << static_cast<uint64_t>(GetPsm()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid()) << ", controller_id = " << static_cast<uint64_t>(GetControllerId());ss << " }";return ss.str();}
 
  protected:
 explicit CreateChannelRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1377,7 +1377,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateChannelResponse { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid() << ", result = " << CreateChannelResponseResultText(GetResult()) << ", status = " << CreateChannelResponseStatusText(GetStatus());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateChannelResponse { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid()) << ", result = " << CreateChannelResponseResultText(GetResult()) << ", status = " << CreateChannelResponseStatusText(GetStatus());ss << " }";return ss.str();}
 
  protected:
 explicit CreateChannelResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1393,7 +1393,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelRequest { ";ss << ""  << "initiator_cid = " << +GetInitiatorCid() << ", dest_controller_id = " << +GetDestControllerId();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelRequest { ";ss << ""  << "initiator_cid = " << static_cast<uint64_t>(GetInitiatorCid()) << ", dest_controller_id = " << static_cast<uint64_t>(GetDestControllerId());ss << " }";return ss.str();}
 
  protected:
 explicit MoveChannelRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1409,7 +1409,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelResponse { ";ss << ""  << "initiator_cid = " << +GetInitiatorCid() << ", result = " << MoveChannelResponseResultText(GetResult());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelResponse { ";ss << ""  << "initiator_cid = " << static_cast<uint64_t>(GetInitiatorCid()) << ", result = " << MoveChannelResponseResultText(GetResult());ss << " }";return ss.str();}
 
  protected:
 explicit MoveChannelResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1425,7 +1425,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelConfirmationRequest { ";ss << ""  << "initiator_cid = " << +GetInitiatorCid() << ", result = " << MoveChannelConfirmationResultText(GetResult());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelConfirmationRequest { ";ss << ""  << "initiator_cid = " << static_cast<uint64_t>(GetInitiatorCid()) << ", result = " << MoveChannelConfirmationResultText(GetResult());ss << " }";return ss.str();}
 
  protected:
 explicit MoveChannelConfirmationRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1439,7 +1439,7 @@ uint16_t GetInitiatorCid() const {ASSERT(was_validated_);auto to_bound = begin()
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!ControlView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 32 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetCode() != CommandCode::MOVE_CHANNEL_CONFIRMATION_RESPONSE) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelConfirmationResponse { ";ss << ""  << "initiator_cid = " << +GetInitiatorCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MoveChannelConfirmationResponse { ";ss << ""  << "initiator_cid = " << static_cast<uint64_t>(GetInitiatorCid());ss << " }";return ss.str();}
 
  protected:
 explicit MoveChannelConfirmationResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1455,7 +1455,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowControlCredit { ";ss << ""  << "cid = " << +GetCid() << ", credits = " << +GetCredits();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowControlCredit { ";ss << ""  << "cid = " << static_cast<uint64_t>(GetCid()) << ", credits = " << static_cast<uint64_t>(GetCredits());ss << " }";return ss.str();}
 
  protected:
 explicit FlowControlCreditView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1478,7 +1478,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedConnectionRequest { ";ss << ""  << "spsm = " << +GetSpsm() << ", mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits() << ", source_cid = " << "VECTOR[";for (size_t index = 0; index < GetSourceCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetSourceCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedConnectionRequest { ";ss << ""  << "spsm = " << static_cast<uint64_t>(GetSpsm()) << ", mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits()) << ", source_cid = " << "VECTOR[";for (size_t index = 0; index < GetSourceCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetSourceCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit CreditBasedConnectionRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1501,7 +1501,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedConnectionResponse { ";ss << ""  << "mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits() << ", result = " << CreditBasedConnectionResponseResultText(GetResult()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetDestinationCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedConnectionResponse { ";ss << ""  << "mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits()) << ", result = " << CreditBasedConnectionResponseResultText(GetResult()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDestinationCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit CreditBasedConnectionResponseView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1520,7 +1520,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedReconfigureRequest { ";ss << ""  << "mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetDestinationCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreditBasedReconfigureRequest { ";ss << ""  << "mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDestinationCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit CreditBasedReconfigureRequestView(ControlView parent) : ControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1576,7 +1576,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "LeControl { ";ss << ""  << "code = " << LeCommandCodeText(GetCode()) << ", identifier = " << +GetIdentifier() << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "LeControl { ";ss << ""  << "code = " << LeCommandCodeText(GetCode()) << ", identifier = " << static_cast<uint64_t>(GetIdentifier()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit LeControlView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -1621,7 +1621,7 @@ uint16_t GetActualMtu() const {ASSERT(was_validated_);auto to_bound = begin();au
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeCommandRejectView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 48 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetReason() != CommandRejectReason::SIGNALING_MTU_EXCEEDED) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCommandRejectMtuExceeded { ";ss << ""  << "actual_mtu = " << +GetActualMtu();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCommandRejectMtuExceeded { ";ss << ""  << "actual_mtu = " << static_cast<uint64_t>(GetActualMtu());ss << " }";return ss.str();}
 
  protected:
 explicit LeCommandRejectMtuExceededView(LeCommandRejectView parent) : LeCommandRejectView(std::move(parent)) { was_validated_ = false; }};
@@ -1637,7 +1637,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCommandRejectInvalidCid { ";ss << ""  << "local_channel = " << +GetLocalChannel() << ", remote_channel = " << +GetRemoteChannel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCommandRejectInvalidCid { ";ss << ""  << "local_channel = " << static_cast<uint64_t>(GetLocalChannel()) << ", remote_channel = " << static_cast<uint64_t>(GetRemoteChannel());ss << " }";return ss.str();}
 
  protected:
 explicit LeCommandRejectInvalidCidView(LeCommandRejectView parent) : LeCommandRejectView(std::move(parent)) { was_validated_ = false; }};
@@ -1653,7 +1653,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDisconnectionRequest { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDisconnectionRequest { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid());ss << " }";return ss.str();}
 
  protected:
 explicit LeDisconnectionRequestView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1669,7 +1669,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDisconnectionResponse { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", source_cid = " << +GetSourceCid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDisconnectionResponse { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid());ss << " }";return ss.str();}
 
  protected:
 explicit LeDisconnectionResponseView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1689,7 +1689,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionParameterUpdateRequest { ";ss << ""  << "interval_min = " << +GetIntervalMin() << ", interval_max = " << +GetIntervalMax() << ", peripheral_latency = " << +GetPeripheralLatency() << ", timeout_multiplier = " << +GetTimeoutMultiplier();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionParameterUpdateRequest { ";ss << ""  << "interval_min = " << static_cast<uint64_t>(GetIntervalMin()) << ", interval_max = " << static_cast<uint64_t>(GetIntervalMax()) << ", peripheral_latency = " << static_cast<uint64_t>(GetPeripheralLatency()) << ", timeout_multiplier = " << static_cast<uint64_t>(GetTimeoutMultiplier());ss << " }";return ss.str();}
 
  protected:
 explicit ConnectionParameterUpdateRequestView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1725,7 +1725,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreditBasedConnectionRequest { ";ss << ""  << "le_psm = " << +GetLePsm() << ", source_cid = " << +GetSourceCid() << ", mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreditBasedConnectionRequest { ";ss << ""  << "le_psm = " << static_cast<uint64_t>(GetLePsm()) << ", source_cid = " << static_cast<uint64_t>(GetSourceCid()) << ", mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits());ss << " }";return ss.str();}
 
  protected:
 explicit LeCreditBasedConnectionRequestView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1747,7 +1747,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreditBasedConnectionResponse { ";ss << ""  << "destination_cid = " << +GetDestinationCid() << ", mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits() << ", result = " << LeCreditBasedConnectionResponseResultText(GetResult());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreditBasedConnectionResponse { ";ss << ""  << "destination_cid = " << static_cast<uint64_t>(GetDestinationCid()) << ", mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits()) << ", result = " << LeCreditBasedConnectionResponseResultText(GetResult());ss << " }";return ss.str();}
 
  protected:
 explicit LeCreditBasedConnectionResponseView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1763,7 +1763,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeFlowControlCredit { ";ss << ""  << "cid = " << +GetCid() << ", credits = " << +GetCredits();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeFlowControlCredit { ";ss << ""  << "cid = " << static_cast<uint64_t>(GetCid()) << ", credits = " << static_cast<uint64_t>(GetCredits());ss << " }";return ss.str();}
 
  protected:
 explicit LeFlowControlCreditView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1786,7 +1786,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedConnectionRequest { ";ss << ""  << "spsm = " << +GetSpsm() << ", mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits() << ", source_cid = " << "VECTOR[";for (size_t index = 0; index < GetSourceCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetSourceCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedConnectionRequest { ";ss << ""  << "spsm = " << static_cast<uint64_t>(GetSpsm()) << ", mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits()) << ", source_cid = " << "VECTOR[";for (size_t index = 0; index < GetSourceCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetSourceCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedCreditBasedConnectionRequestView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1809,7 +1809,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedConnectionResponse { ";ss << ""  << "mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", initial_credits = " << +GetInitialCredits() << ", result = " << CreditBasedConnectionResponseResultText(GetResult()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetDestinationCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedConnectionResponse { ";ss << ""  << "mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", initial_credits = " << static_cast<uint64_t>(GetInitialCredits()) << ", result = " << CreditBasedConnectionResponseResultText(GetResult()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDestinationCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedCreditBasedConnectionResponseView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};
@@ -1828,7 +1828,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedReconfigureRequest { ";ss << ""  << "mtu = " << +GetMtu() << ", mps = " << +GetMps() << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetDestinationCid()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedCreditBasedReconfigureRequest { ";ss << ""  << "mtu = " << static_cast<uint64_t>(GetMtu()) << ", mps = " << static_cast<uint64_t>(GetMps()) << ", destination_cid = " << "VECTOR[";for (size_t index = 0; index < GetDestinationCid().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDestinationCid()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedCreditBasedReconfigureRequestView(LeControlView parent) : LeControlView(std::move(parent)) { was_validated_ = false; }};

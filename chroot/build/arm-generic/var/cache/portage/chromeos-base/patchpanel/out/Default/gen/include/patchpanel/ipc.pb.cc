@@ -14,6 +14,42 @@
 
 PROTOBUF_PRAGMA_INIT_SEG
 namespace patchpanel {
+constexpr SubprocessMessage::SubprocessMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct SubprocessMessageDefaultTypeInternal {
+  constexpr SubprocessMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SubprocessMessageDefaultTypeInternal() {}
+  union {
+    SubprocessMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SubprocessMessageDefaultTypeInternal _SubprocessMessage_default_instance_;
+constexpr ControlMessage::ControlMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ControlMessageDefaultTypeInternal {
+  constexpr ControlMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ControlMessageDefaultTypeInternal() {}
+  union {
+    ControlMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ControlMessageDefaultTypeInternal _ControlMessage_default_instance_;
+constexpr FeedbackMessage::FeedbackMessage(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct FeedbackMessageDefaultTypeInternal {
+  constexpr FeedbackMessageDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~FeedbackMessageDefaultTypeInternal() {}
+  union {
+    FeedbackMessage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT FeedbackMessageDefaultTypeInternal _FeedbackMessage_default_instance_;
 constexpr DeviceMessage::DeviceMessage(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : dev_ifname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -61,18 +97,6 @@ struct NDProxyMessageDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NDProxyMessageDefaultTypeInternal _NDProxyMessage_default_instance_;
-constexpr IpHelperMessage::IpHelperMessage(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
-struct IpHelperMessageDefaultTypeInternal {
-  constexpr IpHelperMessageDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~IpHelperMessageDefaultTypeInternal() {}
-  union {
-    IpHelperMessage _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT IpHelperMessageDefaultTypeInternal _IpHelperMessage_default_instance_;
 }  // namespace patchpanel
 namespace patchpanel {
 bool GuestMessage_GuestType_IsValid(int value) {
@@ -279,6 +303,887 @@ constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::NDProxyEventType_MIN;
 constexpr NDProxyMessage_NDProxyEventType NDProxyMessage::NDProxyEventType_MAX;
 constexpr int NDProxyMessage::NDProxyEventType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+
+// ===================================================================
+
+class SubprocessMessage::_Internal {
+ public:
+  static const ::patchpanel::ControlMessage& control_message(const SubprocessMessage* msg);
+  static const ::patchpanel::FeedbackMessage& feedback_message(const SubprocessMessage* msg);
+};
+
+const ::patchpanel::ControlMessage&
+SubprocessMessage::_Internal::control_message(const SubprocessMessage* msg) {
+  return *msg->message_type_.control_message_;
+}
+const ::patchpanel::FeedbackMessage&
+SubprocessMessage::_Internal::feedback_message(const SubprocessMessage* msg) {
+  return *msg->message_type_.feedback_message_;
+}
+void SubprocessMessage::set_allocated_control_message(::patchpanel::ControlMessage* control_message) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_message_type();
+  if (control_message) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::ControlMessage>::GetOwningArena(control_message);
+    if (message_arena != submessage_arena) {
+      control_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, control_message, submessage_arena);
+    }
+    set_has_control_message();
+    message_type_.control_message_ = control_message;
+  }
+  // @@protoc_insertion_point(field_set_allocated:patchpanel.SubprocessMessage.control_message)
+}
+void SubprocessMessage::set_allocated_feedback_message(::patchpanel::FeedbackMessage* feedback_message) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_message_type();
+  if (feedback_message) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::FeedbackMessage>::GetOwningArena(feedback_message);
+    if (message_arena != submessage_arena) {
+      feedback_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, feedback_message, submessage_arena);
+    }
+    set_has_feedback_message();
+    message_type_.feedback_message_ = feedback_message;
+  }
+  // @@protoc_insertion_point(field_set_allocated:patchpanel.SubprocessMessage.feedback_message)
+}
+SubprocessMessage::SubprocessMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.SubprocessMessage)
+}
+SubprocessMessage::SubprocessMessage(const SubprocessMessage& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  clear_has_message_type();
+  switch (from.message_type_case()) {
+    case kControlMessage: {
+      _internal_mutable_control_message()->::patchpanel::ControlMessage::MergeFrom(from._internal_control_message());
+      break;
+    }
+    case kFeedbackMessage: {
+      _internal_mutable_feedback_message()->::patchpanel::FeedbackMessage::MergeFrom(from._internal_feedback_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:patchpanel.SubprocessMessage)
+}
+
+inline void SubprocessMessage::SharedCtor() {
+clear_has_message_type();
+}
+
+SubprocessMessage::~SubprocessMessage() {
+  // @@protoc_insertion_point(destructor:patchpanel.SubprocessMessage)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void SubprocessMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_message_type()) {
+    clear_message_type();
+  }
+}
+
+void SubprocessMessage::ArenaDtor(void* object) {
+  SubprocessMessage* _this = reinterpret_cast< SubprocessMessage* >(object);
+  (void)_this;
+}
+void SubprocessMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SubprocessMessage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SubprocessMessage::clear_message_type() {
+// @@protoc_insertion_point(one_of_clear_start:patchpanel.SubprocessMessage)
+  switch (message_type_case()) {
+    case kControlMessage: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.control_message_;
+      }
+      break;
+    }
+    case kFeedbackMessage: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.feedback_message_;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+
+
+void SubprocessMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:patchpanel.SubprocessMessage)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_message_type();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* SubprocessMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .patchpanel.ControlMessage control_message = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_control_message(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .patchpanel.FeedbackMessage feedback_message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_feedback_message(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SubprocessMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:patchpanel.SubprocessMessage)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (message_type_case()) {
+    case kControlMessage: {
+      target = stream->EnsureSpace(target);
+      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(
+          1, _Internal::control_message(this), target, stream);
+      break;
+    }
+    case kFeedbackMessage: {
+      target = stream->EnsureSpace(target);
+      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(
+          2, _Internal::feedback_message(this), target, stream);
+      break;
+    }
+    default: ;
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:patchpanel.SubprocessMessage)
+  return target;
+}
+
+size_t SubprocessMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:patchpanel.SubprocessMessage)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (message_type_case()) {
+    // .patchpanel.ControlMessage control_message = 1;
+    case kControlMessage: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *message_type_.control_message_);
+      break;
+    }
+    // .patchpanel.FeedbackMessage feedback_message = 2;
+    case kFeedbackMessage: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *message_type_.feedback_message_);
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SubprocessMessage::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const SubprocessMessage*>(
+      &from));
+}
+
+void SubprocessMessage::MergeFrom(const SubprocessMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.SubprocessMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.message_type_case()) {
+    case kControlMessage: {
+      _internal_mutable_control_message()->::patchpanel::ControlMessage::MergeFrom(from._internal_control_message());
+      break;
+    }
+    case kFeedbackMessage: {
+      _internal_mutable_feedback_message()->::patchpanel::FeedbackMessage::MergeFrom(from._internal_feedback_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void SubprocessMessage::CopyFrom(const SubprocessMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:patchpanel.SubprocessMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SubprocessMessage::IsInitialized() const {
+  switch (message_type_case()) {
+    case kControlMessage: {
+      if (_internal_has_control_message()) {
+        if (!message_type_.control_message_->IsInitialized()) return false;
+      }
+      break;
+    }
+    case kFeedbackMessage: {
+      if (_internal_has_feedback_message()) {
+        if (!message_type_.feedback_message_->IsInitialized()) return false;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  return true;
+}
+
+void SubprocessMessage::InternalSwap(SubprocessMessage* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(message_type_, other->message_type_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+std::string SubprocessMessage::GetTypeName() const {
+  return "patchpanel.SubprocessMessage";
+}
+
+
+// ===================================================================
+
+class ControlMessage::_Internal {
+ public:
+  static const ::patchpanel::GuestMessage& guest_message(const ControlMessage* msg);
+  static const ::patchpanel::DeviceMessage& device_message(const ControlMessage* msg);
+};
+
+const ::patchpanel::GuestMessage&
+ControlMessage::_Internal::guest_message(const ControlMessage* msg) {
+  return *msg->message_type_.guest_message_;
+}
+const ::patchpanel::DeviceMessage&
+ControlMessage::_Internal::device_message(const ControlMessage* msg) {
+  return *msg->message_type_.device_message_;
+}
+void ControlMessage::set_allocated_guest_message(::patchpanel::GuestMessage* guest_message) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_message_type();
+  if (guest_message) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::GuestMessage>::GetOwningArena(guest_message);
+    if (message_arena != submessage_arena) {
+      guest_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, guest_message, submessage_arena);
+    }
+    set_has_guest_message();
+    message_type_.guest_message_ = guest_message;
+  }
+  // @@protoc_insertion_point(field_set_allocated:patchpanel.ControlMessage.guest_message)
+}
+void ControlMessage::set_allocated_device_message(::patchpanel::DeviceMessage* device_message) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_message_type();
+  if (device_message) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::DeviceMessage>::GetOwningArena(device_message);
+    if (message_arena != submessage_arena) {
+      device_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, device_message, submessage_arena);
+    }
+    set_has_device_message();
+    message_type_.device_message_ = device_message;
+  }
+  // @@protoc_insertion_point(field_set_allocated:patchpanel.ControlMessage.device_message)
+}
+ControlMessage::ControlMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.ControlMessage)
+}
+ControlMessage::ControlMessage(const ControlMessage& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  clear_has_message_type();
+  switch (from.message_type_case()) {
+    case kGuestMessage: {
+      _internal_mutable_guest_message()->::patchpanel::GuestMessage::MergeFrom(from._internal_guest_message());
+      break;
+    }
+    case kDeviceMessage: {
+      _internal_mutable_device_message()->::patchpanel::DeviceMessage::MergeFrom(from._internal_device_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:patchpanel.ControlMessage)
+}
+
+inline void ControlMessage::SharedCtor() {
+clear_has_message_type();
+}
+
+ControlMessage::~ControlMessage() {
+  // @@protoc_insertion_point(destructor:patchpanel.ControlMessage)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void ControlMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_message_type()) {
+    clear_message_type();
+  }
+}
+
+void ControlMessage::ArenaDtor(void* object) {
+  ControlMessage* _this = reinterpret_cast< ControlMessage* >(object);
+  (void)_this;
+}
+void ControlMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ControlMessage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ControlMessage::clear_message_type() {
+// @@protoc_insertion_point(one_of_clear_start:patchpanel.ControlMessage)
+  switch (message_type_case()) {
+    case kGuestMessage: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.guest_message_;
+      }
+      break;
+    }
+    case kDeviceMessage: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.device_message_;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+
+
+void ControlMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:patchpanel.ControlMessage)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_message_type();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* ControlMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .patchpanel.GuestMessage guest_message = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_guest_message(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .patchpanel.DeviceMessage device_message = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_device_message(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ControlMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:patchpanel.ControlMessage)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (message_type_case()) {
+    case kGuestMessage: {
+      target = stream->EnsureSpace(target);
+      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(
+          1, _Internal::guest_message(this), target, stream);
+      break;
+    }
+    case kDeviceMessage: {
+      target = stream->EnsureSpace(target);
+      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(
+          2, _Internal::device_message(this), target, stream);
+      break;
+    }
+    default: ;
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:patchpanel.ControlMessage)
+  return target;
+}
+
+size_t ControlMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:patchpanel.ControlMessage)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (message_type_case()) {
+    // .patchpanel.GuestMessage guest_message = 1;
+    case kGuestMessage: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *message_type_.guest_message_);
+      break;
+    }
+    // .patchpanel.DeviceMessage device_message = 2;
+    case kDeviceMessage: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *message_type_.device_message_);
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ControlMessage::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ControlMessage*>(
+      &from));
+}
+
+void ControlMessage::MergeFrom(const ControlMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.ControlMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.message_type_case()) {
+    case kGuestMessage: {
+      _internal_mutable_guest_message()->::patchpanel::GuestMessage::MergeFrom(from._internal_guest_message());
+      break;
+    }
+    case kDeviceMessage: {
+      _internal_mutable_device_message()->::patchpanel::DeviceMessage::MergeFrom(from._internal_device_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void ControlMessage::CopyFrom(const ControlMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:patchpanel.ControlMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ControlMessage::IsInitialized() const {
+  switch (message_type_case()) {
+    case kGuestMessage: {
+      if (_internal_has_guest_message()) {
+        if (!message_type_.guest_message_->IsInitialized()) return false;
+      }
+      break;
+    }
+    case kDeviceMessage: {
+      if (_internal_has_device_message()) {
+        if (!message_type_.device_message_->IsInitialized()) return false;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  return true;
+}
+
+void ControlMessage::InternalSwap(ControlMessage* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(message_type_, other->message_type_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+std::string ControlMessage::GetTypeName() const {
+  return "patchpanel.ControlMessage";
+}
+
+
+// ===================================================================
+
+class FeedbackMessage::_Internal {
+ public:
+  static const ::patchpanel::NDProxyMessage& ndproxy_message(const FeedbackMessage* msg);
+};
+
+const ::patchpanel::NDProxyMessage&
+FeedbackMessage::_Internal::ndproxy_message(const FeedbackMessage* msg) {
+  return *msg->message_type_.ndproxy_message_;
+}
+void FeedbackMessage::set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_message_type();
+  if (ndproxy_message) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::NDProxyMessage>::GetOwningArena(ndproxy_message);
+    if (message_arena != submessage_arena) {
+      ndproxy_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ndproxy_message, submessage_arena);
+    }
+    set_has_ndproxy_message();
+    message_type_.ndproxy_message_ = ndproxy_message;
+  }
+  // @@protoc_insertion_point(field_set_allocated:patchpanel.FeedbackMessage.ndproxy_message)
+}
+FeedbackMessage::FeedbackMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:patchpanel.FeedbackMessage)
+}
+FeedbackMessage::FeedbackMessage(const FeedbackMessage& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  clear_has_message_type();
+  switch (from.message_type_case()) {
+    case kNdproxyMessage: {
+      _internal_mutable_ndproxy_message()->::patchpanel::NDProxyMessage::MergeFrom(from._internal_ndproxy_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:patchpanel.FeedbackMessage)
+}
+
+inline void FeedbackMessage::SharedCtor() {
+clear_has_message_type();
+}
+
+FeedbackMessage::~FeedbackMessage() {
+  // @@protoc_insertion_point(destructor:patchpanel.FeedbackMessage)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void FeedbackMessage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_message_type()) {
+    clear_message_type();
+  }
+}
+
+void FeedbackMessage::ArenaDtor(void* object) {
+  FeedbackMessage* _this = reinterpret_cast< FeedbackMessage* >(object);
+  (void)_this;
+}
+void FeedbackMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void FeedbackMessage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FeedbackMessage::clear_message_type() {
+// @@protoc_insertion_point(one_of_clear_start:patchpanel.FeedbackMessage)
+  switch (message_type_case()) {
+    case kNdproxyMessage: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete message_type_.ndproxy_message_;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
+}
+
+
+void FeedbackMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:patchpanel.FeedbackMessage)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_message_type();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* FeedbackMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .patchpanel.NDProxyMessage ndproxy_message = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ndproxy_message(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FeedbackMessage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:patchpanel.FeedbackMessage)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .patchpanel.NDProxyMessage ndproxy_message = 1;
+  if (_internal_has_ndproxy_message()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::ndproxy_message(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:patchpanel.FeedbackMessage)
+  return target;
+}
+
+size_t FeedbackMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:patchpanel.FeedbackMessage)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (message_type_case()) {
+    // .patchpanel.NDProxyMessage ndproxy_message = 1;
+    case kNdproxyMessage: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *message_type_.ndproxy_message_);
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FeedbackMessage::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const FeedbackMessage*>(
+      &from));
+}
+
+void FeedbackMessage::MergeFrom(const FeedbackMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.FeedbackMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.message_type_case()) {
+    case kNdproxyMessage: {
+      _internal_mutable_ndproxy_message()->::patchpanel::NDProxyMessage::MergeFrom(from._internal_ndproxy_message());
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void FeedbackMessage::CopyFrom(const FeedbackMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:patchpanel.FeedbackMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FeedbackMessage::IsInitialized() const {
+  switch (message_type_case()) {
+    case kNdproxyMessage: {
+      if (_internal_has_ndproxy_message()) {
+        if (!message_type_.ndproxy_message_->IsInitialized()) return false;
+      }
+      break;
+    }
+    case MESSAGE_TYPE_NOT_SET: {
+      break;
+    }
+  }
+  return true;
+}
+
+void FeedbackMessage::InternalSwap(FeedbackMessage* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(message_type_, other->message_type_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+std::string FeedbackMessage::GetTypeName() const {
+  return "patchpanel.FeedbackMessage";
+}
+
 
 // ===================================================================
 
@@ -1260,386 +2165,18 @@ std::string NDProxyMessage::GetTypeName() const {
 }
 
 
-// ===================================================================
-
-class IpHelperMessage::_Internal {
- public:
-  static const ::patchpanel::GuestMessage& guest_message(const IpHelperMessage* msg);
-  static const ::patchpanel::DeviceMessage& device_message(const IpHelperMessage* msg);
-  static const ::patchpanel::NDProxyMessage& ndproxy_message(const IpHelperMessage* msg);
-};
-
-const ::patchpanel::GuestMessage&
-IpHelperMessage::_Internal::guest_message(const IpHelperMessage* msg) {
-  return *msg->message_type_.guest_message_;
-}
-const ::patchpanel::DeviceMessage&
-IpHelperMessage::_Internal::device_message(const IpHelperMessage* msg) {
-  return *msg->message_type_.device_message_;
-}
-const ::patchpanel::NDProxyMessage&
-IpHelperMessage::_Internal::ndproxy_message(const IpHelperMessage* msg) {
-  return *msg->message_type_.ndproxy_message_;
-}
-void IpHelperMessage::set_allocated_guest_message(::patchpanel::GuestMessage* guest_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_message_type();
-  if (guest_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::GuestMessage>::GetOwningArena(guest_message);
-    if (message_arena != submessage_arena) {
-      guest_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, guest_message, submessage_arena);
-    }
-    set_has_guest_message();
-    message_type_.guest_message_ = guest_message;
-  }
-  // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.guest_message)
-}
-void IpHelperMessage::set_allocated_device_message(::patchpanel::DeviceMessage* device_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_message_type();
-  if (device_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::DeviceMessage>::GetOwningArena(device_message);
-    if (message_arena != submessage_arena) {
-      device_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, device_message, submessage_arena);
-    }
-    set_has_device_message();
-    message_type_.device_message_ = device_message;
-  }
-  // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.device_message)
-}
-void IpHelperMessage::set_allocated_ndproxy_message(::patchpanel::NDProxyMessage* ndproxy_message) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_message_type();
-  if (ndproxy_message) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::patchpanel::NDProxyMessage>::GetOwningArena(ndproxy_message);
-    if (message_arena != submessage_arena) {
-      ndproxy_message = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ndproxy_message, submessage_arena);
-    }
-    set_has_ndproxy_message();
-    message_type_.ndproxy_message_ = ndproxy_message;
-  }
-  // @@protoc_insertion_point(field_set_allocated:patchpanel.IpHelperMessage.ndproxy_message)
-}
-IpHelperMessage::IpHelperMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:patchpanel.IpHelperMessage)
-}
-IpHelperMessage::IpHelperMessage(const IpHelperMessage& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  clear_has_message_type();
-  switch (from.message_type_case()) {
-    case kGuestMessage: {
-      _internal_mutable_guest_message()->::patchpanel::GuestMessage::MergeFrom(from._internal_guest_message());
-      break;
-    }
-    case kDeviceMessage: {
-      _internal_mutable_device_message()->::patchpanel::DeviceMessage::MergeFrom(from._internal_device_message());
-      break;
-    }
-    case kNdproxyMessage: {
-      _internal_mutable_ndproxy_message()->::patchpanel::NDProxyMessage::MergeFrom(from._internal_ndproxy_message());
-      break;
-    }
-    case MESSAGE_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  // @@protoc_insertion_point(copy_constructor:patchpanel.IpHelperMessage)
-}
-
-inline void IpHelperMessage::SharedCtor() {
-clear_has_message_type();
-}
-
-IpHelperMessage::~IpHelperMessage() {
-  // @@protoc_insertion_point(destructor:patchpanel.IpHelperMessage)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<std::string>();
-}
-
-inline void IpHelperMessage::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (has_message_type()) {
-    clear_message_type();
-  }
-}
-
-void IpHelperMessage::ArenaDtor(void* object) {
-  IpHelperMessage* _this = reinterpret_cast< IpHelperMessage* >(object);
-  (void)_this;
-}
-void IpHelperMessage::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void IpHelperMessage::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void IpHelperMessage::clear_message_type() {
-// @@protoc_insertion_point(one_of_clear_start:patchpanel.IpHelperMessage)
-  switch (message_type_case()) {
-    case kGuestMessage: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete message_type_.guest_message_;
-      }
-      break;
-    }
-    case kDeviceMessage: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete message_type_.device_message_;
-      }
-      break;
-    }
-    case kNdproxyMessage: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete message_type_.ndproxy_message_;
-      }
-      break;
-    }
-    case MESSAGE_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = MESSAGE_TYPE_NOT_SET;
-}
-
-
-void IpHelperMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:patchpanel.IpHelperMessage)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  clear_message_type();
-  _internal_metadata_.Clear<std::string>();
-}
-
-const char* IpHelperMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .patchpanel.GuestMessage guest_message = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_guest_message(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .patchpanel.DeviceMessage device_message = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_device_message(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .patchpanel.NDProxyMessage ndproxy_message = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_ndproxy_message(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* IpHelperMessage::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:patchpanel.IpHelperMessage)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  switch (message_type_case()) {
-    case kGuestMessage: {
-      target = stream->EnsureSpace(target);
-      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(
-          1, _Internal::guest_message(this), target, stream);
-      break;
-    }
-    case kDeviceMessage: {
-      target = stream->EnsureSpace(target);
-      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(
-          2, _Internal::device_message(this), target, stream);
-      break;
-    }
-    case kNdproxyMessage: {
-      target = stream->EnsureSpace(target);
-      target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(
-          3, _Internal::ndproxy_message(this), target, stream);
-      break;
-    }
-    default: ;
-  }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:patchpanel.IpHelperMessage)
-  return target;
-}
-
-size_t IpHelperMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:patchpanel.IpHelperMessage)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  switch (message_type_case()) {
-    // .patchpanel.GuestMessage guest_message = 1;
-    case kGuestMessage: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *message_type_.guest_message_);
-      break;
-    }
-    // .patchpanel.DeviceMessage device_message = 2;
-    case kDeviceMessage: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *message_type_.device_message_);
-      break;
-    }
-    // .patchpanel.NDProxyMessage ndproxy_message = 3;
-    case kNdproxyMessage: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *message_type_.ndproxy_message_);
-      break;
-    }
-    case MESSAGE_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void IpHelperMessage::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const IpHelperMessage*>(
-      &from));
-}
-
-void IpHelperMessage::MergeFrom(const IpHelperMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:patchpanel.IpHelperMessage)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  switch (from.message_type_case()) {
-    case kGuestMessage: {
-      _internal_mutable_guest_message()->::patchpanel::GuestMessage::MergeFrom(from._internal_guest_message());
-      break;
-    }
-    case kDeviceMessage: {
-      _internal_mutable_device_message()->::patchpanel::DeviceMessage::MergeFrom(from._internal_device_message());
-      break;
-    }
-    case kNdproxyMessage: {
-      _internal_mutable_ndproxy_message()->::patchpanel::NDProxyMessage::MergeFrom(from._internal_ndproxy_message());
-      break;
-    }
-    case MESSAGE_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-}
-
-void IpHelperMessage::CopyFrom(const IpHelperMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:patchpanel.IpHelperMessage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool IpHelperMessage::IsInitialized() const {
-  switch (message_type_case()) {
-    case kGuestMessage: {
-      if (_internal_has_guest_message()) {
-        if (!message_type_.guest_message_->IsInitialized()) return false;
-      }
-      break;
-    }
-    case kDeviceMessage: {
-      if (_internal_has_device_message()) {
-        if (!message_type_.device_message_->IsInitialized()) return false;
-      }
-      break;
-    }
-    case kNdproxyMessage: {
-      if (_internal_has_ndproxy_message()) {
-        if (!message_type_.ndproxy_message_->IsInitialized()) return false;
-      }
-      break;
-    }
-    case MESSAGE_TYPE_NOT_SET: {
-      break;
-    }
-  }
-  return true;
-}
-
-void IpHelperMessage::InternalSwap(IpHelperMessage* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(message_type_, other->message_type_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
-}
-
-std::string IpHelperMessage::GetTypeName() const {
-  return "patchpanel.IpHelperMessage";
-}
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace patchpanel
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::patchpanel::SubprocessMessage* Arena::CreateMaybeMessage< ::patchpanel::SubprocessMessage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::patchpanel::SubprocessMessage >(arena);
+}
+template<> PROTOBUF_NOINLINE ::patchpanel::ControlMessage* Arena::CreateMaybeMessage< ::patchpanel::ControlMessage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::patchpanel::ControlMessage >(arena);
+}
+template<> PROTOBUF_NOINLINE ::patchpanel::FeedbackMessage* Arena::CreateMaybeMessage< ::patchpanel::FeedbackMessage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::patchpanel::FeedbackMessage >(arena);
+}
 template<> PROTOBUF_NOINLINE ::patchpanel::DeviceMessage* Arena::CreateMaybeMessage< ::patchpanel::DeviceMessage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::patchpanel::DeviceMessage >(arena);
 }
@@ -1648,9 +2185,6 @@ template<> PROTOBUF_NOINLINE ::patchpanel::GuestMessage* Arena::CreateMaybeMessa
 }
 template<> PROTOBUF_NOINLINE ::patchpanel::NDProxyMessage* Arena::CreateMaybeMessage< ::patchpanel::NDProxyMessage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::patchpanel::NDProxyMessage >(arena);
-}
-template<> PROTOBUF_NOINLINE ::patchpanel::IpHelperMessage* Arena::CreateMaybeMessage< ::patchpanel::IpHelperMessage >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::patchpanel::IpHelperMessage >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

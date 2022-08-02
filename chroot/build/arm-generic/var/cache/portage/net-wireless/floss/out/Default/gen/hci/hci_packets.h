@@ -1030,7 +1030,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "GapData { ";ss << "data_type = " << GapDataTypeText(data_type_) << ", data = " << "VECTOR[";for (size_t index = 0; index < data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(data_[index]);}ss << "]";ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "GapData { ";ss << "data_type = " << GapDataTypeText(data_type_) << ", data = " << "VECTOR[";for (size_t index = 0; index < data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((data_[index]));}ss << "]";ss << " }";return ss.str();}
 
 GapDataType data_type_{};std::vector<uint8_t> data_{};
  private:
@@ -1056,7 +1056,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "Lap { ";ss << "lap = " << +lap_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "Lap { ";ss << "lap = " << static_cast<uint64_t>(lap_);ss << " }";return ss.str();}
 
 uint8_t lap_{};};
 
@@ -1079,7 +1079,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ScoCodingFormat { ";ss << "coding_format = " << ScoCodingFormatValuesText(coding_format_) << ", company_id = " << +company_id_ << ", vendor_specific_codec_id = " << +vendor_specific_codec_id_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "ScoCodingFormat { ";ss << "coding_format = " << ScoCodingFormatValuesText(coding_format_) << ", company_id = " << static_cast<uint64_t>(company_id_) << ", vendor_specific_codec_id = " << static_cast<uint64_t>(vendor_specific_codec_id_);ss << " }";return ss.str();}
 
 ScoCodingFormatValues coding_format_{};uint16_t company_id_{};uint16_t vendor_specific_codec_id_{};};
 
@@ -1103,7 +1103,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "KeyAndAddress { ";ss << "address = " << address_.ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(link_key_[index]);}ss << "]";ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "KeyAndAddress { ";ss << "address = " << address_.ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((link_key_[index]));}ss << "]";ss << " }";return ss.str();}
 
 Address address_{};std::array<uint8_t,16> link_key_{};};
 
@@ -1127,7 +1127,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CompletedPackets { ";ss << "connection_handle = " << +connection_handle_ << ", host_num_of_completed_packets = " << +host_num_of_completed_packets_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CompletedPackets { ";ss << "connection_handle = " << static_cast<uint64_t>(connection_handle_) << ", host_num_of_completed_packets = " << static_cast<uint64_t>(host_num_of_completed_packets_);ss << " }";return ss.str();}
 
 uint16_t connection_handle_{};uint16_t host_num_of_completed_packets_{};};
 
@@ -1150,7 +1150,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LocalVersionInformation { ";ss << "hci_version = " << HciVersionText(hci_version_) << ", hci_revision = " << +hci_revision_ << ", lmp_version = " << LmpVersionText(lmp_version_) << ", manufacturer_name = " << +manufacturer_name_ << ", lmp_subversion = " << +lmp_subversion_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LocalVersionInformation { ";ss << "hci_version = " << HciVersionText(hci_version_) << ", hci_revision = " << static_cast<uint64_t>(hci_revision_) << ", lmp_version = " << LmpVersionText(lmp_version_) << ", manufacturer_name = " << static_cast<uint64_t>(manufacturer_name_) << ", lmp_subversion = " << static_cast<uint64_t>(lmp_subversion_);ss << " }";return ss.str();}
 
 HciVersion hci_version_{};uint16_t hci_revision_{};LmpVersion lmp_version_{};uint16_t manufacturer_name_{};uint16_t lmp_subversion_{};};
 
@@ -1174,7 +1174,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CodecConfiguration { ";ss << "codec_id = " << +codec_id_ << ", br_edr = " << +br_edr_ << ", br_edr_sco_and_esco = " << +br_edr_sco_and_esco_ << ", le_cis = " << +le_cis_ << ", le_bis = " << +le_bis_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CodecConfiguration { ";ss << "codec_id = " << static_cast<uint64_t>(codec_id_) << ", br_edr = " << static_cast<uint64_t>(br_edr_) << ", br_edr_sco_and_esco = " << static_cast<uint64_t>(br_edr_sco_and_esco_) << ", le_cis = " << static_cast<uint64_t>(le_cis_) << ", le_bis = " << static_cast<uint64_t>(le_bis_);ss << " }";return ss.str();}
 
 uint8_t codec_id_{};uint8_t br_edr_{};uint8_t br_edr_sco_and_esco_{};uint8_t le_cis_{};uint8_t le_bis_{};};
 
@@ -1198,7 +1198,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "VendorCodecConfiguration { ";ss << "company_id = " << +company_id_ << ", codec_vendor_id = " << +codec_vendor_id_ << ", br_edr = " << +br_edr_ << ", br_edr_sco_and_esco = " << +br_edr_sco_and_esco_ << ", le_cis = " << +le_cis_ << ", le_bis = " << +le_bis_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "VendorCodecConfiguration { ";ss << "company_id = " << static_cast<uint64_t>(company_id_) << ", codec_vendor_id = " << static_cast<uint64_t>(codec_vendor_id_) << ", br_edr = " << static_cast<uint64_t>(br_edr_) << ", br_edr_sco_and_esco = " << static_cast<uint64_t>(br_edr_sco_and_esco_) << ", le_cis = " << static_cast<uint64_t>(le_cis_) << ", le_bis = " << static_cast<uint64_t>(le_bis_);ss << " }";return ss.str();}
 
 uint16_t company_id_{};uint16_t codec_vendor_id_{};uint8_t br_edr_{};uint8_t br_edr_sco_and_esco_{};uint8_t le_cis_{};uint8_t le_bis_{};};
 
@@ -1222,7 +1222,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CodecCapability { ";ss << "capability = " << "VECTOR[";for (size_t index = 0; index < capability_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(capability_[index]);}ss << "]";ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CodecCapability { ";ss << "capability = " << "VECTOR[";for (size_t index = 0; index < capability_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((capability_[index]));}ss << "]";ss << " }";return ss.str();}
 
 std::vector<uint8_t> capability_{};
  private:
@@ -1247,7 +1247,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeBufferSize { ";ss << "le_data_packet_length = " << +le_data_packet_length_ << ", total_num_le_packets = " << +total_num_le_packets_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeBufferSize { ";ss << "le_data_packet_length = " << static_cast<uint64_t>(le_data_packet_length_) << ", total_num_le_packets = " << static_cast<uint64_t>(total_num_le_packets_);ss << " }";return ss.str();}
 
 uint16_t le_data_packet_length_{};uint8_t total_num_le_packets_{};};
 
@@ -1270,7 +1270,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeMaximumDataLength { ";ss << "supported_max_tx_octets = " << +supported_max_tx_octets_ << ", supported_max_tx_time = " << +supported_max_tx_time_ << ", supported_max_rx_octets = " << +supported_max_rx_octets_ << ", supported_max_rx_time = " << +supported_max_rx_time_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeMaximumDataLength { ";ss << "supported_max_tx_octets = " << static_cast<uint64_t>(supported_max_tx_octets_) << ", supported_max_tx_time = " << static_cast<uint64_t>(supported_max_tx_time_) << ", supported_max_rx_octets = " << static_cast<uint64_t>(supported_max_rx_octets_) << ", supported_max_rx_time = " << static_cast<uint64_t>(supported_max_rx_time_);ss << " }";return ss.str();}
 
 uint16_t supported_max_tx_octets_{};uint16_t supported_max_tx_time_{};uint16_t supported_max_rx_octets_{};uint16_t supported_max_rx_time_{};};
 
@@ -1293,7 +1293,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "EnabledSet { ";ss << "advertising_handle = " << +advertising_handle_ << ", duration = " << +duration_ << ", max_extended_advertising_events = " << +max_extended_advertising_events_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "EnabledSet { ";ss << "advertising_handle = " << static_cast<uint64_t>(advertising_handle_) << ", duration = " << static_cast<uint64_t>(duration_) << ", max_extended_advertising_events = " << static_cast<uint64_t>(max_extended_advertising_events_);ss << " }";return ss.str();}
 
 uint8_t advertising_handle_{};uint16_t duration_{};uint8_t max_extended_advertising_events_{};};
 
@@ -1316,7 +1316,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "DisabledSet { ";ss << "advertising_handle = " << +advertising_handle_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "DisabledSet { ";ss << "advertising_handle = " << static_cast<uint64_t>(advertising_handle_);ss << " }";return ss.str();}
 
 uint8_t advertising_handle_{};};
 
@@ -1339,7 +1339,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "PhyScanParameters { ";ss << "le_scan_type = " << LeScanTypeText(le_scan_type_) << ", le_scan_interval = " << +le_scan_interval_ << ", le_scan_window = " << +le_scan_window_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "PhyScanParameters { ";ss << "le_scan_type = " << LeScanTypeText(le_scan_type_) << ", le_scan_interval = " << static_cast<uint64_t>(le_scan_interval_) << ", le_scan_window = " << static_cast<uint64_t>(le_scan_window_);ss << " }";return ss.str();}
 
 LeScanType le_scan_type_{};uint16_t le_scan_interval_{};uint16_t le_scan_window_{};};
 
@@ -1362,7 +1362,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeCreateConnPhyScanParameters { ";ss << "scan_interval = " << +scan_interval_ << ", scan_window = " << +scan_window_ << ", conn_interval_min = " << +conn_interval_min_ << ", conn_interval_max = " << +conn_interval_max_ << ", conn_latency = " << +conn_latency_ << ", supervision_timeout = " << +supervision_timeout_ << ", min_ce_length = " << +min_ce_length_ << ", max_ce_length = " << +max_ce_length_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeCreateConnPhyScanParameters { ";ss << "scan_interval = " << static_cast<uint64_t>(scan_interval_) << ", scan_window = " << static_cast<uint64_t>(scan_window_) << ", conn_interval_min = " << static_cast<uint64_t>(conn_interval_min_) << ", conn_interval_max = " << static_cast<uint64_t>(conn_interval_max_) << ", conn_latency = " << static_cast<uint64_t>(conn_latency_) << ", supervision_timeout = " << static_cast<uint64_t>(supervision_timeout_) << ", min_ce_length = " << static_cast<uint64_t>(min_ce_length_) << ", max_ce_length = " << static_cast<uint64_t>(max_ce_length_);ss << " }";return ss.str();}
 
 uint16_t scan_interval_{};uint16_t scan_window_{};uint16_t conn_interval_min_{};uint16_t conn_interval_max_{};uint16_t conn_latency_{};uint16_t supervision_timeout_{};uint16_t min_ce_length_{};uint16_t max_ce_length_{};};
 
@@ -1391,7 +1391,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CisParametersConfig { ";ss << "cis_id = " << +cis_id_ << ", max_sdu_m_to_s = " << +max_sdu_m_to_s_ << ", max_sdu_s_to_m = " << +max_sdu_s_to_m_ << ", phy_m_to_s = " << +phy_m_to_s_ << ", phy_s_to_m = " << +phy_s_to_m_ << ", rtn_m_to_s = " << +rtn_m_to_s_ << ", rtn_s_to_m = " << +rtn_s_to_m_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CisParametersConfig { ";ss << "cis_id = " << static_cast<uint64_t>(cis_id_) << ", max_sdu_m_to_s = " << static_cast<uint64_t>(max_sdu_m_to_s_) << ", max_sdu_s_to_m = " << static_cast<uint64_t>(max_sdu_s_to_m_) << ", phy_m_to_s = " << static_cast<uint64_t>(phy_m_to_s_) << ", phy_s_to_m = " << static_cast<uint64_t>(phy_s_to_m_) << ", rtn_m_to_s = " << static_cast<uint64_t>(rtn_m_to_s_) << ", rtn_s_to_m = " << static_cast<uint64_t>(rtn_s_to_m_);ss << " }";return ss.str();}
 
 uint8_t cis_id_{};uint16_t max_sdu_m_to_s_{};uint16_t max_sdu_s_to_m_{};uint8_t phy_m_to_s_{};uint8_t phy_s_to_m_{};uint8_t rtn_m_to_s_{};uint8_t rtn_s_to_m_{};};
 
@@ -1414,7 +1414,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeCisParametersTestConfig { ";ss << "cis_id = " << +cis_id_ << ", nse = " << +nse_ << ", max_sdu_m_to_s = " << +max_sdu_m_to_s_ << ", max_sdu_s_to_m = " << +max_sdu_s_to_m_ << ", max_pdu_m_to_s = " << +max_pdu_m_to_s_ << ", max_pdu_s_to_m = " << +max_pdu_s_to_m_ << ", phy_m_to_s = " << +phy_m_to_s_ << ", phy_s_to_m = " << +phy_s_to_m_ << ", bn_m_to_s = " << +bn_m_to_s_ << ", bn_s_to_m = " << +bn_s_to_m_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeCisParametersTestConfig { ";ss << "cis_id = " << static_cast<uint64_t>(cis_id_) << ", nse = " << static_cast<uint64_t>(nse_) << ", max_sdu_m_to_s = " << static_cast<uint64_t>(max_sdu_m_to_s_) << ", max_sdu_s_to_m = " << static_cast<uint64_t>(max_sdu_s_to_m_) << ", max_pdu_m_to_s = " << static_cast<uint64_t>(max_pdu_m_to_s_) << ", max_pdu_s_to_m = " << static_cast<uint64_t>(max_pdu_s_to_m_) << ", phy_m_to_s = " << static_cast<uint64_t>(phy_m_to_s_) << ", phy_s_to_m = " << static_cast<uint64_t>(phy_s_to_m_) << ", bn_m_to_s = " << static_cast<uint64_t>(bn_m_to_s_) << ", bn_s_to_m = " << static_cast<uint64_t>(bn_s_to_m_);ss << " }";return ss.str();}
 
 uint8_t cis_id_{};uint8_t nse_{};uint16_t max_sdu_m_to_s_{};uint16_t max_sdu_s_to_m_{};uint16_t max_pdu_m_to_s_{};uint16_t max_pdu_s_to_m_{};uint8_t phy_m_to_s_{};uint8_t phy_s_to_m_{};uint8_t bn_m_to_s_{};uint8_t bn_s_to_m_{};};
 
@@ -1439,7 +1439,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CreateCisConfig { ";ss << "cis_connection_handle = " << +cis_connection_handle_ << ", acl_connection_handle = " << +acl_connection_handle_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "CreateCisConfig { ";ss << "cis_connection_handle = " << static_cast<uint64_t>(cis_connection_handle_) << ", acl_connection_handle = " << static_cast<uint64_t>(acl_connection_handle_);ss << " }";return ss.str();}
 
 uint16_t cis_connection_handle_{};uint16_t acl_connection_handle_{};};
 
@@ -1462,7 +1462,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "VendorCapabilities { ";ss << "is_supported = " << +is_supported_ << ", max_advt_instances = " << +max_advt_instances_ << ", offloaded_resolution_of_private_address = " << +offloaded_resolution_of_private_address_ << ", total_scan_results_storage = " << +total_scan_results_storage_ << ", max_irk_list_sz = " << +max_irk_list_sz_ << ", filtering_support = " << +filtering_support_ << ", max_filter = " << +max_filter_ << ", activity_energy_info_support = " << +activity_energy_info_support_ << ", version_supported = " << +version_supported_ << ", total_num_of_advt_tracked = " << +total_num_of_advt_tracked_ << ", extended_scan_support = " << +extended_scan_support_ << ", debug_logging_supported = " << +debug_logging_supported_ << ", le_address_generation_offloading_support = " << +le_address_generation_offloading_support_ << ", a2dp_source_offload_capability_mask = " << +a2dp_source_offload_capability_mask_ << ", bluetooth_quality_report_support = " << +bluetooth_quality_report_support_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "VendorCapabilities { ";ss << "is_supported = " << static_cast<uint64_t>(is_supported_) << ", max_advt_instances = " << static_cast<uint64_t>(max_advt_instances_) << ", offloaded_resolution_of_private_address = " << static_cast<uint64_t>(offloaded_resolution_of_private_address_) << ", total_scan_results_storage = " << static_cast<uint64_t>(total_scan_results_storage_) << ", max_irk_list_sz = " << static_cast<uint64_t>(max_irk_list_sz_) << ", filtering_support = " << static_cast<uint64_t>(filtering_support_) << ", max_filter = " << static_cast<uint64_t>(max_filter_) << ", activity_energy_info_support = " << static_cast<uint64_t>(activity_energy_info_support_) << ", version_supported = " << static_cast<uint64_t>(version_supported_) << ", total_num_of_advt_tracked = " << static_cast<uint64_t>(total_num_of_advt_tracked_) << ", extended_scan_support = " << static_cast<uint64_t>(extended_scan_support_) << ", debug_logging_supported = " << static_cast<uint64_t>(debug_logging_supported_) << ", le_address_generation_offloading_support = " << static_cast<uint64_t>(le_address_generation_offloading_support_) << ", a2dp_source_offload_capability_mask = " << static_cast<uint64_t>(a2dp_source_offload_capability_mask_) << ", bluetooth_quality_report_support = " << static_cast<uint64_t>(bluetooth_quality_report_support_);ss << " }";return ss.str();}
 
 uint8_t is_supported_{};uint8_t max_advt_instances_{};uint8_t offloaded_resolution_of_private_address_{};uint16_t total_scan_results_storage_{};uint8_t max_irk_list_sz_{};uint8_t filtering_support_{};uint8_t max_filter_{};uint8_t activity_energy_info_support_{};uint16_t version_supported_{};uint16_t total_num_of_advt_tracked_{};uint8_t extended_scan_support_{};uint8_t debug_logging_supported_{};uint8_t le_address_generation_offloading_support_{};uint32_t a2dp_source_offload_capability_mask_{};uint8_t bluetooth_quality_report_support_{};};
 
@@ -1485,7 +1485,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "BaseVendorCapabilities { ";ss << "max_advt_instances = " << +max_advt_instances_ << ", offloaded_resolution_of_private_address = " << +offloaded_resolution_of_private_address_ << ", total_scan_results_storage = " << +total_scan_results_storage_ << ", max_irk_list_sz = " << +max_irk_list_sz_ << ", filtering_support = " << +filtering_support_ << ", max_filter = " << +max_filter_ << ", activity_energy_info_support = " << +activity_energy_info_support_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "BaseVendorCapabilities { ";ss << "max_advt_instances = " << static_cast<uint64_t>(max_advt_instances_) << ", offloaded_resolution_of_private_address = " << static_cast<uint64_t>(offloaded_resolution_of_private_address_) << ", total_scan_results_storage = " << static_cast<uint64_t>(total_scan_results_storage_) << ", max_irk_list_sz = " << static_cast<uint64_t>(max_irk_list_sz_) << ", filtering_support = " << static_cast<uint64_t>(filtering_support_) << ", max_filter = " << static_cast<uint64_t>(max_filter_) << ", activity_energy_info_support = " << static_cast<uint64_t>(activity_energy_info_support_);ss << " }";return ss.str();}
 
 uint8_t max_advt_instances_{};uint8_t offloaded_resolution_of_private_address_{};uint16_t total_scan_results_storage_{};uint8_t max_irk_list_sz_{};uint8_t filtering_support_{};uint8_t max_filter_{};uint8_t activity_energy_info_support_{};};
 
@@ -1508,7 +1508,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "TruncatedResult { ";ss << "bd_addr = " << bd_addr_.ToString() << ", address_type = " << AddressTypeText(address_type_) << ", tx_power = " << +tx_power_ << ", rssi = " << +rssi_ << ", timestamp = " << +timestamp_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "TruncatedResult { ";ss << "bd_addr = " << bd_addr_.ToString() << ", address_type = " << AddressTypeText(address_type_) << ", tx_power = " << static_cast<uint64_t>(tx_power_) << ", rssi = " << static_cast<uint64_t>(rssi_) << ", timestamp = " << static_cast<uint64_t>(timestamp_);ss << " }";return ss.str();}
 
 Address bd_addr_{};AddressType address_type_{};uint8_t tx_power_{};uint8_t rssi_{};uint16_t timestamp_{};};
 
@@ -1533,7 +1533,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "FullResult { ";ss << "bd_addr = " << bd_addr_.ToString() << ", address_type = " << AddressTypeText(address_type_) << ", tx_power = " << +tx_power_ << ", rssi = " << +rssi_ << ", timestamp = " << +timestamp_ << ", adv_packet = " << "VECTOR[";for (size_t index = 0; index < adv_packet_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(adv_packet_[index]);}ss << "]" << ", scan_response = " << "VECTOR[";for (size_t index = 0; index < scan_response_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(scan_response_[index]);}ss << "]";ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "FullResult { ";ss << "bd_addr = " << bd_addr_.ToString() << ", address_type = " << AddressTypeText(address_type_) << ", tx_power = " << static_cast<uint64_t>(tx_power_) << ", rssi = " << static_cast<uint64_t>(rssi_) << ", timestamp = " << static_cast<uint64_t>(timestamp_) << ", adv_packet = " << "VECTOR[";for (size_t index = 0; index < adv_packet_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((adv_packet_[index]));}ss << "]" << ", scan_response = " << "VECTOR[";for (size_t index = 0; index < scan_response_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((scan_response_[index]));}ss << "]";ss << " }";return ss.str();}
 
 Address bd_addr_{};AddressType address_type_{};uint8_t tx_power_{};uint8_t rssi_{};uint16_t timestamp_{};std::vector<uint8_t> adv_packet_{};std::vector<uint8_t> scan_response_{};
  private:
@@ -1563,7 +1563,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "InquiryResponse { ";ss << "bd_addr = " << bd_addr_.ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(page_scan_repetition_mode_) << ", class_of_device = " << class_of_device_.ToString() << ", clock_offset = " << +clock_offset_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "InquiryResponse { ";ss << "bd_addr = " << bd_addr_.ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(page_scan_repetition_mode_) << ", class_of_device = " << class_of_device_.ToString() << ", clock_offset = " << static_cast<uint64_t>(clock_offset_);ss << " }";return ss.str();}
 
 Address bd_addr_{};PageScanRepetitionMode page_scan_repetition_mode_{};ClassOfDevice class_of_device_{};uint16_t clock_offset_{};};
 
@@ -1611,7 +1611,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "InquiryResponseWithRssi { ";ss << "address = " << address_.ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(page_scan_repetition_mode_) << ", class_of_device = " << class_of_device_.ToString() << ", clock_offset = " << +clock_offset_ << ", rssi = " << +rssi_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "InquiryResponseWithRssi { ";ss << "address = " << address_.ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(page_scan_repetition_mode_) << ", class_of_device = " << class_of_device_.ToString() << ", clock_offset = " << static_cast<uint64_t>(clock_offset_) << ", rssi = " << static_cast<uint64_t>(rssi_);ss << " }";return ss.str();}
 
 Address address_{};PageScanRepetitionMode page_scan_repetition_mode_{};ClassOfDevice class_of_device_{};uint16_t clock_offset_{};uint8_t rssi_{};};
 
@@ -1635,7 +1635,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeAdvertisingResponse { ";ss << "event_type = " << AdvertisingEventTypeText(event_type_) << ", address_type = " << AddressTypeText(address_type_) << ", address = " << address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << (advertising_data_[index]).ToString();}ss << "]" << ", rssi = " << +rssi_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeAdvertisingResponse { ";ss << "event_type = " << AdvertisingEventTypeText(event_type_) << ", address_type = " << AddressTypeText(address_type_) << ", address = " << address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << (advertising_data_[index]).ToString();}ss << "]" << ", rssi = " << static_cast<uint64_t>(rssi_);ss << " }";return ss.str();}
 
 AdvertisingEventType event_type_{};AddressType address_type_{};Address address_{};std::vector<GapData> advertising_data_{};uint8_t rssi_{};
  private:
@@ -1661,7 +1661,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeAdvertisingResponseRaw { ";ss << "event_type = " << AdvertisingEventTypeText(event_type_) << ", address_type = " << AddressTypeText(address_type_) << ", address = " << address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(advertising_data_[index]);}ss << "]" << ", rssi = " << +rssi_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeAdvertisingResponseRaw { ";ss << "event_type = " << AdvertisingEventTypeText(event_type_) << ", address_type = " << AddressTypeText(address_type_) << ", address = " << address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((advertising_data_[index]));}ss << "]" << ", rssi = " << static_cast<uint64_t>(rssi_);ss << " }";return ss.str();}
 
 AdvertisingEventType event_type_{};AddressType address_type_{};Address address_{};std::vector<uint8_t> advertising_data_{};uint8_t rssi_{};
  private:
@@ -1686,7 +1686,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeDirectedAdvertisingResponse { ";ss << "event_type = " << DirectAdvertisingEventTypeText(event_type_) << ", address_type = " << DirectAdvertisingAddressTypeText(address_type_) << ", address = " << address_.ToString() << ", direct_address_type = " << DirectAddressTypeText(direct_address_type_) << ", direct_address = " << direct_address_.ToString() << ", rssi = " << +rssi_;ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeDirectedAdvertisingResponse { ";ss << "event_type = " << DirectAdvertisingEventTypeText(event_type_) << ", address_type = " << DirectAdvertisingAddressTypeText(address_type_) << ", address = " << address_.ToString() << ", direct_address_type = " << DirectAddressTypeText(direct_address_type_) << ", direct_address = " << direct_address_.ToString() << ", rssi = " << static_cast<uint64_t>(rssi_);ss << " }";return ss.str();}
 
 DirectAdvertisingEventType event_type_{};DirectAdvertisingAddressType address_type_{};Address address_{};DirectAddressType direct_address_type_{};Address direct_address_{};uint8_t rssi_{};};
 
@@ -1711,7 +1711,7 @@ public:virtual size_t size() const override {return (BitsOfHeader() / 8) + (Bits
 
 
 
-std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeExtendedAdvertisingResponse { ";ss << "connectable = " << +connectable_ << ", scannable = " << +scannable_ << ", directed = " << +directed_ << ", scan_response = " << +scan_response_ << ", legacy = " << +legacy_ << ", data_status = " << DataStatusText(data_status_) << ", address_type = " << DirectAdvertisingAddressTypeText(address_type_) << ", address = " << address_.ToString() << ", primary_phy = " << PrimaryPhyTypeText(primary_phy_) << ", secondary_phy = " << SecondaryPhyTypeText(secondary_phy_) << ", advertising_sid = " << +advertising_sid_ << ", tx_power = " << +tx_power_ << ", rssi = " << +rssi_ << ", periodic_advertising_interval = " << +periodic_advertising_interval_ << ", direct_address_type = " << DirectAdvertisingAddressTypeText(direct_address_type_) << ", direct_address = " << direct_address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << +(advertising_data_[index]);}ss << "]";ss << " }";return ss.str();}
+std::string ToString() {std::stringstream ss;ss << std::hex << std::showbase << "LeExtendedAdvertisingResponse { ";ss << "connectable = " << static_cast<uint64_t>(connectable_) << ", scannable = " << static_cast<uint64_t>(scannable_) << ", directed = " << static_cast<uint64_t>(directed_) << ", scan_response = " << static_cast<uint64_t>(scan_response_) << ", legacy = " << static_cast<uint64_t>(legacy_) << ", data_status = " << DataStatusText(data_status_) << ", address_type = " << DirectAdvertisingAddressTypeText(address_type_) << ", address = " << address_.ToString() << ", primary_phy = " << PrimaryPhyTypeText(primary_phy_) << ", secondary_phy = " << SecondaryPhyTypeText(secondary_phy_) << ", advertising_sid = " << static_cast<uint64_t>(advertising_sid_) << ", tx_power = " << static_cast<uint64_t>(tx_power_) << ", rssi = " << static_cast<uint64_t>(rssi_) << ", periodic_advertising_interval = " << static_cast<uint64_t>(periodic_advertising_interval_) << ", direct_address_type = " << DirectAdvertisingAddressTypeText(direct_address_type_) << ", direct_address = " << direct_address_.ToString() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < advertising_data_.size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((advertising_data_[index]));}ss << "]";ss << " }";return ss.str();}
 
 uint8_t connectable_{};uint8_t scannable_{};uint8_t directed_{};uint8_t scan_response_{};uint8_t legacy_{};DataStatus data_status_{};DirectAdvertisingAddressType address_type_{};Address address_{};PrimaryPhyType primary_phy_{};SecondaryPhyType secondary_phy_{};uint8_t advertising_sid_{};uint8_t tx_power_{};uint8_t rssi_{};uint16_t periodic_advertising_interval_{};DirectAdvertisingAddressType direct_address_type_{};Address direct_address_{};std::vector<uint8_t> advertising_data_{};
  private:
@@ -1741,7 +1741,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Acl { ";ss << ""  << "handle = " << +GetHandle() << ", packet_boundary_flag = " << PacketBoundaryFlagText(GetPacketBoundaryFlag()) << ", broadcast_flag = " << BroadcastFlagText(GetBroadcastFlag()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Acl { ";ss << ""  << "handle = " << static_cast<uint64_t>(GetHandle()) << ", packet_boundary_flag = " << PacketBoundaryFlagText(GetPacketBoundaryFlag()) << ", broadcast_flag = " << BroadcastFlagText(GetBroadcastFlag()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit AclView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -1766,7 +1766,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Sco { ";ss << ""  << "handle = " << +GetHandle() << ", packet_status_flag = " << PacketStatusFlagText(GetPacketStatusFlag()) << ", data_size = " << GetDataSize() << ", data = " << "VECTOR[";for (size_t index = 0; index < GetData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Sco { ";ss << ""  << "handle = " << static_cast<uint64_t>(GetHandle()) << ", packet_status_flag = " << PacketStatusFlagText(GetPacketStatusFlag()) << ", data_size = " << GetDataSize() << ", data = " << "VECTOR[";for (size_t index = 0; index < GetData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ScoView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -2020,7 +2020,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandComplete { ";ss << ""  << "num_hci_command_packets = " << +GetNumHciCommandPackets() << ", command_op_code = " << OpCodeText(GetCommandOpCode()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandComplete { ";ss << ""  << "num_hci_command_packets = " << static_cast<uint64_t>(GetNumHciCommandPackets()) << ", command_op_code = " << OpCodeText(GetCommandOpCode()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit CommandCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -2043,7 +2043,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandStatus { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_hci_command_packets = " << +GetNumHciCommandPackets() << ", command_op_code = " << OpCodeText(GetCommandOpCode()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CommandStatus { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_hci_command_packets = " << static_cast<uint64_t>(GetNumHciCommandPackets()) << ", command_op_code = " << OpCodeText(GetCommandOpCode()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit CommandStatusView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -2074,7 +2074,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Inquiry { ";ss << ""  << "lap = " << GetLap().ToString() << ", inquiry_length = " << +GetInquiryLength() << ", num_responses = " << +GetNumResponses();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Inquiry { ";ss << ""  << "lap = " << GetLap().ToString() << ", inquiry_length = " << static_cast<uint64_t>(GetInquiryLength()) << ", num_responses = " << static_cast<uint64_t>(GetNumResponses());ss << " }";return ss.str();}
 
  protected:
 explicit InquiryView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2135,7 +2135,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PeriodicInquiryMode { ";ss << ""  << "max_period_length = " << +GetMaxPeriodLength() << ", min_period_length = " << +GetMinPeriodLength() << ", lap = " << GetLap().ToString() << ", inquiry_length = " << +GetInquiryLength() << ", num_responses = " << +GetNumResponses();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PeriodicInquiryMode { ";ss << ""  << "max_period_length = " << static_cast<uint64_t>(GetMaxPeriodLength()) << ", min_period_length = " << static_cast<uint64_t>(GetMinPeriodLength()) << ", lap = " << GetLap().ToString() << ", inquiry_length = " << static_cast<uint64_t>(GetInquiryLength()) << ", num_responses = " << static_cast<uint64_t>(GetNumResponses());ss << " }";return ss.str();}
 
  protected:
 explicit PeriodicInquiryModeView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2201,7 +2201,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", packet_type = " << +GetPacketType() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", clock_offset = " << +GetClockOffset() << ", clock_offset_valid = " << ClockOffsetValidText(GetClockOffsetValid()) << ", allow_role_switch = " << CreateConnectionRoleSwitchText(GetAllowRoleSwitch());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CreateConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", packet_type = " << static_cast<uint64_t>(GetPacketType()) << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", clock_offset = " << static_cast<uint64_t>(GetClockOffset()) << ", clock_offset_valid = " << ClockOffsetValidText(GetClockOffsetValid()) << ", allow_role_switch = " << CreateConnectionRoleSwitchText(GetAllowRoleSwitch());ss << " }";return ss.str();}
 
  protected:
 explicit CreateConnectionView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2231,7 +2231,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Disconnect { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", reason = " << DisconnectReasonText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Disconnect { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", reason = " << DisconnectReasonText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit DisconnectView(AclCommandView parent) : AclCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2261,7 +2261,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AddScoConnection { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", packet_type = " << +GetPacketType();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AddScoConnection { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit AddScoConnectionView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2376,7 +2376,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkKeyRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLinkKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkKeyRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLinkKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LinkKeyRequestReplyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2443,7 +2443,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PinCodeRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", pin_code_length = " << +GetPinCodeLength() << ", pin_code = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetPinCode()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "PinCodeRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", pin_code_length = " << static_cast<uint64_t>(GetPinCodeLength()) << ", pin_code = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetPinCode()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit PinCodeRequestReplyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2507,7 +2507,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionPacketType { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", packet_type = " << +GetPacketType();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionPacketType { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit ChangeConnectionPacketTypeView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2535,7 +2535,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AuthenticationRequested { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AuthenticationRequested { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit AuthenticationRequestedView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2565,7 +2565,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetConnectionEncryption { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", encryption_enable = " << EnableText(GetEncryptionEnable());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetConnectionEncryption { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", encryption_enable = " << EnableText(GetEncryptionEnable());ss << " }";return ss.str();}
 
  protected:
 explicit SetConnectionEncryptionView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2593,7 +2593,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionLinkKey { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionLinkKey { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ChangeConnectionLinkKeyView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2653,7 +2653,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteNameRequest { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", clock_offset = " << +GetClockOffset() << ", clock_offset_valid = " << ClockOffsetValidText(GetClockOffsetValid());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteNameRequest { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", clock_offset = " << static_cast<uint64_t>(GetClockOffset()) << ", clock_offset_valid = " << ClockOffsetValidText(GetClockOffsetValid());ss << " }";return ss.str();}
 
  protected:
 explicit RemoteNameRequestView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2711,7 +2711,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteSupportedFeatures { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteSupportedFeatures { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteSupportedFeaturesView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2741,7 +2741,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteExtendedFeatures { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", page_number = " << +GetPageNumber();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteExtendedFeatures { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", page_number = " << static_cast<uint64_t>(GetPageNumber());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteExtendedFeaturesView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2769,7 +2769,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteVersionInformation { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteVersionInformation { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteVersionInformationView(AclCommandView parent) : AclCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2797,7 +2797,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockOffset { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockOffset { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadClockOffsetView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2825,7 +2825,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLmpHandle { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLmpHandle { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLmpHandleView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2847,7 +2847,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLmpHandleComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", lmp_handle = " << +GetLmpHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLmpHandleComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", lmp_handle = " << static_cast<uint64_t>(GetLmpHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLmpHandleCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -2877,7 +2877,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetupSynchronousConnection { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", transmit_bandwidth = " << +GetTransmitBandwidth() << ", receive_bandwidth = " << +GetReceiveBandwidth() << ", max_latency = " << +GetMaxLatency() << ", voice_setting = " << +GetVoiceSetting() << ", retransmission_effort = " << +GetRetransmissionEffort() << ", packet_type = " << +GetPacketType();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetupSynchronousConnection { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", transmit_bandwidth = " << static_cast<uint64_t>(GetTransmitBandwidth()) << ", receive_bandwidth = " << static_cast<uint64_t>(GetReceiveBandwidth()) << ", max_latency = " << static_cast<uint64_t>(GetMaxLatency()) << ", voice_setting = " << static_cast<uint64_t>(GetVoiceSetting()) << ", retransmission_effort = " << static_cast<uint64_t>(GetRetransmissionEffort()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit SetupSynchronousConnectionView(ScoConnectionCommandView parent) : ScoConnectionCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -2917,7 +2917,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AcceptSynchronousConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", transmit_bandwidth = " << +GetTransmitBandwidth() << ", receive_bandwidth = " << +GetReceiveBandwidth() << ", max_latency = " << +GetMaxLatency() << ", voice_setting = " << +GetVoiceSetting() << ", retransmission_effort = " << +GetRetransmissionEffort() << ", packet_type = " << +GetPacketType();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AcceptSynchronousConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", transmit_bandwidth = " << static_cast<uint64_t>(GetTransmitBandwidth()) << ", receive_bandwidth = " << static_cast<uint64_t>(GetReceiveBandwidth()) << ", max_latency = " << static_cast<uint64_t>(GetMaxLatency()) << ", voice_setting = " << static_cast<uint64_t>(GetVoiceSetting()) << ", retransmission_effort = " << static_cast<uint64_t>(GetRetransmissionEffort()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit AcceptSynchronousConnectionView(ScoConnectionCommandView parent) : ScoConnectionCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3069,7 +3069,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserPasskeyRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", numeric_value = " << +GetNumericValue();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserPasskeyRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", numeric_value = " << static_cast<uint64_t>(GetNumericValue());ss << " }";return ss.str();}
 
  protected:
 explicit UserPasskeyRequestReplyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3135,7 +3135,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteOobDataRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", c = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC()[index]);}ss << "]" << ", r = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteOobDataRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", c = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC()[index]));}ss << "]" << ", r = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit RemoteOobDataRequestReplyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3279,7 +3279,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSetupSynchronousConnection { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", transmit_bandwidth_octets_per_second = " << +GetTransmitBandwidthOctetsPerSecond() << ", receive_bandwidth_octets_per_second = " << +GetReceiveBandwidthOctetsPerSecond() << ", transmit_coding_format = " << GetTransmitCodingFormat().ToString() << ", receive_coding_format = " << GetReceiveCodingFormat().ToString() << ", transmit_codec_frame_size = " << +GetTransmitCodecFrameSize() << ", receive_codec_frame_size = " << +GetReceiveCodecFrameSize() << ", input_bandwidth_octets_per_second = " << +GetInputBandwidthOctetsPerSecond() << ", output_bandwidth_octets_per_second = " << +GetOutputBandwidthOctetsPerSecond() << ", input_coding_format = " << GetInputCodingFormat().ToString() << ", output_coding_format = " << GetOutputCodingFormat().ToString() << ", input_coded_data_bits = " << +GetInputCodedDataBits() << ", output_coded_data_bits = " << +GetOutputCodedDataBits() << ", input_pcm_data_format = " << ScoPcmDataFormatText(GetInputPcmDataFormat()) << ", output_pcm_data_format = " << ScoPcmDataFormatText(GetOutputPcmDataFormat()) << ", input_pcm_sample_payload_msb_position = " << +GetInputPcmSamplePayloadMsbPosition() << ", output_pcm_sample_payload_msb_position = " << +GetOutputPcmSamplePayloadMsbPosition() << ", input_data_path = " << ScoDataPathText(GetInputDataPath()) << ", output_data_path = " << ScoDataPathText(GetOutputDataPath()) << ", input_transport_unit_bits = " << +GetInputTransportUnitBits() << ", output_transport_unit_bits = " << +GetOutputTransportUnitBits() << ", max_latency_ms = " << +GetMaxLatencyMs() << ", packet_type = " << +GetPacketType() << ", retransmission_effort = " << RetransmissionEffortText(GetRetransmissionEffort());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedSetupSynchronousConnection { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", transmit_bandwidth_octets_per_second = " << static_cast<uint64_t>(GetTransmitBandwidthOctetsPerSecond()) << ", receive_bandwidth_octets_per_second = " << static_cast<uint64_t>(GetReceiveBandwidthOctetsPerSecond()) << ", transmit_coding_format = " << GetTransmitCodingFormat().ToString() << ", receive_coding_format = " << GetReceiveCodingFormat().ToString() << ", transmit_codec_frame_size = " << static_cast<uint64_t>(GetTransmitCodecFrameSize()) << ", receive_codec_frame_size = " << static_cast<uint64_t>(GetReceiveCodecFrameSize()) << ", input_bandwidth_octets_per_second = " << static_cast<uint64_t>(GetInputBandwidthOctetsPerSecond()) << ", output_bandwidth_octets_per_second = " << static_cast<uint64_t>(GetOutputBandwidthOctetsPerSecond()) << ", input_coding_format = " << GetInputCodingFormat().ToString() << ", output_coding_format = " << GetOutputCodingFormat().ToString() << ", input_coded_data_bits = " << static_cast<uint64_t>(GetInputCodedDataBits()) << ", output_coded_data_bits = " << static_cast<uint64_t>(GetOutputCodedDataBits()) << ", input_pcm_data_format = " << ScoPcmDataFormatText(GetInputPcmDataFormat()) << ", output_pcm_data_format = " << ScoPcmDataFormatText(GetOutputPcmDataFormat()) << ", input_pcm_sample_payload_msb_position = " << static_cast<uint64_t>(GetInputPcmSamplePayloadMsbPosition()) << ", output_pcm_sample_payload_msb_position = " << static_cast<uint64_t>(GetOutputPcmSamplePayloadMsbPosition()) << ", input_data_path = " << ScoDataPathText(GetInputDataPath()) << ", output_data_path = " << ScoDataPathText(GetOutputDataPath()) << ", input_transport_unit_bits = " << static_cast<uint64_t>(GetInputTransportUnitBits()) << ", output_transport_unit_bits = " << static_cast<uint64_t>(GetOutputTransportUnitBits()) << ", max_latency_ms = " << static_cast<uint64_t>(GetMaxLatencyMs()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType()) << ", retransmission_effort = " << RetransmissionEffortText(GetRetransmissionEffort());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedSetupSynchronousConnectionView(ScoConnectionCommandView parent) : ScoConnectionCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3355,7 +3355,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedAcceptSynchronousConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", transmit_bandwidth = " << +GetTransmitBandwidth() << ", receive_bandwidth = " << +GetReceiveBandwidth() << ", transmit_coding_format = " << GetTransmitCodingFormat().ToString() << ", receive_coding_format = " << GetReceiveCodingFormat().ToString() << ", transmit_codec_frame_size = " << +GetTransmitCodecFrameSize() << ", receive_codec_frame_size = " << +GetReceiveCodecFrameSize() << ", input_bandwidth = " << +GetInputBandwidth() << ", output_bandwidth = " << +GetOutputBandwidth() << ", input_coding_format = " << GetInputCodingFormat().ToString() << ", output_coding_format = " << GetOutputCodingFormat().ToString() << ", input_coded_data_bits = " << +GetInputCodedDataBits() << ", output_coded_data_bits = " << +GetOutputCodedDataBits() << ", input_pcm_data_format = " << ScoPcmDataFormatText(GetInputPcmDataFormat()) << ", output_pcm_data_format = " << ScoPcmDataFormatText(GetOutputPcmDataFormat()) << ", input_pcm_sample_payload_msb_position = " << +GetInputPcmSamplePayloadMsbPosition() << ", output_pcm_sample_payload_msb_position = " << +GetOutputPcmSamplePayloadMsbPosition() << ", input_data_path = " << ScoDataPathText(GetInputDataPath()) << ", output_data_path = " << ScoDataPathText(GetOutputDataPath()) << ", input_transport_unit_bits = " << +GetInputTransportUnitBits() << ", output_transport_unit_bits = " << +GetOutputTransportUnitBits() << ", max_latency = " << +GetMaxLatency() << ", packet_type = " << +GetPacketType() << ", retransmission_effort = " << RetransmissionEffortText(GetRetransmissionEffort());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedAcceptSynchronousConnection { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", transmit_bandwidth = " << static_cast<uint64_t>(GetTransmitBandwidth()) << ", receive_bandwidth = " << static_cast<uint64_t>(GetReceiveBandwidth()) << ", transmit_coding_format = " << GetTransmitCodingFormat().ToString() << ", receive_coding_format = " << GetReceiveCodingFormat().ToString() << ", transmit_codec_frame_size = " << static_cast<uint64_t>(GetTransmitCodecFrameSize()) << ", receive_codec_frame_size = " << static_cast<uint64_t>(GetReceiveCodecFrameSize()) << ", input_bandwidth = " << static_cast<uint64_t>(GetInputBandwidth()) << ", output_bandwidth = " << static_cast<uint64_t>(GetOutputBandwidth()) << ", input_coding_format = " << GetInputCodingFormat().ToString() << ", output_coding_format = " << GetOutputCodingFormat().ToString() << ", input_coded_data_bits = " << static_cast<uint64_t>(GetInputCodedDataBits()) << ", output_coded_data_bits = " << static_cast<uint64_t>(GetOutputCodedDataBits()) << ", input_pcm_data_format = " << ScoPcmDataFormatText(GetInputPcmDataFormat()) << ", output_pcm_data_format = " << ScoPcmDataFormatText(GetOutputPcmDataFormat()) << ", input_pcm_sample_payload_msb_position = " << static_cast<uint64_t>(GetInputPcmSamplePayloadMsbPosition()) << ", output_pcm_sample_payload_msb_position = " << static_cast<uint64_t>(GetOutputPcmSamplePayloadMsbPosition()) << ", input_data_path = " << ScoDataPathText(GetInputDataPath()) << ", output_data_path = " << ScoDataPathText(GetOutputDataPath()) << ", input_transport_unit_bits = " << static_cast<uint64_t>(GetInputTransportUnitBits()) << ", output_transport_unit_bits = " << static_cast<uint64_t>(GetOutputTransportUnitBits()) << ", max_latency = " << static_cast<uint64_t>(GetMaxLatency()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType()) << ", retransmission_effort = " << RetransmissionEffortText(GetRetransmissionEffort());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedAcceptSynchronousConnectionView(ScoConnectionCommandView parent) : ScoConnectionCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3393,7 +3393,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteOobExtendedDataRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", c_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC192()[index]);}ss << "]" << ", r_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR192()[index]);}ss << "]" << ", c_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC256()[index]);}ss << "]" << ", r_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR256()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteOobExtendedDataRequestReply { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", c_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC192()[index]));}ss << "]" << ", r_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR192()[index]));}ss << "]" << ", c_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC256()[index]));}ss << "]" << ", r_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR256()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit RemoteOobExtendedDataRequestReplyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3429,7 +3429,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HoldMode { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", hold_mode_max_interval = " << +GetHoldModeMaxInterval() << ", hold_mode_min_interval = " << +GetHoldModeMinInterval();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HoldMode { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", hold_mode_max_interval = " << static_cast<uint64_t>(GetHoldModeMaxInterval()) << ", hold_mode_min_interval = " << static_cast<uint64_t>(GetHoldModeMinInterval());ss << " }";return ss.str();}
 
  protected:
 explicit HoldModeView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3465,7 +3465,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffMode { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", sniff_max_interval = " << +GetSniffMaxInterval() << ", sniff_min_interval = " << +GetSniffMinInterval() << ", sniff_attempt = " << +GetSniffAttempt() << ", sniff_timeout = " << +GetSniffTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffMode { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", sniff_max_interval = " << static_cast<uint64_t>(GetSniffMaxInterval()) << ", sniff_min_interval = " << static_cast<uint64_t>(GetSniffMinInterval()) << ", sniff_attempt = " << static_cast<uint64_t>(GetSniffAttempt()) << ", sniff_timeout = " << static_cast<uint64_t>(GetSniffTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit SniffModeView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3493,7 +3493,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExitSniffMode { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExitSniffMode { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ExitSniffModeView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3533,7 +3533,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosSetup { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << +GetTokenRate() << ", peak_bandwidth = " << +GetPeakBandwidth() << ", latency = " << +GetLatency() << ", delay_variation = " << +GetDelayVariation();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosSetup { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << static_cast<uint64_t>(GetTokenRate()) << ", peak_bandwidth = " << static_cast<uint64_t>(GetPeakBandwidth()) << ", latency = " << static_cast<uint64_t>(GetLatency()) << ", delay_variation = " << static_cast<uint64_t>(GetDelayVariation());ss << " }";return ss.str();}
 
  protected:
 explicit QosSetupView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3561,7 +3561,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RoleDiscovery { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RoleDiscovery { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit RoleDiscoveryView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3581,7 +3581,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RoleDiscoveryComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", current_role = " << RoleText(GetCurrentRole());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RoleDiscoveryComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", current_role = " << RoleText(GetCurrentRole());ss << " }";return ss.str();}
 
  protected:
 explicit RoleDiscoveryCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -3625,7 +3625,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkPolicySettings { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkPolicySettings { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkPolicySettingsView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3645,7 +3645,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", link_policy_settings = " << +GetLinkPolicySettings();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_policy_settings = " << static_cast<uint64_t>(GetLinkPolicySettings());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkPolicySettingsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -3663,7 +3663,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkPolicySettings { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", link_policy_settings = " << +GetLinkPolicySettings();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkPolicySettings { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_policy_settings = " << static_cast<uint64_t>(GetLinkPolicySettings());ss << " }";return ss.str();}
 
  protected:
 explicit WriteLinkPolicySettingsView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3681,7 +3681,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit WriteLinkPolicySettingsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -3709,7 +3709,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadDefaultLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", default_link_policy_settings = " << +GetDefaultLinkPolicySettings();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadDefaultLinkPolicySettingsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", default_link_policy_settings = " << static_cast<uint64_t>(GetDefaultLinkPolicySettings());ss << " }";return ss.str();}
 
  protected:
 explicit ReadDefaultLinkPolicySettingsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -3723,7 +3723,7 @@ uint16_t GetDefaultLinkPolicySettings() const {ASSERT(was_validated_);auto to_bo
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!ConnectionManagementCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_DEFAULT_LINK_POLICY_SETTINGS) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteDefaultLinkPolicySettings { ";ss << ""  << "default_link_policy_settings = " << +GetDefaultLinkPolicySettings();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteDefaultLinkPolicySettings { ";ss << ""  << "default_link_policy_settings = " << static_cast<uint64_t>(GetDefaultLinkPolicySettings());ss << " }";return ss.str();}
 
  protected:
 explicit WriteDefaultLinkPolicySettingsView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3767,7 +3767,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowSpecification { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", flow_direction = " << FlowDirectionText(GetFlowDirection()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << +GetTokenRate() << ", token_bucket_size = " << +GetTokenBucketSize() << ", peak_bandwidth = " << +GetPeakBandwidth() << ", access_latency = " << +GetAccessLatency();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowSpecification { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", flow_direction = " << FlowDirectionText(GetFlowDirection()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << static_cast<uint64_t>(GetTokenRate()) << ", token_bucket_size = " << static_cast<uint64_t>(GetTokenBucketSize()) << ", peak_bandwidth = " << static_cast<uint64_t>(GetPeakBandwidth()) << ", access_latency = " << static_cast<uint64_t>(GetAccessLatency());ss << " }";return ss.str();}
 
  protected:
 explicit FlowSpecificationView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3801,7 +3801,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubrating { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", maximum_latency = " << +GetMaximumLatency() << ", minimum_remote_timeout = " << +GetMinimumRemoteTimeout() << ", minimum_local_timeout = " << +GetMinimumLocalTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubrating { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", maximum_latency = " << static_cast<uint64_t>(GetMaximumLatency()) << ", minimum_remote_timeout = " << static_cast<uint64_t>(GetMinimumRemoteTimeout()) << ", minimum_local_timeout = " << static_cast<uint64_t>(GetMinimumLocalTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit SniffSubratingView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -3819,7 +3819,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubratingComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubratingComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit SniffSubratingCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -3833,7 +3833,7 @@ uint64_t GetEventMask() const {ASSERT(was_validated_);auto to_bound = begin();au
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 8 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::SET_EVENT_MASK) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetEventMask { ";ss << ""  << "event_mask = " << +GetEventMask();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetEventMask { ";ss << ""  << "event_mask = " << static_cast<uint64_t>(GetEventMask());ss << " }";return ss.str();}
 
  protected:
 explicit SetEventMaskView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4053,7 +4053,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Flush { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "Flush { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit FlushView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4071,7 +4071,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlushComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlushComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit FlushCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4161,7 +4161,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", max_num_keys = " << +GetMaxNumKeys() << ", num_keys_read = " << +GetNumKeysRead();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", max_num_keys = " << static_cast<uint64_t>(GetMaxNumKeys()) << ", num_keys_read = " << static_cast<uint64_t>(GetNumKeysRead());ss << " }";return ss.str();}
 
  protected:
 explicit ReadStoredLinkKeyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4179,7 +4179,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteStoredLinkKey { ";ss << ""  << "keys_to_write_count = " << +GetKeysToWriteCount() << ", keys_to_write = " << "VECTOR[";for (size_t index = 0; index < GetKeysToWrite().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetKeysToWrite()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteStoredLinkKey { ";ss << ""  << "keys_to_write_count = " << static_cast<uint64_t>(GetKeysToWriteCount()) << ", keys_to_write = " << "VECTOR[";for (size_t index = 0; index < GetKeysToWrite().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetKeysToWrite()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit WriteStoredLinkKeyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4195,7 +4195,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_keys_written = " << +GetNumKeysWritten();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_keys_written = " << static_cast<uint64_t>(GetNumKeysWritten());ss << " }";return ss.str();}
 
  protected:
 explicit WriteStoredLinkKeyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4227,7 +4227,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DeleteStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_keys_deleted = " << +GetNumKeysDeleted();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DeleteStoredLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_keys_deleted = " << static_cast<uint64_t>(GetNumKeysDeleted());ss << " }";return ss.str();}
 
  protected:
 explicit DeleteStoredLinkKeyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4242,7 +4242,7 @@ std::array<uint8_t,248> GetLocalName() {ASSERT(was_validated_);size_t end_index 
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 248 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_LOCAL_NAME) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLocalName { ";ss << ""  << "local_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLocalName()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLocalName { ";ss << ""  << "local_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLocalName()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit WriteLocalNameView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4285,7 +4285,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalNameComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", local_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLocalName()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalNameComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", local_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLocalName()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalNameCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4313,7 +4313,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadConnectionAcceptTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", conn_accept_timeout = " << +GetConnAcceptTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadConnectionAcceptTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", conn_accept_timeout = " << static_cast<uint64_t>(GetConnAcceptTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit ReadConnectionAcceptTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4327,7 +4327,7 @@ uint16_t GetConnAcceptTimeout() const {ASSERT(was_validated_);auto to_bound = be
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!ConnectionManagementCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_CONNECTION_ACCEPT_TIMEOUT) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteConnectionAcceptTimeout { ";ss << ""  << "conn_accept_timeout = " << +GetConnAcceptTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteConnectionAcceptTimeout { ";ss << ""  << "conn_accept_timeout = " << static_cast<uint64_t>(GetConnAcceptTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit WriteConnectionAcceptTimeoutView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4369,7 +4369,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadPageTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_timeout = " << +GetPageTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadPageTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_timeout = " << static_cast<uint64_t>(GetPageTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit ReadPageTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4383,7 +4383,7 @@ uint16_t GetPageTimeout() const {ASSERT(was_validated_);auto to_bound = begin();
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!DiscoveryCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_PAGE_TIMEOUT) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WritePageTimeout { ";ss << ""  << "page_timeout = " << +GetPageTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WritePageTimeout { ";ss << ""  << "page_timeout = " << static_cast<uint64_t>(GetPageTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit WritePageTimeoutView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4483,7 +4483,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadPageScanActivityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_scan_interval = " << +GetPageScanInterval() << ", page_scan_window = " << +GetPageScanWindow();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadPageScanActivityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_scan_interval = " << static_cast<uint64_t>(GetPageScanInterval()) << ", page_scan_window = " << static_cast<uint64_t>(GetPageScanWindow());ss << " }";return ss.str();}
 
  protected:
 explicit ReadPageScanActivityCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4499,7 +4499,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WritePageScanActivity { ";ss << ""  << "page_scan_interval = " << +GetPageScanInterval() << ", page_scan_window = " << +GetPageScanWindow();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WritePageScanActivity { ";ss << ""  << "page_scan_interval = " << static_cast<uint64_t>(GetPageScanInterval()) << ", page_scan_window = " << static_cast<uint64_t>(GetPageScanWindow());ss << " }";return ss.str();}
 
  protected:
 explicit WritePageScanActivityView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4543,7 +4543,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadInquiryScanActivityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", inquiry_scan_interval = " << +GetInquiryScanInterval() << ", inquiry_scan_window = " << +GetInquiryScanWindow();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadInquiryScanActivityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", inquiry_scan_interval = " << static_cast<uint64_t>(GetInquiryScanInterval()) << ", inquiry_scan_window = " << static_cast<uint64_t>(GetInquiryScanWindow());ss << " }";return ss.str();}
 
  protected:
 explicit ReadInquiryScanActivityCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4559,7 +4559,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteInquiryScanActivity { ";ss << ""  << "inquiry_scan_interval = " << +GetInquiryScanInterval() << ", inquiry_scan_window = " << +GetInquiryScanWindow();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteInquiryScanActivity { ";ss << ""  << "inquiry_scan_interval = " << static_cast<uint64_t>(GetInquiryScanInterval()) << ", inquiry_scan_window = " << static_cast<uint64_t>(GetInquiryScanWindow());ss << " }";return ss.str();}
 
  protected:
 explicit WriteInquiryScanActivityView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4715,7 +4715,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadVoiceSettingComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", voice_setting = " << +GetVoiceSetting();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadVoiceSettingComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", voice_setting = " << static_cast<uint64_t>(GetVoiceSetting());ss << " }";return ss.str();}
 
  protected:
 explicit ReadVoiceSettingCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4731,7 +4731,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteVoiceSetting { ";ss << ""  << "voice_setting = " << +GetVoiceSetting();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteVoiceSetting { ";ss << ""  << "voice_setting = " << static_cast<uint64_t>(GetVoiceSetting());ss << " }";return ss.str();}
 
  protected:
 explicit WriteVoiceSettingView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4761,7 +4761,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAutomaticFlushTimeout { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAutomaticFlushTimeout { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadAutomaticFlushTimeoutView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4781,7 +4781,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAutomaticFlushTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", flush_timeout = " << +GetFlushTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAutomaticFlushTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", flush_timeout = " << static_cast<uint64_t>(GetFlushTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit ReadAutomaticFlushTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4799,7 +4799,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteAutomaticFlushTimeout { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", flush_timeout = " << +GetFlushTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteAutomaticFlushTimeout { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", flush_timeout = " << static_cast<uint64_t>(GetFlushTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit WriteAutomaticFlushTimeoutView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4817,7 +4817,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteAutomaticFlushTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteAutomaticFlushTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit WriteAutomaticFlushTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4845,7 +4845,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadNumBroadcastRetransmitsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_broadcast_retransmissions = " << +GetNumBroadcastRetransmissions();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadNumBroadcastRetransmitsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_broadcast_retransmissions = " << static_cast<uint64_t>(GetNumBroadcastRetransmissions());ss << " }";return ss.str();}
 
  protected:
 explicit ReadNumBroadcastRetransmitsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -4859,7 +4859,7 @@ uint8_t GetNumBroadcastRetransmissions() const {ASSERT(was_validated_);auto to_b
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_NUM_BROADCAST_RETRANSMITS) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteNumBroadcastRetransmits { ";ss << ""  << "num_broadcast_retransmissions = " << +GetNumBroadcastRetransmissions();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteNumBroadcastRetransmits { ";ss << ""  << "num_broadcast_retransmissions = " << static_cast<uint64_t>(GetNumBroadcastRetransmissions());ss << " }";return ss.str();}
 
  protected:
 explicit WriteNumBroadcastRetransmitsView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4947,7 +4947,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadTransmitPowerLevel { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", transmit_power_level_type = " << TransmitPowerLevelTypeText(GetTransmitPowerLevelType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadTransmitPowerLevel { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", transmit_power_level_type = " << TransmitPowerLevelTypeText(GetTransmitPowerLevelType());ss << " }";return ss.str();}
 
  protected:
 explicit ReadTransmitPowerLevelView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -4967,7 +4967,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", transmit_power_level = " << +GetTransmitPowerLevel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", transmit_power_level = " << static_cast<uint64_t>(GetTransmitPowerLevel());ss << " }";return ss.str();}
 
  protected:
 explicit ReadTransmitPowerLevelCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5041,7 +5041,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetControllerToHostFlowControl { ";ss << ""  << "acl = " << +GetAcl() << ", synchronous = " << +GetSynchronous();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetControllerToHostFlowControl { ";ss << ""  << "acl = " << static_cast<uint64_t>(GetAcl()) << ", synchronous = " << static_cast<uint64_t>(GetSynchronous());ss << " }";return ss.str();}
 
  protected:
 explicit SetControllerToHostFlowControlView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5075,7 +5075,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HostBufferSize { ";ss << ""  << "host_acl_data_packet_length = " << +GetHostAclDataPacketLength() << ", host_synchronous_data_packet_length = " << +GetHostSynchronousDataPacketLength() << ", host_total_num_acl_data_packets = " << +GetHostTotalNumAclDataPackets() << ", host_total_num_synchronous_data_packets = " << +GetHostTotalNumSynchronousDataPackets();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HostBufferSize { ";ss << ""  << "host_acl_data_packet_length = " << static_cast<uint64_t>(GetHostAclDataPacketLength()) << ", host_synchronous_data_packet_length = " << static_cast<uint64_t>(GetHostSynchronousDataPacketLength()) << ", host_total_num_acl_data_packets = " << static_cast<uint64_t>(GetHostTotalNumAclDataPackets()) << ", host_total_num_synchronous_data_packets = " << static_cast<uint64_t>(GetHostTotalNumSynchronousDataPackets());ss << " }";return ss.str();}
 
  protected:
 explicit HostBufferSizeView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5107,7 +5107,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HostNumCompletedPackets { ";ss << ""  << "completed_packets_count = " << +GetCompletedPacketsCount() << ", completed_packets = " << "VECTOR[";for (size_t index = 0; index < GetCompletedPackets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCompletedPackets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HostNumCompletedPackets { ";ss << ""  << "completed_packets_count = " << static_cast<uint64_t>(GetCompletedPacketsCount()) << ", completed_packets = " << "VECTOR[";for (size_t index = 0; index < GetCompletedPackets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCompletedPackets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit HostNumCompletedPacketsView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5137,7 +5137,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkSupervisionTimeout { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkSupervisionTimeout { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkSupervisionTimeoutView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5157,7 +5157,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkSupervisionTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", link_supervision_timeout = " << +GetLinkSupervisionTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkSupervisionTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_supervision_timeout = " << static_cast<uint64_t>(GetLinkSupervisionTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkSupervisionTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5175,7 +5175,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkSupervisionTimeout { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", link_supervision_timeout = " << +GetLinkSupervisionTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkSupervisionTimeout { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_supervision_timeout = " << static_cast<uint64_t>(GetLinkSupervisionTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit WriteLinkSupervisionTimeoutView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5193,7 +5193,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkSupervisionTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteLinkSupervisionTimeoutComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit WriteLinkSupervisionTimeoutCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5221,7 +5221,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadNumberOfSupportedIacComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_support_iac = " << +GetNumSupportIac();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadNumberOfSupportedIacComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", num_support_iac = " << static_cast<uint64_t>(GetNumSupportIac());ss << " }";return ss.str();}
 
  protected:
 explicit ReadNumberOfSupportedIacCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5253,7 +5253,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadCurrentIacLapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", laps_to_read_count = " << +GetLapsToReadCount() << ", laps_to_read = " << "VECTOR[";for (size_t index = 0; index < GetLapsToRead().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetLapsToRead()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadCurrentIacLapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", laps_to_read_count = " << static_cast<uint64_t>(GetLapsToReadCount()) << ", laps_to_read = " << "VECTOR[";for (size_t index = 0; index < GetLapsToRead().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetLapsToRead()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadCurrentIacLapCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5271,7 +5271,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteCurrentIacLap { ";ss << ""  << "laps_to_write_count = " << +GetLapsToWriteCount() << ", laps_to_write = " << "VECTOR[";for (size_t index = 0; index < GetLapsToWrite().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetLapsToWrite()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteCurrentIacLap { ";ss << ""  << "laps_to_write_count = " << static_cast<uint64_t>(GetLapsToWriteCount()) << ", laps_to_write = " << "VECTOR[";for (size_t index = 0; index < GetLapsToWrite().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetLapsToWrite()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit WriteCurrentIacLapView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5300,7 +5300,7 @@ std::array<uint8_t,10> GetAfhHostChannelClassification() {ASSERT(was_validated_)
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 10 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::SET_AFH_HOST_CHANNEL_CLASSIFICATION) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetAfhHostChannelClassification { ";ss << ""  << "afh_host_channel_classification = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 10; index++) {ss << ((index == 0) ? "" : ", ") << +(GetAfhHostChannelClassification()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetAfhHostChannelClassification { ";ss << ""  << "afh_host_channel_classification = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 10; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAfhHostChannelClassification()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit SetAfhHostChannelClassificationView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5618,7 +5618,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RefreshEncryptionKey { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RefreshEncryptionKey { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit RefreshEncryptionKeyView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5718,7 +5718,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalOobDataComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", c = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC()[index]);}ss << "]" << ", r = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalOobDataComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", c = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC()[index]));}ss << "]" << ", r = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalOobDataCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5746,7 +5746,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadInquiryResponseTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", tx_power = " << +GetTxPower();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadInquiryResponseTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", tx_power = " << static_cast<uint64_t>(GetTxPower());ss << " }";return ss.str();}
 
  protected:
 explicit ReadInquiryResponseTransmitPowerLevelCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5760,7 +5760,7 @@ uint8_t GetTxPower() const {ASSERT(was_validated_);auto to_bound = begin();auto 
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!DiscoveryCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::WRITE_INQUIRY_TRANSMIT_POWER_LEVEL) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteInquiryTransmitPowerLevel { ";ss << ""  << "tx_power = " << +GetTxPower();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteInquiryTransmitPowerLevel { ";ss << ""  << "tx_power = " << static_cast<uint64_t>(GetTxPower());ss << " }";return ss.str();}
 
  protected:
 explicit WriteInquiryTransmitPowerLevelView(DiscoveryCommandView parent) : DiscoveryCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -5960,7 +5960,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalOobExtendedDataComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", c_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC192()[index]);}ss << "]" << ", r_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR192()[index]);}ss << "]" << ", c_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetC256()[index]);}ss << "]" << ", r_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetR256()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalOobExtendedDataComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", c_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC192()[index]));}ss << "]" << ", r_192 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR192()[index]));}ss << "]" << ", c_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetC256()[index]));}ss << "]" << ", r_256 = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetR256()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalOobExtendedDataCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -5974,7 +5974,7 @@ uint16_t GetInterval() const {ASSERT(was_validated_);auto to_bound = begin();aut
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::SET_ECOSYSTEM_BASE_INTERVAL) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetEcosystemBaseInterval { ";ss << ""  << "interval = " << +GetInterval();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SetEcosystemBaseInterval { ";ss << ""  << "interval = " << static_cast<uint64_t>(GetInterval());ss << " }";return ss.str();}
 
  protected:
 explicit SetEcosystemBaseIntervalView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6010,7 +6010,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigureDataPath { ";ss << ""  << "data_path_direction = " << DataPathDirectionText(GetDataPathDirection()) << ", data_path_id = " << +GetDataPathId() << ", vendor_specific_config_size = " << GetVendorSpecificConfigSize() << ", vendor_specific_config = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetVendorSpecificConfig()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConfigureDataPath { ";ss << ""  << "data_path_direction = " << DataPathDirectionText(GetDataPathDirection()) << ", data_path_id = " << static_cast<uint64_t>(GetDataPathId()) << ", vendor_specific_config_size = " << GetVendorSpecificConfigSize() << ", vendor_specific_config = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetVendorSpecificConfig()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ConfigureDataPathView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6082,7 +6082,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCommandsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_commands = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << +(GetSupportedCommands()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCommandsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_commands = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetSupportedCommands()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedCommandsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6110,7 +6110,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", lmp_features = " << +GetLmpFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", lmp_features = " << static_cast<uint64_t>(GetLmpFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedFeaturesCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6124,7 +6124,7 @@ uint8_t GetPageNumber() const {ASSERT(was_validated_);auto to_bound = begin();au
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::READ_LOCAL_EXTENDED_FEATURES) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalExtendedFeatures { ";ss << ""  << "page_number = " << +GetPageNumber();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalExtendedFeatures { ";ss << ""  << "page_number = " << static_cast<uint64_t>(GetPageNumber());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalExtendedFeaturesView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6144,7 +6144,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalExtendedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_number = " << +GetPageNumber() << ", maximum_page_number = " << +GetMaximumPageNumber() << ", extended_lmp_features = " << +GetExtendedLmpFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalExtendedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", page_number = " << static_cast<uint64_t>(GetPageNumber()) << ", maximum_page_number = " << static_cast<uint64_t>(GetMaximumPageNumber()) << ", extended_lmp_features = " << static_cast<uint64_t>(GetExtendedLmpFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalExtendedFeaturesCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6178,7 +6178,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadBufferSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", acl_data_packet_length = " << +GetAclDataPacketLength() << ", synchronous_data_packet_length = " << +GetSynchronousDataPacketLength() << ", total_num_acl_data_packets = " << +GetTotalNumAclDataPackets() << ", total_num_synchronous_data_packets = " << +GetTotalNumSynchronousDataPackets();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadBufferSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", acl_data_packet_length = " << static_cast<uint64_t>(GetAclDataPacketLength()) << ", synchronous_data_packet_length = " << static_cast<uint64_t>(GetSynchronousDataPacketLength()) << ", total_num_acl_data_packets = " << static_cast<uint64_t>(GetTotalNumAclDataPackets()) << ", total_num_synchronous_data_packets = " << static_cast<uint64_t>(GetTotalNumSynchronousDataPackets());ss << " }";return ss.str();}
 
  protected:
 explicit ReadBufferSizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6238,7 +6238,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadDataBlockSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", max_acl_data_packet_length = " << +GetMaxAclDataPacketLength() << ", data_block_length = " << +GetDataBlockLength() << ", total_num_data_blocks = " << +GetTotalNumDataBlocks();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadDataBlockSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", max_acl_data_packet_length = " << static_cast<uint64_t>(GetMaxAclDataPacketLength()) << ", data_block_length = " << static_cast<uint64_t>(GetDataBlockLength()) << ", total_num_data_blocks = " << static_cast<uint64_t>(GetTotalNumDataBlocks());ss << " }";return ss.str();}
 
  protected:
 explicit ReadDataBlockSizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6276,7 +6276,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecsV1Complete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_codecs_count = " << +GetSupportedCodecsCount() << ", supported_codecs = " << "VECTOR[";for (size_t index = 0; index < GetSupportedCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetSupportedCodecs()[index]);}ss << "]" << ", vendor_specific_codecs_count = " << +GetVendorSpecificCodecsCount() << ", vendor_specific_codecs = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetVendorSpecificCodecs()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecsV1Complete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_codecs_count = " << static_cast<uint64_t>(GetSupportedCodecsCount()) << ", supported_codecs = " << "VECTOR[";for (size_t index = 0; index < GetSupportedCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetSupportedCodecs()[index]));}ss << "]" << ", vendor_specific_codecs_count = " << static_cast<uint64_t>(GetVendorSpecificCodecsCount()) << ", vendor_specific_codecs = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetVendorSpecificCodecs()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedCodecsV1CompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6314,7 +6314,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecsV2Complete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_codecs_count = " << +GetSupportedCodecsCount() << ", supported_codecs = " << "VECTOR[";for (size_t index = 0; index < GetSupportedCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetSupportedCodecs()[index]).ToString();}ss << "]" << ", vendor_specific_codecs_count = " << +GetVendorSpecificCodecsCount() << ", vendor_specific_codecs = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetVendorSpecificCodecs()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecsV2Complete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", supported_codecs_count = " << static_cast<uint64_t>(GetSupportedCodecsCount()) << ", supported_codecs = " << "VECTOR[";for (size_t index = 0; index < GetSupportedCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetSupportedCodecs()[index]).ToString();}ss << "]" << ", vendor_specific_codecs_count = " << static_cast<uint64_t>(GetVendorSpecificCodecsCount()) << ", vendor_specific_codecs = " << "VECTOR[";for (size_t index = 0; index < GetVendorSpecificCodecs().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetVendorSpecificCodecs()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedCodecsV2CompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6344,7 +6344,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecCapabilities { ";ss << ""  << "codec_id = " << +GetCodecId() << ", company_id = " << +GetCompanyId() << ", codec_vendor_id = " << +GetCodecVendorId() << ", br_edr = " << +GetBrEdr() << ", br_edr_sco_and_esco = " << +GetBrEdrScoAndEsco() << ", le_cis = " << +GetLeCis() << ", le_bis = " << +GetLeBis() << ", direction = " << DataPathDirectionText(GetDirection());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecCapabilities { ";ss << ""  << "codec_id = " << static_cast<uint64_t>(GetCodecId()) << ", company_id = " << static_cast<uint64_t>(GetCompanyId()) << ", codec_vendor_id = " << static_cast<uint64_t>(GetCodecVendorId()) << ", br_edr = " << static_cast<uint64_t>(GetBrEdr()) << ", br_edr_sco_and_esco = " << static_cast<uint64_t>(GetBrEdrScoAndEsco()) << ", le_cis = " << static_cast<uint64_t>(GetLeCis()) << ", le_bis = " << static_cast<uint64_t>(GetLeBis()) << ", direction = " << DataPathDirectionText(GetDirection());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedCodecCapabilitiesView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6364,7 +6364,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecCapabilitiesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", codec_capabilities_count = " << +GetCodecCapabilitiesCount() << ", codec_capabilities = " << "VECTOR[";for (size_t index = 0; index < GetCodecCapabilities().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCodecCapabilities()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedCodecCapabilitiesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", codec_capabilities_count = " << static_cast<uint64_t>(GetCodecCapabilitiesCount()) << ", codec_capabilities = " << "VECTOR[";for (size_t index = 0; index < GetCodecCapabilities().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCodecCapabilities()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedCodecCapabilitiesCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6400,7 +6400,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedControllerDelay { ";ss << ""  << "codec_id = " << +GetCodecId() << ", company_id = " << +GetCompanyId() << ", codec_vendor_id = " << +GetCodecVendorId() << ", br_edr = " << +GetBrEdr() << ", br_edr_sco_and_esco = " << +GetBrEdrScoAndEsco() << ", le_cis = " << +GetLeCis() << ", le_bis = " << +GetLeBis() << ", direction = " << DataPathDirectionText(GetDirection()) << ", codec_configuration_size = " << GetCodecConfigurationSize() << ", codec_configuration = " << "VECTOR[";for (size_t index = 0; index < GetCodecConfiguration().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetCodecConfiguration()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedControllerDelay { ";ss << ""  << "codec_id = " << static_cast<uint64_t>(GetCodecId()) << ", company_id = " << static_cast<uint64_t>(GetCompanyId()) << ", codec_vendor_id = " << static_cast<uint64_t>(GetCodecVendorId()) << ", br_edr = " << static_cast<uint64_t>(GetBrEdr()) << ", br_edr_sco_and_esco = " << static_cast<uint64_t>(GetBrEdrScoAndEsco()) << ", le_cis = " << static_cast<uint64_t>(GetLeCis()) << ", le_bis = " << static_cast<uint64_t>(GetLeBis()) << ", direction = " << DataPathDirectionText(GetDirection()) << ", codec_configuration_size = " << GetCodecConfigurationSize() << ", codec_configuration = " << "VECTOR[";for (size_t index = 0; index < GetCodecConfiguration().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetCodecConfiguration()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedControllerDelayView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6418,7 +6418,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedControllerDelayComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", min_controller_delay = " << +GetMinControllerDelay() << ", max_controller_delay = " << +GetMaxControllerDelay();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalSupportedControllerDelayComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", min_controller_delay = " << static_cast<uint64_t>(GetMinControllerDelay()) << ", max_controller_delay = " << static_cast<uint64_t>(GetMaxControllerDelay());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalSupportedControllerDelayCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6434,7 +6434,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadFailedContactCounter { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadFailedContactCounter { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadFailedContactCounterView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6454,7 +6454,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadFailedContactCounterComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", failed_contact_counter = " << +GetFailedContactCounter();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadFailedContactCounterComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", failed_contact_counter = " << static_cast<uint64_t>(GetFailedContactCounter());ss << " }";return ss.str();}
 
  protected:
 explicit ReadFailedContactCounterCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6470,7 +6470,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ResetFailedContactCounter { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ResetFailedContactCounter { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ResetFailedContactCounterView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6488,7 +6488,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ResetFailedContactCounterComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ResetFailedContactCounterComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ResetFailedContactCounterCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6504,7 +6504,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkQuality { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkQuality { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkQualityView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6524,7 +6524,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkQualityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", link_quality = " << +GetLinkQuality();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLinkQualityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_quality = " << static_cast<uint64_t>(GetLinkQuality());ss << " }";return ss.str();}
 
  protected:
 explicit ReadLinkQualityCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6540,7 +6540,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRssi { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRssi { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRssiView(AclCommandView parent) : AclCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6560,7 +6560,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRssiComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", rssi = " << +GetRssi();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRssiComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", rssi = " << static_cast<uint64_t>(GetRssi());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRssiCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6576,7 +6576,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAfhChannelMap { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAfhChannelMap { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadAfhChannelMapView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6599,7 +6599,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAfhChannelMapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", afh_mode = " << AfhModeText(GetAfhMode()) << ", afh_channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 10; index++) {ss << ((index == 0) ? "" : ", ") << +(GetAfhChannelMap()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadAfhChannelMapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", afh_mode = " << AfhModeText(GetAfhMode()) << ", afh_channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 10; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAfhChannelMap()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadAfhChannelMapCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6617,7 +6617,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClock { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", which_clock = " << WhichClockText(GetWhichClock());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClock { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", which_clock = " << WhichClockText(GetWhichClock());ss << " }";return ss.str();}
 
  protected:
 explicit ReadClockView(ConnectionManagementCommandView parent) : ConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6641,7 +6641,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", clock = " << +GetClock() << ", accuracy = " << +GetAccuracy();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", clock = " << static_cast<uint64_t>(GetClock()) << ", accuracy = " << static_cast<uint64_t>(GetAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit ReadClockCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6657,7 +6657,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadEncryptionKeySize { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadEncryptionKeySize { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ReadEncryptionKeySizeView(SecurityCommandView parent) : SecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6677,7 +6677,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadEncryptionKeySizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", key_size = " << +GetKeySize();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadEncryptionKeySizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", key_size = " << static_cast<uint64_t>(GetKeySize());ss << " }";return ss.str();}
 
  protected:
 explicit ReadEncryptionKeySizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6807,7 +6807,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteSecureConnectionsTestMode { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", dm1_aclu_mode = " << EnableText(GetDm1AcluMode()) << ", esco_loopback_mode = " << EnableText(GetEscoLoopbackMode());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "WriteSecureConnectionsTestMode { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", dm1_aclu_mode = " << EnableText(GetDm1AcluMode()) << ", esco_loopback_mode = " << EnableText(GetEscoLoopbackMode());ss << " }";return ss.str();}
 
  protected:
 explicit WriteSecureConnectionsTestModeView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6835,7 +6835,7 @@ uint64_t GetLeEventMask() const {ASSERT(was_validated_);auto to_bound = begin();
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 8 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_SET_EVENT_MASK) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetEventMask { ";ss << ""  << "le_event_mask = " << +GetLeEventMask();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetEventMask { ";ss << ""  << "le_event_mask = " << static_cast<uint64_t>(GetLeEventMask());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetEventMaskView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -6906,7 +6906,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadLocalSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", le_features = " << +GetLeFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadLocalSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", le_features = " << static_cast<uint64_t>(GetLeFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadLocalSupportedFeaturesCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -6964,7 +6964,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetAdvertisingParameters { ";ss << ""  << "interval_min = " << +GetIntervalMin() << ", interval_max = " << +GetIntervalMax() << ", advt_type = " << AdvertisingTypeText(GetAdvtType()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", channel_map = " << +GetChannelMap() << ", filter_policy = " << AdvertisingFilterPolicyText(GetFilterPolicy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetAdvertisingParameters { ";ss << ""  << "interval_min = " << static_cast<uint64_t>(GetIntervalMin()) << ", interval_max = " << static_cast<uint64_t>(GetIntervalMax()) << ", advt_type = " << AdvertisingTypeText(GetAdvtType()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", channel_map = " << static_cast<uint64_t>(GetChannelMap()) << ", filter_policy = " << AdvertisingFilterPolicyText(GetFilterPolicy());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetAdvertisingParametersView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7006,7 +7006,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadAdvertisingPhysicalChannelTxPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", transmit_power_level = " << +GetTransmitPowerLevel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadAdvertisingPhysicalChannelTxPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", transmit_power_level = " << static_cast<uint64_t>(GetTransmitPowerLevel());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadAdvertisingPhysicalChannelTxPowerCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7124,7 +7124,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetScanParameters { ";ss << ""  << "le_scan_type = " << LeScanTypeText(GetLeScanType()) << ", le_scan_interval = " << +GetLeScanInterval() << ", le_scan_window = " << +GetLeScanWindow() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetScanParameters { ";ss << ""  << "le_scan_type = " << LeScanTypeText(GetLeScanType()) << ", le_scan_interval = " << static_cast<uint64_t>(GetLeScanInterval()) << ", le_scan_window = " << static_cast<uint64_t>(GetLeScanWindow()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetScanParametersView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7204,7 +7204,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateConnection { ";ss << ""  << "le_scan_interval = " << +GetLeScanInterval() << ", le_scan_window = " << +GetLeScanWindow() << ", initiator_filter_policy = " << InitiatorFilterPolicyText(GetInitiatorFilterPolicy()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", conn_interval_min = " << +GetConnIntervalMin() << ", conn_interval_max = " << +GetConnIntervalMax() << ", conn_latency = " << +GetConnLatency() << ", supervision_timeout = " << +GetSupervisionTimeout() << ", minimum_ce_length = " << +GetMinimumCeLength() << ", maximum_ce_length = " << +GetMaximumCeLength();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateConnection { ";ss << ""  << "le_scan_interval = " << static_cast<uint64_t>(GetLeScanInterval()) << ", le_scan_window = " << static_cast<uint64_t>(GetLeScanWindow()) << ", initiator_filter_policy = " << InitiatorFilterPolicyText(GetInitiatorFilterPolicy()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", conn_interval_min = " << static_cast<uint64_t>(GetConnIntervalMin()) << ", conn_interval_max = " << static_cast<uint64_t>(GetConnIntervalMax()) << ", conn_latency = " << static_cast<uint64_t>(GetConnLatency()) << ", supervision_timeout = " << static_cast<uint64_t>(GetSupervisionTimeout()) << ", minimum_ce_length = " << static_cast<uint64_t>(GetMinimumCeLength()) << ", maximum_ce_length = " << static_cast<uint64_t>(GetMaximumCeLength());ss << " }";return ss.str();}
 
  protected:
 explicit LeCreateConnectionView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7270,7 +7270,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadFilterAcceptListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", filter_accept_list_size = " << +GetFilterAcceptListSize();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadFilterAcceptListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", filter_accept_list_size = " << static_cast<uint64_t>(GetFilterAcceptListSize());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadFilterAcceptListSizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7384,7 +7384,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionUpdate { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", conn_interval_min = " << +GetConnIntervalMin() << ", conn_interval_max = " << +GetConnIntervalMax() << ", conn_latency = " << +GetConnLatency() << ", supervision_timeout = " << +GetSupervisionTimeout() << ", minimum_ce_length = " << +GetMinimumCeLength() << ", maximum_ce_length = " << +GetMaximumCeLength();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionUpdate { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", conn_interval_min = " << static_cast<uint64_t>(GetConnIntervalMin()) << ", conn_interval_max = " << static_cast<uint64_t>(GetConnIntervalMax()) << ", conn_latency = " << static_cast<uint64_t>(GetConnLatency()) << ", supervision_timeout = " << static_cast<uint64_t>(GetSupervisionTimeout()) << ", minimum_ce_length = " << static_cast<uint64_t>(GetMinimumCeLength()) << ", maximum_ce_length = " << static_cast<uint64_t>(GetMaximumCeLength());ss << " }";return ss.str();}
 
  protected:
 explicit LeConnectionUpdateView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7411,7 +7411,7 @@ std::array<uint8_t,5> GetChannelMap() {ASSERT(was_validated_);size_t end_index =
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeConnectionManagementCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 5 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_SET_HOST_CHANNEL_CLASSIFICATION) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetHostChannelClassification { ";ss << ""  << "channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 5; index++) {ss << ((index == 0) ? "" : ", ") << +(GetChannelMap()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetHostChannelClassification { ";ss << ""  << "channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 5; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetChannelMap()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetHostChannelClassificationView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7458,7 +7458,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadChannelMapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 5; index++) {ss << ((index == 0) ? "" : ", ") << +(GetChannelMap()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadChannelMapComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", channel_map = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 5; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetChannelMap()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeReadChannelMapCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7474,7 +7474,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteFeatures { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteFeatures { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadRemoteFeaturesView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7504,7 +7504,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEncrypt { ";ss << ""  << "key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetKey()[index]);}ss << "]" << ", plaintext_data = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetPlaintextData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEncrypt { ";ss << ""  << "key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetKey()[index]));}ss << "]" << ", plaintext_data = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetPlaintextData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeEncryptView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7521,7 +7521,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEncryptComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", encrypted_data = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetEncryptedData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEncryptComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", encrypted_data = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetEncryptedData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeEncryptCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7549,7 +7549,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRandComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", random_number = " << +GetRandomNumber();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRandComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", random_number = " << static_cast<uint64_t>(GetRandomNumber());ss << " }";return ss.str();}
 
  protected:
 explicit LeRandCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7571,7 +7571,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeStartEncryption { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", rand = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRand()[index]);}ss << "]" << ", ediv = " << +GetEdiv() << ", ltk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLtk()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeStartEncryption { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", rand = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRand()[index]));}ss << "]" << ", ediv = " << static_cast<uint64_t>(GetEdiv()) << ", ltk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLtk()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeStartEncryptionView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7600,7 +7600,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestReply { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", long_term_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLongTermKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestReply { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", long_term_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLongTermKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeLongTermKeyRequestReplyView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7618,7 +7618,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeLongTermKeyRequestReplyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7634,7 +7634,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestNegativeReply { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestNegativeReply { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeLongTermKeyRequestNegativeReplyView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7652,7 +7652,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestNegativeReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequestNegativeReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeLongTermKeyRequestNegativeReplyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7680,7 +7680,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadSupportedStatesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", le_states = " << +GetLeStates();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadSupportedStatesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", le_states = " << static_cast<uint64_t>(GetLeStates());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadSupportedStatesCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7694,7 +7694,7 @@ uint8_t GetRxChannel() const {ASSERT(was_validated_);auto to_bound = begin();aut
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!CommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_RECEIVER_TEST) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReceiverTest { ";ss << ""  << "rx_channel = " << +GetRxChannel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReceiverTest { ";ss << ""  << "rx_channel = " << static_cast<uint64_t>(GetRxChannel());ss << " }";return ss.str();}
 
  protected:
 explicit LeReceiverTestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7726,7 +7726,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTransmitterTest { ";ss << ""  << "tx_channel = " << +GetTxChannel() << ", test_data_length = " << +GetTestDataLength() << ", packet_payload = " << LeTestPayloadText(GetPacketPayload());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTransmitterTest { ";ss << ""  << "tx_channel = " << static_cast<uint64_t>(GetTxChannel()) << ", test_data_length = " << static_cast<uint64_t>(GetTestDataLength()) << ", packet_payload = " << LeTestPayloadText(GetPacketPayload());ss << " }";return ss.str();}
 
  protected:
 explicit LeTransmitterTestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7794,7 +7794,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestReply { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", interval_min = " << +GetIntervalMin() << ", interval_max = " << +GetIntervalMax() << ", latency = " << +GetLatency() << ", timeout = " << +GetTimeout() << ", minimum_ce_length = " << +GetMinimumCeLength() << ", maximum_ce_length = " << +GetMaximumCeLength();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestReply { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", interval_min = " << static_cast<uint64_t>(GetIntervalMin()) << ", interval_max = " << static_cast<uint64_t>(GetIntervalMax()) << ", latency = " << static_cast<uint64_t>(GetLatency()) << ", timeout = " << static_cast<uint64_t>(GetTimeout()) << ", minimum_ce_length = " << static_cast<uint64_t>(GetMinimumCeLength()) << ", maximum_ce_length = " << static_cast<uint64_t>(GetMaximumCeLength());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoteConnectionParameterRequestReplyView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7812,7 +7812,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoteConnectionParameterRequestReplyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7830,7 +7830,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestNegativeReply { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestNegativeReply { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoteConnectionParameterRequestNegativeReplyView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7848,7 +7848,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestNegativeReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequestNegativeReplyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoteConnectionParameterRequestNegativeReplyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7868,7 +7868,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDataLength { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", tx_octets = " << +GetTxOctets() << ", tx_time = " << +GetTxTime();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDataLength { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", tx_octets = " << static_cast<uint64_t>(GetTxOctets()) << ", tx_time = " << static_cast<uint64_t>(GetTxTime());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetDataLengthView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7886,7 +7886,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetDataLengthCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7916,7 +7916,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadSuggestedDefaultDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", tx_octets = " << +GetTxOctets() << ", tx_time = " << +GetTxTime();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadSuggestedDefaultDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", tx_octets = " << static_cast<uint64_t>(GetTxOctets()) << ", tx_time = " << static_cast<uint64_t>(GetTxTime());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadSuggestedDefaultDataLengthCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -7932,7 +7932,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeWriteSuggestedDefaultDataLength { ";ss << ""  << "tx_octets = " << +GetTxOctets() << ", tx_time = " << +GetTxTime();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeWriteSuggestedDefaultDataLength { ";ss << ""  << "tx_octets = " << static_cast<uint64_t>(GetTxOctets()) << ", tx_time = " << static_cast<uint64_t>(GetTxTime());ss << " }";return ss.str();}
 
  protected:
 explicit LeWriteSuggestedDefaultDataLengthView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -7985,7 +7985,7 @@ std::array<uint8_t,64> GetRemoteP256PublicKey() {ASSERT(was_validated_);size_t e
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeSecurityCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 64 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_GENERATE_DHKEY_COMMAND_V1) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGenerateDhkeyV1Command { ";ss << ""  << "remote_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRemoteP256PublicKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGenerateDhkeyV1Command { ";ss << ""  << "remote_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRemoteP256PublicKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeGenerateDhkeyV1CommandView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8019,7 +8019,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAddDeviceToResolvingList { ";ss << ""  << "peer_identity_address_type = " << PeerAddressTypeText(GetPeerIdentityAddressType()) << ", peer_identity_address = " << GetPeerIdentityAddress().ToString() << ", peer_irk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetPeerIrk()[index]);}ss << "]" << ", local_irk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLocalIrk()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAddDeviceToResolvingList { ";ss << ""  << "peer_identity_address_type = " << PeerAddressTypeText(GetPeerIdentityAddressType()) << ", peer_identity_address = " << GetPeerIdentityAddress().ToString() << ", peer_irk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetPeerIrk()[index]));}ss << "]" << ", local_irk = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLocalIrk()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAddDeviceToResolvingListView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8117,7 +8117,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadResolvingListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", resolving_list_size = " << +GetResolvingListSize();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadResolvingListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", resolving_list_size = " << static_cast<uint64_t>(GetResolvingListSize());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadResolvingListSizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -8223,7 +8223,7 @@ uint16_t GetRpaTimeout() const {ASSERT(was_validated_);auto to_bound = begin();a
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeSecurityCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 2 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_SET_RESOLVABLE_PRIVATE_ADDRESS_TIMEOUT) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetResolvablePrivateAddressTimeout { ";ss << ""  << "rpa_timeout = " << +GetRpaTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetResolvablePrivateAddressTimeout { ";ss << ""  << "rpa_timeout = " << static_cast<uint64_t>(GetRpaTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetResolvablePrivateAddressTimeoutView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8282,7 +8282,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPhy { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPhy { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadPhyView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8304,7 +8304,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPhyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", tx_phy = " << PhyTypeText(GetTxPhy()) << ", rx_phy = " << PhyTypeText(GetRxPhy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPhyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", tx_phy = " << PhyTypeText(GetTxPhy()) << ", rx_phy = " << PhyTypeText(GetRxPhy());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadPhyCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -8330,7 +8330,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDefaultPhy { ";ss << ""  << "all_phys_no_transmit_preference = " << +GetAllPhysNoTransmitPreference() << ", all_phys_no_receive_preference = " << +GetAllPhysNoReceivePreference() << ", tx_phys_bitmask = " << +GetTxPhysBitmask() << ", rx_phys_bitmask = " << +GetRxPhysBitmask();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDefaultPhy { ";ss << ""  << "all_phys_no_transmit_preference = " << static_cast<uint64_t>(GetAllPhysNoTransmitPreference()) << ", all_phys_no_receive_preference = " << static_cast<uint64_t>(GetAllPhysNoReceivePreference()) << ", tx_phys_bitmask = " << static_cast<uint64_t>(GetTxPhysBitmask()) << ", rx_phys_bitmask = " << static_cast<uint64_t>(GetRxPhysBitmask());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetDefaultPhyView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8376,7 +8376,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPhy { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", all_phys_no_transmit_preference = " << +GetAllPhysNoTransmitPreference() << ", all_phys_no_receive_preference = " << +GetAllPhysNoReceivePreference() << ", tx_phys_bitmask = " << +GetTxPhysBitmask() << ", rx_phys_bitmask = " << +GetRxPhysBitmask() << ", phy_options = " << PhyOptionsText(GetPhyOptions());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPhy { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", all_phys_no_transmit_preference = " << static_cast<uint64_t>(GetAllPhysNoTransmitPreference()) << ", all_phys_no_receive_preference = " << static_cast<uint64_t>(GetAllPhysNoReceivePreference()) << ", tx_phys_bitmask = " << static_cast<uint64_t>(GetTxPhysBitmask()) << ", rx_phys_bitmask = " << static_cast<uint64_t>(GetRxPhysBitmask()) << ", phy_options = " << PhyOptionsText(GetPhyOptions());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPhyView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8406,7 +8406,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReceiverTest { ";ss << ""  << "rx_channel = " << +GetRxChannel() << ", phy = " << PhyTypeText(GetPhy()) << ", modulation_index = " << ModulationIndexText(GetModulationIndex());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReceiverTest { ";ss << ""  << "rx_channel = " << static_cast<uint64_t>(GetRxChannel()) << ", phy = " << PhyTypeText(GetPhy()) << ", modulation_index = " << ModulationIndexText(GetModulationIndex());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedReceiverTestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8440,7 +8440,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedTransmitterTest { ";ss << ""  << "tx_channel = " << +GetTxChannel() << ", test_data_length = " << +GetTestDataLength() << ", packet_payload = " << LeTestPayloadText(GetPacketPayload()) << ", phy = " << PhyTypeText(GetPhy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedTransmitterTest { ";ss << ""  << "tx_channel = " << static_cast<uint64_t>(GetTxChannel()) << ", test_data_length = " << static_cast<uint64_t>(GetTestDataLength()) << ", packet_payload = " << LeTestPayloadText(GetPacketPayload()) << ", phy = " << PhyTypeText(GetPhy());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedTransmitterTestView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8470,7 +8470,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingRandomAddress { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", advertising_random_address = " << GetAdvertisingRandomAddress().ToString();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingRandomAddress { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", advertising_random_address = " << GetAdvertisingRandomAddress().ToString();ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingRandomAddressView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8531,7 +8531,7 @@ if (GetFixedScalar3() != 1) return false;
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingLegacyParameters { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", advertising_event_legacy_properties = " << LegacyAdvertisingPropertiesText(GetAdvertisingEventLegacyProperties()) << ", primary_advertising_interval_min = " << +GetPrimaryAdvertisingIntervalMin() << ", primary_advertising_interval_max = " << +GetPrimaryAdvertisingIntervalMax() << ", primary_advertising_channel_map = " << +GetPrimaryAdvertisingChannelMap() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", advertising_filter_policy = " << AdvertisingFilterPolicyText(GetAdvertisingFilterPolicy()) << ", advertising_tx_power = " << +GetAdvertisingTxPower() << ", advertising_sid = " << +GetAdvertisingSid() << ", scan_request_notification_enable = " << EnableText(GetScanRequestNotificationEnable());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingLegacyParameters { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", advertising_event_legacy_properties = " << LegacyAdvertisingPropertiesText(GetAdvertisingEventLegacyProperties()) << ", primary_advertising_interval_min = " << static_cast<uint64_t>(GetPrimaryAdvertisingIntervalMin()) << ", primary_advertising_interval_max = " << static_cast<uint64_t>(GetPrimaryAdvertisingIntervalMax()) << ", primary_advertising_channel_map = " << static_cast<uint64_t>(GetPrimaryAdvertisingChannelMap()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", advertising_filter_policy = " << AdvertisingFilterPolicyText(GetAdvertisingFilterPolicy()) << ", advertising_tx_power = " << static_cast<uint64_t>(GetAdvertisingTxPower()) << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid()) << ", scan_request_notification_enable = " << EnableText(GetScanRequestNotificationEnable());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingLegacyParametersView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; } private:
@@ -8589,7 +8589,7 @@ if (GetFixedScalar4() != 0) return false;
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingParameters { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", advertising_event_legacy_properties = " << +GetAdvertisingEventLegacyProperties() << ", advertising_event_properties = " << +GetAdvertisingEventProperties() << ", primary_advertising_interval_min = " << +GetPrimaryAdvertisingIntervalMin() << ", primary_advertising_interval_max = " << +GetPrimaryAdvertisingIntervalMax() << ", primary_advertising_channel_map = " << +GetPrimaryAdvertisingChannelMap() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", advertising_filter_policy = " << AdvertisingFilterPolicyText(GetAdvertisingFilterPolicy()) << ", advertising_tx_power = " << +GetAdvertisingTxPower() << ", primary_advertising_phy = " << PrimaryPhyTypeText(GetPrimaryAdvertisingPhy()) << ", secondary_advertising_max_skip = " << +GetSecondaryAdvertisingMaxSkip() << ", secondary_advertising_phy = " << SecondaryPhyTypeText(GetSecondaryAdvertisingPhy()) << ", advertising_sid = " << +GetAdvertisingSid() << ", scan_request_notification_enable = " << EnableText(GetScanRequestNotificationEnable());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingParameters { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", advertising_event_legacy_properties = " << static_cast<uint64_t>(GetAdvertisingEventLegacyProperties()) << ", advertising_event_properties = " << static_cast<uint64_t>(GetAdvertisingEventProperties()) << ", primary_advertising_interval_min = " << static_cast<uint64_t>(GetPrimaryAdvertisingIntervalMin()) << ", primary_advertising_interval_max = " << static_cast<uint64_t>(GetPrimaryAdvertisingIntervalMax()) << ", primary_advertising_channel_map = " << static_cast<uint64_t>(GetPrimaryAdvertisingChannelMap()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", advertising_filter_policy = " << AdvertisingFilterPolicyText(GetAdvertisingFilterPolicy()) << ", advertising_tx_power = " << static_cast<uint64_t>(GetAdvertisingTxPower()) << ", primary_advertising_phy = " << PrimaryPhyTypeText(GetPrimaryAdvertisingPhy()) << ", secondary_advertising_max_skip = " << static_cast<uint64_t>(GetSecondaryAdvertisingMaxSkip()) << ", secondary_advertising_phy = " << SecondaryPhyTypeText(GetSecondaryAdvertisingPhy()) << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid()) << ", scan_request_notification_enable = " << EnableText(GetScanRequestNotificationEnable());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingParametersView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; } private:
@@ -8608,7 +8608,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", selected_tx_power = " << +GetSelectedTxPower();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", selected_tx_power = " << static_cast<uint64_t>(GetSelectedTxPower());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingParametersCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -8636,7 +8636,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingData { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingData { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingDataView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8664,7 +8664,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingDataRaw { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetAdvertisingData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingDataRaw { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAdvertisingData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingDataRawView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8706,7 +8706,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingScanResponse { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetScanResponseData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingScanResponse { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetScanResponseData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingScanResponseView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8734,7 +8734,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingScanResponseRaw { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetScanResponseData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingScanResponseRaw { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", operation = " << OperationText(GetOperation()) << ", fragment_preference = " << FragmentPreferenceText(GetFragmentPreference()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetScanResponseData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingScanResponseRawView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8786,7 +8786,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingDisable { ";ss << ""  << "disabled_sets_count = " << +GetDisabledSetsCount() << ", disabled_sets = " << "VECTOR[";for (size_t index = 0; index < GetDisabledSets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetDisabledSets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingDisable { ";ss << ""  << "disabled_sets_count = " << static_cast<uint64_t>(GetDisabledSetsCount()) << ", disabled_sets = " << "VECTOR[";for (size_t index = 0; index < GetDisabledSets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetDisabledSets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingDisableView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; } private:
@@ -8809,7 +8809,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", enabled_sets_count = " << +GetEnabledSetsCount() << ", enabled_sets = " << "VECTOR[";for (size_t index = 0; index < GetEnabledSets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetEnabledSets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedAdvertisingEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", enabled_sets_count = " << static_cast<uint64_t>(GetEnabledSetsCount()) << ", enabled_sets = " << "VECTOR[";for (size_t index = 0; index < GetEnabledSets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetEnabledSets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedAdvertisingEnableView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8851,7 +8851,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadMaximumAdvertisingDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", maximum_advertising_data_length = " << +GetMaximumAdvertisingDataLength();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadMaximumAdvertisingDataLengthComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", maximum_advertising_data_length = " << static_cast<uint64_t>(GetMaximumAdvertisingDataLength());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadMaximumAdvertisingDataLengthCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -8879,7 +8879,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadNumberOfSupportedAdvertisingSetsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", number_supported_advertising_sets = " << +GetNumberSupportedAdvertisingSets();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadNumberOfSupportedAdvertisingSetsComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", number_supported_advertising_sets = " << static_cast<uint64_t>(GetNumberSupportedAdvertisingSets());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadNumberOfSupportedAdvertisingSetsCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -8893,7 +8893,7 @@ uint8_t GetAdvertisingHandle() const {ASSERT(was_validated_);auto to_bound = beg
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeAdvertisingCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_REMOVE_ADVERTISING_SET) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveAdvertisingSet { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveAdvertisingSet { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveAdvertisingSetView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8957,7 +8957,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingParam { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", periodic_advertising_interval_min = " << +GetPeriodicAdvertisingIntervalMin() << ", periodic_advertising_interval_max = " << +GetPeriodicAdvertisingIntervalMax() << ", include_tx_power = " << +GetIncludeTxPower();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingParam { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", periodic_advertising_interval_min = " << static_cast<uint64_t>(GetPeriodicAdvertisingIntervalMin()) << ", periodic_advertising_interval_max = " << static_cast<uint64_t>(GetPeriodicAdvertisingIntervalMax()) << ", include_tx_power = " << static_cast<uint64_t>(GetIncludeTxPower());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingParamView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -8995,7 +8995,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingData { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", operation = " << OperationText(GetOperation()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetScanResponseData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingData { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", operation = " << OperationText(GetOperation()) << ", scan_response_data_size = " << GetScanResponseDataSize() << ", scan_response_data = " << "VECTOR[";for (size_t index = 0; index < GetScanResponseData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetScanResponseData()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingDataView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9025,7 +9025,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", advertising_handle = " << +GetAdvertisingHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingEnableView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9060,7 +9060,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedScanParameters { ";ss << ""  << "own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy()) << ", scanning_phys = " << +GetScanningPhys() << ", parameters = " << "VECTOR[";for (size_t index = 0; index < GetParameters().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetParameters()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedScanParameters { ";ss << ""  << "own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy()) << ", scanning_phys = " << static_cast<uint64_t>(GetScanningPhys()) << ", parameters = " << "VECTOR[";for (size_t index = 0; index < GetParameters().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetParameters()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedScanParametersView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9094,7 +9094,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedScanEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", filter_duplicates = " << FilterDuplicatesText(GetFilterDuplicates()) << ", duration = " << +GetDuration() << ", period = " << +GetPeriod();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetExtendedScanEnable { ";ss << ""  << "enable = " << EnableText(GetEnable()) << ", filter_duplicates = " << FilterDuplicatesText(GetFilterDuplicates()) << ", duration = " << static_cast<uint64_t>(GetDuration()) << ", period = " << static_cast<uint64_t>(GetPeriod());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetExtendedScanEnableView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9133,7 +9133,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedCreateConnection { ";ss << ""  << "initiator_filter_policy = " << InitiatorFilterPolicyText(GetInitiatorFilterPolicy()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", initiating_phys = " << +GetInitiatingPhys() << ", phy_scan_parameters = " << "VECTOR[";for (size_t index = 0; index < GetPhyScanParameters().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetPhyScanParameters()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedCreateConnection { ";ss << ""  << "initiator_filter_policy = " << InitiatorFilterPolicyText(GetInitiatorFilterPolicy()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", initiating_phys = " << static_cast<uint64_t>(GetInitiatingPhys()) << ", phy_scan_parameters = " << "VECTOR[";for (size_t index = 0; index < GetPhyScanParameters().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetPhyScanParameters()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeExtendedCreateConnectionView(LeConnectionManagementCommandView parent) : LeConnectionManagementCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9171,7 +9171,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingCreateSync { ";ss << ""  << "options = " << PeriodicAdvertisingOptionsText(GetOptions()) << ", advertising_sid = " << +GetAdvertisingSid() << ", advertiser_address_type = " << AdvertisingAddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", skip = " << +GetSkip() << ", sync_timeout = " << +GetSyncTimeout() << ", sync_cte_type = " << PeriodicSyncCteTypeText(GetSyncCteType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingCreateSync { ";ss << ""  << "options = " << PeriodicAdvertisingOptionsText(GetOptions()) << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid()) << ", advertiser_address_type = " << AdvertisingAddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", skip = " << static_cast<uint64_t>(GetSkip()) << ", sync_timeout = " << static_cast<uint64_t>(GetSyncTimeout()) << ", sync_cte_type = " << PeriodicSyncCteTypeText(GetSyncCteType());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingCreateSyncView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9225,7 +9225,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingTerminateSync { ";ss << ""  << "sync_handle = " << +GetSyncHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingTerminateSync { ";ss << ""  << "sync_handle = " << static_cast<uint64_t>(GetSyncHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingTerminateSyncView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9259,7 +9259,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAddDeviceToPeriodicAdvertisingList { ";ss << ""  << "advertising_address_type = " << AdvertisingAddressTypeText(GetAdvertisingAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertising_sid = " << +GetAdvertisingSid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAddDeviceToPeriodicAdvertisingList { ";ss << ""  << "advertising_address_type = " << AdvertisingAddressTypeText(GetAdvertisingAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid());ss << " }";return ss.str();}
 
  protected:
 explicit LeAddDeviceToPeriodicAdvertisingListView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9291,7 +9291,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveDeviceFromPeriodicAdvertisingList { ";ss << ""  << "advertiser_address_type = " << AdvertisingAddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertising_sid = " << +GetAdvertisingSid();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveDeviceFromPeriodicAdvertisingList { ";ss << ""  << "advertiser_address_type = " << AdvertisingAddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveDeviceFromPeriodicAdvertisingListView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9359,7 +9359,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPeriodicAdvertiserListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", periodic_advertiser_list_size = " << +GetPeriodicAdvertiserListSize();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadPeriodicAdvertiserListSizeComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", periodic_advertiser_list_size = " << static_cast<uint64_t>(GetPeriodicAdvertiserListSize());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadPeriodicAdvertiserListSizeCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9389,7 +9389,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadTransmitPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", min_tx_power_dbm = " << +GetMinTxPowerDbm() << ", max_tx_power_dbm = " << +GetMaxTxPowerDbm();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadTransmitPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", min_tx_power_dbm = " << static_cast<uint64_t>(GetMinTxPowerDbm()) << ", max_tx_power_dbm = " << static_cast<uint64_t>(GetMaxTxPowerDbm());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadTransmitPowerCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9419,7 +9419,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRfPathCompensationPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", rf_tx_path_compensation_tenths_db = " << +GetRfTxPathCompensationTenthsDb() << ", rf_rx_path_compensation_tenths_db = " << +GetRfRxPathCompensationTenthsDb();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRfPathCompensationPowerComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", rf_tx_path_compensation_tenths_db = " << static_cast<uint64_t>(GetRfTxPathCompensationTenthsDb()) << ", rf_rx_path_compensation_tenths_db = " << static_cast<uint64_t>(GetRfRxPathCompensationTenthsDb());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadRfPathCompensationPowerCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9435,7 +9435,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeWriteRfPathCompensationPower { ";ss << ""  << "rf_tx_path_compensation_tenths_db = " << +GetRfTxPathCompensationTenthsDb() << ", rf_rx_path_compensation_tenths_db = " << +GetRfRxPathCompensationTenthsDb();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeWriteRfPathCompensationPower { ";ss << ""  << "rf_tx_path_compensation_tenths_db = " << static_cast<uint64_t>(GetRfTxPathCompensationTenthsDb()) << ", rf_rx_path_compensation_tenths_db = " << static_cast<uint64_t>(GetRfRxPathCompensationTenthsDb());ss << " }";return ss.str();}
 
  protected:
 explicit LeWriteRfPathCompensationPowerView(LeAdvertisingCommandView parent) : LeAdvertisingCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9499,7 +9499,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingReceiveEnable { ";ss << ""  << "sync_handle = " << +GetSyncHandle() << ", enable = " << +GetEnable();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingReceiveEnable { ";ss << ""  << "sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", enable = " << static_cast<uint64_t>(GetEnable());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingReceiveEnableView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9535,7 +9535,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransfer { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", service_data = " << +GetServiceData() << ", sync_handle = " << +GetSyncHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransfer { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", service_data = " << static_cast<uint64_t>(GetServiceData()) << ", sync_handle = " << static_cast<uint64_t>(GetSyncHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSyncTransferView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9553,7 +9553,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransferComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransferComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSyncTransferCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9573,7 +9573,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSetInfoTransfer { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", service_data = " << +GetServiceData() << ", advertising_handle = " << +GetAdvertisingHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSetInfoTransfer { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", service_data = " << static_cast<uint64_t>(GetServiceData()) << ", advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSetInfoTransferView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9591,7 +9591,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSetInfoTransferComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSetInfoTransferComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSetInfoTransferCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9615,7 +9615,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingSyncTransferParameters { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", mode = " << SyncTransferModeText(GetMode()) << ", skip = " << +GetSkip() << ", sync_timeout = " << +GetSyncTimeout() << ", cte_type = " << CteTypeText(GetCteType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingSyncTransferParameters { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", mode = " << SyncTransferModeText(GetMode()) << ", skip = " << static_cast<uint64_t>(GetSkip()) << ", sync_timeout = " << static_cast<uint64_t>(GetSyncTimeout()) << ", cte_type = " << CteTypeText(GetCteType());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingSyncTransferParametersView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9633,7 +9633,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingSyncTransferParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPeriodicAdvertisingSyncTransferParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPeriodicAdvertisingSyncTransferParametersCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9653,7 +9653,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDefaultPeriodicAdvertisingSyncTransferParameters { ";ss << ""  << "mode = " << SyncTransferModeText(GetMode()) << ", skip = " << +GetSkip() << ", sync_timeout = " << +GetSyncTimeout() << ", cte_type = " << CteTypeText(GetCteType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetDefaultPeriodicAdvertisingSyncTransferParameters { ";ss << ""  << "mode = " << SyncTransferModeText(GetMode()) << ", skip = " << static_cast<uint64_t>(GetSkip()) << ", sync_timeout = " << static_cast<uint64_t>(GetSyncTimeout()) << ", cte_type = " << CteTypeText(GetCteType());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetDefaultPeriodicAdvertisingSyncTransferParametersView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9684,7 +9684,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGenerateDhkeyCommand { ";ss << ""  << "remote_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRemoteP256PublicKey()[index]);}ss << "]" << ", key_type = " << UseDebugKeyText(GetKeyType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGenerateDhkeyCommand { ";ss << ""  << "remote_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRemoteP256PublicKey()[index]));}ss << "]" << ", key_type = " << UseDebugKeyText(GetKeyType());ss << " }";return ss.str();}
 
  protected:
 explicit LeGenerateDhkeyCommandView(LeSecurityCommandView parent) : LeSecurityCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9772,7 +9772,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoTxSync { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoTxSync { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadIsoTxSyncView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9794,7 +9794,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoTxSyncComplete { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", packet_sequence_number = " << +GetPacketSequenceNumber() << ", timestamp = " << +GetTimestamp() << ", time_offset = " << +GetTimeOffset();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoTxSyncComplete { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", packet_sequence_number = " << static_cast<uint64_t>(GetPacketSequenceNumber()) << ", timestamp = " << static_cast<uint64_t>(GetTimestamp()) << ", time_offset = " << static_cast<uint64_t>(GetTimeOffset());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadIsoTxSyncCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9828,7 +9828,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParameters { ";ss << ""  << "cig_id = " << +GetCigId() << ", sdu_interval_m_to_s = " << +GetSduIntervalMToS() << ", sdu_interval_s_to_m = " << +GetSduIntervalSToM() << ", peripherals_clock_accuracy = " << ClockAccuracyText(GetPeripheralsClockAccuracy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", max_transport_latency_m_to_s = " << +GetMaxTransportLatencyMToS() << ", max_transport_latency_s_to_m = " << +GetMaxTransportLatencySToM() << ", cis_config_count = " << +GetCisConfigCount() << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParameters { ";ss << ""  << "cig_id = " << static_cast<uint64_t>(GetCigId()) << ", sdu_interval_m_to_s = " << static_cast<uint64_t>(GetSduIntervalMToS()) << ", sdu_interval_s_to_m = " << static_cast<uint64_t>(GetSduIntervalSToM()) << ", peripherals_clock_accuracy = " << ClockAccuracyText(GetPeripheralsClockAccuracy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", max_transport_latency_m_to_s = " << static_cast<uint64_t>(GetMaxTransportLatencyMToS()) << ", max_transport_latency_s_to_m = " << static_cast<uint64_t>(GetMaxTransportLatencySToM()) << ", cis_config_count = " << static_cast<uint64_t>(GetCisConfigCount()) << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetCigParametersView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9850,7 +9850,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << +GetCigId() << ", connection_handle_count = " << +GetConnectionHandleCount() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetConnectionHandle()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << static_cast<uint64_t>(GetCigId()) << ", connection_handle_count = " << static_cast<uint64_t>(GetConnectionHandleCount()) << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetConnectionHandle()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetCigParametersCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9886,7 +9886,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersTest { ";ss << ""  << "cig_id = " << +GetCigId() << ", sdu_interval_m_to_s = " << +GetSduIntervalMToS() << ", sdu_interval_s_to_m = " << +GetSduIntervalSToM() << ", ft_m_to_s = " << +GetFtMToS() << ", ft_s_to_m = " << +GetFtSToM() << ", iso_interval = " << +GetIsoInterval() << ", peripherals_clock_accuracy = " << ClockAccuracyText(GetPeripheralsClockAccuracy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", cis_config_count = " << +GetCisConfigCount() << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersTest { ";ss << ""  << "cig_id = " << static_cast<uint64_t>(GetCigId()) << ", sdu_interval_m_to_s = " << static_cast<uint64_t>(GetSduIntervalMToS()) << ", sdu_interval_s_to_m = " << static_cast<uint64_t>(GetSduIntervalSToM()) << ", ft_m_to_s = " << static_cast<uint64_t>(GetFtMToS()) << ", ft_s_to_m = " << static_cast<uint64_t>(GetFtSToM()) << ", iso_interval = " << static_cast<uint64_t>(GetIsoInterval()) << ", peripherals_clock_accuracy = " << ClockAccuracyText(GetPeripheralsClockAccuracy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", cis_config_count = " << static_cast<uint64_t>(GetCisConfigCount()) << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetCigParametersTestView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9908,7 +9908,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersTestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << +GetCigId() << ", connection_handle_count = " << +GetConnectionHandleCount() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetConnectionHandle()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetCigParametersTestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << static_cast<uint64_t>(GetCigId()) << ", connection_handle_count = " << static_cast<uint64_t>(GetConnectionHandleCount()) << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetConnectionHandle()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetCigParametersTestCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9926,7 +9926,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateCis { ";ss << ""  << "cis_config_count = " << +GetCisConfigCount() << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateCis { ";ss << ""  << "cis_config_count = " << static_cast<uint64_t>(GetCisConfigCount()) << ", cis_config = " << "VECTOR[";for (size_t index = 0; index < GetCisConfig().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCisConfig()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeCreateCisView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9952,7 +9952,7 @@ uint8_t GetCigId() const {ASSERT(was_validated_);auto to_bound = begin();auto ci
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeIsoCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_REMOVE_CIG) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveCig { ";ss << ""  << "cig_id = " << +GetCigId();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveCig { ";ss << ""  << "cig_id = " << static_cast<uint64_t>(GetCigId());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveCigView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -9968,7 +9968,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveCigComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << +GetCigId();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveCigComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", cig_id = " << static_cast<uint64_t>(GetCigId());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveCigCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -9984,7 +9984,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAcceptCisRequest { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAcceptCisRequest { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeAcceptCisRequestView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10014,7 +10014,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRejectCisRequest { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRejectCisRequest { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit LeRejectCisRequestView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10032,7 +10032,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRejectCisRequestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRejectCisRequestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRejectCisRequestCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10071,7 +10071,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateBig { ";ss << ""  << "big_handle = " << +GetBigHandle() << ", advertising_handle = " << +GetAdvertisingHandle() << ", num_bis = " << +GetNumBis() << ", sdu_interval = " << +GetSduInterval() << ", max_sdu = " << +GetMaxSdu() << ", max_transport_latency = " << +GetMaxTransportLatency() << ", rtn = " << +GetRtn() << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", encryption = " << EnableText(GetEncryption()) << ", broadcast_code = " << "VECTOR[";for (size_t index = 0; index < GetBroadcastCode().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetBroadcastCode()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateBig { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", num_bis = " << static_cast<uint64_t>(GetNumBis()) << ", sdu_interval = " << static_cast<uint64_t>(GetSduInterval()) << ", max_sdu = " << static_cast<uint64_t>(GetMaxSdu()) << ", max_transport_latency = " << static_cast<uint64_t>(GetMaxTransportLatency()) << ", rtn = " << static_cast<uint64_t>(GetRtn()) << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", packing = " << PackingText(GetPacking()) << ", framing = " << EnableText(GetFraming()) << ", encryption = " << EnableText(GetEncryption()) << ", broadcast_code = " << "VECTOR[";for (size_t index = 0; index < GetBroadcastCode().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetBroadcastCode()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeCreateBigView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10099,7 +10099,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTerminateBig { ";ss << ""  << "big_handle = " << +GetBigHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTerminateBig { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit LeTerminateBigView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10146,7 +10146,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigCreateSync { ";ss << ""  << "big_handle = " << +GetBigHandle() << ", sync_handle = " << +GetSyncHandle() << ", encryption = " << EnableText(GetEncryption()) << ", broadcast_code = " << "VECTOR[";for (size_t index = 0; index < GetBroadcastCode().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetBroadcastCode()[index]);}ss << "]" << ", mse = " << +GetMse() << ", big_sync_timeout = " << +GetBigSyncTimeout() << ", bis_count = " << +GetBisCount() << ", bis = " << "VECTOR[";for (size_t index = 0; index < GetBis().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetBis()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigCreateSync { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", encryption = " << EnableText(GetEncryption()) << ", broadcast_code = " << "VECTOR[";for (size_t index = 0; index < GetBroadcastCode().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetBroadcastCode()[index]));}ss << "]" << ", mse = " << static_cast<uint64_t>(GetMse()) << ", big_sync_timeout = " << static_cast<uint64_t>(GetBigSyncTimeout()) << ", bis_count = " << static_cast<uint64_t>(GetBisCount()) << ", bis = " << "VECTOR[";for (size_t index = 0; index < GetBis().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetBis()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeBigCreateSyncView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10172,7 +10172,7 @@ uint8_t GetBigHandle() const {ASSERT(was_validated_);auto to_bound = begin();aut
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeIsoCommandView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 24 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetOpCode() != OpCode::LE_BIG_TERMINATE_SYNC) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigTerminateSync { ";ss << ""  << "big_handle = " << +GetBigHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigTerminateSync { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeBigTerminateSyncView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10188,7 +10188,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigTerminateSyncComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << +GetBigHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigTerminateSyncComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << static_cast<uint64_t>(GetBigHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeBigTerminateSyncCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10204,7 +10204,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRequestPeerSca { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRequestPeerSca { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRequestPeerScaView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10246,7 +10246,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetupIsoDataPath { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", data_path_direction = " << DataPathDirectionText(GetDataPathDirection()) << ", data_path_id = " << +GetDataPathId() << ", codec_id = " << +GetCodecId() << ", controller_delay = " << +GetControllerDelay() << ", codec_configuration_count = " << +GetCodecConfigurationCount() << ", codec_configuration = " << "VECTOR[";for (size_t index = 0; index < GetCodecConfiguration().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetCodecConfiguration()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetupIsoDataPath { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", data_path_direction = " << DataPathDirectionText(GetDataPathDirection()) << ", data_path_id = " << static_cast<uint64_t>(GetDataPathId()) << ", codec_id = " << static_cast<uint64_t>(GetCodecId()) << ", controller_delay = " << static_cast<uint64_t>(GetControllerDelay()) << ", codec_configuration_count = " << static_cast<uint64_t>(GetCodecConfigurationCount()) << ", codec_configuration = " << "VECTOR[";for (size_t index = 0; index < GetCodecConfiguration().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetCodecConfiguration()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeSetupIsoDataPathView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10264,7 +10264,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetupIsoDataPathComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetupIsoDataPathComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetupIsoDataPathCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10282,7 +10282,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveIsoDataPath { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", remove_data_path_direction = " << RemoveDataPathDirectionText(GetRemoveDataPathDirection());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveIsoDataPath { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", remove_data_path_direction = " << RemoveDataPathDirectionText(GetRemoveDataPathDirection());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveIsoDataPathView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10300,7 +10300,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveIsoDataPathComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoveIsoDataPathComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoveIsoDataPathCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10346,7 +10346,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoLinkQuality { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoLinkQuality { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadIsoLinkQualityView(LeIsoCommandView parent) : LeIsoCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10378,7 +10378,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoLinkQualityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", tx_unacked_packets = " << +GetTxUnackedPackets() << ", tx_flushed_packets = " << +GetTxFlushedPackets() << ", tx_last_subevent_packets = " << +GetTxLastSubeventPackets() << ", retransmitted_packets = " << +GetRetransmittedPackets() << ", crc_error_packets = " << +GetCrcErrorPackets() << ", rx_unreceived_packets = " << +GetRxUnreceivedPackets() << ", duplicate_packets = " << +GetDuplicatePackets();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadIsoLinkQualityComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", tx_unacked_packets = " << static_cast<uint64_t>(GetTxUnackedPackets()) << ", tx_flushed_packets = " << static_cast<uint64_t>(GetTxFlushedPackets()) << ", tx_last_subevent_packets = " << static_cast<uint64_t>(GetTxLastSubeventPackets()) << ", retransmitted_packets = " << static_cast<uint64_t>(GetRetransmittedPackets()) << ", crc_error_packets = " << static_cast<uint64_t>(GetCrcErrorPackets()) << ", rx_unreceived_packets = " << static_cast<uint64_t>(GetRxUnreceivedPackets()) << ", duplicate_packets = " << static_cast<uint64_t>(GetDuplicatePackets());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadIsoLinkQualityCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10396,7 +10396,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReadTransmitPowerLevel { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", phy = " << +GetPhy();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReadTransmitPowerLevel { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", phy = " << static_cast<uint64_t>(GetPhy());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedReadTransmitPowerLevelView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10420,7 +10420,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReadTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", phy = " << PhyWithCodedSpecifiedText(GetPhy()) << ", current_transmit_power_level = " << +GetCurrentTransmitPowerLevel() << ", max_transmit_power_level = " << +GetMaxTransmitPowerLevel();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedReadTransmitPowerLevelComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", phy = " << PhyWithCodedSpecifiedText(GetPhy()) << ", current_transmit_power_level = " << static_cast<uint64_t>(GetCurrentTransmitPowerLevel()) << ", max_transmit_power_level = " << static_cast<uint64_t>(GetMaxTransmitPowerLevel());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedReadTransmitPowerLevelCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10438,7 +10438,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteTransmitPowerLevel { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", phy = " << +GetPhy();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteTransmitPowerLevel { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", phy = " << static_cast<uint64_t>(GetPhy());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadRemoteTransmitPowerLevelView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10476,7 +10476,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingParameters { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", high_threshold = " << +GetHighThreshold() << ", high_hysteresis = " << +GetHighHysteresis() << ", low_threshold = " << +GetLowThreshold() << ", low_hysteresis = " << +GetLowHysteresis() << ", min_time_spent = " << +GetMinTimeSpent();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingParameters { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", high_threshold = " << static_cast<uint64_t>(GetHighThreshold()) << ", high_hysteresis = " << static_cast<uint64_t>(GetHighHysteresis()) << ", low_threshold = " << static_cast<uint64_t>(GetLowThreshold()) << ", low_hysteresis = " << static_cast<uint64_t>(GetLowHysteresis()) << ", min_time_spent = " << static_cast<uint64_t>(GetMinTimeSpent());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPathLossReportingParametersView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10494,7 +10494,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingParametersComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPathLossReportingParametersCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10512,7 +10512,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingEnable { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", enable = " << +GetEnable();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingEnable { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", enable = " << static_cast<uint64_t>(GetEnable());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPathLossReportingEnableView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10530,7 +10530,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingEnableComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetPathLossReportingEnableComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetPathLossReportingEnableCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10550,7 +10550,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetTransmitPowerReportingEnable { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", local_enable = " << +GetLocalEnable() << ", remote_enable = " << +GetRemoteEnable();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetTransmitPowerReportingEnable { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", local_enable = " << static_cast<uint64_t>(GetLocalEnable()) << ", remote_enable = " << static_cast<uint64_t>(GetRemoteEnable());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetTransmitPowerReportingEnableView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -10568,7 +10568,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetTransmitPowerReportingEnableComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeSetTransmitPowerReportingEnableComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LeSetTransmitPowerReportingEnableCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10627,7 +10627,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete095 { ";ss << ""  << "version_supported = " << +GetVersionSupported() << ", total_num_of_advt_tracked = " << +GetTotalNumOfAdvtTracked() << ", extended_scan_support = " << +GetExtendedScanSupport() << ", debug_logging_supported = " << +GetDebugLoggingSupported() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete095 { ";ss << ""  << "version_supported = " << static_cast<uint64_t>(GetVersionSupported()) << ", total_num_of_advt_tracked = " << static_cast<uint64_t>(GetTotalNumOfAdvtTracked()) << ", extended_scan_support = " << static_cast<uint64_t>(GetExtendedScanSupport()) << ", debug_logging_supported = " << static_cast<uint64_t>(GetDebugLoggingSupported()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit LeGetVendorCapabilitiesComplete095View(LeGetVendorCapabilitiesCompleteView parent) : LeGetVendorCapabilitiesCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -10646,7 +10646,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete096 { ";ss << ""  << "le_address_generation_offloading_support = " << +GetLeAddressGenerationOffloadingSupport() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete096 { ";ss << ""  << "le_address_generation_offloading_support = " << static_cast<uint64_t>(GetLeAddressGenerationOffloadingSupport()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit LeGetVendorCapabilitiesComplete096View(LeGetVendorCapabilitiesComplete095View parent) : LeGetVendorCapabilitiesComplete095View(std::move(parent)) { was_validated_ = false; }};
@@ -10662,7 +10662,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete098 { ";ss << ""  << "a2dp_source_offload_capability_mask = " << +GetA2dpSourceOffloadCapabilityMask() << ", bluetooth_quality_report_support = " << +GetBluetoothQualityReportSupport();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeGetVendorCapabilitiesComplete098 { ";ss << ""  << "a2dp_source_offload_capability_mask = " << static_cast<uint64_t>(GetA2dpSourceOffloadCapabilityMask()) << ", bluetooth_quality_report_support = " << static_cast<uint64_t>(GetBluetoothQualityReportSupport());ss << " }";return ss.str();}
 
  protected:
 explicit LeGetVendorCapabilitiesComplete098View(LeGetVendorCapabilitiesComplete096View parent) : LeGetVendorCapabilitiesComplete096View(std::move(parent)) { was_validated_ = false; }};
@@ -10730,7 +10730,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtParam { ";ss << ""  << "interval_min = " << +GetIntervalMin() << ", interval_max = " << +GetIntervalMax() << ", advt_type = " << AdvertisingTypeText(GetAdvtType()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", own_address = " << GetOwnAddress().ToString() << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", channel_map = " << +GetChannelMap() << ", filter_policy = " << AdvertisingFilterPolicyText(GetFilterPolicy()) << ", instance = " << +GetInstance() << ", tx_power = " << +GetTxPower();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtParam { ";ss << ""  << "interval_min = " << static_cast<uint64_t>(GetIntervalMin()) << ", interval_max = " << static_cast<uint64_t>(GetIntervalMax()) << ", advt_type = " << AdvertisingTypeText(GetAdvtType()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", own_address = " << GetOwnAddress().ToString() << ", peer_address_type = " << PeerAddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", channel_map = " << static_cast<uint64_t>(GetChannelMap()) << ", filter_policy = " << AdvertisingFilterPolicyText(GetFilterPolicy()) << ", instance = " << static_cast<uint64_t>(GetInstance()) << ", tx_power = " << static_cast<uint64_t>(GetTxPower());ss << " }";return ss.str();}
 
  protected:
 explicit LeMultiAdvtParamView(LeMultiAdvtView parent) : LeMultiAdvtView(std::move(parent)) { was_validated_ = false; }};
@@ -10764,7 +10764,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetData { ";ss << ""  << "advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]" << ", padding_248 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()" << ", advertising_instance = " << +GetAdvertisingInstance();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetData { ";ss << ""  << "advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]" << ", padding_248 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()" << ", advertising_instance = " << static_cast<uint64_t>(GetAdvertisingInstance());ss << " }";return ss.str();}
 
  protected:
 explicit LeMultiAdvtSetDataView(LeMultiAdvtView parent) : LeMultiAdvtView(std::move(parent)) { was_validated_ = false; }};
@@ -10798,7 +10798,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetScanResp { ";ss << ""  << "advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]" << ", padding_248 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()" << ", advertising_instance = " << +GetAdvertisingInstance();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetScanResp { ";ss << ""  << "advertising_data_size = " << GetAdvertisingDataSize() << ", advertising_data = " << "VECTOR[";for (size_t index = 0; index < GetAdvertisingData().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetAdvertisingData()[index]).ToString();}ss << "]" << ", padding_248 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()" << ", advertising_instance = " << static_cast<uint64_t>(GetAdvertisingInstance());ss << " }";return ss.str();}
 
  protected:
 explicit LeMultiAdvtSetScanRespView(LeMultiAdvtView parent) : LeMultiAdvtView(std::move(parent)) { was_validated_ = false; }};
@@ -10826,7 +10826,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetRandomAddr { ";ss << ""  << "random_address = " << GetRandomAddress().ToString() << ", advertising_instance = " << +GetAdvertisingInstance();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetRandomAddr { ";ss << ""  << "random_address = " << GetRandomAddress().ToString() << ", advertising_instance = " << static_cast<uint64_t>(GetAdvertisingInstance());ss << " }";return ss.str();}
 
  protected:
 explicit LeMultiAdvtSetRandomAddrView(LeMultiAdvtView parent) : LeMultiAdvtView(std::move(parent)) { was_validated_ = false; }};
@@ -10854,7 +10854,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetEnable { ";ss << ""  << "advertising_enable = " << EnableText(GetAdvertisingEnable()) << ", advertising_instance = " << +GetAdvertisingInstance();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeMultiAdvtSetEnable { ";ss << ""  << "advertising_enable = " << EnableText(GetAdvertisingEnable()) << ", advertising_instance = " << static_cast<uint64_t>(GetAdvertisingInstance());ss << " }";return ss.str();}
 
  protected:
 explicit LeMultiAdvtSetEnableView(LeMultiAdvtView parent) : LeMultiAdvtView(std::move(parent)) { was_validated_ = false; }};
@@ -10944,7 +10944,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanSetStorageParameters { ";ss << ""  << "batch_scan_full_max_percentage = " << +GetBatchScanFullMaxPercentage() << ", batch_scan_truncated_max_percentage = " << +GetBatchScanTruncatedMaxPercentage() << ", batch_scan_notify_threshold_percentage = " << +GetBatchScanNotifyThresholdPercentage();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanSetStorageParameters { ";ss << ""  << "batch_scan_full_max_percentage = " << static_cast<uint64_t>(GetBatchScanFullMaxPercentage()) << ", batch_scan_truncated_max_percentage = " << static_cast<uint64_t>(GetBatchScanTruncatedMaxPercentage()) << ", batch_scan_notify_threshold_percentage = " << static_cast<uint64_t>(GetBatchScanNotifyThresholdPercentage());ss << " }";return ss.str();}
 
  protected:
 explicit LeBatchScanSetStorageParametersView(LeBatchScanView parent) : LeBatchScanView(std::move(parent)) { was_validated_ = false; }};
@@ -10982,7 +10982,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanSetScanParameters { ";ss << ""  << "truncated_mode_enabled = " << +GetTruncatedModeEnabled() << ", full_mode_enabled = " << +GetFullModeEnabled() << ", duty_cycle_scan_window_slots = " << +GetDutyCycleScanWindowSlots() << ", duty_cycle_scan_interval_slots = " << +GetDutyCycleScanIntervalSlots() << ", own_address_type = " << AdvertisingAddressTypeText(GetOwnAddressType()) << ", batch_scan_discard_rule = " << BatchScanDiscardRuleText(GetBatchScanDiscardRule());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanSetScanParameters { ";ss << ""  << "truncated_mode_enabled = " << static_cast<uint64_t>(GetTruncatedModeEnabled()) << ", full_mode_enabled = " << static_cast<uint64_t>(GetFullModeEnabled()) << ", duty_cycle_scan_window_slots = " << static_cast<uint64_t>(GetDutyCycleScanWindowSlots()) << ", duty_cycle_scan_interval_slots = " << static_cast<uint64_t>(GetDutyCycleScanIntervalSlots()) << ", own_address_type = " << AdvertisingAddressTypeText(GetOwnAddressType()) << ", batch_scan_discard_rule = " << BatchScanDiscardRuleText(GetBatchScanDiscardRule());ss << " }";return ss.str();}
 
  protected:
 explicit LeBatchScanSetScanParametersView(LeBatchScanView parent) : LeBatchScanView(std::move(parent)) { was_validated_ = false; }};
@@ -11027,7 +11027,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadResultParametersCompleteRaw { ";ss << ""  << "batch_scan_data_read = " << BatchScanDataReadText(GetBatchScanDataRead()) << ", num_of_records = " << +GetNumOfRecords() << ", raw_data = " << "VECTOR[";for (size_t index = 0; index < GetRawData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetRawData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadResultParametersCompleteRaw { ";ss << ""  << "batch_scan_data_read = " << BatchScanDataReadText(GetBatchScanDataRead()) << ", num_of_records = " << static_cast<uint64_t>(GetNumOfRecords()) << ", raw_data = " << "VECTOR[";for (size_t index = 0; index < GetRawData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRawData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeBatchScanReadResultParametersCompleteRawView(LeBatchScanCompleteView parent) : LeBatchScanCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11061,7 +11061,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadTruncatedResultParametersComplete { ";ss << ""  << "results_count = " << +GetResultsCount() << ", results = " << "VECTOR[";for (size_t index = 0; index < GetResults().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResults()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadTruncatedResultParametersComplete { ";ss << ""  << "results_count = " << static_cast<uint64_t>(GetResultsCount()) << ", results = " << "VECTOR[";for (size_t index = 0; index < GetResults().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResults()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeBatchScanReadTruncatedResultParametersCompleteView(LeBatchScanReadResultParametersCompleteView parent) : LeBatchScanReadResultParametersCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11079,7 +11079,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadFullResultParametersComplete { ";ss << ""  << "results_count = " << +GetResultsCount() << ", results = " << "VECTOR[";for (size_t index = 0; index < GetResults().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResults()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBatchScanReadFullResultParametersComplete { ";ss << ""  << "results_count = " << static_cast<uint64_t>(GetResultsCount()) << ", results = " << "VECTOR[";for (size_t index = 0; index < GetResults().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResults()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeBatchScanReadFullResultParametersCompleteView(LeBatchScanReadResultParametersCompleteView parent) : LeBatchScanReadResultParametersCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11191,7 +11191,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterAddFilteringParameters { ";ss << ""  << "apcf_filter_index = " << +GetApcfFilterIndex() << ", apcf_feature_selection = " << +GetApcfFeatureSelection() << ", apcf_list_logic_type = " << +GetApcfListLogicType() << ", apcf_filter_logic_type = " << +GetApcfFilterLogicType() << ", rssi_high_thresh = " << +GetRssiHighThresh() << ", delivery_mode = " << DeliveryModeText(GetDeliveryMode()) << ", onfound_timeout = " << +GetOnfoundTimeout() << ", onfound_timeout_cnt = " << +GetOnfoundTimeoutCnt() << ", rssi_low_thresh = " << +GetRssiLowThresh() << ", onlost_timeout = " << +GetOnlostTimeout() << ", num_of_tracking_entries = " << +GetNumOfTrackingEntries();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterAddFilteringParameters { ";ss << ""  << "apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", apcf_feature_selection = " << static_cast<uint64_t>(GetApcfFeatureSelection()) << ", apcf_list_logic_type = " << static_cast<uint64_t>(GetApcfListLogicType()) << ", apcf_filter_logic_type = " << static_cast<uint64_t>(GetApcfFilterLogicType()) << ", rssi_high_thresh = " << static_cast<uint64_t>(GetRssiHighThresh()) << ", delivery_mode = " << DeliveryModeText(GetDeliveryMode()) << ", onfound_timeout = " << static_cast<uint64_t>(GetOnfoundTimeout()) << ", onfound_timeout_cnt = " << static_cast<uint64_t>(GetOnfoundTimeoutCnt()) << ", rssi_low_thresh = " << static_cast<uint64_t>(GetRssiLowThresh()) << ", onlost_timeout = " << static_cast<uint64_t>(GetOnlostTimeout()) << ", num_of_tracking_entries = " << static_cast<uint64_t>(GetNumOfTrackingEntries());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterAddFilteringParametersView(LeAdvFilterSetFilteringParametersView parent) : LeAdvFilterSetFilteringParametersView(std::move(parent)) { was_validated_ = false; }};
@@ -11205,7 +11205,7 @@ uint8_t GetApcfFilterIndex() const {ASSERT(was_validated_);auto to_bound = begin
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!LeAdvFilterSetFilteringParametersView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 40 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetApcfAction() != ApcfAction::DELETE) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterDeleteFilteringParameters { ";ss << ""  << "apcf_filter_index = " << +GetApcfFilterIndex();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterDeleteFilteringParameters { ";ss << ""  << "apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterDeleteFilteringParametersView(LeAdvFilterSetFilteringParametersView parent) : LeAdvFilterSetFilteringParametersView(std::move(parent)) { was_validated_ = false; }};
@@ -11233,7 +11233,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSetFilteringParametersComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSetFilteringParametersComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterSetFilteringParametersCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11253,7 +11253,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterBroadcasterAddress { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", apcf_broadcaster_address = " << GetApcfBroadcasterAddress().ToString() << ", apcf_application_address_type = " << ApcfApplicationAddressTypeText(GetApcfApplicationAddressType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterBroadcasterAddress { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", apcf_broadcaster_address = " << GetApcfBroadcasterAddress().ToString() << ", apcf_application_address_type = " << ApcfApplicationAddressTypeText(GetApcfApplicationAddressType());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterBroadcasterAddressView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11268,7 +11268,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterClearBroadcasterAddress { ";ss << ""  << "apcf_filter_index = " << +GetApcfFilterIndex();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterClearBroadcasterAddress { ";ss << ""  << "apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterClearBroadcasterAddressView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; } private:
@@ -11287,7 +11287,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterBroadcasterAddressComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterBroadcasterAddressComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterBroadcasterAddressCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11306,7 +11306,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceUuid { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", acpf_uuid_data = " << "VECTOR[";for (size_t index = 0; index < GetAcpfUuidData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetAcpfUuidData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceUuid { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", acpf_uuid_data = " << "VECTOR[";for (size_t index = 0; index < GetAcpfUuidData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAcpfUuidData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterServiceUuidView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11322,7 +11322,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceUuidComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceUuidComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterServiceUuidCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11341,7 +11341,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSolicitationUuid { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", acpf_uuid_data = " << "VECTOR[";for (size_t index = 0; index < GetAcpfUuidData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetAcpfUuidData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSolicitationUuid { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", acpf_uuid_data = " << "VECTOR[";for (size_t index = 0; index < GetAcpfUuidData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAcpfUuidData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterSolicitationUuidView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11357,7 +11357,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSolicitationUuidComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterSolicitationUuidComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterSolicitationUuidCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11376,7 +11376,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterLocalName { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", apcf_local_name = " << "VECTOR[";for (size_t index = 0; index < GetApcfLocalName().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetApcfLocalName()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterLocalName { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", apcf_local_name = " << "VECTOR[";for (size_t index = 0; index < GetApcfLocalName().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetApcfLocalName()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterLocalNameView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11392,7 +11392,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterLocalNameComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterLocalNameComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterLocalNameCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11411,7 +11411,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterManufacturerData { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", apcf_manufacturer_data = " << "VECTOR[";for (size_t index = 0; index < GetApcfManufacturerData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetApcfManufacturerData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterManufacturerData { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", apcf_manufacturer_data = " << "VECTOR[";for (size_t index = 0; index < GetApcfManufacturerData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetApcfManufacturerData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterManufacturerDataView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11427,7 +11427,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterManufacturerDataComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterManufacturerDataComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterManufacturerDataCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11446,7 +11446,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceData { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << +GetApcfFilterIndex() << ", apcf_service_data = " << "VECTOR[";for (size_t index = 0; index < GetApcfServiceData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetApcfServiceData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceData { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", apcf_service_data = " << "VECTOR[";for (size_t index = 0; index < GetApcfServiceData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetApcfServiceData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterServiceDataView(LeAdvFilterView parent) : LeAdvFilterView(std::move(parent)) { was_validated_ = false; }};
@@ -11462,7 +11462,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceDataComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << +GetApcfAvailableSpaces();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvFilterServiceDataComplete { ";ss << ""  << "apcf_action = " << ApcfActionText(GetApcfAction()) << ", apcf_available_spaces = " << static_cast<uint64_t>(GetApcfAvailableSpaces());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvFilterServiceDataCompleteView(LeAdvFilterCompleteView parent) : LeAdvFilterCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11496,7 +11496,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnergyInfoComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", total_tx_time_ms = " << +GetTotalTxTimeMs() << ", total_rx_time_ms = " << +GetTotalRxTimeMs() << ", total_idle_time_ms = " << +GetTotalIdleTimeMs() << ", total_energy_used_ma_v_ms = " << +GetTotalEnergyUsedMaVMs();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnergyInfoComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", total_tx_time_ms = " << static_cast<uint64_t>(GetTotalTxTimeMs()) << ", total_rx_time_ms = " << static_cast<uint64_t>(GetTotalRxTimeMs()) << ", total_idle_time_ms = " << static_cast<uint64_t>(GetTotalIdleTimeMs()) << ", total_energy_used_ma_v_ms = " << static_cast<uint64_t>(GetTotalEnergyUsedMaVMs());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnergyInfoCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11518,7 +11518,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedScanParams { ";ss << ""  << "le_scan_type = " << LeScanTypeText(GetLeScanType()) << ", le_scan_interval = " << +GetLeScanInterval() << ", le_scan_window = " << +GetLeScanWindow() << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedScanParams { ";ss << ""  << "le_scan_type = " << LeScanTypeText(GetLeScanType()) << ", le_scan_interval = " << static_cast<uint64_t>(GetLeScanInterval()) << ", le_scan_window = " << static_cast<uint64_t>(GetLeScanWindow()) << ", own_address_type = " << OwnAddressTypeText(GetOwnAddressType()) << ", scanning_filter_policy = " << LeScanningFilterPolicyText(GetScanningFilterPolicy());ss << " }";return ss.str();}
 
  protected:
 explicit LeExtendedScanParamsView(LeScanningCommandView parent) : LeScanningCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -11610,7 +11610,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ControllerBqr { ";ss << ""  << "bqr_report_action = " << BqrReportActionText(GetBqrReportAction()) << ", bqr_quality_event_mask = " << +GetBqrQualityEventMask() << ", bqr_minimum_report_interval = " << +GetBqrMinimumReportInterval();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ControllerBqr { ";ss << ""  << "bqr_report_action = " << BqrReportActionText(GetBqrReportAction()) << ", bqr_quality_event_mask = " << static_cast<uint64_t>(GetBqrQualityEventMask()) << ", bqr_minimum_report_interval = " << static_cast<uint64_t>(GetBqrMinimumReportInterval());ss << " }";return ss.str();}
 
  protected:
 explicit ControllerBqrView(VendorCommandView parent) : VendorCommandView(std::move(parent)) { was_validated_ = false; }};
@@ -11626,7 +11626,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ControllerBqrComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", current_quality_event_mask = " << +GetCurrentQualityEventMask();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ControllerBqrComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", current_quality_event_mask = " << static_cast<uint64_t>(GetCurrentQualityEventMask());ss << " }";return ss.str();}
 
  protected:
 explicit ControllerBqrCompleteView(CommandCompleteView parent) : CommandCompleteView(std::move(parent)) { was_validated_ = false; }};
@@ -11658,7 +11658,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InquiryResult { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InquiryResult { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit InquiryResultView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11682,7 +11682,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", bd_addr = " << GetBdAddr().ToString() << ", link_type = " << LinkTypeText(GetLinkType()) << ", encryption_enabled = " << EnableText(GetEncryptionEnabled());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", bd_addr = " << GetBdAddr().ToString() << ", link_type = " << LinkTypeText(GetLinkType()) << ", encryption_enabled = " << EnableText(GetEncryptionEnabled());ss << " }";return ss.str();}
 
  protected:
 explicit ConnectionCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11720,7 +11720,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "DisconnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit DisconnectionCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11738,7 +11738,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AuthenticationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "AuthenticationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit AuthenticationCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11757,7 +11757,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteNameRequestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", bd_addr = " << GetBdAddr().ToString() << ", remote_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRemoteName()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteNameRequestComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", bd_addr = " << GetBdAddr().ToString() << ", remote_name = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 248; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRemoteName()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit RemoteNameRequestCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11777,7 +11777,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionChange { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", encryption_enabled = " << EncryptionEnabledText(GetEncryptionEnabled());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionChange { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", encryption_enabled = " << EncryptionEnabledText(GetEncryptionEnabled());ss << " }";return ss.str();}
 
  protected:
 explicit EncryptionChangeView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11795,7 +11795,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ChangeConnectionLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit ChangeConnectionLinkKeyCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11815,7 +11815,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CentralLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", key_flag = " << KeyFlagText(GetKeyFlag());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "CentralLinkKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", key_flag = " << KeyFlagText(GetKeyFlag());ss << " }";return ss.str();}
 
  protected:
 explicit CentralLinkKeyCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11835,7 +11835,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", lmp_features = " << +GetLmpFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteSupportedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", lmp_features = " << static_cast<uint64_t>(GetLmpFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteSupportedFeaturesCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11859,7 +11859,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteVersionInformationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", version = " << +GetVersion() << ", manufacturer_name = " << +GetManufacturerName() << ", sub_version = " << +GetSubVersion();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteVersionInformationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", version = " << static_cast<uint64_t>(GetVersion()) << ", manufacturer_name = " << static_cast<uint64_t>(GetManufacturerName()) << ", sub_version = " << static_cast<uint64_t>(GetSubVersion());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteVersionInformationCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11889,7 +11889,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosSetupComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << +GetTokenRate() << ", peak_bandwidth = " << +GetPeakBandwidth() << ", latency = " << +GetLatency() << ", delay_variation = " << +GetDelayVariation();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosSetupComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << static_cast<uint64_t>(GetTokenRate()) << ", peak_bandwidth = " << static_cast<uint64_t>(GetPeakBandwidth()) << ", latency = " << static_cast<uint64_t>(GetLatency()) << ", delay_variation = " << static_cast<uint64_t>(GetDelayVariation());ss << " }";return ss.str();}
 
  protected:
 explicit QosSetupCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11903,7 +11903,7 @@ uint8_t GetHardwareCode() const {ASSERT(was_validated_);auto to_bound = begin();
 virtual bool IsValid()  override {if (was_validated_) { return true; } else { was_validated_ = true; was_validated_ = IsValid_(); return was_validated_; }}protected:virtual bool IsValid_() const {if (!EventView::IsValid_()) { return false; } auto it = begin() + (/* Bits: */ 16 + /* Dynamic: */ 0) / 8;it += 1 /* Total size of the fixed fields */;if (it > end()) return false;if (GetEventCode() != EventCode::HARDWARE_ERROR) return false;
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HardwareError { ";ss << ""  << "hardware_code = " << +GetHardwareCode();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "HardwareError { ";ss << ""  << "hardware_code = " << static_cast<uint64_t>(GetHardwareCode());ss << " }";return ss.str();}
 
  protected:
 explicit HardwareErrorView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11919,7 +11919,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlushOccurred { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlushOccurred { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit FlushOccurredView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11955,7 +11955,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "NumberOfCompletedPackets { ";ss << ""  << "completed_packets_count = " << +GetCompletedPacketsCount() << ", completed_packets = " << "VECTOR[";for (size_t index = 0; index < GetCompletedPackets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCompletedPackets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "NumberOfCompletedPackets { ";ss << ""  << "completed_packets_count = " << static_cast<uint64_t>(GetCompletedPacketsCount()) << ", completed_packets = " << "VECTOR[";for (size_t index = 0; index < GetCompletedPackets().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetCompletedPackets()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit NumberOfCompletedPacketsView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11977,7 +11977,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ModeChange { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", current_mode = " << ModeText(GetCurrentMode()) << ", interval = " << +GetInterval();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ModeChange { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", current_mode = " << ModeText(GetCurrentMode()) << ", interval = " << static_cast<uint64_t>(GetInterval());ss << " }";return ss.str();}
 
  protected:
 explicit ModeChangeView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -11995,7 +11995,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReturnLinkKeys { ";ss << ""  << "keys_count = " << +GetKeysCount() << ", keys = " << "VECTOR[";for (size_t index = 0; index < GetKeys().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetKeys()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReturnLinkKeys { ";ss << ""  << "keys_count = " << static_cast<uint64_t>(GetKeysCount()) << ", keys = " << "VECTOR[";for (size_t index = 0; index < GetKeys().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetKeys()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReturnLinkKeysView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12042,7 +12042,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkKeyNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLinkKey()[index]);}ss << "]" << ", key_type = " << KeyTypeText(GetKeyType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkKeyNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", link_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 16; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLinkKey()[index]));}ss << "]" << ", key_type = " << KeyTypeText(GetKeyType());ss << " }";return ss.str();}
 
  protected:
 explicit LinkKeyNotificationView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12091,7 +12091,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MaxSlotsChange { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", lmp_max_slots = " << +GetLmpMaxSlots();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "MaxSlotsChange { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", lmp_max_slots = " << static_cast<uint64_t>(GetLmpMaxSlots());ss << " }";return ss.str();}
 
  protected:
 explicit MaxSlotsChangeView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12113,7 +12113,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockOffsetComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", clock_offset = " << +GetClockOffset();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadClockOffsetComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", clock_offset = " << static_cast<uint64_t>(GetClockOffset());ss << " }";return ss.str();}
 
  protected:
 explicit ReadClockOffsetCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12133,7 +12133,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionPacketTypeChanged { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", packet_type = " << +GetPacketType();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ConnectionPacketTypeChanged { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", packet_type = " << static_cast<uint64_t>(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit ConnectionPacketTypeChangedView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12149,7 +12149,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosViolation { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "QosViolation { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit QosViolationView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12197,7 +12197,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowSpecificationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", flow_direction = " << FlowDirectionText(GetFlowDirection()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << +GetTokenRate() << ", token_bucket_size = " << +GetTokenBucketSize() << ", peak_bandwidth = " << +GetPeakBandwidth() << ", access_latency = " << +GetAccessLatency();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "FlowSpecificationComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", flow_direction = " << FlowDirectionText(GetFlowDirection()) << ", service_type = " << ServiceTypeText(GetServiceType()) << ", token_rate = " << static_cast<uint64_t>(GetTokenRate()) << ", token_bucket_size = " << static_cast<uint64_t>(GetTokenBucketSize()) << ", peak_bandwidth = " << static_cast<uint64_t>(GetPeakBandwidth()) << ", access_latency = " << static_cast<uint64_t>(GetAccessLatency());ss << " }";return ss.str();}
 
  protected:
 explicit FlowSpecificationCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12215,7 +12215,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InquiryResultWithRssi { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "InquiryResultWithRssi { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit InquiryResultWithRssiView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12239,7 +12239,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteExtendedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", page_number = " << +GetPageNumber() << ", maximum_page_number = " << +GetMaximumPageNumber() << ", extended_lmp_features = " << +GetExtendedLmpFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadRemoteExtendedFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", page_number = " << static_cast<uint64_t>(GetPageNumber()) << ", maximum_page_number = " << static_cast<uint64_t>(GetMaximumPageNumber()) << ", extended_lmp_features = " << static_cast<uint64_t>(GetExtendedLmpFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit ReadRemoteExtendedFeaturesCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12271,7 +12271,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SynchronousConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", bd_addr = " << GetBdAddr().ToString() << ", link_type = " << ScoLinkTypeText(GetLinkType()) << ", transmission_interval_slots = " << +GetTransmissionIntervalSlots() << ", retransmission_window_slots = " << +GetRetransmissionWindowSlots() << ", rx_packet_length = " << +GetRxPacketLength() << ", tx_packet_length = " << +GetTxPacketLength() << ", air_mode = " << ScoAirModeText(GetAirMode());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SynchronousConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", bd_addr = " << GetBdAddr().ToString() << ", link_type = " << ScoLinkTypeText(GetLinkType()) << ", transmission_interval_slots = " << static_cast<uint64_t>(GetTransmissionIntervalSlots()) << ", retransmission_window_slots = " << static_cast<uint64_t>(GetRetransmissionWindowSlots()) << ", rx_packet_length = " << static_cast<uint64_t>(GetRxPacketLength()) << ", tx_packet_length = " << static_cast<uint64_t>(GetTxPacketLength()) << ", air_mode = " << ScoAirModeText(GetAirMode());ss << " }";return ss.str();}
 
  protected:
 explicit SynchronousConnectionCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12297,7 +12297,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SynchronousConnectionChanged { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", transmission_interval_slots = " << +GetTransmissionIntervalSlots() << ", retransmission_window_slots = " << +GetRetransmissionWindowSlots() << ", rx_packet_length = " << +GetRxPacketLength() << ", tx_packet_length = " << +GetTxPacketLength();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SynchronousConnectionChanged { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", transmission_interval_slots = " << static_cast<uint64_t>(GetTransmissionIntervalSlots()) << ", retransmission_window_slots = " << static_cast<uint64_t>(GetRetransmissionWindowSlots()) << ", rx_packet_length = " << static_cast<uint64_t>(GetRxPacketLength()) << ", tx_packet_length = " << static_cast<uint64_t>(GetTxPacketLength());ss << " }";return ss.str();}
 
  protected:
 explicit SynchronousConnectionChangedView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12323,7 +12323,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubratingEvent { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", maximum_transmit_latency = " << +GetMaximumTransmitLatency() << ", maximum_receive_latency = " << +GetMaximumReceiveLatency() << ", minimum_remote_timeout = " << +GetMinimumRemoteTimeout() << ", minimum_local_timeout = " << +GetMinimumLocalTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "SniffSubratingEvent { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", maximum_transmit_latency = " << static_cast<uint64_t>(GetMaximumTransmitLatency()) << ", maximum_receive_latency = " << static_cast<uint64_t>(GetMaximumReceiveLatency()) << ", minimum_remote_timeout = " << static_cast<uint64_t>(GetMinimumRemoteTimeout()) << ", minimum_local_timeout = " << static_cast<uint64_t>(GetMinimumLocalTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit SniffSubratingEventView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12355,7 +12355,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInquiryResult { ";ss << ""  << "address = " << GetAddress().ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", class_of_device = " << GetClassOfDevice().ToString() << ", clock_offset = " << +GetClockOffset() << ", rssi = " << +GetRssi() << ", extended_inquiry_response = " << "VECTOR[";for (size_t index = 0; index < GetExtendedInquiryResponse().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetExtendedInquiryResponse()[index]).ToString();}ss << "]" << ", padding_1920 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ExtendedInquiryResult { ";ss << ""  << "address = " << GetAddress().ToString() << ", page_scan_repetition_mode = " << PageScanRepetitionModeText(GetPageScanRepetitionMode()) << ", class_of_device = " << GetClassOfDevice().ToString() << ", clock_offset = " << static_cast<uint64_t>(GetClockOffset()) << ", rssi = " << static_cast<uint64_t>(GetRssi()) << ", extended_inquiry_response = " << "VECTOR[";for (size_t index = 0; index < GetExtendedInquiryResponse().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetExtendedInquiryResponse()[index]).ToString();}ss << "]" << ", padding_1920 = " << "REPRESENTATION_UNIMPLEMENTED PaddingField ()";ss << " }";return ss.str();}
 
  protected:
 explicit ExtendedInquiryResultView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; } private:
@@ -12376,7 +12376,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionKeyRefreshComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EncryptionKeyRefreshComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit EncryptionKeyRefreshCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12428,7 +12428,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserConfirmationRequest { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", numeric_value = " << +GetNumericValue();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserConfirmationRequest { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", numeric_value = " << static_cast<uint64_t>(GetNumericValue());ss << " }";return ss.str();}
 
  protected:
 explicit UserConfirmationRequestView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12490,7 +12490,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkSupervisionTimeoutChanged { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", link_supervision_timeout = " << +GetLinkSupervisionTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LinkSupervisionTimeoutChanged { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", link_supervision_timeout = " << static_cast<uint64_t>(GetLinkSupervisionTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit LinkSupervisionTimeoutChangedView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12508,7 +12508,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedFlush { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", packet_type = " << FlushablePacketTypeText(GetPacketType());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedFlush { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", packet_type = " << FlushablePacketTypeText(GetPacketType());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedFlushView(CommandView parent) : CommandView(std::move(parent)) { was_validated_ = false; }};
@@ -12536,7 +12536,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedFlushComplete { ";ss << ""  << "connection_handle = " << +GetConnectionHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "EnhancedFlushComplete { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle());ss << " }";return ss.str();}
 
  protected:
 explicit EnhancedFlushCompleteView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12554,7 +12554,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserPasskeyNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", passkey = " << +GetPasskey();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "UserPasskeyNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", passkey = " << static_cast<uint64_t>(GetPasskey());ss << " }";return ss.str();}
 
  protected:
 explicit UserPasskeyNotificationView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12586,7 +12586,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteHostSupportedFeaturesNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", host_supported_features = " << +GetHostSupportedFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "RemoteHostSupportedFeaturesNotification { ";ss << ""  << "bd_addr = " << GetBdAddr().ToString() << ", host_supported_features = " << static_cast<uint64_t>(GetHostSupportedFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit RemoteHostSupportedFeaturesNotificationView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12621,7 +12621,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "NumberOfCompletedDataBlocks { ";ss << ""  << "total_num_data_blocks = " << +GetTotalNumDataBlocks() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "NumberOfCompletedDataBlocks { ";ss << ""  << "total_num_data_blocks = " << static_cast<uint64_t>(GetTotalNumDataBlocks()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit NumberOfCompletedDataBlocksView(EventView parent) : EventView(std::move(parent)) { was_validated_ = false; }};
@@ -12653,7 +12653,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", role = " << RoleText(GetRole()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", conn_interval = " << +GetConnInterval() << ", conn_latency = " << +GetConnLatency() << ", supervision_timeout = " << +GetSupervisionTimeout() << ", central_clock_accuracy = " << ClockAccuracyText(GetCentralClockAccuracy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", role = " << RoleText(GetRole()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", conn_interval = " << static_cast<uint64_t>(GetConnInterval()) << ", conn_latency = " << static_cast<uint64_t>(GetConnLatency()) << ", supervision_timeout = " << static_cast<uint64_t>(GetSupervisionTimeout()) << ", central_clock_accuracy = " << ClockAccuracyText(GetCentralClockAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit LeConnectionCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12671,7 +12671,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingReport { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingReport { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvertisingReportView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12689,7 +12689,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingReportRaw { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingReportRaw { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvertisingReportRawView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12713,7 +12713,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionUpdateComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", conn_interval = " << +GetConnInterval() << ", conn_latency = " << +GetConnLatency() << ", supervision_timeout = " << +GetSupervisionTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeConnectionUpdateComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", conn_interval = " << static_cast<uint64_t>(GetConnInterval()) << ", conn_latency = " << static_cast<uint64_t>(GetConnLatency()) << ", supervision_timeout = " << static_cast<uint64_t>(GetSupervisionTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit LeConnectionUpdateCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12733,7 +12733,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", le_features = " << +GetLeFeatures();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeReadRemoteFeaturesComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", le_features = " << static_cast<uint64_t>(GetLeFeatures());ss << " }";return ss.str();}
 
  protected:
 explicit LeReadRemoteFeaturesCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12754,7 +12754,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequest { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", random_number = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << +(GetRandomNumber()[index]);}ss << "]" << ", encrypted_diversifier = " << +GetEncryptedDiversifier();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeLongTermKeyRequest { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", random_number = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 8; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetRandomNumber()[index]));}ss << "]" << ", encrypted_diversifier = " << static_cast<uint64_t>(GetEncryptedDiversifier());ss << " }";return ss.str();}
 
  protected:
 explicit LeLongTermKeyRequestView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12778,7 +12778,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequest { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", interval_min = " << +GetIntervalMin() << ", interval_max = " << +GetIntervalMax() << ", latency = " << +GetLatency() << ", timeout = " << +GetTimeout();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRemoteConnectionParameterRequest { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", interval_min = " << static_cast<uint64_t>(GetIntervalMin()) << ", interval_max = " << static_cast<uint64_t>(GetIntervalMax()) << ", latency = " << static_cast<uint64_t>(GetLatency()) << ", timeout = " << static_cast<uint64_t>(GetTimeout());ss << " }";return ss.str();}
 
  protected:
 explicit LeRemoteConnectionParameterRequestView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12802,7 +12802,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDataLengthChange { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", max_tx_octets = " << +GetMaxTxOctets() << ", max_tx_time = " << +GetMaxTxTime() << ", max_rx_octets = " << +GetMaxRxOctets() << ", max_rx_time = " << +GetMaxRxTime();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDataLengthChange { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", max_tx_octets = " << static_cast<uint64_t>(GetMaxTxOctets()) << ", max_tx_time = " << static_cast<uint64_t>(GetMaxTxTime()) << ", max_rx_octets = " << static_cast<uint64_t>(GetMaxRxOctets()) << ", max_rx_time = " << static_cast<uint64_t>(GetMaxRxTime());ss << " }";return ss.str();}
 
  protected:
 explicit LeDataLengthChangeView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12819,7 +12819,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalP256PublicKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", local_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << +(GetLocalP256PublicKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "ReadLocalP256PublicKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", local_p_256_public_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 64; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetLocalP256PublicKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit ReadLocalP256PublicKeyCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12836,7 +12836,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "GenerateDhKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", dh_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << +(GetDhKey()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "GenerateDhKeyComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", dh_key = " << "ARRAY[";/* uint8_t   ScalarField */for (size_t index = 0; index < 32; index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetDhKey()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit GenerateDhKeyCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12872,7 +12872,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", role = " << RoleText(GetRole()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", local_resolvable_private_address = " << GetLocalResolvablePrivateAddress().ToString() << ", peer_resolvable_private_address = " << GetPeerResolvablePrivateAddress().ToString() << ", conn_interval = " << +GetConnInterval() << ", conn_latency = " << +GetConnLatency() << ", supervision_timeout = " << +GetSupervisionTimeout() << ", central_clock_accuracy = " << ClockAccuracyText(GetCentralClockAccuracy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeEnhancedConnectionComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", role = " << RoleText(GetRole()) << ", peer_address_type = " << AddressTypeText(GetPeerAddressType()) << ", peer_address = " << GetPeerAddress().ToString() << ", local_resolvable_private_address = " << GetLocalResolvablePrivateAddress().ToString() << ", peer_resolvable_private_address = " << GetPeerResolvablePrivateAddress().ToString() << ", conn_interval = " << static_cast<uint64_t>(GetConnInterval()) << ", conn_latency = " << static_cast<uint64_t>(GetConnLatency()) << ", supervision_timeout = " << static_cast<uint64_t>(GetSupervisionTimeout()) << ", central_clock_accuracy = " << ClockAccuracyText(GetCentralClockAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit LeEnhancedConnectionCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12890,7 +12890,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDirectedAdvertisingReport { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeDirectedAdvertisingReport { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeDirectedAdvertisingReportView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12912,7 +12912,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePhyUpdateComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", tx_phy = " << +GetTxPhy() << ", rx_phy = " << +GetRxPhy();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePhyUpdateComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", tx_phy = " << static_cast<uint64_t>(GetTxPhy()) << ", rx_phy = " << static_cast<uint64_t>(GetRxPhy());ss << " }";return ss.str();}
 
  protected:
 explicit LePhyUpdateCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12930,7 +12930,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedAdvertisingReport { ";ss << ""  << "responses_count = " << +GetResponsesCount() << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeExtendedAdvertisingReport { ";ss << ""  << "responses_count = " << static_cast<uint64_t>(GetResponsesCount()) << ", responses = " << "VECTOR[";for (size_t index = 0; index < GetResponses().size(); index++) {ss << ((index == 0) ? "" : ", ") << (GetResponses()[index]).ToString();}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeExtendedAdvertisingReportView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12960,7 +12960,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", sync_handle = " << +GetSyncHandle() << ", advertising_sid = " << +GetAdvertisingSid() << ", advertiser_address_type = " << AddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_phy = " << SecondaryPhyTypeText(GetAdvertiserPhy()) << ", periodic_advertising_interval = " << +GetPeriodicAdvertisingInterval() << ", advertiser_clock_accuracy = " << ClockAccuracyText(GetAdvertiserClockAccuracy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid()) << ", advertiser_address_type = " << AddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_phy = " << SecondaryPhyTypeText(GetAdvertiserPhy()) << ", periodic_advertising_interval = " << static_cast<uint64_t>(GetPeriodicAdvertisingInterval()) << ", advertiser_clock_accuracy = " << ClockAccuracyText(GetAdvertiserClockAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSyncEstablishedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -12990,7 +12990,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingReport { ";ss << ""  << "sync_handle = " << +GetSyncHandle() << ", tx_power = " << +GetTxPower() << ", rssi = " << +GetRssi() << ", cte_type = " << CteTypeText(GetCteType()) << ", data_status = " << PeriodicAdvertisingDataStatusText(GetDataStatus()) << ", data_size = " << GetDataSize() << ", data = " << "VECTOR[";for (size_t index = 0; index < GetData().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetData()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingReport { ";ss << ""  << "sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", tx_power = " << static_cast<uint64_t>(GetTxPower()) << ", rssi = " << static_cast<uint64_t>(GetRssi()) << ", cte_type = " << CteTypeText(GetCteType()) << ", data_status = " << PeriodicAdvertisingDataStatusText(GetDataStatus()) << ", data_size = " << GetDataSize() << ", data = " << "VECTOR[";for (size_t index = 0; index < GetData().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetData()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingReportView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13006,7 +13006,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncLost { ";ss << ""  << "sync_handle = " << +GetSyncHandle();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncLost { ";ss << ""  << "sync_handle = " << static_cast<uint64_t>(GetSyncHandle());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSyncLostView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13040,7 +13040,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingSetTerminated { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", advertising_handle = " << +GetAdvertisingHandle() << ", connection_handle = " << +GetConnectionHandle() << ", num_completed_extended_advertising_events = " << +GetNumCompletedExtendedAdvertisingEvents();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeAdvertisingSetTerminated { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", num_completed_extended_advertising_events = " << static_cast<uint64_t>(GetNumCompletedExtendedAdvertisingEvents());ss << " }";return ss.str();}
 
  protected:
 explicit LeAdvertisingSetTerminatedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13058,7 +13058,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeScanRequestReceived { ";ss << ""  << "advertising_handle = " << +GetAdvertisingHandle() << ", scanner_address_type = " << AddressTypeText(GetScannerAddressType()) << ", scanner_address = " << GetScannerAddress().ToString();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeScanRequestReceived { ";ss << ""  << "advertising_handle = " << static_cast<uint64_t>(GetAdvertisingHandle()) << ", scanner_address_type = " << AddressTypeText(GetScannerAddressType()) << ", scanner_address = " << GetScannerAddress().ToString();ss << " }";return ss.str();}
 
  protected:
 explicit LeScanRequestReceivedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13076,7 +13076,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeChannelSelectionAlgorithm { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", channel_selection_algorithm = " << ChannelSelectionAlgorithmText(GetChannelSelectionAlgorithm());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeChannelSelectionAlgorithm { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", channel_selection_algorithm = " << ChannelSelectionAlgorithmText(GetChannelSelectionAlgorithm());ss << " }";return ss.str();}
 
  protected:
 explicit LeChannelSelectionAlgorithmView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13165,7 +13165,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransferReceived { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", service_data = " << +GetServiceData() << ", sync_handle = " << +GetSyncHandle() << ", advertising_sid = " << +GetAdvertisingSid() << ", advertiser_address_type = " << AddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_phy = " << SecondaryPhyTypeText(GetAdvertiserPhy()) << ", periodic_advertising_interval = " << +GetPeriodicAdvertisingInterval() << ", advertiser_clock_accuracy = " << ClockAccuracyText(GetAdvertiserClockAccuracy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePeriodicAdvertisingSyncTransferReceived { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", service_data = " << static_cast<uint64_t>(GetServiceData()) << ", sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", advertising_sid = " << static_cast<uint64_t>(GetAdvertisingSid()) << ", advertiser_address_type = " << AddressTypeText(GetAdvertiserAddressType()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_phy = " << SecondaryPhyTypeText(GetAdvertiserPhy()) << ", periodic_advertising_interval = " << static_cast<uint64_t>(GetPeriodicAdvertisingInterval()) << ", advertiser_clock_accuracy = " << ClockAccuracyText(GetAdvertiserClockAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit LePeriodicAdvertisingSyncTransferReceivedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13219,7 +13219,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCisEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", cig_sync_delay = " << +GetCigSyncDelay() << ", cis_sync_delay = " << +GetCisSyncDelay() << ", transport_latency_m_to_s = " << +GetTransportLatencyMToS() << ", transport_latency_s_to_m = " << +GetTransportLatencySToM() << ", phy_m_to_s = " << SecondaryPhyTypeText(GetPhyMToS()) << ", phy_s_to_m = " << SecondaryPhyTypeText(GetPhySToM()) << ", nse = " << +GetNse() << ", bn_m_to_s = " << +GetBnMToS() << ", bn_s_to_m = " << +GetBnSToM() << ", ft_m_to_s = " << +GetFtMToS() << ", ft_s_to_m = " << +GetFtSToM() << ", max_pdu_m_to_s = " << +GetMaxPduMToS() << ", max_pdu_s_to_m = " << +GetMaxPduSToM() << ", iso_interval = " << +GetIsoInterval();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCisEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", cig_sync_delay = " << static_cast<uint64_t>(GetCigSyncDelay()) << ", cis_sync_delay = " << static_cast<uint64_t>(GetCisSyncDelay()) << ", transport_latency_m_to_s = " << static_cast<uint64_t>(GetTransportLatencyMToS()) << ", transport_latency_s_to_m = " << static_cast<uint64_t>(GetTransportLatencySToM()) << ", phy_m_to_s = " << SecondaryPhyTypeText(GetPhyMToS()) << ", phy_s_to_m = " << SecondaryPhyTypeText(GetPhySToM()) << ", nse = " << static_cast<uint64_t>(GetNse()) << ", bn_m_to_s = " << static_cast<uint64_t>(GetBnMToS()) << ", bn_s_to_m = " << static_cast<uint64_t>(GetBnSToM()) << ", ft_m_to_s = " << static_cast<uint64_t>(GetFtMToS()) << ", ft_s_to_m = " << static_cast<uint64_t>(GetFtSToM()) << ", max_pdu_m_to_s = " << static_cast<uint64_t>(GetMaxPduMToS()) << ", max_pdu_s_to_m = " << static_cast<uint64_t>(GetMaxPduSToM()) << ", iso_interval = " << static_cast<uint64_t>(GetIsoInterval());ss << " }";return ss.str();}
 
  protected:
 explicit LeCisEstablishedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13243,7 +13243,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCisRequest { ";ss << ""  << "acl_connection_handle = " << +GetAclConnectionHandle() << ", cis_connection_handle = " << +GetCisConnectionHandle() << ", cig_id = " << +GetCigId() << ", cis_id = " << +GetCisId();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCisRequest { ";ss << ""  << "acl_connection_handle = " << static_cast<uint64_t>(GetAclConnectionHandle()) << ", cis_connection_handle = " << static_cast<uint64_t>(GetCisConnectionHandle()) << ", cig_id = " << static_cast<uint64_t>(GetCigId()) << ", cis_id = " << static_cast<uint64_t>(GetCisId());ss << " }";return ss.str();}
 
  protected:
 explicit LeCisRequestView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13283,7 +13283,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateBigComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << +GetBigHandle() << ", big_sync_delay = " << +GetBigSyncDelay() << ", transport_latency_big = " << +GetTransportLatencyBig() << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", nse = " << +GetNse() << ", bn = " << +GetBn() << ", pto = " << +GetPto() << ", irc = " << +GetIrc() << ", max_pdu = " << +GetMaxPdu() << ", iso_interval = " << +GetIsoInterval() << ", connection_handle_size = " << GetConnectionHandleSize() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetConnectionHandle()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeCreateBigComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", big_sync_delay = " << static_cast<uint64_t>(GetBigSyncDelay()) << ", transport_latency_big = " << static_cast<uint64_t>(GetTransportLatencyBig()) << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", nse = " << static_cast<uint64_t>(GetNse()) << ", bn = " << static_cast<uint64_t>(GetBn()) << ", pto = " << static_cast<uint64_t>(GetPto()) << ", irc = " << static_cast<uint64_t>(GetIrc()) << ", max_pdu = " << static_cast<uint64_t>(GetMaxPdu()) << ", iso_interval = " << static_cast<uint64_t>(GetIsoInterval()) << ", connection_handle_size = " << GetConnectionHandleSize() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetConnectionHandle()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeCreateBigCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13299,7 +13299,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTerminateBigComplete { ";ss << ""  << "big_handle = " << +GetBigHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTerminateBigComplete { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit LeTerminateBigCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13335,7 +13335,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigSyncEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << +GetBigHandle() << ", transport_latency_big = " << +GetTransportLatencyBig() << ", nse = " << +GetNse() << ", bn = " << +GetBn() << ", pto = " << +GetPto() << ", irc = " << +GetIrc() << ", max_pdu = " << +GetMaxPdu() << ", iso_interval = " << +GetIsoInterval() << ", connection_handle_size = " << GetConnectionHandleSize() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetConnectionHandle()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigSyncEstablished { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", transport_latency_big = " << static_cast<uint64_t>(GetTransportLatencyBig()) << ", nse = " << static_cast<uint64_t>(GetNse()) << ", bn = " << static_cast<uint64_t>(GetBn()) << ", pto = " << static_cast<uint64_t>(GetPto()) << ", irc = " << static_cast<uint64_t>(GetIrc()) << ", max_pdu = " << static_cast<uint64_t>(GetMaxPdu()) << ", iso_interval = " << static_cast<uint64_t>(GetIsoInterval()) << ", connection_handle_size = " << GetConnectionHandleSize() << ", connection_handle = " << "VECTOR[";for (size_t index = 0; index < GetConnectionHandle().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetConnectionHandle()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LeBigSyncEstablishedView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13351,7 +13351,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigSyncLost { ";ss << ""  << "big_handle = " << +GetBigHandle() << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigSyncLost { ";ss << ""  << "big_handle = " << static_cast<uint64_t>(GetBigHandle()) << ", reason = " << ErrorCodeText(GetReason());ss << " }";return ss.str();}
 
  protected:
 explicit LeBigSyncLostView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13371,7 +13371,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRequestPeerScaComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", peer_clock_accuracy = " << ClockAccuracyText(GetPeerClockAccuracy());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeRequestPeerScaComplete { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", peer_clock_accuracy = " << ClockAccuracyText(GetPeerClockAccuracy());ss << " }";return ss.str();}
 
  protected:
 explicit LeRequestPeerScaCompleteView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13391,7 +13391,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePathLossThreshold { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", current_path_loss = " << +GetCurrentPathLoss() << ", zone_entered = " << PathLossZoneText(GetZoneEntered());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LePathLossThreshold { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", current_path_loss = " << static_cast<uint64_t>(GetCurrentPathLoss()) << ", zone_entered = " << PathLossZoneText(GetZoneEntered());ss << " }";return ss.str();}
 
  protected:
 explicit LePathLossThresholdView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13419,7 +13419,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTransmitPowerReporting { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << +GetConnectionHandle() << ", reason = " << +GetReason() << ", phy = " << +GetPhy() << ", transmit_power_level = " << +GetTransmitPowerLevel() << ", transmit_power_level_flag = " << +GetTransmitPowerLevelFlag() << ", delta = " << +GetDelta();ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeTransmitPowerReporting { ";ss << ""  << "status = " << ErrorCodeText(GetStatus()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", reason = " << static_cast<uint64_t>(GetReason()) << ", phy = " << static_cast<uint64_t>(GetPhy()) << ", transmit_power_level = " << static_cast<uint64_t>(GetTransmitPowerLevel()) << ", transmit_power_level_flag = " << static_cast<uint64_t>(GetTransmitPowerLevelFlag()) << ", delta = " << static_cast<uint64_t>(GetDelta());ss << " }";return ss.str();}
 
  protected:
 explicit LeTransmitPowerReportingView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13459,7 +13459,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigInfoAdvertisingReport { ";ss << ""  << "sync_handle = " << +GetSyncHandle() << ", num_bis = " << +GetNumBis() << ", nse = " << +GetNse() << ", iso_interval = " << +GetIsoInterval() << ", bn = " << +GetBn() << ", pto = " << +GetPto() << ", irc = " << +GetIrc() << ", max_pdu = " << +GetMaxPdu() << ", sdu_interval = " << +GetSduInterval() << ", max_sdu = " << +GetMaxSdu() << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", framing = " << EnableText(GetFraming()) << ", encryption = " << EnableText(GetEncryption());ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LeBigInfoAdvertisingReport { ";ss << ""  << "sync_handle = " << static_cast<uint64_t>(GetSyncHandle()) << ", num_bis = " << static_cast<uint64_t>(GetNumBis()) << ", nse = " << static_cast<uint64_t>(GetNse()) << ", iso_interval = " << static_cast<uint64_t>(GetIsoInterval()) << ", bn = " << static_cast<uint64_t>(GetBn()) << ", pto = " << static_cast<uint64_t>(GetPto()) << ", irc = " << static_cast<uint64_t>(GetIrc()) << ", max_pdu = " << static_cast<uint64_t>(GetMaxPdu()) << ", sdu_interval = " << static_cast<uint64_t>(GetSduInterval()) << ", max_sdu = " << static_cast<uint64_t>(GetMaxSdu()) << ", phy = " << SecondaryPhyTypeText(GetPhy()) << ", framing = " << EnableText(GetFraming()) << ", encryption = " << EnableText(GetEncryption());ss << " }";return ss.str();}
 
  protected:
 explicit LeBigInfoAdvertisingReportView(LeMetaEventView parent) : LeMetaEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13514,7 +13514,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LEAdvertisementTrackingEvent { ";ss << ""  << "apcf_filter_index = " << +GetApcfFilterIndex() << ", advertiser_state = " << +GetAdvertiserState() << ", advt_info_present = " << AdvtInfoPresentText(GetAdvtInfoPresent()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_address_type = " << +GetAdvertiserAddressType() << ", body = " << "BODY REPRESENTATION_UNIMPLEMENTED () ";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LEAdvertisementTrackingEvent { ";ss << ""  << "apcf_filter_index = " << static_cast<uint64_t>(GetApcfFilterIndex()) << ", advertiser_state = " << static_cast<uint64_t>(GetAdvertiserState()) << ", advt_info_present = " << AdvtInfoPresentText(GetAdvtInfoPresent()) << ", advertiser_address = " << GetAdvertiserAddress().ToString() << ", advertiser_address_type = " << static_cast<uint64_t>(GetAdvertiserAddressType()) << ", body = " << "BODY REPRESENTATION_UNIMPLEMENTED () ";ss << " }";return ss.str();}
 
  protected:
 explicit LEAdvertisementTrackingEventView(VendorSpecificEventView parent) : VendorSpecificEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13544,7 +13544,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LEAdvertisementTrackingWithInfoEvent { ";ss << ""  << "tx_power = " << +GetTxPower() << ", rssi = " << +GetRssi() << ", timestamp = " << +GetTimestamp() << ", adv_packet_size = " << GetAdvPacketSize() << ", adv_packet = " << "VECTOR[";for (size_t index = 0; index < GetAdvPacket().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetAdvPacket()[index]);}ss << "]" << ", scan_response_size = " << GetScanResponseSize() << ", scan_response = " << "VECTOR[";for (size_t index = 0; index < GetScanResponse().size(); index++) {ss << ((index == 0) ? "" : ", ") << +(GetScanResponse()[index]);}ss << "]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "LEAdvertisementTrackingWithInfoEvent { ";ss << ""  << "tx_power = " << static_cast<uint64_t>(GetTxPower()) << ", rssi = " << static_cast<uint64_t>(GetRssi()) << ", timestamp = " << static_cast<uint64_t>(GetTimestamp()) << ", adv_packet_size = " << GetAdvPacketSize() << ", adv_packet = " << "VECTOR[";for (size_t index = 0; index < GetAdvPacket().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetAdvPacket()[index]));}ss << "]" << ", scan_response_size = " << GetScanResponseSize() << ", scan_response = " << "VECTOR[";for (size_t index = 0; index < GetScanResponse().size(); index++) {ss << ((index == 0) ? "" : ", ") << static_cast<uint64_t>((GetScanResponse()[index]));}ss << "]";ss << " }";return ss.str();}
 
  protected:
 explicit LEAdvertisementTrackingWithInfoEventView(LEAdvertisementTrackingEventView parent) : LEAdvertisementTrackingEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13618,7 +13618,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrLinkQualityEvent { ";ss << ""  << "packet_type = " << BqrPacketTypeText(GetPacketType()) << ", connection_handle = " << +GetConnectionHandle() << ", connection_role = " << RoleText(GetConnectionRole()) << ", tx_power_level = " << +GetTxPowerLevel() << ", rssi = " << +GetRssi() << ", snr = " << +GetSnr() << ", unused_afh_channel_count = " << +GetUnusedAfhChannelCount() << ", afh_select_unideal_channel_count = " << +GetAfhSelectUnidealChannelCount() << ", lsto = " << +GetLsto() << ", connection_piconet_clock = " << +GetConnectionPiconetClock() << ", retransmission_count = " << +GetRetransmissionCount() << ", no_rx_count = " << +GetNoRxCount() << ", nak_count = " << +GetNakCount() << ", last_tx_ack_timestamp = " << +GetLastTxAckTimestamp() << ", flow_off_count = " << +GetFlowOffCount() << ", last_flow_on_timestamp = " << +GetLastFlowOnTimestamp() << ", buffer_overflow_bytes = " << +GetBufferOverflowBytes() << ", buffer_underflow_bytes = " << +GetBufferUnderflowBytes() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrLinkQualityEvent { ";ss << ""  << "packet_type = " << BqrPacketTypeText(GetPacketType()) << ", connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", connection_role = " << RoleText(GetConnectionRole()) << ", tx_power_level = " << static_cast<uint64_t>(GetTxPowerLevel()) << ", rssi = " << static_cast<uint64_t>(GetRssi()) << ", snr = " << static_cast<uint64_t>(GetSnr()) << ", unused_afh_channel_count = " << static_cast<uint64_t>(GetUnusedAfhChannelCount()) << ", afh_select_unideal_channel_count = " << static_cast<uint64_t>(GetAfhSelectUnidealChannelCount()) << ", lsto = " << static_cast<uint64_t>(GetLsto()) << ", connection_piconet_clock = " << static_cast<uint64_t>(GetConnectionPiconetClock()) << ", retransmission_count = " << static_cast<uint64_t>(GetRetransmissionCount()) << ", no_rx_count = " << static_cast<uint64_t>(GetNoRxCount()) << ", nak_count = " << static_cast<uint64_t>(GetNakCount()) << ", last_tx_ack_timestamp = " << static_cast<uint64_t>(GetLastTxAckTimestamp()) << ", flow_off_count = " << static_cast<uint64_t>(GetFlowOffCount()) << ", last_flow_on_timestamp = " << static_cast<uint64_t>(GetLastFlowOnTimestamp()) << ", buffer_overflow_bytes = " << static_cast<uint64_t>(GetBufferOverflowBytes()) << ", buffer_underflow_bytes = " << static_cast<uint64_t>(GetBufferUnderflowBytes()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit BqrLinkQualityEventView(BqrEventView parent) : BqrEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13707,7 +13707,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrRootInflammationEvent { ";ss << ""  << "error_code = " << +GetErrorCode() << ", vendor_specific_error_code = " << +GetVendorSpecificErrorCode() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrRootInflammationEvent { ";ss << ""  << "error_code = " << static_cast<uint64_t>(GetErrorCode()) << ", vendor_specific_error_code = " << static_cast<uint64_t>(GetVendorSpecificErrorCode()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit BqrRootInflammationEventView(BqrEventView parent) : BqrEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13728,7 +13728,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrLogDumpEvent { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "BqrLogDumpEvent { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit BqrLogDumpEventView(BqrEventView parent) : BqrEventView(std::move(parent)) { was_validated_ = false; }};
@@ -13810,7 +13810,7 @@ virtual bool IsValid()  {if (was_validated_) { return true; } else { was_validat
 return true;}
 bool was_validated_{false};
 
- public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Iso { ";ss << ""  << "connection_handle = " << +GetConnectionHandle() << ", pb_flag = " << IsoPacketBoundaryFlagText(GetPbFlag()) << ", ts_flag = " << TimeStampFlagText(GetTsFlag()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  {std::stringstream ss;ss << std::showbase << std::hex << "Iso { ";ss << ""  << "connection_handle = " << static_cast<uint64_t>(GetConnectionHandle()) << ", pb_flag = " << IsoPacketBoundaryFlagText(GetPbFlag()) << ", ts_flag = " << TimeStampFlagText(GetTsFlag()) << ", payload_size = " << GetPayloadSize() << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit IsoView(PacketView<kLittleEndian> packet)  : PacketView<kLittleEndian>(packet) { was_validated_ = false;}};
@@ -13838,7 +13838,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IsoWithTimestamp { ";ss << ""  << "time_stamp = " << +GetTimeStamp() << ", packet_sequence_number = " << +GetPacketSequenceNumber() << ", payload_size = " << GetPayloadSize() << ", packet_status_flag = " << IsoPacketStatusFlagText(GetPacketStatusFlag()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IsoWithTimestamp { ";ss << ""  << "time_stamp = " << static_cast<uint64_t>(GetTimeStamp()) << ", packet_sequence_number = " << static_cast<uint64_t>(GetPacketSequenceNumber()) << ", payload_size = " << GetPayloadSize() << ", packet_status_flag = " << IsoPacketStatusFlagText(GetPacketStatusFlag()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit IsoWithTimestampView(IsoView parent) : IsoView(std::move(parent)) { was_validated_ = false; }};
@@ -13864,7 +13864,7 @@ virtual bool IsValid()  override {if (was_validated_) { return true; } else { wa
 
 return true;}
 
- public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IsoWithoutTimestamp { ";ss << ""  << "packet_sequence_number = " << +GetPacketSequenceNumber() << ", payload_size = " << GetPayloadSize() << ", packet_status_flag = " << IsoPacketStatusFlagText(GetPacketStatusFlag()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
+ public:virtual std::string ToString()  override {std::stringstream ss;ss << std::showbase << std::hex << "IsoWithoutTimestamp { ";ss << ""  << "packet_sequence_number = " << static_cast<uint64_t>(GetPacketSequenceNumber()) << ", payload_size = " << GetPayloadSize() << ", packet_status_flag = " << IsoPacketStatusFlagText(GetPacketStatusFlag()) << ", payload = " << "PAYLOAD[]";ss << " }";return ss.str();}
 
  protected:
 explicit IsoWithoutTimestampView(IsoView parent) : IsoView(std::move(parent)) { was_validated_ = false; }};
