@@ -2261,6 +2261,136 @@ bool CalibrationOverallStatus_Parse(
   }
   return success;
 }
+bool AdditionalActivity_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> AdditionalActivity_strings[6] = {};
+
+static const char AdditionalActivity_names[] =
+  "RMAD_ADDITIONAL_ACTIVITY_BATTERY_CUTOFF"
+  "RMAD_ADDITIONAL_ACTIVITY_DIAGNOSTICS"
+  "RMAD_ADDITIONAL_ACTIVITY_NOTHING"
+  "RMAD_ADDITIONAL_ACTIVITY_OS_UPDATE"
+  "RMAD_ADDITIONAL_ACTIVITY_REBOOT"
+  "RMAD_ADDITIONAL_ACTIVITY_SHUTDOWN";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry AdditionalActivity_entries[] = {
+  { {AdditionalActivity_names + 0, 39}, 3 },
+  { {AdditionalActivity_names + 39, 36}, 4 },
+  { {AdditionalActivity_names + 75, 32}, 0 },
+  { {AdditionalActivity_names + 107, 34}, 5 },
+  { {AdditionalActivity_names + 141, 31}, 2 },
+  { {AdditionalActivity_names + 172, 33}, 1 },
+};
+
+static const int AdditionalActivity_entries_by_number[] = {
+  2, // 0 -> RMAD_ADDITIONAL_ACTIVITY_NOTHING
+  5, // 1 -> RMAD_ADDITIONAL_ACTIVITY_SHUTDOWN
+  4, // 2 -> RMAD_ADDITIONAL_ACTIVITY_REBOOT
+  0, // 3 -> RMAD_ADDITIONAL_ACTIVITY_BATTERY_CUTOFF
+  1, // 4 -> RMAD_ADDITIONAL_ACTIVITY_DIAGNOSTICS
+  3, // 5 -> RMAD_ADDITIONAL_ACTIVITY_OS_UPDATE
+};
+
+const std::string& AdditionalActivity_Name(
+    AdditionalActivity value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          AdditionalActivity_entries,
+          AdditionalActivity_entries_by_number,
+          6, AdditionalActivity_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      AdditionalActivity_entries,
+      AdditionalActivity_entries_by_number,
+      6, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     AdditionalActivity_strings[idx].get();
+}
+bool AdditionalActivity_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, AdditionalActivity* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      AdditionalActivity_entries, 6, name, &int_value);
+  if (success) {
+    *value = static_cast<AdditionalActivity>(int_value);
+  }
+  return success;
+}
+bool WpDisableMethod_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> WpDisableMethod_strings[5] = {};
+
+static const char WpDisableMethod_names[] =
+  "RMAD_WP_DISABLE_METHOD_PHYSICAL_ASSEMBLE_DEVICE"
+  "RMAD_WP_DISABLE_METHOD_PHYSICAL_KEEP_DEVICE_OPEN"
+  "RMAD_WP_DISABLE_METHOD_RSU"
+  "RMAD_WP_DISABLE_METHOD_SKIPPED"
+  "RMAD_WP_DISABLE_METHOD_UNKNOWN";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry WpDisableMethod_entries[] = {
+  { {WpDisableMethod_names + 0, 47}, 3 },
+  { {WpDisableMethod_names + 47, 48}, 4 },
+  { {WpDisableMethod_names + 95, 26}, 2 },
+  { {WpDisableMethod_names + 121, 30}, 1 },
+  { {WpDisableMethod_names + 151, 30}, 0 },
+};
+
+static const int WpDisableMethod_entries_by_number[] = {
+  4, // 0 -> RMAD_WP_DISABLE_METHOD_UNKNOWN
+  3, // 1 -> RMAD_WP_DISABLE_METHOD_SKIPPED
+  2, // 2 -> RMAD_WP_DISABLE_METHOD_RSU
+  0, // 3 -> RMAD_WP_DISABLE_METHOD_PHYSICAL_ASSEMBLE_DEVICE
+  1, // 4 -> RMAD_WP_DISABLE_METHOD_PHYSICAL_KEEP_DEVICE_OPEN
+};
+
+const std::string& WpDisableMethod_Name(
+    WpDisableMethod value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          WpDisableMethod_entries,
+          WpDisableMethod_entries_by_number,
+          5, WpDisableMethod_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      WpDisableMethod_entries,
+      WpDisableMethod_entries_by_number,
+      5, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     WpDisableMethod_strings[idx].get();
+}
+bool WpDisableMethod_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, WpDisableMethod* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      WpDisableMethod_entries, 5, name, &int_value);
+  if (success) {
+    *value = static_cast<WpDisableMethod>(int_value);
+  }
+  return success;
+}
 
 // ===================================================================
 

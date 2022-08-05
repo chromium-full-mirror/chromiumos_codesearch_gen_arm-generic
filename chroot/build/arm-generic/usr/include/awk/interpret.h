@@ -3,7 +3,7 @@
  */
 
 /* 
- * Copyright (C) 1986, 1988, 1989, 1991-2020,
+ * Copyright (C) 1986, 1988, 1989, 1991-2021,
  * the Free Software Foundation, Inc.
  * 
  * This file is part of GAWK, the GNU implementation of the
@@ -100,9 +100,21 @@ top:
 		}
 #endif
 
-		switch ((op = pc->opcode)) {
+		op = pc->opcode;
+		if (do_itrace) {
+			fprintf(stderr, "+ %s\n", opcode2str(op));
+			fflush(stderr);
+		}
+
+		switch (op) {
 		case Op_rule:
-			currule = pc->in_rule;   /* for sole use in Op_K_next, Op_K_nextfile, Op_K_getline */
+			currule = pc->in_rule;   /* for use in Op_K_next, Op_K_nextfile, Op_K_getline */
+			// 8/2020: See node BEGINFILE/ENDFILE in the manual.  We clear the record
+			// since conceptually we are before reading a new record from the
+			// upcoming file but haven't read it yet.
+			if (currule == BEGINFILE)
+				set_record("", 0, NULL);
+
 			/* fall through */
 		case Op_func:
 			source = pc->source_file;
@@ -253,13 +265,24 @@ uninitialized_scalar:
 			t2 = mk_sub(pc->sub_count);
 			t1 = POP_ARRAY(false);
 
-			if (do_lint && in_array(t1, t2) == NULL) {
+			if (in_array(t1, t2) == NULL) {
 				t2 = force_string(t2);
-				lintwarn(_("reference to uninitialized element `%s[\"%.*s\"]'"),
-					array_vname(t1), (int) t2->stlen, t2->stptr);
-				if (t2->stlen == 0)
-					lintwarn(_("subscript of array `%s' is null string"), array_vname(t1));
+
+				if (t1 == func_table) {
+					fatal(_("reference to uninitialized element `%s[\"%.*s\"] is not allowed'"),
+						"FUNCTAB", (int) t2->stlen, t2->stptr);
+				} else if (t1 == symbol_table) {
+					fatal(_("reference to uninitialized element `%s[\"%.*s\"] is not allowed'"),
+						"SYMTAB", (int) t2->stlen, t2->stptr);
+				} else if (do_lint) {
+					lintwarn(_("reference to uninitialized element `%s[\"%.*s\"]'"),
+						array_vname(t1), (int) t2->stlen, t2->stptr);
+					if (t2->stlen == 0)
+						lintwarn(_("subscript of array `%s' is null string"), array_vname(t1));
+				}
 			}
+
+			// continue the regular processing
 
 			/* for FUNCTAB, get the name as the element value */
 			if (t1 == func_table) {
@@ -402,14 +425,19 @@ uninitialized_scalar:
 					lintwarn(_("assignment used in conditional context"));
 					break;
 
-				case LINT_no_effect:
-					lintwarn(_("statement has no effect"));
-					break;
-
 				default:
 					cant_happen();
 				}
 			}
+			break;
+
+		case Op_lint_plus:
+			// no need to check do_lint, this opcode won't
+			// be generated if that's not true
+			t1 = TOP();
+			t2 = PEEK(1);
+			if ((t1->flags & STRING) != 0 && (t2->flags & STRING) != 0)
+				lintwarn(_("operator `+' used on two string values"));
 			break;
 
 		case Op_K_break:
@@ -1022,7 +1050,8 @@ arrayfor:
 						(unsigned long) max_expect);
 
 			PUSH_CODE(pc);
-			r = awk_value_to_node(pc->extfunc(arg_count, & result, f));
+			awk_value_t *ef_ret = pc->extfunc(arg_count, & result, f);
+			r = awk_value_to_node(ef_ret);
 			(void) POP_CODE();
 			while (arg_count-- > 0) {
 				t1 = POP();
@@ -1228,7 +1257,7 @@ match_re:
 			JUMPTO(ni);
 
 		case Op_K_getline_redir:
-			r = do_getline_redir(pc->into_var, pc->redir_type);
+			r = do_getline_redir(pc->into_var, (enum redirval) pc->redir_type);
 			PUSH(r);
 			break;
 

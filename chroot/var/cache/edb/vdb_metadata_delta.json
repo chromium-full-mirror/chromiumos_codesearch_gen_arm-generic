@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1659658792.140835, "deltas": [{"event": "add", "package": "chromeos-base/update_engine", "version": "0.0.3-r4148", "slot": "0", "counter": "1459"}, {"event": "add", "package": "chromeos-base/tast-remote-tests-cros", "version": "0.0.2-r11872", "slot": "0", "counter": "1460"}]}
+{"version": "1", "timestamp": 1659716141.8504717}

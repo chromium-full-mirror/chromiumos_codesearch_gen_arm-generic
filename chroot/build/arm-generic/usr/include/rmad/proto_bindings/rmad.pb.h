@@ -780,6 +780,55 @@ inline const std::string& CalibrationOverallStatus_Name(T enum_t_value) {
 }
 bool CalibrationOverallStatus_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CalibrationOverallStatus* value);
+enum AdditionalActivity : int {
+  RMAD_ADDITIONAL_ACTIVITY_NOTHING = 0,
+  RMAD_ADDITIONAL_ACTIVITY_SHUTDOWN = 1,
+  RMAD_ADDITIONAL_ACTIVITY_REBOOT = 2,
+  RMAD_ADDITIONAL_ACTIVITY_BATTERY_CUTOFF = 3,
+  RMAD_ADDITIONAL_ACTIVITY_DIAGNOSTICS = 4,
+  RMAD_ADDITIONAL_ACTIVITY_OS_UPDATE = 5,
+  AdditionalActivity_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  AdditionalActivity_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool AdditionalActivity_IsValid(int value);
+constexpr AdditionalActivity AdditionalActivity_MIN = RMAD_ADDITIONAL_ACTIVITY_NOTHING;
+constexpr AdditionalActivity AdditionalActivity_MAX = RMAD_ADDITIONAL_ACTIVITY_OS_UPDATE;
+constexpr int AdditionalActivity_ARRAYSIZE = AdditionalActivity_MAX + 1;
+
+const std::string& AdditionalActivity_Name(AdditionalActivity value);
+template<typename T>
+inline const std::string& AdditionalActivity_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, AdditionalActivity>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function AdditionalActivity_Name.");
+  return AdditionalActivity_Name(static_cast<AdditionalActivity>(enum_t_value));
+}
+bool AdditionalActivity_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, AdditionalActivity* value);
+enum WpDisableMethod : int {
+  RMAD_WP_DISABLE_METHOD_UNKNOWN = 0,
+  RMAD_WP_DISABLE_METHOD_SKIPPED = 1,
+  RMAD_WP_DISABLE_METHOD_RSU = 2,
+  RMAD_WP_DISABLE_METHOD_PHYSICAL_ASSEMBLE_DEVICE = 3,
+  RMAD_WP_DISABLE_METHOD_PHYSICAL_KEEP_DEVICE_OPEN = 4,
+  WpDisableMethod_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  WpDisableMethod_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool WpDisableMethod_IsValid(int value);
+constexpr WpDisableMethod WpDisableMethod_MIN = RMAD_WP_DISABLE_METHOD_UNKNOWN;
+constexpr WpDisableMethod WpDisableMethod_MAX = RMAD_WP_DISABLE_METHOD_PHYSICAL_KEEP_DEVICE_OPEN;
+constexpr int WpDisableMethod_ARRAYSIZE = WpDisableMethod_MAX + 1;
+
+const std::string& WpDisableMethod_Name(WpDisableMethod value);
+template<typename T>
+inline const std::string& WpDisableMethod_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, WpDisableMethod>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function WpDisableMethod_Name.");
+  return WpDisableMethod_Name(static_cast<WpDisableMethod>(enum_t_value));
+}
+bool WpDisableMethod_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, WpDisableMethod* value);
 // ===================================================================
 
 class HardwareVerificationResult final :
@@ -10097,6 +10146,8 @@ template <> struct is_proto_enum< ::rmad::RmadComponent> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::UpdateRoFirmwareStatus> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::CalibrationSetupInstruction> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::CalibrationOverallStatus> : ::std::true_type {};
+template <> struct is_proto_enum< ::rmad::AdditionalActivity> : ::std::true_type {};
+template <> struct is_proto_enum< ::rmad::WpDisableMethod> : ::std::true_type {};
 
 PROTOBUF_NAMESPACE_CLOSE
 

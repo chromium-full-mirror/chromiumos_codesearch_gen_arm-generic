@@ -11,7 +11,7 @@
  */
 
 /*
- * Copyright (C) 1995-2004, 2008, 2009, 2011, 2016, 2018, 2019, 2020,
+ * Copyright (C) 1995-2004, 2008, 2009, 2011, 2016, 2018-2021,
  * the Free Software Foundation, Inc.
  *
  * This file is part of GAWK, the GNU implementation of the
@@ -92,6 +92,12 @@ typedef unsigned long long uint_fast64_t;
 #define _XOPEN_SOURCE_EXTENDED 1
 #endif
 
+#ifdef __MVS__
+#ifndef _REGEX_INCLUDE_LIMITS_H
+#define _REGEX_INCLUDE_LIMITS_H 1
+#endif
+#endif
+
 /* Junk for dfa.[ch] */
 /* The __pure__ attribute was added in gcc 2.96.  */
 #if __GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 96)
@@ -99,5 +105,11 @@ typedef unsigned long long uint_fast64_t;
 #else
 # define _GL_ATTRIBUTE_PURE /* empty */
 #endif
+#define FLEXIBLE_ARRAY_MEMBER	1
+#define xreallocarray xnrealloc
+#define xizalloc xzalloc
+#define xicalloc xcalloc
+#define xirealloc xrealloc
+#define ximalloc xmalloc
 
 #include "mbsupport.h" /* defines stuff for DJGPP to fake MBS */

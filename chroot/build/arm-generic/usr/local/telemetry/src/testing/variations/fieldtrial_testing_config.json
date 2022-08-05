@@ -1463,6 +1463,27 @@
             ]
         }
     ],
+    "AutofillSectionUponRedundantNameInfo": [
+        {
+            "platforms": [
+                "android",
+                "chromeos",
+                "chromeos_lacros",
+                "ios",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "AutofillSectionUponRedundantNameInfo"
+                    ]
+                }
+            ]
+        }
+    ],
     "AutofillServerTypeTakesPrecedence": [
         {
             "platforms": [
@@ -1928,6 +1949,25 @@
             ]
         }
     ],
+    "BatchFetchRequests": [
+        {
+            "platforms": [
+                "android",
+                "chromeos",
+                "linux",
+                "mac",
+                "windows"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "BatchFetchRequests"
+                    ]
+                }
+            ]
+        }
+    ],
     "BatchImageDecoding": [
         {
             "platforms": [
@@ -2300,7 +2340,7 @@
                 {
                     "name": "Enabled",
                     "params": {
-                        "impl": "3"
+                        "use_crs": "true"
                     },
                     "enable_features": [
                         "CertDualVerificationTrial"
@@ -2330,11 +2370,7 @@
             "experiments": [
                 {
                     "name": "Enabled",
-                    "params": {
-                        "impl": "4"
-                    },
                     "enable_features": [
-                        "CertVerifierBuiltin",
                         "ChromeRootStoreUsed"
                     ]
                 }
@@ -3174,6 +3210,21 @@
             ]
         }
     ],
+    "CustomTabBrandTransparency": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "CCTBrandTransparency"
+                    ]
+                }
+            ]
+        }
+    ],
     "CustomTabSessionRecording": [
         {
             "platforms": [
@@ -3372,17 +3423,12 @@
                 {
                     "name": "RecipeTasksRuleBasedDiscountDriveManagedUsersCartOptimizeRecipeTasksSAPIV2Fre_Enabled",
                     "params": {
-                        "NtpChromeCartModuleAbandonedCartDiscountParam": "true",
-                        "NtpChromeCartModuleAbandonedCartDiscountUseUtmParam": "true",
-                        "NtpChromeCartModuleHeuristicsImprovementParam": "true",
                         "NtpDriveModuleExperimentGroupParam": "foo:bar",
                         "NtpDriveModuleManagedUsersOnlyParam": "true",
                         "NtpModulesLoadTimeoutMillisecondsParam": "3000",
-                        "discount-fetch-delay": "1h",
                         "use_sapi_v2": "true"
                     },
                     "enable_features": [
-                        "NtpChromeCartModule",
                         "NtpDriveModule",
                         "NtpModulesLoadTimeoutMilliseconds",
                         "NtpPhotosModule"
@@ -3394,17 +3440,12 @@
                 {
                     "name": "Recipes_SAPIV2_20220415",
                     "params": {
-                        "NtpChromeCartModuleAbandonedCartDiscountParam": "true",
-                        "NtpChromeCartModuleAbandonedCartDiscountUseUtmParam": "true",
-                        "NtpChromeCartModuleHeuristicsImprovementParam": "true",
                         "NtpDriveModuleExperimentGroupParam": "foo:bar",
                         "NtpDriveModuleManagedUsersOnlyParam": "true",
                         "NtpModulesLoadTimeoutMillisecondsParam": "3000",
-                        "discount-fetch-delay": "1h",
                         "use_sapi_v2": "true"
                     },
                     "enable_features": [
-                        "NtpChromeCartModule",
                         "NtpDriveModule",
                         "NtpModulesLoadTimeoutMilliseconds",
                         "NtpRecipeTasksModule"
@@ -3416,16 +3457,11 @@
                 {
                     "name": "Recipes_SAPIV2_Control_20220415",
                     "params": {
-                        "NtpChromeCartModuleAbandonedCartDiscountParam": "true",
-                        "NtpChromeCartModuleAbandonedCartDiscountUseUtmParam": "true",
-                        "NtpChromeCartModuleHeuristicsImprovementParam": "true",
                         "NtpDriveModuleExperimentGroupParam": "foo:bar",
                         "NtpDriveModuleManagedUsersOnlyParam": "true",
-                        "NtpModulesLoadTimeoutMillisecondsParam": "3000",
-                        "discount-fetch-delay": "1h"
+                        "NtpModulesLoadTimeoutMillisecondsParam": "3000"
                     },
                     "enable_features": [
-                        "NtpChromeCartModule",
                         "NtpDriveModule",
                         "NtpModulesLoadTimeoutMilliseconds",
                         "NtpRecipeTasksModule"
@@ -6750,6 +6786,24 @@
                     "name": "Enabled",
                     "enable_features": [
                         "CCTResizableAllowResizeByUserGesture"
+                    ]
+                }
+            ]
+        }
+    ],
+    "PartialCustomTabs3rdPartyPolicy": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "params": {
+                        "default_policy": "use-denylist"
+                    },
+                    "enable_features": [
+                        "CCTResizableForThirdParties"
                     ]
                 }
             ]

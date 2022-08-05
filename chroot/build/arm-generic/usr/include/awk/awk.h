@@ -3,7 +3,7 @@
  */
 
 /*
- * Copyright (C) 1986, 1988, 1989, 1991-2020 the Free Software Foundation, Inc.
+ * Copyright (C) 1986, 1988, 1989, 1991-2021 the Free Software Foundation, Inc.
  *
  * This file is part of GAWK, the GNU implementation of the
  * AWK Programming Language.
@@ -52,6 +52,7 @@
 #include <limits.h>
 #include <ctype.h>
 #include <setjmp.h>
+#include <math.h>
 
 #include "gettext.h"
 #define _(msgid)  gettext(msgid)
@@ -363,9 +364,10 @@ typedef struct exp_node {
 			size_t reserved;
 			struct exp_node *rn;
 			unsigned long cnt;
-			unsigned long reflags;
-#				define	CONSTANT	1
-#				define	FS_DFLT		2
+			enum reflagvals {
+				CONSTANT = 1,
+				FS_DFLT  = 2,
+			} reflags;
 		} nodep;
 
 		struct {
@@ -381,7 +383,6 @@ typedef struct exp_node {
 #endif
 			char *sp;
 			size_t slen;
-			long sref;
 			int idx;
 			wchar_t *wsp;
 			size_t wslen;
@@ -390,79 +391,80 @@ typedef struct exp_node {
 		} val;
 	} sub;
 	NODETYPE type;
-	unsigned int flags;
+	enum flagvals {
+	/* type = Node_val */
+		/*
+		 * STRING and NUMBER are mutually exclusive, except for the special
+		 * case of an uninitialized value, represented internally by
+		 * Nnull_string. They represent the type of a value as assigned.
+		 * Nnull_string has both STRING and NUMBER attributes, but all other
+		 * scalar values should have precisely one of these bits set.
+		 *
+		 * STRCUR and NUMCUR are not mutually exclusive. They represent that
+		 * the particular type of value is up to date.  For example,
+		 *
+		 * 	a = 5		# NUMBER | NUMCUR
+		 * 	b = a ""	# Adds STRCUR to a, since a string value
+		 * 			# is now available. But the type hasn't changed!
+		 *
+		 * 	a = "42"	# STRING | STRCUR
+		 * 	b = a + 0	# Adds NUMCUR to a, since numeric value
+		 * 			# is now available. But the type hasn't changed!
+		 *
+		 * USER_INPUT is the joker.  When STRING|USER_INPUT is set, it means
+		 * "this is string data, but the user may have really wanted it to be a
+		 * number. If we have to guess, like in a comparison, turn it into a
+		 * number if the string is indeed numeric."
+		 * For example,    gawk -v a=42 ....
+		 * Here, `a' gets STRING|STRCUR|USER_INPUT and then when used where
+		 * a number is needed, it gets turned into a NUMBER and STRING
+		 * is cleared. In that case, we leave the USER_INPUT in place, so
+		 * the combination NUMBER|USER_INPUT means it is a strnum a.k.a. a
+		 * "numeric string".
+		 *
+		 * WSTRCUR is for efficiency. If in a multibyte locale, and we
+		 * need to do something character based (substr, length, etc.)
+		 * we create the corresponding wide character string and store it,
+		 * and add WSTRCUR to the flags so that we don't have to do the
+		 * conversion more than once.
+		 *
+		 * The NUMINT flag may be used with a value of any type -- NUMBER,
+		 * STRING, or STRNUM. It indicates that the string representation
+		 * equals the result of sprintf("%ld", <numeric value>). So, for
+		 * example, NUMINT should NOT be set if it's a strnum or string value
+		 * where the string is " 1" or "01" or "+1" or "1.0" or "0.1E1". This
+		 * is a hint to indicate that an integer array optimization may be
+		 * used when this value appears as a subscript.
+		 *
+		 * We hope that the rest of the flags are self-explanatory. :-)
+		 */
+		MALLOC	= 0x0001,       /* stptr can be free'd, i.e. not a field node pointing into a shared buffer */
+		STRING	= 0x0002,       /* assigned as string */
+		STRCUR	= 0x0004,       /* string value is current */
+		NUMCUR	= 0x0008,       /* numeric value is current */
+		NUMBER	= 0x0010,       /* assigned as number */
+		USER_INPUT = 0x0020,    /* user input: if NUMERIC then
+					 * a NUMBER */
+		INTLSTR	= 0x0040,       /* use localized version */
+		NUMINT	= 0x0080,       /* numeric value is an integer */
+		INTIND	= 0x0100,	/* integral value is array index;
+					 * lazy conversion to string.
+					 */
+		WSTRCUR	= 0x0200,       /* wide str value is current */
+		MPFN	= 0x0400,       /* arbitrary-precision floating-point number */
+		MPZN	= 0x0800,       /* arbitrary-precision integer */
+		NO_EXT_SET = 0x1000,    /* extension cannot set a value for this variable */
+		NULL_FIELD = 0x2000,    /* this is the null field */
 
-/* type = Node_val */
-	/*
-	 * STRING and NUMBER are mutually exclusive, except for the special
-	 * case of an uninitialized value, represented internally by
-	 * Nnull_string. They represent the type of a value as assigned.
-	 * Nnull_string has both STRING and NUMBER attributes, but all other
-	 * scalar values should have precisely one of these bits set.
-	 *
-	 * STRCUR and NUMCUR are not mutually exclusive. They represent that
-	 * the particular type of value is up to date.  For example,
-	 *
-	 * 	a = 5		# NUMBER | NUMCUR
-	 * 	b = a ""	# Adds STRCUR to a, since a string value
-	 * 			# is now available. But the type hasn't changed!
-	 *
-	 * 	a = "42"	# STRING | STRCUR
-	 * 	b = a + 0	# Adds NUMCUR to a, since numeric value
-	 * 			# is now available. But the type hasn't changed!
-	 *
-	 * USER_INPUT is the joker.  When STRING|USER_INPUT is set, it means
-	 * "this is string data, but the user may have really wanted it to be a
-	 * number. If we have to guess, like in a comparison, turn it into a
-	 * number if the string is indeed numeric."
-	 * For example,    gawk -v a=42 ....
-	 * Here, `a' gets STRING|STRCUR|USER_INPUT and then when used where
-	 * a number is needed, it gets turned into a NUMBER and STRING
-	 * is cleared. In that case, we leave the USER_INPUT in place, so
-	 * the combination NUMBER|USER_INPUT means it is a strnum a.k.a. a
-	 * "numeric string".
-	 *
-	 * WSTRCUR is for efficiency. If in a multibyte locale, and we
-	 * need to do something character based (substr, length, etc.)
-	 * we create the corresponding wide character string and store it,
-	 * and add WSTRCUR to the flags so that we don't have to do the
-	 * conversion more than once.
-	 *
-	 * The NUMINT flag may be used with a value of any type -- NUMBER,
-	 * STRING, or STRNUM. It indicates that the string representation
-	 * equals the result of sprintf("%ld", <numeric value>). So, for
-	 * example, NUMINT should NOT be set if it's a strnum or string value
-	 * where the string is " 1" or "01" or "+1" or "1.0" or "0.1E1". This
-	 * is a hint to indicate that an integer array optimization may be
-	 * used when this value appears as a subscript.
-	 *
-	 * We hope that the rest of the flags are self-explanatory. :-)
-	 */
-#		define	MALLOC	0x0001       /* stptr can be free'd, i.e. not a field node pointing into a shared buffer */
-#		define	STRING	0x0002       /* assigned as string */
-#		define	STRCUR	0x0004       /* string value is current */
-#		define	NUMCUR	0x0008       /* numeric value is current */
-#		define	NUMBER	0x0010       /* assigned as number */
-#		define	USER_INPUT 0x0020    /* user input: if NUMERIC then
-		                              * a NUMBER */
-#		define	INTLSTR	0x0040       /* use localized version */
-#		define	NUMINT	0x0080       /* numeric value is an integer */
-#		define	INTIND	0x0100	     /* integral value is array index;
-		                              * lazy conversion to string.
-		                              */
-#		define	WSTRCUR	0x0200       /* wide str value is current */
-#		define	MPFN	0x0400       /* arbitrary-precision floating-point number */
-#		define	MPZN	0x0800       /* arbitrary-precision integer */
-#		define	NO_EXT_SET 0x1000    /* extension cannot set a value for this variable */
-#		define	NULL_FIELD 0x2000    /* this is the null field */
-
-/* type = Node_var_array */
-#		define	ARRAYMAXED	0x4000       /* array is at max size */
-#		define	HALFHAT		0x8000       /* half-capacity Hashed Array Tree;
-		                                      * See cint_array.c */
-#		define	XARRAY		0x10000
-#		define	NUMCONSTSTR	0x20000	/* have string value for numeric constant */
-#		define  REGEX           0x40000 /* this is a typed regex */
+	/* type = Node_var_array */
+		ARRAYMAXED	= 0x4000,       /* array is at max size */
+		HALFHAT		= 0x8000,       /* half-capacity Hashed Array Tree;
+						 * See cint_array.c */
+		XARRAY		= 0x10000,
+		NUMCONSTSTR	= 0x20000,	/* have string value for numeric constant */
+		REGEX           = 0x40000,	/* this is a typed regex */
+	} flags;
+	long valref;
 } NODE;
 
 #define vname sub.nodep.name
@@ -499,7 +501,6 @@ typedef struct exp_node {
  */
 #define stptr	sub.val.sp
 #define stlen	sub.val.slen
-#define valref	sub.val.sref
 #define stfmt	sub.val.idx
 #define strndmode sub.val.rndmode
 #define wstptr	sub.val.wsp
@@ -713,6 +714,7 @@ typedef enum opcodeval {
 	Op_exec_count,
 	Op_breakpoint,
 	Op_lint,
+	Op_lint_plus,
 	Op_atexit,
 	Op_stop,
 
@@ -748,6 +750,16 @@ enum redirval {
 
 struct break_point;
 
+#if __DECC && __VAX
+typedef unsigned long exec_count_t;	// for exec_count
+#define EXEC_COUNT_FMT	"%lu"
+#define EXEC_COUNT_PROFILE_FMT	"%6lu"
+#else
+typedef unsigned long long exec_count_t;	// for exec_count
+#define EXEC_COUNT_FMT	"%llu"
+#define EXEC_COUNT_PROFILE_FMT	"%6llu"
+#endif
+
 typedef struct exp_instruction {
 	struct exp_instruction *nexti;
 	union {
@@ -758,6 +770,7 @@ typedef struct exp_instruction {
 					awk_value_t *result,
 					struct awk_ext_func *finfo);
 		long dl;
+		exec_count_t ldl;	// for exec_count
 		char *name;
 	} d;
 
@@ -898,7 +911,7 @@ typedef struct exp_instruction {
 
 /*------------------ pretty printing/profiling --------*/
 /* Op_exec_count */
-#define exec_count      d.dl
+#define exec_count      d.ldl
 
 /* Op_K_while */
 #define while_body      d.di
@@ -942,30 +955,33 @@ typedef struct iobuf {
 	bool valid;
 	int errcode;
 
-	int flag;
-#		define	IOP_IS_TTY	1
-#		define  IOP_AT_EOF      2
-#		define  IOP_CLOSED      4
-#		define  IOP_AT_START    8
+	enum iobuf_flags {
+		IOP_IS_TTY	= 1,
+		IOP_AT_EOF	= 2,
+		IOP_CLOSED	= 4,
+		IOP_AT_START	= 8,
+	} flag;
 } IOBUF;
 
 typedef void (*Func_ptr)(void);
 
 /* structure used to dynamically maintain a linked-list of open files/pipes */
 struct redirect {
-	unsigned int flag;
-#		define	RED_FILE	1
-#		define	RED_PIPE	2
-#		define	RED_READ	4
-#		define	RED_WRITE	8
-#		define	RED_APPEND	16
-#		define	RED_NOBUF	32
-#		define	RED_USED	64	/* closed temporarily to reuse fd */
-#		define	RED_EOF		128
-#		define	RED_TWOWAY	256
-#		define	RED_PTY		512
-#		define	RED_SOCKET	1024
-#		define	RED_TCP		2048
+	enum redirect_flags {
+		RED_NONE	= 0,
+		RED_FILE	= 1,
+		RED_PIPE	= 2,
+		RED_READ	= 4,
+		RED_WRITE	= 8,
+		RED_APPEND	= 16,
+		RED_NOBUF	= 32,
+		RED_USED	= 64,	/* closed temporarily to reuse fd */
+		RED_EOF		= 128,
+		RED_TWOWAY	= 256,
+		RED_PTY		= 512,
+		RED_SOCKET	= 1024,
+		RED_TCP		= 2048,
+	} flag;
 	char *value;
 	FILE *ifp;	/* input fp, needed for PIPES_SIMULATED */
 	IOBUF *iop;
@@ -976,14 +992,15 @@ struct redirect {
 	const char *mode;
 	awk_output_buf_t output;
 };
+typedef enum redirect_flags redirect_flags_t;
 
 /* values for BINMODE, used as bit flags */
 
 enum binmode_values {
-	TEXT_TRANSLATE = 0,	/* usual \r\n ---> \n translation */
-	BINMODE_INPUT = 1,	/* no translation for input files */
-	BINMODE_OUTPUT = 2,	/* no translation for output files */
-	BINMODE_BOTH = 3	/* no translation for either */
+	TEXT_TRANSLATE	= 0,	/* usual \r\n ---> \n translation */
+	BINMODE_INPUT	= 1,	/* no translation for input files */
+	BINMODE_OUTPUT	= 2,	/* no translation for output files */
+	BINMODE_BOTH	= 3	/* no translation for either */
 };
 
 /*
@@ -1069,8 +1086,6 @@ struct block_header {
 enum block_id {
 	BLOCK_NODE = 0,
 	BLOCK_BUCKET,
-	BLOCK_MPFR,
-	BLOCK_MPZ,
 	BLOCK_MAX	/* count */
 };
 
@@ -1101,7 +1116,7 @@ extern int OFSlen;
 extern char *ORS;
 extern int ORSlen;
 extern char *OFMT;
-extern char *CONVFMT;
+extern const char *CONVFMT;
 extern int CONVFMTidx;
 extern int OFMTidx;
 #ifdef HAVE_MPFR
@@ -1137,11 +1152,12 @@ extern NODE *success_node;
 extern struct block_header nextfree[];
 extern bool field0_valid;
 
-extern int do_flags;
+extern bool do_itrace;	/* separate so can poke from a debugger */
 
 extern SRCFILE *srcfiles; /* source files */
 
-enum do_flag_values {
+extern enum do_flag_values {
+	DO_FLAG_NONE       = 0x00000,
 	DO_LINT_INVALID	   = 0x00001,	/* only warn about invalid */
 	DO_LINT_EXTENSIONS = 0x00002,	/* warn about gawk extensions */
 	DO_LINT_ALL	   = 0x00004,	/* warn about all things */
@@ -1157,8 +1173,8 @@ enum do_flag_values {
 	DO_SANDBOX	   = 0x01000,	/* sandbox mode - disable 'system' function & redirections */
 	DO_PROFILE	   = 0x02000,	/* profile the program */
 	DO_DEBUG	   = 0x04000,	/* debug the program */
-	DO_MPFR		   = 0x08000	/* arbitrary-precision floating-point math */
-};
+	DO_MPFR		   = 0x08000,	/* arbitrary-precision floating-point math */
+} do_flags;
 
 #define do_traditional      (do_flags & DO_TRADITIONAL)
 #define do_posix            (do_flags & DO_POSIX)
@@ -1210,10 +1226,10 @@ extern bool do_ieee_fmt;	/* emulate IEEE 754 floating-point format */
 extern const char *myname;
 extern const char def_strftime_format[];
 
-extern char quote;
-extern char *defpath;
-extern char *deflibpath;
-extern char envsep;
+extern const char quote;
+extern const char *defpath;
+extern const char *deflibpath;
+extern const char envsep;
 
 extern char casetable[];	/* for case-independent regexp matching */
 
@@ -1265,8 +1281,11 @@ static inline void
 DEREF(NODE *r)
 {
 	assert(r->valref > 0);
-	if (--r->valref == 0)
-		r_unref(r);
+#ifndef GAWKDEBUG
+	if (--r->valref > 0)
+		return;
+#endif
+	r_unref(r);
 }
 
 #define POP_NUMBER() force_number(POP_SCALAR())
@@ -1301,7 +1320,7 @@ DEREF(NODE *r)
 
 #define get_number_uj(n)	numtype_choose((n), mpfr_get_uj((n)->mpg_numbr, ROUND_MODE), (uintmax_t) mpz_get_d((n)->mpg_i), (uintmax_t) (n)->numbr)
 
-#define iszero(n)		numtype_choose((n), mpfr_zero_p((n)->mpg_numbr), (mpz_sgn((n)->mpg_i) == 0), ((n)->numbr == 0.0))
+#define is_zero(n)		numtype_choose((n), mpfr_zero_p((n)->mpg_numbr), (mpz_sgn((n)->mpg_i) == 0), ((n)->numbr == 0.0))
 
 #define IEEE_FMT(r, t)		(void) (do_ieee_fmt && format_ieee(r, t))
 
@@ -1319,7 +1338,7 @@ DEREF(NODE *r)
 #define is_mpg_number(n)	0
 #define is_mpg_float(n)		0
 #define is_mpg_integer(n)	0
-#define iszero(n)		((n)->numbr == 0.0)
+#define is_zero(n)		((n)->numbr == 0.0)
 #endif
 
 #define var_uninitialized(n)	((n)->var_value == Nnull_string)
@@ -1331,7 +1350,7 @@ DEREF(NODE *r)
 
 extern void *r_getblock(int id);
 extern void r_freeblock(void *, int id);
-#define getblock(p, id, ty)	(void) (p = r_getblock(id))
+#define getblock(p, id, ty)	(void) (p = (ty) r_getblock(id))
 #define freeblock(p, id)	(void) (r_freeblock(p, id))
 
 #else /* MEMDEBUG */
@@ -1442,7 +1461,7 @@ extern bool is_alpha(int c);
 extern bool is_alnum(int c);
 extern bool is_letter(int c);
 extern bool is_identchar(int c);
-extern NODE *make_regnode(int type, NODE *exp);
+extern NODE *make_regnode(NODETYPE type, NODE *exp);
 extern bool validate_qualified_name(char *token);
 /* builtin.c */
 extern double double_to_int(double d);
@@ -1493,6 +1512,7 @@ extern NODE *do_typeof(int nargs);
 extern int strncasecmpmbs(const unsigned char *,
 			  const unsigned char *, size_t);
 extern int sanitize_exit_status(int status);
+extern void check_symtab_functab(NODE *dest, const char *fname, const char *msg);
 /* debug.c */
 extern void init_debug(void);
 extern int debug_prog(INSTRUCTION *pc);
@@ -1576,7 +1596,7 @@ extern void print_ext_versions(void);
 extern void free_api_string_copies(void);
 
 /* gawkmisc.c */
-extern char *gawk_name(const char *filespec);
+extern const char *gawk_name(const char *filespec);
 extern void os_arg_fixup(int *argcp, char ***argvp);
 extern int os_devopen(const char *name, int flag);
 extern void os_close_on_exec(int fd, const char *name, const char *what, const char *dir);
@@ -1664,6 +1684,7 @@ extern void cleanup_mpfr(void);
 extern NODE *mpg_node(unsigned int);
 extern const char *mpg_fmt(const char *, ...);
 extern int mpg_strtoui(mpz_ptr, char *, size_t, char **, int);
+extern void mpg_zero(NODE *n);
 #endif
 /* msg.c */
 extern void gawk_exit(int status);
@@ -1712,6 +1733,7 @@ extern void init_btowc_cache();
 #define is_valid_character(b)	(btowc_cache[(b)&0xFF] != WEOF)
 extern bool out_of_range(NODE *n);
 extern char *format_nan_inf(NODE *n, char format);
+extern bool is_ieee_magic_val(const char *val);
 /* re.c */
 extern Regexp *make_regexp(const char *s, size_t len, bool ignorecase, bool dfa, bool canfatal);
 extern int research(Regexp *rp, char *str, int start, size_t len, int flags);
@@ -1924,6 +1946,7 @@ force_string_fmt(NODE *s, const char *fmtstr, int fmtidx)
 static inline void
 unref(NODE *r)
 {
+	assert(r == NULL || r->valref > 0);
 	if (r != NULL && --r->valref <= 0)
 		r_unref(r);
 }
@@ -1974,7 +1997,7 @@ boolval(NODE *t)
 {
 	(void) fixtype(t);
 	if ((t->flags & NUMBER) != 0)
-		return ! iszero(t);
+		return ! is_zero(t);
 	return (t->stlen > 0);
 }
 

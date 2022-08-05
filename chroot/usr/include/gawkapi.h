@@ -3,7 +3,7 @@
  */
 
 /*
- * Copyright (C) 2012-2019 the Free Software Foundation, Inc.
+ * Copyright (C) 2012-2019, 2021 the Free Software Foundation, Inc.
  *
  * This file is part of GAWK, the GNU implementation of the
  * AWK Programming Language.
@@ -149,6 +149,7 @@ typedef struct awk_input {
 	int fd;			/* file descriptor */
 #define INVALID_HANDLE (-1)
 	void *opaque;           /* private data for input parsers */
+
 	/*
 	 * The get_record function is called to read the next record of data.
 	 *
@@ -187,10 +188,10 @@ typedef struct awk_input {
 			const awk_fieldwidth_info_t **field_width);
 
 	/*
-	 * No argument prototype on read_func to allow for older systems
-	 * whose headers are not up to date.
+	 * This replaces the POSIX read() system call. Use it if you want to
+	 * manage reading raw bytes yourself, and let gawk parse the record.
 	 */
-	ssize_t (*read_func)();
+	ssize_t (*read_func)(int, void *, size_t);
 
 	/*
 	 * The close_func is called to allow the parser to free private data.
@@ -297,7 +298,7 @@ typedef struct awk_two_way_processor {
 } awk_two_way_processor_t;
 
 #define gawk_api_major_version 3
-#define gawk_api_minor_version 0
+#define gawk_api_minor_version 1
 
 /* Current version of the API. */
 enum {
@@ -328,6 +329,13 @@ enum AWK_NUMBER_TYPE {
 	AWK_NUMBER_TYPE_MPFR,
 	AWK_NUMBER_TYPE_MPZ
 };
+
+/*
+ * When type is AWK_NUMBER_MPFR or AWK_NUMBER_MPZ, the memory pointed to
+ * by the ptr member belongs to gawk if it came from gawk.  Otherwise the
+ * memory belongs to the extension and gawk copies it when its received.
+ * See the manual for further discussion.
+ */
 
 typedef struct awk_number {
 	double d;	/* always populated in data received from gawk */
@@ -775,16 +783,16 @@ typedef struct gawk_api {
 	void (*api_free)(void *ptr);
 
 	/*
-	 * A function that returns mpfr data should call this function
-	 * to allocate and initialize an mpfr_ptr for use in an
-	 * awk_value_t structure that will be handed to gawk.
+	 * Obsolete function, should not be used. It remains only
+	 * for binary compatibility.  Any value it returns should be
+	 * freed via api_free.
 	 */
 	void *(*api_get_mpfr)(awk_ext_id_t id);
 
 	/*
-	 * A function that returns mpz data should call this function
-	 * to allocate and initialize an mpz_ptr for use in an
-	 * awk_value_t structure that will be handed to gawk.
+	 * Obsolete function, should not be used. It remains only
+	 * for binary compatibility.  Any value it returns should be
+	 * freed via api_free.
 	 */
 	void *(*api_get_mpz)(awk_ext_id_t id);
 
@@ -928,6 +936,7 @@ typedef struct gawk_api {
 #define get_file(name, namelen, filetype, fd, ibuf, obuf) \
 	(api->api_get_file(ext_id, name, namelen, filetype, fd, ibuf, obuf))
 
+/* These two are obsolete and should not be used. */
 #define get_mpfr_ptr() (api->api_get_mpfr(ext_id))
 #define get_mpz_ptr() (api->api_get_mpz(ext_id))
 
@@ -1035,8 +1044,7 @@ make_number(double num, awk_value_t *result)
 
 /*
  * make_number_mpz --- make an mpz number value in result.
- * The mpz_ptr must be from a call to get_mpz_ptr. Gawk will now
- * take ownership of this memory.
+ * The mpz_ptr must be from a call to get_mpz_ptr.
  */
 
 static inline awk_value_t *
@@ -1050,8 +1058,7 @@ make_number_mpz(void *mpz_ptr, awk_value_t *result)
 
 /*
  * make_number_mpfr --- make an mpfr number value in result.
- * The mpfr_ptr must be from a call to get_mpfr_ptr. Gawk will now
- * take ownership of this memory.
+ * The mpfr_ptr must be from a call to get_mpfr_ptr.
  */
 
 static inline awk_value_t *
