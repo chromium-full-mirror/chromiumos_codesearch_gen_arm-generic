@@ -827,6 +827,10 @@ class  BlockDeviceVendor_Data {
   enum class BlockDeviceVendor_Tag : uint32_t {
 
     
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
+    
     NVME_SUBSYSTEM_VENDOR,
     
     kNvmeSubsystemVendor = NVME_SUBSYSTEM_VENDOR,
@@ -845,6 +849,7 @@ class  BlockDeviceVendor_Data {
   // a struct." - Section 9.5.2 ISO/IEC 14882:2011 (The C++ Spec)
   union MOJO_ALIGNAS(8) Union_ {
     Union_() : unknown(0) {}
+    uint64_t f_unknown;
     uint32_t f_nvme_subsystem_vendor;
     uint16_t f_emmc_oemid;
     uint16_t f_other;
@@ -888,6 +893,10 @@ class  BlockDeviceProduct_Data {
   enum class BlockDeviceProduct_Tag : uint32_t {
 
     
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
+    
     NVME_SUBSYSTEM_DEVICE,
     
     kNvmeSubsystemDevice = NVME_SUBSYSTEM_DEVICE,
@@ -906,6 +915,7 @@ class  BlockDeviceProduct_Data {
   // a struct." - Section 9.5.2 ISO/IEC 14882:2011 (The C++ Spec)
   union MOJO_ALIGNAS(8) Union_ {
     Union_() : unknown(0) {}
+    uint64_t f_unknown;
     uint32_t f_nvme_subsystem_device;
     uint64_t f_emmc_pnm;
     uint16_t f_other;
@@ -949,6 +959,10 @@ class  BlockDeviceRevision_Data {
   enum class BlockDeviceRevision_Tag : uint32_t {
 
     
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
+    
     NVME_PCIE_REV,
     
     kNvmePcieRev = NVME_PCIE_REV,
@@ -967,6 +981,7 @@ class  BlockDeviceRevision_Data {
   // a struct." - Section 9.5.2 ISO/IEC 14882:2011 (The C++ Spec)
   union MOJO_ALIGNAS(8) Union_ {
     Union_() : unknown(0) {}
+    uint64_t f_unknown;
     uint8_t f_nvme_pcie_rev;
     uint8_t f_emmc_prv;
     uint16_t f_other;
@@ -1010,6 +1025,10 @@ class  BlockDeviceFirmware_Data {
   enum class BlockDeviceFirmware_Tag : uint32_t {
 
     
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
+    
     NVME_FIRMWARE_REV,
     
     kNvmeFirmwareRev = NVME_FIRMWARE_REV,
@@ -1028,6 +1047,7 @@ class  BlockDeviceFirmware_Data {
   // a struct." - Section 9.5.2 ISO/IEC 14882:2011 (The C++ Spec)
   union MOJO_ALIGNAS(8) Union_ {
     Union_() : unknown(0) {}
+    uint64_t f_unknown;
     uint64_t f_nvme_firmware_rev;
     uint64_t f_emmc_fwrev;
     uint16_t f_other;

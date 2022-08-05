@@ -34,59 +34,59 @@ class MissivedProxyInterface {
 
   // Enqueues records for encryption, storage, and upload.
   virtual bool EnqueueRecord(
-      const reporting::EnqueueRecordRequest& in_request,
-      reporting::EnqueueRecordResponse* out_reply,
+      const ::reporting::EnqueueRecordRequest& in_request,
+      ::reporting::EnqueueRecordResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Enqueues records for encryption, storage, and upload.
   virtual void EnqueueRecordAsync(
-      const reporting::EnqueueRecordRequest& in_request,
-      base::OnceCallback<void(const reporting::EnqueueRecordResponse& /*reply*/)> success_callback,
+      const ::reporting::EnqueueRecordRequest& in_request,
+      base::OnceCallback<void(const ::reporting::EnqueueRecordResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Requests that the indicated priority queue is flushed.
   virtual bool FlushPriority(
-      const reporting::FlushPriorityRequest& in_request,
-      reporting::FlushPriorityResponse* out_reply,
+      const ::reporting::FlushPriorityRequest& in_request,
+      ::reporting::FlushPriorityResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Requests that the indicated priority queue is flushed.
   virtual void FlushPriorityAsync(
-      const reporting::FlushPriorityRequest& in_request,
-      base::OnceCallback<void(const reporting::FlushPriorityResponse& /*reply*/)> success_callback,
+      const ::reporting::FlushPriorityRequest& in_request,
+      base::OnceCallback<void(const ::reporting::FlushPriorityResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Sent by Chrome to indicate the record was succesfully uploaded.
   // Record indicated by the provided SequenceInformation.
   virtual bool ConfirmRecordUpload(
-      const reporting::ConfirmRecordUploadRequest& in_request,
-      reporting::ConfirmRecordUploadResponse* out_reply,
+      const ::reporting::ConfirmRecordUploadRequest& in_request,
+      ::reporting::ConfirmRecordUploadResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Sent by Chrome to indicate the record was succesfully uploaded.
   // Record indicated by the provided SequenceInformation.
   virtual void ConfirmRecordUploadAsync(
-      const reporting::ConfirmRecordUploadRequest& in_request,
-      base::OnceCallback<void(const reporting::ConfirmRecordUploadResponse& /*reply*/)> success_callback,
+      const ::reporting::ConfirmRecordUploadRequest& in_request,
+      base::OnceCallback<void(const ::reporting::ConfirmRecordUploadResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Sent by Chrome to update the Missive Daemon Encryption Key.
   virtual bool UpdateEncryptionKey(
-      const reporting::UpdateEncryptionKeyRequest& in_request,
-      reporting::UpdateEncryptionKeyResponse* out_reply,
+      const ::reporting::UpdateEncryptionKeyRequest& in_request,
+      ::reporting::UpdateEncryptionKeyResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
   // Sent by Chrome to update the Missive Daemon Encryption Key.
   virtual void UpdateEncryptionKeyAsync(
-      const reporting::UpdateEncryptionKeyRequest& in_request,
-      base::OnceCallback<void(const reporting::UpdateEncryptionKeyResponse& /*reply*/)> success_callback,
+      const ::reporting::UpdateEncryptionKeyRequest& in_request,
+      base::OnceCallback<void(const ::reporting::UpdateEncryptionKeyResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
 
@@ -129,8 +129,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Enqueues records for encryption, storage, and upload.
   bool EnqueueRecord(
-      const reporting::EnqueueRecordRequest& in_request,
-      reporting::EnqueueRecordResponse* out_reply,
+      const ::reporting::EnqueueRecordRequest& in_request,
+      ::reporting::EnqueueRecordResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
@@ -146,8 +146,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Enqueues records for encryption, storage, and upload.
   void EnqueueRecordAsync(
-      const reporting::EnqueueRecordRequest& in_request,
-      base::OnceCallback<void(const reporting::EnqueueRecordResponse& /*reply*/)> success_callback,
+      const ::reporting::EnqueueRecordRequest& in_request,
+      base::OnceCallback<void(const ::reporting::EnqueueRecordResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     brillo::dbus_utils::CallMethodWithTimeout(
@@ -162,8 +162,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Requests that the indicated priority queue is flushed.
   bool FlushPriority(
-      const reporting::FlushPriorityRequest& in_request,
-      reporting::FlushPriorityResponse* out_reply,
+      const ::reporting::FlushPriorityRequest& in_request,
+      ::reporting::FlushPriorityResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
@@ -179,8 +179,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Requests that the indicated priority queue is flushed.
   void FlushPriorityAsync(
-      const reporting::FlushPriorityRequest& in_request,
-      base::OnceCallback<void(const reporting::FlushPriorityResponse& /*reply*/)> success_callback,
+      const ::reporting::FlushPriorityRequest& in_request,
+      base::OnceCallback<void(const ::reporting::FlushPriorityResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     brillo::dbus_utils::CallMethodWithTimeout(
@@ -196,8 +196,8 @@ class MissivedProxy final : public MissivedProxyInterface {
   // Sent by Chrome to indicate the record was succesfully uploaded.
   // Record indicated by the provided SequenceInformation.
   bool ConfirmRecordUpload(
-      const reporting::ConfirmRecordUploadRequest& in_request,
-      reporting::ConfirmRecordUploadResponse* out_reply,
+      const ::reporting::ConfirmRecordUploadRequest& in_request,
+      ::reporting::ConfirmRecordUploadResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
@@ -214,8 +214,8 @@ class MissivedProxy final : public MissivedProxyInterface {
   // Sent by Chrome to indicate the record was succesfully uploaded.
   // Record indicated by the provided SequenceInformation.
   void ConfirmRecordUploadAsync(
-      const reporting::ConfirmRecordUploadRequest& in_request,
-      base::OnceCallback<void(const reporting::ConfirmRecordUploadResponse& /*reply*/)> success_callback,
+      const ::reporting::ConfirmRecordUploadRequest& in_request,
+      base::OnceCallback<void(const ::reporting::ConfirmRecordUploadResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     brillo::dbus_utils::CallMethodWithTimeout(
@@ -230,8 +230,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Sent by Chrome to update the Missive Daemon Encryption Key.
   bool UpdateEncryptionKey(
-      const reporting::UpdateEncryptionKeyRequest& in_request,
-      reporting::UpdateEncryptionKeyResponse* out_reply,
+      const ::reporting::UpdateEncryptionKeyRequest& in_request,
+      ::reporting::UpdateEncryptionKeyResponse* out_reply,
       brillo::ErrorPtr* error,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
@@ -247,8 +247,8 @@ class MissivedProxy final : public MissivedProxyInterface {
 
   // Sent by Chrome to update the Missive Daemon Encryption Key.
   void UpdateEncryptionKeyAsync(
-      const reporting::UpdateEncryptionKeyRequest& in_request,
-      base::OnceCallback<void(const reporting::UpdateEncryptionKeyResponse& /*reply*/)> success_callback,
+      const ::reporting::UpdateEncryptionKeyRequest& in_request,
+      base::OnceCallback<void(const ::reporting::UpdateEncryptionKeyResponse& /*reply*/)> success_callback,
       base::OnceCallback<void(brillo::Error*)> error_callback,
       int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
     brillo::dbus_utils::CallMethodWithTimeout(

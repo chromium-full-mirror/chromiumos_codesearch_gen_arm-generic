@@ -1,5 +1,5 @@
 {
-	"package": "a92a2adba28a1da8054f6e2192d07a6d8d80ee3edd0eeb5cc9a5a97b107170b1",
+	"package": "9680f4f54b585fabcc767564c39e9afe38c08783e5175ee92d63753a80638983",
 	"files": {
 		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
 		"Cargo.toml": "40cbb98e01f71f3930f0ec25fc1639611aa68f978f8fb0b66f9dae3f7b7c669f",
@@ -9,7 +9,7 @@
 		"src/bindings/client/org_chromium_power_manager.rs": "c80810ef5a9aca5ef006e48823814f019fa4593746711bebd7447e8fbfbcc819",
 		"src/bindings/client/org_chromium_debugd.rs": "00ff00c1c8653a909ec2b12e94f67c9b6141c9222afe5782625bd4b5cbdd796e",
 		"src/bindings/client/org_chromium_userdataauth.rs": "30397a747024a46215bdcea2e172952068daac980fdc678f56ba5115743ac6f9",
-		"src/bindings/client/org_chromium_flimflam_manager.rs": "806b693e170a728be72eea5f12f4f3edaa79c494a2e5577a8fc4299a6894c4e5",
+		"src/bindings/client/org_chromium_flimflam_manager.rs": "861aa6379f4b126142bb0c13619f258c123b18128ea6eb7c865f080e1dd41258",
 		"src/bindings/client/org_chromium_vtpm.rs": "2fe321efb81b496a3d418b2e0a7c1fb1b9323a63459e1c42c5d67399a3833455",
 		"src/bindings/client/org_chromium_flimflam_service.rs": "30e85b38f5ee4fba7135d2d73829a0842f05da90f72acb50d3a88a155638ad4d",
 		"src/bindings/client/org_chromium_dlcservice.rs": "412a96fa3cda580e3c7472aa71c1f07e526b5b51a514bea0c36dd799bf308d81",
@@ -17,7 +17,7 @@
 		"src/OWNERS": "268c5667b34ea8686da836537bec5d4a1dd92e1bcc1c02b023ff8805b0dddb21",
 		"src/protos/rpc.rs": "03fd3aaa77e84e3506e86d5c361ffb05e32e0d821f04070966936240e9a81f09",
 		"src/protos/vtpm_interface.rs": "d29a48b7a2ba3a14b87b552deecd32772f6ae96f57428415ddcba1ca482b60b5",
-		"src/protos/auth_factor.rs": "859e5404682346a029b5297eaaf6311d77aa7dd06a45a83f2c0d86a7a0a2fabe",
+		"src/protos/auth_factor.rs": "03d478b07994dbe6ca6e220405bd2ebb4cb74104bdb413cc8657175cb0391bdb",
 		"src/protos/dlcservice.rs": "d5831fe5eb972321e9197314c84f218b76652c1fe9303fe55d55cb37a0fce1b3",
 		"src/protos/UserDataAuth.rs": "46d0f83240447424d3f3fa7ef3f5f7d9c9563658172c0118a723279d219f26a2",
 		"src/protos/fido.rs": "f2e2e1e52320ff65c97a2b883437bef59225f7ea4b96eef68f0764d745369a0f",

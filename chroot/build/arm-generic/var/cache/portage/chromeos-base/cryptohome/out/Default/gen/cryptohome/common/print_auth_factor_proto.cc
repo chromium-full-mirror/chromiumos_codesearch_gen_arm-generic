@@ -43,6 +43,9 @@ std::string GetProtoDebugStringWithIndent(AuthFactorType value,
   if (value == AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY) {
     return "AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY";
   }
+  if (value == AUTH_FACTOR_TYPE_KIOSK) {
+    return "AUTH_FACTOR_TYPE_KIOSK";
+  }
   return "<unknown>";
 }
 
@@ -122,6 +125,20 @@ std::string GetProtoDebugStringWithIndent(
   return output;
 }
 
+std::string GetProtoDebugString(const KioskAuthInput& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const KioskAuthInput& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const AuthInput& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -151,6 +168,13 @@ std::string GetProtoDebugStringWithIndent(const AuthInput& value,
                       GetProtoDebugStringWithIndent(
                           value.cryptohome_recovery_input(), indent_size + 2)
                           .c_str());
+  output += "\n";
+
+  output += indent + "  kiosk_input: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.kiosk_input(), indent_size + 2)
+          .c_str());
   output += "\n";
 
   output += indent + "}\n";
@@ -204,6 +228,20 @@ std::string GetProtoDebugStringWithIndent(
   return output;
 }
 
+std::string GetProtoDebugString(const KioskMetadata& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const KioskMetadata& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const AuthFactor& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -248,6 +286,13 @@ std::string GetProtoDebugStringWithIndent(const AuthFactor& value,
                       GetProtoDebugStringWithIndent(
                           value.cryptohome_recovery_metadata(), indent_size + 2)
                           .c_str());
+  output += "\n";
+
+  output += indent + "  kiosk_metadata: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.kiosk_metadata(), indent_size + 2)
+          .c_str());
   output += "\n";
 
   output += indent + "}\n";

@@ -2,22 +2,22 @@
 	"package": "5b057365138d2717faedce91b5f253bec3c2645686729f5a77da4a3ad522f00b",
 	"files": {
 		"README.md": "c4de6d371be847bc2365e656fd54ef1e7753325801a9d25f7d1fdf7d4f562b7a",
-		"examples/README.md": "0e78ec5593bb1865ee306993690fd8fdfd2a020e835e8f6079e0ca468ec01cce",
-		"Cargo.toml": "48cc1a52daaf0de0a77dac4b6c4ca79096fb894da2e5f432d94089830461a571",
-		"src/attrs.rs": "c0add0ea29e07a58834d2dbc74c9ece4d080f8f83a8b152a4f64da0f25904341",
-		"src/derives/clap.rs": "06c92e8957af9a5c2d9af8e6ad5fe9ac98aa74dbfcacab09ae4e96603637918a",
 		"src/derives/into_app.rs": "97d40f74708c3f0d13bc4d4b29f135864699493a9b66dcfcc539b5d2d0a34411",
-		"src/derives/from_arg_matches.rs": "cd3bfe1591f6fe29830474e08182c7f236873650ce92c4bdd9dfde9dcb226ba9",
 		"src/derives/subcommand.rs": "75415aa747baa738db2b1c300c9629afd5070ff7226b8931882b99d29d1d3118",
-		"src/derives/mod.rs": "0eb596920148e61c88bf086c33032265fb4f11eccdf28b44c663baad417f44a0",
+		"src/derives/from_arg_matches.rs": "cd3bfe1591f6fe29830474e08182c7f236873650ce92c4bdd9dfde9dcb226ba9",
 		"src/derives/arg_enum.rs": "24a4a8f2acff49f8dea2f73e0d1219360eeb4436567fd0e42bde2a139ed40468",
+		"src/derives/clap.rs": "06c92e8957af9a5c2d9af8e6ad5fe9ac98aa74dbfcacab09ae4e96603637918a",
+		"src/derives/mod.rs": "0eb596920148e61c88bf086c33032265fb4f11eccdf28b44c663baad417f44a0",
+		"src/attrs.rs": "c0add0ea29e07a58834d2dbc74c9ece4d080f8f83a8b152a4f64da0f25904341",
 		"src/dummies.rs": "de05c64911b96429e20763a2490b00566662a798d7cd9129cff9e7776e47b733",
+		"src/lib.rs": "330b0c7a034e53a57a03383df899a70d21751608c252337937541ff446bacbf9",
 		"src/utils/doc_comments.rs": "0911bfeeefadb0957ebec61abed7f4c142d7692587f8110bd35d7ea1afe9465f",
+		"src/utils/ty.rs": "441c17b71edb2db1cdd6c6a3cda318d998167602ce120155c121a49e364423b6",
 		"src/utils/spanned.rs": "47728683b26c843b3eb3c2dfee0fd66976a65d57b502ac2ef549fa460d5bf164",
 		"src/utils/mod.rs": "db9cff1ef75ae670d7dade42e3058b9148d71cf7a124777355d1953eba975f57",
-		"src/utils/ty.rs": "441c17b71edb2db1cdd6c6a3cda318d998167602ce120155c121a49e364423b6",
-		"src/lib.rs": "330b0c7a034e53a57a03383df899a70d21751608c252337937541ff446bacbf9",
 		"src/parse.rs": "4744845330bbc3ebb391a1a37b082f8dafc55388ded6ebe663abb85e76543f86",
-		"Cargo.toml.orig": "383f21e238915cb635c19267021a43b35d2842143ad7179e140afa9a84dfc68d"
+		"examples/README.md": "0e78ec5593bb1865ee306993690fd8fdfd2a020e835e8f6079e0ca468ec01cce",
+		"Cargo.toml.orig": "383f21e238915cb635c19267021a43b35d2842143ad7179e140afa9a84dfc68d",
+		"Cargo.toml": "48cc1a52daaf0de0a77dac4b6c4ca79096fb894da2e5f432d94089830461a571"
 	}
 }

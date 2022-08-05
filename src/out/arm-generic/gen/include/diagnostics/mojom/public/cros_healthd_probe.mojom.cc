@@ -5638,8 +5638,8 @@ bool NonRemovableBlockDeviceResult::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context, false);
 }
-BlockDeviceVendor::BlockDeviceVendor() : tag_(Tag::NVME_SUBSYSTEM_VENDOR) {
-  data_.nvme_subsystem_vendor = uint32_t();
+BlockDeviceVendor::BlockDeviceVendor() : tag_(Tag::UNKNOWN) {
+  data_.unknown = uint64_t();
 }
 
 BlockDeviceVendor::~BlockDeviceVendor() {
@@ -5647,6 +5647,14 @@ BlockDeviceVendor::~BlockDeviceVendor() {
 }
 
 
+void BlockDeviceVendor::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 void BlockDeviceVendor::set_nvme_subsystem_vendor(
     uint32_t nvme_subsystem_vendor) {
   if (tag_ != Tag::NVME_SUBSYSTEM_VENDOR) {
@@ -5675,6 +5683,9 @@ void BlockDeviceVendor::set_other(
 void BlockDeviceVendor::DestroyActive() {
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+
+      break;
     case Tag::NVME_SUBSYSTEM_VENDOR:
 
       break;
@@ -5690,6 +5701,8 @@ size_t BlockDeviceVendor::Hash(size_t seed) const {
   seed = mojo::internal::HashCombine(seed, static_cast<uint32_t>(tag_));
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     case Tag::NVME_SUBSYSTEM_VENDOR:
       return mojo::internal::Hash(seed, data_.nvme_subsystem_vendor);
     case Tag::EMMC_OEMID:
@@ -5707,8 +5720,8 @@ bool BlockDeviceVendor::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context, false);
 }
-BlockDeviceProduct::BlockDeviceProduct() : tag_(Tag::NVME_SUBSYSTEM_DEVICE) {
-  data_.nvme_subsystem_device = uint32_t();
+BlockDeviceProduct::BlockDeviceProduct() : tag_(Tag::UNKNOWN) {
+  data_.unknown = uint64_t();
 }
 
 BlockDeviceProduct::~BlockDeviceProduct() {
@@ -5716,6 +5729,14 @@ BlockDeviceProduct::~BlockDeviceProduct() {
 }
 
 
+void BlockDeviceProduct::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 void BlockDeviceProduct::set_nvme_subsystem_device(
     uint32_t nvme_subsystem_device) {
   if (tag_ != Tag::NVME_SUBSYSTEM_DEVICE) {
@@ -5744,6 +5765,9 @@ void BlockDeviceProduct::set_other(
 void BlockDeviceProduct::DestroyActive() {
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+
+      break;
     case Tag::NVME_SUBSYSTEM_DEVICE:
 
       break;
@@ -5759,6 +5783,8 @@ size_t BlockDeviceProduct::Hash(size_t seed) const {
   seed = mojo::internal::HashCombine(seed, static_cast<uint32_t>(tag_));
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     case Tag::NVME_SUBSYSTEM_DEVICE:
       return mojo::internal::Hash(seed, data_.nvme_subsystem_device);
     case Tag::EMMC_PNM:
@@ -5776,8 +5802,8 @@ bool BlockDeviceProduct::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context, false);
 }
-BlockDeviceRevision::BlockDeviceRevision() : tag_(Tag::NVME_PCIE_REV) {
-  data_.nvme_pcie_rev = uint8_t();
+BlockDeviceRevision::BlockDeviceRevision() : tag_(Tag::UNKNOWN) {
+  data_.unknown = uint64_t();
 }
 
 BlockDeviceRevision::~BlockDeviceRevision() {
@@ -5785,6 +5811,14 @@ BlockDeviceRevision::~BlockDeviceRevision() {
 }
 
 
+void BlockDeviceRevision::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 void BlockDeviceRevision::set_nvme_pcie_rev(
     uint8_t nvme_pcie_rev) {
   if (tag_ != Tag::NVME_PCIE_REV) {
@@ -5813,6 +5847,9 @@ void BlockDeviceRevision::set_other(
 void BlockDeviceRevision::DestroyActive() {
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+
+      break;
     case Tag::NVME_PCIE_REV:
 
       break;
@@ -5828,6 +5865,8 @@ size_t BlockDeviceRevision::Hash(size_t seed) const {
   seed = mojo::internal::HashCombine(seed, static_cast<uint32_t>(tag_));
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     case Tag::NVME_PCIE_REV:
       return mojo::internal::Hash(seed, data_.nvme_pcie_rev);
     case Tag::EMMC_PRV:
@@ -5845,8 +5884,8 @@ bool BlockDeviceRevision::Validate(
     mojo::internal::ValidationContext* validation_context) {
   return Data_::Validate(data, validation_context, false);
 }
-BlockDeviceFirmware::BlockDeviceFirmware() : tag_(Tag::NVME_FIRMWARE_REV) {
-  data_.nvme_firmware_rev = uint64_t();
+BlockDeviceFirmware::BlockDeviceFirmware() : tag_(Tag::UNKNOWN) {
+  data_.unknown = uint64_t();
 }
 
 BlockDeviceFirmware::~BlockDeviceFirmware() {
@@ -5854,6 +5893,14 @@ BlockDeviceFirmware::~BlockDeviceFirmware() {
 }
 
 
+void BlockDeviceFirmware::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 void BlockDeviceFirmware::set_nvme_firmware_rev(
     uint64_t nvme_firmware_rev) {
   if (tag_ != Tag::NVME_FIRMWARE_REV) {
@@ -5882,6 +5929,9 @@ void BlockDeviceFirmware::set_other(
 void BlockDeviceFirmware::DestroyActive() {
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+
+      break;
     case Tag::NVME_FIRMWARE_REV:
 
       break;
@@ -5897,6 +5947,8 @@ size_t BlockDeviceFirmware::Hash(size_t seed) const {
   seed = mojo::internal::HashCombine(seed, static_cast<uint32_t>(tag_));
   switch (tag_) {
 
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     case Tag::NVME_FIRMWARE_REV:
       return mojo::internal::Hash(seed, data_.nvme_firmware_rev);
     case Tag::EMMC_FWREV:
@@ -8523,6 +8575,10 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView, :
   using Tag = UnionType::Tag;
 
   switch (input.tag()) {
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     case Tag::NVME_SUBSYSTEM_VENDOR: {
       *output = UnionType::NewNvmeSubsystemVendor(input.nvme_subsystem_vendor());
       break;
@@ -8537,7 +8593,8 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView, :
     }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8550,6 +8607,10 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataView, 
   using Tag = UnionType::Tag;
 
   switch (input.tag()) {
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     case Tag::NVME_SUBSYSTEM_DEVICE: {
       *output = UnionType::NewNvmeSubsystemDevice(input.nvme_subsystem_device());
       break;
@@ -8564,7 +8625,8 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataView, 
     }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8577,6 +8639,10 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataView,
   using Tag = UnionType::Tag;
 
   switch (input.tag()) {
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     case Tag::NVME_PCIE_REV: {
       *output = UnionType::NewNvmePcieRev(input.nvme_pcie_rev());
       break;
@@ -8591,7 +8657,8 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataView,
     }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8604,6 +8671,10 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataView,
   using Tag = UnionType::Tag;
 
   switch (input.tag()) {
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     case Tag::NVME_FIRMWARE_REV: {
       *output = UnionType::NewNvmeFirmwareRev(input.nvme_firmware_rev());
       break;
@@ -8618,7 +8689,8 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataView,
     }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }

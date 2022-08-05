@@ -31,13 +31,38 @@
 
 namespace hwsec {
 
+struct Tpm2PolicyDigest {
+  brillo::Blob digest;
+};
+
+}  // namespace hwsec
+
+namespace hwsec {
+
 struct Tpm2PolicySignedData {
   brillo::Blob public_key_spki_der;
   brillo::Blob srk_wrapped_secret;
   std::optional<int32_t> scheme;
   std::optional<int32_t> hash_alg;
-  brillo::Blob default_pcr_policy_digest;
-  brillo::Blob extended_pcr_policy_digest;
+  std::vector<::hwsec::Tpm2PolicyDigest> pcr_policy_digests;
+};
+
+}  // namespace hwsec
+
+namespace hwsec {
+
+struct Tpm12PcrValue {
+  std::optional<uint32_t> pcr_index;
+  brillo::Blob pcr_value;
+};
+
+}  // namespace hwsec
+
+namespace hwsec {
+
+struct Tpm12PcrBoundItem {
+  std::vector<::hwsec::Tpm12PcrValue> pcr_values;
+  brillo::Blob bound_secret;
 };
 
 }  // namespace hwsec
@@ -49,8 +74,7 @@ struct Tpm12CertifiedMigratableKeyData {
   brillo::Blob srk_wrapped_cmk;
   brillo::Blob cmk_pubkey;
   brillo::Blob cmk_wrapped_auth_data;
-  brillo::Blob default_pcr_bound_secret;
-  brillo::Blob extended_pcr_bound_secret;
+  std::vector<::hwsec::Tpm12PcrBoundItem> pcr_bound_items;
 };
 
 }  // namespace hwsec

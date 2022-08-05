@@ -149,6 +149,9 @@ class ManagerInterface {
   virtual bool SetTetheringEnabled(
       brillo::ErrorPtr* error,
       bool in_1) = 0;
+  virtual bool CheckTetheringReadiness(
+      brillo::ErrorPtr* error,
+      std::string* out_1) = 0;
 };
 
 // Interface adaptor for org::chromium::flimflam::Manager.
@@ -314,6 +317,10 @@ class ManagerAdaptor {
         "SetTetheringEnabled",
         base::Unretained(interface_),
         &ManagerInterface::SetTetheringEnabled);
+    itf->AddSimpleMethodHandlerWithError(
+        "CheckTetheringReadiness",
+        base::Unretained(interface_),
+        &ManagerInterface::CheckTetheringReadiness);
 
     signal_PropertyChanged_ = itf->RegisterSignalOfType<SignalPropertyChangedType>("PropertyChanged");
     signal_StateChanged_ = itf->RegisterSignalOfType<SignalStateChangedType>("StateChanged");
@@ -462,6 +469,9 @@ class ManagerAdaptor {
         "    </method>\n"
         "    <method name=\"SetTetheringEnabled\">\n"
         "      <arg name=\"\" type=\"b\" direction=\"in\"/>\n"
+        "    </method>\n"
+        "    <method name=\"CheckTetheringReadiness\">\n"
+        "      <arg name=\"\" type=\"s\" direction=\"out\"/>\n"
         "    </method>\n"
         "    <signal name=\"PropertyChanged\">\n"
         "      <arg name=\"\" type=\"s\"/>\n"

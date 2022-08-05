@@ -86,6 +86,21 @@ enum JSONParserOptions {
 
 class BASE_EXPORT JSONReader {
  public:
+  struct BASE_EXPORT Error {
+    Error();
+    Error(Error&& other);
+    Error& operator=(Error&& other);
+
+    Error(const Error&) = delete;
+    Error& operator=(const Error&) = delete;
+
+    ~Error();
+
+    std::string message;
+    int line = 0;
+    int column = 0;
+  };
+
   struct BASE_EXPORT ValueWithError {
     ValueWithError();
     ValueWithError(ValueWithError&& other);
@@ -98,11 +113,46 @@ class BASE_EXPORT JSONReader {
 
     absl::optional<Value> value;
 
+    constexpr Error& error() {
+      CHECK(!value);
+      return error_;
+    }
+
+    constexpr bool has_value() const noexcept { return value.has_value(); }
+
+    constexpr Value* operator->() noexcept {
+      CHECK(value);
+      return std::addressof(*value);
+    }
+    constexpr const Value* operator->() const noexcept {
+      CHECK(value);
+      return std::addressof(*value);
+    }
+
+    constexpr Value& operator*() & noexcept {
+      CHECK(value);
+      return *value;
+    }
+    constexpr const Value& operator*() const& noexcept {
+      CHECK(value);
+      return *value;
+    }
+    constexpr Value&& operator*() && noexcept {
+      CHECK(value);
+      return std::move(*value);
+    }
+    constexpr const Value&& operator*() const&& noexcept {
+      CHECK(value);
+      return std::move(*value);
+    }
+
     // Contains default values if |value| exists, or the error status if |value|
     // is absl::nullopt.
     std::string error_message;
     int error_line = 0;
     int error_column = 0;
+
+    Error error_;
   };
 
   // This class contains only static methods.

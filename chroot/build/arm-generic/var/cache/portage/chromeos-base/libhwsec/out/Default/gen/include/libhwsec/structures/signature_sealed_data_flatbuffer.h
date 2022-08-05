@@ -38,6 +38,40 @@
 namespace hwsec_foundation {
 
 template <>
+struct ToFlatBuffer<::hwsec::Tpm2PolicyDigest> {
+  using ResultType =
+      flatbuffers::Offset<::hwsec::_serialized_::Tpm2PolicyDigest>;
+
+  ResultType operator()(flatbuffers::FlatBufferBuilder* builder,
+                        const ::hwsec::Tpm2PolicyDigest& object) const {
+    auto digest = ToFlatBuffer<brillo::Blob>()(builder, object.digest);
+
+    return ::hwsec::_serialized_::CreateTpm2PolicyDigest(*builder, digest);
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
+struct FromFlatBuffer<::hwsec::Tpm2PolicyDigest> {
+  ::hwsec::Tpm2PolicyDigest operator()(
+      const ::hwsec::_serialized_::Tpm2PolicyDigest* object) const {
+    if (object == nullptr) {
+      return ::hwsec::Tpm2PolicyDigest();
+    }
+    return ::hwsec::Tpm2PolicyDigest{
+        .digest = FromFlatBuffer<brillo::Blob>()(object->digest()),
+    };
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
 struct ToFlatBuffer<::hwsec::Tpm2PolicySignedData> {
   using ResultType =
       flatbuffers::Offset<::hwsec::_serialized_::Tpm2PolicySignedData>;
@@ -52,14 +86,13 @@ struct ToFlatBuffer<::hwsec::Tpm2PolicySignedData> {
         ToFlatBuffer<std::optional<int32_t>>()(builder, object.scheme);
     auto hash_alg =
         ToFlatBuffer<std::optional<int32_t>>()(builder, object.hash_alg);
-    auto default_pcr_policy_digest =
-        ToFlatBuffer<brillo::Blob>()(builder, object.default_pcr_policy_digest);
-    auto extended_pcr_policy_digest = ToFlatBuffer<brillo::Blob>()(
-        builder, object.extended_pcr_policy_digest);
+    auto pcr_policy_digests =
+        ToFlatBuffer<std::vector<::hwsec::Tpm2PolicyDigest>>()(
+            builder, object.pcr_policy_digests);
 
     return ::hwsec::_serialized_::CreateTpm2PolicySignedData(
         *builder, public_key_spki_der, srk_wrapped_secret, scheme, hash_alg,
-        default_pcr_policy_digest, extended_pcr_policy_digest);
+        pcr_policy_digests);
   }
 };
 
@@ -82,10 +115,87 @@ struct FromFlatBuffer<::hwsec::Tpm2PolicySignedData> {
         .scheme = FromFlatBuffer<std::optional<int32_t>>()(object->scheme()),
         .hash_alg =
             FromFlatBuffer<std::optional<int32_t>>()(object->hash_alg()),
-        .default_pcr_policy_digest =
-            FromFlatBuffer<brillo::Blob>()(object->default_pcr_policy_digest()),
-        .extended_pcr_policy_digest = FromFlatBuffer<brillo::Blob>()(
-            object->extended_pcr_policy_digest()),
+        .pcr_policy_digests =
+            FromFlatBuffer<std::vector<::hwsec::Tpm2PolicyDigest>>()(
+                object->pcr_policy_digests()),
+    };
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
+struct ToFlatBuffer<::hwsec::Tpm12PcrValue> {
+  using ResultType = flatbuffers::Offset<::hwsec::_serialized_::Tpm12PcrValue>;
+
+  ResultType operator()(flatbuffers::FlatBufferBuilder* builder,
+                        const ::hwsec::Tpm12PcrValue& object) const {
+    auto pcr_index =
+        ToFlatBuffer<std::optional<uint32_t>>()(builder, object.pcr_index);
+    auto pcr_value = ToFlatBuffer<brillo::Blob>()(builder, object.pcr_value);
+
+    return ::hwsec::_serialized_::CreateTpm12PcrValue(*builder, pcr_index,
+                                                      pcr_value);
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
+struct FromFlatBuffer<::hwsec::Tpm12PcrValue> {
+  ::hwsec::Tpm12PcrValue operator()(
+      const ::hwsec::_serialized_::Tpm12PcrValue* object) const {
+    if (object == nullptr) {
+      return ::hwsec::Tpm12PcrValue();
+    }
+    return ::hwsec::Tpm12PcrValue{
+        .pcr_index =
+            FromFlatBuffer<std::optional<uint32_t>>()(object->pcr_index()),
+        .pcr_value = FromFlatBuffer<brillo::Blob>()(object->pcr_value()),
+    };
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
+struct ToFlatBuffer<::hwsec::Tpm12PcrBoundItem> {
+  using ResultType =
+      flatbuffers::Offset<::hwsec::_serialized_::Tpm12PcrBoundItem>;
+
+  ResultType operator()(flatbuffers::FlatBufferBuilder* builder,
+                        const ::hwsec::Tpm12PcrBoundItem& object) const {
+    auto pcr_values = ToFlatBuffer<std::vector<::hwsec::Tpm12PcrValue>>()(
+        builder, object.pcr_values);
+    auto bound_secret =
+        ToFlatBuffer<brillo::Blob>()(builder, object.bound_secret);
+
+    return ::hwsec::_serialized_::CreateTpm12PcrBoundItem(*builder, pcr_values,
+                                                          bound_secret);
+  }
+};
+
+}  // namespace hwsec_foundation
+
+namespace hwsec_foundation {
+
+template <>
+struct FromFlatBuffer<::hwsec::Tpm12PcrBoundItem> {
+  ::hwsec::Tpm12PcrBoundItem operator()(
+      const ::hwsec::_serialized_::Tpm12PcrBoundItem* object) const {
+    if (object == nullptr) {
+      return ::hwsec::Tpm12PcrBoundItem();
+    }
+    return ::hwsec::Tpm12PcrBoundItem{
+        .pcr_values = FromFlatBuffer<std::vector<::hwsec::Tpm12PcrValue>>()(
+            object->pcr_values()),
+        .bound_secret = FromFlatBuffer<brillo::Blob>()(object->bound_secret()),
     };
   }
 };
@@ -109,15 +219,13 @@ struct ToFlatBuffer<::hwsec::Tpm12CertifiedMigratableKeyData> {
     auto cmk_pubkey = ToFlatBuffer<brillo::Blob>()(builder, object.cmk_pubkey);
     auto cmk_wrapped_auth_data =
         ToFlatBuffer<brillo::Blob>()(builder, object.cmk_wrapped_auth_data);
-    auto default_pcr_bound_secret =
-        ToFlatBuffer<brillo::Blob>()(builder, object.default_pcr_bound_secret);
-    auto extended_pcr_bound_secret =
-        ToFlatBuffer<brillo::Blob>()(builder, object.extended_pcr_bound_secret);
+    auto pcr_bound_items =
+        ToFlatBuffer<std::vector<::hwsec::Tpm12PcrBoundItem>>()(
+            builder, object.pcr_bound_items);
 
     return ::hwsec::_serialized_::CreateTpm12CertifiedMigratableKeyData(
         *builder, public_key_spki_der, srk_wrapped_cmk, cmk_pubkey,
-        cmk_wrapped_auth_data, default_pcr_bound_secret,
-        extended_pcr_bound_secret);
+        cmk_wrapped_auth_data, pcr_bound_items);
   }
 };
 
@@ -141,10 +249,9 @@ struct FromFlatBuffer<::hwsec::Tpm12CertifiedMigratableKeyData> {
         .cmk_pubkey = FromFlatBuffer<brillo::Blob>()(object->cmk_pubkey()),
         .cmk_wrapped_auth_data =
             FromFlatBuffer<brillo::Blob>()(object->cmk_wrapped_auth_data()),
-        .default_pcr_bound_secret =
-            FromFlatBuffer<brillo::Blob>()(object->default_pcr_bound_secret()),
-        .extended_pcr_bound_secret =
-            FromFlatBuffer<brillo::Blob>()(object->extended_pcr_bound_secret()),
+        .pcr_bound_items =
+            FromFlatBuffer<std::vector<::hwsec::Tpm12PcrBoundItem>>()(
+                object->pcr_bound_items()),
     };
   }
 };

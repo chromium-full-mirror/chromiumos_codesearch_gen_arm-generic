@@ -2,19 +2,20 @@
   "cache": [
     {
       "key": {
-        "key": "service_account/machine-default@prodx-mon-chrome-infra.google.com.iam.gserviceaccount.com/3ed4f6c379ceaa658ec59c911aab348f52f66142",
+        "key": "luci_ts/cas-read-write@chromium-swarm.iam.gserviceaccount.com/luci-token-server.appspot.com/@internal:chromium-swarm/cas-read-write",
         "scopes": [
-          "https://www.googleapis.com/auth/prodxmon"
+          "https://www.googleapis.com/auth/cloud-platform"
         ]
       },
       "token": {
-        "access_token": "ya29.c.b0AXv0zTMI4E6Vieq5_i_BeJhcyKsveaIJoR_bQ9V693osgTyFDMZgy8W-gbfun0NKapOW-bVwpuq2GcLZvExTIKPK-wK5rokQGqgsqFchZ4x5Jthm9BQhYSIjOonSOEv1ZzOClYL7GhaaWTv4j6sEAPJ6dq1Vb9MQeCq8aSkv_ryiT88BPMeIgFNdameXQI0YUJQ7Dg-CFYm_rXhU_6BjoWxdK8a9lQ4........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................",
+        "access_token": "ya29.c.b0AXv0zTNkP64T56rw8Fucptgfbb3q1NJCCAgFgKw_NsbTwtuOSGmDfuR_uweB-DbiQK36b3NUtMSbG12n8cD7zM709Q0w5GTF0st3NmTTt46Sa915-hZUP-RXXmIiHiUKRhF6XypwlgU2idf-WWwIb23zy8ZLr7cWymRUi0vAGtUXrmfsWldqssZQtG6fLqyLWBW89iOy317OxpxggnuhufISavFLAAtOuwgXWn8TWD54knjmJZINl08cmUX5dulnx8drzhHS6I8qJXqn1Uh38ZKQgXdNE8Uvvlfg8BErmxWKgZVvxplFMo4q5BsfDzHuqrZuCnFurv9b1otK6fhP7Yn4t__fEzxXHLis7Eu1jsd2qv6z7-1Pd4LkghLUFsMgsL1E07h6FjH9Y4XkyrlSO5smjei53xC4nn8....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................",
         "token_type": "Bearer",
-        "expiry": "2022-07-12T14:59:07.03252275Z"
+        "expiry": "2022-07-12T12:11:40Z"
       },
-      "email": "machine-default@prodx-mon-chrome-infra.google.com.iam.gserviceaccount.com",
-      "last_update": "2022-07-12T13:59:08.032574161Z"
+      "id_token": "-",
+      "email": "cas-read-write@chromium-swarm.iam.gserviceaccount.com",
+      "last_update": "2022-07-12T11:16:36.654251574Z"
     }
   ],
-  "last_update": "2022-07-12T13:59:08.032574161Z"
+  "last_update": "2022-05-25T20:44:41.91691614Z"
 }

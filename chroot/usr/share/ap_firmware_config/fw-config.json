@@ -1845,6 +1845,384 @@
       "programmer": "host"
     }
   },
+  "ghost": {
+    "c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_c2d2": {
+      "dut_control_off": [
+        [
+          "spi2_vref:off"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ],
+        [
+          "ap_flash_select:off"
+        ],
+        [
+          "spi2_vref:pp3300"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:serial=%s"
+    },
+    "servo_v4p1_with_ccd": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_cr50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_gsc": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "servo_v4p1_with_ccd_ti50": {
+      "dut_control_off": [
+        [
+          "power_state:reset"
+        ]
+      ],
+      "dut_control_on": [
+        [
+          "ec_uart_timeout:10"
+        ],
+        [
+          "ec_uart_cmd:apshutdown"
+        ],
+        [
+          "sleep:5"
+        ],
+        [
+          "ec_uart_cmd:gpioset en_s5_rails 1"
+        ]
+      ],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "raiden_debug_spi:target=AP,custom_rst=True,serial=%s"
+    },
+    "ssh": {
+      "dut_control_off": [],
+      "dut_control_on": [],
+      "flash_extra_flags_flashrom": [],
+      "flash_extra_flags_futility": [],
+      "force_flashrom": false,
+      "programmer": "host"
+    }
+  },
   "grunt": {
     "ccd_cr50": {
       "dut_control_off": [],

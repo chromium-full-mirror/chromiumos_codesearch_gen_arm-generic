@@ -5375,6 +5375,14 @@ class depgraph(object):
 				mreasons = []
 				violated_atom = atom.unevaluated_atom.violated_conditionals(self._pkg_use_enabled(pkg), \
 					pkg.iuse.is_valid_flag, self._pkg_use_enabled(myparent))
+				if not violated_atom.use:
+					msg = [
+						"violated_atom.use not set:",
+						str(violated_atom),
+					]
+					message = "\n".join(msg)
+					writemsg_level(f"{message}\n", noiselevel=-1, level=logging.WARNING)
+					continue
 				if not (violated_atom.use.enabled or violated_atom.use.disabled):
 					#all violated use deps are conditional
 					changes = []

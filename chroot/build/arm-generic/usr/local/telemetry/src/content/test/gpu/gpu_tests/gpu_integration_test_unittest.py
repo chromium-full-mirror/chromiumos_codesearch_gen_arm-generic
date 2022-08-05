@@ -148,6 +148,11 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
             # We don't want the underlying typ-based tests to report their
             # results to ResultDB.
             '--disable-resultsink',
+            # These tests currently rely on some information sticking around
+            # between tests, so we need to use the older global process pool
+            # approach instead of having different pools scoped for
+            # parallel/serial execution.
+            '--use-global-pool',
         ] + extra_args
         processed_args = run_gpu_integration_test.ProcessArgs(test_argv)
         telemetry_args = browser_test_runner.ProcessConfig(
@@ -242,8 +247,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
         _GetTagsToTest(browser),
         set([
             'win', 'win10', 'release', 'nvidia', 'nvidia-0x1cb3', 'angle-d3d9',
-            'no-passthrough', 'no-swiftshader-gl', 'skia-renderer-disabled',
-            'no-oop-c', 'no-asan'
+            'no-passthrough', 'skia-renderer-disabled', 'no-oop-c', 'no-asan'
         ]))
 
   @mock.patch('sys.platform', 'darwin')
@@ -260,7 +264,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
         set([
             'mac', 'mojave', 'release', 'imagination', 'no-asan',
             'imagination-PowerVR-SGX-554', 'angle-opengles', 'passthrough',
-            'no-swiftshader-gl', 'skia-renderer-disabled', 'no-oop-c'
+            'skia-renderer-disabled', 'no-oop-c'
         ]))
 
   @mock.patch('sys.platform', 'darwin')
@@ -275,8 +279,7 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
         set([
             'mac', 'mojave', 'release', 'imagination', 'no-asan',
             'imagination-Triangle-Monster-3000', 'angle-disabled',
-            'no-passthrough', 'no-swiftshader-gl', 'skia-renderer-disabled',
-            'no-oop-c'
+            'no-passthrough', 'skia-renderer-disabled', 'no-oop-c'
         ]))
 
   @mock.patch.dict(os.environ, clear=True)
@@ -505,6 +508,11 @@ class GpuIntegrationTestUnittest(unittest.TestCase):
               # We don't want the underlying typ-based tests to report their
               # results to ResultDB.
               '--disable-resultsink',
+              # These tests currently rely on some information sticking around
+              # between tests, so we need to use the older global process pool
+              # approach instead of having different pools scoped for
+              # parallel/serial execution.
+              '--use-global-pool',
           ] + test_args.additional_args)
       run_browser_tests.RunTests(args)
       with open(test_results_path) as f:

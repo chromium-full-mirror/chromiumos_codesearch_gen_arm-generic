@@ -45,7 +45,7 @@ struct TableStruct_auth_5ffactor_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,6 +64,12 @@ extern CryptohomeRecoveryAuthInputDefaultTypeInternal _CryptohomeRecoveryAuthInp
 class CryptohomeRecoveryMetadata;
 struct CryptohomeRecoveryMetadataDefaultTypeInternal;
 extern CryptohomeRecoveryMetadataDefaultTypeInternal _CryptohomeRecoveryMetadata_default_instance_;
+class KioskAuthInput;
+struct KioskAuthInputDefaultTypeInternal;
+extern KioskAuthInputDefaultTypeInternal _KioskAuthInput_default_instance_;
+class KioskMetadata;
+struct KioskMetadataDefaultTypeInternal;
+extern KioskMetadataDefaultTypeInternal _KioskMetadata_default_instance_;
 class PasswordAuthInput;
 struct PasswordAuthInputDefaultTypeInternal;
 extern PasswordAuthInputDefaultTypeInternal _PasswordAuthInput_default_instance_;
@@ -82,6 +88,8 @@ template<> ::user_data_auth::AuthFactor* Arena::CreateMaybeMessage<::user_data_a
 template<> ::user_data_auth::AuthInput* Arena::CreateMaybeMessage<::user_data_auth::AuthInput>(Arena*);
 template<> ::user_data_auth::CryptohomeRecoveryAuthInput* Arena::CreateMaybeMessage<::user_data_auth::CryptohomeRecoveryAuthInput>(Arena*);
 template<> ::user_data_auth::CryptohomeRecoveryMetadata* Arena::CreateMaybeMessage<::user_data_auth::CryptohomeRecoveryMetadata>(Arena*);
+template<> ::user_data_auth::KioskAuthInput* Arena::CreateMaybeMessage<::user_data_auth::KioskAuthInput>(Arena*);
+template<> ::user_data_auth::KioskMetadata* Arena::CreateMaybeMessage<::user_data_auth::KioskMetadata>(Arena*);
 template<> ::user_data_auth::PasswordAuthInput* Arena::CreateMaybeMessage<::user_data_auth::PasswordAuthInput>(Arena*);
 template<> ::user_data_auth::PasswordMetadata* Arena::CreateMaybeMessage<::user_data_auth::PasswordMetadata>(Arena*);
 template<> ::user_data_auth::PinAuthInput* Arena::CreateMaybeMessage<::user_data_auth::PinAuthInput>(Arena*);
@@ -94,12 +102,13 @@ enum AuthFactorType : int {
   AUTH_FACTOR_TYPE_PASSWORD = 1,
   AUTH_FACTOR_TYPE_PIN = 2,
   AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY = 3,
+  AUTH_FACTOR_TYPE_KIOSK = 4,
   AuthFactorType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   AuthFactorType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool AuthFactorType_IsValid(int value);
 constexpr AuthFactorType AuthFactorType_MIN = AUTH_FACTOR_TYPE_UNSPECIFIED;
-constexpr AuthFactorType AuthFactorType_MAX = AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY;
+constexpr AuthFactorType AuthFactorType_MAX = AUTH_FACTOR_TYPE_KIOSK;
 constexpr int AuthFactorType_ARRAYSIZE = AuthFactorType_MAX + 1;
 
 const std::string& AuthFactorType_Name(AuthFactorType value);
@@ -551,6 +560,123 @@ class CryptohomeRecoveryAuthInput final :
 };
 // -------------------------------------------------------------------
 
+class KioskAuthInput final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.KioskAuthInput) */ {
+ public:
+  inline KioskAuthInput() : KioskAuthInput(nullptr) {}
+  ~KioskAuthInput() override;
+  explicit constexpr KioskAuthInput(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  KioskAuthInput(const KioskAuthInput& from);
+  KioskAuthInput(KioskAuthInput&& from) noexcept
+    : KioskAuthInput() {
+    *this = ::std::move(from);
+  }
+
+  inline KioskAuthInput& operator=(const KioskAuthInput& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline KioskAuthInput& operator=(KioskAuthInput&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const KioskAuthInput& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const KioskAuthInput* internal_default_instance() {
+    return reinterpret_cast<const KioskAuthInput*>(
+               &_KioskAuthInput_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(KioskAuthInput& a, KioskAuthInput& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(KioskAuthInput* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(KioskAuthInput* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  KioskAuthInput* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<KioskAuthInput>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const KioskAuthInput& from);
+  void MergeFrom(const KioskAuthInput& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(KioskAuthInput* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "user_data_auth.KioskAuthInput";
+  }
+  protected:
+  explicit KioskAuthInput(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:user_data_auth.KioskAuthInput)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_auth_5ffactor_2eproto;
+};
+// -------------------------------------------------------------------
+
 class AuthInput final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.AuthInput) */ {
  public:
@@ -589,6 +715,7 @@ class AuthInput final :
     kPasswordInput = 1,
     kPinInput = 2,
     kCryptohomeRecoveryInput = 3,
+    kKioskInput = 4,
     INPUT_NOT_SET = 0,
   };
 
@@ -597,7 +724,7 @@ class AuthInput final :
                &_AuthInput_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(AuthInput& a, AuthInput& b) {
     a.Swap(&b);
@@ -667,6 +794,7 @@ class AuthInput final :
     kPasswordInputFieldNumber = 1,
     kPinInputFieldNumber = 2,
     kCryptohomeRecoveryInputFieldNumber = 3,
+    kKioskInputFieldNumber = 4,
   };
   // .user_data_auth.PasswordAuthInput password_input = 1;
   bool has_password_input() const;
@@ -722,6 +850,24 @@ class AuthInput final :
       ::user_data_auth::CryptohomeRecoveryAuthInput* cryptohome_recovery_input);
   ::user_data_auth::CryptohomeRecoveryAuthInput* unsafe_arena_release_cryptohome_recovery_input();
 
+  // .user_data_auth.KioskAuthInput kiosk_input = 4;
+  bool has_kiosk_input() const;
+  private:
+  bool _internal_has_kiosk_input() const;
+  public:
+  void clear_kiosk_input();
+  const ::user_data_auth::KioskAuthInput& kiosk_input() const;
+  PROTOBUF_NODISCARD ::user_data_auth::KioskAuthInput* release_kiosk_input();
+  ::user_data_auth::KioskAuthInput* mutable_kiosk_input();
+  void set_allocated_kiosk_input(::user_data_auth::KioskAuthInput* kiosk_input);
+  private:
+  const ::user_data_auth::KioskAuthInput& _internal_kiosk_input() const;
+  ::user_data_auth::KioskAuthInput* _internal_mutable_kiosk_input();
+  public:
+  void unsafe_arena_set_allocated_kiosk_input(
+      ::user_data_auth::KioskAuthInput* kiosk_input);
+  ::user_data_auth::KioskAuthInput* unsafe_arena_release_kiosk_input();
+
   void clear_input();
   InputCase input_case() const;
   // @@protoc_insertion_point(class_scope:user_data_auth.AuthInput)
@@ -730,6 +876,7 @@ class AuthInput final :
   void set_has_password_input();
   void set_has_pin_input();
   void set_has_cryptohome_recovery_input();
+  void set_has_kiosk_input();
 
   inline bool has_input() const;
   inline void clear_has_input();
@@ -743,6 +890,7 @@ class AuthInput final :
     ::user_data_auth::PasswordAuthInput* password_input_;
     ::user_data_auth::PinAuthInput* pin_input_;
     ::user_data_auth::CryptohomeRecoveryAuthInput* cryptohome_recovery_input_;
+    ::user_data_auth::KioskAuthInput* kiosk_input_;
   } input_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -790,7 +938,7 @@ class PasswordMetadata final :
                &_PasswordMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(PasswordMetadata& a, PasswordMetadata& b) {
     a.Swap(&b);
@@ -907,7 +1055,7 @@ class PinMetadata final :
                &_PinMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(PinMetadata& a, PinMetadata& b) {
     a.Swap(&b);
@@ -1037,7 +1185,7 @@ class CryptohomeRecoveryMetadata final :
                &_CryptohomeRecoveryMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(CryptohomeRecoveryMetadata& a, CryptohomeRecoveryMetadata& b) {
     a.Swap(&b);
@@ -1115,6 +1263,123 @@ class CryptohomeRecoveryMetadata final :
 };
 // -------------------------------------------------------------------
 
+class KioskMetadata final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.KioskMetadata) */ {
+ public:
+  inline KioskMetadata() : KioskMetadata(nullptr) {}
+  ~KioskMetadata() override;
+  explicit constexpr KioskMetadata(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  KioskMetadata(const KioskMetadata& from);
+  KioskMetadata(KioskMetadata&& from) noexcept
+    : KioskMetadata() {
+    *this = ::std::move(from);
+  }
+
+  inline KioskMetadata& operator=(const KioskMetadata& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline KioskMetadata& operator=(KioskMetadata&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const KioskMetadata& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const KioskMetadata* internal_default_instance() {
+    return reinterpret_cast<const KioskMetadata*>(
+               &_KioskMetadata_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(KioskMetadata& a, KioskMetadata& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(KioskMetadata* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(KioskMetadata* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  KioskMetadata* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<KioskMetadata>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const KioskMetadata& from);
+  void MergeFrom(const KioskMetadata& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(KioskMetadata* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "user_data_auth.KioskMetadata";
+  }
+  protected:
+  explicit KioskMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:user_data_auth.KioskMetadata)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_auth_5ffactor_2eproto;
+};
+// -------------------------------------------------------------------
+
 class AuthFactor final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.AuthFactor) */ {
  public:
@@ -1153,6 +1418,7 @@ class AuthFactor final :
     kPasswordMetadata = 4,
     kPinMetadata = 5,
     kCryptohomeRecoveryMetadata = 6,
+    kKioskMetadata = 7,
     METADATA_NOT_SET = 0,
   };
 
@@ -1161,7 +1427,7 @@ class AuthFactor final :
                &_AuthFactor_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(AuthFactor& a, AuthFactor& b) {
     a.Swap(&b);
@@ -1234,6 +1500,7 @@ class AuthFactor final :
     kPasswordMetadataFieldNumber = 4,
     kPinMetadataFieldNumber = 5,
     kCryptohomeRecoveryMetadataFieldNumber = 6,
+    kKioskMetadataFieldNumber = 7,
   };
   // string label = 2;
   void clear_label();
@@ -1321,6 +1588,24 @@ class AuthFactor final :
       ::user_data_auth::CryptohomeRecoveryMetadata* cryptohome_recovery_metadata);
   ::user_data_auth::CryptohomeRecoveryMetadata* unsafe_arena_release_cryptohome_recovery_metadata();
 
+  // .user_data_auth.KioskMetadata kiosk_metadata = 7;
+  bool has_kiosk_metadata() const;
+  private:
+  bool _internal_has_kiosk_metadata() const;
+  public:
+  void clear_kiosk_metadata();
+  const ::user_data_auth::KioskMetadata& kiosk_metadata() const;
+  PROTOBUF_NODISCARD ::user_data_auth::KioskMetadata* release_kiosk_metadata();
+  ::user_data_auth::KioskMetadata* mutable_kiosk_metadata();
+  void set_allocated_kiosk_metadata(::user_data_auth::KioskMetadata* kiosk_metadata);
+  private:
+  const ::user_data_auth::KioskMetadata& _internal_kiosk_metadata() const;
+  ::user_data_auth::KioskMetadata* _internal_mutable_kiosk_metadata();
+  public:
+  void unsafe_arena_set_allocated_kiosk_metadata(
+      ::user_data_auth::KioskMetadata* kiosk_metadata);
+  ::user_data_auth::KioskMetadata* unsafe_arena_release_kiosk_metadata();
+
   void clear_metadata();
   MetadataCase metadata_case() const;
   // @@protoc_insertion_point(class_scope:user_data_auth.AuthFactor)
@@ -1329,6 +1614,7 @@ class AuthFactor final :
   void set_has_password_metadata();
   void set_has_pin_metadata();
   void set_has_cryptohome_recovery_metadata();
+  void set_has_kiosk_metadata();
 
   inline bool has_metadata() const;
   inline void clear_has_metadata();
@@ -1345,6 +1631,7 @@ class AuthFactor final :
     ::user_data_auth::PasswordMetadata* password_metadata_;
     ::user_data_auth::PinMetadata* pin_metadata_;
     ::user_data_auth::CryptohomeRecoveryMetadata* cryptohome_recovery_metadata_;
+    ::user_data_auth::KioskMetadata* kiosk_metadata_;
   } metadata_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -1627,6 +1914,10 @@ inline void CryptohomeRecoveryAuthInput::set_allocated_recovery_response(std::st
 
 // -------------------------------------------------------------------
 
+// KioskAuthInput
+
+// -------------------------------------------------------------------
+
 // AuthInput
 
 // .user_data_auth.PasswordAuthInput password_input = 1;
@@ -1851,6 +2142,80 @@ inline ::user_data_auth::CryptohomeRecoveryAuthInput* AuthInput::mutable_cryptoh
   return _msg;
 }
 
+// .user_data_auth.KioskAuthInput kiosk_input = 4;
+inline bool AuthInput::_internal_has_kiosk_input() const {
+  return input_case() == kKioskInput;
+}
+inline bool AuthInput::has_kiosk_input() const {
+  return _internal_has_kiosk_input();
+}
+inline void AuthInput::set_has_kiosk_input() {
+  _oneof_case_[0] = kKioskInput;
+}
+inline void AuthInput::clear_kiosk_input() {
+  if (_internal_has_kiosk_input()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete input_.kiosk_input_;
+    }
+    clear_has_input();
+  }
+}
+inline ::user_data_auth::KioskAuthInput* AuthInput::release_kiosk_input() {
+  // @@protoc_insertion_point(field_release:user_data_auth.AuthInput.kiosk_input)
+  if (_internal_has_kiosk_input()) {
+    clear_has_input();
+      ::user_data_auth::KioskAuthInput* temp = input_.kiosk_input_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    input_.kiosk_input_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::user_data_auth::KioskAuthInput& AuthInput::_internal_kiosk_input() const {
+  return _internal_has_kiosk_input()
+      ? *input_.kiosk_input_
+      : reinterpret_cast< ::user_data_auth::KioskAuthInput&>(::user_data_auth::_KioskAuthInput_default_instance_);
+}
+inline const ::user_data_auth::KioskAuthInput& AuthInput::kiosk_input() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.AuthInput.kiosk_input)
+  return _internal_kiosk_input();
+}
+inline ::user_data_auth::KioskAuthInput* AuthInput::unsafe_arena_release_kiosk_input() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user_data_auth.AuthInput.kiosk_input)
+  if (_internal_has_kiosk_input()) {
+    clear_has_input();
+    ::user_data_auth::KioskAuthInput* temp = input_.kiosk_input_;
+    input_.kiosk_input_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void AuthInput::unsafe_arena_set_allocated_kiosk_input(::user_data_auth::KioskAuthInput* kiosk_input) {
+  clear_input();
+  if (kiosk_input) {
+    set_has_kiosk_input();
+    input_.kiosk_input_ = kiosk_input;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user_data_auth.AuthInput.kiosk_input)
+}
+inline ::user_data_auth::KioskAuthInput* AuthInput::_internal_mutable_kiosk_input() {
+  if (!_internal_has_kiosk_input()) {
+    clear_input();
+    set_has_kiosk_input();
+    input_.kiosk_input_ = CreateMaybeMessage< ::user_data_auth::KioskAuthInput >(GetArenaForAllocation());
+  }
+  return input_.kiosk_input_;
+}
+inline ::user_data_auth::KioskAuthInput* AuthInput::mutable_kiosk_input() {
+  ::user_data_auth::KioskAuthInput* _msg = _internal_mutable_kiosk_input();
+  // @@protoc_insertion_point(field_mutable:user_data_auth.AuthInput.kiosk_input)
+  return _msg;
+}
+
 inline bool AuthInput::has_input() const {
   return input_case() != INPUT_NOT_SET;
 }
@@ -1891,6 +2256,10 @@ inline void PinMetadata::set_auth_locked(bool value) {
 // -------------------------------------------------------------------
 
 // CryptohomeRecoveryMetadata
+
+// -------------------------------------------------------------------
+
+// KioskMetadata
 
 // -------------------------------------------------------------------
 
@@ -2209,6 +2578,80 @@ inline ::user_data_auth::CryptohomeRecoveryMetadata* AuthFactor::mutable_cryptoh
   return _msg;
 }
 
+// .user_data_auth.KioskMetadata kiosk_metadata = 7;
+inline bool AuthFactor::_internal_has_kiosk_metadata() const {
+  return metadata_case() == kKioskMetadata;
+}
+inline bool AuthFactor::has_kiosk_metadata() const {
+  return _internal_has_kiosk_metadata();
+}
+inline void AuthFactor::set_has_kiosk_metadata() {
+  _oneof_case_[0] = kKioskMetadata;
+}
+inline void AuthFactor::clear_kiosk_metadata() {
+  if (_internal_has_kiosk_metadata()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete metadata_.kiosk_metadata_;
+    }
+    clear_has_metadata();
+  }
+}
+inline ::user_data_auth::KioskMetadata* AuthFactor::release_kiosk_metadata() {
+  // @@protoc_insertion_point(field_release:user_data_auth.AuthFactor.kiosk_metadata)
+  if (_internal_has_kiosk_metadata()) {
+    clear_has_metadata();
+      ::user_data_auth::KioskMetadata* temp = metadata_.kiosk_metadata_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    metadata_.kiosk_metadata_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::user_data_auth::KioskMetadata& AuthFactor::_internal_kiosk_metadata() const {
+  return _internal_has_kiosk_metadata()
+      ? *metadata_.kiosk_metadata_
+      : reinterpret_cast< ::user_data_auth::KioskMetadata&>(::user_data_auth::_KioskMetadata_default_instance_);
+}
+inline const ::user_data_auth::KioskMetadata& AuthFactor::kiosk_metadata() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.AuthFactor.kiosk_metadata)
+  return _internal_kiosk_metadata();
+}
+inline ::user_data_auth::KioskMetadata* AuthFactor::unsafe_arena_release_kiosk_metadata() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user_data_auth.AuthFactor.kiosk_metadata)
+  if (_internal_has_kiosk_metadata()) {
+    clear_has_metadata();
+    ::user_data_auth::KioskMetadata* temp = metadata_.kiosk_metadata_;
+    metadata_.kiosk_metadata_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void AuthFactor::unsafe_arena_set_allocated_kiosk_metadata(::user_data_auth::KioskMetadata* kiosk_metadata) {
+  clear_metadata();
+  if (kiosk_metadata) {
+    set_has_kiosk_metadata();
+    metadata_.kiosk_metadata_ = kiosk_metadata;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user_data_auth.AuthFactor.kiosk_metadata)
+}
+inline ::user_data_auth::KioskMetadata* AuthFactor::_internal_mutable_kiosk_metadata() {
+  if (!_internal_has_kiosk_metadata()) {
+    clear_metadata();
+    set_has_kiosk_metadata();
+    metadata_.kiosk_metadata_ = CreateMaybeMessage< ::user_data_auth::KioskMetadata >(GetArenaForAllocation());
+  }
+  return metadata_.kiosk_metadata_;
+}
+inline ::user_data_auth::KioskMetadata* AuthFactor::mutable_kiosk_metadata() {
+  ::user_data_auth::KioskMetadata* _msg = _internal_mutable_kiosk_metadata();
+  // @@protoc_insertion_point(field_mutable:user_data_auth.AuthFactor.kiosk_metadata)
+  return _msg;
+}
+
 inline bool AuthFactor::has_metadata() const {
   return metadata_case() != METADATA_NOT_SET;
 }
@@ -2221,6 +2664,10 @@ inline AuthFactor::MetadataCase AuthFactor::metadata_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

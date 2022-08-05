@@ -1,12 +1,12 @@
 {
-	"package": "f8da7419d6983eccca9fd55935d6cc8e63920ceee6445b85fa36df1c24abc3a7",
+	"package": "c09f88d08581a41ee21ebe9f87f6e102d0ab83104044297c5f41a1533f592c20",
 	"files": {
-		"README.md": "435d19a4946bca71b9f45a3f8e35dd75a0a9cc661f5bbecf5ee0a0606cb29592",
-		"LICENSE-APACHE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
-		"CHANGELOG.header.md": "2eb3461b7367265ba1e63a00e02a08d3e2f4dc9c1cba540a456f09668ffcbc23",
-		"Cargo.toml": "ab1d31e474254f9a7f40bec7a22620a063fb08072553075b23a0a4f9841d7ba9",
-		"src/lib.rs": "dcd00dfaf8b2b3c4c557d9ea06be839c6a04aec2113e13eabc028b7a30a2fe8e",
 		"LICENSE-MIT": "89dee69d06b1c51de6305c5475cbf21d5d876ee3ef6ee12b7a847efdc5d6e90d",
-		"Cargo.toml.orig": "066d3b280b9168d2472c9cd8a5b51d4508085e9131307776b7299af17779107f"
+		"CHANGELOG.header.md": "2eb3461b7367265ba1e63a00e02a08d3e2f4dc9c1cba540a456f09668ffcbc23",
+		"README.md": "435d19a4946bca71b9f45a3f8e35dd75a0a9cc661f5bbecf5ee0a0606cb29592",
+		"src/lib.rs": "dcd00dfaf8b2b3c4c557d9ea06be839c6a04aec2113e13eabc028b7a30a2fe8e",
+		"Cargo.toml.orig": "c53238b112f1e1334dd7abad2e2e89b33b02173384cb9e29774935a972da5b24",
+		"LICENSE-APACHE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+		"Cargo.toml": "ab1d31e474254f9a7f40bec7a22620a063fb08072553075b23a0a4f9841d7ba9"
 	}
 }

@@ -74,11 +74,12 @@ enum Destination : int {
   ADDED_REMOVED_EVENTS = 17,
   CRD_EVENTS = 18,
   PERIPHERAL_EVENTS = 19,
-  SUSPICIOUS_EVENTS = 20
+  SUSPICIOUS_EVENTS = 20,
+  LOCK_UNLOCK_EVENTS = 21
 };
 bool Destination_IsValid(int value);
 constexpr Destination Destination_MIN = UNDEFINED_DESTINATION;
-constexpr Destination Destination_MAX = SUSPICIOUS_EVENTS;
+constexpr Destination Destination_MAX = LOCK_UNLOCK_EVENTS;
 constexpr int Destination_ARRAYSIZE = Destination_MAX + 1;
 
 const std::string& Destination_Name(Destination value);

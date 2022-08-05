@@ -593,6 +593,14 @@ class ManagerProxyMock : public ManagerProxyInterface {
                     base::OnceCallback<void()> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
+  MOCK_METHOD3(CheckTetheringReadiness,
+               bool(std::string*,
+                    brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD3(CheckTetheringReadinessAsync,
+               void(base::OnceCallback<void(const std::string&)> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
   void RegisterPropertyChangedSignalHandler(
     const base::RepeatingCallback<void(const std::string&,
                                        const brillo::Any&)>& signal_callback,

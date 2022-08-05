@@ -25,16 +25,54 @@
 
 namespace hwsec {
 
+inline bool operator==(const Tpm2PolicyDigest& lhs,
+                       const Tpm2PolicyDigest& rhs) {
+  return true && lhs.digest == rhs.digest;
+}
+inline bool operator!=(const Tpm2PolicyDigest& lhs,
+                       const Tpm2PolicyDigest& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace hwsec
+
+namespace hwsec {
+
 inline bool operator==(const Tpm2PolicySignedData& lhs,
                        const Tpm2PolicySignedData& rhs) {
   return true && lhs.public_key_spki_der == rhs.public_key_spki_der &&
          lhs.srk_wrapped_secret == rhs.srk_wrapped_secret &&
          lhs.scheme == rhs.scheme && lhs.hash_alg == rhs.hash_alg &&
-         lhs.default_pcr_policy_digest == rhs.default_pcr_policy_digest &&
-         lhs.extended_pcr_policy_digest == rhs.extended_pcr_policy_digest;
+         lhs.pcr_policy_digests == rhs.pcr_policy_digests;
 }
 inline bool operator!=(const Tpm2PolicySignedData& lhs,
                        const Tpm2PolicySignedData& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace hwsec
+
+namespace hwsec {
+
+inline bool operator==(const Tpm12PcrValue& lhs, const Tpm12PcrValue& rhs) {
+  return true && lhs.pcr_index == rhs.pcr_index &&
+         lhs.pcr_value == rhs.pcr_value;
+}
+inline bool operator!=(const Tpm12PcrValue& lhs, const Tpm12PcrValue& rhs) {
+  return !(lhs == rhs);
+}
+
+}  // namespace hwsec
+
+namespace hwsec {
+
+inline bool operator==(const Tpm12PcrBoundItem& lhs,
+                       const Tpm12PcrBoundItem& rhs) {
+  return true && lhs.pcr_values == rhs.pcr_values &&
+         lhs.bound_secret == rhs.bound_secret;
+}
+inline bool operator!=(const Tpm12PcrBoundItem& lhs,
+                       const Tpm12PcrBoundItem& rhs) {
   return !(lhs == rhs);
 }
 
@@ -48,8 +86,7 @@ inline bool operator==(const Tpm12CertifiedMigratableKeyData& lhs,
          lhs.srk_wrapped_cmk == rhs.srk_wrapped_cmk &&
          lhs.cmk_pubkey == rhs.cmk_pubkey &&
          lhs.cmk_wrapped_auth_data == rhs.cmk_wrapped_auth_data &&
-         lhs.default_pcr_bound_secret == rhs.default_pcr_bound_secret &&
-         lhs.extended_pcr_bound_secret == rhs.extended_pcr_bound_secret;
+         lhs.pcr_bound_items == rhs.pcr_bound_items;
 }
 inline bool operator!=(const Tpm12CertifiedMigratableKeyData& lhs,
                        const Tpm12CertifiedMigratableKeyData& rhs) {

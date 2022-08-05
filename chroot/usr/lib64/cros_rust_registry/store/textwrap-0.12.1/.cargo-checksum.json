@@ -1,19 +1,19 @@
 {
-	"package": "670fbae51f3a19aae8650b839c5e0dd6b164d7e02589b45e6aba1ff0b4d43e1e",
+	"package": "fd3a237f7c2bbf193a6b3dea843ee867843810a2c601fd098262d92d9398bd43",
 	"files": {
-		"Cargo.lock": "96d27b1c997005b84f32f9e4d186ecd0e7e8ac7aebae961d5116564280fd7676",
+		"tests/version-numbers.rs": "5e3174d1a6e159444abcbf36d9dad922f420da375b9ba1c5ed603eed20306452",
 		"README.md": "33afc1a5f4bf1710e4c9851311821d29b72feb84e04feb30fdbb8b7bf7d64405",
+		"src/splitting.rs": "0b1ef65bfe7423770881476c3df2d20706845fb749949b1c2e6b7faa70fd53f8",
+		"src/lib.rs": "1ca0ddeb38d28b7187f62ffa5b3f4722f5351d36d4aef0e5839546b235d9275e",
+		"src/indentation.rs": "b1120dbda4b4d52cee89489996d6da53daf3df5c7fe95b3b6386c80d60216e58",
+		"examples/hyphenation.rs": "0e349d451e14de43c8f14dfb6866204694ac41402c20574743a885733fadef41",
 		"examples/termwidth.rs": "222ca611f8cf405dda7468bd98a5cc622bc2ac3d6e48f015b2bea663462c0362",
 		"examples/layout.rs": "0e96c58f0f4e5b48dec9275ba53e9325dc651a40070cc800ef20482c9f023547",
-		"examples/hyphenation.rs": "0e349d451e14de43c8f14dfb6866204694ac41402c20574743a885733fadef41",
-		"tests/version-numbers.rs": "5e3174d1a6e159444abcbf36d9dad922f420da375b9ba1c5ed603eed20306452",
-		"benches/linear.rs": "13904ffd76d3b877d1d4dd470d40ef061b752894077aed4f709be6aa2178c706",
-		"Cargo.toml": "c9e22c195814d39da74d396515befd844966c525a878cc9b5ef62486e65dd653",
 		"LICENSE": "ce93600c49fbb3e14df32efe752264644f6a2f8e08a735ba981725799e5309ef",
-		"src/indentation.rs": "b1120dbda4b4d52cee89489996d6da53daf3df5c7fe95b3b6386c80d60216e58",
-		"src/lib.rs": "1ca0ddeb38d28b7187f62ffa5b3f4722f5351d36d4aef0e5839546b235d9275e",
-		"src/splitting.rs": "0b1ef65bfe7423770881476c3df2d20706845fb749949b1c2e6b7faa70fd53f8",
+		"Cargo.toml.orig": "c1b524052c620929f757f501a8b4a1463e28775fcf41351ac9c4dfc0264c3da4",
 		"CHANGELOG.md": "aa5b80390fb2ea10d95f5c1c3eb31e87c9e76641614434d5162e1df8862e6839",
-		"Cargo.toml.orig": "25a2bbbc2224a0fe03bbfca29b1168990c950c9e3e176e2e267373ef3f10a8fb"
+		"benches/linear.rs": "13904ffd76d3b877d1d4dd470d40ef061b752894077aed4f709be6aa2178c706",
+		"Cargo.lock": "6a6845303222fe0a71781eef48cb9ebcd48a2dcab3406b08d743db81bfe9e4ec",
+		"Cargo.toml": "c9e22c195814d39da74d396515befd844966c525a878cc9b5ef62486e65dd653"
 	}
 }

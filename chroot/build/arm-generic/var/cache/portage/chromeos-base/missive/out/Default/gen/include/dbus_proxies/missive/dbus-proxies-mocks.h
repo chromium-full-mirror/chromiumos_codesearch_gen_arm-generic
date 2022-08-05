@@ -25,43 +25,43 @@ class MissivedProxyMock : public MissivedProxyInterface {
   MissivedProxyMock& operator=(const MissivedProxyMock&) = delete;
 
   MOCK_METHOD4(EnqueueRecord,
-               bool(const reporting::EnqueueRecordRequest& /*in_request*/,
-                    reporting::EnqueueRecordResponse* /*out_reply*/,
+               bool(const ::reporting::EnqueueRecordRequest& /*in_request*/,
+                    ::reporting::EnqueueRecordResponse* /*out_reply*/,
                     brillo::ErrorPtr* /*error*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(EnqueueRecordAsync,
-               void(const reporting::EnqueueRecordRequest& /*in_request*/,
-                    base::OnceCallback<void(const reporting::EnqueueRecordResponse& /*reply*/)> /*success_callback*/,
+               void(const ::reporting::EnqueueRecordRequest& /*in_request*/,
+                    base::OnceCallback<void(const ::reporting::EnqueueRecordResponse& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(FlushPriority,
-               bool(const reporting::FlushPriorityRequest& /*in_request*/,
-                    reporting::FlushPriorityResponse* /*out_reply*/,
+               bool(const ::reporting::FlushPriorityRequest& /*in_request*/,
+                    ::reporting::FlushPriorityResponse* /*out_reply*/,
                     brillo::ErrorPtr* /*error*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(FlushPriorityAsync,
-               void(const reporting::FlushPriorityRequest& /*in_request*/,
-                    base::OnceCallback<void(const reporting::FlushPriorityResponse& /*reply*/)> /*success_callback*/,
+               void(const ::reporting::FlushPriorityRequest& /*in_request*/,
+                    base::OnceCallback<void(const ::reporting::FlushPriorityResponse& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(ConfirmRecordUpload,
-               bool(const reporting::ConfirmRecordUploadRequest& /*in_request*/,
-                    reporting::ConfirmRecordUploadResponse* /*out_reply*/,
+               bool(const ::reporting::ConfirmRecordUploadRequest& /*in_request*/,
+                    ::reporting::ConfirmRecordUploadResponse* /*out_reply*/,
                     brillo::ErrorPtr* /*error*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(ConfirmRecordUploadAsync,
-               void(const reporting::ConfirmRecordUploadRequest& /*in_request*/,
-                    base::OnceCallback<void(const reporting::ConfirmRecordUploadResponse& /*reply*/)> /*success_callback*/,
+               void(const ::reporting::ConfirmRecordUploadRequest& /*in_request*/,
+                    base::OnceCallback<void(const ::reporting::ConfirmRecordUploadResponse& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(UpdateEncryptionKey,
-               bool(const reporting::UpdateEncryptionKeyRequest& /*in_request*/,
-                    reporting::UpdateEncryptionKeyResponse* /*out_reply*/,
+               bool(const ::reporting::UpdateEncryptionKeyRequest& /*in_request*/,
+                    ::reporting::UpdateEncryptionKeyResponse* /*out_reply*/,
                     brillo::ErrorPtr* /*error*/,
                     int /*timeout_ms*/));
   MOCK_METHOD4(UpdateEncryptionKeyAsync,
-               void(const reporting::UpdateEncryptionKeyRequest& /*in_request*/,
-                    base::OnceCallback<void(const reporting::UpdateEncryptionKeyResponse& /*reply*/)> /*success_callback*/,
+               void(const ::reporting::UpdateEncryptionKeyRequest& /*in_request*/,
+                    base::OnceCallback<void(const ::reporting::UpdateEncryptionKeyResponse& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
   MOCK_CONST_METHOD0(GetObjectPath, const dbus::ObjectPath&());

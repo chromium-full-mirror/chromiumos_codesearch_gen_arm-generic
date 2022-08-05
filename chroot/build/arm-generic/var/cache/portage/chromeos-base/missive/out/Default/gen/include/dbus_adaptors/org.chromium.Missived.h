@@ -25,21 +25,21 @@ class MissivedInterface {
 
   // Enqueues records for encryption, storage, and upload.
   virtual void EnqueueRecord(
-      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<reporting::EnqueueRecordResponse>> response,
-      const reporting::EnqueueRecordRequest& in_request) = 0;
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<::reporting::EnqueueRecordResponse>> response,
+      const ::reporting::EnqueueRecordRequest& in_request) = 0;
   // Requests that the indicated priority queue is flushed.
   virtual void FlushPriority(
-      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<reporting::FlushPriorityResponse>> response,
-      const reporting::FlushPriorityRequest& in_request) = 0;
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<::reporting::FlushPriorityResponse>> response,
+      const ::reporting::FlushPriorityRequest& in_request) = 0;
   // Sent by Chrome to indicate the record was succesfully uploaded.
   // Record indicated by the provided SequenceInformation.
   virtual void ConfirmRecordUpload(
-      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<reporting::ConfirmRecordUploadResponse>> response,
-      const reporting::ConfirmRecordUploadRequest& in_request) = 0;
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<::reporting::ConfirmRecordUploadResponse>> response,
+      const ::reporting::ConfirmRecordUploadRequest& in_request) = 0;
   // Sent by Chrome to update the Missive Daemon Encryption Key.
   virtual void UpdateEncryptionKey(
-      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<reporting::UpdateEncryptionKeyResponse>> response,
-      const reporting::UpdateEncryptionKeyRequest& in_request) = 0;
+      std::unique_ptr<brillo::dbus_utils::DBusMethodResponse<::reporting::UpdateEncryptionKeyResponse>> response,
+      const ::reporting::UpdateEncryptionKeyRequest& in_request) = 0;
 };
 
 // Interface adaptor for org::chromium::Missived.

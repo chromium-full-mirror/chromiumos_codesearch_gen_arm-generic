@@ -108,20 +108,7 @@ substring(start,opt_end){const ret=Spannable.prototype.substring.call(this,start
 function spanCoversPosition(position){return function(span){return span.start<=position&&position<span.end;};}
 function spanValueIs(value){return function(span){return span.value===value;};}
 function valueOfSpan(span){return span?span.value:undefined;}
-goog.provide('NavBraille');goog.require('Spannable');NavBraille=class{constructor(kwargs){this.text=(kwargs.text instanceof Spannable)?kwargs.text:new Spannable(kwargs.text);this.startIndex=(kwargs.startIndex!==undefined)?kwargs.startIndex:-1;this.endIndex=(kwargs.endIndex!==undefined)?kwargs.endIndex:this.startIndex;}
-static fromText(text){return new NavBraille({text});}
-static fromJson(json){if(typeof json.startIndex!=='number'||typeof json.endIndex!=='number'){throw'Invalid start or end index in serialized NavBraille: '+json;}
-return new NavBraille({text:Spannable.fromJson(json.spannable),startIndex:json.startIndex,endIndex:json.endIndex,});}
-isEmpty(){return this.text.length===0;}
-toString(){return'NavBraille(text="'+this.text.toString()+'" '+' startIndex="'+this.startIndex+'" '+' endIndex="'+this.endIndex+'")';}
-toJson(){return{spannable:this.text.toJson(),startIndex:this.startIndex,endIndex:this.endIndex,};}};goog.provide('BrailleInterface');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('NavBraille');BrailleInterface=class{write(params){}
-writeRawImage(imageDataUrl){}
-freeze(){}
-thaw(){}
-getDisplayState(){}
-panLeft(){}
-panRight(){}
-route(braillePosition){}};goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
+goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
 onTtsEnd(){}
 onTtsInterrupted(){}};TtsInterface=class{constructor(){}
 speak(textString,queueMode,properties){}
@@ -516,4 +503,4 @@ return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffs
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
 goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in plural statement.');return result;};goog.i18n.MessageFormat.prototype.parseOrdinalBlock_=function(pattern){var argumentIndex='';var replaceRegex=goog.i18n.MessageFormat.ORDINAL_BLOCK_RE_;pattern=pattern.replace(replaceRegex,function(string,name){argumentIndex=name;return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffset=0;var parts=this.extractParts_(pattern);var pos=0;while(pos<parts.length){var key=parts[pos].value;goog.asserts.assertString(key,'Missing ordinal key element.');pos++;goog.asserts.assert(pos<parts.length,'Missing or invalid ordinal value element.');if(goog.i18n.MessageFormat.Element_.BLOCK==parts[pos].type){var value=this.parseBlock_(parts[pos].value);}else{goog.asserts.fail('Expected block type.');}
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
-goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('BluetoothBrailleDisplayListener');goog.require('BluetoothBrailleDisplayManager');goog.require('BrailleInterface');goog.require('Spannable');goog.require('SpeechLog');goog.require('TtsInterface');goog.require('constants');goog.require('goog.i18n.MessageFormat');
+goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('BluetoothBrailleDisplayListener');goog.require('BluetoothBrailleDisplayManager');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('Spannable');goog.require('SpeechLog');goog.require('TtsInterface');goog.require('constants');goog.require('goog.i18n.MessageFormat');

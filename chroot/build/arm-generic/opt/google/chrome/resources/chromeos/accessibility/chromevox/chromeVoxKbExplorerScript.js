@@ -91,20 +91,7 @@ substring(start,opt_end){const ret=Spannable.prototype.substring.call(this,start
 function spanCoversPosition(position){return function(span){return span.start<=position&&position<span.end;};}
 function spanValueIs(value){return function(span){return span.value===value;};}
 function valueOfSpan(span){return span?span.value:undefined;}
-goog.provide('NavBraille');goog.require('Spannable');NavBraille=class{constructor(kwargs){this.text=(kwargs.text instanceof Spannable)?kwargs.text:new Spannable(kwargs.text);this.startIndex=(kwargs.startIndex!==undefined)?kwargs.startIndex:-1;this.endIndex=(kwargs.endIndex!==undefined)?kwargs.endIndex:this.startIndex;}
-static fromText(text){return new NavBraille({text});}
-static fromJson(json){if(typeof json.startIndex!=='number'||typeof json.endIndex!=='number'){throw'Invalid start or end index in serialized NavBraille: '+json;}
-return new NavBraille({text:Spannable.fromJson(json.spannable),startIndex:json.startIndex,endIndex:json.endIndex,});}
-isEmpty(){return this.text.length===0;}
-toString(){return'NavBraille(text="'+this.text.toString()+'" '+' startIndex="'+this.startIndex+'" '+' endIndex="'+this.endIndex+'")';}
-toJson(){return{spannable:this.text.toJson(),startIndex:this.startIndex,endIndex:this.endIndex,};}};goog.provide('BrailleInterface');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('NavBraille');BrailleInterface=class{write(params){}
-writeRawImage(imageDataUrl){}
-freeze(){}
-thaw(){}
-getDisplayState(){}
-panLeft(){}
-panRight(){}
-route(braillePosition){}};goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
+goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
 onTtsEnd(){}
 onTtsInterrupted(){}};TtsInterface=class{constructor(){}
 speak(textString,queueMode,properties){}
@@ -116,4 +103,4 @@ increaseOrDecreaseProperty(propertyName,increase){}
 propertyToPercentage(property){}
 getDefaultProperty(property){}
 toggleSpeechOnOrOff(){}
-resetTextToSpeechSettings(){}};goog.provide('constants');constants.Dir={FORWARD:'forward',BACKWARD:'backward',};constants.Point;constants.OBJECT_MAX_CHARCOUNT=1500;constants.SYSTEM_VOICE='chromeos_system_voice';constants.FOCUS_COLOR='#F7983A';constants.InteractionMedium={NONE:'none',KEYBOARD:'keyboard',TOUCH:'touch',BRAILLE:'braille',};goog.require('AbstractEarcons');goog.require('BrailleInterface');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('KeyCode');goog.require('NavBraille');goog.require('Spannable');goog.require('TtsInterface');goog.require('constants');
+resetTextToSpeechSettings(){}};goog.provide('constants');constants.Dir={FORWARD:'forward',BACKWARD:'backward',};constants.Point;constants.OBJECT_MAX_CHARCOUNT=1500;constants.SYSTEM_VOICE='chromeos_system_voice';constants.FOCUS_COLOR='#F7983A';constants.InteractionMedium={NONE:'none',KEYBOARD:'keyboard',TOUCH:'touch',BRAILLE:'braille',};goog.require('AbstractEarcons');goog.require('BrailleKeyCommand');goog.require('BrailleKeyEvent');goog.require('KeyCode');goog.require('Spannable');goog.require('TtsInterface');goog.require('constants');

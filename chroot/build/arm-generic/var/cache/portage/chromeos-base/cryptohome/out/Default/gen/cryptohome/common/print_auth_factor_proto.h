@@ -39,6 +39,9 @@ std::string GetProtoDebugStringWithIndent(
     int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(
     const CryptohomeRecoveryAuthInput& value);
+std::string GetProtoDebugStringWithIndent(const KioskAuthInput& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(const KioskAuthInput& value);
 std::string GetProtoDebugStringWithIndent(const AuthInput& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const AuthInput& value);
@@ -53,6 +56,9 @@ std::string GetProtoDebugStringWithIndent(
     int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(
     const CryptohomeRecoveryMetadata& value);
+std::string GetProtoDebugStringWithIndent(const KioskMetadata& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(const KioskMetadata& value);
 std::string GetProtoDebugStringWithIndent(const AuthFactor& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const AuthFactor& value);

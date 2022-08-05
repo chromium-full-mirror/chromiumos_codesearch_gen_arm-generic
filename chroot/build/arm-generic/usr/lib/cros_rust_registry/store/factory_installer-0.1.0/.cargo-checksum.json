@@ -1,5 +1,5 @@
 {
-	"package": "2af8e6423a2473517c4b77a6b27b6144e68ccab6bad32a4199b36c945a648b34",
+	"package": "4627df04a02d2ca9520e00c658600ec3c9ff36669530a5737268d856f5523222",
 	"files": {
 		"Cargo.toml.orig": "2d57404b21d4bfc3906cc6e9ee35013b0fe9fe25ec7d5f60f0e9bc9f4e17d1b5",
 		".gitignore": "2deac6653571d0399747b7f974437a251a2a2ba3dfbfbaf426449985324028f9",
@@ -20,14 +20,15 @@
 		"src/bin/factory_ufs.rs": "bce10039ac86700828864a65eab4431a036dbfc8383471499058d4825f9a129e",
 		"src/factory_ufs/mod.rs": "12786aa4de6eeccf07b038aaab4f349032ee8d6962c876ad0ceadd501bb8560f",
 		"src/factory_ufs/README.md": "758e0148fc2e1f71644ae726a23e08c1f2abef875c06531c1c39d01fdf1499e4",
-		"src/factory_ufs/ufs_provision.rs": "2944a199a9141081d4d71550b6e9547a29cf5296b774c8976ff2a72a892075e2",
+		"src/factory_ufs/ufs_provision.rs": "7319676c5cd9f6046e38ff8377054113a76c5054566e5ff6a8efac3ed1699820",
 		"src/factory_ufs/args.rs": "1659243da1c9db9992ac0a864db9ef978099bbe331d6d219ed404bf4197618b3",
-		"src/factory_ufs/ufs_spec/ufs_config_descriptor.rs": "19a11e93367381cb2c4246208c91e7b51bb1f3d42cbf90a2ed5c368477cb3c48",
-		"src/factory_ufs/ufs_spec/ufs_2_1.rs": "b00104dda22c4cc2c71fe3138eaf7e1ba5bb4f4344d0f4ff5af69a9b8e3bbcf0",
-		"src/factory_ufs/ufs_spec/ufs_unit_descriptor.rs": "b8a0076de1645a61fd406d6b80c299dfc7aa2c6ff9fe0b4ef555b20f869c8fe1",
-		"src/factory_ufs/ufs_spec/ufs_3_1.rs": "78592189f1676eea5521bc165a7d168ee955557275a939e4ac4291b3a456558c",
-		"src/factory_ufs/ufs_spec/mod.rs": "40b55f39f93dafafd620ac75d346ec38326ff7c1713ba8ec0ea6ded3805592a8",
-		"src/factory_ufs/ufs_spec/ufs_common.rs": "f28330f8a83131d766b0266f11dfc27e228492704f2251db01c5147d3f7569c0",
+		"src/factory_ufs/ufs_spec/ufs_config_descriptor.rs": "ebbc56b733458d0ba2e5e44f8ff9b12958dc51f9c228d139e9b25c4cc7a2ea1e",
+		"src/factory_ufs/ufs_spec/ufs_2_1.rs": "aeb40a18b3d4c9bf46c2ffa84a80a1c6230517280f2628725925a778648b6b8c",
+		"src/factory_ufs/ufs_spec/ufs_device_descriptor.rs": "83ebfed6014a9bcf9ce4be90f37693df696c611aba81755ac7cb3183b6f67ede",
+		"src/factory_ufs/ufs_spec/ufs_unit_descriptor.rs": "ea7e9adc757977d03ff55f1b61da96714cb1252ebf7b9ba5b43498ed9131236c",
+		"src/factory_ufs/ufs_spec/ufs_3_1.rs": "a141acb6bc1d60241343729a75317d5d15eb8398fb85a7c0d22685abc3e0c24c",
+		"src/factory_ufs/ufs_spec/mod.rs": "40e0876d69937809d3a94cc9cfed3d4dfa8c5fbcb4b08759ff441e4f3c1f0ca6",
+		"src/factory_ufs/ufs_spec/ufs_common.rs": "0902ce908ad9161aadd4af855b2b132c767fe675ce5dff139d72e652b6af3e04",
 		"src/lib.rs": "5c7f24a986cff6c9ec479cb8e022013af433395ce08b9eba2e41f991373e9063",
 		"src/factory_fai/mod.rs": "976797e4483082386fbe29126e0e19c0ba6def024ba3359d8e449f1433bb059f",
 		"src/factory_fai/README.md": "7ec238c8e3e581beedf3efd19aef2518a053aff9f4b3ac60106fa37e11a97ff6",
@@ -39,8 +40,9 @@
 		"src/tools/mod.rs": "c549f9dea9f1c15c7b3de0271e56908bf3ce9acb4d10cfb0712e8a149a0bee61",
 		"src/utils/process_utils.rs": "8860a920a40ed6a4faec18bb363ffa31f0f3e91fd074f109467f3fe4de612872",
 		"src/utils/sys_utils.rs": "7cc5397cbf6c54d6f436670c13198ece95b3a3abbba37c75f35593d2570ea6c6",
-		"src/utils/mod.rs": "398f0a7d7856fb0dc0eebf7fbb19cde25331a9d4e44fc3319c7d74cadfecb397",
+		"src/utils/mod.rs": "2f350c5bd663d4d1cb336fa6883b926f7415b02da41242a80ba13b7e1a33de54",
 		"src/utils/file_utils.rs": "25cfc4bc8b2602cb9bcd609e0b14cc62b275e08e8b8eb886f299dbf64f466266",
-		"src/utils/string_utils.rs": "15862366e418306e25042431d8d90e485d59df1336d7ee48a7764e08761d0250"
+		"src/utils/string_utils.rs": "15862366e418306e25042431d8d90e485d59df1336d7ee48a7764e08761d0250",
+		"src/utils/error.rs": "33ad0e8cc28caa0bd6852b42ebd2ff63e59922a210010f5e0d004fbdc9dfe079"
 	}
 }
