@@ -2,7 +2,7 @@
   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDltVl1k15pjRzuZfMc3B69inxwm2bZeZ2O8/zFO+NluHnBm3GJ3fzdOoFGJd+M16I8p7zxxQyHeDMfWYASyCeB8XnUEDKjqNLQfCnncsANzHsYoEbYj2nEUML2P13b9q+AAvpCBpAJ4cZp81e9n1y/vbSXHE4385cgkKueItzikQIDAQAB",
   "manifest_version": 2,
   "name": "__MSG_CHROMEVOX_NAME__",
-  "version": "106.0.5219.0",
+  "version": "106.0.5221.0",
   "description": "__MSG_CHROMEVOX_DESCRIPTION__",
   "background": {
     "page": "chromevox/background/background.html"

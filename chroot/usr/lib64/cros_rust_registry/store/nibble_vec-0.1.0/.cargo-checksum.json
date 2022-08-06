@@ -1,15 +1,15 @@
 {
 	"package": "0f04d9f48c31a4674ef89c8f23aedbed299243f8bf6ab759e54100b274fd342f",
 	"files": {
-		"README.md": "cbc998295ee8d7d6c5ab51c113df05a97d354aff79d690cc92b8019300961e0f",
+		"LICENSE": "e4e06f4bee6b18fbe6ab33b26331739a0b2bda0c1037cfa869e7d97512e9fcf7",
+		"Cargo.toml.orig": "5ce40d88c3ac1fac0478ab107ecb38c344385bad2b27c9045f8f1a56e0bcd73a",
+		"Cargo.toml": "4fee06d71c9ae5ca3c39da341b1ff8a6a44b4ea220138736c0275b43449ceaea",
 		"src/lib.rs": "c020c9ae28accc69d86f856e9a4973858b4e46e5951856ce4550d057fad6eed6",
 		"src/test.rs": "758b48af39226cb18b3da62a79da03ab0fed321d5d2012c35c2aa95b5dedf960",
 		"examples/debug.rs": "97f2c42913e8aa1a33fb60b9a930f5d6b190658484f3fe83f0f6cc56976ad30c",
-		"LICENSE": "e4e06f4bee6b18fbe6ab33b26331739a0b2bda0c1037cfa869e7d97512e9fcf7",
-		"Cargo.toml.orig": "5ce40d88c3ac1fac0478ab107ecb38c344385bad2b27c9045f8f1a56e0bcd73a",
+		"README.md": "cbc998295ee8d7d6c5ab51c113df05a97d354aff79d690cc92b8019300961e0f",
 		"CHANGELOG.md": "479ecc970a05b376560b258933f10250e620b41add0be0c36be1163107778c1c",
 		"benches/nib_bench.rs": "e532ccb6a5c7d2a9bd6030dd18cef9c30ee7b765cde674236b4d3e93460f50ea",
-		"Cargo.lock": "3e7418fd3cbb508970d570e642c730f7851f7596d1ac976cadd6098736f4d5a8",
-		"Cargo.toml": "4fee06d71c9ae5ca3c39da341b1ff8a6a44b4ea220138736c0275b43449ceaea"
+		"Cargo.lock": "3e7418fd3cbb508970d570e642c730f7851f7596d1ac976cadd6098736f4d5a8"
 	}
 }

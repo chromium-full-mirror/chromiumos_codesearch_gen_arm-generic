@@ -201,12 +201,12 @@ following less common units:</p>
 <p>Different definitions of the unit &quot;pt&quot;!</p>
 <ul>
 <li><p class="first">In Docutils (as well as CSS) the unit symbol &quot;pt&quot; denotes the
-<cite>Postscript point</cite> or <cite>DTP point</cite>.</p>
+<span class="incremental">Postscript point</span> or <span class="incremental">DTP point</span>.</p>
 </li>
-<li><p class="first">LaTeX uses &quot;pt&quot; for the <cite>LaTeX point</cite>, which is unknown to Docutils and
+<li><p class="first">LaTeX uses &quot;pt&quot; for the <span class="incremental">LaTeX point</span>, which is unknown to Docutils and
 0.3&nbsp;% smaller.</p>
 </li>
-<li><p class="first">The <cite>DTP point</cite> is available in LaTeX as &quot;bp&quot; (big point):</p>
+<li><p class="first">The <span class="incremental">DTP point</span> is available in LaTeX as &quot;bp&quot; (big point):</p>
 <blockquote>
 <p>1 pt = 1/72.25 in &lt; 1 bp  = 1/72 in</p>
 </blockquote>
@@ -214,8 +214,8 @@ following less common units:</p>
 </ul>
 <p>Lengths specified in the document with unit &quot;pt&quot; will be given the
 unit &quot;bp&quot; in the LaTeX source.</p>
-<p class="last">In <a class="reference internal" href="#raw-latex">raw LaTeX</a> and <a class="reference internal" href="#custom-style-sheets">custom style sheets</a>, the <cite>DTP point</cite> must be
-specified as &quot;bp&quot;, while &quot;pt&quot; is interpreted as <cite>LaTeX point</cite>.</p>
+<p class="last">In <a class="reference internal" href="#raw-latex">raw LaTeX</a> and <a class="reference internal" href="#custom-style-sheets">custom style sheets</a>, the <span class="incremental">DTP point</span> must be
+specified as &quot;bp&quot;, while &quot;pt&quot; is interpreted as <span class="incremental">LaTeX point</span>.</p>
 </div>
 <p>The default length unit (added by Docutils to length specifications
 without unit) is the &quot;DTP point&quot;.</p>
@@ -231,7 +231,7 @@ source, including:</p>
 <dd>Generates a PDF document directly from the LaTeX file.</dd>
 <dt><span class="target" id="xelatex">xelatex</span> or <span class="target" id="lualatex">lualatex</span></dt>
 <dd>The <a class="reference external" href="http://tug.org/xetex/">XeTeX</a> and <a class="reference external" href="http://luatex.org/">LuaTeX</a> engines work with input files in UTF-8 encoding
-and system fonts. Export your document with the <cite>xetex</cite> writer
+and system fonts. Export your document with the <span class="incremental">xetex</span> writer
 (<tt class="docutils literal">rst2xetex</tt>), if you want to go this route.</dd>
 </dl>
 <p>You may need to call latex two or three times to get internal references
@@ -394,14 +394,14 @@ you need to pass options to the package, use the <tt class="docutils literal">\u
 command in the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a> or a custom style sheet.</p>
 <dl class="docutils">
 <dt>Example 1:</dt>
-<dd><p class="first">Select Latin Modern fonts with the <cite>lmodern</cite> package:</p>
+<dd><p class="first">Select Latin Modern fonts with the <span class="incremental">lmodern</span> package:</p>
 <pre class="last literal-block">
 --stylesheet=lmodern
 </pre>
 </dd>
 <dt>Example 2:</dt>
-<dd><p class="first">Use the <cite>preamble.tex</cite> home-made custom style sheet together with
-the package <cite>kerkis</cite> (Bookman fonts):</p>
+<dd><p class="first">Use the <span class="incremental">preamble.tex</span> home-made custom style sheet together with
+the package <span class="incremental">kerkis</span> (Bookman fonts):</p>
 <pre class="last literal-block">
 --stylesheet=kerkis,preamble.tex
 </pre>
@@ -667,7 +667,7 @@ By default, docinfo items are typeset as a table.</p>
 <dt>Options:</dt>
 <dd><a class="reference external" href="config.html#use-latex-docinfo">use-latex-docinfo</a>, <a class="reference external" href="config.html#use-latex-abstract">use-latex-abstract</a></dd>
 <dt>Length:</dt>
-<dd><tt class="docutils literal">\DUdocinfowidth</tt>: the width for the <cite>docinfo</cite> table.</dd>
+<dd><tt class="docutils literal">\DUdocinfowidth</tt>: the width for the <span class="incremental">docinfo</span> table.</dd>
 <dt>Default:</dt>
 <dd>90&nbsp;% of text width: <tt class="docutils literal">0.9\textwidth</tt></dd>
 <dt>Example:</dt>
@@ -716,7 +716,7 @@ documents.</p>
 }
 </pre>
 <p class="last">The <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/koma-script.html">KOMA-script</a> classes provide a similar environment under the name
-<cite>labeling</cite>.</p>
+<span class="incremental">labeling</span>.</p>
 </dd>
 </dl>
 </div>
@@ -1228,7 +1228,7 @@ in a custom <a class="reference internal" href="#style-sheet">style sheet</a> or
 </pre>
 <p>(play with the <tt class="docutils literal">\footnotemargin</tt> setting),</p>
 </li>
-<li><p class="first">redefine <tt class="docutils literal">\DUfootnotetext</tt> inserting <cite>hangindent</cite>:</p>
+<li><p class="first">redefine <tt class="docutils literal">\DUfootnotetext</tt> inserting <span class="incremental">hangindent</span>:</p>
 <pre class="literal-block">
 \newcommand{\DUfootnotetext}[4]{%
   \begingroup%
@@ -1364,7 +1364,7 @@ bundle.</p>
 <dt>Commands:</dt>
 <dd><p class="first"><tt class="docutils literal">\linespread</tt>: for small adjustments</p>
 <p class="last"><tt class="docutils literal">\singlespacing</tt>, <tt class="docutils literal">\onehalfspacing</tt>, and <tt class="docutils literal">\doublespacing</tt>: from
-package <cite>setspace</cite></p>
+package <span class="incremental">setspace</span></p>
 </dd>
 <dt>Example 1:</dt>
 <dd><p class="first">Get document wide double spacing:</p>
@@ -1520,7 +1520,7 @@ For details see the <a class="reference external" href="http://mirror.ctan.org/m
 </ol>
 <dl class="docutils">
 <dt>Example 1:</dt>
-<dd><p class="first">Let <cite>typearea</cite> determine the type area with <tt class="docutils literal">DIV=calc</tt> in the
+<dd><p class="first">Let <span class="incremental">typearea</span> determine the type area with <tt class="docutils literal">DIV=calc</tt> in the
 documentoptions:</p>
 <pre class="literal-block">
 --documentoptions='a4paper,DIV=calc'
@@ -1613,7 +1613,7 @@ page with <a class="reference external" href="http://www.ctan.org/pkg/fancyhdr">
 chapter, section, subsection, or subsubsection.</dd>
 <dt>Example 1:</dt>
 <dd><p class="first">To set paragraph indentation to zero but add a vertical space between
-load the <cite>parskip</cite> package with the command line argument:</p>
+load the <span class="incremental">parskip</span> package with the command line argument:</p>
 <pre class="literal-block">
 --stylesheet=parskip
 </pre>
@@ -1692,7 +1692,7 @@ text.</p>
 </pre>
 <ul class="last simple">
 <li>Make sure the margin is wide enough to hold the note.</li>
-<li>This fails with some constructs inside the <cite>side bar</cite> and where
+<li>This fails with some constructs inside the <span class="incremental">side bar</span> and where
 marginpar cannot be used, e.g., inside floats, footnotes, or in frames
 made with the framed package (see <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/marginnote.html">marginnote</a>).</li>
 </ul>
@@ -1793,7 +1793,7 @@ documentation</a> for the numerous configuration options.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Minitoc supports local ToCs only at &quot;part&quot; and top section level
-(&quot;chapter&quot; or &quot;section&quot;). Local <cite>contents</cite> directives at lower levels
+(&quot;chapter&quot; or &quot;section&quot;). Local <span class="incremental">contents</span> directives at lower levels
 are ignored (a warning is issued).</p>
 <p class="last">This is an intended feature of the <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/minitoc.html">minitoc</a> package. If you really
 require local ToCs at lower level, turn off the <a class="reference external" href="config.html#use-latex-toc">use-latex-toc</a> option.</p>
@@ -1825,7 +1825,7 @@ but LaTeX' <em>input</em> encoding.</p>
 <dt>Default:</dt>
 <dd>&quot;utf8&quot;</dd>
 <dt>Example:</dt>
-<dd><p class="first">Encode the LaTeX source file with the ISO <cite>latin-1</cite> (west european)
+<dd><p class="first">Encode the LaTeX source file with the ISO <span class="incremental">latin-1</span> (west european)
 8-bit encoding (the default in Docutils versions up to 0.6.):</p>
 <pre class="last literal-block">
 --output-encoding=latin-1
@@ -1961,7 +1961,7 @@ document language is &quot;russian&quot;.</p>
 </div>
 <div class="section" id="image-inclusion">
 <h3><a class="toc-backref" href="#id91">6.1.5&nbsp;&nbsp;&nbsp;image inclusion</a></h3>
-<p><a class="reference external" href="../ref/rst/directives.html#images">Images</a> are included in LaTeX with the help of the <cite>graphicx</cite> package. The
+<p><a class="reference external" href="../ref/rst/directives.html#images">Images</a> are included in LaTeX with the help of the <span class="incremental">graphicx</span> package. The
 supported file formats depend on the used driver:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#pdflatex">pdflatex</a> and <a class="reference internal" href="#xelatex">xelatex</a> work with PNG, JPG, or PDF, but <strong>not EPS</strong>.</li>
@@ -2002,11 +2002,11 @@ configure the <a class="reference internal" href="#size-of-a-pixel">size of a pi
 <h3><a class="toc-backref" href="#id93">6.1.7&nbsp;&nbsp;&nbsp;Error <tt class="docutils literal">illegal unit px</tt></a></h3>
 <p>If you convert the LaTeX source with a legacy program, you might get this
 error.</p>
-<p>The unit &quot;px&quot; was introduced by the <cite>pdfTeX</cite> converter on 2005-02-04.
-<cite>pdfTeX</cite> is used also for conversion into DVI format in all modern LaTeX
+<p>The unit &quot;px&quot; was introduced by the <span class="incremental">pdfTeX</span> converter on 2005-02-04.
+<span class="incremental">pdfTeX</span> is used also for conversion into DVI format in all modern LaTeX
 distributions (since ca. 2006).</p>
 <p>If updating LaTeX is not an option, just remove the &quot;px&quot; from the length
-specification. HTML/CSS will default to &quot;px&quot; while the <cite>latexe2</cite> writer
+specification. HTML/CSS will default to &quot;px&quot; while the <span class="incremental">latexe2</span> writer
 will add the fallback unit &quot;bp&quot;.</p>
 </div>
 <div class="section" id="error-symbol-textcurrency-not-provided">
@@ -2045,7 +2045,7 @@ umlauts) might fail.  See <a class="reference internal" href="#font">font</a> an
 <ul class="simple">
 <li>Generate LaTeX code with <a class="reference external" href="config.html#output-encoding">output-encoding</a> &quot;utf-8&quot;.</li>
 <li>Add the <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/pmboxdraw.html">pmboxdraw</a> package to the <a class="reference internal" href="#style-sheets">style sheets</a>.
-(For shaded boxes also add the <cite>color</cite> package.)</li>
+(For shaded boxes also add the <span class="incremental">color</span> package.)</li>
 </ul>
 <p>Unfortunately, this defines only a subset of the characters
 (see <a class="reference external" href="http://mirror.ctan.org/macros/latex/contrib/oberdiek/pmboxdraw.pdf">pmboxdraw.pdf</a> for a list).</p>
@@ -2059,7 +2059,7 @@ the <a class="reference external" href="../../BUGS.html">BUGS</a> documentation 
 <div class="section" id="footnotes-and-citations">
 <h3><a class="toc-backref" href="#id98">6.2.1&nbsp;&nbsp;&nbsp;Footnotes and citations</a></h3>
 <p>Initially both were implemented using figure floats, because hyperlinking
-back and forth seemed to be impossible. Later the <cite>figure</cite> directive was
+back and forth seemed to be impossible. Later the <span class="incremental">figure</span> directive was
 added that puts images into figure floats.</p>
 <p>This results in footnotes, citations, and figures possibly being mixed at
 page foot.</p>
@@ -2081,7 +2081,7 @@ The appearance in the output can be configured in a <a class="reference internal
 <li><p class="first">reST-documents line length is assumed to be 80 characters. The
 <em>tablewidth</em> is set relative to this value. If someone produces documents
 with line length of 132 this will lead to suboptimal results.</p>
-<p>You may use the <cite>:width:</cite> option to manually set the table column widths.</p>
+<p>You may use the <span class="incremental">:width:</span> option to manually set the table column widths.</p>
 </li>
 <li><p class="first">Table: multicol cells are always left aligned.</p>
 </li>
@@ -2096,8 +2096,8 @@ uses raggedright.</li>
 missing.</li>
 </ul>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">--table-style=booktabs</span></tt>, <tt class="docutils literal">..class:: booktab</tt>: <cite>booktabs</cite> version
-1.00 does not work with <cite>longtable</cite>. This is solved in newer versions
+<li><p class="first"><tt class="docutils literal"><span class="pre">--table-style=booktabs</span></tt>, <tt class="docutils literal">..class:: booktab</tt>: <span class="incremental">booktabs</span> version
+1.00 does not work with <span class="incremental">longtable</span>. This is solved in newer versions
 (current is 2005/04/14 v1.61803).</p>
 </li>
 </ul>
@@ -2131,7 +2131,7 @@ the section numbering with the <a class="reference internal" href="#options-sett
 <div class="footer">
 <hr class="footer" />
 <a class="reference external" href="latex.txt">View document source</a>.
-Generated on: 2022-08-02 06:38 UTC.
+Generated on: 2022-08-04 08:33 UTC.
 Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
 
 </div>

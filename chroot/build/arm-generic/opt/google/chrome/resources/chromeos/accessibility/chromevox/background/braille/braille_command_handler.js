@@ -6,7 +6,9 @@
  * @fileoverview ChromeVox braille commands.
  */
 import {EventGenerator} from '../../../common/event_generator.js';
+import {KeyCode} from '../../../common/key_code.js';
 import {BrailleCommandData} from '../../common/braille/braille_command_data.js';
+import {BrailleKeyCommand, BrailleKeyEvent} from '../../common/braille/braille_key_types.js';
 import {NavBraille} from '../../common/braille/nav_braille.js';
 import {BridgeConstants} from '../../common/bridge_constants.js';
 import {BridgeHelper} from '../../common/bridge_helper.js';

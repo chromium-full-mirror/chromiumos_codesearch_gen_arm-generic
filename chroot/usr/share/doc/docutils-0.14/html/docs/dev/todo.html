@@ -620,7 +620,7 @@ Use <a class="reference external" href="http://pypi.python.org/pypi/Unidecode">h
 &quot;reference fields&quot;:</p>
 <ul>
 <li><p class="first">Parameterized substitutions are too complicated
-(cf. <cite>or not to do</cite>: <a class="reference external" href="rst/alternatives.html#object-references">object references</a>)</p>
+(cf. <span class="incremental">or not to do</span>: <a class="reference external" href="rst/alternatives.html#object-references">object references</a>)</p>
 </li>
 <li><p class="first">An interpreted text approach is simpler and better:</p>
 <pre class="literal-block">
@@ -1167,13 +1167,13 @@ fields, and have only a single generic &quot;field&quot;?</p>
 <ul>
 <li><p class="first">Add &quot;source&quot; and &quot;line&quot; keyword arguments to all Reporter calls?
 This would require passing source/line arguments along all
-intermediate functions (where currently only <cite>line</cite> is used).</p>
+intermediate functions (where currently only <span class="incremental">line</span> is used).</p>
 <p>Or rather specify &quot;line&quot; only if actually needed?</p>
-<p>Currently, <cite>document.reporter</cite> uses a state machine instance to
+<p>Currently, <span class="incremental">document.reporter</span> uses a state machine instance to
 determine the &quot;source&quot; and &quot;line&quot; info from
-<cite>statemachine.input_lines</cite> if not given explicitely. Except for
+<span class="incremental">statemachine.input_lines</span> if not given explicitely. Except for
 special cases, the &quot;line&quot; argument is not needed because,
-<cite>document.statemachine</cite> keeps record of the current line number.</p>
+<span class="incremental">document.statemachine</span> keeps record of the current line number.</p>
 </li>
 <li><p class="first">For system messages generated after the parsing is completed (i.e. by
 transforms or the writer) &quot;line&quot; info must be present in the doctree
@@ -1182,7 +1182,7 @@ elements.</p>
 too?  Add a set_info method?  To what?)</p>
 <p>The &quot;source&quot; (and line number in the source) can either be added
 explicitely to the elements or determined from the “raw” line
-number by <cite>document.statemachine.get_source_and_line</cite>.</p>
+number by <span class="incremental">document.statemachine.get_source_and_line</span>.</p>
 </li>
 <li><p class="first">Some line numbers in elements are not being set properly
 (explicitly), just implicitly/automatically.  See rev. 1.74 of
@@ -1246,7 +1246,7 @@ content).</li>
 </ul>
 </li>
 <li>Equation numbering and references. (see the section on
-<cite>object numbering and object references</cite> for equations,
+<span class="incremental">object numbering and object references</span> for equations,
 formal tables, and images.)</li>
 </ul>
 <div class="section" id="alternative-input-formats">
@@ -1290,23 +1290,23 @@ the Unicode Consortium.)</p>
 <ul>
 <li><p class="first">one line:</p>
 <ul class="simple">
-<li>numbered: <cite>equation</cite></li>
-<li>unnumbered: <cite>equation*</cite></li>
+<li>numbered: <span class="incremental">equation</span></li>
+<li>unnumbered: <span class="incremental">equation*</span></li>
 </ul>
 </li>
 <li><p class="first">multiline (test for <tt class="docutils literal">\\</tt> outside of a nested environment
-(e.g. <cite>array</cite> or <cite>cases</cite>)</p>
+(e.g. <span class="incremental">array</span> or <span class="incremental">cases</span>)</p>
 <ul>
-<li><p class="first">numbered: <cite>align</cite> (number every line)</p>
-<p>(To give one common number to all lines, put them in a <cite>split</cite>
-environment. Docutils then places it in an <cite>equation</cite> environment.)</p>
+<li><p class="first">numbered: <span class="incremental">align</span> (number every line)</p>
+<p>(To give one common number to all lines, put them in a <span class="incremental">split</span>
+environment. Docutils then places it in an <span class="incremental">equation</span> environment.)</p>
 </li>
-<li><p class="first">unnumbered: <cite>align*</cite></p>
+<li><p class="first">unnumbered: <span class="incremental">align*</span></p>
 </li>
-<li><p class="first">Sphinx math also supports <cite>gather</cite> (checking for blank lines in
+<li><p class="first">Sphinx math also supports <span class="incremental">gather</span> (checking for blank lines in
 the content). Docutils puts content blocks separated by blank
 lines in separate math-block doctree nodes. (The only difference of
-<cite>gather</cite> to two consecutive &quot;normal&quot; environments seems to be that
+<span class="incremental">gather</span> to two consecutive &quot;normal&quot; environments seems to be that
 page-breaks between the two are prevented.)</p>
 </li>
 </ul>
@@ -1938,7 +1938,7 @@ would introduce a huge backwards incompatibility.</p>
 <li><p class="first"><span class="target" id="footnote-citation-gathering">Footnote &amp; Citation Gathering</span></p>
 <p>Collect and move footnotes &amp; citations to the end of a document or the
 place of a &quot;footnotes&quot; or &quot;citations&quot; directive
-(see <cite>&lt;./ref/rst/directives.html&gt;_</cite>)</p>
+(see <span class="incremental">&lt;./ref/rst/directives.html&gt;_</span>)</p>
 <dl class="docutils">
 <dt>Footnotes:</dt>
 <dd><p class="first">Collect all footnotes that are referenced in the document before the
@@ -2231,7 +2231,7 @@ a workaround.</p>
 <p>2017-02-09 this is fixed for enumeration in 0.13.1</p>
 <p>for others, cf. sandbox/latex-variants/tests/rst-levels.txt</p>
 </li>
-<li><p class="first">File names of included graphics (see also <cite>grffile</cite> package).</p>
+<li><p class="first">File names of included graphics (see also <span class="incremental">grffile</span> package).</p>
 </li>
 <li><p class="first">Paragraph following field-list or table in compound is indented.</p>
 <p>This is a problem with the current DUfieldlist definition and with
@@ -2244,7 +2244,7 @@ alternatives.</p>
 <div class="section" id="generate-clean-and-configurable-latex-source">
 <h2><a class="toc-backref" href="#id45">Generate clean and configurable LaTeX source</a></h2>
 <ul class="simple">
-<li>Check the generated source with package <cite>nag</cite>.</li>
+<li>Check the generated source with package <span class="incremental">nag</span>.</li>
 </ul>
 <div class="section" id="configurable-placement-of-figure-and-table-floats">
 <h3><a class="toc-backref" href="#id46">Configurable placement of figure and table floats</a></h3>
@@ -2284,7 +2284,7 @@ alternatives.</p>
 <ul>
 <li><p class="first">base and &quot;recommended&quot; packages</p>
 <p>(packages that should be in a &quot;reasonably sized and reasonably modern
-LaTeX installation like the <cite>texlive-latex-recommended</cite> Debian package,
+LaTeX installation like the <span class="incremental">texlive-latex-recommended</span> Debian package,
 say):</p>
 </li>
 <li><p class="first">No &quot;fancy&quot; or &quot;exotic&quot; requirements.</p>
@@ -2372,7 +2372,7 @@ http://www2.informatik.hu-berlin.de/~ahamann/studies/footnotes.pdf -->
 * perpage provides a general mechanism for resetting counters per page
 * footmisc provides a package option perpage -->
 </li>
-<li><p class="first">use <cite>eqlist</cite> or <cite>enumitem</cite> (texlive-latex-extra) for field-lists?</p>
+<li><p class="first">use <span class="incremental">eqlist</span> or <span class="incremental">enumitem</span> (texlive-latex-extra) for field-lists?</p>
 </li>
 <li><p class="first"><tt class="docutils literal"><span class="pre">--use-latex-when-possible</span></tt> »super option« that would set the
 following:</p>
@@ -2404,7 +2404,7 @@ or</li>
 <li>force a new paragraph with an empty comment.</li>
 </ul>
 </li>
-<li><p class="first">Sidebar handling (environment with <cite>framed</cite>, <cite>marginnote</cite>, <cite>wrapfig</cite>,
+<li><p class="first">Sidebar handling (environment with <span class="incremental">framed</span>, <span class="incremental">marginnote</span>, <span class="incremental">wrapfig</span>,
 ...)?</p>
 </li>
 <li><p class="first">Use optionlist for docinfo?</p>
@@ -2428,8 +2428,8 @@ configuration...</p>
 <li><p class="first">Improve/simplify logic to set the column width in the output.</p>
 <ul class="simple">
 <li>Assumed reST line length for table width setting configurable, or</li>
-<li>use <cite>ltxtable</cite> (a combination of <cite>tabularx</cite> (auto-width) and
-<cite>longtable</cite> (page breaks)), or</li>
+<li>use <span class="incremental">ltxtable</span> (a combination of <span class="incremental">tabularx</span> (auto-width) and
+<span class="incremental">longtable</span> (page breaks)), or</li>
 <li>use tabularx column type <tt class="docutils literal">X</tt> and let LaTeX decide width, or</li>
 <li>use <a class="reference external" href="http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=tabulary">tabulary</a>?</li>
 </ul>
@@ -2497,7 +2497,7 @@ image/figure.</p>
 <li>Wrap text around figures/images with class argument &quot;wrap&quot;
 (like the odt writer)?</li>
 </ul>
-<p>Use <cite>wrapfig</cite> (or other recommended) package.</p>
+<p>Use <span class="incremental">wrapfig</span> (or other recommended) package.</p>
 </li>
 <li><p class="first">support more graphic formats (especially SVG, the only standard
 vector format for HTML)</p>
@@ -2514,7 +2514,7 @@ vector format for HTML)</p>
 a figure in LaTeX is 100&nbsp;% of the text width, setting the 'align'
 argument has currently no effect on the LaTeX output.</p>
 </li>
-<li><p class="first">Let <cite>meta</cite> directive insert PDF-keywords into header?</p>
+<li><p class="first">Let <span class="incremental">meta</span> directive insert PDF-keywords into header?</p>
 </li>
 <li><p class="first">Multiple author entries in docinfo (same thing as in html).
 (already solved?)</p>
@@ -2540,7 +2540,7 @@ that lists LaTeX counterparts for a wide range of Unicode characters.</p>
 <li>Use this in the LaTeXTranslator?
 Think of copyright issues!</li>
 <li>The &quot;ucs&quot; package has many translations in ...doc/latex/ucs/config/</li>
-<li>The <a class="reference external" href="http://code.google.com/p/bibstuff/">bibstuff</a> tool ships a <cite>latex_codec</cite> Python module!</li>
+<li>The <a class="reference external" href="http://code.google.com/p/bibstuff/">bibstuff</a> tool ships a <span class="incremental">latex_codec</span> Python module!</li>
 </ul>
 </div>
 <div class="section" id="allow-choice-between-utf8-standard-and-utf8x-extended-encodings">
@@ -2549,8 +2549,8 @@ Think of copyright issues!</li>
 <li>Allow the user to select <em>utf8</em> or <em>utf8x</em> LaTeX encoding. (Docutil's
 output encoding becomes LaTeX's input encoding.)</li>
 </ul>
-<p>The <cite>ucs</cite> package provides extended support for UTF-8 encoding in LaTeX
-via the <cite>inputenc</cite>-option <tt class="docutils literal">utf8x</tt>.  It is, however, a non-standard
+<p>The <span class="incremental">ucs</span> package provides extended support for UTF-8 encoding in LaTeX
+via the <span class="incremental">inputenc</span>-option <tt class="docutils literal">utf8x</tt>.  It is, however, a non-standard
 extension and no longer developed.</p>
 <dl class="docutils">
 <dt>Ideas:</dt>
@@ -2703,7 +2703,7 @@ End: -->
 <div class="footer">
 <hr class="footer" />
 <a class="reference external" href="todo.txt">View document source</a>.
-Generated on: 2022-08-02 06:38 UTC.
+Generated on: 2022-08-04 08:34 UTC.
 Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
 
 </div>

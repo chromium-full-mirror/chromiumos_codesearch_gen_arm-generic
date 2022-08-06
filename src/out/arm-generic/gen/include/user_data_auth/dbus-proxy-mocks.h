@@ -388,6 +388,16 @@ class UserDataAuthInterfaceProxyMock : public UserDataAuthInterfaceProxyInterfac
                     base::OnceCallback<void(const user_data_auth::RemoveAuthFactorReply& /*reply*/)> /*success_callback*/,
                     base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
                     int /*timeout_ms*/));
+  MOCK_METHOD4(ListAuthFactors,
+               bool(const user_data_auth::ListAuthFactorsRequest& /*in_request*/,
+                    user_data_auth::ListAuthFactorsReply* /*out_reply*/,
+                    brillo::ErrorPtr* /*error*/,
+                    int /*timeout_ms*/));
+  MOCK_METHOD4(ListAuthFactorsAsync,
+               void(const user_data_auth::ListAuthFactorsRequest& /*in_request*/,
+                    base::OnceCallback<void(const user_data_auth::ListAuthFactorsReply& /*reply*/)> /*success_callback*/,
+                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
+                    int /*timeout_ms*/));
   MOCK_METHOD4(GetRecoveryRequest,
                bool(const user_data_auth::GetRecoveryRequestRequest& /*in_request*/,
                     user_data_auth::GetRecoveryRequestReply* /*out_reply*/,

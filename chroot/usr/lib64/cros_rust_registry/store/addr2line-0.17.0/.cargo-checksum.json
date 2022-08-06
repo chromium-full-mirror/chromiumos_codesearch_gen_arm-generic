@@ -1,23 +1,23 @@
 {
-	"package": "2c1d07be6b02010f7063979186b491ab1c79b3d6b4ac777e2e8d0b580dcc4bf8",
+	"package": "2639692317b21d2aec69f64c0cdac8383fadf27335a27d93cd97aec1f75db7fa",
 	"files": {
-		"tests/correctness.rs": "c9325ffdec577bf5e56f5dd72fdff4927153d0a4c34c0fda5aefaeb44a8d26fd",
-		"tests/output_equivalence.rs": "38d7b585b7a2ca43b07eef6b34c11f489d1deae138a010123c33188dfb881c11",
-		"tests/parse.rs": "9e421ea9d9348721f6c6533cdba1db5b84287fc685f870c7905dea06b596b4db",
 		"LICENSE-MIT": "e99d88d232bf57d70f0fb87f6b496d44b6653f99f8a63d250a54c61ea4bcde40",
-		"benchmark.sh": "b35f89b1ca2c1dc0476cdd07f0284b72d41920d1c7b6054072f50ffba296d78d",
-		"README.md": "76d28502bd2e83f6a9e3576bd45e9a7fe5308448c4b5384b0d249515b5f67a5c",
-		"src/lib.rs": "5696c0aee67df576f78935c66bb124f4e5fa19cbc9b25faf8f750e7e8dda113c",
+		"Cargo.toml.orig": "9cf7630000472ee4de801185d8ae74556933ddecfd5b3c9bc1decbb6bcea6869",
+		"Cargo.toml": "1ec9ca6e9f984d352488390ab6f1b4ba561bbc3eade5312d1d47507db9c74937",
+		"tests/parse.rs": "9e421ea9d9348721f6c6533cdba1db5b84287fc685f870c7905dea06b596b4db",
+		"tests/output_equivalence.rs": "38d7b585b7a2ca43b07eef6b34c11f489d1deae138a010123c33188dfb881c11",
+		"tests/correctness.rs": "c9325ffdec577bf5e56f5dd72fdff4927153d0a4c34c0fda5aefaeb44a8d26fd",
 		"src/lazy.rs": "14ec61761369c21d426673f549c21394221533f444b68cd2a8370952eb19f345",
 		"src/function.rs": "395f37cdf03201d416d66bc11abeea627be0abb4585104acd927224a26cb9369",
+		"src/lib.rs": "5696c0aee67df576f78935c66bb124f4e5fa19cbc9b25faf8f750e7e8dda113c",
 		"examples/addr2line.rs": "75ef29e1d07d49d247990ad970892d64f629766bafa36afddff5a88976e58060",
+		"benchmark.sh": "b35f89b1ca2c1dc0476cdd07f0284b72d41920d1c7b6054072f50ffba296d78d",
+		"README.md": "76d28502bd2e83f6a9e3576bd45e9a7fe5308448c4b5384b0d249515b5f67a5c",
+		"coverage.sh": "4677e81922d08a82e83068a911717a247c66af12e559f37b78b6be3337ac9f07",
 		"rustfmt.toml": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-		"bench.plot.r": "6a5d7a4d36ed6b3d9919be703a479bef47698bf947818b483ff03951df2d4e01",
-		"Cargo.toml.orig": "9cf7630000472ee4de801185d8ae74556933ddecfd5b3c9bc1decbb6bcea6869",
 		"CHANGELOG.md": "d4ef249a0a4eff26a34a1f847a3c367dfd9988b4da972ac9c16b1d258b62ad87",
-		"Cargo.lock": "28f22a16b54487bebdfd4b2fa4a847d383961beedd831f68d2c04e868f162476",
 		"LICENSE-APACHE": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
-		"Cargo.toml": "1ec9ca6e9f984d352488390ab6f1b4ba561bbc3eade5312d1d47507db9c74937",
-		"coverage.sh": "4677e81922d08a82e83068a911717a247c66af12e559f37b78b6be3337ac9f07"
+		"bench.plot.r": "6a5d7a4d36ed6b3d9919be703a479bef47698bf947818b483ff03951df2d4e01",
+		"Cargo.lock": "ba607b3f6a7942c0d2629fd3e4103d688fde333d8824dbf3759b1f8be8420042"
 	}
 }

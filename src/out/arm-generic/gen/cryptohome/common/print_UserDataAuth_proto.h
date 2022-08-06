@@ -619,6 +619,14 @@ std::string GetProtoDebugStringWithIndent(const RemoveAuthFactorReply& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(
     const RemoveAuthFactorReply& value);
+std::string GetProtoDebugStringWithIndent(const ListAuthFactorsRequest& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(
+    const ListAuthFactorsRequest& value);
+std::string GetProtoDebugStringWithIndent(const ListAuthFactorsReply& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(
+    const ListAuthFactorsReply& value);
 std::string GetProtoDebugStringWithIndent(
     const GetRecoveryRequestRequest& value,
     int indent_size);

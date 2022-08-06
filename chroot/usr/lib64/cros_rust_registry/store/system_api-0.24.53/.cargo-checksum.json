@@ -1,5 +1,5 @@
 {
-	"package": "9680f4f54b585fabcc767564c39e9afe38c08783e5175ee92d63753a80638983",
+	"package": "a432156e54f9aea16c468cc9acab7f1852fdf3ed110662fe8857c0b240375cdb",
 	"files": {
 		"Cargo.toml.orig": "55e6bfaa88764721bd07529ae9d66cfb4e9708d60deab5d0933624fe358609b6",
 		"Cargo.toml": "40cbb98e01f71f3930f0ec25fc1639611aa68f978f8fb0b66f9dae3f7b7c669f",
@@ -8,7 +8,7 @@
 		"src/bindings/client/org_chromium_sessionmanagerinterface.rs": "36cfa745f0054f16ee723cd910df63122a4540e39fc3ea756ce20ffa2887c059",
 		"src/bindings/client/org_chromium_power_manager.rs": "c80810ef5a9aca5ef006e48823814f019fa4593746711bebd7447e8fbfbcc819",
 		"src/bindings/client/org_chromium_debugd.rs": "00ff00c1c8653a909ec2b12e94f67c9b6141c9222afe5782625bd4b5cbdd796e",
-		"src/bindings/client/org_chromium_userdataauth.rs": "30397a747024a46215bdcea2e172952068daac980fdc678f56ba5115743ac6f9",
+		"src/bindings/client/org_chromium_userdataauth.rs": "d607287e12d57ac063a025b808d6a93e566834c38e363f05b326cb44801dacf6",
 		"src/bindings/client/org_chromium_flimflam_manager.rs": "861aa6379f4b126142bb0c13619f258c123b18128ea6eb7c865f080e1dd41258",
 		"src/bindings/client/org_chromium_vtpm.rs": "2fe321efb81b496a3d418b2e0a7c1fb1b9323a63459e1c42c5d67399a3833455",
 		"src/bindings/client/org_chromium_flimflam_service.rs": "30e85b38f5ee4fba7135d2d73829a0842f05da90f72acb50d3a88a155638ad4d",
@@ -19,7 +19,7 @@
 		"src/protos/vtpm_interface.rs": "d29a48b7a2ba3a14b87b552deecd32772f6ae96f57428415ddcba1ca482b60b5",
 		"src/protos/auth_factor.rs": "03d478b07994dbe6ca6e220405bd2ebb4cb74104bdb413cc8657175cb0391bdb",
 		"src/protos/dlcservice.rs": "d5831fe5eb972321e9197314c84f218b76652c1fe9303fe55d55cb37a0fce1b3",
-		"src/protos/UserDataAuth.rs": "46d0f83240447424d3f3fa7ef3f5f7d9c9563658172c0118a723279d219f26a2",
+		"src/protos/UserDataAuth.rs": "0abd3a1b9a3bec0f50c7d3acf128d6471644b47b0619767c5f0ec5fa47794188",
 		"src/protos/fido.rs": "f2e2e1e52320ff65c97a2b883437bef59225f7ea4b96eef68f0764d745369a0f",
 		"src/protos/include_protos.rs": "05e66958a997e5d3e6c47509315c466ce4cc1bde30b305d4f7492462dd0ca464",
 		"src/protos/key.rs": "3cf3877f30c3679f88f58ca25baf18182828b7a159b73a9ea46297fad54816c5"

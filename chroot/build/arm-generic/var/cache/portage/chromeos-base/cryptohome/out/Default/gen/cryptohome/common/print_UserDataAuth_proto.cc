@@ -3660,6 +3660,76 @@ std::string GetProtoDebugStringWithIndent(const RemoveAuthFactorReply& value,
   return output;
 }
 
+std::string GetProtoDebugString(const ListAuthFactorsRequest& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const ListAuthFactorsRequest& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "  account_id: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.account_id(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
+  output += indent + "}\n";
+  return output;
+}
+
+std::string GetProtoDebugString(const ListAuthFactorsReply& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const ListAuthFactorsReply& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "  error: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error(), indent_size + 2).c_str());
+  output += "\n";
+
+  output += indent + "  error_info: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.error_info(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
+  output += indent + "  configured_auth_factors: {";
+  for (int i = 0; i < value.configured_auth_factors_size(); ++i) {
+    if (i > 0) {
+      base::StringAppendF(&output, ", ");
+    }
+    base::StringAppendF(&output, "%s",
+                        GetProtoDebugStringWithIndent(
+                            value.configured_auth_factors(i), indent_size + 2)
+                            .c_str());
+  }
+  output += "}\n";
+  output += indent + "  supported_auth_factors: {";
+  for (int i = 0; i < value.supported_auth_factors_size(); ++i) {
+    if (i > 0) {
+      base::StringAppendF(&output, ", ");
+    }
+    base::StringAppendF(&output, "%s",
+                        GetProtoDebugStringWithIndent(
+                            value.supported_auth_factors(i), indent_size + 2)
+                            .c_str());
+  }
+  output += "}\n";
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const GetRecoveryRequestRequest& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }

@@ -14,4 +14,4 @@ BIR_LDFLAGS=-Wl,-Bsymbolic
 AR=llvm-ar
 ARFLAGS=r
 RANLIB=llvm-ranlib
-INSTALL_CMD=/var/tmp/portage/._portage_reinstall_.oebe0bye/bin/ebuild-helpers/xattr/install -c
+INSTALL_CMD=/var/tmp/portage/._portage_reinstall_.zu9wjg54/bin/ebuild-helpers/xattr/install -c

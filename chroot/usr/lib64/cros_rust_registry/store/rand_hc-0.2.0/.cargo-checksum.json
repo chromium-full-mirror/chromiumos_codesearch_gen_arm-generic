@@ -2,13 +2,13 @@
 	"package": "07ed6be1fdacf7d256866eb213d8ed6961c5017d3ccba4100395c45e7bf990f4",
 	"files": {
 		"LICENSE-MIT": "a771e4354f6b3ad4c92da1a5c9a239b6c291527db869632ecea4f20e24ca1135",
-		"README.md": "18ac2dc683ade79e01d509870b82fe68c4f868a1afaeb951f9e75bd0dd965d7b",
-		"src/lib.rs": "1e51045313d177cd609bedeee31acfa81a536da1fee93069f900b4fae51a79a0",
-		"src/hc128.rs": "94ff3bb8a986c381102ddfde72bc9638dd19ebc2a7e16d7124ed32d95bd85fe3",
 		"Cargo.toml.orig": "7f51c625c5a4e1b9ca32192a914494d15a5568b8a7b7bbae72214c88d24d0a88",
+		"Cargo.toml": "ec7aa2667c5f07c52e725e6e7cdd54d2efc8de1339ea5acd12139797c9a35d84",
+		"src/hc128.rs": "94ff3bb8a986c381102ddfde72bc9638dd19ebc2a7e16d7124ed32d95bd85fe3",
+		"src/lib.rs": "1e51045313d177cd609bedeee31acfa81a536da1fee93069f900b4fae51a79a0",
+		"README.md": "18ac2dc683ade79e01d509870b82fe68c4f868a1afaeb951f9e75bd0dd965d7b",
 		"CHANGELOG.md": "011d4dd590882dd2e681c28f41bbfe089ab38587ca21336ca2332118cea0f662",
-		"COPYRIGHT": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5",
 		"LICENSE-APACHE": "aaff376532ea30a0cd5330b9502ad4a4c8bf769c539c87ffe78819d188a18ebf",
-		"Cargo.toml": "ec7aa2667c5f07c52e725e6e7cdd54d2efc8de1339ea5acd12139797c9a35d84"
+		"COPYRIGHT": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5"
 	}
 }

@@ -1754,6 +1754,35 @@ struct RemoveAuthFactorReplyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RemoveAuthFactorReplyDefaultTypeInternal _RemoveAuthFactorReply_default_instance_;
+constexpr ListAuthFactorsRequest::ListAuthFactorsRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : account_id_(nullptr){}
+struct ListAuthFactorsRequestDefaultTypeInternal {
+  constexpr ListAuthFactorsRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListAuthFactorsRequestDefaultTypeInternal() {}
+  union {
+    ListAuthFactorsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListAuthFactorsRequestDefaultTypeInternal _ListAuthFactorsRequest_default_instance_;
+constexpr ListAuthFactorsReply::ListAuthFactorsReply(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : configured_auth_factors_()
+  , supported_auth_factors_()
+  , _supported_auth_factors_cached_byte_size_(0)
+  , error_info_(nullptr)
+  , error_(0)
+{}
+struct ListAuthFactorsReplyDefaultTypeInternal {
+  constexpr ListAuthFactorsReplyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ListAuthFactorsReplyDefaultTypeInternal() {}
+  union {
+    ListAuthFactorsReply _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ListAuthFactorsReplyDefaultTypeInternal _ListAuthFactorsReply_default_instance_;
 constexpr GetRecoveryRequestRequest::GetRecoveryRequestRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : auth_session_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -30926,6 +30955,511 @@ std::string RemoveAuthFactorReply::GetTypeName() const {
 
 // ===================================================================
 
+class ListAuthFactorsRequest::_Internal {
+ public:
+  static const ::cryptohome::AccountIdentifier& account_id(const ListAuthFactorsRequest* msg);
+};
+
+const ::cryptohome::AccountIdentifier&
+ListAuthFactorsRequest::_Internal::account_id(const ListAuthFactorsRequest* msg) {
+  return *msg->account_id_;
+}
+void ListAuthFactorsRequest::clear_account_id() {
+  if (GetArenaForAllocation() == nullptr && account_id_ != nullptr) {
+    delete account_id_;
+  }
+  account_id_ = nullptr;
+}
+ListAuthFactorsRequest::ListAuthFactorsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:user_data_auth.ListAuthFactorsRequest)
+}
+ListAuthFactorsRequest::ListAuthFactorsRequest(const ListAuthFactorsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  if (from._internal_has_account_id()) {
+    account_id_ = new ::cryptohome::AccountIdentifier(*from.account_id_);
+  } else {
+    account_id_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:user_data_auth.ListAuthFactorsRequest)
+}
+
+inline void ListAuthFactorsRequest::SharedCtor() {
+account_id_ = nullptr;
+}
+
+ListAuthFactorsRequest::~ListAuthFactorsRequest() {
+  // @@protoc_insertion_point(destructor:user_data_auth.ListAuthFactorsRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void ListAuthFactorsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete account_id_;
+}
+
+void ListAuthFactorsRequest::ArenaDtor(void* object) {
+  ListAuthFactorsRequest* _this = reinterpret_cast< ListAuthFactorsRequest* >(object);
+  (void)_this;
+}
+void ListAuthFactorsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListAuthFactorsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListAuthFactorsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:user_data_auth.ListAuthFactorsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && account_id_ != nullptr) {
+    delete account_id_;
+  }
+  account_id_ = nullptr;
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* ListAuthFactorsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .cryptohome.AccountIdentifier account_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_account_id(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListAuthFactorsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user_data_auth.ListAuthFactorsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .cryptohome.AccountIdentifier account_id = 1;
+  if (this->_internal_has_account_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::account_id(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user_data_auth.ListAuthFactorsRequest)
+  return target;
+}
+
+size_t ListAuthFactorsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user_data_auth.ListAuthFactorsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .cryptohome.AccountIdentifier account_id = 1;
+  if (this->_internal_has_account_id()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *account_id_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListAuthFactorsRequest::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ListAuthFactorsRequest*>(
+      &from));
+}
+
+void ListAuthFactorsRequest::MergeFrom(const ListAuthFactorsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user_data_auth.ListAuthFactorsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_account_id()) {
+    _internal_mutable_account_id()->::cryptohome::AccountIdentifier::MergeFrom(from._internal_account_id());
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void ListAuthFactorsRequest::CopyFrom(const ListAuthFactorsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user_data_auth.ListAuthFactorsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListAuthFactorsRequest::IsInitialized() const {
+  return true;
+}
+
+void ListAuthFactorsRequest::InternalSwap(ListAuthFactorsRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(account_id_, other->account_id_);
+}
+
+std::string ListAuthFactorsRequest::GetTypeName() const {
+  return "user_data_auth.ListAuthFactorsRequest";
+}
+
+
+// ===================================================================
+
+class ListAuthFactorsReply::_Internal {
+ public:
+  static const ::user_data_auth::CryptohomeErrorInfo& error_info(const ListAuthFactorsReply* msg);
+};
+
+const ::user_data_auth::CryptohomeErrorInfo&
+ListAuthFactorsReply::_Internal::error_info(const ListAuthFactorsReply* msg) {
+  return *msg->error_info_;
+}
+void ListAuthFactorsReply::clear_configured_auth_factors() {
+  configured_auth_factors_.Clear();
+}
+ListAuthFactorsReply::ListAuthFactorsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  configured_auth_factors_(arena),
+  supported_auth_factors_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:user_data_auth.ListAuthFactorsReply)
+}
+ListAuthFactorsReply::ListAuthFactorsReply(const ListAuthFactorsReply& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
+      configured_auth_factors_(from.configured_auth_factors_),
+      supported_auth_factors_(from.supported_auth_factors_) {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  if (from._internal_has_error_info()) {
+    error_info_ = new ::user_data_auth::CryptohomeErrorInfo(*from.error_info_);
+  } else {
+    error_info_ = nullptr;
+  }
+  error_ = from.error_;
+  // @@protoc_insertion_point(copy_constructor:user_data_auth.ListAuthFactorsReply)
+}
+
+inline void ListAuthFactorsReply::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&error_info_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&error_) -
+    reinterpret_cast<char*>(&error_info_)) + sizeof(error_));
+}
+
+ListAuthFactorsReply::~ListAuthFactorsReply() {
+  // @@protoc_insertion_point(destructor:user_data_auth.ListAuthFactorsReply)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void ListAuthFactorsReply::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete error_info_;
+}
+
+void ListAuthFactorsReply::ArenaDtor(void* object) {
+  ListAuthFactorsReply* _this = reinterpret_cast< ListAuthFactorsReply* >(object);
+  (void)_this;
+}
+void ListAuthFactorsReply::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ListAuthFactorsReply::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ListAuthFactorsReply::Clear() {
+// @@protoc_insertion_point(message_clear_start:user_data_auth.ListAuthFactorsReply)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  configured_auth_factors_.Clear();
+  supported_auth_factors_.Clear();
+  if (GetArenaForAllocation() == nullptr && error_info_ != nullptr) {
+    delete error_info_;
+  }
+  error_info_ = nullptr;
+  error_ = 0;
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* ListAuthFactorsReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .user_data_auth.CryptohomeErrorCode error = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_error(static_cast<::user_data_auth::CryptohomeErrorCode>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error_info(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .user_data_auth.AuthFactor configured_auth_factors = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_configured_auth_factors(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .user_data_auth.AuthFactorType supported_auth_factors = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_supported_auth_factors(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 32) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_supported_auth_factors(static_cast<::user_data_auth::AuthFactorType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListAuthFactorsReply::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user_data_auth.ListAuthFactorsReply)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .user_data_auth.CryptohomeErrorCode error = 1;
+  if (this->_internal_error() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_error(), target);
+  }
+
+  // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+  if (this->_internal_has_error_info()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error_info(this), target, stream);
+  }
+
+  // repeated .user_data_auth.AuthFactor configured_auth_factors = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_configured_auth_factors_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_configured_auth_factors(i), target, stream);
+  }
+
+  // repeated .user_data_auth.AuthFactorType supported_auth_factors = 4;
+  {
+    int byte_size = _supported_auth_factors_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteEnumPacked(
+          4, supported_auth_factors_, byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user_data_auth.ListAuthFactorsReply)
+  return target;
+}
+
+size_t ListAuthFactorsReply::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user_data_auth.ListAuthFactorsReply)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .user_data_auth.AuthFactor configured_auth_factors = 3;
+  total_size += 1UL * this->_internal_configured_auth_factors_size();
+  for (const auto& msg : this->configured_auth_factors_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .user_data_auth.AuthFactorType supported_auth_factors = 4;
+  {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_supported_auth_factors_size());for (unsigned int i = 0; i < count; i++) {
+      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+        this->_internal_supported_auth_factors(static_cast<int>(i)));
+    }
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _supported_auth_factors_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+  if (this->_internal_has_error_info()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *error_info_);
+  }
+
+  // .user_data_auth.CryptohomeErrorCode error = 1;
+  if (this->_internal_error() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_error());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ListAuthFactorsReply::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ListAuthFactorsReply*>(
+      &from));
+}
+
+void ListAuthFactorsReply::MergeFrom(const ListAuthFactorsReply& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user_data_auth.ListAuthFactorsReply)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  configured_auth_factors_.MergeFrom(from.configured_auth_factors_);
+  supported_auth_factors_.MergeFrom(from.supported_auth_factors_);
+  if (from._internal_has_error_info()) {
+    _internal_mutable_error_info()->::user_data_auth::CryptohomeErrorInfo::MergeFrom(from._internal_error_info());
+  }
+  if (from._internal_error() != 0) {
+    _internal_set_error(from._internal_error());
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void ListAuthFactorsReply::CopyFrom(const ListAuthFactorsReply& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user_data_auth.ListAuthFactorsReply)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListAuthFactorsReply::IsInitialized() const {
+  return true;
+}
+
+void ListAuthFactorsReply::InternalSwap(ListAuthFactorsReply* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  configured_auth_factors_.InternalSwap(&other->configured_auth_factors_);
+  supported_auth_factors_.InternalSwap(&other->supported_auth_factors_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ListAuthFactorsReply, error_)
+      + sizeof(ListAuthFactorsReply::error_)
+      - PROTOBUF_FIELD_OFFSET(ListAuthFactorsReply, error_info_)>(
+          reinterpret_cast<char*>(&error_info_),
+          reinterpret_cast<char*>(&other->error_info_));
+}
+
+std::string ListAuthFactorsReply::GetTypeName() const {
+  return "user_data_auth.ListAuthFactorsReply";
+}
+
+
+// ===================================================================
+
 class GetRecoveryRequestRequest::_Internal {
  public:
 };
@@ -32062,6 +32596,12 @@ template<> PROTOBUF_NOINLINE ::user_data_auth::RemoveAuthFactorRequest* Arena::C
 }
 template<> PROTOBUF_NOINLINE ::user_data_auth::RemoveAuthFactorReply* Arena::CreateMaybeMessage< ::user_data_auth::RemoveAuthFactorReply >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::RemoveAuthFactorReply >(arena);
+}
+template<> PROTOBUF_NOINLINE ::user_data_auth::ListAuthFactorsRequest* Arena::CreateMaybeMessage< ::user_data_auth::ListAuthFactorsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_data_auth::ListAuthFactorsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::user_data_auth::ListAuthFactorsReply* Arena::CreateMaybeMessage< ::user_data_auth::ListAuthFactorsReply >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_data_auth::ListAuthFactorsReply >(arena);
 }
 template<> PROTOBUF_NOINLINE ::user_data_auth::GetRecoveryRequestRequest* Arena::CreateMaybeMessage< ::user_data_auth::GetRecoveryRequestRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::GetRecoveryRequestRequest >(arena);

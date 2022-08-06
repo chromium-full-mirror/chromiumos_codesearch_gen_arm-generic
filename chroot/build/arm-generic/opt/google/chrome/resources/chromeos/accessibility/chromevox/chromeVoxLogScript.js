@@ -42,10 +42,12 @@ return str;};goog.getMsgWithFallback=function(a,b){return a;};goog.exportSymbol=
 if(caller.superClass_){return caller.superClass_.constructor.apply(me,Array.prototype.slice.call(arguments,1));}
 var args=Array.prototype.slice.call(arguments,2);var foundCaller=false;for(var ctor=me.constructor;ctor;ctor=ctor.superClass_&&ctor.superClass_.constructor){if(ctor.prototype[opt_methodName]===caller){foundCaller=true;}else if(foundCaller){return ctor.prototype[opt_methodName].apply(me,args);}}
 if(me[opt_methodName]===caller){return me.constructor.prototype[opt_methodName].apply(me,args);}else{throw Error('goog.base called from a method of one name '+'to a method of a different name');}};goog.scope=function(fn){fn.call(goog.global);};if(!COMPILED){goog.global['COMPILED']=COMPILED;}
-goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
+goog.provide('QueueMode');goog.provide('TtsCapturingEventListener');goog.provide('TtsCategory');goog.provide('TtsInterface');goog.provide('TtsSpeechProperties');TtsCategory={LIVE:'live',NAV:'nav',};QueueMode={INTERJECT:0,FLUSH:1,CATEGORY_FLUSH:2,QUEUE:3,};TtsCapturingEventListener=class{onTtsStart(){}
 onTtsEnd(){}
-onTtsInterrupted(){}};TtsInterface=class{constructor(){}
-speak(textString,queueMode,properties){}
+onTtsInterrupted(){}};TtsSpeechProperties=class{constructor(opt_initialValues){this.category;this.color;this.delay;this.doNotInterrupt;this.fontWeight;this.lang;this.math;this.pause;this.phoneticCharacters;this.punctuationEcho;this.token;this.voiceName;this.pitch;this.relativePitch;this.rate;this.relativeRate;this.volume;this.relativeVolume;this.startCallback;this.endCallback;this.onEvent;this.init_(opt_initialValues);}
+toJSON(){return Object.assign({},this);}
+init_(opt_initialValues){if(!opt_initialValues){return;}
+Object.assign(this,opt_initialValues);}};TtsInterface=class{speak(textString,queueMode,properties){}
 isSpeaking(){}
 stop(){}
 addCapturingEventListener(listener){}

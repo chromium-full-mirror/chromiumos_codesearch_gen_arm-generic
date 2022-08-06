@@ -52,7 +52,7 @@ struct TableStruct_UserDataAuth_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[135]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[137]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -287,6 +287,12 @@ extern IsMountedReplyDefaultTypeInternal _IsMountedReply_default_instance_;
 class IsMountedRequest;
 struct IsMountedRequestDefaultTypeInternal;
 extern IsMountedRequestDefaultTypeInternal _IsMountedRequest_default_instance_;
+class ListAuthFactorsReply;
+struct ListAuthFactorsReplyDefaultTypeInternal;
+extern ListAuthFactorsReplyDefaultTypeInternal _ListAuthFactorsReply_default_instance_;
+class ListAuthFactorsRequest;
+struct ListAuthFactorsRequestDefaultTypeInternal;
+extern ListAuthFactorsRequestDefaultTypeInternal _ListAuthFactorsRequest_default_instance_;
 class ListKeysReply;
 struct ListKeysReplyDefaultTypeInternal;
 extern ListKeysReplyDefaultTypeInternal _ListKeysReply_default_instance_;
@@ -542,6 +548,8 @@ template<> ::user_data_auth::InvalidateAuthSessionReply* Arena::CreateMaybeMessa
 template<> ::user_data_auth::InvalidateAuthSessionRequest* Arena::CreateMaybeMessage<::user_data_auth::InvalidateAuthSessionRequest>(Arena*);
 template<> ::user_data_auth::IsMountedReply* Arena::CreateMaybeMessage<::user_data_auth::IsMountedReply>(Arena*);
 template<> ::user_data_auth::IsMountedRequest* Arena::CreateMaybeMessage<::user_data_auth::IsMountedRequest>(Arena*);
+template<> ::user_data_auth::ListAuthFactorsReply* Arena::CreateMaybeMessage<::user_data_auth::ListAuthFactorsReply>(Arena*);
+template<> ::user_data_auth::ListAuthFactorsRequest* Arena::CreateMaybeMessage<::user_data_auth::ListAuthFactorsRequest>(Arena*);
 template<> ::user_data_auth::ListKeysReply* Arena::CreateMaybeMessage<::user_data_auth::ListKeysReply>(Arena*);
 template<> ::user_data_auth::ListKeysRequest* Arena::CreateMaybeMessage<::user_data_auth::ListKeysRequest>(Arena*);
 template<> ::user_data_auth::LockToSingleUserMountUntilRebootReply* Arena::CreateMaybeMessage<::user_data_auth::LockToSingleUserMountUntilRebootReply>(Arena*);
@@ -19927,6 +19935,335 @@ class RemoveAuthFactorReply final :
 };
 // -------------------------------------------------------------------
 
+class ListAuthFactorsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.ListAuthFactorsRequest) */ {
+ public:
+  inline ListAuthFactorsRequest() : ListAuthFactorsRequest(nullptr) {}
+  ~ListAuthFactorsRequest() override;
+  explicit constexpr ListAuthFactorsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListAuthFactorsRequest(const ListAuthFactorsRequest& from);
+  ListAuthFactorsRequest(ListAuthFactorsRequest&& from) noexcept
+    : ListAuthFactorsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ListAuthFactorsRequest& operator=(const ListAuthFactorsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListAuthFactorsRequest& operator=(ListAuthFactorsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ListAuthFactorsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListAuthFactorsRequest* internal_default_instance() {
+    return reinterpret_cast<const ListAuthFactorsRequest*>(
+               &_ListAuthFactorsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    133;
+
+  friend void swap(ListAuthFactorsRequest& a, ListAuthFactorsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListAuthFactorsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListAuthFactorsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ListAuthFactorsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ListAuthFactorsRequest>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const ListAuthFactorsRequest& from);
+  void MergeFrom(const ListAuthFactorsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ListAuthFactorsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "user_data_auth.ListAuthFactorsRequest";
+  }
+  protected:
+  explicit ListAuthFactorsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountIdFieldNumber = 1,
+  };
+  // .cryptohome.AccountIdentifier account_id = 1;
+  bool has_account_id() const;
+  private:
+  bool _internal_has_account_id() const;
+  public:
+  void clear_account_id();
+  const ::cryptohome::AccountIdentifier& account_id() const;
+  PROTOBUF_NODISCARD ::cryptohome::AccountIdentifier* release_account_id();
+  ::cryptohome::AccountIdentifier* mutable_account_id();
+  void set_allocated_account_id(::cryptohome::AccountIdentifier* account_id);
+  private:
+  const ::cryptohome::AccountIdentifier& _internal_account_id() const;
+  ::cryptohome::AccountIdentifier* _internal_mutable_account_id();
+  public:
+  void unsafe_arena_set_allocated_account_id(
+      ::cryptohome::AccountIdentifier* account_id);
+  ::cryptohome::AccountIdentifier* unsafe_arena_release_account_id();
+
+  // @@protoc_insertion_point(class_scope:user_data_auth.ListAuthFactorsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::cryptohome::AccountIdentifier* account_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_UserDataAuth_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ListAuthFactorsReply final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.ListAuthFactorsReply) */ {
+ public:
+  inline ListAuthFactorsReply() : ListAuthFactorsReply(nullptr) {}
+  ~ListAuthFactorsReply() override;
+  explicit constexpr ListAuthFactorsReply(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ListAuthFactorsReply(const ListAuthFactorsReply& from);
+  ListAuthFactorsReply(ListAuthFactorsReply&& from) noexcept
+    : ListAuthFactorsReply() {
+    *this = ::std::move(from);
+  }
+
+  inline ListAuthFactorsReply& operator=(const ListAuthFactorsReply& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ListAuthFactorsReply& operator=(ListAuthFactorsReply&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ListAuthFactorsReply& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ListAuthFactorsReply* internal_default_instance() {
+    return reinterpret_cast<const ListAuthFactorsReply*>(
+               &_ListAuthFactorsReply_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    134;
+
+  friend void swap(ListAuthFactorsReply& a, ListAuthFactorsReply& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ListAuthFactorsReply* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ListAuthFactorsReply* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ListAuthFactorsReply* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ListAuthFactorsReply>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const ListAuthFactorsReply& from);
+  void MergeFrom(const ListAuthFactorsReply& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(ListAuthFactorsReply* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "user_data_auth.ListAuthFactorsReply";
+  }
+  protected:
+  explicit ListAuthFactorsReply(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConfiguredAuthFactorsFieldNumber = 3,
+    kSupportedAuthFactorsFieldNumber = 4,
+    kErrorInfoFieldNumber = 2,
+    kErrorFieldNumber = 1,
+  };
+  // repeated .user_data_auth.AuthFactor configured_auth_factors = 3;
+  int configured_auth_factors_size() const;
+  private:
+  int _internal_configured_auth_factors_size() const;
+  public:
+  void clear_configured_auth_factors();
+  ::user_data_auth::AuthFactor* mutable_configured_auth_factors(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor >*
+      mutable_configured_auth_factors();
+  private:
+  const ::user_data_auth::AuthFactor& _internal_configured_auth_factors(int index) const;
+  ::user_data_auth::AuthFactor* _internal_add_configured_auth_factors();
+  public:
+  const ::user_data_auth::AuthFactor& configured_auth_factors(int index) const;
+  ::user_data_auth::AuthFactor* add_configured_auth_factors();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor >&
+      configured_auth_factors() const;
+
+  // repeated .user_data_auth.AuthFactorType supported_auth_factors = 4;
+  int supported_auth_factors_size() const;
+  private:
+  int _internal_supported_auth_factors_size() const;
+  public:
+  void clear_supported_auth_factors();
+  private:
+  ::user_data_auth::AuthFactorType _internal_supported_auth_factors(int index) const;
+  void _internal_add_supported_auth_factors(::user_data_auth::AuthFactorType value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_supported_auth_factors();
+  public:
+  ::user_data_auth::AuthFactorType supported_auth_factors(int index) const;
+  void set_supported_auth_factors(int index, ::user_data_auth::AuthFactorType value);
+  void add_supported_auth_factors(::user_data_auth::AuthFactorType value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& supported_auth_factors() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_supported_auth_factors();
+
+  // .user_data_auth.CryptohomeErrorInfo error_info = 2;
+  bool has_error_info() const;
+  private:
+  bool _internal_has_error_info() const;
+  public:
+  void clear_error_info();
+  const ::user_data_auth::CryptohomeErrorInfo& error_info() const;
+  PROTOBUF_NODISCARD ::user_data_auth::CryptohomeErrorInfo* release_error_info();
+  ::user_data_auth::CryptohomeErrorInfo* mutable_error_info();
+  void set_allocated_error_info(::user_data_auth::CryptohomeErrorInfo* error_info);
+  private:
+  const ::user_data_auth::CryptohomeErrorInfo& _internal_error_info() const;
+  ::user_data_auth::CryptohomeErrorInfo* _internal_mutable_error_info();
+  public:
+  void unsafe_arena_set_allocated_error_info(
+      ::user_data_auth::CryptohomeErrorInfo* error_info);
+  ::user_data_auth::CryptohomeErrorInfo* unsafe_arena_release_error_info();
+
+  // .user_data_auth.CryptohomeErrorCode error = 1;
+  void clear_error();
+  ::user_data_auth::CryptohomeErrorCode error() const;
+  void set_error(::user_data_auth::CryptohomeErrorCode value);
+  private:
+  ::user_data_auth::CryptohomeErrorCode _internal_error() const;
+  void _internal_set_error(::user_data_auth::CryptohomeErrorCode value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:user_data_auth.ListAuthFactorsReply)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor > configured_auth_factors_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> supported_auth_factors_;
+  mutable std::atomic<int> _supported_auth_factors_cached_byte_size_;
+  ::user_data_auth::CryptohomeErrorInfo* error_info_;
+  int error_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_UserDataAuth_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetRecoveryRequestRequest final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:user_data_auth.GetRecoveryRequestRequest) */ {
  public:
@@ -19966,7 +20303,7 @@ class GetRecoveryRequestRequest final :
                &_GetRecoveryRequestRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    135;
 
   friend void swap(GetRecoveryRequestRequest& a, GetRecoveryRequestRequest& b) {
     a.Swap(&b);
@@ -20218,7 +20555,7 @@ class GetRecoveryRequestReply final :
                &_GetRecoveryRequestReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    136;
 
   friend void swap(GetRecoveryRequestReply& a, GetRecoveryRequestReply& b) {
     a.Swap(&b);
@@ -31379,6 +31716,290 @@ inline void RemoveAuthFactorReply::set_allocated_error_info(::user_data_auth::Cr
 
 // -------------------------------------------------------------------
 
+// ListAuthFactorsRequest
+
+// .cryptohome.AccountIdentifier account_id = 1;
+inline bool ListAuthFactorsRequest::_internal_has_account_id() const {
+  return this != internal_default_instance() && account_id_ != nullptr;
+}
+inline bool ListAuthFactorsRequest::has_account_id() const {
+  return _internal_has_account_id();
+}
+inline const ::cryptohome::AccountIdentifier& ListAuthFactorsRequest::_internal_account_id() const {
+  const ::cryptohome::AccountIdentifier* p = account_id_;
+  return p != nullptr ? *p : reinterpret_cast<const ::cryptohome::AccountIdentifier&>(
+      ::cryptohome::_AccountIdentifier_default_instance_);
+}
+inline const ::cryptohome::AccountIdentifier& ListAuthFactorsRequest::account_id() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.ListAuthFactorsRequest.account_id)
+  return _internal_account_id();
+}
+inline void ListAuthFactorsRequest::unsafe_arena_set_allocated_account_id(
+    ::cryptohome::AccountIdentifier* account_id) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(account_id_);
+  }
+  account_id_ = account_id;
+  if (account_id) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user_data_auth.ListAuthFactorsRequest.account_id)
+}
+inline ::cryptohome::AccountIdentifier* ListAuthFactorsRequest::release_account_id() {
+  
+  ::cryptohome::AccountIdentifier* temp = account_id_;
+  account_id_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::cryptohome::AccountIdentifier* ListAuthFactorsRequest::unsafe_arena_release_account_id() {
+  // @@protoc_insertion_point(field_release:user_data_auth.ListAuthFactorsRequest.account_id)
+  
+  ::cryptohome::AccountIdentifier* temp = account_id_;
+  account_id_ = nullptr;
+  return temp;
+}
+inline ::cryptohome::AccountIdentifier* ListAuthFactorsRequest::_internal_mutable_account_id() {
+  
+  if (account_id_ == nullptr) {
+    auto* p = CreateMaybeMessage<::cryptohome::AccountIdentifier>(GetArenaForAllocation());
+    account_id_ = p;
+  }
+  return account_id_;
+}
+inline ::cryptohome::AccountIdentifier* ListAuthFactorsRequest::mutable_account_id() {
+  ::cryptohome::AccountIdentifier* _msg = _internal_mutable_account_id();
+  // @@protoc_insertion_point(field_mutable:user_data_auth.ListAuthFactorsRequest.account_id)
+  return _msg;
+}
+inline void ListAuthFactorsRequest::set_allocated_account_id(::cryptohome::AccountIdentifier* account_id) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(account_id_);
+  }
+  if (account_id) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(account_id));
+    if (message_arena != submessage_arena) {
+      account_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, account_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  account_id_ = account_id;
+  // @@protoc_insertion_point(field_set_allocated:user_data_auth.ListAuthFactorsRequest.account_id)
+}
+
+// -------------------------------------------------------------------
+
+// ListAuthFactorsReply
+
+// .user_data_auth.CryptohomeErrorCode error = 1;
+inline void ListAuthFactorsReply::clear_error() {
+  error_ = 0;
+}
+inline ::user_data_auth::CryptohomeErrorCode ListAuthFactorsReply::_internal_error() const {
+  return static_cast< ::user_data_auth::CryptohomeErrorCode >(error_);
+}
+inline ::user_data_auth::CryptohomeErrorCode ListAuthFactorsReply::error() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.ListAuthFactorsReply.error)
+  return _internal_error();
+}
+inline void ListAuthFactorsReply::_internal_set_error(::user_data_auth::CryptohomeErrorCode value) {
+  
+  error_ = value;
+}
+inline void ListAuthFactorsReply::set_error(::user_data_auth::CryptohomeErrorCode value) {
+  _internal_set_error(value);
+  // @@protoc_insertion_point(field_set:user_data_auth.ListAuthFactorsReply.error)
+}
+
+// .user_data_auth.CryptohomeErrorInfo error_info = 2;
+inline bool ListAuthFactorsReply::_internal_has_error_info() const {
+  return this != internal_default_instance() && error_info_ != nullptr;
+}
+inline bool ListAuthFactorsReply::has_error_info() const {
+  return _internal_has_error_info();
+}
+inline void ListAuthFactorsReply::clear_error_info() {
+  if (GetArenaForAllocation() == nullptr && error_info_ != nullptr) {
+    delete error_info_;
+  }
+  error_info_ = nullptr;
+}
+inline const ::user_data_auth::CryptohomeErrorInfo& ListAuthFactorsReply::_internal_error_info() const {
+  const ::user_data_auth::CryptohomeErrorInfo* p = error_info_;
+  return p != nullptr ? *p : reinterpret_cast<const ::user_data_auth::CryptohomeErrorInfo&>(
+      ::user_data_auth::_CryptohomeErrorInfo_default_instance_);
+}
+inline const ::user_data_auth::CryptohomeErrorInfo& ListAuthFactorsReply::error_info() const {
+  // @@protoc_insertion_point(field_get:user_data_auth.ListAuthFactorsReply.error_info)
+  return _internal_error_info();
+}
+inline void ListAuthFactorsReply::unsafe_arena_set_allocated_error_info(
+    ::user_data_auth::CryptohomeErrorInfo* error_info) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error_info_);
+  }
+  error_info_ = error_info;
+  if (error_info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user_data_auth.ListAuthFactorsReply.error_info)
+}
+inline ::user_data_auth::CryptohomeErrorInfo* ListAuthFactorsReply::release_error_info() {
+  
+  ::user_data_auth::CryptohomeErrorInfo* temp = error_info_;
+  error_info_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::user_data_auth::CryptohomeErrorInfo* ListAuthFactorsReply::unsafe_arena_release_error_info() {
+  // @@protoc_insertion_point(field_release:user_data_auth.ListAuthFactorsReply.error_info)
+  
+  ::user_data_auth::CryptohomeErrorInfo* temp = error_info_;
+  error_info_ = nullptr;
+  return temp;
+}
+inline ::user_data_auth::CryptohomeErrorInfo* ListAuthFactorsReply::_internal_mutable_error_info() {
+  
+  if (error_info_ == nullptr) {
+    auto* p = CreateMaybeMessage<::user_data_auth::CryptohomeErrorInfo>(GetArenaForAllocation());
+    error_info_ = p;
+  }
+  return error_info_;
+}
+inline ::user_data_auth::CryptohomeErrorInfo* ListAuthFactorsReply::mutable_error_info() {
+  ::user_data_auth::CryptohomeErrorInfo* _msg = _internal_mutable_error_info();
+  // @@protoc_insertion_point(field_mutable:user_data_auth.ListAuthFactorsReply.error_info)
+  return _msg;
+}
+inline void ListAuthFactorsReply::set_allocated_error_info(::user_data_auth::CryptohomeErrorInfo* error_info) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete error_info_;
+  }
+  if (error_info) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::user_data_auth::CryptohomeErrorInfo>::GetOwningArena(error_info);
+    if (message_arena != submessage_arena) {
+      error_info = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error_info, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  error_info_ = error_info;
+  // @@protoc_insertion_point(field_set_allocated:user_data_auth.ListAuthFactorsReply.error_info)
+}
+
+// repeated .user_data_auth.AuthFactor configured_auth_factors = 3;
+inline int ListAuthFactorsReply::_internal_configured_auth_factors_size() const {
+  return configured_auth_factors_.size();
+}
+inline int ListAuthFactorsReply::configured_auth_factors_size() const {
+  return _internal_configured_auth_factors_size();
+}
+inline ::user_data_auth::AuthFactor* ListAuthFactorsReply::mutable_configured_auth_factors(int index) {
+  // @@protoc_insertion_point(field_mutable:user_data_auth.ListAuthFactorsReply.configured_auth_factors)
+  return configured_auth_factors_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor >*
+ListAuthFactorsReply::mutable_configured_auth_factors() {
+  // @@protoc_insertion_point(field_mutable_list:user_data_auth.ListAuthFactorsReply.configured_auth_factors)
+  return &configured_auth_factors_;
+}
+inline const ::user_data_auth::AuthFactor& ListAuthFactorsReply::_internal_configured_auth_factors(int index) const {
+  return configured_auth_factors_.Get(index);
+}
+inline const ::user_data_auth::AuthFactor& ListAuthFactorsReply::configured_auth_factors(int index) const {
+  // @@protoc_insertion_point(field_get:user_data_auth.ListAuthFactorsReply.configured_auth_factors)
+  return _internal_configured_auth_factors(index);
+}
+inline ::user_data_auth::AuthFactor* ListAuthFactorsReply::_internal_add_configured_auth_factors() {
+  return configured_auth_factors_.Add();
+}
+inline ::user_data_auth::AuthFactor* ListAuthFactorsReply::add_configured_auth_factors() {
+  ::user_data_auth::AuthFactor* _add = _internal_add_configured_auth_factors();
+  // @@protoc_insertion_point(field_add:user_data_auth.ListAuthFactorsReply.configured_auth_factors)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::user_data_auth::AuthFactor >&
+ListAuthFactorsReply::configured_auth_factors() const {
+  // @@protoc_insertion_point(field_list:user_data_auth.ListAuthFactorsReply.configured_auth_factors)
+  return configured_auth_factors_;
+}
+
+// repeated .user_data_auth.AuthFactorType supported_auth_factors = 4;
+inline int ListAuthFactorsReply::_internal_supported_auth_factors_size() const {
+  return supported_auth_factors_.size();
+}
+inline int ListAuthFactorsReply::supported_auth_factors_size() const {
+  return _internal_supported_auth_factors_size();
+}
+inline void ListAuthFactorsReply::clear_supported_auth_factors() {
+  supported_auth_factors_.Clear();
+}
+inline ::user_data_auth::AuthFactorType ListAuthFactorsReply::_internal_supported_auth_factors(int index) const {
+  return static_cast< ::user_data_auth::AuthFactorType >(supported_auth_factors_.Get(index));
+}
+inline ::user_data_auth::AuthFactorType ListAuthFactorsReply::supported_auth_factors(int index) const {
+  // @@protoc_insertion_point(field_get:user_data_auth.ListAuthFactorsReply.supported_auth_factors)
+  return _internal_supported_auth_factors(index);
+}
+inline void ListAuthFactorsReply::set_supported_auth_factors(int index, ::user_data_auth::AuthFactorType value) {
+  supported_auth_factors_.Set(index, value);
+  // @@protoc_insertion_point(field_set:user_data_auth.ListAuthFactorsReply.supported_auth_factors)
+}
+inline void ListAuthFactorsReply::_internal_add_supported_auth_factors(::user_data_auth::AuthFactorType value) {
+  supported_auth_factors_.Add(value);
+}
+inline void ListAuthFactorsReply::add_supported_auth_factors(::user_data_auth::AuthFactorType value) {
+  _internal_add_supported_auth_factors(value);
+  // @@protoc_insertion_point(field_add:user_data_auth.ListAuthFactorsReply.supported_auth_factors)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>&
+ListAuthFactorsReply::supported_auth_factors() const {
+  // @@protoc_insertion_point(field_list:user_data_auth.ListAuthFactorsReply.supported_auth_factors)
+  return supported_auth_factors_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+ListAuthFactorsReply::_internal_mutable_supported_auth_factors() {
+  return &supported_auth_factors_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+ListAuthFactorsReply::mutable_supported_auth_factors() {
+  // @@protoc_insertion_point(field_mutable_list:user_data_auth.ListAuthFactorsReply.supported_auth_factors)
+  return _internal_mutable_supported_auth_factors();
+}
+
+// -------------------------------------------------------------------
+
 // GetRecoveryRequestRequest
 
 // bytes auth_session_id = 1;
@@ -31875,6 +32496,10 @@ inline void GetRecoveryRequestReply::set_allocated_recovery_request(std::string*
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

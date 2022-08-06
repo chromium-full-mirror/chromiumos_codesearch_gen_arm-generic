@@ -1,12 +1,12 @@
 {
-	"package": "8f0077722571f4f46ea9de2b2fa1112ccdfd92fb080efabfc313a6614a2708e3",
+	"package": "3868bd9b3ce2d00c037a705c9f406b47b72a45be16cdd1774c3856576aa337b0",
 	"files": {
 		"Cargo.toml.orig": "028efa8628679b2199431645b8ae0f4a927cc551c909ece90b0854b246f72bda",
 		"Cargo.toml": "26a99c1818264459ac3b3314e094e3e7ed67096db1af7d4dadb9734a387179e9",
 		"README.md": "5b63f329275a1a1f15a403bfa1ba84f134e3ddd0d9662554fdd8d44fb6a951b9",
-		"src/capture.rs": "b30e6edda0e172b18bfcb4aa054ffdd6a4960417d8967513951e74208ae42356",
+		"src/capture.rs": "ec04d5d46ee3180b30a367f187061ee7b8004d8e6bf0a7bf29554b82087f7863",
 		"src/shm_streams.rs": "0de0d986cd3c3f6c4d8627077aa14a0445c1ae1d03d2f0db78f514da48bc5e8f",
-		"src/audio_streams.rs": "13f61da6490f31ecc0d81d52e0fa25f0fd5b711eb687af19f6ab983618fd66f6",
+		"src/audio_streams.rs": "2b3fc6d96692d678c67d0b17615c714dd7ee4b238aade90c815ba996073cea5d",
 		"src/async_api.rs": "05ead02eb5377af2940e22c29a79bd6f7780f18c1078e012ce1ee703def972f2"
 	}
 }

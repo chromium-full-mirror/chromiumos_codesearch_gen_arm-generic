@@ -2064,6 +2064,21 @@
             ]
         }
     ],
+    "CALayerTreeOptimization": [
+        {
+            "platforms": [
+                "mac"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "CALayerTreeOptimization"
+                    ]
+                }
+            ]
+        }
+    ],
     "CCTNewDownloadTab": [
         {
             "platforms": [
@@ -3205,21 +3220,6 @@
                     "name": "Enabled",
                     "enable_features": [
                         "CursiveStylusPreinstall"
-                    ]
-                }
-            ]
-        }
-    ],
-    "CustomTabBrandTransparency": [
-        {
-            "platforms": [
-                "android"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "CCTBrandTransparency"
                     ]
                 }
             ]
@@ -6639,29 +6639,6 @@
             ]
         }
     ],
-    "PageContentAnnotationsAndroid": [
-        {
-            "platforms": [
-                "android"
-            ],
-            "experiments": [
-                {
-                    "name": "EnabledNoFilters_20220502",
-                    "params": {
-                        "extract_related_searches": "true",
-                        "models_to_execute_v2": "OPTIMIZATION_TARGET_PAGE_ENTITIES:de:en:en-AU:en-CA:en-GB:en-US:es:fr:it:nl:pt:tr",
-                        "supported_locales": "de,en,en-AU,en-CA,en-GB,en-US,es,fr,it,nl,pt,tr",
-                        "write_to_history_service": "true"
-                    },
-                    "enable_features": [
-                        "PageContentAnnotations",
-                        "PageEntitiesModelBypassFilters",
-                        "PageEntitiesPageContentAnnotations"
-                    ]
-                }
-            ]
-        }
-    ],
     "PageInfoDiscoverabilityTimeout": [
         {
             "platforms": [
@@ -6815,6 +6792,7 @@
                 "android",
                 "android_weblayer",
                 "android_webview",
+                "linux",
                 "windows"
             ],
             "experiments": [
@@ -7450,6 +7428,17 @@
             ],
             "experiments": [
                 {
+                    "name": "EnabledWithContinueAndMultipleQueries_20220621",
+                    "params": {
+                        "enable_continue": "true",
+                        "multiple_queries_per_session": "true"
+                    },
+                    "enable_features": [
+                        "LauncherItemSuggest",
+                        "ProductivityLauncher"
+                    ]
+                },
+                {
                     "name": "EnabledWithContinueSection_20220621",
                     "params": {
                         "enable_continue": "true"
@@ -7471,17 +7460,6 @@
                     ],
                     "disable_features": [
                         "LauncherItemSuggest"
-                    ]
-                },
-                {
-                    "name": "EnabledWithContinueAndMultipleQueries_20220621",
-                    "params": {
-                        "enable_continue": "true",
-                        "multiple_queries_per_session": "true"
-                    },
-                    "enable_features": [
-                        "LauncherItemSuggest",
-                        "ProductivityLauncher"
                     ]
                 }
             ]
@@ -8048,6 +8026,12 @@
             "experiments": [
                 {
                     "name": "Enabled",
+                    "params": {
+                        "availability": "any",
+                        "event_trigger": "name:crow_tab_menu_item_iph_triggered;comparator:<3;window:7;storage:7",
+                        "event_used": "name:crow_tab_menu_item_clicked;comparator:any;window:360;storage:360",
+                        "session_rate": "any"
+                    },
                     "enable_features": [
                         "ShareCrowButton"
                     ]
@@ -9871,21 +9855,6 @@
                     "name": "Enabled",
                     "enable_features": [
                         "V8VirtualMemoryCage"
-                    ]
-                }
-            ]
-        }
-    ],
-    "VaapiVideoDecoder": [
-        {
-            "platforms": [
-                "linux"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "VaapiVideoDecoder"
                     ]
                 }
             ]

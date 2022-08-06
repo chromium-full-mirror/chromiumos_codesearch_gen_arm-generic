@@ -1,11 +1,11 @@
 {
 	"package": "7e48f2e0d1a0f46052813e01fc885ee5d6240d71ca5dab8ec03b4efbb6dc0a6f",
 	"files": {
-		"README.md": "f6aa150daedacb3dee9bf737996ce6e01c711ad31aa288aa837a16f411e09dd1",
-		"src/lib.rs": "2e1b3e2497f7748ba74027d33a59edeea433199091c93baa68cb76a6372bba7f",
-		"src/slashes.rs": "9febdb6d9469cc3b2c841998f8991626f2da1c544cdcbc5fe560da93cd0a1356",
-		"LICENSE.txt": "97647e63047ef75a82ee2928b335df94f45c87e08777dc033393c73294f3a57a",
 		"Cargo.toml.orig": "2db0d7b2cf0750ed3693ad1e4e2f5940871e5231e18bb994c14f6b6c15d72819",
-		"Cargo.toml": "64df489ed97f2746a10acd5ca37d515940f2f6fc0960170410a730fe9ec72ee5"
+		"Cargo.toml": "64df489ed97f2746a10acd5ca37d515940f2f6fc0960170410a730fe9ec72ee5",
+		"LICENSE.txt": "97647e63047ef75a82ee2928b335df94f45c87e08777dc033393c73294f3a57a",
+		"src/slashes.rs": "9febdb6d9469cc3b2c841998f8991626f2da1c544cdcbc5fe560da93cd0a1356",
+		"src/lib.rs": "2e1b3e2497f7748ba74027d33a59edeea433199091c93baa68cb76a6372bba7f",
+		"README.md": "f6aa150daedacb3dee9bf737996ce6e01c711ad31aa288aa837a16f411e09dd1"
 	}
 }

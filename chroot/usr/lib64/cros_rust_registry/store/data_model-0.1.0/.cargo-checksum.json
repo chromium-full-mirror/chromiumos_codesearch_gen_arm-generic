@@ -1,14 +1,14 @@
 {
 	"package": "276aa50858065b1676e70885e0dde5ac148ba8967e83855ef56803cff2202ed2",
 	"files": {
-		"src/endian.rs": "dcea6af430679b873493fcdd40a3c6b9235e6d6d8f2a191433fa0f6f4fa7f38b",
-		"src/lib.rs": "e1ed8e98961624cfe2a9a3db8fc0a239c6252226a64992e26ba90ece8071b63f",
-		"src/sys.rs": "e8d535f4fd086aee80ab1b150ac748d9beb4e1fdccecde9599e47516a0368e43",
+		"Cargo.toml.orig": "306ebd23b76ffc1d1a51584ac1605cbb0bdc16b0fe901bac1ce8a90067731d10",
+		"Cargo.toml": "1a45671217aa5f579025f8e4fc47716af21ce3fa140256dda4bea8975aa426c4",
 		"src/flexible_array.rs": "634771e7e901773957d829a0f632565ce942539aedebb22dac7be3c8bcfefeb2",
 		"src/volatile_memory.rs": "ebfe238597cb60b7af164390904bfccf9178bce8d9f2236e73174b2e4c8f5bcc",
-		"src/sys/windows.rs": "1bbc9074a5349b86e51d8cc797a24eb857f4f9c812f721dbc42c6172b429986b",
+		"src/endian.rs": "dcea6af430679b873493fcdd40a3c6b9235e6d6d8f2a191433fa0f6f4fa7f38b",
+		"src/sys.rs": "e8d535f4fd086aee80ab1b150ac748d9beb4e1fdccecde9599e47516a0368e43",
+		"src/lib.rs": "e1ed8e98961624cfe2a9a3db8fc0a239c6252226a64992e26ba90ece8071b63f",
 		"src/sys/unix.rs": "a145b93e3d0dce1c7e3d2f60a7ee6c1164a2ceae657d828b4cb9ccf1a19b8aca",
-		"Cargo.toml.orig": "306ebd23b76ffc1d1a51584ac1605cbb0bdc16b0fe901bac1ce8a90067731d10",
-		"Cargo.toml": "1a45671217aa5f579025f8e4fc47716af21ce3fa140256dda4bea8975aa426c4"
+		"src/sys/windows.rs": "1bbc9074a5349b86e51d8cc797a24eb857f4f9c812f721dbc42c6172b429986b"
 	}
 }
