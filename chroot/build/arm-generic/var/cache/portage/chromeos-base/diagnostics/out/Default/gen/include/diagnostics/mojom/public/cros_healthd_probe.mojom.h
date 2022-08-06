@@ -3481,14 +3481,6 @@ class  BlockDeviceVendor {
   static BlockDeviceVendorPtr New() {
     return BlockDeviceVendorPtr(base::in_place);
   }
-  // Construct an instance holding |unknown|.
-  static BlockDeviceVendorPtr
-  NewUnknown(
-      uint64_t unknown) {
-    auto result = BlockDeviceVendorPtr(base::in_place);
-    result->set_unknown(std::move(unknown));
-    return result;
-  }
   // Construct an instance holding |nvme_subsystem_vendor|.
   static BlockDeviceVendorPtr
   NewNvmeSubsystemVendor(
@@ -3553,18 +3545,6 @@ class  BlockDeviceVendor {
 
 
   
-  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
-
-  
-  uint64_t get_unknown() const {
-    CHECK(tag_ == Tag::UNKNOWN);
-    return data_.unknown;
-  }
-
-  
-  void set_unknown(
-      uint64_t unknown);
-  
   bool is_nvme_subsystem_vendor() const { return tag_ == Tag::NVME_SUBSYSTEM_VENDOR; }
 
   
@@ -3618,7 +3598,6 @@ class  BlockDeviceVendor {
   union Union_ {
     Union_() = default;
     ~Union_() = default;
-    uint64_t unknown;
     uint32_t nvme_subsystem_vendor;
     uint16_t emmc_oemid;
     uint16_t other;
@@ -3642,14 +3621,6 @@ class  BlockDeviceProduct {
 
   static BlockDeviceProductPtr New() {
     return BlockDeviceProductPtr(base::in_place);
-  }
-  // Construct an instance holding |unknown|.
-  static BlockDeviceProductPtr
-  NewUnknown(
-      uint64_t unknown) {
-    auto result = BlockDeviceProductPtr(base::in_place);
-    result->set_unknown(std::move(unknown));
-    return result;
   }
   // Construct an instance holding |nvme_subsystem_device|.
   static BlockDeviceProductPtr
@@ -3715,18 +3686,6 @@ class  BlockDeviceProduct {
 
 
   
-  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
-
-  
-  uint64_t get_unknown() const {
-    CHECK(tag_ == Tag::UNKNOWN);
-    return data_.unknown;
-  }
-
-  
-  void set_unknown(
-      uint64_t unknown);
-  
   bool is_nvme_subsystem_device() const { return tag_ == Tag::NVME_SUBSYSTEM_DEVICE; }
 
   
@@ -3780,7 +3739,6 @@ class  BlockDeviceProduct {
   union Union_ {
     Union_() = default;
     ~Union_() = default;
-    uint64_t unknown;
     uint32_t nvme_subsystem_device;
     uint64_t emmc_pnm;
     uint16_t other;
@@ -3804,14 +3762,6 @@ class  BlockDeviceRevision {
 
   static BlockDeviceRevisionPtr New() {
     return BlockDeviceRevisionPtr(base::in_place);
-  }
-  // Construct an instance holding |unknown|.
-  static BlockDeviceRevisionPtr
-  NewUnknown(
-      uint64_t unknown) {
-    auto result = BlockDeviceRevisionPtr(base::in_place);
-    result->set_unknown(std::move(unknown));
-    return result;
   }
   // Construct an instance holding |nvme_pcie_rev|.
   static BlockDeviceRevisionPtr
@@ -3877,18 +3827,6 @@ class  BlockDeviceRevision {
 
 
   
-  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
-
-  
-  uint64_t get_unknown() const {
-    CHECK(tag_ == Tag::UNKNOWN);
-    return data_.unknown;
-  }
-
-  
-  void set_unknown(
-      uint64_t unknown);
-  
   bool is_nvme_pcie_rev() const { return tag_ == Tag::NVME_PCIE_REV; }
 
   
@@ -3942,7 +3880,6 @@ class  BlockDeviceRevision {
   union Union_ {
     Union_() = default;
     ~Union_() = default;
-    uint64_t unknown;
     uint8_t nvme_pcie_rev;
     uint8_t emmc_prv;
     uint16_t other;
@@ -3966,14 +3903,6 @@ class  BlockDeviceFirmware {
 
   static BlockDeviceFirmwarePtr New() {
     return BlockDeviceFirmwarePtr(base::in_place);
-  }
-  // Construct an instance holding |unknown|.
-  static BlockDeviceFirmwarePtr
-  NewUnknown(
-      uint64_t unknown) {
-    auto result = BlockDeviceFirmwarePtr(base::in_place);
-    result->set_unknown(std::move(unknown));
-    return result;
   }
   // Construct an instance holding |nvme_firmware_rev|.
   static BlockDeviceFirmwarePtr
@@ -4039,18 +3968,6 @@ class  BlockDeviceFirmware {
 
 
   
-  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
-
-  
-  uint64_t get_unknown() const {
-    CHECK(tag_ == Tag::UNKNOWN);
-    return data_.unknown;
-  }
-
-  
-  void set_unknown(
-      uint64_t unknown);
-  
   bool is_nvme_firmware_rev() const { return tag_ == Tag::NVME_FIRMWARE_REV; }
 
   
@@ -4104,7 +4021,6 @@ class  BlockDeviceFirmware {
   union Union_ {
     Union_() = default;
     ~Union_() = default;
-    uint64_t unknown;
     uint64_t nvme_firmware_rev;
     uint64_t emmc_fwrev;
     uint16_t other;
@@ -12779,9 +12695,6 @@ BlockDeviceVendorPtr BlockDeviceVendor::Clone() const {
   // without being asked.
   UnionPtrType rv(New());
   switch (tag_) {
-    case Tag::UNKNOWN:
-      rv->set_unknown(mojo::Clone(data_.unknown));
-      break;
     case Tag::NVME_SUBSYSTEM_VENDOR:
       rv->set_nvme_subsystem_vendor(mojo::Clone(data_.nvme_subsystem_vendor));
       break;
@@ -12803,8 +12716,6 @@ bool BlockDeviceVendor::Equals(const T& other) const {
     return false;
 
   switch (tag_) {
-    case Tag::UNKNOWN:
-      return mojo::Equals(data_.unknown, other.data_.unknown);
     case Tag::NVME_SUBSYSTEM_VENDOR:
       return mojo::Equals(data_.nvme_subsystem_vendor, other.data_.nvme_subsystem_vendor);
     case Tag::EMMC_OEMID:
@@ -12821,9 +12732,6 @@ BlockDeviceProductPtr BlockDeviceProduct::Clone() const {
   // without being asked.
   UnionPtrType rv(New());
   switch (tag_) {
-    case Tag::UNKNOWN:
-      rv->set_unknown(mojo::Clone(data_.unknown));
-      break;
     case Tag::NVME_SUBSYSTEM_DEVICE:
       rv->set_nvme_subsystem_device(mojo::Clone(data_.nvme_subsystem_device));
       break;
@@ -12845,8 +12753,6 @@ bool BlockDeviceProduct::Equals(const T& other) const {
     return false;
 
   switch (tag_) {
-    case Tag::UNKNOWN:
-      return mojo::Equals(data_.unknown, other.data_.unknown);
     case Tag::NVME_SUBSYSTEM_DEVICE:
       return mojo::Equals(data_.nvme_subsystem_device, other.data_.nvme_subsystem_device);
     case Tag::EMMC_PNM:
@@ -12863,9 +12769,6 @@ BlockDeviceRevisionPtr BlockDeviceRevision::Clone() const {
   // without being asked.
   UnionPtrType rv(New());
   switch (tag_) {
-    case Tag::UNKNOWN:
-      rv->set_unknown(mojo::Clone(data_.unknown));
-      break;
     case Tag::NVME_PCIE_REV:
       rv->set_nvme_pcie_rev(mojo::Clone(data_.nvme_pcie_rev));
       break;
@@ -12887,8 +12790,6 @@ bool BlockDeviceRevision::Equals(const T& other) const {
     return false;
 
   switch (tag_) {
-    case Tag::UNKNOWN:
-      return mojo::Equals(data_.unknown, other.data_.unknown);
     case Tag::NVME_PCIE_REV:
       return mojo::Equals(data_.nvme_pcie_rev, other.data_.nvme_pcie_rev);
     case Tag::EMMC_PRV:
@@ -12905,9 +12806,6 @@ BlockDeviceFirmwarePtr BlockDeviceFirmware::Clone() const {
   // without being asked.
   UnionPtrType rv(New());
   switch (tag_) {
-    case Tag::UNKNOWN:
-      rv->set_unknown(mojo::Clone(data_.unknown));
-      break;
     case Tag::NVME_FIRMWARE_REV:
       rv->set_nvme_firmware_rev(mojo::Clone(data_.nvme_firmware_rev));
       break;
@@ -12929,8 +12827,6 @@ bool BlockDeviceFirmware::Equals(const T& other) const {
     return false;
 
   switch (tag_) {
-    case Tag::UNKNOWN:
-      return mojo::Equals(data_.unknown, other.data_.unknown);
     case Tag::NVME_FIRMWARE_REV:
       return mojo::Equals(data_.nvme_firmware_rev, other.data_.nvme_firmware_rev);
     case Tag::EMMC_FWREV:
@@ -19105,10 +19001,6 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView
     return input->which();
   }
 
-  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceVendorPtr& input) {
-    return input->get_unknown();
-  }
-
   static  uint32_t nvme_subsystem_vendor(const ::chromeos::cros_healthd::mojom::BlockDeviceVendorPtr& input) {
     return input->get_nvme_subsystem_vendor();
   }
@@ -19133,10 +19025,6 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataVie
 
   static ::chromeos::cros_healthd::mojom::BlockDeviceProduct::Tag GetTag(const ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr& input) {
     return input->which();
-  }
-
-  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr& input) {
-    return input->get_unknown();
   }
 
   static  uint32_t nvme_subsystem_device(const ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr& input) {
@@ -19165,10 +19053,6 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataVi
     return input->which();
   }
 
-  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceRevisionPtr& input) {
-    return input->get_unknown();
-  }
-
   static  uint8_t nvme_pcie_rev(const ::chromeos::cros_healthd::mojom::BlockDeviceRevisionPtr& input) {
     return input->get_nvme_pcie_rev();
   }
@@ -19193,10 +19077,6 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataVi
 
   static ::chromeos::cros_healthd::mojom::BlockDeviceFirmware::Tag GetTag(const ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr& input) {
     return input->which();
-  }
-
-  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr& input) {
-    return input->get_unknown();
   }
 
   static  uint64_t nvme_firmware_rev(const ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr& input) {

@@ -6033,11 +6033,6 @@ class BlockDeviceVendorDataView {
   }
 
   Tag tag() const { return data_->tag; }
-  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
-  uint64_t unknown() const {
-    CHECK(is_unknown());
-    return data_->data.f_unknown;
-  }
   bool is_nvme_subsystem_vendor() const { return data_->tag == Tag::NVME_SUBSYSTEM_VENDOR; }
   uint32_t nvme_subsystem_vendor() const {
     CHECK(is_nvme_subsystem_vendor());
@@ -6078,11 +6073,6 @@ class BlockDeviceProductDataView {
   }
 
   Tag tag() const { return data_->tag; }
-  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
-  uint64_t unknown() const {
-    CHECK(is_unknown());
-    return data_->data.f_unknown;
-  }
   bool is_nvme_subsystem_device() const { return data_->tag == Tag::NVME_SUBSYSTEM_DEVICE; }
   uint32_t nvme_subsystem_device() const {
     CHECK(is_nvme_subsystem_device());
@@ -6123,11 +6113,6 @@ class BlockDeviceRevisionDataView {
   }
 
   Tag tag() const { return data_->tag; }
-  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
-  uint64_t unknown() const {
-    CHECK(is_unknown());
-    return data_->data.f_unknown;
-  }
   bool is_nvme_pcie_rev() const { return data_->tag == Tag::NVME_PCIE_REV; }
   uint8_t nvme_pcie_rev() const {
     CHECK(is_nvme_pcie_rev());
@@ -6168,11 +6153,6 @@ class BlockDeviceFirmwareDataView {
   }
 
   Tag tag() const { return data_->tag; }
-  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
-  uint64_t unknown() const {
-    CHECK(is_unknown());
-    return data_->data.f_unknown;
-  }
   bool is_nvme_firmware_rev() const { return data_->tag == Tag::NVME_FIRMWARE_REV; }
   uint64_t nvme_firmware_rev() const {
     CHECK(is_nvme_firmware_rev());
@@ -11548,12 +11528,6 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView, Ma
     fragment->size = kUnionDataSize;
     fragment->tag = Traits::GetTag(input);
     switch (fragment->tag) {
-      case ::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView::Tag::UNKNOWN: {
-        decltype(Traits::unknown(input))
-            in_unknown = Traits::unknown(input);
-        fragment->data.f_unknown = in_unknown;
-        break;
-      }
       case ::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView::Tag::NVME_SUBSYSTEM_VENDOR: {
         decltype(Traits::nvme_subsystem_vendor(input))
             in_nvme_subsystem_vendor = Traits::nvme_subsystem_vendor(input);
@@ -11613,12 +11587,6 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceProductDataView, M
     fragment->size = kUnionDataSize;
     fragment->tag = Traits::GetTag(input);
     switch (fragment->tag) {
-      case ::chromeos::cros_healthd::mojom::BlockDeviceProductDataView::Tag::UNKNOWN: {
-        decltype(Traits::unknown(input))
-            in_unknown = Traits::unknown(input);
-        fragment->data.f_unknown = in_unknown;
-        break;
-      }
       case ::chromeos::cros_healthd::mojom::BlockDeviceProductDataView::Tag::NVME_SUBSYSTEM_DEVICE: {
         decltype(Traits::nvme_subsystem_device(input))
             in_nvme_subsystem_device = Traits::nvme_subsystem_device(input);
@@ -11678,12 +11646,6 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView, 
     fragment->size = kUnionDataSize;
     fragment->tag = Traits::GetTag(input);
     switch (fragment->tag) {
-      case ::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView::Tag::UNKNOWN: {
-        decltype(Traits::unknown(input))
-            in_unknown = Traits::unknown(input);
-        fragment->data.f_unknown = in_unknown;
-        break;
-      }
       case ::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView::Tag::NVME_PCIE_REV: {
         decltype(Traits::nvme_pcie_rev(input))
             in_nvme_pcie_rev = Traits::nvme_pcie_rev(input);
@@ -11743,12 +11705,6 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView, 
     fragment->size = kUnionDataSize;
     fragment->tag = Traits::GetTag(input);
     switch (fragment->tag) {
-      case ::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView::Tag::UNKNOWN: {
-        decltype(Traits::unknown(input))
-            in_unknown = Traits::unknown(input);
-        fragment->data.f_unknown = in_unknown;
-        break;
-      }
       case ::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView::Tag::NVME_FIRMWARE_REV: {
         decltype(Traits::nvme_firmware_rev(input))
             in_nvme_firmware_rev = Traits::nvme_firmware_rev(input);

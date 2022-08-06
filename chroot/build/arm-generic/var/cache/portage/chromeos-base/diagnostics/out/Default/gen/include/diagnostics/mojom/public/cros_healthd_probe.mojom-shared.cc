@@ -807,10 +807,6 @@ bool BlockDeviceVendor_Data::Validate(
 
   switch (object->tag) {
 
-    case BlockDeviceVendor_Tag::UNKNOWN: {
-
-      return true;
-    }
     case BlockDeviceVendor_Tag::NVME_SUBSYSTEM_VENDOR: {
 
       return true;
@@ -825,7 +821,11 @@ bool BlockDeviceVendor_Data::Validate(
     }
     default: {
 
-      return true;
+      ReportValidationError(
+          validation_context,
+          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
+          "unknown tag in BlockDeviceVendor");
+      return false;
     }
   }
 }
@@ -856,10 +856,6 @@ bool BlockDeviceProduct_Data::Validate(
 
   switch (object->tag) {
 
-    case BlockDeviceProduct_Tag::UNKNOWN: {
-
-      return true;
-    }
     case BlockDeviceProduct_Tag::NVME_SUBSYSTEM_DEVICE: {
 
       return true;
@@ -874,7 +870,11 @@ bool BlockDeviceProduct_Data::Validate(
     }
     default: {
 
-      return true;
+      ReportValidationError(
+          validation_context,
+          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
+          "unknown tag in BlockDeviceProduct");
+      return false;
     }
   }
 }
@@ -905,10 +905,6 @@ bool BlockDeviceRevision_Data::Validate(
 
   switch (object->tag) {
 
-    case BlockDeviceRevision_Tag::UNKNOWN: {
-
-      return true;
-    }
     case BlockDeviceRevision_Tag::NVME_PCIE_REV: {
 
       return true;
@@ -923,7 +919,11 @@ bool BlockDeviceRevision_Data::Validate(
     }
     default: {
 
-      return true;
+      ReportValidationError(
+          validation_context,
+          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
+          "unknown tag in BlockDeviceRevision");
+      return false;
     }
   }
 }
@@ -954,10 +954,6 @@ bool BlockDeviceFirmware_Data::Validate(
 
   switch (object->tag) {
 
-    case BlockDeviceFirmware_Tag::UNKNOWN: {
-
-      return true;
-    }
     case BlockDeviceFirmware_Tag::NVME_FIRMWARE_REV: {
 
       return true;
@@ -972,7 +968,11 @@ bool BlockDeviceFirmware_Data::Validate(
     }
     default: {
 
-      return true;
+      ReportValidationError(
+          validation_context,
+          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
+          "unknown tag in BlockDeviceFirmware");
+      return false;
     }
   }
 }
