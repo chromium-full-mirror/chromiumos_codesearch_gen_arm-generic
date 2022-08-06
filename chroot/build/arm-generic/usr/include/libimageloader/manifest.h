@@ -17,6 +17,9 @@ namespace imageloader {
 enum class BRILLO_EXPORT FileSystem { kExt4, kSquashFS };
 
 // A class to parse and store imageloader.json manifest. See manifest.md.
+//
+// NOTE: For developers, remember to update manifest.md when adding/removing
+// fields into the manifest.
 class BRILLO_EXPORT Manifest {
  public:
   Manifest() = default;
@@ -55,6 +58,7 @@ class BRILLO_EXPORT Manifest {
   const std::map<std::string, std::string> metadata() const {
     return metadata_;
   }
+  bool use_logical_volume() const { return use_logical_volume_; }
 
  private:
   // Required manifest fields:
@@ -81,6 +85,7 @@ class BRILLO_EXPORT Manifest {
   int64_t days_to_purge_ = 0;
   std::string description_;
   std::map<std::string, std::string> metadata_;
+  bool use_logical_volume_ = false;
 };
 
 }  // namespace imageloader
