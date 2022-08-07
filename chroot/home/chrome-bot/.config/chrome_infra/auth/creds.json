@@ -2,20 +2,21 @@
   "cache": [
     {
       "key": {
-        "key": "luci_ts/cas-read-write@chromium-swarm.iam.gserviceaccount.com/luci-token-server.appspot.com/@internal:chromium-swarm/cas-read-write",
+        "key": "service_account/goma-bigquery@goma-logs.iam.gserviceaccount.com/5691c174ae4fd2a1f1216ced3b758c3b2ccced1d",
         "scopes": [
-          "https://www.googleapis.com/auth/cloud-platform"
+          "https://www.googleapis.com/auth/bigquery",
+          "https://www.googleapis.com/auth/userinfo.email"
         ]
       },
       "token": {
-        "access_token": "ya29.c.b0AXv0zTNkP64T56rw8Fucptgfbb3q1NJCCAgFgKw_NsbTwtuOSGmDfuR_uweB-DbiQK36b3NUtMSbG12n8cD7zM709Q0w5GTF0st3NmTTt46Sa915-hZUP-RXXmIiHiUKRhF6XypwlgU2idf-WWwIb23zy8ZLr7cWymRUi0vAGtUXrmfsWldqssZQtG6fLqyLWBW89iOy317OxpxggnuhufISavFLAAtOuwgXWn8TWD54knjmJZINl08cmUX5dulnx8drzhHS6I8qJXqn1Uh38ZKQgXdNE8Uvvlfg8BErmxWKgZVvxplFMo4q5BsfDzHuqrZuCnFurv9b1otK6fhP7Yn4t__fEzxXHLis7Eu1jsd2qv6z7-1Pd4LkghLUFsMgsL1E07h6FjH9Y4XkyrlSO5smjei53xC4nn8....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................",
+        "access_token": "ya29.c.b0AXv0zTM-zclQ7xvpJYUYJGd7ceb1DOZv_iyLxCoXqS_bE1Amia7idaJL8AD_Bi0MwgyJ4o7x4gi3-EAAQsTXRz5lzQrgHF99_F3U36_A-FnixGuyywNCN2rOG9IWZzSFR1hHpSlUGDkJC4kSeDb0Rpr2tzlFysJ1EmA5GY8uAAkphuY13SLrxlQ7tV6Y5bG23Xbg1L6Y3-TMx9HfO1mAWVN9VuVQiMNy.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................",
         "token_type": "Bearer",
-        "expiry": "2022-07-12T12:11:40Z"
+        "expiry": "2022-06-23T21:24:08.351569109Z"
       },
       "id_token": "-",
-      "email": "cas-read-write@chromium-swarm.iam.gserviceaccount.com",
-      "last_update": "2022-07-12T11:16:36.654251574Z"
+      "email": "goma-bigquery@goma-logs.iam.gserviceaccount.com",
+      "last_update": "2022-06-23T20:24:09.352179353Z"
     }
   ],
-  "last_update": "2022-05-25T20:44:41.91691614Z"
+  "last_update": "2022-05-02T12:56:34.412807837Z"
 }
