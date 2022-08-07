@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1659831086.378309, "deltas": [{"event": "add", "package": "dev-rust/libchromeos", "version": "0.1.0-r61", "slot": "0", "counter": "1438"}]}
+{"version": "1", "timestamp": 1659865156.3121738, "deltas": [{"event": "add", "package": "cross-aarch64-cros-linux-gnu/go", "version": "1.18-r2", "slot": "0", "counter": "1428"}, {"event": "add", "package": "cross-armv7a-cros-linux-gnueabihf/go", "version": "1.18-r2", "slot": "0", "counter": "1429"}]}
