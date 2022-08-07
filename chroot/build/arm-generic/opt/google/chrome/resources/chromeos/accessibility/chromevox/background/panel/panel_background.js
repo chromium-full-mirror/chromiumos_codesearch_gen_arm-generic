@@ -57,8 +57,7 @@ export class PanelBackground {
         () => PanelBackground.instance.destroyISearch_());
     BridgeHelper.registerHandler(
         Constants.TARGET, Constants.Action.FOCUS_TAB,
-        ({windowId, tabId}) =>
-            PanelTabMenuBackground.focusTab(windowId, tabId));
+        (windowId, tabId) => PanelTabMenuBackground.focusTab(windowId, tabId));
     BridgeHelper.registerHandler(
         Constants.TARGET, Constants.Action.GET_ACTIONS_FOR_CURRENT_NODE,
         () => PanelBackground.instance.getActionsForCurrentNode_());
@@ -67,7 +66,7 @@ export class PanelBackground {
         () => PanelTabMenuBackground.getTabMenuData());
     BridgeHelper.registerHandler(
         Constants.TARGET, Constants.Action.INCREMENTAL_SEARCH,
-        ({searchStr, dir, opt_nextObject}) =>
+        (searchStr, dir, opt_nextObject) =>
             PanelBackground.instance.incrementalSearch_(
                 searchStr, dir, opt_nextObject));
     BridgeHelper.registerHandler(
@@ -106,6 +105,9 @@ export class PanelBackground {
    * @private
    */
   createAllNodeMenuBackgrounds_(opt_activateMenuTitleId) {
+    if (!this.savedNode_) {
+      return;
+    }
     for (const data of ALL_NODE_MENU_DATA) {
       const isActivatedMenu = opt_activateMenuTitleId === data.titleId;
       const menuBackground =
@@ -258,7 +260,9 @@ export class PanelBackground {
 
   /** @private */
   saveCurrentNode_() {
-    this.savedNode_ = ChromeVoxState.instance.currentRange.start.node;
+    if (ChromeVoxState.instance.currentRange) {
+      this.savedNode_ = ChromeVoxState.instance.currentRange.start.node;
+    }
   }
 
   /**

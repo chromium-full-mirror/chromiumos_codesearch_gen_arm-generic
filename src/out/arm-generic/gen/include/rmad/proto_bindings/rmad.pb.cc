@@ -2261,6 +2261,171 @@ bool CalibrationOverallStatus_Parse(
   }
   return success;
 }
+bool RoVerification_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> RoVerification_strings[3] = {};
+
+static const char RoVerification_names[] =
+  "RMAD_RO_VERIFICATION_PASS"
+  "RMAD_RO_VERIFICATION_UNKNOWN"
+  "RMAD_RO_VERIFICATION_UNSUPPORTED";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry RoVerification_entries[] = {
+  { {RoVerification_names + 0, 25}, 1 },
+  { {RoVerification_names + 25, 28}, 0 },
+  { {RoVerification_names + 53, 32}, 2 },
+};
+
+static const int RoVerification_entries_by_number[] = {
+  1, // 0 -> RMAD_RO_VERIFICATION_UNKNOWN
+  0, // 1 -> RMAD_RO_VERIFICATION_PASS
+  2, // 2 -> RMAD_RO_VERIFICATION_UNSUPPORTED
+};
+
+const std::string& RoVerification_Name(
+    RoVerification value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          RoVerification_entries,
+          RoVerification_entries_by_number,
+          3, RoVerification_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      RoVerification_entries,
+      RoVerification_entries_by_number,
+      3, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     RoVerification_strings[idx].get();
+}
+bool RoVerification_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, RoVerification* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      RoVerification_entries, 3, name, &int_value);
+  if (success) {
+    *value = static_cast<RoVerification>(int_value);
+  }
+  return success;
+}
+bool ReturningOwner_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> ReturningOwner_strings[3] = {};
+
+static const char ReturningOwner_names[] =
+  "RMAD_RETURNING_OWNER_DIFFERENT_OWNER"
+  "RMAD_RETURNING_OWNER_SAME_OWNER"
+  "RMAD_RETURNING_OWNER_UNKNOWN";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry ReturningOwner_entries[] = {
+  { {ReturningOwner_names + 0, 36}, 2 },
+  { {ReturningOwner_names + 36, 31}, 1 },
+  { {ReturningOwner_names + 67, 28}, 0 },
+};
+
+static const int ReturningOwner_entries_by_number[] = {
+  2, // 0 -> RMAD_RETURNING_OWNER_UNKNOWN
+  1, // 1 -> RMAD_RETURNING_OWNER_SAME_OWNER
+  0, // 2 -> RMAD_RETURNING_OWNER_DIFFERENT_OWNER
+};
+
+const std::string& ReturningOwner_Name(
+    ReturningOwner value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          ReturningOwner_entries,
+          ReturningOwner_entries_by_number,
+          3, ReturningOwner_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      ReturningOwner_entries,
+      ReturningOwner_entries_by_number,
+      3, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     ReturningOwner_strings[idx].get();
+}
+bool ReturningOwner_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ReturningOwner* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      ReturningOwner_entries, 3, name, &int_value);
+  if (success) {
+    *value = static_cast<ReturningOwner>(int_value);
+  }
+  return success;
+}
+bool MainboardReplacement_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> MainboardReplacement_strings[3] = {};
+
+static const char MainboardReplacement_names[] =
+  "RMAD_MLB_REPLACEMENT_ORIGINAL"
+  "RMAD_MLB_REPLACEMENT_REPLACED"
+  "RMAD_MLB_REPLACEMENT_UNKNOWN";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry MainboardReplacement_entries[] = {
+  { {MainboardReplacement_names + 0, 29}, 2 },
+  { {MainboardReplacement_names + 29, 29}, 1 },
+  { {MainboardReplacement_names + 58, 28}, 0 },
+};
+
+static const int MainboardReplacement_entries_by_number[] = {
+  2, // 0 -> RMAD_MLB_REPLACEMENT_UNKNOWN
+  1, // 1 -> RMAD_MLB_REPLACEMENT_REPLACED
+  0, // 2 -> RMAD_MLB_REPLACEMENT_ORIGINAL
+};
+
+const std::string& MainboardReplacement_Name(
+    MainboardReplacement value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          MainboardReplacement_entries,
+          MainboardReplacement_entries_by_number,
+          3, MainboardReplacement_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      MainboardReplacement_entries,
+      MainboardReplacement_entries_by_number,
+      3, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     MainboardReplacement_strings[idx].get();
+}
+bool MainboardReplacement_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MainboardReplacement* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      MainboardReplacement_entries, 3, name, &int_value);
+  if (success) {
+    *value = static_cast<MainboardReplacement>(int_value);
+  }
+  return success;
+}
 bool AdditionalActivity_IsValid(int value) {
   switch (value) {
     case 0:

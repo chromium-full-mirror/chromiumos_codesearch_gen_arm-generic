@@ -780,6 +780,72 @@ inline const std::string& CalibrationOverallStatus_Name(T enum_t_value) {
 }
 bool CalibrationOverallStatus_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CalibrationOverallStatus* value);
+enum RoVerification : int {
+  RMAD_RO_VERIFICATION_UNKNOWN = 0,
+  RMAD_RO_VERIFICATION_PASS = 1,
+  RMAD_RO_VERIFICATION_UNSUPPORTED = 2,
+  RoVerification_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  RoVerification_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool RoVerification_IsValid(int value);
+constexpr RoVerification RoVerification_MIN = RMAD_RO_VERIFICATION_UNKNOWN;
+constexpr RoVerification RoVerification_MAX = RMAD_RO_VERIFICATION_UNSUPPORTED;
+constexpr int RoVerification_ARRAYSIZE = RoVerification_MAX + 1;
+
+const std::string& RoVerification_Name(RoVerification value);
+template<typename T>
+inline const std::string& RoVerification_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, RoVerification>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function RoVerification_Name.");
+  return RoVerification_Name(static_cast<RoVerification>(enum_t_value));
+}
+bool RoVerification_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, RoVerification* value);
+enum ReturningOwner : int {
+  RMAD_RETURNING_OWNER_UNKNOWN = 0,
+  RMAD_RETURNING_OWNER_SAME_OWNER = 1,
+  RMAD_RETURNING_OWNER_DIFFERENT_OWNER = 2,
+  ReturningOwner_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  ReturningOwner_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool ReturningOwner_IsValid(int value);
+constexpr ReturningOwner ReturningOwner_MIN = RMAD_RETURNING_OWNER_UNKNOWN;
+constexpr ReturningOwner ReturningOwner_MAX = RMAD_RETURNING_OWNER_DIFFERENT_OWNER;
+constexpr int ReturningOwner_ARRAYSIZE = ReturningOwner_MAX + 1;
+
+const std::string& ReturningOwner_Name(ReturningOwner value);
+template<typename T>
+inline const std::string& ReturningOwner_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ReturningOwner>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function ReturningOwner_Name.");
+  return ReturningOwner_Name(static_cast<ReturningOwner>(enum_t_value));
+}
+bool ReturningOwner_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, ReturningOwner* value);
+enum MainboardReplacement : int {
+  RMAD_MLB_REPLACEMENT_UNKNOWN = 0,
+  RMAD_MLB_REPLACEMENT_REPLACED = 1,
+  RMAD_MLB_REPLACEMENT_ORIGINAL = 2,
+  MainboardReplacement_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  MainboardReplacement_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool MainboardReplacement_IsValid(int value);
+constexpr MainboardReplacement MainboardReplacement_MIN = RMAD_MLB_REPLACEMENT_UNKNOWN;
+constexpr MainboardReplacement MainboardReplacement_MAX = RMAD_MLB_REPLACEMENT_ORIGINAL;
+constexpr int MainboardReplacement_ARRAYSIZE = MainboardReplacement_MAX + 1;
+
+const std::string& MainboardReplacement_Name(MainboardReplacement value);
+template<typename T>
+inline const std::string& MainboardReplacement_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, MainboardReplacement>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function MainboardReplacement_Name.");
+  return MainboardReplacement_Name(static_cast<MainboardReplacement>(enum_t_value));
+}
+bool MainboardReplacement_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MainboardReplacement* value);
 enum AdditionalActivity : int {
   RMAD_ADDITIONAL_ACTIVITY_NOTHING = 0,
   RMAD_ADDITIONAL_ACTIVITY_SHUTDOWN = 1,
@@ -10146,6 +10212,9 @@ template <> struct is_proto_enum< ::rmad::RmadComponent> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::UpdateRoFirmwareStatus> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::CalibrationSetupInstruction> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::CalibrationOverallStatus> : ::std::true_type {};
+template <> struct is_proto_enum< ::rmad::RoVerification> : ::std::true_type {};
+template <> struct is_proto_enum< ::rmad::ReturningOwner> : ::std::true_type {};
+template <> struct is_proto_enum< ::rmad::MainboardReplacement> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::AdditionalActivity> : ::std::true_type {};
 template <> struct is_proto_enum< ::rmad::WpDisableMethod> : ::std::true_type {};
 

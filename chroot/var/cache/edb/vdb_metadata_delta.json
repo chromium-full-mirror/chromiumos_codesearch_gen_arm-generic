@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1659802499.929738}
+{"version": "1", "timestamp": 1659831086.378309, "deltas": [{"event": "add", "package": "dev-rust/libchromeos", "version": "0.1.0-r61", "slot": "0", "counter": "1438"}]}

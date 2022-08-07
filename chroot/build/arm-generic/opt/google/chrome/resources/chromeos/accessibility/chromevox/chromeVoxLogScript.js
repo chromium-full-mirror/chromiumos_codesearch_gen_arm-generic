@@ -68,11 +68,4 @@ treeToString(){if(!this.treeStr_){this.treeStr_=this.formatTree_();}
 return this.treeStr_;}
 createTreeRecursive_(node,rank){let nodeStr='';nodeStr+='++'.repeat(rank);nodeStr+=node.toString();nodeStr+='\n';for(let i=0;i<node.children.length;i++){const nextNode=node.children[i];nodeStr+=this.createTreeRecursive_(nextNode,rank+1);}
 return nodeStr;}
-formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.provide('BaseLog');goog.provide('EventLog');goog.provide('LogType');goog.provide('SpeechLog');goog.provide('TextLog');goog.provide('TreeLog');goog.require('QueueMode');goog.require('TreeDumper');LogType={SPEECH:'speech',SPEECH_RULE:'speechRule',BRAILLE:'braille',BRAILLE_RULE:'brailleRule',EARCON:'earcon',EVENT:'event',TEXT:'text',TREE:'tree',};BaseLog=class{constructor(logType){this.logType=logType;this.date=new Date();}
-toString(){return'';}};EventLog=class extends BaseLog{constructor(event){super(LogType.EVENT);this.type_=event.type;this.targetName_=event.target.name;this.rootName_=event.target.root.name;this.docUrl_=event.target.docUrl;}
-toString(){return`EventType = ${this.type_}, TargetName = ${this.targetName_}, `+`RootName = ${this.rootName_}, DocumentURL = ${this.docUrl_}`;}};SpeechLog=class extends BaseLog{constructor(textString,queueMode,category){super(LogType.SPEECH);this.textString_=textString;this.queueMode_=queueMode;this.category_=category;}
-toString(){let logStr='Speak';if(this.queueMode_===QueueMode.FLUSH){logStr+=' (F)';}else if(this.queueMode_===QueueMode.CATEGORY_FLUSH){logStr+=' (C)';}else if(this.queueMode_===QueueMode.INTERJECT){logStr+=' (I)';}else{logStr+=' (Q)';}
-if(this.category_){logStr+=' category='+this.category_;}
-logStr+=' "'+this.textString_+'"';return logStr;}};TextLog=class extends BaseLog{constructor(logStr,logType){super(logType);this.logStr_=logStr;}
-toString(){return this.logStr_;}};TreeLog=class extends BaseLog{constructor(logTree){super(LogType.TREE);this.logTree_=logTree;}
-toString(){return this.logTree_.treeToString();}};goog.require('BaseLog');goog.require('EventLog');goog.require('LogType');goog.require('SpeechLog');goog.require('TextLog');goog.require('TreeDumper');goog.require('TreeLog');
+formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.require('QueueMode');goog.require('TreeDumper');

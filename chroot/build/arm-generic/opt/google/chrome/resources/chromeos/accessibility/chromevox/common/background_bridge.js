@@ -9,6 +9,7 @@
 
 import {BridgeConstants} from './bridge_constants.js';
 import {BridgeHelper} from './bridge_helper.js';
+import {BaseLog} from './log_types.js';
 
 export const BackgroundBridge = {};
 
@@ -81,7 +82,7 @@ BackgroundBridge.ChromeVoxPrefs = {
   async setLoggingPrefs(key, value) {
     return BridgeHelper.sendMessage(
         BridgeConstants.ChromeVoxPrefs.TARGET,
-        BridgeConstants.ChromeVoxPrefs.Action.SET_LOGGING_PREFS, {key, value});
+        BridgeConstants.ChromeVoxPrefs.Action.SET_LOGGING_PREFS, key, value);
   },
 
   /**
@@ -93,7 +94,7 @@ BackgroundBridge.ChromeVoxPrefs = {
   async setPref(key, value) {
     return BridgeHelper.sendMessage(
         BridgeConstants.ChromeVoxPrefs.TARGET,
-        BridgeConstants.ChromeVoxPrefs.Action.SET_PREF, {key, value});
+        BridgeConstants.ChromeVoxPrefs.Action.SET_PREF, key, value);
   },
 };
 
@@ -169,7 +170,7 @@ BackgroundBridge.EventStreamLogger = {
         BridgeConstants.EventStreamLogger.TARGET,
         BridgeConstants.EventStreamLogger.Action
             .NOTIFY_EVENT_STREAM_FILTER_CHANGED,
-        {name, enabled});
+        name, enabled);
   },
 };
 
@@ -241,7 +242,7 @@ BackgroundBridge.PanelBackground = {
   async focusTab(windowId, tabId) {
     return BridgeHelper.sendMessage(
         BridgeConstants.PanelBackground.TARGET,
-        BridgeConstants.PanelBackground.Action.FOCUS_TAB, {windowId, tabId});
+        BridgeConstants.PanelBackground.Action.FOCUS_TAB, windowId, tabId);
   },
 
   /**
@@ -272,8 +273,8 @@ BackgroundBridge.PanelBackground = {
   async incrementalSearch(searchStr, dir, opt_nextObject) {
     return BridgeHelper.sendMessage(
         BridgeConstants.PanelBackground.TARGET,
-        BridgeConstants.PanelBackground.Action.INCREMENTAL_SEARCH,
-        {searchStr, dir, opt_nextObject});
+        BridgeConstants.PanelBackground.Action.INCREMENTAL_SEARCH, searchStr,
+        dir, opt_nextObject);
   },
 
   /**

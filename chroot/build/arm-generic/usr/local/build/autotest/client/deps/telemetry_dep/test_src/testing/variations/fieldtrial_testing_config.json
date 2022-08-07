@@ -1930,6 +1930,42 @@
                     "enable_features": [
                         "BackForwardCacheMemoryControls"
                     ]
+                },
+                {
+                    "name": "Enabled_1000",
+                    "params": {
+                        "memory_threshold_for_back_forward_cache_in_mb": "1000"
+                    },
+                    "enable_features": [
+                        "BackForwardCacheMemoryControls"
+                    ]
+                },
+                {
+                    "name": "Enabled_1300",
+                    "params": {
+                        "memory_threshold_for_back_forward_cache_in_mb": "1300"
+                    },
+                    "enable_features": [
+                        "BackForwardCacheMemoryControls"
+                    ]
+                },
+                {
+                    "name": "Enabled_1500",
+                    "params": {
+                        "memory_threshold_for_back_forward_cache_in_mb": "1500"
+                    },
+                    "enable_features": [
+                        "BackForwardCacheMemoryControls"
+                    ]
+                },
+                {
+                    "name": "Enabled_1700",
+                    "params": {
+                        "memory_threshold_for_back_forward_cache_in_mb": "1700"
+                    },
+                    "enable_features": [
+                        "BackForwardCacheMemoryControls"
+                    ]
                 }
             ]
         }
@@ -6568,6 +6604,21 @@
             ]
         }
     ],
+    "OptimizeLayoutsForPullRefresh": [
+        {
+            "platforms": [
+                "android"
+            ],
+            "experiments": [
+                {
+                    "name": "Enabled",
+                    "enable_features": [
+                        "OptimizeLayoutsForPullRefresh"
+                    ]
+                }
+            ]
+        }
+    ],
     "OptimizeNetworkBuffers2": [
         {
             "platforms": [
@@ -9986,27 +10037,6 @@
                     },
                     "enable_features": [
                         "VideoTutorials"
-                    ]
-                }
-            ]
-        }
-    ],
-    "ViewportHeightClientHintHeader": [
-        {
-            "platforms": [
-                "windows",
-                "mac",
-                "chromeos",
-                "chromeos_lacros",
-                "linux",
-                "android",
-                "android_webview"
-            ],
-            "experiments": [
-                {
-                    "name": "Enabled",
-                    "enable_features": [
-                        "ViewportHeightClientHintHeader"
                     ]
                 }
             ]
