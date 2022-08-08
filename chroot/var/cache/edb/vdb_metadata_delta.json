@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1659932069.7525315}
+{"version": "1", "timestamp": 1659974971.785829, "deltas": [{"event": "add", "package": "chromeos-base/tast-remote-tests-cros", "version": "0.0.2-r11914", "slot": "0", "counter": "1468"}, {"event": "add", "package": "chromeos-base/hps-sign-rom", "version": "0.1.0-r27", "slot": "0", "counter": "1469"}]}
