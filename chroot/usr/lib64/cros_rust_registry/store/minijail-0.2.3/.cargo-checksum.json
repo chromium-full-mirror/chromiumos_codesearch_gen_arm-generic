@@ -1,10 +1,10 @@
 {
-	"package": "60640e2c1521603e111f6a86d6f6b7cef32e6946eab3d5a11be54b22a13e8c43",
+	"package": "d4f3d3825944271d3f71addbd22af85cedecbf177124fbddcb1d5db8355adeb5",
 	"files": {
 		"Cargo.toml.orig": "13ad07acfe4cca2bfa811dc50da1e4f0c6fbc34afb87115ec3269ec3fabaa5ac",
-		"Cargo.toml": "b89f4b7245faf0f8cf988c2dcf59cc2fad6a9fb4e98bf56c781befab303c356c",
 		"tests/fork_remap.rs": "9a939ed6cecfbc756c5401c171977f8602219f237df15c61c0dabfafc751d003",
+		"Cargo.toml": "b89f4b7245faf0f8cf988c2dcf59cc2fad6a9fb4e98bf56c781befab303c356c",
 		"src/test_filter.policy": "ef5e9afe42caa193d95d91444c22dac558d8f757a549a0b0c44444e6c9777938",
-		"src/lib.rs": "b250b10c40e158d19824c2d338bd163fc55c01edf806f5d2a214fd51422c2504"
+		"src/lib.rs": "3869e7116bb49fbf01338eca8253736c6b7fa2a687c834149e0c08313b9d809e"
 	}
 }
