@@ -449,6 +449,37 @@ std::string GetProtoDebugStringWithIndent(
   return output;
 }
 
+std::string GetProtoDebugString(const DeviceSetupCertificateMetadata& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(
+    const DeviceSetupCertificateMetadata& value,
+    int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  if (value.has_id()) {
+    output += indent + "  id: ";
+    base::StringAppendF(&output, "%s", value.id().c_str());
+    output += "\n";
+  }
+  if (value.has_timestamp()) {
+    output += indent + "  timestamp: ";
+    base::StringAppendF(&output, "%" PRIu64 " (0x%016" PRIX64 ")",
+                        value.timestamp(), value.timestamp());
+    output += "\n";
+  }
+  if (value.has_content_binding()) {
+    output += indent + "  content_binding: ";
+    base::StringAppendF(&output, "%s", value.content_binding().c_str());
+    output += "\n";
+  }
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const AttestationCertificateRequest& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -526,6 +557,14 @@ std::string GetProtoDebugStringWithIndent(
             .c_str());
     output += "\n";
   }
+  output += indent + "  device_setup_certificate_metadata: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.device_setup_certificate_metadata(),
+                                    indent_size + 2)
+          .c_str());
+  output += "\n";
+
   output += indent + "}\n";
   return output;
 }

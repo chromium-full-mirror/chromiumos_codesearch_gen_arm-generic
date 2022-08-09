@@ -3505,6 +3505,14 @@ class  BlockDeviceVendor {
     result->set_other(std::move(other));
     return result;
   }
+  // Construct an instance holding |unknown|.
+  static BlockDeviceVendorPtr
+  NewUnknown(
+      uint64_t unknown) {
+    auto result = BlockDeviceVendorPtr(base::in_place);
+    result->set_unknown(std::move(unknown));
+    return result;
+  }
 
   template <typename U>
   static BlockDeviceVendorPtr From(const U& u) {
@@ -3580,6 +3588,18 @@ class  BlockDeviceVendor {
   
   void set_other(
       uint16_t other);
+  
+  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
+
+  
+  uint64_t get_unknown() const {
+    CHECK(tag_ == Tag::UNKNOWN);
+    return data_.unknown;
+  }
+
+  
+  void set_unknown(
+      uint64_t unknown);
 
   template <typename UserType>
   static mojo::Message SerializeAsMessage(UserType* input) {
@@ -3601,6 +3621,7 @@ class  BlockDeviceVendor {
     uint32_t nvme_subsystem_vendor;
     uint16_t emmc_oemid;
     uint16_t other;
+    uint64_t unknown;
   };
 
   static bool Validate(const void* data,
@@ -3644,6 +3665,14 @@ class  BlockDeviceProduct {
       uint16_t other) {
     auto result = BlockDeviceProductPtr(base::in_place);
     result->set_other(std::move(other));
+    return result;
+  }
+  // Construct an instance holding |unknown|.
+  static BlockDeviceProductPtr
+  NewUnknown(
+      uint64_t unknown) {
+    auto result = BlockDeviceProductPtr(base::in_place);
+    result->set_unknown(std::move(unknown));
     return result;
   }
 
@@ -3721,6 +3750,18 @@ class  BlockDeviceProduct {
   
   void set_other(
       uint16_t other);
+  
+  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
+
+  
+  uint64_t get_unknown() const {
+    CHECK(tag_ == Tag::UNKNOWN);
+    return data_.unknown;
+  }
+
+  
+  void set_unknown(
+      uint64_t unknown);
 
   template <typename UserType>
   static mojo::Message SerializeAsMessage(UserType* input) {
@@ -3742,6 +3783,7 @@ class  BlockDeviceProduct {
     uint32_t nvme_subsystem_device;
     uint64_t emmc_pnm;
     uint16_t other;
+    uint64_t unknown;
   };
 
   static bool Validate(const void* data,
@@ -3785,6 +3827,14 @@ class  BlockDeviceRevision {
       uint16_t other) {
     auto result = BlockDeviceRevisionPtr(base::in_place);
     result->set_other(std::move(other));
+    return result;
+  }
+  // Construct an instance holding |unknown|.
+  static BlockDeviceRevisionPtr
+  NewUnknown(
+      uint64_t unknown) {
+    auto result = BlockDeviceRevisionPtr(base::in_place);
+    result->set_unknown(std::move(unknown));
     return result;
   }
 
@@ -3862,6 +3912,18 @@ class  BlockDeviceRevision {
   
   void set_other(
       uint16_t other);
+  
+  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
+
+  
+  uint64_t get_unknown() const {
+    CHECK(tag_ == Tag::UNKNOWN);
+    return data_.unknown;
+  }
+
+  
+  void set_unknown(
+      uint64_t unknown);
 
   template <typename UserType>
   static mojo::Message SerializeAsMessage(UserType* input) {
@@ -3883,6 +3945,7 @@ class  BlockDeviceRevision {
     uint8_t nvme_pcie_rev;
     uint8_t emmc_prv;
     uint16_t other;
+    uint64_t unknown;
   };
 
   static bool Validate(const void* data,
@@ -3926,6 +3989,14 @@ class  BlockDeviceFirmware {
       uint16_t other) {
     auto result = BlockDeviceFirmwarePtr(base::in_place);
     result->set_other(std::move(other));
+    return result;
+  }
+  // Construct an instance holding |unknown|.
+  static BlockDeviceFirmwarePtr
+  NewUnknown(
+      uint64_t unknown) {
+    auto result = BlockDeviceFirmwarePtr(base::in_place);
+    result->set_unknown(std::move(unknown));
     return result;
   }
 
@@ -4003,6 +4074,18 @@ class  BlockDeviceFirmware {
   
   void set_other(
       uint16_t other);
+  
+  bool is_unknown() const { return tag_ == Tag::UNKNOWN; }
+
+  
+  uint64_t get_unknown() const {
+    CHECK(tag_ == Tag::UNKNOWN);
+    return data_.unknown;
+  }
+
+  
+  void set_unknown(
+      uint64_t unknown);
 
   template <typename UserType>
   static mojo::Message SerializeAsMessage(UserType* input) {
@@ -4024,6 +4107,7 @@ class  BlockDeviceFirmware {
     uint64_t nvme_firmware_rev;
     uint64_t emmc_fwrev;
     uint16_t other;
+    uint64_t unknown;
   };
 
   static bool Validate(const void* data,
@@ -12704,6 +12788,9 @@ BlockDeviceVendorPtr BlockDeviceVendor::Clone() const {
     case Tag::OTHER:
       rv->set_other(mojo::Clone(data_.other));
       break;
+    case Tag::UNKNOWN:
+      rv->set_unknown(mojo::Clone(data_.unknown));
+      break;
   }
   return rv;
 }
@@ -12722,6 +12809,8 @@ bool BlockDeviceVendor::Equals(const T& other) const {
       return mojo::Equals(data_.emmc_oemid, other.data_.emmc_oemid);
     case Tag::OTHER:
       return mojo::Equals(data_.other, other.data_.other);
+    case Tag::UNKNOWN:
+      return mojo::Equals(data_.unknown, other.data_.unknown);
   }
 
   return false;
@@ -12741,6 +12830,9 @@ BlockDeviceProductPtr BlockDeviceProduct::Clone() const {
     case Tag::OTHER:
       rv->set_other(mojo::Clone(data_.other));
       break;
+    case Tag::UNKNOWN:
+      rv->set_unknown(mojo::Clone(data_.unknown));
+      break;
   }
   return rv;
 }
@@ -12759,6 +12851,8 @@ bool BlockDeviceProduct::Equals(const T& other) const {
       return mojo::Equals(data_.emmc_pnm, other.data_.emmc_pnm);
     case Tag::OTHER:
       return mojo::Equals(data_.other, other.data_.other);
+    case Tag::UNKNOWN:
+      return mojo::Equals(data_.unknown, other.data_.unknown);
   }
 
   return false;
@@ -12778,6 +12872,9 @@ BlockDeviceRevisionPtr BlockDeviceRevision::Clone() const {
     case Tag::OTHER:
       rv->set_other(mojo::Clone(data_.other));
       break;
+    case Tag::UNKNOWN:
+      rv->set_unknown(mojo::Clone(data_.unknown));
+      break;
   }
   return rv;
 }
@@ -12796,6 +12893,8 @@ bool BlockDeviceRevision::Equals(const T& other) const {
       return mojo::Equals(data_.emmc_prv, other.data_.emmc_prv);
     case Tag::OTHER:
       return mojo::Equals(data_.other, other.data_.other);
+    case Tag::UNKNOWN:
+      return mojo::Equals(data_.unknown, other.data_.unknown);
   }
 
   return false;
@@ -12815,6 +12914,9 @@ BlockDeviceFirmwarePtr BlockDeviceFirmware::Clone() const {
     case Tag::OTHER:
       rv->set_other(mojo::Clone(data_.other));
       break;
+    case Tag::UNKNOWN:
+      rv->set_unknown(mojo::Clone(data_.unknown));
+      break;
   }
   return rv;
 }
@@ -12833,6 +12935,8 @@ bool BlockDeviceFirmware::Equals(const T& other) const {
       return mojo::Equals(data_.emmc_fwrev, other.data_.emmc_fwrev);
     case Tag::OTHER:
       return mojo::Equals(data_.other, other.data_.other);
+    case Tag::UNKNOWN:
+      return mojo::Equals(data_.unknown, other.data_.unknown);
   }
 
   return false;
@@ -19013,6 +19117,10 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView
     return input->get_other();
   }
 
+  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceVendorPtr& input) {
+    return input->get_unknown();
+  }
+
   static bool Read(::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView input, ::chromeos::cros_healthd::mojom::BlockDeviceVendorPtr* output);
 };
 
@@ -19037,6 +19145,10 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataVie
 
   static  uint16_t other(const ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr& input) {
     return input->get_other();
+  }
+
+  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr& input) {
+    return input->get_unknown();
   }
 
   static bool Read(::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataView input, ::chromeos::cros_healthd::mojom::BlockDeviceProductPtr* output);
@@ -19065,6 +19177,10 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataVi
     return input->get_other();
   }
 
+  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceRevisionPtr& input) {
+    return input->get_unknown();
+  }
+
   static bool Read(::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataView input, ::chromeos::cros_healthd::mojom::BlockDeviceRevisionPtr* output);
 };
 
@@ -19089,6 +19205,10 @@ struct  UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataVi
 
   static  uint16_t other(const ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr& input) {
     return input->get_other();
+  }
+
+  static  uint64_t unknown(const ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr& input) {
+    return input->get_unknown();
   }
 
   static bool Read(::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataView input, ::chromeos::cros_healthd::mojom::BlockDeviceFirmwarePtr* output);

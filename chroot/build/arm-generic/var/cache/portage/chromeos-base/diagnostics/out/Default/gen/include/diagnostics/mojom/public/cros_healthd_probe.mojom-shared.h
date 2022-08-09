@@ -6048,6 +6048,11 @@ class BlockDeviceVendorDataView {
     CHECK(is_other());
     return data_->data.f_other;
   }
+  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
+  uint64_t unknown() const {
+    CHECK(is_unknown());
+    return data_->data.f_unknown;
+  }
 
  private:
   internal::BlockDeviceVendor_Data* data_ = nullptr;
@@ -6087,6 +6092,11 @@ class BlockDeviceProductDataView {
   uint16_t other() const {
     CHECK(is_other());
     return data_->data.f_other;
+  }
+  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
+  uint64_t unknown() const {
+    CHECK(is_unknown());
+    return data_->data.f_unknown;
   }
 
  private:
@@ -6128,6 +6138,11 @@ class BlockDeviceRevisionDataView {
     CHECK(is_other());
     return data_->data.f_other;
   }
+  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
+  uint64_t unknown() const {
+    CHECK(is_unknown());
+    return data_->data.f_unknown;
+  }
 
  private:
   internal::BlockDeviceRevision_Data* data_ = nullptr;
@@ -6167,6 +6182,11 @@ class BlockDeviceFirmwareDataView {
   uint16_t other() const {
     CHECK(is_other());
     return data_->data.f_other;
+  }
+  bool is_unknown() const { return data_->tag == Tag::UNKNOWN; }
+  uint64_t unknown() const {
+    CHECK(is_unknown());
+    return data_->data.f_unknown;
   }
 
  private:
@@ -11546,6 +11566,12 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView, Ma
         fragment->data.f_other = in_other;
         break;
       }
+      case ::chromeos::cros_healthd::mojom::BlockDeviceVendorDataView::Tag::UNKNOWN: {
+        decltype(Traits::unknown(input))
+            in_unknown = Traits::unknown(input);
+        fragment->data.f_unknown = in_unknown;
+        break;
+      }
     }
   }
 
@@ -11603,6 +11629,12 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceProductDataView, M
         decltype(Traits::other(input))
             in_other = Traits::other(input);
         fragment->data.f_other = in_other;
+        break;
+      }
+      case ::chromeos::cros_healthd::mojom::BlockDeviceProductDataView::Tag::UNKNOWN: {
+        decltype(Traits::unknown(input))
+            in_unknown = Traits::unknown(input);
+        fragment->data.f_unknown = in_unknown;
         break;
       }
     }
@@ -11664,6 +11696,12 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView, 
         fragment->data.f_other = in_other;
         break;
       }
+      case ::chromeos::cros_healthd::mojom::BlockDeviceRevisionDataView::Tag::UNKNOWN: {
+        decltype(Traits::unknown(input))
+            in_unknown = Traits::unknown(input);
+        fragment->data.f_unknown = in_unknown;
+        break;
+      }
     }
   }
 
@@ -11721,6 +11759,12 @@ struct Serializer<::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView, 
         decltype(Traits::other(input))
             in_other = Traits::other(input);
         fragment->data.f_other = in_other;
+        break;
+      }
+      case ::chromeos::cros_healthd::mojom::BlockDeviceFirmwareDataView::Tag::UNKNOWN: {
+        decltype(Traits::unknown(input))
+            in_unknown = Traits::unknown(input);
+        fragment->data.f_unknown = in_unknown;
         break;
       }
     }

@@ -72,13 +72,8 @@ class bluetooth_AdapterAdvMonitor(BluetoothAdapterQuickTests,
         self.advmon_test_multi_client()
 
 
-    # Remove flags=['Quick Health'] when this test is migrated to stable suite.
     @test_wrapper('Foreground Background Combination Tests',
-                  devices={
-                          'BLE_KEYBOARD': 1,
-                          'BLE_MOUSE': 1
-                  },
-                  flags=['Quick Health'])
+                  devices={'BLE_KEYBOARD':1, 'BLE_MOUSE':1})
     def advmon_fg_bg_combination_tests(self):
         """Tests foreground and background scanning working together."""
         self.advmon_test_fg_bg_combination()
@@ -93,8 +88,7 @@ class bluetooth_AdapterAdvMonitor(BluetoothAdapterQuickTests,
                   },
                   skip_models=SUSPEND_POWER_DOWN_MODELS,
                   skip_chipsets=SUSPEND_POWER_DOWN_CHIPSETS +
-                  SUSPEND_RESET_IF_NO_PEER_CHIPSETS,
-                  flags=['Quick Health'])
+                  SUSPEND_RESET_IF_NO_PEER_CHIPSETS)
     def advmon_suspend_resume_tests(self):
         """Tests working of background scanning with suspend resume."""
         self.advmon_test_suspend_resume()

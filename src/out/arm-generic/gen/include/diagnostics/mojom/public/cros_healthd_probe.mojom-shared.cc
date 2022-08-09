@@ -819,13 +819,13 @@ bool BlockDeviceVendor_Data::Validate(
 
       return true;
     }
+    case BlockDeviceVendor_Tag::UNKNOWN: {
+
+      return true;
+    }
     default: {
 
-      ReportValidationError(
-          validation_context,
-          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
-          "unknown tag in BlockDeviceVendor");
-      return false;
+      return true;
     }
   }
 }
@@ -868,13 +868,13 @@ bool BlockDeviceProduct_Data::Validate(
 
       return true;
     }
+    case BlockDeviceProduct_Tag::UNKNOWN: {
+
+      return true;
+    }
     default: {
 
-      ReportValidationError(
-          validation_context,
-          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
-          "unknown tag in BlockDeviceProduct");
-      return false;
+      return true;
     }
   }
 }
@@ -917,13 +917,13 @@ bool BlockDeviceRevision_Data::Validate(
 
       return true;
     }
+    case BlockDeviceRevision_Tag::UNKNOWN: {
+
+      return true;
+    }
     default: {
 
-      ReportValidationError(
-          validation_context,
-          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
-          "unknown tag in BlockDeviceRevision");
-      return false;
+      return true;
     }
   }
 }
@@ -966,13 +966,13 @@ bool BlockDeviceFirmware_Data::Validate(
 
       return true;
     }
+    case BlockDeviceFirmware_Tag::UNKNOWN: {
+
+      return true;
+    }
     default: {
 
-      ReportValidationError(
-          validation_context,
-          mojo::internal::VALIDATION_ERROR_UNKNOWN_UNION_TAG,
-          "unknown tag in BlockDeviceFirmware");
-      return false;
+      return true;
     }
   }
 }

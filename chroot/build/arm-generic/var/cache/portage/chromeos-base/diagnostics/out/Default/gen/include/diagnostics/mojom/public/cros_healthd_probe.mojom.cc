@@ -5671,6 +5671,14 @@ void BlockDeviceVendor::set_other(
   }
   data_.other = other;
 }
+void BlockDeviceVendor::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 
 void BlockDeviceVendor::DestroyActive() {
   switch (tag_) {
@@ -5682,6 +5690,9 @@ void BlockDeviceVendor::DestroyActive() {
 
       break;
     case Tag::OTHER:
+
+      break;
+    case Tag::UNKNOWN:
 
       break;
   }
@@ -5696,6 +5707,8 @@ size_t BlockDeviceVendor::Hash(size_t seed) const {
       return mojo::internal::Hash(seed, data_.emmc_oemid);
     case Tag::OTHER:
       return mojo::internal::Hash(seed, data_.other);
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     default:
       NOTREACHED();
       return seed;
@@ -5740,6 +5753,14 @@ void BlockDeviceProduct::set_other(
   }
   data_.other = other;
 }
+void BlockDeviceProduct::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 
 void BlockDeviceProduct::DestroyActive() {
   switch (tag_) {
@@ -5751,6 +5772,9 @@ void BlockDeviceProduct::DestroyActive() {
 
       break;
     case Tag::OTHER:
+
+      break;
+    case Tag::UNKNOWN:
 
       break;
   }
@@ -5765,6 +5789,8 @@ size_t BlockDeviceProduct::Hash(size_t seed) const {
       return mojo::internal::Hash(seed, data_.emmc_pnm);
     case Tag::OTHER:
       return mojo::internal::Hash(seed, data_.other);
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     default:
       NOTREACHED();
       return seed;
@@ -5809,6 +5835,14 @@ void BlockDeviceRevision::set_other(
   }
   data_.other = other;
 }
+void BlockDeviceRevision::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 
 void BlockDeviceRevision::DestroyActive() {
   switch (tag_) {
@@ -5820,6 +5854,9 @@ void BlockDeviceRevision::DestroyActive() {
 
       break;
     case Tag::OTHER:
+
+      break;
+    case Tag::UNKNOWN:
 
       break;
   }
@@ -5834,6 +5871,8 @@ size_t BlockDeviceRevision::Hash(size_t seed) const {
       return mojo::internal::Hash(seed, data_.emmc_prv);
     case Tag::OTHER:
       return mojo::internal::Hash(seed, data_.other);
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     default:
       NOTREACHED();
       return seed;
@@ -5878,6 +5917,14 @@ void BlockDeviceFirmware::set_other(
   }
   data_.other = other;
 }
+void BlockDeviceFirmware::set_unknown(
+    uint64_t unknown) {
+  if (tag_ != Tag::UNKNOWN) {
+    DestroyActive();
+    tag_ = Tag::UNKNOWN;
+  }
+  data_.unknown = unknown;
+}
 
 void BlockDeviceFirmware::DestroyActive() {
   switch (tag_) {
@@ -5889,6 +5936,9 @@ void BlockDeviceFirmware::DestroyActive() {
 
       break;
     case Tag::OTHER:
+
+      break;
+    case Tag::UNKNOWN:
 
       break;
   }
@@ -5903,6 +5953,8 @@ size_t BlockDeviceFirmware::Hash(size_t seed) const {
       return mojo::internal::Hash(seed, data_.emmc_fwrev);
     case Tag::OTHER:
       return mojo::internal::Hash(seed, data_.other);
+    case Tag::UNKNOWN:
+      return mojo::internal::Hash(seed, data_.unknown);
     default:
       NOTREACHED();
       return seed;
@@ -8535,9 +8587,14 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceVendor::DataView, :
       *output = UnionType::NewOther(input.other());
       break;
     }
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8562,9 +8619,14 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceProduct::DataView, 
       *output = UnionType::NewOther(input.other());
       break;
     }
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8589,9 +8651,14 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceRevision::DataView,
       *output = UnionType::NewOther(input.other());
       break;
     }
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }
@@ -8616,9 +8683,14 @@ bool UnionTraits<::chromeos::cros_healthd::mojom::BlockDeviceFirmware::DataView,
       *output = UnionType::NewOther(input.other());
       break;
     }
+    case Tag::UNKNOWN: {
+      *output = UnionType::NewUnknown(input.unknown());
+      break;
+    }
     default:
 
-      return false;
+      *output = UnionType::NewUnknown({});
+      return true;
   }
   return true;
 }

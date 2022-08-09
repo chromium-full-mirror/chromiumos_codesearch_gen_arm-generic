@@ -111,6 +111,20 @@ struct AttestationEnrollmentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AttestationEnrollmentResponseDefaultTypeInternal _AttestationEnrollmentResponse_default_instance_;
+constexpr DeviceSetupCertificateMetadata::DeviceSetupCertificateMetadata(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , content_binding_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , timestamp_(uint64_t{0u}){}
+struct DeviceSetupCertificateMetadataDefaultTypeInternal {
+  constexpr DeviceSetupCertificateMetadataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~DeviceSetupCertificateMetadataDefaultTypeInternal() {}
+  union {
+    DeviceSetupCertificateMetadata _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceSetupCertificateMetadataDefaultTypeInternal _DeviceSetupCertificateMetadata_default_instance_;
 constexpr AttestationCertificateRequest_NvramQuotesEntry_DoNotUse::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct AttestationCertificateRequest_NvramQuotesEntry_DoNotUseDefaultTypeInternal {
@@ -135,7 +149,8 @@ constexpr AttestationCertificateRequest::AttestationCertificateRequest(
 
   , temporal_index_(0)
   , tpm_version_(1)
-{}
+
+  , _oneof_case_{}{}
 struct AttestationCertificateRequestDefaultTypeInternal {
   constexpr AttestationCertificateRequestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -2939,6 +2954,302 @@ std::string AttestationEnrollmentResponse::GetTypeName() const {
 
 // ===================================================================
 
+class DeviceSetupCertificateMetadata::_Internal {
+ public:
+  using HasBits = decltype(std::declval<DeviceSetupCertificateMetadata>()._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_timestamp(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_content_binding(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+DeviceSetupCertificateMetadata::DeviceSetupCertificateMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:attestation.DeviceSetupCertificateMetadata)
+}
+DeviceSetupCertificateMetadata::DeviceSetupCertificateMetadata(const DeviceSetupCertificateMetadata& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
+      _has_bits_(from._has_bits_) {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_id()) {
+    id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
+      GetArenaForAllocation());
+  }
+  content_binding_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    content_binding_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_content_binding()) {
+    content_binding_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_content_binding(), 
+      GetArenaForAllocation());
+  }
+  timestamp_ = from.timestamp_;
+  // @@protoc_insertion_point(copy_constructor:attestation.DeviceSetupCertificateMetadata)
+}
+
+inline void DeviceSetupCertificateMetadata::SharedCtor() {
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+content_binding_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  content_binding_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+timestamp_ = uint64_t{0u};
+}
+
+DeviceSetupCertificateMetadata::~DeviceSetupCertificateMetadata() {
+  // @@protoc_insertion_point(destructor:attestation.DeviceSetupCertificateMetadata)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void DeviceSetupCertificateMetadata::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  content_binding_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void DeviceSetupCertificateMetadata::ArenaDtor(void* object) {
+  DeviceSetupCertificateMetadata* _this = reinterpret_cast< DeviceSetupCertificateMetadata* >(object);
+  (void)_this;
+}
+void DeviceSetupCertificateMetadata::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void DeviceSetupCertificateMetadata::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void DeviceSetupCertificateMetadata::Clear() {
+// @@protoc_insertion_point(message_clear_start:attestation.DeviceSetupCertificateMetadata)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      id_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      content_binding_.ClearNonDefaultToEmpty();
+    }
+  }
+  timestamp_ = uint64_t{0u};
+  _has_bits_.Clear();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* DeviceSetupCertificateMetadata::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint64 timestamp = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_timestamp(&has_bits);
+          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string content_binding = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_content_binding();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeviceSetupCertificateMetadata::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:attestation.DeviceSetupCertificateMetadata)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional string id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_id(), target);
+  }
+
+  // optional uint64 timestamp = 2;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_timestamp(), target);
+  }
+
+  // optional string content_binding = 3;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_content_binding(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:attestation.DeviceSetupCertificateMetadata)
+  return target;
+}
+
+size_t DeviceSetupCertificateMetadata::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:attestation.DeviceSetupCertificateMetadata)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // optional string id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_id());
+    }
+
+    // optional string content_binding = 3;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_content_binding());
+    }
+
+    // optional uint64 timestamp = 2;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64SizePlusOne(this->_internal_timestamp());
+    }
+
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeviceSetupCertificateMetadata::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const DeviceSetupCertificateMetadata*>(
+      &from));
+}
+
+void DeviceSetupCertificateMetadata::MergeFrom(const DeviceSetupCertificateMetadata& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:attestation.DeviceSetupCertificateMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _internal_set_content_binding(from._internal_content_binding());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      timestamp_ = from.timestamp_;
+    }
+    _has_bits_[0] |= cached_has_bits;
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void DeviceSetupCertificateMetadata::CopyFrom(const DeviceSetupCertificateMetadata& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:attestation.DeviceSetupCertificateMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeviceSetupCertificateMetadata::IsInitialized() const {
+  return true;
+}
+
+void DeviceSetupCertificateMetadata::InternalSwap(DeviceSetupCertificateMetadata* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, lhs_arena,
+      &other->id_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &content_binding_, lhs_arena,
+      &other->content_binding_, rhs_arena
+  );
+  swap(timestamp_, other->timestamp_);
+}
+
+std::string DeviceSetupCertificateMetadata::GetTypeName() const {
+  return "attestation.DeviceSetupCertificateMetadata";
+}
+
+
+// ===================================================================
+
 AttestationCertificateRequest_NvramQuotesEntry_DoNotUse::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse() {}
 AttestationCertificateRequest_NvramQuotesEntry_DoNotUse::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
@@ -2978,8 +3289,28 @@ class AttestationCertificateRequest::_Internal {
   static void set_has_tpm_version(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
   }
+  static const ::attestation::DeviceSetupCertificateMetadata& device_setup_certificate_metadata(const AttestationCertificateRequest* msg);
 };
 
+const ::attestation::DeviceSetupCertificateMetadata&
+AttestationCertificateRequest::_Internal::device_setup_certificate_metadata(const AttestationCertificateRequest* msg) {
+  return *msg->metadata_.device_setup_certificate_metadata_;
+}
+void AttestationCertificateRequest::set_allocated_device_setup_certificate_metadata(::attestation::DeviceSetupCertificateMetadata* device_setup_certificate_metadata) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_metadata();
+  if (device_setup_certificate_metadata) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::attestation::DeviceSetupCertificateMetadata>::GetOwningArena(device_setup_certificate_metadata);
+    if (message_arena != submessage_arena) {
+      device_setup_certificate_metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, device_setup_certificate_metadata, submessage_arena);
+    }
+    set_has_device_setup_certificate_metadata();
+    metadata_.device_setup_certificate_metadata_ = device_setup_certificate_metadata;
+  }
+  // @@protoc_insertion_point(field_set_allocated:attestation.AttestationCertificateRequest.device_setup_certificate_metadata)
+}
 AttestationCertificateRequest::AttestationCertificateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
@@ -3046,6 +3377,16 @@ AttestationCertificateRequest::AttestationCertificateRequest(const AttestationCe
   ::memcpy(&profile_, &from.profile_,
     static_cast<size_t>(reinterpret_cast<char*>(&tpm_version_) -
     reinterpret_cast<char*>(&profile_)) + sizeof(tpm_version_));
+  clear_has_metadata();
+  switch (from.metadata_case()) {
+    case kDeviceSetupCertificateMetadata: {
+      _internal_mutable_device_setup_certificate_metadata()->::attestation::DeviceSetupCertificateMetadata::MergeFrom(from._internal_device_setup_certificate_metadata());
+      break;
+    }
+    case METADATA_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:attestation.AttestationCertificateRequest)
 }
 
@@ -3079,6 +3420,7 @@ origin_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlrea
     0, static_cast<size_t>(reinterpret_cast<char*>(&temporal_index_) -
     reinterpret_cast<char*>(&profile_)) + sizeof(temporal_index_));
 tpm_version_ = 1;
+clear_has_metadata();
 }
 
 AttestationCertificateRequest::~AttestationCertificateRequest() {
@@ -3096,6 +3438,9 @@ inline void AttestationCertificateRequest::SharedDtor() {
   certified_key_proof_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   message_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   origin_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (has_metadata()) {
+    clear_metadata();
+  }
 }
 
 void AttestationCertificateRequest::ArenaDtor(void* object) {
@@ -3107,6 +3452,23 @@ void AttestationCertificateRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::A
 void AttestationCertificateRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+
+void AttestationCertificateRequest::clear_metadata() {
+// @@protoc_insertion_point(one_of_clear_start:attestation.AttestationCertificateRequest)
+  switch (metadata_case()) {
+    case kDeviceSetupCertificateMetadata: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete metadata_.device_setup_certificate_metadata_;
+      }
+      break;
+    }
+    case METADATA_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = METADATA_NOT_SET;
+}
+
 
 void AttestationCertificateRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:attestation.AttestationCertificateRequest)
@@ -3142,6 +3504,7 @@ void AttestationCertificateRequest::Clear() {
         reinterpret_cast<char*>(&profile_)) + sizeof(temporal_index_));
   }
   tpm_version_ = 1;
+  clear_metadata();
   _has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
@@ -3252,6 +3615,14 @@ const char* AttestationCertificateRequest::_InternalParse(const char* ptr, ::PRO
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // .attestation.DeviceSetupCertificateMetadata device_setup_certificate_metadata = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+          ptr = ctx->ParseMessage(_internal_mutable_device_setup_certificate_metadata(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -3373,6 +3744,14 @@ uint8_t* AttestationCertificateRequest::_InternalSerialize(
     }
   }
 
+  // .attestation.DeviceSetupCertificateMetadata device_setup_certificate_metadata = 16;
+  if (_internal_has_device_setup_certificate_metadata()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        16, _Internal::device_setup_certificate_metadata(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
@@ -3460,6 +3839,18 @@ size_t AttestationCertificateRequest::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_tpm_version());
   }
 
+  switch (metadata_case()) {
+    // .attestation.DeviceSetupCertificateMetadata device_setup_certificate_metadata = 16;
+    case kDeviceSetupCertificateMetadata: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *metadata_.device_setup_certificate_metadata_);
+      break;
+    }
+    case METADATA_NOT_SET: {
+      break;
+    }
+  }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
@@ -3511,6 +3902,15 @@ void AttestationCertificateRequest::MergeFrom(const AttestationCertificateReques
   }
   if (cached_has_bits & 0x00000100u) {
     _internal_set_tpm_version(from._internal_tpm_version());
+  }
+  switch (from.metadata_case()) {
+    case kDeviceSetupCertificateMetadata: {
+      _internal_mutable_device_setup_certificate_metadata()->::attestation::DeviceSetupCertificateMetadata::MergeFrom(from._internal_device_setup_certificate_metadata());
+      break;
+    }
+    case METADATA_NOT_SET: {
+      break;
+    }
   }
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -3570,6 +3970,8 @@ void AttestationCertificateRequest::InternalSwap(AttestationCertificateRequest* 
           reinterpret_cast<char*>(&profile_),
           reinterpret_cast<char*>(&other->profile_));
   swap(tpm_version_, other->tpm_version_);
+  swap(metadata_, other->metadata_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 std::string AttestationCertificateRequest::GetTypeName() const {
@@ -7288,6 +7690,9 @@ template<> PROTOBUF_NOINLINE ::attestation::AttestationEnrollmentRequest* Arena:
 }
 template<> PROTOBUF_NOINLINE ::attestation::AttestationEnrollmentResponse* Arena::CreateMaybeMessage< ::attestation::AttestationEnrollmentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::attestation::AttestationEnrollmentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::attestation::DeviceSetupCertificateMetadata* Arena::CreateMaybeMessage< ::attestation::DeviceSetupCertificateMetadata >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::attestation::DeviceSetupCertificateMetadata >(arena);
 }
 template<> PROTOBUF_NOINLINE ::attestation::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse* Arena::CreateMaybeMessage< ::attestation::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::attestation::AttestationCertificateRequest_NvramQuotesEntry_DoNotUse >(arena);

@@ -434,6 +434,7 @@
       "absl_bad_any_cast_impl",
       "absl_bad_optional_access",
       "absl_bad_variant_access",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "bootlockbox-client",
@@ -453,7 +454,6 @@
       "installattributes",
       "chromeos-ui",
       "container",
-      "cros_config",
       "ssl3",
       "smime3",
       "nss3",
@@ -556,7 +556,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -576,7 +576,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "check_includes": true,
     "configs": [
@@ -24118,7 +24118,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24139,7 +24139,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24279,7 +24279,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24298,7 +24298,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24472,7 +24472,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24491,7 +24491,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24692,7 +24692,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24711,7 +24711,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24904,7 +24904,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -24923,7 +24923,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25110,7 +25110,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25129,7 +25129,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25317,7 +25317,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25336,7 +25336,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25617,7 +25617,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25636,7 +25636,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25823,7 +25823,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -25842,7 +25842,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26011,7 +26011,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26030,7 +26030,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26209,7 +26209,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26228,7 +26228,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26425,7 +26425,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26444,7 +26444,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26637,7 +26637,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26656,7 +26656,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26849,7 +26849,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -26868,7 +26868,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27061,7 +27061,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27080,7 +27080,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27273,7 +27273,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27292,7 +27292,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27477,7 +27477,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27496,7 +27496,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27679,7 +27679,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27698,7 +27698,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27891,7 +27891,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -27910,7 +27910,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -28103,7 +28103,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -28122,7 +28122,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -28316,7 +28316,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -28335,7 +28335,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -30991,7 +30991,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -31010,7 +31010,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -31190,7 +31190,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -31209,7 +31209,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -38115,6 +38115,7 @@
       "-fPIE",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -38236,6 +38237,7 @@
       "keyutils",
       "rootdev",
       "secure_erase_file",
+      "cros_config",
       "ecryptfs",
       "metrics",
       "vboot_host",
@@ -38439,6 +38441,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -38659,6 +38662,7 @@
       "system_api-ml-protos",
       "system_api-lvmd-protos",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -38774,6 +38778,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -38999,6 +39004,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -39387,6 +39393,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -39600,6 +39607,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -40452,6 +40460,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -40559,6 +40568,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -40784,6 +40794,7 @@
       "brillo-test",
       "curl",
       "base-test",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -40888,6 +40899,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -41107,6 +41119,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "chaps",
       "hwsec",
       "hwsec-foundation",
@@ -41195,6 +41208,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -41407,6 +41421,7 @@
       "system_api",
       "protobuf-lite",
       "bootlockbox-client",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -41505,6 +41520,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -41731,6 +41747,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "bootlockbox-client",
       "hwsec",
       "hwsec-foundation",
@@ -41827,6 +41844,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -42042,6 +42060,7 @@
       "system_api",
       "protobuf-lite",
       "bootlockbox-client",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -42123,6 +42142,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -42337,6 +42357,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -42444,6 +42465,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/user_data_auth-client-test",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -42695,6 +42717,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "bootlockbox-client",
       "cbor",
       "rootdev",
@@ -42886,6 +42909,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -43110,6 +43134,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "hwsec",
       "hwsec-foundation",
       "tpm_manager",
@@ -43183,6 +43208,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -43393,6 +43419,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -43550,6 +43577,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -43618,6 +43646,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -43739,6 +43768,7 @@
       "grpc",
       "base",
       "pthread",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -43935,6 +43965,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -44170,6 +44201,7 @@
       "brillo-test",
       "curl",
       "base-test",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -44259,6 +44291,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -44474,6 +44507,7 @@
       "system_api-lvmd-protos",
       "system_api",
       "protobuf-lite",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -44578,6 +44612,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -44796,6 +44831,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "chaps",
       "hwsec",
       "hwsec-foundation",
@@ -44885,6 +44921,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -45099,6 +45136,7 @@
       "system_api",
       "protobuf-lite",
       "vboot_host",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -45461,6 +45499,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib/dbus-1.0/include",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -45699,6 +45738,7 @@
       "brillo-test",
       "curl",
       "base-test",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -45837,6 +45877,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -46054,6 +46095,7 @@
       "protobuf-lite",
       "dbus-1",
       "bootlockbox-client",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -46153,6 +46195,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -46369,6 +46412,7 @@
       "system_api",
       "protobuf-lite",
       "bootlockbox-client",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -46469,6 +46513,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/user_data_auth-client-test",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -46711,6 +46756,7 @@
       "brillo-test",
       "curl",
       "base-test",
+      "cros_config",
       "keyutils",
       "ecryptfs",
       "metrics",
@@ -46814,6 +46860,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/shill-client",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libchrome",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/glib-2.0",
@@ -47033,6 +47080,7 @@
       "ecryptfs",
       "metrics",
       "vboot_host",
+      "cros_config",
       "hwsec",
       "hwsec-foundation",
       "tspi",
@@ -51379,6 +51427,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android/hardware/libhardware/include",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android/system/core/include",
@@ -51469,6 +51518,7 @@
       "-Wl,-z,now",
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
+      "-pthread",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
     ],
@@ -51486,6 +51536,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "cros_camera_android_deps",
       "drm",
       "base",
@@ -51511,6 +51562,7 @@
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/metadata_logger.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/reloadable_config_file.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/timezone.cc",
+      "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/tracing.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/udev_watcher.cc",
       "/b/s/w/ir/cache/builder/chromiumos/src/platform2/camera/common/utils/camera_config_impl.cc"
     ],
@@ -51607,6 +51659,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -51703,7 +51756,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -51724,6 +51778,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "metrics"
     ],
     "metadata": {},
@@ -51979,6 +52034,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -52075,7 +52131,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -52096,6 +52153,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "metrics"
     ],
     "metadata": {},
@@ -52326,7 +52384,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -52406,7 +52465,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -52426,7 +52486,8 @@
       "sync",
       "udev",
       "yuv.pic",
-      "jpeg"
+      "jpeg",
+      "perfetto_sdk"
     ],
     "metadata": {},
     "public": "*",
@@ -53334,7 +53395,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -53414,7 +53476,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -53434,7 +53497,8 @@
       "sync",
       "udev",
       "yuv.pic",
-      "jpeg"
+      "jpeg",
+      "perfetto_sdk"
     ],
     "metadata": {},
     "public": "*",
@@ -53687,6 +53751,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -53783,7 +53848,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -53804,6 +53870,7 @@
       "sync",
       "udev",
       "yuv.pic",
+      "perfetto_sdk",
       "metrics"
     ],
     "metadata": {},
@@ -53911,6 +53978,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -54043,6 +54111,7 @@
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
@@ -54067,6 +54136,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "metrics",
       "facessd_cros"
     ],
@@ -54772,7 +54842,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -54856,7 +54927,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -54877,7 +54949,8 @@
       "sync",
       "udev",
       "yuv.pic",
-      "jpeg"
+      "jpeg",
+      "perfetto_sdk"
     ],
     "metadata": {},
     "public": "*",
@@ -54983,6 +55056,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -55079,7 +55153,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -55100,6 +55175,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "metrics"
     ],
     "metadata": {},
@@ -55206,6 +55282,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-Wno-unused-local-typedefs",
       "-DBASE_VER=989897",
       "-Wno-cast-qual",
@@ -55302,7 +55379,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -55323,6 +55401,7 @@
       "udev",
       "yuv.pic",
       "jpeg",
+      "perfetto_sdk",
       "metrics"
     ],
     "metadata": {},
@@ -55399,7 +55478,8 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libusb-1.0",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
-      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync"
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto"
     ],
     "cflags_c": [
       "-std=gnu17",
@@ -55479,7 +55559,8 @@
       "-Wl,--as-needed",
       "--sysroot=/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
-      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
+      "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread"
     ],
     "lib_dirs": [
       "/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/lib",
@@ -55498,7 +55579,8 @@
       "sync",
       "udev",
       "yuv.pic",
-      "jpeg"
+      "jpeg",
+      "perfetto_sdk"
     ],
     "metadata": {},
     "public": "*",
@@ -55753,6 +55835,7 @@
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/chromeos",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/libexif",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/sync",
+      "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/perfetto",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android/hardware/libhardware/include",
       "-I/b/s/w/ir/cache/builder/chromiumos/chroot/build/arm-generic/usr/include/android/system/core/include",
@@ -55854,6 +55937,7 @@
       "-Wl,-rpath-link=/b/s/w/ir/cache/builder/chromiumos/src/out/arm-generic/lib",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/",
+      "-pthread",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/usr/share/cros-camera/libfs/",
       "-Wl,-rpath=/b/s/w/ir/cache/builder/chromiumos/chroot/build/share/cros_camera/"
     ],
@@ -55876,7 +55960,8 @@
       "exif",
       "udev",
       "yuv.pic",
-      "jpeg"
+      "jpeg",
+      "perfetto_sdk"
     ],
     "metadata": {},
     "outputs": [
@@ -56123,7 +56208,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -56143,7 +56228,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "check_includes": true,
     "configs": [
@@ -56271,7 +56356,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "cflags_cc": [
       "-std=gnu++17",
@@ -56291,7 +56376,7 @@
       "-fno-exceptions",
       "-fno-unwind-tables",
       "-fno-asynchronous-unwind-tables",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\""
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\""
     ],
     "check_includes": true,
     "configs": [
@@ -77411,7 +77496,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77430,7 +77515,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77545,7 +77630,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77564,7 +77649,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77740,7 +77825,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -77759,7 +77844,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -80708,7 +80793,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -80727,7 +80812,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -80965,7 +81050,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -80984,7 +81069,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -81198,7 +81283,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -81217,7 +81302,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -82328,7 +82413,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -82347,7 +82432,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -82520,7 +82605,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -82541,7 +82626,7 @@
       "-Wno-unreachable-code",
       "-Wno-deprecated-declarations",
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141820,7 +141905,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -141839,7 +141924,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142033,7 +142118,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142052,7 +142137,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142255,7 +142340,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142274,7 +142359,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142483,7 +142568,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142502,7 +142587,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142711,7 +142796,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142730,7 +142815,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142918,7 +143003,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -142937,7 +143022,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143135,7 +143220,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143154,7 +143239,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143367,7 +143452,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143386,7 +143471,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143587,7 +143672,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143606,7 +143691,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143855,7 +143940,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -143874,7 +143959,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144087,7 +144172,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144106,7 +144191,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144291,7 +144376,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144310,7 +144395,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144484,7 +144569,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144503,7 +144588,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144720,7 +144805,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144739,7 +144824,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144971,7 +145056,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -144990,7 +145075,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145243,7 +145328,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145262,7 +145347,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145506,7 +145591,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145525,7 +145610,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145741,7 +145826,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145760,7 +145845,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145978,7 +146063,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -145997,7 +146082,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146188,7 +146273,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146207,7 +146292,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146380,7 +146465,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146399,7 +146484,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146568,7 +146653,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146587,7 +146672,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146756,7 +146841,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146775,7 +146860,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146944,7 +147029,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -146963,7 +147048,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -147133,7 +147218,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -147152,7 +147237,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -147324,7 +147409,7 @@
     ],
     "cflags_c": [
       "-std=gnu17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",
@@ -147343,7 +147428,7 @@
     ],
     "cflags_cc": [
       "-std=gnu++17",
-      "-DVCSID=\"9999-7fe1b0b9f6c62748cd6295b1da1d962f88226e66\"",
+      "-DVCSID=\"9999-658367c854377f147a694ac04af5305b3ab94761\"",
       "-D_FILE_OFFSET_BITS=64",
       "-D_LARGEFILE_SOURCE",
       "-D_LARGEFILE64_SOURCE",

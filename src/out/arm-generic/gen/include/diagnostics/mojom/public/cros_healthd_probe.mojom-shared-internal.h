@@ -838,6 +838,10 @@ class  BlockDeviceVendor_Data {
     OTHER,
     
     kOther = OTHER,
+    
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
   };
 
   // A note on layout:
@@ -848,6 +852,7 @@ class  BlockDeviceVendor_Data {
     uint32_t f_nvme_subsystem_vendor;
     uint16_t f_emmc_oemid;
     uint16_t f_other;
+    uint64_t f_unknown;
     uint64_t unknown;
   };
 
@@ -899,6 +904,10 @@ class  BlockDeviceProduct_Data {
     OTHER,
     
     kOther = OTHER,
+    
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
   };
 
   // A note on layout:
@@ -909,6 +918,7 @@ class  BlockDeviceProduct_Data {
     uint32_t f_nvme_subsystem_device;
     uint64_t f_emmc_pnm;
     uint16_t f_other;
+    uint64_t f_unknown;
     uint64_t unknown;
   };
 
@@ -960,6 +970,10 @@ class  BlockDeviceRevision_Data {
     OTHER,
     
     kOther = OTHER,
+    
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
   };
 
   // A note on layout:
@@ -970,6 +984,7 @@ class  BlockDeviceRevision_Data {
     uint8_t f_nvme_pcie_rev;
     uint8_t f_emmc_prv;
     uint16_t f_other;
+    uint64_t f_unknown;
     uint64_t unknown;
   };
 
@@ -1021,6 +1036,10 @@ class  BlockDeviceFirmware_Data {
     OTHER,
     
     kOther = OTHER,
+    
+    UNKNOWN,
+    
+    kUnknown = UNKNOWN,
   };
 
   // A note on layout:
@@ -1031,6 +1050,7 @@ class  BlockDeviceFirmware_Data {
     uint64_t f_nvme_firmware_rev;
     uint64_t f_emmc_fwrev;
     uint16_t f_other;
+    uint64_t f_unknown;
     uint64_t unknown;
   };
 
