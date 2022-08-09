@@ -1,8 +1,8 @@
 {
-	"package": "9e1d1ba1876bcabeffa2ac4c6771090c73c7b9fe709efd9df56d8662dda2d5b9",
+	"package": "4b611df3b18e2ed3459c28a76607ff751d95df70174203cb3a75252d04fb468e",
 	"files": {
 		"Cargo.toml.orig": "e3976123fa100badc0820b19f83dcf6278f2ef5ea35e3e6f17f8fdd5f934a3d1",
-		"Cargo.lock": "f437f308c38a826376dbe943ccef83bba543b10172dfba7a57d8725ccad70025",
+		"Cargo.lock": "a52f9ad1935d19a8cfd4ee932f209d7e18c9093612d7622a8bf273b2f7fb3460",
 		"benches/junk_modules.rs": "aea434d648639acb5ef0bcc09e84eb69cbfec0fa46afe4dc489042c7db622085",
 		"benches/skip_module.rs": "290019bb4a30937f59d0136e57928502b761bbe18ed859dba3d34d7dc68cca68",
 		"benches/quiet.rs": "8abbcc2de75a74911455f1b32b9021bac4853c051f84b95703029b2337aab779",

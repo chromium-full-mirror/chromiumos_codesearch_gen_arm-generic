@@ -1,8 +1,8 @@
 {
-	"package": "ac62c165910a87f0698ad1dbccfa426cca19a05fe9fc6a36a6e0e12972b876a4",
+	"package": "25d70a31bf2df0baa716a56dc5330f6b28d24dc49957ad4cc820fe5b91476995",
 	"files": {
 		"Cargo.toml.orig": "3e0068f1f3750b8022085ab9d72db696cfdca34d0abf6bef920e66db3812432d",
-		"Cargo.lock": "f048a1042d6bb50a8e4190d7b80eff5c24726f10434ed814f1ea19cee178df81",
+		"Cargo.lock": "e8fd2625464cba714eba78a38b1f6ceeca652a800d373ecf426c82b0ad60e322",
 		"benches/bench.rs": "aafdce667395776862af8a05cdb47f892c4cc029db68aff806128d110c8c4ebc",
 		"tests/input-tests.rs": "86fba951baff502d91f19fabb8746f129089d0f55f194d321dfdd0ffda915da8",
 		"tests/simple-test.rs": "6124fe5b14ab1f83348eef2d58c18bd02e52a9e517af9f125a0bc8a9ae209941",

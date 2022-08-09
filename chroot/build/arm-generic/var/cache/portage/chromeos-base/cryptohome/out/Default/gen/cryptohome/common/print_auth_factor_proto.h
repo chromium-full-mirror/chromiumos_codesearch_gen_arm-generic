@@ -28,6 +28,10 @@ namespace user_data_auth {
 std::string GetProtoDebugStringWithIndent(AuthFactorType value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(AuthFactorType value);
+std::string GetProtoDebugStringWithIndent(SmartCardSignatureAlgorithm value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(
+    SmartCardSignatureAlgorithm value);
 std::string GetProtoDebugStringWithIndent(const PasswordAuthInput& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const PasswordAuthInput& value);
@@ -42,6 +46,9 @@ BRILLO_EXPORT std::string GetProtoDebugString(
 std::string GetProtoDebugStringWithIndent(const KioskAuthInput& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const KioskAuthInput& value);
+std::string GetProtoDebugStringWithIndent(const SmartCardAuthInput& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(const SmartCardAuthInput& value);
 std::string GetProtoDebugStringWithIndent(const AuthInput& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const AuthInput& value);
@@ -59,6 +66,9 @@ BRILLO_EXPORT std::string GetProtoDebugString(
 std::string GetProtoDebugStringWithIndent(const KioskMetadata& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const KioskMetadata& value);
+std::string GetProtoDebugStringWithIndent(const SmartCardMetadata& value,
+                                          int indent_size);
+BRILLO_EXPORT std::string GetProtoDebugString(const SmartCardMetadata& value);
 std::string GetProtoDebugStringWithIndent(const AuthFactor& value,
                                           int indent_size);
 BRILLO_EXPORT std::string GetProtoDebugString(const AuthFactor& value);

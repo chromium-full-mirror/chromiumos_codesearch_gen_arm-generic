@@ -46,6 +46,33 @@ std::string GetProtoDebugStringWithIndent(AuthFactorType value,
   if (value == AUTH_FACTOR_TYPE_KIOSK) {
     return "AUTH_FACTOR_TYPE_KIOSK";
   }
+  if (value == AUTH_FACTOR_TYPE_SMART_CARD) {
+    return "AUTH_FACTOR_TYPE_SMART_CARD";
+  }
+  return "<unknown>";
+}
+
+std::string GetProtoDebugString(SmartCardSignatureAlgorithm value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(SmartCardSignatureAlgorithm value,
+                                          int indent_size) {
+  if (value == CHALLENGE_NOT_SPECIFIED) {
+    return "CHALLENGE_NOT_SPECIFIED";
+  }
+  if (value == CHALLENGE_RSASSA_PKCS1_V1_5_SHA1) {
+    return "CHALLENGE_RSASSA_PKCS1_V1_5_SHA1";
+  }
+  if (value == CHALLENGE_RSASSA_PKCS1_V1_5_SHA256) {
+    return "CHALLENGE_RSASSA_PKCS1_V1_5_SHA256";
+  }
+  if (value == CHALLENGE_RSASSA_PKCS1_V1_5_SHA384) {
+    return "CHALLENGE_RSASSA_PKCS1_V1_5_SHA384";
+  }
+  if (value == CHALLENGE_RSASSA_PKCS1_V1_5_SHA512) {
+    return "CHALLENGE_RSASSA_PKCS1_V1_5_SHA512";
+  }
   return "<unknown>";
 }
 
@@ -139,6 +166,36 @@ std::string GetProtoDebugStringWithIndent(const KioskAuthInput& value,
   return output;
 }
 
+std::string GetProtoDebugString(const SmartCardAuthInput& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const SmartCardAuthInput& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "  signature_algorithms: {";
+  for (int i = 0; i < value.signature_algorithms_size(); ++i) {
+    if (i > 0) {
+      base::StringAppendF(&output, ", ");
+    }
+    base::StringAppendF(&output, "%s",
+                        GetProtoDebugStringWithIndent(
+                            value.signature_algorithms(i), indent_size + 2)
+                            .c_str());
+  }
+  output += "}\n";
+  output += indent + "  key_delegate_dbus_service_name: ";
+  base::StringAppendF(&output, "%s",
+                      value.key_delegate_dbus_service_name().c_str());
+  output += "\n";
+
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const AuthInput& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -174,6 +231,13 @@ std::string GetProtoDebugStringWithIndent(const AuthInput& value,
   base::StringAppendF(
       &output, "%s",
       GetProtoDebugStringWithIndent(value.kiosk_input(), indent_size + 2)
+          .c_str());
+  output += "\n";
+
+  output += indent + "  smart_card_input: ";
+  base::StringAppendF(
+      &output, "%s",
+      GetProtoDebugStringWithIndent(value.smart_card_input(), indent_size + 2)
           .c_str());
   output += "\n";
 
@@ -242,6 +306,27 @@ std::string GetProtoDebugStringWithIndent(const KioskMetadata& value,
   return output;
 }
 
+std::string GetProtoDebugString(const SmartCardMetadata& value) {
+  return GetProtoDebugStringWithIndent(value, 0);
+}
+
+std::string GetProtoDebugStringWithIndent(const SmartCardMetadata& value,
+                                          int indent_size) {
+  std::string indent(indent_size, ' ');
+  std::string output =
+      base::StringPrintf("[%s] {\n", value.GetTypeName().c_str());
+
+  output += indent + "  public_key_spki_der: ";
+  base::StringAppendF(&output, "%s",
+                      base::HexEncode(value.public_key_spki_der().data(),
+                                      value.public_key_spki_der().size())
+                          .c_str());
+  output += "\n";
+
+  output += indent + "}\n";
+  return output;
+}
+
 std::string GetProtoDebugString(const AuthFactor& value) {
   return GetProtoDebugStringWithIndent(value, 0);
 }
@@ -293,6 +378,13 @@ std::string GetProtoDebugStringWithIndent(const AuthFactor& value,
       &output, "%s",
       GetProtoDebugStringWithIndent(value.kiosk_metadata(), indent_size + 2)
           .c_str());
+  output += "\n";
+
+  output += indent + "  smart_card_metadata: ";
+  base::StringAppendF(&output, "%s",
+                      GetProtoDebugStringWithIndent(value.smart_card_metadata(),
+                                                    indent_size + 2)
+                          .c_str());
   output += "\n";
 
   output += indent + "}\n";

@@ -63,6 +63,20 @@ struct KioskAuthInputDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KioskAuthInputDefaultTypeInternal _KioskAuthInput_default_instance_;
+constexpr SmartCardAuthInput::SmartCardAuthInput(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : signature_algorithms_()
+  , _signature_algorithms_cached_byte_size_(0)
+  , key_delegate_dbus_service_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SmartCardAuthInputDefaultTypeInternal {
+  constexpr SmartCardAuthInputDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SmartCardAuthInputDefaultTypeInternal() {}
+  union {
+    SmartCardAuthInput _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SmartCardAuthInputDefaultTypeInternal _SmartCardAuthInput_default_instance_;
 constexpr AuthInput::AuthInput(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : _oneof_case_{}{}
@@ -120,6 +134,18 @@ struct KioskMetadataDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT KioskMetadataDefaultTypeInternal _KioskMetadata_default_instance_;
+constexpr SmartCardMetadata::SmartCardMetadata(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : public_key_spki_der_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct SmartCardMetadataDefaultTypeInternal {
+  constexpr SmartCardMetadataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~SmartCardMetadataDefaultTypeInternal() {}
+  union {
+    SmartCardMetadata _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SmartCardMetadataDefaultTypeInternal _SmartCardMetadata_default_instance_;
 constexpr AuthFactor::AuthFactor(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : label_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -145,19 +171,21 @@ bool AuthFactorType_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> AuthFactorType_strings[5] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> AuthFactorType_strings[6] = {};
 
 static const char AuthFactorType_names[] =
   "AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY"
   "AUTH_FACTOR_TYPE_KIOSK"
   "AUTH_FACTOR_TYPE_PASSWORD"
   "AUTH_FACTOR_TYPE_PIN"
+  "AUTH_FACTOR_TYPE_SMART_CARD"
   "AUTH_FACTOR_TYPE_UNSPECIFIED";
 
 static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry AuthFactorType_entries[] = {
@@ -165,15 +193,17 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry AuthFactorType_entries
   { {AuthFactorType_names + 36, 22}, 4 },
   { {AuthFactorType_names + 58, 25}, 1 },
   { {AuthFactorType_names + 83, 20}, 2 },
-  { {AuthFactorType_names + 103, 28}, 0 },
+  { {AuthFactorType_names + 103, 27}, 5 },
+  { {AuthFactorType_names + 130, 28}, 0 },
 };
 
 static const int AuthFactorType_entries_by_number[] = {
-  4, // 0 -> AUTH_FACTOR_TYPE_UNSPECIFIED
+  5, // 0 -> AUTH_FACTOR_TYPE_UNSPECIFIED
   2, // 1 -> AUTH_FACTOR_TYPE_PASSWORD
   3, // 2 -> AUTH_FACTOR_TYPE_PIN
   0, // 3 -> AUTH_FACTOR_TYPE_CRYPTOHOME_RECOVERY
   1, // 4 -> AUTH_FACTOR_TYPE_KIOSK
+  4, // 5 -> AUTH_FACTOR_TYPE_SMART_CARD
 };
 
 const std::string& AuthFactorType_Name(
@@ -182,12 +212,12 @@ const std::string& AuthFactorType_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           AuthFactorType_entries,
           AuthFactorType_entries_by_number,
-          5, AuthFactorType_strings);
+          6, AuthFactorType_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       AuthFactorType_entries,
       AuthFactorType_entries_by_number,
-      5, value);
+      6, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      AuthFactorType_strings[idx].get();
 }
@@ -195,9 +225,72 @@ bool AuthFactorType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, AuthFactorType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      AuthFactorType_entries, 5, name, &int_value);
+      AuthFactorType_entries, 6, name, &int_value);
   if (success) {
     *value = static_cast<AuthFactorType>(int_value);
+  }
+  return success;
+}
+bool SmartCardSignatureAlgorithm_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> SmartCardSignatureAlgorithm_strings[5] = {};
+
+static const char SmartCardSignatureAlgorithm_names[] =
+  "CHALLENGE_NOT_SPECIFIED"
+  "CHALLENGE_RSASSA_PKCS1_V1_5_SHA1"
+  "CHALLENGE_RSASSA_PKCS1_V1_5_SHA256"
+  "CHALLENGE_RSASSA_PKCS1_V1_5_SHA384"
+  "CHALLENGE_RSASSA_PKCS1_V1_5_SHA512";
+
+static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry SmartCardSignatureAlgorithm_entries[] = {
+  { {SmartCardSignatureAlgorithm_names + 0, 23}, 0 },
+  { {SmartCardSignatureAlgorithm_names + 23, 32}, 1 },
+  { {SmartCardSignatureAlgorithm_names + 55, 34}, 2 },
+  { {SmartCardSignatureAlgorithm_names + 89, 34}, 3 },
+  { {SmartCardSignatureAlgorithm_names + 123, 34}, 4 },
+};
+
+static const int SmartCardSignatureAlgorithm_entries_by_number[] = {
+  0, // 0 -> CHALLENGE_NOT_SPECIFIED
+  1, // 1 -> CHALLENGE_RSASSA_PKCS1_V1_5_SHA1
+  2, // 2 -> CHALLENGE_RSASSA_PKCS1_V1_5_SHA256
+  3, // 3 -> CHALLENGE_RSASSA_PKCS1_V1_5_SHA384
+  4, // 4 -> CHALLENGE_RSASSA_PKCS1_V1_5_SHA512
+};
+
+const std::string& SmartCardSignatureAlgorithm_Name(
+    SmartCardSignatureAlgorithm value) {
+  static const bool dummy =
+      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
+          SmartCardSignatureAlgorithm_entries,
+          SmartCardSignatureAlgorithm_entries_by_number,
+          5, SmartCardSignatureAlgorithm_strings);
+  (void) dummy;
+  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
+      SmartCardSignatureAlgorithm_entries,
+      SmartCardSignatureAlgorithm_entries_by_number,
+      5, value);
+  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
+                     SmartCardSignatureAlgorithm_strings[idx].get();
+}
+bool SmartCardSignatureAlgorithm_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SmartCardSignatureAlgorithm* value) {
+  int int_value;
+  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
+      SmartCardSignatureAlgorithm_entries, 5, name, &int_value);
+  if (success) {
+    *value = static_cast<SmartCardSignatureAlgorithm>(int_value);
   }
   return success;
 }
@@ -1021,12 +1114,257 @@ std::string KioskAuthInput::GetTypeName() const {
 
 // ===================================================================
 
+class SmartCardAuthInput::_Internal {
+ public:
+};
+
+SmartCardAuthInput::SmartCardAuthInput(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned),
+  signature_algorithms_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:user_data_auth.SmartCardAuthInput)
+}
+SmartCardAuthInput::SmartCardAuthInput(const SmartCardAuthInput& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
+      signature_algorithms_(from.signature_algorithms_) {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  key_delegate_dbus_service_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    key_delegate_dbus_service_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_key_delegate_dbus_service_name().empty()) {
+    key_delegate_dbus_service_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_key_delegate_dbus_service_name(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:user_data_auth.SmartCardAuthInput)
+}
+
+inline void SmartCardAuthInput::SharedCtor() {
+key_delegate_dbus_service_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  key_delegate_dbus_service_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SmartCardAuthInput::~SmartCardAuthInput() {
+  // @@protoc_insertion_point(destructor:user_data_auth.SmartCardAuthInput)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void SmartCardAuthInput::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  key_delegate_dbus_service_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void SmartCardAuthInput::ArenaDtor(void* object) {
+  SmartCardAuthInput* _this = reinterpret_cast< SmartCardAuthInput* >(object);
+  (void)_this;
+}
+void SmartCardAuthInput::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SmartCardAuthInput::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SmartCardAuthInput::Clear() {
+// @@protoc_insertion_point(message_clear_start:user_data_auth.SmartCardAuthInput)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  signature_algorithms_.Clear();
+  key_delegate_dbus_service_name_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* SmartCardAuthInput::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .user_data_auth.SmartCardSignatureAlgorithm signature_algorithms = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_signature_algorithms(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_signature_algorithms(static_cast<::user_data_auth::SmartCardSignatureAlgorithm>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // string key_delegate_dbus_service_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_key_delegate_dbus_service_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, nullptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SmartCardAuthInput::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user_data_auth.SmartCardAuthInput)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .user_data_auth.SmartCardSignatureAlgorithm signature_algorithms = 1;
+  {
+    int byte_size = _signature_algorithms_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteEnumPacked(
+          1, signature_algorithms_, byte_size, target);
+    }
+  }
+
+  // string key_delegate_dbus_service_name = 2;
+  if (!this->_internal_key_delegate_dbus_service_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_key_delegate_dbus_service_name().data(), static_cast<int>(this->_internal_key_delegate_dbus_service_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "user_data_auth.SmartCardAuthInput.key_delegate_dbus_service_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_key_delegate_dbus_service_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user_data_auth.SmartCardAuthInput)
+  return target;
+}
+
+size_t SmartCardAuthInput::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user_data_auth.SmartCardAuthInput)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .user_data_auth.SmartCardSignatureAlgorithm signature_algorithms = 1;
+  {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_signature_algorithms_size());for (unsigned int i = 0; i < count; i++) {
+      data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+        this->_internal_signature_algorithms(static_cast<int>(i)));
+    }
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _signature_algorithms_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // string key_delegate_dbus_service_name = 2;
+  if (!this->_internal_key_delegate_dbus_service_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_key_delegate_dbus_service_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SmartCardAuthInput::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const SmartCardAuthInput*>(
+      &from));
+}
+
+void SmartCardAuthInput::MergeFrom(const SmartCardAuthInput& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user_data_auth.SmartCardAuthInput)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  signature_algorithms_.MergeFrom(from.signature_algorithms_);
+  if (!from._internal_key_delegate_dbus_service_name().empty()) {
+    _internal_set_key_delegate_dbus_service_name(from._internal_key_delegate_dbus_service_name());
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void SmartCardAuthInput::CopyFrom(const SmartCardAuthInput& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user_data_auth.SmartCardAuthInput)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SmartCardAuthInput::IsInitialized() const {
+  return true;
+}
+
+void SmartCardAuthInput::InternalSwap(SmartCardAuthInput* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  signature_algorithms_.InternalSwap(&other->signature_algorithms_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &key_delegate_dbus_service_name_, lhs_arena,
+      &other->key_delegate_dbus_service_name_, rhs_arena
+  );
+}
+
+std::string SmartCardAuthInput::GetTypeName() const {
+  return "user_data_auth.SmartCardAuthInput";
+}
+
+
+// ===================================================================
+
 class AuthInput::_Internal {
  public:
   static const ::user_data_auth::PasswordAuthInput& password_input(const AuthInput* msg);
   static const ::user_data_auth::PinAuthInput& pin_input(const AuthInput* msg);
   static const ::user_data_auth::CryptohomeRecoveryAuthInput& cryptohome_recovery_input(const AuthInput* msg);
   static const ::user_data_auth::KioskAuthInput& kiosk_input(const AuthInput* msg);
+  static const ::user_data_auth::SmartCardAuthInput& smart_card_input(const AuthInput* msg);
 };
 
 const ::user_data_auth::PasswordAuthInput&
@@ -1044,6 +1382,10 @@ AuthInput::_Internal::cryptohome_recovery_input(const AuthInput* msg) {
 const ::user_data_auth::KioskAuthInput&
 AuthInput::_Internal::kiosk_input(const AuthInput* msg) {
   return *msg->input_.kiosk_input_;
+}
+const ::user_data_auth::SmartCardAuthInput&
+AuthInput::_Internal::smart_card_input(const AuthInput* msg) {
+  return *msg->input_.smart_card_input_;
 }
 void AuthInput::set_allocated_password_input(::user_data_auth::PasswordAuthInput* password_input) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -1105,6 +1447,21 @@ void AuthInput::set_allocated_kiosk_input(::user_data_auth::KioskAuthInput* kios
   }
   // @@protoc_insertion_point(field_set_allocated:user_data_auth.AuthInput.kiosk_input)
 }
+void AuthInput::set_allocated_smart_card_input(::user_data_auth::SmartCardAuthInput* smart_card_input) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_input();
+  if (smart_card_input) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::user_data_auth::SmartCardAuthInput>::GetOwningArena(smart_card_input);
+    if (message_arena != submessage_arena) {
+      smart_card_input = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, smart_card_input, submessage_arena);
+    }
+    set_has_smart_card_input();
+    input_.smart_card_input_ = smart_card_input;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user_data_auth.AuthInput.smart_card_input)
+}
 AuthInput::AuthInput(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
@@ -1133,6 +1490,10 @@ AuthInput::AuthInput(const AuthInput& from)
     }
     case kKioskInput: {
       _internal_mutable_kiosk_input()->::user_data_auth::KioskAuthInput::MergeFrom(from._internal_kiosk_input());
+      break;
+    }
+    case kSmartCardInput: {
+      _internal_mutable_smart_card_input()->::user_data_auth::SmartCardAuthInput::MergeFrom(from._internal_smart_card_input());
       break;
     }
     case INPUT_NOT_SET: {
@@ -1197,6 +1558,12 @@ void AuthInput::clear_input() {
       }
       break;
     }
+    case kSmartCardInput: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete input_.smart_card_input_;
+      }
+      break;
+    }
     case INPUT_NOT_SET: {
       break;
     }
@@ -1249,6 +1616,14 @@ const char* AuthInput::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_kiosk_input(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .user_data_auth.SmartCardAuthInput smart_card_input = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_smart_card_input(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1314,6 +1689,14 @@ uint8_t* AuthInput::_InternalSerialize(
         4, _Internal::kiosk_input(this), target, stream);
   }
 
+  // .user_data_auth.SmartCardAuthInput smart_card_input = 5;
+  if (_internal_has_smart_card_input()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::smart_card_input(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
@@ -1359,6 +1742,13 @@ size_t AuthInput::ByteSizeLong() const {
           *input_.kiosk_input_);
       break;
     }
+    // .user_data_auth.SmartCardAuthInput smart_card_input = 5;
+    case kSmartCardInput: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *input_.smart_card_input_);
+      break;
+    }
     case INPUT_NOT_SET: {
       break;
     }
@@ -1398,6 +1788,10 @@ void AuthInput::MergeFrom(const AuthInput& from) {
     }
     case kKioskInput: {
       _internal_mutable_kiosk_input()->::user_data_auth::KioskAuthInput::MergeFrom(from._internal_kiosk_input());
+      break;
+    }
+    case kSmartCardInput: {
+      _internal_mutable_smart_card_input()->::user_data_auth::SmartCardAuthInput::MergeFrom(from._internal_smart_card_input());
       break;
     }
     case INPUT_NOT_SET: {
@@ -2039,12 +2433,208 @@ std::string KioskMetadata::GetTypeName() const {
 
 // ===================================================================
 
+class SmartCardMetadata::_Internal {
+ public:
+};
+
+SmartCardMetadata::SmartCardMetadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:user_data_auth.SmartCardMetadata)
+}
+SmartCardMetadata::SmartCardMetadata(const SmartCardMetadata& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  public_key_spki_der_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    public_key_spki_der_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_public_key_spki_der().empty()) {
+    public_key_spki_der_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_public_key_spki_der(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:user_data_auth.SmartCardMetadata)
+}
+
+inline void SmartCardMetadata::SharedCtor() {
+public_key_spki_der_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  public_key_spki_der_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SmartCardMetadata::~SmartCardMetadata() {
+  // @@protoc_insertion_point(destructor:user_data_auth.SmartCardMetadata)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<std::string>();
+}
+
+inline void SmartCardMetadata::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  public_key_spki_der_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void SmartCardMetadata::ArenaDtor(void* object) {
+  SmartCardMetadata* _this = reinterpret_cast< SmartCardMetadata* >(object);
+  (void)_this;
+}
+void SmartCardMetadata::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SmartCardMetadata::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SmartCardMetadata::Clear() {
+// @@protoc_insertion_point(message_clear_start:user_data_auth.SmartCardMetadata)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  public_key_spki_der_.ClearToEmpty();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* SmartCardMetadata::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes public_key_spki_der = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_public_key_spki_der();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SmartCardMetadata::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user_data_auth.SmartCardMetadata)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes public_key_spki_der = 1;
+  if (!this->_internal_public_key_spki_der().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_public_key_spki_der(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user_data_auth.SmartCardMetadata)
+  return target;
+}
+
+size_t SmartCardMetadata::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user_data_auth.SmartCardMetadata)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes public_key_spki_der = 1;
+  if (!this->_internal_public_key_spki_der().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_public_key_spki_der());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SmartCardMetadata::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const SmartCardMetadata*>(
+      &from));
+}
+
+void SmartCardMetadata::MergeFrom(const SmartCardMetadata& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user_data_auth.SmartCardMetadata)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_public_key_spki_der().empty()) {
+    _internal_set_public_key_spki_der(from._internal_public_key_spki_der());
+  }
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void SmartCardMetadata::CopyFrom(const SmartCardMetadata& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user_data_auth.SmartCardMetadata)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SmartCardMetadata::IsInitialized() const {
+  return true;
+}
+
+void SmartCardMetadata::InternalSwap(SmartCardMetadata* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &public_key_spki_der_, lhs_arena,
+      &other->public_key_spki_der_, rhs_arena
+  );
+}
+
+std::string SmartCardMetadata::GetTypeName() const {
+  return "user_data_auth.SmartCardMetadata";
+}
+
+
+// ===================================================================
+
 class AuthFactor::_Internal {
  public:
   static const ::user_data_auth::PasswordMetadata& password_metadata(const AuthFactor* msg);
   static const ::user_data_auth::PinMetadata& pin_metadata(const AuthFactor* msg);
   static const ::user_data_auth::CryptohomeRecoveryMetadata& cryptohome_recovery_metadata(const AuthFactor* msg);
   static const ::user_data_auth::KioskMetadata& kiosk_metadata(const AuthFactor* msg);
+  static const ::user_data_auth::SmartCardMetadata& smart_card_metadata(const AuthFactor* msg);
 };
 
 const ::user_data_auth::PasswordMetadata&
@@ -2062,6 +2652,10 @@ AuthFactor::_Internal::cryptohome_recovery_metadata(const AuthFactor* msg) {
 const ::user_data_auth::KioskMetadata&
 AuthFactor::_Internal::kiosk_metadata(const AuthFactor* msg) {
   return *msg->metadata_.kiosk_metadata_;
+}
+const ::user_data_auth::SmartCardMetadata&
+AuthFactor::_Internal::smart_card_metadata(const AuthFactor* msg) {
+  return *msg->metadata_.smart_card_metadata_;
 }
 void AuthFactor::set_allocated_password_metadata(::user_data_auth::PasswordMetadata* password_metadata) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2123,6 +2717,21 @@ void AuthFactor::set_allocated_kiosk_metadata(::user_data_auth::KioskMetadata* k
   }
   // @@protoc_insertion_point(field_set_allocated:user_data_auth.AuthFactor.kiosk_metadata)
 }
+void AuthFactor::set_allocated_smart_card_metadata(::user_data_auth::SmartCardMetadata* smart_card_metadata) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_metadata();
+  if (smart_card_metadata) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::user_data_auth::SmartCardMetadata>::GetOwningArena(smart_card_metadata);
+    if (message_arena != submessage_arena) {
+      smart_card_metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, smart_card_metadata, submessage_arena);
+    }
+    set_has_smart_card_metadata();
+    metadata_.smart_card_metadata_ = smart_card_metadata;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user_data_auth.AuthFactor.smart_card_metadata)
+}
 AuthFactor::AuthFactor(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
@@ -2162,6 +2771,10 @@ AuthFactor::AuthFactor(const AuthFactor& from)
     }
     case kKioskMetadata: {
       _internal_mutable_kiosk_metadata()->::user_data_auth::KioskMetadata::MergeFrom(from._internal_kiosk_metadata());
+      break;
+    }
+    case kSmartCardMetadata: {
+      _internal_mutable_smart_card_metadata()->::user_data_auth::SmartCardMetadata::MergeFrom(from._internal_smart_card_metadata());
       break;
     }
     case METADATA_NOT_SET: {
@@ -2232,6 +2845,12 @@ void AuthFactor::clear_metadata() {
     case kKioskMetadata: {
       if (GetArenaForAllocation() == nullptr) {
         delete metadata_.kiosk_metadata_;
+      }
+      break;
+    }
+    case kSmartCardMetadata: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete metadata_.smart_card_metadata_;
       }
       break;
     }
@@ -2322,6 +2941,14 @@ const char* AuthFactor::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         } else
           goto handle_unusual;
         continue;
+      // .user_data_auth.SmartCardMetadata smart_card_metadata = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_smart_card_metadata(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -2406,6 +3033,14 @@ uint8_t* AuthFactor::_InternalSerialize(
         7, _Internal::kiosk_metadata(this), target, stream);
   }
 
+  // .user_data_auth.SmartCardMetadata smart_card_metadata = 8;
+  if (_internal_has_smart_card_metadata()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        8, _Internal::smart_card_metadata(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
         static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
@@ -2469,6 +3104,13 @@ size_t AuthFactor::ByteSizeLong() const {
           *metadata_.kiosk_metadata_);
       break;
     }
+    // .user_data_auth.SmartCardMetadata smart_card_metadata = 8;
+    case kSmartCardMetadata: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *metadata_.smart_card_metadata_);
+      break;
+    }
     case METADATA_NOT_SET: {
       break;
     }
@@ -2517,6 +3159,10 @@ void AuthFactor::MergeFrom(const AuthFactor& from) {
     }
     case kKioskMetadata: {
       _internal_mutable_kiosk_metadata()->::user_data_auth::KioskMetadata::MergeFrom(from._internal_kiosk_metadata());
+      break;
+    }
+    case kSmartCardMetadata: {
+      _internal_mutable_smart_card_metadata()->::user_data_auth::SmartCardMetadata::MergeFrom(from._internal_smart_card_metadata());
       break;
     }
     case METADATA_NOT_SET: {
@@ -2577,6 +3223,9 @@ template<> PROTOBUF_NOINLINE ::user_data_auth::CryptohomeRecoveryAuthInput* Aren
 template<> PROTOBUF_NOINLINE ::user_data_auth::KioskAuthInput* Arena::CreateMaybeMessage< ::user_data_auth::KioskAuthInput >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::KioskAuthInput >(arena);
 }
+template<> PROTOBUF_NOINLINE ::user_data_auth::SmartCardAuthInput* Arena::CreateMaybeMessage< ::user_data_auth::SmartCardAuthInput >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_data_auth::SmartCardAuthInput >(arena);
+}
 template<> PROTOBUF_NOINLINE ::user_data_auth::AuthInput* Arena::CreateMaybeMessage< ::user_data_auth::AuthInput >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::AuthInput >(arena);
 }
@@ -2591,6 +3240,9 @@ template<> PROTOBUF_NOINLINE ::user_data_auth::CryptohomeRecoveryMetadata* Arena
 }
 template<> PROTOBUF_NOINLINE ::user_data_auth::KioskMetadata* Arena::CreateMaybeMessage< ::user_data_auth::KioskMetadata >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::KioskMetadata >(arena);
+}
+template<> PROTOBUF_NOINLINE ::user_data_auth::SmartCardMetadata* Arena::CreateMaybeMessage< ::user_data_auth::SmartCardMetadata >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_data_auth::SmartCardMetadata >(arena);
 }
 template<> PROTOBUF_NOINLINE ::user_data_auth::AuthFactor* Arena::CreateMaybeMessage< ::user_data_auth::AuthFactor >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user_data_auth::AuthFactor >(arena);
