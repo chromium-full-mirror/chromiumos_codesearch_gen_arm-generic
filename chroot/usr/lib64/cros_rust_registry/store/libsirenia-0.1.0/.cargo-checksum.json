@@ -1,5 +1,5 @@
 {
-	"package": "13b5d11d7bd1746a380a2bc0342366b7672a5ec9ad8220bf53c0ee56672706cb",
+	"package": "7b6f4db12a80858ab8c095b2e3c74e1397487a2b7acb489b249c360b33836cea",
 	"files": {
 		"Cargo.toml.orig": "114d9d2d42365239c1e73ff265945aeb53c3dcda2fb49f589b9c74949bcbcc39",
 		"Cargo.toml": "576325b8211103cdb40b4f3ffe88b5024ec62fda1e3234c649b73be119a985ad",
@@ -8,7 +8,7 @@
 		"src/secrets/mod.rs": "10bd3b30022593973bed353b42bc44559c5e004bfae7608fa4f42adff9e75586",
 		"src/secrets/storage_encryption.rs": "cba820c94228a25f17adfea489de6fa173ee06ee370ff6be8a819341ff14ab7e",
 		"src/linux/mod.rs": "3fcecc9b4c09aa0745253c02cc1bc4f4f0afc5591d722ac1d9e28747312d4563",
-		"src/linux/events.rs": "7d4d7f83e87a207e02541615761138e6042ed736caaced508c1e1d4fad86288a",
+		"src/linux/events.rs": "8feb186027c5113006242fa66655d914615547b0e6585926d703b082f9fe18f4",
 		"src/linux/kmsg.rs": "4ae3b17b8cc6426591325b1850edb60976a9da91b8a27a5c63e601e4f42151da",
 		"src/linux/syslog.rs": "66badd18fbcb8b2a4f3904db3f48909d49e88326f4d08360844119b4150041e2",
 		"src/linux/poll.rs": "0a7e758e37c3e7dc978e569fecf5e2765c10629d98617230fe2b46692e0d7d38",
