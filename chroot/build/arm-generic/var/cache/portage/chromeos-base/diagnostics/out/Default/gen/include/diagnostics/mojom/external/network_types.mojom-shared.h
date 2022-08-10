@@ -14,7 +14,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/external/network_types.mojom-shared-internal.h"
 
@@ -360,7 +360,7 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::ConnectionStateType> {
@@ -369,7 +369,7 @@ struct  TraceFormatTraits<::chromeos::network_config::mojom::ConnectionStateType
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::DeviceStateType> {
@@ -378,7 +378,7 @@ struct  TraceFormatTraits<::chromeos::network_config::mojom::DeviceStateType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::NetworkType> {
@@ -387,7 +387,7 @@ struct  TraceFormatTraits<::chromeos::network_config::mojom::NetworkType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::OncSource> {
@@ -396,7 +396,7 @@ struct  TraceFormatTraits<::chromeos::network_config::mojom::OncSource> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::PolicySource> {
@@ -405,7 +405,7 @@ struct  TraceFormatTraits<::chromeos::network_config::mojom::PolicySource> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_config::mojom::PortalState> {

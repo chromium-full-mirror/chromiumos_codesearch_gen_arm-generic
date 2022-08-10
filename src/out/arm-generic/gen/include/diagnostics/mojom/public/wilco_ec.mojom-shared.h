@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/public/wilco_ec.mojom-shared-internal.h"
 #include "mojo/public/cpp/bindings/lib/interface_serialization.h"
@@ -430,7 +430,7 @@ inline void GetEcTelemetryResponseDataView::GetPayloadDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Reason> {
@@ -439,7 +439,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Reason> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Type> {
@@ -448,7 +448,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EcEvent_Type> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::GetEcTelemetryResponse_Status> {

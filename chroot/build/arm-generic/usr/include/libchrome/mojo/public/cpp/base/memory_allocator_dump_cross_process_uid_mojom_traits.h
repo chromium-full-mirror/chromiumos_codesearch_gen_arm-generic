@@ -6,7 +6,7 @@
 #define MOJO_PUBLIC_CPP_BASE_MEMORY_ALLOCATOR_DUMP_CROSS_PROCESS_UID_MOJOM_TRAITS_H_
 
 #include "base/component_export.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/memory_allocator_dump_guid.h"
 #include "mojo/public/mojom/base/memory_allocator_dump_cross_process_uid.mojom-shared.h"
 
 namespace mojo {

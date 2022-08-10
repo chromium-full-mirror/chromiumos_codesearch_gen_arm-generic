@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "iioservice/mojo/sensor.mojom-shared-internal.h"
 #include "mojo/public/cpp/bindings/lib/interface_serialization.h"
@@ -595,7 +595,7 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::DeviceType> {
@@ -604,7 +604,7 @@ struct  TraceFormatTraits<::cros::mojom::DeviceType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::ObserverErrorType> {
@@ -613,7 +613,7 @@ struct  TraceFormatTraits<::cros::mojom::ObserverErrorType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::SensorServiceDisconnectReason> {
@@ -622,7 +622,7 @@ struct  TraceFormatTraits<::cros::mojom::SensorServiceDisconnectReason> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::SensorDeviceDisconnectReason> {
@@ -631,7 +631,7 @@ struct  TraceFormatTraits<::cros::mojom::SensorDeviceDisconnectReason> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioChanType> {
@@ -640,7 +640,7 @@ struct  TraceFormatTraits<::cros::mojom::IioChanType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioEventType> {
@@ -649,7 +649,7 @@ struct  TraceFormatTraits<::cros::mojom::IioEventType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::IioEventDirection> {

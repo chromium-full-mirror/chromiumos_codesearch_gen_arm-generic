@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "iioservice/mojo/sensor.mojom-params-data.h"
 namespace cros {
@@ -1405,7 +1405,7 @@ SensorDeviceEventsObserver_OnErrorOccurred_Params_Data::SensorDeviceEventsObserv
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::DeviceType>::WriteIntoTrace(
@@ -1415,7 +1415,7 @@ void TraceFormatTraits<::cros::mojom::DeviceType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::ObserverErrorType>::WriteIntoTrace(
@@ -1425,7 +1425,7 @@ void TraceFormatTraits<::cros::mojom::ObserverErrorType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::SensorServiceDisconnectReason>::WriteIntoTrace(
@@ -1435,7 +1435,7 @@ void TraceFormatTraits<::cros::mojom::SensorServiceDisconnectReason>::WriteIntoT
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::SensorDeviceDisconnectReason>::WriteIntoTrace(
@@ -1445,7 +1445,7 @@ void TraceFormatTraits<::cros::mojom::SensorDeviceDisconnectReason>::WriteIntoTr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::IioChanType>::WriteIntoTrace(
@@ -1455,7 +1455,7 @@ void TraceFormatTraits<::cros::mojom::IioChanType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::IioEventType>::WriteIntoTrace(
@@ -1465,7 +1465,7 @@ void TraceFormatTraits<::cros::mojom::IioEventType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::IioEventDirection>::WriteIntoTrace(

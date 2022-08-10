@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/public/cros_healthd_probe.mojom-shared-internal.h"
 #include "diagnostics/mojom/external/network_health.mojom-shared.h"
@@ -14704,7 +14704,7 @@ inline void InputResultDataView::GetErrorDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuArchitectureEnum> {
@@ -14713,7 +14713,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuArchitectureEnum> 
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProbeCategoryEnum> {
@@ -14722,7 +14722,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProbeCategoryEnum> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ErrorType> {
@@ -14731,7 +14731,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ErrorType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProcessState> {
@@ -14740,7 +14740,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ProcessState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::StorageDevicePurpose> {
@@ -14749,7 +14749,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::StorageDevicePurpose>
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EncryptionState> {
@@ -14758,7 +14758,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::EncryptionState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CryptoAlgorithm> {
@@ -14767,7 +14767,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CryptoAlgorithm> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BluetoothDeviceType> {
@@ -14776,7 +14776,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BluetoothDeviceType> 
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BootMode> {
@@ -14785,7 +14785,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BootMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BusDeviceClass> {
@@ -14794,7 +14794,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::BusDeviceClass> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::FwupdVersionFormat> {
@@ -14803,7 +14803,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::FwupdVersionFormat> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::TpmGSCVersion> {
@@ -14812,7 +14812,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::TpmGSCVersion> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DisplayInputType> {
@@ -14821,7 +14821,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DisplayInputType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel> {
@@ -14830,7 +14830,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::ThunderboltSecurityLe
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl> {
@@ -14839,7 +14839,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VirtualizationInfo_SM
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status> {
@@ -14848,7 +14848,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Sta
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type> {
@@ -14857,7 +14857,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::InputDevice_ConnectionType> {

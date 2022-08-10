@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "camera/mojo/camera3.mojom-shared-internal.h"
 #include "camera/mojo/camera_metadata.mojom-shared.h"
@@ -2104,7 +2104,7 @@ inline void Camera3NotifyMsgMessageDataView::GetGenericDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::HalPixelFormat> {
@@ -2113,7 +2113,7 @@ struct  TraceFormatTraits<::cros::mojom::HalPixelFormat> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3StreamType> {
@@ -2122,7 +2122,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3StreamType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3StreamRotation> {
@@ -2131,7 +2131,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3StreamRotation> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3StreamConfigurationMode> {
@@ -2140,7 +2140,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3StreamConfigurationMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3BufferStatus> {
@@ -2149,7 +2149,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3BufferStatus> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3MsgType> {
@@ -2158,7 +2158,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3MsgType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3ErrorMsgCode> {
@@ -2167,7 +2167,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3ErrorMsgCode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3RequestTemplate> {
@@ -2176,7 +2176,7 @@ struct  TraceFormatTraits<::cros::mojom::Camera3RequestTemplate> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::Camera3DeviceOps_BufferType> {

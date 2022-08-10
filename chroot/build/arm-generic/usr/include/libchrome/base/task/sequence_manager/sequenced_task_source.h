@@ -12,7 +12,7 @@
 #include "base/task/sequence_manager/tasks.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 class EventContext;
 }
 

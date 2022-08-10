@@ -14,7 +14,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "camera/mojo/camera_metadata_tags.mojom-shared-internal.h"
 
@@ -4086,7 +4086,7 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraMetadataSection> {
@@ -4095,7 +4095,7 @@ struct  TraceFormatTraits<::cros::mojom::CameraMetadataSection> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraMetadataSectionStart> {
@@ -4104,7 +4104,7 @@ struct  TraceFormatTraits<::cros::mojom::CameraMetadataSectionStart> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::CameraMetadataTag> {
@@ -4113,7 +4113,7 @@ struct  TraceFormatTraits<::cros::mojom::CameraMetadataTag> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidColorCorrectionMode> {
@@ -4122,7 +4122,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidColorCorrectionMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidColorCorrectionAberrationMode> {
@@ -4131,7 +4131,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidColorCorrectionAberrationMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAeAntibandingMode> {
@@ -4140,7 +4140,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAeAntibandingMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAeLock> {
@@ -4149,7 +4149,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAeLock> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAeMode> {
@@ -4158,7 +4158,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAeMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAePrecaptureTrigger> {
@@ -4167,7 +4167,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAePrecaptureTrigger> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAfMode> {
@@ -4176,7 +4176,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAfMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAfTrigger> {
@@ -4185,7 +4185,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAfTrigger> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbLock> {
@@ -4194,7 +4194,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbLock> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbMode> {
@@ -4203,7 +4203,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlCaptureIntent> {
@@ -4212,7 +4212,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlCaptureIntent> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlEffectMode> {
@@ -4221,7 +4221,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlEffectMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlMode> {
@@ -4230,7 +4230,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlSceneMode> {
@@ -4239,7 +4239,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlSceneMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlVideoStabilizationMode> {
@@ -4248,7 +4248,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlVideoStabilizationMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAeState> {
@@ -4257,7 +4257,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAeState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAfState> {
@@ -4266,7 +4266,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAfState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbState> {
@@ -4275,7 +4275,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAeLockAvailable> {
@@ -4284,7 +4284,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAeLockAvailable> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbLockAvailable> {
@@ -4293,7 +4293,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAwbLockAvailable> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlEnableZsl> {
@@ -4302,7 +4302,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlEnableZsl> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlAfSceneChange> {
@@ -4311,7 +4311,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlAfSceneChange> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidControlExtendedSceneMode> {
@@ -4320,7 +4320,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidControlExtendedSceneMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidDemosaicMode> {
@@ -4329,7 +4329,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidDemosaicMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidEdgeMode> {
@@ -4338,7 +4338,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidEdgeMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidFlashMode> {
@@ -4347,7 +4347,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidFlashMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidFlashState> {
@@ -4356,7 +4356,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidFlashState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidFlashInfoAvailable> {
@@ -4365,7 +4365,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidFlashInfoAvailable> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidHotPixelMode> {
@@ -4374,7 +4374,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidHotPixelMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLensOpticalStabilizationMode> {
@@ -4383,7 +4383,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLensOpticalStabilizationMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLensFacing> {
@@ -4392,7 +4392,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLensFacing> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLensState> {
@@ -4401,7 +4401,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLensState> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLensPoseReference> {
@@ -4410,7 +4410,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLensPoseReference> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLensInfoFocusDistanceCalibration> {
@@ -4419,7 +4419,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLensInfoFocusDistanceCalibration
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidNoiseReductionMode> {
@@ -4428,7 +4428,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidNoiseReductionMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidQuirksPartialResult> {
@@ -4437,7 +4437,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidQuirksPartialResult> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidRequestMetadataMode> {
@@ -4446,7 +4446,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidRequestMetadataMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidRequestType> {
@@ -4455,7 +4455,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidRequestType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidRequestAvailableCapabilities> {
@@ -4464,7 +4464,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidRequestAvailableCapabilities> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableFormats> {
@@ -4473,7 +4473,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableFormats> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableStreamConfigurations> {
@@ -4482,7 +4482,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableStreamConfigurati
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidScalerCroppingType> {
@@ -4491,7 +4491,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidScalerCroppingType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableRecommendedStreamConfigurations> {
@@ -4500,7 +4500,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidScalerAvailableRecommendedStream
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidScalerRotateAndCrop> {
@@ -4509,7 +4509,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidScalerRotateAndCrop> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSensorReferenceIlluminant1> {
@@ -4518,7 +4518,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSensorReferenceIlluminant1> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSensorTestPatternMode> {
@@ -4527,7 +4527,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSensorTestPatternMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoColorFilterArrangement> {
@@ -4536,7 +4536,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoColorFilterArrangement
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoTimestampSource> {
@@ -4545,7 +4545,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoTimestampSource> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoLensShadingApplied> {
@@ -4554,7 +4554,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSensorInfoLensShadingApplied> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidShadingMode> {
@@ -4563,7 +4563,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidShadingMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsFaceDetectMode> {
@@ -4572,7 +4572,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsFaceDetectMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsHistogramMode> {
@@ -4581,7 +4581,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsHistogramMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsSharpnessMapMode> {
@@ -4590,7 +4590,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsSharpnessMapMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsHotPixelMapMode> {
@@ -4599,7 +4599,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsHotPixelMapMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsSceneFlicker> {
@@ -4608,7 +4608,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsSceneFlicker> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsLensShadingMapMode> {
@@ -4617,7 +4617,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsLensShadingMapMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsOisDataMode> {
@@ -4626,7 +4626,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidStatisticsOisDataMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidTonemapMode> {
@@ -4635,7 +4635,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidTonemapMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidTonemapPresetCurve> {
@@ -4644,7 +4644,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidTonemapPresetCurve> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLedTransmit> {
@@ -4653,7 +4653,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLedTransmit> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLedAvailableLeds> {
@@ -4662,7 +4662,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLedAvailableLeds> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidInfoSupportedHardwareLevel> {
@@ -4671,7 +4671,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidInfoSupportedHardwareLevel> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidInfoSupportedBufferManagementVersion> {
@@ -4680,7 +4680,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidInfoSupportedBufferManagementVer
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidBlackLevelLock> {
@@ -4689,7 +4689,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidBlackLevelLock> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSyncFrameNumber> {
@@ -4698,7 +4698,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSyncFrameNumber> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidSyncMaxLatency> {
@@ -4707,7 +4707,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidSyncMaxLatency> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDepthStreamConfigurations> {
@@ -4716,7 +4716,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDepthStreamConfigu
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidDepthDepthIsExclusive> {
@@ -4725,7 +4725,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidDepthDepthIsExclusive> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDynamicDepthStreamConfigurations> {
@@ -4734,7 +4734,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDynamicDepthStream
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidLogicalMultiCameraSensorSyncType> {
@@ -4743,7 +4743,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidLogicalMultiCameraSensorSyncType
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidDistortionCorrectionMode> {
@@ -4752,7 +4752,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidDistortionCorrectionMode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidHeicAvailableHeicStreamConfigurations> {
@@ -4761,7 +4761,7 @@ struct  TraceFormatTraits<::cros::mojom::AndroidHeicAvailableHeicStreamConfigura
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::cros::mojom::AndroidHeicInfoSupported> {

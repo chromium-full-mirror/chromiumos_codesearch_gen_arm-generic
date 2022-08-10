@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "ml/mojom/soda.mojom-shared-internal.h"
 #include "ml/mojom/time.mojom-shared.h"
@@ -1454,7 +1454,7 @@ inline void SpeechRecognizerEventDataView::GetFinalResultDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::OptionalBool> {
@@ -1463,7 +1463,7 @@ struct  TraceFormatTraits<::chromeos::machine_learning::mojom::OptionalBool> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::SodaRecognitionMode> {
@@ -1472,7 +1472,7 @@ struct  TraceFormatTraits<::chromeos::machine_learning::mojom::SodaRecognitionMo
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointerType> {
@@ -1481,7 +1481,7 @@ struct  TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointerType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointReason> {

@@ -22,7 +22,7 @@
 // to the users including trace_event.h, rather than adding a dependency from
 // scoped_refptr.h et al on traced_value.h.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // If T is serialisable into a trace, scoped_refptr<T> is serialisable as well.
 template <class T>

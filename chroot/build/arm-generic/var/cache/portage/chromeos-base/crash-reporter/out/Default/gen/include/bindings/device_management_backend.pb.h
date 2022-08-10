@@ -2230,11 +2230,12 @@ enum AppInstallReportLogEvent_EventType : int {
   AppInstallReportLogEvent_EventType_INSTALLATION_FINISHED = 11,
   AppInstallReportLogEvent_EventType_INSTALLATION_FAILED = 12,
   AppInstallReportLogEvent_EventType_DIRECT_INSTALL = 13,
-  AppInstallReportLogEvent_EventType_CLOUDDPC_MAIN_LOOP_FAILED = 14
+  AppInstallReportLogEvent_EventType_CLOUDDPC_MAIN_LOOP_FAILED = 14,
+  AppInstallReportLogEvent_EventType_PLAYSTORE_LOCAL_POLICY_SET = 15
 };
 bool AppInstallReportLogEvent_EventType_IsValid(int value);
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent_EventType_EventType_MIN = AppInstallReportLogEvent_EventType_LOG_EVENT_TYPE_UNKNOWN;
-constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent_EventType_EventType_MAX = AppInstallReportLogEvent_EventType_CLOUDDPC_MAIN_LOOP_FAILED;
+constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent_EventType_EventType_MAX = AppInstallReportLogEvent_EventType_PLAYSTORE_LOCAL_POLICY_SET;
 constexpr int AppInstallReportLogEvent_EventType_EventType_ARRAYSIZE = AppInstallReportLogEvent_EventType_EventType_MAX + 1;
 
 const std::string& AppInstallReportLogEvent_EventType_Name(AppInstallReportLogEvent_EventType value);
@@ -33512,6 +33513,8 @@ class AppInstallReportLogEvent final :
     AppInstallReportLogEvent_EventType_DIRECT_INSTALL;
   static constexpr EventType CLOUDDPC_MAIN_LOOP_FAILED =
     AppInstallReportLogEvent_EventType_CLOUDDPC_MAIN_LOOP_FAILED;
+  static constexpr EventType PLAYSTORE_LOCAL_POLICY_SET =
+    AppInstallReportLogEvent_EventType_PLAYSTORE_LOCAL_POLICY_SET;
   static inline bool EventType_IsValid(int value) {
     return AppInstallReportLogEvent_EventType_IsValid(value);
   }

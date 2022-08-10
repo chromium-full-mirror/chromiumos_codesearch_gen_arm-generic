@@ -59,7 +59,7 @@ class BASE_EXPORT TrackEventHandle {
 class BASE_EXPORT TracePacketHandle {
  public:
   using TracePacket = perfetto_libchrome::protos::pbzero::TracePacket;
-  using PerfettoPacketHandle = protozero::MessageHandle<TracePacket>;
+  using PerfettoPacketHandle = protozero_libchrome::MessageHandle<TracePacket>;
 
   class BASE_EXPORT CompletionListener {
    public:

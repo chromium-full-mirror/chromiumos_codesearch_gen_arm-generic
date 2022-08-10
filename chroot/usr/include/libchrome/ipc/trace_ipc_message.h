@@ -8,12 +8,8 @@
 #include <stdint.h>
 
 #include "base/component_export.h"
-#include "base/trace_event/base_tracing.h"
-#include "base/tracing_buildflags.h"
-
-#if BUILDFLAG(ENABLE_BASE_TRACING)
+#include "services/tracing/public/cpp/perfetto/macros.h"
 #include "third_party/perfetto/protos/perfetto/trace/track_event/chrome_legacy_ipc.pbzero.h"
-#endif  // BUILDFLAG(ENABLE_BASE_TRACING)
 
 // When tracing is enabled, emits a trace event with the given category and
 // event name and typed arguments for the message's type (message class and line
@@ -24,8 +20,6 @@
                                       ctx.event()->set_chrome_legacy_ipc()); \
   });
 
-#if BUILDFLAG(ENABLE_BASE_TRACING)
-
 namespace IPC {
 
 // Converts |message_id| into its message class and line number parts and writes
@@ -35,7 +29,5 @@ void COMPONENT_EXPORT(IPC)
                                  perfetto_libchrome::protos::pbzero::ChromeLegacyIpc*);
 
 }  // namespace IPC
-
-#endif  // BUILDFLAG(ENABLE_BASE_TRACING)
 
 #endif  // IPC_TRACE_IPC_MESSAGE_H_

@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "arc/vm/libvda/gpu/mojom/video_decode_accelerator.mojom-params-data.h"
 namespace arc {
@@ -624,7 +624,7 @@ VideoDecodeClient_ProvidePictureBuffers_Params_Data::VideoDecodeClient_ProvidePi
 }  // namespace mojom
 }  // namespace arc
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoDecodeAccelerator_Result>::WriteIntoTrace(

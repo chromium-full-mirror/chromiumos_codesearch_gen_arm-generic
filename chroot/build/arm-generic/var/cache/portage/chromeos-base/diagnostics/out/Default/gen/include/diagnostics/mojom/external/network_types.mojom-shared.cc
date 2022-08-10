@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "diagnostics/mojom/external/network_types.mojom-params-data.h"
 namespace chromeos {
@@ -223,7 +223,7 @@ namespace internal {
 }  // namespace network_config
 }  // namespace chromeos
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::ConnectionStateType>::WriteIntoTrace(
@@ -233,7 +233,7 @@ void TraceFormatTraits<::chromeos::network_config::mojom::ConnectionStateType>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::DeviceStateType>::WriteIntoTrace(
@@ -243,7 +243,7 @@ void TraceFormatTraits<::chromeos::network_config::mojom::DeviceStateType>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::NetworkType>::WriteIntoTrace(
@@ -253,7 +253,7 @@ void TraceFormatTraits<::chromeos::network_config::mojom::NetworkType>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::OncSource>::WriteIntoTrace(
@@ -263,7 +263,7 @@ void TraceFormatTraits<::chromeos::network_config::mojom::OncSource>::WriteIntoT
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::PolicySource>::WriteIntoTrace(
@@ -273,7 +273,7 @@ void TraceFormatTraits<::chromeos::network_config::mojom::PolicySource>::WriteIn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_config::mojom::PortalState>::WriteIntoTrace(

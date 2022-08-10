@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "diagnostics/mojom/external/network_diagnostics.mojom-params-data.h"
 #include "diagnostics/mojom/external/time_mojom_traits.h"
@@ -1804,7 +1804,7 @@ NetworkDiagnosticsRoutines_RunArcDnsResolution_ResponseParams_Data::NetworkDiagn
 }  // namespace network_diagnostics
 }  // namespace chromeos
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineType>::WriteIntoTrace(
@@ -1814,7 +1814,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineType>::Wri
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineVerdict>::WriteIntoTrace(
@@ -1824,7 +1824,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineVerdict>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::LanConnectivityProblem>::WriteIntoTrace(
@@ -1834,7 +1834,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::LanConnectivityPr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::SignalStrengthProblem>::WriteIntoTrace(
@@ -1844,7 +1844,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::SignalStrengthPro
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::GatewayCanBePingedProblem>::WriteIntoTrace(
@@ -1854,7 +1854,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::GatewayCanBePinge
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HasSecureWiFiConnectionProblem>::WriteIntoTrace(
@@ -1864,7 +1864,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HasSecureWiFiConn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolverPresentProblem>::WriteIntoTrace(
@@ -1874,7 +1874,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolverPresen
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsLatencyProblem>::WriteIntoTrace(
@@ -1884,7 +1884,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsLatencyProblem
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolutionProblem>::WriteIntoTrace(
@@ -1894,7 +1894,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolutionProb
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::CaptivePortalProblem>::WriteIntoTrace(
@@ -1904,7 +1904,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::CaptivePortalProb
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpFirewallProblem>::WriteIntoTrace(
@@ -1914,7 +1914,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpFirewallProbl
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsFirewallProblem>::WriteIntoTrace(
@@ -1924,7 +1924,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsFirewallProb
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsLatencyProblem>::WriteIntoTrace(
@@ -1934,7 +1934,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsLatencyProbl
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::VideoConferencingProblem>::WriteIntoTrace(
@@ -1944,7 +1944,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::VideoConferencing
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcHttpProblem>::WriteIntoTrace(
@@ -1954,7 +1954,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcHttpProblem>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcDnsResolutionProblem>::WriteIntoTrace(
@@ -1964,7 +1964,7 @@ void TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcDnsResolutionP
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcPingProblem>::WriteIntoTrace(

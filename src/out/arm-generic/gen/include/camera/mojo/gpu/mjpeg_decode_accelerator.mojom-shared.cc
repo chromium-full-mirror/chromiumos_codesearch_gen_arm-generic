@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "camera/mojo/gpu/mjpeg_decode_accelerator.mojom-params-data.h"
 namespace cros {
@@ -195,7 +195,7 @@ MjpegDecodeAccelerator_Uninitialize_Params_Data::MjpegDecodeAccelerator_Uninitia
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::DecodeError>::WriteIntoTrace(

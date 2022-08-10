@@ -13,7 +13,7 @@
 
 #include "base/check.h"
 #include "base/notreached.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
 #include "base/tuple.h"
 #include "build/build_config.h"
 #include "ipc/ipc_message.h"

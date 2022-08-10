@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/external/network_health.mojom-shared-internal.h"
 #include "diagnostics/mojom/external/network_types.mojom-shared.h"
@@ -713,7 +713,7 @@ inline void NetworkHealthStateDataView::GetNetworksDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_health::mojom::NetworkState> {

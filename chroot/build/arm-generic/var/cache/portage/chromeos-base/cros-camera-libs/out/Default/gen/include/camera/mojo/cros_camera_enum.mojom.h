@@ -16,7 +16,7 @@
 #include "third_party/abseil-cpp/absl/types/optional.h"
 #include "mojo/public/cpp/bindings/type_converter.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "camera/mojo/cros_camera_enum.mojom-shared.h"
 #include "camera/mojo/cros_camera_enum.mojom-forward.h"

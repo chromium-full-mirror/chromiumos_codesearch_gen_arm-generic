@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "mojo_service_manager/lib/mojom/service_manager.mojom-params-data.h"
 #include "mojo_service_manager/lib/mojom/time_mojom_traits.h"
@@ -629,7 +629,7 @@ ServiceObserver_OnServiceEvent_Params_Data::ServiceObserver_OnServiceEvent_Param
 }  // namespace mojo_service_manager
 }  // namespace chromeos
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ErrorCode>::WriteIntoTrace(
@@ -639,7 +639,7 @@ void TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ErrorCode>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ServiceEvent_Type>::WriteIntoTrace(

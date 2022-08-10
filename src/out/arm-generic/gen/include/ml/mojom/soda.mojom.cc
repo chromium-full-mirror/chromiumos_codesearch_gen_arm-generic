@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "ml/mojom/soda.mojom-params-data.h"
 #include "ml/mojom/soda.mojom-shared-message-ids.h"
@@ -115,7 +117,7 @@ size_t SodaConfig::Hash(size_t seed) const {
 
 void SodaConfig::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "channel_count"), this->channel_count,
@@ -215,7 +217,7 @@ TimingInfo::~TimingInfo() = default;
 
 void TimingInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "audio_start_epoch"), this->audio_start_epoch,
@@ -300,7 +302,7 @@ EndpointerEvent::~EndpointerEvent() = default;
 
 void EndpointerEvent::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "endpointer_type"), this->endpointer_type,
@@ -340,7 +342,7 @@ PartialResult::~PartialResult() = default;
 
 void PartialResult::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "partial_text"), this->partial_text,
@@ -380,7 +382,7 @@ HypothesisPartInResult::~HypothesisPartInResult() = default;
 
 void HypothesisPartInResult::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
@@ -435,7 +437,7 @@ FinalResult::~FinalResult() = default;
 
 void FinalResult::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "final_hypotheses"), this->final_hypotheses,
@@ -498,7 +500,7 @@ size_t AudioLevelEvent::Hash(size_t seed) const {
 
 void AudioLevelEvent::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "rms"), this->rms,

@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "ml/mojom/soda.mojom-params-data.h"
 #include "ml/mojom/time_mojom_traits.h"
@@ -723,7 +723,7 @@ SodaRecognizer_MarkDone_Params_Data::SodaRecognizer_MarkDone_Params_Data()
 }  // namespace machine_learning
 }  // namespace chromeos
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::OptionalBool>::WriteIntoTrace(
@@ -733,7 +733,7 @@ void TraceFormatTraits<::chromeos::machine_learning::mojom::OptionalBool>::Write
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::SodaRecognitionMode>::WriteIntoTrace(
@@ -743,7 +743,7 @@ void TraceFormatTraits<::chromeos::machine_learning::mojom::SodaRecognitionMode>
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointerType>::WriteIntoTrace(
@@ -753,7 +753,7 @@ void TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointerType>::Wri
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::machine_learning::mojom::EndpointReason>::WriteIntoTrace(

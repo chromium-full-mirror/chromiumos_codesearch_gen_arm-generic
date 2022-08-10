@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "arc/vm/libvda/gpu/mojom/video_common.mojom-params-data.h"
 namespace arc {
@@ -263,7 +263,7 @@ VideoFrameLayout_Data::VideoFrameLayout_Data()
 }  // namespace mojom
 }  // namespace arc
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoCodecProfile>::WriteIntoTrace(
@@ -273,7 +273,7 @@ void TraceFormatTraits<::arc::mojom::VideoCodecProfile>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::arc::mojom::HalPixelFormat>::WriteIntoTrace(
@@ -283,7 +283,7 @@ void TraceFormatTraits<::arc::mojom::HalPixelFormat>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::arc::mojom::VideoPixelFormat>::WriteIntoTrace(

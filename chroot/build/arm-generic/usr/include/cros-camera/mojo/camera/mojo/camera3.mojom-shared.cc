@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "camera/mojo/camera3.mojom-params-data.h"
 namespace cros {
@@ -1392,7 +1392,7 @@ Camera3DeviceOps_ConfigureStreamsAndGetAllocatedBuffers_ResponseParams_Data::Cam
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::HalPixelFormat>::WriteIntoTrace(
@@ -1402,7 +1402,7 @@ void TraceFormatTraits<::cros::mojom::HalPixelFormat>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3StreamType>::WriteIntoTrace(
@@ -1412,7 +1412,7 @@ void TraceFormatTraits<::cros::mojom::Camera3StreamType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3StreamRotation>::WriteIntoTrace(
@@ -1422,7 +1422,7 @@ void TraceFormatTraits<::cros::mojom::Camera3StreamRotation>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3StreamConfigurationMode>::WriteIntoTrace(
@@ -1432,7 +1432,7 @@ void TraceFormatTraits<::cros::mojom::Camera3StreamConfigurationMode>::WriteInto
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3BufferStatus>::WriteIntoTrace(
@@ -1442,7 +1442,7 @@ void TraceFormatTraits<::cros::mojom::Camera3BufferStatus>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3MsgType>::WriteIntoTrace(
@@ -1452,7 +1452,7 @@ void TraceFormatTraits<::cros::mojom::Camera3MsgType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3ErrorMsgCode>::WriteIntoTrace(
@@ -1462,7 +1462,7 @@ void TraceFormatTraits<::cros::mojom::Camera3ErrorMsgCode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3RequestTemplate>::WriteIntoTrace(
@@ -1472,7 +1472,7 @@ void TraceFormatTraits<::cros::mojom::Camera3RequestTemplate>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::Camera3DeviceOps_BufferType>::WriteIntoTrace(

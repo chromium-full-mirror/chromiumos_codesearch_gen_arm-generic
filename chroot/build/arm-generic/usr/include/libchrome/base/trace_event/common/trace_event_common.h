@@ -232,7 +232,7 @@
 // Declare debug annotation converters for base time types, so they can be
 // passed as trace event arguments.
 // TODO(skyostil): Serialize timestamps using perfetto_libchrome::TracedValue instead.
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 namespace protos {
 namespace pbzero {
 class DebugAnnotation;
@@ -252,7 +252,7 @@ WriteDebugAnnotation(protos::pbzero::DebugAnnotation* annotation, ::base::Time);
 // Pull in the tracing macro definitions from Perfetto.
 #include "third_party/perfetto/include/perfetto/tracing.h"
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 namespace legacy {
 
 template <>

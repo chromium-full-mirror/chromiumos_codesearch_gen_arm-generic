@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "ml/mojom/web_platform_model.mojom-params-data.h"
 namespace ml {
@@ -463,7 +463,7 @@ Model_Compute_ResponseParams_Data::Model_Compute_ResponseParams_Data()
 }  // namespace model_loader
 }  // namespace ml
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::ModelFormat>::WriteIntoTrace(
@@ -473,7 +473,7 @@ void TraceFormatTraits<::ml::model_loader::mojom::ModelFormat>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::DevicePreference>::WriteIntoTrace(
@@ -483,7 +483,7 @@ void TraceFormatTraits<::ml::model_loader::mojom::DevicePreference>::WriteIntoTr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::DataType>::WriteIntoTrace(
@@ -493,7 +493,7 @@ void TraceFormatTraits<::ml::model_loader::mojom::DataType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::LoadModelResult>::WriteIntoTrace(
@@ -503,7 +503,7 @@ void TraceFormatTraits<::ml::model_loader::mojom::LoadModelResult>::WriteIntoTra
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::CreateModelLoaderResult>::WriteIntoTrace(
@@ -513,7 +513,7 @@ void TraceFormatTraits<::ml::model_loader::mojom::CreateModelLoaderResult>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::ml::model_loader::mojom::ComputeResult>::WriteIntoTrace(

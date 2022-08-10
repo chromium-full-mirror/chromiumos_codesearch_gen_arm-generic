@@ -14,7 +14,7 @@
 #include <type_traits>
 #include <utility>
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "mojo/public/mojom/base/thread_priority.mojom-shared-internal.h"
 
@@ -108,7 +108,7 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::mojo_base::mojom::ThreadPriority> {

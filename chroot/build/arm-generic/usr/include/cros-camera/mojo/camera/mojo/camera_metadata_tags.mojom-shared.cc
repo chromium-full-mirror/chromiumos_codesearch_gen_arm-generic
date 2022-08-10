@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "camera/mojo/camera_metadata_tags.mojom-params-data.h"
 namespace cros {
@@ -2833,7 +2833,7 @@ namespace internal {
 }  // namespace mojom
 }  // namespace cros
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraMetadataSection>::WriteIntoTrace(
@@ -2843,7 +2843,7 @@ void TraceFormatTraits<::cros::mojom::CameraMetadataSection>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraMetadataSectionStart>::WriteIntoTrace(
@@ -2853,7 +2853,7 @@ void TraceFormatTraits<::cros::mojom::CameraMetadataSectionStart>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::CameraMetadataTag>::WriteIntoTrace(
@@ -2863,7 +2863,7 @@ void TraceFormatTraits<::cros::mojom::CameraMetadataTag>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidColorCorrectionMode>::WriteIntoTrace(
@@ -2873,7 +2873,7 @@ void TraceFormatTraits<::cros::mojom::AndroidColorCorrectionMode>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidColorCorrectionAberrationMode>::WriteIntoTrace(
@@ -2883,7 +2883,7 @@ void TraceFormatTraits<::cros::mojom::AndroidColorCorrectionAberrationMode>::Wri
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAeAntibandingMode>::WriteIntoTrace(
@@ -2893,7 +2893,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAeAntibandingMode>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAeLock>::WriteIntoTrace(
@@ -2903,7 +2903,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAeLock>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAeMode>::WriteIntoTrace(
@@ -2913,7 +2913,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAeMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAePrecaptureTrigger>::WriteIntoTrace(
@@ -2923,7 +2923,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAePrecaptureTrigger>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAfMode>::WriteIntoTrace(
@@ -2933,7 +2933,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAfMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAfTrigger>::WriteIntoTrace(
@@ -2943,7 +2943,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAfTrigger>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAwbLock>::WriteIntoTrace(
@@ -2953,7 +2953,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAwbLock>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAwbMode>::WriteIntoTrace(
@@ -2963,7 +2963,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAwbMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlCaptureIntent>::WriteIntoTrace(
@@ -2973,7 +2973,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlCaptureIntent>::WriteIntoTra
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlEffectMode>::WriteIntoTrace(
@@ -2983,7 +2983,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlEffectMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlMode>::WriteIntoTrace(
@@ -2993,7 +2993,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlSceneMode>::WriteIntoTrace(
@@ -3003,7 +3003,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlSceneMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlVideoStabilizationMode>::WriteIntoTrace(
@@ -3013,7 +3013,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlVideoStabilizationMode>::Wri
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAeState>::WriteIntoTrace(
@@ -3023,7 +3023,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAeState>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAfState>::WriteIntoTrace(
@@ -3033,7 +3033,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAfState>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAwbState>::WriteIntoTrace(
@@ -3043,7 +3043,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAwbState>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAeLockAvailable>::WriteIntoTrace(
@@ -3053,7 +3053,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAeLockAvailable>::WriteIntoT
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAwbLockAvailable>::WriteIntoTrace(
@@ -3063,7 +3063,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAwbLockAvailable>::WriteInto
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlEnableZsl>::WriteIntoTrace(
@@ -3073,7 +3073,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlEnableZsl>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlAfSceneChange>::WriteIntoTrace(
@@ -3083,7 +3083,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlAfSceneChange>::WriteIntoTra
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidControlExtendedSceneMode>::WriteIntoTrace(
@@ -3093,7 +3093,7 @@ void TraceFormatTraits<::cros::mojom::AndroidControlExtendedSceneMode>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidDemosaicMode>::WriteIntoTrace(
@@ -3103,7 +3103,7 @@ void TraceFormatTraits<::cros::mojom::AndroidDemosaicMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidEdgeMode>::WriteIntoTrace(
@@ -3113,7 +3113,7 @@ void TraceFormatTraits<::cros::mojom::AndroidEdgeMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidFlashMode>::WriteIntoTrace(
@@ -3123,7 +3123,7 @@ void TraceFormatTraits<::cros::mojom::AndroidFlashMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidFlashState>::WriteIntoTrace(
@@ -3133,7 +3133,7 @@ void TraceFormatTraits<::cros::mojom::AndroidFlashState>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidFlashInfoAvailable>::WriteIntoTrace(
@@ -3143,7 +3143,7 @@ void TraceFormatTraits<::cros::mojom::AndroidFlashInfoAvailable>::WriteIntoTrace
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidHotPixelMode>::WriteIntoTrace(
@@ -3153,7 +3153,7 @@ void TraceFormatTraits<::cros::mojom::AndroidHotPixelMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLensOpticalStabilizationMode>::WriteIntoTrace(
@@ -3163,7 +3163,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLensOpticalStabilizationMode>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLensFacing>::WriteIntoTrace(
@@ -3173,7 +3173,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLensFacing>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLensState>::WriteIntoTrace(
@@ -3183,7 +3183,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLensState>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLensPoseReference>::WriteIntoTrace(
@@ -3193,7 +3193,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLensPoseReference>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLensInfoFocusDistanceCalibration>::WriteIntoTrace(
@@ -3203,7 +3203,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLensInfoFocusDistanceCalibration>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidNoiseReductionMode>::WriteIntoTrace(
@@ -3213,7 +3213,7 @@ void TraceFormatTraits<::cros::mojom::AndroidNoiseReductionMode>::WriteIntoTrace
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidQuirksPartialResult>::WriteIntoTrace(
@@ -3223,7 +3223,7 @@ void TraceFormatTraits<::cros::mojom::AndroidQuirksPartialResult>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidRequestMetadataMode>::WriteIntoTrace(
@@ -3233,7 +3233,7 @@ void TraceFormatTraits<::cros::mojom::AndroidRequestMetadataMode>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidRequestType>::WriteIntoTrace(
@@ -3243,7 +3243,7 @@ void TraceFormatTraits<::cros::mojom::AndroidRequestType>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidRequestAvailableCapabilities>::WriteIntoTrace(
@@ -3253,7 +3253,7 @@ void TraceFormatTraits<::cros::mojom::AndroidRequestAvailableCapabilities>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableFormats>::WriteIntoTrace(
@@ -3263,7 +3263,7 @@ void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableFormats>::WriteIntoT
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableStreamConfigurations>::WriteIntoTrace(
@@ -3273,7 +3273,7 @@ void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableStreamConfigurations
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidScalerCroppingType>::WriteIntoTrace(
@@ -3283,7 +3283,7 @@ void TraceFormatTraits<::cros::mojom::AndroidScalerCroppingType>::WriteIntoTrace
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableRecommendedStreamConfigurations>::WriteIntoTrace(
@@ -3293,7 +3293,7 @@ void TraceFormatTraits<::cros::mojom::AndroidScalerAvailableRecommendedStreamCon
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidScalerRotateAndCrop>::WriteIntoTrace(
@@ -3303,7 +3303,7 @@ void TraceFormatTraits<::cros::mojom::AndroidScalerRotateAndCrop>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSensorReferenceIlluminant1>::WriteIntoTrace(
@@ -3313,7 +3313,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSensorReferenceIlluminant1>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSensorTestPatternMode>::WriteIntoTrace(
@@ -3323,7 +3323,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSensorTestPatternMode>::WriteIntoTr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSensorInfoColorFilterArrangement>::WriteIntoTrace(
@@ -3333,7 +3333,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSensorInfoColorFilterArrangement>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSensorInfoTimestampSource>::WriteIntoTrace(
@@ -3343,7 +3343,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSensorInfoTimestampSource>::WriteIn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSensorInfoLensShadingApplied>::WriteIntoTrace(
@@ -3353,7 +3353,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSensorInfoLensShadingApplied>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidShadingMode>::WriteIntoTrace(
@@ -3363,7 +3363,7 @@ void TraceFormatTraits<::cros::mojom::AndroidShadingMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsFaceDetectMode>::WriteIntoTrace(
@@ -3373,7 +3373,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsFaceDetectMode>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsHistogramMode>::WriteIntoTrace(
@@ -3383,7 +3383,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsHistogramMode>::WriteInto
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsSharpnessMapMode>::WriteIntoTrace(
@@ -3393,7 +3393,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsSharpnessMapMode>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsHotPixelMapMode>::WriteIntoTrace(
@@ -3403,7 +3403,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsHotPixelMapMode>::WriteIn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsSceneFlicker>::WriteIntoTrace(
@@ -3413,7 +3413,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsSceneFlicker>::WriteIntoT
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsLensShadingMapMode>::WriteIntoTrace(
@@ -3423,7 +3423,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsLensShadingMapMode>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidStatisticsOisDataMode>::WriteIntoTrace(
@@ -3433,7 +3433,7 @@ void TraceFormatTraits<::cros::mojom::AndroidStatisticsOisDataMode>::WriteIntoTr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidTonemapMode>::WriteIntoTrace(
@@ -3443,7 +3443,7 @@ void TraceFormatTraits<::cros::mojom::AndroidTonemapMode>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidTonemapPresetCurve>::WriteIntoTrace(
@@ -3453,7 +3453,7 @@ void TraceFormatTraits<::cros::mojom::AndroidTonemapPresetCurve>::WriteIntoTrace
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLedTransmit>::WriteIntoTrace(
@@ -3463,7 +3463,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLedTransmit>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLedAvailableLeds>::WriteIntoTrace(
@@ -3473,7 +3473,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLedAvailableLeds>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidInfoSupportedHardwareLevel>::WriteIntoTrace(
@@ -3483,7 +3483,7 @@ void TraceFormatTraits<::cros::mojom::AndroidInfoSupportedHardwareLevel>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidInfoSupportedBufferManagementVersion>::WriteIntoTrace(
@@ -3493,7 +3493,7 @@ void TraceFormatTraits<::cros::mojom::AndroidInfoSupportedBufferManagementVersio
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidBlackLevelLock>::WriteIntoTrace(
@@ -3503,7 +3503,7 @@ void TraceFormatTraits<::cros::mojom::AndroidBlackLevelLock>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSyncFrameNumber>::WriteIntoTrace(
@@ -3513,7 +3513,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSyncFrameNumber>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidSyncMaxLatency>::WriteIntoTrace(
@@ -3523,7 +3523,7 @@ void TraceFormatTraits<::cros::mojom::AndroidSyncMaxLatency>::WriteIntoTrace(
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDepthStreamConfigurations>::WriteIntoTrace(
@@ -3533,7 +3533,7 @@ void TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDepthStreamConfigurat
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidDepthDepthIsExclusive>::WriteIntoTrace(
@@ -3543,7 +3543,7 @@ void TraceFormatTraits<::cros::mojom::AndroidDepthDepthIsExclusive>::WriteIntoTr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDynamicDepthStreamConfigurations>::WriteIntoTrace(
@@ -3553,7 +3553,7 @@ void TraceFormatTraits<::cros::mojom::AndroidDepthAvailableDynamicDepthStreamCon
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidLogicalMultiCameraSensorSyncType>::WriteIntoTrace(
@@ -3563,7 +3563,7 @@ void TraceFormatTraits<::cros::mojom::AndroidLogicalMultiCameraSensorSyncType>::
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidDistortionCorrectionMode>::WriteIntoTrace(
@@ -3573,7 +3573,7 @@ void TraceFormatTraits<::cros::mojom::AndroidDistortionCorrectionMode>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidHeicAvailableHeicStreamConfigurations>::WriteIntoTrace(
@@ -3583,7 +3583,7 @@ void TraceFormatTraits<::cros::mojom::AndroidHeicAvailableHeicStreamConfiguratio
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::cros::mojom::AndroidHeicInfoSupported>::WriteIntoTrace(

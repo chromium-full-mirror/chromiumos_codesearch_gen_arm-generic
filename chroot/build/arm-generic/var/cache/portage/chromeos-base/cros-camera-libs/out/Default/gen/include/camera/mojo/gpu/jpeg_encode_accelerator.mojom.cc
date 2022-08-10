@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "camera/mojo/gpu/jpeg_encode_accelerator.mojom-params-data.h"
 #include "camera/mojo/gpu/jpeg_encode_accelerator.mojom-shared-message-ids.h"

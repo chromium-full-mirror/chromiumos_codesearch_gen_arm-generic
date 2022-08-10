@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "ml/mojom/web_platform_handwriting.mojom-params-data.h"
 #include "ml/mojom/web_platform_handwriting.mojom-shared-message-ids.h"
@@ -62,7 +64,7 @@ HandwritingPoint::~HandwritingPoint() = default;
 
 void HandwritingPoint::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "location"), this->location,
@@ -99,7 +101,7 @@ HandwritingStroke::~HandwritingStroke() = default;
 
 void HandwritingStroke::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "points"), this->points,
@@ -139,7 +141,7 @@ size_t HandwritingDrawingSegment::Hash(size_t seed) const {
 
 void HandwritingDrawingSegment::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "stroke_index"), this->stroke_index,
@@ -194,7 +196,7 @@ HandwritingSegment::~HandwritingSegment() = default;
 
 void HandwritingSegment::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "grapheme"), this->grapheme,
@@ -252,7 +254,7 @@ HandwritingPrediction::~HandwritingPrediction() = default;
 
 void HandwritingPrediction::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "text"), this->text,
@@ -312,7 +314,7 @@ HandwritingHints::~HandwritingHints() = default;
 
 void HandwritingHints::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "recognition_type"), this->recognition_type,
@@ -376,7 +378,7 @@ HandwritingModelConstraint::~HandwritingModelConstraint() = default;
 
 void HandwritingModelConstraint::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "languages"), this->languages,

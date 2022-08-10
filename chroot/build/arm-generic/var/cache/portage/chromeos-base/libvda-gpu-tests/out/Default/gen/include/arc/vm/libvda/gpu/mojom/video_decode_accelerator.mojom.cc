@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "arc/vm/libvda/gpu/mojom/video_decode_accelerator.mojom-params-data.h"
 #include "arc/vm/libvda/gpu/mojom/video_decode_accelerator.mojom-shared-message-ids.h"
@@ -65,7 +67,7 @@ BitstreamBuffer::~BitstreamBuffer() = default;
 
 void BitstreamBuffer::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "bitstream_id"), this->bitstream_id,
@@ -132,7 +134,7 @@ size_t Picture::Hash(size_t seed) const {
 
 void Picture::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "picture_buffer_id"), this->picture_buffer_id,
@@ -186,7 +188,7 @@ size_t PictureBufferFormat::Hash(size_t seed) const {
 
 void PictureBufferFormat::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "min_num_buffers"), this->min_num_buffers,
@@ -231,7 +233,7 @@ size_t VideoDecodeAcceleratorConfig::Hash(size_t seed) const {
 
 void VideoDecodeAcceleratorConfig::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "profile"), this->profile,
@@ -272,7 +274,7 @@ size_t BufferModifier::Hash(size_t seed) const {
 
 void BufferModifier::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "val"), this->val,

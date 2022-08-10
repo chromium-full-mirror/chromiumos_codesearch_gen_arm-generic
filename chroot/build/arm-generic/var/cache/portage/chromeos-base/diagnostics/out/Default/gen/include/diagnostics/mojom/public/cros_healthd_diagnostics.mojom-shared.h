@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/public/cros_healthd_diagnostics.mojom-shared-internal.h"
 #include "mojo/public/cpp/bindings/lib/interface_serialization.h"
@@ -964,7 +964,7 @@ inline void RoutineUpdateUnionDataView::GetNoninteractiveUpdateDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineEnum> {
@@ -973,7 +973,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineEnum
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEnum> {
@@ -982,7 +982,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiskReadRoutineTypeEn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineStatusEnum> {
@@ -991,7 +991,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineStat
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineUserMessageEnum> {
@@ -1000,7 +1000,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineUser
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineCommandEnum> {
@@ -1009,7 +1009,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::DiagnosticRoutineComm
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::AcPowerStatusEnum> {
@@ -1018,7 +1018,7 @@ struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::AcPowerStatusEnum> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::cros_healthd::mojom::NvmeSelfTestTypeEnum> {

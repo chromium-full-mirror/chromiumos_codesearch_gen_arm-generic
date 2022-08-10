@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/public/wilco_dtc_supportd.mojom-shared-internal.h"
 #include "diagnostics/mojom/public/cros_healthd.mojom-shared.h"
@@ -247,7 +247,7 @@ namespace mojom {
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestHttpMethod> {
@@ -256,7 +256,7 @@ struct  TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupport
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdWebRequestStatus> {
@@ -265,7 +265,7 @@ struct  TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupport
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::wilco_dtc_supportd::mojom::WilcoDtcSupportdEvent> {

@@ -12,10 +12,10 @@
 #include <utility>
 
 #include "base/strings/stringprintf.h"
-#include "base/trace_event/base_tracing.h"
 #include "mojo/public/cpp/bindings/lib/validate_params.h"
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/lib/validation_util.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "diagnostics/mojom/public/cros_healthd_probe.mojom-params-data.h"
 namespace chromeos {
@@ -5101,7 +5101,7 @@ TelemetryInfo_Data::TelemetryInfo_Data()
 }  // namespace cros_healthd
 }  // namespace chromeos
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuArchitectureEnum>::WriteIntoTrace(
@@ -5111,7 +5111,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuArchitectureEnum>::Wr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::ProbeCategoryEnum>::WriteIntoTrace(
@@ -5121,7 +5121,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::ProbeCategoryEnum>::Writ
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::ErrorType>::WriteIntoTrace(
@@ -5131,7 +5131,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::ErrorType>::WriteIntoTra
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::ProcessState>::WriteIntoTrace(
@@ -5141,7 +5141,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::ProcessState>::WriteInto
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::StorageDevicePurpose>::WriteIntoTrace(
@@ -5151,7 +5151,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::StorageDevicePurpose>::W
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::EncryptionState>::WriteIntoTrace(
@@ -5161,7 +5161,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::EncryptionState>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::CryptoAlgorithm>::WriteIntoTrace(
@@ -5171,7 +5171,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::CryptoAlgorithm>::WriteI
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::BluetoothDeviceType>::WriteIntoTrace(
@@ -5181,7 +5181,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::BluetoothDeviceType>::Wr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::BootMode>::WriteIntoTrace(
@@ -5191,7 +5191,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::BootMode>::WriteIntoTrac
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::BusDeviceClass>::WriteIntoTrace(
@@ -5201,7 +5201,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::BusDeviceClass>::WriteIn
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::FwupdVersionFormat>::WriteIntoTrace(
@@ -5211,7 +5211,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::FwupdVersionFormat>::Wri
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::TpmGSCVersion>::WriteIntoTrace(
@@ -5221,7 +5221,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::TpmGSCVersion>::WriteInt
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::DisplayInputType>::WriteIntoTrace(
@@ -5231,7 +5231,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::DisplayInputType>::Write
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel>::WriteIntoTrace(
@@ -5241,7 +5241,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::ThunderboltSecurityLevel
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTControl>::WriteIntoTrace(
@@ -5251,7 +5251,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::VirtualizationInfo_SMTCo
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status>::WriteIntoTrace(
@@ -5261,7 +5261,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::VulnerabilityInfo_Status
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Type>::WriteIntoTrace(
@@ -5271,7 +5271,7 @@ void TraceFormatTraits<::chromeos::cros_healthd::mojom::CpuVirtualizationInfo_Ty
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 // static
 void TraceFormatTraits<::chromeos::cros_healthd::mojom::InputDevice_ConnectionType>::WriteIntoTrace(

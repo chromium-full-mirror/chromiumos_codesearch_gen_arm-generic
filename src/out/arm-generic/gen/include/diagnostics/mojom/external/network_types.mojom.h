@@ -16,7 +16,7 @@
 #include "third_party/abseil-cpp/absl/types/optional.h"
 #include "mojo/public/cpp/bindings/type_converter.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/external/network_types.mojom-shared.h"
 #include "diagnostics/mojom/external/network_types.mojom-forward.h"

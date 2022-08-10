@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "diagnostics/mojom/public/cros_healthd_probe.mojom-params-data.h"
 #include "diagnostics/mojom/public/cros_healthd_probe.mojom-shared-message-ids.h"
@@ -65,7 +67,7 @@ size_t ProbeError::Hash(size_t seed) const {
 
 void ProbeError::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
@@ -197,7 +199,7 @@ ProcessInfo::~ProcessInfo() = default;
 
 void ProcessInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "command"), this->command,
@@ -435,7 +437,7 @@ BatteryInfo::~BatteryInfo() = default;
 
 void BatteryInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "cycle_count"), this->cycle_count,
@@ -628,7 +630,7 @@ NonRemovableBlockDeviceInfo::~NonRemovableBlockDeviceInfo() = default;
 
 void NonRemovableBlockDeviceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "bytes_read_since_last_boot"), this->bytes_read_since_last_boot,
@@ -832,7 +834,7 @@ CpuInfo::~CpuInfo() = default;
 
 void CpuInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "num_total_threads"), this->num_total_threads,
@@ -926,7 +928,7 @@ size_t VirtualizationInfo::Hash(size_t seed) const {
 
 void VirtualizationInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "has_kvm_device"), this->has_kvm_device,
@@ -980,7 +982,7 @@ size_t VulnerabilityInfo::Hash(size_t seed) const {
 
 void VulnerabilityInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "status"), this->status,
@@ -1021,7 +1023,7 @@ size_t KeylockerInfo::Hash(size_t seed) const {
 
 void KeylockerInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "keylocker_configured"), this->keylocker_configured,
@@ -1066,7 +1068,7 @@ PhysicalCpuInfo::~PhysicalCpuInfo() = default;
 
 void PhysicalCpuInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "model_name"), this->model_name,
@@ -1133,7 +1135,7 @@ size_t CpuVirtualizationInfo::Hash(size_t seed) const {
 
 void CpuVirtualizationInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
@@ -1197,7 +1199,7 @@ LogicalCpuInfo::~LogicalCpuInfo() = default;
 
 void LogicalCpuInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "max_clock_speed_khz"), this->max_clock_speed_khz,
@@ -1287,7 +1289,7 @@ size_t CpuCStateInfo::Hash(size_t seed) const {
 
 void CpuCStateInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
@@ -1327,7 +1329,7 @@ CpuTemperatureChannel::~CpuTemperatureChannel() = default;
 
 void CpuTemperatureChannel::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "label"), this->label,
@@ -1372,7 +1374,7 @@ size_t TimezoneInfo::Hash(size_t seed) const {
 
 void TimezoneInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "posix"), this->posix,
@@ -1432,7 +1434,7 @@ MemoryInfo::~MemoryInfo() = default;
 
 void MemoryInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "total_memory_kib"), this->total_memory_kib,
@@ -1512,7 +1514,7 @@ size_t MemoryEncryptionInfo::Hash(size_t seed) const {
 
 void MemoryEncryptionInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "encryption_state"), this->encryption_state,
@@ -1579,7 +1581,7 @@ size_t BacklightInfo::Hash(size_t seed) const {
 
 void BacklightInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "path"), this->path,
@@ -1629,7 +1631,7 @@ size_t FanInfo::Hash(size_t seed) const {
 
 void FanInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "speed_rpm"), this->speed_rpm,
@@ -1673,7 +1675,7 @@ size_t StatefulPartitionInfo::Hash(size_t seed) const {
 
 void StatefulPartitionInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "available_space"), this->available_space,
@@ -1797,7 +1799,7 @@ BluetoothAdapterInfo::~BluetoothAdapterInfo() = default;
 
 void BluetoothAdapterInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
@@ -1958,7 +1960,7 @@ BluetoothDeviceInfo::~BluetoothDeviceInfo() = default;
 
 void BluetoothDeviceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "address"), this->address,
@@ -2074,7 +2076,7 @@ size_t SupportedCapabilities::Hash(size_t seed) const {
 
 void SupportedCapabilities::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "max_adv_len"), this->max_adv_len,
@@ -2162,7 +2164,7 @@ SystemInfo::~SystemInfo() = default;
 
 void SystemInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "first_power_date"), this->first_power_date,
@@ -2295,7 +2297,7 @@ SystemInfoV2::~SystemInfoV2() = default;
 
 void SystemInfoV2::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "os_info"), this->os_info,
@@ -2364,7 +2366,7 @@ OsInfo::~OsInfo() = default;
 
 void OsInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "code_name"), this->code_name,
@@ -2444,7 +2446,7 @@ size_t OsVersion::Hash(size_t seed) const {
 
 void OsVersion::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "release_milestone"), this->release_milestone,
@@ -2514,7 +2516,7 @@ VpdInfo::~VpdInfo() = default;
 
 void VpdInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "serial_number"), this->serial_number,
@@ -2617,7 +2619,7 @@ DmiInfo::~DmiInfo() = default;
 
 void DmiInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "bios_vendor"), this->bios_vendor,
@@ -2741,7 +2743,7 @@ WirelessInterfaceInfo::~WirelessInterfaceInfo() = default;
 
 void WirelessInterfaceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "interface_name"), this->interface_name,
@@ -2815,7 +2817,7 @@ size_t WirelessLinkInfo::Hash(size_t seed) const {
 
 void WirelessLinkInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "access_point_address_str"), this->access_point_address_str,
@@ -2929,7 +2931,7 @@ size_t AudioInfo::Hash(size_t seed) const {
 
 void AudioInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "output_mute"), this->output_mute,
@@ -3020,7 +3022,7 @@ AudioHardwareInfo::~AudioHardwareInfo() = default;
 
 void AudioHardwareInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "audio_cards"), this->audio_cards,
@@ -3054,7 +3056,7 @@ AudioCard::~AudioCard() = default;
 
 void AudioCard::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "alsa_id"), this->alsa_id,
@@ -3108,7 +3110,7 @@ size_t HDAudioCodec::Hash(size_t seed) const {
 
 void HDAudioCodec::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
@@ -3165,7 +3167,7 @@ size_t BootPerformanceInfo::Hash(size_t seed) const {
 
 void BootPerformanceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "boot_up_seconds"), this->boot_up_seconds,
@@ -3238,7 +3240,7 @@ BusDevice::~BusDevice() = default;
 
 void BusDevice::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "vendor_name"), this->vendor_name,
@@ -3308,7 +3310,7 @@ PciBusInfo::~PciBusInfo() = default;
 
 void PciBusInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "class_id"), this->class_id,
@@ -3414,7 +3416,7 @@ UsbBusInfo::~UsbBusInfo() = default;
 
 void UsbBusInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "class_id"), this->class_id,
@@ -3504,7 +3506,7 @@ size_t FwupdFirmwareVersionInfo::Hash(size_t seed) const {
 
 void FwupdFirmwareVersionInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "version"), this->version,
@@ -3553,7 +3555,7 @@ UsbBusInterfaceInfo::~UsbBusInterfaceInfo() = default;
 
 void UsbBusInterfaceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "interface_number"), this->interface_number,
@@ -3632,7 +3634,7 @@ TpmInfo::~TpmInfo() = default;
 
 void TpmInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "version"), this->version,
@@ -3723,7 +3725,7 @@ TpmVersion::~TpmVersion() = default;
 
 void TpmVersion::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "gsc_version"), this->gsc_version,
@@ -3817,7 +3819,7 @@ size_t TpmStatus::Hash(size_t seed) const {
 
 void TpmStatus::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "enabled"), this->enabled,
@@ -3879,7 +3881,7 @@ size_t TpmDictionaryAttack::Hash(size_t seed) const {
 
 void TpmDictionaryAttack::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "counter"), this->counter,
@@ -3942,7 +3944,7 @@ size_t TpmAttestation::Hash(size_t seed) const {
 
 void TpmAttestation::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "prepared_for_enrollment"), this->prepared_for_enrollment,
@@ -3995,7 +3997,7 @@ size_t TpmSupportedFeatures::Hash(size_t seed) const {
 
 void TpmSupportedFeatures::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "support_u2f"), this->support_u2f,
@@ -4053,7 +4055,7 @@ GraphicsInfo::~GraphicsInfo() = default;
 
 void GraphicsInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "gles_info"), this->gles_info,
@@ -4102,7 +4104,7 @@ GLESInfo::~GLESInfo() = default;
 
 void GLESInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "version"), this->version,
@@ -4175,7 +4177,7 @@ EGLInfo::~EGLInfo() = default;
 
 void EGLInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "version"), this->version,
@@ -4238,7 +4240,7 @@ DisplayInfo::~DisplayInfo() = default;
 
 void DisplayInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "edp_info"), this->edp_info,
@@ -4360,7 +4362,7 @@ EmbeddedDisplayInfo::~EmbeddedDisplayInfo() = default;
 
 void EmbeddedDisplayInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "privacy_screen_supported"), this->privacy_screen_supported,
@@ -4570,7 +4572,7 @@ ExternalDisplayInfo::~ExternalDisplayInfo() = default;
 
 void ExternalDisplayInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "display_width"), this->display_width,
@@ -4738,7 +4740,7 @@ size_t ThunderboltBusInterfaceInfo::Hash(size_t seed) const {
 
 void ThunderboltBusInterfaceInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "vendor_name"), this->vendor_name,
@@ -4832,7 +4834,7 @@ ThunderboltBusInfo::~ThunderboltBusInfo() = default;
 
 void ThunderboltBusInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "security_level"), this->security_level,
@@ -4872,7 +4874,7 @@ InputInfo::~InputInfo() = default;
 
 void InputInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "touchpad_library_name"), this->touchpad_library_name,
@@ -4925,7 +4927,7 @@ size_t TouchscreenDevice::Hash(size_t seed) const {
 
 void TouchscreenDevice::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "input_device"), this->input_device,
@@ -4996,7 +4998,7 @@ size_t InputDevice::Hash(size_t seed) const {
 
 void InputDevice::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "name"), this->name,
@@ -5277,7 +5279,7 @@ TelemetryInfo::~TelemetryInfo() = default;
 
 void TelemetryInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "battery_result"), this->battery_result,

@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "ml/mojom/web_platform_model.mojom-shared-internal.h"
 #include "ml/mojom/big_buffer.mojom-shared.h"
@@ -699,7 +699,7 @@ inline void ModelInfoDataView::GetOutputTensorInfoDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::ModelFormat> {
@@ -708,7 +708,7 @@ struct  TraceFormatTraits<::ml::model_loader::mojom::ModelFormat> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::DevicePreference> {
@@ -717,7 +717,7 @@ struct  TraceFormatTraits<::ml::model_loader::mojom::DevicePreference> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::DataType> {
@@ -726,7 +726,7 @@ struct  TraceFormatTraits<::ml::model_loader::mojom::DataType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::LoadModelResult> {
@@ -735,7 +735,7 @@ struct  TraceFormatTraits<::ml::model_loader::mojom::LoadModelResult> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::CreateModelLoaderResult> {
@@ -744,7 +744,7 @@ struct  TraceFormatTraits<::ml::model_loader::mojom::CreateModelLoaderResult> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::ml::model_loader::mojom::ComputeResult> {

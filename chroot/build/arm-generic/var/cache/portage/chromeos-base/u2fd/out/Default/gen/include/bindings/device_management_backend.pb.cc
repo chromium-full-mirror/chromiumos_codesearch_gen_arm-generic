@@ -7776,13 +7776,14 @@ bool AppInstallReportLogEvent_EventType_IsValid(int value) {
     case 12:
     case 13:
     case 14:
+    case 15:
       return true;
     default:
       return false;
   }
 }
 
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> AppInstallReportLogEvent_EventType_strings[15] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> AppInstallReportLogEvent_EventType_strings[16] = {};
 
 static const char AppInstallReportLogEvent_EventType_names[] =
   "CANCELED"
@@ -7797,6 +7798,7 @@ static const char AppInstallReportLogEvent_EventType_names[] =
   "INSTALLATION_STARTED"
   "LOG_EVENT_TYPE_UNKNOWN"
   "PHONESKY_LOG"
+  "PLAYSTORE_LOCAL_POLICY_SET"
   "SERVER_REQUEST"
   "SESSION_STATE_CHANGE"
   "SUCCESS";
@@ -7814,27 +7816,29 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry AppInstallReportLogEve
   { {AppInstallReportLogEvent_EventType_names + 155, 20}, 10 },
   { {AppInstallReportLogEvent_EventType_names + 175, 22}, 0 },
   { {AppInstallReportLogEvent_EventType_names + 197, 12}, 5 },
-  { {AppInstallReportLogEvent_EventType_names + 209, 14}, 1 },
-  { {AppInstallReportLogEvent_EventType_names + 223, 20}, 9 },
-  { {AppInstallReportLogEvent_EventType_names + 243, 7}, 6 },
+  { {AppInstallReportLogEvent_EventType_names + 209, 26}, 15 },
+  { {AppInstallReportLogEvent_EventType_names + 235, 14}, 1 },
+  { {AppInstallReportLogEvent_EventType_names + 249, 20}, 9 },
+  { {AppInstallReportLogEvent_EventType_names + 269, 7}, 6 },
 };
 
 static const int AppInstallReportLogEvent_EventType_entries_by_number[] = {
   10, // 0 -> LOG_EVENT_TYPE_UNKNOWN
-  12, // 1 -> SERVER_REQUEST
+  13, // 1 -> SERVER_REQUEST
   2, // 2 -> CLOUDDPC_REQUEST
   3, // 3 -> CLOUDDPS_REQUEST
   4, // 4 -> CLOUDDPS_RESPONSE
   11, // 5 -> PHONESKY_LOG
-  14, // 6 -> SUCCESS
+  15, // 6 -> SUCCESS
   0, // 7 -> CANCELED
   5, // 8 -> CONNECTIVITY_CHANGE
-  13, // 9 -> SESSION_STATE_CHANGE
+  14, // 9 -> SESSION_STATE_CHANGE
   9, // 10 -> INSTALLATION_STARTED
   8, // 11 -> INSTALLATION_FINISHED
   7, // 12 -> INSTALLATION_FAILED
   6, // 13 -> DIRECT_INSTALL
   1, // 14 -> CLOUDDPC_MAIN_LOOP_FAILED
+  12, // 15 -> PLAYSTORE_LOCAL_POLICY_SET
 };
 
 const std::string& AppInstallReportLogEvent_EventType_Name(
@@ -7843,12 +7847,12 @@ const std::string& AppInstallReportLogEvent_EventType_Name(
       ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
           AppInstallReportLogEvent_EventType_entries,
           AppInstallReportLogEvent_EventType_entries_by_number,
-          15, AppInstallReportLogEvent_EventType_strings);
+          16, AppInstallReportLogEvent_EventType_strings);
   (void) dummy;
   int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
       AppInstallReportLogEvent_EventType_entries,
       AppInstallReportLogEvent_EventType_entries_by_number,
-      15, value);
+      16, value);
   return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
                      AppInstallReportLogEvent_EventType_strings[idx].get();
 }
@@ -7856,7 +7860,7 @@ bool AppInstallReportLogEvent_EventType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, AppInstallReportLogEvent_EventType* value) {
   int int_value;
   bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      AppInstallReportLogEvent_EventType_entries, 15, name, &int_value);
+      AppInstallReportLogEvent_EventType_entries, 16, name, &int_value);
   if (success) {
     *value = static_cast<AppInstallReportLogEvent_EventType>(int_value);
   }
@@ -7878,6 +7882,7 @@ constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::INSTALLAT
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::INSTALLATION_FAILED;
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::DIRECT_INSTALL;
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::CLOUDDPC_MAIN_LOOP_FAILED;
+constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::PLAYSTORE_LOCAL_POLICY_SET;
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::EventType_MIN;
 constexpr AppInstallReportLogEvent_EventType AppInstallReportLogEvent::EventType_MAX;
 constexpr int AppInstallReportLogEvent::EventType_ARRAYSIZE;

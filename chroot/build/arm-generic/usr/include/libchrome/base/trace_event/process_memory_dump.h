@@ -27,7 +27,7 @@
 #define COUNT_RESIDENT_BYTES_SUPPORTED
 #endif
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 namespace protos {
 namespace pbzero {
 class MemoryTrackerSnapshot;

@@ -226,7 +226,7 @@ union BASE_EXPORT TraceValue {
   const void* as_pointer;
   const char* as_string;
   ConvertableToTraceFormat* as_convertable;
-  protozero::HeapBuffered<perfetto_libchrome::protos::pbzero::DebugAnnotation>* as_proto;
+  protozero_libchrome::HeapBuffered<perfetto_libchrome::protos::pbzero::DebugAnnotation>* as_proto;
 
   // Static method to create a new TraceValue instance from a given
   // initialization value. Note that this deduces the TRACE_VALUE_TYPE_XXX
@@ -385,7 +385,7 @@ union BASE_EXPORT TraceValue {
       perfetto_libchrome::internal::has_traced_value_support<
           typename InnerType<T>::type>::value>::type
   Init(T&& value) {
-    as_proto = new protozero::HeapBuffered<
+    as_proto = new protozero_libchrome::HeapBuffered<
         perfetto_libchrome::protos::pbzero::DebugAnnotation>();
     perfetto_libchrome::WriteIntoTracedValue(
         perfetto_libchrome::internal::CreateTracedValueFromProto(as_proto->get()),

@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/struct_traits.h"
 #include "mojo/public/cpp/bindings/union_traits.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "arc/vm/libvda/gpu/mojom/video_common.mojom-shared.h"
 #include "arc/vm/libvda/gpu/mojom/video_common.mojom-forward.h"

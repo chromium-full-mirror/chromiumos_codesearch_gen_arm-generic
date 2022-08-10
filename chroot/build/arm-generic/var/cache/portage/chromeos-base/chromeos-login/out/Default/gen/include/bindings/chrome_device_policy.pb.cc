@@ -638,7 +638,8 @@ struct SystemSettingsProtoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SystemSettingsProtoDefaultTypeInternal _SystemSettingsProto_default_instance_;
 constexpr SAMLSettingsProto::SAMLSettingsProto(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : transfer_saml_cookies_(false){}
+  : url_parameter_to_autofill_saml_username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , transfer_saml_cookies_(false){}
 struct SAMLSettingsProtoDefaultTypeInternal {
   constexpr SAMLSettingsProtoDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1293,19 +1294,6 @@ struct DeviceAuthDataCacheLifetimeProtoDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DeviceAuthDataCacheLifetimeProtoDefaultTypeInternal _DeviceAuthDataCacheLifetimeProto_default_instance_;
-constexpr SamlLoginAuthenticationTypeProto::SamlLoginAuthenticationTypeProto(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : saml_login_authentication_type_(0)
-{}
-struct SamlLoginAuthenticationTypeProtoDefaultTypeInternal {
-  constexpr SamlLoginAuthenticationTypeProtoDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~SamlLoginAuthenticationTypeProtoDefaultTypeInternal() {}
-  union {
-    SamlLoginAuthenticationTypeProto _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SamlLoginAuthenticationTypeProtoDefaultTypeInternal _SamlLoginAuthenticationTypeProto_default_instance_;
 constexpr DeviceUnaffiliatedCrostiniAllowedProto::DeviceUnaffiliatedCrostiniAllowedProto(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : device_unaffiliated_crostini_allowed_(false){}
@@ -1782,7 +1770,6 @@ constexpr ChromeDeviceSettingsProto::ChromeDeviceSettingsProto(
   , device_login_screen_site_per_process_(nullptr)
   , virtual_machines_allowed_(nullptr)
   , device_machine_password_change_rate_(nullptr)
-  , saml_login_authentication_type_(nullptr)
   , device_unaffiliated_crostini_allowed_(nullptr)
   , device_wifi_fast_transition_enabled_(nullptr)
   , device_display_resolution_(nullptr)
@@ -2938,64 +2925,6 @@ constexpr DeviceUserPolicyLoopbackProcessingModeProto_Mode DeviceUserPolicyLoopb
 constexpr DeviceUserPolicyLoopbackProcessingModeProto_Mode DeviceUserPolicyLoopbackProcessingModeProto::Mode_MIN;
 constexpr DeviceUserPolicyLoopbackProcessingModeProto_Mode DeviceUserPolicyLoopbackProcessingModeProto::Mode_MAX;
 constexpr int DeviceUserPolicyLoopbackProcessingModeProto::Mode_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-bool SamlLoginAuthenticationTypeProto_Type_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
-static ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<std::string> SamlLoginAuthenticationTypeProto_Type_strings[2] = {};
-
-static const char SamlLoginAuthenticationTypeProto_Type_names[] =
-  "TYPE_CLIENT_CERTIFICATE"
-  "TYPE_DEFAULT";
-
-static const ::PROTOBUF_NAMESPACE_ID::internal::EnumEntry SamlLoginAuthenticationTypeProto_Type_entries[] = {
-  { {SamlLoginAuthenticationTypeProto_Type_names + 0, 23}, 1 },
-  { {SamlLoginAuthenticationTypeProto_Type_names + 23, 12}, 0 },
-};
-
-static const int SamlLoginAuthenticationTypeProto_Type_entries_by_number[] = {
-  1, // 0 -> TYPE_DEFAULT
-  0, // 1 -> TYPE_CLIENT_CERTIFICATE
-};
-
-const std::string& SamlLoginAuthenticationTypeProto_Type_Name(
-    SamlLoginAuthenticationTypeProto_Type value) {
-  static const bool dummy =
-      ::PROTOBUF_NAMESPACE_ID::internal::InitializeEnumStrings(
-          SamlLoginAuthenticationTypeProto_Type_entries,
-          SamlLoginAuthenticationTypeProto_Type_entries_by_number,
-          2, SamlLoginAuthenticationTypeProto_Type_strings);
-  (void) dummy;
-  int idx = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumName(
-      SamlLoginAuthenticationTypeProto_Type_entries,
-      SamlLoginAuthenticationTypeProto_Type_entries_by_number,
-      2, value);
-  return idx == -1 ? ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString() :
-                     SamlLoginAuthenticationTypeProto_Type_strings[idx].get();
-}
-bool SamlLoginAuthenticationTypeProto_Type_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SamlLoginAuthenticationTypeProto_Type* value) {
-  int int_value;
-  bool success = ::PROTOBUF_NAMESPACE_ID::internal::LookUpEnumValue(
-      SamlLoginAuthenticationTypeProto_Type_entries, 2, name, &int_value);
-  if (success) {
-    *value = static_cast<SamlLoginAuthenticationTypeProto_Type>(int_value);
-  }
-  return success;
-}
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr SamlLoginAuthenticationTypeProto_Type SamlLoginAuthenticationTypeProto::TYPE_DEFAULT;
-constexpr SamlLoginAuthenticationTypeProto_Type SamlLoginAuthenticationTypeProto::TYPE_CLIENT_CERTIFICATE;
-constexpr SamlLoginAuthenticationTypeProto_Type SamlLoginAuthenticationTypeProto::Type_MIN;
-constexpr SamlLoginAuthenticationTypeProto_Type SamlLoginAuthenticationTypeProto::Type_MAX;
-constexpr int SamlLoginAuthenticationTypeProto::Type_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 bool DeviceRebootOnUserSignoutProto_RebootOnSignoutMode_IsValid(int value) {
   switch (value) {
@@ -15625,6 +15554,9 @@ class SAMLSettingsProto::_Internal {
  public:
   using HasBits = decltype(std::declval<SAMLSettingsProto>()._has_bits_);
   static void set_has_transfer_saml_cookies(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_url_parameter_to_autofill_saml_username(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
@@ -15642,11 +15574,23 @@ SAMLSettingsProto::SAMLSettingsProto(const SAMLSettingsProto& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  url_parameter_to_autofill_saml_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    url_parameter_to_autofill_saml_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_url_parameter_to_autofill_saml_username()) {
+    url_parameter_to_autofill_saml_username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_url_parameter_to_autofill_saml_username(), 
+      GetArenaForAllocation());
+  }
   transfer_saml_cookies_ = from.transfer_saml_cookies_;
   // @@protoc_insertion_point(copy_constructor:enterprise_management.SAMLSettingsProto)
 }
 
 inline void SAMLSettingsProto::SharedCtor() {
+url_parameter_to_autofill_saml_username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  url_parameter_to_autofill_saml_username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 transfer_saml_cookies_ = false;
 }
 
@@ -15659,6 +15603,7 @@ SAMLSettingsProto::~SAMLSettingsProto() {
 
 inline void SAMLSettingsProto::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  url_parameter_to_autofill_saml_username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void SAMLSettingsProto::ArenaDtor(void* object) {
@@ -15677,6 +15622,10 @@ void SAMLSettingsProto::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    url_parameter_to_autofill_saml_username_.ClearNonDefaultToEmpty();
+  }
   transfer_saml_cookies_ = false;
   _has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
@@ -15694,6 +15643,15 @@ const char* SAMLSettingsProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_transfer_saml_cookies(&has_bits);
           transfer_saml_cookies_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string url_parameter_to_autofill_saml_username = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_url_parameter_to_autofill_saml_username();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -15730,9 +15688,15 @@ uint8_t* SAMLSettingsProto::_InternalSerialize(
 
   cached_has_bits = _has_bits_[0];
   // optional bool transfer_saml_cookies = 1;
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_transfer_saml_cookies(), target);
+  }
+
+  // optional string url_parameter_to_autofill_saml_username = 2;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_url_parameter_to_autofill_saml_username(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15751,12 +15715,21 @@ size_t SAMLSettingsProto::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional bool transfer_saml_cookies = 1;
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + 1;
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional string url_parameter_to_autofill_saml_username = 2;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_url_parameter_to_autofill_saml_username());
+    }
 
+    // optional bool transfer_saml_cookies = 1;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 1;
+    }
+
+  }
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
@@ -15777,8 +15750,15 @@ void SAMLSettingsProto::MergeFrom(const SAMLSettingsProto& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_transfer_saml_cookies()) {
-    _internal_set_transfer_saml_cookies(from._internal_transfer_saml_cookies());
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _internal_set_url_parameter_to_autofill_saml_username(from._internal_url_parameter_to_autofill_saml_username());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      transfer_saml_cookies_ = from.transfer_saml_cookies_;
+    }
+    _has_bits_[0] |= cached_has_bits;
   }
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -15796,8 +15776,15 @@ bool SAMLSettingsProto::IsInitialized() const {
 
 void SAMLSettingsProto::InternalSwap(SAMLSettingsProto* other) {
   using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &url_parameter_to_autofill_saml_username_, lhs_arena,
+      &other->url_parameter_to_autofill_saml_username_, rhs_arena
+  );
   swap(transfer_saml_cookies_, other->transfer_saml_cookies_);
 }
 
@@ -26224,199 +26211,6 @@ std::string DeviceAuthDataCacheLifetimeProto::GetTypeName() const {
 
 // ===================================================================
 
-class SamlLoginAuthenticationTypeProto::_Internal {
- public:
-  using HasBits = decltype(std::declval<SamlLoginAuthenticationTypeProto>()._has_bits_);
-  static void set_has_saml_login_authentication_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-};
-
-SamlLoginAuthenticationTypeProto::SamlLoginAuthenticationTypeProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:enterprise_management.SamlLoginAuthenticationTypeProto)
-}
-SamlLoginAuthenticationTypeProto::SamlLoginAuthenticationTypeProto(const SamlLoginAuthenticationTypeProto& from)
-  : ::PROTOBUF_NAMESPACE_ID::MessageLite(),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-  saml_login_authentication_type_ = from.saml_login_authentication_type_;
-  // @@protoc_insertion_point(copy_constructor:enterprise_management.SamlLoginAuthenticationTypeProto)
-}
-
-inline void SamlLoginAuthenticationTypeProto::SharedCtor() {
-saml_login_authentication_type_ = 0;
-}
-
-SamlLoginAuthenticationTypeProto::~SamlLoginAuthenticationTypeProto() {
-  // @@protoc_insertion_point(destructor:enterprise_management.SamlLoginAuthenticationTypeProto)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<std::string>();
-}
-
-inline void SamlLoginAuthenticationTypeProto::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void SamlLoginAuthenticationTypeProto::ArenaDtor(void* object) {
-  SamlLoginAuthenticationTypeProto* _this = reinterpret_cast< SamlLoginAuthenticationTypeProto* >(object);
-  (void)_this;
-}
-void SamlLoginAuthenticationTypeProto::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void SamlLoginAuthenticationTypeProto::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void SamlLoginAuthenticationTypeProto::Clear() {
-// @@protoc_insertion_point(message_clear_start:enterprise_management.SamlLoginAuthenticationTypeProto)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  saml_login_authentication_type_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear<std::string>();
-}
-
-const char* SamlLoginAuthenticationTypeProto::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional .enterprise_management.SamlLoginAuthenticationTypeProto.Type saml_login_authentication_type = 1 [default = TYPE_DEFAULT];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::enterprise_management::SamlLoginAuthenticationTypeProto_Type_IsValid(val))) {
-            _internal_set_saml_login_authentication_type(static_cast<::enterprise_management::SamlLoginAuthenticationTypeProto_Type>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
-          }
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<std::string>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* SamlLoginAuthenticationTypeProto::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:enterprise_management.SamlLoginAuthenticationTypeProto)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // optional .enterprise_management.SamlLoginAuthenticationTypeProto.Type saml_login_authentication_type = 1 [default = TYPE_DEFAULT];
-  if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_saml_login_authentication_type(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
-        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:enterprise_management.SamlLoginAuthenticationTypeProto)
-  return target;
-}
-
-size_t SamlLoginAuthenticationTypeProto::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:enterprise_management.SamlLoginAuthenticationTypeProto)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // optional .enterprise_management.SamlLoginAuthenticationTypeProto.Type saml_login_authentication_type = 1 [default = TYPE_DEFAULT];
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_saml_login_authentication_type());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SamlLoginAuthenticationTypeProto::CheckTypeAndMergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
-  MergeFrom(*::PROTOBUF_NAMESPACE_ID::internal::DownCast<const SamlLoginAuthenticationTypeProto*>(
-      &from));
-}
-
-void SamlLoginAuthenticationTypeProto::MergeFrom(const SamlLoginAuthenticationTypeProto& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:enterprise_management.SamlLoginAuthenticationTypeProto)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_has_saml_login_authentication_type()) {
-    _internal_set_saml_login_authentication_type(from._internal_saml_login_authentication_type());
-  }
-  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
-}
-
-void SamlLoginAuthenticationTypeProto::CopyFrom(const SamlLoginAuthenticationTypeProto& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:enterprise_management.SamlLoginAuthenticationTypeProto)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SamlLoginAuthenticationTypeProto::IsInitialized() const {
-  return true;
-}
-
-void SamlLoginAuthenticationTypeProto::InternalSwap(SamlLoginAuthenticationTypeProto* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  swap(saml_login_authentication_type_, other->saml_login_authentication_type_);
-}
-
-std::string SamlLoginAuthenticationTypeProto::GetTypeName() const {
-  return "enterprise_management.SamlLoginAuthenticationTypeProto";
-}
-
-
-// ===================================================================
-
 class DeviceUnaffiliatedCrostiniAllowedProto::_Internal {
  public:
   using HasBits = decltype(std::declval<DeviceUnaffiliatedCrostiniAllowedProto>()._has_bits_);
@@ -33291,257 +33085,253 @@ class ChromeDeviceSettingsProto::_Internal {
   static void set_has_device_machine_password_change_rate(HasBits* has_bits) {
     (*has_bits)[2] |= 16u;
   }
-  static const ::enterprise_management::SamlLoginAuthenticationTypeProto& saml_login_authentication_type(const ChromeDeviceSettingsProto* msg);
-  static void set_has_saml_login_authentication_type(HasBits* has_bits) {
-    (*has_bits)[2] |= 32u;
-  }
   static const ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto& device_unaffiliated_crostini_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_unaffiliated_crostini_allowed(HasBits* has_bits) {
-    (*has_bits)[2] |= 64u;
+    (*has_bits)[2] |= 32u;
   }
   static const ::enterprise_management::DeviceWiFiFastTransitionEnabledProto& device_wifi_fast_transition_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_wifi_fast_transition_enabled(HasBits* has_bits) {
-    (*has_bits)[2] |= 128u;
+    (*has_bits)[2] |= 64u;
   }
   static const ::enterprise_management::DeviceDisplayResolutionProto& device_display_resolution(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_display_resolution(HasBits* has_bits) {
-    (*has_bits)[2] |= 256u;
+    (*has_bits)[2] |= 128u;
   }
   static const ::enterprise_management::PluginVmAllowedProto& plugin_vm_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_plugin_vm_allowed(HasBits* has_bits) {
-    (*has_bits)[2] |= 512u;
+    (*has_bits)[2] |= 256u;
   }
   static const ::enterprise_management::DeviceGpoCacheLifetimeProto& device_gpo_cache_lifetime(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_gpo_cache_lifetime(HasBits* has_bits) {
-    (*has_bits)[2] |= 1024u;
+    (*has_bits)[2] |= 512u;
   }
   static const ::enterprise_management::DeviceAuthDataCacheLifetimeProto& device_auth_data_cache_lifetime(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_auth_data_cache_lifetime(HasBits* has_bits) {
-    (*has_bits)[2] |= 2048u;
+    (*has_bits)[2] |= 1024u;
   }
   static const ::enterprise_management::PluginVmLicenseKeyProto& plugin_vm_license_key(const ChromeDeviceSettingsProto* msg);
   static void set_has_plugin_vm_license_key(HasBits* has_bits) {
-    (*has_bits)[2] |= 4096u;
+    (*has_bits)[2] |= 2048u;
   }
   static const ::enterprise_management::DeviceRebootOnUserSignoutProto& device_reboot_on_user_signout(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_reboot_on_user_signout(HasBits* has_bits) {
-    (*has_bits)[2] |= 8192u;
+    (*has_bits)[2] |= 4096u;
   }
   static const ::enterprise_management::DeviceWilcoDtcAllowedProto& device_wilco_dtc_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_wilco_dtc_allowed(HasBits* has_bits) {
-    (*has_bits)[2] |= 16384u;
+    (*has_bits)[2] |= 8192u;
   }
   static const ::enterprise_management::DeviceWilcoDtcConfigurationProto& device_wilco_dtc_configuration(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_wilco_dtc_configuration(HasBits* has_bits) {
-    (*has_bits)[2] |= 32768u;
+    (*has_bits)[2] |= 16384u;
   }
   static const ::enterprise_management::DeviceWiFiAllowedProto& device_wifi_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_wifi_allowed(HasBits* has_bits) {
-    (*has_bits)[2] |= 65536u;
+    (*has_bits)[2] |= 32768u;
   }
   static const ::enterprise_management::DevicePowerPeakShiftProto& device_power_peak_shift(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_power_peak_shift(HasBits* has_bits) {
-    (*has_bits)[2] |= 131072u;
+    (*has_bits)[2] |= 65536u;
   }
   static const ::enterprise_management::DeviceBootOnAcProto& device_boot_on_ac(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_boot_on_ac(HasBits* has_bits) {
-    (*has_bits)[2] |= 262144u;
+    (*has_bits)[2] |= 131072u;
   }
   static const ::enterprise_management::DeviceDockMacAddressSourceProto& device_dock_mac_address_source(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_dock_mac_address_source(HasBits* has_bits) {
-    (*has_bits)[2] |= 524288u;
+    (*has_bits)[2] |= 262144u;
   }
   static const ::enterprise_management::DeviceAdvancedBatteryChargeModeProto& device_advanced_battery_charge_mode(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_advanced_battery_charge_mode(HasBits* has_bits) {
-    (*has_bits)[2] |= 1048576u;
+    (*has_bits)[2] |= 524288u;
   }
   static const ::enterprise_management::DeviceBatteryChargeModeProto& device_battery_charge_mode(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_battery_charge_mode(HasBits* has_bits) {
-    (*has_bits)[2] |= 2097152u;
+    (*has_bits)[2] |= 1048576u;
   }
   static const ::enterprise_management::DeviceUsbPowerShareProto& device_usb_power_share(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_usb_power_share(HasBits* has_bits) {
-    (*has_bits)[2] |= 4194304u;
+    (*has_bits)[2] |= 2097152u;
   }
   static const ::enterprise_management::DeviceScheduledUpdateCheckProto& device_scheduled_update_check(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_scheduled_update_check(HasBits* has_bits) {
-    (*has_bits)[2] |= 8388608u;
+    (*has_bits)[2] |= 4194304u;
   }
   static const ::enterprise_management::DevicePowerwashAllowedProto& device_powerwash_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_powerwash_allowed(HasBits* has_bits) {
-    (*has_bits)[2] |= 16777216u;
+    (*has_bits)[2] |= 8388608u;
   }
   static const ::enterprise_management::DeviceLoginScreenWebUsbAllowDevicesForUrlsProto& device_login_screen_webusb_allow_devices_for_urls(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_login_screen_webusb_allow_devices_for_urls(HasBits* has_bits) {
-    (*has_bits)[2] |= 33554432u;
+    (*has_bits)[2] |= 16777216u;
   }
   static const ::enterprise_management::BooleanPolicyProto& device_login_screen_system_info_enforced(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_login_screen_system_info_enforced(HasBits* has_bits) {
-    (*has_bits)[2] |= 67108864u;
+    (*has_bits)[2] |= 33554432u;
   }
   static const ::enterprise_management::StringListPolicyProto& device_web_based_attestation_allowed_urls(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_web_based_attestation_allowed_urls(HasBits* has_bits) {
-    (*has_bits)[2] |= 134217728u;
+    (*has_bits)[2] |= 67108864u;
   }
   static const ::enterprise_management::BooleanPolicyProto& device_show_numeric_keyboard_for_password(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_show_numeric_keyboard_for_password(HasBits* has_bits) {
-    (*has_bits)[2] |= 268435456u;
+    (*has_bits)[2] |= 134217728u;
   }
   static const ::enterprise_management::BooleanPolicyProto& login_screen_primary_mouse_button_switch(const ChromeDeviceSettingsProto* msg);
   static void set_has_login_screen_primary_mouse_button_switch(HasBits* has_bits) {
-    (*has_bits)[2] |= 536870912u;
+    (*has_bits)[2] |= 268435456u;
   }
   static const ::enterprise_management::StringPolicyProto& device_minimum_version(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_minimum_version(HasBits* has_bits) {
-    (*has_bits)[2] |= 1073741824u;
+    (*has_bits)[2] |= 536870912u;
   }
   static const ::enterprise_management::SystemProxySettingsProto& system_proxy_settings(const ChromeDeviceSettingsProto* msg);
   static void set_has_system_proxy_settings(HasBits* has_bits) {
-    (*has_bits)[2] |= 2147483648u;
+    (*has_bits)[2] |= 1073741824u;
   }
   static const ::enterprise_management::IntegerPolicyProto& device_chrome_variations_type(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_chrome_variations_type(HasBits* has_bits) {
-    (*has_bits)[3] |= 1u;
+    (*has_bits)[2] |= 2147483648u;
   }
   static const ::enterprise_management::DeviceLoginScreenPrivacyScreenEnabledProto& device_login_screen_privacy_screen_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_login_screen_privacy_screen_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 2u;
+    (*has_bits)[3] |= 1u;
   }
   static const ::enterprise_management::RequiredClientCertificateForDeviceProto& required_client_certificate_for_device(const ChromeDeviceSettingsProto* msg);
   static void set_has_required_client_certificate_for_device(HasBits* has_bits) {
-    (*has_bits)[3] |= 4u;
+    (*has_bits)[3] |= 2u;
   }
   static const ::enterprise_management::DeviceCrostiniArcAdbSideloadingAllowedProto& device_crostini_arc_adb_sideloading_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_crostini_arc_adb_sideloading_allowed(HasBits* has_bits) {
-    (*has_bits)[3] |= 8u;
+    (*has_bits)[3] |= 4u;
   }
   static const ::enterprise_management::StringPolicyProto& device_minimum_version_aue_message(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_minimum_version_aue_message(HasBits* has_bits) {
-    (*has_bits)[3] |= 16u;
+    (*has_bits)[3] |= 8u;
   }
   static const ::enterprise_management::ManagedGuestSessionPrivacyWarningsProto& managed_guest_session_privacy_warnings(const ChromeDeviceSettingsProto* msg);
   static void set_has_managed_guest_session_privacy_warnings(HasBits* has_bits) {
-    (*has_bits)[3] |= 32u;
+    (*has_bits)[3] |= 16u;
   }
   static const ::enterprise_management::DeviceExternalPrintServersProto& external_print_servers(const ChromeDeviceSettingsProto* msg);
   static void set_has_external_print_servers(HasBits* has_bits) {
-    (*has_bits)[3] |= 64u;
+    (*has_bits)[3] |= 32u;
   }
   static const ::enterprise_management::DeviceExternalPrintServersAllowlistProto& external_print_servers_allowlist(const ChromeDeviceSettingsProto* msg);
   static void set_has_external_print_servers_allowlist(HasBits* has_bits) {
-    (*has_bits)[3] |= 128u;
+    (*has_bits)[3] |= 64u;
   }
   static const ::enterprise_management::DevicePrintersAccessModeProto& device_printers_access_mode(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_printers_access_mode(HasBits* has_bits) {
-    (*has_bits)[3] |= 256u;
+    (*has_bits)[3] |= 128u;
   }
   static const ::enterprise_management::DevicePrintersBlocklistProto& device_printers_blocklist(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_printers_blocklist(HasBits* has_bits) {
-    (*has_bits)[3] |= 512u;
+    (*has_bits)[3] |= 256u;
   }
   static const ::enterprise_management::DevicePrintersAllowlistProto& device_printers_allowlist(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_printers_allowlist(HasBits* has_bits) {
-    (*has_bits)[3] |= 1024u;
+    (*has_bits)[3] |= 512u;
   }
   static const ::enterprise_management::DevicePrintersProto& device_printers(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_printers(HasBits* has_bits) {
-    (*has_bits)[3] |= 2048u;
+    (*has_bits)[3] |= 1024u;
   }
   static const ::enterprise_management::DeviceShowLowDiskSpaceNotificationProto& device_show_low_disk_space_notification(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_show_low_disk_space_notification(HasBits* has_bits) {
-    (*has_bits)[3] |= 4096u;
+    (*has_bits)[3] |= 2048u;
   }
   static const ::enterprise_management::UserAllowlistProto& user_allowlist(const ChromeDeviceSettingsProto* msg);
   static void set_has_user_allowlist(HasBits* has_bits) {
-    (*has_bits)[3] |= 8192u;
+    (*has_bits)[3] |= 4096u;
   }
   static const ::enterprise_management::UsbDetachableAllowlistProto& usb_detachable_allowlist(const ChromeDeviceSettingsProto* msg);
   static void set_has_usb_detachable_allowlist(HasBits* has_bits) {
-    (*has_bits)[3] |= 16384u;
+    (*has_bits)[3] |= 8192u;
   }
   static const ::enterprise_management::DeviceFamilyLinkAccountsAllowedProto& family_link_accounts_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_family_link_accounts_allowed(HasBits* has_bits) {
-    (*has_bits)[3] |= 32768u;
+    (*has_bits)[3] |= 16384u;
   }
   static const ::enterprise_management::DeviceArcDataSnapshotHoursProto& arc_data_snapshot_hours(const ChromeDeviceSettingsProto* msg);
   static void set_has_arc_data_snapshot_hours(HasBits* has_bits) {
-    (*has_bits)[3] |= 65536u;
+    (*has_bits)[3] |= 32768u;
   }
   static const ::enterprise_management::BooleanPolicyProto& device_allow_mgs_to_store_display_properties(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_allow_mgs_to_store_display_properties(HasBits* has_bits) {
-    (*has_bits)[3] |= 131072u;
+    (*has_bits)[3] |= 65536u;
   }
   static const ::enterprise_management::DeviceSystemWideTracingEnabledProto& device_system_wide_tracing_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_system_wide_tracing_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 262144u;
+    (*has_bits)[3] |= 131072u;
   }
   static const ::enterprise_management::DevicePciPeripheralDataAccessEnabledProto& device_pci_peripheral_data_access_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_pci_peripheral_data_access_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 524288u;
+    (*has_bits)[3] |= 262144u;
   }
   static const ::enterprise_management::DeviceBorealisAllowedProto& device_borealis_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_borealis_allowed(HasBits* has_bits) {
-    (*has_bits)[3] |= 1048576u;
+    (*has_bits)[3] |= 524288u;
   }
   static const ::enterprise_management::DeviceAllowedBluetoothServicesProto& device_allowed_bluetooth_services(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_allowed_bluetooth_services(HasBits* has_bits) {
-    (*has_bits)[3] |= 2097152u;
+    (*has_bits)[3] |= 1048576u;
   }
   static const ::enterprise_management::DeviceDebugPacketCaptureAllowedProto& device_debug_packet_capture_allowed(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_debug_packet_capture_allowed(HasBits* has_bits) {
-    (*has_bits)[3] |= 4194304u;
+    (*has_bits)[3] |= 2097152u;
   }
   static const ::enterprise_management::DeviceScheduledRebootProto& device_scheduled_reboot(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_scheduled_reboot(HasBits* has_bits) {
-    (*has_bits)[3] |= 8388608u;
+    (*has_bits)[3] |= 4194304u;
   }
   static const ::enterprise_management::DevicePciPeripheralDataAccessEnabledProtoV2& device_pci_peripheral_data_access_enabled_v2(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_pci_peripheral_data_access_enabled_v2(HasBits* has_bits) {
-    (*has_bits)[3] |= 16777216u;
+    (*has_bits)[3] |= 8388608u;
   }
   static const ::enterprise_management::DeviceRestrictedManagedGuestSessionEnabledProto& device_restricted_managed_guest_session_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_restricted_managed_guest_session_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 33554432u;
+    (*has_bits)[3] |= 16777216u;
   }
   static const ::enterprise_management::HostnameUserConfigurableProto& hostname_user_configurable(const ChromeDeviceSettingsProto* msg);
   static void set_has_hostname_user_configurable(HasBits* has_bits) {
-    (*has_bits)[3] |= 67108864u;
+    (*has_bits)[3] |= 33554432u;
   }
   static const ::enterprise_management::BooleanPolicyProto& login_screen_prompt_on_multiple_matching_certificates(const ChromeDeviceSettingsProto* msg);
   static void set_has_login_screen_prompt_on_multiple_matching_certificates(HasBits* has_bits) {
-    (*has_bits)[3] |= 134217728u;
+    (*has_bits)[3] |= 67108864u;
   }
   static const ::enterprise_management::BooleanPolicyProto& kiosk_crx_manifest_update_url_ignored(const ChromeDeviceSettingsProto* msg);
   static void set_has_kiosk_crx_manifest_update_url_ignored(HasBits* has_bits) {
-    (*has_bits)[3] |= 268435456u;
+    (*has_bits)[3] |= 134217728u;
   }
   static const ::enterprise_management::DeviceI18nShortcutsEnabledProto& device_i18n_shortcuts_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_i18n_shortcuts_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 536870912u;
+    (*has_bits)[3] |= 268435456u;
   }
   static const ::enterprise_management::BooleanPolicyProto& chromad_to_cloud_migration_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_chromad_to_cloud_migration_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 1073741824u;
+    (*has_bits)[3] |= 536870912u;
   }
   static const ::enterprise_management::RevenDeviceHWDataUsageEnabledProto& hardware_data_usage_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_hardware_data_usage_enabled(HasBits* has_bits) {
-    (*has_bits)[3] |= 2147483648u;
+    (*has_bits)[3] |= 1073741824u;
   }
   static const ::enterprise_management::DeviceLoginScreenWebUILazyLoadingProto& login_web_ui_lazy_loading(const ChromeDeviceSettingsProto* msg);
   static void set_has_login_web_ui_lazy_loading(HasBits* has_bits) {
-    (*has_bits)[4] |= 1u;
+    (*has_bits)[3] |= 2147483648u;
   }
   static const ::enterprise_management::DeviceKeylockerForStorageEncryptionEnabledProto& keylocker_for_storage_encryption_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_keylocker_for_storage_encryption_enabled(HasBits* has_bits) {
-    (*has_bits)[4] |= 2u;
+    (*has_bits)[4] |= 1u;
   }
   static const ::enterprise_management::BooleanPolicyProto& device_run_automatic_cleanup_on_login(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_run_automatic_cleanup_on_login(HasBits* has_bits) {
-    (*has_bits)[4] |= 4u;
+    (*has_bits)[4] |= 2u;
   }
   static const ::enterprise_management::EncryptedReportingPipelineConfigurationProto& device_encrypted_reporting_pipeline_enabled(const ChromeDeviceSettingsProto* msg);
   static void set_has_device_encrypted_reporting_pipeline_enabled(HasBits* has_bits) {
-    (*has_bits)[4] |= 8u;
+    (*has_bits)[4] |= 4u;
   }
 };
 
@@ -33821,10 +33611,6 @@ const ::enterprise_management::DeviceMachinePasswordChangeRateProto&
 ChromeDeviceSettingsProto::_Internal::device_machine_password_change_rate(const ChromeDeviceSettingsProto* msg) {
   return *msg->device_machine_password_change_rate_;
 }
-const ::enterprise_management::SamlLoginAuthenticationTypeProto&
-ChromeDeviceSettingsProto::_Internal::saml_login_authentication_type(const ChromeDeviceSettingsProto* msg) {
-  return *msg->saml_login_authentication_type_;
-}
 const ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto&
 ChromeDeviceSettingsProto::_Internal::device_unaffiliated_crostini_allowed(const ChromeDeviceSettingsProto* msg) {
   return *msg->device_unaffiliated_crostini_allowed_;
@@ -34075,51 +33861,51 @@ ChromeDeviceSettingsProto::_Internal::device_encrypted_reporting_pipeline_enable
 }
 void ChromeDeviceSettingsProto::clear_device_login_screen_system_info_enforced() {
   if (device_login_screen_system_info_enforced_ != nullptr) device_login_screen_system_info_enforced_->Clear();
-  _has_bits_[2] &= ~0x04000000u;
+  _has_bits_[2] &= ~0x02000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_web_based_attestation_allowed_urls() {
   if (device_web_based_attestation_allowed_urls_ != nullptr) device_web_based_attestation_allowed_urls_->Clear();
-  _has_bits_[2] &= ~0x08000000u;
+  _has_bits_[2] &= ~0x04000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_show_numeric_keyboard_for_password() {
   if (device_show_numeric_keyboard_for_password_ != nullptr) device_show_numeric_keyboard_for_password_->Clear();
-  _has_bits_[2] &= ~0x10000000u;
+  _has_bits_[2] &= ~0x08000000u;
 }
 void ChromeDeviceSettingsProto::clear_login_screen_primary_mouse_button_switch() {
   if (login_screen_primary_mouse_button_switch_ != nullptr) login_screen_primary_mouse_button_switch_->Clear();
-  _has_bits_[2] &= ~0x20000000u;
+  _has_bits_[2] &= ~0x10000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_minimum_version() {
   if (device_minimum_version_ != nullptr) device_minimum_version_->Clear();
-  _has_bits_[2] &= ~0x40000000u;
+  _has_bits_[2] &= ~0x20000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_chrome_variations_type() {
   if (device_chrome_variations_type_ != nullptr) device_chrome_variations_type_->Clear();
-  _has_bits_[3] &= ~0x00000001u;
+  _has_bits_[2] &= ~0x80000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_minimum_version_aue_message() {
   if (device_minimum_version_aue_message_ != nullptr) device_minimum_version_aue_message_->Clear();
-  _has_bits_[3] &= ~0x00000010u;
+  _has_bits_[3] &= ~0x00000008u;
 }
 void ChromeDeviceSettingsProto::clear_device_allow_mgs_to_store_display_properties() {
   if (device_allow_mgs_to_store_display_properties_ != nullptr) device_allow_mgs_to_store_display_properties_->Clear();
-  _has_bits_[3] &= ~0x00020000u;
+  _has_bits_[3] &= ~0x00010000u;
 }
 void ChromeDeviceSettingsProto::clear_login_screen_prompt_on_multiple_matching_certificates() {
   if (login_screen_prompt_on_multiple_matching_certificates_ != nullptr) login_screen_prompt_on_multiple_matching_certificates_->Clear();
-  _has_bits_[3] &= ~0x08000000u;
+  _has_bits_[3] &= ~0x04000000u;
 }
 void ChromeDeviceSettingsProto::clear_kiosk_crx_manifest_update_url_ignored() {
   if (kiosk_crx_manifest_update_url_ignored_ != nullptr) kiosk_crx_manifest_update_url_ignored_->Clear();
-  _has_bits_[3] &= ~0x10000000u;
+  _has_bits_[3] &= ~0x08000000u;
 }
 void ChromeDeviceSettingsProto::clear_chromad_to_cloud_migration_enabled() {
   if (chromad_to_cloud_migration_enabled_ != nullptr) chromad_to_cloud_migration_enabled_->Clear();
-  _has_bits_[3] &= ~0x40000000u;
+  _has_bits_[3] &= ~0x20000000u;
 }
 void ChromeDeviceSettingsProto::clear_device_run_automatic_cleanup_on_login() {
   if (device_run_automatic_cleanup_on_login_ != nullptr) device_run_automatic_cleanup_on_login_->Clear();
-  _has_bits_[4] &= ~0x00000004u;
+  _has_bits_[4] &= ~0x00000002u;
 }
 ChromeDeviceSettingsProto::ChromeDeviceSettingsProto(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -34478,11 +34264,6 @@ ChromeDeviceSettingsProto::ChromeDeviceSettingsProto(const ChromeDeviceSettingsP
     device_machine_password_change_rate_ = new ::enterprise_management::DeviceMachinePasswordChangeRateProto(*from.device_machine_password_change_rate_);
   } else {
     device_machine_password_change_rate_ = nullptr;
-  }
-  if (from._internal_has_saml_login_authentication_type()) {
-    saml_login_authentication_type_ = new ::enterprise_management::SamlLoginAuthenticationTypeProto(*from.saml_login_authentication_type_);
-  } else {
-    saml_login_authentication_type_ = nullptr;
   }
   if (from._internal_has_device_unaffiliated_crostini_allowed()) {
     device_unaffiliated_crostini_allowed_ = new ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto(*from.device_unaffiliated_crostini_allowed_);
@@ -34882,7 +34663,6 @@ inline void ChromeDeviceSettingsProto::SharedDtor() {
   if (this != internal_default_instance()) delete device_login_screen_site_per_process_;
   if (this != internal_default_instance()) delete virtual_machines_allowed_;
   if (this != internal_default_instance()) delete device_machine_password_change_rate_;
-  if (this != internal_default_instance()) delete saml_login_authentication_type_;
   if (this != internal_default_instance()) delete device_unaffiliated_crostini_allowed_;
   if (this != internal_default_instance()) delete device_wifi_fast_transition_enabled_;
   if (this != internal_default_instance()) delete device_display_resolution_;
@@ -35260,272 +35040,268 @@ void ChromeDeviceSettingsProto::Clear() {
       device_machine_password_change_rate_->Clear();
     }
     if (cached_has_bits & 0x00000020u) {
-      GOOGLE_DCHECK(saml_login_authentication_type_ != nullptr);
-      saml_login_authentication_type_->Clear();
-    }
-    if (cached_has_bits & 0x00000040u) {
       GOOGLE_DCHECK(device_unaffiliated_crostini_allowed_ != nullptr);
       device_unaffiliated_crostini_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       GOOGLE_DCHECK(device_wifi_fast_transition_enabled_ != nullptr);
       device_wifi_fast_transition_enabled_->Clear();
+    }
+    if (cached_has_bits & 0x00000080u) {
+      GOOGLE_DCHECK(device_display_resolution_ != nullptr);
+      device_display_resolution_->Clear();
     }
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      GOOGLE_DCHECK(device_display_resolution_ != nullptr);
-      device_display_resolution_->Clear();
-    }
-    if (cached_has_bits & 0x00000200u) {
       GOOGLE_DCHECK(plugin_vm_allowed_ != nullptr);
       plugin_vm_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       GOOGLE_DCHECK(device_gpo_cache_lifetime_ != nullptr);
       device_gpo_cache_lifetime_->Clear();
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       GOOGLE_DCHECK(device_auth_data_cache_lifetime_ != nullptr);
       device_auth_data_cache_lifetime_->Clear();
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       GOOGLE_DCHECK(plugin_vm_license_key_ != nullptr);
       plugin_vm_license_key_->Clear();
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       GOOGLE_DCHECK(device_reboot_on_user_signout_ != nullptr);
       device_reboot_on_user_signout_->Clear();
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       GOOGLE_DCHECK(device_wilco_dtc_allowed_ != nullptr);
       device_wilco_dtc_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       GOOGLE_DCHECK(device_wilco_dtc_configuration_ != nullptr);
       device_wilco_dtc_configuration_->Clear();
+    }
+    if (cached_has_bits & 0x00008000u) {
+      GOOGLE_DCHECK(device_wifi_allowed_ != nullptr);
+      device_wifi_allowed_->Clear();
     }
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      GOOGLE_DCHECK(device_wifi_allowed_ != nullptr);
-      device_wifi_allowed_->Clear();
-    }
-    if (cached_has_bits & 0x00020000u) {
       GOOGLE_DCHECK(device_power_peak_shift_ != nullptr);
       device_power_peak_shift_->Clear();
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       GOOGLE_DCHECK(device_boot_on_ac_ != nullptr);
       device_boot_on_ac_->Clear();
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       GOOGLE_DCHECK(device_dock_mac_address_source_ != nullptr);
       device_dock_mac_address_source_->Clear();
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       GOOGLE_DCHECK(device_advanced_battery_charge_mode_ != nullptr);
       device_advanced_battery_charge_mode_->Clear();
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       GOOGLE_DCHECK(device_battery_charge_mode_ != nullptr);
       device_battery_charge_mode_->Clear();
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       GOOGLE_DCHECK(device_usb_power_share_ != nullptr);
       device_usb_power_share_->Clear();
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       GOOGLE_DCHECK(device_scheduled_update_check_ != nullptr);
       device_scheduled_update_check_->Clear();
+    }
+    if (cached_has_bits & 0x00800000u) {
+      GOOGLE_DCHECK(device_powerwash_allowed_ != nullptr);
+      device_powerwash_allowed_->Clear();
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      GOOGLE_DCHECK(device_powerwash_allowed_ != nullptr);
-      device_powerwash_allowed_->Clear();
-    }
-    if (cached_has_bits & 0x02000000u) {
       GOOGLE_DCHECK(device_login_screen_webusb_allow_devices_for_urls_ != nullptr);
       device_login_screen_webusb_allow_devices_for_urls_->Clear();
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       GOOGLE_DCHECK(device_login_screen_system_info_enforced_ != nullptr);
       device_login_screen_system_info_enforced_->Clear();
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       GOOGLE_DCHECK(device_web_based_attestation_allowed_urls_ != nullptr);
       device_web_based_attestation_allowed_urls_->Clear();
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       GOOGLE_DCHECK(device_show_numeric_keyboard_for_password_ != nullptr);
       device_show_numeric_keyboard_for_password_->Clear();
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       GOOGLE_DCHECK(login_screen_primary_mouse_button_switch_ != nullptr);
       login_screen_primary_mouse_button_switch_->Clear();
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       GOOGLE_DCHECK(device_minimum_version_ != nullptr);
       device_minimum_version_->Clear();
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       GOOGLE_DCHECK(system_proxy_settings_ != nullptr);
       system_proxy_settings_->Clear();
+    }
+    if (cached_has_bits & 0x80000000u) {
+      GOOGLE_DCHECK(device_chrome_variations_type_ != nullptr);
+      device_chrome_variations_type_->Clear();
     }
   }
   cached_has_bits = _has_bits_[3];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(device_chrome_variations_type_ != nullptr);
-      device_chrome_variations_type_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
       GOOGLE_DCHECK(device_login_screen_privacy_screen_enabled_ != nullptr);
       device_login_screen_privacy_screen_enabled_->Clear();
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       GOOGLE_DCHECK(required_client_certificate_for_device_ != nullptr);
       required_client_certificate_for_device_->Clear();
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       GOOGLE_DCHECK(device_crostini_arc_adb_sideloading_allowed_ != nullptr);
       device_crostini_arc_adb_sideloading_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       GOOGLE_DCHECK(device_minimum_version_aue_message_ != nullptr);
       device_minimum_version_aue_message_->Clear();
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       GOOGLE_DCHECK(managed_guest_session_privacy_warnings_ != nullptr);
       managed_guest_session_privacy_warnings_->Clear();
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       GOOGLE_DCHECK(external_print_servers_ != nullptr);
       external_print_servers_->Clear();
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       GOOGLE_DCHECK(external_print_servers_allowlist_ != nullptr);
       external_print_servers_allowlist_->Clear();
+    }
+    if (cached_has_bits & 0x00000080u) {
+      GOOGLE_DCHECK(device_printers_access_mode_ != nullptr);
+      device_printers_access_mode_->Clear();
     }
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      GOOGLE_DCHECK(device_printers_access_mode_ != nullptr);
-      device_printers_access_mode_->Clear();
-    }
-    if (cached_has_bits & 0x00000200u) {
       GOOGLE_DCHECK(device_printers_blocklist_ != nullptr);
       device_printers_blocklist_->Clear();
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       GOOGLE_DCHECK(device_printers_allowlist_ != nullptr);
       device_printers_allowlist_->Clear();
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       GOOGLE_DCHECK(device_printers_ != nullptr);
       device_printers_->Clear();
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       GOOGLE_DCHECK(device_show_low_disk_space_notification_ != nullptr);
       device_show_low_disk_space_notification_->Clear();
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       GOOGLE_DCHECK(user_allowlist_ != nullptr);
       user_allowlist_->Clear();
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       GOOGLE_DCHECK(usb_detachable_allowlist_ != nullptr);
       usb_detachable_allowlist_->Clear();
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       GOOGLE_DCHECK(family_link_accounts_allowed_ != nullptr);
       family_link_accounts_allowed_->Clear();
+    }
+    if (cached_has_bits & 0x00008000u) {
+      GOOGLE_DCHECK(arc_data_snapshot_hours_ != nullptr);
+      arc_data_snapshot_hours_->Clear();
     }
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      GOOGLE_DCHECK(arc_data_snapshot_hours_ != nullptr);
-      arc_data_snapshot_hours_->Clear();
-    }
-    if (cached_has_bits & 0x00020000u) {
       GOOGLE_DCHECK(device_allow_mgs_to_store_display_properties_ != nullptr);
       device_allow_mgs_to_store_display_properties_->Clear();
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       GOOGLE_DCHECK(device_system_wide_tracing_enabled_ != nullptr);
       device_system_wide_tracing_enabled_->Clear();
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       GOOGLE_DCHECK(device_pci_peripheral_data_access_enabled_ != nullptr);
       device_pci_peripheral_data_access_enabled_->Clear();
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       GOOGLE_DCHECK(device_borealis_allowed_ != nullptr);
       device_borealis_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       GOOGLE_DCHECK(device_allowed_bluetooth_services_ != nullptr);
       device_allowed_bluetooth_services_->Clear();
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       GOOGLE_DCHECK(device_debug_packet_capture_allowed_ != nullptr);
       device_debug_packet_capture_allowed_->Clear();
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       GOOGLE_DCHECK(device_scheduled_reboot_ != nullptr);
       device_scheduled_reboot_->Clear();
+    }
+    if (cached_has_bits & 0x00800000u) {
+      GOOGLE_DCHECK(device_pci_peripheral_data_access_enabled_v2_ != nullptr);
+      device_pci_peripheral_data_access_enabled_v2_->Clear();
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      GOOGLE_DCHECK(device_pci_peripheral_data_access_enabled_v2_ != nullptr);
-      device_pci_peripheral_data_access_enabled_v2_->Clear();
-    }
-    if (cached_has_bits & 0x02000000u) {
       GOOGLE_DCHECK(device_restricted_managed_guest_session_enabled_ != nullptr);
       device_restricted_managed_guest_session_enabled_->Clear();
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       GOOGLE_DCHECK(hostname_user_configurable_ != nullptr);
       hostname_user_configurable_->Clear();
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       GOOGLE_DCHECK(login_screen_prompt_on_multiple_matching_certificates_ != nullptr);
       login_screen_prompt_on_multiple_matching_certificates_->Clear();
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       GOOGLE_DCHECK(kiosk_crx_manifest_update_url_ignored_ != nullptr);
       kiosk_crx_manifest_update_url_ignored_->Clear();
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       GOOGLE_DCHECK(device_i18n_shortcuts_enabled_ != nullptr);
       device_i18n_shortcuts_enabled_->Clear();
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       GOOGLE_DCHECK(chromad_to_cloud_migration_enabled_ != nullptr);
       chromad_to_cloud_migration_enabled_->Clear();
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       GOOGLE_DCHECK(hardware_data_usage_enabled_ != nullptr);
       hardware_data_usage_enabled_->Clear();
     }
-  }
-  cached_has_bits = _has_bits_[4];
-  if (cached_has_bits & 0x0000000fu) {
-    if (cached_has_bits & 0x00000001u) {
+    if (cached_has_bits & 0x80000000u) {
       GOOGLE_DCHECK(login_web_ui_lazy_loading_ != nullptr);
       login_web_ui_lazy_loading_->Clear();
     }
-    if (cached_has_bits & 0x00000002u) {
+  }
+  cached_has_bits = _has_bits_[4];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
       GOOGLE_DCHECK(keylocker_for_storage_encryption_enabled_ != nullptr);
       keylocker_for_storage_encryption_enabled_->Clear();
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       GOOGLE_DCHECK(device_run_automatic_cleanup_on_login_ != nullptr);
       device_run_automatic_cleanup_on_login_->Clear();
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       GOOGLE_DCHECK(device_encrypted_reporting_pipeline_enabled_ != nullptr);
       device_encrypted_reporting_pipeline_enabled_->Clear();
     }
@@ -36088,14 +35864,6 @@ const char* ChromeDeviceSettingsProto::_InternalParse(const char* ptr, ::PROTOBU
       case 70:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_device_machine_password_change_rate(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional .enterprise_management.SamlLoginAuthenticationTypeProto saml_login_authentication_type = 71;
-      case 71:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          ptr = ctx->ParseMessage(_internal_mutable_saml_login_authentication_type(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -37180,16 +36948,8 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
         70, _Internal::device_machine_password_change_rate(this), target, stream);
   }
 
-  // optional .enterprise_management.SamlLoginAuthenticationTypeProto saml_login_authentication_type = 71;
-  if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        71, _Internal::saml_login_authentication_type(this), target, stream);
-  }
-
   // optional .enterprise_management.DeviceUnaffiliatedCrostiniAllowedProto device_unaffiliated_crostini_allowed = 72;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37197,7 +36957,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceWiFiFastTransitionEnabledProto device_wifi_fast_transition_enabled = 73;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37205,7 +36965,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceDisplayResolutionProto device_display_resolution = 74;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37213,7 +36973,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.PluginVmAllowedProto plugin_vm_allowed = 75;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37221,7 +36981,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceGpoCacheLifetimeProto device_gpo_cache_lifetime = 76;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37229,7 +36989,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceAuthDataCacheLifetimeProto device_auth_data_cache_lifetime = 77;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37237,7 +36997,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.PluginVmLicenseKeyProto plugin_vm_license_key = 78;
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37245,7 +37005,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceRebootOnUserSignoutProto device_reboot_on_user_signout = 79;
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37253,7 +37013,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceWilcoDtcAllowedProto device_wilco_dtc_allowed = 80;
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37261,7 +37021,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceWilcoDtcConfigurationProto device_wilco_dtc_configuration = 81;
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37269,7 +37029,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceWiFiAllowedProto device_wifi_allowed = 82;
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37277,7 +37037,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePowerPeakShiftProto device_power_peak_shift = 83;
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37285,7 +37045,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceBootOnAcProto device_boot_on_ac = 84;
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37293,7 +37053,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceDockMacAddressSourceProto device_dock_mac_address_source = 85;
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37301,7 +37061,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceAdvancedBatteryChargeModeProto device_advanced_battery_charge_mode = 86;
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37309,7 +37069,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceBatteryChargeModeProto device_battery_charge_mode = 87;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37317,7 +37077,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceUsbPowerShareProto device_usb_power_share = 88;
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x00200000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37325,7 +37085,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceScheduledUpdateCheckProto device_scheduled_update_check = 89;
-  if (cached_has_bits & 0x00800000u) {
+  if (cached_has_bits & 0x00400000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37333,7 +37093,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePowerwashAllowedProto device_powerwash_allowed = 91;
-  if (cached_has_bits & 0x01000000u) {
+  if (cached_has_bits & 0x00800000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37341,7 +37101,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceLoginScreenWebUsbAllowDevicesForUrlsProto device_login_screen_webusb_allow_devices_for_urls = 92;
-  if (cached_has_bits & 0x02000000u) {
+  if (cached_has_bits & 0x01000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37349,7 +37109,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto device_login_screen_system_info_enforced = 93;
-  if (cached_has_bits & 0x04000000u) {
+  if (cached_has_bits & 0x02000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37357,7 +37117,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.StringListPolicyProto device_web_based_attestation_allowed_urls = 94;
-  if (cached_has_bits & 0x08000000u) {
+  if (cached_has_bits & 0x04000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37365,7 +37125,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto device_show_numeric_keyboard_for_password = 95;
-  if (cached_has_bits & 0x10000000u) {
+  if (cached_has_bits & 0x08000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37373,7 +37133,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto login_screen_primary_mouse_button_switch = 96;
-  if (cached_has_bits & 0x20000000u) {
+  if (cached_has_bits & 0x10000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37381,7 +37141,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.StringPolicyProto device_minimum_version = 97;
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x20000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37389,24 +37149,24 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.SystemProxySettingsProto system_proxy_settings = 98;
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         98, _Internal::system_proxy_settings(this), target, stream);
   }
 
-  cached_has_bits = _has_bits_[3];
   // optional .enterprise_management.IntegerPolicyProto device_chrome_variations_type = 99;
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         99, _Internal::device_chrome_variations_type(this), target, stream);
   }
 
+  cached_has_bits = _has_bits_[3];
   // optional .enterprise_management.DeviceLoginScreenPrivacyScreenEnabledProto device_login_screen_privacy_screen_enabled = 100;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37414,7 +37174,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.RequiredClientCertificateForDeviceProto required_client_certificate_for_device = 101;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37422,7 +37182,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceCrostiniArcAdbSideloadingAllowedProto device_crostini_arc_adb_sideloading_allowed = 102;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37430,7 +37190,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.StringPolicyProto device_minimum_version_aue_message = 103;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37438,7 +37198,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.ManagedGuestSessionPrivacyWarningsProto managed_guest_session_privacy_warnings = 104;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37446,7 +37206,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceExternalPrintServersProto external_print_servers = 105;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37454,7 +37214,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceExternalPrintServersAllowlistProto external_print_servers_allowlist = 106;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37462,7 +37222,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePrintersAccessModeProto device_printers_access_mode = 107;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37470,7 +37230,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePrintersBlocklistProto device_printers_blocklist = 108;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37478,7 +37238,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePrintersAllowlistProto device_printers_allowlist = 109;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37486,7 +37246,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePrintersProto device_printers = 110;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37494,7 +37254,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceShowLowDiskSpaceNotificationProto device_show_low_disk_space_notification = 111;
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37502,7 +37262,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.UserAllowlistProto user_allowlist = 112;
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37510,7 +37270,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.UsbDetachableAllowlistProto usb_detachable_allowlist = 113;
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37518,7 +37278,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceFamilyLinkAccountsAllowedProto family_link_accounts_allowed = 114;
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37526,7 +37286,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceArcDataSnapshotHoursProto arc_data_snapshot_hours = 115;
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37534,7 +37294,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto device_allow_mgs_to_store_display_properties = 116;
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37542,7 +37302,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceSystemWideTracingEnabledProto device_system_wide_tracing_enabled = 117;
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37550,7 +37310,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePciPeripheralDataAccessEnabledProto device_pci_peripheral_data_access_enabled = 118;
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37558,7 +37318,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceBorealisAllowedProto device_borealis_allowed = 119;
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37566,7 +37326,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceAllowedBluetoothServicesProto device_allowed_bluetooth_services = 120;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37574,7 +37334,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceDebugPacketCaptureAllowedProto device_debug_packet_capture_allowed = 121;
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x00200000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37582,7 +37342,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceScheduledRebootProto device_scheduled_reboot = 122;
-  if (cached_has_bits & 0x00800000u) {
+  if (cached_has_bits & 0x00400000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37590,7 +37350,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DevicePciPeripheralDataAccessEnabledProtoV2 device_pci_peripheral_data_access_enabled_v2 = 123;
-  if (cached_has_bits & 0x01000000u) {
+  if (cached_has_bits & 0x00800000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37598,7 +37358,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceRestrictedManagedGuestSessionEnabledProto device_restricted_managed_guest_session_enabled = 124;
-  if (cached_has_bits & 0x02000000u) {
+  if (cached_has_bits & 0x01000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37606,7 +37366,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.HostnameUserConfigurableProto hostname_user_configurable = 125;
-  if (cached_has_bits & 0x04000000u) {
+  if (cached_has_bits & 0x02000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37614,7 +37374,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto login_screen_prompt_on_multiple_matching_certificates = 126;
-  if (cached_has_bits & 0x08000000u) {
+  if (cached_has_bits & 0x04000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37622,7 +37382,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto kiosk_crx_manifest_update_url_ignored = 127;
-  if (cached_has_bits & 0x10000000u) {
+  if (cached_has_bits & 0x08000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37630,7 +37390,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.DeviceI18nShortcutsEnabledProto device_i18n_shortcuts_enabled = 128;
-  if (cached_has_bits & 0x20000000u) {
+  if (cached_has_bits & 0x10000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37638,7 +37398,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto chromad_to_cloud_migration_enabled = 129;
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x20000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37646,24 +37406,24 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.RevenDeviceHWDataUsageEnabledProto hardware_data_usage_enabled = 130;
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         130, _Internal::hardware_data_usage_enabled(this), target, stream);
   }
 
-  cached_has_bits = _has_bits_[4];
   // optional .enterprise_management.DeviceLoginScreenWebUILazyLoadingProto login_web_ui_lazy_loading = 131;
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         131, _Internal::login_web_ui_lazy_loading(this), target, stream);
   }
 
+  cached_has_bits = _has_bits_[4];
   // optional .enterprise_management.DeviceKeylockerForStorageEncryptionEnabledProto keylocker_for_storage_encryption_enabled = 132;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37671,7 +37431,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.BooleanPolicyProto device_run_automatic_cleanup_on_login = 133;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -37679,7 +37439,7 @@ uint8_t* ChromeDeviceSettingsProto::_InternalSerialize(
   }
 
   // optional .enterprise_management.EncryptedReportingPipelineConfigurationProto device_encrypted_reporting_pipeline_enabled = 134;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -38205,460 +37965,453 @@ size_t ChromeDeviceSettingsProto::ByteSizeLong() const {
           *device_machine_password_change_rate_);
     }
 
-    // optional .enterprise_management.SamlLoginAuthenticationTypeProto saml_login_authentication_type = 71;
-    if (cached_has_bits & 0x00000020u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *saml_login_authentication_type_);
-    }
-
     // optional .enterprise_management.DeviceUnaffiliatedCrostiniAllowedProto device_unaffiliated_crostini_allowed = 72;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_unaffiliated_crostini_allowed_);
     }
 
     // optional .enterprise_management.DeviceWiFiFastTransitionEnabledProto device_wifi_fast_transition_enabled = 73;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_wifi_fast_transition_enabled_);
     }
 
-  }
-  if (cached_has_bits & 0x0000ff00u) {
     // optional .enterprise_management.DeviceDisplayResolutionProto device_display_resolution = 74;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_display_resolution_);
     }
 
+  }
+  if (cached_has_bits & 0x0000ff00u) {
     // optional .enterprise_management.PluginVmAllowedProto plugin_vm_allowed = 75;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *plugin_vm_allowed_);
     }
 
     // optional .enterprise_management.DeviceGpoCacheLifetimeProto device_gpo_cache_lifetime = 76;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_gpo_cache_lifetime_);
     }
 
     // optional .enterprise_management.DeviceAuthDataCacheLifetimeProto device_auth_data_cache_lifetime = 77;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_auth_data_cache_lifetime_);
     }
 
     // optional .enterprise_management.PluginVmLicenseKeyProto plugin_vm_license_key = 78;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *plugin_vm_license_key_);
     }
 
     // optional .enterprise_management.DeviceRebootOnUserSignoutProto device_reboot_on_user_signout = 79;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_reboot_on_user_signout_);
     }
 
     // optional .enterprise_management.DeviceWilcoDtcAllowedProto device_wilco_dtc_allowed = 80;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_wilco_dtc_allowed_);
     }
 
     // optional .enterprise_management.DeviceWilcoDtcConfigurationProto device_wilco_dtc_configuration = 81;
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_wilco_dtc_configuration_);
     }
 
-  }
-  if (cached_has_bits & 0x00ff0000u) {
     // optional .enterprise_management.DeviceWiFiAllowedProto device_wifi_allowed = 82;
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_wifi_allowed_);
     }
 
+  }
+  if (cached_has_bits & 0x00ff0000u) {
     // optional .enterprise_management.DevicePowerPeakShiftProto device_power_peak_shift = 83;
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_power_peak_shift_);
     }
 
     // optional .enterprise_management.DeviceBootOnAcProto device_boot_on_ac = 84;
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_boot_on_ac_);
     }
 
     // optional .enterprise_management.DeviceDockMacAddressSourceProto device_dock_mac_address_source = 85;
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_dock_mac_address_source_);
     }
 
     // optional .enterprise_management.DeviceAdvancedBatteryChargeModeProto device_advanced_battery_charge_mode = 86;
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_advanced_battery_charge_mode_);
     }
 
     // optional .enterprise_management.DeviceBatteryChargeModeProto device_battery_charge_mode = 87;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_battery_charge_mode_);
     }
 
     // optional .enterprise_management.DeviceUsbPowerShareProto device_usb_power_share = 88;
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_usb_power_share_);
     }
 
     // optional .enterprise_management.DeviceScheduledUpdateCheckProto device_scheduled_update_check = 89;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_scheduled_update_check_);
     }
 
-  }
-  if (cached_has_bits & 0xff000000u) {
     // optional .enterprise_management.DevicePowerwashAllowedProto device_powerwash_allowed = 91;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_powerwash_allowed_);
     }
 
+  }
+  if (cached_has_bits & 0xff000000u) {
     // optional .enterprise_management.DeviceLoginScreenWebUsbAllowDevicesForUrlsProto device_login_screen_webusb_allow_devices_for_urls = 92;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_login_screen_webusb_allow_devices_for_urls_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto device_login_screen_system_info_enforced = 93;
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_login_screen_system_info_enforced_);
     }
 
     // optional .enterprise_management.StringListPolicyProto device_web_based_attestation_allowed_urls = 94;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_web_based_attestation_allowed_urls_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto device_show_numeric_keyboard_for_password = 95;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_show_numeric_keyboard_for_password_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto login_screen_primary_mouse_button_switch = 96;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *login_screen_primary_mouse_button_switch_);
     }
 
     // optional .enterprise_management.StringPolicyProto device_minimum_version = 97;
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_minimum_version_);
     }
 
     // optional .enterprise_management.SystemProxySettingsProto system_proxy_settings = 98;
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *system_proxy_settings_);
     }
 
-  }
-  cached_has_bits = _has_bits_[3];
-  if (cached_has_bits & 0x000000ffu) {
     // optional .enterprise_management.IntegerPolicyProto device_chrome_variations_type = 99;
-    if (cached_has_bits & 0x00000001u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_chrome_variations_type_);
     }
 
+  }
+  cached_has_bits = _has_bits_[3];
+  if (cached_has_bits & 0x000000ffu) {
     // optional .enterprise_management.DeviceLoginScreenPrivacyScreenEnabledProto device_login_screen_privacy_screen_enabled = 100;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_login_screen_privacy_screen_enabled_);
     }
 
     // optional .enterprise_management.RequiredClientCertificateForDeviceProto required_client_certificate_for_device = 101;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *required_client_certificate_for_device_);
     }
 
     // optional .enterprise_management.DeviceCrostiniArcAdbSideloadingAllowedProto device_crostini_arc_adb_sideloading_allowed = 102;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_crostini_arc_adb_sideloading_allowed_);
     }
 
     // optional .enterprise_management.StringPolicyProto device_minimum_version_aue_message = 103;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_minimum_version_aue_message_);
     }
 
     // optional .enterprise_management.ManagedGuestSessionPrivacyWarningsProto managed_guest_session_privacy_warnings = 104;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *managed_guest_session_privacy_warnings_);
     }
 
     // optional .enterprise_management.DeviceExternalPrintServersProto external_print_servers = 105;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *external_print_servers_);
     }
 
     // optional .enterprise_management.DeviceExternalPrintServersAllowlistProto external_print_servers_allowlist = 106;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *external_print_servers_allowlist_);
     }
 
-  }
-  if (cached_has_bits & 0x0000ff00u) {
     // optional .enterprise_management.DevicePrintersAccessModeProto device_printers_access_mode = 107;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_printers_access_mode_);
     }
 
+  }
+  if (cached_has_bits & 0x0000ff00u) {
     // optional .enterprise_management.DevicePrintersBlocklistProto device_printers_blocklist = 108;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_printers_blocklist_);
     }
 
     // optional .enterprise_management.DevicePrintersAllowlistProto device_printers_allowlist = 109;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_printers_allowlist_);
     }
 
     // optional .enterprise_management.DevicePrintersProto device_printers = 110;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_printers_);
     }
 
     // optional .enterprise_management.DeviceShowLowDiskSpaceNotificationProto device_show_low_disk_space_notification = 111;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_show_low_disk_space_notification_);
     }
 
     // optional .enterprise_management.UserAllowlistProto user_allowlist = 112;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *user_allowlist_);
     }
 
     // optional .enterprise_management.UsbDetachableAllowlistProto usb_detachable_allowlist = 113;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *usb_detachable_allowlist_);
     }
 
     // optional .enterprise_management.DeviceFamilyLinkAccountsAllowedProto family_link_accounts_allowed = 114;
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *family_link_accounts_allowed_);
     }
 
-  }
-  if (cached_has_bits & 0x00ff0000u) {
     // optional .enterprise_management.DeviceArcDataSnapshotHoursProto arc_data_snapshot_hours = 115;
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *arc_data_snapshot_hours_);
     }
 
+  }
+  if (cached_has_bits & 0x00ff0000u) {
     // optional .enterprise_management.BooleanPolicyProto device_allow_mgs_to_store_display_properties = 116;
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_allow_mgs_to_store_display_properties_);
     }
 
     // optional .enterprise_management.DeviceSystemWideTracingEnabledProto device_system_wide_tracing_enabled = 117;
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_system_wide_tracing_enabled_);
     }
 
     // optional .enterprise_management.DevicePciPeripheralDataAccessEnabledProto device_pci_peripheral_data_access_enabled = 118;
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_pci_peripheral_data_access_enabled_);
     }
 
     // optional .enterprise_management.DeviceBorealisAllowedProto device_borealis_allowed = 119;
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_borealis_allowed_);
     }
 
     // optional .enterprise_management.DeviceAllowedBluetoothServicesProto device_allowed_bluetooth_services = 120;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_allowed_bluetooth_services_);
     }
 
     // optional .enterprise_management.DeviceDebugPacketCaptureAllowedProto device_debug_packet_capture_allowed = 121;
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_debug_packet_capture_allowed_);
     }
 
     // optional .enterprise_management.DeviceScheduledRebootProto device_scheduled_reboot = 122;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_scheduled_reboot_);
     }
 
-  }
-  if (cached_has_bits & 0xff000000u) {
     // optional .enterprise_management.DevicePciPeripheralDataAccessEnabledProtoV2 device_pci_peripheral_data_access_enabled_v2 = 123;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_pci_peripheral_data_access_enabled_v2_);
     }
 
+  }
+  if (cached_has_bits & 0xff000000u) {
     // optional .enterprise_management.DeviceRestrictedManagedGuestSessionEnabledProto device_restricted_managed_guest_session_enabled = 124;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_restricted_managed_guest_session_enabled_);
     }
 
     // optional .enterprise_management.HostnameUserConfigurableProto hostname_user_configurable = 125;
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *hostname_user_configurable_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto login_screen_prompt_on_multiple_matching_certificates = 126;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *login_screen_prompt_on_multiple_matching_certificates_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto kiosk_crx_manifest_update_url_ignored = 127;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *kiosk_crx_manifest_update_url_ignored_);
     }
 
     // optional .enterprise_management.DeviceI18nShortcutsEnabledProto device_i18n_shortcuts_enabled = 128;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_i18n_shortcuts_enabled_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto chromad_to_cloud_migration_enabled = 129;
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *chromad_to_cloud_migration_enabled_);
     }
 
     // optional .enterprise_management.RevenDeviceHWDataUsageEnabledProto hardware_data_usage_enabled = 130;
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *hardware_data_usage_enabled_);
     }
 
-  }
-  cached_has_bits = _has_bits_[4];
-  if (cached_has_bits & 0x0000000fu) {
     // optional .enterprise_management.DeviceLoginScreenWebUILazyLoadingProto login_web_ui_lazy_loading = 131;
-    if (cached_has_bits & 0x00000001u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *login_web_ui_lazy_loading_);
     }
 
+  }
+  cached_has_bits = _has_bits_[4];
+  if (cached_has_bits & 0x00000007u) {
     // optional .enterprise_management.DeviceKeylockerForStorageEncryptionEnabledProto keylocker_for_storage_encryption_enabled = 132;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *keylocker_for_storage_encryption_enabled_);
     }
 
     // optional .enterprise_management.BooleanPolicyProto device_run_automatic_cleanup_on_login = 133;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_run_automatic_cleanup_on_login_);
     }
 
     // optional .enterprise_management.EncryptedReportingPipelineConfigurationProto device_encrypted_reporting_pipeline_enabled = 134;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *device_encrypted_reporting_pipeline_enabled_);
@@ -38913,210 +38666,207 @@ void ChromeDeviceSettingsProto::MergeFrom(const ChromeDeviceSettingsProto& from)
       _internal_mutable_device_machine_password_change_rate()->::enterprise_management::DeviceMachinePasswordChangeRateProto::MergeFrom(from._internal_device_machine_password_change_rate());
     }
     if (cached_has_bits & 0x00000020u) {
-      _internal_mutable_saml_login_authentication_type()->::enterprise_management::SamlLoginAuthenticationTypeProto::MergeFrom(from._internal_saml_login_authentication_type());
-    }
-    if (cached_has_bits & 0x00000040u) {
       _internal_mutable_device_unaffiliated_crostini_allowed()->::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto::MergeFrom(from._internal_device_unaffiliated_crostini_allowed());
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       _internal_mutable_device_wifi_fast_transition_enabled()->::enterprise_management::DeviceWiFiFastTransitionEnabledProto::MergeFrom(from._internal_device_wifi_fast_transition_enabled());
+    }
+    if (cached_has_bits & 0x00000080u) {
+      _internal_mutable_device_display_resolution()->::enterprise_management::DeviceDisplayResolutionProto::MergeFrom(from._internal_device_display_resolution());
     }
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _internal_mutable_device_display_resolution()->::enterprise_management::DeviceDisplayResolutionProto::MergeFrom(from._internal_device_display_resolution());
-    }
-    if (cached_has_bits & 0x00000200u) {
       _internal_mutable_plugin_vm_allowed()->::enterprise_management::PluginVmAllowedProto::MergeFrom(from._internal_plugin_vm_allowed());
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       _internal_mutable_device_gpo_cache_lifetime()->::enterprise_management::DeviceGpoCacheLifetimeProto::MergeFrom(from._internal_device_gpo_cache_lifetime());
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       _internal_mutable_device_auth_data_cache_lifetime()->::enterprise_management::DeviceAuthDataCacheLifetimeProto::MergeFrom(from._internal_device_auth_data_cache_lifetime());
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       _internal_mutable_plugin_vm_license_key()->::enterprise_management::PluginVmLicenseKeyProto::MergeFrom(from._internal_plugin_vm_license_key());
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       _internal_mutable_device_reboot_on_user_signout()->::enterprise_management::DeviceRebootOnUserSignoutProto::MergeFrom(from._internal_device_reboot_on_user_signout());
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       _internal_mutable_device_wilco_dtc_allowed()->::enterprise_management::DeviceWilcoDtcAllowedProto::MergeFrom(from._internal_device_wilco_dtc_allowed());
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       _internal_mutable_device_wilco_dtc_configuration()->::enterprise_management::DeviceWilcoDtcConfigurationProto::MergeFrom(from._internal_device_wilco_dtc_configuration());
+    }
+    if (cached_has_bits & 0x00008000u) {
+      _internal_mutable_device_wifi_allowed()->::enterprise_management::DeviceWiFiAllowedProto::MergeFrom(from._internal_device_wifi_allowed());
     }
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      _internal_mutable_device_wifi_allowed()->::enterprise_management::DeviceWiFiAllowedProto::MergeFrom(from._internal_device_wifi_allowed());
-    }
-    if (cached_has_bits & 0x00020000u) {
       _internal_mutable_device_power_peak_shift()->::enterprise_management::DevicePowerPeakShiftProto::MergeFrom(from._internal_device_power_peak_shift());
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       _internal_mutable_device_boot_on_ac()->::enterprise_management::DeviceBootOnAcProto::MergeFrom(from._internal_device_boot_on_ac());
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       _internal_mutable_device_dock_mac_address_source()->::enterprise_management::DeviceDockMacAddressSourceProto::MergeFrom(from._internal_device_dock_mac_address_source());
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       _internal_mutable_device_advanced_battery_charge_mode()->::enterprise_management::DeviceAdvancedBatteryChargeModeProto::MergeFrom(from._internal_device_advanced_battery_charge_mode());
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       _internal_mutable_device_battery_charge_mode()->::enterprise_management::DeviceBatteryChargeModeProto::MergeFrom(from._internal_device_battery_charge_mode());
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       _internal_mutable_device_usb_power_share()->::enterprise_management::DeviceUsbPowerShareProto::MergeFrom(from._internal_device_usb_power_share());
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       _internal_mutable_device_scheduled_update_check()->::enterprise_management::DeviceScheduledUpdateCheckProto::MergeFrom(from._internal_device_scheduled_update_check());
+    }
+    if (cached_has_bits & 0x00800000u) {
+      _internal_mutable_device_powerwash_allowed()->::enterprise_management::DevicePowerwashAllowedProto::MergeFrom(from._internal_device_powerwash_allowed());
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      _internal_mutable_device_powerwash_allowed()->::enterprise_management::DevicePowerwashAllowedProto::MergeFrom(from._internal_device_powerwash_allowed());
-    }
-    if (cached_has_bits & 0x02000000u) {
       _internal_mutable_device_login_screen_webusb_allow_devices_for_urls()->::enterprise_management::DeviceLoginScreenWebUsbAllowDevicesForUrlsProto::MergeFrom(from._internal_device_login_screen_webusb_allow_devices_for_urls());
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       _internal_mutable_device_login_screen_system_info_enforced()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_device_login_screen_system_info_enforced());
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       _internal_mutable_device_web_based_attestation_allowed_urls()->::enterprise_management::StringListPolicyProto::MergeFrom(from._internal_device_web_based_attestation_allowed_urls());
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       _internal_mutable_device_show_numeric_keyboard_for_password()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_device_show_numeric_keyboard_for_password());
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       _internal_mutable_login_screen_primary_mouse_button_switch()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_login_screen_primary_mouse_button_switch());
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       _internal_mutable_device_minimum_version()->::enterprise_management::StringPolicyProto::MergeFrom(from._internal_device_minimum_version());
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       _internal_mutable_system_proxy_settings()->::enterprise_management::SystemProxySettingsProto::MergeFrom(from._internal_system_proxy_settings());
+    }
+    if (cached_has_bits & 0x80000000u) {
+      _internal_mutable_device_chrome_variations_type()->::enterprise_management::IntegerPolicyProto::MergeFrom(from._internal_device_chrome_variations_type());
     }
   }
   cached_has_bits = from._has_bits_[3];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_device_chrome_variations_type()->::enterprise_management::IntegerPolicyProto::MergeFrom(from._internal_device_chrome_variations_type());
-    }
-    if (cached_has_bits & 0x00000002u) {
       _internal_mutable_device_login_screen_privacy_screen_enabled()->::enterprise_management::DeviceLoginScreenPrivacyScreenEnabledProto::MergeFrom(from._internal_device_login_screen_privacy_screen_enabled());
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       _internal_mutable_required_client_certificate_for_device()->::enterprise_management::RequiredClientCertificateForDeviceProto::MergeFrom(from._internal_required_client_certificate_for_device());
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       _internal_mutable_device_crostini_arc_adb_sideloading_allowed()->::enterprise_management::DeviceCrostiniArcAdbSideloadingAllowedProto::MergeFrom(from._internal_device_crostini_arc_adb_sideloading_allowed());
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       _internal_mutable_device_minimum_version_aue_message()->::enterprise_management::StringPolicyProto::MergeFrom(from._internal_device_minimum_version_aue_message());
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       _internal_mutable_managed_guest_session_privacy_warnings()->::enterprise_management::ManagedGuestSessionPrivacyWarningsProto::MergeFrom(from._internal_managed_guest_session_privacy_warnings());
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       _internal_mutable_external_print_servers()->::enterprise_management::DeviceExternalPrintServersProto::MergeFrom(from._internal_external_print_servers());
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       _internal_mutable_external_print_servers_allowlist()->::enterprise_management::DeviceExternalPrintServersAllowlistProto::MergeFrom(from._internal_external_print_servers_allowlist());
+    }
+    if (cached_has_bits & 0x00000080u) {
+      _internal_mutable_device_printers_access_mode()->::enterprise_management::DevicePrintersAccessModeProto::MergeFrom(from._internal_device_printers_access_mode());
     }
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _internal_mutable_device_printers_access_mode()->::enterprise_management::DevicePrintersAccessModeProto::MergeFrom(from._internal_device_printers_access_mode());
-    }
-    if (cached_has_bits & 0x00000200u) {
       _internal_mutable_device_printers_blocklist()->::enterprise_management::DevicePrintersBlocklistProto::MergeFrom(from._internal_device_printers_blocklist());
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       _internal_mutable_device_printers_allowlist()->::enterprise_management::DevicePrintersAllowlistProto::MergeFrom(from._internal_device_printers_allowlist());
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       _internal_mutable_device_printers()->::enterprise_management::DevicePrintersProto::MergeFrom(from._internal_device_printers());
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       _internal_mutable_device_show_low_disk_space_notification()->::enterprise_management::DeviceShowLowDiskSpaceNotificationProto::MergeFrom(from._internal_device_show_low_disk_space_notification());
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       _internal_mutable_user_allowlist()->::enterprise_management::UserAllowlistProto::MergeFrom(from._internal_user_allowlist());
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       _internal_mutable_usb_detachable_allowlist()->::enterprise_management::UsbDetachableAllowlistProto::MergeFrom(from._internal_usb_detachable_allowlist());
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       _internal_mutable_family_link_accounts_allowed()->::enterprise_management::DeviceFamilyLinkAccountsAllowedProto::MergeFrom(from._internal_family_link_accounts_allowed());
+    }
+    if (cached_has_bits & 0x00008000u) {
+      _internal_mutable_arc_data_snapshot_hours()->::enterprise_management::DeviceArcDataSnapshotHoursProto::MergeFrom(from._internal_arc_data_snapshot_hours());
     }
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      _internal_mutable_arc_data_snapshot_hours()->::enterprise_management::DeviceArcDataSnapshotHoursProto::MergeFrom(from._internal_arc_data_snapshot_hours());
-    }
-    if (cached_has_bits & 0x00020000u) {
       _internal_mutable_device_allow_mgs_to_store_display_properties()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_device_allow_mgs_to_store_display_properties());
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       _internal_mutable_device_system_wide_tracing_enabled()->::enterprise_management::DeviceSystemWideTracingEnabledProto::MergeFrom(from._internal_device_system_wide_tracing_enabled());
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       _internal_mutable_device_pci_peripheral_data_access_enabled()->::enterprise_management::DevicePciPeripheralDataAccessEnabledProto::MergeFrom(from._internal_device_pci_peripheral_data_access_enabled());
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       _internal_mutable_device_borealis_allowed()->::enterprise_management::DeviceBorealisAllowedProto::MergeFrom(from._internal_device_borealis_allowed());
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       _internal_mutable_device_allowed_bluetooth_services()->::enterprise_management::DeviceAllowedBluetoothServicesProto::MergeFrom(from._internal_device_allowed_bluetooth_services());
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       _internal_mutable_device_debug_packet_capture_allowed()->::enterprise_management::DeviceDebugPacketCaptureAllowedProto::MergeFrom(from._internal_device_debug_packet_capture_allowed());
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       _internal_mutable_device_scheduled_reboot()->::enterprise_management::DeviceScheduledRebootProto::MergeFrom(from._internal_device_scheduled_reboot());
+    }
+    if (cached_has_bits & 0x00800000u) {
+      _internal_mutable_device_pci_peripheral_data_access_enabled_v2()->::enterprise_management::DevicePciPeripheralDataAccessEnabledProtoV2::MergeFrom(from._internal_device_pci_peripheral_data_access_enabled_v2());
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      _internal_mutable_device_pci_peripheral_data_access_enabled_v2()->::enterprise_management::DevicePciPeripheralDataAccessEnabledProtoV2::MergeFrom(from._internal_device_pci_peripheral_data_access_enabled_v2());
-    }
-    if (cached_has_bits & 0x02000000u) {
       _internal_mutable_device_restricted_managed_guest_session_enabled()->::enterprise_management::DeviceRestrictedManagedGuestSessionEnabledProto::MergeFrom(from._internal_device_restricted_managed_guest_session_enabled());
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x02000000u) {
       _internal_mutable_hostname_user_configurable()->::enterprise_management::HostnameUserConfigurableProto::MergeFrom(from._internal_hostname_user_configurable());
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x04000000u) {
       _internal_mutable_login_screen_prompt_on_multiple_matching_certificates()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_login_screen_prompt_on_multiple_matching_certificates());
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x08000000u) {
       _internal_mutable_kiosk_crx_manifest_update_url_ignored()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_kiosk_crx_manifest_update_url_ignored());
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x10000000u) {
       _internal_mutable_device_i18n_shortcuts_enabled()->::enterprise_management::DeviceI18nShortcutsEnabledProto::MergeFrom(from._internal_device_i18n_shortcuts_enabled());
     }
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x20000000u) {
       _internal_mutable_chromad_to_cloud_migration_enabled()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_chromad_to_cloud_migration_enabled());
     }
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x40000000u) {
       _internal_mutable_hardware_data_usage_enabled()->::enterprise_management::RevenDeviceHWDataUsageEnabledProto::MergeFrom(from._internal_hardware_data_usage_enabled());
+    }
+    if (cached_has_bits & 0x80000000u) {
+      _internal_mutable_login_web_ui_lazy_loading()->::enterprise_management::DeviceLoginScreenWebUILazyLoadingProto::MergeFrom(from._internal_login_web_ui_lazy_loading());
     }
   }
   cached_has_bits = from._has_bits_[4];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_login_web_ui_lazy_loading()->::enterprise_management::DeviceLoginScreenWebUILazyLoadingProto::MergeFrom(from._internal_login_web_ui_lazy_loading());
-    }
-    if (cached_has_bits & 0x00000002u) {
       _internal_mutable_keylocker_for_storage_encryption_enabled()->::enterprise_management::DeviceKeylockerForStorageEncryptionEnabledProto::MergeFrom(from._internal_keylocker_for_storage_encryption_enabled());
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       _internal_mutable_device_run_automatic_cleanup_on_login()->::enterprise_management::BooleanPolicyProto::MergeFrom(from._internal_device_run_automatic_cleanup_on_login());
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       _internal_mutable_device_encrypted_reporting_pipeline_enabled()->::enterprise_management::EncryptedReportingPipelineConfigurationProto::MergeFrom(from._internal_device_encrypted_reporting_pipeline_enabled());
     }
   }
@@ -39442,9 +39192,6 @@ template<> PROTOBUF_NOINLINE ::enterprise_management::DeviceGpoCacheLifetimeProt
 }
 template<> PROTOBUF_NOINLINE ::enterprise_management::DeviceAuthDataCacheLifetimeProto* Arena::CreateMaybeMessage< ::enterprise_management::DeviceAuthDataCacheLifetimeProto >(Arena* arena) {
   return Arena::CreateMessageInternal< ::enterprise_management::DeviceAuthDataCacheLifetimeProto >(arena);
-}
-template<> PROTOBUF_NOINLINE ::enterprise_management::SamlLoginAuthenticationTypeProto* Arena::CreateMaybeMessage< ::enterprise_management::SamlLoginAuthenticationTypeProto >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::enterprise_management::SamlLoginAuthenticationTypeProto >(arena);
 }
 template<> PROTOBUF_NOINLINE ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto* Arena::CreateMaybeMessage< ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto >(Arena* arena) {
   return Arena::CreateMessageInternal< ::enterprise_management::DeviceUnaffiliatedCrostiniAllowedProto >(arena);

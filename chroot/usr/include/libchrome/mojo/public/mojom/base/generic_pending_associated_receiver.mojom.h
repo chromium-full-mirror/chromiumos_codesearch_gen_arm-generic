@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/struct_traits.h"
 #include "mojo/public/cpp/bindings/union_traits.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "mojo/public/mojom/base/generic_pending_associated_receiver.mojom-shared.h"
 #include "mojo/public/mojom/base/generic_pending_associated_receiver.mojom-forward.h"

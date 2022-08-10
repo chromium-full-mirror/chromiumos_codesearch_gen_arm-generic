@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "diagnostics/mojom/external/network_diagnostics.mojom-shared-internal.h"
 #include "diagnostics/mojom/external/time.mojom-shared.h"
@@ -1779,7 +1779,7 @@ inline void RoutineResultValueDataView::GetHttpsLatencyResultValueDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineType> {
@@ -1788,7 +1788,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineType> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineVerdict> {
@@ -1797,7 +1797,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::RoutineVerdict
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::LanConnectivityProblem> {
@@ -1806,7 +1806,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::LanConnectivit
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::SignalStrengthProblem> {
@@ -1815,7 +1815,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::SignalStrength
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::GatewayCanBePingedProblem> {
@@ -1824,7 +1824,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::GatewayCanBePi
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HasSecureWiFiConnectionProblem> {
@@ -1833,7 +1833,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HasSecureWiFiC
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolverPresentProblem> {
@@ -1842,7 +1842,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolverPre
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsLatencyProblem> {
@@ -1851,7 +1851,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsLatencyProb
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolutionProblem> {
@@ -1860,7 +1860,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::DnsResolutionP
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::CaptivePortalProblem> {
@@ -1869,7 +1869,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::CaptivePortalP
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpFirewallProblem> {
@@ -1878,7 +1878,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpFirewallPr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsFirewallProblem> {
@@ -1887,7 +1887,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsFirewallP
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsLatencyProblem> {
@@ -1896,7 +1896,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::HttpsLatencyPr
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::VideoConferencingProblem> {
@@ -1905,7 +1905,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::VideoConferenc
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcHttpProblem> {
@@ -1914,7 +1914,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcHttpProblem
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcDnsResolutionProblem> {
@@ -1923,7 +1923,7 @@ struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcDnsResoluti
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::network_diagnostics::mojom::ArcPingProblem> {

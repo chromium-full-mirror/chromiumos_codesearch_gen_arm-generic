@@ -18,7 +18,7 @@
 #include "base/unguessable_token.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 namespace protos {
 namespace pbzero {
 class MemoryTrackerSnapshot_ProcessSnapshot_MemoryNode;

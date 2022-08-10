@@ -19,7 +19,7 @@
 #include "base/trace_event/base_tracing_forward.h"
 #include "third_party/abseil-cpp/absl/types/optional.h"
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 class EventContext;
 }
 

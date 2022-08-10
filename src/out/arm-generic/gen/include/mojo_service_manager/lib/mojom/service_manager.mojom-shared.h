@@ -21,7 +21,7 @@
 #include "mojo/public/cpp/bindings/map_data_view.h"
 #include "mojo/public/cpp/bindings/string_data_view.h"
 
-#include "base/trace_event/base_tracing.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value_forward.h"
 
 #include "mojo_service_manager/lib/mojom/service_manager.mojom-shared-internal.h"
 #include "mojo_service_manager/lib/mojom/time.mojom-shared.h"
@@ -970,7 +970,7 @@ inline void ServiceStateDataView::GetUnregisteredStateDataView(
 // Declare TraceFormatTraits for enums, which should be defined in ::perfetto
 // namespace.
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ErrorCode> {
@@ -979,7 +979,7 @@ struct  TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ErrorCode> {
 
 } // namespace perfetto
 
-namespace perfetto_libchrome{
+namespace perfetto_libchrome {
 
 template <>
 struct  TraceFormatTraits<::chromeos::mojo_service_manager::mojom::ServiceEvent_Type> {

@@ -18,7 +18,8 @@
 #include "base/hash/md5_constexpr.h"
 #include "base/run_loop.h"
 #include "base/strings/string_number_conversions.h"
-#include "base/trace_event/base_tracing.h"
+#include "base/trace_event/trace_event.h"
+#include "base/trace_event/typed_macros.h"
 #include "mojo/public/cpp/bindings/lib/generated_code_util.h"
 #include "mojo/public/cpp/bindings/lib/message_internal.h"
 #include "mojo/public/cpp/bindings/lib/send_message_helper.h"
@@ -29,6 +30,7 @@
 #include "mojo/public/cpp/bindings/lib/validation_errors.h"
 #include "mojo/public/cpp/bindings/mojo_buildflags.h"
 #include "mojo/public/interfaces/bindings/interface_control_messages.mojom.h"
+#include "third_party/perfetto/include/perfetto/tracing/traced_value.h"
 
 #include "camera/mojo/camera3.mojom-params-data.h"
 #include "camera/mojo/camera3.mojom-shared-message-ids.h"
@@ -60,7 +62,7 @@ size_t CropRotateScaleInfo::Hash(size_t seed) const {
 
 void CropRotateScaleInfo::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "crop_rotate_scale_degrees"), this->crop_rotate_scale_degrees,
@@ -163,7 +165,7 @@ Camera3Stream::~Camera3Stream() = default;
 
 void Camera3Stream::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "id"), this->id,
@@ -294,7 +296,7 @@ Camera3StreamConfiguration::~Camera3StreamConfiguration() = default;
 
 void Camera3StreamConfiguration::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "streams"), this->streams,
@@ -383,7 +385,7 @@ CameraBufferHandle::~CameraBufferHandle() = default;
 
 void CameraBufferHandle::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "buffer_id"), this->buffer_id,
@@ -511,7 +513,7 @@ Camera3StreamBuffer::~Camera3StreamBuffer() = default;
 
 void Camera3StreamBuffer::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "stream_id"), this->stream_id,
@@ -596,7 +598,7 @@ size_t Camera3ErrorMsg::Hash(size_t seed) const {
 
 void Camera3ErrorMsg::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "frame_number"), this->frame_number,
@@ -650,7 +652,7 @@ size_t Camera3ShutterMsg::Hash(size_t seed) const {
 
 void Camera3ShutterMsg::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "frame_number"), this->frame_number,
@@ -690,7 +692,7 @@ Camera3NotifyMsg::~Camera3NotifyMsg() = default;
 
 void Camera3NotifyMsg::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "type"), this->type,
@@ -730,7 +732,7 @@ Camera3PhyscamMetadata::~Camera3PhyscamMetadata() = default;
 
 void Camera3PhyscamMetadata::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "id"), this->id,
@@ -790,7 +792,7 @@ Camera3CaptureRequest::~Camera3CaptureRequest() = default;
 
 void Camera3CaptureRequest::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "frame_number"), this->frame_number,
@@ -882,7 +884,7 @@ Camera3CaptureResult::~Camera3CaptureResult() = default;
 
 void Camera3CaptureResult::WriteIntoTrace(
     perfetto_libchrome::TracedValue traced_context) const {
-  auto dict = std::move(traced_context).WriteDictionary();
+  [[maybe_unused]] auto dict = std::move(traced_context).WriteDictionary();
   perfetto_libchrome::WriteIntoTracedValueWithFallback(
     dict.AddItem(
       "frame_number"), this->frame_number,

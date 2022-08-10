@@ -10,6 +10,7 @@
     206,
     341,
     412,
+    438,
     476,
     544,
     546,
@@ -50,6 +51,7 @@
     "DeviceAutoUpdateDisabled": "auto_update_settings.update_disabled",
     "DeviceAutoUpdateP2PEnabled": "auto_update_settings.p2p_enabled",
     "DeviceAutoUpdateTimeRestrictions": "auto_update_settings.disallowed_time_intervals",
+    "DeviceAutofillSAMLUsername": "saml_settings.url_parameter_to_autofill_saml_username",
     "DeviceBatteryChargeCustomStartCharging": "device_battery_charge_mode.custom_charge_start",
     "DeviceBatteryChargeCustomStopCharging": "device_battery_charge_mode.custom_charge_stop",
     "DeviceBatteryChargeMode": "device_battery_charge_mode.battery_charge_mode",
@@ -143,7 +145,6 @@
     "DeviceRollbackAllowedMilestones": "auto_update_settings.rollback_allowed_milestones",
     "DeviceRollbackToTargetVersion": "auto_update_settings.rollback_to_target_version",
     "DeviceRunAutomaticCleanupOnLogin": "device_run_automatic_cleanup_on_login.value",
-    "DeviceSamlLoginAuthenticationType": "saml_login_authentication_type.saml_login_authentication_type",
     "DeviceScheduledReboot": "device_scheduled_reboot.device_scheduled_reboot_settings",
     "DeviceScheduledUpdateCheck": "device_scheduled_update_check.device_scheduled_update_check_settings",
     "DeviceSecondFactorAuthentication": "device_second_factor_authentication.mode",
@@ -229,7 +230,7 @@
     "VirtualMachinesAllowed": "virtual_machines_allowed.virtual_machines_allowed"
   },
   "highest_atomic_group_id_currently_used": 43,
-  "highest_id_currently_used": 993,
+  "highest_id_currently_used": 999,
   "legacy_device_policy_proto_map": [
     [
       "DeviceStartUpUrls",
@@ -908,7 +909,6 @@
       "id": 30,
       "name": "SAML",
       "policies": [
-        "DeviceSamlLoginAuthenticationType",
         "DeviceTransferSAMLCookies"
       ]
     },
@@ -1182,7 +1182,8 @@
         "KerberosEnabled",
         "KerberosRememberPasswordEnabled",
         "KerberosAddAccountsAllowed",
-        "KerberosAccounts"
+        "KerberosAccounts",
+        "KerberosDomainAutocomplete"
       ],
       "type": "group"
     },
@@ -1618,7 +1619,6 @@
         "DeviceWallpaperImage",
         "DeviceEphemeralUsersEnabled",
         "LoginAuthenticationBehavior",
-        "DeviceSamlLoginAuthenticationType",
         "DeviceTransferSAMLCookies",
         "LoginVideoCaptureAllowedUrls",
         "DeviceStartUpFlags",
@@ -1633,7 +1633,8 @@
         "DeviceShowNumericKeyboardForPassword",
         "DeviceFamilyLinkAccountsAllowed",
         "DeviceLoginScreenPromptOnMultipleMatchingCertificates",
-        "DeviceRunAutomaticCleanupOnLogin"
+        "DeviceRunAutomaticCleanupOnLogin",
+        "DeviceAutofillSAMLUsername"
       ],
       "type": "group"
     },
@@ -1750,7 +1751,8 @@
         "DeviceLocalAccountAutoLoginDelay",
         "DeviceLocalAccountAutoLoginBailoutEnabled",
         "DeviceLocalAccountPromptForNetworkWhenOffline",
-        "AllowKioskAppControlChromeVersion"
+        "AllowKioskAppControlChromeVersion",
+        "NewWindowsInKioskAllowed"
       ],
       "type": "group"
     },
@@ -2014,8 +2016,8 @@
       "type": "group"
     },
     {
-      "caption": "Projector",
-      "desc": "Controls policies for Projector.",
+      "caption": "Screencast",
+      "desc": "Controls policies for Screencast.",
       "name": "Projector",
       "policies": [
         "ProjectorEnabled",
@@ -2046,6 +2048,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 1,
       "label": "Home page URL",
       "name": "HomepageLocation",
@@ -2073,6 +2078,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 2,
       "items": [
         {
@@ -2107,6 +2115,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 360,
       "label": "New Tab page URL",
       "name": "NewTabPageLocation",
@@ -2195,6 +2206,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 5,
       "items": [
         {
@@ -2231,6 +2245,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 6,
       "items": [
         {
@@ -2365,6 +2382,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 273,
       "items": [
         {
@@ -2413,6 +2433,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 261,
       "items": [
         {
@@ -2536,6 +2559,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 643,
       "items": [
         {
@@ -2571,6 +2597,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 654,
       "items": [
         {
@@ -2606,6 +2635,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 792,
       "items": [
         {
@@ -2694,6 +2726,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 9,
       "items": [
         {
@@ -2765,6 +2800,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 93,
       "items": [
         {
@@ -2819,6 +2857,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 11,
       "items": [
         {
@@ -2855,6 +2896,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 187,
       "items": [
         {
@@ -2893,6 +2937,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 926,
       "items": [
         {
@@ -2933,6 +2980,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 309,
       "items": [
         {
@@ -3059,6 +3109,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 369,
       "name": "RemoteAccessHostClientDomainList",
       "owners": [
@@ -3088,6 +3141,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 95,
       "items": [
         {
@@ -3153,6 +3209,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 368,
       "name": "RemoteAccessHostDomainList",
       "owners": [
@@ -3235,6 +3294,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 157,
       "items": [
         {
@@ -3272,6 +3334,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 234,
       "items": [
         {
@@ -3307,6 +3372,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 257,
       "items": [
         {
@@ -3342,6 +3410,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 263,
       "items": [
         {
@@ -3378,6 +3449,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 264,
       "name": "RemoteAccessHostUdpPortRange",
       "owners": [
@@ -3440,6 +3514,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 286,
       "name": "RemoteAccessHostTokenUrl",
       "owners": [
@@ -3467,6 +3544,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 287,
       "name": "RemoteAccessHostTokenValidationUrl",
       "owners": [
@@ -3495,6 +3575,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 288,
       "name": "RemoteAccessHostTokenValidationCertificateIssuer",
       "owners": [
@@ -3584,6 +3667,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 534,
       "items": [
         {
@@ -3620,6 +3706,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 803,
       "items": [
         {
@@ -3656,6 +3745,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 812,
       "items": [
         {
@@ -3692,6 +3784,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 814,
       "name": "RemoteAccessHostMaximumSessionDurationMinutes",
       "owners": [
@@ -3720,6 +3815,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 922,
       "name": "RemoteAccessHostClipboardSizeBytes",
       "owners": [
@@ -3749,6 +3847,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 923,
       "items": [
         {
@@ -3819,6 +3920,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 12,
       "items": [
         {
@@ -3856,6 +3960,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 13,
       "items": [
         {
@@ -4028,6 +4135,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 621,
       "items": [
         {
@@ -4201,6 +4311,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 622,
       "items": [
         {
@@ -4248,6 +4361,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 479,
       "name": "PrintingPaperSizeDefault",
       "owners": [
@@ -4649,6 +4765,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 282,
       "items": [
         {
@@ -4728,6 +4847,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 348,
       "items": [
         {
@@ -4819,6 +4941,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 684,
       "items": [
         {
@@ -4871,7 +4996,8 @@
         "per_profile": false
       },
       "future_on": [
-        "android"
+        "android",
+        "fuchsia"
       ],
       "id": 15,
       "items": [
@@ -4911,6 +5037,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 16,
       "items": [
         {
@@ -4973,6 +5102,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 580,
       "items": [
         {
@@ -5012,6 +5144,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 946,
       "items": [
         {
@@ -5084,6 +5219,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 459,
       "items": [
         {
@@ -5121,6 +5259,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 392,
       "items": [
         {
@@ -5259,6 +5400,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 347,
       "items": [
         {
@@ -5330,7 +5474,8 @@
         "per_profile": true
       },
       "future_on": [
-        "android"
+        "android",
+        "fuchsia"
       ],
       "id": 20,
       "items": [
@@ -5372,6 +5517,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 649,
       "name": "SyncTypesListDisabled",
       "owners": [
@@ -5464,7 +5612,7 @@
     {
       "caption": "Allow sign in to <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>",
       "deprecated": true,
-      "desc": "This policy is deprecated, consider using BrowserSignin instead.\n\n      Allows the user to sign in to <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>.\n\n      If you set this policy, you can configure whether a user is allowed to sign in to <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>. Setting this policy to 'False' will prevent apps and extensions that use the chrome.identity API from functioning, so you may want to use <ph name=\"SYNC_DISABLED_POLICY_NAME\">SyncDisabled</ph> instead.",
+      "desc": "This policy is deprecated, consider using <ph name=\"BROWSER_SIGNIN_POLICY_NAME\">BrowserSignin</ph> instead.\n\n      Allows the user to sign in to <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>.\n\n      Setting this policy to Enabled will allow the user to sign in to <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>.\n      Setting this policy to Disabled will prevent sign in. It also blocks apps and extensions that use the chrome.identity API from functioning. To avoid that, use <ph name=\"SYNC_DISABLED_POLICY_NAME\">SyncDisabled</ph> instead.\n      ",
       "example_value": true,
       "features": {
         "dynamic_refresh": true,
@@ -5556,6 +5704,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 88,
       "label": "Set disk cache directory",
       "name": "DiskCacheDir",
@@ -5580,6 +5731,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 110,
       "label": "Set disk cache size",
       "name": "DiskCacheSize",
@@ -5630,6 +5784,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 970,
       "items": [
         {
@@ -5666,6 +5823,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 371,
       "items": [
         {
@@ -5729,6 +5889,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 64,
       "label": "Set download directory",
       "name": "DownloadDirectory",
@@ -5759,6 +5922,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 700,
       "name": "AutoOpenFileTypes",
       "owners": [
@@ -5793,6 +5959,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 707,
       "name": "AutoOpenAllowedForURLs",
       "owners": [
@@ -5841,6 +6010,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 722,
       "name": "AutoLaunchProtocolsFromOrigins",
       "owners": [
@@ -5983,6 +6155,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 21,
       "items": [
         {
@@ -6044,6 +6219,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 22,
       "items": [
         {
@@ -6185,6 +6363,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 116,
       "name": "ProxySettings",
       "owners": [
@@ -6239,6 +6420,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 26,
       "name": "AuthSchemes",
       "owners": [
@@ -6266,6 +6450,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 950,
       "name": "AllHttpAuthSchemesAllowedForOrigins",
       "owners": [
@@ -6294,6 +6481,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 27,
       "items": [
         {
@@ -6329,6 +6519,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 28,
       "items": [
         {
@@ -6364,6 +6557,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 806,
       "items": [
         {
@@ -6425,6 +6621,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 747,
       "name": "AuthServerAllowlist",
       "owners": [
@@ -6477,6 +6676,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 746,
       "name": "AuthNegotiateDelegateAllowlist",
       "owners": [
@@ -6540,6 +6742,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 816,
       "items": [
         {
@@ -6623,6 +6828,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 89,
       "items": [
         {
@@ -6734,6 +6942,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 740,
       "label": "Extension IDs the user should be prevented from installing (or * for all)",
       "name": "ExtensionInstallBlocklist",
@@ -6765,6 +6976,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 738,
       "label": "Extension IDs to exempt from the blocklist",
       "name": "ExtensionInstallAllowlist",
@@ -6820,7 +7034,7 @@
     {
       "arc_support": "Android apps can be force-installed from the Google Admin console using Google Play. They do not use this policy.",
       "caption": "Configure the list of force-installed apps and extensions",
-      "desc": "Setting the policy specifies a list of apps and extensions that install silently, without user interaction, and which users can't uninstall or turn off. Permissions are granted implicitly, including for the enterprise.deviceAttributes and enterprise.platformKeys extension APIs. (These 2 APIs aren't available to apps and extensions that aren't force-installed.)\n\n      Leaving the policy unset means no apps or extensions are autoinstalled, and users can uninstall any app or extension in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>.\n\n      This policy superseeds <ph name=\"EXTENSION_INSTALL_BLOCKLIST_POLICY_NAME\">ExtensionInstallBlocklist</ph> policy. If a previously force-installed app or extension is removed from this list, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> automatically uninstalls it.\n\n      On <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph> instances, apps and extensions from outside the Chrome Web Store can only be forced installed if the instance is joined to a <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> domain, running on Windows 10 Pro, or enrolled in Chrome Browser Cloud Management.\n\n      On <ph name=\"MAC_OS_NAME\">macOS</ph> instances, apps and extensions from outside the Chrome Web Store can only be force installed if the instance is managed via MDM, or joined to a domain via MCX.\n\n      The source code of any extension may be altered by users through developer tools, potentially rendering the extension dysfunctional. If this is a concern, set the <ph name=\"DEVELOPER_TOOLS_DISABLED_POLICY_NAME\">DeveloperToolsDisabled</ph> policy.\n\n      Each list item of the policy is a string that contains an extension ID and, optionally, an \"update\" URL separated by a semicolon (;). The extension ID is the 32-letter string found, for example, on chrome://extensions when in Developer mode. If specified, the \"update\" URL should point to an Update Manifest XML document ( https://developer.chrome.com/extensions/autoupdate ). By default, the Chrome Web Store's update URL is used. The \"update\" URL set in this policy is only used for the initial installation; subsequent updates of the extension use the update URL in the extension's manifest.\n\n       Note: This policy doesn't apply to Incognito mode. Read about hosting extensions ( https://developer.chrome.com/extensions/hosting ).",
+      "desc": "Setting the policy specifies a list of apps and extensions that install silently, without user interaction, and which users can't uninstall or turn off. Permissions are granted implicitly, including for the enterprise.deviceAttributes and enterprise.platformKeys extension APIs. (These 2 APIs aren't available to apps and extensions that aren't force-installed.)\n\n      Leaving the policy unset means no apps or extensions are autoinstalled, and users can uninstall any app or extension in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>.\n\n      This policy supersedes <ph name=\"EXTENSION_INSTALL_BLOCKLIST_POLICY_NAME\">ExtensionInstallBlocklist</ph> policy. If a previously force-installed app or extension is removed from this list, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> automatically uninstalls it.\n\n      On <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph> instances, apps and extensions from outside the Chrome Web Store can only be forced installed if the instance is joined to a <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> domain, running on Windows 10 Pro, or enrolled in Chrome Browser Cloud Management.\n\n      On <ph name=\"MAC_OS_NAME\">macOS</ph> instances, apps and extensions from outside the Chrome Web Store can only be force installed if the instance is managed via MDM, or joined to a domain via MCX.\n\n      The source code of any extension may be altered by users through developer tools, potentially rendering the extension dysfunctional. If this is a concern, set the <ph name=\"DEVELOPER_TOOLS_DISABLED_POLICY_NAME\">DeveloperToolsDisabled</ph> policy.\n\n      Each list item of the policy is a string that contains an extension ID and, optionally, an \"update\" URL separated by a semicolon (;). The extension ID is the 32-letter string found, for example, on chrome://extensions when in Developer mode. If specified, the \"update\" URL should point to an Update Manifest XML document ( https://developer.chrome.com/extensions/autoupdate ). By default, the Chrome Web Store's update URL is used. The \"update\" URL set in this policy is only used for the initial installation; subsequent updates of the extension use the update URL in the extension's manifest.\n\n       Note: This policy doesn't apply to Incognito mode. Read about hosting extensions ( https://developer.chrome.com/extensions/hosting ).",
       "example_value": [
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa;https://clients2.google.com/service/update2/crx",
         "abcdefghijklmnopabcdefghijklmnop"
@@ -6829,6 +7043,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 34,
       "label": "Extension/App IDs and update URLs to be silently installed",
       "name": "ExtensionInstallForcelist",
@@ -6861,6 +7078,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 148,
       "label": "URL patterns to allow extension, app, and user script installs from",
       "name": "ExtensionInstallSources",
@@ -6894,6 +7114,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 516,
       "items": [
         {
@@ -6932,6 +7155,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 168,
       "items": [
         {
@@ -7069,6 +7295,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 278,
       "name": "ExtensionSettings",
       "owners": [
@@ -7199,12 +7428,15 @@
     },
     {
       "caption": "Blocks external extensions from being installed",
-      "desc": "Controls external extensions installation.\n\n      Enabling this setting blocks external extensions from being installed.\n\n      Disabling this setting or leaving it unset allows external extensions to be installed.\n\n      External extensions and their installation are documented at https://developer.chrome.com/apps/external_extensions.\n      ",
+      "desc": "Controls external extensions installation.\n\n      Setting this policy to Enabled blocks external extensions from being installed.\n\n      Setting this policy to Disabled or leaving it unset allows external extensions to be installed.\n\n      External extensions and their installation are documented at https://developer.chrome.com/apps/external_extensions.\n      ",
       "example_value": true,
       "features": {
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 637,
       "items": [
         {
@@ -7239,6 +7471,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 35,
       "items": [
         {
@@ -7310,6 +7545,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 443,
       "items": [
         {
@@ -7357,6 +7595,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 864,
       "items": [
         {
@@ -7417,7 +7658,8 @@
         "type": "integer"
       },
       "supported_on": [
-        "chrome.*:91-"
+        "chrome.*:91-",
+        "fuchsia:106-"
       ],
       "tags": [],
       "type": "int-enum"
@@ -7431,6 +7673,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 37,
       "items": [
         {
@@ -7450,6 +7695,9 @@
         },
         {
           "caption": "Open a list of URLs and restore the last session",
+          "future_on": [
+            "fuchsia"
+          ],
           "name": "RestoreOnStartupIsLastSessionAndURLs",
           "supported_on": [
             "chrome.*:98-",
@@ -7490,6 +7738,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 38,
       "name": "RestoreOnStartupURLs",
       "owners": [
@@ -7519,6 +7770,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 39,
       "items": [
         {
@@ -7560,6 +7814,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 40,
       "items": [
         {
@@ -7601,6 +7858,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 715,
       "items": [
         {
@@ -7636,6 +7896,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 41,
       "name": "DefaultSearchProviderName",
       "owners": [
@@ -7665,6 +7928,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 42,
       "name": "DefaultSearchProviderKeyword",
       "owners": [
@@ -7692,6 +7958,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 43,
       "name": "DefaultSearchProviderSearchURL",
       "owners": [
@@ -7721,6 +7990,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 44,
       "name": "DefaultSearchProviderSuggestURL",
       "owners": [
@@ -7775,6 +8047,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 46,
       "name": "DefaultSearchProviderIconURL",
       "owners": [
@@ -7807,6 +8082,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 47,
       "name": "DefaultSearchProviderEncodings",
       "owners": [
@@ -7840,6 +8118,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 161,
       "name": "DefaultSearchProviderAlternateURLs",
       "owners": [
@@ -7897,6 +8178,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 229,
       "name": "DefaultSearchProviderImageURL",
       "owners": [
@@ -7924,6 +8208,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 237,
       "name": "DefaultSearchProviderNewTabURL",
       "owners": [
@@ -7951,6 +8238,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 230,
       "name": "DefaultSearchProviderSearchURLPostParams",
       "owners": [
@@ -7978,6 +8268,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 231,
       "name": "DefaultSearchProviderSuggestURLPostParams",
       "owners": [
@@ -8032,6 +8325,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 233,
       "name": "DefaultSearchProviderImageURLPostParams",
       "owners": [
@@ -8058,6 +8354,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 48,
       "items": [
         {
@@ -8105,6 +8404,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 49,
       "items": [
         {
@@ -8145,6 +8447,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 50,
       "items": [
         {
@@ -8233,6 +8538,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 52,
       "items": [
         {
@@ -8275,6 +8583,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 53,
       "items": [
         {
@@ -8322,6 +8633,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 54,
       "items": [
         {
@@ -8415,6 +8729,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 320,
       "items": [
         {
@@ -8505,6 +8822,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 754,
       "items": [
         {
@@ -8547,6 +8867,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 434,
       "items": [
         {
@@ -8602,6 +8925,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 486,
       "name": "WebUsbAllowDevicesForUrls",
       "owners": [
@@ -8732,6 +9058,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 439,
       "name": "WebUsbAskForUrls",
       "owners": [
@@ -8765,6 +9094,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 440,
       "name": "WebUsbBlockedForUrls",
       "owners": [
@@ -8794,6 +9126,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 751,
       "items": [
         {
@@ -8838,6 +9173,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 752,
       "name": "SerialAskForUrls",
       "owners": [
@@ -8869,6 +9207,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 753,
       "name": "SerialBlockedForUrls",
       "owners": [
@@ -8897,6 +9238,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 837,
       "name": "SerialAllowAllPortsForUrls",
       "owners": [
@@ -8946,6 +9290,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 838,
       "name": "SerialAllowUsbDevicesForUrls",
       "owners": [
@@ -9009,6 +9356,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 943,
       "items": [
         {
@@ -9054,6 +9404,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 944,
       "name": "WebHidAskForUrls",
       "owners": [
@@ -9086,6 +9439,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 945,
       "name": "WebHidBlockedForUrls",
       "owners": [
@@ -9116,6 +9472,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 953,
       "name": "WebHidAllowAllDevicesForUrls",
       "owners": [
@@ -9158,6 +9517,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 954,
       "name": "WebHidAllowDevicesForUrls",
       "owners": [
@@ -9233,6 +9595,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 955,
       "name": "WebHidAllowDevicesWithHidUsagesForUrls",
       "owners": [
@@ -9404,6 +9769,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 773,
       "items": [
         {
@@ -9447,6 +9815,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 774,
       "items": [
         {
@@ -9492,6 +9863,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 775,
       "name": "FileSystemReadAskForUrls",
       "owners": [
@@ -9524,6 +9898,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 776,
       "name": "FileSystemReadBlockedForUrls",
       "owners": [
@@ -9554,6 +9931,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 777,
       "name": "FileSystemWriteAskForUrls",
       "owners": [
@@ -9586,6 +9966,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 778,
       "name": "FileSystemWriteBlockedForUrls",
       "owners": [
@@ -9615,6 +9998,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 102,
       "name": "AutoSelectCertificateForUrls",
       "owners": [
@@ -9736,6 +10122,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 77,
       "name": "CookiesAllowedForUrls",
       "owners": [
@@ -9767,6 +10156,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 67,
       "name": "CookiesBlockedForUrls",
       "owners": [
@@ -9798,6 +10190,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 68,
       "name": "CookiesSessionOnlyForUrls",
       "owners": [
@@ -9829,6 +10224,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 69,
       "name": "ImagesAllowedForUrls",
       "owners": [
@@ -9859,6 +10257,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 70,
       "name": "ImagesBlockedForUrls",
       "owners": [
@@ -9889,6 +10290,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 71,
       "name": "JavaScriptAllowedForUrls",
       "owners": [
@@ -9920,6 +10324,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 72,
       "name": "JavaScriptBlockedForUrls",
       "owners": [
@@ -9949,6 +10356,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 983,
       "items": [
         {
@@ -9992,6 +10402,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 984,
       "name": "ClipboardAllowedForUrls",
       "owners": [
@@ -10022,6 +10435,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 985,
       "name": "ClipboardBlockedForUrls",
       "owners": [
@@ -10166,6 +10582,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 624,
       "name": "LegacySameSiteCookieBehaviorEnabledForDomainList",
       "owners": [
@@ -10232,6 +10651,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 886,
       "items": [
         {
@@ -10268,6 +10690,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 906,
       "items": [
         {
@@ -10302,6 +10727,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 766,
       "items": [
         {
@@ -10344,6 +10772,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 767,
       "name": "InsecurePrivateNetworkRequestsAllowedForUrls",
       "owners": [
@@ -10441,6 +10872,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 75,
       "name": "PopupsAllowedForUrls",
       "owners": [
@@ -10479,6 +10913,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 268,
       "name": "RegisteredProtocolHandlers",
       "owners": [
@@ -10527,6 +10964,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 76,
       "name": "PopupsBlockedForUrls",
       "owners": [
@@ -10559,6 +10999,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 105,
       "name": "NotificationsAllowedForUrls",
       "owners": [
@@ -10589,6 +11032,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 106,
       "name": "NotificationsBlockedForUrls",
       "owners": [
@@ -10619,6 +11065,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 755,
       "name": "SensorsAllowedForUrls",
       "owners": [
@@ -10650,6 +11099,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 756,
       "name": "SensorsBlockedForUrls",
       "owners": [
@@ -10712,6 +11164,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 744,
       "label": "Names of the forbidden native messaging hosts (or * for all)",
       "name": "NativeMessagingBlocklist",
@@ -10773,6 +11228,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 745,
       "label": "Names of the native messaging hosts to exempt from the blocklist",
       "name": "NativeMessagingAllowlist",
@@ -10800,6 +11258,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 253,
       "items": [
         {
@@ -10833,6 +11294,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 55,
       "items": [
         {
@@ -10867,6 +11331,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 56,
       "name": "PolicyRefreshRate",
       "owners": [
@@ -10895,6 +11362,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 228,
       "name": "MaxInvalidationFetchDelay",
       "owners": [
@@ -11254,6 +11724,16 @@
         "per_profile": true
       },
       "id": 679,
+      "items": [
+        {
+          "caption": "Log the user out as soon as their account becomes unauthenticated",
+          "value": true
+        },
+        {
+          "caption": "Allow the user to remain logged in after their account becomes unauthenticated",
+          "value": false
+        }
+      ],
       "name": "ForceLogoutUnauthenticatedUserEnabled",
       "owners": [
         "solovey@google.com",
@@ -11412,6 +11892,16 @@
         "per_profile": true
       },
       "id": 563,
+      "items": [
+        {
+          "caption": "Show app recommendations in the <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> launcher",
+          "value": true
+        },
+        {
+          "caption": "Do not show app recommendations in the <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> launcher",
+          "value": false
+        }
+      ],
       "name": "AppRecommendationZeroStateEnabled",
       "owners": [
         "robsc@chromium.org",
@@ -11428,6 +11918,7 @@
     },
     {
       "caption": "Enable Translate",
+      "default": null,
       "desc": "Setting the policy to True provides translation functionality when it's appropriate for users by showing an integrated translate toolbar in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> and a translate option on the right-click context menu. Setting the policy to False shuts off all built-in translate features.\n\n      If you set the policy, users can't change this function. Leaving it unset lets them change the setting.",
       "example_value": true,
       "features": {
@@ -11435,7 +11926,24 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 80,
+      "items": [
+        {
+          "caption": "Always offer translation",
+          "value": true
+        },
+        {
+          "caption": "Never offer translation",
+          "value": false
+        },
+        {
+          "caption": "Allow the user to decide",
+          "value": null
+        }
+      ],
       "name": "TranslateEnabled",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11455,6 +11963,7 @@
     },
     {
       "caption": "Allow running plugins that are outdated",
+      "default": null,
       "deprecated": true,
       "desc": "This policy is deprecated in M88, Flash is no longer supported by Chrome. Setting the policy to Enabled means outdated plugins are used as normal plugins. Setting the policy to Disabled means outdated plugins aren't used.\n\n      Leaving the policy unset means users will be asked for permission to run outdated plugins.",
       "example_value": true,
@@ -11463,6 +11972,20 @@
         "per_profile": true
       },
       "id": 81,
+      "items": [
+        {
+          "caption": "Allow outdated <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph> to be used as normal <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph>",
+          "value": true
+        },
+        {
+          "caption": "Disallow outdated <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph>",
+          "value": false
+        },
+        {
+          "caption": "Ask user for permission to run outdated <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph>",
+          "value": null
+        }
+      ],
       "name": "AllowOutdatedPlugins",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11490,6 +12013,16 @@
         "per_profile": true
       },
       "id": 86,
+      "items": [
+        {
+          "caption": "Always run plugins that are not outdated",
+          "value": true
+        },
+        {
+          "caption": "Ask user for permission to run plugins that require authorization",
+          "value": false
+        }
+      ],
       "name": "AlwaysAuthorizePlugins",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11517,6 +12050,16 @@
         "per_profile": true
       },
       "id": 391,
+      "items": [
+        {
+          "caption": "Run all <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph> content",
+          "value": true
+        },
+        {
+          "caption": "Allow certain <ph name=\"FLASH_PLUGIN_NAME\">Flash</ph> content to be blocked",
+          "value": false
+        }
+      ],
       "name": "RunAllFlashInAllowMode",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11536,6 +12079,7 @@
     },
     {
       "caption": "Enable Bookmark Bar",
+      "default": null,
       "desc": "Setting the policy to True displays a bookmark bar in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>. Setting the policy to False means users never see the bookmark bar.\n\n      If you set the policy, users can't change it. If not set, users decide whether to use this function.",
       "example_value": true,
       "features": {
@@ -11543,7 +12087,24 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 82,
+      "items": [
+        {
+          "caption": "Enable bookmark bar",
+          "value": true
+        },
+        {
+          "caption": "Disable bookmark bar",
+          "value": false
+        },
+        {
+          "caption": "Allow the user to decide",
+          "value": null
+        }
+      ],
       "name": "BookmarkBarEnabled",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11567,7 +12128,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 83,
+      "items": [
+        {
+          "caption": "Enable bookmark editing",
+          "value": true
+        },
+        {
+          "caption": "Disable bookmark editing",
+          "value": false
+        }
+      ],
       "name": "EditBookmarksEnabled",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -11594,6 +12168,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 267,
       "items": [
         {
@@ -11632,6 +12209,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 84,
       "items": [
         {
@@ -11667,6 +12247,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 402,
       "name": "SecurityKeyPermitAttestation",
       "owners": [
@@ -11734,6 +12317,9 @@
         "per_profile": true,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 965,
       "items": [
         {
@@ -11819,7 +12405,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 97,
+      "items": [
+        {
+          "caption": "Enable import of bookmarks on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of bookmarks on first run",
+          "value": false
+        }
+      ],
       "label": "Import bookmarks from default browser on first run",
       "name": "ImportBookmarks",
       "owners": [
@@ -11847,7 +12446,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 98,
+      "items": [
+        {
+          "caption": "Enable import of browsing history on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of browsing history on first run",
+          "value": false
+        }
+      ],
       "label": "Import browsing history from default browser on first run",
       "name": "ImportHistory",
       "owners": [
@@ -11873,7 +12485,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 99,
+      "items": [
+        {
+          "caption": "Enable import of homepage on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of homepage on first run",
+          "value": false
+        }
+      ],
       "label": "Import of homepage from default browser on first run",
       "name": "ImportHomepage",
       "owners": [
@@ -11900,7 +12525,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 100,
+      "items": [
+        {
+          "caption": "Enable import of default search engine on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of default search engine on first run",
+          "value": false
+        }
+      ],
       "label": "Import search engines from default browser on first run",
       "name": "ImportSearchEngine",
       "owners": [
@@ -11927,7 +12565,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 101,
+      "items": [
+        {
+          "caption": "Enable import of saved passwords on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of saved passwords on first run",
+          "value": false
+        }
+      ],
       "label": "Import saved passwords from default browser on first run",
       "name": "ImportSavedPasswords",
       "owners": [
@@ -11954,7 +12605,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 277,
+      "items": [
+        {
+          "caption": "Enable import of autofill form data on first run",
+          "value": true
+        },
+        {
+          "caption": "Disable import of autofill form data on first run",
+          "value": false
+        }
+      ],
       "label": "Import autofill form data from default browser on first run",
       "name": "ImportAutofillFormData",
       "owners": [
@@ -11981,6 +12645,10 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "chrome_os",
+        "fuchsia"
+      ],
       "id": 92,
       "name": "MaxConnectionsPerProxy",
       "owners": [
@@ -12102,7 +12770,7 @@
     {
       "arc_support": "Android apps may voluntarily choose to honor this list. You cannot force them to honor it.",
       "caption": "Block access to a list of URLs",
-      "desc": "Setting the policy prevents webpages with prohibited URLs from loading. It provides a list of URL patterns that specify forbidden URLs. Leaving the policy unset means no URLs are prohibited in the browser. Format the URL pattern according to this format ( https://www.chromium.org/administrators/url-blocklist-filter-format ). Up to 1,000 exceptions can be defined in <ph name=\"URL_ALLOWLIST_POLICY_NAME\">URLAllowlist</ph>.\n\n      From <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> version 73, you can block javascript://* URLs. However, it affects only JavaScript entered in the address bar (or, for example, bookmarklets). In-page JavaScript URLs with dynamically loaded data aren't subject to this policy. For example, if you block example.com/abc, then example.com can still load example.com/abc using XMLHTTPRequest.\n\n      From <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> version 92, this policy is also supported in the headless mode.\n\n      Note: Blocking internal chrome://* URLs can lead to unexpected errors.",
+      "desc": "Setting the policy prevents webpages with prohibited URLs from loading. It provides a list of URL patterns that specify forbidden URLs. Leaving the policy unset means no URLs are prohibited in the browser. Format the URL pattern according to this format ( https://www.chromium.org/administrators/url-blocklist-filter-format ). Up to 1,000 exceptions can be defined in <ph name=\"URL_ALLOWLIST_POLICY_NAME\">URLAllowlist</ph>.\n\n      From <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> version 73, you can block javascript://* URLs. However, it affects only JavaScript entered in the address bar (or, for example, bookmarklets). In-page JavaScript URLs with dynamically loaded data aren't subject to this policy. For example, if you block example.com/abc, then example.com can still load example.com/abc using XMLHTTPRequest.\n\n      From <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> version 92, this policy is also supported in the headless mode.\n\n      Note: Blocking internal chrome://* and chrome-untrusted://* URLs can lead to unexpected errors or may be circumvented in special cases. Instead of blocking certain internal URLs, see if there are more specific policies available. Common cases: Instead of blocking chrome://settings/certificates, use <ph name=\"CA_CERTIFICATE_MANAGEMENT_ALLOWED_POLICY_NAME\">CACertificateManagementAllowed</ph>. Instead of blocking chrome-untrusted://crosh, use <ph name=\"SYSTEM_FEATURES_DISABLE_LIST_POLICY_NAME\">SystemFeaturesDisableList</ph>.",
       "example_value": [
         "example.com",
         "https://ssl.server.com",
@@ -12134,7 +12802,8 @@
         "chrome_os:86-",
         "android:86-",
         "webview_android:86-",
-        "ios:98-"
+        "ios:98-",
+        "fuchsia:106-"
       ],
       "tags": [
         "filtering"
@@ -12156,6 +12825,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 737,
       "name": "URLAllowlist",
       "owners": [
@@ -12186,7 +12858,20 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 584,
+      "items": [
+        {
+          "caption": "Enable policy atomic groups",
+          "value": true
+        },
+        {
+          "caption": "Disable policy atomic groups",
+          "value": false
+        }
+      ],
       "name": "PolicyAtomicGroupsEnabled",
       "owners": [
         "ydago@chromium.org",
@@ -12197,7 +12882,9 @@
       },
       "supported_on": [
         "chrome.*:78-",
-        "chrome_os:78-"
+        "chrome_os:78-",
+        "android:105-",
+        "ios:105-"
       ],
       "tags": [],
       "type": "main"
@@ -12214,6 +12901,9 @@
         "metapolicy_type": "merge",
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 554,
       "label": "Allow merging list policies from different sources",
       "name": "PolicyListMultipleSourceMergeList",
@@ -12230,7 +12920,8 @@
       "supported_on": [
         "chrome.*:75-",
         "chrome_os:75-",
-        "android:97-"
+        "android:97-",
+        "ios:105-"
       ],
       "tags": [],
       "type": "list"
@@ -12246,6 +12937,9 @@
         "metapolicy_type": "merge",
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 565,
       "items": [
         {
@@ -12307,7 +13001,9 @@
       },
       "supported_on": [
         "chrome.*:76-",
-        "chrome_os:76-"
+        "chrome_os:76-",
+        "android:105-",
+        "ios:105-"
       ],
       "tags": [],
       "type": "string-enum-list"
@@ -12322,6 +13018,9 @@
         "metapolicy_type": "merge",
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 859,
       "items": [
         {
@@ -12359,6 +13058,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 711,
       "name": "EnableExperimentalPolicies",
       "owners": [
@@ -12657,7 +13359,7 @@
     {
       "caption": "Enable the migration of Chromad devices into cloud management",
       "default": false,
-      "desc": "Enable the migration of <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> managed devices into cloud management. This policy allows for a remote start of a touchless migration of multiple devices in a company. Additionally, the migration will be as transparent as possible to the end users.\n\n      If this policy is enabled and the enrollment ID has already been uploaded to the DMServer, a remote device powerwash will be triggered.\n\n      If this policy is disabled or not set, the remote device powerwash is not trigged, independently of the enrollment ID upload status.\n\n      This check is triggered whenever the login screen is loaded, then retried every hour (if the device stays on the login screen). This prevents the migration from starting in the middle of a user session, causing potential problems to end users.",
+      "desc": "Enable the migration of <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> managed devices into cloud management. This policy allows for a remote start of a touchless migration of multiple devices in a company. Additionally, the migration will be as transparent as possible to the end users.\n\n      If this policy is enabled and the enrollment ID has already been uploaded to the DMServer, a remote device powerwash will be triggered.\n\n      If this policy is disabled or not set, the remote device powerwash is not triggered, independently of the enrollment ID upload status.\n\n      This check is triggered whenever the login screen is loaded, then retried every hour (if the device stays on the login screen). This prevents the migration from starting in the middle of a user session, causing potential problems to end users.",
       "device_only": true,
       "example_value": false,
       "features": {
@@ -12701,6 +13403,16 @@
         "per_profile": true
       },
       "id": 109,
+      "items": [
+        {
+          "caption": "Enable submission of documents to <ph name=\"CLOUD_PRINT_NAME\">Google Cloud Print</ph>",
+          "value": true
+        },
+        {
+          "caption": "Disable submission of documents to <ph name=\"CLOUD_PRINT_NAME\">Google Cloud Print</ph>",
+          "value": false
+        }
+      ],
       "name": "CloudPrintSubmitEnabled",
       "owners": [
         "file://printing/OWNERS",
@@ -12773,7 +13485,20 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 117,
+      "items": [
+        {
+          "caption": "Disable print preview",
+          "value": true
+        },
+        {
+          "caption": "Enable print preview",
+          "value": false
+        }
+      ],
       "name": "DisablePrintPreview",
       "owners": [
         "file://printing/OWNERS",
@@ -12791,6 +13516,7 @@
     },
     {
       "caption": "Print Headers and Footers",
+      "default": null,
       "desc": "Setting the policy to Enabled turns headers and footers on in print preview. Setting the policy to Disabled turns them off in print preview.\n\n      If you set the policy, users can't change it. If unset, users decides whether headers and footers appear.",
       "example_value": false,
       "features": {
@@ -12798,7 +13524,24 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 480,
+      "items": [
+        {
+          "caption": "Show headers and footers in print preview",
+          "value": true
+        },
+        {
+          "caption": "Hide headers and footers in print preview",
+          "value": false
+        },
+        {
+          "caption": "Allow the user to decide",
+          "value": null
+        }
+      ],
       "name": "PrintHeaderFooter",
       "owners": [
         "nicolaso@chromium.org",
@@ -12823,6 +13566,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 308,
       "name": "DefaultPrinterSelection",
       "owners": [
@@ -12893,7 +13639,20 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 129,
+      "items": [
+        {
+          "caption": "Allow online <ph name=\"OCSP_CRL_LABEL\">OCSP/CRL</ph> checks to be performed",
+          "value": true
+        },
+        {
+          "caption": "Prevent online <ph name=\"OCSP_CRL_LABEL\">OCSP/CRL</ph> checks from being performed",
+          "value": false
+        }
+      ],
       "name": "EnableOnlineRevocationChecks",
       "owners": [
         "file://net/cert/OWNERS",
@@ -12920,6 +13679,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 235,
       "items": [
         {
@@ -12957,6 +13719,16 @@
         "per_profile": false
       },
       "id": 340,
+      "items": [
+        {
+          "caption": "Allow SHA-1 signed certificates issued by local trust anchors",
+          "value": true
+        },
+        {
+          "caption": "Disallow SHA-1 signed certificates",
+          "value": false
+        }
+      ],
       "name": "EnableSha1ForLocalAnchors",
       "owners": [
         "mattm@chromium.org",
@@ -12985,6 +13757,16 @@
         "per_profile": false
       },
       "id": 366,
+      "items": [
+        {
+          "caption": "Allow certificates lacking a subjectAlternativeName extension when issued by local trust anchors",
+          "value": true
+        },
+        {
+          "caption": "Disallow certificates lacking a subjectAlternativeName extension",
+          "value": false
+        }
+      ],
       "name": "EnableCommonNameFallbackForLocalAnchors",
       "owners": [
         "file://net/cert/OWNERS",
@@ -13013,6 +13795,16 @@
         "per_profile": false
       },
       "id": 413,
+      "items": [
+        {
+          "caption": "Enable trust in certificates issued by Symantec Corporation Legacy PKI",
+          "value": true
+        },
+        {
+          "caption": "Disable trust in certificates issued by Symantec Corporation Legacy PKI",
+          "value": false
+        }
+      ],
       "name": "EnableSymantecLegacyInfrastructure",
       "owners": [
         "file://net/cert/OWNERS",
@@ -13033,6 +13825,7 @@
     },
     {
       "caption": "Determines whether the built-in certificate verifier will be used to verify server certificates",
+      "default": null,
       "desc": "When this setting is enabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will perform verification of server certificates using the built-in certificate verifier.\n      When this setting is disabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will perform verification of server certificates using the legacy certificate verifier provided by the platform, unless <ph name=\"CHROME_ROOT_STORE_ENABLED_POLICY_NAME\">ChromeRootStoreEnabled</ph> is enabled.\n      When this setting is not set, the built-in or the legacy certificate verifier may be used.\n\n      This policy is planned to be removed in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> for <ph name=\"MAC_OS_NAME\">macOS</ph> version 107, when support for the legacy certificate verifier on <ph name=\"MAC_OS_NAME\">macOS</ph> is planned to be removed.\n      ",
       "example_value": false,
       "features": {
@@ -13040,6 +13833,20 @@
         "per_profile": false
       },
       "id": 575,
+      "items": [
+        {
+          "caption": "Use the built-in certificate verifier",
+          "value": true
+        },
+        {
+          "caption": "Use the legacy platform certificate verifier",
+          "value": false
+        },
+        {
+          "caption": "Use any certificate verifier",
+          "value": null
+        }
+      ],
       "name": "BuiltinCertificateVerifierEnabled",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -13103,7 +13910,20 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 245,
+      "items": [
+        {
+          "caption": "Clear profile data on disk when user session ends",
+          "value": true
+        },
+        {
+          "caption": "Persist profile data on disk when user session ends",
+          "value": false
+        }
+      ],
       "name": "ForceEphemeralProfiles",
       "owners": [
         "file://components/policy/resources/OWNERS",
@@ -13313,6 +14133,16 @@
         "dynamic_refresh": true
       },
       "id": 119,
+      "items": [
+        {
+          "caption": "Enable device version info reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device version info reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceVersionInfo",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13342,6 +14172,16 @@
         "dynamic_refresh": true
       },
       "id": 120,
+      "items": [
+        {
+          "caption": "Enable device activity time reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device activity time reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceActivityTimes",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13444,6 +14284,16 @@
         "dynamic_refresh": true
       },
       "id": 121,
+      "items": [
+        {
+          "caption": "Enable device boot mode reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device boot mode reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceBootMode",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13466,7 +14316,7 @@
     {
       "arc_support": "This policy has no effect on the logging done by Android.",
       "caption": "Report device location",
-      "desc": "Report the geographic location of the device.\n\n      If the policy is not set, or set to false, the location will not be reported.",
+      "desc": "Report the geographic location of the device.\n\n      Setting the policy to Enabled has enrolled devices periodically report their location.\n\n      Setting the policy to Disabled or leaving it unset means enrolled devices don't report their location.",
       "device_only": true,
       "example_value": false,
       "features": {
@@ -13476,6 +14326,16 @@
         "chrome_os"
       ],
       "id": 143,
+      "items": [
+        {
+          "caption": "Enable device location reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device location reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceLocation",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13536,13 +14396,23 @@
       "arc_support": "This policy has no effect on the logging done by Android.",
       "caption": "Report device network interfaces",
       "deprecated": true,
-      "desc": "This policy is deprecated in M96. Please use <ph name=\"REPORT_DEVICE_NETWORK_CONFIGURATION\">ReportDeviceNetworkConfiguration</ph> and <ph name=\"REPORT_DEVICE_NETWORK_STATUS\">ReportDeviceNetworkStatus</ph> instead.\n\n      Setting the policy to Enabled or leaving it unset has enrolled devices report the list of network interfaces with their types and hardware addresses. Setting the policy to Disabled means enrolled devices don't report the network interface.",
+      "desc": "This policy is deprecated in M96. Please use <ph name=\"REPORT_DEVICE_NETWORK_CONFIGURATION\">ReportDeviceNetworkConfiguration</ph> and <ph name=\"REPORT_DEVICE_NETWORK_STATUS\">ReportDeviceNetworkStatus</ph> instead.\n\n      Setting the policy to Enabled or leaving it unset has enrolled devices report the list of network interfaces with their types and hardware addresses.\n\n      Setting the policy to Disabled means enrolled devices don't report the network interface.",
       "device_only": true,
       "example_value": false,
       "features": {
         "dynamic_refresh": true
       },
       "id": 224,
+      "items": [
+        {
+          "caption": "Enable device network interface reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device network interface reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceNetworkInterfaces",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13678,6 +14548,16 @@
         "dynamic_refresh": true
       },
       "id": 248,
+      "items": [
+        {
+          "caption": "Enable device users reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device users reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceUsers",
       "owners": [
         "stepco@chromium.org",
@@ -13702,13 +14582,23 @@
       "arc_support": "This policy has no effect on the logging done by Android.",
       "caption": "Report hardware status",
       "deprecated": true,
-      "desc": "This policy is deprecated as of M96. Please use <ph name=\"REPORT_DEVICE_CPU_INFO\">ReportDeviceCpuInfo</ph>, <ph name=\"REPORT_DEVICE_MEMORY_INFO\">ReportDeviceMemoryInfo</ph>, <ph name=\"REPORT_DEVICE_STORAGE_STATUS\">ReportDeviceStorageStatus</ph>, <ph name=\"REPORT_DEVICE_SECURITY_STATUS\">ReportDeviceSecurityStatus</ph>, and <ph name=\"REPORT_DEVICE_AUDIO_STATUS\">ReportDeviceAudioStatus</ph> instead.\n\n      Setting the policy to Enabled or leaving it unset has enrolled devices report hardware statistics such as CPU/RAM usage. Setting the policy to Disabled means enrolled devices don't report the hardware statistics.",
+      "desc": "This policy is deprecated as of M96. Please use <ph name=\"REPORT_DEVICE_CPU_INFO\">ReportDeviceCpuInfo</ph>, <ph name=\"REPORT_DEVICE_MEMORY_INFO\">ReportDeviceMemoryInfo</ph>, <ph name=\"REPORT_DEVICE_STORAGE_STATUS\">ReportDeviceStorageStatus</ph>, <ph name=\"REPORT_DEVICE_SECURITY_STATUS\">ReportDeviceSecurityStatus</ph>, and <ph name=\"REPORT_DEVICE_AUDIO_STATUS\">ReportDeviceAudioStatus</ph> instead.\n\n      Setting the policy to Enabled or leaving it unset has enrolled devices report hardware statistics such as CPU/RAM usage.\n\n      Setting the policy to Disabled means enrolled devices don't report the hardware statistics.",
       "device_only": true,
       "example_value": false,
       "features": {
         "dynamic_refresh": true
       },
       "id": 290,
+      "items": [
+        {
+          "caption": "Enable device hardware status reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device hardware status reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceHardwareStatus",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13739,6 +14629,16 @@
         "dynamic_refresh": true
       },
       "id": 291,
+      "items": [
+        {
+          "caption": "Enable device kiosk session reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device kiosk session reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceSessionStatus",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13809,6 +14709,16 @@
         "dynamic_refresh": true
       },
       "id": 660,
+      "items": [
+        {
+          "caption": "Enable device graphics status reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device graphics status reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceGraphicsStatus",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13838,6 +14748,16 @@
         "dynamic_refresh": true
       },
       "id": 665,
+      "items": [
+        {
+          "caption": "Enable device crash report information reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device crash report information reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceCrashReportInfo",
       "owners": [
         "cros-reporting-team@google.com",
@@ -13867,6 +14787,16 @@
         "dynamic_refresh": true
       },
       "id": 602,
+      "items": [
+        {
+          "caption": "Enable device OS update status reporting",
+          "value": true
+        },
+        {
+          "caption": "Disable device OS update status reporting",
+          "value": false
+        }
+      ],
       "name": "ReportDeviceOsUpdateStatus",
       "owners": [
         "cros-reporting-team@google.com",
@@ -15355,7 +16285,7 @@
     {
       "caption": "Use only policy-provided update URL when downloading and updating Kiosk Chrome apps",
       "default": false,
-      "desc": "Setting the policy will disable in-session Kiosk Chrome apps update (which uses update URL from the extension manifest) and leaves only CRX pre-fetching as the update mechanism.",
+      "desc": "\n        Setting the policy to Disabled will disable in-session Kiosk Chrome apps update (which uses update URL from the extension manifest) and leaves only CRX pre-fetching as the update mechanism.\n        Setting the policy to Enabled or not set will allow in-session Kiosk Chrome apps update.\n        ",
       "device_only": true,
       "example_value": true,
       "features": {
@@ -15712,6 +16642,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 147,
       "name": "RestrictSigninToPattern",
       "owners": [
@@ -15735,6 +16668,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 150,
       "name": "DisableSafeBrowsingProceedAnyway",
       "owners": [
@@ -15788,6 +16724,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 151,
       "items": [
         {
@@ -15895,6 +16834,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 160,
       "name": "AudioCaptureAllowed",
       "owners": [
@@ -15922,6 +16864,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 208,
       "name": "AudioCaptureAllowedUrls",
       "owners": [
@@ -15950,6 +16895,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 167,
       "name": "VideoCaptureAllowed",
       "owners": [
@@ -15977,6 +16925,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 209,
       "name": "VideoCaptureAllowedUrls",
       "owners": [
@@ -16005,6 +16956,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 153,
       "name": "DisableScreenshots",
       "owners": [
@@ -16120,6 +17074,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 165,
       "name": "BuiltInDnsClientEnabled",
       "owners": [
@@ -16146,6 +17103,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 582,
       "items": [
         {
@@ -16193,6 +17153,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 642,
       "name": "DnsOverHttpsTemplates",
       "owners": [
@@ -16219,6 +17182,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 857,
       "items": [
         {
@@ -16428,7 +17394,7 @@
     {
       "caption": "Set the user experience of disabled features",
       "default": "blocked",
-      "desc": "Controls the user experience of disabled features listed in <ph name=\"SYSTEM_FEATURES_DISABLE_LIST\">SystemFeaturesDisableList</ph>.\n\n      If this policy is set to \"blocked\", the disabled features will become unusable but still visible to users.\n\n      If this policy is set to \"hidden\", the disabled features will become unusable and invisible to users.\n\n      If this policy is left unset or has an invalid value, the disable mode of system features will be \"blocked\".",
+      "desc": "Controls the user experience of disabled features listed in <ph name=\"SYSTEM_FEATURES_DISABLE_LIST_POLICY_NAME\">SystemFeaturesDisableList</ph>.\n\n      If this policy is set to \"blocked\", the disabled features will become unusable but still visible to users.\n\n      If this policy is set to \"hidden\", the disabled features will become unusable and invisible to users.\n\n      If this policy is left unset or has an invalid value, the disable mode of system features will be \"blocked\".",
       "example_value": "blocked",
       "features": {
         "can_be_recommended": false,
@@ -16542,6 +17508,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 240,
       "name": "FullscreenAllowed",
       "owners": [
@@ -17573,8 +18542,8 @@
       "id": 188,
       "name": "ShowAccessibilityOptionsInSystemTrayMenu",
       "owners": [
-        "file://components/policy/resources/OWNERS",
-        "rsorokin@chromium.org"
+        "josiahk@google.com",
+        "file://ui/accessibility/OWNERS"
       ],
       "schema": {
         "type": "boolean"
@@ -17742,8 +18711,8 @@
       "id": 255,
       "name": "VirtualKeyboardEnabled",
       "owners": [
-        "file://components/policy/resources/OWNERS",
-        "rsorokin@chromium.org"
+        "shend@google.com",
+        "e14s-eng@google.com"
       ],
       "schema": {
         "type": "boolean"
@@ -18306,6 +19275,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 610,
       "name": "SharedClipboardEnabled",
       "owners": [
@@ -18613,6 +19585,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 189,
       "name": "HideWebStoreIcon",
       "owners": [
@@ -18687,7 +19662,7 @@
     },
     {
       "caption": "Automatically reboot after update",
-      "desc": "Schedule an automatic reboot after a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update has been applied.\n\n      When this policy is set to true, an automatic reboot is scheduled when a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update has been applied and a reboot is required to complete the update process. The reboot is scheduled immediately but may be delayed on the device by up to 24 hours if a user is currently using the device.\n\n      When this policy is set to false, no automatic reboot is scheduled after applying a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update. The update process is completed when the user next reboots the device.\n\n      If you set this policy, users cannot change or override it.\n\n      Note: Currently, automatic reboots are only enabled while the login screen is being shown or a kiosk app session is in progress. This will change in the future and the policy will always apply, regardless of whether a session of any particular type is in progress or not.",
+      "desc": "Schedule an automatic reboot after a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update has been applied.\n\n      When this policy is set to true, an automatic reboot is scheduled when a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update has been applied and a reboot is required to complete the update process. The reboot is scheduled immediately but may be delayed on the device by up to 24 hours if a user is currently using the device.\n\n      When this policy is set to false, no automatic reboot is scheduled after applying a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> update. The update process is completed when the user next reboots the device.\n\n      If you set this policy, users cannot change or override it.\n\n      Note: Currently, automatic reboots are only enabled while the login screen is being shown or a kiosk app session is in progress.",
       "device_only": true,
       "example_value": true,
       "features": {
@@ -18717,6 +19692,9 @@
         "internal_only": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 196,
       "name": "VariationsRestrictParameter",
       "owners": [
@@ -18765,6 +19743,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 663,
       "items": [
         {
@@ -19042,6 +20023,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 223,
       "name": "SupervisedUserCreationEnabled",
       "owners": [
@@ -19114,6 +20098,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 227,
       "name": "ManagedBookmarks",
       "owners": [
@@ -19322,6 +20309,37 @@
       "type": "main"
     },
     {
+      "arc_support": "This policy has no effect on Android apps.",
+      "caption": "Autofill username on SAML IdP page",
+      "desc": "Specifies a url parameter name which will be used on the SAML IdP login page to autofill the username field.\n\n      User's email assosiated with their <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> profile will be used as a value for the url parameter. So this setting should be disabled if users are expected to use different emails with SAML IdP.\n\n      If this setting is unset, users will need to manually enter their username on the SAML IdP login page.\n\n      This policy affects online authentication on sign-in and lock screens.",
+      "device_only": true,
+      "example_value": "login_hint",
+      "features": {
+        "dynamic_refresh": true,
+        "per_profile": false
+      },
+      "id": 997,
+      "name": "DeviceAutofillSAMLUsername",
+      "owners": [
+        "andreydav@google.com",
+        "chromeos-commercial-identity@google.com"
+      ],
+      "schema": {
+        "type": "string"
+      },
+      "supported_chrome_os_management": [
+        "google_cloud"
+      ],
+      "supported_on": [
+        "chrome_os:106-"
+      ],
+      "tags": [
+        "website-sharing",
+        "local-data-access"
+      ],
+      "type": "string"
+    },
+    {
       "caption": "Allow Smart Lock to be used",
       "default_for_enterprise_users": false,
       "desc": "If you enable this setting, users will be allowed to use Smart Lock if the requirements for the feature are satisfied.\n\n      If you disable this setting, users will not be allowed to use Smart Lock.\n\n      If this policy is left not set, the default is not allowed for enterprise-managed users and allowed for non-managed users.",
@@ -19383,6 +20401,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 275,
       "name": "BrowserGuestModeEnabled",
       "owners": [
@@ -19407,6 +20428,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 574,
       "name": "BrowserGuestModeEnforced",
       "owners": [
@@ -19430,6 +20454,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 276,
       "name": "BrowserAddPersonEnabled",
       "owners": [
@@ -19480,6 +20507,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 487,
       "items": [
         {
@@ -19532,6 +20562,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 279,
       "items": [
         {
@@ -19678,6 +20711,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 841,
       "items": [
         {
@@ -19717,6 +20753,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 335,
       "name": "CertificateTransparencyEnforcementDisabledForUrls",
       "owners": [
@@ -19750,6 +20789,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 435,
       "name": "CertificateTransparencyEnforcementDisabledForCas",
       "owners": [
@@ -19783,6 +20825,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 436,
       "name": "CertificateTransparencyEnforcementDisabledForLegacyCas",
       "owners": [
@@ -20000,6 +21045,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 300,
       "name": "SSLErrorOverrideAllowed",
       "owners": [
@@ -20027,6 +21075,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 819,
       "name": "SSLErrorOverrideAllowedForOrigins",
       "owners": [
@@ -20084,6 +21135,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 301,
       "name": "QuicAllowed",
       "owners": [
@@ -20178,6 +21232,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 304,
       "name": "HardwareAccelerationModeEnabled",
       "owners": [
@@ -20385,6 +21442,43 @@
       "type": "main"
     },
     {
+      "caption": "Allow Web Kiosk to open more than one browser window on any screen",
+      "default": false,
+      "desc": "Setting the policy to Enabled means a Kiosk Web App can open another browser window which can be placed on the same screen or on a different screen. To open a new window, Web App should call <ph name=\"OPEN_NEW_WINDOW_JS\">window.open(url, target, windowFeatures)</ph> JavaScript function.\n\n      Setting the policy to Disabled or leaving it unset means a Kiosk Web App can use only the main browser window and cannot open a new window. Calling any Javascript functions for opening a new window will be ignored.",
+      "example_value": true,
+      "features": {
+        "dynamic_refresh": true,
+        "per_profile": true
+      },
+      "future_on": [
+        "chrome_os"
+      ],
+      "id": 995,
+      "items": [
+        {
+          "caption": "Allow a Kiosk Web App to open another browser window",
+          "value": true
+        },
+        {
+          "caption": "Prohibit a Kiosk Web App from opening another browser window",
+          "value": false
+        }
+      ],
+      "name": "NewWindowsInKioskAllowed",
+      "owners": [
+        "irfedorova@google.com",
+        "chromeos-kiosk-eng@google.com"
+      ],
+      "schema": {
+        "type": "boolean"
+      },
+      "supported_chrome_os_management": [
+        "google_cloud"
+      ],
+      "tags": [],
+      "type": "main"
+    },
+    {
       "caption": "Configure the login authentication behavior",
       "desc": "When this policy is set, the login authentication flow will be in one of the following ways depending on the value of the setting:\n\n      If set to GAIA, login will be done via the normal GAIA authentication flow.\n\n      If set to SAML_INTERSTITIAL, login will show an interstitial screen offering the user to go forward with authentication via the SAML IdP of the device's enrollment domain, or go back to the normal GAIA login flow.",
       "device_only": true,
@@ -20551,6 +21645,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 324,
       "name": "SuppressUnsupportedOSWarning",
       "owners": [
@@ -20668,6 +21765,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 327,
       "name": "TaskManagerEndProcessEnabled",
       "owners": [
@@ -20995,6 +22095,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 331,
       "name": "AllowedDomainsForApps",
       "owners": [
@@ -21048,6 +22151,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 333,
       "name": "EnableMediaRouter",
       "owners": [
@@ -21072,6 +22178,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 362,
       "name": "ShowCastIconInToolbar",
       "owners": [
@@ -21095,6 +22204,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 437,
       "name": "MediaRouterCastAllowAllIPs",
       "owners": [
@@ -21208,6 +22320,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 653,
       "items": [
         {
@@ -21243,6 +22358,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 805,
       "items": [
         {
@@ -21283,6 +22401,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 941,
       "items": [
         {
@@ -21318,6 +22439,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 339,
       "name": "WebRtcUdpPortRange",
       "owners": [
@@ -21345,6 +22469,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 640,
       "name": "WebRtcLocalIpsAllowedUrls",
       "owners": [
@@ -21371,6 +22498,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 342,
       "name": "ComponentUpdatesEnabled",
       "owners": [
@@ -21382,7 +22512,9 @@
       },
       "supported_on": [
         "chrome.*:54-",
-        "chrome_os:54-"
+        "chrome_os:54-",
+        "android:105-",
+        "ios:105-"
       ],
       "tags": [],
       "type": "main"
@@ -23001,6 +24133,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 370,
       "items": [
         {
@@ -23086,6 +24221,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 373,
       "items": [
         {
@@ -23464,6 +24602,9 @@
         "metapolicy_type": "precedence",
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 381,
       "name": "CloudPolicyOverridesPlatformPolicy",
       "owners": [
@@ -23491,6 +24632,9 @@
         "metapolicy_type": "precedence",
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 899,
       "items": [
         {
@@ -23513,7 +24657,8 @@
       },
       "supported_on": [
         "chrome.*:96-",
-        "android:97-"
+        "android:97-",
+        "ios:105-"
       ],
       "tags": [],
       "type": "main"
@@ -23526,6 +24671,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 395,
       "name": "PromptForDownloadLocation",
       "owners": [
@@ -23633,6 +24781,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 398,
       "name": "IsolateOrigins",
       "owners": [
@@ -23660,6 +24811,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 399,
       "name": "SitePerProcess",
       "owners": [
@@ -23794,6 +24948,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 852,
       "items": [
         {
@@ -23832,6 +24989,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 913,
       "items": [
         {
@@ -23909,6 +25069,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 880,
       "items": [
         {
@@ -23976,6 +25139,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 400,
       "name": "UnsafelyTreatInsecureOriginAsSecure",
       "owners": [
@@ -24006,6 +25172,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 401,
       "name": "DefaultDownloadDirectory",
       "owners": [
@@ -24092,6 +25261,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 404,
       "items": [
         {
@@ -24246,6 +25418,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 408,
       "items": [
         {
@@ -24285,6 +25460,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 409,
       "items": [
         {
@@ -24355,6 +25533,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 411,
       "items": [
         {
@@ -24401,6 +25582,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 419,
       "items": [
         {
@@ -24440,6 +25624,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 420,
       "label": "Time period (milliseconds)",
       "name": "RelaunchNotificationPeriod",
@@ -24459,7 +25646,7 @@
     },
     {
       "caption": "Set the time of the first user relaunch notification",
-      "desc": "Allows you to set the time period, in milliseconds, between the first notification that a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> device must be restarted to apply a pending update and the end of the time period specified by the <ph name=\"RELAUNCH_NOTIFICATION_PERIOD_POLICY_NAME\">RelaunchNotificationPeriod</ph> policy.\n\n      If not set, the default period of 259200000 milliseconds (three days) is used for <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> devices.",
+      "desc": "Allows you to set the time period, in milliseconds, between the first notification that a <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> device must be restarted to apply a pending update and the end of the time period specified by the <ph name=\"RELAUNCH_NOTIFICATION_PERIOD_POLICY_NAME\">RelaunchNotificationPeriod</ph> policy.\n\n      If not set, the default period of 259200000 milliseconds (three days) is used for <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> devices.\n\n      For rollback and other <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> updates that will powerwash the device, the user is always notified immediately when the update is available, independently of the value of this policy.",
       "example_value": 86400000,
       "features": {
         "dynamic_refresh": true,
@@ -24500,6 +25687,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 854,
       "label": "Relaunch time window",
       "name": "RelaunchWindow",
@@ -24914,6 +26104,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 732,
       "name": "SafeBrowsingAllowlistDomains",
       "owners": [
@@ -24944,6 +26137,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 423,
       "name": "PasswordProtectionLoginURLs",
       "owners": [
@@ -24971,6 +26167,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 424,
       "name": "PasswordProtectionChangePasswordURL",
       "owners": [
@@ -24996,6 +26195,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 429,
       "name": "SafeBrowsingExtendedReportingEnabled",
       "owners": [
@@ -25050,6 +26252,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 510,
       "name": "CloudManagementEnrollmentToken",
       "owners": [
@@ -25077,6 +26282,9 @@
         "per_profile": false,
         "platform_only": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 505,
       "name": "CloudManagementEnrollmentMandatory",
       "owners": [
@@ -25160,6 +26368,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 742,
       "name": "AutoplayAllowlist",
       "owners": [
@@ -25252,47 +26463,6 @@
       "type": "main"
     },
     {
-      "caption": "SAML login authentication type",
-      "desc": "Configures the type of authentication for SAML logins.\n\n      When this policy is unset or set to Default (value 0), the behavior of SAML logins is determined by the browser depending on other factors. In the most basic scenario, the user authentication and the protection of the cached user data are based on passwords manually entered by users.\n\n      When this policy is set to ClientCertificate (value 1), client certificate authentication is used for newly added users which log in via SAML. No passwords are used for such users, and their cached local data is protected using corresponding cryptographic keys. For instance, this setting allows configuring smart card based user authentication (note that smart card middleware apps have to be installed via the DeviceLoginScreenExtensions policy).\n\n      This policy affects only users who authenticate using SAML.",
-      "device_only": true,
-      "example_value": 0,
-      "features": {
-        "dynamic_refresh": true
-      },
-      "future_on": [
-        "chrome_os"
-      ],
-      "id": 438,
-      "items": [
-        {
-          "caption": "Default configuration",
-          "name": "Default",
-          "value": 0
-        },
-        {
-          "caption": "Authentication based on client certificates",
-          "name": "ClientCertificate",
-          "value": 1
-        }
-      ],
-      "name": "DeviceSamlLoginAuthenticationType",
-      "owners": [
-        "file://components/policy/resources/OWNERS",
-        "emaxx@chromium.org"
-      ],
-      "schema": {
-        "enum": [
-          0,
-          1
-        ],
-        "type": "integer"
-      },
-      "tags": [
-        "system-security"
-      ],
-      "type": "int-enum"
-    },
-    {
       "caption": "Enable Chrome Cleanup on Windows",
       "desc": "Setting the policy to Enabled or leaving it unset means Chrome Cleanup periodically scans the system for unwanted software and should any be found, will ask the user if they wish to remove it. Manually triggering Chrome Cleanup from chrome://settings is allowed.\n\n      Setting the policy to Disabled means Chrome Cleanup won't periodically scan and manual triggering is disabled.\n\n      On <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph>, this functionality is only available on instances that are joined to a <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> domain, running on Windows 10 Pro, or enrolled in Chrome Browser Cloud Management.",
       "example_value": true,
@@ -25371,7 +26541,7 @@
     },
     {
       "caption": "Configure the allowed input methods in a user session",
-      "desc": "Setting the policy lets users choose one of the input methods for <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> sessions that you specify.\n\n       If you leave it unset or set to an empty list, users can select all supported input methods.\n\n      Note: If the current input method is unsupported, it switches to the hardware keyboard layout (if allowed) or the first valid entry in this list. Invalid or unsupported methods are ignored.",
+      "desc": "Setting the policy lets users choose one of the input methods for <ph name=\"PRODUCT_OS_NAME\">$2<ex>Google ChromeOS</ex></ph> sessions that you specify.\n\n       If you leave it unset or set to an empty list, users can select all supported input methods.\n\n       Starting with version M106 allowed input methods are automatically enabled in kiosk session.\n\n      Note: If the current input method is unsupported, it switches to the hardware keyboard layout (if allowed) or the first valid entry in this list. Invalid or unsupported methods are ignored.",
       "device_only": false,
       "example_value": [
         "xkb:us::eng"
@@ -25448,7 +26618,7 @@
         "google_cloud"
       ],
       "supported_on": [
-        "chrome_os:85-"
+        "chrome_os:85-106"
       ],
       "tags": [
         "google-sharing"
@@ -25884,6 +27054,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 454,
       "name": "PromotionalTabsEnabled",
       "owners": [
@@ -25908,6 +27081,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 455,
       "items": [
         {
@@ -25954,6 +27130,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 457,
       "name": "OverrideSecurityRestrictionsOnInsecureOrigin",
       "owners": [
@@ -26060,6 +27239,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 461,
       "name": "UrlKeyedAnonymizedDataCollectionEnabled",
       "owners": [
@@ -26109,6 +27291,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 464,
       "name": "WebRtcEventLogCollectionAllowed",
       "owners": [
@@ -26160,6 +27345,9 @@
         "internal_only": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 466,
       "name": "CoalesceH2ConnectionsWithClientCertificatesForHosts",
       "owners": [
@@ -26221,6 +27409,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 813,
       "name": "ManagedConfigurationPerOrigin",
       "owners": [
@@ -26291,9 +27482,11 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 468,
       "label": "URLs for Web Apps to be silently installed.",
-      "max_size": 1048576,
       "name": "WebAppInstallForceList",
       "owners": [
         "file://chrome/browser/web_applications/OWNERS",
@@ -26517,6 +27710,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 608,
       "name": "CloudExtensionRequestEnabled",
       "owners": [
@@ -26545,6 +27741,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 493,
       "items": [
         {
@@ -26589,7 +27788,8 @@
       "future_on": [
         "chrome.*",
         "chrome_os",
-        "android"
+        "android",
+        "fuchsia"
       ],
       "id": 942,
       "items": [
@@ -26626,6 +27826,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 962,
       "name": "CloudReportingUploadFrequency",
       "owners": [
@@ -26657,6 +27860,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 483,
       "name": "EnterpriseHardwarePlatformAPIEnabled",
       "owners": [
@@ -26816,6 +28022,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 494,
       "name": "AlternativeBrowserPath",
       "owners": [
@@ -26845,6 +28054,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 495,
       "name": "AlternativeBrowserParameters",
       "owners": [
@@ -26926,6 +28138,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 496,
       "name": "BrowserSwitcherUrlList",
       "owners": [
@@ -26956,6 +28171,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 497,
       "name": "BrowserSwitcherUrlGreylist",
       "owners": [
@@ -27005,6 +28223,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 511,
       "name": "BrowserSwitcherExternalSitelistUrl",
       "owners": [
@@ -27028,6 +28249,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 564,
       "name": "BrowserSwitcherExternalGreylistUrl",
       "owners": [
@@ -27051,6 +28275,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 524,
       "name": "BrowserSwitcherDelay",
       "owners": [
@@ -27074,6 +28301,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 517,
       "name": "BrowserSwitcherEnabled",
       "owners": [
@@ -27098,6 +28328,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 866,
       "items": [
         {
@@ -27133,6 +28366,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 519,
       "name": "BrowserSwitcherKeepLastChromeTab",
       "owners": [
@@ -27905,6 +29141,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 533,
       "name": "AllowPopupsDuringPageUnload",
       "owners": [
@@ -28141,6 +29380,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 542,
       "items": [
         {
@@ -28182,6 +29424,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 826,
       "name": "ContextAwareAccessSignalsAllowlist",
       "owners": [
@@ -28293,6 +29538,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 570,
       "items": [
         {
@@ -28697,7 +29945,7 @@
     },
     {
       "caption": "Enable 'Remember password' feature",
-      "desc": "Controls whether the 'Remember password' feature is enabled in the Kerberos authentication dialog. Passwords are stored encryped on disk, only accessible to the Kerberos system daemon and during a user session.\n\n          If this policy is enabled or not set, users can decide whether Kerberos passwords are remembered, so that they do not have to be entered again. Kerberos tickets are automatically fetched unless additional authentication is required (two-factor authentication).\n\n          If this policy is disabled, passwords are never remembered and all previously stored passwords are removed. Users have to enter their password every time they need to authenticate with the Kerberos system. Depending on server settings, this usually happens between every 8 hours to several months.",
+      "desc": "Controls whether the 'Remember password' feature is enabled in the Kerberos authentication dialog. Passwords are stored encrypted on disk, only accessible to the Kerberos system daemon and during a user session.\n\n          If this policy is enabled or not set, users can decide whether Kerberos passwords are remembered, so that they do not have to be entered again. Kerberos tickets are automatically fetched unless additional authentication is required (two-factor authentication).\n\n          If this policy is disabled, passwords are never remembered and all previously stored passwords are removed. Users have to enter their password every time they need to authenticate with the Kerberos system. Depending on server settings, this usually happens between every 8 hours to several months.",
       "example_value": true,
       "features": {
         "dynamic_refresh": true,
@@ -28836,6 +30084,34 @@
       "type": "dict"
     },
     {
+      "caption": "Autocomplete domain for new Kerberos tickets",
+      "desc": "Adds a prefilled domain to the Kerberos authentication dialog.\n\n          If this policy is set, the \"Kerberos username\" field shows the prefilled domain on the right. If the user enters their username it is going to be concatenated with the prefilled domain. If the user's input contains \"@\", the prefilled domain is not shown and does not affect the input.\n\n          If this policy is unset, no additional information is shown and creating the ticket works as usual.",
+      "example_value": "my-kerberos-domain.com",
+      "features": {
+        "dynamic_refresh": true,
+        "per_profile": false
+      },
+      "future_on": [
+        "chrome_os"
+      ],
+      "id": 999,
+      "name": "KerberosDomainAutocomplete",
+      "owners": [
+        "slutskii@google.com",
+        "file://chrome/browser/ash/kerberos/OWNERS"
+      ],
+      "schema": {
+        "type": "string"
+      },
+      "supported_chrome_os_management": [
+        "google_cloud"
+      ],
+      "tags": [
+        "website-sharing"
+      ],
+      "type": "string"
+    },
+    {
       "caption": "Enable security warnings for command-line flags",
       "default": true,
       "desc": "Setting the policy to Enabled or leaving it unset means security warnings appear when potentially dangerous command-line flags are used to launch Chrome.\n\n      Setting the policy to Disabled prevents security warnings from appearing when Chrome is launched with potentially dangerous command-line flags.\n\n      On <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph>, this functionality is only available on instances that are joined to a <ph name=\"MS_AD_NAME\">Microsoft\u00ae Active Directory\u00ae</ph> domain, running on Windows 10 Pro, or enrolled in Chrome Browser Cloud Management. On <ph name=\"MAC_OS_NAME\">macOS</ph>, this functionality is only available on instances that are managed via MDM, or joined to a domain via MCX.",
@@ -28844,6 +30120,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 566,
       "items": [
         {
@@ -29146,7 +30425,18 @@
             "malware",
             "dlp"
           ],
-          "service_provider": "google"
+          "service_provider": "google",
+          "verification": {
+            "linux": [
+              "key"
+            ],
+            "mac": [
+              "key"
+            ],
+            "windows": [
+              "key"
+            ]
+          }
         }
       ],
       "features": {
@@ -29154,6 +30444,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 696,
       "name": "OnFileDownloadedEnterpriseConnector",
       "owners": [
@@ -29243,9 +30536,33 @@
             "service_provider": {
               "enum": [
                 "google",
-                "local_test"
+                "local_user_agent",
+                "local_system_agent"
               ],
               "type": "string"
+            },
+            "verification": {
+              "properties": {
+                "linux": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "mac": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "windows": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "type": "object"
@@ -29320,7 +30637,18 @@
             "malware",
             "dlp"
           ],
-          "service_provider": "google"
+          "service_provider": "google",
+          "verification": {
+            "linux": [
+              "key"
+            ],
+            "mac": [
+              "key"
+            ],
+            "windows": [
+              "key"
+            ]
+          }
         }
       ],
       "features": {
@@ -29328,6 +30656,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 693,
       "name": "OnFileAttachedEnterpriseConnector",
       "owners": [
@@ -29416,9 +30747,33 @@
             "service_provider": {
               "enum": [
                 "google",
-                "local_test"
+                "local_user_agent",
+                "local_system_agent"
               ],
               "type": "string"
+            },
+            "verification": {
+              "properties": {
+                "linux": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "mac": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "windows": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "type": "object"
@@ -29492,7 +30847,18 @@
             "malware",
             "dlp"
           ],
-          "service_provider": "google"
+          "service_provider": "google",
+          "verification": {
+            "linux": [
+              "key"
+            ],
+            "mac": [
+              "key"
+            ],
+            "windows": [
+              "key"
+            ]
+          }
         }
       ],
       "features": {
@@ -29500,6 +30866,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 697,
       "name": "OnBulkDataEntryEnterpriseConnector",
       "owners": [
@@ -29586,9 +30955,33 @@
             "service_provider": {
               "enum": [
                 "google",
-                "local_test"
+                "local_user_agent",
+                "local_system_agent"
               ],
               "type": "string"
+            },
+            "verification": {
+              "properties": {
+                "linux": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "mac": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "windows": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "type": "object"
@@ -29647,7 +31040,18 @@
           "require_justification_tags": [
             "dlp"
           ],
-          "service_provider": "google"
+          "service_provider": "google",
+          "verification": {
+            "linux": [
+              "key"
+            ],
+            "mac": [
+              "key"
+            ],
+            "windows": [
+              "key"
+            ]
+          }
         }
       ],
       "features": {
@@ -29657,7 +31061,8 @@
       },
       "future_on": [
         "chrome.*",
-        "chrome_os"
+        "chrome_os",
+        "fuchsia"
       ],
       "id": 931,
       "name": "OnPrintEnterpriseConnector",
@@ -29747,9 +31152,33 @@
             "service_provider": {
               "enum": [
                 "google",
-                "local_test"
+                "local_user_agent",
+                "local_system_agent"
               ],
               "type": "string"
+            },
+            "verification": {
+              "properties": {
+                "linux": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "mac": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "windows": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
             }
           },
           "type": "object"
@@ -29790,7 +31219,7 @@
                       "file_system_type": "ARC"
                     },
                     {
-                      "file_system_type": "SAMBA"
+                      "file_system_type": "SMB"
                     },
                     {
                       "file_system_type": "MY_FILES"
@@ -29841,7 +31270,7 @@
                       "file_system_type": "MY_FILES"
                     },
                     {
-                      "file_system_type": "SAMBA"
+                      "file_system_type": "SMB"
                     }
                   ]
                 }
@@ -29933,7 +31362,7 @@
                                   "PROVIDED",
                                   "ARC",
                                   "GOOGLE_DRIVE",
-                                  "SAMBA",
+                                  "SMB",
                                   "CROSTINI",
                                   "PLUGIN_VM",
                                   "BOREALIS",
@@ -30012,6 +31441,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 699,
       "name": "OnSecurityEventEnterpriseConnector",
       "owners": [
@@ -30073,6 +31505,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 728,
       "items": [
         {
@@ -30212,6 +31647,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 601,
       "name": "HSTSPolicyBypassList",
       "owners": [
@@ -30245,6 +31683,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 604,
       "name": "AllowSyncXHRInPageDismissal",
       "owners": [
@@ -30501,6 +31942,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 632,
       "items": [
         {
@@ -30534,6 +31978,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 633,
       "items": [
         {
@@ -30577,6 +32024,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 634,
       "name": "InsecureContentAllowedForUrls",
       "owners": [
@@ -30607,6 +32057,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 635,
       "name": "InsecureContentBlockedForUrls",
       "owners": [
@@ -30866,6 +32319,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 990,
       "items": [
         {
@@ -30906,6 +32362,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 645,
       "name": "ClickToCallEnabled",
       "owners": [
@@ -30931,6 +32390,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 673,
       "name": "UserDataSnapshotRetentionLimit",
       "owners": [
@@ -30958,6 +32420,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 647,
       "items": [
         {
@@ -31143,6 +32608,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 890,
       "name": "PrintRasterizePdfDpi",
       "owners": [
@@ -31171,6 +32639,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 896,
       "items": [
         {
@@ -31229,6 +32700,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 650,
       "items": [
         {
@@ -31282,6 +32756,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 651,
       "name": "PaymentMethodQueryEnabled",
       "owners": [
@@ -31508,6 +32985,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 666,
       "name": "ScreenCaptureAllowed",
       "owners": [
@@ -31535,6 +33015,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 881,
       "name": "ScreenCaptureAllowedByOrigins",
       "owners": [
@@ -31565,6 +33048,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 882,
       "name": "WindowCaptureAllowedByOrigins",
       "owners": [
@@ -31595,6 +33081,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 883,
       "name": "TabCaptureAllowedByOrigins",
       "owners": [
@@ -31625,6 +33114,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 884,
       "name": "SameOriginTabCaptureAllowedByOrigins",
       "owners": [
@@ -31989,6 +33481,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 685,
       "name": "AdvancedProtectionAllowed",
       "owners": [
@@ -32014,6 +33509,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 687,
       "name": "ScrollToTextFragmentEnabled",
       "owners": [
@@ -32065,6 +33563,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 703,
       "items": [
         {
@@ -32106,6 +33607,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 713,
       "name": "IntensiveWakeUpThrottlingEnabled",
       "owners": [
@@ -32244,6 +33748,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 924,
       "items": [
         {
@@ -32281,6 +33788,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 981,
       "items": [
         {
@@ -32345,6 +33855,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 739,
       "name": "ShowFullUrlsInAddressBar",
       "owners": [
@@ -32370,6 +33883,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 748,
       "name": "InsecureFormsWarningsEnabled",
       "owners": [
@@ -32398,6 +33914,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 782,
       "name": "LookalikeWarningAllowlistDomains",
       "owners": [
@@ -32799,6 +34318,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 787,
       "items": [
         {
@@ -32834,6 +34356,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 788,
       "items": [
         {
@@ -32933,6 +34458,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 791,
       "name": "BrowsingDataLifetime",
       "owners": [
@@ -33156,6 +34684,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 809,
       "items": [
         {
@@ -33236,6 +34767,9 @@
         "dynamic_refresh": false,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 810,
       "items": [
         {
@@ -33283,6 +34817,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 811,
       "items": [
         {
@@ -33394,7 +34931,8 @@
       },
       "future_on": [
         "chrome.*",
-        "chrome_os"
+        "chrome_os",
+        "fuchsia"
       ],
       "id": 822,
       "name": "SendDownloadToCloudEnterpriseConnector",
@@ -33527,6 +35065,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 824,
       "name": "WebAppSettings",
       "owners": [
@@ -33573,7 +35114,8 @@
         "per_profile": true
       },
       "future_on": [
-        "chrome_os"
+        "chrome_os",
+        "fuchsia"
       ],
       "id": 827,
       "name": "FetchKeepaliveDurationSecondsOnShutdown",
@@ -33600,6 +35142,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 829,
       "items": [
         {
@@ -33744,6 +35289,10 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "chrome_os",
+        "fuchsia"
+      ],
       "id": 839,
       "name": "ForcedLanguages",
       "owners": [
@@ -33771,6 +35320,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 840,
       "name": "BrowserThemeColor",
       "owners": [
@@ -33797,6 +35349,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 843,
       "items": [
         {
@@ -33922,6 +35477,9 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 849,
       "items": [
         {
@@ -34136,7 +35694,8 @@
         "per_profile": true
       },
       "future_on": [
-        "chrome_os"
+        "chrome_os",
+        "fuchsia"
       ],
       "id": 860,
       "items": [
@@ -34240,6 +35799,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 867,
       "items": [
         {
@@ -34283,6 +35845,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 868,
       "name": "JavaScriptJitAllowedForSites",
       "owners": [
@@ -34313,6 +35878,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 869,
       "name": "JavaScriptJitBlockedForSites",
       "owners": [
@@ -34342,6 +35910,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 870,
       "items": [
         {
@@ -34554,14 +36125,17 @@
       "type": "main"
     },
     {
-      "caption": "Extend support for Chrome Apps on Windows, Mac, and Linux.",
+      "caption": "Extend support for Chrome Apps on <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph>, <ph name=\"MAC_OS_NAME\">macOS</ph>, and <ph name=\"LINUX_OS_NAME\">Linux</ph>.",
       "default": false,
-      "desc": "Chrome Apps are deprecated on Windows, Mac, and Linux.\n      If this policy is enabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will continue to allow Chrome Apps to be run on these platforms until the final date when Chrome Apps support is removed on all platforms, June 2022.\n      If this policy is disabled or unset, Chrome Apps may not be allowed to run, depending on the status of the deprecation rollout.\n      In either case, Chrome Apps that are force installed by policy will continue to be allowed.",
+      "desc": "Chrome Apps are deprecated on <ph name=\"MS_WIN_NAME\">Microsoft\u00ae Windows\u00ae</ph>, <ph name=\"MAC_OS_NAME\">macOS</ph>, and <ph name=\"LINUX_OS_NAME\">Linux</ph>.\n      If this policy is enabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will continue to allow Chrome Apps to be run on these platforms until the final date when Chrome Apps support is removed on all platforms, June 2022.\n      If this policy is disabled or unset, Chrome Apps may not be allowed to run, depending on the status of the deprecation rollout.\n      In either case, Chrome Apps that are force installed by policy will continue to be allowed.",
       "example_value": true,
       "features": {
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 892,
       "items": [
         {
@@ -34736,6 +36310,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 905,
       "items": [
         {
@@ -34771,6 +36348,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 907,
       "items": [
         {
@@ -34806,6 +36386,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 908,
       "name": "AccessCodeCastDeviceDuration",
       "owners": [
@@ -34972,6 +36555,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 921,
       "items": [
         {
@@ -35054,7 +36640,8 @@
       },
       "future_on": [
         "chrome.*",
-        "chrome_os"
+        "chrome_os",
+        "fuchsia"
       ],
       "id": 928,
       "name": "CopyPreventionSettings",
@@ -35095,6 +36682,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 932,
       "items": [
         {
@@ -35146,6 +36736,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 949,
       "items": [
         {
@@ -35198,6 +36791,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 933,
       "items": [
         {
@@ -35261,9 +36857,9 @@
       "type": "main"
     },
     {
-      "caption": "Enable Projector",
-      "default": false,
-      "desc": "This policy gives Projector permission to create and transcribe screen recording and upload to Drive for enterprise users.\n      This policy does not affect Family Link users.\n      This policy does not affect <ph name=\"PROJECTOR_DOGFOOD_FOR_FAMILY_LINK_ENABLED_POLICY_NAME\">ProjectorDogfoodForFamilyLinkEnabled</ph> policy for Family Link users.\n\n      If the policy is enabled, Projector will be enabled.\n      If the policy is disabled, Projector will be disabled.\n      If the policy is not set, Projector will by default disabled.",
+      "caption": "Enable Screencast",
+      "default": true,
+      "desc": "This policy gives Screencast permission to create and transcribe screen recording and upload to Drive for enterprise users.\n      This policy does not affect Family Link users.\n      This policy does not affect <ph name=\"PROJECTOR_DOGFOOD_FOR_FAMILY_LINK_ENABLED_POLICY_NAME\">ProjectorDogfoodForFamilyLinkEnabled</ph> policy for Family Link users.\n\n      If the policy is unset or enabled, Screencast will be enabled.\n      If the policy is disabled, Screencast will be disabled.",
       "example_value": true,
       "features": {
         "dynamic_refresh": true,
@@ -35272,11 +36868,11 @@
       "id": 935,
       "items": [
         {
-          "caption": "Enable Projector",
+          "caption": "Enable Screencast",
           "value": true
         },
         {
-          "caption": "Disable Projector",
+          "caption": "Disable Screencast",
           "value": false
         }
       ],
@@ -35339,6 +36935,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 951,
       "items": [
         {
@@ -35381,6 +36980,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 960,
       "name": "WindowPlacementAllowedForUrls",
       "owners": [
@@ -35410,6 +37012,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 961,
       "name": "WindowPlacementBlockedForUrls",
       "owners": [
@@ -35437,6 +37042,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 977,
       "items": [
         {
@@ -35480,6 +37088,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 978,
       "name": "LocalFontsAllowedForUrls",
       "owners": [
@@ -35510,6 +37121,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 979,
       "name": "LocalFontsBlockedForUrls",
       "owners": [
@@ -35586,6 +37200,9 @@
         "dynamic_refresh": true,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 947,
       "name": "ExemptDomainFileTypePairsFromFileTypeDownloadWarnings",
       "owners": [
@@ -35631,7 +37248,8 @@
         "chrome.*",
         "chrome_os",
         "android",
-        "webview_android"
+        "webview_android",
+        "fuchsia"
       ],
       "id": 948,
       "items": [
@@ -35680,13 +37298,14 @@
       },
       "features": {
         "dynamic_refresh": false,
-        "per_profile": false
+        "per_profile": true
       },
       "future_on": [
         "chrome.*",
         "chrome_os",
         "android",
-        "webview_android"
+        "webview_android",
+        "fuchsia"
       ],
       "id": 969,
       "name": "FirstPartySetsOverrides",
@@ -35796,7 +37415,8 @@
       },
       "future_on": [
         "chrome_os",
-        "chrome.*"
+        "chrome.*",
+        "fuchsia"
       ],
       "id": 958,
       "items": [
@@ -35901,6 +37521,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 966,
       "items": [
         {
@@ -35937,6 +37560,9 @@
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 993,
       "items": [
         {
@@ -36045,7 +37671,8 @@
     {
       "caption": "Enable adaptive charging model to hold charging process to extend battery life",
       "default": true,
-      "desc": "Specifies whether an adaptive charging model is allowed to hold charging process to extend battery life.\n\n      When the device is on AC, the adaptive charging model evaluates if charging process should be hold to extend battery life. If the adaptive charging model holds the charging process, it'll keep the battery at a certain level (i.e. 80%) and then charge the device to 100% when the user need it.\n      If this policy is set to True or left not set, the adaptive charging model will be enabled and allowed to hold the charging process to extend battery life. If this policy is set to False, the adaptive charging model will not influence the charging process.",
+      "default_for_enterprise_users": false,
+      "desc": "Specifies whether an adaptive charging model is allowed to hold charging process to extend battery life.\n\n      When the device is on AC, the adaptive charging model evaluates if charging process should be hold to extend battery life. If the adaptive charging model holds the charging process, it'll keep the battery at a certain level (i.e. 80%) and then charge the device to 100% when the user needs it.\n      If this policy is set to True, the adaptive charging model will be enabled and allowed to hold the charging process to extend battery life. If this policy is set to False or unset, the adaptive charging model will not influence the charging process.",
       "example_value": false,
       "features": {
         "dynamic_refresh": true,
@@ -36200,7 +37827,7 @@
     },
     {
       "caption": "External authentication app launch URLs",
-      "desc": "Allows you to specify configs for authentication urls in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>.\n\n      These Authentication urls would be treated special by <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>, such that during authentication when webpage in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>\n      is navigated to authentication urls, corresponding Identity providers authenticator app that can handle this authentication URL would be launched.\n\n      This flow of launching the Idenity providers authenticator app would be used by the Identity providers to enable\n      use cases like providing SSO across apps or provide better security by collecting zero trust device signals to understand device posture during authentication.\n\n      If there is no valid app installed to handle authentication url on the device, navigation will continue in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>.\n\n      Valid authentication url should have the scheme <ph name=\"HTTP_PROTOCOL\">http</ph>/<ph name=\"HTTPS_PROTOCOL\">https</ph> and should not contain wildcards.\n      ",
+      "desc": "Allows you to specify configs for authentication urls in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>.\n\n      These Authentication urls would be treated special by <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>, such that during authentication when webpage in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>\n      is navigated to authentication urls, corresponding Identity providers authenticator app that can handle this authentication URL would be launched.\n\n      This flow of launching the Idenity providers authenticator app would be used by the Identity providers to enable\n      use cases like providing SSO across apps or provide better security by collecting zero trust device signals to understand device posture during authentication.\n\n      If there is no valid app installed to handle authentication url on the device, navigation will continue in <ph name=\"WEBVIEW_PRODUCT_NAME\">Android WebView</ph>.\n\n      Authentication URL pattern has to be formatted according to https://www.chromium.org/administrators/url-blocklist-filter-format.\n      ",
       "example_value": [
         {
           "url": "https://www.abc.com"
@@ -36210,9 +37837,6 @@
         "dynamic_refresh": true,
         "per_profile": false
       },
-      "future_on": [
-        "webview_android"
-      ],
       "id": 976,
       "name": "EnterpriseAuthenticationAppLinkPolicy",
       "owners": [
@@ -36230,13 +37854,16 @@
         },
         "type": "array"
       },
+      "supported_on": [
+        "webview_android:105-"
+      ],
       "tags": [],
       "type": "dict"
     },
     {
-      "caption": "Enable Projector dogfood for Family Link users",
+      "caption": "Enable Screencast dogfood for Family Link users",
       "default": false,
-      "desc": "This policy enables Projector feature for Family Link users and gives it permission to create and transcribe screen recording and upload to Drive.\n      This policy does not affect other types of users.\n      This policy does not affect <ph name=\"PROJECTOR_ENABLED_POLICY_NAME\">ProjectorEnabled</ph> policy for enterprise users.\n\n      If the policy is enabled, Projector dogfood will be enabled for Family Link users.\n      If the policy is disabled, Projector dogfood will be disabled for Family Link users.\n      If the policy is not set, Projector dogfood will be by default disabled for Family Link users.",
+      "desc": "This policy enables Screencast feature for Family Link users and gives it permission to create and transcribe screen recording and upload to Drive.\n      This policy does not affect other types of users.\n      This policy does not affect <ph name=\"PROJECTOR_ENABLED_POLICY_NAME\">ProjectorEnabled</ph> policy for enterprise users.\n\n      If the policy is enabled, Screencast dogfood will be enabled for Family Link users.\n      If the policy is disabled, Screencast dogfood will be disabled for Family Link users.\n      If the policy is not set, Screencast dogfood will be by default disabled for Family Link users.",
       "example_value": true,
       "features": {
         "dynamic_refresh": true,
@@ -36245,11 +37872,11 @@
       "id": 980,
       "items": [
         {
-          "caption": "Enable Projector dogfood for Family Link users",
+          "caption": "Enable Screencast dogfood for Family Link users",
           "value": true
         },
         {
-          "caption": "Disable Projector dogfood for Family Link users",
+          "caption": "Disable Screencast dogfood for Family Link users",
           "value": false
         }
       ],
@@ -36309,12 +37936,15 @@
     {
       "caption": "Control the nesting threshold before which Javascript setTimeout() function start being clamped",
       "default": null,
-      "desc": "setTimeout(\u2026, 0) is commonly used to break down long Javascript tasks.\n          When the policy is set to Enabled, setTimeouts and setIntervals with an interval smaller than 4ms are not clamped as aggressively.\n          This improves short horizon performance, but websites abusing the API will still eventually have their setTimeouts clamped.\n\n          This may change task ordering on a web page, leading to unexpected behavior on sites that are dependent on a certain ordering in some way.\n          It also may affect sites with a lot of setTimeout() with a timeout of 0ms usage, e.g. increasing CPU load.\n\n          For users where this policy is unset, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will roll out the change gradually on the stable channel.\n\n          This is a temporary policy that is planned be removed in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> 107. This deadline may be extended if there is a need for it among enterprises.\n          ",
+      "desc": "setTimeout(\u2026, 0) is commonly used to break down long Javascript tasks.\n          When the policy is set to Enabled, setTimeouts and setIntervals with an interval smaller than 4ms are not clamped as aggressively.\n          This improves short horizon performance, but websites abusing the API will still eventually have their setTimeouts clamped.\n\n          When the policy is set to Disabled, setTimeouts and setIntervals with an interval smaller than 4ms will be clamped.\n\n          This may change task ordering on a web page, leading to unexpected behavior on sites that are dependent on a certain ordering in some way.\n          It also may affect sites with a lot of setTimeout() with a timeout of 0ms usage, e.g. increasing CPU load.\n\n          For users where this policy is unset, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will roll out the change gradually on the stable channel.\n\n          This is a temporary policy that is planned be removed in <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> 107. This deadline may be extended if there is a need for it among enterprises.\n          ",
       "example_value": true,
       "features": {
         "dynamic_refresh": false,
         "per_profile": true
       },
+      "future_on": [
+        "fuchsia"
+      ],
       "id": 988,
       "items": [
         {
@@ -36343,6 +37973,111 @@
         "chrome_os:104-106",
         "chrome.*:104-106",
         "android:104-106"
+      ],
+      "tags": [],
+      "type": "main"
+    },
+    {
+      "caption": "Timeout until idle profile is closed",
+      "default": 0,
+      "desc": "Triggers an action when the computer is idle.\n\n        If this policy is set to a positive number: it is a number of minutes. After that many minutes without user input, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> closes all browser windows, and shows the Profile Picker.\n\n        If this policy is less than 5, or left unset: nothing happens when the computer is idle.\n\n        \"User input\" is defined by Operating System APIs, and includes things like moving the mouse or typing on the keyboard.",
+      "example_value": 5,
+      "features": {
+        "dynamic_refresh": true,
+        "per_profile": true
+      },
+      "future_on": [
+        "chrome.*",
+        "fuchsia"
+      ],
+      "id": 994,
+      "name": "IdleProfileCloseTimeout",
+      "owners": [
+        "nicolaso@chromium.org"
+      ],
+      "schema": {
+        "minimum": 5,
+        "type": "integer"
+      },
+      "tags": [],
+      "type": "int"
+    },
+    {
+      "caption": "Enable TLS Encrypted ClientHello",
+      "default": true,
+      "desc": "Encrypted ClientHello (ECH) is an extension to TLS to encrypt sensitive fields of the ClientHello and improve privacy.\n\n      If this policy is not configured, or is set to enabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will follow the default rollout process for ECH. If it is disabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> will not enable ECH.\n\n      When the feature is enabled, <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph> may or may not use ECH depending on server support, availability of the HTTPS DNS record, or rollout status.\n\n      ECH is an evolving protocol, so <ph name=\"PRODUCT_NAME\">$1<ex>Google Chrome</ex></ph>'s implementation is subject to change. As such, this policy is a temporary measure to control the initial experimental implementation. It will be replaced with final controls as the protocol finalizes.",
+      "example_value": true,
+      "features": {
+        "dynamic_refresh": true,
+        "per_profile": false
+      },
+      "future_on": [
+        "fuchsia"
+      ],
+      "id": 996,
+      "items": [
+        {
+          "caption": "Enable the TLS Encrypted ClientHello experiment",
+          "value": true
+        },
+        {
+          "caption": "Disable the TLS Encrypted ClientHello experiment",
+          "value": false
+        }
+      ],
+      "name": "EncryptedClientHelloEnabled",
+      "owners": [
+        "davidben@chromium.org",
+        "trusty-transport@chromium.org"
+      ],
+      "schema": {
+        "type": "boolean"
+      },
+      "supported_on": [
+        "chrome.*:105-",
+        "chrome_os:105-",
+        "android:105-"
+      ],
+      "tags": [
+        "system-security"
+      ],
+      "type": "main"
+    },
+    {
+      "caption": "Keep browsing data when creating enterprise profile by default",
+      "default": false,
+      "desc": "If this policy is Enabled, the option to keep any existing browsing data when creating an enterprise profile will be checked by default.\n\nIf this policy is unset or Disabled, the option to keep any existing browsing data when creating an enterprise profile will not be checked by default.\n\nRegardless of the value, the user will be able to decide whether or not to keep any existing browsing data when creating an enterprise profile.\n\nThis policy has no effect if the option to keep existing browsing data is not available; this happens if enterprise profile separation is strictly enforced, or if the data would be from an already managed profile.\n",
+      "example_value": true,
+      "features": {
+        "can_be_mandatory": false,
+        "can_be_recommended": true,
+        "dynamic_refresh": true,
+        "per_profile": false
+      },
+      "future_on": [
+        "fuchsia"
+      ],
+      "id": 998,
+      "items": [
+        {
+          "caption": "Check the option to keep existing browsing data by default",
+          "value": true
+        },
+        {
+          "caption": "Do not check the option to keep existing browsing data by default",
+          "value": false
+        }
+      ],
+      "name": "EnterpriseProfileCreationKeepBrowsingData",
+      "owners": [
+        "ydago@chromium.org",
+        "file://components/policy/resources/OWNERS"
+      ],
+      "schema": {
+        "type": "boolean"
+      },
+      "supported_on": [
+        "chrome.*:106-"
       ],
       "tags": [],
       "type": "main"

@@ -75,16 +75,8 @@ struct IgnoredValue {
   INTERNAL_TRACE_IGNORE(category, name)
 #define PERFETTO_INTERNAL_ADD_EMPTY_EVENT() INTERNAL_TRACE_IGNORE()
 
-template <class T>
-class scoped_refptr;
-
 namespace base {
-
-class SingleThreadTaskRunner;
-
 namespace trace_event {
-
-BASE_EXPORT uint64_t GetNextGlobalTraceId();
 
 class BASE_EXPORT ConvertableToTraceFormat {
  public:
@@ -165,55 +157,10 @@ class BASE_EXPORT BlameContext {
 };
 
 struct MemoryDumpArgs;
-enum class MemoryDumpLevelOfDetail : uint32_t;
-
-class BASE_EXPORT MemoryAllocatorDump {
- public:
-  struct BASE_EXPORT Entry {};
-  MemoryAllocatorDump(const std::string& absolute_name,
-                      MemoryDumpLevelOfDetail,
-                      const MemoryAllocatorDumpGuid&) {}
-  MemoryAllocatorDump(const MemoryAllocatorDump&) = delete;
-  MemoryAllocatorDump& operator=(const MemoryAllocatorDump&) = delete;
-  ~MemoryAllocatorDump();
-  static const char kNameSize[];
-  static const char kNameObjectCount[];
-  static const char kUnitsBytes[];
-  static const char kUnitsObjects[];
-  static const char kTypeScalar[];
-  static const char kTypeString[];
-  void AddScalar(const char* name, const char* units, uint64_t value) {}
-  void AddString(const char* name,
-                 const char* units,
-                 const std::string& value) {}
-  void AsValueInto(TracedValue* value) const {}
-  uint64_t GetSizeInternal() const { return 0; }
-  void set_flags(int flags) {}
-  void clear_flags(int flags) {}
-  int flags() const { return 0; }
-};
-
-class BASE_EXPORT ProcessMemoryDump {
- public:
-  explicit ProcessMemoryDump(const MemoryDumpArgs& dump_args) {}
-  ProcessMemoryDump(ProcessMemoryDump&&) {}
-  ~ProcessMemoryDump() {}
-
-  ProcessMemoryDump& operator=(ProcessMemoryDump&&);
-
-  MemoryAllocatorDump* CreateAllocatorDump(const std::string& absolute_name) {
-    return nullptr;
-  }
-  MemoryAllocatorDump* CreateAllocatorDump(
-      const std::string& absolute_name,
-      const MemoryAllocatorDumpGuid& guid) {
-    return nullptr;
-  }
-};
+class ProcessMemoryDump;
 
 class BASE_EXPORT MemoryDumpProvider {
  public:
-  struct Options {};
   MemoryDumpProvider(const MemoryDumpProvider&) = delete;
   MemoryDumpProvider& operator=(const MemoryDumpProvider&) = delete;
   virtual ~MemoryDumpProvider();
@@ -229,38 +176,6 @@ class BASE_EXPORT MemoryDumpManager {
  public:
   static constexpr const char* const kTraceCategory =
       TRACE_DISABLED_BY_DEFAULT("memory-infra");
-  static MemoryDumpManager* GetInstance() { return nullptr; }
-
-  MemoryDumpManager(const MemoryDumpManager&) = delete;
-  MemoryDumpManager& operator=(const MemoryDumpManager&) = delete;
-
-  void RegisterDumpProvider(MemoryDumpProvider* mdp,
-                            const char* name,
-                            scoped_refptr<SingleThreadTaskRunner> task_runner);
-  void RegisterDumpProvider(MemoryDumpProvider* mdp,
-                            const char* name,
-                            scoped_refptr<SingleThreadTaskRunner> task_runner,
-                            MemoryDumpProvider::Options options);
-  void UnregisterDumpProvider(MemoryDumpProvider* mdp) {}
-  void UnregisterAndDeleteDumpProviderSoon(
-      std::unique_ptr<MemoryDumpProvider> mdp) {}
-
- private:
-  MemoryDumpManager() {}
-  virtual ~MemoryDumpManager();
-};
-
-class BASE_EXPORT TraceLog : public MemoryDumpProvider {
- public:
-  static TraceLog* GetInstance() { return nullptr; }
-
-  TraceLog(const TraceLog&) = delete;
-  TraceLog& operator=(const TraceLog&) = delete;
-
-  int process_id() const { return 0; }
-
- private:
-  explicit TraceLog(int generation) {}
 };
 
 }  // namespace trace_event
@@ -268,12 +183,7 @@ class BASE_EXPORT TraceLog : public MemoryDumpProvider {
 
 // Stub implementation for
 // perfetto_libchrome::StaticString/ThreadTrack/TracedValue/TracedDictionary/TracedArray.
-namespace perfetto_libchrome{
-
-namespace internal {
-template <typename T>
-class has_traced_value_support {};
-}  // namespace internal
+namespace perfetto_libchrome {
 
 class TracedArray;
 class TracedDictionary;
@@ -291,7 +201,7 @@ class DynamicString {
   explicit DynamicString(T) {}
 };
 
-class BASE_EXPORT TracedValue {
+class TracedValue {
  public:
   void WriteInt64(int64_t) && {}
   void WriteUInt64(uint64_t) && {}
@@ -306,7 +216,7 @@ class BASE_EXPORT TracedValue {
   TracedArray WriteArray() &&;
 };
 
-class BASE_EXPORT TracedDictionary {
+class TracedDictionary {
  public:
   TracedValue AddItem(StaticString) { return TracedValue(); }
   TracedValue AddItem(DynamicString) { return TracedValue(); }
@@ -322,7 +232,7 @@ class BASE_EXPORT TracedDictionary {
   TracedArray AddArray(DynamicString);
 };
 
-class BASE_EXPORT TracedArray {
+class TracedArray {
  public:
   TracedValue AppendItem() { return TracedValue(); }
 
@@ -335,11 +245,6 @@ class BASE_EXPORT TracedArray {
 
 template <class T>
 void WriteIntoTracedValue(TracedValue, T&&) {}
-
-template <typename T>
-void WriteIntoTracedValueWithFallback(TracedValue context,
-                                      T&& value,
-                                      const std::string&) {}
 
 }  // namespace perfetto
 
