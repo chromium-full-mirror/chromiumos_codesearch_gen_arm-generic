@@ -1,2 +1,0 @@
-/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_statusor.a CMakeFiles/absl_statusor.dir/statusor.cc.o
-/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_statusor.a

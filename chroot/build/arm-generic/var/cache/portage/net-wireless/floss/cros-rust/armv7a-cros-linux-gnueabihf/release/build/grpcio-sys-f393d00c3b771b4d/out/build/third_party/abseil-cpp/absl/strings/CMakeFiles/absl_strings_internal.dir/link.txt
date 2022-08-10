@@ -1,2 +1,0 @@
-/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_strings_internal.a CMakeFiles/absl_strings_internal.dir/internal/ostringstream.cc.o CMakeFiles/absl_strings_internal.dir/internal/utf8.cc.o CMakeFiles/absl_strings_internal.dir/internal/escaping.cc.o
-/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_strings_internal.a
