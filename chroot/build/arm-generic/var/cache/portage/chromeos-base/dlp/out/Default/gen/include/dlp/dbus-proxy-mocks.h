@@ -24,16 +24,6 @@ class DlpFilesPolicyServiceProxyMock : public DlpFilesPolicyServiceProxyInterfac
   DlpFilesPolicyServiceProxyMock(const DlpFilesPolicyServiceProxyMock&) = delete;
   DlpFilesPolicyServiceProxyMock& operator=(const DlpFilesPolicyServiceProxyMock&) = delete;
 
-  MOCK_METHOD4(IsRestricted,
-               bool(const std::vector<uint8_t>& /*in_request*/,
-                    std::vector<uint8_t>* /*out_response*/,
-                    brillo::ErrorPtr* /*error*/,
-                    int /*timeout_ms*/));
-  MOCK_METHOD4(IsRestrictedAsync,
-               void(const std::vector<uint8_t>& /*in_request*/,
-                    base::OnceCallback<void(const std::vector<uint8_t>& /*response*/)> /*success_callback*/,
-                    base::OnceCallback<void(brillo::Error*)> /*error_callback*/,
-                    int /*timeout_ms*/));
   MOCK_METHOD4(IsDlpPolicyMatched,
                bool(const std::vector<uint8_t>& /*in_request*/,
                     std::vector<uint8_t>* /*out_response*/,

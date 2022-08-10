@@ -32,22 +32,6 @@ class DlpFilesPolicyServiceProxyInterface {
  public:
   virtual ~DlpFilesPolicyServiceProxyInterface() = default;
 
-  // Returns whether a file copy/upload from the given source to the destination should be
-  // restricted according to Data Leak Prevention policy.
-  virtual bool IsRestricted(
-      const std::vector<uint8_t>& in_request,
-      std::vector<uint8_t>* out_response,
-      brillo::ErrorPtr* error,
-      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
-
-  // Returns whether a file copy/upload from the given source to the destination should be
-  // restricted according to Data Leak Prevention policy.
-  virtual void IsRestrictedAsync(
-      const std::vector<uint8_t>& in_request,
-      base::OnceCallback<void(const std::vector<uint8_t>& /*response*/)> success_callback,
-      base::OnceCallback<void(brillo::Error*)> error_callback,
-      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) = 0;
-
   // Returns whether a file from the given source could be restricted by any of files
   // restrictions in Data Leak Prevention policy.
   virtual bool IsDlpPolicyMatched(
@@ -118,41 +102,6 @@ class DlpFilesPolicyServiceProxy final : public DlpFilesPolicyServiceProxyInterf
 
   dbus::ObjectProxy* GetObjectProxy() const override {
     return dbus_object_proxy_;
-  }
-
-  // Returns whether a file copy/upload from the given source to the destination should be
-  // restricted according to Data Leak Prevention policy.
-  bool IsRestricted(
-      const std::vector<uint8_t>& in_request,
-      std::vector<uint8_t>* out_response,
-      brillo::ErrorPtr* error,
-      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
-    auto response = brillo::dbus_utils::CallMethodAndBlockWithTimeout(
-        timeout_ms,
-        dbus_object_proxy_,
-        "org.chromium.DlpFilesPolicyService",
-        "IsRestricted",
-        error,
-        in_request);
-    return response && brillo::dbus_utils::ExtractMethodCallResults(
-        response.get(), error, out_response);
-  }
-
-  // Returns whether a file copy/upload from the given source to the destination should be
-  // restricted according to Data Leak Prevention policy.
-  void IsRestrictedAsync(
-      const std::vector<uint8_t>& in_request,
-      base::OnceCallback<void(const std::vector<uint8_t>& /*response*/)> success_callback,
-      base::OnceCallback<void(brillo::Error*)> error_callback,
-      int timeout_ms = dbus::ObjectProxy::TIMEOUT_USE_DEFAULT) override {
-    brillo::dbus_utils::CallMethodWithTimeout(
-        timeout_ms,
-        dbus_object_proxy_,
-        "org.chromium.DlpFilesPolicyService",
-        "IsRestricted",
-        std::move(success_callback),
-        std::move(error_callback),
-        in_request);
   }
 
   // Returns whether a file from the given source could be restricted by any of files

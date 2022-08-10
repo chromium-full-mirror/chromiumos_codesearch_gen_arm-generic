@@ -45,7 +45,7 @@ struct TableStruct_dlp_5fservice_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -88,12 +88,6 @@ extern IsFilesTransferRestrictedRequestDefaultTypeInternal _IsFilesTransferRestr
 class IsFilesTransferRestrictedResponse;
 struct IsFilesTransferRestrictedResponseDefaultTypeInternal;
 extern IsFilesTransferRestrictedResponseDefaultTypeInternal _IsFilesTransferRestrictedResponse_default_instance_;
-class IsRestrictedRequest;
-struct IsRestrictedRequestDefaultTypeInternal;
-extern IsRestrictedRequestDefaultTypeInternal _IsRestrictedRequest_default_instance_;
-class IsRestrictedResponse;
-struct IsRestrictedResponseDefaultTypeInternal;
-extern IsRestrictedResponseDefaultTypeInternal _IsRestrictedResponse_default_instance_;
 class RequestFileAccessRequest;
 struct RequestFileAccessRequestDefaultTypeInternal;
 extern RequestFileAccessRequestDefaultTypeInternal _RequestFileAccessRequest_default_instance_;
@@ -120,8 +114,6 @@ template<> ::dlp::IsDlpPolicyMatchedRequest* Arena::CreateMaybeMessage<::dlp::Is
 template<> ::dlp::IsDlpPolicyMatchedResponse* Arena::CreateMaybeMessage<::dlp::IsDlpPolicyMatchedResponse>(Arena*);
 template<> ::dlp::IsFilesTransferRestrictedRequest* Arena::CreateMaybeMessage<::dlp::IsFilesTransferRestrictedRequest>(Arena*);
 template<> ::dlp::IsFilesTransferRestrictedResponse* Arena::CreateMaybeMessage<::dlp::IsFilesTransferRestrictedResponse>(Arena*);
-template<> ::dlp::IsRestrictedRequest* Arena::CreateMaybeMessage<::dlp::IsRestrictedRequest>(Arena*);
-template<> ::dlp::IsRestrictedResponse* Arena::CreateMaybeMessage<::dlp::IsRestrictedResponse>(Arena*);
 template<> ::dlp::RequestFileAccessRequest* Arena::CreateMaybeMessage<::dlp::RequestFileAccessRequest>(Arena*);
 template<> ::dlp::RequestFileAccessResponse* Arena::CreateMaybeMessage<::dlp::RequestFileAccessResponse>(Arena*);
 template<> ::dlp::SetDlpFilesPolicyRequest* Arena::CreateMaybeMessage<::dlp::SetDlpFilesPolicyRequest>(Arena*);
@@ -1320,321 +1312,6 @@ class RequestFileAccessResponse final :
 };
 // -------------------------------------------------------------------
 
-class IsRestrictedRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:dlp.IsRestrictedRequest) */ {
- public:
-  inline IsRestrictedRequest() : IsRestrictedRequest(nullptr) {}
-  ~IsRestrictedRequest() override;
-  explicit constexpr IsRestrictedRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  IsRestrictedRequest(const IsRestrictedRequest& from);
-  IsRestrictedRequest(IsRestrictedRequest&& from) noexcept
-    : IsRestrictedRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline IsRestrictedRequest& operator=(const IsRestrictedRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline IsRestrictedRequest& operator=(IsRestrictedRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const std::string& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
-  }
-  inline std::string* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<std::string>();
-  }
-
-  static const IsRestrictedRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const IsRestrictedRequest* internal_default_instance() {
-    return reinterpret_cast<const IsRestrictedRequest*>(
-               &_IsRestrictedRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(IsRestrictedRequest& a, IsRestrictedRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(IsRestrictedRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(IsRestrictedRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  IsRestrictedRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IsRestrictedRequest>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const IsRestrictedRequest& from);
-  void MergeFrom(const IsRestrictedRequest& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(IsRestrictedRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "dlp.IsRestrictedRequest";
-  }
-  protected:
-  explicit IsRestrictedRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kSourceUrlsFieldNumber = 1,
-    kDestinationUrlFieldNumber = 2,
-  };
-  // repeated string source_urls = 1;
-  int source_urls_size() const;
-  private:
-  int _internal_source_urls_size() const;
-  public:
-  void clear_source_urls();
-  const std::string& source_urls(int index) const;
-  std::string* mutable_source_urls(int index);
-  void set_source_urls(int index, const std::string& value);
-  void set_source_urls(int index, std::string&& value);
-  void set_source_urls(int index, const char* value);
-  void set_source_urls(int index, const char* value, size_t size);
-  std::string* add_source_urls();
-  void add_source_urls(const std::string& value);
-  void add_source_urls(std::string&& value);
-  void add_source_urls(const char* value);
-  void add_source_urls(const char* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& source_urls() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_source_urls();
-  private:
-  const std::string& _internal_source_urls(int index) const;
-  std::string* _internal_add_source_urls();
-  public:
-
-  // optional string destination_url = 2;
-  bool has_destination_url() const;
-  private:
-  bool _internal_has_destination_url() const;
-  public:
-  void clear_destination_url();
-  const std::string& destination_url() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_destination_url(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_destination_url();
-  PROTOBUF_NODISCARD std::string* release_destination_url();
-  void set_allocated_destination_url(std::string* destination_url);
-  private:
-  const std::string& _internal_destination_url() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_destination_url(const std::string& value);
-  std::string* _internal_mutable_destination_url();
-  public:
-
-  // @@protoc_insertion_point(class_scope:dlp.IsRestrictedRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> source_urls_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr destination_url_;
-  friend struct ::TableStruct_dlp_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class IsRestrictedResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:dlp.IsRestrictedResponse) */ {
- public:
-  inline IsRestrictedResponse() : IsRestrictedResponse(nullptr) {}
-  ~IsRestrictedResponse() override;
-  explicit constexpr IsRestrictedResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  IsRestrictedResponse(const IsRestrictedResponse& from);
-  IsRestrictedResponse(IsRestrictedResponse&& from) noexcept
-    : IsRestrictedResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline IsRestrictedResponse& operator=(const IsRestrictedResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline IsRestrictedResponse& operator=(IsRestrictedResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const std::string& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
-  }
-  inline std::string* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<std::string>();
-  }
-
-  static const IsRestrictedResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const IsRestrictedResponse* internal_default_instance() {
-    return reinterpret_cast<const IsRestrictedResponse*>(
-               &_IsRestrictedResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  friend void swap(IsRestrictedResponse& a, IsRestrictedResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(IsRestrictedResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(IsRestrictedResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  IsRestrictedResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<IsRestrictedResponse>(arena);
-  }
-  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
-  void CopyFrom(const IsRestrictedResponse& from);
-  void MergeFrom(const IsRestrictedResponse& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  void InternalSwap(IsRestrictedResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "dlp.IsRestrictedResponse";
-  }
-  protected:
-  explicit IsRestrictedResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  std::string GetTypeName() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kRestrictedFieldNumber = 1,
-  };
-  // optional bool restricted = 1;
-  bool has_restricted() const;
-  private:
-  bool _internal_has_restricted() const;
-  public:
-  void clear_restricted();
-  bool restricted() const;
-  void set_restricted(bool value);
-  private:
-  bool _internal_restricted() const;
-  void _internal_set_restricted(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:dlp.IsRestrictedResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  bool restricted_;
-  friend struct ::TableStruct_dlp_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
 class IsDlpPolicyMatchedRequest final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:dlp.IsDlpPolicyMatchedRequest) */ {
  public:
@@ -1681,7 +1358,7 @@ class IsDlpPolicyMatchedRequest final :
                &_IsDlpPolicyMatchedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   friend void swap(IsDlpPolicyMatchedRequest& a, IsDlpPolicyMatchedRequest& b) {
     a.Swap(&b);
@@ -1828,7 +1505,7 @@ class IsDlpPolicyMatchedResponse final :
                &_IsDlpPolicyMatchedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    8;
 
   friend void swap(IsDlpPolicyMatchedResponse& a, IsDlpPolicyMatchedResponse& b) {
     a.Swap(&b);
@@ -1970,7 +1647,7 @@ class GetFilesSourcesRequest final :
                &_GetFilesSourcesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    9;
 
   friend void swap(GetFilesSourcesRequest& a, GetFilesSourcesRequest& b) {
     a.Swap(&b);
@@ -2120,7 +1797,7 @@ class FileMetadata final :
                &_FileMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    10;
 
   friend void swap(FileMetadata& a, FileMetadata& b) {
     a.Swap(&b);
@@ -2282,7 +1959,7 @@ class GetFilesSourcesResponse final :
                &_GetFilesSourcesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   friend void swap(GetFilesSourcesResponse& a, GetFilesSourcesResponse& b) {
     a.Swap(&b);
@@ -2449,7 +2126,7 @@ class CheckFilesTransferRequest final :
                &_CheckFilesTransferRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    12;
 
   friend void swap(CheckFilesTransferRequest& a, CheckFilesTransferRequest& b) {
     a.Swap(&b);
@@ -2622,7 +2299,7 @@ class CheckFilesTransferResponse final :
                &_CheckFilesTransferResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    13;
 
   friend void swap(CheckFilesTransferResponse& a, CheckFilesTransferResponse& b) {
     a.Swap(&b);
@@ -2795,7 +2472,7 @@ class IsFilesTransferRestrictedRequest final :
                &_IsFilesTransferRestrictedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    14;
 
   friend void swap(IsFilesTransferRestrictedRequest& a, IsFilesTransferRestrictedRequest& b) {
     a.Swap(&b);
@@ -2968,7 +2645,7 @@ class IsFilesTransferRestrictedResponse final :
                &_IsFilesTransferRestrictedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    15;
 
   friend void swap(IsFilesTransferRestrictedResponse& a, IsFilesTransferRestrictedResponse& b) {
     a.Swap(&b);
@@ -3931,186 +3608,6 @@ inline void RequestFileAccessResponse::_internal_set_allowed(bool value) {
 inline void RequestFileAccessResponse::set_allowed(bool value) {
   _internal_set_allowed(value);
   // @@protoc_insertion_point(field_set:dlp.RequestFileAccessResponse.allowed)
-}
-
-// -------------------------------------------------------------------
-
-// IsRestrictedRequest
-
-// repeated string source_urls = 1;
-inline int IsRestrictedRequest::_internal_source_urls_size() const {
-  return source_urls_.size();
-}
-inline int IsRestrictedRequest::source_urls_size() const {
-  return _internal_source_urls_size();
-}
-inline void IsRestrictedRequest::clear_source_urls() {
-  source_urls_.Clear();
-}
-inline std::string* IsRestrictedRequest::add_source_urls() {
-  std::string* _s = _internal_add_source_urls();
-  // @@protoc_insertion_point(field_add_mutable:dlp.IsRestrictedRequest.source_urls)
-  return _s;
-}
-inline const std::string& IsRestrictedRequest::_internal_source_urls(int index) const {
-  return source_urls_.Get(index);
-}
-inline const std::string& IsRestrictedRequest::source_urls(int index) const {
-  // @@protoc_insertion_point(field_get:dlp.IsRestrictedRequest.source_urls)
-  return _internal_source_urls(index);
-}
-inline std::string* IsRestrictedRequest::mutable_source_urls(int index) {
-  // @@protoc_insertion_point(field_mutable:dlp.IsRestrictedRequest.source_urls)
-  return source_urls_.Mutable(index);
-}
-inline void IsRestrictedRequest::set_source_urls(int index, const std::string& value) {
-  source_urls_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::set_source_urls(int index, std::string&& value) {
-  source_urls_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::set_source_urls(int index, const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  source_urls_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::set_source_urls(int index, const char* value, size_t size) {
-  source_urls_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:dlp.IsRestrictedRequest.source_urls)
-}
-inline std::string* IsRestrictedRequest::_internal_add_source_urls() {
-  return source_urls_.Add();
-}
-inline void IsRestrictedRequest::add_source_urls(const std::string& value) {
-  source_urls_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::add_source_urls(std::string&& value) {
-  source_urls_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::add_source_urls(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  source_urls_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:dlp.IsRestrictedRequest.source_urls)
-}
-inline void IsRestrictedRequest::add_source_urls(const char* value, size_t size) {
-  source_urls_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:dlp.IsRestrictedRequest.source_urls)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-IsRestrictedRequest::source_urls() const {
-  // @@protoc_insertion_point(field_list:dlp.IsRestrictedRequest.source_urls)
-  return source_urls_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-IsRestrictedRequest::mutable_source_urls() {
-  // @@protoc_insertion_point(field_mutable_list:dlp.IsRestrictedRequest.source_urls)
-  return &source_urls_;
-}
-
-// optional string destination_url = 2;
-inline bool IsRestrictedRequest::_internal_has_destination_url() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool IsRestrictedRequest::has_destination_url() const {
-  return _internal_has_destination_url();
-}
-inline void IsRestrictedRequest::clear_destination_url() {
-  destination_url_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& IsRestrictedRequest::destination_url() const {
-  // @@protoc_insertion_point(field_get:dlp.IsRestrictedRequest.destination_url)
-  return _internal_destination_url();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void IsRestrictedRequest::set_destination_url(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000001u;
- destination_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:dlp.IsRestrictedRequest.destination_url)
-}
-inline std::string* IsRestrictedRequest::mutable_destination_url() {
-  std::string* _s = _internal_mutable_destination_url();
-  // @@protoc_insertion_point(field_mutable:dlp.IsRestrictedRequest.destination_url)
-  return _s;
-}
-inline const std::string& IsRestrictedRequest::_internal_destination_url() const {
-  return destination_url_.Get();
-}
-inline void IsRestrictedRequest::_internal_set_destination_url(const std::string& value) {
-  _has_bits_[0] |= 0x00000001u;
-  destination_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* IsRestrictedRequest::_internal_mutable_destination_url() {
-  _has_bits_[0] |= 0x00000001u;
-  return destination_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* IsRestrictedRequest::release_destination_url() {
-  // @@protoc_insertion_point(field_release:dlp.IsRestrictedRequest.destination_url)
-  if (!_internal_has_destination_url()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000001u;
-  auto* p = destination_url_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (destination_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    destination_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void IsRestrictedRequest::set_allocated_destination_url(std::string* destination_url) {
-  if (destination_url != nullptr) {
-    _has_bits_[0] |= 0x00000001u;
-  } else {
-    _has_bits_[0] &= ~0x00000001u;
-  }
-  destination_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), destination_url,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (destination_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    destination_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:dlp.IsRestrictedRequest.destination_url)
-}
-
-// -------------------------------------------------------------------
-
-// IsRestrictedResponse
-
-// optional bool restricted = 1;
-inline bool IsRestrictedResponse::_internal_has_restricted() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool IsRestrictedResponse::has_restricted() const {
-  return _internal_has_restricted();
-}
-inline void IsRestrictedResponse::clear_restricted() {
-  restricted_ = false;
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline bool IsRestrictedResponse::_internal_restricted() const {
-  return restricted_;
-}
-inline bool IsRestrictedResponse::restricted() const {
-  // @@protoc_insertion_point(field_get:dlp.IsRestrictedResponse.restricted)
-  return _internal_restricted();
-}
-inline void IsRestrictedResponse::_internal_set_restricted(bool value) {
-  _has_bits_[0] |= 0x00000001u;
-  restricted_ = value;
-}
-inline void IsRestrictedResponse::set_restricted(bool value) {
-  _internal_set_restricted(value);
-  // @@protoc_insertion_point(field_set:dlp.IsRestrictedResponse.restricted)
 }
 
 // -------------------------------------------------------------------
@@ -5078,10 +4575,6 @@ IsFilesTransferRestrictedResponse::mutable_files_sources() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
