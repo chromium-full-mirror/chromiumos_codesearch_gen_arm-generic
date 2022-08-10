@@ -162,61 +162,7 @@ this.node_=null;}
 backward_(node){if(node.previousSibling){this.phase_=AutomationTreeWalkerPhase.OTHER;node=node.previousSibling;while(!this.leafPred_(node)&&node.lastChild){node=node.lastChild;}
 this.node_=node;return;}
 if(node.parent&&this.backwardAncestor_===node.parent){this.phase_=AutomationTreeWalkerPhase.ANCESTOR;this.backwardAncestor_=node.parent.parent||null;}
-this.node_=node.parent||null;}};goog.provide('AutomationUtil');goog.require('AutomationPredicate');goog.require('AutomationTreeWalker');goog.require('constants');goog.scope(function(){const AutomationNode=chrome.automation.AutomationNode;const Dir=constants.Dir;const RoleType=chrome.automation.RoleType;AutomationUtil=class{constructor(){}
-static findNodePre(cur,dir,pred){if(!cur){return null;}
-if(pred(cur)&&!AutomationPredicate.shouldIgnoreNode(cur)){return cur;}
-let child=dir===Dir.BACKWARD?cur.lastChild:cur.firstChild;while(child){const ret=AutomationUtil.findNodePre(child,dir,pred);if(ret){return ret;}
-child=dir===Dir.BACKWARD?child.previousSibling:child.nextSibling;}
-return null;}
-static findNodePost(cur,dir,pred){if(!cur){return null;}
-let child=dir===Dir.BACKWARD?cur.lastChild:cur.firstChild;while(child){const ret=AutomationUtil.findNodePost(child,dir,pred);if(ret){return ret;}
-child=dir===Dir.BACKWARD?child.previousSibling:child.nextSibling;}
-if(pred(cur)&&!AutomationPredicate.shouldIgnoreNode(cur)){return cur;}
-return null;}
-static findNextNode(cur,dir,pred,opt_restrictions){const walker=createWalker(cur,dir,pred,opt_restrictions);return walker.next().node;}
-static findAllNodes(cur,dir,pred,opt_restrictions){const walker=createWalker(cur,dir,pred,opt_restrictions);const nodes=[];let currentNode=walker.next().node;while(currentNode){nodes.push(currentNode);currentNode=walker.next().node;}
-return nodes;}
-static findNodeUntil(cur,dir,pred,opt_before){let before=cur;let after=before;do{before=after;after=AutomationUtil.findNextNode(before,dir,AutomationPredicate.leaf);}while(after&&!pred(before,after));return opt_before?before:after;}
-static getAncestors(node){const ret=[];let candidate=node;while(candidate){ret.push(candidate);candidate=candidate.parent;}
-return ret.reverse();}
-static getFirstAncestorWithRole(node,role){if(!node.parent){return null;}
-if(node.parent.role===role){return node.parent;}
-return AutomationUtil.getFirstAncestorWithRole(node.parent,role);}
-static getDivergence(ancestorsA,ancestorsB){for(let i=0;i<ancestorsA.length;i++){if(ancestorsA[i]!==ancestorsB[i]){return i;}}
-if(ancestorsA.length===ancestorsB.length){return-1;}
-return ancestorsA.length;}
-static getUniqueAncestors(prevNode,node){const prevAncestors=AutomationUtil.getAncestors(prevNode);const ancestors=AutomationUtil.getAncestors(node);const divergence=AutomationUtil.getDivergence(prevAncestors,ancestors);return ancestors.slice(divergence);}
-static getDirection(nodeA,nodeB){const ancestorsA=AutomationUtil.getAncestors(nodeA);const ancestorsB=AutomationUtil.getAncestors(nodeB);const divergence=AutomationUtil.getDivergence(ancestorsA,ancestorsB);if(divergence===-1){return Dir.FORWARD;}
-const divA=ancestorsA[divergence];const divB=ancestorsB[divergence];if(!divA){return Dir.FORWARD;}
-if(!divB){return Dir.BACKWARD;}
-if(divA.parent===nodeB){return Dir.BACKWARD;}
-if(divB.parent===nodeA){return Dir.FORWARD;}
-return divA.indexInParent<=divB.indexInParent?Dir.FORWARD:Dir.BACKWARD;}
-static isInSameTree(a,b){if(!a||!b){return true;}
-return a.root===b.root||(a.root.role===b.root.role&&a.root.role===RoleType.ROOT_WEB_AREA);}
-static isDescendantOf(node,ancestor){let testNode=node;while(testNode&&testNode!==ancestor){testNode=testNode.parent;}
-return testNode===ancestor;}
-static hitTest(node,point){let child=node.firstChild;while(child){const hit=AutomationUtil.hitTest(child,point);if(hit){return hit;}
-child=child.nextSibling;}
-const loc=node.unclippedLocation;if(loc.left<0||loc.top<0){return null;}
-if(point.x<=(loc.left+loc.width)&&point.x>=loc.left&&point.y<=(loc.top+loc.height)&&point.y>=loc.top){return node;}
-return null;}
-static getTopLevelRoot(node){let root=node.root;if(!root||root.role===RoleType.DESKTOP){return null;}
-while(root&&root.parent&&root.parent.root&&root.parent.root.role!==RoleType.DESKTOP){root=root.parent.root;}
-return root;}
-static getLeastCommonAncestor(prevNode,node){if(prevNode===node){return node;}
-const prevAncestors=AutomationUtil.getAncestors(prevNode);const ancestors=AutomationUtil.getAncestors(node);const divergence=AutomationUtil.getDivergence(prevAncestors,ancestors);return ancestors[divergence-1];}
-static getText(node){if(!node){return'';}
-if(node.role===RoleType.TEXT_FIELD){return node.value||'';}
-return node.name||'';}
-static getEditableRoot(node){let testNode=node;let rootEditable;do{if(testNode.state.editable&&testNode.state.focused){rootEditable=testNode;}
-testNode=testNode.parent;}while(testNode);return rootEditable;}
-static findLastNode(root,pred){let node=root;while(node.lastChild){node=node.lastChild;}
-do{if(AutomationPredicate.shouldIgnoreNode(node)){continue;}
-let walker=node;let shallowest=null;while(walker){if(walker===root){break;}
-if(pred(walker)&&!AutomationPredicate.shouldIgnoreNode(walker)&&(!shallowest||!AutomationPredicate.container(walker))){shallowest=walker;}
-walker=walker.parent;}
-if(shallowest){return shallowest;}}while(node=AutomationUtil.findNextNode(node,Dir.BACKWARD,pred));return null;}};function createWalker(cur,dir,pred,opt_restrictions){const restrictions={};opt_restrictions=opt_restrictions||{leaf:undefined,root:undefined,visit:undefined,skipInitialSubtree:!AutomationPredicate.container(cur)&&pred(cur),};restrictions.root=opt_restrictions.root||AutomationPredicate.root;restrictions.leaf=opt_restrictions.leaf||function(node){return!AutomationPredicate.container(node)&&pred(node);};restrictions.skipInitialSubtree=opt_restrictions.skipInitialSubtree;restrictions.skipInitialAncestry=opt_restrictions.skipInitialAncestry;restrictions.visit=function(node){return pred(node)&&!AutomationPredicate.shouldIgnoreNode(node);};return new AutomationTreeWalker(cur,dir,restrictions);}});goog.provide('JaPhoneticData');JaPhoneticData=class{constructor(){}
+this.node_=node.parent||null;}};goog.provide('JaPhoneticData');JaPhoneticData=class{constructor(){}
 static init(map){this.phoneticMap_=map;}
 static forCharacter(char){const characterSet=JaPhoneticData.getCharacterSet(char,JaPhoneticData.CharacterSet.NONE);let resultChar=JaPhoneticData.maybeGetLargeLetterKana(char);resultChar=JaPhoneticData.phoneticMap_.get(resultChar)||resultChar;const prefix=JaPhoneticData.getPrefixForCharacter(characterSet);if(prefix){return prefix+' '+resultChar;}
 return resultChar;}
@@ -276,19 +222,7 @@ increaseOrDecreaseProperty(propertyName,increase){}
 propertyToPercentage(property){}
 getDefaultProperty(property){}
 toggleSpeechOnOrOff(){}
-resetTextToSpeechSettings(){}};goog.provide('SimpleAutomationNode');goog.provide('TreeDumper');const AutomationNode=chrome.automation.AutomationNode;SimpleAutomationNode=class{constructor(node){this.name=node.name;this.role=node.role;this.value=node.value;this.url=node.url;this.location=Object.assign({},node.location);this.children=[];for(let i=0;i<node.children.length;i++){this.children.push(new SimpleAutomationNode(node.children[i]));}
-this.logStr='';this.toString=function(){if(this.logStr.length){return this.logStr;}
-if(node.name){this.logStr+='name='+node.name+' ';}
-if(node.role){this.logStr+='role='+node.role+' ';}
-if(node.value){this.logStr+='value='+node.value+' ';}
-if(node.location){this.logStr+='location=('+node.location.left+', '+node.location.top+') ';this.logStr+='size=('+node.location.width+', '+node.location.height+') ';}
-if(node.url){this.logStr+='url='+node.url+' ';}
-return this.logStr;};}};TreeDumper=class{constructor(root){this.rootNode=new SimpleAutomationNode(root);this.treeStr_;}
-treeToString(){if(!this.treeStr_){this.treeStr_=this.formatTree_();}
-return this.treeStr_;}
-createTreeRecursive_(node,rank){let nodeStr='';nodeStr+='++'.repeat(rank);nodeStr+=node.toString();nodeStr+='\n';for(let i=0;i<node.children.length;i++){const nextNode=node.children[i];nodeStr+=this.createTreeRecursive_(nextNode,rank+1);}
-return nodeStr;}
-formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.provide('goog.debug.Error');goog.debug.Error=function(opt_msg){if(Error.captureStackTrace){Error.captureStackTrace(this,goog.debug.Error);}else{var stack=new Error().stack;if(stack){this.stack=stack;}}
+resetTextToSpeechSettings(){}};goog.provide('goog.debug.Error');goog.debug.Error=function(opt_msg){if(Error.captureStackTrace){Error.captureStackTrace(this,goog.debug.Error);}else{var stack=new Error().stack;if(stack){this.stack=stack;}}
 if(opt_msg){this.message=String(opt_msg);}};goog.inherits(goog.debug.Error,Error);goog.debug.Error.prototype.name='CustomError';goog.provide('goog.dom.NodeType');goog.dom.NodeType={ELEMENT:1,ATTRIBUTE:2,TEXT:3,CDATA_SECTION:4,ENTITY_REFERENCE:5,ENTITY:6,PROCESSING_INSTRUCTION:7,COMMENT:8,DOCUMENT:9,DOCUMENT_TYPE:10,DOCUMENT_FRAGMENT:11,NOTATION:12};goog.provide('goog.string');goog.string.subs=function(str,var_args){var splitParts=str.split('%s');var returnString='';var subsArguments=Array.prototype.slice.call(arguments,1);while(subsArguments.length&&splitParts.length>1){returnString+=splitParts.shift()+subsArguments.shift();}
 return returnString+splitParts.join('%s');};goog.provide('goog.asserts');goog.provide('goog.asserts.AssertionError');goog.require('goog.debug.Error');goog.require('goog.dom.NodeType');goog.require('goog.string');goog.asserts.ENABLE_ASSERTS=goog.define('goog.asserts.ENABLE_ASSERTS',goog.DEBUG);goog.asserts.AssertionError=function(messagePattern,messageArgs){messageArgs.unshift(messagePattern);goog.debug.Error.call(this,goog.string.subs.apply(null,messageArgs));messageArgs.shift();this.messagePattern=messagePattern;};goog.inherits(goog.asserts.AssertionError,goog.debug.Error);goog.asserts.AssertionError.prototype.name='AssertionError';goog.asserts.doAssertFailure_=function(defaultMessage,defaultArgs,givenMessage,givenArgs){var message='Assertion failed';if(givenMessage){message+=': '+givenMessage;var args=givenArgs;}else if(defaultMessage){message+=': '+defaultMessage;args=defaultArgs;}
 throw new goog.asserts.AssertionError(''+message,args||[]);};goog.asserts.assert=function(condition,opt_message,var_args){if(goog.asserts.ENABLE_ASSERTS&&!condition){goog.asserts.doAssertFailure_('',null,opt_message,Array.prototype.slice.call(arguments,2));}
@@ -652,4 +586,4 @@ return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffs
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
 goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in plural statement.');return result;};goog.i18n.MessageFormat.prototype.parseOrdinalBlock_=function(pattern){var argumentIndex='';var replaceRegex=goog.i18n.MessageFormat.ORDINAL_BLOCK_RE_;pattern=pattern.replace(replaceRegex,function(string,name){argumentIndex=name;return'';});var result={};result.argumentIndex=argumentIndex;result.argumentOffset=0;var parts=this.extractParts_(pattern);var pos=0;while(pos<parts.length){var key=parts[pos].value;goog.asserts.assertString(key,'Missing ordinal key element.');pos++;goog.asserts.assert(pos<parts.length,'Missing or invalid ordinal value element.');if(goog.i18n.MessageFormat.Element_.BLOCK==parts[pos].type){var value=this.parseBlock_(parts[pos].value);}else{goog.asserts.fail('Expected block type.');}
 result[key.replace(/\s*(?:=)?(\w+)\s*/,'$1')]=value;pos++;}
-goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('AncestryRecoveryStrategy');goog.require('AutomationPredicate');goog.require('AutomationTreeWalker');goog.require('AutomationUtil');goog.require('JaPhoneticData');goog.require('PanelNodeMenuData');goog.require('PanelTabMenuItemData');goog.require('QueueMode');goog.require('RecoveryStrategy');goog.require('TreeDumper');goog.require('TreePathRecoveryStrategy');goog.require('TtsCategory');goog.require('TtsInterface');goog.require('TtsSpeechProperties');goog.require('constants');goog.require('goog.i18n.MessageFormat');goog.require('ALL_NODE_MENU_DATA');
+goog.asserts.assertArray(result[goog.i18n.MessageFormat.OTHER_],'Missing other key in selectordinal statement.');return result;};goog.i18n.MessageFormat.prototype.buildPlaceholder_=function(literals){goog.asserts.assert(literals.length>0,'Literal array is empty.');var index=(literals.length-1).toString(10);return goog.i18n.MessageFormat.LITERAL_PLACEHOLDER_+index+'_';};goog.require('AbstractEarcons');goog.require('AncestryRecoveryStrategy');goog.require('AutomationPredicate');goog.require('AutomationTreeWalker');goog.require('JaPhoneticData');goog.require('PanelNodeMenuData');goog.require('PanelTabMenuItemData');goog.require('QueueMode');goog.require('RecoveryStrategy');goog.require('TreePathRecoveryStrategy');goog.require('TtsCategory');goog.require('TtsInterface');goog.require('TtsSpeechProperties');goog.require('constants');goog.require('goog.i18n.MessageFormat');goog.require('ALL_NODE_MENU_DATA');

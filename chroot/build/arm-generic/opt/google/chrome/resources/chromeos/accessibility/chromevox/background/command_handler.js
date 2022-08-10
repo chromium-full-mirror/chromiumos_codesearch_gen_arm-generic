@@ -5,6 +5,7 @@
 /**
  * @fileoverview ChromeVox commands.
  */
+import {AutomationUtil} from '../../common/automation_util.js';
 import {Cursor, CursorUnit} from '../../common/cursors/cursor.js';
 import {CursorRange} from '../../common/cursors/range.js';
 import {EventGenerator} from '../../common/event_generator.js';
@@ -21,6 +22,7 @@ import {ChromeVoxKbHandler} from '../common/keyboard_handler.js';
 import {LogType} from '../common/log_types.js';
 import {Msgs} from '../common/msgs.js';
 import {PanelCommand, PanelCommandType} from '../common/panel_command.js';
+import {TreeDumper} from '../common/tree_dumper.js';
 
 import {AutoScrollHandler} from './auto_scroll_handler.js';
 import {BrailleBackground} from './braille/braille_background.js';

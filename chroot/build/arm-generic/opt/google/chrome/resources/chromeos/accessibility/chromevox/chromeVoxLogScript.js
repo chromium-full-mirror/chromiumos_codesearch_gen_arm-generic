@@ -56,16 +56,4 @@ increaseOrDecreaseProperty(propertyName,increase){}
 propertyToPercentage(property){}
 getDefaultProperty(property){}
 toggleSpeechOnOrOff(){}
-resetTextToSpeechSettings(){}};goog.provide('SimpleAutomationNode');goog.provide('TreeDumper');const AutomationNode=chrome.automation.AutomationNode;SimpleAutomationNode=class{constructor(node){this.name=node.name;this.role=node.role;this.value=node.value;this.url=node.url;this.location=Object.assign({},node.location);this.children=[];for(let i=0;i<node.children.length;i++){this.children.push(new SimpleAutomationNode(node.children[i]));}
-this.logStr='';this.toString=function(){if(this.logStr.length){return this.logStr;}
-if(node.name){this.logStr+='name='+node.name+' ';}
-if(node.role){this.logStr+='role='+node.role+' ';}
-if(node.value){this.logStr+='value='+node.value+' ';}
-if(node.location){this.logStr+='location=('+node.location.left+', '+node.location.top+') ';this.logStr+='size=('+node.location.width+', '+node.location.height+') ';}
-if(node.url){this.logStr+='url='+node.url+' ';}
-return this.logStr;};}};TreeDumper=class{constructor(root){this.rootNode=new SimpleAutomationNode(root);this.treeStr_;}
-treeToString(){if(!this.treeStr_){this.treeStr_=this.formatTree_();}
-return this.treeStr_;}
-createTreeRecursive_(node,rank){let nodeStr='';nodeStr+='++'.repeat(rank);nodeStr+=node.toString();nodeStr+='\n';for(let i=0;i<node.children.length;i++){const nextNode=node.children[i];nodeStr+=this.createTreeRecursive_(nextNode,rank+1);}
-return nodeStr;}
-formatTree_(){const treeStr=this.createTreeRecursive_(this.rootNode,0);return treeStr;}};goog.require('QueueMode');goog.require('TreeDumper');
+resetTextToSpeechSettings(){}};goog.require('QueueMode');
