@@ -1,1 +1,1 @@
-{"version": "1", "timestamp": 1660162124.6351347, "deltas": [{"event": "add", "package": "chromeos-base/tast-remote-tests-cros", "version": "0.0.2-r11958", "slot": "0", "counter": "1657"}]}
+{"version": "1", "timestamp": 1660195656.6520007, "deltas": [{"event": "add", "package": "cross-armv7a-cros-linux-gnueabihf/go", "version": "1.18-r2", "slot": "0", "counter": "1446"}, {"event": "add", "package": "cross-aarch64-cros-linux-gnu/go", "version": "1.18-r2", "slot": "0", "counter": "1447"}]}
