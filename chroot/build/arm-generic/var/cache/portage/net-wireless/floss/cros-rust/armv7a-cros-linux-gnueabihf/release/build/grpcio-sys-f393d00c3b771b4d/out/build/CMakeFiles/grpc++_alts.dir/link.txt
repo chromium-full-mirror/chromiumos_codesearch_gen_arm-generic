@@ -1,2 +1,0 @@
-/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libgrpc++_alts.a CMakeFiles/grpc++_alts.dir/src/cpp/common/alts_context.cc.o CMakeFiles/grpc++_alts.dir/src/cpp/common/alts_util.cc.o
-/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libgrpc++_alts.a

@@ -1,2 +1,0 @@
-/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_civil_time.a CMakeFiles/absl_civil_time.dir/internal/cctz/src/civil_time_detail.cc.o
-/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_civil_time.a
