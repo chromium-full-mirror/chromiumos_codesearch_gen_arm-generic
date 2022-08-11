@@ -1,0 +1,2 @@
+/usr/bin/armv7a-cros-linux-gnueabihf-ar qc libabsl_cord.a CMakeFiles/absl_cord.dir/cord.cc.o CMakeFiles/absl_cord.dir/internal/cord_internal.cc.o CMakeFiles/absl_cord.dir/internal/cord_rep_ring.cc.o
+/usr/bin/armv7a-cros-linux-gnueabihf-ranlib libabsl_cord.a
